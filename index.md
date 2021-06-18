@@ -8,7 +8,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
 
-- (5/2021) Our paper on bitmap caching has been accepted to SSDBM 2021 as a long paper. Congrats to Sarah McClain, Manya Mutschler-Aldine, and Colin Monaghan.
+- (5/2021) Our paper on bitmap caching has been accepted to SSDBM 2021 as a long paper. Congrats to Sarah McClain (BS'20), Manya Mutschler-Aldine (BS'21), and Colin Monaghan.
 - (6/2020) Elevation to IEEE Senior Member grade.
 - (4/2020) Congrats to Colin Monaghan on receiving a summer research grant to study replacement policies in bitmap index caching.
 - (2/2020) Our paper on optimizing GPU processing of bitmaps has been accepted for publication at DASFAA 2020.
