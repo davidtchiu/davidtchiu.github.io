@@ -1,10 +1,10 @@
 ### Biosketch
 
-I am an Associate Professor and Chair of Computer Science at the [University of Puget Sound](https://cs.pugetsound.edu). I completed a PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [High-Performance Systems Group](https://cse.osu.edu/research/systems). I studied under the supervision of Gagan Agrawal. My dissertation topic was on the dynamic composition and performance optimizations of scientific workflows over distributed cloud computing environments. I also worked on problems in cloud data management.
+I am an Associate Professor and Chair of Computer Science at the [University of Puget Sound](https://cs.pugetsound.edu). I completed a PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [High-Performance Systems Group](https://cse.osu.edu/research/systems). I studied under the supervision of Gagan Agrawal. My dissertation topic was on the dynamic composition and performance optimizations of scientific workflows over distributed cloud computing environments. I also worked on problems in cloud data management and indexing.
 
-I am the recipient of the 2017 Kristine Bartanen Research Achievement Award from the University of Puget Sound. My current teaching and research interests broadly include data management and distributed cloud computing. I am a member of ACM and senior member of the IEEE.
+I am the recipient of the 2017 Kristine Bartanen Research Achievement Award from the University of Puget Sound. My current teaching and research interests include data management and distributed cloud computing. I am a member of ACM and senior member of the IEEE.
 
-Here's a link to my [CV.pdf](curriculum vitae).
+Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
 
@@ -17,7 +17,3 @@ Here's a link to my [CV.pdf](curriculum vitae).
 - (4/2019) Congrats to Sarah McClain on receiving a summer research grant to work on semantic caching of bitmap indices.
 - (3/2019) I am serving on the PC for HiPC'19 Please consider submitting a paper.
 - (10/2018) Our paper on distributed bitmap indexing has been accepted for publication at BDCAT'18. It was nominated for the Best Paper award.
-
-### Availability
-
-<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=ZGF2aWQudC5jaGl1QGdtYWlsLmNvbQ&amp;src=bzBuOXZ2cWdpcHJzNG9saDUxbm82ZWVkY2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F09300&amp;color=%233F51B5&amp;mode=WEEK&amp;showPrint=0&amp;showDate=0&amp;title=David&#39;s%20Availability&amp;showTabs=0&amp;showCalendars=0&amp;showNav=0&amp;showTitle=0" style="border-width:0" width="640" height="450" frameborder="0" scrolling="no"></iframe>
