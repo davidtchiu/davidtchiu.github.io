@@ -4,13 +4,13 @@ My research interests intersect topics in cloud computing and data management. I
 
 ### Research Profiles
 
-- DBLP Computer Science Bibliography
-- Google Scholar
-- ORCID: 0000-0002-1210-8268
+- [DBLP Computer Science Bibliography](https://dblp.org/pid/64/411.html)
+- [Google Scholar](https://scholar.google.com/citations?pli=1&authuser=1&user=HwaZjxcAAAAJ)
+- [ORCID: 0000-0002-1210-8268](https://orcid.org/0000-0002-1210-8268)
 
 ### Current Projects
 
-(See: Conference Publishing Standards for Computer Science from CRA and National Academies of Sciences)
+(See: Conference Publishing Standards for Computer Science from [CRA](http://cra.org/resources/best-practice-memos/evaluating-computer-scientists-and-engineers-for-promotion-and-tenure/))
 
 #### Bitmap Indexing for Data-Intensive Processing
 
@@ -88,37 +88,8 @@ My research interests intersect topics in cloud computing and data management. I
 
 ### PhD Dissertation
 
-- David Chiu. AUSPICE: Automatic Service Planning in Cloud/Grid Environments. Doctoral Dissertation. The Ohio State University, 2010. 196 Pages. Committee: Gagan Agrawal (Advisor), Christopher Stewart, and Hakan Ferhatosmanoglu.
+- D. Chiu. AUSPICE: Automatic Service Planning in Cloud/Grid Environments. Doctoral Dissertation. The Ohio State University, 2010. 196 Pages. Committee: Gagan Agrawal (Advisor), Christopher Stewart, and Hakan Ferhatosmanoglu.
   Research Students
-
-### Research Alumni
-
-Below is a list of my (former) research students and a half-hearted effort to track where they currently are.
-
-- Colin Monaghan (BS'22)
-- Manya Meutschler-Aldine (BS'21)
-- Sarah Walling-Bell (BS'20), University of Washington
-- Sarah McClain (BS'20), Panorama Education, Boston
-- Sam Burdick (BS'19), AWS → PhD Student @ Ohio State
-- Jahrme Risner (BS'19), Google
-- Jared Polonitza (BS'19), Chalice Networks
-- Jack Burns (BS'18), Loopie Seattle
-- Christine Li, Student @ Columbia University
-- Patrick Ryan (BS'18), T-Mobile, Bellevue
-- Rachel Hirsch (BS'17), MS student @ Colorado State
-- Chili Johnson (BS'17)
-- Alexia Ingerson (BS'16), Intel
-- Brandon Roberts (BS'16), Milliman
-- Ben McCamish, (MS'15), PhD Student @ Oregon State → Professor at WSU Vancouver
-- Miles Histand (BS'14) Daimler
-- Gabriel Dunham (BS'14), Plexsys
-- Sean Lim (BS'14), Dell EMC
-- Helena Lucia (BS'14), Intel → Cox
-- Bo Wang (MS'14), Epic → Microsoft
-- Eriko Otsuka (MS'14), Clark College
-- Fredton Doan (MS'13), Clark County Washington
-- Farhana Kabir (MS'12), Intel → HP
-- Travis Hall (MS'12), VMware
 
 ### Awards
 
