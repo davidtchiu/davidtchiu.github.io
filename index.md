@@ -1,6 +1,6 @@
 ### Biosketch
 
-I am an Associate Professor and Chair of Computer Science at the [https://cs.pugetsound.edu](University of Puget Sound). I completed a PhD in Computer Science and Engineering at [https://cse.osu.edu](The Ohio State University) as a member of the [https://cse.osu.edu/research/systems](High-Performance Systems Group). I studied under the supervision of Gagan Agrawal. My dissertation topic was on the dynamic composition and performance optimizations of scientific workflows over distributed cloud computing environments. I also worked on problems in cloud data management.
+I am an Associate Professor and Chair of Computer Science at the [University of Puget Sound](https://cs.pugetsound.edu). I completed a PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [High-Performance Systems Group](https://cse.osu.edu/research/systems). I studied under the supervision of Gagan Agrawal. My dissertation topic was on the dynamic composition and performance optimizations of scientific workflows over distributed cloud computing environments. I also worked on problems in cloud data management.
 
 I am the recipient of the 2017 Kristine Bartanen Research Achievement Award from the University of Puget Sound. My current teaching and research interests broadly include data management and distributed cloud computing. I am a member of ACM and senior member of the IEEE.
 
