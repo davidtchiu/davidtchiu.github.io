@@ -1,4 +1,4 @@
-## [dchiu@pugetsound.edu](David Chiu)
+## [David Chiu](dchiu@pugetsound.edu)
 Associate Professor and Chair of Computer Science, University of Puget Sound
 
 ### Biosketch
@@ -20,4 +20,4 @@ Here's a link to my curriculum vitae.
 * (10/2018) Our paper on distributed bitmap indexing has been accepted for publication at BDCAT'18. It was nominated for the Best Paper award.
 
 ### Availability
-<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=ZGF2aWQudC5jaGl1QGdtYWlsLmNvbQ&amp;src=bzBuOXZ2cWdpcHJzNG9saDUxbm82ZWVkY2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F09300&amp;color=%233F51B5&amp;mode=WEEK&amp;showPrint=0&amp;showDate=0&amp;title=David&#39;s%20Availability&amp;showTabs=0&amp;showCalendars=0&amp;showNav=0&amp;showTitle=0" style="border-width:0" width="550" height="550" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=ZGF2aWQudC5jaGl1QGdtYWlsLmNvbQ&amp;src=bzBuOXZ2cWdpcHJzNG9saDUxbm82ZWVkY2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F09300&amp;color=%233F51B5&amp;mode=WEEK&amp;showPrint=0&amp;showDate=0&amp;title=David&#39;s%20Availability&amp;showTabs=0&amp;showCalendars=0&amp;showNav=0&amp;showTitle=0" style="border-width:0" width="550" height="450" frameborder="0" scrolling="no"></iframe>
