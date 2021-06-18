@@ -1,3 +1,6 @@
+## [dchiu@pugetsound.edu](David Chiu)
+Associate Professor and Chair of Computer Science, University of Puget Sound
+
 ### Biosketch
 I am an Associate Professor and Chair of Computer Science at the University of Puget Sound. I completed a PhD in Computer Science and Engineering at The Ohio State University as a member of the High-Performance Systems Group. I studied under the supervision of Gagan Agrawal. My dissertation topic was on the dynamic composition and performance optimizations of scientific workflows over distributed cloud computing environments. I also worked on problems in cloud data management.
 
