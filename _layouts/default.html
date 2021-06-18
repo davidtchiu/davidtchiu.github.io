@@ -15,12 +15,14 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
           <h2 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
-          <h3 id="project_tagline">
-		  {{ site.description | default: site.github.project_tagline }}<br/>
-		  {{ site.institution | default: site.github.project_tagline }}
-	  </h3>
-          <h3 id="project_tagline">
-            <a href="/"">Home</a>| <a href="/teaching">teaching</a> | <a href="/research">research</a> | <a href="/faq">FAQ</a>
+          <h4 id="project_tagline">
+          {{ site.description | default: site.github.project_tagline }}<br/>
+          {{ site.institution | default: site.github.project_tagline }}
+	        </h4>
+          <br/>
+          <br/>
+          <h3 id="navbar">
+            <a href="/"">home</a>| <a href="/teaching">teaching</a> | <a href="/research">research</a> | <a href="/faq">faq for students</a>
           </h3>
         </header>
     </div>
