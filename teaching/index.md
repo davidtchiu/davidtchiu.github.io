@@ -9,7 +9,7 @@
 * Operating Systems
 * Web Data Management -->
 
-My teaching focuses on the areas of data management and computer systems. I teach the following courses at Puget Sound:
+My teaching focuses on the areas of data management and computer systems. I teach the following courses on a regular rotation at Puget Sound:
 
 - [CS 161 - Introduction to Computer Science](cs161/)
 - [CS 240 - Software Engineering](cs240/)
@@ -17,7 +17,8 @@ My teaching focuses on the areas of data management and computer systems. I teac
 - [CS 440 - Capstone in Computer Science](cs440)
 - [CS 455 - Principles of Database Systems](cs455/)
 - [CS 475 - Operating Systems](cs475/)
-
+\
+\
 <!-- Spring 2020
 CS 161 - Introduction to Computer Science
 

@@ -4,19 +4,19 @@ Instructor: David Chiu
 Meeting Time: MWF 3:00-3:50 in Thompson Hall 395
 Office: Thompson Hall 390 B
 Office Hours: Open door, or by appointment
-Canvas: [https://canvas.pugetsound.edu](canvas.pugetsound.edu)
+Canvas: [https://canvas.pugetsound.edu](https://canvas.pugetsound.edu)
 
 ### Code Alongs
 
-- [ca.git1/](Git Basics: Staging, Committing, Undoing)
-- [ca.git2/](Git Branching and Collaboration)
+- [Git Basics: Staging, Committing, Undoing](ca.git1/)
+- [Git Branching and Collaboration](ca.git2/)
 
 ### Homework
 
-- [hwk1/](TBD)
-- [hwk2/](Scoreboard)
-- [hwk3/](Schelling's Model)
-- [hwk4/](Simone)
+- [Hwk 1: TBD](hwk1/)
+- [Hwk 2: Scoreboard](hwk2/)
+- [Hwk 3: Schelling's Model](hwk3/)
+- [Hwk 4: Simone](hwk4/)
 
 ### Project
 
