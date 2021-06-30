@@ -16,7 +16,7 @@ My teaching focuses on the areas of data management and computer systems. I teac
 - [CS 261 - Computer Science II](cs261/)
 - [CS 440 - Capstone in Computer Science](cs440)
 - [CS 455 - Principles of Database Systems](cs455/)
-- [CS 475 - Operating Systems](cs475/)\
+- [CS 475 - Operating Systems](cs475/)
 
 <!-- Spring 2020
 CS 161 - Introduction to Computer Science
