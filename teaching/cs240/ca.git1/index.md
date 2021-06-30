@@ -21,7 +21,7 @@ In this exercise you will be trying out basic git operations, including staging,
 - Create and save three empty files: `arctic.txt` and `jungle.txt`. Let's now make our first commit to include all three files. Remember that committing is a 2-step process. You must first stage the files you want to include in your commit with:
 
   ```
-  git add file1 file2 ...
+  git add <file1> <file2> ...
   ```
 
   Or if you want to stage all file changes, like in this case, use:
@@ -133,7 +133,7 @@ If you used descriptive commit messages, like we've been doing, it should easy t
 - But let's say you're not sure if you're looking at the right commit, and doing a hard reset to a commit is super dangerous. You can check out the files at different commit points by using:
 
 ```
-git checkout commit-id
+git checkout <commit-id>
 ```
 
 After you checkout, the file contents should update automatically in VS Code to its state in the given commit point! Once you find the most recent commit with the aquarium data, copy that commit id.

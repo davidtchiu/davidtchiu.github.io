@@ -8,6 +8,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
 
+- (7/2021) I'm chairing the Demo/Short Paper Session at SSDBM 2021, and I'm also giving a talk, "Caching Support for Range Query Processing on Bitmap Indices"
 - (5/2021) Our paper on bitmap caching has been accepted to SSDBM 2021 as a long paper. Congrats to Sarah McClain (BS'20), Manya Mutschler-Aldine (BS'21), and Colin Monaghan.
 - (6/2020) Elevation to IEEE Senior Member grade.
 - (4/2020) Congrats to Colin Monaghan on receiving a summer research grant to study replacement policies in bitmap index caching.
