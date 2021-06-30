@@ -1,6 +1,6 @@
 ### Teaching
 
-<!-- My teaching focuses on the areas of data management and computer systems. I have taught the following courses:
+<!--
 * Introduction to Computer Science
 * Computer Science II
 * Capstone in Computer Science
@@ -9,7 +9,7 @@
 * Operating Systems
 * Web Data Management -->
 
-#### University of Puget Sound
+My teaching focuses on the areas of data management and computer systems. I teach the following courses at Puget Sound:
 
 - [CS 161 - Introduction to Computer Science](cs161/)
 - [CS 240 - Software Engineering](cs240/)
@@ -78,9 +78,9 @@ Kent State University (2003-2004)
 Computer Literacy
 Intro to Computer Science -->
 
-### Teaching Awards
+#### Teaching Awards
 
 - **Outstanding Graduate Student Teaching Award**\
-  Computer Science and Engineering, The Ohio State University, 2009
+  Department of Computer Science and Engineering, The Ohio State University, 2009
 - **Preparing Future Faculty (PFF) Fellow**\
-  The Ohio State University, (Mentor: Prof. Joan Krone at Denison University), 2009
+  The Ohio State University, (Mentor: Prof. Joan Krone @ Denison University), 2009
