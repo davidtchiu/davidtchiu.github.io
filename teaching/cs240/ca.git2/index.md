@@ -122,7 +122,7 @@ We will continue our work on the Zoo project. Open this project in VS Code, and 
 
 - Commit with the message `"Added kiosk.txt, initially milk and bananas"`.
 
-- Your manager interrupts _again (ughhhhh! Am I right?)_ to get you to add _5 baby seals_ to `arctic.txt`. This time you remember to switch over to the `main` branch, so go ahead and do so before continuing. Open `arctic.txt` back up add _5 baby seals_ in alphabetical order. You should notice that the penguins and yaks aren't in this version of the file, because they were added under a different branch. Don't worry, we'll merge them together in the next section.
+- Your manager interrupts you _again (ughhhhh! Am I right?)_ to get you to add _5 baby seals_ to `arctic.txt`. This time you remember to switch over to the `main` branch, so go ahead and do so before continuing. Open `arctic.txt` back up add _5 baby seals_ in alphabetical order. You should notice that the penguins and yaks aren't in this version of the file, because they were added under a different branch. Don't worry, we'll merge them together in the next section.
 
 - Commit again with the message `"added 5 baby seals to arctic.txt"`.
 
