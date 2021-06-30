@@ -1,9 +1,9 @@
 ## CS 240 - Software Engineering
 
-Instructor: David Chiu
-Meeting Time: MWF 3:00-3:50 in Thompson Hall 395
-Office: Thompson Hall 390 B
-Office Hours: Open door, or by appointment
+Instructor: David Chiu\
+Meeting Time: MWF 3:00-3:50 in Thompson Hall 395\
+Office: Thompson Hall 390 B\
+Office Hours: Open door, or by appointment\
 Canvas: [https://canvas.pugetsound.edu](https://canvas.pugetsound.edu)
 
 ### Code Alongs
