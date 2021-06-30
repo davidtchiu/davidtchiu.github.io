@@ -1,4 +1,4 @@
-## Git Basics
+## Code Along: Git Basics
 
 In this exercise you will be trying out basic git operations, including staging, committing, and undoing.
 
