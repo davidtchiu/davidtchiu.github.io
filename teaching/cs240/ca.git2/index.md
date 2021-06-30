@@ -127,3 +127,29 @@ We will continue our work on the Zoo project. Open this project in VS Code, and 
 - Commit again with the message `"added 5 baby seals to arctic.txt"`.
 
 ### Part 2 - Merging and Resolving Conflicts
+
+- Your manager reviewed your work in the food branch, and suggests that it's time to merge that branch in with the `main` branch. Before doing anything, verify that you're still on the `main` branch. If not, then switch over to the `main` branch now. Make sure there are no outstanding commits. If there are staged files, go ahead and commit now.
+
+- From the terminal, merge the `food` branch to `main`. You may recall that the syntax to do so is:
+
+  ```
+  git merge <incoming-branch>
+  ```
+
+  Well, git detects a merge conflict for `arctic.txt`, and won't let you merge until the conflict is resolved. There are now two competing versions of it: the version on the `food` branch has yaks and penguins, and the version on the `main` branch has baby seals. We want all three lines.
+
+- To resolve the conflict, git should've caused VS Code to pop up with `arctic.txt` already open. You should find the **conflict markers**, like this:
+
+  ```
+  <<<<<<<
+  local stuff
+  =======
+  incoming stuff
+  >>>>>>>
+  ```
+
+  Go ahead and make the changes directly, keeping all three animals. Remove the `>>>>>>` `<<<<<<<` `=======` markers. Now commit again to merge the branches.
+
+- Having no more need for the `food` branch, go ahead and remove it.
+
+### Part 3 - Github
