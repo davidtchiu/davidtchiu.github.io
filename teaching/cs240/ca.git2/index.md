@@ -6,8 +6,6 @@ In this exercise you will be trying out basic git operations, including staging,
 
 - Creating and switching between branches
 - Merging branches and resolving conflicts
-- Learning how to collaborate over github
-- Generating pull requests (github)
 
 ### Part 1 - Working with Branches
 
@@ -150,6 +148,6 @@ We will continue our work on the Zoo project. Open this project in VS Code, and 
 
   Go ahead and make the changes directly, keeping all three animals. Remove the `>>>>>>`, `<<<<<<<`, `=======` markers. Now commit again to merge the branches.
 
-- Having no more need for the `food` branch, go ahead and remove it.
+- Having no more need for the `food` branch, go ahead and remove it. List your branches to verify that only the `main` branch exists.
 
-### Part 3 - Github
+- Verify that the contents of `arctic.txt.`, `kiosk.txt`, and `cafeteria.txt` are as you'd expect.

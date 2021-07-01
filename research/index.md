@@ -93,10 +93,10 @@ My research interests intersect topics in cloud computing and data management. I
 
 ### Awards
 
-- Best Paper Finalist, 6th IEEE/ACM International Conference on Big Data Computing, Application, and Technologies, 2019
-- Best Paper Finalist, 5th IEEE/ACM International Conference on Big Data Computing, Application, and Technologies, 2018
+- Best Paper Finalist, IEEE/ACM BDCAT 2019
+- Best Paper Finalist, IEEE/ACM BDCAT 2018
 - Kristine Bartanen Research Award, University of Puget Sound, 2017
 - Best Poster Award, Consortium for Computing Sciences in Colleges, Northwest Region, 2015
 - Best Student Paper Finalist, International Conference on Web-based Education, 2005
-- Best Student Paper Award, IEEE International Conference on Coding and Computing, 2004
+- Best Student Paper Award, IEEE ITCC, 2004
 - Best Student Paper Award, Conference on Information Technology in Education, 2004

@@ -13,7 +13,7 @@
 - [Dough Zone](https://www.doughzonedumplinghouse.com)
 - [Mama's Dough](https://www.mamasdoughkent.com)
 - [ShareTea](https://www.1992sharetea.com)
-- Cactus, Tacoma
+- [Cactus](https://cactusrestaurants.com/location/proctor/), Tacoma
 - Valhalla Coffee, Tacoma
 - Bluebeard Coffee, Tacoma
 - The Spar, Old Town Tacoma

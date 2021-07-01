@@ -18,6 +18,8 @@ My teaching focuses on the areas of data management and computer systems. I teac
 - [CS 455 - Principles of Database Systems](cs455/)
 - [CS 475 - Operating Systems](cs475/)
 
+<br/><br/>
+
 <!-- Spring 2020
 CS 161 - Introduction to Computer Science
 
@@ -78,7 +80,7 @@ Kent State University (2003-2004)
 Computer Literacy
 Intro to Computer Science -->
 
-#### Teaching Awards
+### Teaching Awards
 
 - **Outstanding Graduate Student Teaching Award**\
   Department of Computer Science and Engineering, The Ohio State University, 2009
