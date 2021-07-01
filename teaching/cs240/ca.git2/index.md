@@ -148,7 +148,7 @@ We will continue our work on the Zoo project. Open this project in VS Code, and 
   >>>>>>>
   ```
 
-  Go ahead and make the changes directly, keeping all three animals. Remove the `>>>>>>` `<<<<<<<` `=======` markers. Now commit again to merge the branches.
+  Go ahead and make the changes directly, keeping all three animals. Remove the `>>>>>>`, `<<<<<<<`, `=======` markers. Now commit again to merge the branches.
 
 - Having no more need for the `food` branch, go ahead and remove it.
 

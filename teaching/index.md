@@ -82,5 +82,6 @@ Intro to Computer Science -->
 
 - **Outstanding Graduate Student Teaching Award**\
   Department of Computer Science and Engineering, The Ohio State University, 2009
+
 - **Preparing Future Faculty (PFF) Fellow**\
   The Ohio State University, (Mentor: Prof. Joan Krone @ Denison University), 2009
