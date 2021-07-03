@@ -16,6 +16,9 @@
 - **How do I do summer research with you?**\
   If I have a project (usually in Databases) that is available, and I think that you would be a good fit, I will reach out to you to gauge your interest. But just because you don't hear from me doesn't mean you can't reach out! I'm demanding, but I'll ensure that you're ready for the work. I will train you so that you have the necessary background in my area, and on how to "science." Such "sciencing" activities include: how to express problem statements and hypotheses, how to design and run experiments, how to communicate your results effectively, how to structure a technical paper.
 
+- **Can we talk about grad school?**\
+  Yes, make an appointment with me. And the earlier the better. We should be having this conversation ideally when you're in your 3rd year. I'll be happy to set up an appointment. The Math/CS faculty also run a grad school panel every year year in Fall, so watch out for the announcements in your email.
+
 - **Can you write me a letter of recommendation?**\
   The impact of a letter begins with the reliability of its writer, so I don't write puff pieces because I happen to like you. Know that I _will_ list your weaknesses along with strengths in your work and personality. If I agree to write your letter, I would tell you any weaknesses I'd list (if any), and let you decide if you still want me to proceed. Know that good grades in isolation don't really impress me (nor many readers of the letter). "A" students are everywhere, and there's always someone with a better record than you. So you need to ask yourself, _"What separates me from the rest?"_ What impresses people in addition to good grades are your attitudes, actions, and how you treat others.
 
