@@ -56,8 +56,8 @@ For full credit, your project should observe the following requirements.
 
   - Now move on to the control center. Run a query for the 6 manipulable elements. Recall that each option in a drop-down menu is specified in the `value` attribute.
 
-- Images and Sounds: To play sounds using JavaScript is quite simple: look into the [Audio class](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio). Four music files (mp3) have been provided to you in the sounds/ directory:
-  - When the left button (the one with music notes) is pressed, randomly play one of: charge1.mp3, charge2.mp3, buildup.mp3. Also randomly display one of the images to the right of the box score:
+- Images and Sounds: To play sounds using JavaScript is quite simple: look into the [Audio class](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio). Four music files (mp3) have been provided to you.
+  - When the left button (the one with music notes) is pressed, randomly play one of: charge1.mp3, charge2.mp3, or buildup.mp3. Also randomly display one of the images to the right of the box score.
   - When the right button (the one with a keyboard) is pressed, play the Chicken Dance: chickendance.mp3, and always display the sdchicken.jpg to the right of the box score.
     Pressing on another button before the song has finished may cause the music to overlap. This is okay (for now) because we don't know how to wait for the song to end.
 
