@@ -10,10 +10,10 @@
 
 ### Around Puget Sound
 
-- [Dough Zone](https://www.doughzonedumplinghouse.com)
-- [Mama's Dough](https://www.mamasdoughkent.com)
-- [ShareTea](https://www.1992sharetea.com)
-- [Cactus](https://cactusrestaurants.com/location/proctor/), Tacoma
+- Mama's Dough, Kent
+- ShareTea
+- Cactus, Tacoma
+- Dough Zone
 - Valhalla Coffee, Tacoma
 - Bluebeard Coffee, Tacoma
 - The Spar, Old Town Tacoma
@@ -30,23 +30,21 @@ Some of my favorite places in Portland.
 - Flying Cat Coffee Company on SE Division, run by a Buckeye. Check out the OSU-feline themed wall art
 - Rimsky-Korsakoffee House on SE 12th
 - Coffee Time Cafe on NW 21st
-- Escape from New York Pizza on NW 23rd
-- Powell's Books in the Pearl (NW)
-- Washington Park and the International Rose Test Garden
-- Laurelhurst Park and Mt. Tabor Park. These are can't-miss
+- Escape from New York Pizza
+- Powell's
+- Washington Park
+- Laurelhurst Park and Mt Tabor Park
 - SE Hawthorne Blvd. Our old neighborhood
 
 ### Ohio
 
-I was raised near Akron, Ohio (LeBron territory) and spent time in Columbus for grad school.
+I was raised in Akron, Ohio (LeBron territory) and then spent time in Columbus for grad school.
 
 - Stauf's in Grandview
 - Jeni's Ice Cream, a fixture in Columbus
-- Luigi's Restaurant in Akron
+- Luigi's in Akron
 - Sapporo Sushi Factory in Westerville
 - Taco Tanto's in Kent
 - The Stan Hywet in Akron
 - Swenson's in NE Ohio
 - Studio 35 Cinema in Clintonville
-- Cleveland Browns Stadium
-- Ohio Stadium

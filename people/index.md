@@ -15,7 +15,7 @@ Here's is a list of my former research advisees and a half-hearted effort of tra
 - Jack Burns (BS'18), Loopie Seattle
 - Christine Li, Student @ Columbia University
 - Patrick Ryan (BS'18), T-Mobile, Bellevue
-- Rachel Hirsch (BS'17), MS student @ Colorado State University
+- Rachel Hirsch (BS'17), MS student @ Colorado State University → ringDNA
 - Chili Johnson (BS'17)
 - Alexia Ingerson (BS'16), Intel
 - Brandon Roberts (BS'16), Milliman

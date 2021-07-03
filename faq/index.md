@@ -1,10 +1,10 @@
 ### Student FAQs
 
 - **I'm waitlisted for your course. Can you let me in?**\
-  I treat these requests on a case-by-case basis. Things I consider include: your position on the wait list, whether there are alternative sections with space, and whether you need my course to graduate. That said, I usually let in all students on a short (1-3) wait-list.
+  I treat these requests on a case-by-case basis. Things I consider include: your position on the wait list, whether there are alternative sections with space, and whether you need my course to graduate.
 
 - **What are your office hours?**\
-  Check canvas for standard office hours. I also keep an open-door policy. As long as my door is cracked, I'm available. The calendar on my home page gives a rough outline of my day-to-day availability. If you'd like to set up a specific time to meet, however, you're welcome to email me.
+  Check canvas for standard office hours, and I also keep an open-door policy. As long as my door is cracked, I'm available. The calendar on my home page gives a rough outline of my day-to-day availability. If you'd like to set up a specific time to meet, however, you're welcome to email me.
 
 - **Will you be my advisor?**\
   Well, "advisor" means different things to different people, so let's clarify.
@@ -15,7 +15,7 @@
   - As a **mentor**, I will give non-judgmental advice about current academics, work, life, graduate school/job outlook. We might look over your resume, or do a mock interview, etc. I try to keep you in mind when I learn about opportunities that might be a good fit for you. There is no official method to ask for mentoring. The mentor-mentee relationship usually develops organically.
 
 - **How do I do summer research with you?**\
-  If I have a project (usually in Databases) that is available, and I think that you would be a good fit, I will reach out to you in the Spring to gauge your interest. But just because you don't hear from me doesn't mean you shouldn't reach out to me. It could just be that I'm behind on things, or it could mean that I hadn't really had time to hash out some ideas. I'm demanding of my research students, but I'll ensure that you're ready for the work. I will train you so that you have the necessary background in my area. I will also train you on how to "science." Such "sciencing" activities include: how to express problem statements and hypotheses, how to design and run experiments, how to visualize and communicate your results effectively, how to structure a technical paper, and so on. When the results are significant, I will ask you to co-author a paper with me for submission for publication.
+  If I have a project (usually in Databases) that is available, and I think that you would be a good fit, I will reach out to you to gauge your interest. But just because you don't hear from me doesn't mean you can't reach out! I'm demanding, but I'll ensure that you're ready for the work. I will train you so that you have the necessary background in my area, and on how to "science." Such "sciencing" activities include: how to express problem statements and hypotheses, how to design and run experiments, how to communicate your results effectively, how to structure a technical paper.
 
 - **Can you write me a letter of recommendation?**\
   This is one of the common questions I get asked. I believe that the impact of a letter begins with the reliability of its writer. Letter-writing is a serious responsibility, and I don't write puff pieces because I happen to like you. I _will_ list your weaknesses along with your strengths in your work and personality. If I don't feel qualified to evaluate you deeply, I may decline. If I agree, I would tell you any weaknesses I'd list (if any), and let you decide if you want me to proceed.
@@ -33,7 +33,7 @@
   - _"How long has it been since I last interacted with David?"_ If it's been multiple years since you graduated, I may not remember enough details about you as a student. I'd likely have to rely on data like grades and GPA, which may no longer represent you.
 
 - **Can I list you for a job reference?**\
-  Job references are less involved than having to provide letters. Usually, when I'm listed as a reference, a potential employer calls me for a quick 10-min background check: "Are they a real person at your institution?" "Were they easy to to work with?" "What are their strengths/weaknesses?" I don't have to know you and your work with as much detail than I would if I were asked to provide a letter, but you're still reminded that I'm honest about my evaluations of students, so a lot of the things from the previous question still apply.
+  I am generally find with this, as long as I've had you in some courses. I don't have to know you and your work with as much detail than I would if I were asked to provide a letter, but you're still reminded that I'm honest about my evaluations of students, so a lot of the things from the previous question still apply.
 
 - **Can we connect on social media?**\
   I'm happy to connect with my students and alumni on [LinkedIn](http://www.linkedin.com/in/davidtchiu). I'm not on FB, Twitter, Instagram, ... if you happen to find me on those platforms, it's a fake account. There is also a [CS department group](https://www.linkedin.com/groups/1864577/) on LinkedIn that you should request to join.
