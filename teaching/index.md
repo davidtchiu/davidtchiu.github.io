@@ -18,7 +18,7 @@ My teaching focuses on the areas of data management and computer systems. I teac
 - [CS 455 - Principles of Database Systems](cs455/)
 - [CS 475 - Operating Systems](cs475/)
 
-<br/><br/>
+<br/>
 
 <!-- Spring 2020
 CS 161 - Introduction to Computer Science
