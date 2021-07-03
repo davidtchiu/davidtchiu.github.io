@@ -34,4 +34,19 @@ public class T {
 }
 ```
 
-$x = \sqrt{(x'-x)^2 + (y'-y)^2}$
+```js
+let o = {
+  key: val,
+  key2: val2,
+};
+
+function foo(x, y) {
+  function foo2(x2, y2) {
+    console.log("hi");
+  }
+}
+```
+
+### Testing latex
+
+$d = \sqrt{(x'-x)^2 + (y'-y)^2}$
