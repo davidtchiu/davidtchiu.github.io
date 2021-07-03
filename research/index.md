@@ -91,11 +91,13 @@ My research interests intersect topics in cloud computing and data management. I
 - D. Chiu. AUSPICE: Automatic Service Planning in Cloud/Grid Environments. Doctoral Dissertation. The Ohio State University, 2010. 196 Pages. Committee: Gagan Agrawal (Advisor), Christopher Stewart, and Hakan Ferhatosmanoglu.
   Research Students
 
-### Awards
+### Research Awards
 
 - Best Paper Finalist, IEEE/ACM BDCAT 2019
+- Agricola Faculty Research Award, University of Puget Sound, 2019
 - Best Paper Finalist, IEEE/ACM BDCAT 2018
 - Kristine Bartanen Research Award, University of Puget Sound, 2017
+- McCormick Faculty Research Award, University of Puget Sound, 2016
 - Best Poster Award, Consortium for Computing Sciences in Colleges, Northwest Region, 2015
 - Best Student Paper Finalist, International Conference on Web-based Education, 2005
 - Best Student Paper Award, IEEE ITCC, 2004
