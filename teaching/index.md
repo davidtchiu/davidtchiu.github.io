@@ -82,8 +82,8 @@ Intro to Computer Science -->
 
 ### Teaching Awards
 
--- **Diversity Council Award**\
-_A Tangible Approach toward Generating Interest in Underrepresented Students in Computer Science._ WSU Vancouver, 2010.
+- **WSU Diversity Council Award**\
+  _"A Tangible Approach toward Generating Interest in Underrepresented Students in Computer Science."_ WSU Vancouver, 2010.
 
 - **Outstanding Graduate Student Teaching Award**\
   Department of Computer Science and Engineering, The Ohio State University, 2009
