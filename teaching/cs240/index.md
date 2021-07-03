@@ -1,16 +1,17 @@
 ## CS 240 - Software Engineering
 
-Canvas: [https://canvas.pugetsound.edu](https://canvas.pugetsound.edu)
+[https://canvas.pugetsound.edu](https://canvas.pugetsound.edu)
 
 ### Code Alongs
 
-- [Git Basics: Staging, Committing, Undoing](ca.git1/)
-- [Git Branching and Collaboration](ca.git2/)
+- [Git 1: The Basics. Staging, Committing, Undoing](ca.git1/)
+- [Git 2: Branching](ca.git2/)
+- [Git 3: Github and Collaborative Workflow](ca.git3/)
 
 ### Homework
 
 - [Hwk 1: TBD](hwk1/)
-- [Hwk 2: Scoreboard](hwk2/)
+- [Hwk 2: Scoreboard](hwk2.scoreboard/)
 - [Hwk 3: Schelling's Model](hwk3/)
 - [Hwk 4: Simone](hwk4/)
 
