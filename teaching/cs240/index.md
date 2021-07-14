@@ -12,8 +12,8 @@
 
 - [Hwk 1: TBD](hwk1/)
 - [Hwk 2: Scoreboard](hwk2.scoreboard/)
-- [Hwk 3: Schelling's Model](hwk3/)
-- [Hwk 4: Simone](hwk4/)
+- [Hwk 3: Schelling's Model](hwk3.schelling/)
+- [Hwk 4: Simone](hwk4.simone/)
 
 ### Project
 
