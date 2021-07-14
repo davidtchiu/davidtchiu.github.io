@@ -2,15 +2,15 @@
 
 [https://canvas.pugetsound.edu](https://canvas.pugetsound.edu)
 
-### Code Alongs
+### In-Class Labs
 
-- [Git 1: The Basics. Staging, Committing, Undoing](ca.git1/)
-- [Git 2: Branching](ca.git2/)
-- [Git 3: Github and Collaborative Workflow](ca.git3/)
+- [Git 1: The Basics. Staging, Committing, Undoing](lab.git1/)
+- [Git 2: Branching](lab.git2/)
+- [Git 3: Github and Collaborative Workflow](lab.git3/)
 
 ### Homework
 
-- [Hwk 1: TBD](hwk1/)
+- [Hwk 1: Github Homepage](hwk1.hgpages/)
 - [Hwk 2: Scoreboard](hwk2.scoreboard/)
 - [Hwk 3: Schelling's Model](hwk3.schelling/)
 - [Hwk 4: Simone](hwk4.simone/)
