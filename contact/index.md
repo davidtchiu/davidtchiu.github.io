@@ -1,0 +1,10 @@
+### Ways to Contact Me
+
+- Email -- [dchiu@pugetsound.edu](mailto:dchiu@pugetsound.edu)
+- Ph -- [253.879.2853](tel://253-879-2853)
+- Office -- Thompson Hall 390 B
+- Mailing
+  Department of Math and Computer Science
+  University of Puget Sound
+  1500 N. Warner St.
+  Tacoma, WA 98416
