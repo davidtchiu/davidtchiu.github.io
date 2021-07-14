@@ -1,6 +1,6 @@
 ## Homework: Personal Homepage on github.io
 
-In this assignment you'll create a personal homepage on Github's free web hosting service, github.io. This assignment serves a dual purpose: it tries ensure that you understand the basics of HTML, CSS, and git. It also prepares you for the process of submitting future assignments in this course, as we will be working exclusively with git and github for the remainder of this course.
+In this assignment you'll create a personal homepage on Github's free web hosting service, github.io. The purpose of this assignment serves a dual purpose: it tries ensure that you understand the basics of HTML, CSS, and git. It also prepares you for the process of submitting future assignments in this course, as we will be working exclusively with git and github for the remainder of this course.
 
 ### Student Outcomes
 
@@ -11,16 +11,23 @@ In this assignment you'll create a personal homepage on Github's free web hostin
 
 For full credit, your project should observe the following requirements.
 
-- By this time, you should already have an account on Github. If you still don't have an account, [create one now](https://github.com/). Sign in to github, and create a new project called `gh-pages`. This is where the code for your homepage will live.
+- By this time, you should already have an account on Github. If you still don't have an account, [create one now](https://github.com/). Sign in to github, and create a new repository called `gh-pages`. This is where the code for your homepage will live.
 
 - If you're reading online tutorials on how to create a Github page, ignore all references to their markdown (.md) support. You are required to do this assignment using HTML and CSS that _you_ write.
 
 - On your local machine, create a new project in VS Code and have git manage it. Rename your local branch from `master` to `main` for compability with Github.
 
-- You are to create the following HTML documents. The goal of this assignment is to introduce to the online world who you are as a software developer.
+- Working in VS\ Code, you are to create the following documents.
 
   - `index.html` file is your landing (home) page. You are required to upload and show an image of yourself, and write a little about who you are. You don't have to write a novel -- just a few paragraph synopsis will do.
-  - `default.css` file should contain some CSS elements to style your homepage. You can style it however you like. In other words, I won't be grading on "good" design. Inside, there should be:
+  - `resume.html` file serves as your resume. You must link to it from your index page. To put yourself in the right mindset, suppose that you're in the early stages applying for an internship, job, grad school, etc. Place your name and contact info (you don't have to put your physical addresson there) in the heading. Following that, these sections must be included in this order:
+    - Education: List your collegiate history here; your major and minor (if you've declared -- write "undeclared" if you haven't). You do not need to share your GPA.
+    - Work History: List any relevant work history here. A title and short one-paragraph synopsis per item will be sufficient.
+    - Coursework: List your CS and CS-adjacent (such as Math) courses here. Use an unordered list containing course number and course title.
+    - Technical Projects: List any significant technical projects here. A title and short one-paragraph synopsis per project will be sufficient.
+    - Awards and Honors: List any awards, scholarships, honors you've received during your studies (includes high schoool)
+    - Affiliations: List any academical clubs or membership you might be a part of, including athletics.
+  - `default.css` file should contain some CSS elements to style your homepage. You can style it however you like. In other words, I won't be grading on "good" design. Though, it should be emphasized that this page will be "live" and goal of this assignment is to introduce to the online world who you are as a software developer, so you might want to make sure it looks presentable. Inside this file, there should be:
     - At least 2 element selectors and 1 class selector
     - You must style your paragraphs to use helvetica point 10 font.
     - You must style your image to have a solid border, and set to the left of your self-summary.
