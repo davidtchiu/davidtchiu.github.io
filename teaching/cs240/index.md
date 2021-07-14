@@ -10,7 +10,7 @@
 
 ### Homework
 
-- [Hwk 1: Github Homepage](hwk1.hgpages/)
+- [Hwk 1: Github Homepage](hwk1.ghpages/)
 - [Hwk 2: Scoreboard](hwk2.scoreboard/)
 - [Hwk 3: Schelling's Model](hwk3.schelling/)
 - [Hwk 4: Simone](hwk4.simone/)
