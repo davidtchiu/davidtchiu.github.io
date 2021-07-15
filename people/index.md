@@ -13,7 +13,7 @@ Here's is a list of my former research advisees and a half-hearted effort of tra
 - Jahrme Risner (BS'19) → Google
 - Jared Polonitza (BS'19) → Chalice Networks
 - Jack Burns (BS'18) → Loopie Seattle
-- Christine Li → Student @ Columbia University
+- Christine Li (BS'18) → 2-3 Engineering Student @ Columbia University
 - Patrick Ryan (BS'18) → T-Mobile, Bellevue
 - Rachel Hirsch (BS'17) → MS student @ Colorado State → ringDNA
 - Chili Johnson (BS'17)
