@@ -17,16 +17,15 @@ For full credit, your project should observe the following requirements.
 
 - On your local machine, create a new project in VS Code and have git manage it. Rename your local branch from `master` to `main` for compability with Github.
 
-- Working in VS\ Code, you are to create the following documents.
+- Working in VS Code, you are to create the following documents.
 
   - `index.html` file is your landing (home) page. You are required to upload and show an image of yourself, and write a little about who you are. You don't have to write a novel -- just a few paragraph synopsis will do.
   - `resume.html` file serves as your resume. You must link to it from your index page. To put yourself in the right mindset, suppose that you're in the early stages applying for an internship, job, grad school, etc. Place your name and contact info (you don't have to put your physical addresson there) in the heading. Following that, these sections must be included in this order:
     - Education: List your collegiate history here; your major and minor (if you've declared -- write "undeclared" if you haven't). You do not need to share your GPA.
-    - Work History: List any relevant work history here. A title and short one-paragraph synopsis per item will be sufficient.
+    - Experience: List any relevant work history and/or leadership/volunteering experiences here. A title and a short one-paragraph synopsis per item will be sufficient per item.
     - Coursework: List your CS and CS-adjacent (such as Math) courses here. Use an unordered list containing course number and course title.
-    - Technical Projects: List any significant technical projects here. A title and short one-paragraph synopsis per project will be sufficient.
-    - Awards and Honors: List any awards, scholarships, honors you've received during your studies (includes high schoool)
-    - Affiliations: List any academical clubs or membership you might be a part of, including athletics.
+    - Technical Projects: List any significant technical projects here. A title and short one-paragraph synopsis per project will be sufficient. Since it's so early in your studies, you can just list some CS 1 or CS 2 projects here.
+    - Affiliations: List any academic clubs you might be a part of, including athletics and Greek life.
   - `default.css` file should contain some CSS elements to style your homepage. You can style it however you like. In other words, I won't be grading on "good" design. Though, it should be emphasized that this page will be "live" and goal of this assignment is to introduce to the online world who you are as a software developer, so you might want to make sure it looks presentable. Inside this file, there should be:
     - At least 2 element selectors and 1 class selector
     - You must style your paragraphs to use helvetica point 10 font.
