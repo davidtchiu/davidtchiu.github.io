@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-[https://canvas.pugetsound.edu](https://canvas.pugetsound.edu)
+[Canvas](https://canvas.pugetsound.edu)
 
 ### In-Class Labs
 
@@ -17,7 +17,7 @@
 
 ### Project
 
-TBD
+- Word Scramble
 
 ### Testing
 
