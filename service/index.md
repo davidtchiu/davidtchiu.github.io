@@ -1,7 +1,7 @@
 ### Conference Organization
 
 - Session Chair, Demos and Short Papers, SSDBM'21
-- PC Member, IDEAS'21
+- PC Member, IDEAS'21, BDCAT'21
 - PC Member, BDCAT'20, IDEAS'20
 - PC Member, BDCAT'19, IDEAS'19, HiPC'19
 - Session Chair, Big Data Infrastructures, BDCAT'18
@@ -40,6 +40,7 @@
 ### Service to the University
 
 - Chair of Computer Science, University of Puget Sound (2019 - )
+- Student Life, University of Puget Sound (2021 - )
 - Lantz Committee, University of Puget Sound (2021)
 - Curriculum Taskforce (CTF), University of Puget Sound (2018 - )
 - Data Analytics Exploratory Committee, University of Puget Sound (2017 - 2018)

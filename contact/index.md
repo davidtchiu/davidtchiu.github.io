@@ -5,7 +5,7 @@
 - Office: Thompson Hall 390 B
 - Mailing
 
-  Department of Math and Computer Science
-  University of Puget Sound
-  1500 N. Warner St.
+  Department of Math and Computer Science\
+  University of Puget Sound\
+  1500 N. Warner St.\
   Tacoma, WA 98416
