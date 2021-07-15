@@ -1,8 +1,13 @@
-### Ways to Contact Me
+### Ways to Connect
+
+- Office: Thompson Hall 390 B
 
 - Email: [dchiu@pugetsound.edu](mailto:dchiu@pugetsound.edu)
+
 - Phone: [253.879.2853](tel://253-879-2853)
-- Office: Thompson Hall 390 B
+
+- [LinkedIn](https://www.linkedin.com/in/davidtchiu/)
+
 - Mailing:\
   Department of Math and Computer Science\
   University of Puget Sound\

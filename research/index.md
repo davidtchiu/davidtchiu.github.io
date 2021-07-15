@@ -92,6 +92,7 @@ My research interests intersect topics in cloud computing and data management. I
 
 ### Research Awards
 
+- Elevation to IEEE Senior Member, 2020
 - Best Paper Finalist, IEEE/ACM BDCAT 2019
 - Agricola Faculty Research Award, University of Puget Sound, 2019
 - Best Paper Finalist, IEEE/ACM BDCAT 2018
