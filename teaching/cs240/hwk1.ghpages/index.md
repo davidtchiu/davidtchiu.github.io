@@ -15,97 +15,59 @@ For full credit, your project should observe the following requirements.
 
 - If you're reading online tutorials on how to create a Github page, ignore all references to their markdown (.md) support. You are required to do this assignment using HTML and CSS that _you_ write.
 
+- You'll be creating a live webpage here: [https://yourUserName.github.io](https://yourUserName.github.io).
+
 - On your local machine, create a new project in VS Code and have git manage it. Rename your local branch from `master` to `main` for compability with Github.
 
-- Working in VS Code, you are to create the following documents.
+- Working in VS Code, you are to create the following documents. As you're editing your homepage, make commits often, as you will be graded on the frequency and quality of your commit messages. The commit messages don't need to be long, but you should be able to trace your steps by viewing them.
 
   - `index.html` file is your landing (home) page. You are required to upload and show an image of yourself, and write a little about who you are. You don't have to write a novel -- just a few paragraph synopsis will do.
+
+  - `default.css` file should contain some CSS elements to style your homepage. You can style it however you like. In other words, I won't be grading on "good" design. Though, it should be emphasized that this page will be "live" and goal of this assignment is to introduce to the online world who you are as a software developer, so you might want to make sure it looks presentable. Inside this file, there should be:
+
+    - At least 2 element selectors and 1 class selector
+    - You must style your paragraphs to use helvetica point 10 font.
+    - You must style your image to have a solid border, and set to the left of your self-summary.
+
+  - After you've styled your homepage to your liking, commit and push to github. let's work on your resume on a separate branch. Create a new git branch locally called `resume` and switch to it.
+
   - `resume.html` file serves as your resume. You must link to it from your index page. To put yourself in the right mindset, suppose that you're in the early stages applying for an internship, job, grad school, etc. Place your name and contact info (you don't have to put your physical addresson there) in the heading. Following that, these sections must be included in this order:
+
     - Education: List your collegiate history here; your major and minor (if you've declared -- write "undeclared" if you haven't). You do not need to share your GPA.
     - Experience: List any relevant work history and/or leadership/volunteering experiences here. A title and a short one-paragraph synopsis per item will be sufficient per item.
     - Coursework: List your CS and CS-adjacent (such as Math) courses here. Use an unordered list containing course number and course title.
     - Technical Projects: List any significant technical projects here. A title and short one-paragraph synopsis per project will be sufficient. Since it's so early in your studies, you can just list some CS 1 or CS 2 projects here.
     - Affiliations: List any academic clubs you might be a part of, including athletics and Greek life.
-  - `default.css` file should contain some CSS elements to style your homepage. You can style it however you like. In other words, I won't be grading on "good" design. Though, it should be emphasized that this page will be "live" and goal of this assignment is to introduce to the online world who you are as a software developer, so you might want to make sure it looks presentable. Inside this file, there should be:
-    - At least 2 element selectors and 1 class selector
-    - You must style your paragraphs to use helvetica point 10 font.
-    - You must style your image to have a solid border, and set to the left of your self-summary.
 
-- As you're editing your homepage, make commits often, as you will be graded on the frequency and quality of your commit history. Push your commits up to github to see the live page at [https://yourUserName.github.io](https://yourUserName.github.io).
+  - After you're done with the content, merge the `resume` branch to the `main` branch and commit and push, but don't remove the `resume` branch.
 
 ### Optional Extensions
 
-Have some free time? Add the following features:
-
-- The real Simon(e) game speeds up the intervals between each button in higher rounds. You could implement
-  increasingly faster reveals of the solution at the beginning of each round.
-
-- The real Simon(e) also keeps a time limit that a user has between pressing each button, which
-  makes the game even harder. To induce even more anxiety, I would recommend showing the countdown timer
-  to the user, and resetting it after each correct button-press.
-
-- Do a better job approaching the Axios errors. Currently, you're only asked to display the error on the
-  console, but would a real player know what was happening? You could tell the user there was a problem
-  starting up the game, or you could take the user back to the beginning state of the game.
+Have some free time? There's no limitations to the content you want to display. Feel free to make more pages about yourself, and add as much styling as you wish! As long as your site meets the requirements, you will be receive full credit!
 
 ### Grading
 
 ```
-CS 240 Homework (Github Homepage)
+CS 240 Homework (Github Pages)
 
 
 ----------------------------------------------------------
-[20/20pts] AJAX
+[20/20pts] Content
 
-> Your program must use the provided Simone Web Service API
-  to retrieve a start sequence and solution-key sequence.
+> You wrote all HTML and CSS yourself (without using some
+  code generation tool). Your CSS abides by above the
+  requirements.
 
-> Your program gracefully handles all asynchronous execution,
-  including retrieval of HTTP responses from the API.
+> You included an image of yourself, with proper styling.
 
-> Use of .then() chaining of promises or await is necessary.
-
-----------------------------------------------------------
-[50/50pts] Events and Transitions
-
-> Pressing the "Play Simone!" button will create a new instance
-  of the game with the user-specified number of rounds.
-
-> Hovering over a button will cause its borders to be highlighted.
-  Hovering off a button will return the button to original state.
-
-> Pressing down on a button will cause it to be lit up. If mouse
-  press is released while still hovering over a button, it should
-  play the button's sound, return the color back to original, and
-  register the user's selection as part of the pattern.
-
-> When the user presses the wrong button, the appropriate wavs
-  are played, background changes, and the game ends.
-
-> When the user presses on the correct button, either:
-    * The game ends if it was the last button of the last round.
-    * Transitions to the next round if it was the last button of
-      the current round.
-    * Waits for the next button in the sequence to be pressed if
-      still in the middle of the round.
-
-> All transitions must "look and feel" according to program
-  description.
+> Your resume is linked from your home page, and includes
+  the sections listed in the requirements.
 
 ----------------------------------------------------------
-[10/10pts] Implementation and Efficiency
+[10/10pts] Commit History
 
-> Your program should demonstrate reasonable runtime
-  efficiency of all algorithms. Appropriate data structures
-  should be used.
-
-----------------------------------------------------------
-[5/5pts] Comments
-
-> You include sufficient block comments for each class and method.
-
-> You include sufficient inline comments in your methods.
-
+> You are making and pushing commits at regular intervals
+and with substantive, detailed commit messages.
 
 ----------------------------------------------------------
 [0pts] Misc. Deductions
@@ -115,7 +77,5 @@ CS 240 Homework (Github Homepage)
 Suggestions (No Deductions)
 
 
-
-
-Total: 100 pt
+Total: 30 pt
 ```
