@@ -67,7 +67,8 @@ For full credit, your project should observe the following requirements.
 
 ### Optional Extensions
 
-- Have some free time? Add the following features:
+Have some free time? Add the following features:
+
 - Maybe a random sound effect isn't specific enough. Add a button for each sound effect so the operator can be more selective. Feel free to add more sounds and pictures too.
 - Add a text input to the control panel. Whatever you type in that field should show up on the scoreboard.
 

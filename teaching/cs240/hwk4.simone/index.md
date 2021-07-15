@@ -32,9 +32,9 @@ JavaScript called **_Simone_**, the copyright-friendlier(?) version of Simon.
 - More practice with manipulating DOM objects
 - More practice using event listeners and callbacks
 
-### Required Files
+### Starter Code and Git
 
-- [Hwk3_Segregation.zip](Hwk3_Segregation.zip)
+Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-simone](https://github.com/davidtchiu/cs240-hwk-simone). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages.
 
 ### Simone Web API
 
@@ -121,6 +121,10 @@ Have some free time? Add the following features:
 - Do a better job approaching the Axios errors. Currently, you're only asked to display the error on the
   console, but would a real player know what was happening? You could tell the user there was a problem
   starting up the game, or you could take the user back to the beginning state of the game.
+
+### Submission
+
+Assignment submission is simple. Simply make sure that the latest code is committed and pushed into your forked repo on github (before the 12am deadline). Then send me the link to your repository on [canvas](https://canvas.pugetsound.edu).
 
 ### Grading
 

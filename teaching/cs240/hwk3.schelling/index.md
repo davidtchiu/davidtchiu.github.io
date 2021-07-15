@@ -13,9 +13,9 @@ In this assignment, you will create a simulation of Schelling's model. The user 
 - To accept input from fields
 - To practice using event listeners and callbacks
 
-### Required Files
+### Starter Code and Git
 
-- [Hwk3_Segregation.zip](Hwk3_Segregation.zip)
+Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-schelling](https://github.com/davidtchiu/cs240-hwk-schelling). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages.
 
 ### How Schelling's Model Works
 
@@ -111,6 +111,10 @@ Have some free time? Add the following features:
 - Keep a counter showing the % of satisfied cells.
 
 - Create a "Set to Default" button such that, when pressed, will return all input values to the original, and updates the table to reflect the default settings.
+
+### Submission
+
+Assignment submission is simple. Simply make sure that the latest code is committed and pushed into your forked repo on github (before the 12am deadline). Then send me the link to your repository on [canvas](https://canvas.pugetsound.edu).
 
 ### Grading
 
