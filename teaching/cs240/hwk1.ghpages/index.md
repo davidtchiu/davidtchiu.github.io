@@ -29,7 +29,7 @@ For full credit, your project should observe the following requirements.
     - You must style your paragraphs to use helvetica point 10 font.
     - You must style your image to have a solid border, and set to the left of your self-summary.
 
-  - After you've styled your homepage to your liking, commit and push to github. let's work on your resume on a separate branch. Create a new git branch locally called `resume` and switch to it.
+  - After you've styled your homepage to your liking, commit and push to github. It can take 1-2 minutes for the upload to take affect, but check your website in your browser to see. Let's work on your resume on a separate branch. Create a new git branch locally called `resume` and switch to it.
 
   - `resume.html` file serves as your resume. You must link to it from your index page. To put yourself in the right mindset, suppose that you're in the early stages applying for an internship, job, grad school, etc. Place your name and contact info (you don't have to put your physical addresson there) in the heading. Following that, these sections must be included in this order:
 
