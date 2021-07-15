@@ -14,7 +14,11 @@ In this assignment, you will create a scoreboard and control center.
 - Manipulating existing DOM objects
 - Use of event listeners and callbacks
 
-### Media Files
+### Starter Code and Git
+
+Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-scoreboard](https://github.com/davidtchiu/cs240-hwk-scoreboard). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages.
+
+<!-- ### Media Files
 
 Download these files into your project directory.
 
@@ -24,7 +28,7 @@ Download these files into your project directory.
 - [MP3: Chicken Dance](chickendance.mp3)
 - [MP3: Charge](charge1.mp3)
 - [MP3: Charge (variation)](charge2.mp3)
-- [MP3: Build Up](buildup.mp3)
+- [MP3: Build Up](buildup.mp3) -->
 
 ### Working Solution
 
@@ -66,6 +70,10 @@ For full credit, your project should observe the following requirements.
 - Have some free time? Add the following features:
 - Maybe a random sound effect isn't specific enough. Add a button for each sound effect so the operator can be more selective. Feel free to add more sounds and pictures too.
 - Add a text input to the control panel. Whatever you type in that field should show up on the scoreboard.
+
+### Submission
+
+Assignment submission is simple. Simply make sure that the latest code is committed and pushed into your forked `cs240-hwk-scoreboard` on github (before the 12am deadline). Then send me the link to your repository on [canvas](https://canvas.pugetsound.edu).
 
 ### Grading
 

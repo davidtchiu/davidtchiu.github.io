@@ -9,17 +9,17 @@ Here's is a list of my former research advisees and a half-hearted effort of tra
 - Manya Meutschler-Aldine (BS'21)
 - Sarah Walling-Bell (BS'20) → University of Washington
 - Sarah McClain (BS'20) → Panorama Education, Boston
-- Sam Burdick (BS'19) → Amazon → PhD student @ Ohio State
+- Sam Burdick (BS'19) → Amazon → PhD @ Ohio State
 - Jahrme Risner (BS'19) → Google
 - Jared Polonitza (BS'19) → Chalice Networks
 - Jack Burns (BS'18) → Loopie Seattle
-- Christine Li (BS'18) → 2-3 Engineering Student @ Columbia University
+- Christine Li (BS'18) → 2-3 engineering @ Columbia University
 - Patrick Ryan (BS'18) → T-Mobile, Bellevue
-- Rachel Hirsch (BS'17) → MS student @ Colorado State → ringDNA
+- Rachel Hirsch (BS'17) → MS @ Colorado State → ringDNA
 - Chili Johnson (BS'17)
 - Alexia Ingerson (BS'16) → Intel
 - Brandon Roberts (BS'16) → Milliman
-- Ben McCamish, (MS'15) → PhD student @ Oregon State → Clinical Professor @ WSU Vancouver
+- Ben McCamish, (MS'15) → PhD @ Oregon State → Clinical Professor @ WSU Vancouver
 - Miles Histand (BS'14) → Daimler
 - Gabriel Dunham (BS'14) → Plexsys
 - Sean Lim (BS'14) → Dell EMC

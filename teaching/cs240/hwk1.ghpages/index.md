@@ -11,7 +11,7 @@ In this assignment you'll create a personal homepage on Github's free web hostin
 
 For full credit, your project should observe the following requirements.
 
-- By this time, you should already have an account on Github. If you still don't have an account, [create one now](https://github.com/). Sign in to github, and create a new repository called `gh-pages`. This is where the code for your homepage will live.
+- By this time, you should already have an account on Github. If you still don't have an account, [create one now](https://github.com/). Sign in to github, and create a new repository called `yourUserName.github.io` where `yourUserName` is your github username. This is where the code for your homepage will live once you push it up.
 
 - If you're reading online tutorials on how to create a Github page, ignore all references to their markdown (.md) support. You are required to do this assignment using HTML and CSS that _you_ write.
 
