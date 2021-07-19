@@ -23,48 +23,48 @@ Here is a [command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Uni
 
 - Type the following command to download the files for this lab:
 
-```
-git clone https://github.com/davidtchiu/cs240-lab-cmdline
-```
+  ```
+  git clone https://github.com/davidtchiu/cs240-lab-cmdline
+  ```
 
 - After this succeeds, list all files in the current directory. You should see a directory called `cs240-lab-cmdline`. Navigate into it, and print the current working directory, which shows you what directory you're "inside of." If you did this correctly, you should get an output like this:
 
-```bash
-/Users/david/Downloads/cs240-lab-cmdline
-```
+  ```bash
+  /Users/david/Downloads/cs240-lab-cmdline
+  ```
 
 Of course, the first part of your path will differ from mine.
 
 - List all files. Remember that you can do this and get a simple output, as follows
 
-```git
-FastOddEvenSorter$FastOddEvenWorker.class       Heap.java                                       Sorter.ctxt
-FastOddEvenSorter.class                         ListFactory.class                               Sorter.java
-FastOddEvenSorter.ctxt                          ListFactory.ctxt                                Tester.class
-FastOddEvenSorter.java                          ListFactory.java                                Tester.ctxt
-Heap.class                                      README.TXT                                      Tester.java
-Heap.ctxt                                       Sorter.class                                    package.bluej
-```
+  ```git
+  FastOddEvenSorter$FastOddEvenWorker.class       Heap.java                                       Sorter.ctxt
+  FastOddEvenSorter.class                         ListFactory.class                               Sorter.java
+  FastOddEvenSorter.ctxt                          ListFactory.ctxt                                Tester.class
+  FastOddEvenSorter.java                          ListFactory.java                                Tester.ctxt
+  Heap.class                                      README.TXT                                      Tester.java
+  Heap.ctxt                                       Sorter.class                                    package.bluej
+  ```
 
-Or you can call out the details of each file, printed line-by-line, like this:
+  Or you can call out the details of each file, printed line-by-line, like this:
 
-```
--rw-r--r--@ 1 david  staff  2611 Jul 19 09:05 FastOddEvenSorter.java
--rw-r--r--@ 1 david  staff  3388 Jul 19 09:05 Heap.class
--rw-r--r--@ 1 david  staff  2144 Jul 19 09:05 Heap.ctxt
--rw-r--r--@ 1 david  staff  5354 Jul 19 09:05 Heap.java
--rw-r--r--@ 1 david  staff  1638 Jul 19 09:05 ListFactory.class
--rw-r--r--@ 1 david  staff   680 Jul 19 09:05 ListFactory.ctxt
--rw-r--r--@ 1 david  staff  2029 Jul 19 09:05 ListFactory.java
--rw-r--r--@ 1 david  staff   471 Jul 19 09:05 README.TXT
--rw-r--r--@ 1 david  staff  3506 Jul 19 09:05 Sorter.class
--rw-r--r--@ 1 david  staff  2690 Jul 19 09:05 Sorter.ctxt
--rw-r--r--@ 1 david  staff  8417 Jul 19 09:05 Sorter.java
--rw-r--r--@ 1 david  staff  1455 Jul 19 09:05 Tester.class
--rw-r--r--@ 1 david  staff   126 Jul 19 09:05 Tester.ctxt
--rw-r--r--@ 1 david  staff  4437 Jul 19 09:05 Tester.java
--rw-r--r--@ 1 david  staff  1515 Jul 19 09:05 package.bluej
-```
+  ```
+  -rw-r--r--@ 1 david  staff  2611 Jul 19 09:05 FastOddEvenSorter.java
+  -rw-r--r--@ 1 david  staff  3388 Jul 19 09:05 Heap.class
+  -rw-r--r--@ 1 david  staff  2144 Jul 19 09:05 Heap.ctxt
+  -rw-r--r--@ 1 david  staff  5354 Jul 19 09:05 Heap.java
+  -rw-r--r--@ 1 david  staff  1638 Jul 19 09:05 ListFactory.class
+  -rw-r--r--@ 1 david  staff   680 Jul 19 09:05 ListFactory.ctxt
+  -rw-r--r--@ 1 david  staff  2029 Jul 19 09:05 ListFactory.java
+  -rw-r--r--@ 1 david  staff   471 Jul 19 09:05 README.TXT
+  -rw-r--r--@ 1 david  staff  3506 Jul 19 09:05 Sorter.class
+  -rw-r--r--@ 1 david  staff  2690 Jul 19 09:05 Sorter.ctxt
+  -rw-r--r--@ 1 david  staff  8417 Jul 19 09:05 Sorter.java
+  -rw-r--r--@ 1 david  staff  1455 Jul 19 09:05 Tester.class
+  -rw-r--r--@ 1 david  staff   126 Jul 19 09:05 Tester.ctxt
+  -rw-r--r--@ 1 david  staff  4437 Jul 19 09:05 Tester.java
+  -rw-r--r--@ 1 david  staff  1515 Jul 19 09:05 package.bluej
+  ```
 
 - As you can see, this is just an old Java project that is compatible with BlueJ. Let's suppose that your instructor wants you to restructure the contents of this directory in a certain way before submission. Here's what you need to do:
 

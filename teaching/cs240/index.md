@@ -4,10 +4,10 @@
 
 ### In-Class Labs
 
-- [Command line](lab.cmd1/)
-- [Git 1: The Basics. Staging, Committing, Undoing](lab.git1/)
-- [Git 2: Branching](lab.git2/)
-- [Git 3: Github and Collaborative Workflow](lab.git3/)
+- [Command Line Navigation](lab.cmd1/)
+- [Git (1): The Basics. Staging, Committing, Undoing](lab.git1/)
+- [Git (2): Branching](lab.git2/)
+- [Git (3): Github and Collaborative Workflow](lab.git3/)
 
 ### Homework
 
