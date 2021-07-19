@@ -5,7 +5,7 @@ In this exercise you will be trying out basic command line operations.
 ### Student Outcomes
 
 - Learn how to access your terminal
-- Learn how to navigate your file system: `pwd`, `cd`, `ls`, `mv`, `rm`, `less`
+- Learn how to navigate your file system: `pwd`, `cd`, `ls`, `cp`, `mv`, `rm`, `less`
 - Learn to use the `nano` editor
 
 ### Printable Cheat Sheet
@@ -23,13 +23,13 @@ Here is a [command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Uni
 
 - Type the following command to download the files for this lab:
 
-```git
+```
 git clone https://github.com/davidtchiu/cs240-lab-cmdline
 ```
 
 - After this succeeds, list all files in the current directory. You should see a directory called `cs240-lab-cmdline`. Navigate into it, and print the current working directory, which shows you what directory you're "inside of." If you did this correctly, you should get an output like this:
 
-```git
+```bash
 /Users/david/Downloads/cs240-lab-cmdline
 ```
 
@@ -98,14 +98,18 @@ Or you can call out the details of each file, printed line-by-line, like this:
 
 - Let's edit this README file with the following changes. Sure, you can use VS Code for this, but let's try something different. There is a text editor called `nano` that we can use. You can open a file for editing using the command `nano <filename>`. This should replace your Terminal window with the file editor, and make the following changes.
 
-  - Change the PROJECT TITLE to `"Commandline Tutorial"`
+  - Change the PROJECT TITLE to `"Command Line Lab"`
   - Enter today's date after VERSION or DATE
   - Add your name to AUTHORS
   - Remove the remaining lines. You can delete entire lines by moving your cursor on the line by holding down the `control` key and pressing `k`. I'll indicate this sequence as `ctrl + k`. (This command is actually equivalent to a "cut", because it saves the deleted line onto nano's internal clipboard).
   - Save the file using `ctrl + o`.
   - Then close the file using `ctrl + x`.
 
-- To be sure, I wouldn't ever recommend using `nano` for heavy coding, but I find it to be pretty useful for viewing or making quick edits inside the Terminal. Let's explore some other commands within `nano`. Now open `Sorter.java` in `nano`.
+- To be sure, I wouldn't ever recommend using `nano` for heavy coding, but I find it to be pretty useful for viewing or making quick edits inside the Terminal. Let's explore some other commands within `nano`.
+
+- Before we make changes to `Sorter.java`, I want you to make a copy of it in case we screw up. Use the `cp` command to make a copy of this file into `Sorter.java.sav`.
+
+- Now open `Sorter.java` in `nano`.
 
   - Get the cursor location using `ctrl + c` (this tells you the line number and position, as well as the total line/word count)
   - Skip down to the next page using `ctrl + v`. Skip up using `ctrl + y`.
