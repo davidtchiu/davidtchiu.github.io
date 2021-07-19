@@ -16,7 +16,7 @@ In this assignment, you will create a scoreboard and control center.
 
 ### Starter Code and Git
 
-Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-scoreboard](https://github.com/davidtchiu/cs240-hwk-scoreboard). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages.
+Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-scoreboard](https://github.com/davidtchiu/cs240-hwk-scoreboard). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then from your local machine, open a terminal, navigate to your directory for this class, and _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages. Push your commits up to your github repo for submission.
 
 <!-- ### Media Files
 
