@@ -5,7 +5,8 @@ In this exercise you will be trying out basic command line operations.
 ### Student Outcomes
 
 - Learn how to access your terminal
-- Learn how to navigate your file system
+- Learn how to navigate your file system: `pwd`, `cd`, `ls`, `mv`, `rm`, `less`
+- Learn to use the `nano` editor
 
 ### Printable Cheat Sheet
 
@@ -93,7 +94,9 @@ Or you can call out the details of each file, printed line-by-line, like this:
   USER INSTRUCTIONS:
   ```
 
-- Let's edit this file with the following changes. Sure, you can use VS Code for this, but let's try something different. There should be a text editor called `nano`. You can open a file for editing using the command `nano <filename>`. This should replace your Terminal window with the file editor, and make the following changes.
+### Part 2 - nano
+
+- Let's edit this README file with the following changes. Sure, you can use VS Code for this, but let's try something different. There is a text editor called `nano` that we can use. You can open a file for editing using the command `nano <filename>`. This should replace your Terminal window with the file editor, and make the following changes.
 
   - Change the PROJECT TITLE to `"Commandline Tutorial"`
   - Enter today's date after VERSION or DATE
@@ -110,6 +113,8 @@ Or you can call out the details of each file, printed line-by-line, like this:
   - Let's move the `shakerSort` method to the bottom of this class. We'll start by having you find `shakerSort`. Move your cursor to the first line of its method comment, and we'll start cutting by hitting `ctrl + k` consecutive times until the method is gone. Don't worry, all those lines we just removed are saved on nano's clipboard. Now scroll down until you reach the end of the file, and paste it using `ctrl + u`.
   - Save and close this file to return to the Terminal.
 
+### Part 3 - Wrapping up
+
 - Back in the Terminal, check to see if you're still be in the `src/` directory. If not, navigate to it. Let's compile this Java program and run it. You can compile using:
 
   ```
@@ -121,19 +126,21 @@ Or you can call out the details of each file, printed line-by-line, like this:
 - If you list files again, you should now see some `.class` files (those are the compiled versions of the source code). Let's create a new directory called `bin/` at the same level as `src/`. Move all the `.class` files into `bin/`.
 
   ```
-  .
+  cs240-lab-cmdline/
   ├── README.txt
-  ├── bin
+  ├── bin/
   │   ├── Heap.class
   │   ├── ListFactory.class
   │   ├── Sorter.class
   │   └── Tester.class
-  └── src
-    ├── FastOddEvenSorter.java
-    ├── Heap.java
-    ├── ListFactory.java
-    ├── Sorter.java
-    └── Tester.java
+  └── src/
+      ├── FastOddEvenSorter.java
+      ├── Heap.java
+      ├── ListFactory.java
+      ├── Sorter.java
+      └── Tester.java
 
   2 directories, 10 files
   ```
+
+- This concludes the lab. Go ahead and delete the entire `cs240-lab-cmdline` directory structure.
