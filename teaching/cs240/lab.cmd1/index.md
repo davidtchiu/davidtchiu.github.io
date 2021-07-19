@@ -64,3 +64,76 @@ Or you can call out the details of each file, printed line-by-line, like this:
 -rw-r--r--@ 1 david  staff  4437 Jul 19 09:05 Tester.java
 -rw-r--r--@ 1 david  staff  1515 Jul 19 09:05 package.bluej
 ```
+
+- As you can see, this is just an old Java project that is compatible with BlueJ. Let's suppose that your instructor wants you to restructure the contents of this directory in a certain way before submission. Here's what you need to do:
+
+  - Remove all files ending `.class`, `.ctxt`, and `.bluej`. You should not have remove files one-by-one.
+  - Rename `README.TXT` to `README.txt` and then open it up for editing.
+  - Create a new directory called `src/` and all files ending in `.java` must be stored in it. Move them in there now.
+  - If you list files, you should have this in your working directory:
+    ```
+       -rw-r--r--@ 1 dchiu  staff  471 Jul 19 09:05 README.txt
+       drwxr-xr-x@ 7 dchiu  staff  224 Jul 19 09:20 src
+    ```
+
+- Show the contents of `README.txt`. You should see:
+
+  ```
+  ------------------------------------------------------------------------
+  This is the project README file. Here, you should describe your project.
+  Tell the reader (someone who does not know anything about this project)
+  all he/she needs to know. The comments should usually include at least:
+  ------------------------------------------------------------------------
+
+  PROJECT TITLE:
+  PURPOSE OF PROJECT:
+  VERSION or DATE:
+  HOW TO START THIS PROJECT:
+  AUTHORS:
+  USER INSTRUCTIONS:
+  ```
+
+- Let's edit this file with the following changes. Sure, you can use VS Code for this, but let's try something different. There should be a text editor called `nano`. You can open a file for editing using the command `nano <filename>`. This should replace your Terminal window with the file editor, and make the following changes.
+
+  - Change the PROJECT TITLE to `"Commandline Tutorial"`
+  - Enter today's date after VERSION or DATE
+  - Add your name to AUTHORS
+  - Remove the remaining lines. You can delete entire lines by moving your cursor on the line by holding down the `control` key and pressing `k`. I'll indicate this sequence as `ctrl + k`. (This command is actually equivalent to a "cut", because it saves the deleted line onto nano's internal clipboard).
+  - Save the file using `ctrl + o`.
+  - Then close the file using `ctrl + x`.
+
+- To be sure, I wouldn't ever recommend using `nano` for heavy coding, but I find it to be pretty useful for viewing or making quick edits inside the Terminal. Let's explore some other commands within `nano`. Now open `Sorter.java` in `nano`.
+
+  - Get the cursor location using `ctrl + c` (this tells you the line number and position, as well as the total line/word count)
+  - Skip down to the next page using `ctrl + v`. Skip up using `ctrl + y`.
+  - Search for (case insensitive) string-sequences using `ctrl + w`. (Can you figure out how to do a search-and-replace?)
+  - Let's move the `shakerSort` method to the bottom of this class. We'll start by having you find `shakerSort`. Move your cursor to the first line of its method comment, and we'll start cutting by hitting `ctrl + k` consecutive times until the method is gone. Don't worry, all those lines we just removed are saved on nano's clipboard. Now scroll down until you reach the end of the file, and paste it using `ctrl + u`.
+  - Save and close this file to return to the Terminal.
+
+- Back in the Terminal, check to see if you're still be in the `src/` directory. If not, navigate to it. Let's compile this Java program and run it. You can compile using:
+
+  ```
+  javac Tester.java
+  ```
+
+  Because `Tester.java` depends on the other `.java` files, those will be compiled automatically. It may complain about unchecked/unsafe operations, but it's just a warning that you can ignore for this exercise. In the unlikely case in which you get a compilation error, then that means you made a mistake while moving `shakerSort` in the previous step. Go back and fix it.
+
+- If you list files again, you should now see some `.class` files (those are the compiled versions of the source code). Let's create a new directory called `bin/` at the same level as `src/`. Move all the `.class` files into `bin/`.
+
+  ```
+  .
+  ├── README.txt
+  ├── bin
+  │   ├── Heap.class
+  │   ├── ListFactory.class
+  │   ├── Sorter.class
+  │   └── Tester.class
+  └── src
+    ├── FastOddEvenSorter.java
+    ├── Heap.java
+    ├── ListFactory.java
+    ├── Sorter.java
+    └── Tester.java
+
+  2 directories, 10 files
+  ```
