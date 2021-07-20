@@ -6,8 +6,6 @@ Here's how it goes. The computer selects a random 6-letter word from the English
 
 To accomplish gameplay, the computer must run some internal computation to determine a list of all possible English words of lengths 3 to 6 that can be formed using those letters. For instance, suppose the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pep", ... and so on. To give you a hint on how many there are, the computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal a hidden word, and it's up to the player to try to guess them all.
 
-<!-- The computer asks the user to input a _root word_ of length $n$. It then runs some internal computation to determine a list of all possible English words (of lengths 3 to $n$, where $n \ge 3$) that can be formed using those letters. For instance, suppose the base word is "david", then the following words, of lengths 3 to 5, can be formed using a subset of its letters: "david", "dad", "diva", "add", "avid", "ava", ... and so on. The computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal that hidden word, and it's up to the player to try to guess them all. -->
-
 ### Student Outcomes
 
 - Use of JavaScript: Functions, arrays, objects, etc.
@@ -27,7 +25,6 @@ For full credit, your project should observe the following requirements.
 - The starter code provides you with a file containing the English dictionary formatted as an array. It's easy to include this in your code. Create an `index.html` file that first includes the dictionary file, and then includes your own `app.js` file.
 
 - The game starts by randomly selecting a 6-letter root word from the English dictionary.
-<!-- asking the user to input a _root word_. This word must be four or more letters long, and must be a valid English word. If the input word does not meet these criteria, then re-prompt. -->
 
 - The bulk of your work is the next step. Given root word, you are then to compute all the valid English words using a subset of its letters. A root letter cannot be used more than once, unless it appears more than once in the root word. For instance, the root word "hello" can't generate the word "lee" because 'e' only appears once in "hello". However, "hell" can be generated because 'l' appears twice in "hello". There are multiple ways to tackle this problem, so I'll leave it up to you to solve this problem, but keep in mind that time-efficiency does matter -- we wouldn't want those pesky airplane passengers to lose their patience and exit the game before it even starts!
 
