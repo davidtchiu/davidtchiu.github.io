@@ -12,13 +12,10 @@
 ### Homework
 
 - [Hwk 1: Github Homepage](hwk1.ghpages/)
-- [Hwk 2: Scoreboard](hwk2.scoreboard/)
-- [Hwk 3: Schelling's Model](hwk3.schelling/)
-- [Hwk 4: Simone](hwk4.simone/)
-
-### Project
-
-- Word Scramble
+- [Hwk 2: Wordplay](hwk2.wordplay/)
+- [Hwk 3: Scoreboard](hwk3.scoreboard/)
+- [Hwk 4: Schelling's Model](hwk4.schelling/)
+- [Hwk 5: Simone](hwk5.simone/)
 
 ### Testing
 
