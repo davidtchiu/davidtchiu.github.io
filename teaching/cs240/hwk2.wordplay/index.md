@@ -32,14 +32,20 @@ For full credit, your project should observe the following requirements.
 - The bulk of your work is the next step. Given root word, you are then to compute all the valid English words using a subset of its letters. A root letter cannot be used more than once, unless it appears more than once in the root word. For instance, the root word "hello" can't generate the word "lee" because 'e' only appears once in "hello". However, "hell" can be generated because 'l' appears twice in "hello". There are multiple ways to tackle this problem, so I'll leave it up to you to solve this problem, but keep in mind that time-efficiency does matter -- we wouldn't want those pesky airplane passengers to lose their patience and exit the game before it even starts!
 
 - Display the current list of guessed/unguessed words to the user, and get their inputs. Repeat until all words have been guessed, or if the user presses cancel. To prompt the user for an input, use:
+
   ```js
   let input = prompt(someString);
   ```
+
   And to print and display a dialog window, use:
+
   ```js
   alert(someOtherString);
   ```
+
   For the words that have not been guessed, hide them using a dashes (one dash per letter, like for Hangman).
+
+- On end-game, display the solution (all the valid words), as well as the number of words the player got right!
 
 ### Submission
 
