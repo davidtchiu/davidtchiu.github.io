@@ -1,6 +1,10 @@
 ## Homework: Wordplay
 
-_This assignment is based on a true story._ David was on a long flight home with his kids. To kill time, he found himself playing a few games on the back of the seats on the plane. Most of the games were too hard, but one among them, a game called _Wordplay_ (he thinks), was by far the most interesting. It also happens to make for a nice homework assignment, so yay! Here's how the game goes. The computer selects a random 6-letter word from the English dictionary. We'll call this the _root word_. The computer tells this word to the player, and it is the player's job to list as many other words as they can think of that uses a subset of the root word's letters. To reduce possibilities, the computer only considers words that are 3 or more letters in length.
+_This assignment is based on a true story._ David was on a long flight home with his kids. To kill time, he found himself playing a few games on the back of the seats on the plane. Most of the games were too hard, but one among them, a game called _Wordplay_ (he thinks), was by far the most interesting. To remind himself of how the gameplay worked, here's a terrible picture he took on the plane. (By pure accident, the 6-letter word happened to be _logger_.)
+
+![Wordplay](figures/wordplay.jpg)
+
+Here's how the game goes. The computer selects a random 6-letter word from the English dictionary. We'll call this the _root word_. The computer tells this word to the player, and it is the player's job to list as many other words as they can think of that uses a subset of the root word's letters. To reduce possibilities, the computer only considers words that are 3 or more letters in length.
 
 To accomplish gameplay, the computer must run some internal computation to determine a list of all possible English words of lengths 3 to 6 that can be formed using those letters. For instance, suppose the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pod", and "pep". To give you a hint on how many there are, the computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal a hidden word, and it's up to the player to try to guess them all. For instance, after guessing a few on the root word "popped", it might display:
 
