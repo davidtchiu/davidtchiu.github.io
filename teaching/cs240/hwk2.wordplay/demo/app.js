@@ -36,12 +36,8 @@ var MIN_LENGTH = 3,
   descrambledWords = [],
   guessedWords = [];
 initialize();
-var baseWord = null;
-do baseWord = prompt("Input a 6-letter root word");
-while (
-  null != baseWord &&
-  (baseWord.length != MAX_LENGTH || -1 == possibleRootWords.indexOf(baseWord))
-);
+var baseWord =
+  possibleRootWords[Math.floor(Math.random() * possibleRootWords.length)];
 if (null != baseWord) {
   for (
     var permutations = getPerms(baseWord),
@@ -64,7 +60,10 @@ if (null != baseWord) {
       $jscomp$key$word = $jscomp$iter$1.next()
     ) {
       var word = $jscomp$key$word.value;
-      output += word + "\n";
+      output =
+        -1 < guessedWords.indexOf(word)
+          ? output + (word + "\n")
+          : output + ("- ".repeat(word.length) + "\n");
     }
     console.log(output);
     guess = prompt("Enter a guess: ");
