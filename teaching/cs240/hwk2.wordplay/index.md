@@ -33,9 +33,9 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 ### Working Solution
 
-- [Click here](demo/) for my working solution of this App. This is how your solution should behave when it's done. (You'll need to cancel the first run, to open the Inspector and Console)
+- [Click here](demo/) for my working solution of this App. This is how your solution should behave when it's done. (You'll need to cancel the first run, to open the Inspector and Console, then reload the page.)
 
-- [Click here](demo2/) for testing against my App. This version lets you enter the root word and it does not hide the possible English words, so you can see if your results actually match mine. Try root words like: "popped" or "joists".
+- [Click here](demo2/) for testing against my App. This version lets you enter the root word and it does not hide the possible English words, so you can see if your results actually match mine. Try root words like: "popped", "grades", "joists".
 
 ### Program Requirements
 
