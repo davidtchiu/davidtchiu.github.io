@@ -47,4 +47,4 @@ function foo(x, y) {
 
 ### Testing latex
 
-$d = \sqrt{(x'-x)^2 + (y'-y)^2}$
+$$d = \sqrt{(x'-x)^2 + (y'-y)^2}$$
