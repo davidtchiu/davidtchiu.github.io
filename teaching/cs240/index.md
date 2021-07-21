@@ -2,13 +2,6 @@
 
 [Canvas](https://canvas.pugetsound.edu)
 
-### In-Class Labs
-
-- [Command Line Navigation](lab.cmd1/)
-- [Git (1): The Basics. Staging, Committing, Undoing](lab.git1/)
-- [Git (2): Branching](lab.git2/)
-- [Git (3): Github and Collaborative Workflow](lab.git3/)
-
 ### Homework
 
 - [Hwk 1: Github Homepage](hwk1.ghpages/)
@@ -17,7 +10,14 @@
 - [Hwk 4: Schelling's Model](hwk4.schelling/)
 - [Hwk 5: Simone](hwk5.simone/)
 
-### Testing
+### In-Class Labs
+
+- [Command Line Tutoriaal](lab.cmd1/)
+- [Git (1): The Basics. Staging, Committing, Undoing](lab.git1/)
+- [Git (2): Branching, Merging, Conflicts](lab.git2/)
+- [Git (3): Github and Collaborative Workflow](lab.git3/)
+
+<!-- ### Testing
 
 ```java
 public class T {
@@ -47,4 +47,4 @@ function foo(x, y) {
 
 ### Testing latex
 
-$$d = \sqrt{(x'-x)^2 + (y'-y)^2}$$
+$$d = \sqrt{(x'-x)^2 + (y'-y)^2}$$ -->
