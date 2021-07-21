@@ -1,65 +1,145 @@
-function c(a) {
+var $jscomp = $jscomp || {};
+$jscomp.scope = {};
+$jscomp.createTemplateTagFirstArg = function (a) {
+  return (a.raw = a);
+};
+$jscomp.createTemplateTagFirstArgWithRaw = function (a, b) {
+  a.raw = b;
+  return a;
+};
+$jscomp.arrayIteratorImpl = function (a) {
   var b = 0;
   return function () {
     return b < a.length ? { done: !1, value: a[b++] } : { done: !0 };
   };
-}
-function d(a) {
+};
+$jscomp.arrayIterator = function (a) {
+  return { next: $jscomp.arrayIteratorImpl(a) };
+};
+$jscomp.makeIterator = function (a) {
   var b = "undefined" != typeof Symbol && Symbol.iterator && a[Symbol.iterator];
-  return b ? b.call(a) : { next: c(a) };
+  return b ? b.call(a) : $jscomp.arrayIterator(a);
+};
+$jscomp.arrayFromIterator = function (a) {
+  for (var b, d = []; !(b = a.next()).done; ) d.push(b.value);
+  return d;
+};
+$jscomp.arrayFromIterable = function (a) {
+  return a instanceof Array
+    ? a
+    : $jscomp.arrayFromIterator($jscomp.makeIterator(a));
+};
+var MIN_LENGTH = 3,
+  MAX_LENGTH = 6,
+  dictMap = {},
+  possibleRootWords = [],
+  descrambledWords = [],
+  guessedWords = [];
+initialize();
+var baseWord = null;
+do baseWord = prompt("Input a 6-letter root word");
+while (
+  null != baseWord &&
+  (baseWord.length != MAX_LENGTH || -1 == possibleRootWords.indexOf(baseWord))
+);
+if (null != baseWord) {
+  for (
+    var permutations = getPerms(baseWord),
+      $jscomp$iter$0 = $jscomp.makeIterator(permutations),
+      $jscomp$key$candidate = $jscomp$iter$0.next();
+    !$jscomp$key$candidate.done;
+    $jscomp$key$candidate = $jscomp$iter$0.next()
+  ) {
+    var candidate = $jscomp$key$candidate.value;
+    dictMap[candidate] && descrambledWords.push(candidate);
+  }
+  baseWord = shuffle(baseWord);
+  var guess = null;
+  do {
+    for (
+      var output = "Available letters: " + baseWord + "\n",
+        $jscomp$iter$1 = $jscomp.makeIterator(descrambledWords),
+        $jscomp$key$word = $jscomp$iter$1.next();
+      !$jscomp$key$word.done;
+      $jscomp$key$word = $jscomp$iter$1.next()
+    ) {
+      var word = $jscomp$key$word.value;
+      output += word + "\n";
+    }
+    console.log(output);
+    guess = prompt("Enter a guess: ");
+    null != guess &&
+      (guess.length < MIN_LENGTH
+        ? "*" == guess
+          ? ((baseWord = shuffle(baseWord)), alert("Shuffling root word..."))
+          : alert("Guess is too short!")
+        : guess.length > MAX_LENGTH
+        ? alert("Guess is too long!")
+        : -1 < guessedWords.indexOf(guess)
+        ? alert("Already guessed " + guess + "!")
+        : -1 < descrambledWords.indexOf(guess)
+        ? (alert("Correct! " + guess), guessedWords.push(guess))
+        : alert(guess + " is not a word!"));
+    console.clear();
+  } while (null != guess && guessedWords.length < descrambledWords.length);
+  var key =
+      "You answered " +
+      guessedWords.length +
+      " out of " +
+      descrambledWords.length +
+      "!\n\n",
+    $jscomp$iter$2 = $jscomp.makeIterator(descrambledWords);
+  for (
+    $jscomp$key$word = $jscomp$iter$2.next();
+    !$jscomp$key$word.done;
+    $jscomp$key$word = $jscomp$iter$2.next()
+  ) {
+    var word$5 = $jscomp$key$word.value;
+    key += word$5 + "\n";
+  }
+  console.log(key);
 }
-function f(a) {
-  for (var b, e = []; !(b = a.next()).done; ) e.push(b.value);
-  return e;
+function initialize() {
+  for (
+    var a = $jscomp.makeIterator(dictionary), b = a.next();
+    !b.done;
+    b = a.next()
+  )
+    (b = b.value),
+      b.length >= MIN_LENGTH &&
+        b.length <= MAX_LENGTH &&
+        ((dictMap[b] = !0),
+        b.length == MAX_LENGTH && possibleRootWords.push(b));
 }
-for (
-  var h = {}, k = [], l = [], m = [], p = d(dictionary), q = p.next();
-  !q.done;
-  q = p.next()
-) {
-  var r = q.value;
-  3 <= r.length && 6 >= r.length && ((h[r] = !0), 6 == r.length && k.push(r));
+function shuffle(a) {
+  for (var b = 0; b < a.length; b++) {
+    var d = b,
+      e = Math.floor(Math.random() * a.length);
+    a = a.split("");
+    var c = a[d];
+    a[d] = a[e];
+    a[e] = c;
+    a = a.join("");
+  }
+  return a;
 }
-for (var t = null; null == t || 6 != t.length || -1 == k.indexOf(t); )
-  t = prompt("Input a 6-letter root word");
-m.push(t);
-for (var v = u(t), w = d(v), x = w.next(); !x.done; x = w.next()) {
-  var y = x.value;
-  h[y] && l.push(y);
-}
-var z = null;
-do {
-  for (var A = "", B = d(l), C = B.next(); !C.done; C = B.next())
-    A += C.value + "\n";
-  z = prompt(A + "\n\nEnter a guess: ");
-  null != z &&
-    (-1 < m.indexOf(z)
-      ? alert("Already guessed " + z + "!")
-      : -1 < l.indexOf(z)
-      ? (alert("Correct! " + z), m.push(z))
-      : alert(z + " is not a word!"));
-} while (null != z && m.length < l.length);
-var E = "You answered " + m.length + " out of " + l.length + "!\n\n",
-  F = d(l);
-for (C = F.next(); !C.done; C = F.next()) E += C.value + "\n";
-alert(E);
-function u(a) {
+function getPerms(a) {
   if (0 == a.length) return new Set().add("");
   var b = a[0];
-  a = u(a.substring(1));
+  a = getPerms(a.substring(1));
   for (
-    var e = new Set(), D = d(a.values()), g = D.next();
-    !g.done;
-    g = D.next()
+    var d = new Set(), e = $jscomp.makeIterator(a.values()), c = e.next();
+    !c.done;
+    c = e.next()
   ) {
-    g = g.value;
-    for (var n = 0; n <= g.length; n++)
-      e.add(g.substring(-1, n) + b + g.substring(n));
+    c = c.value;
+    for (var f = 0; f <= c.length; f++) {
+      var g = c.substring(-1, f),
+        h = c.substring(f);
+      d.add(g + b + h);
+    }
   }
   return new Set(
-    [].concat(
-      a instanceof Array ? a : f(d(a)),
-      e instanceof Array ? e : f(d(e))
-    )
+    [].concat($jscomp.arrayFromIterable(a), $jscomp.arrayFromIterable(d))
   );
 }
