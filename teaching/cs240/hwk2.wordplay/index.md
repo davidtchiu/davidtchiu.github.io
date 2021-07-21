@@ -5,7 +5,7 @@ Here's how the game goes. The computer selects a random 6-letter word from the E
 
 ![Wordplay](figures/wordplay.jpg)
 
-After losing many times, David got to thinking about how the game was written. Surely, the puzzles aren't curated and made by hand... there's too many possibilities! To accomplish gameplay, the computer must run some internal algorithm to determine a list of possible English words of lengths 3-to-6 that can be formed using the letters of the root word. For instance, if the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pod", and "pep".
+As he kept losing, because there are a lot of 3-letter words he didn't know existed, David got to thinking about how the game was written. Surely, each puzzle wasn't curated by someone... there's just too many possibilities to handcraft! To accomplish gameplay, the computer must run some internal algorithm to determine a list of possible English words of lengths 3-to-6 that can be formed using the letters of the root word. For instance, if the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pod", and "pep".
 
 We don't know how to manipulate graphics (yet) using JavaScript, so we'll simulate this game in the text console. To give you a hint on how many there are, the computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal a hidden word, and it's up to the player to try to guess them all. For instance, after guessing a few on the root word "popped", it might display:
 
@@ -45,9 +45,10 @@ For full credit, your project should observe the following requirements.
 
 - The game starts by randomly selecting a 6-letter root word from the English dictionary. This word is not revealed to the user.
 
-- The bulk of your work is the next step. Given root word, you are then to compute all the valid English words using a subset of its letters. A root letter cannot be used more than once, unless it appears more than once in the root word. For instance, the root word "hello" can't generate the word "lee" because 'e' only appears once in "hello". However, "hell" can be generated because 'l' appears twice in "hello". There are multiple ways to tackle this problem, so I'll leave it up to you to solve this problem, but keep in mind that time-efficiency does matter -- we wouldn't want those pesky airplane passengers to lose their patience and exit the game before it even starts!
+- The bulk of your work is the next step. Given root word, you are then to compute all the valid English words using a subset of its letters. A root word's letter cannot be used more than once, unless it appears more than once in the root word. For instance, the root word "hello" can't generate the word "lee" because 'e' only appears once in "hello". There are multiple ways to tackle this problem, so I'll leave it up to you, but keep in mind that time-efficiency matters -- we wouldn't want those pesky airplane passengers to lose their patience and exit the game before it even starts!
 
-- Scramble the root word and output to the console so the player knows what they have to work with. Then display to the console the current list of guessed/unguessed words to the user, and get their inputs. Repeat until all words have been guessed, or if the user presses cancel. To prompt the user for an input, use:
+- Scramble the root word and output it to the console so the player knows what letters they have to work with. Then display to the console the current list of guessed/unguessed words to the user, and get their inputs. Repeat until all words have been guessed, or if the user presses cancel. For the words that have not been guessed, hide them using a dashes (one dash per letter separaated by space, like for Hangman). Print this output to the console.
+  To prompt the user for an input, use:
 
   ```js
   let input = prompt(someString);
@@ -64,8 +65,6 @@ For full credit, your project should observe the following requirements.
   ```js
   console.log(someOtherString);
   ```
-
-  For the words that have not been guessed, hide them using a dashes (one dash per letter, like for Hangman). Print this output to the console.
 
 - You should clear the console after each guess.
 
@@ -115,8 +114,8 @@ CS 240 Homework (Word Play)
 
 > Your program outputs an appropriate message on a given input.
   These messages are appropriate on a given input word:
-    * $word$ is not a valid English word (or too short/long)
-    * $word$ has already been found
+    * word is not a valid English word (or too short/long)
+    * word has already been found
     * Correct!
 
 > Your program congratulates the user and terminates when
