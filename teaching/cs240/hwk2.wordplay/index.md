@@ -73,6 +73,7 @@ For full credit, your project should observe the following requirements.
   - Alert to the user: `word` is not a valid English word (or too short/long)
   - Alert to the user: `word` has already been found
   - Alert to the user: Correct!
+  - The exception is if a `*` was entered. When this is the case, scramble the available letters and display the status of the game again. Alert the user that you have done this.
 
 - The game ends on two conditions: if the user guesses all words, or if the user inputs null for a guess, which can be accomplished by pressing `Cancel` on the prompt.
 
@@ -95,6 +96,7 @@ CS 240 Homework (Word Play)
   of English words that use a subset of letters in that string.
 
 > Entering "*" for a guess will shuffle the available letters.
+  The user should be alerted.
 
 ----------------------------------------------------------
 [10/10pts] Game Play
