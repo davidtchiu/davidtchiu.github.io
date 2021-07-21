@@ -18,7 +18,7 @@ In this exercise you will be trying out basic git operations, including staging,
   git init
   ```
 
-- Create and save three empty files: `arctic.txt` and `jungle.txt`. Let's now make our first commit to include all three files. Remember that committing is a 2-step process. You must first stage the files you want to include in your commit with:
+- Create 2 empty files: `arctic.txt` and `jungle.txt`. (You can do this in VS Code, or with the `touch` command directly in the Terminal). Let's now make our first commit to include all three files. Remember that committing is a 2-step process. You must first stage the files you want to include in your commit with:
 
   ```
   git add <file1> <file2> ...
@@ -37,7 +37,7 @@ In this exercise you will be trying out basic git operations, including staging,
 ```
 2 narwhals
 3 polar bears
-1 snowy owl
+1 snowy owls
 4 walruses
 ```
 
@@ -45,10 +45,10 @@ Now open up jungle.txt and add:
 
 ```
 10010 piranhas
-1 tiger
+1 tigers
 3 wild boars
 11 warthogs
-1 panther
+1 panthers
 112 tree frogs
 1 python
 ```
@@ -64,11 +64,10 @@ Save both files.
 ```
 1 pacific octopus
 10 starfish
-2 hermit crabs
 6 manta rays
 ```
 
-Add 3 arctic foxes to `arctic.txt` and remove the two hermit crabs from `arctic.txt`.
+- Now add 3 arctic foxes to `arctic.txt`.
 
 Now commit all changes with the message `"Added aquarium, and updated arctic and jungle's inventory"`
 
@@ -78,19 +77,19 @@ Your manager noticed a clerical mistake and said that all animal quantity of "1"
 
 ```
 1000100 piranhas
-10 tiger
+10 tigers
 3 wild boars
-10 panther
 1010 warthogs
-10 panther
+10 panthers
 10102 tree frogs
-10 python
+10 pythons
 ```
 
 ```
+3 arctic foxes
 2 narwhals
 3 polar bears
-10 snowy owl
+10 snowy owls
 4 walruses
 ```
 
@@ -108,13 +107,15 @@ Right after you saved these files, you realize right away that the quantities fo
 
 ### Part 3 - Undoing Changes at the Commit Level
 
-- Due to a loss of funding, plans for the aquarium are being scrapped. Your manager asks you to remove aquarium.txt, but to distribute its contents into two new files: `wishlist.txt` and `seacritters.txt`. Put the hermit crab and starfish in the `seacritters.txt` file.
+- Due to a loss of funding, plans for the aquarium are being scrapped. Your manager asks you to remove aquarium.txt, but to distribute its contents into two new files: `wishlist.txt` and `seacritters.txt`.
 
 - Place the octopus and the manta ray on the `wishlist.txt` file, and commit with the message `"octopus and ray now in wishlist"`
 
-- Place the hermit crab and starfish on the seacritters.txt file, and commit with the message `"aquarium now reduced to small sea-critters section"`
+- If you made changes to `aquarium.txt` make sure you save the file now.
 
-- With its contents redistributed, you can now delete the aquarium file using the proper git operation:
+- Place the starfish on the seacritters.txt file, and commit with the message `"aquarium now reduced to small sea-critters section"`
+
+- With its contents redistributed, you can now delete `aquarium.txt` using the proper git operation:
 
 ```
 git rm <file>
