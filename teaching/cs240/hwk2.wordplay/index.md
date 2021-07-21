@@ -1,13 +1,13 @@
 ## Homework: Wordplay
 
 _This assignment is based on a true story._ David was on a long flight home with his kids. To kill time, he found himself playing a few games on the back of the seats on the plane. Most of the games were too hard, but one among them, a game called _Wordplay_ (he thinks), was by far the most interesting.
-Here's how the game goes. The computer selects a random 6-letter word from the English dictionary. We'll call this the _root word_. The computer tells this word to the player, and it is the player's job to list as many other words as they can think of that uses a subset of the root word's letters. To reduce possibilities, the computer only considers words that are 3 or more letters in length.
-
-To remind himself of how the gameplay worked, here's a terrible picture he took on the plane. (By pure accident, the 6-letter word happened to be _"logger"_.)
+Here's how the game goes. The computer selects a random 6-letter word from the English dictionary. We'll call this the _root word_. The computer then scrambles the letters of this root word and displays it to the player. It is the player's job to list as many other words as they can think of that uses a subset of the root word. To reduce possibilities, the computer only considers words that are 3 or more letters in length. To remind himself of how the gameplay worked, here's a terrible picture David took on the plane. (By sheer accident, the 6-letter word happened to be _"logger"_.)
 
 ![Wordplay](figures/wordplay.jpg)
 
-To accomplish gameplay, the computer must run some internal computation to determine a list of all possible English words of lengths 3 to 6 that can be formed using those letters. For instance, suppose the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pod", and "pep". To give you a hint on how many there are, the computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal a hidden word, and it's up to the player to try to guess them all. For instance, after guessing a few on the root word "popped", it might display:
+After losing many times, David got to thinking about how the game was written. Surely, the puzzles aren't curated and made by hand... there's too many possibilities! To accomplish gameplay, the computer must run some internal algorithm to determine a list of possible English words of lengths 3-to-6 that can be formed using the letters of the root word. For instance, if the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pod", and "pep".
+
+We don't know how to manipulate graphics (yet) using JavaScript, so we'll simulate this game in the text console. To give you a hint on how many there are, the computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal a hidden word, and it's up to the player to try to guess them all. For instance, after guessing a few on the root word "popped", it might display:
 
 ```
 Letters: e o p d p p
@@ -21,7 +21,7 @@ d o p e
 - - - - - -
 ```
 
-The available letters from the root word are scrambled and listed on top. The player can also re-scramble those letters if it helps their mental block. In the real game, there is a 3 minute timer before the game ends, but we'll ignore that for our implementation.
+Note that the available letters from the root word are scrambled and listed on top. The player can also mix those letters up if it helps get them past a mental block. In the real game, you can see that there is a 3 minute timer before the game ends, but we'll ignore the timer for our implementation.
 
 ### Student Outcomes
 
@@ -84,6 +84,10 @@ For full credit, your project should observe the following requirements.
 
   - Congratulate the user if they mananged to get all the words!
   - Otherwise, display the solution (all the valid words), as well as the number of words the player got right!
+
+### Optional Extension
+
+If you have time, add a 3-minute countdown timer which starts as soon as the page is loaded. When the timer hits 0, the game ends.
 
 ### Submission
 
