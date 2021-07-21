@@ -62,6 +62,12 @@ For full credit, your project should observe the following requirements.
 
   For the words that have not been guessed, hide them using a dashes (one dash per letter, like for Hangman). Print this output to the console.
 
+- You should clear the console after each guess.
+
+  ```js
+  console.clear();
+  ```
+
 - Your program outputs an appropriate message on a given input. These messages are appropriate on a given input word:
 
   - Alert to the user: `word` is not a valid English word (or too short/long)
