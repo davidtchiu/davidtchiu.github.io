@@ -16,7 +16,8 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 ### Working Solution
 
-[Click here](demo/) for my working solution of this App.
+[Click here](demo/) for my working solution of this App. This is how your solution should behave when it's done.
+[Click here](demo2/) for testing against my App. This version lets you enter the root word and it does not hide the words.
 
 ### Program Requirements
 
@@ -51,7 +52,7 @@ Assignment submission is simple. Simply make sure that the latest code is commit
 ### Grading
 
 ```
-CS 240 Homework (Scoreboard Operator)
+CS 240 Homework (Word Play)
 
 
 ----------------------------------------------------------
