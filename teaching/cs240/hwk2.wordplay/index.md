@@ -2,7 +2,21 @@
 
 True Story: David was on a long flight home with his kids recently, and to kill time, he found himself playing a few games on the back of the seats. One among them, a game called _Wordplay_, was by far the most interesting and challenging. It also happens to make for a nice homework assignment. Here's how the game goes. The computer selects a random 6-letter word from the English dictionary. We'll call this the _root word_. The computer tells this word to the player, and it is the player's job to list as many other words as they can think of that uses a subset of the root word's letters. To reduce possibilities, the computer only considers words that are 3 or more letters in length.
 
-To accomplish gameplay, the computer must run some internal computation to determine a list of all possible English words of lengths 3 to 6 that can be formed using those letters. For instance, suppose the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pep", ... and so on. To give you a hint on how many there are, the computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal a hidden word, and it's up to the player to try to guess them all.
+To accomplish gameplay, the computer must run some internal computation to determine a list of all possible English words of lengths 3 to 6 that can be formed using those letters. For instance, suppose the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pod", and "pep". To give you a hint on how many there are, the computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal a hidden word, and it's up to the player to try to guess them all. For instance, after guessing a few on the root word "popped", it might display:
+
+```
+Letters: e o p d p p
+
+- - -
+- - -
+o d e
+- - -
+d o p e
+- - - -
+- - - - - -
+```
+
+The available letters from the root word are scrambled and listed on top. The player can also re-scramble those letters if it helps their mental block. In the real game, there is a 3 minute timer before the game ends, but we'll ignore that for our implementation.
 
 ### Student Outcomes
 
@@ -42,7 +56,10 @@ For full credit, your project should observe the following requirements.
 
   For the words that have not been guessed, hide them using a dashes (one dash per letter, like for Hangman).
 
-- On end-game, display the solution (all the valid words), as well as the number of words the player got right!
+- The game ends on two conditions: if the user guesses all words, or if the user inputs null for a guess, which can be accomplished by pressing `Cancel` on the prompt.
+
+  - Congratulate the user if they mananged to get all the words!
+  - Otherwise, display the solution (all the valid words), as well as the number of words the player got right!
 
 ### Submission
 
@@ -71,7 +88,11 @@ CS 240 Homework (Word Play)
     * $word$ has already been found
     * Correct!
 
-> Your program reveals the key if null is given as input.
+> Your program congratulates the user and terminates when
+  they guess all words.
+
+> Your program terminates and reveals the key if null is
+  given as input.
 
 > Your program also outputs the number answered right.
 
