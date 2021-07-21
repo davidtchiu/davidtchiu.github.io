@@ -1,8 +1,6 @@
 ## Homework: Wordplay
 
-David was on a long flight recently, and to kill time he found himself playing a few games on the back of the seats. Among them, a game called _Wordplay_ was by far the most interesting and it just so happens to make for a nice homework assignment.
-
-Here's how it goes. The computer selects a random 6-letter word from the English dictionary. We'll call this the _root word_. The computer tells this word to the player, and it is the player's job to list as many words as they can think of that uses a subset of the root word's letters.
+True Story: David was on a long flight home with his kids recently, and to kill time, he found himself playing a few games on the back of the seats. One among them, a game called _Wordplay_, was by far the most interesting and challenging. It also happens to make for a nice homework assignment. Here's how the game goes. The computer selects a random 6-letter word from the English dictionary. We'll call this the _root word_. The computer tells this word to the player, and it is the player's job to list as many other words as they can think of that uses a subset of the root word's letters. To reduce possibilities, the computer only considers words that are 3 or more letters in length.
 
 To accomplish gameplay, the computer must run some internal computation to determine a list of all possible English words of lengths 3 to 6 that can be formed using those letters. For instance, suppose the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pep", ... and so on. To give you a hint on how many there are, the computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal a hidden word, and it's up to the player to try to guess them all.
 
@@ -16,8 +14,9 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 ### Working Solution
 
-[Click here](demo/) for my working solution of this App. This is how your solution should behave when it's done.
-[Click here](demo2/) for testing against my App. This version lets you enter the root word and it does not hide the words.
+- [Click here](demo/) for my working solution of this App. This is how your solution should behave when it's done.
+
+- [Click here](demo2/) for testing against my App. This version lets you enter the root word and it does not hide the possible English words, so you can see if your results actually match mine. Try root words like: "popped" or "joists".
 
 ### Program Requirements
 
@@ -25,7 +24,7 @@ For full credit, your project should observe the following requirements.
 
 - The starter code provides you with a file containing the English dictionary formatted as an array. It's easy to include this in your code. Create an `index.html` file that first includes the dictionary file, and then includes your own `app.js` file.
 
-- The game starts by randomly selecting a 6-letter root word from the English dictionary.
+- The game starts by randomly selecting a 6-letter root word from the English dictionary. This word is not revealed to the user
 
 - The bulk of your work is the next step. Given root word, you are then to compute all the valid English words using a subset of its letters. A root letter cannot be used more than once, unless it appears more than once in the root word. For instance, the root word "hello" can't generate the word "lee" because 'e' only appears once in "hello". However, "hell" can be generated because 'l' appears twice in "hello". There are multiple ways to tackle this problem, so I'll leave it up to you to solve this problem, but keep in mind that time-efficiency does matter -- we wouldn't want those pesky airplane passengers to lose their patience and exit the game before it even starts!
 
@@ -54,31 +53,27 @@ Assignment submission is simple. Simply make sure that the latest code is commit
 ```
 CS 240 Homework (Word Play)
 
+----------------------------------------------------------
+[30/30pts] Algorithm
+
+> Given a string, your program can determine a complete set of
+  of English words that use a subset of letters in that string.
 
 ----------------------------------------------------------
-[20/20pts] HTML + CSS
+[10/10pts] Game Play
 
-> The design and feel of your Scoreboard app looks exactly as
-  is specified in the description. The exception is if you
-  added a few more buttons if you completed some of the
-  "extra" items.
+> Your program hides all words initially (except for the root
+  word), revealing them only as the player answers correctly.
 
-----------------------------------------------------------
-[30/30pts] DOM and Events
+> Your program outputs an appropriate message on a given input.
+  These messages are appropriate on a given input word:
+    * $word$ is not a valid English word (or too short/long)
+    * $word$ has already been found
+    * Correct!
 
-> Your program queries for, and reads in all "inning" and "runs"
-  boxes as DOM nodes, storing them in an appropriate data
-  structure for easy access.
+> Your program reveals the key if null is given as input.
 
-> Pressing + or - will make the appropriate scoring changes
-  in the box currently specified by the "Inning" and "Who" values.
-  Additionally, the total runs in the "R" column should reflect
-  the new scores.
-
-> Ensure that runs never go negative.
-
-> The music buttons play sound effects and updates images as
-  as described.
+> Your program also outputs the number answered right.
 
 ----------------------------------------------------------
 [5/5pts] Implementation and Efficiency
@@ -103,5 +98,5 @@ CS 240 Homework (Word Play)
 Suggestions (No Deductions)
 
 
-Total: 60 pt
+Total: 50 pt
 ```
