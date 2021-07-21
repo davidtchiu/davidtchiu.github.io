@@ -38,23 +38,35 @@ For full credit, your project should observe the following requirements.
 
 - The starter code provides you with a file containing the English dictionary formatted as an array. It's easy to include this in your code. Create an `index.html` file that first includes the dictionary file, and then includes your own `app.js` file.
 
-- The game starts by randomly selecting a 6-letter root word from the English dictionary. This word is not revealed to the user
+- The game starts by randomly selecting a 6-letter root word from the English dictionary. This word is not revealed to the user.
 
 - The bulk of your work is the next step. Given root word, you are then to compute all the valid English words using a subset of its letters. A root letter cannot be used more than once, unless it appears more than once in the root word. For instance, the root word "hello" can't generate the word "lee" because 'e' only appears once in "hello". However, "hell" can be generated because 'l' appears twice in "hello". There are multiple ways to tackle this problem, so I'll leave it up to you to solve this problem, but keep in mind that time-efficiency does matter -- we wouldn't want those pesky airplane passengers to lose their patience and exit the game before it even starts!
 
-- Display the current list of guessed/unguessed words to the user, and get their inputs. Repeat until all words have been guessed, or if the user presses cancel. To prompt the user for an input, use:
+- Scramble the root word and output to the console so the player knows what they have to work with. Then display to the console the current list of guessed/unguessed words to the user, and get their inputs. Repeat until all words have been guessed, or if the user presses cancel. To prompt the user for an input, use:
 
   ```js
   let input = prompt(someString);
   ```
 
-  And to print and display a dialog window, use:
+  To print and display a dialog window, use:
 
   ```js
   alert(someOtherString);
   ```
 
-  For the words that have not been guessed, hide them using a dashes (one dash per letter, like for Hangman).
+  To print something to the console window, use:
+
+  ```js
+  console.log(someOtherString);
+  ```
+
+  For the words that have not been guessed, hide them using a dashes (one dash per letter, like for Hangman). Print this output to the console.
+
+- Your program outputs an appropriate message on a given input. These messages are appropriate on a given input word:
+
+  - Alert to the user: `word` is not a valid English word (or too short/long)
+  - Alert to the user: `word` has already been found
+  - Alert to the user: Correct!
 
 - The game ends on two conditions: if the user guesses all words, or if the user inputs null for a guess, which can be accomplished by pressing `Cancel` on the prompt.
 
@@ -71,10 +83,12 @@ Assignment submission is simple. Simply make sure that the latest code is commit
 CS 240 Homework (Word Play)
 
 ----------------------------------------------------------
-[30/30pts] Algorithm
+[40/40pts] Algorithms
 
 > Given a string, your program can determine a complete set of
   of English words that use a subset of letters in that string.
+
+> Entering "*" for a guess will shuffle the available letters.
 
 ----------------------------------------------------------
 [10/10pts] Game Play
@@ -119,5 +133,5 @@ CS 240 Homework (Word Play)
 Suggestions (No Deductions)
 
 
-Total: 50 pt
+Total: 60 pt
 ```
