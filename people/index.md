@@ -7,13 +7,13 @@
 Here's is a list of my former research advisees and a half-hearted effort of tracking where they currently are.
 
 - Manya Meutschler-Aldine (BS'21)
-- Sarah Walling-Bell (BS'20) → University of Washington
+- Sarah Walling-Bell (BS'20) → Center for Neurotechnology, UW Seattle
 - Sarah McClain (BS'20) → Panorama Education, Boston
 - Sam Burdick (BS'19) → Amazon → PhD @ Ohio State
 - Jahrme Risner (BS'19) → Google
 - Jared Polonitza (BS'19) → Chalice Networks
 - Jack Burns (BS'18) → Loopie Seattle
-- Christine Li (BS'18) → 2-3 engineering @ Columbia University
+- Christine Li (BS'18) → Columbia University
 - Patrick Ryan (BS'18) → T-Mobile, Bellevue
 - Rachel Hirsch (BS'17) → MS @ Colorado State → ringDNA
 - Chili Johnson (BS'17)
