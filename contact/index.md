@@ -8,8 +8,7 @@
 
 - [LinkedIn](https://www.linkedin.com/in/davidtchiu/)
 
-- Mailing:\
-  Department of Math and Computer Science\
+- Department of Math and Computer Science\
   University of Puget Sound\
   1500 N. Warner St.\
   Tacoma, WA 98416
