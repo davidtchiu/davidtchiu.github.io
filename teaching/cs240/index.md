@@ -12,7 +12,7 @@
 
 ### In-Class Labs
 
-- [Command Line Tutoriaal](lab.cmd1/)
+- [Command Line Tutorial](lab.cmd/)
 - [Git (a): The Basics. Staging, Committing, Undoing](lab.git1/)
 - [Git (b): Branching, Merging, Conflicts](lab.git2/)
 - [Unit Testing: Jasmine](lab.testing/)
