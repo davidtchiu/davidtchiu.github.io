@@ -14,10 +14,10 @@ My research interests intersect topics in cloud computing and data management. I
 
 #### Bitmap Indexing for Data-Intensive Processing
 
-- S. McClain, M. Mutschler-Aldine, C. Monaghan, D. Chiu, J. Sawin, and P. Jarvis. Caching Support for Range Query Processing on Bitmap Indices. 33rd International Conference on Scientific and Statistical Database Management (SSDBM). Tampa, FL. 2021. ACM.
+- S. McClain, M. Mutschler-Aldine, C. Monaghan, D. Chiu, J. Sawin, and P. Jarvis. Caching Support for Range Query Processing on Bitmap Indices. 33rd International Conference on Scientific and Statistical Database Management (SSDBM). Tampa, FL. 2021. ACM. ([pdf](Papers/mcclain-ssdbm2021.pdf))
 - B. Tran, B. Schaffner, J. Sawin, J. Myre, and D. Chiu. Increasing the Efficiency of GPU Bitmap Index Query Processing. 25th International Conference on Database Systems for Advanced Applications (DASFAA). JeJu, South Korea. 2020.
 - M. Nelson, Z. Sorenson, J. Myer, J. Sawin, and D. Chiu. GPU Acceleration of Range Queries over Large Data Sets. Proceedings of the 6th IEEE/ACM International Conference on Big Data Computing, Application, and Technologies (BDCAT'19). Auckland, New Zealand. 2019. (Best Paper Candidate)
-- S. Burdick, J. Risner, D. Chiu, and J. Sawin. Fault-Tolerant Query Execution over Distributed Bitmap Indices. In Proceedings of the 5th IEEE/ACM International Conference on Big Data Computing, Application, and Technologies (BDCAT'18). Zurich, Switzerland. 2018. (Best Paper Candidate)
+- S. Burdick, J. Risner, D. Chiu, and J. Sawin. Fault-Tolerant Query Execution over Distributed Bitmap Indices. In Proceedings of the 5th IEEE/ACM International Conference on Big Data Computing, Application, and Technologies (BDCAT'18). Zurich, Switzerland. 2018. ([pdf](Papers/mcclain-ssdbm2021.pdf)| Best Paper Candidate)
 - B. Taufen, J. Sawin, and D. Chiu. Improving the Querying Efficiency of the PLWAH Bitmap Algorithm. In Proceedings of the 21st International Database Engineering and Applications Symposium (IDEAS'17). Bristol, UK. 2017.
 - G. Guzun, G. Canahuate, and D. Chiu. A Two-Phase MapReduce Algorithm for Scalable Preference Queries over High-Dimensional Data. In Proceedings of the 20th International Database Engineering and Applications Symposium (IDEAS'16). Montreal, Canada. 2016.
 - M. Velez, J. Sawin, A. Ingerson, and D. Chiu. Improving Bitmap Execution Performance Using Column-Based Metadata. 4th IEEE International Conference on Future Internet of Things and Cloud (FiCloud'16). Vienna, Austria. 2016

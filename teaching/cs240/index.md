@@ -13,9 +13,9 @@
 ### In-Class Labs
 
 - [Command Line Tutoriaal](lab.cmd1/)
-- [Git (1): The Basics. Staging, Committing, Undoing](lab.git1/)
-- [Git (2): Branching, Merging, Conflicts](lab.git2/)
-- [Git (3): Github and Collaborative Workflow](lab.git3/)
+- [Git (a): The Basics. Staging, Committing, Undoing](lab.git1/)
+- [Git (b): Branching, Merging, Conflicts](lab.git2/)
+- [Unit Testing: Jasmine](lab.testing/)
 
 <!-- ### Testing
 
