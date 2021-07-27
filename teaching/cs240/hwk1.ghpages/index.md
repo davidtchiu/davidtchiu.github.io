@@ -1,15 +1,15 @@
-# CS 240 Software Engineering
+## CS 240 - Software Engineering
 
-## Homework: Personal Homepage on github.io
+### Homework: Personal Homepage on github.io
 
 In this assignment you'll create a personal homepage on Github's free web hosting service, github.io. The purpose of this assignment is to try to ensure that you understand the basics of HTML, CSS, and git. It also prepares you for the process of submitting future assignments in this course, as we will be working exclusively with git and github for the remainder of this course.
 
-### Student Outcomes
+#### Student Outcomes
 
 - Use of HTML and CSS
 - Exposure to various git operations and Github
 
-### Program Requirements
+#### Program Requirements
 
 For full credit, your project should observe the following requirements.
 
@@ -43,11 +43,11 @@ For full credit, your project should observe the following requirements.
 
   - After you're done with the content, merge the `resume` branch to the `main` branch and commit and push, but don't remove the `resume` branch.
 
-### Optional Extensions
+#### Optional Extensions
 
 Have some free time? There's no limitations to the content you want to display. Feel free to make more pages about yourself, and add as much styling as you wish! As long as your site meets the requirements, you will be receive full credit!
 
-### Grading
+#### Grading
 
 ```
 CS 240 Homework (Github Pages)
