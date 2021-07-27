@@ -85,7 +85,7 @@ Intro to Computer Science -->
 - **WSU Diversity Council Award**\
   WSU Vancouver, 2010
 
-- **Outstanding Graduate Student Teaching (Eleanor Quinlan Memorial) Award**\
+- **Outstanding Graduate Student Teaching Award (Quinlan Memorial)**\
   Department of Computer Science and Engineering, The Ohio State University, 2009
 
 - **Preparing Future Faculty (PFF) Fellow**\
