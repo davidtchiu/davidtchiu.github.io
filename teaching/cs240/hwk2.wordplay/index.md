@@ -1,6 +1,6 @@
 ## Homework: Wordplay
 
-_This assignment is based on a true story._ David was on a long flight home from Ohio with his kids recently. To kill time, he found himself playing a few games on the back of the seats on the plane. Most of the games were too hard, but one among them, a game called _Wordplay_ (he thinks), was by far the most interesting.
+_This assignment is based on a true story._ David was on a long flight home from Ohio with his kids recently. To kill time, he found himself playing a few games on the back of the seats on the plane. One game, called _Wordplay_ (he thinks), was by far the most interesting.
 Here's how the game goes. The computer selects a random 6-letter word from the English dictionary. We'll call this the _root word_. The computer then scrambles the letters of this root word and displays it to the player. It is the player's job to list as many other words as they can think of that uses a subset of the root word. To reduce possibilities, the computer only considers words that are 3 or more letters in length. To remind himself of how the gameplay worked, here's a terrible picture David took on the plane. (By sheer accident, the 6-letter word happened to be _"logger"_.)
 
 ![Wordplay](figures/wordplay.jpg)
