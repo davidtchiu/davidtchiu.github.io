@@ -43,8 +43,8 @@ the minority as long as there are at least 30% of similar agents
 in adjacent cells.
 
 The picture below (left) shows a satisfied agent because
-50% of X's neighbors are also X $(50\% > t)$. The next X (right) is
-not satisfied because only 25% of its neighbors are X $(25\% < t)$.
+50% of X's neighbors are also X $$(50\% > t)$$. The next X (right) is
+not satisfied because only 25% of its neighbors are X $$(25\% < t)$$.
 Notice that in this example empty cells are <b>not</b> counted when
 calculating similarity.
 
@@ -67,7 +67,7 @@ which were previously satisfied to become dissatisfied!
 ![Grid4](figures/grid4.png)
 ![Grid5](figures/grid5.png)
 
-All dissatisfied agents must be moved in the same round, or generation. After the
+All dissatisfied agents must be moved in the same round or generation. After the
 round is complete, a new round begins, and dissatisfied agents are
 once again moved to new locations in the grid. These rounds continue
 until all agents in the neighborhood are satisfied with their location.
@@ -82,9 +82,9 @@ For full credit, your project should observe the following requirements.
 
 - Use the file templates that were provided to you. The only file you need to make changes to is `schelling.js`, but you're free to make changes to the CSS file to your liking. **DO NOT** modify `index.html`.
 
-- **Dynamic HTML generation:** Take a closer look inside `index.html`. Notice that the table displaying the population grid is nowhere to be found! In the previous scoreboard assignment, you saw the limitations of start up with a preexisting HTML structure. It made it hard to associate those predefined HTML elements (like a box in the scoreboard) to your JavaScript code. Here we take a different approach (and this is a pattern you should get used to from now on). We instead start only with the a minimalist version of the HTML: there might only be some `<div>` or `<p>` tags that your JS code will hook into.
+- **Dynamic HTML generation:** Take a closer look inside `index.html`. Notice that the table displaying the population grid is nowhere to be found! In the previous scoreboard assignment, you saw the limitations of start up with a preexisting HTML structure. It made it hard to associate those predefined HTML elements (like a box in the scoreboard) to your JavaScript code. Here we take a different approach (and this is a pattern you should get used to from now on). We instead start only with a minimalist version of the HTML: there might only be some `<div>` or `<p>` tags that your JS code will hook into.
 
-  The basic idea is that, you will use JS to define classes and/or data structures (like a 2D array for the population grid), which makes it easy to access and work with. Then you'll write method(s) to convert those structures into HTML DOM nodes, before appending them to the page's. That way, you won't have to worry about things like first having to create a table in HTML and giving each cell an ID! (That would be an insane amount of meticulous work!)
+  The basic idea is that, you will use JS to define classes and/or data structures (like a 2D array for the population grid), which makes it easy to access and work with. Then you'll write method(s) to convert those structures into HTML DOM nodes, before appending them to the pages. That way, you won't have to worry about things like first having to create a table in HTML and giving each cell an ID! (That would be an insane amount of meticulous work!)
 
 - When the page loads (or reloads), your app should immediately read in all of the existing values in the `<input>` fields. Use these values to generate an HTML `<table>` element representing the population distribution. Initially, you should get a 20 x 20 table containing ~10% vacant spots. In the remaining spots, you should see a ~60% to ~40% split between population X and Y, respectively. Produce the table using javascript (use a 2D array to represent the board). The table node must be attached as a child to the HTML element with the id: `board`.
 
@@ -92,7 +92,7 @@ For full credit, your project should observe the following requirements.
 
 - Vacant cells should be colored white, and its color cannot be changed. Picking a different color for either of the two populations should immediately cause their colors to change in the table. It should not, however, reset the table or move any elements around.
 
-- When typing in a new dimension, similarity theshold, vacant %, or population split, your table's state should adjust to the new values as-you-type. Randomize/reset the table if the dimension, vacant, or population split changes. Changing the similarity theshold should not cause your table to reset.
+- When typing in a new dimension, similarity threshold, vacant %, or population split, your table's state should adjust to the new values as-you-type. Randomize/reset the table if the dimension, vacant, or population split changes. Changing the similarity threshold should not cause your table to reset.
 
 - The `Randomize` button should cause the spots to be distributed randomly.
 
@@ -100,7 +100,7 @@ For full credit, your project should observe the following requirements.
 
 - The number of generations should be reflected in the subtitle of your page.
 
-- So that we can actually see the changes happening in real time, add a 100ms delay between each generation. Look into the `await` operation and the `Promise` obejct.
+- So that we can actually see the changes happening in real-time, add a 100ms delay between each generation. Look into the `await` operation and the `Promise` obejct.
 
 - Your program should demonstrate good modularity and abstraction. For instance, use of inner functions would be appreciated.
 

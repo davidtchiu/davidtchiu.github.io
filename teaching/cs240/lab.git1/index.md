@@ -2,7 +2,7 @@
 
 ### In-Class Exercise: Git Basics
 
-In this exercise you will be trying out basic git operations, including staging, committing, and undoing.
+In this exercise, you will be trying out basic git operations, including staging, committing, and undoing.
 
 #### Student Outcomes
 
@@ -14,13 +14,13 @@ In this exercise you will be trying out basic git operations, including staging,
 
 - From your file system, create a new directory called `zoo/`. This directory will store an inventory of animals in different sections of our zoo.
 
-- Now open up that directory from VS Code, and open up the Terminal to that project. (Ask for help if you don't remember how to open the integrated terminal). From the terminal, go ahead and initialize git in the zoo directory. The command-line syntax to initialize git is given below. **It's important** to make sureyour current working directory is in `zoo/` before issuing this command.
+- Now open up that directory from VS Code, and open up the terminal to that project. (Ask for help if you don't remember how to open the integrated terminal). From the terminal, go ahead and initialize git in the zoo directory. The command-line syntax to initialize git is given below. **It's important** to make sure your current working directory is in `zoo/` before issuing this command.
 
   ```
   git init
   ```
 
-- Create 2 empty files: `arctic.txt` and `jungle.txt`. (You can do this in VS Code, or with the `touch` command directly in the Terminal). Let's now make our first commit to include all three files. Remember that committing is a 2-step process. You must first stage the files you want to include in your commit with:
+- Create two empty files: `arctic.txt` and `jungle.txt`. (You can do this in VS Code, or with the `touch` command directly in the terminal). Let's now make our first commit to include all three files. Remember that committing is a 2-step process. You must first stage the files you want to include in your commit with:
 
   ```
   git add <file1> <file2> ...
@@ -47,7 +47,7 @@ Now open up jungle.txt and add:
 
 ```
 10010 piranhas
-1 tigers
+1 tiger
 3 wild boars
 11 warthogs
 1 panthers
@@ -69,7 +69,7 @@ Save both files.
 6 manta rays
 ```
 
-- Now add 3 arctic foxes to `arctic.txt`.
+- Now add "3 arctic foxes" to `arctic.txt`.
 
 Now commit all changes with the message `"Added aquarium, and updated arctic and jungle's inventory"`
 
@@ -79,7 +79,7 @@ Your manager noticed a clerical mistake and said that all animal quantity of "1"
 
 ```
 1000100 piranhas
-10 tigers
+10 tiger
 3 wild boars
 1010 warthogs
 10 panthers
@@ -105,7 +105,7 @@ Right after you saved these files, you realize right away that the quantities fo
 
 - Using the `git restore` command, restore these files to the state before you made these global replacements.
 
-- Now, go through each file one-by-one, and make the quantity changes by hand. After you're done, save all files and commmit with the message `"Replaced all quantities: 1-to-10."`
+- Now, go through each file one-by-one, and make the quantity changes by hand. After you're done, save all files and commit with the message `"Replaced all quantities: 1-to-10."`
 
 #### Part 3 - Undoing Changes at the Commit Level
 

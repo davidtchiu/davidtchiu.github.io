@@ -14,11 +14,11 @@ predetermined random pattern of a fixed
 length. The game starts by revealing to the player only the first
 button in the pattern, and it's the player's job to repeat that
 pattern. Pressing the wrong
-button at any point ends the game and the player loses.
+button at any point ends the game, and the player loses.
 Successfully mimicking the
 pattern moves the player to the next "round," in which the current
 pattern increases by a step. When a player successfully executes the last round
-without ever making a mistake in preveious rounds, they win!
+without ever making a mistake in previous rounds, they win!
 
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1Yqj76Q4jJ4" title="YouTube video player" frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
