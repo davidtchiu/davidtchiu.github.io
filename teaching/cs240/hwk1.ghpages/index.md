@@ -1,6 +1,6 @@
 ## Homework: Personal Homepage on github.io
 
-In this assignment you'll create a personal homepage on Github's free web hosting service, github.io. The purpose of this assignment serves a dual purpose: it tries ensure that you understand the basics of HTML, CSS, and git. It also prepares you for the process of submitting future assignments in this course, as we will be working exclusively with git and github for the remainder of this course.
+In this assignment you'll create a personal homepage on Github's free web hosting service, github.io. The purpose of this assignment is to try to ensure that you understand the basics of HTML, CSS, and git. It also prepares you for the process of submitting future assignments in this course, as we will be working exclusively with git and github for the remainder of this course.
 
 ### Student Outcomes
 
