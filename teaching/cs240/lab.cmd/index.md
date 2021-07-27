@@ -1,23 +1,25 @@
-## In-Class Exercise: Command Line
+## CS 240 - Software Engineering
+
+### In-Class Exercise: Command Line
 
 In this exercise you will be trying out basic command line operations.
 
-### Student Outcomes
+#### Student Outcomes
 
 - Learn how to access your terminal
-- Learn how to navigate your file system: `pwd`, `cd`, `ls`, `cp`, `mv`, `rm`, `less`
+- Learn how to navigate your file system: `pwd`, `cd`, `ls`, `cp`, `mv`, `rm`, `less`, `tar`
 - Learn to use the `nano` editor
 
-### Printable Cheat Sheet
+#### Printable Cheat Sheet
 
 Here is a [command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Unix_command_cheatsheet.pdf) that you can download and print.
 
-### Prerequisites
+#### Prerequisites
 
 - [https://git-scm.com/downloads](Download) and install git if not already installed.
 - [https://www.java.com](Download) and install Java if not already installed.
 
-### Part 1 - Navigating the File System
+#### Part 1 - Navigating the File System
 
 - Open your terminal window. You can get to it in various ways, and it depends on your operating system. I think it's easiest to access it through VS Code. Open VS Code. It doesn't matter which project is open (if any). Click on the `Terminal` menu, and click `New Terminal`. You should see the terminal window pop up on the bottom.
 
@@ -94,7 +96,7 @@ Of course, the first part of your path will differ from mine.
   USER INSTRUCTIONS:
   ```
 
-### Part 2 - nano
+#### Part 2 - nano
 
 - Let's edit this README file with the following changes. Sure, you can use VS Code for this, but let's try something different. There is a text editor called `nano` that we can use. You can open a file for editing using the command `nano <filename>`. This should replace your Terminal window with the file editor, and make the following changes.
 
@@ -117,7 +119,7 @@ Of course, the first part of your path will differ from mine.
   - Let's move the `shakerSort` method to the bottom of this class. We'll start by having you find `shakerSort`. Move your cursor to the first line of its method comment, and we'll start cutting by hitting `ctrl + k` consecutive times until the method is gone. Don't worry, all those lines we just removed are saved on nano's clipboard. Now scroll down until you reach the end of the file, and paste it using `ctrl + u`.
   - Save and close this file to return to the Terminal.
 
-### Part 3 - Wrapping up
+#### Part 3 - Wrapping up
 
 - Back in the Terminal, check to see if you're still be in the `src/` directory. If not, navigate to it. Let's compile this Java program and run it. You can compile using:
 
@@ -147,4 +149,22 @@ Of course, the first part of your path will differ from mine.
   2 directories, 10 files
   ```
 
-- This concludes the lab. Go ahead and delete the entire `cs240-lab-cmdline` directory structure.
+- Let's "zip" this directory structure up into a "tarball" file. Use this command:
+
+  ```
+  tar -czvf <output-filename.tar.gz> <directory-to-zip>
+  ```
+
+  Suppose I named my output file `cs240-lab.tar.gz`. You should now see it if you listed the contents of the current directory.
+
+- Go ahead and delete the entire `cs240-lab-cmdline/` directory structure. (Don't worry, we just archived it)
+
+- Now unzip the `tar.gz` file by running:
+
+  ```
+  tar -xvf <your-filename.tar.gz>
+  ```
+
+  List directory contents to verify that the `cs240-lab-cmdline/` directory is restored.
+
+- This concludes the lab. Go ahead and delete the entire `cs240-lab-cmdline` directory structure and the `tar.gz` file if you wish.

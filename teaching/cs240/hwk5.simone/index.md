@@ -1,4 +1,6 @@
-## Homework: Simone the Memory Game
+## CS 240 - Software Engineering
+
+### Homework: Simone the Memory Game
 
 One of David's favorite childhood games was
 a hand-held memory-skill game called Simon, shown below. The four buttons
@@ -24,7 +26,7 @@ without ever making a mistake in preveious rounds, they win!
 In this assignment, you will create a version of this game using
 JavaScript called **_Simone_**, the copyright-friendlier(?) version of Simon.
 
-### Student Outcomes
+#### Student Outcomes
 
 - Exposure to OOP in JavaScript
 - Use of asynchronous functions/methods
@@ -32,14 +34,14 @@ JavaScript called **_Simone_**, the copyright-friendlier(?) version of Simon.
 - More practice with manipulating DOM objects
 - More practice using event listeners and callbacks
 
-### Starter Code and Git
+#### Starter Code and Git
 
 Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-simone](https://github.com/davidtchiu/cs240-hwk-simone). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages.
 
-### Simone Web API
+#### Simone Web API
 
-First, we describe the API to the Simone Web Service. The API is located
-[http://cs.pugetsound.edu/~dchiu/cs240/api/simone/](http://cs.pugetsound.edu/~dchiu/cs240/api/simone/).
+First, we describe the API to the Simone Web Service. The API is located here
+`http://cs.pugetsound.edu/~dchiu/cs240/api/simone/`.
 **_You must use_** this API to retrieve the random pattern sequences for an instance of your game.
 
 Two commands are accepted, and all others will be rejected with an HTTP 400 error. The commands
@@ -54,11 +56,11 @@ must be issued as part of the URL's _query string_:
 Successful executions of both commands will return a JSON object with the corresponding sequence. Test the API out using PostMan
 or even within your browser. Try on different or invalid values to see what the API returns.
 
-### Working Solution
+#### Working Solution
 
 [Click here](demo/) for my working solution of this App.
 
-### Program Requirements
+#### Program Requirements
 
 For full credit, your project should observe the following requirements.
 
@@ -107,7 +109,7 @@ For full credit, your project should observe the following requirements.
 - If the player wins, you must play the appropriate sound bites, and change the
   background to "DeepSkyBlue." Further, you must display the message `"Yay you win!"` to the user.
 
-### Optional Extensions
+#### Optional Extensions
 
 Have some free time? Add the following features:
 
@@ -122,7 +124,7 @@ Have some free time? Add the following features:
   console, but would a real player know what was happening? You could tell the user there was a problem
   starting up the game, or you could take the user back to the beginning state of the game.
 
-### Submission
+#### Submission
 
 Assignment submission is simple. Simply make sure that the latest code is committed and pushed into your forked repo on github (before the 12am deadline). Then send me the link to your repository on [canvas](https://canvas.pugetsound.edu).
 

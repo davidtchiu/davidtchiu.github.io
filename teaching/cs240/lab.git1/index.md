@@ -1,14 +1,16 @@
-## Code Along: Git Basics
+## CS 240 - Software Engineering
+
+### In-Class Exercise: Git Basics
 
 In this exercise you will be trying out basic git operations, including staging, committing, and undoing.
 
-### Student Outcomes
+#### Student Outcomes
 
 - Starting a git project from scratch
 - Staging and committing changes
 - Undoing changes
 
-### Part 1 - Initializing and Committing
+#### Part 1 - Initializing and Committing
 
 - From your file system, create a new directory called `zoo/`. This directory will store an inventory of animals in different sections of our zoo.
 
@@ -71,7 +73,7 @@ Save both files.
 
 Now commit all changes with the message `"Added aquarium, and updated arctic and jungle's inventory"`
 
-### Part 2 - Undoing Changes at the File Level
+#### Part 2 - Undoing Changes at the File Level
 
 Your manager noticed a clerical mistake and said that all animal quantity of "1" is actually supposed to be "10" in all the files. Open up each of the files and do a search-and-replace for the string "1" and replace it with "10" and save each file. Go ahead and do this now (yes, this is a bad idea). Your files should now have the contents below:
 
@@ -105,7 +107,7 @@ Right after you saved these files, you realize right away that the quantities fo
 
 - Now, go through each file one-by-one, and make the quantity changes by hand. After you're done, save all files and commmit with the message `"Replaced all quantities: 1-to-10."`
 
-### Part 3 - Undoing Changes at the Commit Level
+#### Part 3 - Undoing Changes at the Commit Level
 
 - Due to a loss of funding, plans for the aquarium are being scrapped. Your manager asks you to remove aquarium.txt, but to distribute its contents into two new files: `wishlist.txt` and `seacritters.txt`.
 

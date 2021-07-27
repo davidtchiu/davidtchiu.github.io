@@ -1,4 +1,6 @@
-## Homework: Schelling's Model of Segregation
+## CS 240 - Software Engineering
+
+### Homework: Schelling's Model of Segregation
 
 Racial segregation has always been a pernicious social problem in the United States. Although much effort has been extended to desegregate our schools, churches, and neighborhoods, the US continues to remain segregated by race and economic lines. Why is segregation such a difficult problem to eradicate?
 
@@ -6,18 +8,18 @@ In 1971, the American economist Thomas Schelling created an agent-based model th
 
 In this assignment, you will create a simulation of Schelling's model. The user should be able to set a number of parameters of the model and watch it go.
 
-### Student Outcomes
+#### Student Outcomes
 
 - To generate HTML content dynamically using JS
 - To create and manipulate DOM objects
 - To accept input from fields
 - To practice using event listeners and callbacks
 
-### Starter Code and Git
+#### Starter Code and Git
 
 Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-schelling](https://github.com/davidtchiu/cs240-hwk-schelling). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages.
 
-### How Schelling's Model Works
+#### How Schelling's Model Works
 
 Schelling's model will now be explained with some minor changes. Suppose there are two types of agents: X and O. The two types of agents might represent different races, ethnicity, economic status, etc. Two populations of the two agent types are initially placed into random locations of a neighborhood represented by a grid. After placing all the agents in the grid, each cell is either occupied by an agent or is empty as shown below.
 
@@ -70,11 +72,11 @@ round is complete, a new round begins, and dissatisfied agents are
 once again moved to new locations in the grid. These rounds continue
 until all agents in the neighborhood are satisfied with their location.
 
-### Working Solution
+#### Working Solution
 
 [Click here](demo/) for my working solution of this App.
 
-### Program Requirements
+#### Program Requirements
 
 For full credit, your project should observe the following requirements.
 
@@ -102,7 +104,7 @@ For full credit, your project should observe the following requirements.
 
 - Your program should demonstrate good modularity and abstraction. For instance, use of inner functions would be appreciated.
 
-### Optional Extensions
+#### Optional Extensions
 
 Have some free time? Add the following features:
 
@@ -112,11 +114,11 @@ Have some free time? Add the following features:
 
 - Create a "Set to Default" button such that, when pressed, will return all input values to the original, and updates the table to reflect the default settings.
 
-### Submission
+#### Submission
 
 Assignment submission is simple. Simply make sure that the latest code is committed and pushed into your forked repo on github (before the 12am deadline). Then send me the link to your repository on [canvas](https://canvas.pugetsound.edu).
 
-### Grading
+#### Grading
 
 ```
 CS 261 Homework (Schelling's Model)

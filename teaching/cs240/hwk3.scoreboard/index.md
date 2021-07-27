@@ -1,4 +1,6 @@
-## Homework: Scoreboard Operator
+## CS 240 - Software Engineering
+
+### Homework: Scoreboard Operator
 
 In this assignment you will be building a scoreboard and its control panel using what we've learned so far. Specifically, we'll build a scoreboard for softball (or baseball). If you're not familiar with the scoring system of this game, here's a feeble attempt at describing it. In an official game, the two teams play seven innings (nine, if baseball). Each team gets three outs per inning to try to score runs (which counts the number of players who reach home plate). After seven innings the runs are added together, and the winner is determined.
 
@@ -8,13 +10,13 @@ The status (and result) of the game is called a box score. During a game, the bo
 
 In this assignment, you will create a scoreboard and control center.
 
-### Student Outcomes
+#### Student Outcomes
 
 - Use of HTML + CSS to structure and style page elements
 - Manipulating existing DOM objects
 - Use of event listeners and callbacks
 
-### Starter Code and Git
+#### Starter Code and Git
 
 Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-scoreboard](https://github.com/davidtchiu/cs240-hwk-scoreboard). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then from your local machine, open a terminal, navigate to your directory for this class, and _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages. Push your commits up to your github repo for submission.
 
@@ -30,11 +32,11 @@ Download these files into your project directory.
 - [MP3: Charge (variation)](charge2.mp3)
 - [MP3: Build Up](buildup.mp3) -->
 
-### Working Solution
+#### Working Solution
 
 [Click here](demo/) for my working solution of this App.
 
-### Program Requirements
+#### Program Requirements
 
 For full credit, your project should observe the following requirements.
 
@@ -65,18 +67,18 @@ For full credit, your project should observe the following requirements.
   - When the right button (the one with a keyboard) is pressed, play the Chicken Dance: chickendance.mp3, and always display the sdchicken.jpg to the right of the box score.
     Pressing on another button before the song has finished may cause the music to overlap. This is okay (for now) because we don't know how to wait for the song to end.
 
-### Optional Extensions
+#### Optional Extensions
 
 Have some free time? Add the following features:
 
 - Maybe a random sound effect isn't specific enough. Add a button for each sound effect so the operator can be more selective. Feel free to add more sounds and pictures too.
 - Add a text input to the control panel. Whatever you type in that field should show up on the scoreboard.
 
-### Submission
+#### Submission
 
 Assignment submission is simple. Simply make sure that the latest code is committed and pushed into your forked `cs240-hwk-scoreboard` on github (before the 12am deadline). Then send me the link to your repository on [canvas](https://canvas.pugetsound.edu).
 
-### Grading
+#### Grading
 
 ```
 CS 240 Homework (Scoreboard Operator)

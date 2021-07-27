@@ -1,13 +1,16 @@
-## Code Along: Git Branching Exercise
+## CS 240 - Software Engineering
+
+### In-Class Exercise: Git Branching Exercise
 
 In this exercise you will be trying out basic git operations, including staging, committing, and undoing.
 
-### Student Outcomes
+#### Student Outcomes
 
 - Creating and switching between branches
 - Merging branches and resolving conflicts
+- Pushing your project onto Github
 
-### Part 1 - Working with Branches
+#### Part 1 - Working with Branches
 
 We will continue our work on the Zoo project. Open this project in VS Code, and use the Terminal to navigate within the `zoo/` directory. Type `git status` in the terminal to make sure you're in the right place, and that git is properly tracking the Zoo project.
 
@@ -130,7 +133,7 @@ We will continue our work on the Zoo project. Open this project in VS Code, and 
 
 - Commit again with the message `"added 5 baby seals to arctic.txt"`.
 
-### Part 2 - Merging Branches and Resolving Conflicts
+#### Part 2 - Merging Branches and Resolving Conflicts
 
 - Remember that the `main` branch generally represents the most stable and visible version of your code, so merging feature branches back into it is a pretty big deal. It usually undergoes rounds of review and testing. Let's see what can go wrong.
 
@@ -252,7 +255,7 @@ We will continue our work on the Zoo project. Open this project in VS Code, and 
       (_/
     ```
 
-### Part 3: Taking It to Github
+#### Part 3: Taking It to Github
 
 Happy with your contributions, your manager wants you to put this project on Github for backing up your code.
 

@@ -1,4 +1,6 @@
-## Homework: Wordplay
+## CS 240 - Software Engineering
+
+### Homework: Wordplay
 
 _This assignment is based on a true story._ David was on a long flight home from Ohio with his kids recently. To kill time, he found himself playing a few games on the back of the seats on the plane. One game, called _Wordplay_ (he thinks), was by far the most interesting.
 Here's how the game goes. The computer selects a random 6-letter word from the English dictionary. We'll call this the _root word_. The computer then scrambles the letters of this root word and displays it to the player. It is the player's job to list as many other words as they can think of that uses a subset of the root word. To reduce possibilities, the computer only considers words that are 3 or more letters in length. To remind himself of how the gameplay worked, here's a terrible picture David took on the plane. (By sheer accident, the 6-letter word happened to be _"logger"_.)
@@ -23,21 +25,21 @@ d o p e
 
 Note that the available letters from the root word are scrambled and listed on top. The player can also mix those letters up if it helps get them past a mental block. In the real game, you can see that there is a 3 minute timer before the game ends, but we'll ignore the timer for our implementation.
 
-### Student Outcomes
+#### Student Outcomes
 
 - Use of JavaScript: Functions, arrays, objects, etc.
 
-### Starter Code and Git
+#### Starter Code and Git
 
 Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-wordplay](https://github.com/davidtchiu/cs240-hwk-wordplay). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then from your local machine, open a terminal, navigate to your directory for this class, and _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages. Push your commits up to your github repo for submission.
 
-### Working Solution
+#### Working Solution
 
 - [Click here](demo/) for my working solution of this App. This is how your solution should behave when it's done. (You'll need to cancel the first run, to open the Inspector and Console, then reload the page.)
 
 - [Click here](demo2/) for testing against my App. This version lets you enter the root word and it does not hide the possible English words, so you can see if your results actually match mine. Try root words like: "popped", "grades", "joists".
 
-### Program Requirements
+#### Program Requirements
 
 For full credit, your project should observe the following requirements.
 
@@ -84,15 +86,15 @@ For full credit, your project should observe the following requirements.
   - Congratulate the user if they mananged to get all the words!
   - Otherwise, display the solution (all the valid words), as well as the number of words the player got right!
 
-### Optional Extension
+#### Optional Extension
 
 If you have time, add a 3-minute countdown timer which starts as soon as the page is loaded. When the timer hits 0, the game ends.
 
-### Submission
+#### Submission
 
 Assignment submission is simple. Simply make sure that the latest code is committed and pushed into your forked `cs240-hwk-wordplay` on github (before the 12am deadline). Then send me the link to your repository on [canvas](https://canvas.pugetsound.edu).
 
-### Grading
+#### Grading
 
 ```
 CS 240 Homework (Word Play)
