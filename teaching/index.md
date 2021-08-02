@@ -18,7 +18,10 @@ My teaching focuses on the areas of data management and computer systems. I teac
 - [CS 455 - Principles of Database Systems](cs455/)
 - [CS 475 - Operating Systems](cs475/)
 
-<br/>
+Other courses taught:
+
+- High-Performance Computing
+- Search Engines
 
 <!-- Spring 2020
 CS 161 - Introduction to Computer Science
@@ -85,7 +88,7 @@ Intro to Computer Science -->
 - **WSU Diversity Council Award**\
   WSU Vancouver, 2010
 
-- **Outstanding Graduate Student Teaching Award (Quinlan Memorial)**\
+- **Outstanding Graduate Student Teaching (Eleanor Quinlan Memorial) Award**\
   Department of Computer Science and Engineering, The Ohio State University, 2009
 
 - **Preparing Future Faculty (PFF) Fellow**\
