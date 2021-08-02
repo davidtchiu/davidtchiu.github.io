@@ -4,7 +4,8 @@
 
 ### Homework
 
-- [Hwk 1: A Better Circle](hwk1.bluej/)
+- [Hwk 1: A Better Circle](hwk1.circle/)
+
 <!-- - [Hwk 2: Wordplay](hwk2.wordplay/)
 - [Hwk 3: Scoreboard](hwk3.scoreboard/)
 - [Hwk 4: Schelling's Model](hwk4.schelling/)

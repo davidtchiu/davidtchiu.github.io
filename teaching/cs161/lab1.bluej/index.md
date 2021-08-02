@@ -101,13 +101,13 @@ Watch this video to
 
 - You still don't need a partner yet, but now it's your turn to write an algorithm to draw anything of your choosing. (Without saying, please draw something appropriate!)
 
-  - To remove Pac-Man, you can click on the reset arrow (`&#8617;`) found at the _bottom right corner_ of BlueJ. This will reset the entire process.
+  - To remove Pac-Man, you can click on the reset arrow &#8617; found at the _bottom right corner_ of BlueJ. This will reset the entire process.
 
   - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (maybe just 3-4 shapes should suffice) because your partner will have to reproduce your drawing before the lab period is over!
 
   - Now take your design from paper to screen! **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** To do this recording, open that white paper icon in BlueJ. Because your drawing will be reproduced by someone else, it is imperative that your recording is precise, i.e., record all steps, even when you input wrong values at first just to test the size and location. This recording becomes the algorithm to create your drawing.
 
-  - When you're done, erase your drawing by clicking on the reset arrow (`&#8617;`), and wait until "time" is called.
+  - When you're done, erase your drawing by clicking on the reset arrow &#8617;, and wait until "time" is called.
 
   - When we call "time", you will need to find another student and exchange algorithms (you can email them your algorithm, for example). By following their algorithm _faithfully_, try and reproduce each other's drawings! Follow the other student's instructions exactly as stated, even if you think you found an error.
 
