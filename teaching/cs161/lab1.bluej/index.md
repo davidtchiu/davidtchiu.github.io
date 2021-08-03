@@ -19,7 +19,7 @@ The following file(s) have been provided for this lab.
 
 #### Preliminary: Where to Save My Files?
 
-Watch this video to learn how to save and open BlueJ files.
+If you haven't already, please Watch this video to learn how to save and open BlueJ files for this course.
 
 #### Part 1: Getting Started
 
