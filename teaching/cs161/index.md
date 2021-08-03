@@ -14,3 +14,4 @@
 ### Labs
 
 - [Lab 1: Draw My Picture](lab1.bluej/)
+- [Lab 2: Variables and Scope](lab2.vars/)
