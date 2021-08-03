@@ -27,7 +27,7 @@ If you haven't already, please Watch this video to learn how to save and open Bl
 
 - Download the project from the link above. You will need to save the `.zip` file to your computer. The actual project files are stored inside this compressed zip, and you need to first extract its contents before BlueJ can open the project.
 
-  - On a Windows machine, double-click on this zip file, and you should find two folders in the file explorer. Ignore the Mac OSX folder, now drag the Lab1_Shapes folder to a place you'll remember (like into a dedicated folder for this course). You may close out and delete the zip file. Navigate to that project folder before moving on.
+  - On a Windows machine, double-click on this zip file, and you should find two folders in the file explorer. Ignore the Mac OS X folder, now drag the Lab1_Shapes folder to a place you'll remember (like into a dedicated folder for this course). You may close out and delete the zip file. Navigate to that project folder before moving on.
 
   - On a Mac, double-clicking the file should extract the project folder in the current folder as the compressed file. If you have any problems with this process, let us know!
 
