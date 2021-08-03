@@ -27,7 +27,7 @@ If you haven't already, please Watch this video to learn how to save and open Bl
 
 - Download the project from the link above. You will need to save the `.zip` file to your computer. The actual project files are stored inside this compressed zip, and you need to first extract its contents before BlueJ can open the project.
 
-  - On a Windows machine, double-click on this zip file, and you should find two folders in the file explorer. Ignore the MacOSX folder, now drag the Lab1_Shapes folder to a place you'll remember (like into a dedicated folder for this course). You may close out and delete the zip file. Navigate to that project folder before moving on.
+  - On a Windows machine, double-click on this zip file, and you should find two folders in the file explorer. Ignore the Mac OSX folder, now drag the Lab1_Shapes folder to a place you'll remember (like into a dedicated folder for this course). You may close out and delete the zip file. Navigate to that project folder before moving on.
 
   - On a Mac, double-clicking the file should extract the project folder in the current folder as the compressed file. If you have any problems with this process, let us know!
 
@@ -41,7 +41,7 @@ If you haven't already, please Watch this video to learn how to save and open Bl
 
   If something goes wrong when you click `Compile`, it's typically because either Java isn't properly installed on your machine, or BlueJ hasn't been configured properly and is having trouble finding the Java compiler. Let us know if this step fails, and we'll be happy to help you sort things out.
 
-### Part 2: From Shapes to Pictures
+#### Part 2: From Shapes to Pictures
 
 - Now that you have the project open and compiled, you can start creating and manipulating objects.
 
