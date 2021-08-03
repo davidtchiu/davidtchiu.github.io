@@ -13,4 +13,4 @@
 
 ### Labs
 
-- [Draw My Picture](lab1.bluej/)
+- [Lab 1: Draw My Picture](lab1.bluej/)
