@@ -1,4 +1,4 @@
-## CS 240 - Software Engineering
+## CS 161 - Intro to Computer Science
 
 ### Lab: Draw My Picture
 
@@ -19,7 +19,7 @@ The following file(s) have been provided for this lab.
 
 #### Preliminary: Where to Save My Files?
 
-Watch this video to
+Watch this video to learn how to save and open BlueJ files.
 
 #### Part 1: Getting Started
 
@@ -115,7 +115,7 @@ Watch this video to
 
 #### Part 4: Answering Questions in the README file
 
-Back in BlueJ's project window, open up the README.txt file by double-clicking on the white paper icon ![](readme-icon.png).
+Back in BlueJ's project window, open up the README.txt file by double-clicking on the white paper icon ![](figures/readme-icon.png).
 In general, the README file never contains any programming elements, and is used to let you describe your program.
 
 - First, add your name to the Authors list.
