@@ -1,6 +1,7 @@
 ## CS 161 - Introduction to Computer Science
 
 [Course Syllabus](CS161-syllabus.pdf)
+
 [Visit Canvas for Full Schedule](https://canvas.pugetsound.edu)
 
 ### Homework

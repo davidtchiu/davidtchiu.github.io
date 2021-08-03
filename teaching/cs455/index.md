@@ -1,6 +1,7 @@
 ## CS 455 - Principles of Database Systems
 
 [Course Syllabus](CS455-syllabus.pdf)
+
 [Visit Canvas for Full Schedule](https://canvas.pugetsound.edu)
 
 ### Homework Assignments
