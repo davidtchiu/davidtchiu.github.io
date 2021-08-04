@@ -165,14 +165,26 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 ```
 This assignment will be graded out of a total of 75pts.
 
-    [2pts] Appropriate constructor(s) have been implemented.
-    [3pts] The reset method has been properly implemented.
-    [10pts] isHashtag and isMention have been implemented using proper calls to String methods.
+    [2pts]  Appropriate constructor(s) have been implemented.
+
+    [3pts]  The reset method has been properly implemented.
+
+    [10pts] isHashtag and isMention have been implemented using
+            proper calls to String methods.
+
     [10pts] toString() is properly implemented.
-    [30pts] processTweet successfully implemented to tokenize tweet using split() and update the stats accordingly.
-    [10pts] processTweet manages an ArrayList of hashtags. A new hashtag is only added when it doesn't already exist (ignore case).
+
+    [30pts] processTweet successfully implemented to tokenize
+            tweet using split() and update the stats accordingly.
+
+    [10pts] processTweet manages an ArrayList of hashtags. A new
+            hashtag is only added when it doesn't already exist
+            (ignore case).
+
     [5pts] You re-use code whenever possible.
-    [5pts] You provide Javadocs style comments for any new methods implemented. You include sufficient inline
+
+    [5pts] You provide Javadocs style comments for any new methods
+           implemented. You include sufficient inline
            comments to explain the logic of your methods.
 ```
 
