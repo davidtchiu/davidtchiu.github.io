@@ -193,10 +193,10 @@ where `x` and `y` are the coordinates for the Robot's reference point.
 
 - Important: Your dance routine must employ at least two loops. Here's a snippet of my dance routine below. I simply ask the Robots to move apart twice, then move together twice, and repeat. Feel free to create your own dance routine, adding even more methods if necessary. Also remember that all those Robot's methods you wrote earlier are available to you (e.g., moveVertical, moveHorizontal, moveTo, ...).
 
-      <video width="420" controls>
-        <source src="https://gyazo.com/c71245b5f41e631a7aed80e6642ec3da.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <video width="420" controls>
+    <source src="https://gyazo.com/c71245b5f41e631a7aed80e6642ec3da.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
 #### Program Defensively
 
@@ -267,4 +267,4 @@ Exit BlueJ
 
 #### Credits
 
-Adapted for use from a previous assignment by Brad Richards. Shape classes provided by BlueJ.
+Written by David Chiu and Joel Ross.

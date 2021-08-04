@@ -10,6 +10,7 @@
 - [Hwk 2: Calculator](hwk2.calc/)
 - [Hwk 3: Orca Card](hwk3.orca/)
 - [Hwk 4: Robot!](hwk4.robot/)
+- [Hwk 5: Loops](hwk5.loops/)
 
 ### Labs
 
