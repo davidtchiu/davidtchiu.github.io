@@ -37,30 +37,30 @@ Download the [PooledTesting Project](Hwk7_PooledTesting.zip) and open it in Blue
 
 ```
 pool    sample
-A   0
-A   2
-A   3
-A   7
-B   4
-B   5
-B   6
-B   1
-C   0
-C   3
-C   4
-C   1
-D   5
-D   6
-D   7
-D   2
-E   0
-E   4
-E   5
-E   2
-F   6
-F   7
-F   1
-F   3
+A       0
+A       2
+A       3
+A       7
+B       4
+B       5
+B       6
+B       1
+C       0
+C       3
+C       4
+C       1
+D       5
+D       6
+D       7
+D       2
+E       0
+E       4
+E       5
+E       2
+F       6
+F       7
+F       1
+F       3
 ```
 
 You should use this example for testing as you write your program.

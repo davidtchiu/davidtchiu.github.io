@@ -6,7 +6,7 @@ Business at David's Casino is flourishing, but customers have been complaining t
 
 <img width="200px" src="figures/BlackJack.jpg" />
 
-### Student Outcomes
+#### Student Outcomes
 
 - Use of constants, enums
 - Writing the main method
@@ -63,9 +63,7 @@ A quick word on face values. The face value of each card can usually be added to
 
 - The `String toString()` method, which returns a String representing the Hand. The String should show each Card in the hand on the same line, followed by the value of the Hand and whether it is bust, and whether it is a Black Jack on the same line. See code examples below for help.
 
-- Code pad examples
-
-  The first example below shows the effect of counting Aces.
+- The first example below shows the effect of counting Aces.
 
         ```java
         Card c1 = new Card(Suit.CLUB, 1);
@@ -89,7 +87,6 @@ A quick word on face values. The face value of each card can usually be added to
         System.out.println(myHand);
 
         > <club,A> <diamond,A> <diamond,Q> <heart,A> <diamond,J> (23 -- Bust!)
-
         ```
 
 The following example shows a Black Jack, and some subsequent hits.
