@@ -129,8 +129,6 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
 
 - Food for Thought: By now, you've probably played the game several times to test your program. Have you figured out a guessing strategy based on the "higher" or "lower" information that minimizes the number of guesses you need to find the secret number? (Foreshadowing: Could such a strategy be useful in other ways...?)
 
-#### Extras
-
 #### Grading
 
 ```
@@ -165,7 +163,7 @@ Exit BlueJ
 
 #### Credits
 
-Adapted for use from a previous lab by America Chambers.
+Written by David Chiu and Joel Ross.
 
 #### Lab Attendance Policies
 
