@@ -159,19 +159,19 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
 
 - Write the `public static void main(String[] args)` method.
 
-        - It starts by printing a "startup/welcome message" to the sucker (I mean human player) who will be playing against your algorithm. Create a Deck here and shuffle it a few times! Then create two Hands: a Hand for the AI and a Hand for the human-player. Make sure both AI and human-player Hands remember the Deck you just created.
+  - It starts by printing a "startup/welcome message" to the sucker (I mean human player) who will be playing against your algorithm. Create a Deck here and shuffle it a few times! Then create two Hands: a Hand for the AI and a Hand for the human-player. Make sure both AI and human-player Hands remember the Deck you just created.
 
-        - If the human has a Black Jack, then the game ends. That is, neither the human nor the AI gets to hit. (The AI can push if it also gets a Black Jack.) If the human doesn't get a Black Jack however, the game must go on...
+  - If the human has a Black Jack, then the game ends. That is, neither the human nor the AI gets to hit. (The AI can push if it also gets a Black Jack.) If the human doesn't get a Black Jack however, the game must go on...
 
-        - Print the AI's second Card (but don't reveal the first Card to the human). Also print the human's hand to the screen.
+  - Print the AI's second Card (but don't reveal the first Card to the human). Also print the human's hand to the screen.
 
-        - Prompt the user to either hit or hold. Scan in the user's response. If they typed in "hit," then deal them another Card and print out their hand again. Continue to prompt them to hit or hold until the human either busts or types in "hold."
+  - Prompt the user to either hit or hold. Scan in the user's response. If they typed in "hit," then deal them another Card and print out their hand again. Continue to prompt them to hit or hold until the human either busts or types in "hold."
 
-        - If the user enters anything but hit or hold, then you must output an error and re-prompt.
+  - If the user enters anything but hit or hold, then you must output an error and re-prompt.
 
-        - Afterwards, if the human is bust, then the AI doesn't need to hit. The human loses immediately. Otherwise, the AI hits until its Hand holds at least a value of 18, or bust. After AI's action is performed, you must compare two hands, and either determine a winner or a push (if there's a tie).
+  - Afterwards, if the human is bust, then the AI doesn't need to hit. The human loses immediately. Otherwise, the AI hits until its Hand holds at least a value of 18, or bust. After AI's action is performed, you must compare two hands, and either determine a winner or a push (if there's a tie).
 
-        - When the game ends, you must print off both Hands and the result of the Game.
+  - When the game ends, you must print off both Hands and the result of the Game.
 
 - See code example below for a sample interaction.
 
