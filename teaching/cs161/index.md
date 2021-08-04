@@ -11,6 +11,10 @@
 - [Hwk 3: Orca Card](hwk3.orca/)
 - [Hwk 4: Robot!](hwk4.robot/)
 - [Hwk 5: Loops](hwk5.loops/)
+- [Hwk 6: Tweet Processor](hwk6.twitter/)
+- [Hwk 7: Pooled Testing](hwk7.pooled/)
+- [Hwk 8 (prep)](hwk8.prep/)
+- [Hwk 8 (alternate): Black Jack](hwk8.blackjack/)
 
 ### Labs
 
