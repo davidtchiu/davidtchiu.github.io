@@ -15,26 +15,26 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 - **(Not nested)** `stringRepeat()` which inputs a String `str` and an integer `num`. It returns a String in which `str` is
   is appended to itself `num` times. An empty string should be returned if `nums <= 0`.
 
-```java
-Loops loopie = new Loops();
-System.out.println(loopie.stringRepeat("#", 5));
-> #####
+  ```java
+  Loops loopie = new Loops();
+  System.out.println(loopie.stringRepeat("#", 5));
+  > #####
 
-System.out.println(loopie.stringRepeat("wuff ", 3));
-> wuff wuff wuff
+  System.out.println(loopie.stringRepeat("wuff ", 3));
+  > wuff wuff wuff
 
-System.out.println(loopie.stringRepeat("#", 1));
-> #
+  System.out.println(loopie.stringRepeat("#", 1));
+  > #
 
-System.out.println(loopie.stringRepeat("#", 0));
->
+  System.out.println(loopie.stringRepeat("#", 0));
+  >
 
-System.out.println(loopie.stringRepeat("#", -5));
->
+  System.out.println(loopie.stringRepeat("#", -5));
+  >
 
-System.out.println(loopie.stringRepeat(loopie.stringRepeat("!", 2), 4));
-> !!!!!!!!
-```
+  System.out.println(loopie.stringRepeat(loopie.stringRepeat("!", 2), 4));
+  > !!!!!!!!
+  ```
 
 - **(Not nested)** Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the String API handy to help you.
 
@@ -104,7 +104,7 @@ System.out.println(loopie.stringRepeat(loopie.stringRepeat("!", 2), 4));
   29
   ```
 
-- `printDownTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. This method requires a nested loop.
+- **(Nested)** `printDownTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. This method requires a nested loop.
 
   ```java
   Loops l = new Loops();
@@ -171,6 +171,8 @@ System.out.println(loopie.stringRepeat(loopie.stringRepeat("!", 2), 4));
 
 #### Optional (for more Loop practice)
 
+I strongly recommend any student (especially those hoping to minor/major) to complete all of these as well.
+
 - **(Not nested; involves arrays)** Write a method called `instancesOf()` that inputs an array of integers, an integer `M`, and an integer
   `N`. This method returns a boolean true if it can find exactly `N` copies of `M` in the array, and false otherwise.
 
@@ -205,21 +207,21 @@ System.out.println(loopie.stringRepeat(loopie.stringRepeat("!", 2), 4));
   Loops l = new Loops();
   l.printRightTriangle(5);
       *
-    **
+     **
     ***
-  ****
+   ****
   *****
 
   l.printRightTriangle(10);
-          *
+           *
           **
-        ***
+         ***
         ****
-      *****
+       *****
       ******
-    *******
+     *******
     ********
-  *********
+   *********
   **********
   ```
 
@@ -253,10 +255,6 @@ System.out.println(loopie.stringRepeat(loopie.stringRepeat("!", 2), 4));
   System.out.println(Arrays.toString(loopie.merge(A,B)));
   > [1,2,3,4,5,6,8,10]
   ```
-
-#### Extending the Homework
-
-Looking for additional challenges? Add code to the `buyTrip()` method so that it also prints out a simulated ticket, showing the cost, the amount paid in tax, and the remaining balance on the card. You could add a `cheatIRS()` method that moves the amount you've collected as tax over to the balance of the card. Look into ways to tidy up the dollar amounts so that they always have two digits after the decimal point. In my output, I printed trip(s) so that it sounded ok whether there had been one trip or more. It would look even better if you added some code that looked at the number of trips and either used trip or trips as appropriate.
 
 #### Program Defensively
 
