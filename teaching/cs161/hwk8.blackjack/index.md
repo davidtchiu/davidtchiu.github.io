@@ -153,34 +153,48 @@ A quick word on face values. The face value of each card can usually be added to
 
 #### Writing the Game Class
 
+Good work! Now we need a way to play Black Jack with the computer. Do the following:
+
+- Create a class `Game`. It will initiate the game itself when people run your program. It requires no fields. You may write as many (static) helper methods as you'd like, but you must provide a main method (below).
+
+- Write the `public static void main(String[] args)` method.
+
+  - It starts by printing a "startup/welcome message" to the sucker (I mean human player) who will be playing against your algorithm. Create a Deck here and shuffle it a few times! Then create two Hands: a Hand for the AI and a Hand for the human-player. Make sure both AI and human-player Hands remember the Deck you just created.
+  - If the human has a Black Jack, then the game ends. That is, neither the human nor the AI gets to hit. (The AI can push if it also gets a Black Jack.) If the human doesn't get a Black Jack however, the game must go on.
+  - Print the AI's second Card (but don't reveal the first Card to the human). Also print the human's hand to the screen.
+  - Prompt the user to either hit or hold. Scan in the user's response. If they typed in "hit," then deal them another Card and print out their hand again. Continue to prompt them to hit or hold until the human either busts or types in "hold."
+  - If the user enters anything but hit or hold, then you must output an error and re-prompt.
+  - Afterwards, if the human is bust, then the AI doesn't need to hit. The human loses immediately. Otherwise, the AI hits until its Hand holds at least a value of 18, or bust. After AI's action is performed, you must compare two hands, and either determine a winner or a push (if there's a tie).
+  - When the game ends, you must print off both Hands and the result of the Game.
+
 - The first example below shows the AI busting.
 
-  ```java
-  *** Welcome to Black Jack! Prepare to lose. ***
+```
+*** Welcome to Black Jack! Prepare to lose. ***
 
-  AI: <???>, <diamond,10>
-  Player: <diamond,3> <heart,A> (14)
+AI: <???>, <diamond,10>
+Player: <diamond,3> <heart,A> (14)
 
-  What will you do (enter either 'hold' or 'hit')?
-  > hit
+What will you do (enter either 'hold' or 'hit')?
+> hit
 
-  AI: <???>, <diamond,10>
-  Player: <diamond,3> <heart,A> <spade,5> (19)
+AI: <???>, <diamond,10>
+Player: <diamond,3> <heart,A> <spade,5> (19)
 
-  What will you do (enter either 'hold' or 'hit')?
-  > hold
+What will you do (enter either 'hold' or 'hit')?
+> hold
 
-  ***************************
-  ***      Game Over      ***
-  ***      You win!       ***
-  ***************************
-  AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
-  Player: <diamond,3> <heart,A> <spade,5> (19)
-  ```
+***************************
+***      Game Over      ***
+***      You win!       ***
+***************************
+AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
+Player: <diamond,3> <heart,A> <spade,5> (19)
+```
 
 - The second example shows that neither AI and human busts, but human wins.
 
-  ```java
+  ```
   *** Welcome to Black Jack! Prepare to lose. ***
   AI: <???>, <diamond,A>
   Player: <diamond,3> <diamond,4> (7)
@@ -211,7 +225,7 @@ A quick word on face values. The face value of each card can usually be added to
 
 - The third example shows the human busting.
 
-  ```java
+  ```
   *** Welcome to Black Jack! Prepare to lose. ***
 
   AI: <???>, <club,3>
@@ -232,7 +246,7 @@ A quick word on face values. The face value of each card can usually be added to
 
 - The final example shows a push (tie).
 
-  ```java
+  ```
   *** Welcome to Black Jack! Prepare to lose. ***
 
   AI: <???>, <club,K>
