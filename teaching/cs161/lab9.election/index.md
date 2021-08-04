@@ -112,7 +112,3 @@ Written by David Chiu.
 #### Lab Attendance Policies
 
 Attendance is required for lab. Unexcused absence = no credit even if you turned in the lab. Unexcused tardiness = half credit.
-
-```
-
-```
