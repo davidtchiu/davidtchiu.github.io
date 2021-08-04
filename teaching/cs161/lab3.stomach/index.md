@@ -142,7 +142,7 @@ The API handout that you'll want to have in front of you:
 
 - If everything is working, you should get something similar to what I got below. Because `digest()` is random, most your values will likely differ. But read through your output carefully to make sure everything makes sense.
 
-  ```java
+  ```
   Creating a new stomach...
   Ingested: 0,  digested: 0
 
