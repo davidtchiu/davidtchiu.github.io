@@ -20,3 +20,5 @@
 
 - [Lab 1: Draw My Picture](lab1.bluej/)
 - [Lab 2: Variables and Scope](lab2.vars/)
+- [Lab 3: Stomach Class](lab3.stomach/)
+-
