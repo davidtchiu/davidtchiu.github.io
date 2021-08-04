@@ -109,7 +109,7 @@ The API handout that you'll want to have in front of you:
   }
   ```
 
-s#### Grading
+#### Grading
 
 ```
 This lab assignment will be graded out of a total of 10pts provided the following
