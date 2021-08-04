@@ -65,91 +65,91 @@ A quick word on face values. The face value of each card can usually be added to
 
 - The first example below shows the effect of counting Aces.
 
-        ```java
-        Card c1 = new Card(Suit.CLUB, 1);
-        Card c2 = new Card(Suit.DIAMOND, 1);
-        Hand myHand = new Hand(c1, c2);
-        System.out.println(myHand);
+  ```java
+  Card c1 = new Card(Suit.CLUB, 1);
+  Card c2 = new Card(Suit.DIAMOND, 1);
+  Hand myHand = new Hand(c1, c2);
+  System.out.println(myHand);
 
-        > <club,A> <diamond,A> (12)
+  > <club,A> <diamond,A> (12)
 
-        myHand.hit(); //got a queen (10)!
-        System.out.println(myHand);
+  myHand.hit(); //got a queen (10)!
+  System.out.println(myHand);
 
-        > <club,A> <diamond,A> <diamond,Q> (12)
+  > <club,A> <diamond,A> <diamond,Q> (12)
 
-        myHand.hit(); //got another Ace (1)!
-        System.out.println(myHand);
+  myHand.hit(); //got another Ace (1)!
+  System.out.println(myHand);
 
-        > <club,A> <diamond,A> <diamond,Q> <heart,A> (13)
+  > <club,A> <diamond,A> <diamond,Q> <heart,A> (13)
 
-        myHand.hit(); //got a jack (10)!
-        System.out.println(myHand);
+  myHand.hit(); //got a jack (10)!
+  System.out.println(myHand);
 
-        > <club,A> <diamond,A> <diamond,Q> <heart,A> <diamond,J> (23 -- Bust!)
-        ```
+  > <club,A> <diamond,A> <diamond,Q> <heart,A> <diamond,J> (23 -- Bust!)
+  ```
 
 - The following example shows a Black Jack, and some subsequent hits.
 
-        ```java
-        Card c1 = new Card(Suit.CLUB, 1);
-        Card c2 = new Card(Suit.SPADE, 12);
-        Hand myHand = new Hand(c1, c2);
-        myHand.isBlackJack()
-        > true   (boolean)
+  ```java
+  Card c1 = new Card(Suit.CLUB, 1);
+  Card c2 = new Card(Suit.SPADE, 12);
+  Hand myHand = new Hand(c1, c2);
+  myHand.isBlackJack()
+  > true   (boolean)
 
-        System.out.println(myHand);
-        > <club,A> <spade,Q> (21 -- Black Jack!)
+  System.out.println(myHand);
+  > <club,A> <spade,Q> (21 -- Black Jack!)
 
-        myHand.hit();
-        System.out.println(myHand);
-        > <club,A> <spade,Q> <heart,5> (16)
+  myHand.hit();
+  System.out.println(myHand);
+  > <club,A> <spade,Q> <heart,5> (16)
 
-        myHand.hit();
-        System.out.println(myHand);
-        > <club,A> <spade,Q> <heart,5> <spade,J> (26 -- Bust!)
+  myHand.hit();
+  System.out.println(myHand);
+  > <club,A> <spade,Q> <heart,5> <spade,J> (26 -- Bust!)
 
-        myHand.hit(); //hit should have no effect since hand is bust
-        System.out.println(myHand);
-        > <club,A> <spade,Q> <heart,5> <spade,J> (26 -- Bust!)
-        ```
+  myHand.hit(); //hit should have no effect since hand is bust
+  System.out.println(myHand);
+  > <club,A> <spade,Q> <heart,5> <spade,J> (26 -- Bust!)
+  ```
 
 - The final example shows the effect of comparing two hands.
 
-        ```java
-        //start with the same hands (both Black Jacks, in fact)
-        Hand myHand = new Hand(new Card(Suit.CLUB, 1), new Card(Suit.SPADE, 10));
-        Hand yourHand = new Hand(new Card(Suit.DIAMOND, 1), new Card(Suit.CLUB, 13));
-        myHand.defeats(yourHand)
-        > false   (boolean)
+  ```java
+  //start with the same hands (both Black Jacks, in fact)
+  Hand myHand = new Hand(new Card(Suit.CLUB, 1), new Card(Suit.SPADE, 10));
+  Hand yourHand = new Hand(new Card(Suit.DIAMOND, 1), new Card(Suit.CLUB, 13));
+  myHand.defeats(yourHand)
+  > false   (boolean)
 
-        yourHand.defeats(myHand)
-        > false   (boolean)
+  yourHand.defeats(myHand)
+  > false   (boolean)
 
-        yourHand.pushes(myHand)
-        > true    (boolean)
+  yourHand.pushes(myHand)
+  > true    (boolean)
 
-        yourHand.hit();
-        myHand.defeats(yourHand)
-        > true   (boolean)
+  yourHand.hit();
+  myHand.defeats(yourHand)
+  > true   (boolean)
 
-        System.out.println(yourHand);
-        > <club,A> <spade,10> <heart,7> (18)
+  System.out.println(yourHand);
+  > <club,A> <spade,10> <heart,7> (18)
 
-        System.out.println(myHand);
-        > <club,A> <spade,10> (21 -- Black Jack!)
+  System.out.println(myHand);
+  > <club,A> <spade,10> (21 -- Black Jack!)
 
-        myHand.hit();
-        myHand.hit();
-        myHand.defeats(yourHand)
-        > false   (boolean)
+  myHand.hit();
+  myHand.hit();
+  myHand.defeats(yourHand)
+  > false   (boolean)
 
-        yourHand.defeats(myHand)
-        > true   (boolean)
+  yourHand.defeats(myHand)
+  > true   (boolean)
 
-        System.out.println(myHand);
-        > <club,A> <spade,10> <club,6> <spade,J> (27 -- Bust!)
-        ```
+  System.out.println(myHand);
+  > <club,A> <spade,10> <club,6> <spade,J> (27 -- Bust!)
+  ```
 
 #### Writing the Game Class
 
@@ -177,97 +177,97 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
 
 - The first example below shows the AI busting.
 
-        ```java
-        *** Welcome to Black Jack! Prepare to lose. ***
+  ```java
+  *** Welcome to Black Jack! Prepare to lose. ***
 
-        AI: <???>, <diamond,10>
-        Player: <diamond,3> <heart,A> (14)
+  AI: <???>, <diamond,10>
+  Player: <diamond,3> <heart,A> (14)
 
-        What will you do (enter either 'hold' or 'hit')?
-        > hit
+  What will you do (enter either 'hold' or 'hit')?
+  > hit
 
-        AI: <???>, <diamond,10>
-        Player: <diamond,3> <heart,A> <spade,5> (19)
+  AI: <???>, <diamond,10>
+  Player: <diamond,3> <heart,A> <spade,5> (19)
 
-        What will you do (enter either 'hold' or 'hit')?
-        > hold
+  What will you do (enter either 'hold' or 'hit')?
+  > hold
 
-        ***************************
-        ***      Game Over      ***
-        ***      You win!       ***
-        ***************************
-        AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
-        Player: <diamond,3> <heart,A> <spade,5> (19)
-        ```
+  ***************************
+  ***      Game Over      ***
+  ***      You win!       ***
+  ***************************
+  AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
+  Player: <diamond,3> <heart,A> <spade,5> (19)
+  ```
 
 - The second example shows that neither AI and human busts, but human wins.
 
-        ```java
-        *** Welcome to Black Jack! Prepare to lose. ***
-        AI: <???>, <diamond,A>
-        Player: <diamond,3> <diamond,4> (7)
-        What will you do (enter either 'hold' or 'hit')?
-        hit
+  ```java
+  *** Welcome to Black Jack! Prepare to lose. ***
+  AI: <???>, <diamond,A>
+  Player: <diamond,3> <diamond,4> (7)
+  What will you do (enter either 'hold' or 'hit')?
+  hit
 
-        AI: <???>, <diamond,A>
-        Player: <diamond,3> <diamond,4> <spade,7> (14)
-        What will you do (enter either 'hold' or 'hit')?
-        hit
+  AI: <???>, <diamond,A>
+  Player: <diamond,3> <diamond,4> <spade,7> (14)
+  What will you do (enter either 'hold' or 'hit')?
+  hit
 
-        AI: <???>, <diamond,A>
-        Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> (18)
-        What will you do (enter either 'hold' or 'hit')?
-        hit
+  AI: <???>, <diamond,A>
+  Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> (18)
+  What will you do (enter either 'hold' or 'hit')?
+  hit
 
-        AI: <???>, <diamond,A>
-        Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
-        What will you do (enter either 'hold' or 'hit')?
-        hold
-        ***************************
-        ***      Game Over      ***
-        ***      You win!       ***
-        ***************************
-        AI: <diamond,8> <diamond,A> (19)
-        Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
-        ```
+  AI: <???>, <diamond,A>
+  Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
+  What will you do (enter either 'hold' or 'hit')?
+  hold
+  ***************************
+  ***      Game Over      ***
+  ***      You win!       ***
+  ***************************
+  AI: <diamond,8> <diamond,A> (19)
+  Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
+  ```
 
 - The third example shows the human busting.
 
-        ```java
-        *** Welcome to Black Jack! Prepare to lose. ***
+  ```java
+  *** Welcome to Black Jack! Prepare to lose. ***
 
-        AI: <???>, <club,3>
-        Player: <club,J> <heart,6> (16)
-        What will you do (enter either 'hold' or 'hit')?
-        hit
+  AI: <???>, <club,3>
+  Player: <club,J> <heart,6> (16)
+  What will you do (enter either 'hold' or 'hit')?
+  hit
 
-        AI: <???>, <club,3>
-        Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
+  AI: <???>, <club,3>
+  Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
 
-        ***************************
-        ***      Game Over      ***
-        ***      You lose!      ***
-        ***************************
-        AI: <club,3> <club,3> (6)
-        Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
-        ```
+  ***************************
+  ***      Game Over      ***
+  ***      You lose!      ***
+  ***************************
+  AI: <club,3> <club,3> (6)
+  Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
+  ```
 
 - The final example shows a push (tie).
 
-        ```java
-        *** Welcome to Black Jack! Prepare to lose. ***
+  ```java
+  *** Welcome to Black Jack! Prepare to lose. ***
 
-        AI: <???>, <club,K>
-        Player: <diamond,10> <heart,8> (18)
-        What will you do (enter either 'hold' or 'hit')?
-        hold
-        ***************************
-        ***      Game Over      ***
-        ***      You pushed     ***
-        ***************************
-        AI: <club,2> <club,K> <spade,5> <club,A> (18)
-        Player: <diamond,10> <heart,8> (18)
-        ```
+  AI: <???>, <club,K>
+  Player: <diamond,10> <heart,8> (18)
+  What will you do (enter either 'hold' or 'hit')?
+  hold
+  ***************************
+  ***      Game Over      ***
+  ***      You pushed     ***
+  ***************************
+  AI: <club,2> <club,K> <spade,5> <club,A> (18)
+  Player: <diamond,10> <heart,8> (18)
+  ```
 
 #### Extensions
 
