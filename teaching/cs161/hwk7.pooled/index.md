@@ -1,6 +1,8 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Pooled Sample TestingIn this assignment you will be writing a program to perform Pooled Sample Testing analysis and dealing with real Covid-19 infection data.
+### Homework: Pooled Sample Testing
+
+In this assignment you will be writing a program to perform Pooled Sample Testing analysis and dealing with real Covid-19 infection data.
 
 Ready access and frequent testing are keys to curtailing the spread of novel viruses, and it is widely documented that the shortage of testing supplies has diminished our ability to curtail the current COVID-19 pandemic. One longstanding idea to handle testing shortages is through a strategy called Pooled Sample Testing. In this method, samples are grouped into "pools" of equal size. Samples are then mixed with other samples that share the same pool and then tested. By analyzing which pools tested positive, scientists are able to identify those individuals testing positive with a high degree of accuracy. In [a 2020 study](https://advances.sciencemag.org/content/early/2020/08/20/sciadv.abc5961), Israeli scientists were able to reduce the number of COVID-19 tests by a factor of 8!
 
