@@ -80,12 +80,12 @@ The following file(s) have been provided for this assignment.
 
 - Write a method, `shakeHead()` that causes the Robot to shake its head horizontally (see video below).
 
-      <video width="420" controls>
-        <source src="https://i.gyazo.com/02a78f5a6a8a3555af5f2b4694070964.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+<video width="420" controls>
+  <source src="https://i.gyazo.com/02a78f5a6a8a3555af5f2b4694070964.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-  Thanks to abstraction, we can ignore how to get the head to move smoothly (since Circle objects already provide that functionality!) and focus on making the movements appear like it's shaking side to side. This method should only be a few lines of code. Test and ensure it is working.
+Thanks to abstraction, we can ignore how to get the head to move smoothly (since Circle objects already provide that functionality!) and focus on making the movements appear like it's shaking side to side. This method should only be a few lines of code. Test and ensure it is working.
 
 - Write a method, `waveHand()` that causes the Robot to raise its left hand up and down twice (see video above). Again, this method should only be a few line of code.
 
@@ -193,10 +193,10 @@ where `x` and `y` are the coordinates for the Robot's reference point.
 
 - Important: Your dance routine must employ at least two loops. Here's a snippet of my dance routine below. I simply ask the Robots to move apart twice, then move together twice, and repeat. Feel free to create your own dance routine, adding even more methods if necessary. Also remember that all those Robot's methods you wrote earlier are available to you (e.g., moveVertical, moveHorizontal, moveTo, ...).
 
-  <video width="420" controls>
-    <source src="https://gyazo.com/c71245b5f41e631a7aed80e6642ec3da.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<video width="420" controls>
+  <source src="https://gyazo.com/c71245b5f41e631a7aed80e6642ec3da.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 #### Program Defensively
 
