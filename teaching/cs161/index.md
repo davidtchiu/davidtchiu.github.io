@@ -22,3 +22,4 @@
 - [Lab 2: Variables and Scope](lab2.vars/)
 - [Lab 3: Stomach Class](lab3.stomach/)
 - [Lab 4: Guessing Game](lab4.guessing/)
+- [Lab 5: Circle Drawer](lab5.circleDrawer/)
