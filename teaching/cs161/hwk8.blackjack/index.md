@@ -50,7 +50,7 @@ A quick word on face values. The face value of each card can usually be added to
 
 - A method, `boolean isBust()` which accepts no input arguments, and determines whether or not the value of the hand exceeds 21.
 
-- A method, `boolean isBlackJack()` which accepts no input arguments, and determines whether or not the current Hand holds a Black Jack. This can only occur when the the Hand holds exactly two cards, and the value of the Hand is _21_. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s).
+- A method, `boolean isBlackJack()` which accepts no input arguments, and determines whether or not the current Hand holds a Black Jack. This can only occur when the the Hand holds exactly two cards, and the value of the Hand is **21**. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s).
 
 - A method, `void hit()` which accepts no input arguments. It draws the top card from the associated `Deck` object and adds it to the current hand. If the hand is already bust, this method performs no action.
 
@@ -89,7 +89,7 @@ A quick word on face values. The face value of each card can usually be added to
         > <club,A> <diamond,A> <diamond,Q> <heart,A> <diamond,J> (23 -- Bust!)
         ```
 
-The following example shows a Black Jack, and some subsequent hits.
+- The following example shows a Black Jack, and some subsequent hits.
 
         ```java
         Card c1 = new Card(Suit.CLUB, 1);
@@ -114,7 +114,7 @@ The following example shows a Black Jack, and some subsequent hits.
         > <club,A> <spade,Q> <heart,5> <spade,J> (26 -- Bust!)
         ```
 
-The final example shows the effect of comparing two hands.
+- The final example shows the effect of comparing two hands.
 
         ```java
         //start with the same hands (both Black Jacks, in fact)
