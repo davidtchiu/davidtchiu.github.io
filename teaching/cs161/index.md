@@ -7,6 +7,8 @@
 ### Homework
 
 - [Hwk 1: A Better Circle](hwk1.circle/)
+- [Hwk 2: Calculator](hwk2.calc/)
+- [Hwk 3: Orca Card](hwk3.orca/)
 
 ### Labs
 
