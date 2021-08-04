@@ -77,14 +77,14 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
 
 - **Upgrade #1 - Congratulate or Mock the Player:** When the user guesses the answer correctly, we now want to either mock or compliment them depending on the number of guesses it took. (Now your game needs to know how many tries it's taking the user!) Using the table below, print out the appropriate message when the guess is correct:
 
-  | Guesses    | Message to Print                        |
-  | ---------- | --------------------------------------- |
-  | 1          | "All luck!"                             |
-  | 2 to 4     | "Okay, that was amazing!"               |
-  | 5 to 6     | "Not bad!"                              |
-  | 7          | "I think you can do better..."          |
-  | 8 to 9     | "Try harder."                           |
-  | 10 or more | "Like, are you even serious right now?" |
+  | Guesses    | Message to Print                  |
+  | ---------- | --------------------------------- |
+  | 1          | "All luck!"                       |
+  | 2 to 4     | "Okay, that was amazing!"         |
+  | 5 to 6     | "Not bad!"                        |
+  | 7          | "I think you can do better..."    |
+  | 8 to 9     | "Try harder."                     |
+  | 10 or more | "Are you even serious right now?" |
 
 - **Upgrade #2 - Hot or Cold:** This next one is a little harder. When a user guesses wrong, currently your code only tells them to go higher or lower. Now, print out a message corresponding to how close their guess was to the secret number. Print a different message depending on its distance:
 
