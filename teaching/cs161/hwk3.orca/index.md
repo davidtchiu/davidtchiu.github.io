@@ -49,13 +49,13 @@ For full credit, your class should contain all of the methods described below. T
 
 - Let's also alert the user to their level of balance remaining on the card. Write a method `balanceLevel()` that doesn't require arguments, and returns a String containing the appropriate message (shown below) based on the current balance. Only one message should be returned. Note that a negative balance cannot happen if you programmed `buyTrip()` properly. If you see a negative balance, go back and fix that method!
 
-| balance                                      | message to print                        |
-| -------------------------------------------- | --------------------------------------- |
-| $0                                           | Your card is empty! Top up immediately! |
-| at or below the average trip cost            | Your balance is low!                    |
-| at or below twice the average trip cost      | Your balance is just enough.            |
-| at or below five times the average trip cost | Your balance is sufficient!             |
-| anything higher                              | Your balance is high!                   |
+  | balance                                      | message to print                        |
+  | -------------------------------------------- | --------------------------------------- |
+  | $0                                           | Your card is empty! Top up immediately! |
+  | at or below the average trip cost            | Your balance is low!                    |
+  | at or below twice the average trip cost      | Your balance is just enough.            |
+  | at or below five times the average trip cost | Your balance is sufficient!             |
+  | anything higher                              | Your balance is high!                   |
 
 - Finally, write a `printSummary()` method that prints information about the ORCA card object. Feel free to personalize this as you see fit, but the string should contain at least the card's current balance, the number of trips taken, and the balance-level message from the method you just wrote previously.
 
