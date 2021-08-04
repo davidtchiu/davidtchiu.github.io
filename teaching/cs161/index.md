@@ -27,6 +27,6 @@
 - [Lab 7: Combo Guesser (Arrays)](lab7.combo/)
 - [Lab 8: Super Circle Drawer (ArrayLists)](lab8.superCircleDrawer/)
 - [Lab 9: Election (HashMaps)](lab9.election/)
-- [Lab 10: A Smarter Chatbot (HashMaps, File I/O)](lab10.smartbot/)
+- [Lab 10: Boulders (File I/O, Parsing)](lab10.boulders/)
 - [Lab 11: Playing Cards (Constants, Enum; IntelliJ IDE)](lab11.cards/)
 - [Lab 12: Elementary Complexity Analysis](lab12.perf/)
