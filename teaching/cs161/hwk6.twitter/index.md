@@ -20,18 +20,18 @@ It is useful to those who study the impact of social networks to extract and cou
 Before you get started, you need to familiarize yourself with two very useful classes. We taught you that, to communicate to users how to use a class, you document your class using Javadoc comments. The Javadoc, which can be converted into a web page, communicates the Application Programming Interface (API) of a class.
 We'll start with familiarizing ourselves with the String class, because it's something we've been using since the beginning. Recall that `Strings` are objects representing a sequence of characters. You can look at its [full documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) here, but I've outlined some of the important methods below:
 
-| Method                                      | Description                                                          |
-| ------------------------------------------- | -------------------------------------------------------------------- |
-| `boolean equals(String other)`              | Compares this String to another String                               |
-| `boolean equalsIgnoreCase(String other)`    | Compares this String to another String, ignoring case                |
-| `int indexOf(String str)`                   | Returns the index of the first occurrence of the specified substring |
-| `int length()`                              | Returns the length of this string                                    |
-| `String replace(String target, String rep)` | Returns a string which has replaced each substring that matches the  |
-|                                             | targeted sequence with the specified replacement sequence            |
-| `String substring(int begin, int end)`      | Returns a new string that is a substring of this string              |
-| `String toUpperCase()`                      | Returns a String after converting all characters to upper case       |
-| `String toLowerCase()`                      | Returns a String after converting all characters to lower case       |
-| `String trim()`                             | Returns a String with leading and trailing whitespace omitted        |
+| Method                                      | Description                                                                           |
+| ------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `boolean equals(String other)`              | Compares this String to another String                                                |
+| `boolean equalsIgnoreCase(String other)`    | Compares this String to another String, ignoring case                                 |
+| `int indexOf(String str)`                   | Returns the index of the first occurrence of the specified substring                  |
+| `int length()`                              | Returns the length of this string                                                     |
+| `String replace(String target, String rep)` | Returns a string which has replaced each substring that matches the targeted sequence |
+|                                             | with the specified replacement sequence                                               |
+| `String substring(int begin, int end)`      | Returns a new string that is a substring of this string                               |
+| `String toUpperCase()`                      | Returns a String after converting all characters to upper case                        |
+| `String toLowerCase()`                      | Returns a String after converting all characters to lower case                        |
+| `String trim()`                             | Returns a String with leading and trailing whitespace omitted                         |
 
 To see these methods in action, let's open up BlueJ's codepad. Type the following into the codepad, line-by-line.
 
