@@ -23,4 +23,5 @@
 - [Lab 3: Stomach Class](lab3.stomach/)
 - [Lab 4: Guessing Game](lab4.guessing/)
 - [Lab 5: Circle Drawer](lab5.circleDrawer/)
-- [Lab 6: Turtle Graphics](lab5.turtle/)
+- [Lab 6: Turtle Graphics](lab6.turtle/)
+- [Lab 7: Combo Guesser](lab7.combo/)
