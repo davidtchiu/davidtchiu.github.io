@@ -169,28 +169,28 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
 
 - The first example below shows the AI busting.
 
-```
-*** Welcome to Black Jack! Prepare to lose. ***
+  ```
+  *** Welcome to Black Jack! Prepare to lose. ***
 
-AI: <???>, <diamond,10>
-Player: <diamond,3> <heart,A> (14)
+  AI: <???>, <diamond,10>
+  Player: <diamond,3> <heart,A> (14)
 
-What will you do (enter either 'hold' or 'hit')?
-> hit
+  What will you do (enter either hold or hit)?
+  > hit
 
-AI: <???>, <diamond,10>
-Player: <diamond,3> <heart,A> <spade,5> (19)
+  AI: <???>, <diamond,10>
+  Player: <diamond,3> <heart,A> <spade,5> (19)
 
-What will you do (enter either 'hold' or 'hit')?
-> hold
+  What will you do (enter either hold or hit)?
+  > hold
 
-***************************
-***      Game Over      ***
-***      You win!       ***
-***************************
-AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
-Player: <diamond,3> <heart,A> <spade,5> (19)
-```
+  ***************************
+  ***      Game Over      ***
+  ***      You win!       ***
+  ***************************
+  AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
+  Player: <diamond,3> <heart,A> <spade,5> (19)
+  ```
 
 - The second example shows that neither AI and human busts, but human wins.
 
@@ -198,22 +198,22 @@ Player: <diamond,3> <heart,A> <spade,5> (19)
   *** Welcome to Black Jack! Prepare to lose. ***
   AI: <???>, <diamond,A>
   Player: <diamond,3> <diamond,4> (7)
-  What will you do (enter either 'hold' or 'hit')?
+  What will you do (enter either hold or hit)?
   hit
 
   AI: <???>, <diamond,A>
   Player: <diamond,3> <diamond,4> <spade,7> (14)
-  What will you do (enter either 'hold' or 'hit')?
+  What will you do (enter either hold or hit)?
   hit
 
   AI: <???>, <diamond,A>
   Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> (18)
-  What will you do (enter either 'hold' or 'hit')?
+  What will you do (enter either hold or hit)?
   hit
 
   AI: <???>, <diamond,A>
   Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
-  What will you do (enter either 'hold' or 'hit')?
+  What will you do (enter either hold or hit)?
   hold
   ***************************
   ***      Game Over      ***
@@ -230,7 +230,7 @@ Player: <diamond,3> <heart,A> <spade,5> (19)
 
   AI: <???>, <club,3>
   Player: <club,J> <heart,6> (16)
-  What will you do (enter either 'hold' or 'hit')?
+  What will you do (enter either hold or hit)?
   hit
 
   AI: <???>, <club,3>
@@ -251,7 +251,7 @@ Player: <diamond,3> <heart,A> <spade,5> (19)
 
   AI: <???>, <club,K>
   Player: <diamond,10> <heart,8> (18)
-  What will you do (enter either 'hold' or 'hit')?
+  What will you do (enter either hold or hit)?
   hold
   ***************************
   ***      Game Over      ***
