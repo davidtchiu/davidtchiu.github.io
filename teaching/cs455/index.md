@@ -43,4 +43,4 @@
 | 13     | Bitmap compression: WAH                        | _Thanksgiving (no class)_                                      | _Thanksgiving (no class)_                 |
 | 14     | Start transactions: ACID, serializability      | Transactions: serializability test, precedence graph, topoSort | Transactions: Concurrency control         |
 | 15     | _Project Demos_                                | _Project Demos_                                                |                                           |
-| Finals |                                                | Final Exam: 4:00-6:00                                          |                                           |
+| Finals |                                                | **Final Exam: 4:00-6:00**                                      |                                           |
