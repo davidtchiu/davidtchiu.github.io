@@ -30,3 +30,13 @@
 - [Lab 10: Boulders (File I/O, Parsing)](lab10.boulders/)
 - [Lab 11: Playing Cards (Constants, Enum; IntelliJ IDE)](lab11.cards/)
 - [Lab 12: Elementary Complexity Analysis](lab12.perf/)
+
+### Tentative Course Schedule
+
+| Week | Mon                                              | Wed                                                 | Thu   | Fri                                     |
+| ---- | ------------------------------------------------ | --------------------------------------------------- | ----- | --------------------------------------- |
+| 1    | Our first algorithm                              | What is CS, anyway?                                 | Lab 1 | Objects vs. Classes; the `Circle` class |
+| 2    | Objects vs. Classes; the Circle class            | Variables and data types, methods, and constructors | Lab 2 | Saving algorithms; Method calls         |
+| 3    | Writing classes: `TicketMachine`. Printing       | Conditionals                                        | Lab 3 | `Random`, more conditionals, `return`   |
+| 4    | Else-if; Start data types: primitives            | Type-casting (narrowing, widening)                  | Lab 4 | Lab 4 solution; boolean expressions     |
+| 5    | Classes as types: references, object equivalence | Object composition: Abstraction and modularity      | Lab 5 | Class APIs: `Strings`                   |
