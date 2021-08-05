@@ -33,21 +33,21 @@
 
 ### Tentative Course Schedule (Fall)
 
-| Week   | Mon                                              | Wed                                                 | Thu    | Fri                                     |
-| ------ | ------------------------------------------------ | --------------------------------------------------- | ------ | --------------------------------------- |
-| 1      | Our first algorithm                              | What is CS, anyway?                                 | Lab 1  | Objects vs. Classes; the `Circle` class |
-| 2      | Objects vs. Classes; the Circle class            | Variables and data types, methods, and constructors | Lab 2  | Saving algorithms; Method calls         |
-| 3      | Writing classes: `TicketMachine`. Printing       | Conditionals                                        | Lab 3  | `Random`, more conditionals, `return`   |
-| 4      | Else-if; Start data types: primitives            | Type-casting (narrowing, widening)                  | Lab 4  | Lab 4 solution; boolean expressions     |
-| 5      | Classes as types: references, object equivalence | Object composition: Abstraction and modularity      | Lab 5  | Class APIs: `Strings`                   |
-| 6      | Loops                                            | Review                                              | Exam 1 | Writing `while` loops                   |
-| 7      | `for` loops                                      | Nested Loops                                        | Lab 6  | Start arrays                            |
-| 8      | Fall break (no class)                            | Arrays of Objects: `TurtleMob`                      | Lab 7  | Finish `TurtleMob`                      |
-| 9      | Start `ArrayList`                                | `ArrayList`                                         | Lab 8  | Scanning for input: `ChatBot`           |
-| 10     | Finish `ChatBot`; Start `HashMap`                | `HashMap`, for-each loop                            | Lab 9  | HashMap (cont.): Smarter ChatBot        |
-| 11     | Start files                                      | Review                                              | Exam 2 | File I/O                                |
-| 12     | Information hiding, `static`, `main()`           | `enum`; Intellij                                    | Lab 10 | Complexity: Linear search               |
-| 13     | Binary search                                    | Thanksgiving (no class)                             | --     | Thanksgiving (no class)                 |
-| 14     | Selection sort                                   | Bubble Sort and optimizations                       | Lab 11 | Shaker sort, list operations            |
-| 15     | Recursion                                        | Review                                              | --     | Reading Period (no class)               |
-| Finals |                                                  |
+| Week | Mon                                              | Wed                                                 | Thu    | Fri                                     |
+| ---- | ------------------------------------------------ | --------------------------------------------------- | ------ | --------------------------------------- |
+| 1    | Our first algorithm                              | What is CS, anyway?                                 | Lab 1  | Objects vs. Classes; the `Circle` class |
+| 2    | Objects vs. Classes; the Circle class            | Variables and data types, methods, and constructors | Lab 2  | Saving algorithms; Method calls         |
+| 3    | Writing classes: `TicketMachine`. Printing       | Conditionals                                        | Lab 3  | `Random`, more conditionals, `return`   |
+| 4    | Else-if; Start data types: primitives            | Type-casting (narrowing, widening)                  | Lab 4  | Lab 4 solution; boolean expressions     |
+| 5    | Classes as types: references, object equivalence | Object composition: Abstraction and modularity      | Lab 5  | Class APIs: `Strings`                   |
+| 6    | Loops                                            | Review                                              | Exam 1 | Writing `while` loops                   |
+| 7    | `for` loops                                      | Nested Loops                                        | Lab 6  | Start arrays                            |
+| 8    | Fall break (no class)                            | Arrays of Objects: `TurtleMob`                      | Lab 7  | Finish `TurtleMob`                      |
+| 9    | Start `ArrayList`                                | `ArrayList`                                         | Lab 8  | Scanning for input: `ChatBot`           |
+| 10   | Finish `ChatBot`; Start `HashMap`                | `HashMap`, for-each loop                            | Lab 9  | HashMap (cont.): Smarter ChatBot        |
+| 11   | Start files                                      | Review                                              | Exam 2 | File I/O                                |
+| 12   | Information hiding, `static`, `main()`           | `enum`; Intellij                                    | Lab 10 | Complexity: Linear search               |
+| 13   | Binary search                                    | Thanksgiving (no class)                             | --     | Thanksgiving (no class)                 |
+| 14   | Selection sort                                   | Bubble Sort and optimizations                       | Lab 11 | Shaker sort, list operations            |
+| 15   | Recursion                                        | Review                                              | --     | Reading Period (no class)               |
+|      |                                                  | Final Exam (12p-2p)                                 |        |                                         |
