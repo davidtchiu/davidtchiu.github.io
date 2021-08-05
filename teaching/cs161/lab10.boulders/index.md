@@ -21,7 +21,7 @@ The following file(s) have been provided for this homework.
 
 The API handout that you'll want to have in front of you:
 
-- [Scanner](ScannerAPI.pdf)
+- [Scanner](../api/ScannerAPI.pdf)
 
 #### Part I: Boulders
 
@@ -82,7 +82,7 @@ Let's say we wanted to jazz up our boulders a little more.
 
 - Refactor your code to account for the colors in the file.
 
-#### Collision
+#### Collision Detection
 
 Currently the boulders just pass through each other, which doesn't look very realistic.
 

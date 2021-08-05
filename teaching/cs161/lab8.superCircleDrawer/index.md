@@ -22,9 +22,9 @@ The following file(s) have been provided for this homework.
 
 The API handout that you'll want to have in front of you:
 
-- [ArrayList](ArrayListAPI.pdf)
-- [Circle](CircleAPI.pdf)
-- [Random](RandomAPI.pdf)
+- [ArrayList](../api/ArrayListAPI.pdf)
+- [Circle](../api/CircleAPI.pdf)
+- [Random](../api/RandomAPI.pdf)
 
 #### Instructions
 

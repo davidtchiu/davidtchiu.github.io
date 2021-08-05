@@ -13,7 +13,7 @@ In this assignment you will use BlueJ to practice creating and calling methods o
 
 The API handout that you'll want to have in front of you:
 
-- [Random](RandomAPI.pdf)
+- [Random](api/RandomAPI.pdf)
 
 #### The Stomach Class
 

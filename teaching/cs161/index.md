@@ -19,7 +19,7 @@
 ### Labs
 
 - [Lab 1: Draw My Picture](lab1.bluej/)
-- [Lab 2: Variables and Scope](lab2.vars/)
+- [Lab 2: Variables and Scope (Scope and Lifetime)](lab2.vars/)
 - [Lab 3: Stomach Class (Class Writing)](lab3.stomach/)
 - [Lab 4: Guessing Game (Conditionals)](lab4.guessing/)
 - [Lab 5: Circle Drawer (Objects)](lab5.circleDrawer/)

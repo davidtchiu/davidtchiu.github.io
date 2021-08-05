@@ -19,8 +19,8 @@ The following file(s) have been provided for this homework.
 
 The API handout that you'll want to have in front of you:
 
-- [Circle](CircleAPI.pdf)
-- [Random](RandomAPI.pdf)
+- [Circle](../api/CircleAPI.pdf)
+- [Random](../api/RandomAPI.pdf)
 
 #### Instructions
 
