@@ -36,7 +36,7 @@
 | Week | Mon                                              | Wed                                                 | Thu       | Fri                                     |
 | ---- | ------------------------------------------------ | --------------------------------------------------- | --------- | --------------------------------------- |
 | 1    | Our first algorithm                              | What is CS, anyway?                                 | Lab1      | Objects vs. Classes; the `Circle` class |
-| 2    | Objects vs. Classes; the Circle class            | Variables and data types, methods, and constructors | Lab2      | Saving algorithms; Method calls         |
+| 2    | _Labor Day_                                      | Variables and data types, methods, and constructors | Lab2      | Saving algorithms; Method calls         |
 | 3    | Writing classes: `TicketMachine`. Printing       | Conditionals                                        | Lab3      | `Random`, more conditionals, `return`   |
 | 4    | Else-if; Start data types: primitives            | Type-casting (narrowing, widening)                  | Lab4      | Lab 4 solution; boolean expressions     |
 | 5    | Classes as types: references, object equivalence | Object composition: Abstraction and modularity      | Lab5      | Class APIs: `Strings`                   |
