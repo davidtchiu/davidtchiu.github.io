@@ -22,7 +22,7 @@ The following file(s) have been provided for this homework.
 
 The API handout that you'll want to have in front of you:
 
-- [HashMap](HashMapAPI.pdf)
+- [HashMap](../api/HashMapAPI.pdf)
 
 #### Part I: Ballot Counter
 

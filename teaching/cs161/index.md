@@ -2,7 +2,7 @@
 
 [Course Syllabus](CS161-syllabus.pdf)
 
-[Visit Canvas for Full Schedule](https://canvas.pugetsound.edu)
+[Visit Canvas Submission and Due Dates](https://canvas.pugetsound.edu)
 
 ### Homework
 

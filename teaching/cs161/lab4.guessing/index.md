@@ -46,7 +46,7 @@ I've seen better.
 
 The API handout that you'll want to have in front of you:
 
-- [Random](RandomAPI.pdf)
+- [Random](../api/RandomAPI.pdf)
 
 #### Part 1: The Bare-Bones Version
 

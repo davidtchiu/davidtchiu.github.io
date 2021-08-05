@@ -19,34 +19,23 @@
 - [Git (b): Branching, Merging, Conflicts](lab.git2/)
 - [Unit Testing: Jasmine](lab.testing/)
 
-<!-- ### Testing
+### Tentative Course Schedule (Fall)
 
-```java
-public class T {
-  private int;
-
-  /**
-   * Hi
-   */
-  public T() {
-    this.x = 0;
-  }
-}
-```
-
-```js
-let o = {
-  key: val,
-  key2: val2,
-};
-
-function foo(x, y) {
-  function foo2(x2, y2) {
-    console.log("hi");
-  }
-}
-```
-
-### Testing latex
-
-$$d = \sqrt{(x'-x)^2 + (y'-y)^2}$$ -->
+| Week   | Tue                                          | Thu                           |
+| ------ | -------------------------------------------- | ----------------------------- |
+| 1      | Introduction                                 | VS Code; Start command line   |
+| 2      | Command-line Lab; Start Git                  | More Git; Git lab             |
+| 3      | Git branching, merging                       | Finish Git; Git branching lab |
+| 4      | Intro to the web; JS Fundamentals            | JS Fundamentals (Cont'd)      |
+| 5      | DOM navigation and manipulation              | Event handling                |
+| 6      | More event handling                          | Asynchronous execution        |
+| 7      | Promises; Await                              | Ajax, JSON, Axios             |
+| 8      | _Fall Break (no class)_                      | Process Models; Start Agile   |
+| 9      | User stories, feature selection; Stories Lab | Start Node.js                 |
+| 10     | Node.js and Express                          | More Express                  |
+| 11     | EJS Templating                               | EJS+Express Lab?              |
+| 12     | Software Testing                             | Jasmine; Testing Lab          |
+| 13     | Project Work Day                             | _Thanksgiving (no class)_     |
+| 14     | Panel                                        | Panel                         |
+| 15     | Project Work Day                             | _Reading Period (no class)_   |
+| Finals | Presentations                                |                               |
