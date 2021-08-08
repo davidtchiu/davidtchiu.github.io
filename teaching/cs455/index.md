@@ -6,7 +6,7 @@
 
 ### Homework Assignments
 
-- Hwk 1: The Relational Model [Written] (due 09/13/2019)
+- [Hwk 1: The Relational Model [Written]](DB_Hwk1.pdf) (due 09/13/2019)
 - Hwk 2: Relational Algebra [Written] (due 09/27/2019)
 - Hwk 3: Data Cleansing [Programming] (due 10/07/2019)
 - Hwk 4: Writing SQL Queries (due 10/16/2019)
