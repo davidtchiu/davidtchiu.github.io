@@ -15,7 +15,7 @@
 
 ### In-class Labs
 
-- [SQL Lab](lab1.sql/) (due 10/07/2021) (Solution)
+- [SQL Lab](lab.sql/) (due 10/07/2021) (Solution)
 
 ### Projects
 
