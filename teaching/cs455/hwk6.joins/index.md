@@ -360,4 +360,4 @@ Navigate to our course on Canvas. You should see the Homework 6 Dropbox. Click o
 
 #### Credits
 
-Written by David Chiu. Some problems lifted from Silberschatz et al., Ramakrishnan/Gerhke, and Elmasri/Navathe. 2016.
+Written by David Chiu.

@@ -33,4 +33,4 @@ After you've filled in the answers, scan all pages into a PDF, and submit to can
 
 #### Credits
 
-Written by David Chiu. Some problems lifted from Silberschatz et al., Ramakrishnan/Gerhke, and Elmasri/Navathe. 2016.
+Written by David Chiu.
