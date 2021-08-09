@@ -113,29 +113,29 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 
 <ul>
 <li>
-	<p>$$Student(studentID, studentName, class, gpa)$$<br/>
+	<p>`Student(studentID, studentName, class, gpa)`<br/>
 	Students are identified with a unique studentID, a first name, 
-	a class standing, and a cumulative GPA, which can be $NULL$. 
-	The studentName may not be unique, but it cannot be $NULL$. The 
+	a class standing, and a cumulative GPA, which can be `NULL`. 
+	The studentName may not be unique, but it cannot be `NULL`. The 
 	class standing <i>must</i> be one of: 
 	"Freshman," "Sophomore," "Junior," or "Senior." The database should reject 
 	any insertions or updates if a student's class rank is not one of these.
-	Similarly, GPAs must be either $$NULL$$ or between 0.0 to 4.0.
+	Similarly, GPAs must be either `NULL` or between 0.0 to 4.0.
 	</p>
 </li>
 <li>
-	<p>$$Major(studentID, major)$$<br/>
+	<p>`Major(studentID, major)`<br/>
 	A student's major(s) is/are recognized by an entry in this table (an undeclared student
 	therefore would not have an entry). StudentID is self-explanatory, 
 	and the major code is the department's ID (see Department table below). That is, if a department
-	decided to recode its ID (e.g., $CS$ changes its department code to $CSCI$), the changes must be reflected
+	decided to recode its ID (e.g., `CS` changes its department code to `CSCI`), the changes must be reflected
 	automatically in this table. When defining the primary key for this table, you need to 
 	consider that a student may have several majors.
 	</p>
 </li>
 <li>
 	<p>
-	$Course(courseNum, deptID, courseName, location, meetDay, meetTime)$<br/>
+	`Course(courseNum, deptID, courseName, location, meetDay, meetTime)`<br/>
 	Courses have a course number, a department it belongs to, a course name, 
 	location, day, and time. Some courses can be cross listed. For instance, 
 	the course Discrete Math might belong to both CS and Math departments! By 
@@ -147,9 +147,9 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 </li>
 <li>
 	<p>
-	$Dept(deptID, name, building)$<br/>
+	`Dept(deptID, name, building)`<br/>
 	Departments are identified by a label (deptID), which is not numerical. For 
-	instance, $CS$ would be the deptID for the computer science department. 
+	instance, `CS` would be the deptID for the computer science department. 
 	It also requires a full name of the department, and each is housed in a 
 	particular building on campus. A department cannot be housed in more than
 	one building, nor can they have more than one label.
@@ -163,11 +163,11 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 </li>
 <li>
 	<p>
-	$Enroll(courseNum, deptID, studentID)$<br/>
+	`Enroll(courseNum, deptID, studentID)`<br/>
 	Students can enroll in any number of courses. A course-enrollment is given by 
 	course number, the department of the course offering, and the student taking
 	the course. For instance, that Kelly is enrolled in Databases 
-	would be represented in this table as the tuple $(351, 'CS', 1282)$.
+	would be represented in this table as the tuple `(351, 'CS', 1282)`.
 	</p>
 </li>
 </ul>
@@ -365,7 +365,7 @@ Total: 60pts
 
 #### Submitting Your Assignment
 
-After you have completed the homework, use the following to submit your work on moodle.
+After you have completed the homework, use the following to submit your work on Canvas.
 You must submit two files: (1) The file containing the SQL schema definition. This file must be in plain-text. (2) The script used to generate the insert statements. Zip these files up.
 
 Navigate to our course on Canvas. You should see the Homework 3 Dropbox. Click on this link, and you should be able to drag your file right into the submission box. Click "Save Changes". You may submit as often as you'd like before the deadline. I will grade the most recent copy.
