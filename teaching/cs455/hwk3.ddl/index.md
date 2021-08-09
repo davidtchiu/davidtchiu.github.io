@@ -205,6 +205,9 @@ If you did everything correctly, type in the following queries, and your results
 
 ```sql
 sqlite> select * from Dept order by deptID;
+```
+
+```
 deptID      deptName            building
 ----------  ------------------  -------------
 BUS         School of Business  McIntyre Hall
@@ -214,8 +217,13 @@ HIST        Department of Hist  Wyatt Hall
 MATH        Department of Math  Tower of Babe
 PHYS        Department of Phys  Harned Hall
 SOAN        Department of Anth  Wyatt Hall
+```
 
+```sql
 sqlite> select * from Student order by studentID;
+```
+
+```
 studentID   studentName  class       gpa
 ----------  -----------  ----------  ----------
 1001        Lia          Junior      3.6
@@ -240,9 +248,13 @@ studentID   studentName  class       gpa
 1782        Andrew       Sophomore   3.7
 1911        David        Senior      4.0
 1934        Kyle         Junior      2.1
+```
 
-
+```sql
 sqlite> select * from course order by deptID,courseNum;
+```
+
+```
 CourseNum   deptID      CourseName  Location    meetDay     meetTime
 ----------  ----------  ----------  ----------  ----------  ----------
 122         BUS         Economics   WY 30       MW          13:30
@@ -264,9 +276,13 @@ CourseNum   deptID      CourseName  Location    meetDay     meetTime
 401         PHYS        Quantum Me  HH 372      TR          09:00
 101         SOAN        Sociology   WY 105      MWF         08:00
 102         SOAN        Sociology   WY 205      MTWRF       09:00
+```
 
-
+```sql
 sqlite> select * from major order by major, StudentID;
+```
+
+```
 StudentID   major
 ----------  ----------
 1101        BUS
@@ -292,8 +308,13 @@ StudentID   major
 1510        MATH
 1510        PHYS
 1709        SOAN
+```
 
+```sql
 sqlite> select * from Enroll order by StudentID,deptID,courseNum;
+```
+
+```
 CourseNum   deptID      StudentID
 ----------  ----------  ----------
 351         BUS         1025
