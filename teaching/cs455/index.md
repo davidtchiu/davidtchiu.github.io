@@ -9,7 +9,7 @@
 - [Hwk 1: The Relational Model [Written]](hwk1.rel/) (due 09/13/2019)
 - [Hwk 2: Relational Algebra [Written]](hwk2.ra/) (due 09/27/2019)
 - [Hwk 3: Data Cleansing [Programming]](hwk3.ddl/) (due 10/07/2019)
-- Hwk 4: Writing SQL Queries (due 10/16/2019)
+- [Hwk 4: Writing SQL Queries](hwk4.dml/) (due 10/16/2019)
 - Hwk 5: Database Theory and Normalization [Written] (due 11/01/2019)
 - Hwk 6: Joins! [Programming] (due 11/18/2019)
 
