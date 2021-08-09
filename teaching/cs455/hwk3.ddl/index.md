@@ -365,9 +365,10 @@ Total: 60pts
 
 #### Submitting Your Assignment
 
-Print the provided PDF using single-side pages. Fill in your name above, and write in the solutions in the space provided below each question. You are allowed to use the back of each page. If you used any scratch paper to show your work, append those to the end. Note: It is important you use this format for gradescope.
+After you have completed the homework, use the following to submit your work on moodle.
+You must submit two files: (1) The file containing the SQL schema definition. This file must be in plain-text. (2) The script used to generate the insert statements. Zip these files up.
 
-After you've filled in the answers, scan all pages into a PDF, and submit to canvas.
+Navigate to our course on Canvas. You should see the Homework 3 Dropbox. Click on this link, and you should be able to drag your file right into the submission box. Click "Save Changes". You may submit as often as you'd like before the deadline. I will grade the most recent copy.
 
 #### Credits
 
