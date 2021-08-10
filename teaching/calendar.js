@@ -141,7 +141,7 @@ class CourseCalendar {
           }/${currentDate.getDate()}</strong><br/>`;
 
           // any assignments due today?
-          for (let assignmentType in Object.keys(this.days.assignments)) {
+          for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
                 td.innerHTML += `<span style='color: #800080'>${assign.name} due</span><br/>`;
