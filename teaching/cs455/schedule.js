@@ -22,7 +22,7 @@ let days = {
       name: "Hwk 4",
       title: "Writing SQL Queries",
       url: "hwk4.dml/",
-      due: "10/15/2021",
+      due: "10/20/2021",
     },
     {
       name: "Hwk 5",
@@ -68,7 +68,7 @@ let days = {
     "Armstrong’s axioms, inference rules",
     "Attribute closure and keys",
     // wk 8
-    "<span style='color: #0f79d0'>Fall Break (no class)</span>",
+    "<span style='color: #0f79d0'>Fall Break</span>",
     "Normal forms: 1NF, 2NF",
     "BCNF; Canonical cover",
     // wk 9
@@ -89,8 +89,8 @@ let days = {
     "Bitmaps",
     // wk 13
     "Bitmap compression: WAH",
-    "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
-    "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
+    "<span style='color: #0f79d0'>Thanksgiving</span>",
+    "<span style='color: #0f79d0'>Thanksgiving</span>",
     // wk 14
     "Start transactions: ACID, serializability",
     "Transactions: serializability test, precedence graphs",
@@ -108,4 +108,5 @@ let days = {
 
 // print out the schedule to HTML
 const schedule = new CourseCalendar("8/30/21", days, MWF);
+schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
