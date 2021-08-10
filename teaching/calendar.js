@@ -104,12 +104,13 @@ class CourseCalendar {
             dateHeader.style.color = TODAY_COLOR;
           }
           td.appendChild(dateHeader);
+          td.appendChild(document.createElement("br"));
 
-          // any assignments due today?
+          // any assignments due on current day?
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
-                td.innerHTML = `<br/><br/><span style='color: ${DUE_COLOR[assignmentType]}'>${assign.name} due</span><br/>`;
+                td.innerHTML = `<br/><span style='color: ${DUE_COLOR[assignmentType]}'>${assign.name} due</span><br/>`;
               }
             }
           }
