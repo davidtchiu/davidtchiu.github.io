@@ -47,7 +47,7 @@ class CourseCalendar {
     while (this.days.lectures.length > 0) {
       let tr = document.createElement("tr");
       for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
-        if (currentDate.getDay() > 0 && currentDate.getDay() < 6) {
+        if (this.format[dayCnt] != OFF) {
           let td = document.createElement("td");
           td.innerHTML = `<center>${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}<br/></center>`;
 
