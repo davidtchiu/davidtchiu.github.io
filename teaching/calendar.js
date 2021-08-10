@@ -83,7 +83,7 @@ class CourseCalendar {
       for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
         if (this.format[dayCnt] != WKD) {
           let td = document.createElement("td");
-
+          td.style.width = "20%";
           // Is it today? Highlight the background differently
           if (this.sameDay(currentDate, this.today)) {
             td.style.backgroundColor = "#0f79d0";
@@ -91,8 +91,9 @@ class CourseCalendar {
           }
 
           // output the date
-          td.innerHTML = `<strong>${dayLabels[(currentDate.getDay() + 6) % 7]}
-          ${currentDate.getMonth() + 1}/${currentDate.getDate()}</strong><br/>`;
+          td.innerHTML = `<strong>${
+            currentDate.getMonth() + 1
+          }/${currentDate.getDate()}</strong><br/>`;
 
           // any assignments due today?
           for (let assign of this.days.assignments) {
