@@ -186,8 +186,8 @@ let days = {
     "<span style='color: #0f79d0'>Exam 2</span>",
     "File I/O",
     // wk 12
-    "Information hiding, `static`, `main()`",
-    "`enum`; IntelliJ IDE",
+    "Information hiding, static, main()",
+    "enum; IntelliJ IDE",
     "Lab 10",
     "Complexity: Linear search",
     // wk 13
