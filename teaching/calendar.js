@@ -71,7 +71,7 @@ class CourseCalendar {
     for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
       if (this.format[dayCnt] != WKD) {
         let th = document.createElement("th");
-        th.style.textAlign = "center";=
+        th.style.textAlign = "center";
         th.innerHTML = `${dayLabels[dayCnt]}`;
         theadRow.appendChild(th);
       }
