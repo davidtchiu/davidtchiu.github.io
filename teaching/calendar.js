@@ -12,8 +12,8 @@ const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const DUE_COLOR = {
   labs: "#800080",
-  homework: "#aa0000",
-  projects: "#0086B3",
+  homework: "#0086B3",
+  projects: "#009926",
 };
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#0f79d0";
@@ -94,16 +94,16 @@ class CourseCalendar {
         if (this.format[dayCnt] != WKD) {
           let td = document.createElement("td");
           td.style.width = "20%";
-          // Is it today? Highlight the background differently
-          if (this.sameDay(currentDate, this.today)) {
-            td.style.backgroundColor = TODAY_BG_COLOR;
-            td.style.color = TODAY_COLOR;
-          }
 
-          // output the date
-          td.innerHTML = `<strong>${
-            currentDate.getMonth() + 1
-          }/${currentDate.getDate()}</strong><br/>`;
+          // Is it today? Highlight the background differently
+          let dateHeader = document.createTextNode(
+            `${currentDate.getMonth() + 1}/${currentDate.getDate()}`
+          );
+          if (this.sameDay(currentDate, this.today)) {
+            dateHeader.style.backgroundColor = TODAY_BG_COLOR;
+            dateHeader.style.color = TODAY_COLOR;
+          }
+          td.appendChild(dateHeader);
 
           // any assignments due today?
           for (let assignmentType of Object.keys(this.days.assignments)) {
