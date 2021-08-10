@@ -44,3 +44,6 @@
 | 14     | Start transactions: ACID, serializability      | Transactions: serializability test, precedence graph, topoSort | Transactions: Concurrency control         |
 | 15     | **Project Demos**                              | **Project Demos**                                              |                                           |
 | Finals |                                                | **Final Exam: 4:00-6:00**                                      |                                           |
+
+<script type="text/javascript" src="../calendar.js"></script>
+<script type="text/javascript" src="schedule.js"></script>
