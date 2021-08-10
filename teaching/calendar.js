@@ -120,7 +120,7 @@ class CourseCalendar {
           // depending on whether the day is LEC, WKD, or OFF, pull
           // activity from the respective queue and add to the table
           if (this.format[dayCnt] == LEC) {
-            p.innerHTML += `${this.days.lectures.shift()}`;
+            dayContent.innerHTML += `${this.days.lectures.shift()}`;
           }
           td.appendChild(dateHeader);
           td.appendChild(dayContent);
