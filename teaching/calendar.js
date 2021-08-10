@@ -17,7 +17,7 @@ const DUE_COLOR = {
 };
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#0f79d0";
-const NOTTODAY_BG_COLOR = "#212121";
+const NOTTODAY_BG_COLOR = "#373737";
 
 class CourseCalendar {
   constructor(startDate, daysObj, format, elementID) {
@@ -97,7 +97,7 @@ class CourseCalendar {
           let td = document.createElement("td");
           td.style.width = "20%";
           td.style.margin = "1px";
-          td.style.padding = "1px";
+          // td.style.padding = "1px";
 
           // Is it today? Highlight the background differently
           let dateHeader = document.createElement("div");
