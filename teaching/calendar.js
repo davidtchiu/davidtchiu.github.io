@@ -45,8 +45,8 @@ class CourseCalendar {
         li.appendChild(anchor);
         if (assign.due) {
           let due = document.createTextNode(` (due ${assign.due})`);
+          li.appendChild(due);
         }
-        li.appendChild(due);
         ul.appendChild(li);
       }
 
