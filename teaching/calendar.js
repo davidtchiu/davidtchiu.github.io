@@ -40,27 +40,28 @@ class CourseCalendar {
     let fri = document.createElement("th");
     fri.innerHTML = "Fri";
     theadRow.appendChild(fri);
-
     thead.appendChild(theadRow);
     table.appendChild(thead);
 
     let currentDate = this.startDate;
     while (this.days.lectures.length > 0) {
+      let tr = document.createElement("tr");
       for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
         // depending on whether the day is LAB, LEC, or OFF, pull
         // activity from the respective queue and add to the table
+        let td = document.createElement("td");
+        td.innerHTML = `<center>${currentDate.toDateString()}<br/></center>`;
         if (this.format[dayCnt] == LAB) {
-          console.log(
-            `${currentDate.toDateString()} ${this.days.labs.shift()}`
-          );
+          td.innerHTML += `${this.days.labs.shift()}`;
         } else if (this.format[dayCnt] == LEC) {
-          console.log(
-            `${currentDate.toDateString()} ${this.days.lectures.shift()}`
-          );
+          td.innerHTML += `${this.days.lectures.shift()}`;
         }
+        tr.appendChild(td);
+
         // next day
         currentDate.setDate(currentDate.getDate() + 1);
       }
+      table.appendChild(tr);
     }
 
     // update the HTML element
