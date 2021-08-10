@@ -96,23 +96,21 @@ class CourseCalendar {
           td.style.width = "20%";
 
           // Is it today? Highlight the background differently
-          let dateHeader = document.createTextNode(
-            `<strong>${
-              currentDate.getMonth() + 1
-            }/${currentDate.getDate()}</strong>`
-          );
+          let dateHeader = document.createElement("div");
+          dateHeader.innerHTML = `<strong>${
+            currentDate.getMonth() + 1
+          }/${currentDate.getDate()}</strong>`;
           if (this.sameDay(currentDate, this.today)) {
             dateHeader.style.backgroundColor = TODAY_BG_COLOR;
             dateHeader.style.color = TODAY_COLOR;
           }
-          td.appendChild(dateHeader);
-          td.appendChild(document.createElement("br"));
 
           // any assignments due on current day?
+          let dayContent = document.createElement("p");
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
-                td.innerHTML += `<span style='color: ${DUE_COLOR[assignmentType]}'>${assign.name} due</span><br/>`;
+                dayContent.innerHTML += `<span style='color: ${DUE_COLOR[assignmentType]}'>${assign.name} due</span><br/>`;
               }
             }
           }
@@ -120,8 +118,10 @@ class CourseCalendar {
           // depending on whether the day is LEC, WKD, or OFF, pull
           // activity from the respective queue and add to the table
           if (this.format[dayCnt] == LEC) {
-            td.innerHTML += `${this.days.lectures.shift()}`;
+            p.innerHTML += `${this.days.lectures.shift()}`;
           }
+          td.appendChild(dateHeader);
+          td.appendChild(dayContent);
           tr.appendChild(td);
         }
         // next day
