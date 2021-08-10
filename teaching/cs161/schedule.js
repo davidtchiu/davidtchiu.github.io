@@ -54,6 +54,44 @@ let days = {
       url: "hwk8.blackjack/",
       due: "12/10/2021",
     },
+
+    // labs
+    {
+      name: "Lab 1",
+      title: "Draw My Picture (BlueJ)",
+      url: "lab1.bluej/",
+      due: "9/3/2021",
+    },
+    {
+      name: "Lab 2",
+      title: "Variables and Scope (Scope and Lifetime)",
+      url: "lab2.vars/",
+      due: "9/10/2021",
+    },
+    {
+      name: "Lab 3",
+      title: "Stomach Class (Class Writing)",
+      url: "lab3.stomach/",
+      due: "9/17/2021",
+    },
+    {
+      name: "Lab 4",
+      title: "Guessing Game (Conditionals)",
+      url: "lab4.guessing/",
+      due: "9/24/2021",
+    },
+    {
+      name: "Lab 5",
+      title: "Circle Drawer (Objects)",
+      url: "lab5.circleDrawer/",
+      due: "10/1/2021",
+    },
+    {
+      name: "Lab 6",
+      title: "Circle Drawer (Objects)",
+      url: "lab5.circleDrawer/",
+      due: "10/1/2021",
+    },
   ],
   lectures: [
     // wk 1
