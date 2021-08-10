@@ -44,8 +44,16 @@ class CourseCalendar {
     // table.appendChild(thead);
 
     let currentDate = this.startDate;
+    let weekNum = 1;
     while (this.days.lectures.length > 0) {
       let tr = document.createElement("tr");
+
+      // associate week number
+      let wk = document.createElement("td");
+      wk.innerHTML = weekNum;
+      tr.appendChild(wk);
+
+      // work on days of the week
       for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
         if (this.format[dayCnt] != OFF) {
           let td = document.createElement("td");
@@ -64,6 +72,7 @@ class CourseCalendar {
         currentDate.setDate(currentDate.getDate() + 1);
       }
       table.appendChild(tr);
+      weekNum++;
     }
 
     // update the HTML element
