@@ -95,7 +95,7 @@ class CourseCalendar {
 
           // any assignments due today?
           for (let assign of this.days.assignments) {
-            if (sameDay(new Date(assign.due), currentDate)) {
+            if (this.sameDay(new Date(assign.due), currentDate)) {
               td.innerHTML += `${assign.name} due`;
             }
           }
