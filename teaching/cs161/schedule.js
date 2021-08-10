@@ -192,9 +192,9 @@ let days = {
     "Complexity: Linear search",
     // wk 13
     "Binary search",
-    "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
-    "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
-    "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
+    "<span style='color: #0f79d0'>Thanksgiving</span>",
+    "<span style='color: #0f79d0'>Thanksgiving</span>",
+    "<span style='color: #0f79d0'>Thanksgiving</span>",
     // wk 14
     "Selection sort",
     "Bubble Sort and optimizations",
