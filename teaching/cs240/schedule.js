@@ -80,6 +80,11 @@ let days = {
       },
       {
         name: "Lab 4",
+        title: "Personal, Stories, Features",
+        url: "lab.features/",
+      },
+      {
+        name: "Lab 5",
         title: "Unit Testing",
         url: "lab.testing/",
       },
