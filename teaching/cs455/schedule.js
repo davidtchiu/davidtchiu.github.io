@@ -1,4 +1,43 @@
 let days = {
+  assignments: [
+    {
+      name: "Hwk 1",
+      title: "The Relational Model",
+      url: "hwk1.rel/",
+      due: "9/10/2021",
+    },
+    {
+      name: "Hwk 2",
+      title: "Relational Algebra",
+      url: "hwk2.ra/",
+      due: "9/24/2021",
+    },
+    {
+      name: "Hwk 3",
+      title: "Data Cleansing",
+      url: "hwk3.ddl/",
+      due: "10/8/2021",
+    },
+    {
+      name: "Hwk 4",
+      title: "Writing SQL Queries",
+      url: "hwk4.dml/",
+      due: "10/15/2021",
+    },
+    {
+      name: "Hwk 5",
+      title: "Database Theory and Normalization",
+      url: "hwk5.norm/",
+      due: "11/1/2021",
+    },
+    {
+      name: "Hwk 6",
+      title: "Joins!",
+      url: "hwk6.joins/",
+      due: "11/19/2021",
+    },
+
+
   lectures: [
     // wk 1
     "Why DBMS? Data independence",

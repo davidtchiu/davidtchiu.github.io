@@ -55,7 +55,7 @@ let days = {
     "Promises",
     "Ajax, JSON, Axios",
     // wk 8
-    "<span style='color: #0f79d0'>Fall Break (no class)</span>",
+    "<span style='color: #0f79d0'>Fall Break</span>",
     "Process Models; Start Agile",
     // wk 9
     "User stories, feature selection; Stories Lab",
@@ -71,7 +71,7 @@ let days = {
     "Jasmine; Testing Lab",
     // wk 13
     "Project Work Day",
-    "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
+    "<span style='color: #0f79d0'>Thanksgiving</span>",
     // wk 14
     "Panel",
     "Panel",
