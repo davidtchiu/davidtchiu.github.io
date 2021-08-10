@@ -69,6 +69,8 @@ class CourseCalendar {
           td.innerHTML = `<strong>${dayLabels[(currentDate.getDay() + 6) % 7]}
           ${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}</strong><br/>`;
 
+          console.log(currentDate.getMonth());
+
           // depending on whether the day is LAB, LEC, or OFF, pull
           // activity from the respective queue and add to the table
           if (this.format[dayCnt] == LAB) {
