@@ -1,6 +1,6 @@
 let days = {
   assignments: {
-    hwks: [
+    homework: [
       {
         name: "Hwk 1",
         title: "The Relational Model",

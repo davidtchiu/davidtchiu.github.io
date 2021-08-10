@@ -10,7 +10,11 @@ const MWRF = [LEC, OFF, LEC, LEC, LEC, WKD, WKD];
 const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-const DUE_LAB_COLOR = "#800080";
+const DUE_COLOR = {
+  labs: "#800080",
+  homework: "#aa0000",
+  projects: "#0086B3",
+};
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#0f79d0";
 
@@ -44,7 +48,7 @@ class CourseCalendar {
 
       // update the HTML element
       let h3 = document.createElement("h3");
-      h3.innerHTML = assignType;
+      h3.innerHTML = assignType.toUpperCase();
       div.appendChild(h3);
       div.appendChild(ul);
     }
@@ -105,7 +109,7 @@ class CourseCalendar {
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
-                td.innerHTML += `<span style='color: ${DUE_LAB_COLOR}'>${assign.name} due</span><br/>`;
+                td.innerHTML += `<span style='color: ${DUE_COLOR[assignmentType]}'>${assign.name} due</span><br/>`;
               }
             }
           }
