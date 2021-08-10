@@ -45,5 +45,8 @@
 | 15     | **Project Demos**                              | **Project Demos**                                              |                                           |
 | Finals |                                                | **Final Exam: 4:00-6:00**                                      |                                           |
 
+<!-- David's schedule generator! Do not touch -->
+<div id="schedule">&nbsp;</div>
 <script type="text/javascript" src="../calendar.js"></script>
 <script type="text/javascript" src="schedule.js"></script>
+<!-- End -->

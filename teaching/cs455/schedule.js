@@ -1,6 +1,3 @@
-let y = new CourseCalendar("8/30/2021", days, MWF);
-y.print();
-
 const days = {
   lectures: [
     "Why DBMS? Data independence",
@@ -52,3 +49,7 @@ const days = {
     "Final Exam: 4:00-6:00",
   ],
 };
+
+// print out the schedule to HTML
+const schedule = new CourseCalendar("8/30/2021", days, MWF);
+schedule.generateHTMLCalendar();
