@@ -12,8 +12,8 @@ const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const DUE_COLOR = {
   labs: "#800080",
-  homework: "#0086B3",
-  projects: "#009926",
+  homework: "#009926",
+  projects: "#a61717",
 };
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#0f79d0";
