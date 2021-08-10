@@ -17,6 +17,8 @@ class CourseCalendar {
     this.format = format;
     this.elementID = elementID;
     this.today = new Date();
+
+    console.log(this.startDate);
   }
 
   /**
@@ -66,7 +68,7 @@ class CourseCalendar {
             td.style.backgroundColor = "#0f79d0";
             td.style.color = "#f2f2f2";
           }
-          td.innerHTML = `<strong>
+          td.innerHTML = `<strong>${dayLabels[(currentDate.getDay() + 6) % 7]}
           ${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}</strong><br/>`;
 
           // depending on whether the day is LAB, LEC, or OFF, pull
