@@ -5,7 +5,7 @@ let days = {
     "Relational model: connection to set theory",
     "Keys and schema",
     // wk 2
-    "Labor Day (no class)",
+    "<span style='color: #0f79d0'>Labor Day (no class)</span>",
     "Relational algebra",
     "RA: expression trees; composition",
     // wk 3
@@ -19,17 +19,17 @@ let days = {
     // wk 5
     "SQL: subqueries: IN, EXISTS; start aggregation",
     "SQL: grouping and aggregation, triggers, transactions",
-    "SQL Lab",
+    "SQL Lab Day 1",
     // wk 6
-    "SQL Lab Cont.",
-    "Review",
-    "Exam 1",
+    "SQL Lab Day 2",
+    "<span style='color: #0f79d0'>Review</span>",
+    "<span style='color: #0f79d0'>Exam 1</span>",
     // wk 7
     "DB theory: functional dependencies (FD)",
     "Armstrong’s axioms and deriving inference rules",
     "Attribute closure and keys",
     // wk 8
-    "Fall Break (no class)",
+    "<span style='color: #0f79d0'>Fall Break (no class)</span>s",
     "Normal forms: 1NF, 2NF",
     "BCNF; Canonical cover",
     // wk 9
@@ -42,27 +42,27 @@ let days = {
     "Start indexing",
     // wk 11
     "Indexing: B+Trees",
-    "Review",
-    "Exam 2",
+    "<span style='color: #0f79d0'>Review</span>",
+    "<span style='color: #0f79d0'>Exam 2</span>",
     // wk 12
     "B+Trees: properties, operations",
     "B+Trees (cont.): complexity analysis; Start dynamic hashing",
     "Bitmaps",
     // wk 13
     "Bitmap compression: WAH",
-    "Thanksgiving (no class)",
-    "Thanksgiving (no class)",
+    "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
+    "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
     // wk 14
     "Start transactions: ACID, serializability",
-    "Transactions: serializability test, precedence graph, topoSort",
+    "Transactions: serializability test, precedence graphs",
     "Transactions: Concurrency control",
     // wk 15
     "Project Demos",
     "Project Demos",
-    "Reading Period",
+    "<span style='color: #0f79d0'>Reading Period</span>",
     // wk final
     "",
-    "Final Exam: 4:00-6:00",
+    "<span style='color: #0f79d0'>Final Exam: 4:00-6:00</span>",
     "",
   ],
 };
