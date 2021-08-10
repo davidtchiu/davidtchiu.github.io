@@ -30,6 +30,7 @@ class CourseCalendar {
     theadRow.appendChild((document.createElement("th").innerHTML = "Wed"));
     theadRow.appendChild((document.createElement("th").innerHTML = "Thu"));
     theadRow.appendChild((document.createElement("th").innerHTML = "Fri"));
+    thead.appendChild(theadRow);
     table.appendChild(thead);
 
     let currentDate = this.startDate;
@@ -52,7 +53,7 @@ class CourseCalendar {
     }
 
     // update the HTML element
-    const div = document.querySelectorAll("#schedule");
+    const div = document.querySelector("#schedule");
     div.appendChild(table);
   }
 }
