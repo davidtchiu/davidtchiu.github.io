@@ -37,16 +37,16 @@ let days = {
     "Software Testing",
     "Jasmine; Testing Lab",
     // wk 13
-    "<span style='color: #0f79d0'>Project Work Day</span>",
+    "Project Work Day",
     "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
     // wk 14
-    "<span style='color: #0f79d0'>Panel</span>",
-    "<span style='color: #0f79d0'>Panel</span>",
+    "Panel",
+    "Panel",
     // wk 15
-    "<span style='color: #0f79d0'>Project Work Day</span>",
+    "Project Work Day",
     "<span style='color: #0f79d0'>Reading Period</span>",
     // wk final
-    "<span style='color: #0f79d0'>Presentations</span>",
+    "<span style='color: #0f79d0'>Presentations (12p - 2p)</span>",
     "",
   ],
 };

@@ -31,7 +31,7 @@
 - [Lab 11: Playing Cards (Constants, Enum; IntelliJ IDE)](lab11.cards/)
 - [Lab 12: Elementary Complexity Analysis](lab12.perf/)
 
-### Tentative Course Schedule (Fall)
+<!-- ### Tentative Course Schedule (Fall)
 
 | Week | Mon                                              | Wed                                                 | Thu       | Fri                                   |
 | ---- | ------------------------------------------------ | --------------------------------------------------- | --------- | ------------------------------------- |
@@ -50,4 +50,13 @@
 | 13   | Binary search                                    | _Thanksgiving (no class)_                           | --        | _Thanksgiving (no class)_             |
 | 14   | Selection sort                                   | Bubble Sort and optimizations                       | Lab 11    | Shaker sort, list operations          |
 | 15   | Recursion                                        | Review                                              | --        | _Reading Period (no class)_           |
-|      |                                                  | **Final Exam (12p-2p)**                             |           |                                       |
+|      |                                                  | **Final Exam (12p-2p)**                             |           |                                       | -->
+
+<!-- David's schedule generator! Do not touch -->
+
+### Tentative Course Schedule (Fall)
+
+<div id="schedule">&nbsp;</div>
+<script type="text/javascript" src="../calendar.js"></script>
+<script type="text/javascript" src="schedule.js"></script>
+<!-- End -->
