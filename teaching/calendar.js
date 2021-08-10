@@ -50,8 +50,8 @@ class CourseCalendar {
             th.innerHTML = `<center>Fri</center>`;
             break;
         }
+        theadRow.appendChild(th);
       }
-      theadRow.appendChild(th);
     }
     table.appendChild(theadRow);
 
