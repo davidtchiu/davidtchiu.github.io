@@ -1,42 +1,72 @@
 let days = {
-  assignments: [
-    {
-      name: "Hwk 1",
-      title: "The Relational Model",
-      url: "hwk1.rel/",
-      due: "9/10/2021",
-    },
-    {
-      name: "Hwk 2",
-      title: "Relational Algebra",
-      url: "hwk2.ra/",
-      due: "9/24/2021",
-    },
-    {
-      name: "Hwk 3",
-      title: "Data Cleansing",
-      url: "hwk3.ddl/",
-      due: "10/8/2021",
-    },
-    {
-      name: "Hwk 4",
-      title: "Writing SQL Queries",
-      url: "hwk4.dml/",
-      due: "10/20/2021",
-    },
-    {
-      name: "Hwk 5",
-      title: "Database Theory and Normalization",
-      url: "hwk5.norm/",
-      due: "11/1/2021",
-    },
-    {
-      name: "Hwk 6",
-      title: "Joins!",
-      url: "hwk6.joins/",
-      due: "11/19/2021",
-    },
-  ],
+  assignments: {
+    hwks: [
+      {
+        name: "Hwk 1",
+        title: "The Relational Model",
+        url: "hwk1.rel/",
+        due: "9/10/2021",
+      },
+      {
+        name: "Hwk 2",
+        title: "Relational Algebra",
+        url: "hwk2.ra/",
+        due: "9/24/2021",
+      },
+      {
+        name: "Hwk 3",
+        title: "Data Cleansing",
+        url: "hwk3.ddl/",
+        due: "10/8/2021",
+      },
+      {
+        name: "Hwk 4",
+        title: "Writing SQL Queries",
+        url: "hwk4.dml/",
+        due: "10/20/2021",
+      },
+      {
+        name: "Hwk 5",
+        title: "Database Theory and Normalization",
+        url: "hwk5.norm/",
+        due: "11/1/2021",
+      },
+      {
+        name: "Hwk 6",
+        title: "Joins!",
+        url: "hwk6.joins/",
+        due: "11/19/2021",
+      },
+    ],
+
+    ////////////////////////////// PROJECTS ///////////////////////////////
+    projects: [
+      {
+        name: "Proj 1",
+        title: "To the Cloud",
+        url: "proj1.cloud/",
+        due: "9/20/2021",
+      },
+      {
+        name: "Proj 2",
+        title: "Data-Driven Web Development",
+        url: "proj2.php/",
+        due: "10/18/2021",
+      },
+      {
+        name: "Proj 3",
+        title: "Project Planning",
+        url: "proj3.planning/",
+        due: "11/1/2021",
+      },
+      {
+        name: "Proj 4",
+        title: "Implementation",
+        url: "proj4.impl/",
+        due: "12/6/2021",
+      },
+    ],
+  },
 
   lectures: [
     // wk 1

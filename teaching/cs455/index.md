@@ -2,16 +2,6 @@
 
 [Course Syllabus](CS455-syllabus.pdf) - [Visit Canvas](https://canvas.pugetsound.edu)
 
-### Homework Assignments
-
-- [Hwk 1: The Relational Model [Written]](hwk1.rel/) (due 09/10)
-
-<!-- - [Hwk 2: Relational Algebra [Written]](hwk2.ra/) (due 09/24)
-- [Hwk 3: Data Cleansing [Programming]](hwk3.ddl/) (due 10/8)
-- [Hwk 4: Writing SQL Queries](hwk4.dml/) (due 10/15)
-- [Hwk 5: Database Theory and Normalization [Written]](hwk5.norm/) (due 11/1)
-- [Hwk 6: Joins! [Programming]](hwk6.joins/) (due 11/19) -->
-
 <!-- ### In-class Labs
 
 - [SQL Lab](lab.sql/) (Solution) -->
