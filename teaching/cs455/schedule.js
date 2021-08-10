@@ -66,6 +66,15 @@ let days = {
         due: "12/6/2021",
       },
     ],
+
+    ////////////////////////////////// LABS ////////////////////////////////
+    labs: [
+      {
+        name: "Lab",
+        title: "2-Day SQL Bootcamp",
+        url: "lab.sql/",
+      },
+    ],
   },
 
   lectures: [

@@ -134,7 +134,7 @@ class CourseCalendar {
     // update the HTML element
     const div = document.querySelector("#schedule");
     let h3 = document.createElement("h3");
-    h3.innerHTML = "Tentative Schedule";
+    h3.innerHTML = "SCHEDULE";
     div.appendChild(h3);
     div.appendChild(table);
   }
