@@ -17,6 +17,7 @@ const DUE_COLOR = {
 };
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#0f79d0";
+const NOTTODAY_BG_COLOR = "#445588";
 
 class CourseCalendar {
   constructor(startDate, daysObj, format, elementID) {
@@ -97,15 +98,17 @@ class CourseCalendar {
 
           // Is it today? Highlight the background differently
           let dateHeader = document.createElement("div");
+          if (this.sameDay(currentDate, this.today)) {
+            dateHeader.style.backgroundColor = TODAY_BG_COLOR;
+          } else {
+            dateHeader.style.backgroundColor = NOTTODAY_BG_COLOR;
+          }
+          dateHeader.style.color = TODAY_COLOR;
           dateHeader.style.textAlign = "center";
           dateHeader.style.fontWeight = "bold";
           dateHeader.innerHTML = `${
             currentDate.getMonth() + 1
           }/${currentDate.getDate()}`;
-          if (this.sameDay(currentDate, this.today)) {
-            dateHeader.style.backgroundColor = TODAY_BG_COLOR;
-            dateHeader.style.color = TODAY_COLOR;
-          }
 
           // any assignments due on current day?
           let dayContent = document.createElement("p");
