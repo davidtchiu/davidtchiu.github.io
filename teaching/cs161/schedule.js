@@ -1,9 +1,3 @@
-
-- [Hwk 6: Tweet Processor](hwk6.twitter/) (11/15)
-- [Hwk 7: Pooled Testing](hwk7.pooled/) (11/23)
-- [Hwk 8: Black Jack](hwk8.blackjack/) (12/10)
-- [Hwk 8 (alternate)](hwk8.prep/) -->
-
 let days = {
   assignments: [
     {
@@ -41,26 +35,26 @@ let days = {
       title: "Tweet Processor",
       url: "hwk6.twitter/",
       due: "11/15/2021",
-    },    
+    },
     {
       name: "Hwk 7",
       title: "Pooled Testing",
       url: "hwk7.pooled/",
       due: "11/23/2021",
-   },      
-   {
-    name: "Hwk 8 (Alternate)",
-    title: "Black Jack",
-    url: "hwk8.prep/",
-    due: "11/30/2021",
-  },
-  {
-    name: "Hwk 8",
-    title: "Black Jack",
-    url: "hwk8.blackjack/",
-    due: "12/10/2021",
-  },
-],
+    },
+    {
+      name: "Hwk 8 (Alternate)",
+      title: "Black Jack",
+      url: "hwk8.prep/",
+      due: "11/30/2021",
+    },
+    {
+      name: "Hwk 8",
+      title: "Black Jack",
+      url: "hwk8.blackjack/",
+      due: "12/10/2021",
+    },
+  ],
   lectures: [
     // wk 1
     "Our first algorithm",
