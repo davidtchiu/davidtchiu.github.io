@@ -26,61 +26,67 @@ class CourseCalendar {
     const div = document.querySelector("#schedule");
 
     // Homework
-    let ul = document.createElement("ul");
-    for (let assign of this.days.assignments.hwks) {
-      let li = document.createElement("li");
-      let anchor = document.createElement("a");
-      anchor.href = assign.url;
-      anchor.innerHTML = `${assign.name}: ${assign.title}`;
-      let due = document.createTextNode(` (due ${assign.due})`);
-      li.appendChild(anchor);
-      li.appendChild(due);
-      ul.appendChild(li);
-    }
+    if (this.days.assignments.hwks) {
+      let ul = document.createElement("ul");
+      for (let assign of this.days.assignments.hwks) {
+        let li = document.createElement("li");
+        let anchor = document.createElement("a");
+        anchor.href = assign.url;
+        anchor.innerHTML = `${assign.name}: ${assign.title}`;
+        let due = document.createTextNode(` (due ${assign.due})`);
+        li.appendChild(anchor);
+        li.appendChild(due);
+        ul.appendChild(li);
+      }
 
-    // update the HTML element
-    let h3 = document.createElement("h3");
-    h3.innerHTML = "Homework";
-    div.appendChild(h3);
-    div.appendChild(ul);
+      // update the HTML element
+      let h3 = document.createElement("h3");
+      h3.innerHTML = "Homework";
+      div.appendChild(h3);
+      div.appendChild(ul);
+    }
 
     // Projects
-    ul = document.createElement("ul");
-    for (let assign of this.days.assignments.projects) {
-      let li = document.createElement("li");
-      let anchor = document.createElement("a");
-      anchor.href = assign.url;
-      anchor.innerHTML = `${assign.name}: ${assign.title}`;
-      let due = document.createTextNode(` (due ${assign.due})`);
-      li.appendChild(anchor);
-      li.appendChild(due);
-      ul.appendChild(li);
-    }
+    if (this.days.assignments.projects) {
+      ul = document.createElement("ul");
+      for (let assign of this.days.assignments.projects) {
+        let li = document.createElement("li");
+        let anchor = document.createElement("a");
+        anchor.href = assign.url;
+        anchor.innerHTML = `${assign.name}: ${assign.title}`;
+        let due = document.createTextNode(` (due ${assign.due})`);
+        li.appendChild(anchor);
+        li.appendChild(due);
+        ul.appendChild(li);
+      }
 
-    // update the HTML element
-    h3 = document.createElement("h3");
-    h3.innerHTML = "Projects";
-    div.appendChild(h3);
-    div.appendChild(ul);
+      // update the HTML element
+      h3 = document.createElement("h3");
+      h3.innerHTML = "Projects";
+      div.appendChild(h3);
+      div.appendChild(ul);
+    }
 
     // Labs
-    ul = document.createElement("ul");
-    for (let assign of this.days.assignments.labs) {
-      let li = document.createElement("li");
-      let anchor = document.createElement("a");
-      anchor.href = assign.url;
-      anchor.innerHTML = `${assign.name}: ${assign.title}`;
-      let due = document.createTextNode(` (due ${assign.due})`);
-      li.appendChild(anchor);
-      li.appendChild(due);
-      ul.appendChild(li);
-    }
+    if (this.days.assignments.labs) {
+      ul = document.createElement("ul");
+      for (let assign of this.days.assignments.labs) {
+        let li = document.createElement("li");
+        let anchor = document.createElement("a");
+        anchor.href = assign.url;
+        anchor.innerHTML = `${assign.name}: ${assign.title}`;
+        let due = document.createTextNode(` (due ${assign.due})`);
+        li.appendChild(anchor);
+        li.appendChild(due);
+        ul.appendChild(li);
+      }
 
-    // update the HTML element
-    h3 = document.createElement("h3");
-    h3.innerHTML = "Labs";
-    div.appendChild(h3);
-    div.appendChild(ul);
+      // update the HTML element
+      h3 = document.createElement("h3");
+      h3.innerHTML = "Labs";
+      div.appendChild(h3);
+      div.appendChild(ul);
+    }
   }
 
   /**
