@@ -10,9 +10,6 @@
 - [Unit Testing: Jasmine](lab.testing/)
 
 <!-- David's schedule generator! Do not touch -->
-
-### Tentative Course Schedule (Fall)
-
 <div id="schedule">&nbsp;</div>
 <script type="text/javascript" src="../calendar.js"></script>
 <script type="text/javascript" src="schedule.js"></script>

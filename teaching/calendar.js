@@ -104,9 +104,7 @@ class CourseCalendar {
 
           // depending on whether the day is LAB, LEC, or OFF, pull
           // activity from the respective queue and add to the table
-          if (this.format[dayCnt] == LAB) {
-            td.innerHTML += `${this.days.labs.shift()}`;
-          } else if (this.format[dayCnt] == LEC) {
+          if (this.format[dayCnt] == LAB || this.format[dayCnt] == LEC) {
             td.innerHTML += `${this.days.lectures.shift()}`;
           }
           tr.appendChild(td);
