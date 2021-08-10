@@ -3,12 +3,11 @@
  */
 const WKD = -2;
 const OFF = -1;
-const LAB = 1;
 const LEC = 0;
 const TR = [OFF, LEC, OFF, LEC, OFF, WKD, WKD];
 const MWF = [LEC, OFF, LEC, OFF, LEC, WKD, WKD];
-const MWRF = [LEC, OFF, LEC, LAB, LEC, WKD, WKD];
-const MTWF = [LEC, LAB, LEC, OFF, LEC, WKD, WKD];
+const MWRF = [LEC, OFF, LEC, LEC, LEC, WKD, WKD];
+const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 class CourseCalendar {
@@ -102,9 +101,9 @@ class CourseCalendar {
             }
           }
 
-          // depending on whether the day is LAB, LEC, or OFF, pull
+          // depending on whether the day is LEC, WKD, or OFF, pull
           // activity from the respective queue and add to the table
-          if (this.format[dayCnt] == LAB || this.format[dayCnt] == LEC) {
+          if (this.format[dayCnt] == LEC) {
             td.innerHTML += `${this.days.lectures.shift()}`;
           }
           tr.appendChild(td);
