@@ -2,7 +2,7 @@ let days = {
   lectures: [
     // wk 1
     "Why DBMS? Data independence",
-    "Relational model: connection to set theory",
+    "Relational model; set theory",
     "Keys and schema",
     // wk 2
     "<span style='color: #0f79d0'>Labor Day (no class)</span>",
@@ -26,10 +26,10 @@ let days = {
     "<span style='color: #0f79d0'>Exam 1</span>",
     // wk 7
     "DB theory: functional dependencies (FD)",
-    "Armstrong’s axioms and deriving inference rules",
+    "Armstrong’s axioms, inference rules",
     "Attribute closure and keys",
     // wk 8
-    "<span style='color: #0f79d0'>Fall Break (no class)</span>s",
+    "<span style='color: #0f79d0'>Fall Break (no class)</span>",
     "Normal forms: 1NF, 2NF",
     "BCNF; Canonical cover",
     // wk 9
