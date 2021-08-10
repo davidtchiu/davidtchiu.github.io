@@ -58,11 +58,6 @@ class CourseCalendar {
         if (this.format[dayCnt] != OFF) {
           let td = document.createElement("td");
 
-          console.log(this.startDate);
-          console.log(this.startDate.getMonth());
-          console.log(currentDate);
-          console.log(currentDate.getMonth());
-
           // Is it today? Highlight the background differently
           if (
             currentDate.getMonth() == this.today.getMonth() &&
@@ -73,13 +68,10 @@ class CourseCalendar {
             td.style.color = "#f2f2f2";
           }
 
-          console.log(this.startDate);
-          console.log(this.startDate.getMonth());
-          console.log(currentDate);
-          console.log(currentDate.getMonth());
-
           td.innerHTML = `<strong>${dayLabels[(currentDate.getDay() + 6) % 7]}
-          ${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}</strong><br/>`;
+          ${
+            currentDate.getMonth() + 1
+          }/${currentDate.getDate()}/${currentDate.getFullYear()}</strong><br/>`;
 
           // depending on whether the day is LAB, LEC, or OFF, pull
           // activity from the respective queue and add to the table
