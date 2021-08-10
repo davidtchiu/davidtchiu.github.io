@@ -1,24 +1,3 @@
-| Week   | Tue                                          | Thu                           |
-| ------ | -------------------------------------------- | ----------------------------- |
-| 1      | Introduction                                 | VS Code; Start command line   |
-| 2      | Command-line Lab; Start Git                  | More Git; Git lab             |
-| 3      | Git branching, merging                       | Finish Git; Git branching lab |
-| 4      | Intro to the web; JS Fundamentals            | JS Fundamentals (Cont'd)      |
-| 5      | DOM navigation and manipulation              | Event handling                |
-| 6      | More event handling                          | Asynchronous execution        |
-| 7      | Promises; Await                              | Ajax, JSON, Axios             |
-| 8      | _Fall Break (no class)_                      | Process Models; Start Agile   |
-| 9      | User stories, feature selection; Stories Lab | Start Node.js                 |
-| 10     | Node.js and Express                          | More Express                  |
-| 11     | EJS Templating                               | EJS+Express Lab?              |
-| 12     | Software Testing                             | Jasmine; Testing Lab          |
-| 13     | Project Work Day                             | _Thanksgiving (no class)_     |
-| 14     | Panel                                        | Panel                         |
-| 15     | Project Work Day                             | _Reading Period (no class)_   |
-| Finals | Presentations                                |                               |
-
-
-
 let days = {
   lectures: [
     // wk 1
