@@ -42,8 +42,10 @@ class CourseCalendar {
         anchor.style.color = ASSIGNMENT_COLOR[assignType];
         anchor.href = assign.url;
         anchor.innerHTML = `${assign.name}: ${assign.title}`;
-        let due = document.createTextNode(` (due ${assign.due})`);
         li.appendChild(anchor);
+        if (assign.due) {
+          let due = document.createTextNode(` (due ${assign.due})`);
+        }
         li.appendChild(due);
         ul.appendChild(li);
       }

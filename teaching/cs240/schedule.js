@@ -1,36 +1,90 @@
 let days = {
-  assignments: [
-    {
-      name: "Hwk 1",
-      title: "Github Homepage",
-      url: "hwk1.ghpages/",
-      due: "9/20/2021",
-    },
-    {
-      name: "Hwk 2",
-      title: "Wordplay",
-      url: "hwk2.wordplay/",
-      due: "10/6/2021",
-    },
-    {
-      name: "Hwk 3",
-      title: "Scoreboard",
-      url: "hwk3.scoreboard/",
-      due: "10/18/2021",
-    },
-    {
-      name: "Hwk 4",
-      title: "Schelling's Model",
-      url: "hwk4.schelling/",
-      due: "11/03/2021",
-    },
-    {
-      name: "Hwk 5",
-      title: "Simone the Memory Game",
-      url: "hwk5.simone/",
-      due: "11/15/2021",
-    },
-  ],
+  assignments: {
+    homework: [
+      {
+        name: "Hwk 1",
+        title: "Github Homepage",
+        url: "hwk1.ghpages/",
+        due: "9/20/2021",
+      },
+      {
+        name: "Hwk 2",
+        title: "Wordplay",
+        url: "hwk2.wordplay/",
+        due: "10/6/2021",
+      },
+      {
+        name: "Hwk 3",
+        title: "Scoreboard",
+        url: "hwk3.scoreboard/",
+        due: "10/18/2021",
+      },
+      {
+        name: "Hwk 4",
+        title: "Schelling's Model",
+        url: "hwk4.schelling/",
+        due: "11/03/2021",
+      },
+      {
+        name: "Hwk 5",
+        title: "Simone the Memory Game",
+        url: "hwk5.simone/",
+        due: "11/15/2021",
+      },
+    ],
+
+    ////////////////////////////// PROJECTS ///////////////////////////////
+    projects: [
+      {
+        name: "Proj 1",
+        title: "To the Cloud",
+        url: "proj1.cloud/",
+        due: "9/20/2021",
+      },
+      {
+        name: "Proj 2",
+        title: "Data-Driven Web Development",
+        url: "proj2.php/",
+        due: "10/18/2021",
+      },
+      {
+        name: "Proj 3",
+        title: "Project Planning",
+        url: "proj3.planning/",
+        due: "11/1/2021",
+      },
+      {
+        name: "Proj 4",
+        title: "Implementation",
+        url: "proj4.impl/",
+        due: "12/6/2021",
+      },
+    ],
+
+    ////////////////////////////////// LABS ////////////////////////////////
+    labs: [
+      {
+        name: "Lab 1",
+        title: "Command Line Bootcamp",
+        url: "lab.cmd/",
+      },
+      {
+        name: "Lab 2",
+        title: "Git Basics",
+        url: "lab.git1/",
+      },
+      {
+        name: "Lab 3",
+        title: "Git Branching",
+        url: "lab.cmd/",
+      },
+      {
+        name: "Lab 4",
+        title: "Unit Testing",
+        url: "lab.testing/",
+      },
+    ],
+  },
 
   lectures: [
     // wk 1
