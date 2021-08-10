@@ -68,5 +68,5 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("8/30/2021", days, MWF);
+const schedule = new CourseCalendar("8/30/21", days, MWF);
 schedule.generateHTMLCalendar();
