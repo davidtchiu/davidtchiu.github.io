@@ -1,4 +1,4 @@
-const days = {
+let days = {
   lectures: [
     // wk 1
     "Why DBMS? Data independence",

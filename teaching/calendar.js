@@ -8,6 +8,7 @@ const TR = [OFF, LEC, OFF, LEC, OFF, OFF, OFF];
 const MWF = [LEC, OFF, LEC, OFF, LEC, OFF, OFF];
 const MWRF = [LEC, OFF, LEC, LAB, LEC, OFF, OFF];
 const MTWF = [LEC, LAB, LEC, OFF, LEC, OFF, OFF];
+const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 class CourseCalendar {
   constructor(startDate, daysObj, format, elementID) {
@@ -33,23 +34,7 @@ class CourseCalendar {
     for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
       if (this.format[dayCnt] != OFF) {
         let th = document.createElement("th");
-        switch (dayCnt) {
-          case 0:
-            th.innerHTML = `<center>Mon</center>`;
-            break;
-          case 1:
-            th.innerHTML = `<center>Tue</center>`;
-            break;
-          case 2:
-            th.innerHTML = `<center>Wed</center>`;
-            break;
-          case 3:
-            th.innerHTML = `<center>Thu</center>`;
-            break;
-          case 4:
-            th.innerHTML = `<center>Fri</center>`;
-            break;
-        }
+        th.innerHTML = `<center>${dayLabels[dayCnt]}</center>`;
         theadRow.appendChild(th);
       }
     }
@@ -70,7 +55,10 @@ class CourseCalendar {
       for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
         if (this.format[dayCnt] != OFF) {
           let td = document.createElement("td");
-          td.innerHTML = `<center>${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}<br/></center>`;
+          td.innerHTML = `<center><strong>${
+            dayLabels[currentDate.getDay()]
+          }, ${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}
+          </strong></center><br/>`;
 
           // depending on whether the day is LAB, LEC, or OFF, pull
           // activity from the respective queue and add to the table
