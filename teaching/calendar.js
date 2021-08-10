@@ -96,7 +96,7 @@ class CourseCalendar {
           let td = document.createElement("td");
           td.style.width = "20%";
           td.style.margin = "0px";
-          td.style.padding = "0px";
+          // td.style.padding = "0px";
 
           // Is it today? Highlight the background differently
           let dateHeader = document.createElement("div");
