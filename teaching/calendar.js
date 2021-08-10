@@ -45,9 +45,6 @@ class CourseCalendar {
     let currentDate = this.startDate;
     let weekNum = 1;
 
-    console.log(this.startDate);
-    console.log(currentDate);
-
     while (this.days.lectures.length > 0) {
       let tr = document.createElement("tr");
 
@@ -61,6 +58,9 @@ class CourseCalendar {
         if (this.format[dayCnt] != OFF) {
           let td = document.createElement("td");
 
+          console.log(this.startDate);
+          console.log(currentDate);
+
           // Is it today? Highlight the background differently
           if (
             currentDate.getMonth() == this.today.getMonth() &&
@@ -70,6 +70,10 @@ class CourseCalendar {
             td.style.backgroundColor = "#0f79d0";
             td.style.color = "#f2f2f2";
           }
+
+          console.log(this.startDate);
+          console.log(currentDate);
+
           td.innerHTML = `<strong>${dayLabels[(currentDate.getDay() + 6) % 7]}
           ${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}</strong><br/>`;
 
