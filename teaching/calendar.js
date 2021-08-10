@@ -25,11 +25,22 @@ class CourseCalendar {
     let table = document.createElement("table");
     let thead = document.createElement("thead");
     let theadRow = document.createElement("tr");
-    theadRow.appendChild((document.createElement("th").innerHTML = "Mon"));
-    theadRow.appendChild((document.createElement("th").innerHTML = "Tue"));
-    theadRow.appendChild((document.createElement("th").innerHTML = "Wed"));
-    theadRow.appendChild((document.createElement("th").innerHTML = "Thu"));
-    theadRow.appendChild((document.createElement("th").innerHTML = "Fri"));
+    let mon = document.createElement("th");
+    mon.innerHTML = "Mon";
+    theadRow.appendChild(mon);
+    let mon = document.createElement("th");
+    tue.innerHTML = "Tue";
+    theadRow.appendChild(tue);
+    let wed = document.createElement("th");
+    wed.innerHTML = "Wed";
+    theadRow.appendChild(wed);
+    let thu = document.createElement("th");
+    thu.innerHTML = "Thu";
+    theadRow.appendChild(thu);
+    let fri = document.createElement("th");
+    fri.innerHTML = "Fri";
+    theadRow.appendChild(fri);
+
     thead.appendChild(theadRow);
     table.appendChild(thead);
 
