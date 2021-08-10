@@ -35,30 +35,30 @@ let days = {
 
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
-      {
-        name: "Proj 1",
-        title: "To the Cloud",
-        url: "proj1.cloud/",
-        due: "9/20/2021",
-      },
-      {
-        name: "Proj 2",
-        title: "Data-Driven Web Development",
-        url: "proj2.php/",
-        due: "10/18/2021",
-      },
-      {
-        name: "Proj 3",
-        title: "Project Planning",
-        url: "proj3.planning/",
-        due: "11/1/2021",
-      },
-      {
-        name: "Proj 4",
-        title: "Implementation",
-        url: "proj4.impl/",
-        due: "12/6/2021",
-      },
+      // {
+      //   name: "Proj 1",
+      //   title: "To the Cloud",
+      //   url: "proj1.cloud/",
+      //   due: "9/20/2021",
+      // },
+      // {
+      //   name: "Proj 2",
+      //   title: "Data-Driven Web Development",
+      //   url: "proj2.php/",
+      //   due: "10/18/2021",
+      // },
+      // {
+      //   name: "Proj 3",
+      //   title: "Project Planning",
+      //   url: "proj3.planning/",
+      //   due: "11/1/2021",
+      // },
+      // {
+      //   name: "Proj 4",
+      //   title: "Implementation",
+      //   url: "proj4.impl/",
+      //   due: "12/6/2021",
+      // },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
