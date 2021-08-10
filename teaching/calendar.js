@@ -10,7 +10,7 @@ const MWRF = [LEC, OFF, LEC, LEC, LEC, WKD, WKD];
 const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-const DUE_COLOR = {
+const ASSIGNMENT_COLOR = {
   labs: "#800080",
   homework: "#009926",
   projects: "#a61717",
@@ -39,7 +39,7 @@ class CourseCalendar {
       for (let assign of this.days.assignments[assignType]) {
         let li = document.createElement("li");
         let anchor = document.createElement("a");
-        anchor.style.color = DUE_COLOR[assignmentType];
+        anchor.style.color = ASSIGNMENT_COLOR[assignType];
         anchor.href = assign.url;
         anchor.innerHTML = `${assign.name}: ${assign.title}`;
         let due = document.createTextNode(` (due ${assign.due})`);
@@ -119,7 +119,7 @@ class CourseCalendar {
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
-                dayContent.innerHTML += `<span style='color: ${DUE_COLOR[assignmentType]}'>${assign.name} due</span><br/>`;
+                dayContent.innerHTML += `<span style='color: ${ASSIGNMENT_COLOR[assignmentType]}'>${assign.name} due</span><br/>`;
               }
             }
           }
