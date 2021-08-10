@@ -36,7 +36,7 @@ let days = {
       url: "hwk6.joins/",
       due: "11/19/2021",
     },
-
+  ],
 
   lectures: [
     // wk 1
