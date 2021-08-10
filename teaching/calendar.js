@@ -20,6 +20,30 @@ class CourseCalendar {
   }
 
   /**
+   * Creates and updates HTML element with list of assignments
+   */
+  generateHTMLAssigments() {
+    let ul = document.createElement("ul");
+    for (let assign of this.days.assignments) {
+      let li = document.createElement("li");
+      let anchor = document.createElement("a");
+      anchor.href = assign.url;
+      anchor.innerHTML = `${assign.name}: ${assign.title}`;
+      let due = document.createTextNode(`(due ${assign.due})`);
+      li.appendChild(anchor);
+      li.appendChild(due);
+      ul.appendChild(li);
+    }
+
+    // update the HTML element
+    const div = document.querySelector("#schedule");
+    let h3 = document.createElement("h3");
+    h3.innerHTML = "Assignments";
+    div.appendChild(h3);
+    div.appendChild(ul);
+  }
+
+  /**
    * Creates and updates the HTML element with the schedule table.
    */
   generateHTMLCalendar() {
@@ -39,7 +63,8 @@ class CourseCalendar {
         theadRow.appendChild(th);
       }
     }
-    table.appendChild(theadRow);
+    thead.appendChild(theadRow);
+    table.appendChild(thead);
 
     //actual content starts here
     let currentDate = this.startDate;
@@ -89,6 +114,9 @@ class CourseCalendar {
 
     // update the HTML element
     const div = document.querySelector("#schedule");
+    let h3 = document.createElement("h3");
+    h3.innerHTML = "Tentative Schedule";
+    div.appendChild(h3);
     div.appendChild(table);
   }
 }

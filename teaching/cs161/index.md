@@ -1,19 +1,18 @@
 ## CS 161 - Introduction to Computer Science
 
-[Course Syllabus](CS455-syllabus.pdf)
-[Visit Canvas](https://canvas.pugetsound.edu)
+[Course Syllabus](CS455-syllabus.pdf) - [Visit Canvas](https://canvas.pugetsound.edu)
 
 ### Homework
 
-- [Hwk 1: A Better Circle](hwk1.circle/)
+- [Hwk 1: A Better Circle](hwk1.circle/) (9/8)
 
-<!-- - [Hwk 2: Calculator](hwk2.calc/)
-- [Hwk 3: Orca Card](hwk3.orca/)
-- [Hwk 4: Robot!](hwk4.robot/)
-- [Hwk 5: Loops](hwk5.loops/)
-- [Hwk 6: Tweet Processor](hwk6.twitter/)
-- [Hwk 7: Pooled Testing](hwk7.pooled/)
-- [Hwk 8: Black Jack](hwk8.blackjack/)
+<!-- - [Hwk 2: Calculator](hwk2.calc/) (9/24)
+- [Hwk 3: Orca Card](hwk3.orca/) (10/6)
+- [Hwk 4: Robot!](hwk4.robot/) (10/20)
+- [Hwk 5: Loops](hwk5.loops/) (11/3)
+- [Hwk 6: Tweet Processor](hwk6.twitter/) (11/15)
+- [Hwk 7: Pooled Testing](hwk7.pooled/) (11/23)
+- [Hwk 8: Black Jack](hwk8.blackjack/) (12/10)
 - [Hwk 8 (alternate)](hwk8.prep/) -->
 
 ### Labs
