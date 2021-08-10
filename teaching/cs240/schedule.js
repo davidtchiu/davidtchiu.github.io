@@ -76,15 +76,20 @@ let days = {
       {
         name: "Lab 3",
         title: "Git Branching",
-        url: "lab.cmd/",
+        url: "lab.git2/",
       },
       {
         name: "Lab 4",
+        title: "Express ",
+        url: "lab.express/",
+      },
+      {
+        name: "Lab 5",
         title: "Personal, Stories, Features",
         url: "lab.features/",
       },
       {
-        name: "Lab 5",
+        name: "Lab 6",
         title: "Unit Testing",
         url: "lab.testing/",
       },
