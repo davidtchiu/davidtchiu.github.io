@@ -81,6 +81,7 @@ let days = {
     "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
     "Lab 11",
     "<span style='color: #0f79d0'>Reading Period</span>",
+    "",
   ],
 };
 
