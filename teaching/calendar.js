@@ -66,6 +66,7 @@ class CourseCalendar {
     let thead = document.createElement("thead");
     let theadRow = document.createElement("tr");
     let wkHead = document.createElement("th");
+    wkHead.style.textAlign = "center";
     wkHead.innerHTML = "Wk";
     theadRow.appendChild(wkHead);
     for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
