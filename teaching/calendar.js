@@ -28,7 +28,7 @@ class CourseCalendar {
     let mon = document.createElement("th");
     mon.innerHTML = "Mon";
     theadRow.appendChild(mon);
-    let mon = document.createElement("th");
+    let tue = document.createElement("th");
     tue.innerHTML = "Tue";
     theadRow.appendChild(tue);
     let wed = document.createElement("th");
