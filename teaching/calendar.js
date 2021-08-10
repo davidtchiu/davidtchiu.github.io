@@ -39,6 +39,7 @@ class CourseCalendar {
       for (let assign of this.days.assignments[assignType]) {
         let li = document.createElement("li");
         let anchor = document.createElement("a");
+        anchor.style.color = DUE_COLOR[assignmentType];
         anchor.href = assign.url;
         anchor.innerHTML = `${assign.name}: ${assign.title}`;
         let due = document.createTextNode(` (due ${assign.due})`);
