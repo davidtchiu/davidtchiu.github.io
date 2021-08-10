@@ -55,7 +55,7 @@ class CourseCalendar {
     let thead = document.createElement("thead");
     let theadRow = document.createElement("tr");
     let wkHead = document.createElement("th");
-    wkHead.innerHTML = "Week";
+    wkHead.innerHTML = "Wk";
     theadRow.appendChild(wkHead);
     for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
       if (this.format[dayCnt] != WKD) {
