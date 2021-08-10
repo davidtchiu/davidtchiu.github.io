@@ -7,6 +7,7 @@
 ### Homework
 
 - [Hwk 1: A Better Circle](hwk1.circle/)
+
 <!-- - [Hwk 2: Calculator](hwk2.calc/)
 - [Hwk 3: Orca Card](hwk3.orca/)
 - [Hwk 4: Robot!](hwk4.robot/)
@@ -19,6 +20,7 @@
 ### Labs
 
 - [Lab 1: Draw My Picture](lab1.bluej/)
+
 <!-- - [Lab 2: Variables and Scope (Scope and Lifetime)](lab2.vars/)
 - [Lab 3: Stomach Class (Class Writing)](lab3.stomach/)
 - [Lab 4: Guessing Game (Conditionals)](lab4.guessing/)

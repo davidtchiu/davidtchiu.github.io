@@ -17,8 +17,6 @@ class CourseCalendar {
     this.format = format;
     this.elementID = elementID;
     this.today = new Date();
-
-    console.log(this.startDate);
   }
 
   /**
@@ -46,6 +44,10 @@ class CourseCalendar {
     //actual content starts here
     let currentDate = this.startDate;
     let weekNum = 1;
+
+    console.log(this.startDate);
+    console.log(currentDate);
+
     while (this.days.lectures.length > 0) {
       let tr = document.createElement("tr");
 
