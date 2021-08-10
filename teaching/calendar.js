@@ -23,26 +23,39 @@ class CourseCalendar {
   generateHTMLCalendar() {
     // table and thead
     let table = document.createElement("table");
-    // let thead = document.createElement("thead");
-    // let theadRow = document.createElement("tr");
-    // let mon = document.createElement("th");
-    // mon.innerHTML = "Mon";
-    // theadRow.appendChild(mon);
-    // let tue = document.createElement("th");
-    // tue.innerHTML = "Tue";
-    // theadRow.appendChild(tue);
-    // let wed = document.createElement("th");
-    // wed.innerHTML = "Wed";
-    // theadRow.appendChild(wed);
-    // let thu = document.createElement("th");
-    // thu.innerHTML = "Thu";
-    // theadRow.appendChild(thu);
-    // let fri = document.createElement("th");
-    // fri.innerHTML = "Fri";
-    // theadRow.appendChild(fri);
-    // thead.appendChild(theadRow);
-    // table.appendChild(thead);
 
+    // header
+    let thead = document.createElement("thead");
+    let theadRow = document.createElement("tr");
+    let wkHead = document.createElement("th");
+    wkHead.innerHTML = "Week";
+    theadRow.appendChild(wkHead);
+    for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
+      if (this.format[dayCnt] != OFF) {
+        let th = document.createElement("th");
+        switch (dayCnt) {
+          case 0:
+            th.innerHTML = `<center>Mon</center>`;
+            break;
+          case 1:
+            th.innerHTML = `<center>Tue</center>`;
+            break;
+          case 2:
+            th.innerHTML = `<center>Wed</center>`;
+            break;
+          case 3:
+            th.innerHTML = `<center>Thu</center>`;
+            break;
+          case 4:
+            th.innerHTML = `<center>Fri</center>`;
+            break;
+        }
+      }
+      theadRow.appendChild(th);
+    }
+    table.appendChild(theadRow);
+
+    //actual content starts here
     let currentDate = this.startDate;
     let weekNum = 1;
     while (this.days.lectures.length > 0) {
