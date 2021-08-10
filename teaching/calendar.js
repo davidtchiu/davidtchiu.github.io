@@ -29,7 +29,7 @@ class CourseCalendar {
       let anchor = document.createElement("a");
       anchor.href = assign.url;
       anchor.innerHTML = `${assign.name}: ${assign.title}`;
-      let due = document.createTextNode(`(due ${assign.due})`);
+      let due = document.createTextNode(` (due ${assign.due})`);
       li.appendChild(anchor);
       li.appendChild(due);
       ul.appendChild(li);
@@ -84,17 +84,21 @@ class CourseCalendar {
           let td = document.createElement("td");
 
           // Is it today? Highlight the background differently
-          if (
-            currentDate.getMonth() == this.today.getMonth() &&
-            currentDate.getDate() == this.today.getDate() &&
-            currentDate.getFullYear() == this.today.getFullYear()
-          ) {
+          if (this.sameDay(currentDate, this.today)) {
             td.style.backgroundColor = "#0f79d0";
             td.style.color = "#f2f2f2";
           }
 
+          // output the date
           td.innerHTML = `<strong>${dayLabels[(currentDate.getDay() + 6) % 7]}
           ${currentDate.getMonth() + 1}/${currentDate.getDate()}</strong><br/>`;
+
+          // any assignments due today?
+          for (let assign of this.days.assignments) {
+            if (sameDay(new Date(assign.due), currentDate)) {
+              td.innerHTML += `${assign.name} due`;
+            }
+          }
 
           // depending on whether the day is LAB, LEC, or OFF, pull
           // activity from the respective queue and add to the table
@@ -118,5 +122,13 @@ class CourseCalendar {
     h3.innerHTML = "Tentative Schedule";
     div.appendChild(h3);
     div.appendChild(table);
+  }
+
+  sameDay(day1, day2) {
+    return (
+      day1.getMonth() == day2.getMonth() &&
+      day1.getDate() == day2.getDate() &&
+      day1.getFullYear() == day2.getFullYear()
+    );
   }
 }
