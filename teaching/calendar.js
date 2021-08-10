@@ -59,7 +59,9 @@ class CourseCalendar {
           let td = document.createElement("td");
 
           console.log(this.startDate);
+          console.log(this.startDate.getMonth());
           console.log(currentDate);
+          console.log(currentDate.getMonth());
 
           // Is it today? Highlight the background differently
           if (
@@ -72,7 +74,9 @@ class CourseCalendar {
           }
 
           console.log(this.startDate);
+          console.log(this.startDate.getMonth());
           console.log(currentDate);
+          console.log(currentDate.getMonth());
 
           td.innerHTML = `<strong>${dayLabels[(currentDate.getDay() + 6) % 7]}
           ${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}</strong><br/>`;
