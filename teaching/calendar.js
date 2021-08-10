@@ -1,13 +1,14 @@
 /**
  * David's semester calendar generator
  */
+const WKD = -2;
 const OFF = -1;
 const LAB = 1;
 const LEC = 0;
-const TR = [OFF, LEC, OFF, LEC, OFF, OFF, OFF];
-const MWF = [LEC, OFF, LEC, OFF, LEC, OFF, OFF];
-const MWRF = [LEC, OFF, LEC, LAB, LEC, OFF, OFF];
-const MTWF = [LEC, LAB, LEC, OFF, LEC, OFF, OFF];
+const TR = [OFF, LEC, OFF, LEC, OFF, WKD, WKD];
+const MWF = [LEC, OFF, LEC, OFF, LEC, WKD, WKD];
+const MWRF = [LEC, OFF, LEC, LAB, LEC, WKD, WKD];
+const MTWF = [LEC, LAB, LEC, OFF, LEC, WKD, WKD];
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 class CourseCalendar {
@@ -57,7 +58,7 @@ class CourseCalendar {
     wkHead.innerHTML = "Week";
     theadRow.appendChild(wkHead);
     for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
-      if (this.format[dayCnt] != OFF) {
+      if (this.format[dayCnt] != WKD) {
         let th = document.createElement("th");
         th.innerHTML = `${dayLabels[dayCnt]}`;
         theadRow.appendChild(th);
@@ -80,7 +81,7 @@ class CourseCalendar {
 
       // work on days of the week
       for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
-        if (this.format[dayCnt] != OFF) {
+        if (this.format[dayCnt] != WKD) {
           let td = document.createElement("td");
 
           // Is it today? Highlight the background differently
