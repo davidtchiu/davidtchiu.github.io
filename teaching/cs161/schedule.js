@@ -78,6 +78,7 @@ let days = {
     "Lab 9",
     "<span style='color: #0f79d0'>Exam 2</span>",
     "Lab 10",
+    "<span style='color: #0f79d0'>Thanksgiving (no class)</span>",
     "Lab 11",
     "<span style='color: #0f79d0'>Reading Period</span>",
   ],
