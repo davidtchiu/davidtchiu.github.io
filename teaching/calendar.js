@@ -10,6 +10,10 @@ const MWRF = [LEC, OFF, LEC, LEC, LEC, WKD, WKD];
 const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
+const DUE_LAB_COLOR = "#800080";
+const TODAY_COLOR = "#f2f2f2";
+const TODAY_BG_COLOR = "#0f79d0";
+
 class CourseCalendar {
   constructor(startDate, daysObj, format, elementID) {
     this.startDate = new Date(startDate);
@@ -25,10 +29,9 @@ class CourseCalendar {
   generateHTMLAssigments() {
     const div = document.querySelector("#schedule");
 
-    // Homework
-    if (this.days.assignments.hwks) {
+    for (let assignType of Object.keys(this.days.assignments)) {
       let ul = document.createElement("ul");
-      for (let assign of this.days.assignments.hwks) {
+      for (let assign of this.days.assignments[assignType]) {
         let li = document.createElement("li");
         let anchor = document.createElement("a");
         anchor.href = assign.url;
@@ -41,49 +44,7 @@ class CourseCalendar {
 
       // update the HTML element
       let h3 = document.createElement("h3");
-      h3.innerHTML = "Homework";
-      div.appendChild(h3);
-      div.appendChild(ul);
-    }
-
-    // Projects
-    if (this.days.assignments.projects) {
-      let ul = document.createElement("ul");
-      for (let assign of this.days.assignments.projects) {
-        let li = document.createElement("li");
-        let anchor = document.createElement("a");
-        anchor.href = assign.url;
-        anchor.innerHTML = `${assign.name}: ${assign.title}`;
-        let due = document.createTextNode(` (due ${assign.due})`);
-        li.appendChild(anchor);
-        li.appendChild(due);
-        ul.appendChild(li);
-      }
-
-      // update the HTML element
-      let h3 = document.createElement("h3");
-      h3.innerHTML = "Projects";
-      div.appendChild(h3);
-      div.appendChild(ul);
-    }
-
-    // Labs
-    if (this.days.assignments.labs) {
-      let ul = document.createElement("ul");
-      for (let assign of this.days.assignments.labs) {
-        let li = document.createElement("li");
-        let anchor = document.createElement("a");
-        anchor.href = assign.url;
-        anchor.innerHTML = `${assign.name}: ${assign.title}`;
-        let due = document.createTextNode(` (due ${assign.due})`);
-        li.appendChild(anchor);
-        li.appendChild(due);
-        ul.appendChild(li);
-      }
-
-      // update the HTML element
-      let h3 = document.createElement("h3");
-      h3.innerHTML = "Labs";
+      h3.innerHTML = assignType;
       div.appendChild(h3);
       div.appendChild(ul);
     }
@@ -131,8 +92,8 @@ class CourseCalendar {
           td.style.width = "20%";
           // Is it today? Highlight the background differently
           if (this.sameDay(currentDate, this.today)) {
-            td.style.backgroundColor = "#0f79d0";
-            td.style.color = "#f2f2f2";
+            td.style.backgroundColor = TODAY_BG_COLOR;
+            td.style.color = TODAY_COLOR;
           }
 
           // output the date
@@ -144,7 +105,7 @@ class CourseCalendar {
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
-                td.innerHTML += `<span style='color: #800080'>${assign.name} due</span><br/>`;
+                td.innerHTML += `<span style='color: ${DUE_LAB_COLOR}'>${assign.name} due</span><br/>`;
               }
             }
           }
