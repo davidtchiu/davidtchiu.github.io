@@ -66,12 +66,12 @@ class CourseCalendar {
     let thead = document.createElement("thead");
     let theadRow = document.createElement("tr");
     let wkHead = document.createElement("th");
-    wkHead.style.textAlign = "center";
     wkHead.innerHTML = "Wk";
     theadRow.appendChild(wkHead);
     for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
       if (this.format[dayCnt] != WKD) {
         let th = document.createElement("th");
+        th.style.textAlign = "center";=
         th.innerHTML = `${dayLabels[dayCnt]}`;
         theadRow.appendChild(th);
       }
@@ -96,8 +96,8 @@ class CourseCalendar {
         if (this.format[dayCnt] != WKD) {
           let td = document.createElement("td");
           td.style.width = "20%";
-          // td.style.margin = "0px";
-          td.style.padding = "0px";
+          td.style.margin = "1px";
+          td.style.padding = "1px";
 
           // Is it today? Highlight the background differently
           let dateHeader = document.createElement("div");
