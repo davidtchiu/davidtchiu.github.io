@@ -97,9 +97,11 @@ class CourseCalendar {
 
           // Is it today? Highlight the background differently
           let dateHeader = document.createElement("div");
-          dateHeader.innerHTML = `<strong>${
+          dateHeader.style.textAlign = "center";
+          dateHeader.style.fontWeight = "bold";
+          dateHeader.innerHTML = `${
             currentDate.getMonth() + 1
-          }/${currentDate.getDate()}</strong>`;
+          }/${currentDate.getDate()}`;
           if (this.sameDay(currentDate, this.today)) {
             dateHeader.style.backgroundColor = TODAY_BG_COLOR;
             dateHeader.style.color = TODAY_COLOR;
