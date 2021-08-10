@@ -9,7 +9,7 @@ const days = {
     "Relational algebra",
     "RA: expression trees; composition",
     // wk 3
-    "RA: natural join, $$\theta$$ join",
+    "RA: natural join, $$\\theta$$ join",
     "RA: outer joins, rename, NULL",
     "RA: aggregation and grouping",
     // wk 4

@@ -23,41 +23,43 @@ class CourseCalendar {
   generateHTMLCalendar() {
     // table and thead
     let table = document.createElement("table");
-    let thead = document.createElement("thead");
-    let theadRow = document.createElement("tr");
-    let mon = document.createElement("th");
-    mon.innerHTML = "Mon";
-    theadRow.appendChild(mon);
-    let tue = document.createElement("th");
-    tue.innerHTML = "Tue";
-    theadRow.appendChild(tue);
-    let wed = document.createElement("th");
-    wed.innerHTML = "Wed";
-    theadRow.appendChild(wed);
-    let thu = document.createElement("th");
-    thu.innerHTML = "Thu";
-    theadRow.appendChild(thu);
-    let fri = document.createElement("th");
-    fri.innerHTML = "Fri";
-    theadRow.appendChild(fri);
-    thead.appendChild(theadRow);
-    table.appendChild(thead);
+    // let thead = document.createElement("thead");
+    // let theadRow = document.createElement("tr");
+    // let mon = document.createElement("th");
+    // mon.innerHTML = "Mon";
+    // theadRow.appendChild(mon);
+    // let tue = document.createElement("th");
+    // tue.innerHTML = "Tue";
+    // theadRow.appendChild(tue);
+    // let wed = document.createElement("th");
+    // wed.innerHTML = "Wed";
+    // theadRow.appendChild(wed);
+    // let thu = document.createElement("th");
+    // thu.innerHTML = "Thu";
+    // theadRow.appendChild(thu);
+    // let fri = document.createElement("th");
+    // fri.innerHTML = "Fri";
+    // theadRow.appendChild(fri);
+    // thead.appendChild(theadRow);
+    // table.appendChild(thead);
 
     let currentDate = this.startDate;
     while (this.days.lectures.length > 0) {
       let tr = document.createElement("tr");
       for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
-        // depending on whether the day is LAB, LEC, or OFF, pull
-        // activity from the respective queue and add to the table
-        let td = document.createElement("td");
-        td.innerHTML = `<center>${currentDate.toDateString()}<br/></center>`;
-        if (this.format[dayCnt] == LAB) {
-          td.innerHTML += `${this.days.labs.shift()}`;
-        } else if (this.format[dayCnt] == LEC) {
-          td.innerHTML += `${this.days.lectures.shift()}`;
-        }
-        tr.appendChild(td);
+        if (currentDate.getDay() > 0 && currentDate.getDay() < 6) {
+          let td = document.createElement("td");
+          td.innerHTML = `<center>${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}<br/></center>`;
 
+          // depending on whether the day is LAB, LEC, or OFF, pull
+          // activity from the respective queue and add to the table
+          if (this.format[dayCnt] == LAB) {
+            td.innerHTML += `${this.days.labs.shift()}`;
+          } else if (this.format[dayCnt] == LEC) {
+            td.innerHTML += `${this.days.lectures.shift()}`;
+          }
+          tr.appendChild(td);
+        }
         // next day
         currentDate.setDate(currentDate.getDate() + 1);
       }
