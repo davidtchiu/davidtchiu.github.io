@@ -48,7 +48,7 @@ class CourseCalendar {
 
     // Projects
     if (this.days.assignments.projects) {
-      ul = document.createElement("ul");
+      let ul = document.createElement("ul");
       for (let assign of this.days.assignments.projects) {
         let li = document.createElement("li");
         let anchor = document.createElement("a");
@@ -61,7 +61,7 @@ class CourseCalendar {
       }
 
       // update the HTML element
-      h3 = document.createElement("h3");
+      let h3 = document.createElement("h3");
       h3.innerHTML = "Projects";
       div.appendChild(h3);
       div.appendChild(ul);
@@ -69,7 +69,7 @@ class CourseCalendar {
 
     // Labs
     if (this.days.assignments.labs) {
-      ul = document.createElement("ul");
+      let ul = document.createElement("ul");
       for (let assign of this.days.assignments.labs) {
         let li = document.createElement("li");
         let anchor = document.createElement("a");
@@ -82,7 +82,7 @@ class CourseCalendar {
       }
 
       // update the HTML element
-      h3 = document.createElement("h3");
+      let h3 = document.createElement("h3");
       h3.innerHTML = "Labs";
       div.appendChild(h3);
       div.appendChild(ul);
