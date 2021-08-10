@@ -88,10 +88,46 @@ let days = {
     },
     {
       name: "Lab 6",
-      title: "Circle Drawer (Objects)",
-      url: "lab5.circleDrawer/",
-      due: "10/1/2021",
+      title: "Turtle Graphics (Loops)",
+      url: "lab6.turtle/",
+      due: "10/15/2021",
     },
+    {
+      name: "Lab 7",
+      title: "Combo Guesser (Arrays)",
+      url: "lab7.combo/",
+      due: "10/22/2021",
+    },
+    {
+      name: "Lab 8",
+      title: "Super Circle Drawer (ArrayLists)",
+      url: "lab8.superCircleDrawer/",
+      due: "10/29/2021",
+    },
+    {
+      name: "Lab 9",
+      title: "Election (HashMaps)",
+      url: "lab9.election/",
+      due: "11/5/2021",
+    },
+    {
+      name: "Lab 10",
+      title: "Boulders (File I/O, Parsing)",
+      url: "lab10.boulders/",
+      due: "11/19/2021",
+    },
+    {
+      name: "Lab 11",
+      title: "Playing Cards (Constants, Enum; IntelliJ IDE)",
+      url: "lab11.cards/",
+      due: "12/3/2021",
+    },
+    // {
+    //   name: "Lab 12",
+    //   title: "Elementary Complexity Analysis",
+    //   url: "lab12.perf/",
+    //   due: "12/10/2021",
+    // },
   ],
   lectures: [
     // wk 1
