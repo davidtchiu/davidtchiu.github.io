@@ -34,7 +34,7 @@ class CourseCalendar {
     for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
       if (this.format[dayCnt] != OFF) {
         let th = document.createElement("th");
-        th.innerHTML = `<center>${dayLabels[dayCnt]}</center>`;
+        th.innerHTML = `${dayLabels[dayCnt]}`;
         theadRow.appendChild(th);
       }
     }
@@ -55,9 +55,9 @@ class CourseCalendar {
       for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
         if (this.format[dayCnt] != OFF) {
           let td = document.createElement("td");
-          td.innerHTML = `<center><strong>${
+          td.innerHTML = `<strong>${
             dayLabels[(currentDate.getDay() + 6) % 7]
-          }, ${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}</strong></center><br/>`;
+          }, ${currentDate.getMonth()}/${currentDate.getDate()}/${currentDate.getFullYear()}</strong><br/>`;
 
           // depending on whether the day is LAB, LEC, or OFF, pull
           // activity from the respective queue and add to the table
