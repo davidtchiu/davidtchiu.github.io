@@ -164,6 +164,12 @@ class CourseCalendar {
     div.appendChild(table);
   }
 
+  /**
+   * Tests if two dates are the same
+   * @param {Date} day1
+   * @param {Date} day2
+   * @returns {boolean} true if the two dates are of the same mm/dd/yyyy
+   */
   sameDay(day1, day2) {
     return (
       day1.getMonth() == day2.getMonth() &&

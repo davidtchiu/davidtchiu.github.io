@@ -85,8 +85,8 @@ let days = {
       },
       {
         name: "Lab 5",
-        title: "Personal, Stories, Features",
-        url: "lab.features/",
+        title: "Personas and Scenarios",
+        url: "lab.personas/",
       },
       {
         name: "Lab 6",
