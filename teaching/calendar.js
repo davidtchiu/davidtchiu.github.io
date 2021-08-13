@@ -1,14 +1,18 @@
 /**
  * David's semester calendar generator
  */
-const WKD = -2;
-const OFF = -1;
+
+//////////////////////// constants ////////////////////////////
 const LEC = 0;
+const WKD = 2;
+const OFF = 1;
+const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+//////////////////////// configuration ////////////////////////////
 const TR = [OFF, LEC, OFF, LEC, OFF, WKD, WKD];
 const MWF = [LEC, OFF, LEC, OFF, LEC, WKD, WKD];
 const MWRF = [LEC, OFF, LEC, LEC, LEC, WKD, WKD];
 const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
-const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const ASSIGNMENT_COLOR = {
   labs: "#800080",
@@ -17,9 +21,19 @@ const ASSIGNMENT_COLOR = {
 };
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#0f79d0";
-const NOTTODAY_BG_COLOR = "#373737";
+const NOTTODAY_BG_COLOR = "#494949";
 
+/**
+ * This class can be used to generated an HTML course calendar.
+ */
 class CourseCalendar {
+  /**
+   *
+   * @param {string} startDate Start date of the semester in "mm/dd/yyyy"
+   * @param {object} daysObj
+   * @param {array} format
+   * @param {string} elementID HTML div element ID to update the calendar
+   */
   constructor(startDate, daysObj, format, elementID) {
     this.startDate = new Date(startDate);
     this.days = daysObj;
