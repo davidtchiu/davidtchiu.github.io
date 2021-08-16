@@ -77,7 +77,27 @@ Before you code up the Simone client, you need to consider some server-side supp
     solution sequence, or in other words, the number of rounds to be played.
 
 Successful executions of both commands will return a JSON object with the corresponding sequence. Test your API out using PostMan
-or even within your browser. Try on different or invalid values to see what the API returns. You can play with my web service to see the expected behavior.
+or even within your browser. Try on different or invalid values to see what the API returns.
+
+The server's return object should adhere to the following JSON formats. An example output is given below if the `start` command was issued.
+
+```json
+{
+  "type": "start",
+  "sequence": ["Y", "R", "Y", "B", "G", "B", "R", "R", "G", "B", "B", "Y"]
+}
+```
+
+An example output is given below if `getSolution` was issued for 10 rounds.
+
+```json
+{
+  "type": "solution",
+  "key": ["B", "R", "B", "G", "Y", "R", "G", "Y", "Y", "R"]
+}
+```
+
+In the returned sequence, B, R, G, Y correspond to Blue, Red, Green, and Yellow, respectively. You can play with my web service to see the expected behavior.
 
 - Get a Random Start Sequence: [http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=start](http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=start)
 - Get a Solution of 10 Rounds: [http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=getSolution&rounds=10](http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=getSolution&rounds=10)
@@ -85,6 +105,8 @@ or even within your browser. Try on different or invalid values to see what the 
 #### Program Requirements
 
 For full credit, your project should observe the following requirements.
+
+- Your program must use the Simone server-side API that you wrote in the previous section. However, if you're anxious to get the client up and running, you could always do your testing against my Simone API (`http://cs.pugetsound.edu/~dchiu/cs240/api/simone`) first.
 
 - Use the file templates that were provided to you.
   **_DO NOT_** modify `index.html`. Take a look through `index.html`
@@ -121,12 +143,12 @@ For full credit, your project should observe the following requirements.
   - There must be a <b>4 second</b> delay between the greeting sequence and the start of the first round.
   - When displaying the greeting sequence, there is a <b>120 ms</b> interval between each button.
   - When display the solution sequence at the beginning of each round, there is a <b>400 ms</b> interval between each button.
-  - During gameplay, each correctly pressed button should cause your game to display a status message to the player `"So far so good! $X$ more to go!"` where $X$ is the number of remaining buttons to press in the round.
+  - During gameplay, each correctly pressed button should cause your game to display a status message to the player `"So far so good! x more to go!"` where x is the number of remaining buttons to press in the round.
   - At the end of each successfully played round, you must display a status message to the player
-    `"Good job! Prepare for next round."`, which is followed by an <b>800 ms</b> delay, followed by another status message `"Round $x$ of $y$"`, which is again followed by an <b>800 ms</b> delay.
+    `"Good job! Prepare for next round."`, which is followed by an <b>800 ms</b> delay, followed by another status message `"Round x of y"`, which is again followed by an <b>800 ms</b> delay.
 
 - If the player loses at any point by pressing the wrong button in a sequence, you must play the appropriate sound bites, and change the
-  background to "hotpink." Further, you must display the mssage `"Incorrect! You lose!"` to the user. Optionally, you could display the solution, but it makes it that much more frustrating (or fun) to the user that they might never know how they screwed up.
+  background to "hotpink." Further, you must display the message `"Incorrect! You lose!"` to the user. Optionally, you could display the solution, but it makes it that much more frustrating (or fun) to the user that they might never know how they screwed up.
 
 - If the player wins, you must play the appropriate sound bites, and change the
   background to "DeepSkyBlue." Further, you must display the message `"Yay you win!"` to the user.
@@ -157,6 +179,15 @@ CS 240 Homework (Simone)
 
 
 ----------------------------------------------------------
+[25/25pts] Server-side Simone API
+
+> You must write the server-side API according to my specifications
+using the Express package.
+
+> All invalid commands or command combinations should result in an
+HTTP 400 error.
+
+----------------------------------------------------------
 [15/15pts] Class design
 
 > Your class design demonstrates good modularity and avoids
@@ -166,7 +197,7 @@ CS 240 Homework (Simone)
 ----------------------------------------------------------
 [20/20pts] AJAX
 
-> Your program must use the provided Simone Web Service API
+> Your program must use your Simone Web Service API
   to retrieve a start sequence and solution-key sequence.
 
 > Your program gracefully handles all asynchronous execution,
@@ -226,5 +257,5 @@ Suggestions (No Deductions)
 
 
 
-Total: 100 pt
+Total: 125 pt
 ```
