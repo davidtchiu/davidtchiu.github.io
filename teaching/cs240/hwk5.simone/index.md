@@ -38,6 +38,7 @@ JavaScript called **_Simone_**, the copyright-friendlier(?) version of Simon.
 
 Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-simone](https://github.com/davidtchiu/cs240-hwk-simone). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages.
 
+<!--
 #### Simone Web API
 
 First, we describe the API to the Simone Web Service. The API is located here
@@ -54,11 +55,32 @@ must be issued as part of the URL's _query string_:
   solution sequence, or in other words, the number of rounds to be played.
 
 Successful executions of both commands will return a JSON object with the corresponding sequence. Test the API out using PostMan
-or even within your browser. Try on different or invalid values to see what the API returns.
+or even within your browser. Try on different or invalid values to see what the API returns. -->
 
 #### Working Solution
 
 [Click here](demo/) for my working solution of this App.
+
+#### Prelims: Writing the Simone Web API
+
+Before you code up the Simone client, you need to consider some server-side support using Express. Create a new project called `simoneAPI/` and install `express` package using `node`. In an `index.js` file, add the necessary server logic to respond to the following queries:
+
+- Two commands are accepted, and all others will be rejected with an HTTP 400 error. The commands
+  must be issued as part of the URL's _query string_:
+
+  - `cmd`: The command we request the API to run. The two acceptable values are `start` and `getSolution`.
+
+    - If `cmd == start` the server should send the "greeting sequence" that Simone will play when a player first starts the game.
+    - If `cmd == getSolution` the server should send the "solution sequence" that the player must then repeat.
+
+  - `rounds`: If the `getSolution` command is issued, then the client is further required to request the length of the
+    solution sequence, or in other words, the number of rounds to be played.
+
+Successful executions of both commands will return a JSON object with the corresponding sequence. Test your API out using PostMan
+or even within your browser. Try on different or invalid values to see what the API returns. You can play with my web service to see the expected behavior.
+
+- Get a Random Start Sequence: [http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=start](http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=start)
+- Get a Solution of 10 Rounds: [http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=getSolution&rounds=10](http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=getSolution&rounds=10)
 
 #### Program Requirements
 
