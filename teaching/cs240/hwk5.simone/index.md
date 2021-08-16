@@ -97,7 +97,7 @@ An example output is given below if `getSolution` was issued for 10 rounds.
 }
 ```
 
-In the returned sequence, B, R, G, Y correspond to Blue, Red, Green, and Yellow, respectively. You can play with my web service to see the expected behavior.
+In the returned sequence, B, R, G, Y correspond to Blue, Red, Green, and Yellow, respectively. You can play with my working web service (below) to see the expected behavior. Try it with different commands and combinations (for instance, what would happen if you asked for -2 rounds, or what if you misspelled a command or variable?)
 
 - Get a Random Start Sequence: [http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=start](http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=start)
 - Get a Solution of 10 Rounds: [http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=getSolution&rounds=10](http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=getSolution&rounds=10)
