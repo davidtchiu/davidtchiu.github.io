@@ -131,13 +131,13 @@ let days = {
     "EJS Templating",
     "EJS+Express Lab",
     // wk 12
-    "Software Testing",
-    "Jasmine; Testing Lab",
+    "Project Work Day",
+    "Software Testing; Testing Lab",
     // wk 13
     "Project Work Day",
     "<span style='color: #0f79d0'>Thanksgiving</span>",
     // wk 14
-    "Panel",
+    "Project Work Day",
     "Panel",
     // wk 15
     "Project Work Day",
