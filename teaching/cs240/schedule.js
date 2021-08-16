@@ -80,13 +80,13 @@ let days = {
       },
       {
         name: "Lab 4",
-        title: "Express ",
-        url: "lab.express/",
+        title: "Personas and Scenarios",
+        url: "lab.personas/",
       },
       {
         name: "Lab 5",
-        title: "Personas and Scenarios",
-        url: "lab.personas/",
+        title: "Express Lab",
+        url: "lab.express/",
       },
       {
         name: "Lab 6",
