@@ -1,84 +1,68 @@
 ## CS 240 - Software Engineering
 
-### Personas and Scenarios
+### User Stories and Sprint Planning
 
-By this time, you should have a rough idea of what your term software project will be, and it's useful to think about who might be using your product, and in what ways. In this exercise you will be working with your team to write personas and scenarios for your software.
+As your team continues to develop personas and scenarios by which they interact with your software, we can begin refining some user stories for development.
 
 #### Student Outcomes
 
-- To practice the agile design process
+- To identify and write user stories
+- To practice the agile design process: sprint planning
 
-#### Part 1 - Writing a Persona
+#### Preliminary - Trello
 
-- Start by creating a new Github project called `design-docs` and clone it down to your machines.
+- Each of you will need to create a [Trello](https://trello.com/). Go ahead and do so now, if you haven't already, and please use your `pugetsound.edu` email so that I can invite you to later to my workspace.
 
-- Think about all the various **types of users** who might use your software, and choose one to write up. A paragraph or two ought to suffice). Personas could be imagined, or they might be representative of potential users that you surveyed/polled. Whichever the case, personas should be based on an understanding of the potential product users, their jobs, their background and their aspirations.
+- Have one of you create a new Workspace. The title of this workspace should be the name of your team or software application.
 
-- Here are all the elements you should include for each persona:
+- When creating a new "board," select the `Engineering-IT` category, which will display some templates. Choose the `Agile Spring Board` template to create a new board, but de-select the option to keep all existing content from the template. This board is where you will be putting your product backlog and sprint backlog.
 
-  - Details of their education and experience
-  - Details of the individual's job
-  - Personal information about the user (personalization)
-  - Details of their interest in the product (relevance)
+- Invite your team members to contribute to this board.
 
-- Here is an example of a persona we saw in lecture for the iLearn system:
+#### Part 1 - User Stories
 
-  ```
-  Elena, a school IT technician
+- Refer back to your scenario(s) from the previous lab (and your work outside of class) and begin identifying user stories. Look for action verbs in the scenarios, and highlight where you think it could result in user stories.
 
-  Elena, age 28, is a senior IT technician in a large secondary school (high school) in Glasgow with
-  over 2000 students. Originally from Poland, she has a diploma in electronics from Potsdam University.
-  She moved to Scotland in 2011 after being unemployed for a year after graduation. She has a Scottish
-  partner, no children, and hopes to develop her career in Scotland. She was originally appointed as a
-  junior technician but was promoted, in 2014,  to a senior post responsible for all the school computers.
-
-  Although not involved directly in teaching, Elena is often called on to help in computer science
-  classes. She is a competent Python programmer and is a ‘power user’ of digital technologies. She has a
-  long-term career goal of becoming a technical expert in digital learning technologies and being
-  involved in their development. She wants to become an expert in the iLearn system and sees it as an
-  experimental platform for supporting new uses for digital learning.
-  ```
-
-- I don't have a preference for the format of your document, so feel free to use plaintext `.txt`, or a `.doc`, or a `.pdf` for your persona.
-
-#### Part 2 - Scenarios
-
-- After you've completed writing the persona, start working on some scenarios for him/her.
-
-- Recall that a good scenario should have the following characteristics:
-
-  - A name for the scenario
-  - An overall objective, and what's involved in reaching the objective
-  - Personas involved
-  - Possible ways that the problem can be solved
-  - Keep it high-level; No implementation details
-
-- Here's an example scenario for Elena
+- Use the following templates for writing your user stories.
 
   ```
-  Elena has been asked by David, the head of the art department, to help set up an iLearn environment for
-  his department. David wants an environment that includes tools for making and sharing art, access to
-  external websites to study artworks, and ‘exhibition’ facilities so that the students’ work can be
-  displayed.
-
-  Elena starts by talking to art teachers to discover the tools that they recommend and the art sites
-  that they use for studies. She also discovers that the tools they use and the sites they access vary
-  according to the age of their students. Consequently, different student groups should be presented
-  with a toolset that is appropriate for their age and experience.
-
-  Once she has established what is required, Elena logs into the iLearn system as an administrator and
-  starts configuring the art environment using the iLearn setup service. She creates sub-environments
-  for three age groups plus a shared environment that includes tools and sites that may be used by all
-  students.
-
-  She drags and drops tools that are available locally and the URLs of external websites into each of
-  these environments. For each of the sub-environments, she assigns an art teacher as its administrator
-  so that they can refine the tool and web site selection that has been set up. She publishes the
-  environments in ‘review mode’ and makes them available to the teachers in the art department.
-
-  After discussing the environments with the teachers, Elena shows them how to refine and extend the
-  environments. Once they have agreed that the art environment is useful, it is released to all students
-  in the school.
+  As a <role>, I <want|need> to <do something>
   ```
 
-- In the end, each persona should be involved in several scenarios, but for now, just use the rest of the class period to write up one or two scenarios for your persona.
+  ```
+  As a <role> I <want|need> to <do something> so that <reason>
+  ```
+
+  - Keep in mind that scenarios are not the only source for producing user stories, but they should do a good enough job covering the various ways your personas use your system. Stories can also be newly defined through the personas themselves, and sometimes you might even discover the need for a new kind of user, with a whole new set of scenarios... the process is cyclical.
+
+- In Trello, create a new _list_ called `Product Backlog`, and for each user story you write, create a new _card_ that stores it.
+
+  - Then assign a `Label` to it. You can access the labels by selecting the "edit" button to the right of the list.
+  - Give your label a unique color, and name it `Story <X>` where `X` is just some unique identifier.
+
+- Reorder the cards by priority. I would start by prioritizing the stories that refer to software features that are "core" to your system. Remember that your goal is to develop a prototype of the system quickly, so I wouldn't start with tackling subsystems (like a login) until much later.
+
+- Here's an example of my Product Backlog for the game we wrote earlier in the semester, Wordplay:
+  ![](figures/product_backlog.png)
+
+#### Part 2 - Sprint Planning
+
+- Create a new list on Trello called `Sprint Backlog`.
+
+- Assuming that our _sprints_ are two weeks long, try your best to estimate the number of user stories you hope to implement in that time. (Maybe, since this is our first sprint, we should just try to implement 1-2 stories).
+
+- From the user stories that you've selected for this sprint, talk through all the individual "programming tasks" that you think are involved in implementing it. Put each "task" in the Sprint Backlog.
+
+  - Each task should be a functional unit of work, and may have implementation details associated with it.
+
+  - and assign it to the team member(s) responsible for implementing it in the sprint. You can assign a task by selecting the "edit" button to the right of a task card, and choose `Change members.`
+
+  - The amount of work that everyone takes on should be relatively equal. As tasks vary in size, it's normal for some team members to be assigned more tasks than others. (I know it can be subjective and hard to predict right now, and that's okay!)
+
+- Here's what my product backlog and sprint backlog looks like for an initial sprint for Wordplay.
+  ![](figures/sprint_backlog.png)
+
+  - In this example my first user story expanded into two disparate tasks, both assigned to "DC."
+  - You can ignore expanding other user stories into tasks for now. Just focus on the next sprint.
+
+- **Invite me!** As this is a living document to help you manage your project, there's no set number of tasks that you have to create and assign before the end of lab. However, I do require you to use and update your Trello board over the course of your project. To track your sprints and your progress, I want you to invite me to your board. Press the `Invite` button and search for me using my `pugetsound.edu` email.

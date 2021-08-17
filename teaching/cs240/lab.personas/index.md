@@ -81,4 +81,6 @@ By this time, you should have a rough idea of what your term software project wi
   in the school.
   ```
 
-- In the end, each persona should be involved in several scenarios, but for now, just use the rest of the class period to write up one or two scenarios for your persona.
+- Use the rest of the class period to write up one or two scenarios for your persona.
+
+- **Note on continued work:** After lab is finished, you and your team must continue to define the remaining personas and scenarios. Each persona should be involved in several scenarios. Your work outside on this outside of class is crucial to the success of your project.
