@@ -125,7 +125,7 @@ let days = {
     "Ajax, JSON, Axios",
     // wk 8
     "<span style='color: #0f79d0'>Fall Break</span>",
-    "Process Models; Start Agile",
+    "Software Process Models; Agile/Scrum",
     // wk 9
     "Persona and scenarios lab",
     "User stories and features Lab",
@@ -134,18 +134,18 @@ let days = {
     "Node.js and Express",
     // wk 11
     "EJS Templating",
-    "EJS+Express Lab",
+    "EJS and express lab",
     // wk 12
-    "Project Work Day",
-    "Software Testing; Testing Lab",
+    "Work/Sprint Meeting",
+    "Software Testing; Testing lab",
     // wk 13
-    "Project Work Day",
+    "Work",
     "<span style='color: #0f79d0'>Thanksgiving</span>",
     // wk 14
-    "Project Work Day",
-    "Panel",
+    "Work/Sprint Meeting",
+    "Industry Panel",
     // wk 15
-    "Project Work Day",
+    "Work",
     "<span style='color: #0f79d0'>Reading Period</span>",
     // wk final
     "<span style='color: #0f79d0'>Presentations (12p - 2p)</span>",
