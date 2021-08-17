@@ -43,6 +43,7 @@ As your team continues to develop personas and scenarios by which they interact 
 - Reorder the cards by priority. I would start by prioritizing the stories that refer to software features that are "core" to your system. Remember that your goal is to develop a prototype of the system quickly, so I wouldn't start with tackling subsystems (like a login) until much later.
 
 - Here's an example of my Product Backlog for the game we wrote earlier in the semester, Wordplay:
+
   <img src="figures/product_backlog.png" height="200px/>
 
 #### Part 2 - Sprint Planning
@@ -60,6 +61,7 @@ As your team continues to develop personas and scenarios by which they interact 
   - The amount of work that everyone takes on should be relatively equal. As tasks vary in size, it's normal for some team members to be assigned more tasks than others. (I know it can be subjective and hard to predict right now, and that's okay!)
 
 - Here's what my product backlog and sprint backlog looks like for an initial sprint for Wordplay.
+
   <img src="figures/sprint_backlog.png" height="200px/>
 
   - In this example my first user story expanded into two disparate tasks, both assigned to "DC."
