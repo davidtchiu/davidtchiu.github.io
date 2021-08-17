@@ -56,7 +56,9 @@ As your team continues to develop personas and scenarios by which they interact 
 
   - Each task should be a functional unit of work, and may have implementation details associated with it.
 
-  - and assign it to the team member(s) responsible for implementing it in the sprint. You can assign a task by selecting the "edit" button to the right of a task card, and choose `Change members.`
+  - Assign a label to the task, so that you can associate it with its corresponding User Story.
+
+  - Assign it to the team member(s) responsible for implementing it in the sprint. You can assign a task by selecting the "edit" button to the right of a task card, and choose `Change members.`
 
   - The amount of work that everyone takes on should be relatively equal. As tasks vary in size, it's normal for some team members to be assigned more tasks than others. (I know it can be subjective and hard to predict right now, and that's okay!)
 
