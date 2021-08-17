@@ -85,11 +85,16 @@ let days = {
       },
       {
         name: "Lab 5",
+        title: "User Stories",
+        url: "lab.stories/",
+      },
+      {
+        name: "Lab 6",
         title: "Express Lab",
         url: "lab.express/",
       },
       {
-        name: "Lab 6",
+        name: "Lab 7",
         title: "Unit Testing",
         url: "lab.testing/",
       },
@@ -114,7 +119,7 @@ let days = {
     "Event handling",
     // wk 6
     "Event handling",
-    "Asyncrhonous execution",
+    "Asynchronous execution",
     // wk 7
     "Promises",
     "Ajax, JSON, Axios",
@@ -122,11 +127,11 @@ let days = {
     "<span style='color: #0f79d0'>Fall Break</span>",
     "Process Models; Start Agile",
     // wk 9
-    "User stories, feature selection; Stories Lab",
-    "Start Node.js",
+    "Persona and scenarios lab",
+    "User stories and features Lab",
     // wk 10
+    "Start Node.js",
     "Node.js and Express",
-    "More Express",
     // wk 11
     "EJS Templating",
     "EJS+Express Lab",

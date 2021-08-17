@@ -148,10 +148,10 @@ For full credit, your project should observe the following requirements.
     `"Good job! Prepare for next round."`, which is followed by an <b>800 ms</b> delay, followed by another status message `"Round x of y"`, which is again followed by an <b>800 ms</b> delay.
 
 - If the player loses at any point by pressing the wrong button in a sequence, you must play the appropriate sound bites, and change the
-  background to "hotpink." Further, you must display the message `"Incorrect! You lose!"` to the user. Optionally, you could display the solution, but it makes it that much more frustrating (or fun) to the user that they might never know how they screwed up.
+  background to `hotpink`. Further, you must display the message `"Incorrect! You lose!"` to the user. Optionally, you could display the solution, but it makes it that much more frustrating (or fun) to the user that they might never know how they screwed up.
 
 - If the player wins, you must play the appropriate sound bites, and change the
-  background to "DeepSkyBlue." Further, you must display the message `"Yay you win!"` to the user.
+  background to `DeepSkyBlue`. Further, you must display the message `"Yay you win!"` to the user.
 
 #### Optional Extensions
 
