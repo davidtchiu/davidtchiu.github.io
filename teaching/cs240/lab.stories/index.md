@@ -44,7 +44,7 @@ As your team continues to develop personas and scenarios by which they interact 
 
 - Here's an example of my Product Backlog for the game we wrote earlier in the semester, Wordplay:
 
-  <img src="figures/product_backlog.png" height="200px" />
+  <img src="figures/product_backlog.png" height="400px" />
 
 #### Part 2 - Sprint Planning
 
@@ -58,15 +58,15 @@ As your team continues to develop personas and scenarios by which they interact 
 
   - Assign a label to the task, so that you can associate it with its corresponding User Story.
 
-  - Assign it to the team member(s) responsible for implementing it in the sprint. You can assign a task by selecting the "edit" button to the right of a task card, and choose `Change members.`
+  - Assign it to the team member(s) responsible for implementing it in the sprint. You can assign a task by selecting the "edit" button to the right of a task card, and choose `Change members`.
 
   - The amount of work that everyone takes on should be relatively equal. As tasks vary in size, it's normal for some team members to be assigned more tasks than others. (I know it can be subjective and hard to predict right now, and that's okay!)
 
-- Here's what my product backlog and sprint backlog looks like for an initial sprint for Wordplay.
+- Here's what my product backlog and sprint backlog looks like for the initial sprint of Wordplay.
 
-  <img src="figures/sprint_backlog.png" height="200px" />
+  <img src="figures/sprint_backlog.png" height="400px" />
 
   - In this example my first user story expanded into two disparate tasks, both assigned to "DC."
-  - You can ignore expanding other user stories into tasks for now. Just focus on the next sprint.
+  - You can ignore expanding other user stories into tasks for now. Just focus on the current sprint.
 
 - **Invite me!** As this is a living document to help you manage your project, there's no set number of tasks that you have to create and assign before the end of lab. However, I do require you to use and update your Trello board over the course of your project. To track your sprints and your progress, I want you to invite me to your board. Press the `Invite` button and search for me using my `pugetsound.edu` email.
