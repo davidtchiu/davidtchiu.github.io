@@ -44,7 +44,7 @@ As your team continues to develop personas and scenarios by which they interact 
 
 - Here's an example of my Product Backlog for the game we wrote earlier in the semester, Wordplay:
 
-  <img src="figures/product_backlog.png" height="200px/>
+  <img src="figures/product_backlog.png" height="200px" />
 
 #### Part 2 - Sprint Planning
 
@@ -64,7 +64,7 @@ As your team continues to develop personas and scenarios by which they interact 
 
 - Here's what my product backlog and sprint backlog looks like for an initial sprint for Wordplay.
 
-  <img src="figures/sprint_backlog.png" height="200px/>
+  <img src="figures/sprint_backlog.png" height="200px" />
 
   - In this example my first user story expanded into two disparate tasks, both assigned to "DC."
   - You can ignore expanding other user stories into tasks for now. Just focus on the next sprint.
