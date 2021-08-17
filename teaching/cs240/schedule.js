@@ -128,7 +128,7 @@ let days = {
     "Software Process Models; Agile/Scrum",
     // wk 9
     "Persona and scenarios lab",
-    "User stories and features Lab",
+    "User stories and planning lab",
     // wk 10
     "Start Node.js",
     "Node.js and Express",
