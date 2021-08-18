@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-[Course Syllabus](CS455-syllabus.pdf) - [Visit Canvas](https://canvas.pugetsound.edu)
+[Course Syllabus](CS240-syllabus.pdf) - [Visit Canvas](https://canvas.pugetsound.edu)
 
 <!-- David's schedule generator! Do not touch -->
 <div id="schedule">&nbsp;</div>
