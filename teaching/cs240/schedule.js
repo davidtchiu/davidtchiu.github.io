@@ -49,7 +49,7 @@ let days = {
       },
       {
         name: "Phase 2.2",
-        title: "2nd Sprints",
+        title: "2nd Sprint",
         url: "proj2.sprints/",
         due: "11/22/2021",
       },
@@ -61,16 +61,16 @@ let days = {
       },
       {
         name: "Phase 2.4",
-        title: "4th Sprints",
+        title: "4th Sprint",
         url: "proj2.sprints/",
         due: "12/6/2021",
       },
-      // {
-      //   name: "Proj 3",
-      //   title: "Project Planning",
-      //   url: "proj3.planning/",
-      //   due: "11/1/2021",
-      // },
+      {
+        name: "Phase 3",
+        title: "Wrapup and Presentation",
+        url: "proj3/",
+        due: "12/14/2021",
+      },
       // {
       //   name: "Proj 4",
       //   title: "Implementation",
