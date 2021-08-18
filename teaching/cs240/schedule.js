@@ -166,7 +166,7 @@ let days = {
     "Work/Sprint Review with David",
     "<span style='color: #0f79d0'>Reading Period</span>",
     // wk final
-    "<span style='color: #0f79d0'>Presentations (12p - 2p)</span>",
+    "<span style='color: #0f79d0'>Presentations<br/>(12p - 2p)</span>",
     "",
   ],
 };
