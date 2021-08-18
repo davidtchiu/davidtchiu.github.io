@@ -36,31 +36,31 @@ let days = {
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
       {
-        name: "Project 1",
+        name: "Phase 1",
         title: "Planning and Design",
         url: "proj1.planning/",
         due: "11/8/2021",
       },
       {
-        name: "Project 2 (1st Sprint)",
+        name: "Phase 2 (1st Sprint)",
         title: "Sprints",
         url: "proj2.sprints/",
         due: "11/15/2021",
       },
       {
-        name: "Project 2b (2nd Sprint)",
+        name: "Phase 2 (2nd Sprint)",
         title: "Sprints",
         url: "proj2.sprints/",
         due: "11/22/2021",
       },
       {
-        name: "Project 2c (3rd Sprint)",
+        name: "Phase 2 (3rd Sprint)",
         title: "Sprints",
         url: "proj2.sprints/",
         due: "11/29/2021",
       },
       {
-        name: "Project 2d (4th Sprint)",
+        name: "Phase 2 (4th Sprint)",
         title: "Sprints",
         url: "proj2.sprints/",
         due: "12/6/2021",
