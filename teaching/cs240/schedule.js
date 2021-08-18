@@ -154,16 +154,16 @@ let days = {
     "EJS Templating",
     "EJS and express lab",
     // wk 12
-    "Work/Sprint",
+    "Work/Sprint Review with David",
     "Software Testing; Testing lab",
     // wk 13
-    "Work/Sprint",
+    "Work/Sprint Review with David",
     "<span style='color: #0f79d0'>Thanksgiving</span>",
     // wk 14
-    "Work/Sprint",
+    "Work/Sprint Review with David",
     "Industry Panel",
     // wk 15
-    "Work/Sprint",
+    "Work/Sprint Review with David",
     "<span style='color: #0f79d0'>Reading Period</span>",
     // wk final
     "<span style='color: #0f79d0'>Presentations (12p - 2p)</span>",
