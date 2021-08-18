@@ -35,12 +35,12 @@ let days = {
 
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
-      // {
-      //   name: "Proj 1",
-      //   title: "To the Cloud",
-      //   url: "proj1.cloud/",
-      //   due: "9/20/2021",
-      // },
+      {
+        name: "Project 1",
+        title: "Planning and Design",
+        url: "proj1.planning/",
+        due: "11/5/2021",
+      },
       // {
       //   name: "Proj 2",
       //   title: "Data-Driven Web Development",
@@ -136,16 +136,16 @@ let days = {
     "EJS Templating",
     "EJS and express lab",
     // wk 12
-    "Work/Sprint Meeting",
+    "Work/Sprint",
     "Software Testing; Testing lab",
     // wk 13
-    "Work",
+    "Work/Sprint",
     "<span style='color: #0f79d0'>Thanksgiving</span>",
     // wk 14
-    "Work/Sprint Meeting",
+    "Work/Sprint",
     "Industry Panel",
     // wk 15
-    "Work",
+    "Work/Sprint",
     "<span style='color: #0f79d0'>Reading Period</span>",
     // wk final
     "<span style='color: #0f79d0'>Presentations (12p - 2p)</span>",

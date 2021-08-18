@@ -1,8 +1,8 @@
 ## CS 240 - Software Engineering
 
-### User Stories and Sprint Planning
+### In-Class Exercise: User Stories and Sprint Planning
 
-As your team continues to develop personas and scenarios by which they interact with your software, we can begin refining some user stories for development.
+As your team continues to develop personas and scenarios by which they interact with your software, we can begin refining some user stories for development. This lab is meant to help you jumpstart the requirements needed for Project 1.
 
 #### Student Outcomes
 
@@ -11,11 +11,11 @@ As your team continues to develop personas and scenarios by which they interact 
 
 #### Preliminary - Trello
 
-- Each of you will need to create a [Trello](https://trello.com/). Go ahead and do so now, if you haven't already, and please use your `pugetsound.edu` email so that I can invite you to later to my workspace.
+- Each of you will need to create a [Trello](https://trello.com/). Go ahead and do so now, and please use your `pugetsound.edu` email so that I can invite you to later to my workspace.
 
 - Have one of you create a new Workspace. The title of this workspace should be the name of your team or software application.
 
-- When creating a new "board," select the `Engineering-IT` category, which will display some templates. Choose the `Agile Spring Board` template to create a new board, but de-select the option to keep all existing content from the template. This board is where you will be putting your product backlog and sprint backlog.
+- When creating a new "board," select the `Engineering-IT` category, which will display some templates. Choose the `Agile Spring Board` template to create a new board, but de-select the options to keep all existing cards and card templates. This board is where you will be putting your product backlog and sprint backlog.
 
 - Invite your team members to contribute to this board.
 

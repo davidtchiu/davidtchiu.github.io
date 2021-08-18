@@ -1,8 +1,8 @@
 ## CS 240 - Software Engineering
 
-### Personas and Scenarios
+### In-Class Exercise: Personas and Scenarios
 
-By this time, you should have a rough idea of what your term software project will be, and it's useful to think about who might be using your product, and in what ways. In this exercise you will be working with your team to write personas and scenarios for your software.
+By this time, you should have a rough idea of what your term project will be, and it's useful to think about who might be using your product, and in what ways. In this exercise you will be working with your team to write personas and scenarios for your software. This lab is meant to jumpstart the requirements needed for Project 1.
 
 #### Student Outcomes
 
@@ -10,7 +10,7 @@ By this time, you should have a rough idea of what your term software project wi
 
 #### Part 1 - Writing a Persona
 
-- Start by creating a new Github project called `design-docs` and clone it down to your machines.
+- If you haven't done so already, start by having one of your group members create a new Github project called `cs240-term-project` and clone it down to your machines.
 
 - Think about all the various **types of users** who might use your software, and choose one to write up. A paragraph or two ought to suffice). Personas could be imagined, or they might be representative of potential users that you surveyed/polled. Whichever the case, personas should be based on an understanding of the potential product users, their jobs, their background and their aspirations.
 

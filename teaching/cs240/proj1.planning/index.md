@@ -1,29 +1,57 @@
 ## CS 240 - Software Engineering
 
-### User Stories and Sprint Planning
-
-As your team continues to develop personas and scenarios by which they interact with your software, we can begin refining some user stories for development.
+### Project 1: Initial Sprint Planning
 
 #### Student Outcomes
 
+- To write a product vision statement, personas, and scenarios
 - To identify and write user stories
 - To practice the agile design process: sprint planning
 
-#### Preliminary - Trello
+#### Proposed Software Vision
 
-- Each of you will need to create a [Trello](https://trello.com/). Go ahead and do so now, if you haven't already, and please use your `pugetsound.edu` email so that I can invite you to later to my workspace.
+With your teammates, agree on a software application that you believe would be doable in 4-5 weeks of sustained team work. You'll have 1 or 2 individual homework assignments due in the meantime, but they're designed to give you the skills you'll need to produce a workable product by finals week. As you define your project, keep in mind that people's schedules and workloads vary. That is, I want you to be cautiously ambitious -- design what a minimal product release might look like by the end of the year, and build in some "reach features" for if you have time, or your team's "velocity" is faster than expected. As always, communicate your ideas with me before running away with it, so that I can input my suggestions.
 
-- Have one of you create a new Workspace. The title of this workspace should be the name of your team or software application.
+- Start by having one of your group members create a new Github project called `cs240-term-project` and clone it down to your machines.
 
-- When creating a new "board," select the `Engineering-IT` category, which will display some templates. Choose the `Agile Spring Board` template to create a new board, but de-select the option to keep all existing content from the template. This board is where you will be putting your product backlog and sprint backlog.
+- Your group should work together to come up with a project vision statement. This statement should just be a short 1-2 paragraph summary of what your product does. (In the real world, you'd be justifying what makes your product unique on the market, but we'll skip that part.) Here are a couple resources that helps you write your vision statement:
 
-- Invite your team members to contribute to this board.
+  - [https://280group.com/what-is-product-management/skills/product-vision/](https://280group.com/what-is-product-management/skills/product-vision/)
+  - [https://www.productboard.com/blog/write-product-vision/](https://www.productboard.com/blog/write-product-vision/)
 
-#### Part 1 - User Stories
+- Name this file `README.md` and remember to push it up to Github when you're done. If you refresh your Github project page, it should now display the vision statement directly within the page. Add a link to your Trello workspace to this readme.
 
-- Refer back to your scenario(s) from the previous lab (and your work outside of class) and begin identifying user stories. Look for action verbs in the scenarios, and highlight where you think it could result in user stories.
+- It would be ideal to have the product vision written and agreed-upon before the **Persona/Scenarios Lab**.
 
-- Use the following templates for writing your user stories.
+#### Design Documents: Personas and Scenarios
+
+**Note:** You can wait to complete this section until after we've completed the in-class **Persona/Scenarios Lab** and the **User Stories/Sprint Planning Lab**.
+
+As part of the software design process, you are to provide the following written documents.
+
+- **Personas**
+
+  - Envision all the different kinds of users that may interact with your system, and create a persona (an imagined user profile) for each. If you participated in the persona lab in class, you should already know what needs to go into each persona statement. I think anywhere between 1-3 personas seems about right for projects your size, though this may vary.
+
+  - Put all your personas in the same file that you started writing in the lab.
+
+  - Push up to Github when you're done.
+
+- **Scenarios**
+
+  - By this time, you should have 1-2 scenarios written for a single persona following the lab. Finish writing your usage scenarios for each of the personas. Think creatively and critically about "coverage," i.e., all the different ways that you can envision different types of user interacting with your software. Keep it at a high level (no implementation details), and use action verbs where you can.
+
+  - A scenario should describe a situation in which a user interacts with your system, so I'd expect around 2-3 paragraphs each. Each persona should be involved in at least one scenario, and a scenario may involve more than one persona.
+
+  - Add these scenarios to the existing file that you already started writing in Lab.
+
+  - Push up to Github when you're done.
+
+#### Project Management with Trello
+
+In the sprint planning lab, every team member should all have created a [Trello](https://trello.com) account, each with a access to a shared workspace for your project.
+
+- Based on your scenarios, continue defining user stories and populating your `Product Backlog`. Recall that each user story should be formatted as follows,
 
   ```
   As a <role>, I <want|need> to <do something>
@@ -33,40 +61,63 @@ As your team continues to develop personas and scenarios by which they interact 
   As a <role> I <want|need> to <do something> so that <reason>
   ```
 
-  - Keep in mind that scenarios are not the only source for producing user stories, but they should do a good enough job covering the various ways your personas use your system. Stories can also be newly defined through the personas themselves, and sometimes you might even discover the need for a new kind of user, with a whole new set of scenarios... the process is cyclical.
+- In aggregate, you should be able to get a good sense of what your software is and does by perusing through the backlog. Remember to prioritize user stories that offer core functionality, as you're supposed to be producing incremental releases every couple weeks.
 
-- In Trello, create a new _list_ called `Product Backlog`, and for each user story you write, create a new _card_ that stores it.
+- When your backlog is sufficiently populated, finish planning out your _sprint_. Each sprint is 2 weeks of development time. As a team, choose the first couple user stories that you believe can be done in the next sprint, and start defining the finer details as programming tasks. Each user story may require several programming tasks for its implementation.
 
-  - Then assign a `Label` to it. You can access the labels by selecting the "edit" button to the right of the list.
-  - Give your label a unique color, and name it `Story <X>` where `X` is just some unique identifier.
-
-- Reorder the cards by priority. I would start by prioritizing the stories that refer to software features that are "core" to your system. Remember that your goal is to develop a prototype of the system quickly, so I wouldn't start with tackling subsystems (like a login) until much later.
-
-- Here's an example of my Product Backlog for the game we wrote earlier in the semester, Wordplay:
-
-  <img src="figures/product_backlog.png" height="400px" />
-
-#### Part 2 - Sprint Planning
-
-- Create a new list on Trello called `Sprint Backlog`.
-
-- Assuming that our _sprints_ are two weeks long, try your best to estimate the number of user stories you hope to implement in that time. (Maybe, since this is our first sprint, we should just try to implement 1-2 stories).
-
-- From the user stories that you've selected for this sprint, talk through all the individual "programming tasks" that you think are involved in implementing it. Put each "task" in the Sprint Backlog.
-
-  - Each task should be a functional unit of work, and may have implementation details associated with it.
-
-  - Assign a label to the task, so that you can associate it with its corresponding User Story.
-
-  - Assign it to the team member(s) responsible for implementing it in the sprint. You can assign a task by selecting the "edit" button to the right of a task card, and choose `Change members`.
-
-  - The amount of work that everyone takes on should be relatively equal. As tasks vary in size, it's normal for some team members to be assigned more tasks than others. (I know it can be subjective and hard to predict right now, and that's okay!)
-
-- Here's what my product backlog and sprint backlog looks like for the initial sprint of Wordplay.
-
-  <img src="figures/sprint_backlog.png" height="400px" />
-
-  - In this example my first user story expanded into two disparate tasks, both assigned to "DC."
-  - You can ignore expanding other user stories into tasks for now. Just focus on the current sprint.
+  - Place all sprint tasks into the `Sprint Backlog` on Trello.
+  - As instructed in the lab, assign each task to a member for completion, and give it the proper label to organize it under its associated user story.
 
 - **Invite me!** As this is a living document to help you manage your project, there's no set number of tasks that you have to create and assign before the end of lab. However, I do require you to use and update your Trello board over the course of your project. To track your sprints and your progress, I want you to invite me to your board. Press the `Invite` button and search for me using my `pugetsound.edu` email.
+
+#### Submission
+
+There are two items of submission:
+
+1. Make sure that your vision statement, persona, and scenario documents are pushed onto Github (before the 12am deadline). Then send me the link to your repository on [canvas](https://canvas.pugetsound.edu).
+
+2. Invite me to join your Trello workspace.
+
+#### Grading
+
+```
+CS 261 Project 1 (Team Graded)
+
+----------------------------------------------------------
+[10/10pts] Vision Statement
+
+----------------------------------------------------------
+
+[10/10pts] Persona Statements
+
+----------------------------------------------------------
+
+[30/30pts] Scenarios
+
+> You have multiple scenarios describing at a high level the
+various way sin which your personas interact with your system.
+
+----------------------------------------------------------
+
+[30/30pts] User Stories and Backlogs on Trello
+
+> You extracted User Stories from your scenarios and prioritized
+them on the product backlog on Trello.
+
+> You selected a sufficient number of Stories to implement in your
+initial sprint, and created tasks assigned to individual team
+members.
+
+> Task assignment should be of equal work, and should constitiute
+around 2-weeks worth of work.
+
+----------------------------------------------------------
+[0pts] Misc. Deductions
+> Late?
+
+----------------------------------------------------------
+Suggestions (No Deductions)
+
+
+Total:  80 / 80
+```
