@@ -66,9 +66,9 @@ let days = {
         due: "12/6/2021",
       },
       {
-        name: "Phase 3",
+        name: "Presentation",
         title: "Wrapup and Presentation",
-        url: "proj3/",
+        url: "proj3.final/",
         due: "12/14/2021",
       },
       // {
