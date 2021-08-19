@@ -37,7 +37,7 @@ Instructor's Evaluation: Finally, you will receive an evaluation from me about m
 Please submit to me the following:
 
 1. Make sure any slides, final code base, including test suite, is pushed to Github.
-2. On canvas, provide me with a link to your github project page, and a link to your team's Trello board.
+2. On canvas, provide me with a link to your github project page and a link to your team's Trello board.
 
 <!-- #### Grading
 
