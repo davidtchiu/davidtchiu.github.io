@@ -101,8 +101,8 @@ let days = {
     "SQL Lab Day 1",
     // wk 6
     "SQL Lab Day 2",
-    "<span style='color: #0f79d0'>Review</span>",
-    "<span style='color: #0f79d0'>Exam 1</span>",
+    "<strong><emph>Review</emph></strong>",
+    "<strong><emph>Exam 1</emph></strong>",
     // wk 7
     "DB theory: functional dependencies (FD)",
     "Armstrong’s axioms, inference rules",
@@ -121,8 +121,8 @@ let days = {
     "Start indexing",
     // wk 11
     "Indexing: B+Trees",
-    "<span style='color: #0f79d0'>Review</span>",
-    "<span style='color: #0f79d0'>Exam 2</span>",
+    "<strong><emph>Review</emph></strong>",
+    "<strong><emph>Exam 2</emph></strong>",
     // wk 12
     "B+Trees: properties, operations",
     "B+Trees (cont.): complexity analysis; Start dynamic hashing",
@@ -141,7 +141,7 @@ let days = {
     "<span style='color: #0f79d0'>Reading Period</span>",
     // wk final
     "",
-    "<span style='color: #0f79d0'>Final Exam: 4:00-6:00</span>",
+    "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
     "",
   ],
 };

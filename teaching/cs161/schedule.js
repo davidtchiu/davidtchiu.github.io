@@ -160,8 +160,8 @@ let days = {
     "Class APIs: Strings",
     // wk 6
     "Loops",
-    "<span style='color: #0f79d0'>Review</span>",
-    "<span style='color: #0f79d0'>Exam 1</span>",
+    "<strong><emph>Review</emph></strong>",
+    "<strong><emph>Exam 1</emph></strong>",
     "Writing while loops",
     // wk 7
     "For loops",
@@ -185,8 +185,8 @@ let days = {
     "HashMap (cont.): Smarter ChatBot",
     // wk 11
     "Start files",
-    "<span style='color: #0f79d0'>Review</span>",
-    "<span style='color: #0f79d0'>Exam 2</span>",
+    "<strong><emph>Review</emph></strong>",
+    "<strong><emph>Exam 2</emph></strong>",
     "File I/O",
     // wk 12
     "Information hiding, static, main()",
@@ -205,12 +205,12 @@ let days = {
     "Shaker sort, list operations",
     // wk 15
     "Recursion",
-    "<span style='color: #0f79d0'>Review</span>",
+    "<strong><emph>Review</emph></strong>",
     "<span style='color: #0f79d0'>Reading Period</span>",
     "<span style='color: #0f79d0'>Reading Period</span>",
     // wk final
     "",
-    "<span style='color: #0f79d0'>Final Exam (12p - 2p)</span>",
+    "<strong><emph>Final Exam (12p - 2p)</strong></emph>",
     "",
     "",
   ],
