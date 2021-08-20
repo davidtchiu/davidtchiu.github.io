@@ -118,6 +118,7 @@ class CourseCalendar {
 
           // Is it today? Highlight the background differently
           let dateHeader = document.createElement("div");
+
           if (this.sameDay(currentDate, this.today)) {
             dateHeader.style.backgroundColor = TODAY_BG_COLOR;
           } else {
@@ -135,7 +136,7 @@ class CourseCalendar {
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
-                dayContent.innerHTML += `<span style='color: ${ASSIGNMENT_COLOR[assignmentType]}'>${assign.name} due</span><br/>`;
+                dayContent.innerHTML += `<emph><span style='color: ${ASSIGNMENT_COLOR[assignmentType]}'>${assign.name} due</span></emph><br/>`;
               }
             }
           }
