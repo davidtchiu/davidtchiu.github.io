@@ -35,8 +35,8 @@ I will assume that each member of the team has contributed equally to the projec
   - In the [VS Code editor](https://code.visualstudio.com/download), which is recommended for this project, there is a built-in Terminal that you can use to access the command line. To get to it, start any project, then right-click anywhere on the project's file menu, and select `Open in Integrated Terminal`.
   - Of course, if you prefer not to use the VS Code integrated terminal, then the following tools will work too:
 
-        - If you use Mac: Your Terminal (found in Applications/Utilities) would work fine, but I prefer `iTerm 2`.
-        - If you use Windows, I recommend downloading `git-bash` (part of the Git application), or you can download `PuTTY`.
+    - If you use Mac: Your Terminal (found in Applications/Utilities) would work fine, but I prefer `iTerm 2`.
+    - If you use Windows, I recommend downloading `git-bash` (part of the Git application), or you can download `PuTTY`.
 
 - Let's get connected to your the Linux server. From your command-line, type:
 
