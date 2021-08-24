@@ -16,11 +16,11 @@ const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
 
 const ASSIGNMENT_COLOR = {
   labs: "#800080",
-  homework: "#009926",
-  projects: "#a61717",
+  homework: "#0f79d0",
+  projects: "#d14",
 };
 const TODAY_COLOR = "#f2f2f2";
-const TODAY_BG_COLOR = "#0f79d0";
+const TODAY_BG_COLOR = "##fcba03";
 const NOTTODAY_BG_COLOR = "#494949";
 
 /**
