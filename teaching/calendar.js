@@ -49,26 +49,28 @@ class CourseCalendar {
     const div = document.querySelector("#schedule");
 
     for (let assignType of Object.keys(this.days.assignments)) {
-      let ul = document.createElement("ul");
-      for (let assign of this.days.assignments[assignType]) {
-        let li = document.createElement("li");
-        let anchor = document.createElement("a");
-        anchor.style.color = ASSIGNMENT_COLOR[assignType];
-        anchor.href = assign.url;
-        anchor.innerHTML = `${assign.name}: ${assign.title}`;
-        li.appendChild(anchor);
-        if (assign.due) {
-          let due = document.createTextNode(` (due ${assign.due})`);
-          li.appendChild(due);
+      if (this.days.assignments[assignType].length > 0) {
+        let ul = document.createElement("ul");
+        for (let assign of this.days.assignments[assignType]) {
+          let li = document.createElement("li");
+          let anchor = document.createElement("a");
+          anchor.style.color = ASSIGNMENT_COLOR[assignType];
+          anchor.href = assign.url;
+          anchor.innerHTML = `${assign.name}: ${assign.title}`;
+          li.appendChild(anchor);
+          if (assign.due) {
+            let due = document.createTextNode(` (due ${assign.due})`);
+            li.appendChild(due);
+          }
+          ul.appendChild(li);
         }
-        ul.appendChild(li);
-      }
 
-      // update the HTML element
-      let h3 = document.createElement("h3");
-      h3.innerHTML = assignType.toUpperCase();
-      div.appendChild(h3);
-      div.appendChild(ul);
+        // update the HTML element
+        let h3 = document.createElement("h3");
+        h3.innerHTML = assignType.toUpperCase();
+        div.appendChild(h3);
+        div.appendChild(ul);
+      }
     }
   }
 

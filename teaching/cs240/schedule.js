@@ -1,76 +1,76 @@
 let days = {
   assignments: {
     homework: [
-      {
-        name: "Hwk 1",
-        title: "Github Homepage",
-        url: "hwk1.ghpages/",
-        due: "9/20/2021",
-      },
-      {
-        name: "Hwk 2",
-        title: "Wordplay",
-        url: "hwk2.wordplay/",
-        due: "10/6/2021",
-      },
-      {
-        name: "Hwk 3",
-        title: "Scoreboard",
-        url: "hwk3.scoreboard/",
-        due: "10/18/2021",
-      },
-      {
-        name: "Hwk 4",
-        title: "Schelling's Model",
-        url: "hwk4.schelling/",
-        due: "11/03/2021",
-      },
-      {
-        name: "Hwk 5",
-        title: "Simone the Memory Game",
-        url: "hwk5.simone/",
-        due: "11/15/2021",
-      },
+      // {
+      //   name: "Hwk 1",
+      //   title: "Github Homepage",
+      //   url: "hwk1.ghpages/",
+      //   due: "9/20/2021",
+      // },
+      // {
+      //   name: "Hwk 2",
+      //   title: "Wordplay",
+      //   url: "hwk2.wordplay/",
+      //   due: "10/6/2021",
+      // },
+      // {
+      //   name: "Hwk 3",
+      //   title: "Scoreboard",
+      //   url: "hwk3.scoreboard/",
+      //   due: "10/18/2021",
+      // },
+      // {
+      //   name: "Hwk 4",
+      //   title: "Schelling's Model",
+      //   url: "hwk4.schelling/",
+      //   due: "11/03/2021",
+      // },
+      // {
+      //   name: "Hwk 5",
+      //   title: "Simone the Memory Game",
+      //   url: "hwk5.simone/",
+      //   due: "11/15/2021",
+      // },
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
-      {
-        name: "Phase 1",
-        title: "Planning and Design",
-        url: "proj1.planning/",
-        due: "11/8/2021",
-      },
-      {
-        name: "Phase 2.1",
-        title: "1st Sprint",
-        url: "proj2.sprints/",
-        due: "11/15/2021",
-      },
-      {
-        name: "Phase 2.2",
-        title: "2nd Sprint",
-        url: "proj2.sprints/",
-        due: "11/22/2021",
-      },
-      {
-        name: "Phase 2.3",
-        title: "3rd Sprint",
-        url: "proj2.sprints/",
-        due: "11/29/2021",
-      },
-      {
-        name: "Phase 2.4",
-        title: "4th Sprint",
-        url: "proj2.sprints/",
-        due: "12/6/2021",
-      },
-      {
-        name: "Presentation",
-        title: "Wrapup and Presentation",
-        url: "proj3.final/",
-        due: "12/14/2021",
-      },
+      // {
+      //   name: "Phase 1",
+      //   title: "Planning and Design",
+      //   url: "proj1.planning/",
+      //   due: "11/8/2021",
+      // },
+      // {
+      //   name: "Phase 2.1",
+      //   title: "1st Sprint",
+      //   url: "proj2.sprints/",
+      //   due: "11/15/2021",
+      // },
+      // {
+      //   name: "Phase 2.2",
+      //   title: "2nd Sprint",
+      //   url: "proj2.sprints/",
+      //   due: "11/22/2021",
+      // },
+      // {
+      //   name: "Phase 2.3",
+      //   title: "3rd Sprint",
+      //   url: "proj2.sprints/",
+      //   due: "11/29/2021",
+      // },
+      // {
+      //   name: "Phase 2.4",
+      //   title: "4th Sprint",
+      //   url: "proj2.sprints/",
+      //   due: "12/6/2021",
+      // },
+      // {
+      //   name: "Presentation",
+      //   title: "Wrapup and Presentation",
+      //   url: "proj3.final/",
+      //   due: "12/14/2021",
+      // },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
@@ -80,37 +80,37 @@ let days = {
         title: "Command Line Bootcamp",
         url: "lab.cmd/",
       },
-      {
-        name: "Lab 2",
-        title: "Git Basics",
-        url: "lab.git1/",
-      },
-      {
-        name: "Lab 3",
-        title: "Git Branching",
-        url: "lab.git2/",
-      },
-      {
-        name: "Lab 4",
-        title: "Personas and Scenarios",
-        url: "lab.personas/",
-      },
-      {
-        name: "Lab 5",
-        title: "User Stories and Sprint Planning",
-        url: "lab.stories/",
-      },
-      {
-        name: "Lab 6",
-        title: "Express Lab",
-        url: "lab.express/",
-      },
-      {
-        name: "Lab 7",
-        title: "Unit Testing",
-        url: "lab.testing/",
-      },
-    ],
+    //   {
+    //     name: "Lab 2",
+    //     title: "Git Basics",
+    //     url: "lab.git1/",
+    //   },
+    //   {
+    //     name: "Lab 3",
+    //     title: "Git Branching",
+    //     url: "lab.git2/",
+    //   },
+    //   {
+    //     name: "Lab 4",
+    //     title: "Personas and Scenarios",
+    //     url: "lab.personas/",
+    //   },
+    //   {
+    //     name: "Lab 5",
+    //     title: "User Stories and Sprint Planning",
+    //     url: "lab.stories/",
+    //   },
+    //   {
+    //     name: "Lab 6",
+    //     title: "Express Lab",
+    //     url: "lab.express/",
+    //   },
+    //   {
+    //     name: "Lab 7",
+    //     title: "Unit Testing",
+    //     url: "lab.testing/",
+    //   },
+    // ],
   },
 
   lectures: [
