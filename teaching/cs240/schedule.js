@@ -71,12 +71,6 @@ let days = {
         url: "proj3.final/",
         due: "12/14/2021",
       },
-      // {
-      //   name: "Proj 4",
-      //   title: "Implementation",
-      //   url: "proj4.impl/",
-      //   due: "12/6/2021",
-      // },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
@@ -142,7 +136,7 @@ let days = {
     "Promises",
     "Ajax, JSON, Axios",
     // wk 8
-    "<span style='color: #0f79d0'>Fall Break</span>",
+    "<strong>Fall Break<strong>",
     "Software Process Models; Agile/Scrum",
     // wk 9
     "Persona and scenarios lab",
@@ -158,15 +152,15 @@ let days = {
     "Software Testing; Testing lab",
     // wk 13
     "Work/Sprint Review with David",
-    "<span style='color: #0f79d0'>Thanksgiving</span>",
+    "<strong>Thanksgiving</strong>",
     // wk 14
     "Work/Sprint Review with David",
     "Industry Panel",
     // wk 15
     "Work/Sprint Review with David",
-    "<span style='color: #0f79d0'>Reading Period</span>",
+    "<strong>Reading Period</span>",
     // wk final
-    "<span style='color: #0f79d0'>Presentations<br/>(12p - 2p)</span>",
+    "<strong>Presentations<br/>(12p - 2p)<strong>",
     "",
   ],
 };
