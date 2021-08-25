@@ -80,37 +80,37 @@ let days = {
         title: "Command Line Bootcamp",
         url: "lab.cmd/",
       },
-    //   {
-    //     name: "Lab 2",
-    //     title: "Git Basics",
-    //     url: "lab.git1/",
-    //   },
-    //   {
-    //     name: "Lab 3",
-    //     title: "Git Branching",
-    //     url: "lab.git2/",
-    //   },
-    //   {
-    //     name: "Lab 4",
-    //     title: "Personas and Scenarios",
-    //     url: "lab.personas/",
-    //   },
-    //   {
-    //     name: "Lab 5",
-    //     title: "User Stories and Sprint Planning",
-    //     url: "lab.stories/",
-    //   },
-    //   {
-    //     name: "Lab 6",
-    //     title: "Express Lab",
-    //     url: "lab.express/",
-    //   },
-    //   {
-    //     name: "Lab 7",
-    //     title: "Unit Testing",
-    //     url: "lab.testing/",
-    //   },
-    // ],
+      //   {
+      //     name: "Lab 2",
+      //     title: "Git Basics",
+      //     url: "lab.git1/",
+      //   },
+      //   {
+      //     name: "Lab 3",
+      //     title: "Git Branching",
+      //     url: "lab.git2/",
+      //   },
+      //   {
+      //     name: "Lab 4",
+      //     title: "Personas and Scenarios",
+      //     url: "lab.personas/",
+      //   },
+      //   {
+      //     name: "Lab 5",
+      //     title: "User Stories and Sprint Planning",
+      //     url: "lab.stories/",
+      //   },
+      //   {
+      //     name: "Lab 6",
+      //     title: "Express Lab",
+      //     url: "lab.express/",
+      //   },
+      //   {
+      //     name: "Lab 7",
+      //     title: "Unit Testing",
+      //     url: "lab.testing/",
+      //   },
+    ],
   },
 
   lectures: [
