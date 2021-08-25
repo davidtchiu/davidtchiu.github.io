@@ -7,36 +7,36 @@ let days = {
         url: "hwk1.rel/",
         due: "9/10/2021",
       },
-      {
-        name: "Hwk 2",
-        title: "Relational Algebra",
-        url: "hwk2.ra/",
-        due: "9/24/2021",
-      },
-      {
-        name: "Hwk 3",
-        title: "Data Cleansing",
-        url: "hwk3.ddl/",
-        due: "10/8/2021",
-      },
-      {
-        name: "Hwk 4",
-        title: "Writing SQL Queries",
-        url: "hwk4.dml/",
-        due: "10/20/2021",
-      },
-      {
-        name: "Hwk 5",
-        title: "Database Theory and Normalization",
-        url: "hwk5.norm/",
-        due: "11/1/2021",
-      },
-      {
-        name: "Hwk 6",
-        title: "Joins!",
-        url: "hwk6.joins/",
-        due: "11/19/2021",
-      },
+      // {
+      //   name: "Hwk 2",
+      //   title: "Relational Algebra",
+      //   url: "hwk2.ra/",
+      //   due: "9/24/2021",
+      // },
+      // {
+      //   name: "Hwk 3",
+      //   title: "Data Cleansing",
+      //   url: "hwk3.ddl/",
+      //   due: "10/8/2021",
+      // },
+      // {
+      //   name: "Hwk 4",
+      //   title: "Writing SQL Queries",
+      //   url: "hwk4.dml/",
+      //   due: "10/20/2021",
+      // },
+      // {
+      //   name: "Hwk 5",
+      //   title: "Database Theory and Normalization",
+      //   url: "hwk5.norm/",
+      //   due: "11/1/2021",
+      // },
+      // {
+      //   name: "Hwk 6",
+      //   title: "Joins!",
+      //   url: "hwk6.joins/",
+      //   due: "11/19/2021",
+      // },
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
@@ -47,24 +47,24 @@ let days = {
         url: "proj1.cloud/",
         due: "9/20/2021",
       },
-      {
-        name: "Proj 2",
-        title: "Data-Driven Web Development",
-        url: "proj2.php/",
-        due: "10/18/2021",
-      },
-      {
-        name: "Proj 3",
-        title: "Project Planning",
-        url: "proj3.planning/",
-        due: "11/1/2021",
-      },
-      {
-        name: "Proj 4",
-        title: "Implementation",
-        url: "proj4.impl/",
-        due: "12/6/2021",
-      },
+      // {
+      //   name: "Proj 2",
+      //   title: "Data-Driven Web Development",
+      //   url: "proj2.php/",
+      //   due: "10/18/2021",
+      // },
+      // {
+      //   name: "Proj 3",
+      //   title: "Project Planning",
+      //   url: "proj3.planning/",
+      //   due: "11/1/2021",
+      // },
+      // {
+      //   name: "Proj 4",
+      //   title: "Implementation",
+      //   url: "proj4.impl/",
+      //   due: "12/6/2021",
+      // },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
@@ -84,7 +84,7 @@ let days = {
     "Relational model; set theory",
     "Keys and schema",
     // wk 2
-    "<span style='color: #0f79d0'>Labor Day (no class)</span>",
+    "<strong>Labor Day (no class)</strong>",
     "Relational algebra",
     "RA: expression trees; composition",
     // wk 3
@@ -108,7 +108,7 @@ let days = {
     "Armstrong’s axioms, inference rules",
     "Attribute closure and keys",
     // wk 8
-    "<span style='color: #0f79d0'>Fall Break</span>",
+    "<strong>Fall Break</strong>",
     "Normal forms: 1NF, 2NF",
     "BCNF; Canonical cover",
     // wk 9
@@ -129,8 +129,8 @@ let days = {
     "Bitmaps",
     // wk 13
     "Bitmap compression: WAH",
-    "<span style='color: #0f79d0'>Thanksgiving</span>",
-    "<span style='color: #0f79d0'>Thanksgiving</span>",
+    "<strong>Thanksgiving</strong>",
+    "<strong>Thanksgiving</strong>",
     // wk 14
     "Start transactions: ACID, serializability",
     "Transactions: serializability test, precedence graphs",
@@ -138,7 +138,7 @@ let days = {
     // wk 15
     "Project Demos",
     "Project Demos",
-    "<span style='color: #0f79d0'>Reading Period</span>",
+    "<strong>Reading Period</strong>",
     // wk final
     "",
     "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",

@@ -169,7 +169,7 @@ let days = {
     "Lab 6",
     "Start arrays",
     // wk 8
-    "<span style='color: #0f79d0'>Fall Break (no class)</span>",
+    "<strong>Fall Break (no class)</strong>",
     "Arrays of Objects: TurtleMob",
     "Lab 7",
     "Finish TurtleMob",
@@ -195,9 +195,9 @@ let days = {
     "Complexity: Linear search",
     // wk 13
     "Binary search",
-    "<span style='color: #0f79d0'>Thanksgiving</span>",
-    "<span style='color: #0f79d0'>Thanksgiving</span>",
-    "<span style='color: #0f79d0'>Thanksgiving</span>",
+    "<strong>Thanksgiving</strong>",
+    "<strong>Thanksgiving</strong>",
+    "<strong>Thanksgiving</strong>",
     // wk 14
     "Selection sort",
     "Bubble Sort and optimizations",
@@ -206,8 +206,8 @@ let days = {
     // wk 15
     "Recursion",
     "<strong><emph>Review</emph></strong>",
-    "<span style='color: #0f79d0'>Reading Period</span>",
-    "<span style='color: #0f79d0'>Reading Period</span>",
+    "<strong>Reading Period</strong>",
+    "<strong>Reading Period</strong>",
     // wk final
     "",
     "<strong><emph>Final Exam (12p - 2p)</strong></emph>",
