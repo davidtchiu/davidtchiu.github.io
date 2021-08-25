@@ -139,7 +139,7 @@ let days = {
     "Lab 1",
     "Objects vs. Classes; the Circle class",
     // wk 2
-    "<span style='color: #0f79d0'>Labor Day (no class)</span>",
+    "<strong>Labor Day (no class)</strong>",
     "Variables and data types, methods, and constructors",
     "Lab 2",
     "Saving algorithms; Method calls",
