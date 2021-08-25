@@ -172,9 +172,7 @@ However, I also understand if you just want to avoid putting more on your plate 
 
 #### Submission
 
-There are two items of submission:
-
-1. Go onto [canvas](https://canvas.pugetsound.edu) and submit the URL to your page.
+Go onto [canvas](https://canvas.pugetsound.edu) and submit the URL to your page.
 
 #### Grading
 
