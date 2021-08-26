@@ -34,7 +34,7 @@ Starter code for this assignment is provided in the github repo [https://github.
   npx jasmine-browser-runner serve
   ```
 
-  This command shouldn't return on the terminal as long as it's running. It starts up the Jasmine web interface that shows you the results of your tests.
+  This command shouldn't return on the terminal as long as it's running. It starts up the Jasmine web server that shows you the results of your tests.
 
 - To get to the Jasmine web interface, point to your browser to [http://localhost:8888/](http://localhost:8888/). You should see a Jasmine page that says something to the order of `Incomplete: No specs found, , randomized with seed ...`. That's good news! Jasmine is running, but we just haven't written any tests (specs) yet!
 
