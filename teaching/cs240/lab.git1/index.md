@@ -123,7 +123,7 @@ Right after you saved these files, you realize right away that the quantities fo
 git rm <file>
 ```
 
-Note that you could also simply drag the file into your trashbin and git will know what to do. Go ahead and commit with the message `"removed aquarium file."`
+Note that you could also simply drag the file into your trash bin and git will know what to do. Go ahead and commit with the message `"removed aquarium file."`
 
 - Pretend that weeks go by, and you learn the good news that the aquarium has been reinstated!! To get the aquarium file back, you simply have to time travel to an earlier commit. List all your commits using:
 
