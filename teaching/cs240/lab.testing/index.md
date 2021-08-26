@@ -67,7 +67,7 @@ In Jasmine, a **suite** lets us group together related specs (or unit tests). To
 4. When unit testing, we're interested in finding out whether certain inputs to a function lead to expected outputs (conversely, we're also interested in knowing whether incorrect inputs lead to incorrect outputs.) Such statements are called **assertions** or **expectations** in unit testing. For instance, if we're testing our prime number checker, we would **expect** that an input of `11` would return `true`, and conversely, we would also expect that `20` would return `false`. Writing assertions is done using the `expect()` method:
 
    ```js
-   expect(thingIWantTested).toBe(realThing);
+   expect(thingWeWantTested).toBe(realThing);
    ```
 
    Again, each assertion statement is designed to be very human-readable. For instance, an assertion that states the expression to be tested, `5+10`, should be `15` can be written as follows,
@@ -133,22 +133,23 @@ In Jasmine, a **suite** lets us group together related specs (or unit tests). To
 7. Okay let's run the tests, and it's as simple as refreshing your browser, which is pointing to [http://localhost:8888/](http://localhost:8888/). You should see some errors!
 
    <img src="figures/jas1.png" width="350px"/>
+
    In this case, it tells you that the error is on **line 9** of your `checkerSpec.js` file, and a quick inspection tells us that `2` (which should be prime) did not pass your test. This means there's a bug in `isPrime()` that should be fixed.
 
 8. Go ahead and fix the bug in `isPrime()` and try running the tests again. After you've fixed it, refresh the page again, and it should say that all 5 specs passed the test!
 
 9. **Infinite loops and the Halting Problem** Comment out the initial if-statement that checks if the number is an integer and is greater than 1. Run the tests again and see what happens. Your browser should hang, and eventually, it may clue you in that it's actually running code and stuck in a loop! If you look at the `isPrime()` implementation now, there are actually several ways that you can induce an infinite loop. One way is to input a negative number. Another way is to give it a floating point number. Obviously, both cases were tested in our suite. When you see this behavior, you should hit "stop" on your browser, and look for the tests that induced this behavior, then fix the code to avoid infinite loops. (For us, just go ahead and uncomment the conditional, but I wanted to show you what this looked like.)
 
-So, you may wonder why Jasmine isn't smart enough to know that it's stuck in an infinite loop, and break out of it to report the error. This is hitting on a fundamental problem in computer science theory called the _Halting Problem_. Basically it states that a monitoring application can't decide whether the monitored program will ever stop. In other words, there are plenty of algorithms that take a _really_ long time to process -- and that they will eventually terminate. But a monitoring program can't tell those apart from programs that buggy and stuck in a loop. So while we can always answer "yes" to whether a program halts, it is not possible to answer "no."
+   So, you may wonder why Jasmine isn't "robust" enough to know that it's stuck in an infinite loop, and break out of it to report the error. This is hitting on a fundamental problem in computer science theory called the _Halting Problem_. Basically it states that a monitoring application can't decide whether the monitored program will ever stop. In other words, there are plenty of algorithms that take a _really_ long time to process -- and that they will eventually terminate. But a monitoring program can't tell those apart from programs that buggy and stuck in a loop. So while we can always answer "yes" to whether a program halts, it is not possible to answer "no."
 
 #### Part 3 - Other "Matchers"
 
 1. So far, we've only seen the `toBe()` matcher, which checks to see if the values from both expressions are `===` to each other, which among checking equality of primitive values, it is also used to check whether two references point to the same object. (In Java, we called this "reference equality" of objects). For instance, consider the following objects, which carry the same content:
 
-```js
-let objX = { a: "b" };
-let objY = { a: "b" };
-```
+   ```js
+   let objX = { a: "b" };
+   let objY = { a: "b" };
+   ```
 
 2. **toEqual()**: However, `expect(objX).toBe(objY)` would evaluate to `false` because `objX` and `objY` actually point to different objects. What if we were interested in "deep equality" (I called this "content equality" of objects), in which we only care if their stored values are the same? This is checked by using the `toEqual()` method.
 
