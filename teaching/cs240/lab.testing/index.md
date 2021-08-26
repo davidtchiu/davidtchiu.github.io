@@ -167,8 +167,17 @@ If we asserted `expect(objX).toBe(objY)`, it would actually evaluate to `false` 
    | `expect(thing).toContain(anotherThing)` | Expects `thing` (array or string) to contain an element or substring |
    | `expect(thing).toMatch(regex)`          | Expects `thing` to be match the given regular expression             |
 
-   The full list can be found in [Jasmine's documentation](https://jasmine.github.io/api/edge/matchers.html).
+3. Most of those matchers only offer convenience. I find that most tests can be written with just `toBe()` and `toEqual()`. The full list can be found in [Jasmine's documentation](https://jasmine.github.io/api/edge/matchers.html).
 
-#### Part 4 - Writing Specs (Unit Tests)
+4. Now focus in on the `isLeapYear()` function. Read through the comments to get an understanding of how to detect a leap year, then create some input partitions for your unit tests.
 
-1. Now it's your turn!
+   - You can either write another `describe` block underneath the existing one,
+   - Or you can create another `spec.js` file with its own `describe` block if you prefer to keep things neat and tidy.
+
+#### Part 4 - Test-Driven Development
+
+Test-Driven Development (TDD) in software engineering merely refers to process of writing unit tests prior to writing code. Here we'll "practice" what that process might be like at work.
+
+1. Take a look at the `generateEmail()` function you're supposed to provide and read through the requirements.
+
+2. Create a new spec file and a corresponding `describe` block. Come up with reasonable sets of input partitions and write all the tests and expectations now. Then with those tests in mind, implement the `generateEmail()` method. Test early and often as you write, to ensure you're making steady progress.
