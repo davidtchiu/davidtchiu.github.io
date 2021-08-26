@@ -16,9 +16,9 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 #### Part 1 - Getting Started with Jasmine
 
-- Open up the `cs240-lab-testing` project with VS Code. Check out the code (stored inside the `src/` directory) before doing anything. All that's there is an `app.js` file, and there are a couple functions, whose correctness are dubious and need to be tested, and a third function that needs to be implemented.
+- After you've cloned it, find and open up the `cs240-lab-testing` project with VS Code. Look through the code (stored inside the `src/` directory) before doing anything. All that's there is an `app.js` file, and there are a couple functions, whose correctness are dubious and need to be tested. The stub for a third function needs to be implemented, and we'll do that toward the end of lab.
 
-- Next, open up the integrated Terminal, because we will be using node to install jasmine. Type the following:
+- Next, open up the integrated Terminal, because we will be using _node_ to install Jasmine. Type the following:
 
   ```
   npm install geckodriver
@@ -182,3 +182,5 @@ Test-Driven Development (TDD) in software engineering merely refers to process o
 1. Take a look at the `generateEmail()` function you're supposed to provide and read through the requirements.
 
 2. Create a new spec file and a corresponding `describe` block. Come up with reasonable sets of input partitions and write all the tests and expectations now. Then with those tests in mind, implement the `generateEmail()` method. Test early and often as you write, to ensure you're making steady progress.
+
+3. This concludes the lab. You can terminate the Jasmine server by hitting `ctrl+c` in the Terminal in which Jasmine is running.
