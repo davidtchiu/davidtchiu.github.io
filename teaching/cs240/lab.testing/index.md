@@ -67,7 +67,7 @@ In Jasmine, a **suite** lets us group together related specs (or unit tests). To
 4. When unit testing, we're interested in finding out whether certain inputs to a function lead to expected outputs (conversely, we're also interested in knowing whether incorrect inputs lead to incorrect outputs.) Such statements are called **assertions** or **expectations** in unit testing. For instance, if we're testing our prime number checker, we would **expect** that an input of `11` would return `true`, and conversely, we would also expect that `20` would return `false`. Writing assertions is done using the `expect()` method:
 
    ```js
-   expect(thingWeWantTested).toBe(realThing);
+   expect(thingWeWantTested).toBe(expectedThing);
    ```
 
    Again, each assertion statement is designed to be very human-readable. For instance, an assertion that states the expression to be tested, `5+10`, should be `15` can be written as follows,
@@ -144,16 +144,30 @@ In Jasmine, a **suite** lets us group together related specs (or unit tests). To
 
 #### Part 3 - Other "Matchers"
 
-1. So far, we've only seen the `toBe()` matcher, which checks to see if the values from both expressions are `===` to each other, which among checking equality of primitive values, it is also used to check whether two references point to the same object. (In Java, we called this "reference equality" of objects). For instance, consider the following objects, which carry the same content:
+1. So far, we've only seen the `toBe(...)` matcher, which checks to see if the values from both expressions are `===` to each other, which among checking equality of primitive values, it is also used to check whether two references point to the same object. (In Java, we called this "reference equality" of objects). For instance, consider the following objects, which carry the same content:
 
    ```js
    let objX = { a: "b" };
    let objY = { a: "b" };
    ```
 
-2. **toEqual()**: However, `expect(objX).toBe(objY)` would evaluate to `false` because `objX` and `objY` actually point to different objects. What if we were interested in "deep equality" (I called this "content equality" of objects), in which we only care if their stored values are the same? This is checked by using the `toEqual()` method.
+If we asserted `expect(objX).toBe(objY)`, it would actually evaluate to `false` because `objX` and `objY` point to different objects/locations.
 
-3.
+2. But what if we were interested in "deep equality" (I called this the "content equality" of objects), in which we only care if their stored values are the same? The `toBe()` matcher would be insufficient... so there must be other "matchers" that are supported. Here's a non-exhaustive list!
+
+   | Method                                  | Description                                                          |
+   | --------------------------------------- | -------------------------------------------------------------------- |
+   | `expect(thing).toEqual(expectedThing)`  | Performs deep equality (or content) equality of two expressions      |
+   | `expect(thing).toBeTrue()`              | Expects `thing` to be true                                           |
+   | `expect(thing).toBeFalse()`             | Expects `thing` to be false                                          |
+   | `expect(thing).toBeNull()`              | Expects `thing` to be null                                           |
+   | `expect(thing).toBeNaN()`               | Expects `thing` to be not-a-number                                   |
+   | `expect(thing).toBeDefined()`           | Expects `thing` to be defined                                        |
+   | `expect(thing).toBeUnDefined()`         | Expects `thing` to be defined                                        |
+   | `expect(thing).toContain(anotherThing)` | Expects `thing` (array or string) to contain an element or substring |
+   | `expect(thing).toMatch(regex)`          | Expects `thing` to be match the given regular expression             |
+
+   The full list can be found in [Jasmine's documentation](https://jasmine.github.io/api/edge/matchers.html).
 
 #### Part 4 - Writing Specs (Unit Tests)
 
