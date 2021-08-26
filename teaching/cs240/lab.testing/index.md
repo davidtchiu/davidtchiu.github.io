@@ -1,13 +1,13 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: Unit Testing (Jasmine)
+### In-Class Exercise: Unit Testing
 
 As your team continues to develop personas and scenarios by which they interact with your software, we can begin refining some user stories for development. This lab is meant to help you jumpstart the requirements needed for Project 1.
 
 #### Student Outcomes
 
-- To identify and write user stories
-- To practice the agile design process: sprint planning
+- To debug and code through systematic testing
+- To write and run unit tests
 
 #### Starter Code and Git
 
@@ -67,16 +67,16 @@ In Jasmine, a **suite** lets us group together related specs (or unit tests). To
 4. When unit testing, we're interested in finding out whether certain inputs to a function lead to expected outputs (conversely, we're also interested in knowing whether incorrect inputs lead to incorrect outputs.) Such statements are called **assertions** or **expectations** in unit testing. For instance, if we're testing our prime number checker, we would **expect** that an input of `11` would return `true`, and conversely, we would also expect that `20` would return `false`. Writing assertions is done using the `expect()` method:
 
    ```js
-   expect(expression1).toBe(expression2);
+   expect(thingIWantTested).toBe(realThing);
    ```
 
-   Again, each assertion statement is designed to be very human-readable. For instance, an assertion that states `5+10` should be `15` can be made as follows,
+   Again, each assertion statement is designed to be very human-readable. For instance, an assertion that states the expression to be tested, `5+10`, should be `15` can be written as follows,
 
    ```js
    expect(5 + 10).toBe(15);
    ```
 
-   There's a `not` keyword that can also be used to flip the logic:
+   There's a convenient `not` keyword that can be used to negate the logic:
 
    ```js
    expect(10 + "10").not.toBe("20");
@@ -127,9 +127,11 @@ In Jasmine, a **suite** lets us group together related specs (or unit tests). To
    ```
 
 6. Read through the specs, and note that the input values come directly from the input partitions we decided during class:
+
    <img src="figures/input_part.png" width="650px"/>
 
 7. Okay let's run the tests, and it's as simple as refreshing your browser, which is pointing to [http://localhost:8888/](http://localhost:8888/). You should see some errors!
+
    <img src="figures/jas1.png" width="350px"/>
    In this case, it tells you that the error is on **line 9** of your `checkerSpec.js` file, and a quick inspection tells us that `2` (which should be prime) did not pass your test. This means there's a bug in `isPrime()` that should be fixed.
 
@@ -141,7 +143,16 @@ So, you may wonder why Jasmine isn't smart enough to know that it's stuck in an 
 
 #### Part 3 - Other "Matchers"
 
-1. The
+1. So far, we've only seen the `toBe()` matcher, which checks to see if the values from both expressions are `===` to each other, which among checking equality of primitive values, it is also used to check whether two references point to the same object. (In Java, we called this "reference equality" of objects). For instance, consider the following objects, which carry the same content:
+
+```js
+let objX = { a: "b" };
+let objY = { a: "b" };
+```
+
+2. **toEqual()**: However, `expect(objX).toBe(objY)` would evaluate to `false` because `objX` and `objY` actually point to different objects. What if we were interested in "deep equality" (I called this "content equality" of objects), in which we only care if their stored values are the same? This is checked by using the `toEqual()` method.
+
+3.
 
 #### Part 4 - Writing Specs (Unit Tests)
 
