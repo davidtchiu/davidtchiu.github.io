@@ -8,6 +8,7 @@ As your team continues to develop personas and scenarios by which they interact 
 
 - To debug and code through systematic testing
 - To write and run unit tests
+- To be exposed to the concept of test-driven development (TDD)
 
 #### Starter Code and Git
 
@@ -176,7 +177,7 @@ If we asserted `expect(objX).toBe(objY)`, it would actually evaluate to `false` 
 
 #### Part 4 - Test-Driven Development
 
-Test-Driven Development (TDD) in software engineering merely refers to process of writing unit tests prior to writing code. Here we'll "practice" what that process might be like at work.
+Test-Driven Development (TDD) in software engineering merely refers to process of writing unit tests prior to writing code. Here we'll "practice" what that process might be like at work. Obviously, we're doing this at a much smaller scale.
 
 1. Take a look at the `generateEmail()` function you're supposed to provide and read through the requirements.
 
