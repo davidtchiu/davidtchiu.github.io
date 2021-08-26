@@ -41,12 +41,12 @@ let days = {
 
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
-      {
-        name: "Proj 1",
-        title: "To the Cloud",
-        url: "proj1.cloud/",
-        due: "9/20/2021",
-      },
+      // {
+      //   name: "Proj 1",
+      //   title: "To the Cloud",
+      //   url: "proj1.cloud/",
+      //   due: "9/20/2021",
+      // },
       // {
       //   name: "Proj 2",
       //   title: "Data-Driven Web Development",
@@ -69,12 +69,12 @@ let days = {
 
     ////////////////////////////////// LABS ////////////////////////////////
     labs: [
-      {
-        name: "Lab",
-        title: "2-Day SQL Bootcamp",
-        url: "lab.sql/",
-        due: "10/5/2021",
-      },
+      // {
+      //   name: "Lab",
+      //   title: "2-Day SQL Bootcamp",
+      //   url: "lab.sql/",
+      //   due: "10/5/2021",
+      // },
     ],
   },
 
