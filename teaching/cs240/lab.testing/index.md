@@ -152,7 +152,7 @@ In Jasmine, a **suite** lets us group together related specs (or unit tests). To
    let objY = { a: "b" };
    ```
 
-If we asserted `expect(objX).toBe(objY)`, it would actually evaluate to `false` because `objX` and `objY` point to different objects/locations.
+   If we asserted `expect(objX).toBe(objY)`, it would actually evaluate to `false` because `objX` and `objY` point to different objects/locations.
 
 2. But what if we were interested in "deep equality" (I called this the "content equality" of objects), in which we only care if their stored values are the same? The `toBe()` matcher would be insufficient... so there must be other "matchers" that are supported. Here's a non-exhaustive list!
 
