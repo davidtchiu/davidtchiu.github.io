@@ -5,7 +5,7 @@ let days = {
         name: "Hwk 1",
         title: "A Better Circle",
         url: "hwk1.circle/",
-        due: "9/8/2021",
+        due: "9/10/2021",
       },
       // {
       //   name: "Hwk 2",
