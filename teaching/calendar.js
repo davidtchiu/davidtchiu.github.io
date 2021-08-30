@@ -20,7 +20,7 @@ const ASSIGNMENT_COLOR = {
   projects: "#d14",
 };
 const TODAY_COLOR = "#f2f2f2";
-const TODAY_BG_COLOR = "##fcba03";
+const TODAY_BG_COLOR = "#fcba03";
 const NOTTODAY_BG_COLOR = "#494949";
 
 /**

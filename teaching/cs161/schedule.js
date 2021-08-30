@@ -134,7 +134,7 @@ let days = {
   },
   lectures: [
     // wk 1
-    "Our first algorithm",
+    "Introductions",
     "What is CS, anyway?",
     "Lab 1",
     "Objects vs. Classes; the Circle class",
