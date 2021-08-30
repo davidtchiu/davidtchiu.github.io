@@ -155,7 +155,7 @@ let days = {
     "<strong>Thanksgiving</strong>",
     // wk 14
     "Work/Sprint Review with David",
-    "Industry Panel",
+    "Industry Panel: Alexia Ingerson (Intel); Banji Oyewole (FreeFly); Kayla Ramos (Infoblox); Dr. Sayantan Sur (Nvidia)",
     // wk 15
     "Work/Sprint Review with David",
     "<strong>Reading Period</span>",
