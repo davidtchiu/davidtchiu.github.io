@@ -75,11 +75,11 @@ let days = {
 
     ////////////////////////////////// LABS ////////////////////////////////
     labs: [
-      {
-        name: "Lab 1",
-        title: "Command Line Bootcamp",
-        url: "lab.cmd/",
-      },
+      // {
+      //   name: "Lab 1",
+      //   title: "Command Line Bootcamp",
+      //   url: "lab.cmd/",
+      // },
       //   {
       //     name: "Lab 2",
       //     title: "Git Basics",
