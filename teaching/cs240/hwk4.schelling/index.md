@@ -27,14 +27,14 @@ Schelling's model will now be explained with some minor changes. Suppose there a
 
 Now we must determine if each agent is satisfied with its
 current location. A satisfied agent is one that is surrounded
-by at least $t$ percent of agents that are like itself. This
-threshold $t$ is one that will apply to all agents in the model,
+by at least $$t$$ percent of agents that are like itself. This
+threshold $$t$$ is one that will apply to all agents in the model,
 even though in reality everyone might have a different threshold
 they are satisfied with. Note that the higher the threshold, the
 higher the likelihood the agents will not be satisfied with their
 current location.
 
-For example, if $t = 30\%$, agent X is satisfied if at least 30% of
+For example, if $$t = 30\%$$, agent X is satisfied if at least 30% of
 its neighbors are also X. If fewer than 30% are X, then the agent
 is not satisfied, and it will want to change its location in the
 grid. For the remainder of this explanation, let's assume a
