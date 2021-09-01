@@ -74,7 +74,7 @@ until all agents in the neighborhood are satisfied with their location.
 
 #### Working Solution
 
-[Click here](demo/) for my working solution of this App.
+[Click here](demo/) for my working solution of this App. (Use FireFox for best results -- a Chrome bug enters infinite loop when you use the color picker.)
 
 #### Program Requirements
 
