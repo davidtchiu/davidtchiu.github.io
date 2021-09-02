@@ -58,74 +58,74 @@ let days = {
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
+      {
+        name: "Zoom Lab 1",
+        title: "Draw My Picture (BlueJ)",
+        url: "lab1.bluej/",
+        due: "9/3/2021",
+      },
       // {
-      //   name: "Lab 1",
-      //   title: "Draw My Picture (BlueJ)",
-      //   url: "lab1.bluej/",
-      //   due: "9/3/2021",
-      // },
-      // {
-      //   name: "Lab 2",
+      //   name: "Zoom Lab 2",
       //   title: "Variables and Scope (Scope and Lifetime)",
       //   url: "lab2.vars/",
       //   due: "9/10/2021",
       // },
       // {
-      //   name: "Lab 3",
+      //   name: "Zoom Lab 3",
       //   title: "Stomach Class (Class Writing)",
       //   url: "lab3.stomach/",
       //   due: "9/17/2021",
       // },
       // {
-      //   name: "Lab 4",
+      //   name: "Zoom Lab 4",
       //   title: "Guessing Game (Conditionals)",
       //   url: "lab4.guessing/",
       //   due: "9/24/2021",
       // },
       // {
-      //   name: "Lab 5",
+      //   name: "Zoom Lab 5",
       //   title: "Circle Drawer (Objects)",
       //   url: "lab5.circleDrawer/",
       //   due: "10/1/2021",
       // },
       // {
-      //   name: "Lab 6",
+      //   name: "Zoom Lab 6",
       //   title: "Turtle Graphics (Loops)",
       //   url: "lab6.turtle/",
       //   due: "10/15/2021",
       // },
       // {
-      //   name: "Lab 7",
+      //   name: "Zoom Lab 7",
       //   title: "Combo Guesser (Arrays)",
       //   url: "lab7.combo/",
       //   due: "10/22/2021",
       // },
       // {
-      //   name: "Lab 8",
+      //   name: "Zoom Lab 8",
       //   title: "Super Circle Drawer (ArrayLists)",
       //   url: "lab8.superCircleDrawer/",
       //   due: "10/29/2021",
       // },
       // {
-      //   name: "Lab 9",
+      //   name: "Zoom Lab 9",
       //   title: "Election (HashMaps)",
       //   url: "lab9.election/",
       //   due: "11/5/2021",
       // },
       // {
-      //   name: "Lab 10",
+      //   name: "Zoom Lab 10",
       //   title: "Boulders (File I/O, Parsing)",
       //   url: "lab10.boulders/",
       //   due: "11/19/2021",
       // },
       // {
-      //   name: "Lab 11",
+      //   name: "Zoom Lab 11",
       //   title: "Playing Cards (Constants, Enum; IntelliJ IDE)",
       //   url: "lab11.cards/",
       //   due: "12/3/2021",
       // },
       // {
-      //   name: "Lab 12",
+      //   name: "Zoom Lab 12",
       //   title: "Elementary Complexity Analysis",
       //   url: "lab12.perf/",
       //   due: "12/10/2021",
@@ -136,27 +136,27 @@ let days = {
     // wk 1
     "Introductions",
     "What is CS, anyway?",
-    "Lab 1",
+    "Zoom Lab 1",
     "Objects vs. Classes; the Circle class",
     // wk 2
     "<strong>Labor Day (no class)</strong>",
     "Variables and data types, methods, and constructors",
-    "Lab 2",
+    "Zoom Lab 2",
     "Saving algorithms; Method calls",
     // wk 3
     "Writing classes: TicketMachine. Printing",
     "Conditionals",
-    "Lab 3",
+    "Zoom Lab 3",
     "Random, more conditionals, return",
     // wk 4
     "Else-if; Start data types: primitives",
     "Type-casting (narrowing, widening)",
-    "Lab 4",
+    "Zoom Lab 4",
     "Lab 4 solution; boolean expressions",
     // wk 5
     "Classes as types: references, object equivalence",
     "Object composition: Abstraction and modularity",
-    "Lab 5",
+    "Zoom Lab 5",
     "Class APIs: Strings",
     // wk 6
     "Loops",
@@ -166,22 +166,22 @@ let days = {
     // wk 7
     "For loops",
     "Nested loops",
-    "Lab 6",
+    "Zoom Lab 6",
     "Start arrays",
     // wk 8
     "<strong>Fall Break (no class)</strong>",
     "Arrays of Objects: TurtleMob",
-    "Lab 7",
+    "Zoom Lab 7",
     "Finish TurtleMob",
     // wk 9
     "Start ArrayList",
     "ArrayList",
-    "Lab 8",
+    "Zoom Lab 8",
     "Scanning for input: ChatBot",
     // wk 10
     "Finish ChatBot; Start HashMap",
     "HashMap, for-each loop",
-    "Lab 9",
+    "Zoom Lab 9",
     "HashMap (cont.): Smarter ChatBot",
     // wk 11
     "Start files",
@@ -191,7 +191,7 @@ let days = {
     // wk 12
     "Information hiding, static, main()",
     "enum; IntelliJ IDE",
-    "Lab 10",
+    "Zoom Lab 10",
     "Complexity: Linear search",
     // wk 13
     "Binary search",
@@ -201,7 +201,7 @@ let days = {
     // wk 14
     "Selection sort",
     "Bubble Sort and optimizations",
-    "Lab 11",
+    "Zoom Lab 11",
     "Shaker sort, list operations",
     // wk 15
     "Recursion",
