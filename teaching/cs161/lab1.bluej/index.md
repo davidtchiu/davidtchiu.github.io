@@ -32,7 +32,8 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
   - On a Mac, double-clicking the file should extract the project folder in the current folder as the compressed file. If you have any problems with this process, let us know!
 
 - You can open this project by either double-clicking on the `package.bluej` file inside the project folder. If all goes well, you should see a project window like the one below:
-  ![](figures/UPS_Shapes.png)
+
+  <img src="figures/UPS_Shapes.png" width="400px"/>
 
 - Some terminology:
   The orange boxes that are displayed are called `classes`. As you can see, our program currently only supports three shape classes: Squares, Triangles, and Circles. Think of these classes as recipes that you can use to create any number of instances of those classes. For instance, you can use the `Circle` to create any number of circle objects, which we can control and have appear on the canvas.
@@ -48,7 +49,8 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 - You can instantiate (create) objects by right-clicking (or, two-finger click on a Mac) on the appropriate shape class and selecting the `new ...()` menu item. For example, if you right-click on the `Circle` class, you should be able to select the `new Circle()` method:
 
   You will be prompted to provide a name for your object in order to keep track of it. To continue with the default name shown in the text box (e.g., `circle1`), click the `OK` button to create the object. You should now see a red box labeled with the object's name and class in the **workbench** (the lower left corner of the BlueJ window). The red object represents and gives you access to the object you just created.
-  ![](figures/workbench.png)
+
+  <img src="figures/workbench.png" width="300px"/>
 
 - You can now begin calling methods on the circle and changing its state. Right-click on the object to see a list of **methods** that you can call on it. Select the `makeVisible()` method, and you should now get a window with a single blue circle drawn.
 
@@ -57,7 +59,8 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
   - DO NOT select the red "Remove" option at the bottom of an object's method list: this will remove the object from the object bench, but not from the drawing! And since it is removed from the bench, you'll never be able to call a method on it again. You should first call the `makeInvisible()` method on the object in order to remove it from the Canvas---then you can remove it from the bench.
 
   - If you select the red `Inspect` option from the BlueJ menu, you will get a window that shows you all of the **instance variables (or fields)** of the object. Together, this set of instance variables combine to form the **object's state**. Here, we can see that this state comprise its location, its diameter, its color, and whether it is visible on the canvas window. Note that you cannot change their values from here; you can only change the state of an object through the methods menu.
-    ![](figures/inspector.png)
+
+    <img src="figures/inspector.png" width="300px"/>
 
 - Before continuing to the next section, select `makeInvisible()` and then `Remove` this circle. (Yes, I know it's unintuitive, but if you don't hide it before you remove it, then its image will remain on the canvas forever!)
 
@@ -93,7 +96,8 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
   ```
 
 - If you followed the instructions correctly, you should see the following image being drawn:
-  ![](figures/pacman.png)
+
+  <img src="figures/pacman.png" width="300px"/>
 
 #### Part 3: Your Turn!
 

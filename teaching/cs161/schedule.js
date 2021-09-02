@@ -139,7 +139,7 @@ let days = {
     "Zoom Lab 1",
     "Objects vs. Classes; the Circle class",
     // wk 2
-    "<strong>Labor Day (no class)</strong>",
+    "<strong>Labor Day<br/>(no class)</strong>",
     "Variables and data types, methods, and constructors",
     "Zoom Lab 2",
     "Saving algorithms; Method calls",
