@@ -46,7 +46,7 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
 - Now that you have the project open and compiled, you can start creating and manipulating objects.
 
-- You can instantiate (create) objects by right-clicking (or, two-finger click on a Mac) on the appropriate shape class and selecting the `new ...()` menu item. For example, if you right-click on the `Circle` class, you should be able to select the `new Circle()` method:
+- You can instantiate (create) objects by right-clicking (**If you're using a Mac**, you should use a two-finger click or hold down control and click.) on the appropriate shape class and selecting the `new ...()` menu item. For example, if you right-click on the `Circle` class, you should be able to select the `new Circle()` method:
 
   You will be prompted to provide a name for your object in order to keep track of it. To continue with the default name shown in the text box (e.g., `circle1`), click the `OK` button to create the object. You should now see a red box labeled with the object's name and class in the **workbench** (the lower left corner of the BlueJ window). The red object represents and gives you access to the object you just created.
 
@@ -109,7 +109,7 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
   - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (maybe just 3-4 shapes should suffice) because your partner will have to reproduce your drawing before the lab period is over!
 
-  - Now take your design from paper to screen! **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** To do this recording, open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window. This recording becomes the algorithm to create your drawing.
+  - Now take your design from paper to screen! **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** There is no "record" function in BlueJ -- open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window and type in the steps. This recording becomes the algorithm to create your drawing.
 
   - When you're done, erase your drawing by clicking on the reset arrow &#8617;, and wait until "time" is called.
 
