@@ -101,7 +101,7 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
 #### Part 3: Your Turn!
 
-- You just executed an **_ALGORITHM_** -- a sequence of instructions that gives you some desired outcome. The algorithm we provided, when executed faithfully, will _always_ produce the same Pac-Man picture. This means that, when designing this algorithm, we had to be careful and detail-oriented when recording the steps. We even test-ran the algorithm several times just to make sure it would be repeatable.
+- You just executed an **Algorithm** -- recall from class that it's a sequence of instructions that gives you some desired outcome. The algorithm we provided, when executed faithfully, will always produce the same Pac-Man picture. This means that, when designing this algorithm, we had to be careful and detail-oriented when recording steps. We even test-ran the algorithm several times just to make sure it would be repeatable.
 
 - You still don't need a partner yet, but now it's your turn to write an algorithm to draw anything of your choosing. (Without saying, please draw something appropriate!)
 
@@ -109,13 +109,13 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
   - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (maybe just 3-4 shapes should suffice) because your partner will have to reproduce your drawing before the lab period is over!
 
-  - Now take your design from paper to screen! **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** To do this recording, open that white paper icon in BlueJ. Because your drawing will be reproduced by someone else, it is imperative that your recording is precise, i.e., record all steps, even when you input wrong values at first just to test the size and location. This recording becomes the algorithm to create your drawing.
+  - Now take your design from paper to screen! **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** To do this recording, open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window. This recording becomes the algorithm to create your drawing.
 
   - When you're done, erase your drawing by clicking on the reset arrow &#8617;, and wait until "time" is called.
 
-  - When we call "time", you will need to find another student and exchange algorithms (you can email them your algorithm, for example). By following their algorithm _faithfully_, try and reproduce each other's drawings! Follow the other student's instructions exactly as stated, even if you think you found an error.
+  - When I call "time", you will need to find another student and exchange algorithms (you can email them your algorithm, for example). By following their algorithm exactly as written (even if you think you found an error), you should be able to reproduce each other's drawings!
 
-  - Once you are finished, give your partner some feedback: Describe what the picture is of, and whether there were any problems you had following the algorithm. (It's okay for there to be problems with their algorithm.)
+  - Once you are finished, give your partner some feedback: Describe whether there were any problems you ran into when following the algorithm. (It's okay for there to be problems -- you aren't getting graded on that.)
 
 #### Part 4: Answering Questions in the README file
 
