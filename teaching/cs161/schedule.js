@@ -5,7 +5,7 @@ let days = {
         name: "Hwk 1",
         title: "A Better Circle",
         url: "hwk1.circle/",
-        due: "9/10/2021",
+        due: "9/13/2021",
       },
       // {
       //   name: "Hwk 2",
@@ -134,10 +134,10 @@ let days = {
   },
   lectures: [
     // wk 1
-    "Introductions",
-    "What is CS, anyway?",
+    "Introductions: Who are we? Syllabus",
+    "What is CS?",
     "Zoom Lab 1",
-    "Objects vs. Classes; the Circle class",
+    "CS: hardware, langs; Objects vs. Classes; the Circle class",
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
     "Variables and data types, methods, and constructors",
