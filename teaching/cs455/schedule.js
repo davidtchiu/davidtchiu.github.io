@@ -84,7 +84,7 @@ let days = {
     "Relational model; set theory",
     "Keys and schema",
     // wk 2
-    "<strong>Labor Day (no class)</strong>",
+    "<strong>Labor Day<br/>(no class)</strong>",
     "Relational algebra",
     "RA: expression trees; composition",
     // wk 3
