@@ -46,7 +46,7 @@ I will assume that each member of the team has contributed equally to the projec
 
   This command causes the SSH (secure shell) client to connect to the machine located at the specified IP address.
   The login name is `dbteam` (the part before the @ symbol), i.e., once you login, that is your userID on the instance.
-  Finally, `ipaddr` is your instance's public IP address, which has been provided to you.
+  Finally, `ipaddr` is your instance's public IP address, which has already been provided to you.
 
 - Next, type in the temporary password that was provided to your team.
 
@@ -156,7 +156,7 @@ The following commands are important (you need to have administrative/superuser 
 
 - You are required to add some design and colors to your page using appropriate CSS elements (create a separate .css file and link to it from your webpage). You don't need to go overboard with design unless you really want to. Also, I'd prefer it if you don't make your page bright pink with green lettering, as some students have done in the past to irritate me. I just want you to demonstrate that you know how to include a CSS stylesheet to your HTML page.
 
-- If it is all done correctly, I should be able to access it by pointing my web browser to `http://ip_addr/~dbteam`.
+- If it is all done correctly, I should be able to access it by pointing my web browser to `http://ip_addr/~dbteam`, where `ip_addr` is your server's assigned IP address.
 
 #### Part 5: Transferring Files to/from the Server
 
