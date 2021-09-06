@@ -152,9 +152,11 @@ The following commands are important (you need to have administrative/superuser 
 
 - It's time to create and serve your first web page! If you completed the previous problems, you should've already enabled public HTML directories for users on your server. Well, you're working under the `dbteam` user, so we'll create a webpage under that account.
 
-- Navigate into the `/home/dbteam/public_html` directory and create a simple HTML page named index.html. The content of this page should contain the group-membership list, and responses to the questions listed below. The page itself doesn't have to be anything fancy, but it should have some structure (for instance, an enumerated list?) and design elements (e.g., background color and non-boring font?). The page should also contain at least one (appropriate) image.
+- Navigate into the `/home/dbteam/public_html` directory and create a simple HTML page named `index.html`. The content of this page should contain your team-membership list, and responses to the questions listed below. The page itself doesn't have to be anything fancy, but it should have some structure (for instance, an enumerated list?) and design elements (e.g., background color and non-boring font?). The page should also contain at least one (appropriate) image.
 
-- You are required to add some design and colors to your page using appropriate CSS elements (create a separate .css file and link to it from your webpage). You don't need to go overboard with design unless you really want to. Also, I'd prefer it if you don't make your page bright pink with green lettering, as some students have done in the past to irritate me. I just want you to demonstrate that you know how to include a CSS stylesheet to your HTML page.
+  - If you're interested in learning more HTML, here's a free [online tutorial](https://www.internetingishard.com/html-and-css/) I have students use for another course.
+
+- You are required to add some design and colors to your page using appropriate CSS elements (create a separate `.css` file and link to it from your webpage). You don't need to go overboard with design unless you really want to. Also, I'd prefer it if you don't make your page bright pink with green lettering, as some students have done in the past to irritate me. I just want you to demonstrate that you know how to include a CSS stylesheet to your HTML page.
 
 - If it is all done correctly, I should be able to access it by pointing my web browser to `http://ip_addr/~dbteam`, where `ip_addr` is your server's assigned IP address.
 
