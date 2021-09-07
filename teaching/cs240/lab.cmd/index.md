@@ -83,22 +83,20 @@ Of course, the first part of your path will differ from mine.
        drwxr-xr-x@ 7 dchiu  staff  224 Jul 19 09:20 src
     ```
 
-- Show the contents of `README.txt`. You should see:
-
-  ```
-  ------------------------------------------------------------------------
-  This is the project README file. Here, you should describe your project.
-  Tell the reader (someone who does not know anything about this project)
-  all he/she needs to know. The comments should usually include at least:
-  ------------------------------------------------------------------------
-
-  PROJECT TITLE:
-  PURPOSE OF PROJECT:
-  VERSION or DATE:
-  HOW TO START THIS PROJECT:
-  AUTHORS:
-  USER INSTRUCTIONS:
-  ```
+- **Permission**: Hmm, the permissions to read any of these files are open to anybody on this system. That doesn't seem like a good idea, given that these are supposedly your homework files.
+  - Make sure the owner of all remaining files belong to you (not `david`)
+  - Now change permissions for all files ending in `.java` to the following:
+    - Owner: read, write, execute
+    - Group: none
+    - Others: none
+    - This should only take a single `chmod` command. If you did it correctly, you should see the following inside your `src/` directory.
+      ```
+      -rwx------@ 1 david  staff  2611 Jul 19 09:05 FastOddEvenSorter.java
+      -rwx------@ 1 david  staff  5354 Jul 19 09:05 Heap.java
+      -rwx------@ 1 david  staff  2029 Jul 19 09:05 ListFactory.java
+      -rwx------@ 1 david  staff  8417 Jul 19 09:05 Sorter.java
+      -rwx------@ 1 david  staff  4437 Jul 19 09:05 Tester.java
+      ```
 
 #### Part 2 - `nano` Text Editor
 
