@@ -1,12 +1,12 @@
 let days = {
   assignments: {
     homework: [
-      // {
-      //   name: "Hwk 1",
-      //   title: "Github Homepage",
-      //   url: "hwk1.ghpages/",
-      //   due: "9/20/2021",
-      // },
+      {
+        name: "Hwk 1",
+        title: "Github Homepage",
+        url: "hwk1.ghpages/",
+        due: "9/20/2021",
+      },
       // {
       //   name: "Hwk 2",
       //   title: "Wordplay",
@@ -75,11 +75,11 @@ let days = {
 
     ////////////////////////////////// LABS ////////////////////////////////
     labs: [
-      // {
-      //   name: "Lab 1",
-      //   title: "Command Line Bootcamp",
-      //   url: "lab.cmd/",
-      // },
+      {
+        name: "Lab 1",
+        title: "Command Line Bootcamp",
+        url: "lab.cmd/",
+      },
       //   {
       //     name: "Lab 2",
       //     title: "Git Basics",
@@ -118,8 +118,8 @@ let days = {
     "Introduction",
     "VS Code; Start command line",
     // wk 2
-    "Command-line Lab; Start Git",
-    "More Git; Lab on Git",
+    "Command-line Lab; Finish command line",
+    "Start Git; Lab on Git",
     // wk 3
     "Git: branching, merging",
     "Finish Git; Lab on Git branching",
