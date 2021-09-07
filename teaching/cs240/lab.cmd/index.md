@@ -100,7 +100,7 @@ Of course, the first part of your path will differ from mine.
       -rwx------@ 1 david  staff  4437 Jul 19 09:05 Tester.java
       ```
 
-- **Permission** (For Windows Users Only): Windows users can skip this part. The binary numbering system does not work with Windows. Windows uses
+- **Permission** (For Windows Users Only): Windows users can skip this part. The binary numbering system does not work with Windows. Windows uses a different permission system, but it's not really important to us, since the servers I will provide you are not Windows machines.
 
 #### Part 2 - `nano` Text Editor
 
