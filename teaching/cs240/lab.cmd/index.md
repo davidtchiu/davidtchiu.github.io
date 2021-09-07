@@ -2,13 +2,14 @@
 
 ### In-Class Exercise: Command Line
 
-In this exercise you will be trying out basic command line operations.
+In this exercise you will be pulling up the terminal and trying out basic command line operations.
 
 #### Student Outcomes
 
 - Learn how to access your terminal
-- Learn how to navigate your file system: `pwd`, `cd`, `ls`, `cp`, `mv`, `rm`, `less`, `tar`
-- Learn to use the `nano` editor
+- Learn how to navigate your file system: `pwd`, `cd`, `ls`
+- Learn how to manipulate your file system: `cp`, `mv`, `rm`, `less`, `tar`
+- Learn to use `nano` for simple text editing
 
 #### Printable Cheat Sheet
 
@@ -73,7 +74,7 @@ Of course, the first part of your path will differ from mine.
 
 - As you can see, this is just an old Java project that is compatible with BlueJ. Let's suppose that your instructor wants you to restructure the contents of this directory in a certain way before submission, and here's what you need to do:
 
-  - Remove all files ending `.class`, `.ctxt`, and `.bluej`. You should not have remove files one-by-one.
+  - Remove all files ending `.class`, `.ctxt`, and `.bluej`. You should not have remove files one-by-one... use the `*` wildcard.
   - Rename `README.TXT` to `README.txt`.
   - Create a new directory inside `cs240-lab-cmdline/` called `src` and all files ending in `.java` must be moved inside it.
   - If you list files again, you should see this in your working directory:
