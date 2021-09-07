@@ -16,8 +16,9 @@ Here is a [command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Uni
 
 #### Prerequisites
 
-- [https://git-scm.com/downloads](Download) and install git if not already installed.
-- [https://www.java.com](Download) and install Java if not already installed.
+- Ideally, you should have the git and Java installed on your machine, but they're big installs. Even if you don't have these yet, you should still be able to do the lab.
+  - [https://git-scm.com/downloads](Download) and install git if not already installed.
+  - [https://www.java.com](Download) and install Java if not already installed.
 
 #### Part 1 - Navigating the File System
 
@@ -128,6 +129,8 @@ Of course, the first part of your path will differ from mine.
   ```
   javac Tester.java
   ```
+
+  If, for some reason, `javac` doesn't exist on your machine, then you can skip this part.
 
   Because `Tester.java` depends on the other `.java` files, those will be compiled automatically as well. It may complain about unchecked/unsafe operations, but it's just a warning that you can ignore for this exercise. In the unlikely case in which you get a compilation error, then that means you may have made a mistake moving `shakerSort` in the previous step. Go back in with `nano` and fix it.
 
