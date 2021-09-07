@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: Command Line
+### In-Class Exercise: Command Line (~45min)
 
 In this exercise you will be pulling up the terminal and trying out basic command line operations.
 
