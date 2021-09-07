@@ -172,4 +172,6 @@ Of course, the first part of your path will differ from mine.
 
   List directory contents to verify that the `cs240-lab-cmdline/` directory is fully restored.
 
-- This concludes the lab. You may delete the entire `cs240-lab-cmdline` directory structure and the `tar.gz` file if you wish.
+- You may delete the entire `cs240-lab-cmdline` directory structure and the `tar.gz` file if you wish.
+
+- This concludes the lab, and you should understand basic navigation and file manipulation in the shell.
