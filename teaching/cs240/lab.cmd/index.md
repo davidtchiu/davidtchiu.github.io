@@ -21,7 +21,7 @@ Here is a [command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Uni
 
 #### Part 1 - Navigating the File System
 
-- Open your terminal window. You can get to it in various ways, and it depends on your operating system. I think it's easiest to access it through VS Code. Open VS Code. It doesn't matter which project is open (if any). Click on the `Terminal` menu, and click `New Terminal`. You should see the terminal window pop up on the bottom.
+- Open your terminal window. You can get to it in various ways, and it depends on your operating system (on a Mac, Terminal or iTerm; on windows, git-bash is a good option), so if you'd rather use your own terminal program, feel free! I think it's probably easiest to access the terminal through VS Code, since it's the same for both Windows and Mac users. From VS Code, Click on the `Terminal` menu, and click `New Terminal`. You should see the terminal window pop up on the bottom.
 
 - Type the following command to download the files for this lab:
 
@@ -29,9 +29,11 @@ Here is a [command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Uni
   git clone https://github.com/davidtchiu/cs240-lab-cmdline
   ```
 
-- After this succeeds, list all files in the current directory. You should see a directory called `cs240-lab-cmdline`. Navigate into it, and print the current working directory, which shows you what directory you're "inside of." If you did this correctly, you should get an output like this:
+  **Alternative method:** If, for some reason, you have yet to successfully install git on your machine, you can instead download and unzip the file by [going here](https://github.com/davidtchiu/cs240-lab-cmdline). Then click on the "Code" drop-down button, and select "Download ZIP." Take note of where you download this file to. Once downloaded, you should unzip it. Now go in your Terminal, and navigate to the new `cs240-lab-cmdline` directory. If you're using a Mac, it should be in your `Downloads` folder by default. I believe the same is true for Windows.
 
-  ```bash
+- After this succeeds, from the Terminal, list all files in the current directory. You should see a directory called `cs240-lab-cmdline`. Navigate into it, and print the current working directory, which shows you what directory you're "inside of." If you did this correctly, you should get an output like this:
+
+  ```
   /Users/david/Downloads/cs240-lab-cmdline
   ```
 
@@ -39,7 +41,7 @@ Of course, the first part of your path will differ from mine.
 
 - List all files. Remember that you can do this and get a simple output, as follows
 
-  ```git
+  ```
   FastOddEvenSorter$FastOddEvenWorker.class       Heap.java                                       Sorter.ctxt
   FastOddEvenSorter.class                         ListFactory.class                               Sorter.java
   FastOddEvenSorter.ctxt                          ListFactory.ctxt                                Tester.class
@@ -48,7 +50,7 @@ Of course, the first part of your path will differ from mine.
   Heap.ctxt                                       Sorter.class                                    package.bluej
   ```
 
-  Or you can call out the details of each file, printed line-by-line, like this:
+  Or, you can call out the details of each file, printed line-by-line, like this. Make sure you know how to print this version:
 
   ```
   -rw-r--r--@ 1 david  staff  2611 Jul 19 09:05 FastOddEvenSorter.java
@@ -68,12 +70,12 @@ Of course, the first part of your path will differ from mine.
   -rw-r--r--@ 1 david  staff  1515 Jul 19 09:05 package.bluej
   ```
 
-- As you can see, this is just an old Java project that is compatible with BlueJ. Let's suppose that your instructor wants you to restructure the contents of this directory in a certain way before submission. Here's what you need to do:
+- As you can see, this is just an old Java project that is compatible with BlueJ. Let's suppose that your instructor wants you to restructure the contents of this directory in a certain way before submission, and here's what you need to do:
 
   - Remove all files ending `.class`, `.ctxt`, and `.bluej`. You should not have remove files one-by-one.
-  - Rename `README.TXT` to `README.txt` and then open it up for editing.
-  - Create a new directory called `src/` and all files ending in `.java` must be stored in it. Move them in there now.
-  - If you list files, you should have this in your working directory:
+  - Rename `README.TXT` to `README.txt`.
+  - Create a new directory inside `cs240-lab-cmdline/` called `src` and all files ending in `.java` must be moved inside it.
+  - If you list files again, you should see this in your working directory:
     ```
        -rw-r--r--@ 1 dchiu  staff  471 Jul 19 09:05 README.txt
        drwxr-xr-x@ 7 dchiu  staff  224 Jul 19 09:20 src
@@ -96,27 +98,27 @@ Of course, the first part of your path will differ from mine.
   USER INSTRUCTIONS:
   ```
 
-#### Part 2 - nano
+#### Part 2 - `nano` Text Editor
 
-- Let's edit this README file with the following changes. Sure, you can use VS Code for this, but let's try something different. There is a text editor called `nano` that we can use. You can open a file for editing using the command `nano <filename>`. This should replace your Terminal window with the file editor, and make the following changes.
+- Let's edit this `README.txt` file with the following changes. Sure, you can use VS Code (or any other text editor) for this, but let's try one that's available within your shell. There is a text editor called `nano` that we can use. You can open a file for editing using the command `nano <filename>`. This should replace your Terminal window with the file editor. Try moving the cursor around using the directional keys, and make the following changes.
 
   - Change the PROJECT TITLE to `"Command Line Lab"`
   - Enter today's date after VERSION or DATE
   - Add your name to AUTHORS
-  - Remove the remaining lines. You can delete entire lines by moving your cursor on the line by holding down the `control` key and pressing `k`. I'll indicate this sequence as `ctrl + k`. (This command is actually equivalent to a "cut", because it saves the deleted line onto nano's internal clipboard).
-  - Save the file using `ctrl + o`.
+  - Remove all remaining lines. You can delete entire lines by moving your cursor on the line by holding down the `control` key and pressing `k`. I'll indicate this sequence as `ctrl + k`. (This command is actually equivalent to a "cut", because it saves the deleted line onto nano's internal clipboard).
+  - Save the file using `ctrl + o`. (And hit `enter` again to confirm)
   - Then close the file using `ctrl + x`.
 
-- To be sure, I wouldn't ever recommend using `nano` for heavy coding, but I find it to be pretty useful for viewing or making quick edits inside the Terminal. Let's explore some other commands within `nano`.
+- To be sure, I wouldn't ever recommend using `nano` for heavy-duty coding, but I find it to be pretty useful for viewing or making quick edits when you're working within the Terminal.
 
-- Before we make changes to `Sorter.java`, I want you to make a copy of it in case we screw up. Use the `cp` command to make a copy of this file into `Sorter.java.sav`.
+- Let's make some more changes to `Sorter.java`, but before we do, I want you to make a copy of it in case we screw up. Back out to the Terminal, make sure you're in the `src` directory, and make a copy of `Sorter.java` to `Sorter.java.sav`. List files and check the contents of `Sorter.java.sav` to be sure that the copy was successful.
 
-- Now open `Sorter.java` in `nano`.
+- Now open `Sorter.java` in `nano`, and let's learn a few more commands (the following commands are only available in `nano` -- not all editors and certainly not within your shell!):
 
-  - Get the cursor location using `ctrl + c` (this tells you the line number and position, as well as the total line/word count)
+  - You can get the cursor location using `ctrl + c` (this tells you the line number and position, as well as the total line/word count)
   - Skip down to the next page using `ctrl + v`. Skip up using `ctrl + y`.
   - Search for (case insensitive) string-sequences using `ctrl + w`. (Can you figure out how to do a search-and-replace?)
-  - Let's move the `shakerSort` method to the bottom of this class. We'll start by having you find `shakerSort`. Move your cursor to the first line of its method comment, and we'll start cutting by hitting `ctrl + k` consecutive times until the method is gone. Don't worry, all those lines we just removed are saved on nano's clipboard. Now scroll down until you reach the end of the file, and paste it using `ctrl + u`.
+  - Let's move the `shakerSort` method to the bottom of this class. We'll start by having you find `shakerSort` using `ctrl + w`. Move your cursor to the first line of its method comment, and we'll start cutting by hitting `ctrl + k` consecutive times until the method is totally removed. Don't worry, all those lines we just removed are saved on nano's clipboard. (And it's a different clipboard than your machine's, which means if you were to exit out of `nano` now, you'd lose `shakerSort`!). Now scroll down until you reach the end of the file, and paste the contents of your nano clipboard using `ctrl + u`.
   - Save and close this file to return to the Terminal.
 
 #### Part 3 - Wrapping up
@@ -127,7 +129,7 @@ Of course, the first part of your path will differ from mine.
   javac Tester.java
   ```
 
-  Because `Tester.java` depends on the other `.java` files, those will be compiled automatically. It may complain about unchecked/unsafe operations, but it's just a warning that you can ignore for this exercise. In the unlikely case in which you get a compilation error, then that means you made a mistake while moving `shakerSort` in the previous step. Go back and fix it.
+  Because `Tester.java` depends on the other `.java` files, those will be compiled automatically as well. It may complain about unchecked/unsafe operations, but it's just a warning that you can ignore for this exercise. In the unlikely case in which you get a compilation error, then that means you may have made a mistake moving `shakerSort` in the previous step. Go back in with `nano` and fix it.
 
 - If you list files again, you should now see some `.class` files (those are the compiled versions of the source code). Let's create a new directory called `bin/` at the same level as `src/`. Move all the `.class` files into `bin/`.
 
@@ -155,16 +157,16 @@ Of course, the first part of your path will differ from mine.
   tar -czvf <output-filename.tar.gz> <directory-to-zip>
   ```
 
-  Suppose I named my output file `cs240-lab.tar.gz`. You should now see it if you listed the contents of the current directory.
+  List the contents of the current directory again to make sure your new `tar.gz` file exists.
 
-- Go ahead and delete the entire `cs240-lab-cmdline/` directory structure. (Don't worry, we just archived it)
+- Go ahead and delete the _entire_ `cs240-lab-cmdline/` directory structure. (Don't worry, we just archived it in the tarball file.)
 
-- Now unzip the `tar.gz` file by running:
+- Now unzip (extract) your `tar.gz` file by running:
 
   ```
   tar -xvf <your-filename.tar.gz>
   ```
 
-  List directory contents to verify that the `cs240-lab-cmdline/` directory is restored.
+  List directory contents to verify that the `cs240-lab-cmdline/` directory is fully restored.
 
 - This concludes the lab. You may delete the entire `cs240-lab-cmdline` directory structure and the `tar.gz` file if you wish.
