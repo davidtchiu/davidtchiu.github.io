@@ -9,6 +9,7 @@ In this exercise you will be pulling up the terminal and trying out basic comman
 - Learn how to access your terminal
 - Learn how to navigate your file system: `pwd`, `cd`, `ls`
 - Learn how to manipulate your file system: `cp`, `mv`, `rm`, `less`, `tar`
+- Practice setting permission: `chmod`
 - Learn to use `nano` for simple text editing
 
 #### Printable Cheat Sheet
@@ -18,7 +19,7 @@ Here is a [command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Uni
 #### Prerequisites
 
 - Ideally, you should have the git and Java installed on your machine, but they're big installs. Even if you don't have these yet, you should still be able to do the lab.
-  - [https://git-scm.com/downloads](Download) and install git if not already installed.
+  - [https://git-scm.com/downloads](Download) and install git if not already installed. **For windows users** this is particularly important!!!
   - [https://www.java.com](Download) and install Java if not already installed.
 
 #### Part 1 - Navigating the File System
@@ -83,7 +84,8 @@ Of course, the first part of your path will differ from mine.
        drwxr-xr-x@ 7 dchiu  staff  224 Jul 19 09:20 src
     ```
 
-- **Permission**: Hmm, the permissions to read any of these files are open to anybody on this system. That doesn't seem like a good idea, given that these are supposedly your homework files.
+- **Permission** (For Mac Users Only): Hmm, the permissions to read any of these files are open to anybody on this system. That doesn't seem like a good idea, given that these are supposedly your homework files.
+
   - Make sure the owner of all remaining files belong to you (not `david`)
   - Now change permissions for all files ending in `.java` to the following:
     - Owner: read, write, execute
@@ -97,6 +99,8 @@ Of course, the first part of your path will differ from mine.
       -rwx------@ 1 david  staff  8417 Jul 19 09:05 Sorter.java
       -rwx------@ 1 david  staff  4437 Jul 19 09:05 Tester.java
       ```
+
+- **Permission** (For Windows Users Only): Windows users can skip this part. The binary numbering system does not work with Windows. Windows uses
 
 #### Part 2 - `nano` Text Editor
 
@@ -129,7 +133,7 @@ Of course, the first part of your path will differ from mine.
   javac Tester.java
   ```
 
-  If, for some reason, `javac` doesn't exist on your machine, then you can skip this part.
+  If, for some reason, `javac` doesn't exist on your machine, you can skip this part -- it's not of particular importance to the lab.
 
   Because `Tester.java` depends on the other `.java` files, those will be compiled automatically as well. It may complain about unchecked/unsafe operations, but it's just a warning that you can ignore for this exercise. In the unlikely case in which you get a compilation error, then that means you may have made a mistake moving `shakerSort` in the previous step. Go back in with `nano` and fix it.
 
