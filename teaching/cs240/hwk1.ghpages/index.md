@@ -17,11 +17,11 @@ For full credit, your submission should observe the following requirements.
 
 - If you're reading online tutorials on how to create a Github page, ignore all references to their markdown (.md) support. (Markdown is a simplified syntax for generating webpages -- they converted into HTML by a 3rd-party application). You are required to do this assignment using HTML and CSS that _you_ write.
 
-- You'll be creating a live webpage here: [https://yourUserName.github.io](https://yourUserName.github.io).
+- You'll be creating a live webpage here: [https://yourGithubUserName.github.io](https://yourGithubUserName.github.io).
 
-- On your local machine, create a new project in VS Code and have git manage it. Rename your local branch from `master` to `main` for compatability with Github.
+- On your local machine, create a new project in VS Code and have git manage it. Rename your local branch from `master` to `main` for compatibility with Github.
 
-- Working in VS Code, you are to create the following documents. As you're editing your homepage, make commits often, as you will be graded on the frequency and quality of your commit messages. The commit messages don't need to be long, but you should be able to trace your steps by viewing them.
+- Working in VS Code, you are to create the following documents. As you're editing your homepage, make commits often, as you will be graded on the _frequency_ and _quality_ of your commit messages. The commit messages don't need to be long, but you should be able to trace your steps by viewing them.
 
   - `index.html` file is your landing (home) page. You are required to upload and show an image of yourself and write a little more about who you are. You don't have to write a novel -- just a few paragraph synopsis will do.
 
@@ -31,15 +31,19 @@ For full credit, your submission should observe the following requirements.
     - You must style your paragraphs to use helvetica point 10 font.
     - You must style your image to have a solid border, and set it to the left of your self-summary.
 
-  - After you've styled your homepage to your liking, commit and push to github. It can take 1-2 minutes for the upload to take effect, but check your website in your browser to see. Let's work on your resume on a separate branch. Create a new git branch locally called `resume` and switch to it.
+  - After you've styled your homepage to your liking, commit and push to github. It can take 1-2 minutes for the upload to take effect, but check your website in your browser to see. Let's work on your resume on a separate branch.
 
-  - `resume.html` file serves as your resume. You must link to it from your index page. To put yourself in the right mindset, suppose that you're in the early stages of applying for an internship, job, grad school, etc. Place your name and contact info (you don't have to put your physical address on there) in the heading. Following that, these sections must be included in this order:
+  - Next, let's work on a resume page. Create a new git branch locally called `resume` and switch to it. This step is important, as you will be graded on the existence of the branch.
 
-    - Education: List your collegiate history here; your major and minor (if you've declared -- write "undeclared" if you haven't). You do not need to share your GPA.
-    - Experience: List any relevant work history and/or leadership/volunteering experiences here. A title and a short one-paragraph synopsis per item will be sufficient per item.
-    - Coursework: List your CS and CS-adjacent (such as Math) courses here. Use an unordered list containing course number and course title.
-    - Technical Projects: List any significant technical projects here. A title and short one-paragraph synopsis per project will be sufficient. Since it's so early in your studies, you can just list some CS 1 or CS 2 projects here.
-    - Affiliations: List any academic clubs you might be a part of, including athletics and Greek life.
+  - `resume.html` serves as your resume. You must link to it from your home page. To put yourself in the right mindset, suppose that you're in the early stages of applying for an internship, job, grad school, etc. Place your name and contact info (you don't have to put your physical address on there) in the heading. Following that, these sections must be included in this order:
+
+    - **Education:** List your collegiate history here; your major and minor (if you've declared -- write "undeclared" if you haven't). You do not need to share your GPA.
+    - **Experience**: List any relevant work history and/or leadership/volunteering experiences here. A title and a short one-paragraph synopsis per item will be sufficient per item.
+    - **Coursework**: List your CS and CS-adjacent (such as Math) courses here. Use an unordered list containing course number and course title.
+    - **Technical Projects**: List any significant technical projects here. A title and short one-paragraph synopsis per project will be sufficient. Since it's so early in your studies, you can just list some CS 1 or CS 2 projects here.
+    - **Affiliations**: List any academic clubs you might be a part of, including athletics and Greek life.
+
+  - Make sure that your resume matches styling to your homepage, or alternatively, you can create a totally separate styling for your resume.
 
   - After you're done with the content, merge the `resume` branch to the `main` branch and commit and push, but don't remove the `resume` branch.
 
@@ -70,6 +74,9 @@ CS 240 Homework (Github Pages)
 
 > You are making and pushing commits at regular intervals
 and with substantive, detailed commit messages.
+
+> A 'resume' branch was created while you worked on
+resume.html. It has also been merged, but not deleted.
 
 ----------------------------------------------------------
 [0pts] Misc. Deductions
