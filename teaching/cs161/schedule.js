@@ -137,13 +137,14 @@ let days = {
     "Introductions: Who are we? Syllabus",
     "What is CS?",
     "Zoom Lab 1",
-    "CS: hardware, langs; Objects vs. Classes; the Circle class",
+    "CS: hardware, languages",
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
-    "Variables and data types, methods, and constructors",
+    "Objects vs. Classes; the Circle class",
     "Zoom Lab 2",
-    "Saving algorithms; Method calls",
+    "Variables and data types, methods, and constructors",
     // wk 3
+    //    "Saving algorithms; Method calls",
     "Writing classes: TicketMachine. Printing",
     "Conditionals",
     "Zoom Lab 3",
