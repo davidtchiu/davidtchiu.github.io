@@ -140,11 +140,10 @@ let days = {
     "CS: hardware, languages",
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
-    "Objects vs. Classes; the Circle class",
+    "Circle class: Fields, data types, constructors",
     "Zoom Lab 2",
-    "Variables and data types, methods, and constructors",
+    "Methods and making method calls",
     // wk 3
-    //    "Saving algorithms; Method calls",
     "Writing classes: TicketMachine. Printing",
     "Conditionals",
     "Zoom Lab 3",
