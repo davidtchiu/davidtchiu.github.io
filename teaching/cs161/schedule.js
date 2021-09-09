@@ -64,12 +64,12 @@ let days = {
         url: "lab1.bluej/",
         due: "9/3/2021",
       },
-      // {
-      //   name: "Zoom Lab 2",
-      //   title: "Variables and Scope (Scope and Lifetime)",
-      //   url: "lab2.vars/",
-      //   due: "9/10/2021",
-      // },
+      {
+        name: "Zoom Lab 2",
+        title: "Variables (Scope and Lifetime)",
+        url: "lab2.vars/",
+        due: "9/10/2021",
+      },
       // {
       //   name: "Zoom Lab 3",
       //   title: "Stomach Class (Class Writing)",
