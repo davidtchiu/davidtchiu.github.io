@@ -28,7 +28,7 @@ For full credit, your submission should observe the following requirements.
   - `default.css` file should contain some CSS elements to style your homepage. You can style it however you like. In other words, I won't be grading on "good" design. Though, it should be emphasized that this page will be "live" and the goal of this assignment is to introduce to the online world who you are as a software developer, so you might want to make sure it looks presentable. Inside this file, there should be:
 
     - At least 2 element selectors and 1 class selector
-    - You must style your paragraphs to use helvetica point 10 font.
+    - You must style your paragraphs to use Helvetica point 10 font.
     - You must style your image to have a solid border, and set it to the left of your self-summary.
 
   - After you've styled your homepage to your liking, commit and push to github. It can take 1-2 minutes for the upload to take effect, but check your website in your browser to see. Let's work on your resume on a separate branch.
