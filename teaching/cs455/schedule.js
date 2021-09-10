@@ -90,15 +90,16 @@ let days = {
     // wk 3
     "RA: natural join, theta join",
     "RA: outer joins, rename, NULL",
-    "RA: aggregation and grouping",
+    "<strong>Canceled (personal)</strong>",
     // wk 4
+    "RA: aggregation and grouping",
     "SQL: schema definition; integrity constraints",
     "SQL: selection, joins, set ops",
-    "SQL: SQL: outer joins, rename, WITH",
     // wk 5
+    // "SQL: outer joins, rename, WITH",
     "SQL: subqueries: IN, EXISTS; start aggregation",
-    "SQL: grouping and aggregation, triggers, transactions",
-    "SQL Lab Day 1",
+    // "SQL: grouping and aggregation, triggers, transactions",
+    "SQL: grouping and aggregation; Start SQL Lab Day 1",
     // wk 6
     "SQL Lab Day 2",
     "<strong><emph>Review</emph></strong>",
