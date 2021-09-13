@@ -14,7 +14,6 @@ This assignment asks you to formulate proper relational algebra expressions to a
 The following file(s) have been provided for this assignment.
 
 - [Print This Out](DB_Hwk2.pdf)
-- [Or the LaTeX source](Hwk2.zip)
 
 #### Instructions
 
