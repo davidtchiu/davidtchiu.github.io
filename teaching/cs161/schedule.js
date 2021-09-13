@@ -140,14 +140,15 @@ let days = {
     "CS: hardware, languages",
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
-    "Circle class: Comments, fields, data types, constructors",
+    "Circle class: Comments, fields, data types",
     "Zoom Lab 2",
-    "Methods and making method calls",
+    "Writing constructors; parameters, assignment statement",
     // wk 3
+    "Writing methods, calling methods, returning",
     "Writing classes: TicketMachine. Printing",
-    "Conditionals",
     "Zoom Lab 3",
-    "Random, more conditionals, return",
+    "Conditionals",
+    // "Random, more conditionals, return",
     // wk 4
     "Else-if; Start data types: primitives",
     "Type-casting (narrowing, widening)",
