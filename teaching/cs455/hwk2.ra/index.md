@@ -6,7 +6,8 @@ This assignment asks you to formulate proper relational algebra expressions to a
 
 #### Student Outcomes
 
-- To practice basic relational algebra operations.
+- To practice relational algebra operations.
+- Composing relational algebra expressions to answer complex queries.
 - To understand the connection of the relational model and its algebra to set theory.
 
 #### Required Files
