@@ -7,12 +7,12 @@ let days = {
         url: "hwk1.rel/",
         due: "9/10/2021",
       },
-      // {
-      //   name: "Hwk 2",
-      //   title: "Relational Algebra",
-      //   url: "hwk2.ra/",
-      //   due: "9/24/2021",
-      // },
+      {
+        name: "Hwk 2",
+        title: "Relational Algebra",
+        url: "hwk2.ra/",
+        due: "9/24/2021",
+      },
       // {
       //   name: "Hwk 3",
       //   title: "Data Cleansing",
@@ -90,15 +90,14 @@ let days = {
     // wk 3
     "RA: natural join, theta join",
     "RA: outer joins, rename, NULL",
-    "<strong>Canceled (personal)</strong>",
+    "RA: aggregation and grouping <b>(Zoom recording)</b>",
     // wk 4
-    "RA: aggregation and grouping",
     "SQL: schema definition; integrity constraints",
     "SQL: selection, joins, set ops",
+    "SQL: outer joins, rename, WITH",
     // wk 5
-    // "SQL: outer joins, rename, WITH",
     "SQL: subqueries: IN, EXISTS; start aggregation",
-    // "SQL: grouping and aggregation, triggers, transactions",
+    "SQL: grouping and aggregation, triggers, transactions",
     "SQL: grouping and aggregation; Start SQL Lab Day 1",
     // wk 6
     "SQL Lab Day 2",
