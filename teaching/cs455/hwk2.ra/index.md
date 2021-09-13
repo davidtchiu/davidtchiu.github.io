@@ -2,12 +2,12 @@
 
 ### Hwk: Relational Algebra
 
-This assignment asks you to formulate proper relational algebra expressions to answer arbitrary queries about the data. You are allowed to do these by hand (then scanned into a PDF document), but I strongly encourage you to take this opportunity to learn some $$\LaTeX$$.
+This assignment asks you to formulate proper relational algebra expressions to answer arbitrary queries about the data. You are allowed to do these by hand (then scanned into a PDF document).
 
 #### Student Outcomes
 
 - To practice relational algebra operations.
-- Composing relational algebra expressions to answer complex queries.
+- To compose relational algebra expressions to answer complex queries.
 - To understand the connection of the relational model and its algebra to set theory.
 
 #### Required Files
