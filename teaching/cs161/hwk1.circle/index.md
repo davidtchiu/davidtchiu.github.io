@@ -24,24 +24,21 @@ Start by downloading a fresh copy of the starter file from the above link. The c
 
 - Add a new method called `moveNorthEast()` to the Circle class. When invoked, it should move the circle up by 30 pixels and to the right by 30 pixels. Then add a block comment to the code describing your new method. **Note:** When possible, you should reuse methods that have already been written by calling them from within the body of the method you're writing. Can you write this method using only two statements?
 
-- Add a new method called `shuffleHorizontal()` that takes a single integer as its argument. When invoked, the method causes the circle to do a slow shuffle to the right by the specified number of pixels, then back to the left, leaving the circle exactly where it started. (That's assuming the input is positive — if the input is negative, the circle will shuffle left, then right.) Add another block comment describing your new method. If your method is more than a couple of lines, you're going down the wrong track. You do not need to copy and paste anything from `slowMoveHorizontal()` to do this method.
+- Add a new method called `shuffleHorizontal()` that takes a single integer as its argument. When invoked, the method causes the circle to do a slow shuffle to the right by the specified number of pixels, then back to the left, leaving the circle exactly where it started. (That's assuming the input is positive — if the input is negative, the circle will shuffle left, then right.) Add another block comment describing your new method. If your method is more than a couple of lines, you're going down the wrong track. You do not need to copy-and-paste anything from within the `slowMoveHorizontal()` algorithm to write this method. (You should simply _re-use_ (or _call_) `slowMoveHorizontal()` to help you do what you want).
 
 - Add a method called `shuffleVertical()` that inputs an integer argument. The method, like `shuffleHorizontal()`, will cause the Circle to do a slow shuffle to the north, and back to its original position.
 
-- Add a method called `dance()` that inputs an integer named `distance` and four String arguments: `firstColor`, `secondColor`, `thirdColor`, and `fourthColor`. It will first change the color's color to `firstColor`, then shuffle the circle to the right by the given distance. Then it circle's color will change to `secondColor` before shuffling to the south by the given distance, and so on, in clockwise fashion for the remaining two colors.
+- Add a method called `dance()` that inputs an integer named `distance` and four String arguments: `firstColor`, `secondColor`, `thirdColor`, and `fourthColor`. It will first change the color's color to `firstColor`, then shuffle the circle to the right by the given distance. Then it circle's color will change to `secondColor` before shuffling to the south by the given distance, and so on, in clockwise fashion for the remaining two colors. Again, you should simply _call_ methods that's already been written.
 
   <img width="500px" border="1px" src="figures/danceCircle.gif" />
 
-#### Extending the Homework
+#### Extending the Homework (Optional)
 
-- Doing these will not fetch you any more extra credit, but you will obtain enlightenment (no guarantees).
-  Take a the code for the `changeColor()` method, and read the block comment above it to get a gist of the valid colors. What happens if you try to change the color of a shape to a color not listed? What if you capitalized some letters? What do you think is going on?
+Doing these will not fetch you any more extra credit, but you will obtain enlightenment (no guarantees).
 
-- For each shape class, add method `getArea()` that inputs no arguments and returns the area (which is a double type) of the shape. To test them out, change their size and make sure you're getting the expected results.
+- Take a the code for the `changeColor()` method, and read the block comment above it to get a gist of the valid colors. What happens if you try to change the color of a shape to a color not listed? What if you capitalized some letters? What do you think is going on?
 
-#### Optional Extensions
-
-Have some free time? There are no limitations to the content you want to display. Feel free to make more pages about yourself, and add as much styling as you wish! As long as your site meets the requirements, you will receive full credit!
+- Write a new constructor for `Circle` that lets the user decide where circle objects are placed initially.
 
 #### Grading
 
