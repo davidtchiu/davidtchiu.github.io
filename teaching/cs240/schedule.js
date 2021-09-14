@@ -121,11 +121,12 @@ let days = {
     "File system manipulation; permissions; Command-line Lab",
     "Finish command line: program execution and $PATH; Start Git",
     // wk 3
-    "Git lab; Start branching, merging",
-    "Finish Git; Lab on Git branching",
+    "Finish Git basics; Git lab 1",
+    "Start branching, merging",
     // wk 4
-    "Intro to the web; JS Fundamentals",
+    "Finish Git; Lab on Git branching",
     "JS Fundamentals",
+    // "JS Fundamentals",
     // wk 5
     "DOM navigation and manipulation",
     "Event handling",
