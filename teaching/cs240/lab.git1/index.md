@@ -12,6 +12,8 @@ In this exercise, you will be trying out basic git operations, including staging
 
 #### Part 1 - Initializing and Committing
 
+As I noted in lectures, if you were to `clone` an existing git project, it would download the project directories from the remote repo (i.e., Github), and automatically initialize git. In this lab I want to show you how to set up a git repo for an existing project directory on your local machine.
+
 - From your file system, create a new directory called `zoo/`. This directory will store an inventory of animals in different sections of our zoo.
 
 - Now open up that directory from VS Code, and open up the terminal to that project. (Ask for help if you don't remember how to open the integrated terminal). From the terminal, go ahead and initialize git in the zoo directory. The command-line syntax to initialize git is given below. **It's important** to make sure your current working directory is in `zoo/` before issuing this command.
