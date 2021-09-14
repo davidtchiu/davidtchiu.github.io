@@ -3,9 +3,9 @@ let days = {
     homework: [
       {
         name: "Hwk 1",
-        title: "Github Homepage",
+        title: "Github Homepage (extended deadline)",
         url: "hwk1.ghpages/",
-        due: "9/20/2021",
+        due: "9/22/2021",
       },
       // {
       //   name: "Hwk 2",
