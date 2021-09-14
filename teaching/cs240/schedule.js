@@ -80,11 +80,11 @@ let days = {
         title: "Command Line Bootcamp",
         url: "lab.cmd/",
       },
-      //   {
-      //     name: "Lab 2",
-      //     title: "Git Basics",
-      //     url: "lab.git1/",
-      //   },
+      {
+        name: "Lab 2",
+        title: "Git Basics",
+        url: "lab.git1/",
+      },
       //   {
       //     name: "Lab 3",
       //     title: "Git Branching",
