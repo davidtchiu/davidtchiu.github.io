@@ -4,7 +4,7 @@
 
 #### Prerequisites: Slack
 
-- You and your team are strongly encouraged to use Slack for communications. Go here to sign up under the Puget Sound team.
+- You and your team are strongly encouraged to use Slack for communications. Go [here](https://univpugetsound.slack.com) to sign up under the Puget Sound team.
 - When signing up, for your email, you must use your `pugetsound.edu` address. It's set up so that it only accepts users with our school's domain to keep out strangers.
 - If asked, the Team Name is: `univpugetsound`
 - Once logged into the team page, join the `#cs455_db` channel. This is where general course discussion takes place.
@@ -145,7 +145,7 @@ The following commands are important (you need to have administrative/superuser 
   4. What port does apache listen to for HTTP connections from browsers by default? Test it out by typing this into your browser: `http://ip_addr:port`, where `ip_addr` is the IP address of your server, and port is the port number given in the configuration file. Try changing the port number to something else. Test it again in your browser, then change it back. The fact that you don't usually need to specify the port when going to a URL should tell you that the default port to access web servers is the one given in the config file.
   5. What file on your server contains apache's traffic logs? What about apache's error logs? These files tend to get very long, with the most recent logged events being appended to the end of the file. On the terminal, how can you view the last few lines of any file?
   6. What is a Directory Index file? Why would it be desirable to have one in each directory?
-  7. When the browser tries to access a page that does not exist, the HTTP protocol issues a 404 error code. Try it by navigating to [http://cs.pugetsound.edu/david_is_awesome.html](this non-existent URL). It's sort of a clunky way of telling users a page doesn't exist, right? It's ugly and unhelpful. Now try going a [https://pugetsound.edu/david_is_awesome.html](different non-existent URL) on our school's website. Notice that, this time, the web server is able to redirect you to a better looking page, and it's also more helpful in providing you links to other existing resources. So, how do you get apache to redirect users to a specified page upon receiving a 404?
+  7. When the browser tries to access a page that does not exist, the HTTP protocol issues a 404 error code. Try it by navigating to [http://cs.pugetsound.edu/david_is_awesome.html](this non-existent URL). It's sort of a clunky way of telling users a page doesn't exist, right? It's ugly and unhelpful. Now try going to a [http://pugetsound.edu/david_is_awesome.html](different non-existent URL) on our school's website. Notice that, this time, the web server is able to redirect you to a better looking page, and it's also more helpful in providing you links to other existing resources. So, how do you get apache to redirect users to a specified page upon receiving a 404?
   8. How do you give every user on your Linux server their own web space? Enable it now!
 
 #### Part 4: Serving up a Webpage
