@@ -10,11 +10,23 @@ In this exercise, you will be trying out basic git operations, including staging
 - Staging and committing changes
 - Undoing changes
 
+#### Preliminary: Configuring Git (First Time Only)
+
+If this is your first time using git on your machine, you should do the following. Open a Terminal and configure your name, email, and editor for Git. Here's what I did to configure mine:
+
+```
+git config --global user.name "David Chiu"
+git config --global user.email dchiu@pugetsound.edu
+git config --global core.editor "code --wait"
+```
+
+You only need to do this one time.
+
 #### Part 1 - Initializing and Committing
 
 As I noted in lectures, if you were to `clone` an existing git project, it would download the project directories from the remote repo (e.g., github), and automatically run `git init` to track this project. In this lab I want to show you how to set up a git repo for an existing project directory on your local machine.
 
-- From your file system, create a new directory called `zoo/`. This directory will store an inventory of animals in different sections of our zoo.
+- From your file system, create a new directory called `zoo`. This directory will store an inventory of animals in different sections of our Zoo.
 
 - Now open up that directory from VS Code, and open up the terminal to that project. (Ask for help if you don't remember how to open the integrated terminal). From the terminal, go ahead and initialize git in the zoo directory. The command-line syntax to initialize git is given below. **It's important** to make sure your current working directory is in `zoo/` before issuing this command.
 
@@ -77,7 +89,7 @@ Now commit all changes with the message `"Added aquarium, and updated arctic and
 
 #### Part 2 - Undoing Changes at the File Level
 
-Your manager noticed a clerical mistake and said that all animal quantity of "1" is actually supposed to be "10" in all the files. Open up each of the files and do a search-and-replace for the string "1" and replace it with "10" and save each file. Go ahead and do this now (yes, this is a bad idea). Your files should now have the contents below:
+Your manager noticed a clerical mistake and said that all animal quantity of "1" is actually supposed to be "10" in all the files. Open up each of the files and do a search-and-replace for the string "1" and replace it with "10" and save each file. To do a search-and-replace in VS Code, make sure you have the file open, and select `Edit` followed by `Replace`. That opens up a dialog asking for a search string (you'll enter `1` here) and a replacement string (you'll enter `10` here). Then hover your mouse over the far-right button to "replace all instances." Go ahead and do this now for all three files. Your files should now have the contents below:
 
 ```
 1000100 piranhas
