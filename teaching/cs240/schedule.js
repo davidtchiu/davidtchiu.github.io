@@ -119,12 +119,12 @@ let days = {
     "VS Code; Start command line",
     // wk 2
     "File system manipulation; permissions; Command-line Lab",
-    "Finish command line: program execution and $PATH; Start Git",
+    "Command line: execution and $PATH; Start Git - staging, committing",
     // wk 3
-    "Finish Git basics; Git lab 1",
-    "Start branching, merging",
+    "Git: ignoring, undoing; Git lab 1",
+    "Github: pulling, pushing; Start branching",
     // wk 4
-    "Finish Git; Lab on Git branching",
+    "Git branching; Lab on branching/merging",
     "JS Fundamentals",
     // "JS Fundamentals",
     // wk 5
