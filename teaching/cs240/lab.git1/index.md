@@ -89,7 +89,7 @@ Now commit all changes with the message `"Added aquarium, and updated arctic and
 
 #### Part 2 - Undoing Changes at the File Level
 
-Your manager noticed a clerical mistake and said that all animal quantity of "1" is actually supposed to be "10" in all the files. Open up each of the files and do a search-and-replace for the string "1" and replace it with "10" and save each file. To do a search-and-replace in VS Code, make sure you have the file open, and select `Edit` followed by `Replace`. That opens up a dialog asking for a search string (you'll enter `1` here) and a replacement string (you'll enter `10` here). Then hover your mouse over the far-right button to "replace all instances." Go ahead and do this now for all three files. Your files should now have the contents below:
+Your manager noticed a clerical mistake and said that all animal quantity of "1" is actually supposed to be "10" in all the files. Open up each of the files and do a _search-and-replace (read on)_ for the string "1" and replace it with "10" and save each file. To do a search-and-replace in VS Code, make sure you have the file open, and select `Edit` followed by `Replace`. That opens up a dialog asking for a search string (you'll enter `1` here) and a replacement string (you'll enter `10` here). Then hover your mouse over the far-right button to "replace all instances." Go ahead and do this now for all three files. Your files should now have the contents below:
 
 ```
 1000100 piranhas
