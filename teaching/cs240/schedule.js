@@ -85,11 +85,11 @@ let days = {
         title: "Git Basics",
         url: "lab.git1/",
       },
-      //   {
-      //     name: "Lab 3",
-      //     title: "Git Branching",
-      //     url: "lab.git2/",
-      //   },
+      {
+        name: "Lab 3",
+        title: "Git Branching",
+        url: "lab.git2/",
+      },
       //   {
       //     name: "Lab 4",
       //     title: "Personas and Scenarios",
