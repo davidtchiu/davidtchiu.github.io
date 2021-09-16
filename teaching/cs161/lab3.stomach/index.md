@@ -50,7 +50,7 @@ The API handout that you'll want to have in front of you:
 
     ```java
     // If the method returns nothing, its return type is void
-    public returnType method_name(parameterList) {
+    public returnType methodName(parameterList) {
       // code here
       // if returnType is non-void, it must have a return statement
     }
@@ -58,13 +58,13 @@ The API handout that you'll want to have in front of you:
 
   - Here are all the methods that your class needs to support. Read each description carefully. After you've designed each method, write it in BlueJ, and test it vigorously before moving on!
 
-    - `getAmountFood` - Inputs nothing, and returns the current amount of food in the stomach.
+    - `getAmountFood` - Inputs nothing, and returns (doesn't print!) the current amount of food in the stomach.
 
-    - `getAmountDigested` - Inputs nothing, and returns the total amount of food that the stomach has digested.
+    - `getAmountDigested` - Inputs nothing, and returns (doesn't print! the total amount of food that the stomach has digested.
 
-    - `ingest` - This method accepts one input, and does not return a value. Running this method causes the stomach to ingest the amount of food given in the input parameter, and this amount should be added to the current amount of food sitting in the stomach.
+    - `ingest` - This method accepts one input, and does not `return` a value. Running this method causes the stomach to ingest the amount of food given in the input parameter, and this amount should be added to the current amount of food sitting in the stomach.
 
-    - `digest` - This method accepts no inputs and does not return a value. Running it causes a random amount of the food that's currently in the stomach to be "digested" and pulled out of the stomach. For example, suppose there are 13 units of food in the stomach, and 30 units have been digested. Select a random number between 0 and 13 (see below on how) to digest. Let's say the random number, 6, is chosen. After the method is finished, the stomach should now contain 7 units of food ingested, with 36 units digested.
+    - `digest` - This method accepts no inputs and does not `return` a value. Running it causes a random amount of the food that's currently in the stomach to be "digested" and pulled out of the stomach. For example, suppose there are 13 units of food in the stomach, and 30 units have been digested. Select a random number between 0 and 13 (see below on how) to digest. Let's say the random number, 6, is chosen. After the method is finished, the stomach should now contain 7 units of food ingested, with 36 units digested.
 
       - To write this method, you need to figure out how to ask Java to generate a random value. **Read on.** Java has a convenient built-in class called `Random`, and to use it, you need to import it into your code. Place this line at the very top of your class file, above the class header:
 
@@ -94,9 +94,13 @@ The API handout that you'll want to have in front of you:
 
     - `toString` - Inputs nothing, and returns a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `"Ingested: X, digested: Y"`, where `X` and `Y` refer to those respective field values.
 
-  - **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It let's you! You need to fix these problems next.
+  - It would be nice to know how "efficiently" our stomach is working. On average, how much are we digesting every time the `digest()` method is called? This might be a useful piece of information to know. (E.g., if we’re digesting a very small amount on average then we might have a blockage in our stomach that needs to be examined.)
 
-    Use an if-then-else statement to alert the user that they've entered an invalid input, and ignore further actions on the stomach's state.
+  Add the following method to your Stomach class: `public double getAverageAmountDigested()`. This method should return the average amount of food that has been digested. For example, if 10 units of food was digested the first time we called `digest()` and 4 units of food the second time we called `digest()`, then on average, we are digesting 7 units of food.
+
+  - **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It lets you! You need to fix these problems next.
+
+    Use an if-then-else statement to alert the user that they've entered an invalid input, and ignore further actions on the stomach's state. For fixing your constructor, it is appropriate to just let Java create an empty stomach.
 
   - **The Test Code:** Here's some code to test your Stomach class. You can type the following into Blue's codepad. Ask one of us if you don't remember where this is. If your class is bug-free, your output (below the Test code) should look similar to mine.
 
@@ -161,12 +165,6 @@ The API handout that you'll want to have in front of you:
   Digesting...
   Ingested: 3,  digested: 32
   ```
-
-#### Extras
-
-If you want more practice, consider this: After a while, it would be nice to know how "efficiently" our stomach is working. On average, how much are we digesting every time the `digest()` method is called? This might be a useful piece of information to know. (E.g., if we’re digesting a very small amount on average then we might have a blockage in our stomach that needs to be examined.)
-
-Add the following method to your Stomach class: `public double getAverageAmountDigested()`. This method should return the average amount of food that has been digested. For example, if 10 units of food was digested the first time we called `digest()` and 4 units of food the second time we called `digest()`, then on average, we are digesting 7 units of food.
 
 #### Grading
 
