@@ -27,8 +27,7 @@ The API handout that you'll want to have in front of you:
     - A whole number variable to hold the total amount of food that has been digested.
 
       ```java
-      private dataType fieldName;   //data_type can be primitive (e.g., int, double, ...),
-                                      //or it could be the name of a predefined class.
+      private dataType fieldName;
       ```
 
   - **Constructors:** Recall that it is the job of the constructor to set up initial values for the fields. Your class should have two constructors:
