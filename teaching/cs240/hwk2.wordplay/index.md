@@ -9,7 +9,7 @@ Here's how the game goes. The computer selects a random 6-letter word from the E
 
 As he kept losing, because there are a lot of 3-letter words he didn't know existed, David got to thinking about how the game was written. Surely, each puzzle wasn't curated by someone... there's just too many possibilities to handcraft! To accomplish gameplay, the computer must run some internal algorithm to determine a list of possible English words of lengths 3-to-6 that can be formed using the letters of the root word. For instance, if the selected 6-letter root word is "popped", then the following words can be formed using a subset of its letters: "popped" (by default), "pop", "ode", "dope", "pope", "pod", and "pep".
 
-We don't know how to manipulate graphics (yet) using JavaScript, so we'll simulate this game in the text console. To give you a hint on how many there are, the computer lists the possible words in hidden form (think Hangman). Every correct answer will reveal a hidden word, and it's up to the player to try to guess them all. For instance, after guessing a few on the root word "popped", it might display:
+We don't know how to manipulate graphics (yet) using JavaScript, so we'll simulate this game in the text console. In the beginning, the computer lists all possible words in hidden form (think Hangman). Every correct answer will reveal a word, and it's up to the player to try to guess them all. For instance, after guessing a few on the root word "popped", it might display:
 
 ```
 Letters: e o p d p p
@@ -31,7 +31,7 @@ Note that the available letters from the root word are scrambled and listed on t
 
 #### Starter Code and Git
 
-Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-wordplay](https://github.com/davidtchiu/cs240-hwk-wordplay). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then from your local machine, open a terminal, navigate to your directory for this class, and _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages. Push your commits up to your github repo for submission.
+Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-wordplay](https://github.com/davidtchiu/cs240-hwk-wordplay). Go to my github repo, and _*fork*_ this repository to your github account to obtain your own copy on github. Copy the Github URL to _your_ newly forked project. Then from your local machine, open a terminal, navigate to your directory for this class, and _*clone*_ your forked Github repo down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate with substantive messages. Branch early and often. Push your `main` branch up to your github repo for backing up your work. I also will be checking out your Github's `main` branch for grading!
 
 #### Working Solution
 
