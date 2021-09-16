@@ -45,9 +45,11 @@ For full credit, your class should contain all of the methods described below. T
 
 - Report it to the IRS you say? We'll need a `getTax()` method. It doesn't take any arguments, but should return the total amount of tax collected during "swipes" of the card.
 
-- We'll also add a `getAverageTripCost()` method. It doesn't need any arguments, but it should return the average cost of the trips paid for by this card. Ignore the tax we pay on the trips when computing the average. (Hint: You already keep track of the total cost of the trips, which will come in handy here, but you'll need to keep some additional information as well.)
+- It might be good to keep a record of the costliest trip you've ever taken. Write a method called `getCostliestTrip()` that returns that information.
 
-- Let's also alert the user to their level of balance remaining on the card. Write a method `balanceLevel()` that doesn't require arguments, and returns a String containing the appropriate message (shown below) based on the current balance. Only one message should be returned. Note that a negative balance cannot happen if you programmed `buyTrip()` properly. If you see a negative balance, go back and fix that method!
+- We'll also add a `getAverageTripCost()` method. It doesn't need any arguments, but it should return the average cost of the trips paid for by this card. Ignore the tax we pay on the trips when computing the average.
+
+- Let's also alert the user to their level of balance remaining on the card. Write a method `balanceLevel()` that doesn't require arguments, and `returns` a `String` containing the appropriate message (shown below) based on the current balance. Only one message should be returned. Note that a negative balance cannot happen if you programmed `buyTrip()` properly. If you see a negative balance, go back and fix that method!
 
   | balance                                      | message to print                        |
   | -------------------------------------------- | --------------------------------------- |
@@ -57,15 +59,17 @@ For full credit, your class should contain all of the methods described below. T
   | at or below five times the average trip cost | Your balance is sufficient!             |
   | anything higher                              | Your balance is high!                   |
 
-- Finally, write a `printSummary()` method that prints information about the ORCA card object. Feel free to personalize this as you see fit, but the string should contain at least the card's current balance, the number of trips taken, and the balance-level message from the method you just wrote previously.
+- Finally, write a `printSummary()` method that prints (does not `return`) information about the ORCA card object. The output should contain: the card's current balance, the number of trips taken, the balance-level message from the method you just wrote previously. It should also print your costliest trip on a separate line.
 
-- You can test out your class in code pad. Except for your version of `printSummary()`, your output should match mine exactly for full credit. Recall that outputs from your program to the terminal are indicated with a > sign below.
+- You can test out your class in code pad. Except for your version of `printSummary()`, your output should match mine exactly for full credit. Recall that outputs from your program to the terminal are indicated with a `>` sign below.
 
   ```java
   OrcaCard my_card = new OrcaCard();
   my_card.topUp(20.5);
   my_card.printSummary();
   > $20.5 left after 0 trip(s).
+  > Your balance is high!
+  > Your costliest trip so far cost $0
 
   my_card.buyTrip(10.00);
   > Success: Ticket purchased.  $9.85 remaining.
@@ -94,6 +98,8 @@ For full credit, your class should contain all of the methods described below. T
 
   my_card.printSummary();
   > $0.7324999999999995 left after 3 trip(s).
+  > Your balance is low!
+  > Your costliest trip so far cost $5
   ```
 
 #### Extending the Homework
@@ -111,7 +117,7 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 60pts.
+This assignment will be graded out of a total of 70pts.
 
 [5pts] Proper fields have been defined. No more -- no less than what is needed
        by the OrcaCard class.
@@ -130,6 +136,8 @@ This assignment will be graded out of a total of 60pts.
 [5pts] The getTax() method is properly implemented.
 
 [5pts] The getAverageTripCost() method is properly implemented.
+
+[10pts] The getCostliestTrip() method is properly implemented.
 
 [10pts] The balanceLevel() method returns a single, appropriate message based on
        your card's balance.
