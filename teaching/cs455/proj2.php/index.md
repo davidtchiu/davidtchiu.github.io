@@ -1,21 +1,10 @@
 ## CS 455 - Principles of Database Systems
 
-### Project 1: To the Cloud
-
-#### Prerequisites: Slack
-
-- You and your team are strongly encouraged to use Slack for communications. Go [here](https://univpugetsound.slack.com) to sign up under the Puget Sound team.
-- When signing up, for your email, you must use your `pugetsound.edu` address. It's set up so that it only accepts users with our school's domain to keep out strangers.
-- If asked, the Team Name is: `univpugetsound`
-- Once logged into the team page, join the `#cs455_db` channel. This is where general course discussion takes place.
-- Create a new channel for your team, and you may invite me to it (if you like professors to spy on you).
-- It is also recommended that you download their app (iOS and/or Android) to get notifications on your phone.
+### Project 2: PHP Web Development
 
 #### Overview
 
-So, why are you learning Linux server administration in a database course? Well, it turns out that building web pages that draw their content from a database is one of the most common use-cases in all of web-development operations today. (You didn't think sites like Amazon create a web page for every possible search term, did you?) In web-development lingo, what you're about to set up is commonly referred to as the three-tier architecture. The three-tier architecture consists of the Data Tier (consists of the database), the Logic Tier (consists of the code responsible for processing and communication with the database), and the Presentation Tier (which is the HTML/CSS that presents the information to a browser). In practice, the vast majority of today's three-tier architectures are hosted on the Apache Web Server, usually running on a Linux machine.
-
-In this project (and remaining projects), you will receive first-hand experience in creating your own dynamic web application on the cloud from scratch. We'll first focus on spinning up a virtual machine (called an instance) on AWS, and getting comfortable on its command-line interface (or shell). By the end of this project, you'll be bringing the Apache Web Server up and running and serving up your very own website.
+In this project you will be getting Apache to support the PHP programming environment, an interpreted language designed for generating web content. You will also become familiarized with PHP's library support to communicate with various databases, like SQLite3. You'll write a small database-driven web app. Finally, you'll learn how to write code that secures against SQL-injection attacks, which are responsible for a vast number of leaks of private data.
 
 #### Importance of Teamwork
 
@@ -25,111 +14,142 @@ I will assume that each member of the team has contributed equally to the projec
 
 #### Student Learning Objectives
 
-- To become familiar with the command-line and common Linux commands
-- To understand the basic administration of the Apache Web Server
+- At the end of this project, students will be:
+- Familiar with the installation and language of PHP
+- Understand the integration of PHP with HTML to produce dynamic web pages
+- Understand PHP's database-connectivity support for SQLite3
+- Understand the risks posed by SQL-injection and how to secure against it
 
-#### Part 1: Accessing Your Cloud Instance
+#### Part 1: Installing Required Software
 
-- To access your team's virtual machine, we need to get a command-line interface that you'll feel comfortable using on your personal machine.
+This project assumes the successful completion of Project 1. It requires that you have a basic understanding of how to navigate the Linux command-line interface. When in doubt, refer to that [cheat-sheet](https://files.fosswire.com/2007/08/fwunixref.pdf) I you pointed to in the last project.
 
-  - In the [VS Code editor](https://code.visualstudio.com/download), which is recommended for this project, there is a built-in Terminal that you can use to access the command line. To get to it, start any project, then right-click anywhere on the project's file menu, and select `Open in Integrated Terminal`.
-  - Of course, if you prefer not to use the VS Code integrated terminal, then the following tools will work too:
+1. Login to your server. We need to install a few things before we can move on.
 
-    - If you use Mac: Your Terminal (found in Applications/Utilities) would work fine, but I prefer `iTerm 2`.
-    - If you use Windows, I recommend downloading `git-bash` (part of the Git application), or you can download `PuTTY`.
+2. Using the `apt-get` command, you need to install the following software packages on your server:
 
-- Let's get connected to your the Linux server. From your command-line, type:
+   - SQLite3. Test this by typing `sqlite3` in the command line.
+   - PHP language support (version 7 is stable at the time of writing). Test this by renaming your .html page to have a .php extension.
+   - PHP 7 PDO libraries for sqlite3 support.
+   - It's too hard to keep up with what the apt-package names are for PHP 7 and PHP 7's sqlite libraries. Those are up to you to figure out.
+   - Go ahead and restart apache after you've installed the PHP and PDO packages.
 
-  ```bash
-  ssh dbteam@ipaddr
+3. It would probably also make sense to install PHP and Apache on your own machines, if you plan to develop on your local machines separately, and pushing up your code once it's ready to be tested in the "live" environment.
+
+4. Even if everything went smoothly, you'll still want to test that everything is working. Create a new webpage, but this time, the file will have a `.php` extension, instead of a `.html` extension. Type in the following code, then save the file:
+
+```php
+<?php
+    phpinfo();
+?>
+```
+
+Navigate to the page from your web browser, and you should see a page containing a ton of information. If you see this, congrats, PHP is installed. If your browser asks you to download the `.php` file, try restarting Apache. If even that doesn't work, then I surmise PHP wasn't installed properly.
+
+5. On the server, navigate to `/etc/apache2/mods-enabled` and edit the `php7.x.conf` file. You should see the setting there, and turn it on. Restart apache after you're done.
+
+6. What `phpinfo()` spews out is the configuration and state of your PHP and web-server environment. Scroll down to the "PDO" section, and see if the SQLite3 library (driver) is listed as being installed. If you see it, congrats, your PHP has sqlite3 support. If you don't, you need to try reinstalling the PDO library for SQLite3.
+
+7. Peruse through the PHP info a little more. There are two sections of data that are pretty interesting. First, under the Apache Environment section, you can read all about how Apache was configured (what you had to do in the previous project). For instance, you can see where the document root is, and what the current URL is (`SCRIPT_NAME`).
+
+8. Superglobal Variables: The second section with interesting data is toward the bottom, called PHP Variables. These variables contain the server information we just saw in the Apache Environment section, and more! As you'll learn, these variables are called superglobals, and they are accessible by any PHP page! So, for instance, any PHP page you create knows what the current page is called (`$\_SERVER['SCRIPT_NAME']`), and even knows how the user got here (`$\_SERVER['HTTP_REFERER']`).
+
+#### Part 2: Learn Some PHP
+
+1. PHP is one of the most popular languages in use today, and it's also pretty easy to learn! You can find many good tutorials online. I've also prepared some notes for you that you might find useful.
+
+- [David's old PHP Notes](CS455-php.pdf)
+
+2. When you're ready to test out PHP, create another file, called `test.php`, and type the following code in. Notice that there is an intentional error (the hello-world string was not terminated).
+
+```php
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+    //there should be an error
+    echo "<p>hello world!</p>;
+?>
+
+</body>
+</html>
+```
+
+Save it, then navigate to the page on your browser. You _should_ see a blank page. View the HTML source from your browser, and you should also see nothing. Not very useful for debugging purposes, is it?
+
+3. Why doesn't PHP display errors by default? Well think about this from a production standpoint. If a page has errors in it, would you want PHP to announce to the world what the problem was? The might reveal some sensitive information, for instance, leading to security vulnerabilities. So, hiding errors by default is actually a good thing, but it's not very useful for educational settings! We need to turn error-reporting on.
+
+4. Fortunately, like Apache, PHP also comes with a configuration file. It's called php.ini. You'll need to find it on your server first (maybe `phpinfo()` would tell you?). You'll need superuser privilege to edit it. Read through the entire file, and try to understand as much as you can. In this file, semi-colons denote line-comments. Find the line that sets the value for `display_errors`, and turn it On. You need to restart Apache for the changes to take effect. Refresh the `testing.php` page, and now you should see the errors.
+
+5. Fix the error in `test.php`, and you should see the "Hello World!" message if you refresh the page. From your browser, choose to view the source. Here's something interesting: It appears that the browser only knows about the HTML code that was generated after the PHP code had already processed! This important observation implies two very important concepts:
+
+   - Your PHP code was executed before the web server (apache) serves it back to the browser.
+   - Your browser is built to interpret HTML, and is completely oblivious to the fact that PHP was even present. It does not know, or even care, that the HTML document it's displaying was generated by PHP, or that was a static HTML page to begin with.
+   - This web-programming model, in which the code is processed by the web server, is called server-side programming. Today, PHP is the dominant server-side language (others include Python (flask), C\#, and Ruby-on-Rails). As an aside, client-side languages are ignored by the server and processed by the browser. JavaScript is the most widely known client-side language, but interestingly, recent developments in JavaScript has meant that it can be used as a server-side language too (see: node.js)!
+
+#### Part 3: Bringing in the Database
+
+Because we only have enough time in class to cover one database system, this tutorial will be written for SQLite3. However, the strength of PHP's PDO driver library makes these instructions pretty easy to adapt to other relational database systems, like MySQL, PostgreSQL, etc.
+
+- From the command line, create a new folder called myDB, in your web directory and navigate inside it.
+
+- Start up `sqlite3`. Now let's populate it with the airplane data set we've been working with in class. Copy and paste the contents of the `airport-schema.sql` and `airport-populate.sql` (these are on found on the course page) into the SQLite prompt. Save the database as a file named airport.db by typing `.backup airport.db` or `.save airport.db`.
+
+- Once the airport database is created, you now need to give the web server read, write, and execute permissions to the both `myDB/` directory to the new `airport.db` file. You also want both items to be owned by apache. To do this, you need to figure out what username does Apache execute on your machine? Use the `ps aux` command to list all the processes that are running. The usernames of the owners will be displayed as part of the output. Then use the commands `chown` and `chmod` to assign proper permissions to these two items. Do this before moving on.
+
+- Create a new file, outside the database directory, called `showPassengers.php`. Paste the following content into this file:
+
+  ```php
+  <!DOCTYPE html>
+  <html>
+  <body>
+  <h2>List of all passengers</h2>
+  <p>
+      <?php
+
+          //path to the SQLite database file
+          $db_file = './myDB/airport.db';
+
+          try {
+              //open connection to the airport database file
+              $db = new PDO('sqlite:' . $db_file);      // <------ Line 13
+
+              //set errormode to use exceptions
+              $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+              //return all passengers, and store the result set
+              $query_str = "select * from passengers;";  // <----- Line 19
+              $result_set = $db->query($query_str);
+
+              //loop through each tuple in result set and print out the data
+              //ssn will be shown in blue (see below)
+              foreach($result_set as $tuple) {          // <------ Line 24
+                  echo "<font color='blue'>$tuple[ssn]</font> $tuple[f_name] $tuple[m_name] $tuple[l_name]<br/>\n";
+              }
+
+              //disconnect from db
+              $db = null;
+          }
+          catch(PDOException $e) {
+              die('Exception : '.$e->getMessage());
+          }
+      ?>
+
+  </p>
+  </body>
+  </html>
   ```
 
-  This command causes the SSH (secure shell) client to connect to the machine located at the specified IP address.
-  The login name is `dbteam` (the part before the @ symbol), i.e., once you login, that is your userID on the instance.
-  Finally, `ipaddr` is your instance's public IP address, which has already been provided to you.
+  - On Line 13, a PHP-PDO object is instantiated. The argument into this constructor a string containing this format protocol:path, where protocol refers to the database-type in use, and path is the path to the airport.db file. After this constructor is executed, the connection to the airport.db database is made. If there is an error (say, the file isn't readable by Apache, or file doesn't exist), then an exception will be thrown and control will jump to the `catch()` clause. The try-catch syntax and behavior is just like Java.
 
-- Next, type in the temporary password that was provided to your team.
+  - On Line 19-20, we run an SQL query that selects every passenger from the database. It stores the results in an array of arrays called `$result_set`. Each item in `$result_set` is a tuple (which is like a HashMap).
 
-- You'll be prompted with a host verification message. Type `yes`. You'll just need to do this once. If all goes well, you should now be logged into the server, and get something that looks like the following.
+  - On Lines 24-26: the `foreach($result_set as $tuple)` loop stores every tuple in the result set in a variable called `$tuple`. It works just like the foreach-loop in Java. Each attribute value of the tuple can then be accessed using the syntax `$tuple[attribute_name]`.
 
-  ```
-  Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-51-generic x86_64)
+  - Save this file, and call it `showPassengers.php`, then point your browser to it.
 
-    System information as of Mon Jul  8 13:29:33 CDT 2019
-
-    System load:  0.21              Processes:           174
-    Usage of /:   55.8% of 7.58GB   Users logged in:     0
-    Memory usage: 22%               IP address for ens3: 172.17.65.12
-    Swap usage:   0%
-
-  * Read about Ubuntu updates for L1 Terminal Fault Vulnerabilities
-    (L1TF).
-
-    - https://ubu.one/L1TF
-
-  * Check out 6 great IDEs now available on Ubuntu. There may even be
-    something worthwhile there for those crazy EMACS fans ;)
-
-    - https://bit.ly/6-cool-IDEs
-
-    Get cloud support with Ubuntu Advantage Cloud Guest:
-      http://www.ubuntu.com/business/services/cloud
-
-  * Canonical Livepatch is available for installation.
-    - Reduce system reboots and improve kernel security. Activate at:
-      https://ubuntu.com/livepatch
-
-  Welcome to
-      _   _                             _
-    / \ | |_ _ __ ___   ___  ___ _ __ | |__   ___ _ __ ___
-    / _ \| __| '_ ` _ \ / _ \/ __| '_ \| '_ \ / _ \ '__/ _ \
-  / ___ \ |_| | | | | | (_) \__ \ |_) | | | |  __/ | |  __/
-  /_/   \_\__|_| |_| |_|\___/|___/ .__/|_| |_|\___|_|  \___|
-                                |_|
-
-
-  dbteam@js-17-119:~$
-  ```
-
-  If you see something like this, then you're in!! If it refuses your connection attempt (or times out), let me know.
-
-- One of the first things you should do as a team is to change the password to your server to something more secure. When you've decided on one, use the `passwd` command to change it.
-
-- **Warning!!** There's a mild risk associated with running a server on the cloud. Unlike your own computers, the machine you just logged into has ephemeral storage. What this means is that, every time the machine reboots, it'll revert back to its original, clean-slate state! This means a few things for you:
-
-  - It is not recommended that you code directly on the server. Instead, code locally on your machine, then upload it to the server for execution (I'll show you how later).
-  - Backup and use version control, such as installing git on your server.
-
-#### Part 2: Learn Some Linux Commands
-
-- If you typed your instance's public IP address into your browser, it won't bring anything up. We need to change that, and give yourselves a web presence. To start, we'll need to install the Apache web server on your instance. However, before we can start, you you need to become somewhat competent with common Linux commands.
-
-  - Here's a great [cheat sheet](https://files.fosswire.com/2007/08/fwunixref.pdf) you can download. I strongly recommend printing it out and keeping it somewhere convenient.
-
-- Currently, you're logged in as the user `dbteam` with a temporary password that I made up. The first thing you should do is to change your password.
-
-- After this, learn know how to do the following. Life may be painful for future projects if you don't know how to do these things:
-
-  - Navigate the file system: Understand relative and absolute paths, change directories, list files, remove files, remove directories (including their sub-directories if any), move files/directories, copy files/directories.
-  - Locating files using `find`
-  - Text editing: Read an existing text file, create a new text file, modify an existing file. If this is all new to you, I wouldn't start with the `vi` or `emacs` editors. Instead, look into using `nano`.
-  - File permissions: Understand how to see permissions, change permissions on existing files or directories.
-  - Install software packages with `apt-get`
-  - Authentication: Occasionally, you need to be an "administrator" (or, superuser) of the server to run privileged commands. How?
-
-- It's time to test out your knowledge and start installing and configuring some software packages. **Install** the Apache Web Server on your machine. Look up how to use `apt-get` and how to get it to download and install the latest version of apache.
-
-- To check if your installation of apache was successful, point your web browser to the IP address of your server. If the installation of Apache was successful, you should get some generic web page saying something to the effect of It Worked!. On failure, your browser will probably time-out or tell you the page does not exist (but not a 404 error).
-
-- You cannot proceed any further until you've ensured that **apache** is running properly. (To check after installation, point your browser to your public IP address to see if you get a default "successful installation" page). Check with me if you have any questions on this step.
-
-#### Part 3: Configuring the Apache Web Server
-
-The following commands are important (you need to have administrative/superuser privileges to run these):
-
-- To start apache: `sudo apachectl start`
-- To stop apache: `sudo apachectl stop`
-- To restart apache: `sudo apachectl restart`
+  - If everything goes smoothly, you should see an HTML page displaying all passengers' information. Again, you should check the HTML source to see what exactly was printed out.
 
 ##### The Apache Configuration File
 

@@ -11,7 +11,7 @@ let days = {
         name: "Hwk 2",
         title: "Wordplay",
         url: "hwk2.wordplay/",
-        due: "10/6/2021",
+        due: "10/4/2021",
       },
       // {
       //   name: "Hwk 3",
