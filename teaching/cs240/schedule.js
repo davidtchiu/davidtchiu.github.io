@@ -7,12 +7,12 @@ let days = {
         url: "hwk1.ghpages/",
         due: "9/22/2021",
       },
-      // {
-      //   name: "Hwk 2",
-      //   title: "Wordplay",
-      //   url: "hwk2.wordplay/",
-      //   due: "10/6/2021",
-      // },
+      {
+        name: "Hwk 2",
+        title: "Wordplay",
+        url: "hwk2.wordplay/",
+        due: "10/6/2021",
+      },
       // {
       //   name: "Hwk 3",
       //   title: "Scoreboard",

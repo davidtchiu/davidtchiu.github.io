@@ -148,7 +148,6 @@ let days = {
     "Writing classes: TicketMachine. Printing",
     "Zoom Lab 3",
     "Conditionals",
-    // "Random, more conditionals, return",
     // wk 4
     "Else-if; Start data types: primitives",
     "Type-casting (narrowing, widening)",
