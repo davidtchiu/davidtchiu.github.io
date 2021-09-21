@@ -52,25 +52,25 @@ For full credit, your project should observe the following requirements.
 - Scramble the root word and output it to the console so the player knows what letters they have to work with. Then display to the console the current list of guessed/unguessed words to the user, and get their inputs. Repeat until all words have been guessed, or if the user presses cancel. For the words that have not been guessed, hide them using a dashes (one dash per letter separaated by space, like for Hangman). Print this output to the console.
   To prompt the user for an input, use:
 
-  ```js
+  ```javascript
   let input = prompt(someString);
   ```
 
   To print and display a dialog window, use:
 
-  ```js
+  ```javascript
   alert(someOtherString);
   ```
 
   To print something to the console window, use:
 
-  ```js
+  ```javascript
   console.log(someOtherString);
   ```
 
 - You should clear the console after each guess.
 
-  ```js
+  ```javascript
   console.clear();
   ```
 
