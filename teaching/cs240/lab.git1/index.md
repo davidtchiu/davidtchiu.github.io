@@ -46,7 +46,7 @@ As I noted in lectures, if you were to `clone` an existing git project, it would
   git add .
   ```
 
-  After staging, we can now commit with the message `"created a new zoo with 3 sections"`
+  After staging, we can now commit with the message `"created a new zoo"`
 
 - In `arctic.txt`, add the following content:
 
@@ -71,90 +71,155 @@ Now open up jungle.txt and add:
 
 Save both files.
 
-- Make a commit with only the changes in arctic.txt. Use the message `"Added arctic animals"`
+- Remember that you can choose what you'd like to commit by staging only certain files using the `git add <filename>` command.
 
-- Now make another commit with only the changes in jungle.txt. Use the message `"Added jungle animals"`
+  - Make a commit with only the changes in arctic.txt. Use the message `"Added arctic animals"`
 
-- Create a new file, aquarium.txt and add the following content:
+  - Now make another commit with only the changes in jungle.txt. Use the message `"Added jungle animals"`
 
-```
-1 pacific octopus
-10 starfish
-6 manta rays
-```
+- Create a new file, `aquarium.txt` and add the following content:
 
-- Now add "3 arctic foxes" to `arctic.txt`.
+  ```
+  1 pacific octopus
+  10 starfish
+  6 manta rays
+  ```
 
-Now commit all changes with the message `"Added aquarium, and updated arctic and jungle's inventory"`
+- Now go back to the `arctic.txt` add "3 arctic foxes" to the top of the file.
+
+- Now commit all changes with the message `"Added aquarium, and updated arctic's inventory"`. If you check `git status` you should see a message like mine below, which tells you there is nothing staged, and no pending changes to your repository:
+  ```
+  $ git status
+  On branch master
+  nothing to commit, working tree clean
+  ```
 
 #### Part 2 - Undoing Changes at the File Level
 
-Your manager noticed a clerical mistake and said that all animal quantity of "1" is actually supposed to be "10" in all the files. Open up each of the files and do a _search-and-replace (read on)_ for the string "1" and replace it with "10" and save each file. To do a search-and-replace in VS Code, make sure you have the file open, and select `Edit` followed by `Replace`. That opens up a dialog asking for a search string (you'll enter `1` here) and a replacement string (you'll enter `10` here). Then hover your mouse over the far-right button to "replace all instances." Go ahead and do this now for all three files. Your files should now have the contents below:
+- Your manager noticed a clerical mistake and said that all quantities of "1" is actually supposed to be "10" in all the files.
 
-```
-1000100 piranhas
-10 tiger
-3 wild boars
-1010 warthogs
-10 panthers
-10102 tree frogs
-10 pythons
-```
+- Open up each of the files and do a _search-and-replace (read on, I'll explain how to do it)_ for the string "1" and replace it with "10" and save each file. To do a search-and-replace in VS Code, make sure you have the file open, and select `Edit` followed by `Replace`. **Do not choose `Replace in Files`!!** That opens up a dialog asking for a search string (you'll enter `1` here) and a replacement string (you'll enter `10` here). Then hover your mouse over the far-right button to "replace all instances."
 
-```
-3 arctic foxes
-2 narwhals
-3 polar bears
-10 snowy owls
-4 walruses
-```
+- Go ahead and do this now for **all three files** and save them. Your files should now have the contents below:
 
-```
-10 pacific octopus
-100 starfish
-6 manta rays
-```
+  ```
+  1000100 piranhas
+  10 tiger
+  3 wild boars
+  1010 warthogs
+  10 panthers
+  10102 tree frogs
+  10 pythons
+  ```
 
-Right after you saved these files, you realize right away that the quantities for some of the other animals are now wrong! You don't remember what they used to be, and you don't want to make a mistake changing them back! It's a pain to have to re-open all the files to which you made changes. What if you missed one? (Use your imagination -- this could've been a lot worse in a real program where multiple classes are affected because you renamed a method or instance variable).
+  ```
+  3 arctic foxes
+  2 narwhals
+  3 polar bears
+  10 snowy owls
+  4 walruses
+  ```
 
-- Using the `git restore` command, restore these files to the state before you made these global replacements.
+  ```
+  10 pacific octopus
+  100 starfish
+  6 manta rays
+  ```
 
-- Now, go through each file one-by-one, and make the quantity changes by hand. After you're done, save all files and commit with the message `"Replaced all quantities: 1-to-10."`
+- Right after you saved these files, you realize that the quantities for some of the other animals are now wrong! You don't remember what those values used to be, and you don't want to make a mistake changing them back!
+
+- Using the `git restore <file>` command, restore these files to the state before you made these global replacements. (You'll issue this command three times).
+
+- After you've restored them back to their past state, go through each file one-by-one, and make the quantity changes by hand. After you're done, your files should look like the following:
+
+  ```
+  10010 piranhas
+  10 tigers
+  3 wild boars
+  11 warthogs
+  10 panthers
+  112 tree frogs
+  10 pythons
+  ```
+
+  ```
+  3 arctic foxes
+  2 narwhals
+  3 polar bears
+  10 snowy owls
+  4 walruses
+  ```
+
+  ```
+  10 pacific octopus
+  10 starfish
+  6 manta rays
+  ```
+
+- Save all three files and commit with the message `"Replaced all quantities: 1-to-10."`
 
 #### Part 3 - Undoing Changes at the Commit Level
 
-- Due to a loss of funding, plans for the aquarium are being scrapped. Your manager asks you to remove aquarium.txt, but to distribute its contents into two new files: `wishlist.txt` and `seacritters.txt`.
+- Due to a loss of funding, plans for the aquarium are being scrapped. Your manager asks you to delete the `aquarium.txt` file, but to distribute its contents into two new files: `wishlist.txt` and `seacritters.txt`.
 
-- Place the octopus and the manta ray on the `wishlist.txt` file, and commit with the message `"octopus and ray now in wishlist"`
+- Place the octopus line and the manta ray line in the `wishlist.txt` file, and commit with the message `"octopus and ray now in wishlist"`
 
 - If you made changes to `aquarium.txt` make sure you save the file now.
 
-- Place the starfish on the seacritters.txt file, and commit with the message `"aquarium now reduced to small sea-critters section"`
+- Put the starfish line in the `seacritters.txt` file, and commit with the message `"aquarium now reduced to small sea-critters section"`
 
 - With its contents redistributed, you can now delete `aquarium.txt` using the proper git operation:
 
-```
-git rm <file>
-```
+  ```
+  git rm <file>
+  ```
 
 Note that you could also simply drag the file into your trash bin and git will know what to do. Go ahead and commit with the message `"removed aquarium file."`
 
 - Pretend that weeks go by, and you learn the good news that the aquarium has been reinstated!! To get the aquarium file back, you simply have to time travel to an earlier commit. List all your commits using:
 
-```
-git log --oneline
-```
+  ```
+  git log --oneline
+  ```
 
-If you used descriptive commit messages, like we've been doing, it should easy to trace yourselves back to the right commit.
+If you used descriptive commit messages, like we've been doing, it should easy to trace yourselves back to the right commit. Here's what mine looks like
+
+    ```
+    $ git log --oneline
+    214fe41 (HEAD -> master) removed aquarium file
+    5c797ca aquarium now reduced to small sea-critters section
+    7267e2f Replaced all quantities: 1-to-10.
+    7e67b59 Added aquarium, and updated arctic's inventory
+    49b55af Added jungle animals
+    18d1b39 Added arctic animals
+    ```
 
 - But let's say you're not sure if you're looking at the right commit, and doing a hard reset to a commit is super dangerous. You can check out the files at different commit points by using:
 
-```
-git checkout <commit-id>
-```
+  ```
+  git checkout <commit-id>
+  ```
 
-After you checkout, the file contents should update automatically in VS Code to its state in the given commit point! Once you find the most recent commit with the aquarium data, copy that commit id.
+After you checkout, the file contents should update automatically in VS Code to its state in the given commit point! Once you find the commit point that has the aquarium, jungle, and arctic files, copy that commit id. (For my example, the right commit id is `7267e2f`).
 
-- Before we do a hard reset to this earlier commit, **we must return to our current commit point!** Check out the most recent commit now.
+- Before we do a hard reset to this earlier commit, **we must return to our current commit point!** To do this, run
 
-- Now, do a hard reset to the earlier commit point. Open the aquarium file to ensure that it exists, and you should no longer see the wishlist and seacritter files.
+  ```
+  git checkout master
+  ```
+
+- Now, do a reset to the earlier commit point.
+
+  ```
+  git reset <commit-id>
+  ```
+
+- This should return your project to the state before the aquarium was removed, and before the seacritters and wishlist files were created. Make sure this is indeed the case.
+
+- Before we finish up, run the following command just to get ourselves ready for the next lab.
+
+  ```
+  git checkout master
+  ```
+
+- Then commit anything that hasn't already been committed (it would be unusual for you to have uncommitted changes at this point).
