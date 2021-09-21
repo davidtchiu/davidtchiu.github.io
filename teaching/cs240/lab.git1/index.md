@@ -216,7 +216,7 @@ After you checkout, the file contents should update automatically in VS Code to 
 
 - This should return your project to the state before the aquarium was removed, and before the seacritters and wishlist files were created. Make sure this is indeed the case.
 
-- Before we finish up, run the following command just to get ourselves ready for the next lab.
+- Before we finish up, run the following command just to get ourselves ready for the next lab. (Hopefully it says you're already on that branch).
 
   ```
   git checkout master
