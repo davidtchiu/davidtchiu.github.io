@@ -124,9 +124,8 @@ let days = {
     "Git: ignoring, undoing; Git lab 1",
     "Github: pulling, pushing; Start branching",
     // wk 4
-    "Git branching; Lab on branching/merging",
+    "Lab on branching; Start JS Fundamentals",
     "JS Fundamentals",
-    // "JS Fundamentals",
     // wk 5
     "DOM navigation and manipulation",
     "Event handling",
