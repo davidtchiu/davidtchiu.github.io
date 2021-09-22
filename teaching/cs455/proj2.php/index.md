@@ -52,31 +52,31 @@ Navigate to the page from your web browser, and you should see a page containing
 
 7. Peruse through the PHP info a little more. There are two sections of data that are pretty interesting. First, under the Apache Environment section, you can read all about how Apache was configured (what you had to do in the previous project). For instance, you can see where the document root is, and what the current URL is (`SCRIPT_NAME`).
 
-8. Superglobal Variables: The second section with interesting data is toward the bottom, called PHP Variables. These variables contain the server information we just saw in the Apache Environment section, and more! As you'll learn, these variables are called superglobals, and they are accessible by any PHP page! So, for instance, any PHP page you create knows what the current page is called (`$\_SERVER['SCRIPT_NAME']`), and even knows how the user got here (`$\_SERVER['HTTP_REFERER']`).
+8. Superglobal Variables: The second section with interesting data is toward the bottom, called PHP Variables. These variables contain the server information we just saw in the Apache Environment section, and more! As you'll learn, these variables are called superglobals, and they are accessible by any PHP page! So, for instance, any PHP page you create knows what the current page is called (`$_SERVER['SCRIPT_NAME']`), and even knows how the user got here (`$_SERVER['HTTP_REFERER']`).
 
 #### Part 2: Learn Some PHP
 
 1. PHP is one of the most popular languages in use today, and it's also pretty easy to learn! You can find many good tutorials online. I've also prepared some notes for you that you might find useful.
 
-- [David's old PHP Notes](CS455-php.pdf)
+   - [David's old PHP Notes](CS455-php.pdf)
 
 2. When you're ready to test out PHP, create another file, called `test.php`, and type the following code in. Notice that there is an intentional error (the hello-world string was not terminated).
 
-```php
-<!DOCTYPE html>
-<html>
-<body>
+   ```php
+   <!DOCTYPE html>
+   <html>
+   <body>
 
-<?php
-    //there should be an error
-    echo "<p>hello world!</p>;
-?>
+   <?php
+       //there should be an error
+       echo "<p>hello world!</p>;
+   ?>
 
-</body>
-</html>
-```
+   </body>
+   </html>
+   ```
 
-Save it, then navigate to the page on your browser. You _should_ see a blank page. View the HTML source from your browser, and you should also see nothing. Not very useful for debugging purposes, is it?
+   Save it, then navigate to the page on your browser. You _should_ see a blank page. View the HTML source from your browser, and you should also see nothing. Not very useful for debugging purposes, is it?
 
 3. Why doesn't PHP display errors by default? Well think about this from a production standpoint. If a page has errors in it, would you want PHP to announce to the world what the problem was? The might reveal some sensitive information, for instance, leading to security vulnerabilities. So, hiding errors by default is actually a good thing, but it's not very useful for educational settings! We need to turn error-reporting on.
 
@@ -169,7 +169,7 @@ http://addr/showPassengers.php?var0=value0&var1=value1&...
 
 - Let's try sending a variable to the `showPassengers.php` page! Send a variable called `passenger_ssn` and set its value to `555-55-5555` (which belongs to Frank Lovejoy). This does... nothing... because our show passengers page isn't looking for any incoming data, so let's change that now.
 
-- To access your GET request variables, you can use the PHP superglobal variable `$\_GET[var_name]`, where `var\_name` is the name of the variable you assigned in the URL. Print out `$\_GET[passenger_ssn]` somewhere, and refresh the page. You should see `555-55-5555` now printed on the web page.
+- To access your GET request variables, you can use the PHP superglobal variable `$_GET[var_name]`, where `var_name` is the name of the variable you assigned in the URL. Print out `$_GET[passenger_ssn]` somewhere, and refresh the page. You should see `555-55-5555` now printed on the web page.
 
 - Now, modify the SQL query so that it selects the person sharing the given. Specifically, you'd want to change Line 19 in the above file to:
 
