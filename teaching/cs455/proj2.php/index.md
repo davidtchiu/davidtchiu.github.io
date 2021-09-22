@@ -235,7 +235,7 @@ You will provide three new functionalities over the airport database. All of you
 
 1. Write an HTML page containing a form to input information for a new passenger. Then, in a separate file, write a PHP script that takes the contents of this form via POST request, and does the following:
 
-   - Checks if any of the Firstname, Lastname, and SSN fields are empty.
+   - Checks if any of the FirstName, LastName, and SSN fields are empty.
    - If any of them are empty, decline the user action by immediately redirecting her back to input form (Look into PHP's header() function to do this.)
    - A good form-handler would also inform the user on which fields require info if the user didn't provide sufficient data. Consider sending some GET variables back to the input form to indicate which fields.
    - You can and should do even more error checking. For instance, you can check if the SSN was input as an 11-digit number, or that the first and last names should be non-null and alphabetical.
