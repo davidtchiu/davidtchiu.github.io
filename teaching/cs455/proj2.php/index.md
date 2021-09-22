@@ -151,58 +151,123 @@ Because we only have enough time in class to cover one database system, this tut
 
   - If everything goes smoothly, you should see an HTML page displaying all passengers' information. Again, you should check the HTML source to see what exactly was printed out.
 
-##### The Apache Configuration File
+##### Part 4: Passing Data via HTTP
 
-- The behavior of your Apache web server is defined in its configuration file. On some systems, it is called `httpd.conf`, and on others, it's `apache2.conf`. Find out which one is on your server, and then open it up for reading.
+Suppose that, instead of listing all passengers, we want to select passenger data on a specific person, and we have their SSN. How do we get the SSN to the PHP page? There are two ways to do this: GET request and a POST request. I'll talk about GET requests first.
 
-- Locate the apache configuration file, and open it up. You'll notice that any line starting with the `#` symbol is a comment. Read through all the comments for each configuration key and value. You don't have to understand most of them, but I will be asking questions about the important configuration keys later! Note: any change to this config file must be followed by an apache restart for it to take effect.
+###### HTTP GET Request
 
-- To make sure you have a good understanding of the web server, answer the following questions. Most of these answers can be found in the configuration file. You should type out the answers together with your team in a file (You'll be writing a web page with the answers shortly.)
+One way to pass data to a web page is through the URL itself. To indicate that you want to pass in some variables to the "show passengers" page, you use the following URL syntax:
 
-  1. What command can you type into your server's terminal to check if apache is currently running?
-  2. Apache implements the HTTP protocol. The protocol is extremely simple, with just a few commands. What is the difference between the `GET`, `POST`, and `HEAD` commands?
-  3. What is the difference between `ServerRoot` and `DocumentRoot`?
-  4. What port does apache listen to for HTTP connections from browsers by default? Test it out by typing this into your browser: `http://ip_addr:port`, where `ip_addr` is the IP address of your server, and port is the port number given in the configuration file. Try changing the port number to something else. Test it again in your browser, then change it back. The fact that you don't usually need to specify the port when going to a URL should tell you that the default port to access web servers is the one given in the config file.
-  5. What file on your server contains apache's traffic logs? What about apache's error logs? These files tend to get very long, with the most recent logged events being appended to the end of the file. On the terminal, how can you view the last few lines of any file?
-  6. What is a Directory Index file? Why would it be desirable to have one in each directory?
-  7. When the browser tries to access a page that does not exist, the HTTP protocol issues a 404 error code. Try it by navigating to [http://cs.pugetsound.edu/david_is_awesome.html](this non-existent URL). It's sort of a clunky way of telling users a page doesn't exist, right? It's ugly and unhelpful. Now try going to a [http://pugetsound.edu/david_is_awesome.html](different non-existent URL) on our school's website. Notice that, this time, the web server is able to redirect you to a better looking page, and it's also more helpful in providing you links to other existing resources. So, how do you get apache to redirect users to a specified page upon receiving a 404?
-  8. How do you give every user on your Linux server their own web space? Enable it now!
+```
+http://addr/showPassengers.php?var0=value0&var1=value1&...
+```
 
-#### Part 4: Serving up a Webpage
+- The list of variables come after the `?` in the URL, which is called the _query string_, not to be confused with SQL queries.
 
-- It's time to create and serve your first web page! If you completed the previous problems, you should've already enabled public HTML directories for users on your server. Well, you're working under the `dbteam` user, so we'll create a webpage under that account.
+- Each variable has the format `name=value`, and multiple variables are separated by an ampersand `&`.
 
-- Navigate into the `/home/dbteam/public_html` directory and create a simple HTML page named `index.html`. The content of this page should contain your team-membership list, and responses to the questions listed below. The page itself doesn't have to be anything fancy, but it should have some structure (for instance, an enumerated list?) and design elements (e.g., background color and non-boring font?). The page should also contain at least one (appropriate) image.
+- Let's try sending a variable to the `showPassengers.php` page! Send a variable called `passenger_ssn` and set its value to `555-55-5555` (which belongs to Frank Lovejoy). This does... nothing... because our show passengers page isn't looking for any incoming data, so let's change that now.
 
-  - If you're interested in learning more HTML, here's a free [online tutorial](https://www.internetingishard.com/html-and-css/) I have students use for another course.
+- To access your GET request variables, you can use the PHP superglobal variable `$\_GET[var_name]`, where `var\_name` is the name of the variable you assigned in the URL. Print out `$\_GET[passenger_ssn]` somewhere, and refresh the page. You should see `555-55-5555` now printed on the web page.
 
-- You are required to add some design and colors to your page using appropriate CSS elements (create a separate `.css` file and link to it from your webpage). You don't need to go overboard with design unless you really want to. Also, I'd prefer it if you don't make your page bright pink with green lettering, as some students have done in the past to irritate me. I just want you to demonstrate that you know how to include a CSS stylesheet to your HTML page.
+- Now, modify the SQL query so that it selects the person sharing the given. Specifically, you'd want to change Line 19 in the above file to:
 
-- If it is all done correctly, I should be able to access it by pointing my web browser to `http://ip_addr/~dbteam`, where `ip_addr` is your server's assigned IP address.
+  ```php
+  $query_str = "select * from passengers where ssn='$_GET[passenger_ssn]';";
+  ```
 
-#### Part 5: Transferring Files to/from the Server
+- Refresh the page, and you should see the information for only Frank Lovejoy. Try inputting different query strings in the URL to see the info being printed for other users.
 
-The instructions asks you to embed an image. You might wonder how to get the image up on the server. More generally, you might wonder how to transfer any file to-and-from the server. I do not recommend you writing code directly on the server anyway, because multiple people working on it remotely could cause you to overwrite each other's changes. It is much safer to develop local copies of your webpage (also serves as backup), then uploading it to the server.
+###### HTTP POST Request
 
-I'll leave this to you to decide, but I think the _preferred_ way would be to install `git` on the server and on your personal machines. Create a github repo work with your team to `push` code and other files to this repo from your computers. When you're ready to "go live," you could then `pull` the code down to your apache servers.Git does require some training if you aren't well-versed in it already. This is a good time to force yourself to learn it.
+I mentioned that there were two ways to send variables to the web server. Posts requests are the second method. To do this, you'll need to develop an HTML form. Each input-box in the form gets a variable name, and value is whatever the users input in those boxes. I'll leave this as an exercise for you to figure out.
 
-However, I also understand if you just want to avoid putting more on your plate at the moment. Here are some tools to transfer files to and from the server. Use the same credentials here as you did to ssh to your instance.
+#### Part 5: Securing against SQL Injection
 
-- On MacOS/Windows: I like CyberDuck.
-- On Windows: WinSCP or FileZilla.
-- On Linux/MacOS: Could also just use the `scp` command from your shell.
+The PHP page we just wrote is highly vulnerable to SQL injection, one of the major cybersecurity threats today. In this section, I'll show you just how easy it is to hack your "show passengers" page.
+
+![](figures/exploits_of_a_mom.png)
+
+- To common users of your "show passengers" page, they don't know much of the magic that goes on in the background, since its obscured. But they can make educated guesses by looking at your URL. First, it's pretty obvious that the page is written in PHP, just based on its file extension. Second, they see the query string, which they can enter arbitrary values for --- and this is the key issue.
+
+- At first, they might try entering some SSNs that don't belong to them. They stumble upon Homer's private information just by entering 111-11-1111, a simple enough SSN to start with. If they're motivated, you could imagine that they could write a program that enumerates every 10-digit SSN and makes a request to your server to retrieve their private information.
+
+- Yeah, that seems bad, but it gets worse. Most hackers are smart enough to realize that you construct an SQL query out of the GET variable. And knowing that they can enter arbitrary strings as the value of the GET variable, it brews trouble. Don't do this yet, but suppose I enter this URL query string:
+
+  ```sql
+  http://addr/showPassengers.php?passenger_ssn=' OR 1=1; --
+  ```
+
+- Err, what? It doesn't seem to make any sense. Well, not until you combine it with what happens inside your PHP code. Let's go back to read your show passengers code, and substitute (on paper) the GET variable placeholder with the string I gave above. What does the SQL statement read now? You should get what I got below:
+
+  ```sql
+  select * from passengers where ssn='' OR 1=1; --';
+  ```
+
+- Well, that should send chills down your spine. Essentially, the where clause will always evaluate true now. And the -- you added to the end comments out what remained in the old query format so that it becomes a legal SQL statement. Test it out. It should cause the dump of the entire passenger table! Holy crap, could you imagine if people's passwords and other private information (address, phone numbers, emails, credit cards, citizenship status, etc.) were stored in plaintext??!?
+
+- What if I injected an update or delete statement afterwards? Updating people's information would be fun (like your GPA), and deleting records is a good way to take out the business, if the organization doesn't do regular backups.
+
+##### Removing the Threat
+
+Securing against injection attacks is quite simple. PHP and its PDO library have lots of built-in functions to sanitize the input. The problem with cybersecurity threats like this one is just that a lot of developers are either unaware or are too lazy to deal it. Well, now that you're aware of the problem, my advice to you is to not be lazy!
+
+- There are lots of ways to protect against injection. The elegant way is to use [prepared SQL statements](http://php.net/manual/en/pdo.prepared-statements.php).
+
+- What allows the injection to work before was that I was able to comment out the last piece of the SQL statement that the PHP programmer wrote. If you couldn't comment out the remaining part, the resulting SQL statement would've been invalid. Observe below:
+
+  ```sql
+  select * from passengers where ssn='' OR 1=1;';
+
+  _____________________________________________^ (error here)
+  ```
+
+  Because there is an unterminated string, SQLite3 will report the error, and the page and your PHP code would immediately jump to the catch clause.
+
+- Prepared statements make it so that such tampering with the intended SQL statement cannot be made. You "prepare" an SQL template to be run, making certain placeholders for data to be input. Data input from the users are then "bound" to these placeholders. The single-quote that I injected will be escaped (`\'`) from the binding, which causes the where cause to return false.
+
+#### Assignment
+
+You will provide three new functionalities over the airport database. All of your scripts must be free from the SQL-injection vulnerability by using prepared statements. I will intentionally try to hack into your database using injection attacks. If I succeed in doing so, you will receive a failing grade on this project.
+
+##### Creating New Passengers
+
+1. Write an HTML page containing a form to input information for a new passenger. Then, in a separate file, write a PHP script that takes the contents of this form via POST request, and does the following:
+
+   - Checks if any of the Firstname, Lastname, and SSN fields are empty.
+   - If any of them are empty, decline the user action by immediately redirecting her back to input form (Look into PHP's header() function to do this.)
+   - A good form-handler would also inform the user on which fields require info if the user didn't provide sufficient data. Consider sending some GET variables back to the input form to indicate which fields.
+   - You can and should do even more error checking. For instance, you can check if the SSN was input as an 11-digit number, or that the first and last names should be non-null and alphabetical.
+   - If all three required data fields are given, then insert them into a database, return the user to the passenger list and display a "success!" message on the list page.
+
+2. Modify the "show passengers" page I gave you to once again display all the airplane data in a table. Next to each tuple, provide a link called "update." Clicking on it will take you the passenger HTML form you created in the previous step, but with all fields pre-populated with existing data from the database. The submit button should now read "Update Info." The user can now make updates to any field, and on pressing on the submit button, it will make the changes in the passenger table, and take you back to the now-updated passenger list.
+
+3. Replace your document-index page with a new one that links to the following pages: passenger list, create passenger form, and SQL form.
 
 #### Submission
 
-Go onto [canvas](https://canvas.pugetsound.edu) and submit the URL to your page.
+Create a page that links to: (1) the new-passenger form, (2) the passenger listing. List the group membership on this page. Go to [canvas](https://canvas.pugetsound.edu) and submit the URL to this page under Project 2.
 
 #### Grading
 
 ```
-This assignment will be graded out of 35 points:
-
-[0pt] The names of your team members are listed.
-[24pt] You have created an HTML file with the correct answers to the questions posed. 3pts per question (x 8).
-[6pt] The HTML page embeds an image and has some basic structure and CSS design elements.
-[5pt] The HTML page is being served up in the ubuntu user's web space.
+This assignment will be graded out of 40 points:
+[5pt] An form that allows users to input data on a new or exiting passenger.
+[5pt] A secure PHP page, createPassenger.php, that inserts new passengers
+      (with data input from the aforementioned form) into the passengers table.
+[5pt] On success, createPassenger.php redirects users back to the passenger
+      list with a "success" message.
+[5pt] On failure, createPassenger.php redirects users back to the user-input
+      form page, indicating all error(s).
+[5pt] The update link now redirects users back to the createPassenger.php page,
+      with exiting data already filled in the boxes. The submit button now
+      reads "Update Info"
+[5pt] Clicking on "Update Info" will take users to a secure PHP page,
+      updatePassenger.php, which updates the specific passenger with the new
+      data from the previous form.
+[5pt] On update success, updatePassenger.php redirects users back to passenger list.
+[5pt] On update failure, updatePassenger.php redirects users back to the form,
+      indicating all error(s).
+[-15pt] I can successfully inject SQL statements.
 ```
