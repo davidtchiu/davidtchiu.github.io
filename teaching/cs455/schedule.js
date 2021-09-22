@@ -47,12 +47,12 @@ let days = {
         url: "proj1.cloud/",
         due: "9/20/2021",
       },
-      // {
-      //   name: "Proj 2",
-      //   title: "Data-Driven Web Development",
-      //   url: "proj2.php/",
-      //   due: "10/18/2021",
-      // },
+      {
+        name: "Proj 2",
+        title: "Server-Side Web Development with PHP",
+        url: "proj2.php/",
+        due: "10/18/2021",
+      },
       // {
       //   name: "Proj 3",
       //   title: "Project Planning",
