@@ -90,6 +90,11 @@ let days = {
         title: "Git Branching",
         url: "lab.git2/",
       },
+      {
+        name: "Lab 4",
+        title: "JavaScript Basics",
+        url: "lab.js1/",
+      },
       //   {
       //     name: "Lab 4",
       //     title: "Personas and Scenarios",
@@ -124,11 +129,11 @@ let days = {
     "Git: ignoring, undoing; Git lab 1",
     "Github: pulling, pushing; Start branching",
     // wk 4
-    "Lab on branching; Start JS Fundamentals",
-    "JS Fundamentals",
+    "Lab on branching; Start JS",
+    "JS Fundamentals (Part I)",
     // wk 5
+    "JS Fundamentals (Part II)",
     "DOM navigation and manipulation",
-    "Event handling",
     // wk 6
     "Event handling",
     "Asynchronous execution",
