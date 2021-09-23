@@ -76,12 +76,12 @@ let days = {
         url: "lab3.stomach/",
         due: "9/17/2021",
       },
-      // {
-      //   name: "Zoom Lab 4",
-      //   title: "Guessing Game (Conditionals)",
-      //   url: "lab4.guessing/",
-      //   due: "9/24/2021",
-      // },
+      {
+        name: "Zoom Lab 4",
+        title: "Guessing Game (Conditionals)",
+        url: "lab4.guessing/",
+        due: "9/24/2021",
+      },
       // {
       //   name: "Zoom Lab 5",
       //   title: "Circle Drawer (Objects)",
