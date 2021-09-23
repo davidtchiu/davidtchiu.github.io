@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: Command Line (~20min)
+### In-Class Exercise: JavaScript Basics 1 (~20min)
 
 In this exercise you will learn how to set up a project in your VS code environment from scratch. You will also practice writing some basic JavaScript functions.
 
