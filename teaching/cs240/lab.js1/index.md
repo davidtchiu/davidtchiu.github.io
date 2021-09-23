@@ -15,7 +15,7 @@ In this exercise you will learn how to set up a project in your VS code environm
 
   - Click on the extensions button to the left-hand panel. It looks like ![](extensions-view-icon.png)
   - Now find and install each of the following extensions (some may require you to restart VS Code before it's active)
-    - `Live Server` (this is a must) by Ritwick Dey
+    - `Live Server` (this is a must) by Ritwick Dey. You should restart VS Code after installing it.
     - `Prettier Code Formatter`
     - `Bracket Pair Colorizer`
     - `Color Highlight`
@@ -40,6 +40,6 @@ In this exercise you will learn how to set up a project in your VS code environm
 
   - Now print the contents of the array in lexicographical (alphabetical, in this case) order.
 
-  - If you have time, or just want more practice, work on the following:
-    - Normalize all the animals so that the first letter is capitalized, and the rest are lower case, before sorting and printing.
-    - Ensure that the same animal can't be entered twice.
+- If you have time, or just want more practice, work on the following:
+  - Normalize all the animals so that the first letter is capitalized, and the rest are lower case, before sorting and printing.
+  - Ensure that the same animal can't be entered twice.
