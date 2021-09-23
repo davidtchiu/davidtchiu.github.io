@@ -152,12 +152,12 @@ let days = {
     "Else-if; Start data types: primitives",
     "Type-casting (narrowing, widening)",
     "Zoom Lab 4",
-    "Lab 4 solution; boolean expressions",
-    // wk 5
     "Classes as types: references, object equivalence",
-    "Object composition: Abstraction and modularity",
+    // wk 5
+    "Abstraction and modularity",
     "Zoom Lab 5",
-    "Class APIs: Strings",
+    "Object composition: Writing the Organism Class",
+    "Working with APIs: Strings",
     // wk 6
     "Loops",
     "<strong><emph>Review</emph></strong>",
