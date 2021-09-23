@@ -12,15 +12,13 @@ In this exercise, you will be trying out basic git operations, including staging
 
 #### Preliminary: Configuring Git (First Time Only)
 
-If this is your first time using git on your machine, you should do the following. Open a Terminal and configure your name, email, and editor for Git. Here's what I did to configure mine:
+You only need to do this the first time using git, so if you've already done it before, you can ignore this section. Open a Terminal and configure your name, email, and editor for Git. Here's what I did to configure mine:
 
 ```
 git config --global user.name "David Chiu"
 git config --global user.email dchiu@pugetsound.edu
 git config --global core.editor "code --wait"
 ```
-
-You only need to do this one time.
 
 #### Part 1 - Initializing and Committing
 
