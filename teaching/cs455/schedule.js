@@ -23,7 +23,7 @@ let days = {
       //   name: "Hwk 4",
       //   title: "Writing SQL Queries",
       //   url: "hwk4.dml/",
-      //   due: "10/20/2021",
+      //   due: "10/15/2021",
       // },
       // {
       //   name: "Hwk 5",
@@ -98,7 +98,7 @@ let days = {
     // wk 5
     "SQL: subqueries: IN, EXISTS; start aggregation",
     "SQL: grouping and aggregation, triggers, transactions",
-    "SQL: grouping and aggregation; Start SQL Lab Day 1",
+    "SQL Lab Day 1",
     // wk 6
     "SQL Lab Day 2",
     "<strong><emph>Review</emph></strong>",
