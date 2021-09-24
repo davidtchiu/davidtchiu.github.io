@@ -13,12 +13,12 @@ let days = {
         url: "hwk2.ra/",
         due: "9/24/2021",
       },
-      // {
-      //   name: "Hwk 3",
-      //   title: "Data Cleansing",
-      //   url: "hwk3.ddl/",
-      //   due: "10/6/2021",
-      // },
+      {
+        name: "Hwk 3",
+        title: "Data Preparation",
+        url: "hwk3.ddl/",
+        due: "10/4/2021",
+      },
       // {
       //   name: "Hwk 4",
       //   title: "Writing SQL Queries",
