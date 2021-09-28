@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: DOM and Event Handling (~20min)
+### In-Class Exercise: DOM and Event Handling (~25min)
 
 In this exercise you will get some practice working with DOM elements. This exercise assumes that you are familiar with using objects and callbacks.
 
