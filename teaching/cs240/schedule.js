@@ -95,6 +95,11 @@ let days = {
         title: "JavaScript Basics",
         url: "lab.js1/",
       },
+      {
+        name: "Lab 5",
+        title: "DOM & Events",
+        url: "lab.js2/",
+      },
       //   {
       //     name: "Lab 4",
       //     title: "Personas and Scenarios",
