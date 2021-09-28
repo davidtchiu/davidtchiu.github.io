@@ -62,9 +62,9 @@ In this exercise you will get some practice working with DOM elements. This exer
 
   The `eventName` in our case is just `click` and you'll need to input a callback function to perform all the actions:
 
-      - Query for update the `<h1>` node object, so that it displays a randomly generated `rgb(rrr,ggg,bbb)` string. You can modify a node's text content by assigning to its `.innerHTML` property.
+  - Query for update the `<h1>` node object, so that it displays a randomly generated `rgb(rrr,ggg,bbb)` string. You can modify a node's text content by assigning to its `.innerHTML` property.
 
-      - Query for and update the `<body>` node, and change its `.style.backgroundColor` to the `rgb(rrr,ggg,bbb)` string.
+  - Query for and update the `<body>` node, and change its `.style.backgroundColor` to the `rgb(rrr,ggg,bbb)` string.
 
 - If you have time, try the following:
 
