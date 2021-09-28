@@ -32,7 +32,7 @@ In this exercise you will get some practice working with DOM elements. This exer
 
 - It shouldn't take long, so study the HTML you just pasted. There are only 2 visible elements: the h1 and the button. You can view it by right-clicking on `index.html` on the left-hand panel, and choose `Open with Live Server`. You should see something that looks like the following:
 
-  ![](bg.png)
+  <img src="bg.png" width="250px" />
 
   Clicking on the button does nothing currently. Let's change that!
 
@@ -62,8 +62,10 @@ In this exercise you will get some practice working with DOM elements. This exer
 
   The `eventName` in our case is just `click` and you'll need to input a callback function to perform all the actions:
 
-      - Query for update the `<h1>` node object, so that it displays a randomly generated `rgb(rrr,bbb,ggg)` string. You can modify a node's text content by assigning to its `.innerHTML` property.
+      - Query for update the `<h1>` node object, so that it displays a randomly generated `rgb(rrr,ggg,bbb)` string. You can modify a node's text content by assigning to its `.innerHTML` property.
 
       - Query for and update the `<body>` node, and change its `.style.backgroundColor` to the `rgb(rrr,ggg,bbb)` string.
 
-- If you have time,
+- If you have time, try the following:
+
+  - You might notice that the `<h1>` text gets a bit hard to read if the background is too dark. Add in the necessary code to change the font color of the `<h1>` text to the inverse of the current `rrr`, `bbb`, and `ggg` values. For instance, if your current RGB is `rgb(25, 140,239)`, then the text color of the `<h1>` element should be set to `rgb(230, 115, 16)`. To invert, I simply subtracted each value from 255.
