@@ -19,17 +19,17 @@ The following file(s) have been provided for this assignment.
 
 Start by downloading the two `.sql` files and reading them into your SQLite3 database. The "ddl" file contains the schema definition, so load that first. After you input the "populate" file, your database should be loaded with the enrollment data from the previous homework. Create a file named `YourLastName_HW4.sql` and store all your queries in the following format:
 
-    ```sql
-    -- Q0: This is just an example showing the format I expect.
-    -- This query retrieves every student in the database. It projects
-    -- only their ID and name.
-    SELECT studentID,name
-    FROM student;
+```sql
+-- Q0: This is just an example showing the format I expect.
+-- This query retrieves every student in the database. It projects
+-- only their ID and name.
+SELECT studentID,name
+FROM student;
 
 
-    -- Q1: Description of the next query..
-    SELECT ...
-    ```
+-- Q1: Description of the next query..
+SELECT ...
+```
 
 I recommend that you test out your queries directly on the SQLite command-line (or GUI, if you downloaded one). Once you are convinced that your query works, copy it into the `YourLastName_HW4.sql` file for submission. Here are the queries that the college wants you to run. Below each request, I've given you the expected result. **Except for the last problem in which you are asked to create an audit table, you are not allowed to make changes to the schema to help you write your queries.** Furthermore, because the data is being updated constantly in real life, no queries should be written specifically for this instance of the database -- that is, your queries should work in general, regardless of what data is currently stored.
 
