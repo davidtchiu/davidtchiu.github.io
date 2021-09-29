@@ -55,7 +55,8 @@ I recommend that you test out your queries directly on the SQLite command-line (
 
 3. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the avg(GPA) field to ClassGPA.
 
-   ```class ClassGPA
+   ```
+   class ClassGPA
    ----------  ----------
    Freshman    2.44
    Junior      3.125
