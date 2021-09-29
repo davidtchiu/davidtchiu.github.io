@@ -82,12 +82,12 @@ let days = {
         url: "lab4.guessing/",
         due: "9/24/2021",
       },
-      // {
-      //   name: "Zoom Lab 5",
-      //   title: "Circle Drawer (Objects)",
-      //   url: "lab5.circleDrawer/",
-      //   due: "10/1/2021",
-      // },
+      {
+        name: "Zoom Lab 5",
+        title: "Circle Drawer (Objects)",
+        url: "lab5.circleDrawer/",
+        due: "10/1/2021",
+      },
       // {
       //   name: "Zoom Lab 6",
       //   title: "Turtle Graphics (Loops)",
