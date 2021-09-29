@@ -29,12 +29,11 @@ This project assumes the successful completion of Project 1. It requires that yo
 2. Using the `apt-get` command, you need to install the following software packages on your server:
 
    - SQLite3. Test this by typing `sqlite3` in the command line.
-   - PHP language support (version 7 is stable at the time of writing). Test this by renaming your .html page to have a .php extension.
-   - PHP 7 PDO libraries for sqlite3 support.
-   - It's too hard to keep up with what the apt-package names are for PHP 7 and PHP 7's sqlite libraries. Those are up to you to figure out.
+   - PHP language support (version 7 is stable at the time of writing). The package names _should_ be `php` and `libapache2-mod-php`.
+   - PHP 7 PDO libraries for sqlite3 support. The package name should be `php-pdo`.
    - Go ahead and restart apache after you've installed the PHP and PDO packages.
 
-3. It would probably also make sense to install PHP and Apache on your own machines, if you plan to develop on your local machines separately, and pushing up your code once it's ready to be tested in the "live" environment.
+3. It would probably be wise to install PHP and Apache on your own computers, if you plan to develop on your local machines separately, and pushing up your code once it's ready to be tested in the "live" environment. I'd imagine the installation would be much more intuitive on your Windows/Mac.
 
 4. Even if everything went smoothly, you'll still want to test that everything is working. Create a new webpage, but this time, the file will have a `.php` extension, instead of a `.html` extension. Type in the following code, then save the file:
 
@@ -46,7 +45,7 @@ This project assumes the successful completion of Project 1. It requires that yo
 
 Navigate to the page from your web browser, and you should see a page containing a ton of information. If you see this, congrats, PHP is installed. If your browser asks you to download the `.php` file, try restarting Apache. If even that doesn't work, then I surmise PHP wasn't installed properly.
 
-5. On the server, navigate to `/etc/apache2/mods-enabled` and edit the `php7.x.conf` file. You should see the setting there, and turn it on. Restart apache after you're done.
+5. On the server, navigate to `/etc/apache2/mods-enabled` and edit the `php7.x.conf` (where `x` is the current sub-version of PHP)file and scroll to the bottom. You should see the relevant block there. In my version of the file, I had to `# comment out` a block of code to enable PHP in the user directories. Restart apache after you're done.
 
 6. What `phpinfo()` spews out is the configuration and state of your PHP and web-server environment. Scroll down to the "PDO" section, and see if the SQLite3 library (driver) is listed as being installed. If you see it, congrats, your PHP has sqlite3 support. If you don't, you need to try reinstalling the PDO library for SQLite3.
 
