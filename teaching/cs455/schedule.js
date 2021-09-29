@@ -102,7 +102,7 @@ let days = {
     // wk 6
     "SQL Lab Day 2",
     "<strong><emph>Review</emph></strong>",
-    "<strong><emph>Exam 1</emph></strong>",
+    "<strong><emph>Exam 1 (in person)</emph></strong>",
     // wk 7
     "DB theory: functional dependencies (FD)",
     "Armstrong’s axioms, inference rules",
