@@ -155,19 +155,19 @@ let days = {
     "Classes as types: references, object equivalence",
     // wk 5
     "Abstraction and modularity: Organism",
-    "Working with APIs: Strings",
+    "Abstraction: Working with APIs; Start Loops",
     "Zoom Lab 5",
-    "Start Loops",
+    "Writing while loops",
     // wk 6
-    "Loops",
+    "For loops",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    "Writing while loops",
-    // wk 7
-    "For loops",
     "Nested loops",
-    "Zoom Lab 6",
+    // wk 7
+    "Nested loops",
     "Start arrays",
+    "Zoom Lab 6",
+    "Arrays cont.",
     // wk 8
     "<strong>Fall Break (no class)</strong>",
     "Arrays of Objects: TurtleMob",
