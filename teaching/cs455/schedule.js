@@ -73,7 +73,7 @@ let days = {
         name: "Lab",
         title: "2-Day SQL Bootcamp",
         url: "lab.sql/",
-        due: "10/5/2021",
+        // due: "10/5/2021",
       },
     ],
   },
