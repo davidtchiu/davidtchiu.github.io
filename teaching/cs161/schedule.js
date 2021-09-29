@@ -154,10 +154,10 @@ let days = {
     "Zoom Lab 4",
     "Classes as types: references, object equivalence",
     // wk 5
-    "Abstraction and modularity",
-    "Zoom Lab 5",
-    "Object composition: Writing the Organism Class",
+    "Abstraction and modularity: Organism",
     "Working with APIs: Strings",
+    "Zoom Lab 5",
+    "Start Loops",
     // wk 6
     "Loops",
     "<strong><emph>Review</emph></strong>",
