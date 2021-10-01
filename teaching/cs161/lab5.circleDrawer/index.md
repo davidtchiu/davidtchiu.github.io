@@ -128,8 +128,6 @@ items are completed.
 
 - The drawWhenEquals() method is properly implemented.
 
-- You re-use code when possible, particularly within replaceSmallest().
-
 - You provide Javadocs style comments for any new methods implemented.
 
 - You include sufficient inline comments to explain the logic of your methods.

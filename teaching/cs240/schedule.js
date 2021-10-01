@@ -17,19 +17,19 @@ let days = {
       //   name: "Hwk 3",
       //   title: "Scoreboard",
       //   url: "hwk3.scoreboard/",
-      //   due: "10/18/2021",
+      //   due: "10/15/2021",
       // },
       // {
       //   name: "Hwk 4",
       //   title: "Schelling's Model",
       //   url: "hwk4.schelling/",
-      //   due: "11/03/2021",
+      //   due: "10/27/2021",
       // },
       // {
       //   name: "Hwk 5",
       //   title: "Simone the Memory Game",
       //   url: "hwk5.simone/",
-      //   due: "11/15/2021",
+      //   due: "11/8/2021",
       // },
     ],
 
