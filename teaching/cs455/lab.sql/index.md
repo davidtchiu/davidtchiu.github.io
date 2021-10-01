@@ -12,7 +12,7 @@ To write SQL queries for the retrieval of data.
 
 Download the file below, and open it up with SQLite or SQLite DB Browser.
 
-- [classicmodels.db](classicmodels.db)
+- [classicmodels.db](files/classicmodels.db)
 
 #### Instructions
 
