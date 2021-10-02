@@ -100,7 +100,7 @@ In this exercise you will get some practice working with DOM elements. This exer
   ```
 
   so to create above, you'll need to use `document.createElement(..)` again to create an `input` element. Store the string `"checkbox"` to its `type` attribute. You should also give it a good unique variable name, as this will be important later on. Under your list-item node, _insert_ this new `<input>` node _before_ the `<span>` node. If you did this correctly, you should see something like the following:
-  <div>
+  <div style="background-color: #ffffff">
   <ul>
     <li><input type="checkbox" name="ex"/><span>Grapes</span></li>
   </ul>
@@ -112,7 +112,7 @@ In this exercise you will get some practice working with DOM elements. This exer
   - Once selected, for each checkbox you need to add an event listener to it.
     - These event listeners are checking for the `"change"` event type. When it fires, you should tell the associated list item (which is the checkbox's sibling) add the `.itemChecked` style to its CSS class list -- this is stored as the node's `classList` property.
     - If this works, you should now be seeing something like:
-      <div>
+      <div style="background-color: #ffffff">
       <ul>
         <li><input type="checkbox" checked="checked" name="ex"/><span style="text-decoration: line-through; color: gray">Grapes</span></li>
       </ul>
