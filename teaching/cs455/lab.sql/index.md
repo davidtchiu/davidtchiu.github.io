@@ -140,7 +140,7 @@ Take a moment to study the schema, noting the keys. Browse the data in each rela
    West Coast Collectables Co
    ```
 
-6. List the customers (by name) that are based in the country which is first in the lexicographic order of customer countries. Order by customerName
+6. List the customers (by name) that are based in the country which is first in the lexicographic order of customer countries. (In this database instance, that country is Australia). Order by customerName.
 
    ```
    customerName
