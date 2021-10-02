@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: DOM and Event Handling (~50min)
+### In-Class Exercise: DOM and Event Handling (~65min)
 
 In this exercise you will get some practice working with DOM elements. This exercise assumes that you are familiar with using objects and callbacks.
 
@@ -102,7 +102,7 @@ In this exercise you will get some practice working with DOM elements. This exer
   so to create above, you'll need to use `document.createElement(..)` again to create an `input` element. Store the string `"checkbox"` to its `type` attribute. You should also give it a good unique variable name, as this will be important later on. Under your list-item node, _insert_ this new `<input>` node _before_ the `<span>` node. If you did this correctly, you should see something like the following:
   <div>
   <ul>
-    <li><input type="checkbox" name="ex"/><span>Grapes</span>
+    <li><input type="checkbox" name="ex"/><span>Grapes</span></li>
   </ul>
   </div>
 
@@ -114,7 +114,7 @@ In this exercise you will get some practice working with DOM elements. This exer
     - If this works, you should now be seeing something like:
       <div>
       <ul>
-        <li><input type="checkbox" checked="checked" name="ex"/><span style="text-decoration: line-through; color: gray">Grapes</span>
+        <li><input type="checkbox" checked="checked" name="ex"/><span style="text-decoration: line-through; color: gray">Grapes</span></li>
       </ul>
       </div>
 
