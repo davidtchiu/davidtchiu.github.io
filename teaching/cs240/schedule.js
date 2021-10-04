@@ -100,6 +100,11 @@ let days = {
         title: "DOM & Events",
         url: "lab.js2/",
       },
+      {
+        name: "Lab 6",
+        title: "More DOM & Events",
+        url: "lab.js3.evt/",
+      },
       //   {
       //     name: "Lab 4",
       //     title: "Personas and Scenarios",
