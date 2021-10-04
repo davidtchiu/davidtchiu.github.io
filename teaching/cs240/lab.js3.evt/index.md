@@ -103,6 +103,6 @@ git clone https://github.com/davidtchiu/cs240-lab-grocery
 
 #### Part 2: Ordering and Managing Duplicates
 
-- One rather annoying issue is that duplicates are allowed. It was suggested to you that, when the list gets longer, it's harder to know that a grocery item is already on the list, because it's not sorted in any way. Modify your "add to list" event listener so that it inserts the items to the list in alphabetical order. (Note that you don't need to `sort()` anything.)
+- One rather annoying issue is that duplicates are allowed. It was suggested to you that, when the list gets longer, it's harder to know that a grocery item is already on the list, because it's not sorted in any way. Modify your "add to list" event listener so that it inserts the items to the list in alphabetical order. (So you don't need to `sort()` anything.)
 
 - Still, people make mistakes. Write the necessary code to first test if the input item is already on the list. Don't add it to the list if that's the case. (Or even better, you can store and increment the quantity of that item.)

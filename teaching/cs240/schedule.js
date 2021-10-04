@@ -13,12 +13,12 @@ let days = {
         url: "hwk2.wordplay/",
         due: "10/4/2021",
       },
-      // {
-      //   name: "Hwk 3",
-      //   title: "Scoreboard",
-      //   url: "hwk3.scoreboard/",
-      //   due: "10/15/2021",
-      // },
+      {
+        name: "Hwk 3",
+        title: "Scoreboard",
+        url: "hwk3.scoreboard/",
+        due: "10/13/2021",
+      },
       // {
       //   name: "Hwk 4",
       //   title: "Schelling's Model",
@@ -143,9 +143,9 @@ let days = {
     "JS Fundamentals (Part I)",
     // wk 5
     "JS Fundamentals (Part II)",
-    "DOM navigation and manipulation",
+    "DOM navigation and manipulation; DOM Lab",
     // wk 6
-    "Event handling",
+    "Event handling; Events Lab",
     "Asynchronous execution",
     // wk 7
     "Promises",
