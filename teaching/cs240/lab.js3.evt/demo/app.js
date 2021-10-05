@@ -1,61 +1,54 @@
 // add an event for keypress
 let inputNode = document.querySelector("input[name='itemName']");
-inputNode.addEventListener("keypress", function (evt) {
-  if (evt.code === "Enter") {
-    // get the value from the input field
-    addItem("#list", inputNode.value);
+inputNode.addEventListener("keydown", function (evt) {
+  if (evt.code === "Enter" && inputNode.value !== "") {
+    // try to find existing item (case insensitive)
+    let ul = document.querySelector("#list");
 
-    // clear out field
+    // convert list of children to an array of children
+    // add item only if it doesn't already exist
+    let itemsArr = Array.from(ul.children);
+    if (!itemsArr.some((li) => li.lastChild.innerHTML === inputNode.value)) {
+      // create children of item node
+      let itemName = document.createElement("span");
+      itemName.innerHTML = inputNode.value;
+
+      // make a new checkbox, with an event listener for checking
+      let chkbox = document.createElement("input");
+      chkbox.type = "checkbox";
+      chkbox.addEventListener("change", function () {
+        // if checked, add '.itemChecked' css class style
+        if (chkbox.checked) {
+          chkbox.parentElement.classList.add("itemChecked");
+        } else {
+          chkbox.parentElement.classList.remove("itemChecked");
+        }
+      });
+
+      // create the new list item element <li>
+      let newListItem = document.createElement("li");
+
+      // append the <input type="checkbox"> and the <span>
+      newListItem.appendChild(chkbox);
+      newListItem.appendChild(itemName);
+
+      // append to the list
+      // find position to insert into
+      let pos = 0;
+      while (
+        pos < ul.children.length &&
+        inputNode.value.toLowerCase() >
+          ul.children[pos].lastChild.innerHTML.toLowerCase()
+      ) {
+        pos++;
+      }
+      if (pos > ul.children.length - 1) {
+        ul.appendChild(newListItem);
+      } else {
+        ul.insertBefore(newListItem, ul.children[pos]);
+      }
+    }
+    // clear out input field
     inputNode.value = "";
   }
 });
-
-/**
- * Adds an item to the list
- * @param {string} listID HTML id of the list
- * @param {string} item Name of the grocery list item to be added
- */
-function addItem(listID, item) {
-  if (!listID.startsWith("#")) {
-    listID = "#" + listID;
-  }
-
-  // try to find existing item (case insensitive)
-  let found = false;
-  let ul = document.querySelector(listID);
-  for (let i = 0; i < ul.childElementCount; i++) {
-    // first child is qty, last child is item name
-    if (ul.children[i].lastChild.innerHTML == item) {
-      let cnt = parseInt(ul.children[i].firstChild.innerHTML) + 1;
-      ul.children[i].firstChild.innerHTML = cnt;
-      found = true;
-    }
-  }
-  if (!found) {
-    // create children of item node
-    // let qty = document.createElement("span");
-    // qty.innerHTML = 1;
-    let itemName = document.createElement("span");
-    itemName.innerHTML = item;
-
-    // make a new checkbox
-    let chkbox = document.createElement("input");
-    chkbox.type = "checkbox";
-    chkbox.addEventListener("change", function () {
-      if (chkbox.checked) {
-        chkbox.parentElement.className = "itemChecked";
-      } else {
-        chkbox.parentElement.className = "";
-      }
-    });
-
-    let newListItem = document.createElement("li");
-    newListItem.appendChild(chkbox);
-    // newListItem.appendChild(qty);
-    newListItem.appendChild(itemName);
-
-    // append to the list
-    let ul = document.querySelector(listID);
-    ul.appendChild(newListItem);
-  }
-}
