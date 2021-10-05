@@ -67,7 +67,7 @@ git clone https://github.com/davidtchiu/cs240-lab-grocery
 
 - Adding things to the grocery list is a great reminder of what you'll need when you're there, but you should also have a way to <del>cross things out</del> that you've put in your shopping cart!
 
-- Modify the `addItem()` code so that it _also_ adds a checkbox to the left of the item name. In HTML, a checkbox can be formed using:
+- Modify the existing event handler code so that it _also_ adds a checkbox to the left of the item name. In HTML, a checkbox can be formed using:
 
   ```html
   <input type="checkbox" name="varName" />
