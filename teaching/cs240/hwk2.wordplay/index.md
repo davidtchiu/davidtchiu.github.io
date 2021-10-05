@@ -43,7 +43,7 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 For full credit, your project should observe the following requirements.
 
-- The starter code provides you with a file containing the English dictionary formatted as an array. It's easy to include this in your code. Create an `index.html` file that first includes the dictionary file, and then includes your own `app.js` file.
+- The starter code provides you with a file containing the English dictionary formatted as an array. It's easy to include this in your code: Create an `index.html` file that first includes the dictionary's `.js` file in a `<script>` tag, and then include your own `app.js` file in another `<script>` tag.
 
 - The game starts by randomly selecting a 6-letter root word from the English dictionary. This word is not revealed to the user.
 
