@@ -99,7 +99,7 @@ For full credit, your class should contain all of the methods described below. T
   my_card.printSummary();
   > $0.7324999999999995 left after 3 trip(s).
   > Your balance is low!
-  > Your costliest trip so far cost $5
+  > Your costliest trip so far cost $10
   ```
 
 #### Extending the Homework
