@@ -100,9 +100,15 @@ For full credit, your project should observe the following requirements.
 
 - The number of generations should be reflected in the subtitle of your page.
 
-- So that we can actually see the changes happening in real-time, add a 100ms delay between each generation. Look into the `await` operation and the `Promise` obejct.
+- So that we can actually see the changes happening in real-time, add a 100ms delay between each generation. Here's how you can do it:
 
-- Your program should demonstrate good modularity and abstraction. For instance, use of inner functions would be appreciated.
+  ```js
+  await new Promise((r) => setTimeout(r, 100));
+  ```
+
+  You can put that right before or after each iteration of the board is drawn. For this to work, you will need add the `async` keyword to the function you're writing.
+
+- Your program should demonstrate good modularity and abstraction.
 
 #### Optional Extensions
 
