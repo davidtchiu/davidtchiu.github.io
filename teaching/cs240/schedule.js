@@ -146,9 +146,9 @@ let days = {
     "DOM navigation and manipulation; DOM Lab",
     // wk 6
     "Event handling; Events Lab",
-    "Asynchronous execution",
+    "Asynchronous execution and Promises",
     // wk 7
-    "Promises",
+    "Promise chaining; async and await",
     "Ajax, JSON, Axios",
     // wk 8
     "<strong>Fall Break<strong>",
