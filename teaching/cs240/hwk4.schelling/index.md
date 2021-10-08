@@ -103,7 +103,11 @@ For full credit, your project should observe the following requirements.
 - So that we can actually see the changes happening in real-time, add a 100ms delay between each generation. Here's how you can do it:
 
   ```js
-  await new Promise((r) => setTimeout(r, 100));
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(); // do nothing after waiting 100 ms, just alert the calling thread
+    }, 100)
+  );
   ```
 
   You can put that right before or after each iteration of the board is drawn. For this to work, you will need add the `async` keyword to the function you're writing.

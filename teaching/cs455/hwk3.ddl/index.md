@@ -91,7 +91,7 @@ Your task is two-part: (1) You must first define a database schema in SQL. I wil
 
 We'll focus first on Task 1. You can assume there will be no other relations needed. Create a plain-text file called **YourLastname_HW3_DDL.sql** that will store the schema definition in SQL. (Disclaimer: Yes this file must be in plain-text. Do not write these in Word (.doc), Wordpad (.rtf), etc., that adds special formatting. Use an editor like Sublime Text or Atom). Submissions in non-plaintext will be returned without a grade.
 
-Give the SQL commands to create the relations described below. Where appropriate, all foreign-key constraints must cascade on update and delete operations. To make your lives easier, I've gotten a start on it for you. Place the following SQLite3 block in the top of your file:
+Give the SQL commands to create the relations described below. Where appropriate, all foreign-key constraints must cascade on update and delete operations, unless otherwise stated below. To make your lives easier, I've gotten a start on it for you. Place the following SQLite3 block in the top of your file:
 
 ```sql
 -- Turn on foreign keys
@@ -100,6 +100,7 @@ PRAGMA foreign_keys = ON;
 -- Delete the tables if they already exist
 drop table if exists Student;
 drop table if exists Course;
+drop table if exists Major;
 drop table if exists Enroll;
 drop table if exists Dept;
 
