@@ -169,9 +169,9 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   > [A, B, C, D, E]
   ```
 
-#### Optional (for more Loop practice)
+#### More Loop practice
 
-I strongly recommend any student (especially those hoping to minor/major) to complete all of these as well.
+I strongly recommend students to complete all of these as well for preparation of future materials.
 
 - **(Not nested; involves arrays)** Write a method called `instancesOf()` that inputs an array of integers, an integer `M`, and an integer
   `N`. This method returns a boolean true if it can find exactly `N` copies of `M` in the array, and false otherwise.
