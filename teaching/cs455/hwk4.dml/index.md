@@ -132,6 +132,9 @@ I recommend that you test out your queries directly on the SQLite command-line (
    1510        Jordan       Freshman    MATH        3.0
    ```
 
+<!--
+
+
 9. Find the names, IDs, and the number of courses they are taking, for the students who are enrolled in the most number of courses.
 
    ```
@@ -264,7 +267,7 @@ I recommend that you test out your queries directly on the SQLite command-line (
 
 12. To prevent future tampering, the university wants you to log any activity in the Student table. Create a new table called `student_log` to store the following information: activity in question (insert, deletion, update), student's name, all the old values, and the new values. Finally, create the triggers that will record these activities.
 
-Put these statements in the DDL file that was provided to you.
+Put these statements in the DDL file that was provided to you. -->
 
 #### Grading
 
@@ -272,10 +275,20 @@ Put these statements in the DDL file that was provided to you.
 Files submitted not in plain-text format will be returned without a grade.
 
 [15pt] Completion of the queries Q1 - Q3. Each query is of equal value (5pts each)
+[50pt] Completion of remaining problems. Each problem is of equal value (10pts each)
+
+Total: 65pts
+```
+
+<!--
+```
+Files submitted not in plain-text format will be returned without a grade.
+
+[15pt] Completion of the queries Q1 - Q3. Each query is of equal value (5pts each)
 [90pt] Completion of remaining problems. Each problem is of equal value (10pts each)
 
 Total: 105pts
-```
+``` -->
 
 #### Submitting Your Assignment
 
