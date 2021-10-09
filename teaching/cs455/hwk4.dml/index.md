@@ -33,7 +33,11 @@ FROM student;
 SELECT ...
 ```
 
-I recommend that you test out your queries directly on the SQLite command-line (or GUI, if you downloaded one). Once you are convinced that your query works, copy it into the `YourLastName_HW4.sql` file for submission. Here are the queries that the college wants you to run. Below each request, I've given you the expected result. **Except for the last problem in which you are asked to create an audit table, you are not allowed to make changes to the schema to help you write your queries.** Furthermore, because the data is being updated constantly in real life, no queries should be written specifically for this instance of the database -- that is, your queries should work in general, regardless of what data is currently stored.
+I recommend that you test out your queries directly on the SQLite command-line (or GUI, if you downloaded one). Once you are convinced that your query works, copy it into the `YourLastName_HW4.sql` file for submission. Here are the queries that the college wants you to run. Below each request, I've given you the expected result.
+
+ <!-- **Except for the last problem in which you are asked to create an audit table, you are not allowed to make changes to the schema to help you write your queries.**  -->
+
+Furthermore, because the data is being updated constantly in real life, no queries should be written specifically for this instance of the database -- that is, your queries should work in general, regardless of what data is currently stored.
 
 1. Get all courses being taught by the MATH department that start in the afternoon. You may assume that time is in 24hr format, and you're reminded that you can use comparison operators (`<`, `>`) on strings.
 
