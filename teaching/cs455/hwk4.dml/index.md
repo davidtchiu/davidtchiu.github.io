@@ -17,9 +17,13 @@ The following file(s) have been provided for this assignment.
 - [university-ddl.sql](university-ddl.sql)
 - [university-populate.sql](university-populate.sql)
 
-#### Raw Enrollment Data
+#### Populate your Database!
 
-Start by downloading the two `.sql` files and reading them into your SQLite3 database. To do this, you can create a new database in DB Browser, and then paste them into the SQL Execution console. The `university-ddl.sql` file contains the schema definition, so load that first. Next, paste in the ``university-populate.sql` file contents. After you input the "populate" file, your database should be loaded with the enrollment data from the previous homework. Create a file named `YourLastName_HW4.sql` and store all your queries in the following format:
+Start by downloading the two `.sql` files and reading them into your SQLite3 database. To do this, you can create a new database in DB Browser, and then paste them into the SQL Execution console. The `university-ddl.sql` file contains the schema definition, so load that first. Next, paste in the ``university-populate.sql` file contents. Your database should now be loaded with the correct schema and enrollment data from the previous homework. Let's get to work.
+
+#### Writing SQL Queries
+
+Create a file named `YourLastName_HW4.sql` and store all your queries in the following format:
 
 ```sql
 -- Q0: This is just an example showing the format I expect.
