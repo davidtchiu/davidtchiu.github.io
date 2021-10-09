@@ -56,7 +56,7 @@ I recommend that you test out your queries directly on the SQLite command-line (
 3. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the avg(GPA) field to ClassGPA.
 
    ```
-   class ClassGPA
+   class       ClassGPA
    ----------  ----------
    Freshman    2.44
    Junior      3.125
@@ -66,8 +66,8 @@ I recommend that you test out your queries directly on the SQLite command-line (
 
 4. Identify all students who have a lower GPA than the average of his/her respective class rank. Sort the results by class rank and the student's name.
 
-   ````
-    studentID studentName  class       gpa         ClassGPA
+   ```
+   studentID studentName  class       gpa         ClassGPA
    ----------  -----------  ----------  ----------  ----------
    1661        Logan        Freshman    0.5         2.44
    1709        Cassandra    Junior      2.8         3.125
@@ -77,13 +77,13 @@ I recommend that you test out your queries directly on the SQLite command-line (
    1689        Gabriel      Senior      2.4         3.1
    1304        Jordan       Senior      2.9         3.1
    1316        Austin       Sophomore   2.1         2.675
-   1468        Kris         Sophomore   1.0         2.675```
-   ````
+   1468        Kris         Sophomore   1.0         2.675
+   ```
 
 5. Get a list of all students who are still undeclared (that is, without a major). Project only the students' ID and name. Sort results by the students' ID.
 
    ```
-    studentID studentName
+    tudentID   studentName
    ----------  -----------
    1225        Sarah
    1282        Kelly
