@@ -6,6 +6,8 @@
 
 Here's is a list of my former research advisees and a half-hearted effort of tracking where they currently are.
 
+#### Undergraduate Research Students Supervised
+
 - Manya Meutschler-Aldine (BS'21)
 - Sarah Walling-Bell (BS'20) → Center for Neurotechnology, UW Seattle
 - Sarah McClain (BS'20) → Panorama Education, Boston
@@ -19,11 +21,14 @@ Here's is a list of my former research advisees and a half-hearted effort of tra
 - Chili Johnson (BS'17)
 - Alexia Ingerson (BS'16) → Intel
 - Brandon Roberts (BS'16) → Milliman
-- Ben McCamish, (MS'15) → PhD @ Oregon State → Clinical Professor @ WSU Vancouver
 - Miles Histand (BS'14) → Daimler
 - Gabriel Dunham (BS'14) → Plexsys
 - Sean Lim (BS'14) → Dell EMC
 - Helena Lucia (BS'14) → Intel → Cox
+
+#### Graduate Students Supervised (while at WSU)
+
+- Ben McCamish, (MS'15) → PhD @ Oregon State → Clinical Professor @ WSU Vancouver
 - Bo Wang (MS'14) → Epic → Microsoft
 - Eriko Otsuka (MS'14) → Clark College
 - Fredton Doan (MS'13) → Clark County Washington
