@@ -1,6 +1,7 @@
 ### Biosketch
 
-I am an Associate Professor and Chair of Computer Science at the [University of Puget Sound](https://pugetsound.edu). I completed a PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [High-Performance Systems Group](https://cse.osu.edu/research/systems) and under the supervision of Gagan Agrawal. My doctoral dissertation was on the dynamic composition and performance optimizations of scientific workflows over distributed cloud computing environments. I also worked on (and continue to work on) problems involving cloud data management and indexing.
+I am an Associate Professor and Chair of Computer Science at the [University of Puget Sound](https://pugetsound.edu). I completed a PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [High-Performance Systems Group](https://cse.osu.edu/research/systems) and under the supervision of Gagan Agrawal. My doctoral dissertation was on the dynamic composition and performance optimizations of scientific workflows over distributed cloud computing environments. I also worked on (and continue to work on) problems involving cloud data management and indexing. Prior to my PhD, I worked under [Paul S. Wang](http://www.cs.kent.edu/~pwang/) for my BS and MS degrees.
+
 My current teaching and research interests include data management and distributed cloud computing. I am a member of ACM and senior member of the IEEE.
 
 Here's a link to my [curriculum vitae](CV.pdf).
