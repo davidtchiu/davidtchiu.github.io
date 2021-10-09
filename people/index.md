@@ -22,7 +22,7 @@ Here's is a list of my former research advisees and a half-hearted effort of tra
 - Alexia Ingerson (BS'16, Puget Sound) → Intel
 - Brandon Roberts (BS'16, Puget Sound) → Milliman
 - Miles Histand (BS'14, Portland State University) → Daimler
-- Gabriel Dunham (BS'14), Washington State University → Plexsys
+- Gabriel Dunham (BS'14, Washington State University) → Plexsys
 - Sean Lim (BS'14, Washington State University) → Dell EMC
 - Helena Lucia (BS'14, Washington State University) → Intel → Cox
 
