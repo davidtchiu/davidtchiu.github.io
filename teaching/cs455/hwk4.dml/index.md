@@ -2,11 +2,13 @@
 
 ### Hwk: SQL Queries
 
-Now that you've gotten the raw enrollment data stored in a relational database (SQLite), you're finally ready to conduct the analysis that the college wants. The college has fallen on hard times, and need to do various audits to see which students and departments are worth keeping around. They start by asking you to write some simple queries (e.g., finding a student's course schedule). This is followed by queries of greater complexity (e.g., retrieving departments with the low enrollments, finding students who have the highest GPA in their major, etc.). Finally, they ask you to create triggers to log system activities.
+Now that you've gotten the raw enrollment data stored in a relational database (SQLite), you're finally ready to conduct the analysis that the college wants. Remember that the data, though fake, is an analog to the real data in our university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually run when generating our reports! Cool, eh?
+
+<!-- Finally, they ask you to create triggers to log system activities. -->
 
 #### Student Outcomes
 
-- To write SQL queries for the retrieval and manipulation of data.
+- To write SQL queries for the retrieval of data.
 
 #### Required Files
 
@@ -17,7 +19,7 @@ The following file(s) have been provided for this assignment.
 
 #### Raw Enrollment Data
 
-Start by downloading the two `.sql` files and reading them into your SQLite3 database. The "ddl" file contains the schema definition, so load that first. After you input the "populate" file, your database should be loaded with the enrollment data from the previous homework. Create a file named `YourLastName_HW4.sql` and store all your queries in the following format:
+Start by downloading the two `.sql` files and reading them into your SQLite3 database. To do this, you can create a new database in DB Browser, and then paste them into the SQL Execution console. The `university-ddl.sql` file contains the schema definition, so load that first. Next, paste in the ``university-populate.sql` file contents. After you input the "populate" file, your database should be loaded with the enrollment data from the previous homework. Create a file named `YourLastName_HW4.sql` and store all your queries in the following format:
 
 ```sql
 -- Q0: This is just an example showing the format I expect.
@@ -33,7 +35,7 @@ SELECT ...
 
 I recommend that you test out your queries directly on the SQLite command-line (or GUI, if you downloaded one). Once you are convinced that your query works, copy it into the `YourLastName_HW4.sql` file for submission. Here are the queries that the college wants you to run. Below each request, I've given you the expected result. **Except for the last problem in which you are asked to create an audit table, you are not allowed to make changes to the schema to help you write your queries.** Furthermore, because the data is being updated constantly in real life, no queries should be written specifically for this instance of the database -- that is, your queries should work in general, regardless of what data is currently stored.
 
-1. Get all courses being taught by the MATH department that start in the afternoon. You may assume that time is in 24hr format.
+1. Get all courses being taught by the MATH department that start in the afternoon. You may assume that time is in 24hr format, and you're reminded that you can use comparison operators (`<`, `>`) on strings.
 
    ```
    CourseNum   deptID      CourseName  Location    meetDay     meetTime
@@ -43,7 +45,7 @@ I recommend that you test out your queries directly on the SQLite command-line (
    460         MATH        Calculus 3  WEY 102     TR          12:30
    ```
 
-2. Return David's course schedule. You don't have his student ID, but he's the only person with that name. Only Course attributes should be projected.
+2. Return the student, David's, course schedule. You don't have their student ID, but they're the only one with that name. Only `Course`'s attributes should be projected.
 
    ```
    deptID      CourseNum   CourseName        Location    meetDay     meetTime
@@ -53,7 +55,7 @@ I recommend that you test out your queries directly on the SQLite command-line (
    MATH        230         Linear Algebra    HH 308      TR          15:00
    ```
 
-3. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the avg(GPA) field to ClassGPA.
+3. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the `avg(GPA)` column to `ClassGPA`.
 
    ```
    class       ClassGPA
@@ -64,7 +66,7 @@ I recommend that you test out your queries directly on the SQLite command-line (
    Sophomore   2.675
    ```
 
-4. Identify all students who have a lower GPA than the average of his/her respective class rank. Sort the results by class rank and the student's name.
+4. Identify all students who have a lower GPA than the average of their respective class rank. Sort the results first by class rank, then by the student's name.
 
    ```
    studentID studentName  class       gpa         ClassGPA
@@ -80,10 +82,10 @@ I recommend that you test out your queries directly on the SQLite command-line (
    1468        Kris         Sophomore   1.0         2.675
    ```
 
-5. Get a list of all students who are still undeclared (that is, without a major). Project only the students' ID and name. Sort results by the students' ID.
+5. Get a list of all students who are still undeclared (that is, without a major). Project only the `studentID` and their name. Sort results by `studentID`.
 
    ```
-    tudentID   studentName
+   studentID   studentName
    ----------  -----------
    1225        Sarah
    1282        Kelly
@@ -91,7 +93,7 @@ I recommend that you test out your queries directly on the SQLite command-line (
    1640        Adam
    ```
 
-6. List all departments in the college and their respective student enrollments. Sort the results in descending order of enrollment.
+6. List all departments and their respective student enrollments. Sort the results in descending order of enrollment.
 
    ```
    deptName                    enrolled
@@ -105,7 +107,7 @@ I recommend that you test out your queries directly on the SQLite command-line (
    Department of History       0
    ```
 
-7. Identify all valedictorians in the major. (This is a real query that we have to run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that ENGL has two students with the same GPA)
+7. Identify all valedictorians in all majors. (This is a real query that we have to run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that `ENGL` has two students with the same GPA)
 
    ```
    (Notice that ENGL has two students with the same GPA)
@@ -121,7 +123,7 @@ I recommend that you test out your queries directly on the SQLite command-line (
    1709        Cassandra    Junior      SOAN        2.8
    ```
 
-8. The runners-up in each major should receive a prize too! For each major, find the student(s) with the second highest GPA. Sort results by major. (You may not delete from the database, and yes, you might not like me very much for making you this one, but it help builds character and strength).
+8. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database, and I risk the chance that you may not might not like me very much for making you this one, but it help builds character and strength).
 
    ```
    studentID   studentName  class       major       gpa
