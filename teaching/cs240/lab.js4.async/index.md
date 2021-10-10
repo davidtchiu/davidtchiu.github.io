@@ -143,4 +143,4 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
 
 - Don't forget to call `doMood()` when you're ready.
 
-- Take a snapshot of how neat and tidy your new `doMood()` code is, compared to the old pyramid of doom.
+- Take a snapshot of how neat and tidy your new `doMood()` code is, compared to the old pyramid of doom. Why would I put you through learning the _old_ way of `Promise` handling? Simple, there's simply so much code and code-examples in industry and in online documentations that still use the old way, and you should be ready to interpret what they're doing!
