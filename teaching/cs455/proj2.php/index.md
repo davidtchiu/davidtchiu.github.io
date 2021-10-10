@@ -20,6 +20,13 @@ I will assume that each member of the team has contributed equally to the projec
 - Understand PHP's database-connectivity support for SQLite3
 - Understand the risks posed by SQL-injection and how to secure against it
 
+#### Required Files
+
+The following file(s) have been provided for this assignment.
+
+- [airport-schema.sql](airport-schema.sql)
+- [airport-populate.sql](airport-populate.sql)
+
 #### Part 1: Installing Required Software
 
 This project assumes the successful completion of Project 1. It requires that you have a basic understanding of how to navigate the Linux command-line interface. When in doubt, refer to that [cheat-sheet](https://files.fosswire.com/2007/08/fwunixref.pdf) I you pointed to in the last project.

@@ -12,6 +12,8 @@ In this exercise you will get some practice working with DOM elements. This exer
 
 #### Solution/Demo
 
+You can always see my solution by loading the demo, right clicking anywhere on the page and displaying the source. Then click on the link to my `.js` file(s).
+
 - [Link to Demo](demo/)
 
 #### Instructions
