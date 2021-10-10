@@ -35,7 +35,7 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
 
   - Because we haven't learned how to make a real Web request, we'll have to **fake** it for now.
   - We generate a random `delay` of 0 to 3 seconds to simulate a random network delay.
-  - After the delay, there is a 20% chance that the request will fail and `"unavailable"` will be returned.
+  - After the delay, there is a 20% chance that the request will fail and `"service unavailable"` will be returned.
   - When the request succeeds, then one of `"hangry", "sad", "shocked", "happy", "scared"` will be returned.
 
 - Notice that in the middle of the `app.js` file, you'll see `fakeMoodRequest()` being called and its results printed to the console.
@@ -74,8 +74,71 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
     })
   ```
 
-  For our purpose, if the request was successful, then `resultFromThread` would hold an emotion `"hangry", "sad", "shocked", "happy", "scared"`. Look in the emojiMap to display the corresponding image. If the request failed, then you need to set the `.innerHTML` to `index.html`'s `<div>` element to say `"unavailable"`.
+  For our purpose, if the request was successful, then `resultFromThread` would hold an emotion `"hangry", "sad", "shocked", "happy", "scared"`. Look in the emojiMap to display the corresponding image. If the request failed, then you need to set the `.innerHTML` to `index.html`'s `<div>` element to say `"service unavailable"`.
 
 - If everything's working, you should now see [my demo's](demo/) behavior. Congrats you just set up and handled a Promise!
 
-#### Part 2: `async` and `await`
+#### Part 2: Dealing with Dependencies and the Pyramid of Doom
+
+- Let's suppose that, instead of simply setting `"service unavailable"` to the page, we wanted to retry the fake request up to 2 more times until it succeeds. If the request is _still_ failing after that, then we'll finally set `"service unavailable"` to the page, as we do now.
+
+- To do this, we need to put in another call to `fakeRequest()` inside the `catch()` clause.
+
+  ```js
+  // 1st attempt
+  fakeMoodRequest()
+    .then(function (resultFromThread) {
+      // code to run when thread resolved() in 1st try
+    });
+    .catch(function (errorFromThread) {
+      // 2nd attempt
+      fakeMoodRequest()
+        .then(function (resultFromThread) {
+          // code to run when thread resolved() in 2nd try
+        });
+        .catch(function (errorFromThread) {
+          // 3rd attempt
+          fakeMoodRequest()
+            .then(function (resultFromThread) {
+              // code to run when thread resolved() in 3rd try
+            });
+            .catch(function (errorFromThread) {
+              // code to run when thread rejected()
+            })
+        })
+    })
+  ```
+
+- Try it out now. You may want to increase the probability of a failure from 20% to something higher temporarily just to test things out. I mean, the Promise consuming code above should work, but _yikes that's hard to follow!!!_
+
+#### Part 3: `async` and `await`
+
+- Thankfully, JavaScript introduced the `async` and `await` keywords quite recently (2017) to help make dependencies easier to manage.
+
+- Let's start by commenting out that `fakeMoodRequest()` nested monstrosity.
+
+- Create a new asynchronous method, `async function doMood()` that will call the `fakeMoodRequest()` method in a `try-catch` clause.
+
+  ```js
+  async function doMood() {
+    try {
+      // this is key -- wait here until fakeMoodRequest resolves!
+      let msgFromThread = await fakeMoodRequest();
+      // now display the image
+    } catch (errMsgFromThread) {
+      // code to run if unsuccessful
+    }
+  }
+  ```
+
+- The `await` keyword, which can only be used in an `async` function, will tell the current thread to twiddle its thumbs until the `Promise` from `fakeMoodRequest()` is either resolved or rejected.
+
+  - On resolve (success), the message produced by `fakeMoodRequest()` will be returned and captured in the `msgFromThread` variable!
+  - On reject (failure), execution will jump to the `catch` clause and the failure message will be stored in `errMsgFromThread`.
+  - This try-catch behavior is very similar to Java.
+
+- Add the necessary code to iterate the try-catch block up to 3 times upon repeated failure. Remember to break out of the loop once it succeeds.
+
+- Don't forget to call `doMood()` when you're ready.
+
+- Take a snapshot of how neat and tidy your new `doMood()` code is, compared to the old pyramid of doom.

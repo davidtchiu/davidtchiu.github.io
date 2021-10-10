@@ -7,21 +7,34 @@ const emojiImgs = {
   scared: "figures/scared-face.png",
 };
 
-callDavidMood();
+/**
+ * Main
+ */
+doMood();
 
-// Get David's Mood!
-async function callDavidMood() {
-  try {
-    let result = await getDavidsMood();
-    let img = document.createElement("img");
-    img.src = emojiImgs[result];
-    img.alt = result;
+/**
+ * Make a fake web request to get David's current mood. Upon receiving
+ * failures, the function should retry up to 3 times.
+ */
+async function doMood() {
+  let attempts = 0;
+  let success = false;
+  while (!success && attempts < 3) {
+    try {
+      let result = await getDavidsMood();
+      let img = document.createElement("img");
+      img.src = emojiImgs[result];
+      img.alt = result;
 
-    let div = document.querySelector("#imgPlaceholder");
-    div.appendChild(img);
-  } catch (error) {
-    let div = document.querySelector("#imgPlaceholder");
-    div.innerHTML = error;
+      let div = document.querySelector("#imgPlaceholder");
+      div.innerHTML = "";
+      div.appendChild(img);
+      success = true; // don't attempt again
+    } catch (error) {
+      let div = document.querySelector("#imgPlaceholder");
+      div.innerHTML = error;
+      attempts++;
+    }
   }
   // .then((resultFromThread) => {
   //   let img = document.createElement("img");
@@ -52,7 +65,7 @@ function getDavidsMood() {
     setTimeout(() => {
       // this is the code that runs after the delay
       if (Math.random() < 0.2) {
-        reject("unavailable");
+        reject("service unavailable");
       } else {
         const moods = ["hangry", "sad", "shocked", "happy", "scared"];
         resolve(moods[Math.floor(Math.random() * moods.length)]);
