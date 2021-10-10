@@ -1,8 +1,12 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: DOM and Event Handling (~65min)
+### In-Class Exercise: Promises, async/await (~65min)
 
-In this exercise you will get some practice working with DOM elements. This exercise assumes that you are familiar with using objects and callbacks.
+#### Overview: Why Promises?
+
+It's probably still not very clear at this moment why we're spending time handling asynchronous execution and Promises, because the examples we've seen have been so contrived. The fact is, we can't really talk about one of the important functionalities, _handling remote web requests_, without understanding how Promises really work.
+
+As I mentioned in lecture, browsers can't afford to execute code sequentially and wait for requests to finish, especially when remote Web requests may take seconds or even longer to fulfill. Moreover, there may be multiple remote Web requests that need to be made just to fulfill the information for a single page! Think about a restaurant review page, like on _Yelp!_, which needs to make a request to retrieve data from some online review database; another request to google maps to show its location; another request get collect the restaurant's contact information; etc.
 
 #### Student Outcomes
 
@@ -14,12 +18,6 @@ In this exercise you will get some practice working with DOM elements. This exer
 You can always see my solution by loading the demo, right clicking anywhere on the page and displaying the source. Then click on the link to my `.js` file(s).
 
 - [Link to Demo](demo/)
-
-#### Overview: Why Promises?
-
-It's probably still not very clear at this moment why we're spending time handling asynchronous execution and Promises, because the examples we've seen have been so contrived. The fact is, we can't really talk about one of the important functionalities, _handling web requests_, without understanding how Promises really work.
-
-As I mentioned in lecture, browsers can't afford to execute code sequentially and wait for requests to finish, especially when remote Web requests may take seconds or even longer to fulfill. Moreover, there may be multiple remote Web requests that need to be made just to fulfill the information for a single page! Think about a restaurant review page, like on _Yelp!_, which needs to make a request to retrieve data from some online review database; another request to google maps to show its location; another request get collect the restaurant's contact information; etc.
 
 #### Instructions
 
