@@ -74,7 +74,9 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
     })
   ```
 
-  For our purpose, if the request was successful, then `resultFromThread` would hold an emotion `"hangry", "sad", "shocked", "happy", "scared"`. Look in the emojiMap to display the corresponding image. If the request failed, then you need to set the `.innerHTML` to `index.html`'s `<div>` element to say `"service unavailable"`.
+  For our purpose, if the request was successful, then `resultFromThread` would hold an emotion "hangry", "sad", "shocked", "happy", "scared". Look in the emojiMap to display the corresponding image as a child of `index.html`'s only`<div>` element. (You still remember the syntax to create and set attributes for an `<img>` element?)
+
+  If the request failed, then you need to set the `<div>`'s `innerHTML` property to say `"service unavailable"`.
 
 - If everything's working, you should now see [my demo's](demo/) behavior. Congrats you just set up and handled a Promise!
 
