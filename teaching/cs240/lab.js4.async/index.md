@@ -109,7 +109,7 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
     })
   ```
 
-- Try it out now. You may want to increase the probability of a failure from 20% to something higher temporarily just to test things out. I mean, the Promise consuming code above should work, but _yikes that's hard to follow!!!_ And worse, the the degree of nesting is hard-coded by the number of attempts I want to try, which doesn't seem like a very general solution.
+- Try it out now. You may want to increase the probability of a failure from 20% to something higher temporarily just to test things out. I mean, the Promise consuming code above should work, but _yikes that's hard to follow!!!_ But what's worse is that the degree of nesting is hard-coded by the number of attempts I want to try, which doesn't seem like a very general solution.
 
 #### Part 3: `async` and `await`
 
