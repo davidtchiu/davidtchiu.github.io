@@ -6,7 +6,7 @@ Overview: Why Promises?
 
 It's probably still not very clear at this moment why we're spending time handling asynchronous execution and `Promises`, because the examples we've seen that use them have been so contrived. The fact is, I'm preparing us to talk about one of the core JS functionalities, _handling remote web requests_ -- that is, accessing and using public APIs to important Web services, like obtaining today's weather forecast, or asking Google Maps to provide directions to a certain place.
 
-As I mentioned in lecture, browsers can't afford to execute code sequentially and wait for every potentially long-running requests to finish (remote Web requests may take seconds or even longer to fulfill!) Moreover, there may be multiple such remote Web requests that need to be made just to fulfill the information for a single page! Think about a restaurant review page, like on _Yelp!_, which needs to make a request to retrieve data from some online review database; another request to google maps to show its location; another request get collect the restaurant's contact information; etc.
+As I mentioned in lecture, browsers can't afford to execute code sequentially and wait for every potentially long-running requests to finish (remote Web requests may take seconds or even longer to fulfill!) Moreover, there may be multiple such requests that need to be made just to fulfill the information for a single page! Think about a restaurant review page, like on _Yelp!_, which needs to make a request to retrieve data from some online review database; another request to google maps to show its location; another request get collect the restaurant's contact information; etc.
 
 #### Student Outcomes
 
