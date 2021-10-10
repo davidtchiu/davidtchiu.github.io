@@ -103,7 +103,7 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
               // code to run when thread resolved() in 3rd try
             });
             .catch(function (errorFromThread) {
-              // code to run when thread rejected()
+              // code to run when thread rejected() the 3rd and final time
             })
         })
     })
