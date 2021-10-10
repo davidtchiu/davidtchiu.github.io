@@ -31,9 +31,11 @@ async function doMood() {
       div.appendChild(img);
       success = true; // don't attempt again
     } catch (error) {
-      let div = document.querySelector("#imgPlaceholder");
-      div.innerHTML = error;
       attempts++;
+      if (attempts == 3) {
+        let div = document.querySelector("#imgPlaceholder");
+        div.innerHTML = error;
+      }
     }
   }
   // .then((resultFromThread) => {
