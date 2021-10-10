@@ -2,9 +2,9 @@
 
 ### In-Class Exercise: Promises, async/await (~65min)
 
-#### Overview: Why Promises?
+Overview: Why Promises?
 
-It's probably still not very clear at this moment why we're spending time handling asynchronous execution and Promises, because the examples we've seen have been so contrived. The fact is, we can't really talk about one of the important functionalities, _handling remote web requests_, without understanding how Promises really work.
+It's probably still not very clear at this moment why we're spending time handling asynchronous execution and `Promises`, because the examples we've seen that use them have been so contrived. The fact is, I'm preparing us to talk about one of the core JS functionalities, _handling remote web requests_.
 
 As I mentioned in lecture, browsers can't afford to execute code sequentially and wait for requests to finish, especially when remote Web requests may take seconds or even longer to fulfill. Moreover, there may be multiple remote Web requests that need to be made just to fulfill the information for a single page! Think about a restaurant review page, like on _Yelp!_, which needs to make a request to retrieve data from some online review database; another request to google maps to show its location; another request get collect the restaurant's contact information; etc.
 
