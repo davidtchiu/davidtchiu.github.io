@@ -106,7 +106,7 @@ let days = {
         url: "lab.js3.evt/",
       },
       {
-        name: "Lab 6",
+        name: "Lab 7",
         title: "Promises, Await, and Async",
         url: "lab.js4.async/",
       },
