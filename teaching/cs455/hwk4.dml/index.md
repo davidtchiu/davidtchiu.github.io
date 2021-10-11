@@ -131,7 +131,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
    1709        Cassandra    Junior      SOAN        2.8
    ```
 
-8. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database, and I risk the chance that you may not might not like me very much for making you this one, but it help builds character and strength).
+8. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
 
    ```
    studentID   studentName  class       major       gpa
