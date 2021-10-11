@@ -22,7 +22,7 @@ The following file(s) have been provided for this assignment.
 
 - Download Hwk4_Robot.zip and extract it. You can open this project by either double-clicking on the `package.bluej` file inside the project folder. You should see the following classes:
 
-      <img width="350px" src="figures/robotproj.png" />
+    <img width="350px" src="figures/robotproj.png" />
 
 - Create a `Circle` object, and take a look at its methods. You should notice a new one
   called `moveTo(int x, int y)`. Call this method a few times on certain inputs for `x` and `y`,
