@@ -29,7 +29,7 @@ let days = {
       //   name: "Hwk 5",
       //   title: "Normalization",
       //   url: "hwk5.norm/",
-      //   due: "11/3/2021",
+      //   due: "11/5/2021",
       // },
       // {
       //   name: "Hwk 6",
