@@ -169,8 +169,9 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   > [A, B, C, D, E]
   ```
 
-#### More Loop practice
+#### Extra Credit Opportunity
 
+Completion of each of the following will yield +1 point per question on your lowest midterm exam.
 I strongly recommend students to complete all of these as well for preparation of future materials.
 
 - **(Not nested; involves arrays)** Write a method called `instancesOf()` that inputs an array of integers, an integer `M`, and an integer
