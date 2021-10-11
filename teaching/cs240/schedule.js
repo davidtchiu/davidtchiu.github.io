@@ -105,6 +105,11 @@ let days = {
         title: "More DOM & Events",
         url: "lab.js3.evt/",
       },
+      {
+        name: "Lab 6",
+        title: "Promises, Await, and Async",
+        url: "lab.js4.async/",
+      },
       //   {
       //     name: "Lab 4",
       //     title: "Personas and Scenarios",
