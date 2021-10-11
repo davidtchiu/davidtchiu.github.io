@@ -159,12 +159,12 @@ let days = {
     "Zoom Lab 5",
     "String exercises",
     // wk 6
-    "Writing loops",
+    "Start loops; reading; tracing",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    "More loops",
+    "Writing loops: while",
     // wk 7
-    "Nested loops",
+    "For loops",
     "Start arrays",
     "Zoom Lab 6",
     "Arrays cont.",
