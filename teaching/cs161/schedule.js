@@ -165,9 +165,9 @@ let days = {
     "Writing loops: while",
     // wk 7
     "For loops",
-    "Start arrays",
+    "Nested loops",
     "Zoom Lab 6",
-    "Arrays cont.",
+    "Start Arrays",
     // wk 8
     "<strong>Fall Break (no class)</strong>",
     "Arrays of Objects: TurtleMob",
