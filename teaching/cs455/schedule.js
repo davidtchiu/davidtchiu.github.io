@@ -19,18 +19,18 @@ let days = {
         url: "hwk3.ddl/",
         due: "10/8/2021",
       },
-      // {
-      //   name: "Hwk 4",
-      //   title: "Writing SQL Queries",
-      //   url: "hwk4.dml/",
-      //   due: "10/15/2021",
-      // },
       {
         name: "Hwk 4",
-        title: "Database Theory and Normalization",
-        url: "hwk4.norm/",
-        due: "10/25/2021",
+        title: "Writing SQL Queries",
+        url: "hwk4.dml/",
+        due: "10/22/2021",
       },
+      // {
+      //   name: "Hwk 5",
+      //   title: "Normalization",
+      //   url: "hwk5.norm/",
+      //   due: "11/3/2021",
+      // },
       // {
       //   name: "Hwk 6",
       //   title: "Joins!",
