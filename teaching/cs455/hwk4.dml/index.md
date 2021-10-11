@@ -302,10 +302,10 @@ Total: 105pts
 
 #### Submitting Your Assignment
 
-After you have completed the homework, use the following to submit your work on moodle.
-Please submit the modified DDL file (with your triggers and the new audit table defined) and the file containing all of your queries. Zip them together. Files not in plain-text will be returned without a grade.
+<!-- After you have completed the homework, use the following to submit your work on [Canvas](https://canvas.pugetsound.edu).
+Please submit the modified DDL file (with your triggers and the new audit table defined) and the file containing all of your queries. Zip them together. Files not in plain-text will be returned without a grade. -->
 
-Navigate to our course on Canvas. You should see the Homework 4 Dropbox. Click on this link, and you should be able to drag your file right into the submission box. Click "Save Changes". You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+Navigate to our course on [Canvas](https://canvas.pugetsound.edu). Click on this Homework link, and you should be able to drag your file right into the submission box. Click "Save Changes". I just need the file that contains all of your queries. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
 
 #### Credits
 
