@@ -282,10 +282,10 @@ Put these statements in the DDL file that was provided to you. -->
 #### Grading
 
 ```
-Files submitted not in plain-text format will be returned without a grade.
+Files not submitted in plain-text format will be returned without a grade. (Do not submit your queries in a Word or PDF file!)
 
-[15pt] Completion of the queries Q1 - Q3. Each query is of equal value (5pts each)
-[50pt] Completion of remaining problems. Each problem is of equal value (10pts each)
+[15pt] Completion of the queries Q1 - Q3. (5pts each)
+[50pt] Completion of queries Q4 - Q8.  (10pts each)
 
 Total: 65pts
 ```
