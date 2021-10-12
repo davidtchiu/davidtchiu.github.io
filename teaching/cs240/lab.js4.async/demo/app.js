@@ -62,7 +62,7 @@ async function doMood() {
 //         div.appendChild(img);
 //       })
 //       .catch(function (errorMessageFromThread) {
-//         console.log("second attempt");
+//         console.log("third attempt");
 //         getDavidsMood()
 //           .then(function (resultFromThread) {
 //             let img = document.createElement("img");

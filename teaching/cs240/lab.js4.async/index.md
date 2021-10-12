@@ -78,10 +78,10 @@ The next piece is now to define data-consuming side of the `Promise`. This can b
 fakeMoodRequest()
   .then(function (resultFromThread) {
     // code to run if data-producing thread resolve()
-  });
+  })
   .catch(function (errorFromThread) {
     // code to run if data-producing thread reject()
-  })
+  });
 ```
 
 For our purpose, if the request was successful, then `resultFromThread` would hold an emotion "hangry", "sad", "shocked", "happy", "scared". Look in the emojiMap to display the corresponding image as a child of `index.html`'s only`<div>` element. (You still remember the syntax to create and set attributes for an `<img>` element?)
@@ -101,24 +101,24 @@ If the request failed, then you need to set the `<div>`'s `innerHTML` property t
   fakeMoodRequest()
     .then(function (resultFromThread) {
       // code to run when thread resolved() in 1st try
-    });
+    })
     .catch(function (errorFromThread) {
       // 2nd attempt
       fakeMoodRequest()
         .then(function (resultFromThread) {
           // code to run when thread resolved() in 2nd try
-        });
+        })
         .catch(function (errorFromThread) {
           // 3rd attempt
           fakeMoodRequest()
             .then(function (resultFromThread) {
               // code to run when thread resolved() in 3rd try
-            });
+            })
             .catch(function (errorFromThread) {
               // code to run when thread rejected() the 3rd and final time
-            })
-        })
-    })
+            });
+        });
+    });
   ```
 
 - Try it out now. You may want to increase the probability of a failure from 20% to something higher temporarily just to test things out. I mean, the Promise consuming code above should work, but _yikes that's hard to follow!!!_ But what's worse is that the degree of nesting is hard-coded by the number of attempts I want to try, which doesn't seem like a very general solution.
