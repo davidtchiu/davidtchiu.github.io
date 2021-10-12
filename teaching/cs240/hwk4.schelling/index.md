@@ -88,6 +88,8 @@ For full credit, your project should observe the following requirements.
 
 - When the page loads (or reloads), your app should immediately read in all of the existing values in the `<input>` fields. Use these values to generate an HTML `<table>` element representing the population distribution. Initially, you should get a 20 x 20 table containing ~10% vacant spots. In the remaining spots, you should see a ~60% to ~40% split between population X and Y, respectively. Produce the table using javascript (use a 2D array to represent the board). The table node must be attached as a child to the HTML element with the id: `board`.
 
+  - You may want to refresh yourself on how tables are structured in HTML. Here's a link to [using tables](https://www.w3schools.com/html/html_tables.asp).
+
 - When converting your 2D array to an HTML table, use the `document.createElement()` method, and append or replace the nodes where appropriate. That is, your code should _not_ be building an HTLM string, and modifying the `.innerHTML` field. Manipulate the DOM directly using standard JS functions learned in class.
 
 - Vacant cells should be colored white, and its color cannot be changed. Picking a different color for either of the two populations should immediately cause their colors to change in the table. It should not, however, reset the table or move any elements around.
