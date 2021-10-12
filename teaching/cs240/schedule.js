@@ -153,7 +153,7 @@ let days = {
     "Event handling; Events Lab",
     "Asynchronous execution and Promises",
     // wk 7
-    "Promise chaining; async and await",
+    "async and await; Promise Lab",
     "Ajax, JSON, Axios",
     // wk 8
     "<strong>Fall Break<strong>",
