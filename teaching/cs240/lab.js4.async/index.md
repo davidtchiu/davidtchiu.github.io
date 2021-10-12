@@ -123,9 +123,7 @@ If the request failed, then you need to set the `<div>`'s `innerHTML` property t
 
 - Thankfully, JavaScript introduced the `async` and `await` keywords quite recently (2017) to help make dependencies easier to manage.
 
-- Let's start by commenting out that `fakeMoodRequest()` nested monstrosity.
-
-- Create a new asynchronous method, `async function doMood()` that will call the `fakeMoodRequest()` method in a `try-catch` clause.
+- Let's start by commenting out that entire `fakeMoodRequest()` nested pyramid code monstrosity. Now create a new asynchronous method, `async function doMood()` that will call the `fakeMoodRequest()` method in a `try-catch` clause.
 
   ```js
   async function doMood() {
