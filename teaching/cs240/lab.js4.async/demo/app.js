@@ -18,10 +18,9 @@ doMood();
  */
 async function doMood() {
   let attempts = 0;
-  let success = false;
-  while (!success && attempts < 3) {
+  while (attempts < 3) {
     try {
-      let result = await getDavidsMood();
+      let result = await fakeMoodRequest();
       let img = document.createElement("img");
       img.src = emojiImgs[result];
       img.alt = result;
@@ -29,7 +28,7 @@ async function doMood() {
       let div = document.querySelector("#imgPlaceholder");
       div.innerHTML = "";
       div.appendChild(img);
-      success = true; // don't attempt again
+      attempts = 3; // don't attempt again
     } catch (error) {
       attempts++;
       if (attempts == 3) {
@@ -38,19 +37,47 @@ async function doMood() {
       }
     }
   }
-  // .then((resultFromThread) => {
-  //   let img = document.createElement("img");
-  //   img.src = emojiImgs[resultFromThread];
-  //   img.alt = resultFromThread;
-
-  //   let div = document.querySelector("#imgPlaceholder");
-  //   div.appendChild(img);
-  // })
-  // .catch((errorMessageFromThread) => {
-  //   let div = document.querySelector("#imgPlaceholder");
-  //   div.innerHTML = errorMessageFromThread;
-  // });
 }
+
+// Instead of doMood(), the code below will attempt 3 times too,
+// but it's really ugly!
+// getDavidsMood()
+//   .then(function (resultFromThread) {
+//     let img = document.createElement("img");
+//     img.src = emojiImgs[resultFromThread];
+//     img.alt = resultFromThread;
+
+//     let div = document.querySelector("#imgPlaceholder");
+//     div.appendChild(img);
+//   })
+//   .catch(function (errorMessageFromThread) {
+//     console.log("second attempt");
+//     getDavidsMood()
+//       .then(function (resultFromThread) {
+//         let img = document.createElement("img");
+//         img.src = emojiImgs[resultFromThread];
+//         img.alt = resultFromThread;
+
+//         let div = document.querySelector("#imgPlaceholder");
+//         div.appendChild(img);
+//       })
+//       .catch(function (errorMessageFromThread) {
+//         console.log("second attempt");
+//         getDavidsMood()
+//           .then(function (resultFromThread) {
+//             let img = document.createElement("img");
+//             img.src = emojiImgs[resultFromThread];
+//             img.alt = resultFromThread;
+
+//             let div = document.querySelector("#imgPlaceholder");
+//             div.appendChild(img);
+//           })
+//           .catch(function (errorMessageFromThread) {
+//             let div = document.querySelector("#imgPlaceholder");
+//             div.innerHTML = errorMessageFromThread;
+//           });
+//       });
+//   });
 
 /**
  * This function will simulate fetching David's current Mood from the internet
@@ -61,8 +88,8 @@ async function doMood() {
  *
  * @returns a Promise object that encapsulates this data fetch
  */
-function getDavidsMood() {
-  return new Promise((resolve, reject) => {
+function fakeMoodRequest() {
+  return new Promise(function (resolve, reject) {
     let delay = Math.floor(Math.random() * 3000);
     setTimeout(() => {
       // this is the code that runs after the delay
