@@ -50,35 +50,39 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
 
 - Let's recall that there's two sides to every `Promise`: The **Data-Producing** side (that's run on a different thread), and the **Data-Consuming** side which spawned the new thread and is now waiting for a response.
 
-- **Data-Producing Side** We will start "promisifying" `fakeMoodRequest()`. To do this, we need to wrap the code currently done inside a `Promise` object and return it. Here's the syntax to create and return a `Promise`.
+##### Data-Producing Side
 
-  ```js
-  return new Promise((resolve, reject) => {
-    // stuff that you want to run in another thread
-    // remember to call resolve(value) on success and
-    // call reject(value) on failure.
-  });
-  ```
+- We will start "promisifying" `fakeMoodRequest()`. To do this, we need to wrap the code currently done inside a `Promise` object and return it. Here's the syntax to create and return a `Promise`.
 
-  In the syntax block given above, the `Promise` constructor inputs a single callback function, which itself accepts two callback functions named `resolve` and `reject` -- the good news is that we don't need to define those. JavaScript supplies those on its own.
+```js
+return new Promise((resolve, reject) => {
+  // stuff that you want to run in another thread
+  // remember to call resolve(value) on success and
+  // call reject(value) on failure.
+});
+```
+
+In the syntax block given above, the `Promise` constructor inputs a single callback function, which itself accepts two callback functions named `resolve` and `reject` -- the good news is that we don't need to define those. JavaScript supplies those on its own.
 
 - Refactor the `fakeMoodRequest()` method now using the syntax shown above. Once you think it's working, the output should now show a `Promise` instead of `undefined` as before. Good, the data-producing and signaling side is done.
 
-- **Data-Consuming Side** The next piece is now to define data-consuming side of the `Promise`. This can be done using the following syntax:
+##### Data-Consuming Side
 
-  ```js
-  fakeMoodRequest()
-    .then(function (resultFromThread) {
-      // code to run when thread resolved()
-    });
-    .catch(function (errorFromThread) {
-      // code to run when thread rejected()
-    })
-  ```
+The next piece is now to define data-consuming side of the `Promise`. This can be done using the following syntax:
 
-  For our purpose, if the request was successful, then `resultFromThread` would hold an emotion "hangry", "sad", "shocked", "happy", "scared". Look in the emojiMap to display the corresponding image as a child of `index.html`'s only`<div>` element. (You still remember the syntax to create and set attributes for an `<img>` element?)
+    ```js
+    fakeMoodRequest()
+      .then(function (resultFromThread) {
+        // code to run when thread resolved()
+      });
+      .catch(function (errorFromThread) {
+        // code to run when thread rejected()
+      })
+    ```
 
-  If the request failed, then you need to set the `<div>`'s `innerHTML` property to say `"service unavailable"`.
+For our purpose, if the request was successful, then `resultFromThread` would hold an emotion "hangry", "sad", "shocked", "happy", "scared". Look in the emojiMap to display the corresponding image as a child of `index.html`'s only`<div>` element. (You still remember the syntax to create and set attributes for an `<img>` element?)
+
+If the request failed, then you need to set the `<div>`'s `innerHTML` property to say `"service unavailable"`.
 
 - If everything's working, you should now see [my demo's](demo/) behavior. Congrats you just set up and handled a Promise!
 
