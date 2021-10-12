@@ -164,7 +164,7 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "Writing loops: while",
     // wk 7
-    "For loops",
+    "Exam review; Start For loops",
     "Nested loops",
     "Zoom Lab 6",
     "Start Arrays",
