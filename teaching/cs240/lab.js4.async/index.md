@@ -64,7 +64,11 @@ return new Promise((resolve, reject) => {
 
 In the syntax block given above, the `Promise` constructor inputs a single callback function, which itself accepts two callback functions named `resolve` and `reject` -- the good news is that we don't need to define those. JavaScript supplies those on its own.
 
-- Refactor the `fakeMoodRequest()` method now using the syntax shown above. Once you think it's working, the output should now show a `Promise` instead of `undefined` as before. Good, the data-producing and signaling side is done.
+- Refactor the `fakeMoodRequest()` method now using the `new Promise(...)` syntax shown above.
+
+- Check in with me to see if you've done this part correctly!
+
+- Once you think it's working, the output should now show a `Promise` instead of `undefined` as before. Good, the data-producing and signaling side is done.
 
 ##### Data-Consuming Side
 
