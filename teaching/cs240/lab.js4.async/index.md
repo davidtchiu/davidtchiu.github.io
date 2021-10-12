@@ -73,10 +73,10 @@ The next piece is now to define data-consuming side of the `Promise`. This can b
 ```js
 fakeMoodRequest()
   .then(function (resultFromThread) {
-    // code to run when thread resolved()
+    // code to run if data-producing thread resolve()
   });
   .catch(function (errorFromThread) {
-    // code to run when thread rejected()
+    // code to run if data-producing thread reject()
   })
 ```
 
