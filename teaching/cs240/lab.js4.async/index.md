@@ -53,8 +53,8 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
   ```js
   return new Promise((resolve, reject) => {
     // stuff that you want to run in another thread
-    // remember to call resolve("str") on success and
-    // call reject("str") on failure.
+    // remember to call resolve(value) on success and
+    // call reject(value) on failure.
   });
   ```
 
