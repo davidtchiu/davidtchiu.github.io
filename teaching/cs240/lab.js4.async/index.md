@@ -70,15 +70,15 @@ In the syntax block given above, the `Promise` constructor inputs a single callb
 
 The next piece is now to define data-consuming side of the `Promise`. This can be done using the following syntax:
 
-    ```js
-    fakeMoodRequest()
-      .then(function (resultFromThread) {
-        // code to run when thread resolved()
-      });
-      .catch(function (errorFromThread) {
-        // code to run when thread rejected()
-      })
-    ```
+```js
+fakeMoodRequest()
+  .then(function (resultFromThread) {
+    // code to run when thread resolved()
+  });
+  .catch(function (errorFromThread) {
+    // code to run when thread rejected()
+  })
+```
 
 For our purpose, if the request was successful, then `resultFromThread` would hold an emotion "hangry", "sad", "shocked", "happy", "scared". Look in the emojiMap to display the corresponding image as a child of `index.html`'s only`<div>` element. (You still remember the syntax to create and set attributes for an `<img>` element?)
 
