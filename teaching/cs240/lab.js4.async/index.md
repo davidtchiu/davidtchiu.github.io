@@ -119,7 +119,7 @@ If the request failed, then you need to set the `<div>`'s `innerHTML` property t
 
 - Try it out now. You may want to increase the probability of a failure from 20% to something higher temporarily just to test things out. I mean, the Promise consuming code above should work, but _yikes that's hard to follow!!!_ But what's worse is that the degree of nesting is hard-coded by the number of attempts I want to try, which doesn't seem like a very general solution.
 
-#### Part 3: `async` and `await`
+#### Part 3: Yes!!!! `async` and `await`
 
 - Thankfully, JavaScript introduced the `async` and `await` keywords quite recently (2017) to help make dependencies easier to manage.
 
