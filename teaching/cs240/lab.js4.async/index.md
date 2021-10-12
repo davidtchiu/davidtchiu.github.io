@@ -40,7 +40,7 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
 
 - Notice that in the middle of the `app.js` file, you'll see `fakeMoodRequest()` being called and its results printed to the console.
 
-#### Part 1: Promisifying the Fake Request
+#### Part 1: "Promisifying" the Fake Request
 
 - Let's go ahead and try this code out. Right-click on `index.html` on the left-hand panel, and choose `Open with Live Server`. Remember to open the browser's inspector to see the output.... _Hmm, it's coming up undefined_.
 
