@@ -42,7 +42,7 @@ For full credit, your project should observe the following requirements.
 
 - There are no starter files given for this assignment, but you will owe me at least 3 files: an HTML file; a CSS file; and a JS file.
 
-- I would start with creating the HTML and CSS files - you should work on them concurrently. When creating your page, you can name the field to whatever you like, but all other HTML elements must conform to my standards (see below). Give each box in the box score a unique `name` or `id` so that you can link them up to your JS code later. Similarly, name or identify all "toggle-able" elements and buttons in the control center. As you're not submitting any values, the input fields and buttons of the control center do not need to be enclosed in a `<form>` element. After your page looks like a static, non-working version of what I have specified, then move on to the JavaScript portion of this assignment.
+- I would start with creating the HTML and CSS files - you should work on them concurrently. When creating your page, you can name the field to whatever you like, but all other HTML elements should attempt to conform to my standards (see below). Give each box in the box score a unique `name` or `id` so that you can link them up to your JS code later. Similarly, name or identify all "toggle-able" elements and buttons in the control center. As you're not submitting any values, the input fields and buttons of the control center do not need to be enclosed in a `<form>` element. After your page looks like a static, non-working version of what I have specified, then move on to the JavaScript portion of this assignment.
 
 - Scoreboard Style Guide
   ![Scoreboard Style Guide](figures/scoreboardDim.png)
@@ -50,7 +50,13 @@ For full credit, your project should observe the following requirements.
 - Control Center Style Guide
   ![CC Style Guide](figures/ccDim.png)
 
+- I used `<table>`s to set up the scoreboard and control center, for instance, wrapping every box score in a `<td>` element. You should look into how HTML tables work if you're unsure how to use them. Make sure you learn how to span columns and rows across multiple columns and rows too. This will save you a lot of time. Here's a link to [using tables](https://www.w3schools.com/html/html_tables.asp).
+
+- When grading, I won't be _too_ nit-picky about whether your HTML looks exactly like mine, but it should get close.
+
 - **Control center:** you need a dropdown menu for "Who" and "Inning." The allowable values for "Who" are "Away" and "Home" and the values for "Inning" can range from 1-7. With the "Who" and "Inning" selected, the scorekeeper can press on the + or - button to update the runs for the specified box on the scoreboard. Be careful not to let the runs go negative. As the runs are updated, so should the "R" box on the far-right end of the box score, which totals up all the runs for each team.
+
+  - The drop-down menu can be created using the `<select>` and `<option>` elements. Here's a link that shows you how [drop downs are made](https://www.w3schools.com/html/html_form_elements.asp).
 
 - JavaScript: Some tips for you.
 
