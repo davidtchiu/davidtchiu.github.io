@@ -86,7 +86,7 @@ If the request failed, then you need to set the `<div>`'s `innerHTML` property t
 
 - If everything's working, you should now see [my demo's](demo/) behavior. Congrats you just set up and handled a Promise!
 
-#### Part 2: Dealing with Dependencies and the Pyramid of Doom
+#### Part 2: Promise Dependencies and the Pyramid of Doom
 
 - Let's suppose that, instead of simply setting `"service unavailable"` to the page, we wanted to retry the fake request up to 2 more times until it succeeds. If the request is _still_ failing after that, then we'll finally set `"service unavailable"` to the page, as we do now.
 
