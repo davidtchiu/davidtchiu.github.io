@@ -48,6 +48,8 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
 
 - We have to set `fakeMoodRequest()` up so that the calling thread will wait for it to complete; and so that it will produce a value to be consumed by the calling thread.
 
+- Let's recall that there's two sides to every `Promise`: The **Data-Producing** side (that's run on a different thread), and the **Data-Consuming** side, which spawned the new thread and is now waiting for a response. Let's
+
 - **Data-Producing Side** We will start "promisifying" `fakeMoodRequest()`. To do this, we need to wrap the code currently done inside a `Promise` object and return it. Here's the syntax to create and return a `Promise`.
 
   ```js
