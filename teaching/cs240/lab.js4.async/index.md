@@ -55,7 +55,7 @@ git clone https://github.com/davidtchiu/cs240-lab-promise
 - We will start "promisifying" `fakeMoodRequest()`. To do this, we need to wrap the code currently done inside a `Promise` object and return it. Here's the syntax to create and return a `Promise`.
 
 ```js
-return new Promise((resolve, reject) => {
+return new Promise(function (resolve, reject) {
   // stuff that you want to run in another thread
   // remember to call resolve(value) on success and
   // call reject(value) on failure.
