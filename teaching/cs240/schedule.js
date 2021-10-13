@@ -165,7 +165,7 @@ let days = {
     "Start Node.js",
     "Node.js and Express",
     // wk 11
-    "EJS Templating",
+    "EJS templating",
     "EJS and express lab",
     // wk 12
     "Work/Sprint Review with David",

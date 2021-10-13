@@ -242,14 +242,12 @@ You will provide three new functionalities over the airport database. All of you
 1. Write an HTML page containing a form to input information for a new passenger. Then, in a separate file, write a PHP script that takes the contents of this form via POST request, and does the following:
 
    - Checks if any of the FirstName, LastName, and SSN fields are empty.
-   - If any of them are empty, decline the user action by immediately redirecting her back to input form (Look into PHP's header() function to do this.)
+   - If any of them are empty, decline the user action by immediately redirecting her back to input form (Look into PHP's `header()` function to do this.)
    - A good form-handler would also inform the user on which fields require info if the user didn't provide sufficient data. Consider sending some GET variables back to the input form to indicate which fields.
    - You can and should do even more error checking. For instance, you can check if the SSN was input as an 11-digit number, or that the first and last names should be non-null and alphabetical.
    - If all three required data fields are given, then insert them into a database, return the user to the passenger list and display a "success!" message on the list page.
 
-2. Modify the "show passengers" page I gave you to once again display all the airplane data in a table. Next to each tuple, provide a link called "update." Clicking on it will take you the passenger HTML form you created in the previous step, but with all fields pre-populated with existing data from the database. The submit button should now read "Update Info." The user can now make updates to any field, and on pressing on the submit button, it will make the changes in the passenger table, and take you back to the now-updated passenger list.
-
-3. Replace your document-index page with a new one that links to the following pages: passenger list, create passenger form, and SQL form.
+2. Modify the "show passengers" page I gave you to once again display the passenger data in a table. Next to each tuple, provide a link called "update." Clicking on it will take you the passenger HTML form you created in the previous step, but with all fields pre-populated with existing data from the database. The submit button should now read "Update Info." The user can now make updates to any field, and on pressing on the submit button, it will make the changes in the passenger table, and take you back to the now-updated passenger list.
 
 #### Submission
 
