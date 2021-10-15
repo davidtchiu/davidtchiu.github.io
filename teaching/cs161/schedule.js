@@ -25,12 +25,12 @@ let days = {
         url: "hwk4.robot/",
         due: "10/20/2021",
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Loops",
-      //   url: "hwk5.loops/",
-      //   due: "11/3/2021",
-      // },
+      {
+        name: "Hwk 5",
+        title: "Loops",
+        url: "hwk5.loops/",
+        due: "11/1/2021",
+      },
       // {
       //   name: "Hwk 6",
       //   title: "Tweet Processor",
