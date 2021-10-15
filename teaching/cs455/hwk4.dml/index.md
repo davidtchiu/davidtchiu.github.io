@@ -95,6 +95,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
    ```
    studentID   studentName
    ----------  -----------
+   1001        Lia
    1225        Sarah
    1282        Kelly
    1629        Brad
