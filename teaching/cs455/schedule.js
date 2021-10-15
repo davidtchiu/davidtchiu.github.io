@@ -106,7 +106,7 @@ let days = {
     // wk 7
     "DB theory: functional dependencies (FD)",
     "Armstrong’s axioms, inference rules",
-    "Attribute closure and keys",
+    "Class canceled",
     // wk 8
     "<strong>Fall Break</strong>",
     "Normal forms: 1NF, 2NF",
