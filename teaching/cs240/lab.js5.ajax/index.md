@@ -37,13 +37,13 @@ git clone https://github.com/davidtchiu/cs240-lab-ajax
 
   Recall that, to use the `await` keyword, it must be wrapped inside an `async` function. If successful, the JSON "payload" can be accessed through returned Promise object's `.data` property.
 
-- After receiving the list of breeds in a JSON formatted string, you need to _parse_ it into a JavaScript object. The function to do that is:
+<!-- - After receiving the list of breeds in a JSON formatted string, you need to _parse_ it into a JavaScript object. The function to do that is:
 
   ```js
   let obj = JSON.parse(someJsonString);
-  ```
+  ``` -->
 
-- I would display the object in the console to see what you're working with. Then fill the drop-down menu with all those breeds. You'll have to `document.querySelector(..)` the drop-down menu, and append a bunch of `<option>` nodes under it. Use the `document.createElement(..)` function to create an `<option>` per breed. For example, an option node should have this effect:
+- I would test it out and display the object in the console to see what you're working with. Then fill the drop-down menu with all those breeds. You'll have to `document.querySelector(..)` the drop-down menu, and append a bunch of `<option>` nodes under it. Use the `document.createElement(..)` function to create an `<option>` per breed. For example, an option node should have this effect:
 
   ```html
   <option value="akita">akita</option>

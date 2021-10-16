@@ -110,6 +110,11 @@ let days = {
         title: "Promises, Await, and Async",
         url: "lab.js4.async/",
       },
+      {
+        name: "Lab 8",
+        title: "Ajax",
+        url: "lab.js5.ajax/",
+      },
       //   {
       //     name: "Lab 4",
       //     title: "Personas and Scenarios",
