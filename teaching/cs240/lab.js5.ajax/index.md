@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: AJAX Lab (~65min)
+### In-Class Exercise: AJAX Lab (~45min)
 
 Dogs are pretty cool, and we can't get enough of their cute pictures. The good folks at [https://dog.ceo/](https://dog.ceo/) offer a free web service API to let us retrieve random pictures of dogs to make us happy. Let's write a small app to let users retrieve random dog pictures.
 
