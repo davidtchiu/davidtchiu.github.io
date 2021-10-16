@@ -27,7 +27,7 @@ You can always see my solution by loading the demo, right clicking anywhere on t
 git clone https://github.com/davidtchiu/cs240-lab-promise
 ```
 
-- Note that do not need to make changes to the `index.html` or the CSS file for this lab, but study the files you just pasted to get a sense of what's in there.
+- Note that you do not need to make changes to the `index.html` or the CSS file for this lab, but study the files you just pasted to get a sense of what's in there.
 
 - The `app.js` file has an object literal that maps different emotions to paths locating the corresponding emoji images.
 

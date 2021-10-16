@@ -72,6 +72,7 @@ For full credit, your project should observe the following requirements.
   - When the left button (the one with music notes) is pressed, randomly play one of: charge1.mp3, charge2.mp3, or buildup.mp3. Also randomly display one of the images to the right of the box score.
   - When the right button (the one with a keyboard) is pressed, play the Chicken Dance: chickendance.mp3, and always display the sdchicken.jpg to the right of the box score.
     Pressing on another button before the song has finished may cause the music to overlap. This is okay (for now) because we don't know how to wait for the song to end.
+  - You're welcome (encouraged!) to add your own pictures and sounds to the mix.
 
 #### Optional Extensions
 
