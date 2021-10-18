@@ -114,7 +114,7 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 
 <ul>
 <li>
-	<p>`Student(studentID, studentName, class, gpa)`<br/>
+	<p>Student(studentID, studentName, class, gpa)<br/>
 	Students are identified with a unique studentID, a first name, 
 	a class standing, and a cumulative GPA, which can be `NULL`. 
 	The studentName may not be unique, but it cannot be `NULL`. The 
@@ -125,7 +125,7 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 	</p>
 </li>
 <li>
-	<p>`Major(studentID, major)`<br/>
+	<p>Major(studentID, major)<br/>
 	A student's major(s) is/are recognized by an entry in this table (an undeclared student
 	therefore would not have an entry). StudentID is self-explanatory, 
 	and the major code is the department's ID (see Department table below). That is, if a department
@@ -136,7 +136,7 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 </li>
 <li>
 	<p>
-	`Course(courseNum, deptID, courseName, location, meetDay, meetTime)`<br/>
+	Course(courseNum, deptID, courseName, location, meetDay, meetTime)<br/>
 	Courses have a course number, a department it belongs to, a course name, 
 	location, day, and time. Some courses can be cross listed. For instance, 
 	the course Discrete Math might belong to both CS and Math departments! By 
@@ -148,7 +148,7 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 </li>
 <li>
 	<p>
-	`Dept(deptID, name, building)`<br/>
+	Dept(deptID, name, building)<br/>
 	Departments are identified by a label (deptID), which is not numerical. For 
 	instance, `CS` would be the deptID for the computer science department. 
 	It also requires a full name of the department, and each is housed in a 
@@ -164,7 +164,7 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 </li>
 <li>
 	<p>
-	`Enroll(courseNum, deptID, studentID)`<br/>
+	Enroll(courseNum, deptID, studentID)<br/>
 	Students can enroll in any number of courses. A course-enrollment is given by 
 	course number, the department of the course offering, and the student taking
 	the course. For instance, that Kelly is enrolled in Databases 
@@ -247,7 +247,7 @@ studentID   studentName  class       gpa
 1641        Brittany     Senior      2.7
 1661        Logan        Freshman    1.5
 1689        Gabriel      Senior      2.4
-1709        Cassandra    Junior      3.8
+1709        Cassandra    Junior      2.8
 1782        Andrew       Sophomore   3.7
 1911        David        Senior      4.0
 1934        Kyle         Junior      2.1
