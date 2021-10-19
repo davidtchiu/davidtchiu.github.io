@@ -51,7 +51,9 @@ The proposal itself does not have to be long. I'm not expecting 10 pages here. I
 
   You'll also likely experience that this list of features may change over time, and that's okay. Consider this a living document and make adjustments to it over time.
 
-- **Section III: Project Management** -- In this section, you will define each team member's role by assigning features to specific team members. As I mentioned earlier, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. And conversely, some complicated features may require multiple students to work on it simultaneously. Some features are also dependent on other features to be implemented first. Therefore, it's important to use software-engineering tools to ensure that everybody's on the same page.
+- **Section III: Database Schema** -- Design a relational database schema to support the set of features you listed. There are lots of tools to draw schema diagrams. For instance, check out [draw.io](https://draw.io). In your schema diagram, underline the primary keys, and don't forget to draw edges for your foreign keys. For each relation, write a brief description of what it stores, and why it's needed.
+
+- **Section IV: Project Management** -- In this section, you will define each team member's role by assigning features to specific team members. As I mentioned earlier, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. And conversely, some complicated features may require multiple students to work on it simultaneously. Some features are also dependent on other features to be implemented first. Therefore, it's important to use software-engineering tools to ensure that everybody's on the same page.
 
   - Make a list of tools you'll be using to help you manage your project and workflow. List each tool by name, along with their intended purpose (e.g., git, figma, slack, trello, etc.)
     - This is a good time to explore what people use in industry to communicate, or to track bugs, or to design user interfaces, etc.
@@ -81,8 +83,7 @@ List the group membership on your proposal page. Go to [Canvas](https://canvas.p
 
 ```
 This assignment will be graded out of 40 points:
-[5pt] Your proposal is free from spelling and grammatical errors.
-[5pt] You have defined good use cases. There are at least three use-cases assigned to each team member.
+[10pt] You have defined a set of sensible features for your application. There are at least two features per team member.
 [10pt] Your project management plan includes a Gantt chart detailing task delegation, timeline, and milestones.
        A communication plan is also required.
 [20pt] An appropriate relational schema diagram is given to support your project.
