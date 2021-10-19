@@ -84,7 +84,8 @@ List the group membership on your proposal page. Go to [Canvas](https://canvas.p
 ```
 This assignment will be graded out of 40 points:
 [10pt] You have defined a set of sensible features for your application. There are at least two features per team member.
-[10pt] Your project management plan includes a Gantt chart detailing task delegation, timeline, and milestones.
+[10pt] Your project management plan includes a Gantt chart that estimates task delegation, timeline, and milestones.
        A communication plan is also required.
-[20pt] An appropriate relational schema diagram is given to support your project.
+[ 5pt] A list of tools you plan on using for project manage is required.
+[15pt] An appropriate relational schema diagram is given to support your project.
 ```
