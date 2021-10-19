@@ -36,22 +36,28 @@ The proposal itself does not have to be long. I'm not expecting 10 pages here. I
 
 - **Section I: Introduction (suggested length: 2-3 paragraphs)** -- Describe your project vision. Explain the problem you're trying to solve, and why you believe a database solution is necessary.
 
-- **Section II: Product Features** -- Next, define _at least six_ significant features for your app. Here are a few example features for a package-shipping company:
+- **Section II: Product Features** -- Next, define _at least two_ significant software features per team member. Here are a few example features for a package-shipping company:
 
-  - _Feature 1:_ Users can login to our system with a username and password, which are both encrypted in the database. The login form has a checkbox option to "Remember me today." If this option is checked upon a successful login, the website will remember them for a 24-hour period (without requiring login if they leave and return to the site later). If not checked, the site will only remember them for a 1-hour period.
+  - _Feature 1:_ Customers can login to our system with a username and password, which are both encrypted in the database. The login form has a checkbox option to "Remember me today." If this option is checked upon a successful login, the website will remember them for a 24-hour period (without requiring login if they leave and return to the site later). If not checked, the site will only remember them for a 1-hour period.
   - _Feature 2:_ To provide added security, we will block out an account after 5 unsuccessful login attempts, after which the user must reset their password by following a link that is emailed to the addressed stored in the database for the given the username.
-  - _Feature 3:_ Users with proper credentials can manually add a new package by date, and assign that company's container to a specific delivery vehicle.
-  - _Feature 4:_ Any user can view the company's shipping routes by date, but users with proper credentials can also adjust (add/delete/update) any shipping routes.
-  - _Feature 5:_ Users with proper credentials can generate reports on the company's earnings aggregated by day, month, and year.
+  - _Feature 3:_ A company rep with proper credentials can manually add a new package by date, and assign that company's container to a specific delivery vehicle.
+  - _Feature 4:_ Any user can view the company's shipping routes by date, but a company rep with proper credentials can also adjust (add/delete/update) any shipping routes.
+  - _Feature 5:_ A company rep with proper credentials can generate reports on the company's earnings aggregated by day, month, and year.
+  - _Feature 6:_ Customers can track the live location of their package on a map.
 
-  It's important to remember that proposal is **not** a contract, so it's okay to list features that you may not get to implement, but it's your job to prioritize the fundamental features over the "nice-to-have" features. You'll also likely experience that this list of features may change over time. Again, since the project is so broad and organic, the idea here is to get you all to collaborate and brainstorm to _add_ structure to this work. The goal is to have a working prototype of the fundamental features by the last week of classes.
+  As you can see in the examples above, it's important to list the type of user(s) involved in each feature, followed by a concise and independent "unit of work." It's **not** important to ensure that features are of equal "size" and "time commitment." It may take a student, or a couple students, a week to implement _Feature 6_, while _Feature 2_ may only take a day.
 
-- **Section III: Project Management** -- In this section, you will define each team member's role by assigning features to specific team members. Clearly, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. Therefore, it's important to use software-engineering tools to ensure that everyone's on the same page.
+  It may also be helpful to remember that this proposal is **not** a contract between you and me, so it's okay to be ambitious and list features that you may not get to implement. It's your job, however, to prioritize the "must-have" features over the "nice-to-have" ones. Your goal is to have a working prototype of the fundamental features by the last week of classes, so prioritize wisely!
 
-  - Make a list of tools you'll be using to manage your project, along with their intended purpose (e.g., git, slack, trello, etc.)
-  - You should also summarize how you intend to communicate to your team members (e.g., meeting frequency).
-  - You should use project-management tools like [Trello](https://trello.com) to organize your application's features, notes, and to track overall progress.
-  - Finally, you must produce a Gantt Chart that communicates your timeline and milestones. Throughout the weeks of your project's implementation, I will hold you accountable based on your proposed timeline. Here is an example:
+  You'll also likely experience that this list of features may change over time, and that's okay. Consider this a living document and make adjustments to it over time.
+
+- **Section III: Project Management** -- In this section, you will define each team member's role by assigning features to specific team members. As I mentioned earlier, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. And conversely, some complicated features may require multiple students to work on it simultaneously. Some features are also dependent on other features to be implemented first. Therefore, it's important to use software-engineering tools to ensure that everybody's on the same page.
+
+  - Make a list of tools you'll be using to help you manage your project and workflow. List each tool by name, along with their intended purpose (e.g., git, figma, slack, trello, etc.)
+    - This is a good time to explore what people use in industry to communicate, or to track bugs, or to design user interfaces, etc.
+    <!-- - You should summarize how you intend to communicate to your team members (e.g., meeting frequency).
+  - You should use project-management tools like [Trello](https://trello.com) to organize your application's features, notes, and to track overall progress. -->
+  - Finally, you must produce a Gantt Chart that communicates your timeline and milestones. Throughout the weeks of your project's implementation, I will hold you accountable based on your proposed timeline, with the understanding that plans and features do change. Here is an example Gantt Chart:
 
     <img src="figures/timeline.png" width="550px"/>
 
