@@ -57,7 +57,7 @@ The proposal itself does not have to be long. I'm not expecting 10 pages here. I
 
 #### Miscellanea
 
-- Your project must be hosted on the server to which you have access.
+- Your project must be hosted on the server to which you have access. Please don't use another 3rd party host. This why, I always have direct access to your server and code.
 - If you're interested in trying out another database system like MySQL/MariaDB/PostgreSQL, you're more than welcome to. The only requirement is that the database system you choose must be relational in nature.
   - You cannot use document-object storage systems like MongoDB and CouchDB.
   - You're also reminded that different implementations may support different "flavors" of SQL. That means there may be significant variations to the syntax you're already familiar with.
