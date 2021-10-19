@@ -51,7 +51,7 @@ let days = {
         name: "Proj 2",
         title: "Server-Side Web Development with PHP",
         url: "proj2.php/",
-        due: "10/18/2021",
+        due: "10/22/2021", //extended this year only (move back to 10/18 in future)
       },
       {
         name: "Proj 3",

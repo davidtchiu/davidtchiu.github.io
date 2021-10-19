@@ -44,7 +44,7 @@ The proposal itself does not have to be long. I'm not expecting 10 pages here. I
   - Feature 4: Any user can view the company's shipping routes by date, but users with proper credentials can also adjust (add/delete/update) any shipping routes.
   - Feature 5: Users with proper credentials can generate reports on the company's earnings aggregated by day, month, and year.
 
-  This proposal is **not** a contract! It's okay to list features that you may not get to implement. It's your job to prioritize the fundamental features over the "nice-to-have" features. You'll also likely experience that this list of features may change over time. Again, since the project is so broad and organic, the idea here is to get you all to collaborate and brainstorm to _add_ structure to this work.
+  This proposal is **not** a contract! It's okay to list features that you may not get to implement, but it's your job to prioritize the fundamental features over the "nice-to-have" features. You'll also likely experience that this list of features may change over time. Again, since the project is so broad and organic, the idea here is to get you all to collaborate and brainstorm to _add_ structure to this work. The goal is to have a working prototype of the fundamental features by the last week of classes.
 
 - **Section III: Project Management** -- In this section, you will define each team member's role by assigning features to specific team members. Clearly, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. Therefore, it's important to use software-engineering tools to ensure that everyone's on the same page.
 
