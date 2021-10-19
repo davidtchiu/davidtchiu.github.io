@@ -53,7 +53,7 @@ The proposal itself does not have to be long. I'm not expecting 10 pages here. I
   - You should use project-management tools like [Trello](https://trello.com) to organize your application's features, notes, and to track overall progress.
   - Finally, you must produce a Gantt Chart that communicates your timeline and milestones. Throughout the weeks of your project's implementation, I will hold you accountable based on your proposed timeline. Here is an example:
 
-    <img src="figures/timeline.png" width="450px"/>
+    <img src="figures/timeline.png" width="550px"/>
 
 #### Miscellanea
 
