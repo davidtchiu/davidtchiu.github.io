@@ -53,12 +53,12 @@ let days = {
         url: "proj2.php/",
         due: "10/18/2021",
       },
-      // {
-      //   name: "Proj 3",
-      //   title: "Project Planning",
-      //   url: "proj3.planning/",
-      //   due: "11/1/2021",
-      // },
+      {
+        name: "Proj 3",
+        title: "Project Planning",
+        url: "proj3.planning/",
+        due: "11/1/2021",
+      },
       // {
       //   name: "Proj 4",
       //   title: "Implementation",
