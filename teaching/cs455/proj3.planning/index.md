@@ -38,11 +38,11 @@ The proposal itself does not have to be long. I'm not expecting 10 pages here. I
 
 - **Section II: Product Features** -- Next, define 2-3 features per team member. Here are a few example features for a package-shipping company:
 
-  - Feature 1: Users can login to our system with a username and password, which are both encrypted in the database. The login form has a checkbox option to "Remember me today." If this option is checked upon a successful login, the website will remember them for a 24-hour period (without requiring login if they leave and return to the site later). If not checked, the site will only remember them for a 1-hour period.
-  - Feature 2: To provide added security, we will block out an account after 5 unsuccessful login attempts, after which the user must reset their password by following a link that is emailed to the addressed stored in the database for the given the username.
-  - Feature 3: Users with proper credentials can manually add a new package by date, and assign that company's container to a specific delivery vehicle.
-  - Feature 4: Any user can view the company's shipping routes by date, but users with proper credentials can also adjust (add/delete/update) any shipping routes.
-  - Feature 5: Users with proper credentials can generate reports on the company's earnings aggregated by day, month, and year.
+  - _Feature 1:_ Users can login to our system with a username and password, which are both encrypted in the database. The login form has a checkbox option to "Remember me today." If this option is checked upon a successful login, the website will remember them for a 24-hour period (without requiring login if they leave and return to the site later). If not checked, the site will only remember them for a 1-hour period.
+  - _Feature 2:_ To provide added security, we will block out an account after 5 unsuccessful login attempts, after which the user must reset their password by following a link that is emailed to the addressed stored in the database for the given the username.
+  - _Feature 3:_ Users with proper credentials can manually add a new package by date, and assign that company's container to a specific delivery vehicle.
+  - _Feature 4:_ Any user can view the company's shipping routes by date, but users with proper credentials can also adjust (add/delete/update) any shipping routes.
+  - _Feature 5:_ Users with proper credentials can generate reports on the company's earnings aggregated by day, month, and year.
 
   This proposal is **not** a contract! It's okay to list features that you may not get to implement, but it's your job to prioritize the fundamental features over the "nice-to-have" features. You'll also likely experience that this list of features may change over time. Again, since the project is so broad and organic, the idea here is to get you all to collaborate and brainstorm to _add_ structure to this work. The goal is to have a working prototype of the fundamental features by the last week of classes.
 
