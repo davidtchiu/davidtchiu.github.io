@@ -30,13 +30,13 @@ These are just examples from the past couple semesters. You're clearly not bound
 
 Caution: I recommend that the team comes to a consensus on the project vision, so that everyone is bought-in and invested equally. Project visions borne out of one or two students generally doesn't work well. Something like this has happened in the very recent past... A student was really into Pokemon cards. They convinced the rest of their team members to write a web app to organize all the Pokemon cards in the world, and so that users can manage which cards they own and even trade them and _battle_ each other. Other teammates didn't understand how the battles were played out, which was more complicated than they first thought, but went along with it anyway. The other members were never really invested enough to stay motivated to work on the project, and it didn't end well.
 
-#### Part 2: Project Proposal (2-3 pages)
+#### Part 2: Project Proposal (HTML)
 
-Please submit a short proposal with the following required elements:
+The proposal itself does not have to be long. I'm not expecting 10 pages here. It's more about getting together with your team and thinking through the features you want to support. **Create an HTML page** on your server with following required sections:
 
-- **Section I: Introduction** -- Describe your project briefly. Discuss your client's requirements and summarize why you believe a database solution is necessary.
+- **Section I: Introduction (suggested length: 2-3 paragraphs)** -- Describe your project vision. Explain the problem you're trying to solve, and why you believe a database solution is necessary.
 
-- **Section II: Product Features** -- Define 2-3 features per team member. Here are a few example use-cases for a package-shipping company:
+- **Section II: Product Features** -- Next, define 2-3 features per team member. Here are a few example features for a package-shipping company:
 
   - Feature 1: Users can login to our system with a username and password, which are both encrypted in the database. The login form has a checkbox option to "Remember me today." If this option is checked upon a successful login, the website will remember them for a 24-hour period (without requiring login if they leave and return to the site later). If not checked, the site will only remember them for a 1-hour period.
   - Feature 2: To provide added security, we will block out an account after 5 unsuccessful login attempts, after which the user must reset their password by following a link that is emailed to the addressed stored in the database for the given the username.
@@ -44,7 +44,14 @@ Please submit a short proposal with the following required elements:
   - Feature 4: Any user can view the company's shipping routes by date, but users with proper credentials can also adjust (add/delete/update) any shipping routes.
   - Feature 5: Users with proper credentials can generate reports on the company's earnings aggregated by day, month, and year.
 
-- **Section III: Project Management** -- In this section, you will define each team member's role by assigning features to specific team members. Clearly, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. You must outline how you will manage the shared code in your project through a version control system like Git. You should also summarize how you intend to communicate to your team members (e.g., physical meeting frequency and online meeting frequency). Finally, you must produce a Gantt Chart that communicates your timeline and milestones. Throughout the weeks of your project's implementation, I will hold you accountable based on your proposed timeline. Here is an example:
+  This proposal is **not** a contract! It's okay to list features that you may not get to implement. It's your job to prioritize the fundamental features over the "nice-to-have" features. You'll also likely experience that this list of features may change over time. Again, since the project is so broad and organic, the idea here is to get you all to collaborate and brainstorm to _add_ structure to this work.
+
+- **Section III: Project Management** -- In this section, you will define each team member's role by assigning features to specific team members. Clearly, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. Therefore, it's important to use software-engineering tools to ensure that everyone's on the same page.
+
+  - Make a list of tools you'll be using to manage your project, along with their intended purpose (e.g., git, slack, trello, etc.)
+  - You should also summarize how you intend to communicate to your team members (e.g., meeting frequency).
+  - You should use project-management tools like [Trello](https://trello.com) to organize your application's features, notes, and to track overall progress.
+  - Finally, you must produce a Gantt Chart that communicates your timeline and milestones. Throughout the weeks of your project's implementation, I will hold you accountable based on your proposed timeline. Here is an example:
 
     <img src="figures/timeline.png" width="450px"/>
 
@@ -62,27 +69,15 @@ Please submit a short proposal with the following required elements:
 
 #### Submission
 
-Create a page that links to: (1) the new-passenger form, (2) the passenger listing. List the group membership on this page. Go to [canvas](https://canvas.pugetsound.edu) and submit the URL to this page under Project 2.
+List the group membership on your proposal page. Go to [Canvas](https://canvas.pugetsound.edu) and submit the URL to your proposal under the `Project 3` Dropbox.
 
 #### Grading
 
 ```
 This assignment will be graded out of 40 points:
-[5pt] An form that allows users to input data on a new or exiting passenger.
-[5pt] A secure PHP page, createPassenger.php, that inserts new passengers
-      (with data input from the aforementioned form) into the passengers table.
-[5pt] On success, createPassenger.php redirects users back to the passenger
-      list with a "success" message.
-[5pt] On failure, createPassenger.php redirects users back to the user-input
-      form page, indicating all error(s).
-[5pt] The update link now redirects users back to the createPassenger.php page,
-      with exiting data already filled in the boxes. The submit button now
-      reads "Update Info"
-[5pt] Clicking on "Update Info" will take users to a secure PHP page,
-      updatePassenger.php, which updates the specific passenger with the new
-      data from the previous form.
-[5pt] On update success, updatePassenger.php redirects users back to passenger list.
-[5pt] On update failure, updatePassenger.php redirects users back to the form,
-      indicating all error(s).
-[-15pt] I can successfully inject SQL statements.
+[5pt] Your proposal is free from spelling and grammatical errors.
+[5pt] You have defined good use cases. There are at least three use-cases assigned to each team member.
+[10pt] Your project management plan includes a Gantt chart detailing task delegation, timeline, and milestones.
+       A communication plan is also required.
+[20pt] An appropriate relational schema diagram is given to support your project.
 ```
