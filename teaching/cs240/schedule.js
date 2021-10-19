@@ -35,12 +35,12 @@ let days = {
 
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
-      // {
-      //   name: "Phase 1",
-      //   title: "Planning and Design",
-      //   url: "proj1.planning/",
-      //   due: "11/8/2021",
-      // },
+      {
+        name: "Phase 1",
+        title: "Planning and Design",
+        url: "proj1.planning/",
+        due: "11/8/2021",
+      },
       // {
       //   name: "Phase 2.1",
       //   title: "1st Sprint",
@@ -162,13 +162,13 @@ let days = {
     "Ajax, JSON, Axios",
     // wk 8
     "<strong>Fall Break<strong>",
-    "Software Process Models; Agile/Scrum",
+    "Review Ajax; Ajax Lab",
     // wk 9
+    "Node.js and Express",
+    "Software Process Models; Agile/Scrum",
+    // wk 10
     "Persona and scenarios lab",
     "User stories and planning lab",
-    // wk 10
-    "Start Node.js",
-    "Node.js and Express",
     // wk 11
     "EJS templating",
     "EJS and express lab",
