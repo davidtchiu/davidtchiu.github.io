@@ -164,14 +164,14 @@ let days = {
     "<strong>Fall Break<strong>",
     "Review Ajax; Ajax Lab",
     // wk 9
-    "Node.js and Express",
+    "Node.js and npm",
     "Software Process Models; Agile/Scrum",
     // wk 10
     "Persona and scenarios lab",
     "User stories and planning lab",
     // wk 11
-    "EJS templating",
-    "EJS and express lab",
+    "Express; Express Lab",
+    "EJS templating; EJS Lab",
     // wk 12
     "Work/Sprint Review with David",
     "Software Testing; Testing lab",
