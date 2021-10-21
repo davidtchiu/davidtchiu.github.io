@@ -94,12 +94,12 @@ let days = {
         url: "lab6.turtle/",
         due: "10/15/2021",
       },
-      // {
-      //   name: "Zoom Lab 7",
-      //   title: "Combo Guesser (Arrays)",
-      //   url: "lab7.combo/",
-      //   due: "10/22/2021",
-      // },
+      {
+        name: "Zoom Lab 7",
+        title: "Combo Guesser (Arrays)",
+        url: "lab7.combo/",
+        due: "10/22/2021",
+      },
       // {
       //   name: "Zoom Lab 8",
       //   title: "Super Circle Drawer (ArrayLists)",
