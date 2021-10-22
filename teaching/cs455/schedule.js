@@ -110,11 +110,12 @@ let days = {
     // wk 8
     "<strong>Fall Break</strong>",
     "Normal forms: 1NF, 2NF",
-    "BCNF; Canonical cover",
+    "Shortfalls of 2NF; BCNF",
     // wk 9
+    "Canonical cover of FD Sets",
     "Disk and files: access times",
     "Access patterns, disk scheduling; Start files",
-    "Buffer mgr; Start files: Format tradeoffs",
+    // "Buffer mgr; Start files: Format tradeoffs",
     // wk 10
     "File organization of tuples",
     "Cost analysis: join algorithms",

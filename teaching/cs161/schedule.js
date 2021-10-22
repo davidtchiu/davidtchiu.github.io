@@ -170,9 +170,9 @@ let days = {
     "Nested loops",
     // wk 8
     "<strong>Fall Break (no class)</strong>",
-    "Arrays; Start `Bank`",
+    "Arrays; Start Bank",
     "Zoom Lab 7",
-    "Finish `Bank`; Arrays of Objects: `TurtleMob`",
+    "Review Lab; Finish Bank",
     // wk 9
     "Start ArrayList",
     "ArrayList",
