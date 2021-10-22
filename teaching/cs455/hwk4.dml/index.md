@@ -102,7 +102,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
    1640        Adam
    ```
 
-6. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented in the results (e.g., History)
+6. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented in your results (e.g., History)
 
    ```
    deptName                    enrolled
