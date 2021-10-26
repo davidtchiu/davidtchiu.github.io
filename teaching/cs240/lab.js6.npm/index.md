@@ -136,7 +136,7 @@ You can always see my solution by loading the demo, right clicking anywhere on t
   | and apathy? I don't know and I don't     |
   \ care.                                    /
   ------------------------------------------
-          \   ^__^
+         \   ^__^
           \  (oo)\_______
              (__)\        )\/\
                   ||----w |
@@ -149,7 +149,7 @@ You can always see my solution by loading the demo, right clicking anywhere on t
   / What do you call your friend who stands \
   \ in a hole? Phil.                        /
   -----------------------------------------
-          \   ^__^
+         \   ^__^
           \  (oo)\_______
              (__)\        )\/\
                   ||----w |
