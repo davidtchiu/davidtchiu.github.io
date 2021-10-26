@@ -62,8 +62,8 @@ You can always see my solution by loading the demo, right clicking anywhere on t
 
 - Before you can write any code that uses Axios, you need to first require it as part of your code. You can do this by stating the following at the top of your `app.js` file.
 
-  ```
-  const axios = require('axios');
+  ```js
+  const axios = require("axios");
   ```
 
   Your file should have access to the `axios` methods (such as `axios.get(..)` and `axios.post(..)`).
