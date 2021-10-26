@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: Node.js Lab (~20min)
+### In-Class Exercise: Node.js Lab (~30min)
 
 Node.js decouples JavaScript from the browser, so we can run it anywhere. One of the cool utilities that Node comes with is something called the Node Package Manager (`npm`). The `npm` allows us to download and install useful 3rd-party packages as part of our project. Let's do a quick lab on this stuff.
 
