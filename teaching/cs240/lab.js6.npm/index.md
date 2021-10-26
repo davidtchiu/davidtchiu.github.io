@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: Node.js Lab (~30min)
+### In-Class Exercise: Node.js and npm Lab (~30min)
 
 Node.js decouples JavaScript from the browser, so we can run it anywhere. One of the cool utilities that Node comes with is something called the Node Package Manager (`npm`). The `npm` allows us to download and install useful 3rd-party packages as part of our project. Let's do a quick lab on this stuff.
 
@@ -9,11 +9,11 @@ Node.js decouples JavaScript from the browser, so we can run it anywhere. One of
 - Learn how to manage and use multiple packages through npm.
 - More practice with Ajax.
 
-#### Solution/Demo
+#### Solution
 
-You can always see my solution by loading the demo, right clicking anywhere on the page and displaying the source. Then click on the link to my `.js` file(s).
+There is no link to a demo, since there's no HTML page for this project. Instead, you should fork and clone a copy of my solution. Navigate to the project directory and first run `npm install` to download its dependency packages. Then run `node app.js` to run my script.
 
-- [Link to Demo](demo/)
+- [Link to Solution](https://github.com/davidtchiu/cs240-lab-js6.npm-soln)
 
 #### Prerequisites
 
