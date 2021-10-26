@@ -119,7 +119,7 @@ There is no link to a demo, since there's no HTML page for this project. Instead
          });
        ```
 
-##### Cow Say (If you have time)
+##### CowSay
 
 - What's better than printing a random joke onto the screen? Drawing a cow to tell the joke.
 
@@ -155,3 +155,5 @@ There is no link to a demo, since there's no HTML page for this project. Instead
                   ||----w |
                   ||     ||
   ```
+
+  - It turns out there are a lot of different looks for these cows. Read further into the cowsay2 documentation to generate different kinds of cows.

@@ -115,6 +115,11 @@ let days = {
         title: "Ajax",
         url: "lab.js5.ajax/",
       },
+      {
+        name: "Lab 9",
+        title: "Node.js, npm",
+        url: "lab.js6.npm/",
+      },
       //   {
       //     name: "Lab 4",
       //     title: "Personas and Scenarios",
