@@ -144,6 +144,7 @@ You can always see my solution by loading the demo, right clicking anywhere on t
   ```
 
   ```
+  $ node app.js
    _________________________________________
   / What do you call your friend who stands \
   \ in a hole? Phil.                        /
