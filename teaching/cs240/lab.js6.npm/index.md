@@ -128,3 +128,29 @@ You can always see my solution by loading the demo, right clicking anywhere on t
 - Read the documentation for [cowsay2 here](https://www.npmjs.com/package/cowsay2).
 
 - Require the new package into your `app.js`. Now use `cowsay` to tell the jokes. Here are some samples of what things should look like, once you get it working:
+
+  ```
+  $ node app.js
+  __________________________________________
+  / What is the difference between ignorance \
+  | and apathy? I don't know and I don't     |
+  \ care.                                    /
+  ------------------------------------------
+          \   ^__^
+          \  (oo)\_______
+              (__)\       )\/\
+                  ||----w |
+                  ||     ||
+  ```
+
+  ```
+   _________________________________________
+  / What do you call your friend who stands \
+  \ in a hole? Phil.                        /
+  -----------------------------------------
+          \   ^__^
+          \  (oo)\_______
+              (__)\       )\/\
+                  ||----w |
+                  ||     ||
+  ```
