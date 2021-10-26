@@ -138,7 +138,7 @@ You can always see my solution by loading the demo, right clicking anywhere on t
   ------------------------------------------
           \   ^__^
           \  (oo)\_______
-              (__)\       )\/\
+             (__)\        )\/\
                   ||----w |
                   ||     ||
   ```
@@ -150,7 +150,7 @@ You can always see my solution by loading the demo, right clicking anywhere on t
   -----------------------------------------
           \   ^__^
           \  (oo)\_______
-              (__)\       )\/\
+             (__)\        )\/\
                   ||----w |
                   ||     ||
   ```
