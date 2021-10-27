@@ -61,20 +61,21 @@ or even within your browser. Try on different or invalid values to see what the 
 
 [Click here](demo/) for my working solution of this App.
 
-#### Prelims: Writing the Simone Web API
+#### Prelims: Writing the Simone Web API in a separate
 
-Before you code up the Simone client, you need to consider some server-side support using Express. Create a new project called `simoneAPI/` and install `express` package using `node`. In an `index.js` file, add the necessary server logic to respond to the following queries:
+Before you code up the Simone client, you need to consider some server-side support using Express. Create a new project directory called `simoneAPI` (yes, a totally separate folder outside of your project), and initialize `npm`. Then install the `express`. In an `index.js` file, use the `express` kit to add the necessary server logic to respond to the following queries:
 
-- Two commands are accepted, and all others will be rejected with an HTTP 400 error. The commands
-  must be issued as part of the URL's _query string_:
+- Your server should only accept `GET` commands that supply two query parameters:
 
-  - `cmd`: The command we request the API to run. The two acceptable values are `start` and `getSolution`.
+  - Two parameters are accepted, and all others should be rejected with an HTTP 400 error. The parameters must be issued as part of the URL's _query string_:
 
-    - If `cmd == start` the server should send the "greeting sequence" that Simone will play when a player first starts the game.
-    - If `cmd == getSolution` the server should send the "solution sequence" that the player must then repeat.
+    - `cmd`: The command that the user requests the Web API to run. The two acceptable values are `start` and `getSolution`.
 
-  - `rounds`: If the `getSolution` command is issued, then the client is further required to request the length of the
-    solution sequence, or in other words, the number of rounds to be played.
+      - If `cmd == start` the server should send the "greeting sequence" that Simone will play when a player first starts the game.
+      - If `cmd == getSolution` the server should send the "solution sequence" that the player must then repeat.
+
+    - `rounds`: If the `getSolution` command is issued, then the client is further required to request the length of the
+      solution sequence, or in other words, the number of rounds to be played.
 
 Successful executions of both commands will return a JSON object with the corresponding sequence. Test your API out using PostMan
 or even within your browser. Try on different or invalid values to see what the API returns.

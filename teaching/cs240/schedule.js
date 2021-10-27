@@ -25,12 +25,12 @@ let days = {
         url: "hwk4.schelling/",
         due: "10/27/2021",
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Simone the Memory Game",
-      //   url: "hwk5.simone/",
-      //   due: "11/8/2021",
-      // },
+      {
+        name: "Hwk 5",
+        title: "Simone the Memory Game",
+        url: "hwk5.simone/",
+        due: "11/12/2021",
+      },
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
@@ -170,13 +170,13 @@ let days = {
     "Review Ajax; Ajax Lab",
     // wk 9
     "Node.js and npm",
-    "Software Process Models; Agile/Scrum",
+    "Remote development; Express Package",
     // wk 10
+    "Software Process Models; Agile/Scrum",
     "Persona and Scenarios Lab",
-    "User Stories and Features Lab",
     // wk 11
-    "Express and EJS",
-    "Express Lab",
+    "User Stories and Features Lab",
+    "Templates: EJS",
     // wk 12
     "Work/Sprint Review with David",
     "Software Testing; Testing lab",
@@ -185,7 +185,7 @@ let days = {
     "<strong>Thanksgiving</strong>",
     // wk 14
     "Work/Sprint Review with David",
-    "Industry Panel: Alexia Ingerson (Intel); Banji Oyewole (FreeFly); Kayla Ramos (Infoblox); Dr. Sayantan Sur (Nvidia)",
+    "Industry Panel: Alexia Ingerson (Intel); Banji Oyewole (FreeFly); Kayla Ramos (ActZero); Dr. Sayantan Sur (Nvidia)",
     // wk 15
     "Work/Sprint Review with David",
     "<strong>Reading Period</span>",
