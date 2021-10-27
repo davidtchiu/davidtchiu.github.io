@@ -28,9 +28,11 @@ JavaScript called **_Simone_**, the copyright-friendlier(?) version of Simon.
 
 #### Student Outcomes
 
+- Exposure to remote/backend development of Web Services
 - Use of node and npm
 - Calling Web Service APIs with the Axios library
 
+<!--
 #### Simone Web API
 
 First, we describe the API to the Simone Web Service. The API is located here
@@ -47,7 +49,7 @@ must be issued as part of the URL's _query string_:
   solution sequence, or in other words, the number of rounds to be played.
 
 Successful executions of both commands will return a JSON object with the corresponding sequence. Test the API out using PostMan
-or even within your browser. Try on different or invalid values to see what the API returns.
+or even within your browser. Try on different or invalid values to see what the API returns. -->
 
 #### Working Solution
 
@@ -55,7 +57,7 @@ or even within your browser. Try on different or invalid values to see what the 
 
 #### Instructions
 
-<!-- This homework has two parts: You will meed to write a web service API that will be deployed on a remote server first. Then you will be writing the Simone game client in a separate project folder. **You should start on this project as early as possible.**
+This homework has two parts: You will meed to write a web service API that will be deployed on a remote server first. Then you will be writing the Simone game client in a separate project folder. **You should start on this project as early as possible.**
 
 #### Part I: Writing the Simone Web API on a Remote Server
 
@@ -112,7 +114,7 @@ In the returned sequence, B, R, G, Y correspond to Blue, Red, Green, and Yellow,
 
 When you're sure that your web service is up and running, move on.
 
-##### Part II: The Simone Game Client -->
+##### Part II: The Simone Game Client
 
 ###### Starter Code and Git
 
@@ -120,11 +122,12 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 ###### Requirements
 
-- Your program must use the Simone API I provided above determine the color sequences.
+- Your program must use the Simone server-side API that you wrote in the previous section. However, if you're anxious to get the client up and running, you could always do your testing against my Simone API (`http://cs.pugetsound.edu/~dchiu/cs240/api/simone`) first.
 
 - Use the file templates that were provided to you.
   **_DO NOT_** modify `index.html`. Take a look through `index.html`
-  to find the structure and the IDs of the useful HTML elements. Also look through the CSS file to get a sense of what's been provided. You may make changes to the CSS if you wish.
+  to find the structure and the IDs of the useful HTML elements. Also look through the CSS file
+  to get a sense of what's been provided.
 
 - To play sounds using JavaScript is quite simple: look into the [Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio) class.
   8 music files (wav) have been provided to you in the `sounds/` directory:
@@ -170,11 +173,16 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 Have some free time? Add the following features:
 
-- The real Simon(e) game speeds up the intervals between each button in higher rounds. You could implement increasingly faster reveals of the solution at the beginning of each round.
+- The real Simon(e) game speeds up the intervals between each button in higher rounds. You could implement
+  increasingly faster reveals of the solution at the beginning of each round.
 
-- The real Simon(e) also keeps a time limit that a user has between pressing each button, which makes the game even harder. To induce even more anxiety, I would recommend showing the countdown timer to the user, and resetting it after each correct button-press.
+- The real Simon(e) also keeps a time limit that a user has between pressing each button, which
+  makes the game even harder. To induce even more anxiety, I would recommend showing the countdown timer
+  to the user, and resetting it after each correct button-press.
 
-- Do a better job handling the Axios errors. Currently, you're only asked to display the error on the console, but would a real player know what was happening? You could tell the user there was a problem starting up the game and to try again later, or you could take the user back to the beginning state of the game.
+- Do a better job approaching the Axios errors. Currently, you're only asked to display the error on the
+  console, but would a real player know what was happening? You could tell the user there was a problem
+  starting up the game, or you could take the user back to the beginning state of the game.
 
 #### Submission
 
@@ -185,6 +193,18 @@ Assignment submission is simple. Simply make sure that the latest code is commit
 ```
 CS 240 Homework (Simone)
 
+
+----------------------------------------------------------
+[40/40pts] Server-side: Simone Web API
+
+> You must write the server-side API according to my specifications
+using the Express package.
+
+> All invalid commands or command combinations should result in an
+HTTP 400 error.
+
+> The API must be deployed using node on a port that you specify.
+Ensure that the web service is "up" at all times.
 
 ----------------------------------------------------------
 [20/20pts] Client-Side: AJAX
@@ -250,5 +270,5 @@ Suggestions (No Deductions)
 
 
 
-Total: 85 pt
+Total: 125 pt
 ```
