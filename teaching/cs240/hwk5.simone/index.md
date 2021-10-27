@@ -28,15 +28,9 @@ JavaScript called **_Simone_**, the copyright-friendlier(?) version of Simon.
 
 #### Student Outcomes
 
-- Exposure to OOP in JavaScript
-- Use of asynchronous functions/methods
+- Exposure to remote/backend development of Web Services
+- Use of node and npm
 - Calling Web Service APIs with the Axios library
-- More practice with manipulating DOM objects
-- More practice using event listeners and callbacks
-
-#### Starter Code and Git
-
-Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-simone](https://github.com/davidtchiu/cs240-hwk-simone). Go to my github repo, and _*fork*_ this repository to your github account to obtain your own copy on github. Copy the Github URL to _your_ newly forked project. Then from your local machine, open a terminal, navigate to your directory for this class, and _*clone*_ your forked Github repo down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate with substantive messages. Branch early and often. Push your `main` branch up to your github repo for backing up your work. I also will be checking out your Github's `main` branch for grading!
 
 <!--
 #### Simone Web API
@@ -61,7 +55,11 @@ or even within your browser. Try on different or invalid values to see what the 
 
 [Click here](demo/) for my working solution of this App.
 
-#### Prelims: Writing the Simone Web API on a Remote Server
+#### Instructions
+
+This homework has two parts: You will meed to write a web service API that will be deployed on a remote server first. Then you will be writing the Simone game client in a separate project folder. **You should start on this project as early as possible.**
+
+#### Part I: Writing the Simone Web API on a Remote Server
 
 Before you code up the Simone client, you need to consider some server-side support using the Express package.
 
@@ -114,9 +112,15 @@ In the returned sequence, B, R, G, Y correspond to Blue, Red, Green, and Yellow,
 - Get a Random Start Sequence: [http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=start](http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=start)
 - Get a Solution of 10 Rounds: [http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=getSolution&rounds=10](http://cs.pugetsound.edu/~dchiu/cs240/api/simone/?cmd=getSolution&rounds=10)
 
-#### Program Requirements
+When you're sure that your web service is up and running, move on.
 
-For full credit, your project should observe the following requirements.
+##### Part II: The Simone Game Client
+
+###### Starter Code and Git
+
+Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-hwk-simone](https://github.com/davidtchiu/cs240-hwk-simone). Go to my github repo, and _*fork*_ this repository to your github account to obtain your own copy on github. Copy the Github URL to _your_ newly forked project. Then from your local machine, open a terminal, navigate to your directory for this class, and _*clone*_ your forked Github repo down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate with substantive messages. Branch early and often. Push your `main` branch up to your github repo for backing up your work. I also will be checking out your Github's `main` branch for grading!
+
+###### Requirements
 
 - Your program must use the Simone server-side API that you wrote in the previous section. However, if you're anxious to get the client up and running, you could always do your testing against my Simone API (`http://cs.pugetsound.edu/~dchiu/cs240/api/simone`) first.
 
@@ -191,7 +195,7 @@ CS 240 Homework (Simone)
 
 
 ----------------------------------------------------------
-[25/25pts] Server-side Simone API
+[40/40pts] Server-side: Simone Web API
 
 > You must write the server-side API according to my specifications
 using the Express package.
@@ -199,15 +203,11 @@ using the Express package.
 > All invalid commands or command combinations should result in an
 HTTP 400 error.
 
-----------------------------------------------------------
-[15/15pts] Class design
-
-> Your class design demonstrates good modularity and avoids
-  code duplication. Use of inheritance if appropriate.
-
+> The API must be deployed using node on a port that you specify.
+Ensure that the web service is "up" at all times.
 
 ----------------------------------------------------------
-[20/20pts] AJAX
+[20/20pts] Client-Side: AJAX
 
 > Your program must use your Simone Web Service API
   to retrieve a start sequence and solution-key sequence.
@@ -215,10 +215,11 @@ HTTP 400 error.
 > Your program gracefully handles all asynchronous execution,
   including retrieval of HTTP responses from the API.
 
-> Use of .then() chaining of promises or await is necessary.
+> Use of .then().catch() handling of promises or async/await is
+necessary.
 
 ----------------------------------------------------------
-[50/50pts] Events and Transitions
+[50/50pts] Client-Side: Events and Transitions
 
 > Pressing the "Play Simone!" button will create a new instance
   of the game with the user-specified number of rounds.
