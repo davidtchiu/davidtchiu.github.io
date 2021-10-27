@@ -29,7 +29,7 @@ let days = {
         name: "Hwk 5",
         title: "Simone the Memory Game",
         url: "hwk5.simone/",
-        due: "11/15/2021",
+        due: "11/12/2021",
       },
     ],
 
@@ -39,7 +39,7 @@ let days = {
         name: "Phase 1",
         title: "Planning and Design",
         url: "proj1.planning/",
-        due: "11/12/2021",
+        due: "11/10/2021",
       },
       // {
       //   name: "Phase 2.1",
@@ -170,12 +170,12 @@ let days = {
     "Review Ajax; Ajax Lab",
     // wk 9
     "Node.js and npm",
-    "Remote development; Express Package",
-    // wk 10
     "Software Process Models; Agile/Scrum",
+    // wk 10
     "Persona and Scenarios Lab",
-    // wk 11
     "User Stories and Features Lab",
+    // wk 11
+    "Remote development; Express Package",
     "Work!",
     // "Templates: EJS",
     // wk 12
