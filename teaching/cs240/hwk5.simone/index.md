@@ -187,7 +187,7 @@ CS 240 Homework (Simone)
 
 
 ----------------------------------------------------------
-[20/20pts] Client-Side: AJAX
+[35/35pts] AJAX
 
 > Your program must use your Simone Web Service API
   to retrieve a start sequence and solution-key sequence.
@@ -199,7 +199,7 @@ CS 240 Homework (Simone)
 necessary.
 
 ----------------------------------------------------------
-[50/50pts] Client-Side: Events and Transitions
+[50/50pts] Events and Transitions
 
 > Pressing the "Play Simone!" button will create a new instance
   of the game with the user-specified number of rounds.
@@ -250,5 +250,5 @@ Suggestions (No Deductions)
 
 
 
-Total: 85 pt
+Total: 100 pt
 ```
