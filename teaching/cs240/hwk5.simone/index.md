@@ -30,6 +30,8 @@ JavaScript called **_Simone_**, the copyright-friendlier(?) version of Simon.
 
 - Use of node and npm
 - Calling Web Service APIs with the Axios library
+- More practice with async execution
+- More practice with event handling
 
 #### Simone Web API
 
