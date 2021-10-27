@@ -122,9 +122,16 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 - Your program must use the Simone API I provided above determine the color sequences.
 
+- After you've forked and cloned my git repo, point your Terminal to the new project folder, and run:
+
+  ```
+  npm install
+  ```
+
+  This will install all the necessary (dependencies) packages listed in my `package.json` file. In our case, it's just the `axios` package that will be installed.
+
 - Use the file templates that were provided to you.
-  **_DO NOT_** modify `index.html`. Take a look through `index.html`
-  to find the structure and the IDs of the useful HTML elements. Also look through the CSS file to get a sense of what's been provided. You may make changes to the CSS if you wish.
+  **Do not modify index.html!** Just take a look through `index.html` to find the structure and the IDs of the useful HTML elements. Also look through the CSS file to get a sense of what's been provided. You may make changes to the CSS if you wish.
 
 - To play sounds using JavaScript is quite simple: look into the [Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio) class.
   8 music files (wav) have been provided to you in the `sounds/` directory:
@@ -133,8 +140,7 @@ Starter code for this assignment is provided in the github repo [https://github.
   - `nextRound.wav` should be played after the user successfully repeats the pattern for the current round. The exception is when the user wins the last round.
   - `wrong.wav` followed directly with `lose.wav` should be played at any point when the user presses the wrong button in the sequence.
   - `win.wav` should be played instead of `nextRound.wav` when the player correctly repeats the pattern in the final round.
-
-- Your solution must be object-oriented, so before putting down code, read through the requirements and come up with a good class diagram. (For reference, my solution only required two classes, but yours may differ.) Your program should therefore demonstrate good modularity and abstraction.
+  - You are more than welcome to replace the sound files with your own.
 
 - You must use the Simone Web Service API to get the welcome sequence and gameplay sequence. That is,
   do not generate a sequence on your own. Use the Axios library (already included in the index.html)

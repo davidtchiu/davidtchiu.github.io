@@ -137,8 +137,6 @@ Starter code for this assignment is provided in the github repo [https://github.
   - `wrong.wav` followed directly with `lose.wav` should be played at any point when the user presses the wrong button in the sequence.
   - `win.wav` should be played instead of `nextRound.wav` when the player correctly repeats the pattern in the final round.
 
-- Your solution must be object-oriented, so before putting down code, read through the requirements and come up with a good class diagram. (For reference, my solution only required two classes, but yours may differ.) Your program should therefore demonstrate good modularity and abstraction.
-
 - You must use the Simone Web Service API to get the welcome sequence and gameplay sequence. That is,
   do not generate a sequence on your own. Use the Axios library (already included in the index.html)
   for making requests. The user starts by typing in a number of rounds (the length of the sequence)
