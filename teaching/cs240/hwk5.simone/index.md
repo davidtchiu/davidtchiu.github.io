@@ -178,6 +178,8 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 Have some free time? Add the following features:
 
+- Look into the `electron` npm package to make your game pop up in a standalone window rather than the browser.
+
 - The real Simon(e) game speeds up the intervals between each button in higher rounds. You could implement increasingly faster reveals of the solution at the beginning of each round.
 
 - The real Simon(e) also keeps a time limit that a user has between pressing each button, which makes the game even harder. To induce even more anxiety, I would recommend showing the countdown timer to the user, and resetting it after each correct button-press.
