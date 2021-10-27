@@ -61,9 +61,20 @@ or even within your browser. Try on different or invalid values to see what the 
 
 [Click here](demo/) for my working solution of this App.
 
-#### Prelims: Writing the Simone Web API in a separate
+#### Prelims: Writing the Simone Web API on a Remote Server
 
-Before you code up the Simone client, you need to consider some server-side support using Express. Create a new project directory called `simoneAPI` (yes, a totally separate folder outside of your project), and initialize `npm`. Then install the `express`. In an `index.js` file, use the `express` kit to add the necessary server logic to respond to the following queries:
+Before you code up the Simone client, you need to consider some server-side support using the Express package.
+
+- First, you'll need to have a way to develop on your remote server.
+- Open VSCode and download the `Remote - SSH` extension, if you haven't already.
+
+  - Under the "Remote Explorer" tab in VSCode, add a new `SSH Target`
+  - The command should be: `ssh user@ipaddress`, where `user` is the username I assigned to you, and `ipaddress` is your machine's IP address.
+  - Once you're logged in, click `Open Folder`. Then choose your home directory, for instance, `/home/dchiu`.
+  - You'll be asked to grant some permissions, which you should go ahead and do.
+  - Now that you're in your home directory, create a new project directory called `simoneAPI`.
+
+- Using the terminal, navigate inside this directory and initialize `npm`. Then install the `express`. In an `index.js` file, use the `express` toolkit to add the necessary server logic to respond to the following queries:
 
 - Your server should only accept `GET` commands that supply two query parameters:
 
