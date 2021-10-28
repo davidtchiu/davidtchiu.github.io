@@ -100,12 +100,12 @@ let days = {
         url: "lab7.combo/",
         due: "10/22/2021",
       },
-      // {
-      //   name: "Zoom Lab 8",
-      //   title: "Super Circle Drawer (ArrayLists)",
-      //   url: "lab8.superCircleDrawer/",
-      //   due: "10/29/2021",
-      // },
+      {
+        name: "Zoom Lab 8",
+        title: "Super Circle Drawer (ArrayLists)",
+        url: "lab8.superCircleDrawer/",
+        due: "10/29/2021",
+      },
       // {
       //   name: "Zoom Lab 9",
       //   title: "Election (HashMaps)",
