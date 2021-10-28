@@ -133,26 +133,7 @@ Assignment submission is simple. Simply make sure that the latest code is commit
 #### Grading
 
 ```
-CS 261 Homework (Schelling's Model)
-
-
-----------------------------------------------------------
-[10/10pts] Class design
-
-> Your class design demonstrates good modularity.
-
-> Demonstrates good use of inheritance and interfaces,
-  if applicable.
-
-> Use information-hiding if desirable (e.g., nested classes,
-private methods)
-
-
-----------------------------------------------------------
-[10/10pts] Exception handling
-
-> Your program gracefully handles all exceptions thrown.
-ArrayIndexOutOfBoundsException are aplenty.
+CS 240 Homework (Schelling's Model)
 
 
 ----------------------------------------------------------
@@ -164,17 +145,13 @@ for this assignment.
 > Neighborhood similarity scores are calculated accurately
 for each cell.
 
-> When moving a cell, a free spot is determined in
-constant time, and grabbed in FIFO order.
+> No exceptions are thrown.
 
 
 ----------------------------------------------------------
 [5/5pts] Comments
 
-> You include sufficient Javadocs comments for each class and method.
-
-> You include sufficient inline comments in your methods.
-
+> You include sufficient comments describing your work.
 
 ----------------------------------------------------------
 [0pts] Misc. Deductions
