@@ -137,7 +137,17 @@ CS 240 Homework (Schelling's Model)
 
 
 ----------------------------------------------------------
-[50/50pts] Implementation and Efficiency
+[75/75pts] Implementation
+
+> The grid should be drawn on page load with the given
+properties from the input fields. Any changes to the form
+(dimensions, colors, etc) should be reflected in the grid
+immediatedly.
+
+> There is a small delay between each generation of the grid.
+
+> Event handling is properly implemented for all buttons
+and text fields.
 
 > Runtime efficiency consideration is emphasized
 for this assignment.
@@ -145,8 +155,7 @@ for this assignment.
 > Neighborhood similarity scores are calculated accurately
 for each cell.
 
-> No exceptions are thrown.
-
+> Exceptions, if thrown, are handled gracefully.
 
 ----------------------------------------------------------
 [5/5pts] Comments
