@@ -202,9 +202,10 @@ let days = {
     "Selection sort",
     "Bubble Sort and optimizations",
     "Zoom Lab 11",
-    "Shaker sort, list operations",
-    // wk 15
+    // "Shaker sort, list operations",
     "Recursion",
+    // wk 15
+    "Recursion (cont.)",
     "<strong><emph>Review</emph></strong>",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",

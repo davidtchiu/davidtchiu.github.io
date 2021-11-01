@@ -127,8 +127,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   *
   ```
 
-  - **(Nested)** `reveal` which inputs an integer `n` and returns a String. It gradually reveals each number 1, 2, 3, ..., up to
-    `n`, on each line (see below). This method requires a nested loop. Ignore negative input.
+  - **(Nested)** `reveal()` which inputs an integer `n` and returns a String. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). This method requires a nested loop. Ignore negative input. Recall that `"\n"` can be used to symbolize a "newline" character.
 
   ```java
   Loops l = new Loops();
@@ -149,7 +148,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   12345678
   ```
 
-- **(Nested, involves arrays)** Write a method called `rotate()` that inputs an array of Strings and an integer `N`. If `N > 0`, your method should shift every item in the array one position to the right, and the right-most item would jump to the left. If `N < 0`, you'll want to do the same, but move all items to the left, with left-most item jumping to the right. Complete this rotation `|N|` times. (Hint: Start by focusing on writing a loop that can perform a single rotation, shifting each number one spot left/right).
+- **(Nested, involves arrays)** Write a method called `rotate()` that inputs an array of Strings and an integer `N`. If `N > 0`, your method should shift every item in the array one position to the right, and the right-most item would jump to the left. If `N < 0`, you'll want to do the same, but move all items to the left, with left-most item jumping to the right. Complete this rotation `|N|` times. Your method should return the rotated array. (Hint: Start by focusing on writing a loop that can perform a single rotation, shifting each number one spot left/right).
 
   ```java
   import java.util.Arrays;  // this is for printing arrays

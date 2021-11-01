@@ -121,15 +121,15 @@ let days = {
     "Cost analysis: join algorithms",
     // wk 11
     "Start indexing",
-    "Indexing: B+Trees",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 12
     // "B+Trees: properties, operations",
-    "B+Trees (cont.): complexity analysis; Start dynamic hashing",
-    "Bitmaps",
+    "B+Trees: operations and properties",
+    "B+Trees (cont.): complexity analysis",
+    "Extendible hashing",
     // wk 13
-    "Bitmap compression: WAH",
+    "Bitmap indexing",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
