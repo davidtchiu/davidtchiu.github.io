@@ -59,12 +59,12 @@ let days = {
         url: "proj3.planning/",
         due: "11/1/2021",
       },
-      // {
-      //   name: "Proj 4",
-      //   title: "Implementation",
-      //   url: "proj4.impl/",
-      //   due: "12/6/2021",
-      // },
+      {
+        name: "Proj 4",
+        title: "Implementation",
+        url: "proj4.impl/",
+        due: "12/6/2021",
+      },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
@@ -113,19 +113,19 @@ let days = {
     "Shortfalls of 2NF; BCNF",
     // wk 9
     "Canonical cover of FD Sets",
-    "Disk and files: access times",
-    "Access patterns, disk scheduling; Start files",
-    // "Buffer mgr; Start files: Format tradeoffs",
+    "Disks and files; access patterns",
+    "Data access time",
     // wk 10
+    "Disk scheduling; Buffer management",
     "File organization of tuples",
     "Cost analysis: join algorithms",
-    "Start indexing",
     // wk 11
+    "Start indexing",
     "Indexing: B+Trees",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 12
-    "B+Trees: properties, operations",
+    // "B+Trees: properties, operations",
     "B+Trees (cont.): complexity analysis; Start dynamic hashing",
     "Bitmaps",
     // wk 13
