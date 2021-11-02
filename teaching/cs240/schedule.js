@@ -172,8 +172,8 @@ let days = {
     "Node.js and npm",
     "Software Process Models; Agile/Scrum",
     // wk 10
-    "Vision, Persona, and Scenarios Lab",
-    "Work! Refine your scenarios",
+    "Vision and Persona Lab",
+    "Continued work: Scenarios Lab",
     // wk 11
     "User Stories and Features Lab",
     "Remote development; Express",
