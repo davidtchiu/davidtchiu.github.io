@@ -1,12 +1,16 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: Personas and Scenarios
+### In-Class Exercise: Vision, Personas, and Scenarios
 
 By this time, you should have a rough idea of what your term project will be, and it's useful to think about who might be using your product, and in what ways. In this exercise you will be working with your team to write personas and scenarios for your software. This lab is meant to jumpstart the requirements needed for Project 1.
 
 #### Student Outcomes
 
 - To practice the agile design process
+
+#### Preliminary
+
+Before you can start thinking the types of users who will be interacting with your application, you and your group should first decide on _what_ app you'll be building. If you haven't already decided, then go here to [Project 1](../proj1.planning/) and use this time to work on the **Proposed Software Vision** section.
 
 #### Part 1 - Writing a Persona
 
