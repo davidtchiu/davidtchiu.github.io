@@ -129,7 +129,7 @@ There are two items of submission:
 
 1. Make sure that your vision statement, persona, and scenario documents are pushed onto Github (before the 12am deadline). Then send me the URL to your repository on [canvas](https://canvas.pugetsound.edu).
 
-2. Invite me to join your Trello workspace.
+2. Invite me to join your Trello workspace so I can keep track of your progress and velocity.
 
 #### Grading
 
