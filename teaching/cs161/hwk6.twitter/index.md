@@ -131,35 +131,54 @@ Do not attempt this assignment without thorough understanding of the String meth
   History (3): #hack #chop #loggerup
   ```
 
-- Now write a class called `TweetStats` and create the `public static void main(String[] args)` method. Inside this method, you should first instantiate a `TweetProcessor` object. Then use a `Scanner` to accept tweets from the user on the Terminal. For each tweet that your program obtains from the user, you'll _process_ (i.e., by calling `processTweet()`) it using the `TweetProcessor`. Do this repeatedly until `.quit` is input (make sure not to process `.quit` as if it were a tweet!) Then call `toString()` on the TweetProcessor object and print out its return value.
+- Now write a class called `TweetStats` and create the `public static void main(String[] args)` method. Inside this method, you should first instantiate a `TweetProcessor` object. Then use a `Scanner` to accept tweets from the user on the Terminal. For each tweet that your program obtains from the user, you'll _process_ (i.e., by calling `processTweet()`) it using the `TweetProcessor`. Continuously prompt the user for another tweet (just like we saw with ChatBot during lecture.)
+
+  There are two special commands you must listen for though.
+
+  - The first is `.status`. If this command is given, then call and print the results of the TweetProcess's `toString()` method to get a report of the stats that the TweetProcessor has collected so far. Your program should continue to prompt for input afterwards.
+  - The second is `.quit`. If this command is given, then your loop/program should terminate. Call and print the results of the TweetProcess's `toString()` method to get a report of final stats.
+
+  is input (make sure not to process `.quit` as if it were a tweet!) Then call `toString()` on the TweetProcessor object and print out its return value.
 
   For instance, let's say the following tweets are input to my program:
 
   ```
-  Please enter a tweet (or type .quit to exit):
-  > Hi @univpugetsound loggers!
+  ====================================
+  Welcome to my TweetStats Program!
+  ====================================
+  Enter a tweet (.status or .quit): Hi @univpugetsound loggers!
 
-  Please enter a tweet (or type .quit to exit):
-  > #hack #hack #chop #chop
+  Enter a tweet (.status or .quit): #hack #hack #chop #chop
 
-  Please enter a tweet (or type .quit to exit):
-  > The Lady Logs vie for the D3 championship! #LoggerUp @univpugetsound
+  Enter a tweet (.status or .quit): .status
+  > Tweets: 2
+  > Terms: 7
+  > Characters per tweet: 25.0
+  > Hashtags: 4
+  > Mentions: 1
+  > History (2): #hack #chop
 
-  Please enter a tweet (or type .quit to exit):
-  > What a send-off! Good luck, Loggers! RT @PSLoggers: Logger Sports Network: Good luck, @PSwbasketball! #LoggerUP
+  Enter a tweet (.status or .quit): The Lady Logs vie for the D3 championship! #LoggerUp @univpugetsound
 
-  Please enter a tweet (or type .quit to exit):
-  > I like sandwiches
+  Enter a tweet (.status or .quit): What a send-off! Good luck, Loggers! RT @PSLoggers: Logger Sports Network: Good luck, @PSwbasketball! #LoggerUP
 
-  Please enter a tweet (or type .quit to exit):
-  > .quit
+  Enter a tweet (.status or .quit): .status
+  > Tweets: 4
+  > Terms: 32
+  > Characters per tweet: 57.25
+  > Hashtags: 6
+  > Mentions: 4
+  > History (3): #hack #chop #loggerup
 
-  Tweets: 5
-  Terms: 35
-  Characters per tweet: 49.2
-  Hashtags: 6
-  Mentions: 4
-  History (3): #hack #chop #loggerup
+  Enter a tweet (.status or .quit): I like sandwiches
+
+  Enter a tweet (.status or .quit): .quit
+  > Tweets: 5
+  > Terms: 35
+  > Characters per tweet: 49.2
+  > Hashtags: 6
+  > Mentions: 4
+  > History (3): #hack #chop #loggerup
   ```
 
 <!-- - Now write a class called `TweetStats` and create the `main()` method. I've input some tweets in there and print out the stats.
