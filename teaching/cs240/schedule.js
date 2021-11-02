@@ -173,7 +173,7 @@ let days = {
     "Software Process Models; Agile/Scrum",
     // wk 10
     "Vision, Persona, and Scenarios Lab",
-    "Work!",
+    "Work! Refine your scenarios",
     // wk 11
     "User Stories and Features Lab",
     "Remote development; Express",
