@@ -120,11 +120,11 @@ let days = {
         title: "Node.js, npm",
         url: "lab.js6.npm/",
       },
-      //   {
-      //     name: "Lab 4",
-      //     title: "Personas and Scenarios",
-      //     url: "lab.personas/",
-      //   },
+      {
+        name: "Lab 10",
+        title: "Personas and Scenarios",
+        url: "lab.personas/",
+      },
       //   {
       //     name: "Lab 5",
       //     title: "User Stories and Sprint Planning",
