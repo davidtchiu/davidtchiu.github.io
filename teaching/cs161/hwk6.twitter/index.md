@@ -199,7 +199,7 @@ Do not attempt this assignment without thorough understanding of the String meth
     }
   ``` -->
 
-- You should get the following output if you implemented everything properly.
+<!-- - You should get the following output if you implemented everything properly.
 
   ```
   ====================================
@@ -211,7 +211,7 @@ Do not attempt this assignment without thorough understanding of the String meth
   Hashtags: 6
   Mentions: 4
   History (3): #hack #chop #loggerup
-  ```
+  ``` -->
 
 #### Program Defensively
 
