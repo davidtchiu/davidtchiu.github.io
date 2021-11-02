@@ -18,6 +18,8 @@ Your project can be anything, but it must observe the following requirements:
 - Use of third party libraries/tools must be approved by me
   - But you must use at least 2 significant Node.js packages, like Electron, MongoDB, React, Express, etc.
 - Deployment of your app on a server (that was given to you)
+- Scrum is practiced and meeting minutes logged daily
+- Trello is used to manage the product and sprint backlogs
 
 #### Proposed Software Vision
 
