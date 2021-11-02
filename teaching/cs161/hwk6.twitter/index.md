@@ -68,11 +68,13 @@ Notice that, after the `line.replace("Ishmael", "David")` was called, it returne
 
 #### Preliminary: String's split() Method
 
-An important `String` method called `split()` deserves additional attention. It is used to chop up a given String (using some separator, called a _delimiter_, into individual pieces, storing those individual pieces in an array. Here is its signature and description:
+An important `String` method called `split()` deserves additional attention. It is used to chop up a given String (using some separator, called a _delimiter_, into individual pieces, storing those individual pieces in an array.
 
-| Method                             | Description                                                                                                  |
+<!-- Here is its signature and description: -->
+
+<!-- | Method                             | Description                                                                                                  |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `String[] split(String delimiter)` | Splits this string around matches of the given delimiter, and returns an array containing those split-pieces |
+| `String[] split(String delimiter)` | Splits this string around matches of the given delimiter, and returns an array containing those split-pieces | -->
 
 To see how `split()` works, let's once again open up BlueJ's codepad. Type the following into the codepad, line-by-line.
 
