@@ -12,6 +12,7 @@ It is useful to those who study the impact of social networks to extract and cou
 
 - Incorporating APIs into existing projects projects.
 - Working with Arrays and ArrayLists.
+- Use of the Scanner object for obtaining user input.
 - Experience and familiarity with fundamental String methods.
 - Experience with String processing.
 
