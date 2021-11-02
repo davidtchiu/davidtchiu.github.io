@@ -8,6 +8,17 @@
 - To identify and write user stories
 - To practice the agile design process: sprint planning
 
+#### Project Requirements
+
+Your project can be anything you and your team would like to work on, but it must observe the following requirements:
+
+- JavaScript is to be used
+- Git and Github for version control
+- Graphical user interface (GUI)
+- You must provide a Web API to be used by your own app
+- Use of third party libraries/tools must be approved by me
+  - But you must use at least 2 significant Node.js packages, like Electron, MongoDB, React, Express, etc.
+
 #### Proposed Software Vision
 
 With your teammates, agree on a software application that you believe would be doable in 4-5 weeks of sustained team work. You'll have 1 or 2 individual homework assignments due in the meantime, but they're designed to give you the skills you'll need to produce a workable product by finals week. As you define your project, keep in mind that people's schedules and workloads vary. That is, I want you to be cautiously ambitious -- design what a minimal product release might look like by the end of the year, and build in some "reach features" for if you have time, or your team's "velocity" is faster than expected. As always, communicate your ideas with me before running away with it, so that I can input my suggestions.
