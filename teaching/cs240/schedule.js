@@ -29,7 +29,7 @@ let days = {
         name: "Hwk 5",
         title: "Simone the Memory Game",
         url: "hwk5.simone/",
-        due: "11/12/2021",
+        due: "11/15/2021",
       },
     ],
 
