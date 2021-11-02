@@ -68,7 +68,7 @@ Notice that, after the `line.replace("Ishmael", "David")` was called, it returne
 
 #### Preliminary: String's split() Method
 
-An important `String` method called `split()` deserves additional attention. It is used to chop up a given String (using some separator, called a _delimiter_, into individual pieces, storing those individual pieces in an array.
+An important `String` method called `split()` deserves additional attention. It is used to chop up a given String (using some separator, called a _delimiter_, into individual pieces, storing those individual pieces in an array (not ArrayList!) and returning that array.
 
 <!-- Here is its signature and description: -->
 
