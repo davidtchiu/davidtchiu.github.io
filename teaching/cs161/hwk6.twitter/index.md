@@ -91,9 +91,9 @@ for (int i = 0; i < terms.length; i++) {
 
 The String variable `post` is split up by space (`" "` was input as the delimiter). The split method stores all the split-up chunks into a string array, and returns this array. The `String[] terms` variable holds this array, and we are able to traverse through its contents as usual.
 
-Before you move on, make sure you can do the following exercise in Codepad:
+You don't need to turn this in, but before you move on, see if you can do the following exercise:
 
-- Say you have a string called roster, which stores a list of names like this: `David Chiu`, `Adam Smith`, `Brad Richards`, `America Chambers`. Write a method makeUserName that accepts roster as input, and prints each person's username on a separate line. A username is constructed using the first letter of first name appended with the last name. The entire username must be lower case. If done correctly, this method should print:
+- Say you have a string called roster, which stores a list of names of Professors as one long string like this: `David Chiu, Adam Smith, Brad Richards, America Chambers`. Each Professor's name is separated by a comma in the String. Write a method `makeUserName` that accepts roster as input, and prints each person's username on a separate line. A username is constructed using the first letter of first name appended with the last name. The entire username must be lower case. If done correctly, this method should print:
 
 ```
 dchiu
