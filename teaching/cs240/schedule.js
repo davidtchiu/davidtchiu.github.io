@@ -122,7 +122,7 @@ let days = {
       },
       {
         name: "Lab 10",
-        title: "Personas and Scenarios",
+        title: "Vision, Personas, and Scenarios",
         url: "lab.personas/",
       },
       //   {
