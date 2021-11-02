@@ -15,7 +15,7 @@ It is useful to those who study the impact of social networks to extract and cou
 - Experience and familiarity with fundamental String methods.
 - Experience with String processing.
 
-#### Preliminary: The String API
+<!-- #### Preliminary: The String API
 
 Before you get started, you need to familiarize yourself with two very useful classes. We taught you that, to communicate to users how to use a class, you document your class using Javadoc comments. The Javadoc, which can be converted into a web page, communicates the Application Programming Interface (API) of a class.
 We'll start with familiarizing ourselves with the String class, because it's something we've been using since the beginning. Recall that `Strings` are objects representing a sequence of characters. You can look at its [full documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) here, but I've outlined some of the important methods below:
@@ -63,11 +63,11 @@ line
 > "Call me Ishmael."   (String)
 ```
 
-Notice that, after the `line.replace("Ishmael", "David")` was called, it returned the expected result (`"Call me David"`). However, when we check the contents of line, it still stores `"Call me Ishmael"`. Similarly, the `line.substring(5,7)` call returns the expected substring, but line is still untouched.
+Notice that, after the `line.replace("Ishmael", "David")` was called, it returned the expected result (`"Call me David"`). However, when we check the contents of line, it still stores `"Call me Ishmael"`. Similarly, the `line.substring(5,7)` call returns the expected substring, but line is still untouched. -->
 
-#### Preliminary 2: The All Important split() Method
+#### Preliminary: String's split() Method
 
-An important `String` method called split deserves additional attention. It is used to chop up a given String (using some separator, called a _delimiter_, into individual pieces, storing those individual pieces in an array. Here is its signature and description:
+An important `String` method called `split()` deserves additional attention. It is used to chop up a given String (using some separator, called a _delimiter_, into individual pieces, storing those individual pieces in an array. Here is its signature and description:
 
 | Method                             | Description                                                                                                  |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -78,16 +78,15 @@ To see how `split()` works, let's once again open up BlueJ's codepad. Type the f
 ```java
 String post = "Call me Ishmael";
 String[] terms = post.split(" ");
-for (int i = 0; i < terms.length; i++)
-{
+for (int i = 0; i < terms.length; i++) {
     System.out.println(terms[i]);
 }
 > call
 > me
-> ishmael
+> Ishmael
 ```
 
-The string variable post is split up by space (" " was input as the delimiter). The split method stores all the split-up chunks into a string array, and returns this array. The `String[] terms` variable holds this array, and we are able to traverse through its contents as usual.
+The String variable `post` is split up by space (`" "` was input as the delimiter). The split method stores all the split-up chunks into a string array, and returns this array. The `String[] terms` variable holds this array, and we are able to traverse through its contents as usual.
 
 Before you move on, make sure you can do the following exercise in Codepad:
 
@@ -102,7 +101,7 @@ achambers
 
 #### Program Requirements
 
-Do not attempt this assignment without thorough understanding of the String methods seen above. Create a new project in BlueJ named `TweetProcessor`. This class allows users to input tweets, and it will generate some useful statistics given those tweets. It also maintains a list of the `N` most recently seen hashtags. We'll refer to this list as the history.
+Do not attempt this assignment without thorough understanding of the String methods in its API. Create a new project in BlueJ named `TweetProcessor`. This class allows users to input tweets, and it will generate some useful statistics given those tweets. It also maintains an ArrayList of the most recently seen hashtags. We'll refer to this list as the history.
 
 - Write a default constructor that initializes the fields.
 
@@ -118,9 +117,49 @@ Do not attempt this assignment without thorough understanding of the String meth
 
   - When you come across a `#hashtag`, you need to update the history as follows. First, the history should not contain any duplicates (i.e., every time you come across one, you need to see whether it already exists in your ArrayList, and add it in only if it's new!). You should ignore case, so if `#computing` is in the history, then `#COMPUTING` should not be added.
 
-- Write a method called `toString()` that will return a string containing the number of tweets, number of hashtags, number of mentions, and the number of terms processed (hashtags and mentions also count as terms). Additionally, you should report the number of characters (which includes spaces) and the average number of characters per tweet. Lastly, it reports the history of observed `#hashtag`s. You must print in this format: each #hashtag must be separated by a space and printed on the same line. This method should print `(no hashtags found)` if none has been observed.
+- Write a method called `toString()` that will return a string containing the number of tweets, number of hashtags, number of mentions, and the number of terms processed (hashtags and mentions also count as terms). Additionally, you should report the number of characters (which includes spaces) and the average number of characters per tweet. Lastly, it reports the history of observed `#hashtag`s. You must print in this format: each #hashtag must be separated by a space and printed on the same line. This method should print `(no hashtags found)` if none has been observed. For instance, when you print what this method returns, you might get something that looks like the following:
 
-- Now write a class called `TweetStats` and create the `main()` method. I've input some tweets in there and print out the stats.
+  ```
+  Tweets: 5
+  Terms: 35
+  Characters per tweet: 49.2
+  Hashtags: 6
+  Mentions: 4
+  History (3): #hack #chop #loggerup
+  ```
+
+- Now write a class called `TweetStats` and create the `public static void main(String[] args)` method. Inside this method, you should first instantiate a `TweetProcessor` object. Then use a `Scanner` to accept tweets from the user on the Terminal. For each tweet that your program obtains from the user, you'll _process_ (i.e., by calling `processTweet()`) it using the `TweetProcessor`. Do this repeatedly until `.quit` is input (make sure not to process `.quit` as if it were a tweet!) Then call `toString()` on the TweetProcessor object and print out its return value.
+
+  For instance, let's say the following tweets are input to my program:
+
+  ```
+  Please enter a tweet (or type .quit to exit):
+  > Hi @univpugetsound loggers!
+
+  Please enter a tweet (or type .quit to exit):
+  > #hack #hack #chop #chop
+
+  Please enter a tweet (or type .quit to exit):
+  > The Lady Logs vie for the D3 championship! #LoggerUp @univpugetsound
+
+  Please enter a tweet (or type .quit to exit):
+  > What a send-off! Good luck, Loggers! RT @PSLoggers: Logger Sports Network: Good luck, @PSwbasketball! #LoggerUP
+
+  Please enter a tweet (or type .quit to exit):
+  > I like sandwiches
+
+  Please enter a tweet (or type .quit to exit):
+  > .quit
+
+  Tweets: 5
+  Terms: 35
+  Characters per tweet: 49.2
+  Hashtags: 6
+  Mentions: 4
+  History (3): #hack #chop #loggerup
+  ```
+
+<!-- - Now write a class called `TweetStats` and create the `main()` method. I've input some tweets in there and print out the stats.
 
   ```java
    public static void main(String[] args) {
@@ -136,7 +175,7 @@ Do not attempt this assignment without thorough understanding of the String meth
         tp.processTweet("I like sandwiches");
         System.out.println(tp.toString());
     }
-  ```
+  ``` -->
 
 - You should get the following output if you implemented everything properly.
 
