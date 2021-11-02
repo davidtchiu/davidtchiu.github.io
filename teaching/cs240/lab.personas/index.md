@@ -16,15 +16,15 @@ With your teammates, agree on a software application that you believe would be d
 
 Start by having one of your group members create a new Github project called `cs240-term-project` and clone it down to your machines.
 
-Your group should work together to come up with a **project vision statement**. This statement should just be a short 1-2 paragraph summary of what your product does. You can use Moore's template, given below:
+Your group should work together to come up with a **project vision statement**. This statement should just be a short 1-2 paragraph summary of what your product does. You can use Moore's template, given below, and you can skip the `UNLIKE` and `OUR PRODUCT` statements.`
 
 ```
 FOR (target customer)
 WHO (statement of the need or opportunity)
 THE (PRODUCT NAME) is a (product category)
 THAT (key benefit, compelling reason to buy)
-UNLIKE (primary competitive alternative)
-OUR PRODUCT  (statement of primary differentiation)
+UNLIKE (primary competitive alternative)   <----- optional
+OUR PRODUCT  (statement of primary differentiation) <----- optional
 ```
 
 Here's the example I showed you in class for an educational tool:
