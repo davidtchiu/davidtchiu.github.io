@@ -39,7 +39,7 @@ let days = {
         name: "Phase 1",
         title: "Planning and Design",
         url: "proj1.planning/",
-        due: "11/10/2021",
+        due: "11/12/2021",
       },
       // {
       //   name: "Phase 2.1",
@@ -172,10 +172,10 @@ let days = {
     "Node.js and npm",
     "Software Process Models; Agile/Scrum",
     // wk 10
-    "Persona and Scenarios Lab",
-    "User Stories and Features Lab",
-    // wk 11
+    "Vision, Persona, and Scenarios Lab",
     "Work!",
+    // wk 11
+    "User Stories and Features Lab",
     "Remote development; Express",
     // "Templates: EJS",
     // wk 12
