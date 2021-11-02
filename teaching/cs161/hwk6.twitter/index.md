@@ -205,13 +205,13 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 75pts.
+This assignment will be graded out of a total of 90.
 
     [2pts]  Appropriate constructor(s) have been implemented.
 
     [3pts]  The reset method has been properly implemented.
 
-    [10pts] isHashtag and isMention have been implemented using
+    [10pts] isHashtag() and isMention() have been implemented using
             proper calls to String methods.
 
     [10pts] toString() is properly implemented.
@@ -222,6 +222,13 @@ This assignment will be graded out of a total of 75pts.
     [10pts] processTweet manages an ArrayList of hashtags. A new
             hashtag is only added when it doesn't already exist
             (ignore case).
+
+    [15pts] The main() method in TweetStat continuously accepts
+            user input in the form of a tweet, and it processes
+            each one as soon as it's input. The only exception is
+            when .quit is entered, which terminates the loop/program
+            and prints out the stats of all the tweets that were
+            input.
 
     [5pts] You re-use code whenever possible.
 
