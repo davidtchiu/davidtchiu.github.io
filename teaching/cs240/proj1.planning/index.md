@@ -21,7 +21,7 @@ Your project can be anything, but it must observe the following requirements:
 - Scrum is practiced and meeting minutes logged daily
 - Trello is used to manage the product and sprint backlogs
 
-#### Proposed Software Vision
+<!-- #### Proposed Software Vision
 
 With your teammates, agree on a software application that you believe would be doable in 4-5 weeks of sustained team work. You'll have 1 or 2 individual homework assignments due in the meantime, but they're designed to give you the skills you'll need to produce a workable product by finals week. As you define your project, keep in mind that people's schedules and workloads vary. That is, I want you to be cautiously ambitious -- design what a minimal product release might look like by the end of the year, and build in some "reach features" for if you have time, or your team's "velocity" is faster than expected. As always, communicate your ideas with me before running away with it, so that I can input my suggestions.
 
@@ -34,7 +34,47 @@ With your teammates, agree on a software application that you believe would be d
 
 - Name this file `README.md` and remember to push it up to Github when you're done. If you refresh your Github project page, it should now display the vision statement directly within the page. Add a link to your Trello workspace to this readme.
 
-- It would be ideal to have the product vision written and agreed-upon before the **Persona/Scenarios Lab**.
+- It would be ideal to have the product vision written and agreed-upon before the **Persona/Scenarios Lab**. -->
+
+#### Project Vision Statement
+
+<!-- Before you can start thinking the types of users who will be interacting with your application, you and your group should first decide on _what_ app you'll be building. If you haven't already decided, then go here to [Project 1](../proj1.planning/) and use this time to work on the **Proposed Software Vision** section. -->
+
+The [in-class lab](../lab.personas) should've given you and your team a head start on the vision statement, but I'll repeat the requirements here for good measure.
+
+With your teammates, agree on a software application that you believe would be doable in 4-6 weeks of sustained team work. You’ll have just 1 individual homework assignment due in the meantime, and it's designed to hone the skills you’ll need to produce a workable product by finals week. As you define your project, keep in mind that other students' schedules and workloads vary. I want you to be cautiously ambitious – design what a minimal product release might look like by the end of the year, and build in some "reach features" for if you have extra time, or your team’s "velocity" is faster than anticipated. As always, communicate your ideas with me before running away with it, so that I can input suggestions.
+
+Start by having one of your group members create a new Github project called `cs240-term-project` and clone it down to your machines.
+
+Your group should work together to come up with a **project vision statement**. This statement should just be a short 1-2 paragraph summary of what your product does. You can use Moore's template, given below:
+
+```
+FOR (target customer)
+WHO (statement of the need or opportunity)
+THE (PRODUCT NAME) is a (product category)
+THAT (key benefit, compelling reason to buy)
+UNLIKE (primary competitive alternative)
+OUR PRODUCT  (statement of primary differentiation)
+```
+
+Here's the example I showed you in class for an educational tool:
+
+```
+Product vision for iLearn
+
+FOR teachers and educators WHO need a way to help students use web-based learning resources and applications, THE iLearn system is an open learning environment THAT allows the set of resources used by classes and students to be easily configured for these students and classes by teachers themselves. UNLIKE Virtual Learning Environments, such as Moodle, the focus of iLearn is the learning process rather than the administration and management of materials, assessments and coursework. OUR product enables teachers to create subject and age-specific environments for their students using any web-based resources, such as videos, simulations and written materials that are appropriate.
+
+Schools and universities are the target customers for the iLearn system as it will significantly improve the learning experience of students at relatively low cost. It will collect and process learner analytics that will reduce the costs of progress tracking and reporting.
+```
+
+<!-- (In the real world, you’d be justifying what makes your product unique on the market, but we’ll skip that part.) Here are a couple resources that helps you write your vision statement:
+
+https://280group.com/what-is-product-management/skills/product-vision/
+https://www.productboard.com/blog/write-product-vision/ -->
+
+Write the vision statement together, and put it in a file named `README.md`. Remember to push it up to Github when you’re done. If you refresh your Github project page, it should now display the vision statement directly within the page.
+
+The vision statement must be written before moving on to defining your personas and scenarios. You are therefore expected to continue working on finishing this lab on your own time. **Work on your term project starts now!**
 
 #### Design Documents: Personas and Scenarios
 
