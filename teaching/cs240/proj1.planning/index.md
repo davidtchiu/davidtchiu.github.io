@@ -127,7 +127,7 @@ In the sprint planning lab, every team member should all have created a [Trello]
 
 There are two items of submission:
 
-1. Make sure that your vision statement, persona, and scenario documents are pushed onto Github (before the 12am deadline). Then send me the link to your repository on [canvas](https://canvas.pugetsound.edu).
+1. Make sure that your vision statement, persona, and scenario documents are pushed onto Github (before the 12am deadline). Then send me the URL to your repository on [canvas](https://canvas.pugetsound.edu).
 
 2. Invite me to join your Trello workspace.
 
