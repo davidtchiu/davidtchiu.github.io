@@ -10,14 +10,14 @@
 
 #### Project Requirements
 
-Your project can be anything you and your team would like to work on, but it must observe the following requirements:
+Your project can be anything, but it must observe the following requirements:
 
 - JavaScript is to be used
-- Git and Github for version control
-- Graphical user interface (GUI)
-- You must provide a Web API to be used by your own app
+- Git and Github used for version control
+- A graphical user interface (GUI) through HTML+CSS must be supported
 - Use of third party libraries/tools must be approved by me
   - But you must use at least 2 significant Node.js packages, like Electron, MongoDB, React, Express, etc.
+- Deployment of your app on a server (that was given to you)
 
 #### Proposed Software Vision
 
