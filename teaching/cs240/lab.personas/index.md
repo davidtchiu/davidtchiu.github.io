@@ -8,7 +8,7 @@ By this time, you should have a rough idea of what your term project will be, an
 
 - To practice the agile design process
 
-#### Preliminary
+#### Preliminary - Project Vision Statement
 
 Before you can start thinking the types of users who will be interacting with your application, you and your group should first decide on _what_ app you'll be building. If you haven't already decided, then go here to [Project 1](../proj1.planning/) and use this time to work on the **Proposed Software Vision** section.
 
@@ -85,6 +85,6 @@ Before you can start thinking the types of users who will be interacting with yo
   in the school.
   ```
 
-- Use the rest of the class period to write up one or two scenarios for your persona.
+<!-- - Use the rest of the class period to write up one or two scenarios for your persona. -->
 
-- **Note on continued work:** After lab is finished, you and your team must continue to define the remaining personas and scenarios. Each persona should be involved in several scenarios. Your work outside on this outside of class is crucial to the success of your project.
+- **Note on continued work:** After lab is finished, you and your team should continue to define the remaining personas and scenarios. Each persona should be involved in several scenarios. Your work outside on this outside of class is crucial to the success of your project.
