@@ -160,7 +160,7 @@ Starter code for this assignment is provided in the github repo [https://github.
 
   Then `bundle.js` will be automatically updated every time you make a change and save to the `simone.js` file! This command replaces your repeated calls to `browserify`. By the way, you'll notice that `watchify` does not return the terminal prompt back to you, which is normal. Just open up a new `bash` Terminal from within VS Code.
 
-  - **Why do this?** I'm perfectly aware that you could have avoided all this work by just using the Axios `<script>` element I had you include for the Dog and CowSay Jokes Labs. But I _insist_ on getting you to understand how to work with npm packages, as it is a crucial skill in industry. Moreover, not all packages are made available over the web! The people who made Axios just happens to be nice enough to host their code for free. So yes, there are definitely npm packages where you simply _must_ use the method described above to run on a browser.
+  - **Why do this?** I'm perfectly aware that you could have avoided all this work by just using the Axios `<script>` element I had you include for the Dog and CowSay Jokes Labs. But I _insist_ on getting you to understand how to work with npm packages, as it is a crucial skill in industry development. Moreover, not all packages are made available over the web! The people who made Axios just happens to be nice enough to host their code for free. So yes, there are definitely npm packages where you simply _must_ use the method described above to run on a browser.
 
 - The user starts by typing in a number of rounds (the length of the sequence)
   they wish to play, and pressing on the "Play Simone!" button. Your game needs to make two consecutive
