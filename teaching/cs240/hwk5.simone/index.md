@@ -135,8 +135,9 @@ Starter code for this assignment is provided in the github repo [https://github.
 - Use the file templates that were provided to you.
   You **will** need to modify `index.html` to include your JavaScript file. Take a look through `index.html` to find the structure and the IDs of the useful HTML elements. Also look through the CSS file to get a sense of what's been provided. You may make changes to the CSS if you wish.
 
-- You must use the Simone Web Service API to get the welcome sequence and gameplay sequence. That is,
-  do not generate a sequence on your own. Use the Axios library for making requests. As I explained in lecture, you need to use the `require()` function to import any `npm` packages you install. **But here's the rub**: `require()` is only recognized in the node.js runtime, which means your browser doesn't recognize the function when you go deploy your code.
+- You must use the Simone Web Service API to get the welcome sequence and gameplay sequence. However, I would ignore the Web Service API until the very end. Initially, I would generate a color sequence on your own, just to get your app up and running. Once you have all of the functionalities written and tested, _then_ work on obtaining the color sequences via my Web API.
+
+- To that end, you must use the Axios library for making requests. As I explained in lecture, you need to use the `require()` function to import any `npm` packages you install. **But here's the rub**: `require()` is only recognized in the node.js runtime, which means your browser doesn't recognize the function when you go deploy your code.
 
   No worries, there is a workaround for this! Download and install two command-line tools using npm. On your command line, type:
 
