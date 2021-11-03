@@ -152,15 +152,15 @@ Starter code for this assignment is provided in the github repo [https://github.
   browserify simone.js -o bundle.js
   ```
 
-  What this does is that it will take all of the `npm` packages and bundle them together with your `simone.js`. The output file is named `bundle.js`, and you should include only this file in your `index.html` page.
-
-  One problem is that you need to run `browserify` _every_ time you make a change to your `simone.js` file, which can get very annoying. That's why I also had you download `watchify`. If you instead ran:
+  What this does is that it will take all of the `npm` packages and bundle them together with your `simone.js`. The output file is named `bundle.js`, and you should include only this file in your `index.html` page. One problem is that you need to run `browserify` _every_ time you make a change to your `simone.js` file, which can get very annoying. That's why I also had you download `watchify`. If you instead ran:
 
   ```
   watchify simone.js -o bundle.js
   ```
 
   Then `bundle.js` will be automatically updated every time you make a change and save to the `simone.js` file! This command replaces your repeated calls to `browserify`. By the way, you'll notice that `watchify` does not return the terminal prompt back to you, which is normal. Just open up a new `bash` Terminal from within VS Code.
+
+  - **Why do this?** I'm perfectly aware that you could have avoided all this work by just using the `<script>` I had you include for the Dog Lab. But I insist on getting you to understand how to work with npm libraries, as it is a crucial skill in industry. Moreover, not all packages are made available over the web! The people who made Axios just happens to be nice enough to host their code for free. So yes, there are definitely npm packages where you simply _must_ use the method described above to run on a browser.
 
 - The user starts by typing in a number of rounds (the length of the sequence)
   they wish to play, and pressing on the "Play Simone!" button. Your game needs to make two consecutive
