@@ -133,7 +133,39 @@ Starter code for this assignment is provided in the github repo [https://github.
   This will install all the necessary (dependencies) packages listed in my `package.json` file. In our case, it's just the `axios` package that will be installed.
 
 - Use the file templates that were provided to you.
-  **Do not modify index.html!** Just take a look through `index.html` to find the structure and the IDs of the useful HTML elements. Also look through the CSS file to get a sense of what's been provided. You may make changes to the CSS if you wish.
+  You **will** need to modify `index.html` to include your JavaScript file. Take a look through `index.html` to find the structure and the IDs of the useful HTML elements. Also look through the CSS file to get a sense of what's been provided. You may make changes to the CSS if you wish.
+
+- You must use the Simone Web Service API to get the welcome sequence and gameplay sequence. That is,
+  do not generate a sequence on your own. Use the Axios library for making requests. As I explained in lecture, you need to use the `require()` function to import any `npm` packages you install. **But here's the rub**: `require()` is only recognized in the node.js runtime, which means your browser doesn't recognize the function when you go deploy your code.
+
+  No worries, there is a workaround for this! Download and install two command-line tools using npm. On your command line, type:
+
+  ```
+  sudo npm install -g browserify
+  sudo npm install -g watchify
+  ```
+
+  The `-g` flag installs these tools globally, so that they're always accessible from your terminal. Now, let's say you create a file called `simone.js` that uses `require()` to import (npm) packages. When you're ready, run on your terminal:
+
+  ```
+  browserify simone.js -o bundle.js
+  ```
+
+  What this does is that it will take all of the `npm` packages and bundle them together with your `simone.js`. The output file is named `bundle.js`, and you should include only this file in your `index.html` page.
+
+  One problem is that you need to run `browserify` _every_ time you make a change to your `simone.js` file, which can get very annoying. That's why I also had you download `watchify`. If you instead ran:
+
+  ```
+  watchify simone.js -o bundle.js
+  ```
+
+  Then `bundle.js` will be automatically updated every time you make a change and save to the `simone.js` file! This command replaces your repeated calls to `browserify`. By the way, you'll notice that `watchify` does not return the terminal prompt back to you, which is normal. Just open up a new `bash` Terminal from within VS Code.
+
+- The user starts by typing in a number of rounds (the length of the sequence)
+  they wish to play, and pressing on the "Play Simone!" button. Your game needs to make two consecutive
+  API requests -- first for the greeting sequence, and then the solution sequence given the number of
+  rounds that was input by the user. If things go wrong (for instance, the server is down, or your wifi
+  is out), you should catch the error and report it on the console.
 
 - To play sounds using JavaScript is quite simple: look into the [Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio) class.
   8 music files (wav) have been provided to you in the `sounds/` directory:
@@ -143,14 +175,6 @@ Starter code for this assignment is provided in the github repo [https://github.
   - `wrong.wav` followed directly with `lose.wav` should be played at any point when the user presses the wrong button in the sequence.
   - `win.wav` should be played instead of `nextRound.wav` when the player correctly repeats the pattern in the final round.
   - You are more than welcome to replace the sound files with your own.
-
-- You must use the Simone Web Service API to get the welcome sequence and gameplay sequence. That is,
-  do not generate a sequence on your own. Use the Axios library (already included in the index.html)
-  for making requests. The user starts by typing in a number of rounds (the length of the sequence)
-  they wish to play, and pressing on the "Play Simone!" button. Your game needs to make two consecutive
-  API requests -- first for the greeting sequence, and then the solution sequence given the number of
-  rounds that was input by the user. If things go wrong (for instance, the server is down, or your wifi
-  is out), you should catch the error and report it on the console.
 
 - **_Button presses:_** Be careful when implementing the event listeners for button presses. Go to my
   solution to make sure your interactions match mine. For instance, the sound does not register on a
