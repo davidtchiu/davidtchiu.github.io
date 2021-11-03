@@ -197,7 +197,7 @@ Starter code for this assignment is provided in the github repo [https://github.
   watchify simone.js -o bundle.js
   ```
 
-  Then `bundle.js` will be automatically updated every time you make a change and save to the `simone.js` file! This command replaces your repeated calls to `browserify`. By the way, you'll notice that `watchify` does not return the terminal prompt back to you, which is normal. Just open up a new `bash` Terminal from within VS Code.
+  This way, `bundle.js` will be automatically updated every time you make a change and save to the `simone.js` file, saving you from repeatedly running `browserify` each time you make a change. (Think of it as a replacement for the `browserify` command). By the way, you'll notice that `watchify` will not return the terminal prompt back to you, which is normal. Just open up a new `bash` Terminal from within VS Code. When you're ready to quit `watchify`, just interrupt it by returning to its Terminal and pressing `control+c`.
 
   - **Why do this?** I'm perfectly aware that you could have avoided all this work by just using the Axios `<script>` element I had you include for the Dog and CowSay Jokes Labs. But I _insist_ on getting you to understand how to work with npm packages, as it is a crucial skill in industry development. Moreover, not all packages are made available over the web! The people who made Axios just happens to be nice enough to host their code for free. So yes, there are definitely npm packages where you simply _must_ use the method described above to run on a browser.
 
