@@ -135,33 +135,6 @@ Starter code for this assignment is provided in the github repo [https://github.
 - Use the file templates that were provided to you.
   You **will** need to modify `index.html` to include your JavaScript file. Take a look through `index.html` to find the structure and the IDs of the useful HTML elements. Also look through the CSS file to get a sense of what's been provided. You may make changes to the CSS if you wish.
 
-- You must use the Simone Web Service API to get the welcome sequence and gameplay sequence. However, I would ignore the Web Service API until the very end. Initially, I would generate a color sequence on your own, just to get your app up and running. Once you have all of the functionalities written and tested, _then_ work on obtaining the color sequences via my Web API.
-
-- To that end, you must use the Axios library for making requests. As I explained in lecture, you need to use the `require()` function to import any `npm` packages you install. **But here's the rub**: `require()` is only recognized in the node.js runtime, which means your browser doesn't recognize the function when you go deploy your code.
-
-  No worries, there is a workaround for this! Download and install two command-line tools using npm. On your command line, type:
-
-  ```
-  sudo npm install -g browserify
-  sudo npm install -g watchify
-  ```
-
-  The `-g` flag installs these tools globally, so that they're always accessible from your terminal. Now, let's say you create a file called `simone.js` that uses `require()` to import (npm) packages. When you're ready, run on your terminal:
-
-  ```
-  browserify simone.js -o bundle.js
-  ```
-
-  What this does is that it will take all of the `npm` packages and bundle them together with your `simone.js`. The output file is named `bundle.js`, and you should include only this file in your `index.html` page. One problem is that you need to run `browserify` _every_ time you make a change to your `simone.js` file, which can get very annoying. That's why I also had you download `watchify`. If you instead ran:
-
-  ```
-  watchify simone.js -o bundle.js
-  ```
-
-  Then `bundle.js` will be automatically updated every time you make a change and save to the `simone.js` file! This command replaces your repeated calls to `browserify`. By the way, you'll notice that `watchify` does not return the terminal prompt back to you, which is normal. Just open up a new `bash` Terminal from within VS Code.
-
-  - **Why do this?** I'm perfectly aware that you could have avoided all this work by just using the Axios `<script>` element I had you include for the Dog and CowSay Jokes Labs. But I _insist_ on getting you to understand how to work with npm packages, as it is a crucial skill in industry development. Moreover, not all packages are made available over the web! The people who made Axios just happens to be nice enough to host their code for free. So yes, there are definitely npm packages where you simply _must_ use the method described above to run on a browser.
-
 - The user starts by typing in a number of rounds (the length of the sequence)
   they wish to play, and pressing on the "Play Simone!" button. Your game needs to make two consecutive
   API requests -- first for the greeting sequence, and then the solution sequence given the number of
@@ -198,6 +171,35 @@ Starter code for this assignment is provided in the github repo [https://github.
 
 - If the player wins, you must play the appropriate sound bites, and change the
   background to `DeepSkyBlue`. Further, you must display the message `"Yay you win!"` to the user.
+
+###### Axios Package and the Web API (Do This Last!)
+
+- You _must_ use the Simone Web Service API I provided to you to get the welcome sequence and gameplay sequence. However, I would ignore the Web Service API until the very end. Initially, I would generate a color sequence on your own, just to get your app up and running. Once you have all of the functionalities written and tested, _then_ work on obtaining the color sequences via my Web API.
+
+- To that end, you must use the Axios library for making requests. As I explained in lecture, you need to use the `require()` function to import any `npm` packages you install. **But here's the rub**: `require()` is only recognized in the node.js runtime, which means your browser doesn't recognize the function when you go deploy your code.
+
+  No worries, there is a workaround for this! Download and install two command-line tools using npm. On your command line, type:
+
+  ```
+  sudo npm install -g browserify
+  sudo npm install -g watchify
+  ```
+
+  The `-g` flag installs these tools globally, so that they're always accessible from your terminal. Now, let's say you create a file called `simone.js` that uses `require()` to import (npm) packages. When you're ready, run on your terminal:
+
+  ```
+  browserify simone.js -o bundle.js
+  ```
+
+  What this does is that it will take all of the `npm` packages and bundle them together with your `simone.js`. The output file is named `bundle.js`, and you should include only this file in your `index.html` page. One problem is that you need to run `browserify` _every_ time you make a change to your `simone.js` file, which can get very annoying. That's why I also had you download `watchify`. If you instead ran:
+
+  ```
+  watchify simone.js -o bundle.js
+  ```
+
+  Then `bundle.js` will be automatically updated every time you make a change and save to the `simone.js` file! This command replaces your repeated calls to `browserify`. By the way, you'll notice that `watchify` does not return the terminal prompt back to you, which is normal. Just open up a new `bash` Terminal from within VS Code.
+
+  - **Why do this?** I'm perfectly aware that you could have avoided all this work by just using the Axios `<script>` element I had you include for the Dog and CowSay Jokes Labs. But I _insist_ on getting you to understand how to work with npm packages, as it is a crucial skill in industry development. Moreover, not all packages are made available over the web! The people who made Axios just happens to be nice enough to host their code for free. So yes, there are definitely npm packages where you simply _must_ use the method described above to run on a browser.
 
 #### Optional Extensions
 
