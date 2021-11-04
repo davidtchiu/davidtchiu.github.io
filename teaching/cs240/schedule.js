@@ -121,9 +121,14 @@ let days = {
         url: "lab.js6.npm/",
       },
       {
-        name: "Lab 10",
-        title: "Vision, Personas, and Scenarios",
+        name: "Lab 10a",
+        title: "Vision, Personas",
         url: "lab.personas/",
+      },
+      {
+        name: "Lab 10b",
+        title: "Scenarios",
+        url: "lab.scenarios/",
       },
       //   {
       //     name: "Lab 5",
