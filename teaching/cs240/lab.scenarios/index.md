@@ -16,7 +16,7 @@ By this time, you might have a rough idea of what your term project will be, and
 
   - A name for the scenario
   - An overall objective, and what's involved in reaching the objective
-  - Personas involved
+  - One or more personas are involved
   - Possible ways that the problem can be solved
   - Keep it high-level; No implementation details
 
@@ -68,6 +68,6 @@ By this time, you might have a rough idea of what your term project will be, and
 
 - Use the rest of the class period to write up one or two scenarios for your personas.
 
-- I don't have a preference for the format of your scenarios document, so feel free to use plaintext `.txt`, or a `.doc`, or a `.pdf` for your persona.
+- I don't have a preference for the format of your scenarios and persona documents, so feel free to use plaintext `.txt`, or a `.doc`, or a `.pdf`.
 
 - **Note on continued work:** After lab is finished, you and your team should continue to define the remaining personas and scenarios. Each persona should be involved in several scenarios. Your work outside on this outside of class is crucial to the success of your project.
