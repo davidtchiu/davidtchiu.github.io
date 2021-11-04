@@ -20,6 +20,24 @@ By this time, you might have a rough idea of what your term project will be, and
   - Possible ways that the problem can be solved
   - Keep it high-level; No implementation details
 
+- Before I give you an example, let's review an example persona we saw in lecture for the iLearn system:
+
+  ```
+  Elena, a school IT technician
+
+  Elena, age 28, is a senior IT technician in a large secondary school (high school) in Glasgow with
+  over 2000 students. Originally from Poland, she has a diploma in electronics from Potsdam University.
+  She moved to Scotland in 2011 after being unemployed for a year after graduation. She has a Scottish
+  partner, no children, and hopes to develop her career in Scotland. She was originally appointed as a
+  junior technician but was promoted, in 2014,  to a senior post responsible for all the school computers.
+
+  Although not involved directly in teaching, Elena is often called on to help in computer science
+  classes. She is a competent Python programmer and is a ‘power user’ of digital technologies. She has a
+  long-term career goal of becoming a technical expert in digital learning technologies and being
+  involved in their development. She wants to become an expert in the iLearn system and sees it as an
+  experimental platform for supporting new uses for digital learning.
+  ```
+
 - Here's an example scenario for Elena
 
   ```
@@ -48,7 +66,7 @@ By this time, you might have a rough idea of what your term project will be, and
   in the school.
   ```
 
-<!-- - Use the rest of the class period to write up one or two scenarios for your persona. -->
+- Use the rest of the class period to write up one or two scenarios for your personas.
 
 - I don't have a preference for the format of your scenarios document, so feel free to use plaintext `.txt`, or a `.doc`, or a `.pdf` for your persona.
 
