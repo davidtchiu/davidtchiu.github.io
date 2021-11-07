@@ -130,11 +130,11 @@ let days = {
         title: "Scenarios",
         url: "lab.scenarios/",
       },
-      //   {
-      //     name: "Lab 5",
-      //     title: "User Stories and Sprint Planning",
-      //     url: "lab.stories/",
-      //   },
+      {
+        name: "Lab 10c",
+        title: "User Stories and Sprint Planning",
+        url: "lab.stories/",
+      },
       //   {
       //     name: "Lab 6",
       //     title: "Express Lab",

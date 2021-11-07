@@ -44,13 +44,13 @@ let days = {
       //   due: "11/23/2021",
       // },
       // {
-      //   name: "Hwk 8",
+      //   name: "Final Hwk Prep",
       //   title: "Alt Prep",
       //   url: "hwk8.prep/",
       //   due: "11/30/2021",
       // },
       // {
-      //   name: "Hwk 8",
+      //   name: "Final Hwk",
       //   title: "Black Jack",
       //   url: "hwk8.blackjack/",
       //   due: "12/10/2021",
