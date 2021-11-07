@@ -41,36 +41,36 @@ let days = {
         url: "proj1.planning/",
         due: "11/12/2021",
       },
-      // {
-      //   name: "Phase 2.1",
-      //   title: "1st Sprint",
-      //   url: "proj2.sprints/",
-      //   due: "11/15/2021",
-      // },
-      // {
-      //   name: "Phase 2.2",
-      //   title: "2nd Sprint",
-      //   url: "proj2.sprints/",
-      //   due: "11/22/2021",
-      // },
-      // {
-      //   name: "Phase 2.3",
-      //   title: "3rd Sprint",
-      //   url: "proj2.sprints/",
-      //   due: "11/29/2021",
-      // },
-      // {
-      //   name: "Phase 2.4",
-      //   title: "4th Sprint",
-      //   url: "proj2.sprints/",
-      //   due: "12/6/2021",
-      // },
-      // {
-      //   name: "Presentation",
-      //   title: "Wrapup and Presentation",
-      //   url: "proj3.final/",
-      //   due: "12/14/2021",
-      // },
+      {
+        name: "Phase 2.1",
+        title: "1st Sprint",
+        url: "proj2.sprints/",
+        due: "11/15/2021",
+      },
+      {
+        name: "Phase 2.2",
+        title: "2nd Sprint",
+        url: "proj2.sprints/",
+        due: "11/22/2021",
+      },
+      {
+        name: "Phase 2.3",
+        title: "3rd Sprint",
+        url: "proj2.sprints/",
+        due: "11/29/2021",
+      },
+      {
+        name: "Phase 2.4",
+        title: "4th Sprint",
+        url: "proj2.sprints/",
+        due: "12/6/2021",
+      },
+      {
+        name: "Presentation",
+        title: "Wrapup and Presentation",
+        url: "proj3.final/",
+        due: "12/14/2021",
+      },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
