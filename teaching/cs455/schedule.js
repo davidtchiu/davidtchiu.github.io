@@ -31,12 +31,12 @@ let days = {
         url: "hwk5.norm/",
         due: "11/5/2021",
       },
-      // {
-      //   name: "Hwk 6",
-      //   title: "Joins!",
-      //   url: "hwk6.joins/",
-      //   due: "11/19/2021",
-      // },
+      {
+        name: "Hwk 6",
+        title: "Joins!",
+        url: "hwk6.joins/",
+        due: "11/19/2021",
+      },
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
