@@ -16,7 +16,7 @@ Download the file below, and extract it into your project directory. It contains
 
 #### Instructions
 
-This assignment is programming-intensive and can be time-consuming. You must get a good head start on it if you want to finish on time. In this assignment, you will get some hands-on experience programming several classical implementations of the natural join ($$R \bowtie S$$) operation, one of the key algorithms in relational database systems. Specifically, you will be implementing the 3 natural-join algorithms we learned in class. Their pseudo-codes are listed in the slides.
+In this assignment, you will get some hands-on experience programming several classical implementations of the natural join ($$R \bowtie S$$) operation, one of the key algorithms in relational database systems. Specifically, you will be implementing the 3 natural-join algorithms we learned in class. Their pseudo-codes are listed in the slides.
 
 <!-- - **Nested-Loop Join**
   The nested-loop join is the naive approach, and its mechanism follows almost exactly what you've been taught the $$R \bowtie S$$ relational operator does. It loops through each tuple in $R$ and $S$ and produces a concatenated tuple if the values of their common attributes are all equal. The pseudocode of the nested-loop join is given below.
