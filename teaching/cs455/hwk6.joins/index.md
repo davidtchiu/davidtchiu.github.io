@@ -150,7 +150,7 @@ Comments in the file are preceded by a `#`. The comment on the first line has al
 
 #### Program Requirements
 
-**You must write this program in Java.** There are no restrictions on how you choose to implement this program, but it's probably a good idea to have at least three classes: a driver class that has the main method, a Relation class, and a Tuple class. I also found it useful to have an Attribute class and a Comparator class to order the Tuples.
+**You must write this program in Java.** There are no restrictions on how you choose to implement this program, but it's probably a good idea to have _at least_ three classes: a driver class that has only the main method, a `Relation` class, and a `Tuple` class. I also found it useful to have an `Attribute` class and a `Comparator` class to order the Tuples.
 
 - Create a class in your project called JoinEngine that only has the `main()` method. When the program starts, you should read every file in the `data/` directory into a object representing a relation. You must use the file name, minus the file extension (`.txt`), as the name of the relation. For grading, I will be using completely different files (with different file names). Your program must work, assuming that my `data/` directory will be placed in your project directory. You should test rigorously with your own toy-files to ensure that your program can accept arbitrary data sets. Assignments that fail to work with my data sets will be returned without a grade. Look into using the `File` class' `listFiles()` method.
 
@@ -162,8 +162,6 @@ Comments in the file are preceded by a `#`. The comment on the first line has al
 - If a common attribute does not exist between the tables, you may either throw an exception or, more accurately, you could also produce the cartesian product. Otherwise, you may assume that there is _at most one_ common attribute between two relations. If a common attribute does exist then:
 
   - The nested loop join should occur unconditionally.
-
-  - The hash join can only occur if its Phase I determines that the common attribute values are unique. You should throw an exception otherwise.
 
   - The sort-merge join must sort the tuples in both tables only if they are not already sorted on the common attribute. Further, it must take $$O(1)$$
     time for you to determine whether the tuples are already sorted on the common attribute. To sort tuples, you must store your `Tuples` in a List and then there are two ways: (1) your `Tuple` class can implement `Comparable`, then override `compareTo()` to establish natural ordering and call `Collections.sort(...)`, or (2) you could create a class that implements `Comparator<Tuple>`, and plug the list and the comparator into `Collections.sort(...)`.
