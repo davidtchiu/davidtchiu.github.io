@@ -58,7 +58,8 @@ At the end of the each week (sprint), the project manager must submit to me the 
 #### Grading
 
 ```
-I will assign each of you a grade (from 0 to 3) after each sprint. Your grade is
-dependent on your project manager's rating, and your commit history. I will be doing
-code reviews to ensure that you're making substantive commits each sprint.
+I will assign each of you a grade (from 0 to 3) after each sprint. Though I take it into consideration,
+Your sprint grade is not just based on your project manager's rating. I base your grade on your commit
+history also, and I will be doing code reviews to ensure that you're making substantive commits each
+sprint.
 ```
