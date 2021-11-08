@@ -18,8 +18,8 @@ Download the file below, and extract it into your project directory. It contains
 
 This assignment is programming-intensive and can be time-consuming. You must get a good head start on it if you want to finish on time. In this assignment, you will get some hands-on experience programming several classical implementations of the natural join ($$R \bowtie S$$) operation, one of the key algorithms in relational database systems. Specifically, you will be implementing the 3 natural-join algorithms we learned in class. Their pseudo-codes are listed in the slides.
 
-- **Nested-Loop Join**
-  <!-- The nested-loop join is the naive approach, and its mechanism follows almost exactly what you've been taught the $$R \bowtie S$$ relational operator does. It loops through each tuple in $R$ and $S$ and produces a concatenated tuple if the values of their common attributes are all equal. The pseudocode of the nested-loop join is given below.
+<!-- - **Nested-Loop Join**
+  The nested-loop join is the naive approach, and its mechanism follows almost exactly what you've been taught the $$R \bowtie S$$ relational operator does. It loops through each tuple in $R$ and $S$ and produces a concatenated tuple if the values of their common attributes are all equal. The pseudocode of the nested-loop join is given below.
 
   ```
   Input: Relation R, Relation S
@@ -34,10 +34,10 @@ This assignment is programming-intensive and can be time-consuming. You must get
         if (r.c == s.c)
           create new tuple (r,s) and add it to T
   return T
-  ``` -->
+  ```
 
 - **Hash Join**
-  <!-- The hash join algorithm has two distinct phases. Phase I builds a hashmap over relation
+  The hash join algorithm has two distinct phases. Phase I builds a hashmap over relation
   $$R$$. Each map entry is keyed on the value of the common attribute and stores the tuple in
   $$R$$. Important: It is for this reason that the common attribute $$R.c$$ must have unique values (e.g., be a key) in $$R$$. If $$R.c$$ were not unique, then different tuples would collide (and overwrite each other) in the hashmap. Phase II then iterates through each tuple in
   $$S$$ and searches for the value of its common attribute in the hash map. If it exists in the map, then there is equivalence on common attributes in both relations, and the concatenated tuple is retained in the result. Otherwise the tuple in
@@ -74,10 +74,10 @@ This assignment is programming-intensive and can be time-consuming. You must get
         }
   }
   return T
-  ``` -->
+  ```
 
 - **Sort-Merge Join**
-  <!-- The sort-merge join assumes that the tuples in both relations are sorted on their common attributes. We use cursors $$i$$ and $$j$$ to track the row positions of relation $$R$$ and $$S$$, respectively. We shift the cursors down until we exceed one of the relations. When a match on their common attributes is found, we enter the merge phase, in which we concatenate both tuples, while moving $$S$$'s cursor down. You can think of the merge phase as a baby nested loop join on the tuples that match. When $$S$$'s cursor refers to a tuple that is no longer a match, then $$R$$'s cursor moves increments and $$S$$'s cursor resets.
+  The sort-merge join assumes that the tuples in both relations are sorted on their common attributes. We use cursors $$i$$ and $$j$$ to track the row positions of relation $$R$$ and $$S$$, respectively. We shift the cursors down until we exceed one of the relations. When a match on their common attributes is found, we enter the merge phase, in which we concatenate both tuples, while moving $$S$$'s cursor down. You can think of the merge phase as a baby nested loop join on the tuples that match. When $$S$$'s cursor refers to a tuple that is no longer a match, then $$R$$'s cursor moves increments and $$S$$'s cursor resets.
 
   ```
   Input: Relation R, Relation S
