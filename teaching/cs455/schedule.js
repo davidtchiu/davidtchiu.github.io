@@ -118,14 +118,13 @@ let days = {
     // wk 10
     "Disk scheduling; Buffer management",
     "File organization of tuples",
-    "Cost analysis: join algorithms",
     // wk 11
-    "Start indexing",
+    "Cost analysis: join algorithms",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 12
     // "B+Trees: properties, operations",
-    "B+Trees: operations and properties",
+    "Start Indexing: B+Trees",
     "B+Trees (cont.): complexity analysis",
     "Extendible hashing",
     // wk 13
