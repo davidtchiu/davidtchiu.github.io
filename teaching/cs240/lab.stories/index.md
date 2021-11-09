@@ -69,4 +69,4 @@ As your team continues to develop personas and scenarios by which they interact 
   - In this example my first user story expanded into two disparate tasks, both assigned to "DC."
   - You can ignore expanding other user stories into tasks for now. Just focus on the current sprint.
 
-- **Invite me!** As this is a living document to help you manage your project, there's no set number of tasks that you have to create and assign before the end of lab. However, I do require you to use and update your Trello board over the course of your project. To track your sprints and your progress, I want you to invite me to your board. Press the `Invite` button and search for me using my `pugetsound.edu` email.
+- **Invite me!** As this is a living document to help you manage your project, there's no set number of tasks that you have to create and assign before the end of lab. However, I do require you to use and update your Trello board over the course of your project. To track your sprints and your progress, I want you to invite me to your board. Press the `Invite` button and search for me using `david.t.chiu@gmail.com`.
