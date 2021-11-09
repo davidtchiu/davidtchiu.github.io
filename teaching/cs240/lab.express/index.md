@@ -1,186 +1,150 @@
 ## CS 240 - Software Engineering
 
-### In-Class Exercise: Expresss
+### In-Class Exercise: Express Web Server
 
 As your team continues to develop personas and scenarios by which they interact with your software, we can begin refining some user stories for development. This lab is meant to help you jumpstart the requirements needed for Project 1.
 
 #### Student Outcomes
 
-- To debug and code through systematic testing
-- To write and run unit tests
-- To be exposed to the concept of test-driven development (TDD)
+- To learn how to develop on a remote machine.
+- To learn how to develop and start an Express web server.
 
-#### Starter Code and Git
+#### Part 1 - Getting Connected
 
-Starter code for this assignment is provided in the github repo [https://github.com/davidtchiu/cs240-lab-testing](https://github.com/davidtchiu/cs240-lab-testing). On my github repo, _fork_ this repository to your github account to obtain your own copy. Then _clone_ your copy down to your local working directory. After you've done this, you can work freely in VS Code. Remember to commit when appropriate, with substantive messages.
+- Open VS Code and make sure you have installed the ``Remote Development'' extension pack. Once installed, click on the "Remote Explorer" tab on the left-most panel.
 
-#### Part 1 - Getting Started with Jasmine
-
-- After you've cloned it, find and open up the `cs240-lab-testing` project with VS Code. Look through the code (stored inside the `src/` directory) before doing anything. All that's there is an `app.js` file, and there are a couple functions, whose correctness are dubious and need to be tested. The stub for a third function needs to be implemented, and we'll do that toward the end of lab.
-
-- Next, open up the integrated Terminal, because we will be using _node_ to install Jasmine. Type the following:
+- If you haven't already done so, click on the `+` to add a new SSH target to the server that I assigned you. In the dialog box that opens, type:
 
   ```
-  npm install geckodriver
-  npm install --save-dev jasmine-browser-runner
-  npx jasmine-browser-runner init
+  ssh -l yourUsername yourServerIP
   ```
 
-  This will download and initialize Jasmine for this project.
+  Both of these have been assigned to you via email.
 
-- Next, run:
+- This should create a new target. Right click on your server's IP, and choose `Connect to Host in Current Window`. It will ask you to provide your password. After you've connected successfully, click `Open Folder` on the left, and choose your _home directory_, which is at `/home/yourUsername`. VS Code should now list all the files and directories in your home directory on the server!
+
+- Click on the icon to create a new folder, and name it `expressLab`.
+
+- Now go to the integrated Terminal and navigate to your new `expressLab` directory:
 
   ```
-  npx jasmine-browser-runner serve
+  $ cd expressLab/
   ```
 
-  This command shouldn't return on the terminal as long as it's running. It starts up the Jasmine web server that shows you the results of your tests.
+- Let's go ahead and initialize `npm` and install the `express` package:
 
-- To get to the Jasmine web interface, point to your browser to [http://localhost:8888/](http://localhost:8888/). You should see a Jasmine page that says something to the order of `Incomplete: No specs found, , randomized with seed ...`. That's good news! Jasmine is running, but we just haven't written any tests (specs) yet!
+  ```
+  $ npm init
+  ```
 
-#### Part 2 - Exploring the Jasmine Testing Framework
+  You will be asked a series of questions... just press enter to get past them for now. After you regain control of the terminal, type the following to install express and nodemon:
 
-In Jasmine, a **suite** lets us group together related specs (or unit tests). To make a test suite,
+  ```
+  $ npm install express
+  $ npm install nodemon
+  ```
 
-1. First, create a file called `checkerSpecs.js` inside the `specs/` directory. It's important to note that _all_ test suite files must end in either `spec.js` or `Spec.js`, and they must be placed inside the `specs/` directory in order for Jasmine to find them. (Similarly, any code you wish to test must be in the `src/` directory.)
+  The former will give you the express package that we'll use to help us write a web server. The latter is used to run the express web server.
 
-2. **Test Suite**: In the `checkerSpecs.js` file, we will use the `describe()` function to create a new test suite. The `describe()` function has the following syntax:
+- That should do it! Let's move on to the next step.
 
-   ```js
-   describe("Name of Suite", function () {
-     // spec 1
-     // spec 2
-     // spec 3
-     // ...
-   });
-   ```
+#### Part 2: Setting up a Simple Web Server
 
-3. Each **spec** (or unit test) is declared using the `it()` function, which has the following format:
+- Create a new file in the `expressLab` directory called `index.js`.
 
-   ```js
-   it("should work for...", function () {
-     // assertion (or expectation) statements
-   });
-   ```
+- Inside, let's bring import the express library:
 
-   One of the nice things about the Jasmine framework is that, it's super intuitive to read. Every test and assertion code should read like English. The string argument to the `it()` function usually starts with `"should ...` and it's up to the tester to complete that sentence with the expected behavior.
+  ```js
+  const express = require("express");
+  const app = express();
+  ```
 
-4. When unit testing, we're interested in finding out whether certain inputs to a function lead to expected outputs (conversely, we're also interested in knowing whether incorrect inputs lead to incorrect outputs.) Such statements are called **assertions** or **expectations** in unit testing. For instance, if we're testing our prime number checker, we would **expect** that an input of `11` would return `true`, and conversely, we would also expect that `20` would return `false`. Writing assertions is done using the `expect()` method:
+- Next, we need to get the web server to listen on a particular port for HTTP requests. In a production server, HTTP runs on port `80`. However, you and your teammates are all developing on the same server, and you would all be in conflict for port `80`, which can only be bound once. So, let's try something different, like `8080` or `8081`, etc.
 
-   ```js
-   expect(thingWeWantTested).toBe(expectedThing);
-   ```
+  ```js
+  const port = 8080;
+  app.listen(port, function () {
+    console.log(`Web server running on port ${port}!`);
+  });
+  ```
 
-   Again, each assertion statement is designed to be very human-readable. For instance, an assertion that states the expression to be tested, `5+10`, should be `15` can be written as follows,
+  Go ahead and save `index.js`.
 
-   ```js
-   expect(5 + 10).toBe(15);
-   ```
+- Without doing anything else, point your browser to `http://yourServerIP:port` where `port` is the port you assigned your server. You _should_ get a 404, because we never ran the code we just wrote to start the web server.
 
-   There's a convenient `not` keyword that can be used to negate the logic:
+- Let's go back to the terminal and type the following the run your script:
 
-   ```js
-   expect(10 + "10").not.toBe("20");
-   ```
+  ```
+  $ nodemon index.js
+  ```
 
-5. Let's put it all together by writing some tests for the Prime Number Checker (`isPrime()`) function that is provided to you in the code. Copy and paste the following specs in the `checkerSpec.js` file.
+  On success, you should see something like the following on your Terminal:
 
-   ```js
-   describe("Prime number checker tests", function () {
-     it("should work for prime numbers", function () {
-       expect(isPrime(53)).toBe(true);
-       expect(isPrime(7)).toBe(true);
-       expect(isPrime(11)).toBe(true);
-       expect(isPrime(3)).toBe(true);
-       expect(isPrime(17)).toBe(true);
-       expect(isPrime(5)).toBe(true);
-       expect(isPrime(2)).toBe(true);
-     });
+  ```
+  [nodemon] 2.0.7
+  [nodemon] to restart at any time, enter `rs`
+  [nodemon] watching path(s): *.*
+  [nodemon] watching extensions: js,mjs,json
+  [nodemon] starting `node index.js`
+  Web server running on port 8080!
+  ```
 
-     it("should work for composite numbers", function () {
-       expect(isPrime(4)).toBe(false);
-       expect(isPrime(10)).toBe(false);
-       expect(isPrime(55)).toBe(false);
-       expect(isPrime(121)).toBe(false);
-     });
+  It does not give you back the control to the terminal because it's busy running the web server. If you ever need to regain control over the terminal (and it's okay to stop your web server), then hit `control + c`.
 
-     it("should work for even numbers", function () {
-       expect(isPrime(4)).toBe(false);
-       expect(isPrime(20)).toBe(false);
-       expect(isPrime(100)).toBe(false);
-       expect(isPrime(1024)).toBe(false);
-       expect(isPrime(0)).toBe(false);
-     });
+- Return to your browser and refresh the page. This time, you should get a different error message:
 
-     it("should work for numbers less than 2", function () {
-       expect(isPrime(-2)).toBe(false);
-       expect(isPrime(-5)).toBe(false);
-       expect(isPrime(-29)).toBe(false);
-       expect(isPrime(-1)).toBe(false);
-     });
+  ```
+  Cannot GET /
+  ```
 
-     it("should work for numbers with fractions", function () {
-       expect(isPrime(2.1)).toBe(false);
-       expect(isPrime(3.3)).toBe(false);
-       expect(isPrime(17.3)).toBe(false);
-     });
-   });
-   ```
+- This is actually good news! It means the express web server is running, but it doesn't know how to respond to any requests! In fact, play with your URL a bit to see a different message displayed. For instance, go to `http://yourServerIP:port/faculty/cats` and you should see the message:
 
-6. Read through the specs, and note that the input values come directly from the input partitions we decided during class:
+  ```
+  Cannot GET /faculty/cats
+  ```
 
-   <img src="figures/input_part.png" width="650px"/>
+- The path (or route) that appears after the port in your URL is pointing at a location that the Web server doesn't yet know how to handle. Let's return to your `index.js` file and add a route.
 
-7. Okay let's run the tests, and it's as simple as refreshing your browser, which is pointing to [http://localhost:8888/](http://localhost:8888/). You should see some errors!
+#### Part 3: Routing
 
-   <img src="figures/jas1.png" width="350px"/>
+- Go back in `index.js`, and let's write a simple route for `/dogs`.
 
-   In this case, it tells you that the error is on **line 9** of your `checkerSpec.js` file, and a quick inspection tells us that `2` (which should be prime) did not pass your test. This means there's a bug in `isPrime()` that should be fixed.
+  ```js
+  app.get("/dogs", function (req, resp) {
+    resp.send("<p>Wuff!! -- Wuff!!</p>");
+  });
+  ```
 
-8. Go ahead and fix the bug in `isPrime()` and try running the tests again. After you've fixed it, refresh the page again, and it should say that all 5 specs passed the test!
+  Save the file, and go to `http://yourServerIP:port/dogs`. You should see `Wuff!! -- Wuff!!` in the browser! Check out the source code... it's straight HTML being served by Express! This code only runs if the `/dogs` path (route) was given in the URL!
 
-9. **Infinite loops and the Halting Problem** Comment out the initial if-statement that checks if the number is an integer and is greater than 1. Run the tests again and see what happens. Your browser should hang, and eventually, it may clue you in that it's actually running code and stuck in a loop! If you look at the `isPrime()` implementation now, there are actually several ways that you can induce an infinite loop. One way is to input a negative number. Another way is to give it a floating point number. Obviously, both cases were tested in our suite. When you see this behavior, you should hit "stop" on your browser, and look for the tests that induced this behavior, then fix the code to avoid infinite loops. (For us, just go ahead and uncomment the conditional, but I wanted to show you what this looked like.)
+- Neat! Through this example, we can understand how to serve up different HTML content given a complete URL. For instance, instead of just printing "Wuff Wuff," we could have printed out all the code you wrote for Scoreboard assignment if we wanted to make it public to world.
 
-   So, you may wonder why Jasmine isn't "robust" enough to know that it's stuck in an infinite loop, and break out of it to report the error. This is hitting on a fundamental problem in computer science theory called the _Halting Problem_. Basically it states that a monitoring application can't decide whether the monitored program will ever stop. In other words, there are plenty of algorithms that take a _really_ long time to process -- and that they will eventually terminate. But a monitoring program can't tell those apart from programs that buggy and stuck in a loop. So while we can always answer "yes" to whether a program halts, it is not possible to answer "no."
+- Anyway, the point is that you see how to serve up HTML content dynamically, and how you might leverage this when coding your own term project.
 
-#### Part 3 - Other "Matchers"
+#### Part 4: Let's write a Web API!
 
-1. So far, we've only seen the `toBe(...)` matcher, which checks to see if the values from both expressions are `===` to each other, which among checking equality of primitive values, it is also used to check whether two references point to the same object. (In Java, we called this "reference equality" of objects). For instance, consider the following objects, which carry the same content:
+- As we've seen in class, there are lots of web services out there to be used. Ever wonder how they're built? Let's find out. Even for our fifth homework, Simone, I had created a Web API for you to use. Now it's your turn to create a Simone Web API!
 
-   ```js
-   let objX = { a: "b" };
-   let objY = { a: "b" };
-   ```
+- Back in `index.js`, you can leave the `/dogs` route, but create a new wrote called `/simone`. Check the `req` object for the `cmd` query string. Query strings are stored in the `req.query` object. If the `cmd` is `start`, then you just have to return the _start sequence_ for the calling app to play.
 
-   If we asserted `expect(objX).toBe(objY)`, it would actually evaluate to `false` because `objX` and `objY` point to different objects/locations. But checking reference equality is rarely what we want to assert!
+  Create a JavaScript object. The `type` property should be assigned `start`, and the `sequence` property should be assigned an array of strings, such as: `["Y", "G", "B", "Y", "B", "R", ...]` The sequence should be 12 characters long, and it should be randomized each time it's called. If you `app.send()` this object, Express will automatically convert it into a JSON object before giving it to the client.
 
-2. Usually, when we compare two objects, we're interested in "deep equality" (I also call this _"content equality"_ of objects in my intro classes), in which we only care if their stored values are the same? The `toBe()` matcher would be insufficient... so there must be other "matchers" that are supported. Here's a non-exhaustive list!
+- Return to your browser, and go to `http://yourServerIP:port/simone?cmd=start`. If your code is working, your browser should display something like:
 
-   | Method                                  | Description                                                          |
-   | --------------------------------------- | -------------------------------------------------------------------- |
-   | `expect(thing).toEqual(expectedThing)`  | Performs deep equality (or content) equality of two expressions      |
-   | `expect(thing).toBeTrue()`              | Expects `thing` to be true                                           |
-   | `expect(thing).toBeFalse()`             | Expects `thing` to be false                                          |
-   | `expect(thing).toBeNull()`              | Expects `thing` to be null                                           |
-   | `expect(thing).toBeNaN()`               | Expects `thing` to be not-a-number                                   |
-   | `expect(thing).toBeDefined()`           | Expects `thing` to be defined                                        |
-   | `expect(thing).toBeUnDefined()`         | Expects `thing` to be defined                                        |
-   | `expect(thing).toContain(anotherThing)` | Expects `thing` (array or string) to contain an element or substring |
-   | `expect(thing).toMatch(regex)`          | Expects `thing` to be match the given regular expression             |
+  ```json
+  {
+    "type": "start",
+    "sequence": ["B", "B", "G", "G", "Y", "R", "B", "R", "R", "R", "B", "Y"]
+  }
+  ```
 
-3. Most of those matchers only offer convenience. I find that most tests can be written with just `toBe()` and `toEqual()`. The full list can be found in [Jasmine's documentation](https://jasmine.github.io/api/edge/matchers.html).
+- But that's only the start sequence. The Simone Web API also returns an answer key. Look again in the `req.query` object for the `cmd` query string. If `cmd` is `getSolution`, then it must also have a variable called `rounds` which is assigned to the number of rounds they wanted to play. Your code should return a JSON object where `type` is assigned `solution` and `key` is a random sequence of the given number of rounds. For instance, if I went to `http://yourServerIP:port/simone?cmd=getSolution&rounds=4` then I might expect the following in return.
 
-4. Now focus in on the `isLeapYear()` function. Read through the comments to get an understanding of how to detect a leap year, then create some input partitions for your unit tests.
+  ```json
+  {
+    "type": "solution",
+    "key": ["R", "G", "R", "R"]
+  }
+  ```
 
-   - You can either write another `describe` block underneath the existing one,
-   - Or you can create another `spec.js` file with its own `describe` block if you prefer to keep things neat and tidy.
-
-#### Part 4 - Test-Driven Development
-
-Test-Driven Development (TDD) in software engineering merely refers to process of writing unit tests prior to writing code. Here we'll "practice" what that process might be like at work. Obviously, we're doing this at a much smaller scale.
-
-1. Take a look at the `generateEmail()` function you're supposed to provide and read through the requirements.
-
-2. Create a new spec file and a corresponding `describe` block. Come up with reasonable sets of input partitions and write all the tests and expectations now. Then with those tests in mind, implement the `generateEmail()` method. Test early and often as you write, to ensure you're making steady progress.
-
-3. This concludes the lab. You can terminate the Jasmine server by hitting `ctrl+c` in the Terminal in which Jasmine is running.
+- Once this is working, then you've completed your first Web API! You can even point your Simone homework to _this_ URL, if you really wanted to.
