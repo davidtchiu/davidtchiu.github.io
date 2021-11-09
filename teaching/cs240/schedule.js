@@ -183,9 +183,8 @@ let days = {
     // wk 11
     "User Stories and Features Lab",
     "Remote development; Express",
-    // "Templates: EJS",
     // wk 12
-    "Work/Sprint Review with David",
+    "Express + EJS",
     "Software Testing; Testing lab",
     // wk 13
     "Work/Sprint Review with David",
