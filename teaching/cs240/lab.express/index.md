@@ -41,10 +41,14 @@ As your team continues to develop personas and scenarios by which they interact 
 
   ```
   $ npm install express
-  $ npm install nodemon
   ```
 
-  The former will give you the express package that we'll use to help us write a web server. The latter is used to run the express web server.
+  The former will give you the express package that we'll use to help us write a web server.
+  The command below is used to run the express web server. The -g flag will install it globally on your machine, so it really just needs done once (not once per project). It will ask for your password, since you're making a system change.
+
+  ```
+  $ sudo npm install -g nodemon
+  ```
 
 - That should do it! Let's move on to the next step.
 
