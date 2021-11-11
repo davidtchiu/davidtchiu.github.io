@@ -147,7 +147,7 @@ As your team continues to develop personas and scenarios by which they interact 
   }
   ```
 
-- But that's only the start sequence. The Simone Web API also returns an answer key. Look again in the `req.query` object for the `cmd` query string. If `cmd` is `getSolution`, then it must also have a variable called `rounds` which is assigned to the number of rounds they wanted to play. Your code should return a JSON object where `type` is assigned `solution` and `key` is a random sequence of the given number of rounds. For instance, if I went to `http://yourServerIP:port/simone?cmd=getSolution&rounds=4` then I might expect the following in return.
+- But that's only the start sequence. The Simone Web API also returns an answer key when asked. Look again in the `req.query` object for the `cmd` query string. This time, if `cmd` is `getSolution`, then it must also have a variable called `rounds` which is assigned to the number of rounds they wanted to play. Your code should return a JSON object where `type` is assigned `solution` and `key` is a random sequence of the given number of rounds. For instance, if I went to `http://yourServerIP:port/simone?cmd=getSolution&rounds=4` then I might expect the following in return.
 
   ```json
   {
