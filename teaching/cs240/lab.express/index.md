@@ -59,7 +59,7 @@ As your team continues to develop personas and scenarios by which they interact 
   const app = express();
   ```
 
-- Next, we need to get the web server to listen on a particular port for HTTP requests. In a production server, HTTP runs on port `80`. However, you and your teammates are all developing on the same server, and you would all be in conflict for port `80`, which can only be bound once. So, let's try something different, like `8080` or `8081`, etc.
+- Next, we need to get the web server to listen on a particular port for HTTP requests. In a production server, HTTP runs on port 80. However, you and your teammates are all developing on the same server, and you would all be in conflict for port 80, which can only be bound once. So, let's try something different, like 8080 or 8081, etc. Make sure you talk amongst yourselves so that none of you is picking the same port.
 
   ```js
   const port = 8080;
@@ -70,7 +70,7 @@ As your team continues to develop personas and scenarios by which they interact 
 
   Go ahead and save `index.js`.
 
-- Without doing anything else, point your browser to `http://yourServerIP:port` where `port` is the port you assigned your server. You _should_ get a 404, because we never ran the code we just wrote to start the web server.
+- Without doing anything else, point your browser to `http://yourServerIP:port` where `port` is the port you assigned your server. You _should_ get a 404, because we never ran the code we just wrote to start the web server. (Aside: It's true that, because port 80 is widely recognized as the HTTP port, if you had selected port 80 in the previous step, you do not need to supply the port in the URL).
 
 - Let's go back to the terminal and type the following the run your script:
 
