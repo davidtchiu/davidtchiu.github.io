@@ -125,9 +125,18 @@ As your team continues to develop personas and scenarios by which they interact 
 
 - As we've seen in class, there are lots of web services out there to be used. Ever wonder how they're built? Let's find out. Even for our fifth homework, Simone, I had created a Web API for you to use. Now it's your turn to create a Simone Web API!
 
-- Back in `index.js`, you can leave the `/dogs` route, but create a new wrote called `/simone`. Check the `req` object for the `cmd` query string. Query strings are stored in the `req.query` object. If the `cmd` is `start`, then you just have to return the _start sequence_ for the calling app to play.
+- Back in `index.js`, you can leave the `/dogs` route, but create a new route called `/simone`. Check out the `req` object for the `cmd` query string. Query strings are stored in the `req.query` object. If the `cmd` is given as `start`, then you just have to return the _start sequence_ for the calling app to play.
 
-  Create a JavaScript object. The `type` property should be assigned `start`, and the `sequence` property should be assigned an array of strings, such as: `["Y", "G", "B", "Y", "B", "R", ...]` The sequence should be 12 characters long, and it should be randomized each time it's called. If you `app.send()` this object, Express will automatically convert it into a JSON object before giving it to the client.
+  To do this, now create a JavaScript object literal with two properties (keys): The `type` property should be assigned the string `start`, and the `sequence` property should be assigned an array of strings, such as: `["Y", "G", "B", "Y", "B", "R", ...]` The sequence should be 12 characters long, and it should be randomized. Here's an example of what the object literal would look like.
+
+  ```js
+  {
+    type: "start",
+    sequence: ["B", "B", "G", "G", "Y", "R", "B", "R", "R", "R", "B", "Y"]
+  }
+  ```
+
+  If you use `app.send()` on this object literal, Express will automatically convert it into a JSON object before giving it to the client.
 
 - Return to your browser, and go to `http://yourServerIP:port/simone?cmd=start`. If your code is working, your browser should display something like:
 
