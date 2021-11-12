@@ -27,7 +27,7 @@ Here's a short list of what CS 161 students have done in the last couple years:
 
 - _Mood Guesser:_ A program that utilizes an external API that can tell you the sentiment value for a given word (Ask me for it, and I can provide). For instance, the score for a positive word, like "happy" or "awesome" would be closer to 1.0. A negative word like "angry" or "unfair" would have a sentiment score closer to -1.0. Using a library that can do this, you try to guess the mood of someone writing a tweet.
 
-- _A Graphical BlackJack:_ One student programmed BlackJack, and then wrote a graphical interface for it (think Life lab). A black jack table is drawn on the canvas, hit and hold and quit buttons are implemented
+<!-- - _A Graphical BlackJack:_ One student programmed BlackJack, and then wrote a graphical interface for it (think Life lab). A black jack table is drawn on the canvas, hit and hold and quit buttons are implemented -->
 
 #### Proposal
 

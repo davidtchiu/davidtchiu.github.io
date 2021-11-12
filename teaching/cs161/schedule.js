@@ -43,12 +43,12 @@ let days = {
       //   url: "hwk7.pooled/",
       //   due: "11/23/2021",
       // },
-      // {
-      //   name: "Final Hwk Prep",
-      //   title: "Alt Prep",
-      //   url: "hwk8.prep/",
-      //   due: "11/30/2021",
-      // },
+      {
+        name: "Final Hwk Prep",
+        title: "Alternate Final Homework Proposal",
+        url: "hwk7.prep/",
+        due: "11/19/2021",
+      },
       // {
       //   name: "Final Hwk",
       //   title: "Black Jack",
