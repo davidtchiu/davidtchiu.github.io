@@ -149,6 +149,21 @@ Starter code for this assignment is provided in the github repo [https://github.
   - `wrong.wav` followed directly with `lose.wav` should be played at any point when the user presses the wrong button in the sequence.
   - `win.wav` should be played instead of `nextRound.wav` when the player correctly repeats the pattern in the final round.
   - You are more than welcome to replace the sound files with your own.
+  - **Read this** There's one minor bugger you should be aware of when using the Audio class. Repeated calls to `play()` will be ignored if the audio is still playing. That's not exactly what we want when we're playing a fast sequence (like the Game Start sequence). In that case, we actually want the audios to overlap.
+    - To do this, you simply need to instantiate a new Audio object on the same file and `play()` it again.
+    - Here's an example of what I mean. Instead of doing this:
+      ```js
+      let sound = new Audio("green.wav");
+      sound.play();
+      sound.play(); // does this play? - Doubtful, the previous play is still in progress
+      sound.play(); // does this play? - Possibly? Depends on whether the first play finished
+      ```
+      This is what you'd want instead
+      ```
+      (new Audio("green.wav")).play();
+      (new Audio("green.wav")).play(); // does this play? - yes! overlaps with the first play
+      (new Audio("green.wav")).play(); // does this play? - yes! overlaps with the previous
+      ```
 
 - **_Button presses:_** Be careful when implementing the event listeners for button presses. Go to my
   solution to make sure your interactions match mine. For instance, the sound does not register on a
