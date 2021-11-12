@@ -187,7 +187,7 @@ let days = {
     "Start files",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "File I/O",
+    "File I/O; String parsing; Sorting ArrayLists",
     // wk 12
     "Information hiding, static, main()",
     "enum; IntelliJ IDE",

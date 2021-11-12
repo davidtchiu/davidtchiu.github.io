@@ -152,7 +152,7 @@ Starter code for this assignment is provided in the github repo [https://github.
   - **Read this** There's one minor bugger you should be aware of when using the Audio class. Repeated calls to `play()` will be ignored if the audio is still playing. That's not exactly what we want when we're playing a fast sequence (like the Game Start sequence). In that case, we actually want the audios to overlap.
     - To do this, you simply need to instantiate a new Audio object on the same file and `play()` it again.
     - Here's an example of what I mean. Instead of doing this:
-      ```js
+      ```
       let sound = new Audio("green.wav");
       sound.play();
       sound.play(); // does this play? - Doubtful, the previous play is still in progress
