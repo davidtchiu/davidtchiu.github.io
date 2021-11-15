@@ -35,7 +35,7 @@ let days = {
         name: "Hwk 6",
         title: "Joins!",
         url: "hwk6.joins/",
-        due: "11/19/2021",
+        due: "11/23/2021",
       },
     ],
 
@@ -117,6 +117,7 @@ let days = {
     "Data access time",
     // wk 10
     "Disk scheduling; Buffer management",
+    "Database files",
     "File organization of tuples",
     // wk 11
     "Cost analysis: join algorithms",
