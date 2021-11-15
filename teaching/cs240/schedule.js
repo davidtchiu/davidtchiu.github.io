@@ -141,6 +141,11 @@ let days = {
         title: "Express Lab",
         url: "lab.express/",
       },
+      {
+        name: "Lab 12",
+        title: "Express+EJS Lab",
+        url: "lab.express2.ejs/",
+      },
       //   {
       //     name: "Lab 12",
       //     title: "Unit Testing",
