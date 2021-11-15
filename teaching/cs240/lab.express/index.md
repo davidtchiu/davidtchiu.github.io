@@ -56,7 +56,7 @@ As your team continues to develop personas and scenarios by which they interact 
 
 - Create a new file in the `expressLab` directory called `index.js`.
 
-- Inside, let's bring import the express library:
+- At the top of this file, import the express library and instantiate an instance of the express server.
 
   ```js
   const express = require("express");

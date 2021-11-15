@@ -37,17 +37,17 @@ let days = {
         url: "hwk6.twitter/",
         due: "11/15/2021",
       },
-      // {
-      //   name: "Hwk 7",
-      //   title: "Pooled Testing",
-      //   url: "hwk7.pooled/",
-      //   due: "11/23/2021",
-      // },
       {
         name: "Final Hwk Prep",
         title: "Alternate Final Homework Proposal",
         url: "hwk7.prep/",
         due: "11/19/2021",
+      },
+      {
+        name: "Final Hwk (alternate)",
+        title: "Pooled Testing",
+        url: "hwk7.pooled/",
+        due: "12/6/2021",
       },
       // {
       //   name: "Final Hwk",
