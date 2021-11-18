@@ -192,9 +192,9 @@ let days = {
     "Information hiding, static, main()",
     "enum; IntelliJ IDE",
     "Zoom Lab 10",
-    "Complexity: Linear search",
+    "enum; IntelliJ IDE",
     // wk 13
-    "Binary search",
+    "Start complexity: Linear and Binary search",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
