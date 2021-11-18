@@ -164,7 +164,7 @@ In Jasmine, a **suite** lets us group together related specs (or unit tests). To
    | `expect(thing).toBeNull()`              | Expects `thing` to be null                                           |
    | `expect(thing).toBeNaN()`               | Expects `thing` to be not-a-number                                   |
    | `expect(thing).toBeDefined()`           | Expects `thing` to be defined                                        |
-   | `expect(thing).toBeUnDefined()`         | Expects `thing` to be defined                                        |
+   | `expect(thing).toBeUnDefined()`         | Expects `thing` to be undefined                                      |
    | `expect(thing).toContain(anotherThing)` | Expects `thing` (array or string) to contain an element or substring |
    | `expect(thing).toMatch(regex)`          | Expects `thing` to be match the given regular expression             |
 
