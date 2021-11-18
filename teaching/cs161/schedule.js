@@ -112,12 +112,12 @@ let days = {
         url: "lab9.election/",
         due: "11/5/2021",
       },
-      // {
-      //   name: "Zoom Lab 10",
-      //   title: "Boulders (File I/O, Parsing)",
-      //   url: "lab10.boulders/",
-      //   due: "11/19/2021",
-      // },
+      {
+        name: "Zoom Lab 10",
+        title: "Boulders (File I/O, Parsing)",
+        url: "lab10.boulders/",
+        due: "11/19/2021",
+      },
       // {
       //   name: "Zoom Lab 11",
       //   title: "Playing Cards (Constants, Enum; IntelliJ IDE)",
