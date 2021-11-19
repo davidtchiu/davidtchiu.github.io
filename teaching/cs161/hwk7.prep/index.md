@@ -31,7 +31,7 @@ Here's a short list of what CS 161 students have done in the last couple years:
 
 #### Proposal
 
-If you want to pitch your idea, all I would need is a short document that summarizes your project, why it's interesting to you, and the classes and data structures you plan to use. Most importantly, this project is graded out of 130 points, so you need to provide a rubric for me to use to grade the success of your project. Submit the proposal on Canvas when you're ready. If I have concerns, I will contact you.
+If you want to pitch your idea, all I would need is a short document that summarizes your project, why it's interesting to you, and the classes and data structures you plan to use. Most importantly, this project is graded out of 100 points, so you need to provide a rubric for me to use to grade the success of your project. Submit the proposal on Canvas when you're ready. If I have concerns, I will contact you.
 
 #### Grading
 

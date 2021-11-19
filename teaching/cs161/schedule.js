@@ -39,7 +39,7 @@ let days = {
       },
       {
         name: "Final Hwk Prep",
-        title: "Alternate Final Homework Proposal",
+        title: "Final Homework Proposal (Optional)",
         url: "hwk7.prep/",
         due: "11/19/2021",
       },
