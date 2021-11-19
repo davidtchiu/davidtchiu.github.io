@@ -125,17 +125,18 @@ let days = {
     "<strong><emph>Exam 2</emph></strong>",
     // wk 12
     // "B+Trees: properties, operations",
-    "Start Indexing: B+Trees",
-    "B+Trees (cont.): complexity analysis",
-    "Extendible hashing",
+    "Start Indexing",
+    "B+Trees",
+    "B+Trees: complexity analysis",
     // wk 13
-    "Bitmap indexing",
+    "Extendible hashing",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
+    "Bitmap indexing",
     "Start transactions: ACID, serializability",
     "Transactions: serializability test, precedence graphs",
-    "Transactions: Concurrency control",
+    // "Transactions: Concurrency control",
     // wk 15
     "Project Demos",
     "Project Demos",
