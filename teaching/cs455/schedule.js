@@ -129,13 +129,15 @@ let days = {
     "B+Trees",
     "B+Trees: complexity analysis",
     // wk 13
-    "Extendible hashing",
+    "Project Work Day",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
+    "Extendible hashing",
     "Bitmap indexing",
-    "Start transactions: ACID, serializability",
-    "Transactions: serializability test, precedence graphs",
+    "Project Work Day",
+    // "Start transactions: ACID, serializability",
+    // "Transactions: serializability test, precedence graphs",
     // "Transactions: Concurrency control",
     // wk 15
     "Project Demos",
