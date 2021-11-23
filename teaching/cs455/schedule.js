@@ -133,8 +133,10 @@ let days = {
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
-    "Extendible hashing",
-    "Bitmap indexing",
+    // "Extendible hashing",
+    // "Bitmap indexing",
+    "Project Work Day",
+    "Project Work Day",
     "Project Work Day",
     // "Start transactions: ACID, serializability",
     // "Transactions: serializability test, precedence graphs",
