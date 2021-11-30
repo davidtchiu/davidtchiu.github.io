@@ -63,7 +63,7 @@ let days = {
         name: "Proj 4",
         title: "Implementation",
         url: "proj4.impl/",
-        due: "12/6/2021",
+        due: "12/10/2021",
       },
     ],
 
