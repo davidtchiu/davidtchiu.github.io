@@ -15,9 +15,11 @@ In this exercise, you will be trying out basic git operations, including staging
 You only need to do this the first time using git, so if you've already done it before, you can ignore this section. Open a Terminal and configure your name, email, and editor for Git. Here's what I did to configure mine:
 
 ```
-git config --global user.name "David Chiu"
-git config --global user.email dchiu@pugetsound.edu
+git config --global user.name "Full Name"
+git config --global user.email your@email.edu
 git config --global core.editor "code --wait"
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 ```
 
 #### Part 1 - Initializing and Committing
