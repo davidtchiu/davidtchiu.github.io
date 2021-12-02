@@ -32,26 +32,6 @@ My research interests intersect topics in cloud computing and data management. I
 
 ### Completed Projects
 
-#### Modeling and Resource Allocation for Data-Intensive Cloud Applications
-
-- X. Xu, G. Dunham, X. Zhao, D. Chiu, and J. Xu. Modeling Parallel Molecular Simulations on Amazon EC2. In Proceedings of the International Conference on Cloud Computing and Big Data (CCBD'15). Taipei, Taiwan. 2015 (Short Paper).
-- B. Wang, X. Zhao, and D. Chiu. Lightweight Online Power Monitoring and Control for Mobile Applications. In Proceedings of 20th IEEE International Conference on Parallel and Distributed Systems (ICPADS'14). Hsinchu, Taiwan. 2014.
-- T. Bicer, J. Yin, D. Chiu, G. Agrawal, and K. Schuchardt. Integrating Online Compression to Accelerate Large-Scale Data Analytics Applications. In Proceedings of the 27th IEEE International Parallel and Distributed Processing Symposium (IPDPS'13). Boston, MA. 2013.
-- T. Bicer, D. Chiu, and G. Agrawal. Time and Cost Sensitive Data-Intensive Computing on Hybrid Clouds. In Proceedings of the 12th IEEE/ACM International Symposium on Cluster, Cloud, and Grid Computing (CCGrid'12). Ottawa, Canada. 2012.
-- V. Ravi, W. Ma, D. Chiu, and G. Agrawal. Compiler and Runtime Support for Enabling Reduction Computations on Heterogeneous Systems. Concurrency and Computation: Practice and Experience. Vol 24(5). April 2012.
-- T. Bicer, D. Chiu, and G. Agrawal. MATE-EC2: A Middleware for Processing Data with AWS. 4th Workshop on Many-Task Computing on Grids and Supercomputers (MTAGS'11). Held in conjunction with SC'11. Seattle, WA. 2011. (Invited Paper)
-- T. Bicer, D. Chiu, and G. Agrawal. A Framework for Data-Intensive Computing with Cloud Bursting. In Proceedings of the 2011 IEEE International Conference on Cluster Computing (Cluster'11). Austin, TX. 2011.
-- V. Ravi, W. Ma, D. Chiu, and G. Agrawal. Compiler and Runtime Support for Enabling Generalized Reduction Computations on Heterogeneous Parallel Configurations. In Proceedings of the 24th ACM/SIGARCH International Conference on Supercomputing (ICS'10). Tsukuba, Japan, 2010.
-
-#### Elastic Cloud Caching for Accelerating Data-Intensive Applications
-
-- F. Kabir, T. Hall, S. Wallace, and D. Chiu. Elastic Resource Allocation for a Cloud-Based Web Caching System. International Journal of Next-Generation Computing. Vol 5(1). 2014.
-- F. Kabir and D. Chiu. Reconciling Cost and Performance Objectives for Elastic Web Caches. In Proceedings of the 2012 IEEE International Conference on Cloud and Services Computing (CSC'12). Shanghai, China. 2012.
-- D. Chiu, A. Shetty, and G. Agrawal. Evaluating and Optimizing Indexing Schemes for a Cloud-based Elastic Key-Value Store. In Proceedings of the 11th IEEE/ACM International Symposium on Cluster, Cloud, and Grid Computing (CCGrid'11). Newport Beach, CA. 2011.
-- D. Chiu, A. Shetty, and G. Agrawal. Elastic Cloud Caches for Accelerating Service-Oriented Computations. In Proceedings of the 23rd ACM/IEEE International Conference on High Performance Computing Networking, Storage and Analysis (SC'10). New Orleans, LA. 2010.
-- D. Chiu and G. Agrawal. Evaluating Caching and Storage Options on the Amazon Web Services Cloud. In Proceedings of the 11th ACM/IEEE International Conference on Grid Computing (GRID'10). Brussels, Belgium. 2010.
-- D. Chiu and G. Agrawal. Hierarchical Caches for Grid Workflows. In Proceedings of the 9th IEEE/ACM International Symposium on Cluster Computing and the Grid (CCGrid'09). Shanghai, China. 2009.
-
 #### Power Management in Distributed Systems
 
 - J. Polonitza, D. Chiu, and B. Ren. [A Transactional Framework for Broadening Access to Geo-Diversification](Papers/polonitza-CLOUD2019.pdf). In the Proceedings of the 12th IEEE International Conference on Cloud Computing (Cloud'19). Milan, Italy. 2019.
@@ -62,6 +42,26 @@ My research interests intersect topics in cloud computing and data management. I
 - B. McCamish, D. Chiu, M. Histand, R. Meier, J. Landford, E. Cotilla-Sanchez, and R. Bass. [Managing PMU Data Sets with Bitmap Indexes](Papers/mccamish-sustech14.pdf). In Proceedings of the 2nd IEEE Conference on Technologies for Sustainability (SusTech'14). Portland, OR. 2014.
 - Y. Li, D. Chiu, C. Liu, L. T. X. Phan, T. Gill, S. Aggarwal, Z. Zhang, B. T. Loo, D. Maier, and B. McManus. [Towards Dynamic Pricing-Based Collaborative Optimizations for Green Data Centers](Papers/yang-DMC13.pdf). In the 2nd International Workshop on Data Management in the Cloud (DMC'13). In conjunction with ICDE'13. Brisbane, Australia. 2013.
 - D. Chiu, C. Stewart, and B. McManus. [Electric Load Balancing through Low-Cost Workload Migration](Papers/chiu-GreenMetrics2012.pdf). In ACM SIGMETRICS Performance Evaluation Review (GreenMetrics). Vol 40(3). Dec 2012.
+
+#### Modeling and Resource Allocation for Data-Intensive Cloud Applications
+
+- X. Xu, G. Dunham, X. Zhao, D. Chiu, and J. Xu. [Modeling Parallel Molecular Simulations on Amazon EC2](Papers/xu-CCBD2015.pdf). In Proceedings of the International Conference on Cloud Computing and Big Data (CCBD'15). Taipei, Taiwan. 2015 (Short Paper).
+- B. Wang, X. Zhao, and D. Chiu. [Lightweight Online Power Monitoring and Control for Mobile Applications](Papers/wang-ICPADS14.pdf). In Proceedings of 20th IEEE International Conference on Parallel and Distributed Systems (ICPADS'14). Hsinchu, Taiwan. 2014.
+- T. Bicer, J. Yin, D. Chiu, G. Agrawal, and K. Schuchardt. [Integrating Online Compression to Accelerate Large-Scale Data Analytics Applications](https://ieeexplore.ieee.org/document/6569897). In Proceedings of the 27th IEEE International Parallel and Distributed Processing Symposium (IPDPS'13). Boston, MA. 2013.
+- T. Bicer, D. Chiu, and G. Agrawal. [Time and Cost Sensitive Data-Intensive Computing on Hybrid Clouds](https://ieeexplore.ieee.org/document/6217476). In Proceedings of the 12th IEEE/ACM International Symposium on Cluster, Cloud, and Grid Computing (CCGrid'12). Ottawa, Canada. 2012.
+- V. Ravi, W. Ma, D. Chiu, and G. Agrawal. [Compiler and Runtime Support for Enabling Reduction Computations on Heterogeneous Systems](https://dl.acm.org/doi/10.1002/cpe.1848). Concurrency and Computation: Practice and Experience. Vol 24(5). April 2012.
+- T. Bicer, D. Chiu, and G. Agrawal. [MATE-EC2: A Middleware for Processing Data with AWS](https://dl.acm.org/doi/10.1145/2132876.2132889). 4th Workshop on Many-Task Computing on Grids and Supercomputers (MTAGS'11). Held in conjunction with SC'11. Seattle, WA. 2011. (Invited Paper)
+- T. Bicer, D. Chiu, and G. Agrawal. [A Framework for Data-Intensive Computing with Cloud Bursting](Papers/bicer-CLUSTER11.pdf). In Proceedings of the 2011 IEEE International Conference on Cluster Computing (Cluster'11). Austin, TX. 2011.
+- V. Ravi, W. Ma, D. Chiu, and G. Agrawal. [Compiler and Runtime Support for Enabling Generalized Reduction Computations on Heterogeneous Parallel Configurations](https://dl.acm.org/doi/10.1145/1810085.1810106). In Proceedings of the 24th ACM/SIGARCH International Conference on Supercomputing (ICS'10). Tsukuba, Japan, 2010.
+
+#### Elastic Cloud Caching for Accelerating Data-Intensive Applications
+
+- F. Kabir, T. Hall, S. Wallace, and D. Chiu. Elastic Resource Allocation for a Cloud-Based Web Caching System. International Journal of Next-Generation Computing. Vol 5(1). 2014.
+- F. Kabir and D. Chiu. Reconciling Cost and Performance Objectives for Elastic Web Caches. In Proceedings of the 2012 IEEE International Conference on Cloud and Services Computing (CSC'12). Shanghai, China. 2012.
+- D. Chiu, A. Shetty, and G. Agrawal. Evaluating and Optimizing Indexing Schemes for a Cloud-based Elastic Key-Value Store. In Proceedings of the 11th IEEE/ACM International Symposium on Cluster, Cloud, and Grid Computing (CCGrid'11). Newport Beach, CA. 2011.
+- D. Chiu, A. Shetty, and G. Agrawal. Elastic Cloud Caches for Accelerating Service-Oriented Computations. In Proceedings of the 23rd ACM/IEEE International Conference on High Performance Computing Networking, Storage and Analysis (SC'10). New Orleans, LA. 2010.
+- D. Chiu and G. Agrawal. Evaluating Caching and Storage Options on the Amazon Web Services Cloud. In Proceedings of the 11th ACM/IEEE International Conference on Grid Computing (GRID'10). Brussels, Belgium. 2010.
+- D. Chiu and G. Agrawal. Hierarchical Caches for Grid Workflows. In Proceedings of the 9th IEEE/ACM International Symposium on Cluster Computing and the Grid (CCGrid'09). Shanghai, China. 2009.
 
 #### Mining Data Streams
 
