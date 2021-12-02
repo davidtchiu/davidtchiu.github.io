@@ -32,14 +32,14 @@ My research interests intersect topics in cloud computing and data management. I
 
 #### Power Management in Distributed Systems
 
-- J. Polonitza, D. Chiu, and B. Ren. A Transactional Framework for Broadening Access to Geo-Diversification. In the Proceedings of the 12th IEEE International Conference on Cloud Computing (Cloud'19). Milan, Italy. 2019.
-- R. Bass, J. Landford, R. Meier, B. McCamish, E. Cotilla-Sanchez, and D. Chiu. Event Detection Using Correlation within Arrays of Streaming PMU Data. Proceedings of the 2018 IEEE Power and Energy Society General Meetings (PES'18). Portland, OR. 2018.
-- C. Johnson and D. Chiu. Hadoop in Flight: Migrating Live MapReduce Jobs for Power-Shifting Data Centers. In the Proceedings of the 9th IEEE International Conference on Cloud Computing (Cloud'16). Research Track. San Francisco, CA. 2016.
-- B. McCamish, R. Meier, J. Landford, R. Bass, D. Chiu, and E. Cotilla-Sanchez. A Backend Framework for the Efficient Management of Power System Measurements. Electric Power Systems Research. 2016.
-- R. Meier, M. Histand, J. Landford, B. McCamish, D. Chiu, R. Bass, and E. Cotilla-Sanchez. Power System Data Management and Analysis Using Synchrophasor Data. In Proceedings of the 2nd IEEE Conference on Technologies for Sustainability (SusTech'14). Portland, OR. 2014.
-- B. McCamish, D. Chiu, M. Histand, R. Meier, J. Landford, E. Cotilla-Sanchez, and R. Bass. Managing PMU Data Sets with Bitmap Indexes. In Proceedings of the 2nd IEEE Conference on Technologies for Sustainability (SusTech'14). Portland, OR. 2014.
-- Y. Li, D. Chiu, C. Liu, L. T. X. Phan, T. Gill, S. Aggarwal, Z. Zhang, B. T. Loo, D. Maier, and B. McManus. Towards Dynamic Pricing-Based Collaborative Optimizations for Green Data Centers. In the 2nd International Workshop on Data Management in the Cloud (DMC'13). In conjunction with ICDE'13. Brisbane, Australia. 2013.
-- D. Chiu, C. Stewart, and B. McManus. Electric Load Balancing through Low-Cost Workload Migration. In ACM SIGMETRICS Performance Evaluation Review (GreenMetrics). Vol 40(3). Dec 2012.
+- J. Polonitza, D. Chiu, and B. Ren. [A Transactional Framework for Broadening Access to Geo-Diversification](Papers/polonitza-CLOUD2019.pdf). In the Proceedings of the 12th IEEE International Conference on Cloud Computing (Cloud'19). Milan, Italy. 2019.
+- R. Bass, J. Landford, R. Meier, B. McCamish, E. Cotilla-Sanchez, and D. Chiu. [Event Detection Using Correlation within Arrays of Streaming PMU Data](https://ieeexplore.ieee.org/document/8585774). Proceedings of the 2018 IEEE Power and Energy Society General Meetings (PES'18). Portland, OR. 2018.
+- C. Johnson and D. Chiu. [Hadoop in Flight: Migrating Live MapReduce Jobs for Power-Shifting Data Centers](Papers/johnson_CLOUD2016.pdf). In the Proceedings of the 9th IEEE International Conference on Cloud Computing (Cloud'16). Research Track - Full Paper. San Francisco, CA. 2016.
+- B. McCamish, R. Meier, J. Landford, R. Bass, D. Chiu, and E. Cotilla-Sanchez. [A Backend Framework for the Efficient Management of Power System Measurements](https://www.sciencedirect.com/science/article/abs/pii/S0378779616301559?via%3Dihub). Electric Power Systems Research. Volume 140, November 2016, Pages 797-805.
+- R. Meier, M. Histand, J. Landford, B. McCamish, D. Chiu, R. Bass, and E. Cotilla-Sanchez. [Power System Data Management and Analysis Using Synchrophasor Data](https://ieeexplore.ieee.org/document/7046248?arnumber=7046248). In Proceedings of the 2nd IEEE Conference on Technologies for Sustainability (SusTech'14). Portland, OR. 2014.
+- B. McCamish, D. Chiu, M. Histand, R. Meier, J. Landford, E. Cotilla-Sanchez, and R. Bass. [Managing PMU Data Sets with Bitmap Indexes](Papers/mccamish-sustech14.pdf). In Proceedings of the 2nd IEEE Conference on Technologies for Sustainability (SusTech'14). Portland, OR. 2014.
+- Y. Li, D. Chiu, C. Liu, L. T. X. Phan, T. Gill, S. Aggarwal, Z. Zhang, B. T. Loo, D. Maier, and B. McManus. [Towards Dynamic Pricing-Based Collaborative Optimizations for Green Data Centers](Papers/yang-DMC13.pdf). In the 2nd International Workshop on Data Management in the Cloud (DMC'13). In conjunction with ICDE'13. Brisbane, Australia. 2013.
+- D. Chiu, C. Stewart, and B. McManus. [Electric Load Balancing through Low-Cost Workload Migration](Papers/chiu-GreenMetrics2012.pdf). In ACM SIGMETRICS Performance Evaluation Review (GreenMetrics). Vol 40(3). Dec 2012.
 
 ### Completed Projects
 
