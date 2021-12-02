@@ -88,7 +88,7 @@ My research interests intersect topics in cloud computing and data management. I
 - D. Chiu. WME Site Organization and Customization Support. In Proceedings of the Conference on Information Technology in Education. Elizabethtown, PA. 2004. (Best Student Paper Award)
 - M. Mikusa, P. S. Wang, D. Chiu, X. Lai, and X. Zou. Web-based Mathematics Education Pilot Project. In Proceedings of the Conference on Information Technology in Education. Elizabethtown, PA. 2004.
 - D. Chiu. [Web-based Mathematics Education with MathChat](https://ieeexplore.ieee.org/document/1286551). In Proceedings of the IEEE International Conference on Information Technology: Coding and Computing (ITCC'04). Las Vegas, NV. 2004. (Best Student Paper Award)
-- D. Chiu, Y. Zhou, X. Zou, and P. S. Wang. [Design, Implementation, and Processing Support of MeML](Papers/chiu-iacm2003.pdf). In Proceedings of the ACM ISSAC Workshop on Internet Accessible Mathematics Computation (IAMC'03), Philadelphia, PA, USA. July 2003.
+- D. Chiu, Y. Zhou, X. Zou, and P. S. Wang. [Design, Implementation, and Processing Support of MeML](Papers/chiu-iamc2003.pdf). In Proceedings of the ACM ISSAC Workshop on Internet Accessible Mathematics Computation (IAMC'03), Philadelphia, PA, USA. July 2003.
 
 ### PhD Dissertation
 
