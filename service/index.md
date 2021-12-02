@@ -42,6 +42,8 @@
 - Chair of Computer Science, University of Puget Sound (2019 - )
 - Student Life Committee, University of Puget Sound (2021 - )
 - Lantz Committee, University of Puget Sound (2021)
+- Chair, Data Science Program Committee, University of Puget Sound (2020 - 2021)
+- Chair, Data Science Search Committee, University of Puget Sound (2020)
 - Curriculum Taskforce (CTF), University of Puget Sound (2018 - )
 - Data Analytics Exploratory Committee, University of Puget Sound (2017 - 2018)
 - Alumni Mentoring Committee, University of Puget Sound (2017 - 2018)
