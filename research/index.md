@@ -28,7 +28,7 @@ My research interests intersect topics in cloud computing and data management. I
 <!-- [[PDF](Papers/slechta-IDEAS2014.pdf)] -->
 - F. Doan, D. Chiu, B. Perez Lukes, J. Sawin, G. Guzun, and G. Canahuate. [Dynamic Bitmap Index Recompression through Workload-Based Optimizations](Papers/doan-IDEAS13.pdf). In Proceedings of the 17th International Database Engineering and Applications Symposium (IDEAS'13). Barcelona, Spain.
 <!-- [[PDF](Papers/doan-IDEAS13.pdf)] -->
-- F. Corrales, D. Chiu, and J. Sawin. Variable Length Compression for Bitmap Indices. In Proceedings of the 22nd International Conference on Database and Expert Systems Applications (DEXA'11). LNCS, Springer. Toulouse, France. 2011.
+- F. Corrales, D. Chiu, and J. Sawin. [Variable Length Compression for Bitmap Indices](https://link.springer.com/chapter/10.1007%2F978-3-642-23091-2_32). In Proceedings of the 22nd International Conference on Database and Expert Systems Applications (DEXA'11). LNCS, Springer. Toulouse, France. 2011.
 
 #### Power Management in Distributed Systems
 
