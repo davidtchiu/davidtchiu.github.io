@@ -272,13 +272,11 @@ We'd like to generate some charts to better visualize our results.
 
 1. Open up the `ListSearcher` class, and look for the `findMedian()` method. Again, study the code carefully and hypothesize what the best, worst, and average cases would be.
 
-2. Now, modify this method to count the comparisons required for each run.
+2. Open your Lab Report back up. For each best/worst/average case, write down (1) the scenario under which the case would be observed, and (2) the equation, in terms of N, expressing its complexity.
 
-3. Open your Lab Report back up. For each best/worst/average case, write down (1) the scenario under which the case would be observed, and (2) the equation, in terms of N, expressing its complexity.
+3. Run some experiments by varying N = 1000, 2000, ..., 10000. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case. Insert the plot in your Lab Report, and answer the final questions.
 
-4. Run some experiments by varying N = 1000, 2000, ..., 10000. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case. Insert the plot in your Lab Report, and answer the final questions.
-
-5. Finally hypothesize whether ordering affects the complexities of this method. Run a final set of experiments to confirm/reject your hypothesis.
+4. Finally hypothesize whether ordering affects the complexities of this method. Run a final set of experiments to confirm/reject your hypothesis.
 
 #### Grading
 
