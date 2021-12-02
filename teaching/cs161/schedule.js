@@ -124,12 +124,12 @@ let days = {
       //   url: "lab11.cards/",
       //   due: "12/3/2021",
       // },
-      // {
-      //   name: "Zoom Lab 12",
-      //   title: "Elementary Complexity Analysis",
-      //   url: "lab12.perf/",
-      //   due: "12/10/2021",
-      // },
+      {
+        name: "Zoom Lab 11",
+        title: "Elementary Complexity Analysis",
+        url: "lab11.perf/",
+        due: "12/3/2021",
+      },
     ],
   },
   lectures: [
