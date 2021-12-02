@@ -56,29 +56,29 @@ My research interests intersect topics in cloud computing and data management. I
 
 #### Elastic Cloud Caching for Accelerating Data-Intensive Applications
 
-- F. Kabir, T. Hall, S. Wallace, and D. Chiu. Elastic Resource Allocation for a Cloud-Based Web Caching System. International Journal of Next-Generation Computing. Vol 5(1). 2014.
-- F. Kabir and D. Chiu. Reconciling Cost and Performance Objectives for Elastic Web Caches. In Proceedings of the 2012 IEEE International Conference on Cloud and Services Computing (CSC'12). Shanghai, China. 2012.
-- D. Chiu, A. Shetty, and G. Agrawal. Evaluating and Optimizing Indexing Schemes for a Cloud-based Elastic Key-Value Store. In Proceedings of the 11th IEEE/ACM International Symposium on Cluster, Cloud, and Grid Computing (CCGrid'11). Newport Beach, CA. 2011.
-- D. Chiu, A. Shetty, and G. Agrawal. Elastic Cloud Caches for Accelerating Service-Oriented Computations. In Proceedings of the 23rd ACM/IEEE International Conference on High Performance Computing Networking, Storage and Analysis (SC'10). New Orleans, LA. 2010.
-- D. Chiu and G. Agrawal. Evaluating Caching and Storage Options on the Amazon Web Services Cloud. In Proceedings of the 11th ACM/IEEE International Conference on Grid Computing (GRID'10). Brussels, Belgium. 2010.
-- D. Chiu and G. Agrawal. Hierarchical Caches for Grid Workflows. In Proceedings of the 9th IEEE/ACM International Symposium on Cluster Computing and the Grid (CCGrid'09). Shanghai, China. 2009.
+- F. Kabir, T. Hall, S. Wallace, and D. Chiu. [Elastic Resource Allocation for a Cloud-Based Web Caching System](https://ijngc.perpetualinnovation.net/index.php/ijngc/article/view/58). International Journal of Next-Generation Computing. Vol 5(1). 2014.
+- F. Kabir and D. Chiu. [Reconciling Cost and Performance Objectives for Elastic Web Caches](Papers/kabir_CSC2012.pdf). In Proceedings of the 2012 IEEE International Conference on Cloud and Services Computing (CSC'12). Shanghai, China. 2012.
+- D. Chiu, A. Shetty, and G. Agrawal. [Evaluating and Optimizing Indexing Schemes for a Cloud-based Elastic Key-Value Store](Papers/chiu-CCGRID11.pdf). In Proceedings of the 11th IEEE/ACM International Symposium on Cluster, Cloud, and Grid Computing (CCGrid'11). Newport Beach, CA. 2011.
+- D. Chiu, A. Shetty, and G. Agrawal. [Elastic Cloud Caches for Accelerating Service-Oriented Computations](Papers/chiu-SC10.pdf). In Proceedings of the 23rd ACM/IEEE International Conference on High Performance Computing Networking, Storage and Analysis (SC'10). New Orleans, LA. 2010.
+- D. Chiu and G. Agrawal. [Evaluating Caching and Storage Options on the Amazon Web Services Cloud](Papers/chiu-GRID10.pdf). In Proceedings of the 11th ACM/IEEE International Conference on Grid Computing (GRID'10). Brussels, Belgium. 2010.
+- D. Chiu and G. Agrawal. [Hierarchical Caches for Grid Workflows](Papers/chiu-GRID08.pdf). In Proceedings of the 9th IEEE/ACM International Symposium on Cluster Computing and the Grid (CCGrid'09). Shanghai, China. 2009.
+
+#### Scientific Workflow Management in Cloud/Grid Environments
+
+- D. Chiu and G. Agrawal. [Cost and Accuracy Aware Scientific Workflow Composition for Service-Oriented Environments](https://ieeexplore.ieee.org/document/6226350). IEEE Transactions on Services Computing. Vol 6(4). IEEE. 2012.
+- D. Chiu, T. Hall, F. Kabir, and G. Agrawal. [An Approach towards Automatic Workflow Composition through Information Retrieval](Papers/chiu-IDEAS11.pdf). In Proceedings of the 15th International Database Engineering and Applications Symposium (IDEAS'11). Lisbon, Portugal. 2011.
+- D. Chiu, T. Hall, F. Kabir, A. Shetty, and G. Agrawal. [Analyzing Costs and Optimizations for an Elastic Key-Value Store on Amazon Web Services](https://www.ijngc.perpetualinnovation.net/index.php/ijngc/article/view/90). International Journal of Next-Generation Computing. Vol 2(2). Special Issue on Cloud Computing. July 2011.
+- D. Chiu, S. Deshpande, G. Agrawal, and R. Li. [A Dynamic Approach toward QoS-Aware Service Workflow Composition](Papers/chiu-ICWS09.pdf). In Proceedings of the 7th IEEE International Conference on Web Services (ICWS'09). Los Angeles, CA, USA. 2009.
+- D. Chiu, S. Deshpande, G. Agrawal, and R. Li. [Composing Geoinformatics Workflows with User Preferences](https://dl.acm.org/doi/10.1145/1463434.1463500). In Proceedings of the 16th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems (ACM GIS'08). Irvine, CA, USA. 2008 (Poster Paper).
+- D. Chiu, S. Deshpande, G. Agrawal, and R. Li. [Cost and Accuracy Sensitive Dynamic Workflow Composition over Grid Environments](Papers/chiu-GRID08.pdf). In Proceedings of the 9th IEEE/ACM International Conference on Grid Computing (GRID'08). Tsukuba, Japan, 2008.
+- D. Chiu and G. Agrawal. [Enabling Ad Hoc Queries over Low-Level Scientific Data Sets](Papers/chiu-SSDBM09.pdf). In Proceedings of the 21st International Conference on Scientific and Statistical Database Management (SSDBM'09). New Orleans, LA, USA. 2009.
 
 #### Mining Data Streams
 
-- E. Otsuka, S. Wallace, and D. Chiu. A Hashtag Recommendation System for Twitter Data Streams. Computational Social Networks, 3(1), 1-26. Springer. 2016.
-- X. Huang, T. Liu, D.Chiu, X. Li, and T. Zhu. Topic Model for Identifying Suicidal Ideation in Chinese Microblog. 29th Pacific Asia Conference on Language, Information and Computation (PACLIC'15). Shanghai, China. 2015.
-- E. Otsuka, S. A. Wallace, and D. Chiu. Design and Evaluation of a Twitter Hashtag Recommendation System. In Proceedings of the 18th International Database Engineering and Applications Symposium (IDEAS'14). Porto, Portugal. (Short Paper).
-- X. Huang, L. Zhang, T. Liu, D. Chiu, X. Li, and T. Zhu. Detecting Suicidal Ideation in Chinese Microblogs with Psychological Lexicons. In Proceedings of the 2014 Workshop on Pervasive and Ubiquitous Data Analytics. Held in conjunction with the 11th IEEE International Conference on Ubiquitous Intelligence and Computing.
-
-#### Automatic Service Planning in Cloud/Grid Environments
-
-- D. Chiu and G. Agrawal. Cost and Accuracy Aware Scientific Workflow Composition for Service-Oriented Environments. IEEE Transactions on Services Computing. Vol 6(4). IEEE. 2012.
-- D. Chiu, T. Hall, F. Kabir, and G. Agrawal. An Approach towards Automatic Workflow Composition through Information Retrieval. In Proceedings of the 15th International Database Engineering and Applications Symposium (IDEAS'11). Lisbon, Portugal. 2011.
-- D. Chiu, T. Hall, F. Kabir, A. Shetty, and G. Agrawal. Analyzing Costs and Optimizations for an Elastic Key-Value Store on Amazon Web Services. International Journal of Next-Generation Computing. Vol 2(2). Special Issue on Cloud Computing. July 2011.
-- D. Chiu, S. Deshpande, G. Agrawal, and R. Li. A Dynamic Approach toward QoS-Aware Service Workflow Composition. In Proceedings of the 7th IEEE International Conference on Web Services (ICWS'09). Los Angeles, CA, USA. 2009.
-- D. Chiu, S. Deshpande, G. Agrawal, and R. Li. Composing Geoinformatics Workflows with User Preferences. In Proceedings of the 16th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems (ACM GIS'08). Irvine, CA, USA. 2008 (Poster Paper).
-- D. Chiu, S. Deshpande, G. Agrawal, and R. Li. Cost and Accuracy Sensitive Dynamic Workflow Composition over Grid Environments. In Proceedings of the 9th IEEE/ACM International Conference on Grid Computing (GRID'08). Tsukuba, Japan, 2008.
-- D. Chiu and G. Agrawal. Enabling Ad Hoc Queries over Low-Level Scientific Data Sets. In Proceedings of the 21st International Conference on Scientific and Statistical Database Management (SSDBM'09). New Orleans, LA, USA. 2009.
+- E. Otsuka, S. Wallace, and D. Chiu. [A Hashtag Recommendation System for Twitter Data Streams](Papers/otsuka-CSN2016.pdf). Computational Social Networks, 3(1), 1-26. Springer. 2016.
+- X. Huang, T. Liu, D.Chiu, X. Li, and T. Zhu. [Topic Model for Identifying Suicidal Ideation in Chinese Microblog](https://aclanthology.org/Y15-1064/). 29th Pacific Asia Conference on Language, Information and Computation (PACLIC'15). Shanghai, China. 2015.
+- E. Otsuka, S. A. Wallace, and D. Chiu. [Design and Evaluation of a Twitter Hashtag Recommendation System](Papers/otsuka-IDEAS2014.pdf). In Proceedings of the 18th International Database Engineering and Applications Symposium (IDEAS'14). Porto, Portugal. (Short Paper).
+- X. Huang, L. Zhang, T. Liu, D. Chiu, X. Li, and T. Zhu. [Detecting Suicidal Ideation in Chinese Microblogs with Psychological Lexicons](https://ieeexplore.ieee.org/document/7307052). In Proceedings of the 2014 Workshop on Pervasive and Ubiquitous Data Analytics. Held in conjunction with the 11th IEEE International Conference on Ubiquitous Intelligence and Computing.
 
 #### Education Technologies and CS Pedagogy
 
