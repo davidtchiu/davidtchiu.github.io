@@ -21,15 +21,12 @@ My research interests intersect topics in cloud computing and data management. I
 - M. Nelson, Z. Sorenson, J. Myer, J. Sawin, and D. Chiu. [GPU Acceleration of Range Queries over Large Data Sets](Papers/nelson-BDCAT2019.pdf). Proceedings of the 6th IEEE/ACM International Conference on Big Data Computing, Application, and Technologies (BDCAT'19). Auckland, New Zealand. 2019. **(Best Paper Candidate)**
 - S. Burdick, J. Risner, D. Chiu, and J. Sawin. [Fault-Tolerant Query Execution over Distributed Bitmap Indices](Papers/mcclain-ssdbm2021.pdf). In Proceedings of the 5th IEEE/ACM International Conference on Big Data Computing, Application, and Technologies (BDCAT'18). Zurich, Switzerland. 2018. **(Best Paper Candidate)**
 - B. Taufen, J. Sawin, and D. Chiu. [Improving the Querying Efficiency of the PLWAH Bitmap Algorithm](Papers/taufenIDEAS2017.pdf). In Proceedings of the 21st International Database Engineering and Applications Symposium (IDEAS'17). Bristol, UK. 2017.
-- G. Guzun, G. Canahuate, and D. Chiu. A Two-Phase MapReduce Algorithm for Scalable Preference Queries over High-Dimensional Data. In Proceedings of the 20th International Database Engineering and Applications Symposium (IDEAS'16). Montreal, Canada. 2016.
-  [[PDF](Papers/guzun-IDEAS2016.pdf)]
-- M. Velez, J. Sawin, A. Ingerson, and D. Chiu. Improving Bitmap Execution Performance Using Column-Based Metadata. 4th IEEE International Conference on Future Internet of Things and Cloud (FiCloud'16). Vienna, Austria. 2016.
-  [[PDF](Papers/velez-FiCloud2016.pdf)]
-- G. Guzun, G. Canahuate, D. Chiu, and J. Sawin. A Tunable Aligned Compression Framework for Bitmap Indices. In Proceedings of the 30th IEEE International Conference on Data Engineering (ICDE'14). Chicago, IL.
-  [[PDF](Papers/guzun-ICDE2014.pdf)]
-- R. Slechta, J. Sawin, B. McCamish, D. Chiu, and G. Canahuate. Optimizing Query Execution for Variable-Aligned Length Compression of Bitmap Indices. In Proceedings of the 18th International Database Engineering and Applications Symposium (IDEAS'14). Porto, Portugal.
+- G. Guzun, G. Canahuate, and D. Chiu. [A Two-Phase MapReduce Algorithm for Scalable Preference Queries over High-Dimensional Data](Papers/guzun-IDEAS2016.pdf). In Proceedings of the 20th International Database Engineering and Applications Symposium (IDEAS'16). Montreal, Canada. 2016.
+- M. Velez, J. Sawin, A. Ingerson, and D. Chiu. [Improving Bitmap Execution Performance Using Column-Based Metadata](Papers/velez-FiCloud2016.pdf). 4th IEEE International Conference on Future Internet of Things and Cloud (FiCloud'16). Vienna, Austria. 2016.
+- G. Guzun, G. Canahuate, D. Chiu, and J. Sawin. [A Tunable Aligned Compression Framework for Bitmap Indices](Papers/guzun-ICDE2014.pdf). In Proceedings of the 30th IEEE International Conference on Data Engineering (ICDE'14). Chicago, IL.
+- R. Slechta, J. Sawin, B. McCamish, D. Chiu, and G. Canahuate. [Optimizing Query Execution for Variable-Aligned Length Compression of Bitmap Indices](Papers/slechta-IDEAS2014.pdf). In Proceedings of the 18th International Database Engineering and Applications Symposium (IDEAS'14). Porto, Portugal.
 <!-- [[PDF](Papers/slechta-IDEAS2014.pdf)] -->
-- F. Doan, D. Chiu, B. Perez Lukes, J. Sawin, G. Guzun, and G. Canahuate. Dynamic Bitmap Index Recompression through Workload-Based Optimizations. In Proceedings of the 17th International Database Engineering and Applications Symposium (IDEAS'13). Barcelona, Spain.
+- F. Doan, D. Chiu, B. Perez Lukes, J. Sawin, G. Guzun, and G. Canahuate. [Dynamic Bitmap Index Recompression through Workload-Based Optimizations](Papers/doan-IDEAS13.pdf). In Proceedings of the 17th International Database Engineering and Applications Symposium (IDEAS'13). Barcelona, Spain.
 <!-- [[PDF](Papers/doan-IDEAS13.pdf)] -->
 - F. Corrales, D. Chiu, and J. Sawin. Variable Length Compression for Bitmap Indices. In Proceedings of the 22nd International Conference on Database and Expert Systems Applications (DEXA'11). LNCS, Springer. Toulouse, France. 2011.
 
