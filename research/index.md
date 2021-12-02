@@ -84,10 +84,10 @@ My research interests intersect topics in cloud computing and data management. I
 
 - D. Chiu and S. Wallace. [On the Science in Computer Science: Integrating Research Preparedness in Undergraduate CS](https://dl.acm.org/doi/abs/10.5555/2527148.2527183). In the Journal of Computing Sciences in Colleges. Vol 29(1). 2013.
 - D. Chiu. On Teaching Computer Science: Thoughts and Advice for TAs. ACM XRDS. 15(2), 2008.
-- D. Chiu and P. S. Wang. [An Approach for Interoperable and Customizable Web-based Mathematics Education](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.163.8062&rep=rep1&type=pdf). In Proceedings of the 5th International Conference on Web-based Education. Puerto Vallarta, Mexico. 2006. (Best Student Paper Finalist)
-- D. Chiu. WME Site Organization and Customization Support. In Proceedings of the Conference on Information Technology in Education. Elizabethtown, PA. 2004. (Best Student Paper Award)
+- D. Chiu and P. S. Wang. [An Approach for Interoperable and Customizable Web-based Mathematics Education](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.163.8062&rep=rep1&type=pdf). In Proceedings of the 5th International Conference on Web-based Education. Puerto Vallarta, Mexico. 2006. **(Best Student Paper Finalist)**
+- D. Chiu. WME Site Organization and Customization Support. In Proceedings of the Conference on Information Technology in Education. Elizabethtown, PA. 2004. **(Best Student Paper Award)**
 - M. Mikusa, P. S. Wang, D. Chiu, X. Lai, and X. Zou. Web-based Mathematics Education Pilot Project. In Proceedings of the Conference on Information Technology in Education. Elizabethtown, PA. 2004.
-- D. Chiu. [Web-based Mathematics Education with MathChat](https://ieeexplore.ieee.org/document/1286551). In Proceedings of the IEEE International Conference on Information Technology: Coding and Computing (ITCC'04). Las Vegas, NV. 2004. (Best Student Paper Award)
+- D. Chiu. [Web-based Mathematics Education with MathChat](https://ieeexplore.ieee.org/document/1286551). In Proceedings of the IEEE International Conference on Information Technology: Coding and Computing (ITCC'04). Las Vegas, NV. 2004. **(Best Student Paper Award)**
 - D. Chiu, Y. Zhou, X. Zou, and P. S. Wang. [Design, Implementation, and Processing Support of MeML](Papers/chiu-iamc2003.pdf). In Proceedings of the ACM ISSAC Workshop on Internet Accessible Mathematics Computation (IAMC'03), Philadelphia, PA, USA. July 2003.
 
 ### PhD Dissertation
