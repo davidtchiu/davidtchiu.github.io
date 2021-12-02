@@ -85,7 +85,7 @@ Intro to Computer Science -->
 
 ### Teaching Awards
 
-- **WSU Diversity Council Award**\
+- **Diversity Council Award**\
   WSU Vancouver, 2010
 
 - **Outstanding Graduate Student Teaching (Eleanor Quinlan Memorial) Award**\
