@@ -27,16 +27,6 @@
 - Department Editor, ACM XRDS (2009-2010)
 - Associate Copy Editor, ACM XRDS (2007-2009)
 
-### Volunteering and Community Outreach
-
-- Mentor, Google Summer of Code (2011-present)
-- Faculty Participant, MESA Engineering Day (2011, 2012)
-- Mentor, Broader Engagement (Mentor/Protege) Program at Supercomputing'11, Seattle, WA (2011)
-- Lead Judge, Oral Presentations at MESA Day, Clark Community College, Vancouver WA (2011)
-- Middle and High School Judge, Intel Northwest Science Expo (2011)
-  Faculty Participant, MESA Engineering Day and Imagine U @ WSU (2010)
-- Mentor, Broader Engagement (Mentor/Protege) Program at Supercomputing'10, New Orleans, LA (2010)
-
 ### Service to the University
 
 - Chair of Computer Science, University of Puget Sound (2019 - )
@@ -56,3 +46,13 @@
 - Search Committee, School of Engineering and Computer Science, WSU Vancouver
 - Faculty Mentor, University Scholars Honors Program, WSU Vancouver
 - Graduate Studies Committee, School of Engineering and Computer Science, WSU Vancouver
+
+### Volunteering and Community Outreach
+
+- Mentor, Google Summer of Code (2011-present)
+- Faculty Participant, MESA Engineering Day (2011, 2012)
+- Mentor, Broader Engagement (Mentor/Protege) Program at Supercomputing'11, Seattle, WA (2011)
+- Lead Judge, Oral Presentations at MESA Day, Clark Community College, Vancouver WA (2011)
+- Middle and High School Judge, Intel Northwest Science Expo (2011)
+  Faculty Participant, MESA Engineering Day and Imagine U @ WSU (2010)
+- Mentor, Broader Engagement (Mentor/Protege) Program at Supercomputing'10, New Orleans, LA (2010)
