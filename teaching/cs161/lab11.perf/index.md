@@ -15,11 +15,13 @@ Intrigued, but skeptical, your friend asks you to "show them what you mean." In 
 
 The following file(s) have been provided for this homework.
 
-- [Lab12_Performance.zip](Lab12_Performance.zip)
+- [Lab11_Performance.zip](Lab11_Performance.zip)
 
 #### Preliminary
 
 Download the BlueJ project from the above link. After you unzip it into your working directory, navigate into the Lab12_Performance folder. Inside, you'll find a Word document called `Lab_Report.docx` and a BlueJ package. Open up the package and you'll see the following classes: `ListSearcher` and `PerformanceTester`.
+
+     ![](figures/lab9_fig0.png)
 
 #### Part 1: Generating Test Data
 
@@ -235,23 +237,23 @@ We'd like to generate some charts to better visualize our results.
    - Head over to [Google Docs](https://docs.google.com). One of you will need a Google ID, and sign in. Once in, click on the striped-lines button on the top-left corner, and select Sheets. Next, click on the `+` button on the bottom-right corner and it should generate a new blank spreadsheet. Let us know if you have troubles getting this far. After you've got a blank sheet in front of you, start plugging the numbers for N, Best Case, Worst Case, and Average Case as follows.
 
    - After you've got a blank sheet in front of you, start plugging the numbers for N, Best Case, Worst Case, and Average Case as follows.
-     ![](figs/lab9_fig1.png)
+     ![](figures/lab9_fig1.png)
 
    - Double-check that all of your data is entered correctly. Then select your data (including the first row containing labels). Then from the menu bar, click `Insert` > `Chart`... This will bring up a new dialog box that looks like the following. Make sure you place checkmarks in Use `Row 1` as Headers and Use `Column A` as Labels
-     ![](figs/lab9_fig2.png)
+     ![](figures/lab9_fig2.png)
 
    - Now we need to decide the best kind of graph to visualize our data. For our results, we want a simple line-graph. From the dialog, click on the Charts tab. Make sure Line is selected on the left-hand panel, then select top option:
-     ![](figs/lab9_fig3.png)
+     ![](figures/lab9_fig3.png)
 
    - Inside the same dialog, click on the Customize tab. Give your chart a title, then scroll down half way to find Axis:
 
      - Label your Horizontal Axis to be "N (List Size)"
      - Label your Left Vertical Axis to be "Comparisons"
-       ![](figs/lab9_fig4.png)
-       ![](figs/lab9_fig5.png)
+       ![](figures/lab9_fig4.png)
+       ![](figures/lab9_fig5.png)
 
    - Click the Insert button on the bottom, and you should see the Chart!
-     ![](figs/lab9_fig6.png)
+     ![](figures/lab9_fig6.png)
 
    - Click on the chart, and on the top-right hand corner you should see a triangle button. Click on this button, and click Save Image. This will download the chart as a PNG file. Finally, open it and copy-and-paste this Chart into the appropriate place in your Lab Report under Linear Search Time Complexity Plot (Unordered Lists).
 
