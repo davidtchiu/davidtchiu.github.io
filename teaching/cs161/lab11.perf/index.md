@@ -274,7 +274,7 @@ We'd like to generate some charts to better visualize our results.
 
 2. Now, modify this method to count the comparisons required for each run.
 
-3. Open your Lab Report back up. For each best/worst/average case, write down (1) the scenario under which the case would be observed, and (2) the equation expressing its complexity.
+3. Open your Lab Report back up. For each best/worst/average case, write down (1) the scenario under which the case would be observed, and (2) the equation, in terms of N, expressing its complexity.
 
 4. Run some experiments by varying N = 1000, 2000, ..., 10000. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case. Insert the plot in your Lab Report, and answer the final questions.
 
@@ -284,7 +284,7 @@ We'd like to generate some charts to better visualize our results.
 
 ```
 
-This assignment will be graded out of a total of 10pts.
+This assignment will be graded out of a total of 2 pts.
 
 ```
 
