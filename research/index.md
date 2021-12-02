@@ -92,7 +92,7 @@ My research interests intersect topics in cloud computing and data management. I
 
 ### PhD Dissertation
 
-- D. Chiu. [AUSPICE: Automatic Service Planning in Cloud/Grid Environments](Papers/chiu-dissertation10.pdf). Doctoral Dissertation. The Ohio State University, 2010. 196 Pages. Committee: Gagan Agrawal (Advisor), Christopher Stewart, and Hakan Ferhatosmanoglu.
+- D. Chiu. [AUSPICE: Automatic Service Planning in Cloud/Grid Environments](Papers/chiu-dissertation10.pdf). Doctoral Dissertation. The Ohio State University, 2010. 196 Pages. Committee: Gagan Agrawal (Advisor), Christopher Stewart, Feng Qin, and Hakan Ferhatosmanoglu.
 
 ### Research Awards
 
