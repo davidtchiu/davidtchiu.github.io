@@ -1,81 +1,70 @@
 let days = {
   assignments: {
-    homework: [
-      {
-        name: "Hwk 1",
-        title: "The Relational Model",
-        url: "hwk1.rel/",
-        due: "9/10/2021",
-      },
-      {
-        name: "Hwk 2",
-        title: "Relational Algebra",
-        url: "hwk2.ra/",
-        due: "9/24/2021",
-      },
-      {
-        name: "Hwk 3",
-        title: "Data Preparation",
-        url: "hwk3.ddl/",
-        due: "10/8/2021",
-      },
-      {
-        name: "Hwk 4",
-        title: "Writing SQL Queries",
-        url: "hwk4.dml/",
-        due: "10/22/2021",
-      },
-      {
-        name: "Hwk 5",
-        title: "Normalization",
-        url: "hwk5.norm/",
-        due: "11/5/2021",
-      },
-      {
-        name: "Hwk 6",
-        title: "Joins!",
-        url: "hwk6.joins/",
-        due: "11/23/2021",
-      },
-    ],
-
+    // homework: [
+    //   {
+    //     name: "Hwk 1",
+    //     title: "The Relational Model",
+    //     url: "hwk1.rel/",
+    //     due: "9/10/2021",
+    //   },
+    //   {
+    //     name: "Hwk 2",
+    //     title: "Relational Algebra",
+    //     url: "hwk2.ra/",
+    //     due: "9/24/2021",
+    //   },
+    //   {
+    //     name: "Hwk 3",
+    //     title: "Data Preparation",
+    //     url: "hwk3.ddl/",
+    //     due: "10/8/2021",
+    //   },
+    //   {
+    //     name: "Hwk 4",
+    //     title: "Writing SQL Queries",
+    //     url: "hwk4.dml/",
+    //     due: "10/22/2021",
+    //   },
+    //   {
+    //     name: "Hwk 5",
+    //     title: "Normalization",
+    //     url: "hwk5.norm/",
+    //     due: "11/5/2021",
+    //   },
+    //   {
+    //     name: "Hwk 6",
+    //     title: "Joins!",
+    //     url: "hwk6.joins/",
+    //     due: "11/23/2021",
+    //   },
+    // ],
     ////////////////////////////// PROJECTS ///////////////////////////////
-    projects: [
-      {
-        name: "Proj 1",
-        title: "To the Cloud",
-        url: "proj1.cloud/",
-        due: "9/20/2021",
-      },
-      {
-        name: "Proj 2",
-        title: "Server-Side Web Development with PHP",
-        url: "proj2.php/",
-        due: "10/22/2021", //extended this year only (move back to 10/18 in future)
-      },
-      {
-        name: "Proj 3",
-        title: "Project Planning",
-        url: "proj3.planning/",
-        due: "11/1/2021",
-      },
-      {
-        name: "Proj 4",
-        title: "Implementation",
-        url: "proj4.impl/",
-        due: "12/10/2021",
-      },
-    ],
-
-    ////////////////////////////////// LABS ////////////////////////////////
-    labs: [
-      {
-        name: "Lab",
-        title: "2-Day SQL Bootcamp",
-        url: "lab.sql/",
-        // due: "10/5/2021",
-      },
-    ],
+    // projects: [
+    //   {
+    //     name: "Proj 1",
+    //     title: "To the Cloud",
+    //     url: "proj1.cloud/",
+    //     due: "9/20/2021",
+    //   },
+    //   {
+    //     name: "Proj 2",
+    //     title: "Server-Side Web Development with PHP",
+    //     url: "proj2.php/",
+    //     due: "10/22/2021", //extended this year only (move back to 10/18 in future)
+    //   },
+    //   {
+    //     name: "Proj 3",
+    //     title: "Project Planning",
+    //     url: "proj3.planning/",
+    //     due: "11/1/2021",
+    //   },
+    //   {
+    //     name: "Proj 4",
+    //     title: "Implementation",
+    //     url: "proj4.impl/",
+    //     due: "12/10/2021",
+    //   },
+    // ],
   },
 
   lectures: [
