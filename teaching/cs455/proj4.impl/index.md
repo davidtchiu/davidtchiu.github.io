@@ -65,6 +65,6 @@ This assignment will be graded out of 100 points:
 [25pt] Internal/self evaluation. Each of your teammates will evaluate your contributions to the overall project. You will take this on the final exam.
 
 Misc.
-[-5pt] Failure to turn in a peer evaluation. (Both demo days)
-[-5pt] Failure to turn in an internal evaluation. (Final Exam)
+[-5pt] Failure to turn in a peer evaluation. (On demo days)
+[-5pt] Failure to turn in an internal evaluation. (On date of Final Exam)
 ```
