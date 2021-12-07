@@ -42,7 +42,7 @@ For each of your use-cases, you must now implement a set of web pages to support
 
 - [Peer Eval Form](PeerEvaluation.pdf)
 
-**Internal Evaluation:** Members of your team will each submit an anonymous evaluation of the other team members to me. In this evaluation, you should be honest about the work balance and dynamics of yourself and other members.
+**Internal Evaluation (On Final Exam)** Members of your team will each submit an anonymous evaluation of the other team members to me. In this evaluation, you should be honest about the work balance and dynamics of yourself and other members.
 
 - [Internal Eval Form](InternalEvaluation.pdf)
 
@@ -62,7 +62,7 @@ This assignment will be graded out of 100 points:
 [45pt] The use-cases you outlined in the project planning phase are implemented properly and resist SQL injection.
 [10pt] The in-class demo/presentation is well-prepared, fluid, and organized.
 [10pt] Peer evaluation. All other teams will evaluate the quality of your project.
-[25pt] Internal/self evaluation. Each of your teammates will evaluate your contributions to the overall project.
+[25pt] Internal/self evaluation. Each of your teammates will evaluate your contributions to the overall project. You will take this on the final exam.
 
 Misc.
 [-5pt] Failure to turn in a peer evaluation. (Both demo days)
