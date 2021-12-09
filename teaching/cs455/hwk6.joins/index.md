@@ -10,9 +10,10 @@
 
 #### Required Files
 
-Download the file below, and extract it into your project directory. It contains the [classicmodels database](http://richardtwatson.com/dm6e/Reader/ClassicModels.html).
+Download the file below, and extract it into your project directory.
 
-- [classicmodels.zip](classicmodels.zip)
+- [data_testing.zip](data_testing.zip) - This file contains some small relations for testing.
+- [classicmodels.zip](classicmodels.zip) - This file contains the [classicmodels database](http://richardtwatson.com/dm6e/Reader/ClassicModels.html).
 
 #### Instructions
 
@@ -185,7 +186,75 @@ Comments in the file are preceded by a `#`. The comment on the first line has al
 
 - Rest assured that my input file will be well-formed (to the above specifications) and does not contain garbage inputs.
 
-#### Selected Outputs
+#### Selected Outputs (on data_testing DB)
+
+ade_sorted_unique abc_sorted_notunique over Nested Loop Join
+
+```
+D|A|E|B|C
+d5|a1|e5|b0|c0
+d5|a1|e5|b1|c1
+d3|a3|e3|b3|c3
+d3|a3|e3|b4|c4
+d1|a5|e1|b5|c5
+```
+
+abc_unsorted_notunique ade_unsorted_unique over Nested Loop Join
+
+```
+A|B|C|D|E
+a1|b0|c0|d5|e5
+a5|b5|c5|d1|e1
+a1|b1|c1|d5|e5
+a3|b3|c3|d3|e3
+a3|b4|c4|d3|e3
+```
+
+abc_sorted_notunique ade_unsorted_unique over HashJoin
+
+```
+A|B|C|D|E
+a1|b0|c0|d5|e5
+a1|b1|c1|d5|e5
+a5|b5|c5|d1|e1
+a3|b3|c3|d3|e3
+a3|b4|c4|d3|e3
+```
+
+ade_unsorted_unique abc_sorted_notunique over HashJoin
+
+```
+D|A|E|B|C
+d5|a1|e5|b0|c0
+d5|a1|e5|b1|c1
+d3|a3|e3|b3|c3
+d3|a3|e3|b4|c4
+d1|a5|e1|b5|c5
+```
+
+abc_sorted_notunique ade_sorted_unique over SortJoin
+
+```
+A|B|C|D|E
+a1|b0|c0|d5|e5
+a1|b1|c1|d5|e5
+a3|b3|c3|d3|e3
+a3|b4|c4|d3|e3
+a5|b5|c5|d1|e1
+```
+
+abc_unsorted_notunique ade_unsorted_unique over SortJoin
+
+```
+A|B|C|D|E
+a1|b0|c0|d5|e5
+a1|b1|c1|d5|e5
+a3|b3|c3|d3|e3
+a3|b4|c4|d3|e3
+a5|b5|c5|d1|e1
+```
+
+#### Selected Outputs (on classic models DB)
 
 Here is $$offices \bowtie employees$$ over sort-merge join:
 
