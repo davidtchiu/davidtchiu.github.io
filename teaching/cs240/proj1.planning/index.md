@@ -16,7 +16,7 @@ Your project can be anything, but it must observe the following requirements:
 - Git and Github used for version control
 - A graphical user interface (GUI) through HTML+CSS must be supported
 - Use of third party libraries/tools must be approved by me
-  - But you must use at least **2 significant Node.js packages**, like Electron, MongoDB, React, Express, etc.
+  <!-- - But you must use at least **2 significant Node.js packages**, like Electron, MongoDB, React, Express, etc. -->
 - Scrum is practiced and meeting minutes logged daily
 - Trello is used to manage the product and sprint backlogs
 
