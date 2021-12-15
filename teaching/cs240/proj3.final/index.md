@@ -21,13 +21,13 @@ At the minimum, your demo should outline:
 
 - Explanation for your project. Why it's needed (in a simulated world) and whom it's for.
 - Spend time showing off and discussing persona, scenarios, and major features.
-- List what worked well, and what didn't?
 - Lessons learned ("If we could do it over, we would ...")
 - The most important takeaway was ...
 
 Some other topics you might discuss:
 
--
+- If we had more time, we'd ...
+- What worked well, and what didn't?
 - How might you change the way you code after taking this class?
 
 #### Submissions
