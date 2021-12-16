@@ -17,7 +17,8 @@ Your project can be anything, but it must observe the following requirements:
 - A graphical user interface (GUI) through HTML+CSS must be supported
 - Use of third party libraries/tools must be approved by me, but you are encouraged to use npm packages!
   <!-- - But you must use at least **2 significant Node.js packages**, like Electron, MongoDB, React, Express, etc. -->
-- Scrum is practiced and meeting minutes logged daily
+- Scrum is practiced among team members, led by project manager
+- Scrum meeting minutes logged daily
 - Trello is used to manage the product backlog and sprint backlog
 
 <!-- #### Proposed Software Vision
