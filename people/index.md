@@ -1,22 +1,21 @@
 ### Current Students
 
-- Colin Monaghan (BS'22, Puget Sound)
-
 ### Research Alumni
 
 Here's is a list of my former research advisees and a half-hearted effort of tracking where they currently are.
 
 #### Undergraduate Research Students
 
+- Colin Monaghan (BS'22, Puget Sound)
 - Manya Meutschler-Aldine (BS'21, Puget Sound)
 - Sarah Walling-Bell (BS'20, Puget Sound) → Center for Neurotechnology, UW Seattle
 - Sarah McClain (BS'20, Puget Sound) → Panorama Education, Boston
-- Sam Burdick (BS'19, Puget Sound) → Amazon → PhD @ Ohio State
-- Jahrme Risner (BS'19, Puget Sound) → Google
 - Jared Polonitza (BS'19, Puget Sound) → Chalice Networks
+- Sam Burdick (BS'18, Puget Sound) → Amazon → PhD @ Ohio State
+- Jahrme Risner (BS'18, Puget Sound) → Google
 - Jack Burns (BS'18, Puget Sound) → Loopie Seattle
-- Christine Li (BS'18, Puget Sound) → Columbia University
 - Patrick Ryan (BS'18, Puget Sound) → T-Mobile, Bellevue
+- Christine Li (BS'17, Puget Sound) → Columbia University
 - Rachel Hirsch (BS'17, Puget Sound) → MS @ Colorado State → ringDNA
 - Chili Johnson (BS'17, Puget Sound)
 - Alexia Ingerson (BS'16, Puget Sound) → Intel
