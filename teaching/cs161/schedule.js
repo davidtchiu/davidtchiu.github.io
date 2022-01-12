@@ -221,13 +221,13 @@ let days = {
     "Lab 12",
     "Review Lab 12",
     // wk 16
-    "<strong><emph>Recursion</emph></strong>",
+    "<strong>Recursion</strong>",
     "<strong><emph>Review</emph></strong>",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
+    "<strong><emph>Final Exam (8a - 10a)</strong></emph>",
     "",
-    "<strong><emph>Final Exam (12p - 2p)</strong></emph>",
     "",
     "",
   ],
