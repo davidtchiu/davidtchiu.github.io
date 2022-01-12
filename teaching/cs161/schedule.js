@@ -59,73 +59,73 @@ let days = {
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
       // {
-      //   name: "Zoom Lab 1",
+      //   name: "Lab 1",
       //   title: "Draw My Picture (BlueJ)",
       //   url: "lab1.bluej/",
       //   due: "9/3/2021",
       // },
       // {
-      //   name: "Zoom Lab 2",
+      //   name: "Lab 2",
       //   title: "Variables (Scope and Lifetime)",
       //   url: "lab2.vars/",
       //   due: "9/10/2021",
       // },
       // {
-      //   name: "Zoom Lab 3",
+      //   name: "Lab 3",
       //   title: "Stomach Class (Class Writing)",
       //   url: "lab3.stomach/",
       //   due: "9/17/2021",
       // },
       // {
-      //   name: "Zoom Lab 4",
+      //   name: "Lab 4",
       //   title: "Guessing Game (Conditionals)",
       //   url: "lab4.guessing/",
       //   due: "9/24/2021",
       // },
       // {
-      //   name: "Zoom Lab 5",
+      //   name: "Lab 5",
       //   title: "Circle Drawer (Objects)",
       //   url: "lab5.circleDrawer/",
       //   due: "10/1/2021",
       // },
       // {
-      //   name: "Zoom Lab 6",
+      //   name: "Lab 6",
       //   title: "Turtle Graphics (Loops)",
       //   url: "lab6.turtle/",
       //   due: "10/15/2021",
       // },
       // {
-      //   name: "Zoom Lab 7",
+      //   name: "Lab 7",
       //   title: "Combo Guesser (Arrays)",
       //   url: "lab7.combo/",
       //   due: "10/22/2021",
       // },
       // {
-      //   name: "Zoom Lab 8",
+      //   name: "Lab 8",
       //   title: "Super Circle Drawer (ArrayLists)",
       //   url: "lab8.superCircleDrawer/",
       //   due: "10/29/2021",
       // },
       // {
-      //   name: "Zoom Lab 9",
+      //   name: "Lab 9",
       //   title: "Election (HashMaps)",
       //   url: "lab9.election/",
       //   due: "11/5/2021",
       // },
       // {
-      //   name: "Zoom Lab 10",
+      //   name: "Lab 10",
       //   title: "Boulders (File I/O, Parsing)",
       //   url: "lab10.boulders/",
       //   due: "11/19/2021",
       // },
       // {
-      //   name: "Zoom Lab 11",
+      //   name: "Lab 11",
       //   title: "Playing Cards (Constants, Enum; IntelliJ IDE)",
       //   url: "lab11.cards/",
       //   due: "12/3/2021",
       // },
       // {
-      //   name: "Zoom Lab 11",
+      //   name: "Lab 11",
       //   title: "Elementary Complexity Analysis",
       //   url: "lab11.perf/",
       //   due: "12/3/2021",
@@ -134,29 +134,29 @@ let days = {
   },
   lectures: [
     // wk 1
-    "<strong>MLK<br/>(no class)</strong>",
-    "Introductions: Who are we? Syllabus",
-    "Zoom Lab 1",
-    "What is CS?",
+    "<strong>MLK Day<br/>(no class)</strong>",
+    "Introductions: Who are we? Syllabus (Zoom)",
+    "Lab 1 (Zoom)",
+    "What is CS? (Zoom)",
     // wk 2
     "CS: hardware, languages",
     "Circle class: Comments, fields, data types",
-    "Zoom Lab 2",
+    "Lab 2",
     "Writing constructors; parameters, assignment statement",
     // wk 3
     "Writing methods, calling methods, returning",
     "Writing classes: TicketMachine. Printing",
-    "Zoom Lab 3",
+    "Lab 3",
     "Conditionals",
     // wk 4
     "Else-if; Start data types: primitives",
     "Type-casting (narrowing, widening)",
-    "Zoom Lab 4",
+    "Lab 4",
     "Classes as types: references, object equivalence",
     // wk 5
     "Abstraction and modularity: Organism",
     "Abstraction: Working with APIs; Unpacking Strings",
-    "Zoom Lab 5",
+    "Lab 5",
     "String exercises",
     // wk 6
     "Start loops; reading; tracing",
@@ -166,46 +166,50 @@ let days = {
     // wk 7
     "Exam review; Start For loops",
     "More loop examples",
-    "Zoom Lab 6",
+    "Lab 6",
     "Nested loops",
     // wk 8
     "Arrays; Start Bank",
     "Finish Bank",
-    "Zoom Lab 7",
+    "Lab 7",
     "Review Lab 7",
-    // wk 9
+    // wk 9: spring break
+    "<b>Spring Break</b>",
+    "<b>Spring Break</b>",
+    "<b>Spring Break</b>",
+    "<b>Spring Break</b>",
+    // wk 10
     "Start ArrayList",
     "ArrayList",
-    "Zoom Lab 8",
+    "Lab 8",
     "Scanning for input: ChatBot",
-    // wk 10
+    // wk 11
     "Finish ChatBot; Start HashMap",
     "HashMap, for-each loop",
-    "Zoom Lab 9",
+    "Lab 9",
     "HashMap (cont.): Smarter ChatBot",
-    // wk 11
+    // wk 12
     "Start files",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     "File I/O; String parsing; Sorting ArrayLists",
-    // wk 12
+    // wk 13
     "Information hiding, static, main()",
     "enum; IntelliJ IDE",
-    "Zoom Lab 10",
+    "Lab 10",
     "enum; IntelliJ IDE",
-    // wk 13
-    "Start complexity: Linear and Binary search",
-    "<strong>Thanksgiving</strong>",
-    "<strong>Thanksgiving</strong>",
-    "<strong>Thanksgiving</strong>",
     // wk 14
+    "Start complexity: Linear and Binary search",
     "Selection sort",
+    "Lab 11",
     "Bubble Sort and optimizations",
-    "Zoom Lab 11",
-    // "Shaker sort, list operations",
-    "Recursion",
     // wk 15
+    "Recursion",
     "Recursion (cont.)",
+    "Lab 12",
+    "Review Lab 12",
+    // wk 16
+    "<strong><emph>Recursion</emph></strong>",
     "<strong><emph>Review</emph></strong>",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
@@ -218,6 +222,6 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("1/17/2021", days, MWRF);
+const schedule = new CourseCalendar("1/17/2022", days, MWRF);
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
