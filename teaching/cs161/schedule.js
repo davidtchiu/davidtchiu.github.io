@@ -2,10 +2,16 @@ let days = {
   assignments: {
     homework: [
       {
+        name: "Hwk 0",
+        title: "Coding My Drawing",
+        url: "hwk0.coding/",
+        due: "1/24/2022",
+      },
+      {
         name: "Hwk 1",
         title: "A Better Circle",
         url: "hwk1.circle/",
-        due: "9/13/2021",
+        due: "2/2/2022",
       },
       // {
       //   name: "Hwk 2",
