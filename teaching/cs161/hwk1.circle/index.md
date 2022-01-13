@@ -2,7 +2,7 @@
 
 ### Hwk: A Better Circle
 
-This first assignment will give you a chance to explore the shape classes in more detail, and gain additional experience with BlueJ. It requires modifying and extending Java source code, but all of the exercises below can be solved by copying and pasting from the original, running code — you don't need to know how to create any new lines of code from scratch yet.
+This assignment will give you a chance to explore the Circle class in more detail, and gain additional experience with BlueJ. It requires modifying and extending Java source code, but all of the exercises below can be solved by copying and pasting from the original, running code — you don't need to know how to create any new lines of code from scratch yet.
 
 #### Student Outcomes
 
