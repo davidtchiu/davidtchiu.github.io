@@ -52,20 +52,20 @@ let days = {
       // {
       //   name: "Final Hwk Prep",
       //   title: "Final Homework Proposal (Optional)",
-      //   url: "hwk7.prep/",
-      //   due: "4/15/2022",
+      //   url: "hwkF.prep/",
+      //   due: "4/18/2022",
       // },
       // {
       //   name: "Final Hwk (alternate)",
       //   title: "Pooled Testing",
-      //   url: "hwk7.pooled/",
+      //   url: "hwkF.pooled/",
       //   due: "5/4/2021",
       // },
       // {
       //   name: "Final Hwk (altnernate)",
       //   title: "Black Jack",
-      //   url: "hwk8.blackjack/",
-      //   due: "5/4/2022",
+      //   url: "hwkF.blackjack/",
+      //   due: "5/2/2022",
       // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
