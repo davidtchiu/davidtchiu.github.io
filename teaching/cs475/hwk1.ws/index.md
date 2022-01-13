@@ -29,59 +29,62 @@ The following file(s) have been provided for this assignment.
   cd learningTypes
   ```
 - Now let's create a new file using the VSCode editor.
+
   ```bash
   code types.c
   ```
+
   Paste in the following code, and we'll discuss what each line means later in this assignment.
+
   ```c
-    1  /**
-    2  * A simple C program
-    3  *
-    4  * @author David
-    5  */
-    6
-    7 #include <stdio.h>
-    8
-    9  #define VAL 0
-    10 #define PI 3.14
-    11
-    12 int main(int argc, char *argv[])
-    13 {
-    14     char a = 'X';
-    15     int b = 9;
-    16     float c = 6;
-    17     double d = 0;
-    18     char str[] = "Hello world!";
-    19
-    20     if (VAL == d)
-    21     {
-    22         printf("Value of a is %c\n", a);
-    23         printf("Value of b is %d\n", b);
-    24         printf("Value of c is %f\n", c);
-    25         printf("Value of d is %f\n", d);
-    26         printf("Value of str is %s\n", str);
-    27
-    28         //printf can input varying amounts of arguments
-    29         printf("Values of a, b, and c are %c, %d, and %f\n", a, b, c);
-    30
-    31         //controlling floating point output
-    32         printf("c/b is: %f\n", c/b);
-    33         printf("c/b is: %0.0f\n", c/b);
-    34         printf("c/b is: %25.3f\n", c/b);
-    35         printf("c/b is: %0.9f\n", c/b);
-    36
-    37         //obtaining input
-    38         printf("Enter a character: ");
-    39         scanf("%c", &a);
-    40         printf("Enter an integer: ");
-    41         scanf("%d", &b);
-    42         printf("You entered %c and %d\n", a, b);
-    43         printf("Enter an float: ");
-    44         scanf("%f", &c);
-    45         printf("You entered %f\n", c);
-    46     }
-    47     return 0;
-    48 }
+  /**
+  * A simple C program
+  *
+  * @author David
+  */
+
+  #include <stdio.h>
+
+  #define VAL 0
+  #define PI 3.14
+
+  int main(int argc, char *argv[])
+  {
+      char a = 'X';
+      int b = 9;
+      float c = 6;
+      double d = 0;
+      char str[] = "Hello world!";
+
+      if (VAL == d)
+      {
+          printf("Value of a is %c\n", a);
+          printf("Value of b is %d\n", b);
+          printf("Value of c is %f\n", c);
+          printf("Value of d is %f\n", d);
+          printf("Value of str is %s\n", str);
+
+          //printf can input varying amounts of arguments
+          printf("Values of a, b, and c are %c, %d, and %f\n", a, b, c);
+
+          //controlling floating point output
+          printf("c/b is: %f\n", c/b);
+          printf("c/b is: %0.0f\n", c/b);
+          printf("c/b is: %25.3f\n", c/b);
+          printf("c/b is: %0.9f\n", c/b);
+
+          //obtaining input
+          printf("Enter a character: ");
+          scanf("%c", &a);
+          printf("Enter an integer: ");
+          scanf("%d", &b);
+          printf("You entered %c and %d\n", a, b);
+          printf("Enter an float: ");
+          scanf("%f", &c);
+          printf("You entered %f\n", c);
+      }
+      return 0;
+  }
   ```
 
 #### Grading
