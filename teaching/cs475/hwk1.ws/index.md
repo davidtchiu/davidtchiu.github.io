@@ -151,7 +151,222 @@ Open your virtual machine, and log in. Open up a Terminal window to the shell.
 
   - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters 'y' then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, inform the user, and ask again. (Hint: C's loop syntax is exactly the same as in Java)
 
-##### Part 2: About That `char` Data Type...
+<!-- ##### Part 2: About That `char` Data Type... -->
+
+##### Array Basics
+
+C has array support, but unlike Java, arrays in C are not considered objects. That means we don't have that nice `array.length` field, for instance, to tell us the length of an array, so it is the programmer who must always keep track of, and pass along, each array's size.
+
+- The syntax to create an array is:
+
+  ```c
+  dataType arrayName[size];
+  ```
+
+  where `size` is a constant. Alternatively, you can also create an array with known values:
+
+- The syntax to create an array is:
+
+  ```c
+  dataType arrayName[] = {val1, val2, ...};
+  ```
+
+- Now create the following program, called `array.c`:
+
+  ```c
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <time.h>
+
+  #define MAX_VALS 5
+
+  int main()
+  {
+      int A[] = {4,3,2,1};
+      double B[MAX_VALS];
+
+      //print out contents of A
+      int i;
+      for (i=0; i<4; i++)
+          printf("%d ", A[i]);
+      printf("\n");
+
+      //seed the random number generator
+      srand(time(NULL));
+
+      //fill B[..] with random numbers
+      for (i=0; i<MAX_VALS; i++)
+          B[i] = rand() % 100;    //get a number from 0 (inclusive) to 100 (exclusive)
+
+      //print out contents of B
+      for (i=0; i<MAX_VALS; i++)
+          printf("%.2f ", B[i]);
+      printf("\n");
+
+      return 0;
+  }
+  ```
+
+- Once you compile and run it, you should get something like:
+
+  ```c
+  4 3 2 1
+  50.00 95.00 79.00 37.00 92.00
+  ```
+
+- Note a few important differences from Java's arrays:
+
+  - The size of the array must be a constant. That is, you cannot input the size of the array from the user, then create the array later. There will be a workaround for this later.
+
+  - There is no easy way to determine the size of the array (i.e., no equivalent of `arrayName.length` in Java). This shouldn't be a problem, since arrays must've had a known, constant size when created.
+
+- Referring back to the source file:
+
+  - Lines 2-3: the random number generator functions `srand()` and `rand()` are imported from stdlib.h. We also include time.h to gain access to the `time()` function, which returns the number of seconds since 00:00 Jan 1, 1970 (known as Unix Time).
+
+  - Lines 9-10: declare and/or initialize two arrays. Notice that, either the values are known a priori and are initialized (Line 9), or the size of the array is given as a constant (Line 10).
+
+  - Lines 13-16: shows the common for-loop to access array elements. One thing to point out is that the indexing variable cannot be declared in the for-loop in C.
+
+  - Lines 19: to use the random number generator, we need to first seed it with an unsigned integer. It is common to the current time as the seed.
+
+  - Lines 23: after seeding, we can call `rand()` return a number in the range of [0, RAND_MAX].
+
+- Do these exercises (not graded):
+
+  - What is the value of `RAND_MAX` on your machine?
+
+  - What happens if you use `rand()` without seeding it first? Try pulling the call to `srand()` out, and run the program a few times.
+
+  - Set a value at an out-of-bounds index for one of the arrays (e.g.,` B[6] = 10;`), and then print out the array element at that index. Do you get runtime errors?
+
+##### Strings
+
+A string in C is essentially an array of `chars`, with one important caveat: The character sequence must be terminated with the null character `'\0'`, which has an integer value of 0. Therefore, C strings are often called "null-terminated strings" in literature.
+
+- The following code creates a character array of size 20, and is initialized with a string of length 11, `"Puget Sound"`. Even though the string is only 11 characters long, it actually occupies 12 elements to store the terminating null character.
+
+  ```c
+  char str[20];
+  str[0] = 'P';
+  str[1] = 'u';
+  str[2] = 'g';
+  str[3] = 'e';
+  str[4] = 't';
+  str[5] = ' ';
+  str[6] = 'S';
+  str[7] = 'o';
+  str[8] = 'u';
+  str[9] = 'n';
+  str[10] = 'd';
+  str[11] = '\0';
+  ```
+
+- Like Java, a literal in C is enclosed in double-quotes. When assigned as follows, it has the same effect as the code above. The null character is hidden when using this format.
+
+  ```c
+  char str[20] = "Puget Sound";
+  ```
+
+- After this initalization, the contents of str are shown below. The null character is appended at `str[11]` automatically. Although the remaining unused characters (`str[12]`, ..., `str[19]`) are shown in the figure as having `'\0'`, C may not make any guarantee of this.
+
+- Caveat: Just like with other arrays, the only time you can use the assignment operator is during initialization (above). Let's suppose we want to reassign `str` to `"Loggers"`. Unfortunately, unlike Java, the assignment operator will not work here:
+
+  ```c
+  #include <stdio.h>
+  #define MAX_LEN 20
+
+  int main() {
+      char str[MAX_LEN] = "Puget Sound";
+      char str2[MAX_LEN] = "Loggers";
+
+      str = str2;     //won't compile!!
+      str = "Loggers";    //won't compile!!
+
+      printf("%s ", str);
+      return 0;
+  }
+  ```
+
+- Instead, we need to write this cumbersome code to do the assignment:
+
+  ```c
+  #include <stdio.h>
+  #define MAX_LEN 20
+
+  int main() {
+      char str[MAX_LEN] = "Puget Sound";
+      char str2[MAX_LEN] = "Loggers";
+
+      //assign str2 to str by copying str2 over
+      int i;
+      for (i=0; i < MAX_LEN && str2[i] != '\0'; i++)
+          str[i] = str2[i];
+      str[i] = '\0';  //don't forget to terminate str!
+
+      printf("%s ", str);
+      return 0;
+  }
+  ```
+
+  After the code runs, `str` would contain:
+
+- Important! You need to be sure that `str` was declared with enough storage to hold the newly assigned string _plus_ the terminating null character!
+
+- As you can imagine, manipulating strings in C can be a pain because you need to handle everything at the array level. Forgetting something as simple as terminating the string could have dire consequences. Fortunately, C provides a standard string library `string.h` to help us out. Here are a few useful functions:
+
+  - You should check out [string.h](http://www.cplusplus.com/reference/cstring/) library for the full list of functions.
+  - `char *strcpy(char *dest, const char *src)`: copies src to dest, and null-terminates.
+  - `char *strcat(char *dest, const char *src)`: concatenates src to dest, and null terminates.
+  - `size_t strlen(const char *str)`: returns the length of string str. size_t is an unsigned int.
+  - `int strcmp(const char *str1, const char *str2)`: compares the given strings and returns 0 if equal, a positive int if `str1` is lexicographically greater than `str2`, and a negative integer otherwise.
+
+- Instead of writing our own, we could therefore use `strcpy()` to assign strings.
+
+  ```c
+  #include <stdio.h>
+  #include <string.h> //import the string library
+  #define MAX_LEN 20
+
+  int main() {
+      char str[MAX_LEN] = "Puget Sound";
+      char str2[MAX_LEN] = "Loggers";
+
+      strcpy(str, str2);
+      printf("%s\n", str);        //prints "Loggers"
+
+      strcat(str, " Rule");
+      printf("%s\n", str);    //prints "Loggers Rule"
+
+      int x = 0, y = 1;
+      sprintf(str, "x is %d, y is %d", x, y);
+      printf("%s\n", str);    //prints "x is 0, y is 1"
+
+      return 0;
+  }
+  ```
+
+- Referring back to the source file:
+
+  - Line 2: Imports the string library.
+
+  - Line 9: copies all 7 characters from str2 to str. The function automatically appends the terminating null character at `str[7]`.
+
+  - Line 10: when `printf()` is called to print str, it prints every character up to, and not including `'\0'`.
+
+  - Lines 12: concatenates " Rule" to the end of str, and appends terminating character.
+
+  - Lines 15-16: The `strcpy()` function is only good for assigning a string. However, we often need to mix types. The `stdio.h` library includes a `sprintf()` that is used like `printf()`.
+
+  Warning: On Lines 9, 12, and 16, it is assumed that the programmer had allocated enough space in str to hold the new string.
+
+- Do these exercises (not graded):
+
+  - Java provides the split() method in its String class to tokenize strings by a delimiter. Look into C's `strtok()` function. Test it out - you will need to use it later.
+
+  - You've seen how to get individual integers and doubles from users using `scanf()`. Check out C's `fgets()` function to read entire line of input from user into a string. Caveat: using `scanf()` to input a numeric value will leave the trailing white-space in the input buffer. This screws up subsequent inputs if you're reading in a string. This problem should already be known to you, if you've ever worked with Java's Scanner class.
+
+  - Java provides the useful `Integer.parseInt(String x)` to convert a string `x` into an int. What's the equivalent in C? What about converting strings to floats?
 
 #### Grading
 
