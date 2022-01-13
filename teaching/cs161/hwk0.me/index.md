@@ -77,7 +77,9 @@ This assignment will be graded out of a total of 22pts.
 
 [3pts] Correct implementation of printBday.
 
-[3pts] Correct implementation of printMyInfo.
+[3pts] Correct implementation of printMyInfo. This method should
+       not duplicate any code. It should simply call the existing
+       methods.
 
 [10pts] Correctly zipped and submitted your assignment (see below).
        Check with me or with tutors if you're not sure!
