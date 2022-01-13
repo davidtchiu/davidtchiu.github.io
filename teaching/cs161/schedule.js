@@ -4,7 +4,7 @@ let days = {
       {
         name: "Hwk 0",
         title: "About Me",
-        url: "hwk0.coding/",
+        url: "hwk0.me/",
         due: "1/24/2022",
       },
       // {
