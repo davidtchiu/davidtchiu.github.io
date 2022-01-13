@@ -18,28 +18,71 @@ The following file(s) have been provided for this assignment.
 
 #### Instructions
 
-C is highly dependent on the compute environment on which it compiles and executes. This is everybody's worst nightmare: turning in an assignment you spent hours on, only to have it not compile or execute on your instructor's machine. In fact, having a common runtime environment was what made Java so successful when it was introduced in the mid-90s.
+- Open your virtual machine, and log in. Open up a Terminal window to the shell.
 
-It's therefore important that we all share a common environment, so I've prepared a virtual machine (think: another operating system that runs as a separate process on your machine). Important: all programming assignments should be written and submitted from this virtual machine (VM).
-
-- Download and install [Oracle VirtualBox](https://www.virtualbox.org/). Note: the current version at the time of writing is version 6.1.
-
-- Download the following VirtualBox image:
-
-  - [TBD](TBD TBD)
-
-- Open up VirtualBox. Then click on the `File` > `Import Appliance` menu. Browse and find the `TBDTBD` file you just downloaded, then click Continue.
-
-- This brings up the Appliance Settings window. **Important:** Do not click to enable "Reinitialize the MAC address of all network cards." Click `Import`. This will take a little bit of time to finish.
-  ![](img/figures/install1.png)
-
-- Highlight `TBDTBD` from the side menu, and click on `Settings`. From the Settings menu, navigate to Ports. Make sure that Enable Serial Port and is checked. **IMPORTANT:** Do not check Connect to Existing Pipe/Socket. Under Path/address:
-
-  - If you're on a Linux or Mac: type in `/tmp/xinu_serial`
-  - If you're on Windows: type in `\\.\pipe\xinu_com1`
-    ![](img/figures/install4.png)
-
--
+- From your shell, create a directory to store your first program. Let's call this directory `learningTypes/`.
+  ```bash
+  mkdir learningTypes
+  ```
+- Now navigate inside this directory:
+  ```bash
+  cd learningTypes
+  ```
+- Now let's create a new file using the VSCode editor.
+  ```bash
+  code types.c
+  ```
+  Paste in the following code, and we'll discuss what each line means later in this assignment.
+  ```c
+    1  /**
+    2  * A simple C program
+    3  *
+    4  * @author David
+    5  */
+    6
+    7 #include <stdio.h>
+    8
+    9  #define VAL 0
+    10 #define PI 3.14
+    11
+    12 int main(int argc, char *argv[])
+    13 {
+    14     char a = 'X';
+    15     int b = 9;
+    16     float c = 6;
+    17     double d = 0;
+    18     char str[] = "Hello world!";
+    19
+    20     if (VAL == d)
+    21     {
+    22         printf("Value of a is %c\n", a);
+    23         printf("Value of b is %d\n", b);
+    24         printf("Value of c is %f\n", c);
+    25         printf("Value of d is %f\n", d);
+    26         printf("Value of str is %s\n", str);
+    27
+    28         //printf can input varying amounts of arguments
+    29         printf("Values of a, b, and c are %c, %d, and %f\n", a, b, c);
+    30
+    31         //controlling floating point output
+    32         printf("c/b is: %f\n", c/b);
+    33         printf("c/b is: %0.0f\n", c/b);
+    34         printf("c/b is: %25.3f\n", c/b);
+    35         printf("c/b is: %0.9f\n", c/b);
+    36
+    37         //obtaining input
+    38         printf("Enter a character: ");
+    39         scanf("%c", &a);
+    40         printf("Enter an integer: ");
+    41         scanf("%d", &b);
+    42         printf("You entered %c and %d\n", a, b);
+    43         printf("Enter an float: ");
+    44         scanf("%f", &c);
+    45         printf("You entered %f\n", c);
+    46     }
+    47     return 0;
+    48 }
+  ```
 
 #### Grading
 
