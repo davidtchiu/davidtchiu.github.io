@@ -6,7 +6,7 @@ In this ungraded "preliminary assignment," we will set up your virtual machine. 
 
 It's therefore important that we all share a common environment, so I've prepared a virtual machine (think: another operating system that runs as a separate process on your machine). Important: all programming assignments should be written and submitted from this virtual machine (VM).
 
-#### Student Outcomes
+<!-- #### Student Outcomes? -->
 
 #### Required Files
 
