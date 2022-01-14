@@ -18,16 +18,16 @@ The following file(s) have been provided for this assignment.
 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/). Note: the current version at the time of writing is version 6.1.
 
-- Download the following VirtualBox image:
+- Download the following VirtualBox image. It is a LARGE file, so be patient while it downloads!
 
-  - [TBD](TBD TBD)
+  - [Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova](https://mathcs.pugetsound.edu/~dchiu/CS475/Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova)
 
-- Open up VirtualBox. Then click on the `File` > `Import Appliance` menu. Browse and find the `TBDTBD` file you just downloaded, then click Continue.
+- Open up VirtualBox. Then click on the `File` > `Import Appliance` menu. Browse and find the `Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova` file you just downloaded, then click Continue.
 
 - This brings up the Appliance Settings window. **Important:** Do not click to enable "Reinitialize the MAC address of all network cards." Click `Import`. This will take a little bit of time to finish.
   ![](img/figures/install1.png)
 
-- Highlight `TBDTBD` from the side menu, and click on `Settings`. From the Settings menu, navigate to Ports. Make sure that Enable Serial Port and is checked. **IMPORTANT:** Do not check Connect to Existing Pipe/Socket. Under Path/address:
+- Highlight `Ubuntu_20.04.3_VB_LinuxVMImages.COM` from the side menu, and click on `Settings`. From the Settings menu, navigate to Ports. Make sure that Enable Serial Port and is checked. **IMPORTANT:** Do not check Connect to Existing Pipe/Socket. Under Path/address:
 
   - If you're on a Linux or Mac: type in `/tmp/xinu_serial`
   - If you're on Windows: type in `\\.\pipe\xinu_com1`
@@ -35,7 +35,7 @@ The following file(s) have been provided for this assignment.
 
   Click OK to exit Settings.
 
-- Double-click on `TBDTBD`. This will start a virtual machine (VM) running Ubuntu Linux. Think of a VM as being a program on your machine that can run a separate isolated instance of another operating system! This VM serves several important purposes for this class and for your education:. You will program all your assignments and projects within this VM.
+- Double-click on `Ubuntu_20.04.3_VB_LinuxVMImages.COM`. This will start a virtual machine (VM) running Ubuntu Linux. Think of a VM as being a program on your machine that can run a separate isolated instance of another operating system! This VM serves several important purposes for this class and for your education:. You will program all your assignments and projects within this VM.
 
 - **Important for Windows Users:** There is a known issue on some Windows machines that does not allow the VM to boot up or import properly. The error you receive from VirtualBox reads, "VT-X is not enabled in BIOS" or something to the effect of "virtualization is disabled". If you are experiencing this, then you need to enable virtualization in your BIOS, which is possible upon a reboot of your computer. I can help you with this, or you can Google how.
 
@@ -43,8 +43,8 @@ The following file(s) have been provided for this assignment.
 
 - Once the develop-end-ubuntu starts up, you can login with the following credentials:
 
-  - Username: `xinu`
-  - Password: `xinurocks`
+  - Username: `ubuntu`
+  - Password: `ubuntu`
   - Note: This user has sudo (or administrator) access.
 
   After you log in, make sure you have network access to the outside world. You can open the Firefox browser from the sidebar menu. If you don't have access, let me know.
@@ -52,7 +52,7 @@ The following file(s) have been provided for this assignment.
 - You can test out a couple nice features. They've been finicky for me in the past though, but are huge time-savers if you get them to work.
 
   - Shared clipboard: Click on the Devices menu and select Shared Clipboard. Then select bi-directional. Test this out. It will save you hours of time in this course. Copy some text from your host machine, then try pasting it into this VM, and then vice-versa.
-  - Drag and Drop: Click on the Devices menu and select Drag and Drop. Then select bi-directional. This has been finicky for me in the past, but mostly works. Pick a file from your host machine and drag it anywhere on your VM. The file ends up in a folder inside `/tmp/VirtualBox Dropped Files` directory.
+  <!-- - Drag and Drop: Click on the Devices menu and select Drag and Drop. Then select bi-directional. This has been finicky for me in the past, but mostly works. Pick a file from your host machine and drag it anywhere on your VM. The file ends up in a folder inside `/tmp/VirtualBox Dropped Files` directory. -->
 
 - Open up the Terminal. The terminal gives you a shell (most likely the Bourne Again Shell, or bash), which is a command-line environment to interact directly with the operating system (Ubuntu Linux, in our case). Recall the following useful shell commands (Note: in the following listing, parameters enclosed in diamond brackets `<...>` are required and those enclosed in square brackets `[...]` are optional).
 
@@ -63,6 +63,10 @@ The following file(s) have been provided for this assignment.
     - Paths can be chained. For instance, cd `../../a/` will navigate you up two parent directories, then into `a/`
   - `ls -l [path]`: lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory
   - `mkdir <name>`: creates directory called name in current working directory
+
+- Here's a [command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Unix_command_cheatsheet.pdf) you can download.
+
+- Here's a [bootcamp](https://davidtchiu.github.io/teaching/cs240/lab.cmd/) from my other course you can try out.
 
 #### Credits
 

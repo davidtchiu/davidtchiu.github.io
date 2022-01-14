@@ -378,6 +378,8 @@ returnType funcName(param1, param2, ...) {
 }
 ```
 
+- Initially, we need to assume that in C, all function definitions must precede its usages.
+
 - Let's write the function `void my_strcat(char s[], char t[])`, which appends string `t` to the end of string `s` (basically, performs the function as `strcat()` from the `string.h` library).
 
   ```c
@@ -435,6 +437,132 @@ returnType funcName(param1, param2, ...) {
   - Using more arithmetic tricks, can you figure out how a Java function like `Integer.parseInt()` might be implemented in C?
 
   - Write a function `merge(int A[], int B[], int C[], int sizeA, int sizeB, int sizeC)` that inputs 2 sorted int arrays `A` and `B`, and an "output" array `C`. The function merges `A` and `B` into a sorted sequence in array `C`. Because the function doesn't know the arrays' lengths, you must also input those as params.
+
+##### Declaring Structs
+
+C is not an object-oriented language, so the classic definitions of classes and objects do not apply. However, it does support derived (or complex) data types with the `struct` keyword. I like to think of structs as classes with only public fields and no methods. Let's see how it's used.
+
+- To create a struct, you can use the following syntax:
+
+  ```c
+  struct structName {
+      type0 var0;
+      type1 var1;
+      ...
+      typeN varN;
+  };
+  ```
+
+  Usually, this declaration appears at the same scope as `main()`, so that other functions can declare variables of this type.
+
+- Once a `struct` has been declared you can use it as a "cookie-cutter" to create instances of that type. For example, the following code uses a `struct` to store two points:
+
+  ```c
+  #include <stdio.h>
+  #include <math.h>
+
+  /**
+   * Define a Point struct
+   */
+  struct Point {
+      double xCoord;
+      double yCoord;
+  };
+
+
+  /**
+  * Finds distance between two points
+  * @param u one point
+  * @param v another point
+  * @return distance between points u and v
+  */
+  double getDistance(struct Point u, struct Point v) {
+      return sqrt(pow(u.xCoord-v.xCoord, 2) + pow(u.yCoord-v.yCoord, 2));
+  }
+
+
+  int main(int argc, char *argv[]) {
+      struct Point p, q;  //declare two Points
+
+      //set Points' location
+      p.xCoord = 0;
+      p.yCoord = 0;
+      q.xCoord = 5.1;
+      q.yCoord = 10.75;
+
+      printf("The distance from p to q is: %.3f\n", getDistance(p,q));
+      return 0;
+  }
+  ```
+
+- **Important notes**
+
+  - All of a `struct`'s data members are `public`. There is no such thing as `private` or `protected` in C.
+  - Like Java, data members are accessed using dot-notation. (You'll see a different notation once we start pointers).
+  - Unlike Java, only data is encapsulated: Constructors, functions, or methods cannot be defined within a C `struct`.
+
+##### Aliasing Type Names with `typedef`
+
+As you know from Java, maintaining code can get confusing without proper names for types. For instance, let's say that an employee's ID must be an integer in the range of 1 to 65000 in my company. Being space-conscious, I know that I don't need a 32-bit `int` to hold this value, and that a 16-bit `short int` would be enough, as long as it's unsigned -- that is, the most-significant bit is used to represent the integer, not to denote positive/negative. So if I had all 16 bits to my disposal, it is capable of representing up to the number 65533, which is more than enough to represent a valid `employeeID`. Everywhere in my company's codebase, I would have to declare `employeeID` as follows,
+
+```c
+unsigned short int employeeID;
+```
+
+Any function I write that returns or inputs an employee's ID would also be declared `unsigned short int`. Yuck, right? Not only is it messy, it becomes very easy to lose track of what the `unsigned short` is even representing once your code gets more complicated. As you can see, things in your code start getting confusing fast.
+
+To avoid this problem, C allows us to alias a data type to a new name, using the following syntax:
+
+```c
+typedef <data type> <alias>;
+```
+
+- Let's alias `emp_t` to represent an `unsigned short int`. This makes for much more readable and manageable code:
+
+  ```c
+  #include <stdio.h>
+
+  typedef unsigned short int emp_t;   //alias emp_t to unsigned short int
+
+  /**
+  * Returns a pointer to a string containing an employee's name
+  */
+  int getSalary(emp_t id) {
+      //(code omitted)
+  }
+
+  /**
+  * Main function
+  */
+  int main() {
+      emp_t employeeID;
+      printf("Enter an employee id: ");
+      scanf("%u", &employeeID);   // read input as unsigned int (%u) into employeeID.
+
+      int salary = getSalary(employeeID);
+
+      // (code omitted)
+
+      return 0;
+  }
+  ```
+
+- Typedefs are often used in conjunction with `structs`. For example, it's mildly annoying that we have to declare a `Point` object named `p` using `struct Point p;` syntax. Using `typedef` totally optional, but it will make the syntax a little more familiar to what we're used to seeing in Java:
+
+  ```c
+  typedef struct <structName> {
+      //members
+  } <structName>;
+  ```
+
+  We could therefore declare the Point struct as follows,
+
+  ```c
+  typedef struct Point {
+      double xCoord;
+      double yCoord;
+  } Point;
+  ```
 
 #### Grading
 
