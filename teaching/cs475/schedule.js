@@ -7,12 +7,12 @@ let days = {
         url: "hwk0.vb/",
         due: "ASAP",
       },
-      {
-        name: "Hwk 1",
-        title: "Getting Started with C",
-        url: "hwk1.ws/",
-        due: "1/28/2022",
-      },
+      // {
+      //   name: "Hwk 1",
+      //   title: "Getting Started with C",
+      //   url: "hwk1.ws/",
+      //   due: "1/28/2022",
+      // },
       //   {
       //     name: "Hwk 2",
       //     title: "Relational Algebra",
