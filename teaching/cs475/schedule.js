@@ -1,43 +1,49 @@
 let days = {
   assignments: {
-    // homework: [
-    //   {
-    //     name: "Hwk 1",
-    //     title: "The Relational Model",
-    //     url: "hwk1.rel/",
-    //     due: "9/10/2021",
-    //   },
-    //   {
-    //     name: "Hwk 2",
-    //     title: "Relational Algebra",
-    //     url: "hwk2.ra/",
-    //     due: "9/24/2021",
-    //   },
-    //   {
-    //     name: "Hwk 3",
-    //     title: "Data Preparation",
-    //     url: "hwk3.ddl/",
-    //     due: "10/8/2021",
-    //   },
-    //   {
-    //     name: "Hwk 4",
-    //     title: "Writing SQL Queries",
-    //     url: "hwk4.dml/",
-    //     due: "10/22/2021",
-    //   },
-    //   {
-    //     name: "Hwk 5",
-    //     title: "Normalization",
-    //     url: "hwk5.norm/",
-    //     due: "11/5/2021",
-    //   },
-    //   {
-    //     name: "Hwk 6",
-    //     title: "Joins!",
-    //     url: "hwk6.joins/",
-    //     due: "11/23/2021",
-    //   },
-    // ],
+    homework: [
+      {
+        name: "Hwk 0",
+        title: "Virtual Machine",
+        url: "hwk0.vb/",
+        due: "ASAP",
+      },
+      {
+        name: "Hwk 1",
+        title: "Getting Started with C",
+        url: "hwk1.ws/",
+        due: "1/28/2022",
+      },
+      //   {
+      //     name: "Hwk 2",
+      //     title: "Relational Algebra",
+      //     url: "hwk2.ra/",
+      //     due: "9/24/2021",
+      //   },
+      //   {
+      //     name: "Hwk 3",
+      //     title: "Data Preparation",
+      //     url: "hwk3.ddl/",
+      //     due: "10/8/2021",
+      //   },
+      //   {
+      //     name: "Hwk 4",
+      //     title: "Writing SQL Queries",
+      //     url: "hwk4.dml/",
+      //     due: "10/22/2021",
+      //   },
+      //   {
+      //     name: "Hwk 5",
+      //     title: "Normalization",
+      //     url: "hwk5.norm/",
+      //     due: "11/5/2021",
+      //   },
+      //   {
+      //     name: "Hwk 6",
+      //     title: "Joins!",
+      //     url: "hwk6.joins/",
+      //     due: "11/23/2021",
+      //   },
+    ],
     ////////////////////////////// PROJECTS ///////////////////////////////
     // projects: [
     //   {
