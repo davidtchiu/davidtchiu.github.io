@@ -9,7 +9,7 @@ In this exercise you will be pulling up the terminal and trying out basic comman
 - Learn how to access your terminal
 - Learn how to navigate your file system: `pwd`, `cd`, `ls`
 - Learn how to manipulate your file system: `cp`, `mv`, `rm`, `less`, `tar`
-- Practice setting permission: `chmod`
+<!-- - Practice setting permission: `chmod` -->
 - Learn to use `nano` for simple text editing
 
 #### Printable Cheat Sheet
@@ -84,7 +84,7 @@ Of course, the first part of your path will differ from mine.
        drwxr-xr-x@ 7 dchiu  staff  224 Jul 19 09:20 src
     ```
 
-- **Permission** (For Mac Users Only): Hmm, the permissions to read any of these files are open to anybody on this system. That doesn't seem like a good idea, given that these are supposedly your homework files.
+<!-- - **Permission** (For Mac Users Only): Hmm, the permissions to read any of these files are open to anybody on this system. That doesn't seem like a good idea, given that these are supposedly your homework files.
 
   - Make sure the owner of all remaining files belong to you (not `david`)
   - Now change permissions for all files ending in `.java` to the following:
@@ -100,7 +100,7 @@ Of course, the first part of your path will differ from mine.
       -rwx------@ 1 david  staff  4437 Jul 19 09:05 Tester.java
       ```
 
-- **Permission** (For Windows Users Only): Windows users can skip this part. The binary numbering system does not work with Windows. Windows uses a different permission system, but it's not really important to us, since the servers I will provide you are not Windows machines.
+- **Permission** (For Windows Users Only): Windows users can skip this part. The binary numbering system does not work with Windows. Windows uses a different permission system, but it's not really important to us, since the servers I will provide you are not Windows machines. -->
 
 #### Part 2 - `nano` Text Editor
 
