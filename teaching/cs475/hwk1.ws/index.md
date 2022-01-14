@@ -10,15 +10,9 @@ This is the first part of a multi-part primer on C. You will be programming a si
 - To become familiar with compiling single-source C programs.
 - To become familiar with C's supported data types, arrays (and strings), function writing, structs, and input/output functions.
 
-#### Required Files
-
-The following file(s) have been provided for this assignment.
-
-- [develop-end.ova](TBD TBD)
-
 #### Instructions
 
-Open your virtual machine, and log in. Open up a Terminal window to the shell.
+Open your virtual machine, and log in. Open up a Terminal window to the shell. If you don't know what I'm referring to, complete [Hwk 0](../hwk0.vb).
 
 ##### Part I: The Basics
 
@@ -555,7 +549,7 @@ typedef <data type> <alias>;
   } <structName>;
   ```
 
-  We could therefore declare the Point struct as follows,
+  We could therefore declare the `Point` struct as follows,
 
   ```c
   typedef struct Point {
@@ -563,6 +557,26 @@ typedef <data type> <alias>;
       double yCoord;
   } Point;
   ```
+
+  and now we can declare using `Point p;` and access its elements just like before: `p.xCoord` and `p.yCoord`.
+
+#### Assignment: Word Stats (Graded)
+
+You're ready to write your first C program in this class! This assignment tries to incorporate almost all of the concepts you learned in this tutorial to make sure you start with strong footing.
+
+You are to create a program generates some basics statistics given user-input strings. When your program begins, it should ask the user to enter a string. Once it is entered, your program should parse all words out of this string, and update the following stats:
+
+- Word count
+- Vowel count
+- Consonant count
+- A histogram of letter-use frequency
+- Update these stats for each word that is read, and continue asking for more input until the user enters #, at which point your program outputs a menu with the following options:
+
+  - Enter 1 to print vowel and consonant frequency.
+  - Enter 2 to print word count.
+  - Enter 3 to print histogram.
+  - Enter 4 to return to inputting more strings.
+  - Enter 5 to quit.
 
 #### Grading
 
