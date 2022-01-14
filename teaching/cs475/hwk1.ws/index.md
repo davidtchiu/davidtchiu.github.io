@@ -362,11 +362,79 @@ A string in C is essentially an array of `chars`, with one important caveat: The
 
 - Do these exercises (not graded):
 
-  - Java provides the split() method in its String class to tokenize strings by a delimiter. Look into C's `strtok()` function. Test it out - you will need to use it later.
+  - Java provides the `split()` method in its `String` class to tokenize strings by a delimiter. Look into C's `strtok()` function. Test it out - you will need to use it later.
 
   - You've seen how to get individual integers and doubles from users using `scanf()`. Check out C's `fgets()` function to read entire line of input from user into a string. Caveat: using `scanf()` to input a numeric value will leave the trailing white-space in the input buffer. This screws up subsequent inputs if you're reading in a string. This problem should already be known to you, if you've ever worked with Java's Scanner class.
 
   - Java provides the useful `Integer.parseInt(String x)` to convert a string `x` into an int. What's the equivalent in C? What about converting strings to floats?
+
+##### Writing Functions
+
+As good programmers, we know that we should promote reuse and modularity by writing functions. In C, function definitions follow this syntax:
+
+```c
+returnType funcName(param1, param2, ...) {
+    //body
+}
+```
+
+- Let's write the function `void my_strcat(char s[], char t[])`, which appends string `t` to the end of string `s` (basically, performs the function as `strcat()` from the `string.h` library).
+
+  ```c
+  #include <stdio.h>
+
+  /**
+  * Concatenates two strings
+  * @param s The destination string, with enough space for t[] and null-character
+  * @param t The source string to be appended
+  */
+  void my_strcat(char s[], char t[]) {
+      int i = 0, j = 0;
+
+      // assign i to the position immediately following the existing string s
+      while (s[i] != '\0') {
+          i++;
+      }
+
+      // i now at NULL character position of s
+      // now append string t to the end of s
+      while (t[j] != '\0') {
+          s[i] = t[j];
+          i++;
+          j++;
+      }
+      s[i] = '\0';    // don't forget to NULL-terminate string s
+  }
+
+  int main() {
+      char str[20] = "Hello";
+      my_strcat(str, " World!!");
+      printf("%s", str);
+      return 0;
+  }
+  ```
+
+- Let's check out the code:
+
+  - First, note that the function is defined before it is called in `main()`.
+
+  - Lines 12-13: We want `i` be the length of string `s`, and to do that, we simply traverse all characters of `s` until we encounter the NULL terminating character `'\0'`.
+
+  - Lines 17-20: The second loop will copy into `s` all elements of `t` until `t`'s NULL character is encountered.
+
+  - Lastly, and importantly, we must insert a NULL terminating character to the end of `s`.
+
+  - Note: As is true in Java, any changes made to an array passed as a parameter will persist beyond the scope of the function call! Therefore, we do not need to return `s` in `my_strcat()`.
+
+- Defining all of our functions in the same file before each is used can be a bit of a hassle, and complicated programs can become hard to manage. Like Java's class structure, it would be ideal to split related functions into different files. Go here to learn more about organizing multi-file programs. You are required to do this for your assignment.
+
+- Do these exercises (not graded):
+
+  - Using some char-arithmetic tricks, write a function that inputs a string, and converts it to upper-case.
+
+  - Using more arithmetic tricks, can you figure out how a Java function like `Integer.parseInt()` might be implemented in C?
+
+  - Write a function `merge(int A[], int B[], int C[], int sizeA, int sizeB, int sizeC)` that inputs 2 sorted int arrays `A` and `B`, and an "output" array `C`. The function merges `A` and `B` into a sorted sequence in array `C`. Because the function doesn't know the arrays' lengths, you must also input those as params.
 
 #### Grading
 
