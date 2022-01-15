@@ -607,7 +607,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 I have included a working solution of my program along with the starter code. The binary executable file is called `wordstatSol`. You can run it from the terminal by first navigating in to the Hwk1 directory and typing the command `./wordstatSol`. This is how your solution should behave when it's done.
 
-##### make: Compiling Your Code and Cleaning Your Codebase
+##### `make`: Compiling Your Code and Cleaning Your Codebase
 
 Compiling a multi-file C program can be tricky, and requires multiple steps and careful sequencing. To simplify the compilation process, I have provided a _script_ for you to run. As long as the `Makefile` is found in your project directory, you can run the command `make`, and it will resolve the rules inside the `Makefile` and compile your project (hopefully). The name of the binary executable has been configured to be called `wordstat`, so if all goes well, you should be able to run `./wordstat` after compiling.
 

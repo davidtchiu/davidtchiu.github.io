@@ -25,13 +25,13 @@ The following file(s) have been provided for this assignment.
 - Open up VirtualBox. Then click on the `File` > `Import Appliance` menu. Browse and find the `Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova` file you just downloaded, then click Continue.
 
 - This brings up the Appliance Settings window. **Important:** Do not click to enable "Reinitialize the MAC address of all network cards." Click `Import`. This will take a little bit of time to finish.
-  ![](img/figures/install1.png)
+  ![](figures/install1.png)
 
 - Highlight `Ubuntu_20.04.3_VB_LinuxVMImages.COM` from the side menu, and click on `Settings`. From the Settings menu, navigate to Ports. Make sure that Enable Serial Port and is checked. **IMPORTANT:** Do not check Connect to Existing Pipe/Socket. Under Path/address:
 
   - If you're on a Linux or Mac: type in `/tmp/xinu_serial`
   - If you're on Windows: type in `\\.\pipe\xinu_com1`
-    ![](img/figures/install4.png)
+    ![](figures/install4.png)
 
   Click OK to exit Settings.
 
@@ -48,6 +48,7 @@ The following file(s) have been provided for this assignment.
   - Note: This user has sudo (or administrator) access.
 
   After you log in, make sure you have network access to the outside world. You can open the Firefox browser from the sidebar menu. If you don't have access, let me know.
+  ![](figures/develop-end-ubuntu__Running_.png)
 
 - You can test out a couple nice features. They've been finicky for me in the past though, but are huge time-savers if you get them to work.
 
