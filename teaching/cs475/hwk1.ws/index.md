@@ -582,15 +582,19 @@ You are to create a program generates some basics statistics given user-input st
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk1-wordstat](https://github.com/davidtchiu/cs475-hwk1-wordstat). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below.
+- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk1-wordstat](https://github.com/davidtchiu/cs475-hwk1-wordstat). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
-- From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
   ```
   git clone <your-github-url-for-this-project>
   ```
-  This should download the starter code to your virtual machine. After you've done this, you can work freely from VS Code or any other editor.
 
-You should see these files inside your new homework directory:
+- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Unbuntu virtual machine using:
+
+  ```
+  git clone https://github.com/davidtchiu/cs475-hwk1-wordstat
+  ```
+
+- This should download the starter code to your virtual machine, in a directory called `cs475-hwk1-wordstat`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
 
 - `Makefile` - Do not make changes to this file. It is used for compiling.
 - `menu.h` - This file should contain menu-option constants, function declarations
