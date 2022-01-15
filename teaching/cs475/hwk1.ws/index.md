@@ -263,6 +263,7 @@ A string in C is essentially an array of `chars`, with one important caveat: The
   ```
 
 - After this initalization, the contents of str are shown below. The null character is appended at `str[11]` automatically. Although the remaining unused characters (`str[12]`, ..., `str[19]`) are shown in the figure as having `'\0'`, C may not make any guarantee of this.
+  ![](figures/str1.png)
 
 - Caveat: Just like with other arrays, the only time you can use the assignment operator is during initialization (above). Let's suppose we want to reassign `str` to `"Loggers"`. Unfortunately, unlike Java, the assignment operator will not work here:
 
@@ -304,6 +305,7 @@ A string in C is essentially an array of `chars`, with one important caveat: The
   ```
 
   After the code runs, `str` would contain:
+  ![](figures/str2.png)
 
 - Important! You need to be sure that `str` was declared with enough storage to hold the newly assigned string _plus_ the terminating null character!
 
