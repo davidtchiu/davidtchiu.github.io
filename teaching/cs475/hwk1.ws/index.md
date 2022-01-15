@@ -776,23 +776,25 @@ This assignment will be graded out of 20 points:
 
 #### Submitting Your Assignment
 
-After you have completed the homework, use the following to submit your work on Canvas.
-I assume you wrote your program inside VirtualBox.
+After you have completed the homework, use the following to submit your work on Canvas. I assume you wrote your program inside your virtual machine. There are two options to submit your work.
 
-- From the Terminal in your VirtualBox,
-- Navigate to the directory that contains your homework directory.
-- Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
+1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
+2. If you'd rather submit a "zipped" file on Canvas, do the following:
 
-  - For example, if my homework directory is called `hwk1/`, and I want the zipped file to be called `hwk1.tar.gz`, use: `tar -czvf hwk1.tar.gz hwk1/`
-  - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
+   - From the Terminal in your virtual machine,
+   - Navigate to the directory that contains your homework directory.
+   - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
 
-- Navigate to our course on Canvas, and find the assignment submission box.
+     - For example, if my homework directory is called `hwk1/`, and I want the zipped file to be called `hwk1.tar.gz`, use: `tar -czvf hwk1.tar.gz hwk1/`
+     - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
 
-- Click on Submit Assignment, and you should be able to "browse" for your file
+   - Navigate to our course on Canvas, and find the assignment submission box.
 
-- When you've selected the proper file, click Submit Assignment again to upload it.
+   - Click on Submit Assignment, and you should be able to "browse" for your file
 
-- You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+   - When you've selected the proper file, click Submit Assignment again to upload it.
+
+3. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
 
 #### Credits
 
