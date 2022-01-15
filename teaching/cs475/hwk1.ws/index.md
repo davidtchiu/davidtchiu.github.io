@@ -432,7 +432,7 @@ returnType funcName(param1, param2, ...) {
 
   - Write a function `merge(int A[], int B[], int C[], int sizeA, int sizeB, int sizeC)` that inputs 2 sorted int arrays `A` and `B`, and an "output" array `C`. The function merges `A` and `B` into a sorted sequence in array `C`. Because the function doesn't know the arrays' lengths, you must also input those as params.
 
-##### Declaring Structs
+##### Structs
 
 C is not an object-oriented language, so the classic definitions of classes and objects do not apply. However, it does support derived (or complex) data types with the `struct` keyword. I like to think of structs as classes with only public fields and no methods. Let's see how it's used.
 
@@ -562,7 +562,7 @@ typedef <data type> <alias>;
 
 #### Assignment: Word Stats (Graded)
 
-You're ready to write your first C program in this class! This assignment tries to incorporate almost all of the concepts you learned in this tutorial to make sure you start with strong footing.
+Hop onto your Ubuntu virtual machine - you're ready to write your first C program in this class! This assignment tries to incorporate almost all of the concepts you learned in this tutorial to make sure you start with strong footing.
 
 You are to create a program generates some basics statistics given user-input strings. When your program begins, it should ask the user to enter a string. Once it is entered, your program should parse all words out of this string, and update the following stats:
 
@@ -577,6 +577,176 @@ You are to create a program generates some basics statistics given user-input st
   - Enter 3 to print histogram.
   - Enter 4 to return to inputting more strings.
   - Enter 5 to quit.
+
+##### Starter Code
+
+Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
+
+- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs240-hwk-wordplay](https://github.com/davidtchiu/cs240-hwk-wordplay). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below.
+
+- From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+  ```
+  git clone <your-github-url-for-this-project>
+  ```
+  This should download the starter code to your virtual machine. After you've done this, you can work freely from VS Code or any other editor.
+
+You should see these files inside your new homework directory:
+
+- `Makefile` - Do not make changes to this file. It is used for compiling.
+- `menu.h` - This file should contain menu-option constants, function declarations
+- `menu.c` - You will implement the functions declared in `menu.h` in this file
+- `stats.h` - This file should contain constants, `WordStats` struct declaration, function declarations
+- `stats.c` - You will implement the functions declared in `stats.h` in this file
+- `main.c` - This file will contain the `main()` function, and other related helper functions
+
+##### Working Solution
+
+I have included a working solution of my program along with the starter code. The binary executable file is called `wordstatSol`. You can run it from the terminal by first navigating in to the Hwk1 directory and typing the command `./wordstatSol`. This is how your solution should behave when it's done.
+
+##### make: Compiling Your Code and Cleaning Your Codebase
+
+Compiling a multi-file C program can be tricky, and requires multiple steps and careful sequencing. To simplify the compilation process, I have provided a _script_ for you to run. As long as the `Makefile` is found in your project directory, you can run the command `make`, and it will resolve the rules inside the `Makefile` and compile your project (hopefully). The name of the binary executable has been configured to be called `wordstat`, so if all goes well, you should be able to run `./wordstat` after compiling.
+
+- One related matter is the `make clean` command. This command will remove all intermediate files and binaries, but it will leave your source code alone. Use this command right before you submit the homework, for instance.
+
+##### Program Requirements
+
+1. Create a README file in your project directory that has your name and a brief description of your program.
+
+2. All programming is to be done on the given Virtual Box environment. The entire program must be written and compiled in C.
+
+3. Display any floating-point number to the hundredth place.
+
+4. If an unknown menu option is entered, print an error informing the user.
+
+5. You may not assume that a user always enters a single word per input. If the user enters multiple words, you should parse out each one, and determine its length. You may, however, assume that the entire user-input string cannot exceed 128 characters. Define a global constant MAX_INPUT_LEN to store this value. Ignore any characters that is input beyond this limit. You can use fgets() to obtain a line of input from the user.
+
+6. To split a string into tokens, you should look into using the strtok() function.
+
+7. To simplify things, you may assume that words are delimited by any whitespace, and must begin with an alphabetical character.
+
+8. Your program must contain several well-defined functions.
+
+9. Your stats should be stored in the following struct:
+
+```c
+typedef struct WordStats {
+    int histo[ALPHABET_SIZE];
+    int wordCount;
+    int vowelCount;
+    int consonantCount;
+} WordStats;
+```
+
+##### Sample Output
+
+```
+Enter strings (# to stop):
+APPle caT
+orangE goat
+greenish blue fish
+#
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print word count.
+Enter 3 to print histogram.
+Enter 4 to return to inputting more strings.
+Enter 5 to quit.
+1
+
+Vowels = 14 (41.18%), Consonants = 20 (58.82%), Total= 34
+
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print word count.
+Enter 3 to print histogram.
+Enter 4 to return to inputting more strings.
+Enter 5 to quit.
+2
+
+Words: 7
+
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print word count.
+Enter 3 to print histogram.
+Enter 4 to return to inputting more strings.
+Enter 5 to quit.
+3
+        *
+*       *
+*       *   *
+*       *   * * *     *   * * *   * * *
+* * *   * * * * *     *   * * *   * * * *
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+4 1 1 0 5 1 3 2 2 0 0 2 0 2 2 2 0 2 2 2 1 0 0 0 0 0
+
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print word count.
+Enter 3 to print histogram.
+Enter 4 to return to inputting more strings.
+Enter 5 to quit.
+4
+Enter strings (# to stop):
+grey SHARK
+!!!!!!!!
+@#$@#$@#$
+#
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print word count.
+Enter 3 to print histogram.
+Enter 4 to return to inputting more strings.
+Enter 5 to quit.
+1
+
+Vowels = 16 (37.21%), Consonants = 27 (62.79%), Total= 43
+
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print word count.
+Enter 3 to print histogram.
+Enter 4 to return to inputting more strings.
+Enter 5 to quit.
+2
+
+Words: 9
+
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print word count.
+Enter 3 to print histogram.
+Enter 4 to return to inputting more strings.
+Enter 5 to quit.
+3
+        *
+*       *
+*       *   *                     *
+*       *   * *                   * *
+*       *   * * *     *   * * *   * * *
+* * *   * * * * *   * *   * * *   * * * *       *
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+5 1 1 0 6 1 4 3 2 0 1 2 0 2 2 2 0 4 3 2 1 0 0 0 1 0
+
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print word count.
+Enter 3 to print histogram.
+Enter 4 to return to inputting more strings.
+Enter 5 to quit.
+19
+Error: Unknown option 19. Try again.
+
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print word count.
+Enter 3 to print histogram.
+Enter 4 to return to inputting more strings.
+Enter 5 to quit.
+5
+Exiting...
+```
 
 #### Grading
 
