@@ -5,14 +5,14 @@ let days = {
         name: "Hwk 0",
         title: "Virtual Machine",
         url: "hwk0.vb/",
-        due: "ASAP",
+        due: "1/21/2022",
       },
-      // {
-      //   name: "Hwk 1",
-      //   title: "Getting Started with C",
-      //   url: "hwk1.ws/",
-      //   due: "1/28/2022",
-      // },
+      {
+        name: "Hwk 1",
+        title: "Getting Started with C",
+        url: "hwk1.ws/",
+        due: "1/28/2022",
+      },
       //   {
       //     name: "Hwk 2",
       //     title: "Relational Algebra",
