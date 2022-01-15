@@ -22,12 +22,12 @@ The following file(s) have been provided for this assignment.
 
   - [Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova](https://mathcs.pugetsound.edu/~dchiu/CS475/Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova)
 
-- Open up VirtualBox. Then click on the `File` > `Import Appliance` menu. Browse and find the `Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova` file you just downloaded, then click Continue.
+- Open up VirtualBox. Then click on the File > Import Appliance menu. Browse and find the **Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova** file you just downloaded, then click Continue.
 
-- This brings up the Appliance Settings window. **Important:** Do not click to enable "Reinitialize the MAC address of all network cards." Click `Import`. This will take a little bit of time to finish.
+- This brings up the Appliance Settings window. **Important:** Do not click to enable "Reinitialize the MAC address of all network cards." Click Import. This will take a little bit of time to finish.
   ![](figures/install1.png)
 
-- Highlight `Ubuntu_20.04.3_VB_LinuxVMImages.COM` from the side menu, and click on `Settings`. From the Settings menu, navigate to Ports. Make sure that Enable Serial Port and is checked. **IMPORTANT:** Do not check Connect to Existing Pipe/Socket. Under Path/address:
+- Highlight **Ubuntu_20.04.3_VB_LinuxVMImages.COM** from the side menu, and click on `Settings`. From the Settings menu, navigate to Ports. Make sure that Enable Serial Port and is checked. **IMPORTANT:** Do not check Connect to Existing Pipe/Socket. Under Path/address:
 
   - If you're on a Linux or Mac: type in `/tmp/xinu_serial`
   - If you're on Windows: type in `\\.\pipe\xinu_com1`
@@ -35,7 +35,7 @@ The following file(s) have been provided for this assignment.
 
   Click OK to exit Settings.
 
-- Double-click on `Ubuntu_20.04.3_VB_LinuxVMImages.COM`. This will start a virtual machine (VM) running Ubuntu Linux. Think of a VM as being a program on your machine that can run a separate isolated instance of another operating system! This VM serves several important purposes for this class and for your education:. You will program all your assignments and projects within this VM.
+- Double-click on **Ubuntu_20.04.3_VB_LinuxVMImages.COM**. This will start a virtual machine (VM) running Ubuntu Linux. Think of a VM as being a program on your machine that can run a separate isolated instance of another operating system! This VM serves several important purposes for this class and for your education:. You will program all your assignments and projects within this VM.
 
 - **Important for Windows Users:** There is a known issue on some Windows machines that does not allow the VM to boot up or import properly. The error you receive from VirtualBox reads, "VT-X is not enabled in BIOS" or something to the effect of "virtualization is disabled". If you are experiencing this, then you need to enable virtualization in your BIOS, which is possible upon a reboot of your computer. I can help you with this, or you can Google how.
 
