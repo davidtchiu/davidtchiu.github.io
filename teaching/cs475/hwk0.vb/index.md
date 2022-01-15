@@ -55,6 +55,8 @@ The following file(s) have been provided for this assignment.
   - Shared clipboard: Click on the Devices menu and select Shared Clipboard. Then select bi-directional. Test this out. It will save you hours of time in this course. Copy some text from your host machine, then try pasting it into this VM, and then vice-versa.
   <!-- - Drag and Drop: Click on the Devices menu and select Drag and Drop. Then select bi-directional. This has been finicky for me in the past, but mostly works. Pick a file from your host machine and drag it anywhere on your VM. The file ends up in a folder inside `/tmp/VirtualBox Dropped Files` directory. -->
 
+- You should be able to have access to the Internet. Try it out to make sure it works. If it doesn't, you may need to disable and reenable your networks. (Go to the top right corner to access your network settings.)
+
 - Open up the Terminal. The terminal gives you a shell (most likely the Bourne Again Shell, or bash), which is a command-line environment to interact directly with the operating system (Ubuntu Linux, in our case). Recall the following useful shell commands (Note: in the following listing, parameters enclosed in diamond brackets `<...>` are required and those enclosed in square brackets `[...]` are optional).
 
   - pwd: returns your current (or present) working directory
