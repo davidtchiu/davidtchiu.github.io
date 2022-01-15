@@ -145,7 +145,7 @@ Open your virtual machine, and log in. Open up a Terminal window to the shell. I
 
   - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters 'y' then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, inform the user, and ask again. (Hint: C's loop syntax is exactly the same as in Java)
 
-<!-- ##### Part 2: About That `char` Data Type... -->
+##### About That `char` Data Type...
 
 ##### Array Basics
 
@@ -582,7 +582,7 @@ You are to create a program generates some basics statistics given user-input st
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs240-hwk-wordplay](https://github.com/davidtchiu/cs240-hwk-wordplay). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below.
+- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk1-wordstat](https://github.com/davidtchiu/cs475-hwk1-wordstat). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below.
 
 - From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
   ```
@@ -611,32 +611,32 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
 
 ##### Program Requirements
 
-1. Create a README file in your project directory that has your name and a brief description of your program.
+1. All programming is to be done on the given Virtual Box environment. The entire program must be written and compiled in C.
 
-2. All programming is to be done on the given Virtual Box environment. The entire program must be written and compiled in C.
+2. Display any floating-point number to the hundredth place.
 
-3. Display any floating-point number to the hundredth place.
+3. If an unknown menu option is entered, print an error informing the user.
 
-4. If an unknown menu option is entered, print an error informing the user.
+4. You may not assume that a user always enters a single word per input. If the user enters multiple words, you should parse out each one, and determine its length. You may, however, assume that the entire user-input string cannot exceed 128 characters. I have defined a global constant `MAX_INPUT_LEN` to store this value in `main.c`. Ignore any characters that is input beyond this limit. You can use `fgets()` to obtain a line of input from the user.
 
-5. You may not assume that a user always enters a single word per input. If the user enters multiple words, you should parse out each one, and determine its length. You may, however, assume that the entire user-input string cannot exceed 128 characters. Define a global constant MAX_INPUT_LEN to store this value. Ignore any characters that is input beyond this limit. You can use fgets() to obtain a line of input from the user.
+5. To split a string into tokens, you should look into using the `strtok()` function.
 
-6. To split a string into tokens, you should look into using the strtok() function.
+6. To simplify things, you may assume that words are delimited by any whitespace, and must begin with an alphabetical character.
 
-7. To simplify things, you may assume that words are delimited by any whitespace, and must begin with an alphabetical character.
+7. Your program must contain several well-defined functions.
 
-8. Your program must contain several well-defined functions.
+8. Your stats must be stored in the struct given in `stat.h`:
 
-9. Your stats should be stored in the following struct:
+   ```c
+   typedef struct WordStats {
+       int histo[ALPHABET_SIZE];
+       int wordCount;
+       int vowelCount;
+       int consonantCount;
+   } WordStats;
+   ```
 
-```c
-typedef struct WordStats {
-    int histo[ALPHABET_SIZE];
-    int wordCount;
-    int vowelCount;
-    int consonantCount;
-} WordStats;
-```
+9. The bars in the histogram that you print must be vertical (see below). Point deductions will be taken if you print horizontal bars.
 
 ##### Sample Output
 
@@ -770,8 +770,7 @@ This assignment will be graded out of 20 points:
 
 [1pt] Your program runs repeatedly until sentinel inputs are entered
 
-[1pt] The README is written and placed in your project directory. Your
-      program observes good style and commenting.
+[1pt] Your program observes good style and commenting.
 ```
 
 #### Submitting Your Assignment
