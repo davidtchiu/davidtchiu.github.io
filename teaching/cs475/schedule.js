@@ -15,8 +15,8 @@ let days = {
       },
       //   {
       //     name: "Hwk 2",
-      //     title: "Relational Algebra",
-      //     url: "hwk2.ra/",
+      //     title: "Pointers and Arrays",
+      //     url: "hwk2.ptrs/",
       //     due: "9/24/2021",
       //   },
       //   {

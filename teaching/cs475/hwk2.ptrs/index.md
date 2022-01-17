@@ -634,6 +634,10 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 - This should download the starter code to your virtual machine, in a directory called `cs475-hwk2-heapsort`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
 
+###### Working Solution
+
+I have included a working solution of my program along with the starter code. The binary executable file is called `heapsortSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./heapsortSol`. This is how your solution should behave when it's done.
+
 ###### Program Requirements
 
 1. Download the required file Hwk2_Heapsort.zip. Inside, you should find the following files:
