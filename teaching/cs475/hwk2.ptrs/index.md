@@ -610,7 +610,7 @@ $$A[0],...,A[n−1]$$ that can be viewed as a binary tree (not necessarily a bin
 - For an array index `i`,
   - $$parent(i) = \lfloor (i-1)/2 \rfloor$$ (except for the root, which has no parent)
   - $$left\_child(i) = 2(i+1)−1$$
-  - $$right\_child(i) = 2(i+1)$$$
+  - $$right\_child(i) = 2(i+1)$$
 - The _min-heap property_ says: For every node $$A[i]$$ except for the root, the value of $$A[i]$$ is greater than or equal to the value of its parent, i.e., $$A[parent(i)] \le A[i]$$. The figure below shows an example of a min-heap of size 12.\
    <img width="400px" src="figures/heap.png" />
 
