@@ -616,6 +616,24 @@ $$A[0],...,A[n−1]$$ that can be viewed as a binary tree (not necessarily a bin
 
   Note that we're only mapping an array to a binary tree's structure. Thus, all functions operate on arrays, and no binary tree is ever constructed.
 
+###### Starter Code
+
+Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
+
+- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk2-heapsort](https://github.com/davidtchiu/cs475-hwk2-heapsort). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+
+  ```
+  git clone <your-github-url-for-this-project>
+  ```
+
+- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Unbuntu virtual machine using:
+
+  ```
+  git clone https://github.com/davidtchiu/cs475-hwk2-heapsort
+  ```
+
+- This should download the starter code to your virtual machine, in a directory called `cs475-hwk2-heapsort`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
+
 ###### Program Requirements
 
 1. Download the required file Hwk2_Heapsort.zip. Inside, you should find the following files:
