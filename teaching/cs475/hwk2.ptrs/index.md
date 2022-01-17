@@ -38,7 +38,7 @@ You might recall from your architecture class that a **word** is the basic unit 
 
 In the figure to the left, only the word's start address is shown, but it should be noted that each byte within the word is also addressable. When a CPU requests the byte located at a certain address, say 1117, the full word ranging from address 1116 to 1119 is retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte from the word as needed.
 
-![](figures/proj2-ex1.png)
+<img border="1" width="400px" src="figures/proj2-ex1.png"/>
 
 **Important Operator: `sizeof()`**
 Notice from the figure I drew above that I somehow knew that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures. **So how did I know these storage requirements apply to my computer?** provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies. Let's see what it does.
@@ -193,7 +193,7 @@ We've seen one side of a variable, which is how its value is stored and the numb
    ```
 
 2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**.
-   ![](figures/proj2-ex1.png)
+   <img border="1" width="400px" src="figures/proj2-ex2.png"/>
 
 3. Here is an example output when this program is executed.
 
@@ -368,12 +368,60 @@ Will this method work? Trace its execution.
   }
   ```
 
-```
-  Enter a name: David
-  Enter a GPA: 4.0
-  Name: David, GPA: 4.00
-  Name: David, GPA: 0.00
-```
+  ```
+    Enter a name: David
+    Enter a GPA: 4.0
+    Name: David, GPA: 4.00
+    Name: David, GPA: 0.00
+  ```
+
+##### Part 3: Pointer Basics
+
+Now that we have a good handle on data types and addressing, let's put everything together. There are three basic C concepts you need to master:
+
+1. Address-of Operator: Given a variable var, `&var` returns the address of var's location in memory.
+
+2. A pointer variable stores the address of some data. This data can be a variable, an array, another pointer... To declare a pointer, you use the following syntax:
+
+   ```c
+   dataType *ptr;          //pointer to a dataType
+   dataType *ptr1, *ptr2, *ptr3;   //multiple pointers
+   ```
+
+   When assigning a pointer q to another pointer p, it causes them both to point to the same data. In Java-speak, they're just references to some data in another location in memory.
+
+   ```c
+   double *a = NULL, *b = NULL, c = 10;
+   b = &c; //point b at c
+   a = b;  //point a at c
+   ```
+
+   - Memory contents after the declaration:\
+     <img border="1" width="250px" src="figures/proj2-ptrAssign1.png" />
+
+   - Memory contents after the assignment statements on Line 2 and 3.\
+     <img border="1" width="250px" src="figures/proj2-ptrAssign2.png" />
+
+   - `NULL` is just like the null keyword in Java, representing a pointer (or reference) to nothing. You must first `#include <stdlib.h>` to get access to the `NULL` constant.
+
+3. Dereference Operator: Given a pointer ptr, we use `*ptr` to access the value at the location referenced by `ptr`. I know, I know, it's awful. They really should've used a different syntax for dereferencing, because `*ptr` already has a different meaning!
+   ```c
+   double *a = NULL, *b = NULL, c = 10;
+   b = &c; //point b at c
+   a = b;  //point a at c
+   *b = 15;
+   *a += 5;
+   ```
+
+- Memory contents after Line 4's assignment statement `*b = 15`.
+  <img border="1" width="250px" src="figures/proj2-ptrAssign3.png" />
+
+- Memory contents after Line 5.
+  <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
+
+##### Practice Questions (not graded):
+
+- What value does the `NULL` constant hold? Try printing out. What happens to your program when you try to dereference a pointer to `NULL`?
 
 #### Grading
 
