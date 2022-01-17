@@ -308,7 +308,7 @@ Now that we have a good handle on data types and addressing, let's put everythin
 
 - Write a function `compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`.
 
-##### Important: Output Parameters
+##### Part 4: Output Parameters
 
 1. Consider the following function used to swap the values of two integer variables:
 
@@ -423,6 +423,43 @@ Now that we have a good handle on data types and addressing, let's put everythin
        Name: David, GPA: 4.00
        Name: David, GPA: 0.00
      ```
+
+##### Part 5: Connection to Arrays (Pointer Arithmetic)
+
+1.  In this section, we'll explore the relationship between pointers and arrays (and strings).
+    Study the following source file, then compile and run it.
+
+    ```c
+    #include <stdio.h>
+
+    #define BUFFERSIZE 4
+
+    int main()
+    {
+        int arr[BUFFERSIZE] = {9,8,7,6};
+        int i;
+
+        printf("*** where is arr[0] stored? ***\n");
+        printf("arr[0] location: %p\n", &arr[0]);
+
+        printf("\n*** where is arr stored? ***\n");
+        printf("arr location: %p\n", arr);
+
+        printf("\n*** print out contents using pointer arithmetic ***\n");
+        for (i=0; i<BUFFERSIZE; i++)
+            printf("%d ", *(arr+i));
+
+        printf("\n\n*** print out contents using familiar subscript syntax ***\n");
+        for (i=0; i<BUFFERSIZE; i++)
+            printf("%d ", arr[i]);
+
+        return 0;
+    }
+    ```
+
+2.  Arrays represent a list of data in contiguous sequence, and that is also how they're laid out in memory: one element after another. It is therefore not all that surprising to find `arr` being represented as in the figure below, with each `int` element occupying 4 bytes. When compiled and executed, this program outputs something akin to the following:
+
+  <img border="1" width="250px" src="figures/proj2-ex3.png" />
 
 #### Grading
 
