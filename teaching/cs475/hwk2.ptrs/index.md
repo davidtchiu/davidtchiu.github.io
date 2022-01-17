@@ -296,10 +296,10 @@ Now that we have a good handle on data types and addressing, let's put everythin
    *a += 5;
    ```
 
-- Memory contents after Line 4's assignment statement `*b = 15`.
+- Memory contents after Line 4's assignment statement `*b = 15`.\
   <img border="1" width="250px" src="figures/proj2-ptrAssign3.png" />
 
-- Memory contents after Line 5.
+- Memory contents after Line 5.\
   <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
 
 ##### Practice Questions (not graded):
