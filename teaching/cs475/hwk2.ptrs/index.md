@@ -458,7 +458,7 @@ Now that we have a good handle on data types and addressing, let's put everythin
 
 2.  Arrays represent a list of data in contiguous sequence, and that is also how they're laid out in memory: one element after another. It is therefore not all that surprising to find `arr` being represented as in the figure below, with each `int` element occupying 4 bytes. When compiled and executed, this program outputs something akin to the following:
 
-  <img border="1" width="250px" src="figures/proj2-ex3.png" />
+    <img border="1" width="250px" src="figures/proj2-ex3.png" />
 
     ```
     *** where is arr[0] stored? ***
