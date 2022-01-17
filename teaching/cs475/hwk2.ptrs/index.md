@@ -124,7 +124,7 @@ size of 0.5 * 400 / 2: 8 bytes
      printf("size of long double: %lu bytes\n", sizeof(long double));
      ```
 
-   - Line 23: shows how `sizeof()` can be used to determine the size of the array `nums` in bytes: $$80 = (10 \* sizeof(double))$$ bytes.
+   - Line 23: shows how `sizeof()` can be used to determine the size of the array `nums` in bytes: 80, or `(10 * sizeof(double))` bytes.
 
      ```c
      printf("size of nums array: %lu\n", sizeof(nums));
@@ -253,6 +253,14 @@ We've seen one side of a variable, which is how its value is stored and the numb
 
    - In the example above, we showed that the `&` operator returns just address of the first byte of `days`, even though `days` also occupies the following three bytes. When we dereference `*ptr` on Lines 8 and 12, the runtime was smart enough to know that the next three bytes are part of the value. Had the program read anymore than three more bytes, we would've gotten a much larger number, and had it read fewer than three bytes, we would've truncated our number. How does our program know that exactly three more bytes (and not zero, or one, or seven) trailed first byte? (Hint: It's why we declare data types!)
 
+##### Practice Problems (not graded)
+
+- We know that a pointer to an int (that is, `int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct X` on my machine? (Hint: Does the maximum size of an address ever change?)
+
+- You can also create a pointer to a `void` data type. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful.
+
+- Write a function `compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`.
+
 ##### Important: Output Parameters
 
 1. Consider the following function used to swap the values of two integer variables:
@@ -366,14 +374,6 @@ Will this method work? Trace its execution.
   Name: David, GPA: 4.00
   Name: David, GPA: 0.00
 ```
-
-##### Problems (not graded)
-
-- We know that a pointer to an int (that is, `int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct X` on my machine? (Hint: Does the maximum size of an address ever change?)
-
-- You can also create a pointer to a `void` data type. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful.
-
-- Write a function `compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`.
 
 #### Grading
 
