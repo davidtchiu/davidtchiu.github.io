@@ -59,13 +59,14 @@ The following file(s) have been provided for this assignment.
 
 - Open up the Terminal. The terminal gives you a shell (most likely the Bourne Again Shell, or bash), which is a command-line environment to interact directly with the operating system (Ubuntu Linux, in our case). Recall the following useful shell commands (Note: in the following listing, parameters enclosed in diamond brackets `<...>` are required and those enclosed in square brackets `[...]` are optional).
 
-  - pwd: returns your current (or present) working directory
-  - cd [path]: changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory. Note the following two special paths:
+  - `pwd`: returns your current (or present) working directory
+  - `cd [path]`: changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory. Note the following two special paths:
     - `.` returns the current directory
     - `..` returns the parent directory
     - Paths can be chained. For instance, cd `../../a/` will navigate you up two parent directories, then into `a/`
   - `ls -l [path]`: lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory
   - `mkdir <name>`: creates directory called name in current working directory
+  - `code [name]`: opens the VS Code editor on the given file name
 
 - Here's a [command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Unix_command_cheatsheet.pdf) you can download.
 

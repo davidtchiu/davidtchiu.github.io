@@ -4,6 +4,13 @@
 
 This is the first part of a multi-part primer on C. You will be programming a simple interactive program in C, and getting familiarized with your programming environment on Linux.
 
+#### ZyBooks Reading
+
+- Chap 3: data types and variables
+- Chap 6: arrays and strings
+- Chap 7: functions
+- Chap 8: structs
+
 #### Student Outcomes
 
 - To become familiar with the programming environment
@@ -146,6 +153,39 @@ Open your virtual machine, and log in. Open up a Terminal window to the shell. I
   - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters 'y' then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, inform the user, and ask again. (Hint: C's loop syntax is exactly the same as in Java)
 
 ##### About That `char` Data Type...
+
+It is worth giving special attention to the char data type. In C, a char is essentially an 8-bit integer. That means chars can represent
+$$2^8 = 256$$ numbers, and each map to a unique character under the ASCII standard. Below I list a few notable mappings, but click here to see the [full list of ASCII codes](https://www.asciitable.com/).
+
+- Do not confuse the character, `'0'` with the integer `0` (indeed, `'0'` has an integer value of `48`!), and similarly for `'1'`, ..., `'9'`. Note that `'\0'` (known as the null character) has an ASCII integer value of 0. This null character plays a big role with C strings, which we'll look at soon.
+
+- To see that chars are really stored as integers, you can print them out using the %d formatter. You can also cast ints into chars, and vice versa.
+
+  ```c
+  printf("%c = %d\n", 'A', 'A');  //prints A = 65
+  printf("%c = %d\n", 'a', 'a');  //prints a = 97
+
+  //casting an int to a char
+  int x = 33;
+  char c = (char) x;
+  printf("%c\n", c);  //prints !
+
+  //casting char to an int
+  c = '#';
+  x = (int) c;
+  printf("%d\n", x);  //prints 35
+  ```
+
+- Therefore, it is possible to do some arithmetics directly on chars, which looks a bit wonky, but can be useful in certain situations. For instance, we could do the following to convert any letter to upper case by subtracting an offset of 32:
+
+  ```c
+  //make sure c is a lower-case letter in the alphabet
+  if (c >= 'a' && c <= 'z') {
+      c -= 32;
+  }
+  ```
+
+- Check out the [ctype](https://www.cplusplus.com/reference/cctype/) library for useful functions on chars.
 
 ##### Array Basics
 
