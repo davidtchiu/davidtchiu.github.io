@@ -157,13 +157,13 @@ Notice from the figure I drew above that I somehow knew that an `int` takes up f
 
 3. One of the benefits of a typed language like C and Java should be somewhat apparent now. When a programmer declares a variable's type, the executable knows exactly how many contiguous bytes to read and write memory. This is in contrast to languages like Python, JavaScript, and PHP, where the type of a variable is allowed to change during runtime, and requires a bit of overhead to interpret, or juggle their storage requirements. This type-juggling overhead accounts for much of the reason why compiled programs usually run faster than interpreted programs.
 
-4. **Practice Questions (not graded):**
+###### Practice Questions (not graded):
 
-   - Although a char requires just one byte of storage, most CPUs will insist on wasting, or "padding" the remaining 3 bytes (see figure above). Why do you think CPUs prefer this, instead of, say, having `amt` start from address 1117 to save space? (Hint: A unit of transfer between memory and CPU is a word...)
+- Although a char requires just one byte of storage, most CPUs will insist on wasting, or "padding" the remaining 3 bytes (see figure above). Why do you think CPUs prefer this, instead of, say, having `amt` start from address 1117 to save space? (Hint: A unit of transfer between memory and CPU is a word...)
 
-   - What is an `unsigned` number? What is the point of an unsigned integer, and when would it be useful? Does Java support unsigned numbers?
+- What is an `unsigned` number? What is the point of an unsigned integer, and when would it be useful? Does Java support unsigned numbers?
 
-   - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`?
+- If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`?
 
 ##### Part 2: Understanding Variables - Addressing
 
@@ -252,7 +252,7 @@ We've seen one side of a variable, which is how its value is stored and the numb
 
    - In the example above, we showed that the `&` operator returns just address of the first byte of `days`, even though `days` also occupies the following three bytes. When we dereference `*ptr` on Lines 8 and 12, the runtime was smart enough to know that the next three bytes are part of the value. Had the program read anymore than three more bytes, we would've gotten a much larger number, and had it read fewer than three bytes, we would've truncated our number. How does our program know that exactly three more bytes (and not zero, or one, or seven) trailed first byte? (Hint: It's why we declare data types!)
 
-##### Practice Problems (not graded)
+###### Practice Problems (not graded)
 
 - We know that a pointer to an int (that is, `int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct X` on my machine? (Hint: Does the maximum size of an address ever change?)
 
@@ -302,7 +302,7 @@ Now that we have a good handle on data types and addressing, let's put everythin
 - Memory contents after Line 5.\
   <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
 
-##### Practice Questions (not graded):
+###### Practice Questions (not graded):
 
 - What value does the `NULL` constant hold? Try printing out. What happens to your program when you try to dereference a pointer to `NULL`?
 
