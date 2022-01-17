@@ -601,6 +601,99 @@ Now that we have a good handle on data types and addressing, let's put everythin
 
 ##### Assignment: HeapSort (Graded)
 
+Your boss has decided that she needs to make cuts to the company's budget. She's tasked you with providing her a list of employees, sorted in _descending_ order of their salaries. Luckily, you remember Heapsort from your Algorithms or CS II class, and decide to use it...
+
+Heaps are a representation of arrays and are useful as the basis for the Heapsort algorithm. Heaps are also the backbone for Priority Queues, an important data structure which finds uses in many applications (including in OS). Your goal is to implement Heapsort using a min-heap. A min-heap is an array of $$n$$ elements
+$$A[0],...,A[n−1]$$ that can be viewed as a binary tree (not necessarily a binary search tree), with the following properties:
+
+- The root of the heap is $$A[0]$$.
+- For an array index `i`,
+  - $$parent(i) = \lceil (i-1)/2 \rceil$$ (except for the root, which has no parent)
+  - $$left_child(i) = 2(i+1)−1$$
+  - $$right_child(i) = 2(i+1)$$$
+- The _min-heap property_ says: For every node $$A[i]$$ except for the root, the value of $$A[i]$$ is greater than or equal to the value of its parent, i.e., $$A[parent(i)] \le A[i]$$. The figure below shows an example of a min-heap of size 12.\
+   <img width="400px" src="figures/heap.png" />
+
+  Note that we're only mapping an array to a binary tree's structure. Thus, all functions operate on arrays, and no binary tree is ever constructed.
+
+###### Program Requirements
+
+1. Download the required file Hwk2_Heapsort.zip. Inside, you should find the following files:
+
+   - `Makefile`
+   - `employee.h` contains the definition of the Employee structure and declarations of several functions
+   - `heap.h` contains the function declarations related to the heap
+   - `heap.c` contains the stubs for the functions defined in `heap.h`
+   - `main.c ` contains the `main()` function
+
+2. Implement the following functions inside `heap.c`:
+
+   - `void heapify(struct Employee *A, int i, int n)`: This function inputs a pointer to an array
+     `A`, an index `i`, and the size of the array `n`. The function assumes the trees that rooted at
+     `left_child(i)` and `right_child(i)` already satisfy the min-heap property, but that `A[i]`
+     may be larger than its children. This function should trickle `A[i]`
+     down in place such that the tree rooted at `i` satisfies the min-heap property.
+
+     In the figure below, you can see how `heapify()` works. Here, `A[2]` violates the min-heap property, and a call to
+     `heapify(A, 2, 12)` is made to produce the following:\
+      <img width="400px" src="figures/heapify.png" />
+
+   - In Step 2, the out-of-place element `A[2]` is swapped with the smaller of the two children, `A[5]`. However, the tree rooted at
+     `A[5]` no longer satisfies min-heap property. Thus, a recursive call to heapify on
+     `A[5]` corrects the subtree. You should therefore recursively correct the subtrees until you hit a leaf.
+
+   - `void buildHeap(struct Employee *A, int n)`: Given a pointer to an array
+     `A` of size `n`, this function will leave the tree rooted at `A[0]` satisfying the min-heap property. Because leaf nodes trivially satisfy the property, only the non-leaf nodes need to be heapified. It's pertinent to know that the last non-leaf node is located at
+     index $$\lceil n/2 \rceil$$. Run `heapify()` on `A[n/2]` down to `A[0]`.
+
+     The before-and-after of this function call is shown below:\
+      <img width="400px" src="figures/proj2-buildHeap.png" />
+
+   - `void swap(struct Employee *e1, struct Employee *e2)`: Inputs pointers to two Employees, and swaps them.
+
+   - `void printHeap(struct Employee *A, int n)`: Prints all values in the array referenced by pointer `A`.
+
+   - `void heapsort(struct Employee *A, int i, int n)`: This function inputs a pointer to an unsorted array of Employees and the size of that array and sorts it in descending order of their salary. Here's the sketch:
+     ```
+     Build min-heap over A
+     Repeat the following until n < 0:
+       Swap root of heap with element n−1.
+       Now smallest element is sorted into place.
+       Heapify up to element n−1
+       Decrement n by 1
+     ```
+
+3. Implement the following inside `main.c`:
+
+   - Define a constant called `MAX_EMPLOYEES` that will serve as the maximum length of your array.
+
+   - `int main()`: The driver function should create an array of `MAX_EMPLOYEES` elements, and fill it with values from the user. Below, a sample interaction for `MAX_EMPLOYEES` of 5.
+
+4. Here's a sample output:
+
+   ```
+   Name: David
+   Salary: 60000
+   Enter another user (y/n)? y
+
+   Name: Gabe
+   Salary: 75000
+   Enter another user (y/n)? y
+
+   Name: Katie
+   Salary: 92000
+   Enter another user (y/n)? y
+
+   Name: Gabe
+   Salary: 40000
+   Enter another user (y/n)? y
+
+   Name: Joan
+   Salary: 86000
+
+   [id=Katie sal=92000], [id=Joan sal=86000], [id=Gabe sal=75000], [id=David sal=60000], [id=Gabe sal=40000]
+   ```
+
 #### Grading
 
 ```
@@ -626,7 +719,7 @@ After you have completed the homework, use the following to submit your work on 
    - Navigate to the directory that contains your homework directory.
    - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
 
-     - For example, if my homework directory is called `hwk1/`, and I want the zipped file to be called `hwk1.tar.gz`, use: `tar -czvf hwk1.tar.gz hwk1/`
+     - For example, if my homework directory is called `hwk1/`, and I want the zipped file to be called `hwk2.tar.gz`, use: `tar -czvf hwk2.tar.gz hwk1/`
      - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
 
    - Navigate to our course on Canvas, and find the assignment submission box.
