@@ -36,82 +36,81 @@ Although high-level languages like C, Java, etc., hide it from us, the three var
 
 You might recall from your architecture class that a **word** is the basic unit of data transfer between memory and CPU. In these tutorials, we'll assume that a word is a block of four contiguous bytes (i.e., 32-bits), though it is worth mentioning that many CPUs now fully support 8-byte words (i.e., 64-bits).
 
-In the figure to the left, only the word's start address is shown, but it should be noted that each byte within the word is also addressable. When a CPU requests the byte located at a certain address, say 1117, the full word ranging from address 1116 to 1119 is retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte from the word as needed.
-
-<img border="1" width="400px" src="figures/proj2-ex1.png"/>
+In the figure to the left, only the word's start address is shown, but it should be noted that each byte within the word is also addressable. When a CPU requests the byte located at a certain address, say 1117, the full word ranging from address 1116 to 1119 is retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte from the word as needed.\
+ <img border="1" width="400px" src="figures/proj2-ex1.png"/>
 
 **Important Operator: `sizeof()`**
 Notice from the figure I drew above that I somehow knew that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures. **So how did I know these storage requirements apply to my computer?** provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies. Let's see what it does.
 
-```c
-#include <stdio.h>
+    ```c
+    #include <stdio.h>
 
-int main()
-{
-    char letter = 'p';
-    int days = 365;
-    double amt = 90000.75;
-    double nums[10];
+    int main()
+    {
+        char letter = 'p';
+        int days = 365;
+        double amt = 90000.75;
+        double nums[10];
 
-    printf("\n*** sizes of data types ***\n");
-    printf("size of char: %lu bytes\n", sizeof(char));
-    printf("size of short: %lu bytes\n", sizeof(short));
-    printf("size of int: %lu bytes\n", sizeof(int));
-    printf("size of long: %lu bytes\n", sizeof(long));
-    printf("size of float: %lu bytes\n", sizeof(float));
-    printf("size of double: %lu bytes\n", sizeof(double));
-    printf("size of long double: %lu bytes\n", sizeof(long double));
+        printf("\n*** sizes of data types ***\n");
+        printf("size of char: %lu bytes\n", sizeof(char));
+        printf("size of short: %lu bytes\n", sizeof(short));
+        printf("size of int: %lu bytes\n", sizeof(int));
+        printf("size of long: %lu bytes\n", sizeof(long));
+        printf("size of float: %lu bytes\n", sizeof(float));
+        printf("size of double: %lu bytes\n", sizeof(double));
+        printf("size of long double: %lu bytes\n", sizeof(long double));
 
-    printf("\n*** sizes of vars ***\n");
-    printf("size of letter: %lu bytes\n", sizeof(letter));
-    printf("size of days: %lu bytes\n", sizeof(days));
-    printf("size of amt: %lu bytes\n", sizeof(amt));
-    printf("size of nums array: %lu\n", sizeof(nums));
+        printf("\n*** sizes of vars ***\n");
+        printf("size of letter: %lu bytes\n", sizeof(letter));
+        printf("size of days: %lu bytes\n", sizeof(days));
+        printf("size of amt: %lu bytes\n", sizeof(amt));
+        printf("size of nums array: %lu\n", sizeof(nums));
 
-    printf("\n*** sizes of constants and expressions ***\n");
-    printf("size of 50: %lu bytes\n", sizeof(50));
-    printf("size of '#': %lu bytes\n", sizeof('#'));
-    printf("size of 54.999: %lu bytes\n", sizeof(54.999));
-    printf("size of hello: %lu bytes\n", sizeof("hello"));
-    printf("size of 3/2: %lu bytes\n", sizeof(3/2));
-    printf("size of 0.5 * 400 / 2: %lu bytes\n", sizeof(0.5 * 400 / 2));
+        printf("\n*** sizes of constants and expressions ***\n");
+        printf("size of 50: %lu bytes\n", sizeof(50));
+        printf("size of '#': %lu bytes\n", sizeof('#'));
+        printf("size of 54.999: %lu bytes\n", sizeof(54.999));
+        printf("size of hello: %lu bytes\n", sizeof("hello"));
+        printf("size of 3/2: %lu bytes\n", sizeof(3/2));
+        printf("size of 0.5 * 400 / 2: %lu bytes\n", sizeof(0.5 * 400 / 2));
 
-    return 0;
-}
-```
+        return 0;
+    }
+    ```
 
 - When I compile and run it, I get the following output.
 
-```
-*** sizes of data types ***
-size of char: 1 bytes
-size of short: 2 bytes
-size of int: 4 bytes
-size of long: 8 bytes
-size of float: 4 bytes
-size of double: 8 bytes
-size of long double: 16 bytes
+  ```
+  *** sizes of data types ***
+  size of char: 1 bytes
+  size of short: 2 bytes
+  size of int: 4 bytes
+  size of long: 8 bytes
+  size of float: 4 bytes
+  size of double: 8 bytes
+  size of long double: 16 bytes
 
-*** sizes of vars ***
-size of letter: 1 bytes
-size of days: 4 bytes
-size of amt: 8 bytes
-size of nums array: 80
+  *** sizes of vars ***
+  size of letter: 1 bytes
+  size of days: 4 bytes
+  size of amt: 8 bytes
+  size of nums array: 80
 
-*** sizes of constants and expressions ***
-size of 50: 4 bytes
-size of '#': 4 bytes
-size of 54.999: 8 bytes
-size of hello: 6 bytes
-size of 3/2: 4 bytes
-size of 0.5 * 400 / 2: 8 bytes
-```
+  *** sizes of constants and expressions ***
+  size of 50: 4 bytes
+  size of '#': 4 bytes
+  size of 54.999: 8 bytes
+  size of hello: 6 bytes
+  size of 3/2: 4 bytes
+  size of 0.5 * 400 / 2: 8 bytes
+  ```
 
-1. The integer that is returned by sizeof() is the number of bytes required to store that data. A couple other things worth pointing out about the code:
+1. The integer that is returned by `sizeof()` is the number of bytes required to store that data. A couple other things worth pointing out about the code:
 
    <!-- - The `%lu` specifier means unsigned long integer, which is what is returned by `sizeof()`. In fact, if you dig into `sizeof()`, you'll see that it actually returns a type called size_t, which is an alias to an unsigned long. -->
 
-   - Lines 10-17: We're now introduced to a few more data types (`short`, `long`, `long double`), which are all variants of the four original primitives. These are not unlike their counterparts in Java.
+   - **Lines 10-17**: We're now introduced to a few more data types (`short`, `long`, `long double`), which are all variants of the four original primitives. These are not unlike their counterparts in Java.
 
      ```c
      printf("\n*** sizes of data types ***\n");
@@ -192,7 +191,7 @@ We've seen one side of a variable, which is how its value is stored and the numb
    printf("Value of ptr: %p\n", ptr);
    ```
 
-2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**.
+2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**.\
    <img border="1" width="400px" src="figures/proj2-ex2.png"/>
 
 3. Here is an example output when this program is executed.
@@ -259,122 +258,6 @@ We've seen one side of a variable, which is how its value is stored and the numb
 
 - You can also create a pointer to a `void` data type. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful.
 
-- Write a function `compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`.
-
-##### Important: Output Parameters
-
-1. Consider the following function used to swap the values of two integer variables:
-
-```c
-void swap(int *x, int *y) {
-  int tmp = *x;
-  *x = *y;
-  *y = tmp;
-}
-```
-
-How would you call this function? Trace execution of calling `swap()` by drawing out the memory contents like you saw in earlier examples.
-
-2.  Consider this version of swap:
-
-```c
-void swap2(int *x, int *y) {
-    int *tmp = x;
-    x = y;
-    y = tmp;
-}
-
-//(code omitted)
-//...
-int a = 4, b = 3;
-swap2(&a, &b); //swap?
-```
-
-Will this method work? Trace its execution.
-
-3.  Consider a final version of swap:
-
-```c
-void swap3(int x, int y) {
-    int *x_ptr = &x;
-    int *y_ptr = &y;
-    int tmp = *x_ptr;
-    *x_ptr = *y_ptr;
-    *y_ptr = tmp;
-}
-
-//(code omitted)
-//...
-int a = 4, b = 3;
-swap3(a,b); //swap?
-```
-
-Will this method work? Trace its execution.
-
-4.  **"Output Parameters"**: Try using the first `swap()` method in Java. You'll see that the contents of the variables aren't swapped at all after calling it, but it works in C! It is quite common in C for functions to have so-called "output parameters". An output parameter refers to a pointer that is input into a function, and the function modifies its contents. After the function call, one just needs to deference the pointer to obtain the updated value(s). It's convenient for functions like `swap()`, where there's not really a return value that makes any sense, but we expect some side-effects to occur.
-
-- You've also seen it in action already with `scanf()`. For example, when `scanf("%d", &var);` is used, we input the address of `var` (i.e., a pointer), and we expect the contents of `var` to have changed afterwards.
-
-- Output parameters are quite dangerous, but useful. I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance (it's not pretty):
-
-  ```c
-  void sum(int inX, int inY, int* outSum) {
-    *outSum = inX + inY;
-  }
-  ```
-
-  In practice you might even see functions written like this:
-
-  ```c
-  void sum(
-    int x,    /* IN */
-    int y,    /* IN */
-    int* sum  /* OUT */
-    ) {
-    *sum = x + y;
-  }
-  ```
-
-  ```c
-  #include <stdio.h>
-
-  typedef struct Student {
-  float gpa;
-  char name[25];
-  } Student;
-
-  /**
-   * Clears a GPA to 0
-   * @param gpaOut (OUT) A pointer to the GPA to be cleared
-   */
-  void clearGPA(float *gpaOut) {
-    //de-reference pointer, clear the value
-    *gpaOut = 0.0;
-  }
-
-  int main() {
-    Student stu;
-
-    printf("Enter a name: ");
-    scanf("%s", &stu.name);  //value expected in stu.name
-    printf("Enter a GPA: ");
-    scanf("%f", &stu.gpa);
-
-    printf("Name: %s, GPA: %.2f\n", stu.name, stu.gpa);
-    clearGPA(&stu.gpa);  //stu.gpa gets cleared
-    printf("Name: %s, GPA: %.2f\n", stu.name, stu.gpa);
-
-    return 0;
-  }
-  ```
-
-  ```
-    Enter a name: David
-    Enter a GPA: 4.0
-    Name: David, GPA: 4.00
-    Name: David, GPA: 0.00
-  ```
-
 ##### Part 3: Pointer Basics
 
 Now that we have a good handle on data types and addressing, let's put everything together. There are three basic C concepts you need to master:
@@ -422,6 +305,124 @@ Now that we have a good handle on data types and addressing, let's put everythin
 ##### Practice Questions (not graded):
 
 - What value does the `NULL` constant hold? Try printing out. What happens to your program when you try to dereference a pointer to `NULL`?
+
+- Write a function `compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`.
+
+##### Important: Output Parameters
+
+1. Consider the following function used to swap the values of two integer variables:
+
+   ```c
+   void swap(int *x, int *y) {
+     int tmp = *x;
+     *x = *y;
+     *y = tmp;
+   }
+   ```
+
+   How would you call this function? Trace execution of calling `swap()` by drawing out the memory contents like you saw in earlier examples.
+
+2. Consider this version of swap:
+
+   ```c
+   void swap2(int *x, int *y) {
+       int *tmp = x;
+       x = y;
+       y = tmp;
+   }
+
+   //(code omitted)
+   //...
+   int a = 4, b = 3;
+   swap2(&a, &b); //swap?
+   ```
+
+   Will this method work? Trace its execution.
+
+3. Consider a final version of swap:
+
+   ```c
+   void swap3(int x, int y) {
+       int *x_ptr = &x;
+       int *y_ptr = &y;
+       int tmp = *x_ptr;
+       *x_ptr = *y_ptr;
+       *y_ptr = tmp;
+   }
+
+   //(code omitted)
+   //...
+   int a = 4, b = 3;
+   swap3(a,b); //swap?
+   ```
+
+   Will this method work? Trace its execution.
+
+4. **"Output Parameters"**: Try using the first `swap()` method in Java. You'll see that the contents of the variables aren't swapped at all after calling it, but it works in C! It is quite common in C for functions to have so-called "output parameters". An output parameter refers to a pointer that is input into a function, and the function modifies its contents. After the function call, one just needs to deference the pointer to obtain the updated value(s). It's convenient for functions like `swap()`, where there's not really a return value that makes any sense, but we expect some side-effects to occur.
+
+   - You've also seen it in action already with `scanf()`. For example, when `scanf("%d", &var);` is used, we input the address of `var` (i.e., a pointer), and we expect the contents of `var` to have changed afterwards.
+
+   - Output parameters are quite dangerous, but useful. I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance (it's not pretty):
+
+     ```c
+     void sum(int inX, int inY, int* outSum) {
+       *outSum = inX + inY;
+     }
+     ```
+
+   - In practice you might even see functions written like this:
+
+     ```c
+     void sum(
+       int x,    /* IN */
+       int y,    /* IN */
+       int* sum  /* OUT */
+       ) {
+       *sum = x + y;
+     }
+     ```
+
+   - Here's another example:
+
+     ```c
+     #include <stdio.h>
+
+     typedef struct Student {
+     float gpa;
+     char name[25];
+     } Student;
+
+     /**
+     * Clears a GPA to 0
+     * @param gpaOut (OUT) A pointer to the GPA to be cleared
+     */
+     void clearGPA(float *gpaOut) {
+       //de-reference pointer, clear the value
+       *gpaOut = 0.0;
+     }
+
+     int main() {
+       Student stu;
+
+       printf("Enter a name: ");
+       scanf("%s", &stu.name);  //value expected in stu.name
+       printf("Enter a GPA: ");
+       scanf("%f", &stu.gpa);
+
+       printf("Name: %s, GPA: %.2f\n", stu.name, stu.gpa);
+       clearGPA(&stu.gpa);  //stu.gpa gets cleared
+       printf("Name: %s, GPA: %.2f\n", stu.name, stu.gpa);
+
+       return 0;
+     }
+     ```
+
+     ```
+       Enter a name: David
+       Enter a GPA: 4.0
+       Name: David, GPA: 4.00
+       Name: David, GPA: 0.00
+     ```
 
 #### Grading
 
