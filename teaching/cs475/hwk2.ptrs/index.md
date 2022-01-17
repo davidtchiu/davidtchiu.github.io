@@ -192,7 +192,6 @@ We've seen one side of a variable, which is how its value is stored and the numb
    ```
 
 2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**.\
-   <img border="1" width="400px" src="figures/proj2-ex2.png"/>
 
 3. Here is an example output when this program is executed.
 
@@ -461,31 +460,159 @@ Now that we have a good handle on data types and addressing, let's put everythin
 
   <img border="1" width="250px" src="figures/proj2-ex3.png" />
 
+    ```
+    *** where is arr[0] stored? ***
+    arr[0] location: 0x4318
+
+    *** where is arr stored? ***
+    arr location: 0x4318
+
+    *** print out contents using pointer arithmetic ***
+    9 8 7 6
+
+    *** print out contents using familiar subscript syntax ***
+    9 8 7 6
+    ```
+
+3.  Looking at the source code,
+
+    - **Lines 11 and 14**: Suppose we want to find the location of the 0th
+      element in `arr`. The syntax shown on **Line 11**
+
+      ```c
+      printf("arr[0] location: %p\n", &arr[0]);
+      ```
+
+      should not be all that surprising; we can simply apply the `&` operator on element `arr[0]` to get its address. The code on **Line 14**, however, may be slightly unexpected.
+
+      ```c
+      printf("arr location: %p\n", arr);
+      ```
+
+      It would appear that an array's name is **actually** a pointer to the location of its 0th element!
+      By the way, `0x4318` is hexadecimal for `17176` (for the figure below).
+
+    - **Line 16-18**: Hmmm let's try something. Because we now know `arr` is just a pointer, can we also dereference it to access the array elements?
+
+      ```c
+      `*(arr+0)` or simply, `*(arr)` returns 9
+      ```
+
+      Exciting! How would we access the item at index 1? The runtime is smart enough to know that the next element is 4 bytes away because the array was declared to store ints. So adding 1 to the pointer will automatically skip the next 3 bytes and move the pointer to the next item in the array!
+
+      - `*(arr+1)` returns 8
+      - `*(arr+2)` returns 7
+      - `*(arr+3)` returns 6
+
+    - **Line 20-22 (Important!)** Finally, we understand that the array indexing syntax we're all familiar with, `arr[i]`, is simply a convenience to programmers: Indeed, `arr[i]` is _really_ a shorthand for `*(arr+i)`
+
+      - (Full circle now -- Zero-based Addressing): It has never really been explained in previously taught courses why array indices are 0-based in every language. That is, first item stored in `[0]`, second item stored in `[1]`, and so on. Now we know enough to understand why: it's because of pointer arithmetic. If we store the first item in location 1, then the C compiler would always have to subtract 1 when performing each array index lookup.
+
+4.  **Arrays are passed into Functions as pointers:** Now that we know an array's name is essentially the address of its 0th element, take a look at the following functions that manipulate the array. Each of the following functions do exactly the same thing! Make sure you read through each and understand why.
+
+    ```c
+    void initArray(int A[], const int SIZE) {
+      int i;
+      for (i = 0; i < SIZE; i++) {
+          A[i] = -1;
+      }
+    }
+
+    void initArray2(int *A, const int SIZE) {
+      int i;
+      for (i = 0; i < SIZE; i++) {
+          A[i] = -1;
+      }
+    }
+
+    void initArray3(int A[], const int SIZE) {
+      int i;
+      for (i = 0; i < SIZE; i++) {
+          *A++ = -1;
+      }
+    }
+
+    void initArray4(int *A, const int SIZE) {
+      int i;
+      for (i = 0; i < SIZE; i++) {
+          *(A+i) = -1;
+      }
+    }
+    ```
+
+    Side note: Because arrays are passed as pointers, you can now appreciate why modifications to arrays persist even after the function returns (this is also true in Java - after all, Java was written in C).
+
+5.  Here's another example with strings. Take a look at the code below, where we define a function `strToUpper(char *s)`:
+
+    ```c
+    #include <stdio.h>
+
+    /**
+    * Converts given string to upper case
+    * @param s A pointer to a string
+    */
+    void strToUpper(char *s) {
+        while (*s) {
+            if (*s >= 'a' && *s <= 'z') {
+                *s -= 32;   //convert character to to upper case
+            }
+            s++;    //move to next character
+        }
+    }
+
+    int main() {
+        char univ[] = "puget sound";
+        strToUpper(univ);
+        printf("%s\n", univ);
+        return 0;
+    }
+    ```
+
+    - **Line 7**: the input parameter `char *s` declares a pointer to a `char`, which we know can _also_ be interpreted as the 0th element in an array of chars.
+
+    - **Line 9:** checks the dereferenced value of pointer `s` to see if we've reached the end of the string. This syntax looks wonky at first. Let's unpack it.
+      - Recall that `*s` is an attempt to dereference the pointer `s`.
+      - Well, `s` is initially pointing to the 0th character in the string. Once dereferenced, it will return the character at that location, which generally has a non-zero value (recall that any non-zero value is `true`).
+      - Remember that all strings must end with the null-character `'\0'`, which has an integer value of 0 (implying boolean `false`).
+      - Putting it all together: the loop will run for each character in the string, until the null character is reached.
+    - **Line 11-12:** checks to see if the character currently being pointed to by s is a lower case letter, and if it is, subtract by 32, which is the offset from its upper-case counterpart.
+
+    - **Line 13:** this will move to pointer to the next element in sequence in memory. Because `s` points to a `char`, we know from pointer arithmetic that the `++` operator moves the pointer (since sizeof(char) == 1).
+
+    - **Line 19:** The main function creates a string and we assume it is placed in bytes 272372 to 272383.
+
+    - **Line 20 (and Line 7):** calls `strToUpper(univ)`, which implicitly creates a pointer variable `s` that refers to the first character in `univ`. The memory contents at this point is shown below:
+      <img border="1" width="250px" src="figures/proj2-str2upper1.png" />
+      Right before `strToUpper()` returns, the memory contents are shown below:
+      <img border="1" width="250px" src="figures/proj2-str2upper2.png" />
+      Every time `s++` is called (Line 13), it increments the pointer to the next character in `univ`. Eventually, `s` points to `univ[11]`, allowing it to break out of the loop.
+
+###### Do these exercises (not graded):
+
+- The following is a well-known function. What does it do?
+  ```c
+  void mystery(char *s, char *t) {
+     while (*s++ = *t++) { //assignment, not equivalence (i.e., not a typo)
+         ;
+     }
+  }
+  ```
+- Using pointer arithmetics, implement the string function `strcat(char *s, char *t)`, which concatenates the string referred to by `t` to the end of the string referred to by `s`.
+
+##### Assignment: HeapSort (Graded)
+
 #### Grading
 
 ```
-
 This assignment will be graded out of 20 points:
 
-[1pt] Appropriate constants have been defined
-
-[1pt] Array(s) and strings are created using a constant size
-
-[3pt] Your program is multi-file, contains multiple well-defined functions.
-A Makefile must be included with all and clean targets defined.
-
-[5pt] Your program handles multiple-word inputs
-
-[4pt] Your program updates counts and histogram appropriately
-
-[3pt] Your program prints a vertical (not horizontal) histogram
-
-[1pt] Basic error checking is handled, such as entering invalid menu options.
-
-[1pt] Your program runs repeatedly until sentinel inputs are entered
-
-[1pt] Your program observes good style and commenting.
-
+[1pt] Appropriate constants have been defined.
+[6pt] Heapify is properly implemented.
+[6pt] BuildHeap is properly implemented to build a min-heap.
+[6pt] Heapsort sorts employees by descending order of their salary.
+[1pt] Your program receives user-input, and does basic error checking.
+[1pt] The README is written and placed in your project directory. Your program observes
+good style and commenting.
 ```
 
 #### Submitting Your Assignment
@@ -513,11 +640,3 @@ After you have completed the homework, use the following to submit your work on 
 #### Credits
 
 Written by David Chiu. 2022.
-
-```
-
-```
-
-```
-
-```
