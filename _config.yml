@@ -5,7 +5,5 @@ institution: University of Puget Sound
 office: Thompson Hall 303
 email: dchiu@pugetsound.edu
 kramdown:
-  # math_engine: mathjax
-  # syntax_highlighter: rouge
   syntax_highlighter_opts:
     disable: true
