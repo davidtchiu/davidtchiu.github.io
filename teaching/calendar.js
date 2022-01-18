@@ -15,9 +15,9 @@ const MWRF = [LEC, OFF, LEC, LEC, LEC, WKD, WKD];
 const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
 
 const ASSIGNMENT_COLOR = {
-  labs: "#800080",
-  homework: "#0f79d0",
-  projects: "#d14",
+  labs: "#330099",
+  homework: "#0e84b5",
+  projects: "#003333",
 };
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#d14";
@@ -140,7 +140,7 @@ class CourseCalendar {
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
-                dayContent.innerHTML += `<emph><a href="${assign.url}"><span style='color: ${ASSIGNMENT_COLOR[assignmentType]}'>${assign.name} due</span></a></emph><br/>`;
+                dayContent.innerHTML += `<a href="${assign.url}"><emph><span style='color: ${ASSIGNMENT_COLOR[assignmentType]}'>${assign.name} due</span></emph></a><br/>`;
               }
             }
           }
