@@ -17,7 +17,7 @@ let days = {
       //     name: "Hwk 2",
       //     title: "Pointers and Arrays",
       //     url: "hwk2.ptrs/",
-      //     due: "9/24/2021",
+      //     due: "2/4/2022",
       //   },
       //   {
       //     name: "Hwk 3",

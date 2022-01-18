@@ -1,26 +1,26 @@
 ## CS 161 - Intro to Computer Science
 
-### Hwk: Addressing and Pointers
+### Hwk: Dynamic Memory Allocation
 
-This is the second part of a multi-part primer on C. In this tutorial-assignment, you'll gain an appreciation for the way values and variables are stored in memory. You'll be introduced to pointers, as well as the connection between pointers and arrays.
+Pointers are still a bit mysterious, because we still haven't seen the need for them yet. Indeed, with exception to `swap()`, all the previous code examples can be done easily without pointers. In this section, we introduce the prevailing motivation for pointers: dynamic memory allocation.
 
 #### ZyBooks Reading
 
-- Chap 10.1 - 10.4: pointers
+- Chap 10.5 - 10.12: pointers
 
 #### Student Outcomes
 
-- To understand how values and variables are stored in memory.
-- To be familiar with pointers and references.
-- To understand the relationship between pointers and arrays.
+- To understand process address space.
+- To understand the motivation for dynamic memory allocation.
+- To become familiar with memory management functions:`malloc()`, `realloc()`, and `free()`.
 
 #### Instructions
 
 Open your virtual machine, and log in. Open up a Terminal window to the shell. If you don't know what I'm referring to, complete [Hwk 0](../hwk0.vb).
 
-##### Part 1: Understanding Variables - Data Types
+##### Part 1: Motivation
 
-A variable is a symbol that is associated with: (a) its data type and (b) its location in memory. To understand pointers, we need to have a grasp on both. We'll start discussion with the former. Consider the following code snippet:
+Using the last primer as a motivating example, recall that we stored a fixed-size array (heap) of Employees, whose information was entered by the user. But in general, the number of employees we need to store is not known until runtime. To deal with this issue, we define the max number of employees `MAX` as a constant, and then we ask the user for the number of employees they expect to have in this particular run:
 
 ```c
 int main() {
@@ -582,9 +582,9 @@ Now that we have a good handle on data types and addressing, let's put everythin
     - **Line 19:** The main function creates a string and we assume it is placed in bytes 272372 to 272383.
 
     - **Line 20 (and Line 7):** calls `strToUpper(univ)`, which implicitly creates a pointer variable `s` that refers to the first character in `univ`. The memory contents at this point is shown below:\
-      <img border="1" width="250px" src="figures/proj2-str2upper1.png" />\
+      <img border="1" width="250px" src="figures/proj2-str2upper1.png" />
       Right before `strToUpper()` returns, the memory contents are shown below:\
-      <img border="1" width="250px" src="figures/proj2-str2upper2.png" />\
+      <img border="1" width="250px" src="figures/proj2-str2upper2.png" />
       Every time `s++` is called (Line 13), it increments the pointer to the next character in `univ`. Eventually, `s` points to `univ[11]`, allowing it to break out of the loop.
 
 ###### Do these exercises (not graded):

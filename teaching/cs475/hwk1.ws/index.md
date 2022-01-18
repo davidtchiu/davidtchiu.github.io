@@ -7,9 +7,10 @@ This is the first part of a multi-part primer on C. You will be programming a si
 #### ZyBooks Reading
 
 - Chap 3: data types and variables
-- Chap 6: arrays and strings
-- Chap 7: functions
-- Chap 8: structs
+- Chap 6: arrays
+- Chap 7: strings
+- Chap 8: functions
+- Chap 9: structs
 
 #### Student Outcomes
 
