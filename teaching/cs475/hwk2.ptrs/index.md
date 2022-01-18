@@ -658,7 +658,7 @@ I have included a working solution of my program along with the starter code. Th
 
      In the figure below, you can see how `heapify()` works. Here, `A[2]` violates the min-heap property, and a call to
      `heapify(A, 2, 12)` is made to produce the following:\
-      <img width="400px" src="figures/heapify.png" />
+      <img width="600px" src="figures/heapify.png" />
 
    - In Step 2, the out-of-place element `A[2]` is swapped with the smaller of the two children, `A[5]`. However, the tree rooted at
      `A[5]` no longer satisfies min-heap property. Thus, a recursive call to heapify on
