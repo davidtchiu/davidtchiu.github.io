@@ -171,7 +171,7 @@ We've seen one side of a variable, which is how its value is stored and the numb
 
 1. Let's now consider the code below. Study it before moving on.
 
-   ```c
+   ```java
    char letter = 'p';
    int days = 365;
    double amt = 90000.75;
