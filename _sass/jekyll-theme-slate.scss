@@ -250,12 +250,14 @@ code {
 pre {
   padding: 5px;
   overflow: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 code {
   color: #373737;
   padding: 2px;
   margin: 0 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 pre code {
