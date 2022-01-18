@@ -603,15 +603,16 @@ Now that we have a good handle on data types and addressing, let's put everythin
 
 Your boss has decided that she needs to make cuts to the company's budget. She's tasked you with providing her a list of employees, sorted in _descending_ order of their salaries. Luckily, you remember Heapsort from your Algorithms or CS II class, and decide to use it...
 
-Heaps are a representation of arrays and are useful as the basis for the Heapsort algorithm. Heaps are also the backbone for Priority Queues, an important data structure which finds uses in many applications (including in OS). Your goal is to implement Heapsort using a min-heap. A min-heap is an array of $$n$$ elements
-$$A[0],...,A[n−1]$$ that can be viewed as a binary tree (not necessarily a binary search tree), with the following properties:
+Heaps are a representation of arrays and are useful as the basis for the Heapsort algorithm. Heaps are also the backbone for Priority Queues, an important data structure which finds uses in many applications (including in OS). Your goal is to implement Heapsort using a min-heap. A min-heap is an array of n elements
+`A[0]`,...,`A[n−1]` that can be viewed as a binary tree (not necessarily a binary search tree), with the following properties:
 
-- The root of the heap is $$A[0]$$.
+- The root of the heap is `A[0]`.
 - For an array index `i`,
   - `parent(i) = (i-1)/2 ` (except for the root, which has no parent)
   - `left_child(i) = 2(i+1)−1`
   - `right_child(i) = 2(i+1)`
-- The _min-heap property_ says: For every node `A[i]` except for the root, the value of `A[i]` is greater than or equal to the value of its parent, i.e., `A[parent(i)] <= A[i]`. The figure below shows an example of a min-heap of size 12.\
+- The _min-heap property_ says: For every node `A[i]` except for the root, the value of `A[i]` is greater than or equal to the value of its parent, i.e., `A[parent(i)] <= A[i]`. The figure below shows an example of a min-heap of size 12.
+
    <img width="400px" src="figures/heap.png" />
 
   Note that we're only mapping an array to a binary tree's structure. Thus, all functions operate on arrays, and no binary tree is ever constructed.
@@ -657,7 +658,8 @@ I have included a working solution of my program along with the starter code. Th
      down in place such that the tree rooted at `i` satisfies the min-heap property.
 
      In the figure below, you can see how `heapify()` works. Here, `A[2]` violates the min-heap property, and a call to
-     `heapify(A, 2, 12)` is made to produce the following:\
+     `heapify(A, 2, 12)` is made to produce the following:
+
       <img width="600px" src="figures/heapify.png" />
 
    - In Step 2, the out-of-place element `A[2]` is swapped with the smaller of the two children, `A[5]`. However, the tree rooted at
@@ -668,7 +670,8 @@ I have included a working solution of my program along with the starter code. Th
      `A` of size `n`, this function will leave the tree rooted at `A[0]` satisfying the min-heap property. Because leaf nodes trivially satisfy the property, only the non-leaf nodes need to be heapified. It's pertinent to know that the last non-leaf node is located at
      index `n/2`. Run `heapify()` on `A[n/2]` down to `A[0]`.
 
-     The before-and-after of this function call is shown below:\
+     The before-and-after of this function call is shown below:
+
       <img width="400px" src="figures/proj2-buildHeap.png" />
 
    - `void swap(struct Employee *e1, struct Employee *e2)`: Inputs pointers to two Employees, and swaps them.
