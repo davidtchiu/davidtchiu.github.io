@@ -107,6 +107,7 @@ class CourseCalendar {
 
       // associate week number
       let wk = document.createElement("td");
+      wk.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
       wk.innerHTML = weekNum;
       tr.appendChild(wk);
 
@@ -163,7 +164,7 @@ class CourseCalendar {
     // update the HTML element
     const div = document.querySelector("#schedule");
     let h3 = document.createElement("h3");
-    h3.innerHTML = "SCHEDULE";
+    h3.innerHTML = "CALENDAR (TENTATIVE)";
     div.appendChild(h3);
     div.appendChild(table);
   }
