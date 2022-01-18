@@ -641,7 +641,7 @@ I have included a working solution of my program along with the starter code. Th
 
 ###### Program Requirements
 
-1. Download the required file Hwk2_Heapsort.zip. Inside, you should find the following files:
+1. Inside the project directory, you should find the following files:
 
    - `Makefile`
    - `employee.h` contains the definition of the Employee structure and declarations of several functions
@@ -744,7 +744,7 @@ After you have completed the homework, use the following to submit your work on 
    - Navigate to the directory that contains your homework directory.
    - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
 
-     - For example, if my homework directory is called `hwk1/`, and I want the zipped file to be called `hwk2.tar.gz`, use: `tar -czvf hwk2.tar.gz hwk1/`
+     - For example, if my homework directory is called `hwk2/`, and I want the zipped file to be called `hwk2.tar.gz`, use: `tar -czvf hwk2.tar.gz hwk2/`
      - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
 
    - Navigate to our course on Canvas, and find the assignment submission box.

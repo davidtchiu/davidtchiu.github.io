@@ -223,7 +223,7 @@ Now that we understand how the stack is managed, we return to the original probl
 
     //(code omitted)
 
-    free(my_employees); //deallocate space after we're done!
+    free(my_employees); // deallocate space after we're done!
     return 0;
   }
   ```
@@ -270,7 +270,15 @@ Now that we understand how the stack is managed, we return to the original probl
 
     Remember from the previous primer that we learned the array-index syntax `my_employees[i]` is really a short-hand for `*(my_employees+i)`? Because of the earlier cast, C knows to skip `sizeof(Employee) == 20` bytes every time `i` is incremented. How convenient that we can use the array-index syntax in this context to dereference each 20-byte block as an `Employee`!
 
-  - On **Line 30**: frees up the `num_employees * sizeof(Employee)` bytes from the heap, so that the space can be reclaimed and used by another part of the process. Be careful! at this point, `my_employees` now points to an invalid address. If you try to dereference `my_employees` now (as in Lines 21-25), you'll receive a segmentation fault.
+  - On **Line 30 (important word on Garbage Collection)**: This line _frees_ up the `num_employees * sizeof(Employee)` bytes from the heap, so that the space can be reclaimed and used by another part of the process. Be careful! at this point, `my_employees` now points to an invalid address. If you try to dereference `my_employees` now (as in Lines 21-25), you'll receive a segmentation fault.
+
+    - If your program doesn't free up memory that's no longer being used, then the memory remains allocated on the heap.
+
+    - You can never reclaim this memory because there are no longer any pointers referencing its location.
+
+    - This is called a **memory leak**, which will cause your program to eat up increasing amounts of memory over time, sucking up system resources.
+
+    - While garbage collection is automatically handled by languages like Java, we don't have that luxury in C! It is completely up to the programmer to decide when free memory from the heap.
 
 ##### Part 4: Dynamic Memory Allocation
 
@@ -317,28 +325,157 @@ The arrow operator provides a cleaner syntax.
 
 Having taken CS 261, I'm assuming that you have a working knowledge of BST's properties, so I won't be spending time describing the actual algorithms. The important thing is that you understand the implementation details in C.
 
-##### Assignment: HeapSort (Graded)
+1. Download Hwk3_BST.zip and extract its contents to your working directory. This file contains a Makefile, bst.h, bst.c, and main.c.
 
-Your boss has decided that she needs to make cuts to the company's budget. She's tasked you with providing her a list of employees, sorted in _descending_ order of their salaries. Luckily, you remember Heapsort from your Algorithms or CS II class, and decide to use it...
+2. Structs: We'll assume for simplicity that a BST node holds an integer key, and has pointers to a left and right child nodes. Open up the header file `bst.h`:
 
-Heaps are a representation of arrays and are useful as the basis for the Heapsort algorithm. Heaps are also the backbone for Priority Queues, an important data structure which finds uses in many applications (including in OS). Your goal is to implement Heapsort using a min-heap. A min-heap is an array of $$n$$ elements
-$$A[0],...,A[n−1]$$ that can be viewed as a binary tree (not necessarily a binary search tree), with the following properties:
+   ```c
+   /**
+   *  Each BST node has an integer key,
+   *  and pointers to its parent, left child, and right child.
+   */
+   typedef struct BSTNode {
+       int key;
+       struct BSTNode *parent; //pointer to parent
+       struct BSTNode *left;   //pointer to left childs
+       struct BSTNode *right;  //pointer to right child
+   } BSTNode;
 
-- The root of the heap is $$A[0]$$.
-- For an array index `i`,
-- $$parent(i) = \lfloor (i-1)/2 \rfloor$$ (except for the root, which has no parent)
-- $$left\_child(i) = 2(i+1)−1$$
-- $$right\_child(i) = 2(i+1)$$
-- The _min-heap property_ says: For every node $$A[i]$$ except for the root, the value of $$A[i]$$ is greater than or equal to the value of its parent, i.e., $$A[parent(i)] \le A[i]$$. The figure below shows an example of a min-heap of size 12.\
-  <img width="400px" src="figures/heap.png" />
+   /** BST struct stores just a pointer to the root node */
+   typedef struct BST {
+       BSTNode *root;  //pointer to root of tree
+   } BST;
+   ```
 
-Note that we're only mapping an array to a binary tree's structure. Thus, all functions operate on arrays, and no binary tree is ever constructed.
+3. Insertion:
+
+   ```c
+   /**
+    * Creates a new BSTNode holding val, then inserts val into tree rooted at root
+    * @param root  Pointer to a binary search tree
+    * @param val   Value to be inserted
+    */
+   void insert(BST *tree, int val) {
+       //create and initialize new node
+       BSTNode *newNode = (BSTNode*) malloc(sizeof(BSTNode));
+       newNode->key = val;
+       newNode->left = NULL;
+       newNode->right = NULL;
+
+       //find node to attach newNode
+       if (tree->root == NULL) {
+           tree->root = newNode;
+       }
+       else {
+           //loop to find where to insert the new node
+           BSTNode *currentNode = tree->root;
+           BSTNode *parentNode = NULL;
+           while (currentNode != NULL) {
+               parentNode = currentNode;
+               if (key > currentNode->key) {
+                   currentNode = currentNode->right;   //descend down right subtree
+               }
+               else {
+                   currentNode = currentNode->left;    //descend down left subtree
+               }
+           }
+           //link up newNode
+           if (key > parentNode->key) {
+               parentNode->right = newNode;
+           }
+           else {
+               parentNode->left = newNode;
+           }
+       }
+   }
+   ```
+
+   - On Line 8: creates a `BSTNode` on the heap, referenced by `newNode`.
+
+   - On Lines 9-11 (Important): shows a the arrow syntax I introduced earlier. The arrow syntax is used to access data members referenced by a `struct` pointer. Its syntax `p->val` is just a short-hand for `(*p).val`.
+
+   - On Lines 14-16: is the trivial case where there is no root node. We simply set the `newNode` as the tree's root.
+
+   - On Lines 18-29: iterates to search for the node (`parentNode`) to insert `newNode` under.
+
+   - On Lines 30-36: inserts `newNode` as a child under the `parentNode`.
+
+4. Freeing up memory. Recall from earlier that garbage collection is super important to avoid **memory leaks**. For instance, if we were writing the `remove()` function, you'll need to remember to `free()` the `BSTNode` being deleted. In this example below,
+   we want to clear everything off the existing tree.
+
+   ```c
+   /**
+    * Frees up space allocated by BST
+    * @param tree Pointer to the tree
+    */
+   void freeTree(BST *tree) {
+       freeTreeNode(tree->root);
+   }
+
+   /**
+    * Recursive helper function
+    */
+   void freeTreeNode(BSTNode *node) {
+       if (node != NULL) {
+           if (node->left == NULL && node->right == NULL) {     //leaf
+               printf("Freeing %d\n", node->key);
+               free(node);
+           }
+           else {   //non-leaf node
+               freeTreeNode(node->left);
+               freeTreeNode(node->right);
+               printf("Freeing %d\n", node->key);
+               free(node);
+           }
+       }
+   }
+   ```
+
+###### Do these exercises (not graded):
+
+1. Implement `int min(BST *tree)` and `int max(BST *tree)`, which input a pointer to the `BST` and returns the min and max values in the BST, respectively.
+
+2. Implement `int treeSum(BST *tree)`, which inputs a pointer to the `BST`, adds up all the node values and returns the sum.
+
+3. Implement `void printInOrder(BST *tree)`, which inputs a pointer to the `BST` and uses in-order traversal to print all values in ascending order.
+
+4. Implement `void delete(BST *tree, int key)`, which inputs a pointer to the `BST`, and deletes the node with the given value. Remember to `free()` up the deleted node. (Remember from your CS II course that there are 3 cases to handle.)
+
+##### Assignment: Reverse Polish Calculator (Graded)
+
+We're used to seeing mathematical expressions written in infix notation. For instance, we know how to evaluate `1 + 4 / (1-5)`
+because we understand operator and parenthetical precedence. It turns out that infix expressions are quite difficult for computers to evaluate because the entire expression needs to be read in, and yet the application of some operators must be delayed. An alternate notation, known as postfix or reverse polish notation (RPN), avoids these problems by imposing the burden of entering operands in a specific order on the user.
+
+In an RPN expression, the operands and operators are read from left to right. As operands are read, they are pushed onto a stack, and as soon as an operator is read, the first two operands from the stack are popped off, and the operator is applied. The result is then pushed back onto the stack. These rules apply until the end of the expression is reached, and there should be a single value left on the stack which contains the result. The above infix expression converted in RPN is: `1 4 1 5 - / +` The figure below shows how this expression is evaluated.
+
+![](figures/proj3-rpn.png)
+
+Your goal is to implement a Reverse Polish Notation (RPN) calculator that evaluates expressions. The algorithm to evaluate an RPN expression is described below:
+
+```
+Input: RPN expression string
+
+Extract tokens from expression string from left to right
+If token is a number:
+    Push it onto the stack
+Otherwise (token is an operator +, -, *, or /):
+    If stack size < 2:
+        Generate error and exit
+    Otherwise:
+        Pop two numbers off the top of the stack
+        Apply the current operator on the numbers
+        Push result onto the stack
+If stack size > 1:
+    Generate error and exit
+Otherwise:
+    Pop final value off stack, and return final result
+```
 
 ###### Starter Code
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk2-heapsort](https://github.com/davidtchiu/cs475-hwk2-heapsort). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk3-rpncalc](https://github.com/davidtchiu/cs475-hwk3-rpncalc). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
 ```
 
@@ -354,106 +491,105 @@ git clone https://github.com/davidtchiu/cs475-hwk2-heapsort
 
 ```
 
-- This should download the starter code to your virtual machine, in a directory called `cs475-hwk2-heapsort`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
+- This should download the starter code to your virtual machine, in a directory called `cs475-hwk3-rpncalc`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
 
 ###### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `heapsortSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./heapsortSol`. This is how your solution should behave when it's done.
+I have included a working solution of my program along with the starter code. The binary executable file is called `rpncalcSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./rpncalcSol`. This is how your solution should behave when it's done.
 
 ###### Program Requirements
 
-1. Download the required file Hwk2_Heapsort.zip. Inside, you should find the following files:
+1. Inside the project directory, you should find the following files:
 
-- `Makefile`
-- `employee.h` contains the definition of the Employee structure and declarations of several functions
-- `heap.h` contains the function declarations related to the heap
-- `heap.c` contains the stubs for the functions defined in `heap.h`
-- `main.c ` contains the `main()` function
+   - `Makefile`
+   - `stack.h` and `stack.c`: you are required to dynamically allocate stack elements (tokens) on the heap. These stack functions are required.
 
-2. Implement the following functions inside `heap.c`:
+     - An element on the stack holds operands from the expressions, which are assumed to be doubles.
+     - `int size()` returns the number of elements currently on the stack.
+     - `void push(double)` inputs a `double`, allocates a new stack element, and pushes it onto the top of the stack.
+     - `double pop()` pops off the top element from the stack, returns the stored double value, and deallocates it from the heap.
 
-- `void heapify(struct Employee *A, int i, int n)`: This function inputs a pointer to an array
-  `A`, an index `i`, and the size of the array `n`. The function assumes the trees that rooted at
-  `left_child(i)` and `right_child(i)` already satisfy the min-heap property, but that `A[i]`
-  may be larger than its children. This function should trickle `A[i]`
-  down in place such that the tree rooted at `i` satisfies the min-heap property.
+   - **Warning:** In the spirit of this tutorial, you must implement your stack using a linked-list. That is, you are not allowed to simply `malloc()` an array of doubles, and then use that array as the basis for your stack.
 
-  In the figure below, you can see how `heapify()` works. Here, `A[2]` violates the min-heap property, and a call to
-  `heapify(A, 2, 12)` is made to produce the following:\
-   <img width="400px" src="figures/heapify.png" />
+     - Array-based stack implementations will be returned without grading.
 
-- In Step 2, the out-of-place element `A[2]` is swapped with the smaller of the two children, `A[5]`. However, the tree rooted at
-  `A[5]` no longer satisfies min-heap property. Thus, a recursive call to heapify on
-  `A[5]` corrects the subtree. You should therefore recursively correct the subtrees until you hit a leaf.
+   - `rpn.h` and `rpn.c`: should implement the RPN evaluation algorithm (as given above). You must remember to catch divide-by-zero errors.
 
-- `void buildHeap(struct Employee *A, int n)`: Given a pointer to an array
-  `A` of size `n`, this function will leave the tree rooted at `A[0]` satisfying the min-heap property. Because leaf nodes trivially satisfy the property, only the non-leaf nodes need to be heapified. It's pertinent to know that the last non-leaf node is located at
-  index $$\lfloor n/2 \rfloor$$. Run `heapify()` on `A[n/2]` down to `A[0]`.
+   - `main.c`: prompt the user for an RPN expression, evaluate the expression and print the result. You may assume that an expression can be no longer than 100 characters long. Operators and operands may be separated by a space, a tab or a newline.
 
-  The before-and-after of this function call is shown below:\
-   <img width="400px" src="figures/proj2-buildHeap.png" />
+2. You may find the following useful:
 
-- `void swap(struct Employee *e1, struct Employee *e2)`: Inputs pointers to two Employees, and swaps them.
+   - To scan in an entire line of input, it is recommended that you use [`fgets()`](http://www.cplusplus.com/reference/cstdio/fgets/)
+   - To split or tokenize a string, check out [`strtok()`](http://www.cplusplus.com/reference/cstring/strtok/) from the **string.h** library
+   - To convert a string to an int or a float, look into [atoi()](http://www.cplusplus.com/reference/cstdlib/atoi/[) and [atof()](http://www.cplusplus.com/reference/cstdlib/atof/) from the **stdlib.h** library
+   - There are some neat functions, like [ispunct()](https://www.programiz.com/c-programming/library-function/ctype.h/ispunct) that can tell you whether a single char (not an entire string!) is a punctuation or a digit. You need to include ctype.h.
+   - There is a NAN (not-a-number) constant defined in **math.h**, that is useful when you must return a `double`, but the return value is undefined.
 
-- `void printHeap(struct Employee *A, int n)`: Prints all values in the array referenced by pointer `A`.
+3. Here's a sample output:
 
-- `void heapsort(struct Employee *A, int i, int n)`: This function inputs a pointer to an unsorted array of Employees and the size of that array and sorts it in descending order of their salary. Here's the sketch:
-  ```
-  Build min-heap over A
-  Repeat the following until n < 0:
-    Swap root of heap with element n−1.
-    Now smallest element is sorted into place.
-    Heapify up to element n−1
-    Decrement n by 1
-  ```
+```
+> Enter an equation (in RPN):
+> 3
+3.000
 
-3. Implement the following inside `main.c`:
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> 23 4 -
+19.000
 
-- Define a constant called `MAX_EMPLOYEES` that will serve as the maximum length of your array.
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> 4 23 -
+-19.000
 
-- `int main()`: The driver function should create an array of `MAX_EMPLOYEES` elements, and fill it with values from the user. Below, a sample interaction for `MAX_EMPLOYEES` of 5.
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> 4 4 + 0 3 - /
+-2.667
 
-4. Here's a sample output:
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> 45 9 ^ 5 *
+Error: operator ^ unrecognized.
 
-````
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> 4 5 6 *
+Error: too many operands entered.
 
-Name: David
-Salary: 60000
-Enter another user (y/n)? y
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> 4 5 6 * + +
+Error: insufficient operands.
 
-Name: Gabe
-Salary: 75000
-Enter another user (y/n)? y
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> 4 0 /
+Error: divide-by-zero
 
-Name: Katie
-Salary: 92000
-Enter another user (y/n)? y
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> 4 0 /
+Error: divide-by-zero
 
-Name: Gabe
-Salary: 40000
-Enter another user (y/n)? y
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> 2 5 * 4 + 3 2 * 1 + /
+2.000
 
-Name: Joan
-Salary: 86000
-
-[id=Katie sal=92000], [id=Joan sal=86000], [id=Gabe sal=75000], [id=David sal=60000], [id=Gabe sal=40000]
-
+>Evaluate another? (y/n): n
+Exiting...
 ```
 
 #### Grading
 
 ```
-
 This assignment will be graded out of 20 points:
-
-[1pt] Appropriate constants have been defined.
-[6pt] Heapify is properly implemented.
-[6pt] BuildHeap is properly implemented to build a min-heap.
-[6pt] Heapsort sorts employees by descending order of their salary.
-[1pt] Your program receives user-input, and does basic error checking.
-[1pt] The README is written and placed in your project directory. Your program observes
-good style and commenting.
-
+[5pt] User input is properly handled.
+[4pt] push() is dynamically allocates a stack element and pushes it on the top of the stack.
+[4pt] pop() removes the top element, returns the stored value, and is free from memory leaks.
+[1pt] size() returns the the number of elements on the stack.
+[6pt] RPN algorithm is properly implemented.
 ```
 
 #### Submitting Your Assignment
@@ -467,7 +603,7 @@ After you have completed the homework, use the following to submit your work on 
    - Navigate to the directory that contains your homework directory.
    - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
 
-     - For example, if my homework directory is called `hwk1/`, and I want the zipped file to be called `hwk2.tar.gz`, use: `tar -czvf hwk2.tar.gz hwk1/`
+     - For example, if my homework directory is called `hwk3/`, and I want the zipped file to be called `hwk3.tar.gz`, use: `tar -czvf hwk3.tar.gz hwk3/`
      - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
 
    - Navigate to our course on Canvas, and find the assignment submission box.
@@ -481,5 +617,7 @@ After you have completed the homework, use the following to submit your work on 
 #### Credits
 
 Written by David Chiu. 2022.
+
 ```
-````
+
+```
