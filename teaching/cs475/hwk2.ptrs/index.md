@@ -608,10 +608,10 @@ $$A[0],...,A[n−1]$$ that can be viewed as a binary tree (not necessarily a bin
 
 - The root of the heap is $$A[0]$$.
 - For an array index `i`,
-  - $$parent(i) = \lfloor (i-1)/2 \rfloor$$ (except for the root, which has no parent)
-  - $$left\_child(i) = 2(i+1)−1$$
-  - $$right\_child(i) = 2(i+1)$$
-- The _min-heap property_ says: For every node $$A[i]$$ except for the root, the value of $$A[i]$$ is greater than or equal to the value of its parent, i.e., $$A[parent(i)] \le A[i]$$. The figure below shows an example of a min-heap of size 12.\
+  - `parent(i) = (i-1)/2 ` (except for the root, which has no parent)
+  - `left_child(i) = 2(i+1)−1`
+  - `right_child(i) = 2(i+1)`
+- The _min-heap property_ says: For every node `A[i]` except for the root, the value of `A[i]` is greater than or equal to the value of its parent, i.e., `A[parent(i)] <= A[i]`. The figure below shows an example of a min-heap of size 12.\
    <img width="400px" src="figures/heap.png" />
 
   Note that we're only mapping an array to a binary tree's structure. Thus, all functions operate on arrays, and no binary tree is ever constructed.
@@ -666,7 +666,7 @@ I have included a working solution of my program along with the starter code. Th
 
    - `void buildHeap(struct Employee *A, int n)`: Given a pointer to an array
      `A` of size `n`, this function will leave the tree rooted at `A[0]` satisfying the min-heap property. Because leaf nodes trivially satisfy the property, only the non-leaf nodes need to be heapified. It's pertinent to know that the last non-leaf node is located at
-     index $$\lfloor n/2 \rfloor$$. Run `heapify()` on `A[n/2]` down to `A[0]`.
+     index `n/2`. Run `heapify()` on `A[n/2]` down to `A[0]`.
 
      The before-and-after of this function call is shown below:\
       <img width="400px" src="figures/proj2-buildHeap.png" />
