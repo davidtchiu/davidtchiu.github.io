@@ -177,7 +177,7 @@ Now that we understand how the stack is managed, we return to the original probl
 
 - Clearly, a program that crashes depending on an arbitrary input should be avoided, and is why you should avoid creating unknown-sized arrays on the _stack_. That foreshadows a different location that can store arbitrarily-sized structures.
 
-##### Part 4: Heap to the Rescue
+##### Part 4: The Program Heap
 
 - To deal with the stack-overflow problem, we need to allocate unknown-sized memory off the stack, in some large, free area of memory. The **Heap** segment in the address space serves this exact purpose. Instead, when we need a new array, struct, (or object), during runtime, we'll create a pointer on the stack to refer to some location on the heap where this potentially large structure will reside.
 
@@ -242,20 +242,20 @@ Now that we understand how the stack is managed, we return to the original probl
 
     Remember the goal is to create an array that contains `num_employees` elements of `Employee`. Therefore, we need to use `malloc()` to request `num_employees * sizeof(Employee)` bytes on the heap.
 
-        - For example, assume that the `Employee` struct is declared as follows:
+    - For example, assume that the `Employee` struct is declared as follows:
 
-          ```c
-          #define MAX_NAME_LEN 16
+      ```c
+      #define MAX_NAME_LEN 16
 
-          typedef struct Employee {
-              char name[MAX_NAME_LEN];
-              int salary;
-          } Employee;
-          ```
+      typedef struct Employee {
+          char name[MAX_NAME_LEN];
+          int salary;
+      } Employee;
+      ```
 
-        - Then `sizeof(Employee) == 20` because `name` is a char array of length 16 and `salary` is an 4-byte integer. Therefore, `malloc()` is going to try to allocate a block of `num_employees * 20` bytes on the heap, and return the address of the first byte of this block.
+    - Then `sizeof(Employee) == 20` because `name` is a char array of length 16 and `salary` is an 4-byte integer. Therefore, `malloc()` is going to try to allocate a block of `num_employees * 20` bytes on the heap, and return the address of the first byte of this block.
 
-        -  Next, we cast whatever `malloc()` returns to a pointer to Employee, `(Employee*)`. Remember  that `malloc()` is type-agnostic; it doesn't care about what kind of data you intend to store in the newly allocated memory. Therefore, it returns a `void*` pointer, which means we need to cast it into the desired pointer type. Without the cast, C wouldn't know what the byte boundaries are for each `Employee` object to do pointer-arithmetic. Furthermore, it wouldn't be able to associate `.name` with the first 16 bytes, and `.salary` with the last four bytes.
+    - Next, we cast whatever `malloc()` returns to a pointer to Employee, `(Employee*)`. Remember that `malloc()` is type-agnostic; it doesn't care about what kind of data you intend to store in the newly allocated memory. Therefore, it returns a `void*` pointer, which means we need to cast it into the desired pointer type. Without the cast, C wouldn't know what the byte boundaries are for each `Employee` object to do pointer-arithmetic. Furthermore, it wouldn't be able to associate `.name` with the first 16 bytes, and `.salary` with the last four bytes.
 
   - On **Line 21-25**:
 
@@ -272,37 +272,50 @@ Now that we understand how the stack is managed, we return to the original probl
 
   - On **Line 30**: frees up the `num_employees * sizeof(Employee)` bytes from the heap, so that the space can be reclaimed and used by another part of the process. Be careful! at this point, `my_employees` now points to an invalid address. If you try to dereference `my_employees` now (as in Lines 21-25), you'll receive a segmentation fault.
 
-##### Part 4: Dynamic Data Structures (Binary Search Tree)
+##### Part 4: Dynamic Memory Allocation
 
 All right, so we've seen how to create an array on the heap, but still, this is assuming that the user would at some point know the size of the array. But `malloc()` is more general than that. It can be used to allocate _any_ amount of memory on the heap, even a single `int`, `double`, or `struct`. It all simply depends on what _data type_ the programmer can casts the returned `void*` pointer into.
 
 In the code below, we use `malloc()` to create 4 bytes (`sizeof(int)`) on the heap. `malloc()`, as always will return the address of the 0th byte that it allocated. We then tell C to interpret the 4 bytes as an `int` by simply casting the address into an `int*` pointer, which is then stored in `p`.
 
-    ```c
-    int *p = (int*) malloc(sizeof(int));
-    *p = 0; // initialize it to 0
-    ```
+```c
+int *p = (int*) malloc(sizeof(int));
+*p = 0; // initialize it to 0
+```
 
-In the example below, I show that we can also use `malloc()` to create a single `struct` element.
+The true strength of `malloc()` lies in allowing us to create and manage dynamic data structures that are unbounded in size, like linked lists and trees. Assume we've declared the following `struct` for a Linked List node:
 
-    ```c
-    /** Here's a node for a linked list, say */
-    typedef struct Node {
-        struct Node *next;
-        int data;
-    } Node;
-    ```
+```c
+/** Here's a node for a linked list, say */
+typedef struct Node {
+    int data;
+    struct Node *next;
+} Node;
+```
 
-    ```c
-    // here's how to construct it
-    Node *newNode = (Node*) malloc(sizeof(Node));
+I show that we can also use `malloc()` to create a single `struct` element, as follows.
 
-    // here's how to initialize it (note the '->' operator)
-    newNode->data = 0;
-    newNode->next = NULL;
-    ```
+```c
+// here's how to construct a Node element
+Node *newNode = (Node*) malloc(sizeof(Node));
 
-The true strength of `malloc()` lies in allowing us to create and manage dynamic data structures that are unbounded in size, like linked lists and trees. Having taken CS 261, I'm assuming that you have a working knowledge of BST's properties, so I won't be spending time describing the actual algorithms. The important thing is that you understand the implementation details in C.
+// here's how to initialize it (note the '->' operator)
+newNode->data = 0;
+newNode->next = NULL;
+```
+
+Notice the new operator `->` that can be used to access pointers to `struct`s. It automatically dereferences the pointer. The alternative way to access `data` and `next` was to use the dereferencing operator and dot-notation, as follows:
+
+```c
+(*newNode).data = 0;
+(*newNode).next = NULL;
+```
+
+The arrow operator provides a cleaner syntax.
+
+##### Example: Binary Search Trees (BST)
+
+Having taken CS 261, I'm assuming that you have a working knowledge of BST's properties, so I won't be spending time describing the actual algorithms. The important thing is that you understand the implementation details in C.
 
 ##### Assignment: HeapSort (Graded)
 
