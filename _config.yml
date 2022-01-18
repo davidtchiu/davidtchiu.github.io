@@ -1,7 +1,6 @@
 theme: jekyll-theme-slate
 title: David Chiu
-description: Associate Professor
-description2: Computer Science
+description: Associate Professor, Computer Science
 institution: University of Puget Sound
 office: Thompson Hall 303
-email: <a href="mailto:dchiu@pugetsound.edu">dchiu@pugetsound.edu</a>
+email: dchiu@pugetsound.edu
