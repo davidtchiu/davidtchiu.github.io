@@ -248,19 +248,19 @@ code {
 }
 
 pre {
-  padding: 10px;
+  padding: 5px;
   overflow: auto;
 }
 
 code {
-  color: #444;
-  padding: 1px;
-  margin: 0 1px;
+  color: #373737;
+  padding: 2px;
+  margin: 0 2px;
 }
 
 pre code {
   display: block;
-  box-shadow: none;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
 }
 
 blockquote {
