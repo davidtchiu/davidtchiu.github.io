@@ -494,9 +494,7 @@ Now that we have a good handle on data types and addressing, let's put everythin
 
     - **Line 16-18**: Hmmm let's try something. Because we now know `arr` is just a pointer, can we also dereference it to access the array elements?
 
-      ```c
-      `*(arr+0)` or simply, `*(arr)` returns 9
-      ```
+      - `*(arr+0)`, or simply, `*arr` returns 9
 
       Exciting! How would we access the item at index 1? The runtime is smart enough to know that the next element is 4 bytes away because the array was declared to store ints. So adding 1 to the pointer will automatically skip the next 3 bytes and move the pointer to the next item in the array!
 
