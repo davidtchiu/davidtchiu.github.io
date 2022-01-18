@@ -617,7 +617,3 @@ After you have completed the homework, use the following to submit your work on 
 #### Credits
 
 Written by David Chiu. 2022.
-
-```
-
-```

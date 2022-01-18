@@ -42,69 +42,69 @@ In the figure to the left, only the word's start address is shown, but it should
 **Important Operator: `sizeof()`**
 Notice from the figure I drew above that I somehow knew that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures. **So how did I know these storage requirements apply to my computer?** provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies. Let's see what it does.
 
-    ```c
-    #include <stdio.h>
+```c
+#include <stdio.h>
 
-    int main()
-    {
-        char letter = 'p';
-        int days = 365;
-        double amt = 90000.75;
-        double nums[10];
+int main()
+{
+    char letter = 'p';
+    int days = 365;
+    double amt = 90000.75;
+    double nums[10];
 
-        printf("\n*** sizes of data types ***\n");
-        printf("size of char: %lu bytes\n", sizeof(char));
-        printf("size of short: %lu bytes\n", sizeof(short));
-        printf("size of int: %lu bytes\n", sizeof(int));
-        printf("size of long: %lu bytes\n", sizeof(long));
-        printf("size of float: %lu bytes\n", sizeof(float));
-        printf("size of double: %lu bytes\n", sizeof(double));
-        printf("size of long double: %lu bytes\n", sizeof(long double));
+    printf("\n*** sizes of data types ***\n");
+    printf("size of char: %lu bytes\n", sizeof(char));
+    printf("size of short: %lu bytes\n", sizeof(short));
+    printf("size of int: %lu bytes\n", sizeof(int));
+    printf("size of long: %lu bytes\n", sizeof(long));
+    printf("size of float: %lu bytes\n", sizeof(float));
+    printf("size of double: %lu bytes\n", sizeof(double));
+    printf("size of long double: %lu bytes\n", sizeof(long double));
 
-        printf("\n*** sizes of vars ***\n");
-        printf("size of letter: %lu bytes\n", sizeof(letter));
-        printf("size of days: %lu bytes\n", sizeof(days));
-        printf("size of amt: %lu bytes\n", sizeof(amt));
-        printf("size of nums array: %lu\n", sizeof(nums));
+    printf("\n*** sizes of vars ***\n");
+    printf("size of letter: %lu bytes\n", sizeof(letter));
+    printf("size of days: %lu bytes\n", sizeof(days));
+    printf("size of amt: %lu bytes\n", sizeof(amt));
+    printf("size of nums array: %lu\n", sizeof(nums));
 
-        printf("\n*** sizes of constants and expressions ***\n");
-        printf("size of 50: %lu bytes\n", sizeof(50));
-        printf("size of '#': %lu bytes\n", sizeof('#'));
-        printf("size of 54.999: %lu bytes\n", sizeof(54.999));
-        printf("size of hello: %lu bytes\n", sizeof("hello"));
-        printf("size of 3/2: %lu bytes\n", sizeof(3/2));
-        printf("size of 0.5 * 400 / 2: %lu bytes\n", sizeof(0.5 * 400 / 2));
+    printf("\n*** sizes of constants and expressions ***\n");
+    printf("size of 50: %lu bytes\n", sizeof(50));
+    printf("size of '#': %lu bytes\n", sizeof('#'));
+    printf("size of 54.999: %lu bytes\n", sizeof(54.999));
+    printf("size of hello: %lu bytes\n", sizeof("hello"));
+    printf("size of 3/2: %lu bytes\n", sizeof(3/2));
+    printf("size of 0.5 * 400 / 2: %lu bytes\n", sizeof(0.5 * 400 / 2));
 
-        return 0;
-    }
-    ```
+    return 0;
+}
+```
 
-- When I compile and run it, I get the following output.
+When I compile and run it, I get the following output.
 
-  ```
-  *** sizes of data types ***
-  size of char: 1 bytes
-  size of short: 2 bytes
-  size of int: 4 bytes
-  size of long: 8 bytes
-  size of float: 4 bytes
-  size of double: 8 bytes
-  size of long double: 16 bytes
+```
+*** sizes of data types ***
+size of char: 1 bytes
+size of short: 2 bytes
+size of int: 4 bytes
+size of long: 8 bytes
+size of float: 4 bytes
+size of double: 8 bytes
+size of long double: 16 bytes
 
-  *** sizes of vars ***
-  size of letter: 1 bytes
-  size of days: 4 bytes
-  size of amt: 8 bytes
-  size of nums array: 80
+*** sizes of vars ***
+size of letter: 1 bytes
+size of days: 4 bytes
+size of amt: 8 bytes
+size of nums array: 80
 
-  *** sizes of constants and expressions ***
-  size of 50: 4 bytes
-  size of '#': 4 bytes
-  size of 54.999: 8 bytes
-  size of hello: 6 bytes
-  size of 3/2: 4 bytes
-  size of 0.5 * 400 / 2: 8 bytes
-  ```
+*** sizes of constants and expressions ***
+size of 50: 4 bytes
+size of '#': 4 bytes
+size of 54.999: 8 bytes
+size of hello: 6 bytes
+size of 3/2: 4 bytes
+size of 0.5 * 400 / 2: 8 bytes
+```
 
 1. The integer that is returned by `sizeof()` is the number of bytes required to store that data. A couple other things worth pointing out about the code:
 
