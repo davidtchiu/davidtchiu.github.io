@@ -23,581 +23,286 @@ Open your virtual machine, and log in. Open up a Terminal window to the shell. I
 Using the last primer as a motivating example, recall that we stored a fixed-size array (heap) of Employees, whose information was entered by the user. But in general, the number of employees we need to store is not known until runtime. To deal with this issue, we define the max number of employees `MAX` as a constant, and then we ask the user for the number of employees they expect to have in this particular run:
 
 ```c
-int main() {
-    char letter = 'p';
-    int days = 365;
-    double amt = 90000.75;
+#include <stdio.h>
+#include "employee.h"
 
-    //(more code omitted)
+#define MAX 100000
+
+int getNumEmployees() {
+    int num;
+    do {
+        printf("Number of employees you need to store: ");
+        scanf("%d", &num);
+    } while (num > MAX || num <= 0);
+    return num;
+}
+
+
+int main() {
+    int i;
+    Employee my_employees[MAX];             // create array of 100000 employees
+    int num_employees = getNumEmployees();  // what do they *really* need?
+
+    // fill employee info
+    for (i = 0; i < num_employees; i++) {
+        //(code omitted)
+    }
 }
 ```
 
-Although high-level languages like C, Java, etc., hide it from us, the three variables exist somewhere in memory. Let's take a look at a make-believe snapshot of my computer's memory as it runs the code shown above.
+**The code above is undesirable for several reasons.** First, `MAX` is entirely arbitrary and defined at the programmer's discretion. Second, a company can never have more than `MAX` employees: the program would either not run, or will fail when a user tried to start with more. Third, for the runs that do not require anywhere close to
+MAX employees, this program ends up wasting quite a bit of space.
 
-You might recall from your architecture class that a **word** is the basic unit of data transfer between memory and CPU. In these tutorials, we'll assume that a word is a block of four contiguous bytes (i.e., 32-bits), though it is worth mentioning that many CPUs now fully support 8-byte words (i.e., 64-bits).
+Okay. You might think the above example seems contrived. After all, why didn't we ask the user for the number of employees first, and then create the array using that size. _"Enough with the tomfoolery David, we've been doing it this way in Java for years,"_ is what you're likely thinking. Consider the following code:
 
-In the figure to the left, only the word's start address is shown, but it should be noted that each byte within the word is also addressable. When a CPU requests the byte located at a certain address, say 1117, the full word ranging from address 1116 to 1119 is retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte from the word as needed.\
- <img border="1" width="400px" src="figures/proj2-ex1.png"/>
+```c
+#include <stdio.h>
+#include "employee.h"
 
-**Important Operator: `sizeof()`**
-Notice from the figure I drew above that I somehow knew that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures. **So how did I know these storage requirements apply to my computer?** provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies. Let's see what it does.
+int getNumEmployees() {
+    int num;
+    do {
+        printf("Number of employees you need to store: ");
+        scanf("%d", &num);
+    } while (num <= 0);
+    return num;
+}
 
-    ```c
-    #include <stdio.h>
 
-    int main()
-    {
-        char letter = 'p';
-        int days = 365;
-        double amt = 90000.75;
-        double nums[10];
+int main() {
+    // Just ask for the size first
+    int num_employees = getNumEmployees();
+    Employee my_employees[num_employees];
 
-        printf("\n*** sizes of data types ***\n");
-        printf("size of char: %lu bytes\n", sizeof(char));
-        printf("size of short: %lu bytes\n", sizeof(short));
-        printf("size of int: %lu bytes\n", sizeof(int));
-        printf("size of long: %lu bytes\n", sizeof(long));
-        printf("size of float: %lu bytes\n", sizeof(float));
-        printf("size of double: %lu bytes\n", sizeof(double));
-        printf("size of long double: %lu bytes\n", sizeof(long double));
+    // (code omitted)
+}
+```
 
-        printf("\n*** sizes of vars ***\n");
-        printf("size of letter: %lu bytes\n", sizeof(letter));
-        printf("size of days: %lu bytes\n", sizeof(days));
-        printf("size of amt: %lu bytes\n", sizeof(amt));
-        printf("size of nums array: %lu\n", sizeof(nums));
+While it's true that this code works in Java, **this code is even less desirable than the one above it!** It may crash the C program at unexpected times. It's really important to understand why (stack overflow), so we need to have a handle on how the OS manages a process' memory during execution.
 
-        printf("\n*** sizes of constants and expressions ***\n");
-        printf("size of 50: %lu bytes\n", sizeof(50));
-        printf("size of '#': %lu bytes\n", sizeof('#'));
-        printf("size of 54.999: %lu bytes\n", sizeof(54.999));
-        printf("size of hello: %lu bytes\n", sizeof("hello"));
-        printf("size of 3/2: %lu bytes\n", sizeof(3/2));
-        printf("size of 0.5 * 400 / 2: %lu bytes\n", sizeof(0.5 * 400 / 2));
+##### Part 2: Process Address Space
 
-        return 0;
-    }
-    ```
+When your program is in execution (known as a **process**), the OS assigns it a virtual address space. Think of this space as the process' very own sandbox. The specific implementation may vary across systems, but for simplicity and consistency with lectures, we'll assume that the OS organizes and orders the address space in the following **segments**:
 
-- When I compile and run it, I get the following output.
+    ![](figures/proj3-memlayout.png)
 
-  ```
-  *** sizes of data types ***
-  size of char: 1 bytes
-  size of short: 2 bytes
-  size of int: 4 bytes
-  size of long: 8 bytes
-  size of float: 4 bytes
-  size of double: 8 bytes
-  size of long double: 16 bytes
+    - **Code (Text) Segment** stores the binary (executable file) currently running. It is placed near the lowest address.
 
-  *** sizes of vars ***
-  size of letter: 1 bytes
-  size of days: 4 bytes
-  size of amt: 8 bytes
-  size of nums array: 80
+    - **Data Segment** stores global and static variables that have been initialized with a non-zero or non-NULL value. The related BSS segment stores uninitialized global and static variables.
 
-  *** sizes of constants and expressions ***
-  size of 50: 4 bytes
-  size of '#': 4 bytes
-  size of 54.999: 8 bytes
-  size of hello: 6 bytes
-  size of 3/2: 4 bytes
-  size of 0.5 * 400 / 2: 8 bytes
-  ```
+    - **Heap** stores data allocated by the process during runtime (i.e. with `malloc()` or `calloc()` in C and with new operator in C++ and Java). It grows "upward"
 
-1. The integer that is returned by `sizeof()` is the number of bytes required to store that data. A couple other things worth pointing out about the code:
+    - **Program Stack** stores data (e.g., local variables, function parameters, return addresses) needed to keep track of program execution and scope of function calls. It is placed at the top of the address space, and grows "downward".
 
-   <!-- - The `%lu` specifier means unsigned long integer, which is what is returned by `sizeof()`. In fact, if you dig into `sizeof()`, you'll see that it actually returns a type called size_t, which is an alias to an unsigned long. -->
+###### How the Program Stack Works (And What Is a Stack Overflow?)
 
-   - **Lines 10-17**: We're now introduced to a few more data types (`short`, `long`, `long double`), which are all variants of the four original primitives. These are not unlike their counterparts in Java.
+When a process is created, the OS allocates `RLIMIT_STACK` bytes to store the program stack. A user cannot increase this stack size, and can only decrease it. Here's how the stack is used:
 
-     ```c
-     printf("\n*** sizes of data types ***\n");
-     printf("size of char: %lu bytes\n", sizeof(char));
-     printf("size of short: %lu bytes\n", sizeof(short));
-     printf("size of int: %lu bytes\n", sizeof(int));
-     printf("size of long: %lu bytes\n", sizeof(long));
-     printf("size of float: %lu bytes\n", sizeof(float));
-     printf("size of double: %lu bytes\n", sizeof(double));
-     printf("size of long double: %lu bytes\n", sizeof(long double));
-     ```
+- From the `main()` function, where the program starts running, its command-line arguments and local variables are pushed onto the stack, which grows downwards towards the address `MAX - RLIMIT_STACK`. This data, together with the return address make up what is known as `main()`'s Stack Frame. When `main()` calls another method, a new stack frame is created, and its return address, arguments, and local variables are pushed onto the stack. When a function returns, all the data in its frame are popped off the stack, and we jump back to the return address that was also pushed on, thus restoring the caller's scope.
 
-   - Line 23: shows how `sizeof()` can be used to determine the size of the array `nums` in bytes: 80, or `(10 * sizeof(double))` bytes.
+- Stack Overflow: The stack is allowed to grow and shrink so as long as it stays within the bounds imposed by `RLIMIT_STACK`. Unfortunately for programmers, violating this rule is all too easy. Take a look at the following example, which contains an infinite recursion:
 
-     ```c
-     printf("size of nums array: %lu\n", sizeof(nums));
-     ```
-
-   <!-- - Line 27: a character constant is represented as an `int` (4 bytes on my machine). -->
-
-   - Line 28: shows that a hardcoded floating-point constant is treated as a `double`, not a `float`. This is also true in Java.
-     ```c
-      printf("size of 54.999: %lu bytes\n", sizeof(54.999));
-     ```
-   - Line 29: the string literal `"hello"` occupies 6 bytes (not 5!), because it includes the terminating `\0` character.
-
-     ```c
-     printf("size of hello: %lu bytes\n", sizeof("hello"));
-     ```
-
-   - Line 30: holds the result of an integer expression, which is an `int` (same as Java)
-
-     ```c
-     printf("size of 3/2: %lu bytes\n", sizeof(3/2));
-     ```
-
-   - Line 31: holds the result of a mixed expression, which is a `double` (same as Java)
-
-     ```c
-     printf("size of 0.5 * 400 / 2: %lu bytes\n", sizeof(0.5 * 400 / 2));
-     ```
-
-2. Important: Remember the `sizeof()` operator; it is important to pointer-arithmetic, and will also be used in a big way when we discuss dynamic memory allocation.
-
-3. One of the benefits of a typed language like C and Java should be somewhat apparent now. When a programmer declares a variable's type, the executable knows exactly how many contiguous bytes to read and write memory. This is in contrast to languages like Python, JavaScript, and PHP, where the type of a variable is allowed to change during runtime, and requires a bit of overhead to interpret, or juggle their storage requirements. This type-juggling overhead accounts for much of the reason why compiled programs usually run faster than interpreted programs.
-
-###### Practice Questions (not graded):
-
-- Although a char requires just one byte of storage, most CPUs will insist on wasting, or "padding" the remaining 3 bytes (see figure above). Why do you think CPUs prefer this, instead of, say, having `amt` start from address 1117 to save space? (Hint: A unit of transfer between memory and CPU is a word...)
-
-- What is an `unsigned` number? What is the point of an unsigned integer, and when would it be useful? Does Java support unsigned numbers?
-
-- If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`?
-
-##### Part 2: Understanding Variables - Addressing
-
-We've seen one side of a variable, which is how its value is stored and the number of bytes that its value occupies depending on its data type. The other side to a variable is its **location** in memory. This section focuses on the support for working with a variable's location in C.
-
-1. Let's now consider the code below. Study it before moving on.
-
-   ```c
-   char letter = 'p';
-   int days = 365;
-   double amt = 90000.75;
-
-   int *ptr;       //declare pointer to an int
-   ptr = &days;    //point ptr at days
-   printf("There are %d days\n", days);
-   printf("There are %d days\n", *ptr);
-
-   (*ptr)--;   //decrement days by 1
-   printf("There are now %d days\n", days);
-   printf("There are now %d days\n", *ptr);
-
-   //print addresses
-   printf("Location of days: %p\n", &days);
-   printf("Location of ptr: %p\n", &ptr);
-   printf("Value of ptr: %p\n", ptr);
-   ```
-
-2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**.\
-
-3. Here is an example output when this program is executed.
-
-   ```
-   There are 365 days
-   There are 365 days
-   There are now 364 days
-   There are now 364 days
-   Location of days: 0x458
-   Location of ptr: 0x8A2C
-   Value of ptr: 0x458
-   ```
-
-4. Let's now go back and explain the source code.
-
-   - On **Line 5**, we see a new kind of variable-declaration syntax
-
-     ```c
-     int *ptr;       //declare pointer to an int
-     ```
-
-     This declares a new variable named `ptr`, and unlike anything we've seen before, it holds a memory address, which references an `int` value. In other words, `ptr` is a pointer to an integer. Of course, `ptr` is itself a variable that requires storage, and our figure shows that `ptr` itself is located in byte addresses `35372` to `35375`.
-
-   - On **Line 6**:
-
-     ```c
-     ptr = &days;    //point ptr at days
-     ```
-
-     Recall that the unary operator `&var` determines the address of the variable, `var`. Even though day occupies four bytes because it is an `int`, only the address of the first byte (i.e., **1112**) is returned. Thus, `ptr = &days` will therefore assign address **1112** to `ptr`.
-
-   - **Line 8** introduces an important operation, called **dereferencing**.
-
-     ```c
-     printf("There are %d days\n", *ptr);
-     ```
-
-     Dereferencing is used when we're interested in the _content_ that is being referenced by `ptr`. If we simply output the value of `ptr`, we'd get **1112**, which is just the location of the value we're actually interested in. Therefore, the objective is to "follow" the pointer to its destination. To do this, C provides the unary dereferencing operator `*var`, where `var` is a pointer variable.
-
-   - On **Line 10**:
-
-     ```c
-     (*ptr)--;   //decrement days by 1
-     ```
-
-     `ptr` is first dereferenced to get the content `365`. It is then decremented to `364` and written back.
-
-   - On **Lines 15-17**: shows that we can use the output specifier, `%p` to print an address (in hexadecimal).
-
-     ```c
-     printf("Location of days: %p\n", &days);
-     printf("Location of ptr: %p\n", &ptr);
-     printf("Value of ptr: %p\n", ptr);
-     ```
-
-     The addresses of `days` (0x458 == 1112) and `ptr` (0x8A2C == 35372) are first printed. This is followed by printing the contents of `ptr`, which unsurprisingly, stores the address of `days`.
-
-   - In the example above, we showed that the `&` operator returns just address of the first byte of `days`, even though `days` also occupies the following three bytes. When we dereference `*ptr` on Lines 8 and 12, the runtime was smart enough to know that the next three bytes are part of the value. Had the program read anymore than three more bytes, we would've gotten a much larger number, and had it read fewer than three bytes, we would've truncated our number. How does our program know that exactly three more bytes (and not zero, or one, or seven) trailed first byte? (Hint: It's why we declare data types!)
-
-###### Practice Problems (not graded)
-
-- We know that a pointer to an int (that is, `int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct X` on my machine? (Hint: Does the maximum size of an address ever change?)
-
-- You can also create a pointer to a `void` data type. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful.
-
-##### Part 3: Pointer Basics
-
-Now that we have a good handle on data types and addressing, let's put everything together. There are three basic C concepts you need to master:
-
-1. Address-of Operator: Given a variable var, `&var` returns the address of var's location in memory.
-
-2. A pointer variable stores the address of some data. This data can be a variable, an array, another pointer... To declare a pointer, you use the following syntax:
-
-   ```c
-   dataType *ptr;          //pointer to a dataType
-   dataType *ptr1, *ptr2, *ptr3;   //multiple pointers
-   ```
-
-   When assigning a pointer q to another pointer p, it causes them both to point to the same data. In Java-speak, they're just references to some data in another location in memory.
-
-   ```c
-   double *a = NULL, *b = NULL, c = 10;
-   b = &c; //point b at c
-   a = b;  //point a at c
-   ```
-
-   - Memory contents after the declaration:\
-     <img border="1" width="250px" src="figures/proj2-ptrAssign1.png" />
-
-   - Memory contents after the assignment statements on Line 2 and 3.\
-     <img border="1" width="250px" src="figures/proj2-ptrAssign2.png" />
-
-   - `NULL` is just like the null keyword in Java, representing a pointer (or reference) to nothing. You must first `#include <stdlib.h>` to get access to the `NULL` constant.
-
-3. Dereference Operator: Given a pointer ptr, we use `*ptr` to access the value at the location referenced by `ptr`. I know, I know, it's awful. They really should've used a different syntax for dereferencing, because `*ptr` already has a different meaning!
-   ```c
-   double *a = NULL, *b = NULL, c = 10;
-   b = &c; //point b at c
-   a = b;  //point a at c
-   *b = 15;
-   *a += 5;
-   ```
-
-- Memory contents after Line 4's assignment statement `*b = 15`.\
-  <img border="1" width="250px" src="figures/proj2-ptrAssign3.png" />
-
-- Memory contents after Line 5.\
-  <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
-
-###### Practice Questions (not graded):
-
-- What value does the `NULL` constant hold? Try printing out. What happens to your program when you try to dereference a pointer to `NULL`?
-
-- Write a function `compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`.
-
-##### Part 4: Output Parameters
-
-1. Consider the following function used to swap the values of two integer variables:
-
-   ```c
-   void swap(int *x, int *y) {
-     int tmp = *x;
-     *x = *y;
-     *y = tmp;
-   }
-   ```
-
-   How would you call this function? Trace execution of calling `swap()` by drawing out the memory contents like you saw in earlier examples.
-
-2. Consider this version of swap:
-
-   ```c
-   void swap2(int *x, int *y) {
-       int *tmp = x;
-       x = y;
-       y = tmp;
-   }
-
-   //(code omitted)
-   //...
-   int a = 4, b = 3;
-   swap2(&a, &b); //swap?
-   ```
-
-   Will this method work? Trace its execution.
-
-3. Consider a final version of swap:
-
-   ```c
-   void swap3(int x, int y) {
-       int *x_ptr = &x;
-       int *y_ptr = &y;
-       int tmp = *x_ptr;
-       *x_ptr = *y_ptr;
-       *y_ptr = tmp;
-   }
-
-   //(code omitted)
-   //...
-   int a = 4, b = 3;
-   swap3(a,b); //swap?
-   ```
-
-   Will this method work? Trace its execution.
-
-4. **"Output Parameters"**: Try using the first `swap()` method in Java. You'll see that the contents of the variables aren't swapped at all after calling it, but it works in C! It is quite common in C for functions to have so-called "output parameters". An output parameter refers to a pointer that is input into a function, and the function modifies its contents. After the function call, one just needs to deference the pointer to obtain the updated value(s). It's convenient for functions like `swap()`, where there's not really a return value that makes any sense, but we expect some side-effects to occur.
-
-   - You've also seen it in action already with `scanf()`. For example, when `scanf("%d", &var);` is used, we input the address of `var` (i.e., a pointer), and we expect the contents of `var` to have changed afterwards.
-
-   - Output parameters are quite dangerous, but useful. I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance (it's not pretty):
-
-     ```c
-     void sum(int inX, int inY, int* outSum) {
-       *outSum = inX + inY;
-     }
-     ```
-
-   - In practice you might even see functions written like this:
-
-     ```c
-     void sum(
-       int x,    /* IN */
-       int y,    /* IN */
-       int* sum  /* OUT */
-       ) {
-       *sum = x + y;
-     }
-     ```
-
-   - Here's another example:
-
-     ```c
-     #include <stdio.h>
-
-     typedef struct Student {
-     float gpa;
-     char name[25];
-     } Student;
-
-     /**
-     * Clears a GPA to 0
-     * @param gpaOut (OUT) A pointer to the GPA to be cleared
-     */
-     void clearGPA(float *gpaOut) {
-       //de-reference pointer, clear the value
-       *gpaOut = 0.0;
-     }
-
-     int main() {
-       Student stu;
-
-       printf("Enter a name: ");
-       scanf("%s", &stu.name);  //value expected in stu.name
-       printf("Enter a GPA: ");
-       scanf("%f", &stu.gpa);
-
-       printf("Name: %s, GPA: %.2f\n", stu.name, stu.gpa);
-       clearGPA(&stu.gpa);  //stu.gpa gets cleared
-       printf("Name: %s, GPA: %.2f\n", stu.name, stu.gpa);
-
-       return 0;
-     }
-     ```
-
-     ```
-       Enter a name: David
-       Enter a GPA: 4.0
-       Name: David, GPA: 4.00
-       Name: David, GPA: 0.00
-     ```
-
-##### Part 5: Connection to Arrays (Pointer Arithmetic)
-
-1.  In this section, we'll explore the relationship between pointers and arrays (and strings).
-    Study the following source file, then compile and run it.
-
-    ```c
-    #include <stdio.h>
-
-    #define BUFFERSIZE 4
-
-    int main()
-    {
-        int arr[BUFFERSIZE] = {9,8,7,6};
-        int i;
-
-        printf("*** where is arr[0] stored? ***\n");
-        printf("arr[0] location: %p\n", &arr[0]);
-
-        printf("\n*** where is arr stored? ***\n");
-        printf("arr location: %p\n", arr);
-
-        printf("\n*** print out contents using pointer arithmetic ***\n");
-        for (i=0; i<BUFFERSIZE; i++)
-            printf("%d ", *(arr+i));
-
-        printf("\n\n*** print out contents using familiar subscript syntax ***\n");
-        for (i=0; i<BUFFERSIZE; i++)
-            printf("%d ", arr[i]);
-
-        return 0;
-    }
-    ```
-
-2.  Arrays represent a list of data in contiguous sequence, and that is also how they're laid out in memory: one element after another. It is therefore not all that surprising to find `arr` being represented as in the figure below, with each `int` element occupying 4 bytes. When compiled and executed, this program outputs something akin to the following:
-
-    <img border="1" width="250px" src="figures/proj2-ex3.png" />
-
-    ```
-    *** where is arr[0] stored? ***
-    arr[0] location: 0x4318
-
-    *** where is arr stored? ***
-    arr location: 0x4318
-
-    *** print out contents using pointer arithmetic ***
-    9 8 7 6
-
-    *** print out contents using familiar subscript syntax ***
-    9 8 7 6
-    ```
-
-3.  Looking at the source code,
-
-    - **Lines 11 and 14**: Suppose we want to find the location of the 0th
-      element in `arr`. The syntax shown on **Line 11**
-
-      ```c
-      printf("arr[0] location: %p\n", &arr[0]);
-      ```
-
-      should not be all that surprising; we can simply apply the `&` operator on element `arr[0]` to get its address. The code on **Line 14**, however, may be slightly unexpected.
-
-      ```c
-      printf("arr location: %p\n", arr);
-      ```
-
-      It would appear that an array's name is **actually** a pointer to the location of its 0th element!
-      By the way, `0x4318` is hexadecimal for `17176` (for the figure below).
-
-    - **Line 16-18**: Hmmm let's try something. Because we now know `arr` is just a pointer, can we also dereference it to access the array elements?
-
-      ```c
-      `*(arr+0)` or simply, `*(arr)` returns 9
-      ```
-
-      Exciting! How would we access the item at index 1? The runtime is smart enough to know that the next element is 4 bytes away because the array was declared to store ints. So adding 1 to the pointer will automatically skip the next 3 bytes and move the pointer to the next item in the array!
-
-      - `*(arr+1)` returns 8
-      - `*(arr+2)` returns 7
-      - `*(arr+3)` returns 6
-
-    - **Line 20-22 (Important!)** Finally, we understand that the array indexing syntax we're all familiar with, `arr[i]`, is simply a convenience to programmers: Indeed, `arr[i]` is _really_ a shorthand for `*(arr+i)`
-
-      - (Full circle now -- Zero-based Addressing): It has never really been explained in previously taught courses why array indices are 0-based in every language. That is, first item stored in `[0]`, second item stored in `[1]`, and so on. Now we know enough to understand why: it's because of pointer arithmetic. If we store the first item in location 1, then the C compiler would always have to subtract 1 when performing each array index lookup.
-
-4.  **Arrays are passed into Functions as pointers:** Now that we know an array's name is essentially the address of its 0th element, take a look at the following functions that manipulate the array. Each of the following functions do exactly the same thing! Make sure you read through each and understand why.
-
-    ```c
-    void initArray(int A[], const int SIZE) {
-      int i;
-      for (i = 0; i < SIZE; i++) {
-          A[i] = -1;
-      }
-    }
-
-    void initArray2(int *A, const int SIZE) {
-      int i;
-      for (i = 0; i < SIZE; i++) {
-          A[i] = -1;
-      }
-    }
-
-    void initArray3(int A[], const int SIZE) {
-      int i;
-      for (i = 0; i < SIZE; i++) {
-          *A++ = -1;
-      }
-    }
-
-    void initArray4(int *A, const int SIZE) {
-      int i;
-      for (i = 0; i < SIZE; i++) {
-          *(A+i) = -1;
-      }
-    }
-    ```
-
-    Side note: Because arrays are passed as pointers, you can now appreciate why modifications to arrays persist even after the function returns (this is also true in Java - after all, Java was written in C).
-
-5.  Here's another example with strings. Take a look at the code below, where we define a function `strToUpper(char *s)`:
-
-    ```c
-    #include <stdio.h>
-
-    /**
-    * Converts given string to upper case
-    * @param s A pointer to a string
-    */
-    void strToUpper(char *s) {
-        while (*s) {
-            if (*s >= 'a' && *s <= 'z') {
-                *s -= 32;   //convert character to to upper case
-            }
-            s++;    //move to next character
-        }
-    }
-
-    int main() {
-        char univ[] = "puget sound";
-        strToUpper(univ);
-        printf("%s\n", univ);
-        return 0;
-    }
-    ```
-
-    - **Line 7**: the input parameter `char *s` declares a pointer to a `char`, which we know can _also_ be interpreted as the 0th element in an array of chars.
-
-    - **Line 9:** checks the dereferenced value of pointer `s` to see if we've reached the end of the string. This syntax looks wonky at first. Let's unpack it.
-      - Recall that `*s` is an attempt to dereference the pointer `s`.
-      - Well, `s` is initially pointing to the 0th character in the string. Once dereferenced, it will return the character at that location, which generally has a non-zero value (recall that any non-zero value is `true`).
-      - Remember that all strings must end with the null-character `'\0'`, which has an integer value of 0 (implying boolean `false`).
-      - Putting it all together: the loop will run for each character in the string, until the null character is reached.
-    - **Line 11-12:** checks to see if the character currently being pointed to by s is a lower case letter, and if it is, subtract by 32, which is the offset from its upper-case counterpart.
-
-    - **Line 13:** this will move to pointer to the next element in sequence in memory. Because `s` points to a `char`, we know from pointer arithmetic that the `++` operator moves the pointer (since sizeof(char) == 1).
-
-    - **Line 19:** The main function creates a string and we assume it is placed in bytes 272372 to 272383.
-
-    - **Line 20 (and Line 7):** calls `strToUpper(univ)`, which implicitly creates a pointer variable `s` that refers to the first character in `univ`. The memory contents at this point is shown below:\
-      <img border="1" width="250px" src="figures/proj2-str2upper1.png" />
-      Right before `strToUpper()` returns, the memory contents are shown below:\
-      <img border="1" width="250px" src="figures/proj2-str2upper2.png" />
-      Every time `s++` is called (Line 13), it increments the pointer to the next character in `univ`. Eventually, `s` points to `univ[11]`, allowing it to break out of the loop.
-
-###### Do these exercises (not graded):
-
-- The following is a well-known function. What does it do?
   ```c
-  void mystery(char *s, char *t) {
-     while (*s++ = *t++) { //assignment, not equivalence (i.e., not a typo)
-         ;
-     }
+  #include <stdio.h>
+
+  void f(int depth) {
+      printf("depth = %d\n", depth);
+      f(depth+1);
+  }
+
+  int main() {
+      f(1);
+      return 0;
   }
   ```
-- Using pointer arithmetics, implement the string function `strcat(char *s, char *t)`, which concatenates the string referred to by `t` to the end of the string referred to by `s`.
+
+- I'm sure you've probably written a few infinite recursions by mistake. Unlike a program that gets stuck in an infinite loop, programs infinite recursions _will_ eventually crash. Why? Weren't you taught that an infinite recursion is semantically equivalent to an infinite loop? Well yes, but let's see the output of a run of this program:
+
+  ```c
+  ...
+  depth = 393031
+  depth = 393032
+  depth = 393033
+  depth = 393034
+  depth = 393035
+  Segmentation fault
+  ```
+
+- The dreaded segmentation fault, a historical umbrella term that means your program tried to access an invalid location in its address space. In this particular example, each call to `f()` involves pushing the return address followed by pushing int depth on the stack. The stack breaches the `RLIMIT_STACK` limit with the 393036th recursive call to `f()`. When the program tries to push a frame beyond that threshold, the memory-management unit within the OS detects this problem and throws the segmentation fault. The OS kills the offending process.
+
+  - Indeed, an infinite recursion always crashes the program because the program continues to use up space (on the stack). In contrast, an infinite loop might not, and that's probably why you've rarely seen an infinite loop be terminated by the OS.
+
+- What's my machine's `RLIMIT_STACK` you ask? This value varies across systems. To find out what this value is on your machine, you can use the shell command `ulimit`. The `-a` option shows all resource limits defined by your OS. If you're only interested in the stack size, you can specify the `-s` flag.
+
+  ```
+  $ ulimit -s
+  10240
+  ```
+
+- The number reported by `ulimit` is in KB ($$2^{10}$$ bytes), so my machine gives each running process a 10MB stack.
+
+##### Part 3: Revisiting the Problem of Unknown Array Sizes
+
+Now that we understand how the stack is managed, we return to the original problem of dealing with array sizes that are unknown until runtime. Here's the problematic code we saw earlier:
+
+- The problem is on **Line 19**:
+
+  ```c
+  Employee my_employees[num_employees];
+  ```
+
+  If the user entered a large enough number for `num_employees`, a segmentation fault can occur when the runtime tries to push an `Employee` array of that size onto the stack.
+
+- Check out the output for the following two runs:
+
+  ```
+  $ ./employees
+  Number of employees you need to store: 2
+  Enter a name: David
+  Enter salary: 30000
+
+  Enter a name: Michelle
+  Enter salary: 40000
+
+  [name=Michelle, sal=40000], [name=David, sal=30000]
+  ```
+
+  ```
+  $ ./employees
+  Number of employees you need to store: 2000000
+  Segmentation fault
+  ```
+
+  The first time I run the program, I only needed to create two `Employee` objects, which fits on the stack without issue. Thinking my program can scale, the second run, I create two million `Employees`, but the program crashes immediately due to stack overflow.
+
+- Clearly, a program that crashes depending on an arbitrary input should be avoided, and is why you should avoid creating unknown-sized arrays on the _stack_. That foreshadows a different location that can store arbitrarily-sized structures.
+
+##### Part 4: Heap to the Rescue
+
+- To deal with the stack-overflow problem, we need to allocate unknown-sized memory off the stack, in some large, free area of memory. The **Heap** segment in the address space serves this exact purpose. Instead, when we need a new array, struct, (or object), during runtime, we'll create a pointer on the stack to refer to some location on the heap where this potentially large structure will reside.
+
+- In fact, allocating memory on the heap is exactly what Java does every time the `new` keyword is used to create an object. In this section, we'll see how C supports memory allocation (and deallocation) on the heap.
+
+- There are four important memory allocation functions we should know. To gain access to them, we need to first #include <stdlib.h>. These functions are:
+
+  1.  `void* malloc(size_t size)`: allocates `size` contiguous bytes on the heap, and returns a pointer to the first byte. Note that `size_t` is just a `typedef` alias to `unsigned int`. Importantly, because the returned pointer is `void *`, the programmer must cast it to the desired data type before dereferencing (think the generic `Object` type in Java). On failure, `NULL` is returned.
+
+  2.  `void* calloc(size_t num, size_t size)`: is a alternative to using `malloc()`. It takes as input an unsigned integer `num` (number of elements) and `size` (number of bytes per element). It attempts to allocate `num * size` bytes on the heap. One difference from `malloc()` is that it will also initialize the entire allocated block to zeroes. On success, it returns a `void*` pointer to the first byte of the newly allocated block. On failure, `NULL` is returned.
+
+  3.  `void* realloc(void *ptr, size_t size)`: is used to change the size of an already-allocated block of memory on the heap. It takes as input a generic `void*` pointer to a block of memory, and a new `size`, which may be smaller or larger than the current allocation. On failure, `NULL` is returned. Caveat: the location of the allocated block might change, which is why a `void*` pointer to a potentially different starting address is returned.
+
+  4.  `void free(void *ptr)`: is used to deallocate, or free-up, the space that was previously allocated on the heap. It takes as input a pointer to the already-allocated memory block, and returns nothing. Important! It is extremely important to free up memory when it is no longer being used (Unlike Java, C does not garbage collect user-allocated memory automatically). When a user fails to free up un-used space, it leads to memory leaks, which can be very hard to track down after the fact.
+
+- As an exercise, let's see how I could refactor the problematic employee code so that it allocates the array on the heap.
+
+  ```c
+  #include <stdio.h>
+  #include <string.h>
+  #include <stdlib.h> //for malloc(), free(), ...
+  #include "employee.h"
+
+  int getNumEmployees() {
+    int num;
+    do {
+       printf("Number of employees you need to store: ");
+       scanf("%d", &num);
+    } while (num <= 0);
+    return num;
+  }
+
+  int main() {
+    int num_employees = getNumEmployees();
+    Employee *my_employees = (Employee*) malloc(num_employees * sizeof(Employee));  // on the heap!
+
+    //fill employee info
+    int i;
+    for (i = 0; i < num_employees; i++) {
+        strcpy(my_employees[i].name, getName());
+        my_employees[i].salary = getSalary();
+    }
+
+    //(code omitted)
+
+    free(my_employees); //deallocate space after we're done!
+    return 0;
+  }
+  ```
+
+- In the code:
+
+  - On **Line 3**: the `stdlib.h` library is imported to gain access to memory allocation functions.
+
+  - On **Line 16**: we ask the user to input the number of employees
+
+  - On **Line 17:** there's a lot of information on this line. Let's break it up into pieces and talk about each one separately.
+
+    ```c
+    Employee *my_employees = (Employee*) malloc(num_employees * sizeof(Employee));  // on the heap!
+    ```
+
+    Remember the goal is to create an array that contains `num_employees` elements of `Employee`. Therefore, we need to use `malloc()` to request `num_employees * sizeof(Employee)` bytes on the heap.
+
+        - For example, assume that the `Employee` struct is declared as follows:
+
+          ```c
+          #define MAX_NAME_LEN 16
+
+          typedef struct Employee {
+              char name[MAX_NAME_LEN];
+              int salary;
+          } Employee;
+          ```
+
+        - Then `sizeof(Employee) == 20` because `name` is a char array of length 16 and `salary` is an 4-byte integer. Therefore, `malloc()` is going to try to allocate a block of `num_employees * 20` bytes on the heap, and return the address of the first byte of this block.
+
+        -  Next, we cast whatever `malloc()` returns to a pointer to Employee, `(Employee*)`. Remember  that `malloc()` is type-agnostic; it doesn't care about what kind of data you intend to store in the newly allocated memory. Therefore, it returns a `void*` pointer, which means we need to cast it into the desired pointer type. Without the cast, C wouldn't know what the byte boundaries are for each `Employee` object to do pointer-arithmetic. Furthermore, it wouldn't be able to associate `.name` with the first 16 bytes, and `.salary` with the last four bytes.
+
+  - On **Line 21-25**:
+
+    ```c
+    //fill employee info
+    int i;
+    for (i = 0; i < num_employees; i++) {
+        strcpy(my_employees[i].name, getName());
+        my_employees[i].salary = getSalary();
+    }
+    ```
+
+    Remember from the previous primer that we learned the array-index syntax `my_employees[i]` is really a short-hand for `*(my_employees+i)`? Because of the earlier cast, C knows to skip `sizeof(Employee) == 20` bytes every time `i` is incremented. How convenient that we can use the array-index syntax in this context to dereference each 20-byte block as an `Employee`!
+
+  - On **Line 30**: frees up the `num_employees * sizeof(Employee)` bytes from the heap, so that the space can be reclaimed and used by another part of the process. Be careful! at this point, `my_employees` now points to an invalid address. If you try to dereference `my_employees` now (as in Lines 21-25), you'll receive a segmentation fault.
+
+##### Part 4: Dynamic Data Structures (Binary Search Tree)
+
+All right, so we've seen how to create an array on the heap, but still, this is assuming that the user would at some point know the size of the array. But `malloc()` is more general than that. It can be used to allocate _any_ amount of memory on the heap, even a single `int`, `double`, or `struct`. It all simply depends on what _data type_ the programmer can casts the returned `void*` pointer into.
+
+In the code below, we use `malloc()` to create 4 bytes (`sizeof(int)`) on the heap. `malloc()`, as always will return the address of the 0th byte that it allocated. We then tell C to interpret the 4 bytes as an `int` by simply casting the address into an `int*` pointer, which is then stored in `p`.
+
+    ```c
+    int *p = (int*) malloc(sizeof(int));
+    *p = 0; // initialize it to 0
+    ```
+
+In the example below, I show that we can also use `malloc()` to create a single `struct` element.
+
+    ```c
+    /** Here's a node for a linked list, say */
+    typedef struct Node {
+        struct Node *next;
+        int data;
+    } Node;
+    ```
+
+    ```c
+    // here's how to construct it
+    Node *newNode = (Node*) malloc(sizeof(Node));
+
+    // here's how to initialize it (note the '->' operator)
+    newNode->data = 0;
+    newNode->next = NULL;
+    ```
+
+The true strength of `malloc()` lies in allowing us to create and manage dynamic data structures that are unbounded in size, like linked lists and trees. Having taken CS 261, I'm assuming that you have a working knowledge of BST's properties, so I won't be spending time describing the actual algorithms. The important thing is that you understand the implementation details in C.
 
 ##### Assignment: HeapSort (Graded)
 
@@ -608,13 +313,13 @@ $$A[0],...,A[n−1]$$ that can be viewed as a binary tree (not necessarily a bin
 
 - The root of the heap is $$A[0]$$.
 - For an array index `i`,
-  - $$parent(i) = \lfloor (i-1)/2 \rfloor$$ (except for the root, which has no parent)
-  - $$left\_child(i) = 2(i+1)−1$$
-  - $$right\_child(i) = 2(i+1)$$
+- $$parent(i) = \lfloor (i-1)/2 \rfloor$$ (except for the root, which has no parent)
+- $$left\_child(i) = 2(i+1)−1$$
+- $$right\_child(i) = 2(i+1)$$
 - The _min-heap property_ says: For every node $$A[i]$$ except for the root, the value of $$A[i]$$ is greater than or equal to the value of its parent, i.e., $$A[parent(i)] \le A[i]$$. The figure below shows an example of a min-heap of size 12.\
-   <img width="400px" src="figures/heap.png" />
+  <img width="400px" src="figures/heap.png" />
 
-  Note that we're only mapping an array to a binary tree's structure. Thus, all functions operate on arrays, and no binary tree is ever constructed.
+Note that we're only mapping an array to a binary tree's structure. Thus, all functions operate on arrays, and no binary tree is ever constructed.
 
 ###### Starter Code
 
@@ -622,15 +327,19 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 - If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk2-heapsort](https://github.com/davidtchiu/cs475-hwk2-heapsort). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
-  ```
-  git clone <your-github-url-for-this-project>
-  ```
+```
+
+git clone <your-github-url-for-this-project>
+
+```
 
 - If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Unbuntu virtual machine using:
 
-  ```
-  git clone https://github.com/davidtchiu/cs475-hwk2-heapsort
-  ```
+```
+
+git clone https://github.com/davidtchiu/cs475-hwk2-heapsort
+
+```
 
 - This should download the starter code to your virtual machine, in a directory called `cs475-hwk2-heapsort`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
 
@@ -642,83 +351,86 @@ I have included a working solution of my program along with the starter code. Th
 
 1. Download the required file Hwk2_Heapsort.zip. Inside, you should find the following files:
 
-   - `Makefile`
-   - `employee.h` contains the definition of the Employee structure and declarations of several functions
-   - `heap.h` contains the function declarations related to the heap
-   - `heap.c` contains the stubs for the functions defined in `heap.h`
-   - `main.c ` contains the `main()` function
+- `Makefile`
+- `employee.h` contains the definition of the Employee structure and declarations of several functions
+- `heap.h` contains the function declarations related to the heap
+- `heap.c` contains the stubs for the functions defined in `heap.h`
+- `main.c ` contains the `main()` function
 
 2. Implement the following functions inside `heap.c`:
 
-   - `void heapify(struct Employee *A, int i, int n)`: This function inputs a pointer to an array
-     `A`, an index `i`, and the size of the array `n`. The function assumes the trees that rooted at
-     `left_child(i)` and `right_child(i)` already satisfy the min-heap property, but that `A[i]`
-     may be larger than its children. This function should trickle `A[i]`
-     down in place such that the tree rooted at `i` satisfies the min-heap property.
+- `void heapify(struct Employee *A, int i, int n)`: This function inputs a pointer to an array
+  `A`, an index `i`, and the size of the array `n`. The function assumes the trees that rooted at
+  `left_child(i)` and `right_child(i)` already satisfy the min-heap property, but that `A[i]`
+  may be larger than its children. This function should trickle `A[i]`
+  down in place such that the tree rooted at `i` satisfies the min-heap property.
 
-     In the figure below, you can see how `heapify()` works. Here, `A[2]` violates the min-heap property, and a call to
-     `heapify(A, 2, 12)` is made to produce the following:\
-      <img width="400px" src="figures/heapify.png" />
+  In the figure below, you can see how `heapify()` works. Here, `A[2]` violates the min-heap property, and a call to
+  `heapify(A, 2, 12)` is made to produce the following:\
+   <img width="400px" src="figures/heapify.png" />
 
-   - In Step 2, the out-of-place element `A[2]` is swapped with the smaller of the two children, `A[5]`. However, the tree rooted at
-     `A[5]` no longer satisfies min-heap property. Thus, a recursive call to heapify on
-     `A[5]` corrects the subtree. You should therefore recursively correct the subtrees until you hit a leaf.
+- In Step 2, the out-of-place element `A[2]` is swapped with the smaller of the two children, `A[5]`. However, the tree rooted at
+  `A[5]` no longer satisfies min-heap property. Thus, a recursive call to heapify on
+  `A[5]` corrects the subtree. You should therefore recursively correct the subtrees until you hit a leaf.
 
-   - `void buildHeap(struct Employee *A, int n)`: Given a pointer to an array
-     `A` of size `n`, this function will leave the tree rooted at `A[0]` satisfying the min-heap property. Because leaf nodes trivially satisfy the property, only the non-leaf nodes need to be heapified. It's pertinent to know that the last non-leaf node is located at
-     index $$\lfloor n/2 \rfloor$$. Run `heapify()` on `A[n/2]` down to `A[0]`.
+- `void buildHeap(struct Employee *A, int n)`: Given a pointer to an array
+  `A` of size `n`, this function will leave the tree rooted at `A[0]` satisfying the min-heap property. Because leaf nodes trivially satisfy the property, only the non-leaf nodes need to be heapified. It's pertinent to know that the last non-leaf node is located at
+  index $$\lfloor n/2 \rfloor$$. Run `heapify()` on `A[n/2]` down to `A[0]`.
 
-     The before-and-after of this function call is shown below:\
-      <img width="400px" src="figures/proj2-buildHeap.png" />
+  The before-and-after of this function call is shown below:\
+   <img width="400px" src="figures/proj2-buildHeap.png" />
 
-   - `void swap(struct Employee *e1, struct Employee *e2)`: Inputs pointers to two Employees, and swaps them.
+- `void swap(struct Employee *e1, struct Employee *e2)`: Inputs pointers to two Employees, and swaps them.
 
-   - `void printHeap(struct Employee *A, int n)`: Prints all values in the array referenced by pointer `A`.
+- `void printHeap(struct Employee *A, int n)`: Prints all values in the array referenced by pointer `A`.
 
-   - `void heapsort(struct Employee *A, int i, int n)`: This function inputs a pointer to an unsorted array of Employees and the size of that array and sorts it in descending order of their salary. Here's the sketch:
-     ```
-     Build min-heap over A
-     Repeat the following until n < 0:
-       Swap root of heap with element n−1.
-       Now smallest element is sorted into place.
-       Heapify up to element n−1
-       Decrement n by 1
-     ```
+- `void heapsort(struct Employee *A, int i, int n)`: This function inputs a pointer to an unsorted array of Employees and the size of that array and sorts it in descending order of their salary. Here's the sketch:
+  ```
+  Build min-heap over A
+  Repeat the following until n < 0:
+    Swap root of heap with element n−1.
+    Now smallest element is sorted into place.
+    Heapify up to element n−1
+    Decrement n by 1
+  ```
 
 3. Implement the following inside `main.c`:
 
-   - Define a constant called `MAX_EMPLOYEES` that will serve as the maximum length of your array.
+- Define a constant called `MAX_EMPLOYEES` that will serve as the maximum length of your array.
 
-   - `int main()`: The driver function should create an array of `MAX_EMPLOYEES` elements, and fill it with values from the user. Below, a sample interaction for `MAX_EMPLOYEES` of 5.
+- `int main()`: The driver function should create an array of `MAX_EMPLOYEES` elements, and fill it with values from the user. Below, a sample interaction for `MAX_EMPLOYEES` of 5.
 
 4. Here's a sample output:
 
-   ```
-   Name: David
-   Salary: 60000
-   Enter another user (y/n)? y
+````
 
-   Name: Gabe
-   Salary: 75000
-   Enter another user (y/n)? y
+Name: David
+Salary: 60000
+Enter another user (y/n)? y
 
-   Name: Katie
-   Salary: 92000
-   Enter another user (y/n)? y
+Name: Gabe
+Salary: 75000
+Enter another user (y/n)? y
 
-   Name: Gabe
-   Salary: 40000
-   Enter another user (y/n)? y
+Name: Katie
+Salary: 92000
+Enter another user (y/n)? y
 
-   Name: Joan
-   Salary: 86000
+Name: Gabe
+Salary: 40000
+Enter another user (y/n)? y
 
-   [id=Katie sal=92000], [id=Joan sal=86000], [id=Gabe sal=75000], [id=David sal=60000], [id=Gabe sal=40000]
-   ```
+Name: Joan
+Salary: 86000
+
+[id=Katie sal=92000], [id=Joan sal=86000], [id=Gabe sal=75000], [id=David sal=60000], [id=Gabe sal=40000]
+
+```
 
 #### Grading
 
 ```
+
 This assignment will be graded out of 20 points:
 
 [1pt] Appropriate constants have been defined.
@@ -728,6 +440,7 @@ This assignment will be graded out of 20 points:
 [1pt] Your program receives user-input, and does basic error checking.
 [1pt] The README is written and placed in your project directory. Your program observes
 good style and commenting.
+
 ```
 
 #### Submitting Your Assignment
@@ -755,3 +468,5 @@ After you have completed the homework, use the following to submit your work on 
 #### Credits
 
 Written by David Chiu. 2022.
+```
+````
