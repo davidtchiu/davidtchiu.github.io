@@ -140,7 +140,7 @@ class CourseCalendar {
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
-                dayContent.innerHTML += `<emph><span style='color: ${ASSIGNMENT_COLOR[assignmentType]}'>${assign.name} due</span></emph><br/>`;
+                dayContent.innerHTML += `<emph><span style='color: ${ASSIGNMENT_COLOR[assignmentType]}'><a href="${assign.url}">${assign.name} due</a></span></emph><br/>`;
               }
             }
           }
