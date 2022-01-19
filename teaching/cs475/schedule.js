@@ -27,9 +27,9 @@ let days = {
       },
       //   {
       //     name: "Hwk 4",
-      //     title: "Writing SQL Queries",
-      //     url: "hwk4.dml/",
-      //     due: "10/22/2021",
+      //     title: "David Shell (dsh)",
+      //     url: "hwk4.dsh/",
+      //     due: "2/23/2022",
       //   },
       //   {
       //     name: "Hwk 5",

@@ -8,12 +8,6 @@ It's therefore important that we all share a common environment, so I've prepare
 
 <!-- #### Student Outcomes? -->
 
-#### Required Files
-
-The following file(s) have been provided for this assignment.
-
-- [develop-end.ova](TBD TBD)
-
 #### Instructions
 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/). Note: the current version at the time of writing is version 6.1.
