@@ -13,18 +13,18 @@ let days = {
         url: "hwk1.ws/",
         due: "1/28/2022",
       },
-      //   {
-      //     name: "Hwk 2",
-      //     title: "Pointers and Arrays",
-      //     url: "hwk2.ptrs/",
-      //     due: "2/4/2022",
-      //   },
-      //   {
-      //     name: "Hwk 3",
-      //     title: "Data Preparation",
-      //     url: "hwk3.ddl/",
-      //     due: "10/8/2021",
-      //   },
+      {
+        name: "Hwk 2",
+        title: "Pointers and Arrays",
+        url: "hwk2.ptrs/",
+        due: "2/4/2022",
+      },
+      {
+        name: "Hwk 3",
+        title: "Dynamic Allocation",
+        url: "hwk3.malloc/",
+        due: "2/11/2022",
+      },
       //   {
       //     name: "Hwk 4",
       //     title: "Writing SQL Queries",
