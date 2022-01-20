@@ -70,12 +70,12 @@ let days = {
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
-      // {
-      //   name: "Lab 1",
-      //   title: "Draw My Picture (BlueJ)",
-      //   url: "lab1.bluej/",
-      //   due: "1/20/2022",
-      // },
+      {
+        name: "Lab 1",
+        title: "Draw My Picture (BlueJ)",
+        url: "lab1.bluej/",
+        due: "1/20/2022",
+      },
       // {
       //   name: "Lab 2",
       //   title: "Variables (Scope and Lifetime)",
