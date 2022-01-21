@@ -49,7 +49,18 @@ It's therefore important that we all share a common environment, so I've prepare
   - Shared clipboard: Click on the Devices menu and select Shared Clipboard. Then select bi-directional. Test this out. It will save you hours of time in this course. Copy some text from your host machine, then try pasting it into this VM, and then vice-versa.
   <!-- - Drag and Drop: Click on the Devices menu and select Drag and Drop. Then select bi-directional. This has been finicky for me in the past, but mostly works. Pick a file from your host machine and drag it anywhere on your VM. The file ends up in a folder inside `/tmp/VirtualBox Dropped Files` directory. -->
 
-- You should be able to have access to the Internet. Try it out to make sure it works. If it doesn't, you may need to disable and reenable your networks. (Go to the top right corner to access your network settings.)
+- Internet access is important. Open Firefox to check if you're connected. If it doesn't connect, you may need to disable and reenable your networks.
+
+  - Go to the top right corner, then click `Settings` to access your network settings.
+    ![](figures/Ubuntu_20_04_3_VB_LinuxVMImages_COM__Running_.png)
+  - That should bring up your network configuration. You should see two network interfaces: `enp0s3` and `enp0s8`.
+    ![](figures/Ubuntu_20_04_3_VB_LinuxVMImages_COM__Running_2.png)
+
+    - Switch them both off.
+    - **Important**: Then enable the `enp0s8` first (the bottom one). Give it a few seconds, and try accessing a webpage using Firefox again. It should come up now.
+    - Now enable `enp0s3` (the top one). Verify that Firefox is still working.
+
+  - You may have to do this every time Ubuntu starts up, so some people just leave it running in the background.
 
 - Open up the Terminal. The terminal gives you a shell (most likely the Bourne Again Shell, or bash), which is a command-line environment to interact directly with the operating system (Ubuntu Linux, in our case). Recall the following useful shell commands (Note: in the following listing, parameters enclosed in diamond brackets `<...>` are required and those enclosed in square brackets `[...]` are optional).
 
