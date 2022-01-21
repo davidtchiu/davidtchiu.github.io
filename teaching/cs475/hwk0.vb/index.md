@@ -18,6 +18,8 @@ It's therefore important that we all share a common environment, so I've prepare
 
 - Open up VirtualBox. Then click on the File > Import Appliance menu. Browse and find the **Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova** file you just downloaded. Then click Continue. Don't change anything on the window that pops up, and click "Import."
 
+  - Some students reported seeing an error, like `NS_ERROR_INVALID_ARG` when trying to import. This concerns insufficient disk space. Are there some large files you can remove to free up a few GBs on your machine? Do so now if you see this error.
+
 <!-- - This brings up the Appliance Settings window. **Important:** Do not click to enable "Reinitialize the MAC address of all network cards." Click Import. This will take a little bit of time to finish.
   ![](figures/install1.png) -->
 
@@ -33,9 +35,9 @@ It's therefore important that we all share a common environment, so I've prepare
 
 - **Important for Windows Users:** There is a known issue on some Windows machines that does not allow the VM to boot up or import properly. The error you receive from VirtualBox reads, "VT-X is not enabled in BIOS" or something to the effect of "virtualization is disabled". If you are experiencing this, then you need to enable virtualization in your BIOS, which is possible upon a reboot of your computer. I can help you with this, or you can Google how.
 
-- **Important for newer Macs with Retina display:** Some people have reported sluggishness of the virtual machine, to a point where it becomes unusable. Here's what worked for me. Go to the App Store and download ResolutionTab. Once installed, it puts a new icon on your top menu. Select a lower resolution that is NOT HiDPI. I used something like 1650 x 1050, and it worked great. (I think the important thing is to disable the HiDPI).
+- **Important for Macs with Retina display:** Some people have reported sluggishness of the virtual machine, to a point where it becomes unusable. Here's what worked for me. Go to the App Store and download ResolutionTab. Once installed, it puts a new icon on your top menu. Select a lower resolution that is NOT HiDPI. I used something like 1650 x 1050, and it worked great. (I think the important thing is to disable HiDPI -- at least, that's what worked for me).
 
-- Once the develop-end-ubuntu starts up, you can login with the following credentials:
+- Once the Ubuntu starts up, you can login with the following credentials:
 
   - Username: `ubuntu`
   - Password: `ubuntu`
