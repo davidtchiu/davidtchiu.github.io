@@ -804,14 +804,11 @@ This assignment will be graded out of 20 points:
 
 [1pt] Array(s) and strings are created using a constant size
 
-[3pt] Your program is multi-file, contains multiple well-defined functions.
-      A Makefile must be included with all and clean targets defined.
-
-[5pt] Your program handles multiple-word inputs
+[6pt] Your program handles multiple-word inputs
 
 [4pt] Your program updates counts and histogram appropriately
 
-[3pt] Your program prints a vertical (not horizontal) histogram
+[5pt] Your program prints a vertical (not horizontal) histogram
 
 [1pt] Basic error checking is handled, such as entering invalid menu options.
 
