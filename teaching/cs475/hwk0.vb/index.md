@@ -19,6 +19,7 @@ It's therefore important that we all share a common environment, so I've prepare
 - Open up VirtualBox. Then click on the File > Import Appliance menu. Browse and find the **Ubuntu_20.04.3_VB_LinuxVMImages.COM.ova** file you just downloaded. Then click Continue. Don't change anything on the window that pops up, and click "Import."
 
   - Some students reported seeing an error, like `NS_ERROR_INVALID_ARG` when trying to import. This concerns insufficient disk space. Are there some large files you can remove to free up a few GBs on your machine? Do so now if you see this error.
+  - Even if your disk shows that you have enough space, it might be that the disk partition that's storing most of your files is full.
 
 <!-- - This brings up the Appliance Settings window. **Important:** Do not click to enable "Reinitialize the MAC address of all network cards." Click Import. This will take a little bit of time to finish.
   ![](figures/install1.png) -->
