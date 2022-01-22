@@ -699,8 +699,7 @@ Enter 2 to print word count.
 Enter 3 to print histogram.
 Enter 4 to return to inputting more strings.
 Enter 5 to quit.
-1
-
+> 1
 Vowels = 14 (41.18%), Consonants = 20 (58.82%), Total= 34
 
 *** WORD STATS MENU ***
@@ -709,8 +708,7 @@ Enter 2 to print word count.
 Enter 3 to print histogram.
 Enter 4 to return to inputting more strings.
 Enter 5 to quit.
-2
-
+> 2
 Words: 7
 
 *** WORD STATS MENU ***
@@ -719,7 +717,7 @@ Enter 2 to print word count.
 Enter 3 to print histogram.
 Enter 4 to return to inputting more strings.
 Enter 5 to quit.
-3
+> 3
         *
 *       *
 *       *   *
@@ -734,20 +732,20 @@ Enter 2 to print word count.
 Enter 3 to print histogram.
 Enter 4 to return to inputting more strings.
 Enter 5 to quit.
-4
+> 4
 Enter strings (# to stop):
-grey SHARK
-!!!!!!!!
-@#$@#$@#$
-#
+> grey SHARK
+> !!!!!!!!
+> @#$@#$@#$
+> #
+
 *** WORD STATS MENU ***
 Enter 1 to print vowel and consonant frequency.
 Enter 2 to print word count.
 Enter 3 to print histogram.
 Enter 4 to return to inputting more strings.
 Enter 5 to quit.
-1
-
+> 1
 Vowels = 16 (37.21%), Consonants = 27 (62.79%), Total= 43
 
 *** WORD STATS MENU ***
@@ -756,8 +754,7 @@ Enter 2 to print word count.
 Enter 3 to print histogram.
 Enter 4 to return to inputting more strings.
 Enter 5 to quit.
-2
-
+> 2
 Words: 9
 
 *** WORD STATS MENU ***
@@ -766,7 +763,7 @@ Enter 2 to print word count.
 Enter 3 to print histogram.
 Enter 4 to return to inputting more strings.
 Enter 5 to quit.
-3
+> 3
         *
 *       *
 *       *   *                     *
@@ -782,7 +779,7 @@ Enter 2 to print word count.
 Enter 3 to print histogram.
 Enter 4 to return to inputting more strings.
 Enter 5 to quit.
-19
+> 19
 Error: Unknown option 19. Try again.
 
 *** WORD STATS MENU ***
@@ -791,7 +788,7 @@ Enter 2 to print word count.
 Enter 3 to print histogram.
 Enter 4 to return to inputting more strings.
 Enter 5 to quit.
-5
+> 5
 Exiting...
 ```
 
