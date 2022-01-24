@@ -80,8 +80,9 @@ let days = {
     "A brief history of computing",
     // wk 2
     "Job scheduling models",
-    "Brief intro to the cmd-line",
-    "Interrupts, system calls, and dual-mode operation",
+    // "Brief intro to the cmd-line",
+    "Dual-mode operation",
+    "Interrupts, system calls",
     // wk 3
     "Process Management: address spaces",
     "Process: PCB, state transitions",
