@@ -24,11 +24,11 @@ It's therefore important that we all share a common environment, so I've prepare
 <!-- - This brings up the Appliance Settings window. **Important:** Do not click to enable "Reinitialize the MAC address of all network cards." Click Import. This will take a little bit of time to finish.
   ![](figures/install1.png) -->
 
-- Highlight **Ubuntu_20.04.3_VB_LinuxVMImages.COM** from the side menu, and click on `Settings`. From the Settings menu, navigate to Ports. Make sure that Enable Serial Port and is checked. **IMPORTANT:** Do not check Connect to Existing Pipe/Socket. Under Path/address:
+- Highlight **Ubuntu_20.04.3_VB_LinuxVMImages.COM** from the side menu, and click on `Settings`. From the Settings menu, navigate to `Ports`. Make sure that `Enable Serial Port` and is checked. **IMPORTANT:** Do _not_ check `Connect to Existing Pipe/Socket`. Under Path/address:
 
   - If you're on a Linux or Mac: type in `/tmp/xinu_serial`
   - If you're on Windows: type in `\\.\pipe\xinu_com1`
-    ![](figures/install4.png)
+    <!-- ![](figures/install4.png) -->
 
   Click OK to exit Settings.
 
