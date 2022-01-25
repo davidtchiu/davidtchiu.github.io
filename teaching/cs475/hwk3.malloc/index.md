@@ -84,7 +84,7 @@ While it's true that this code works in Java, **this code is even less desirable
 
 When your program is in execution (known as a **process**), the OS assigns it a virtual address space. Think of this space as the process' very own sandbox. The specific implementation may vary across systems, but for simplicity and consistency with lectures, we'll assume that the OS organizes and orders the address space in the following **segments**:
 
-    ![](figures/proj3-memlayout.png)
+![](figures/proj3-memlayout.png)
 
     - **Code (Text) Segment** stores the binary (executable file) currently running. It is placed near the lowest address.
 
