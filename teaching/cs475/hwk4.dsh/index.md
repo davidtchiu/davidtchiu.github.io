@@ -99,14 +99,14 @@ So this is all pointing to a couple of options we need to support. The user migh
 
 1.  **Option 1 (easy):** The user types in the absolute path to an executable. You know they typed an absolute path if their input starts begins with a `'/'` character! First, check to see if the given path even exists. To do this in C, I would first include the `unistd.h` file on top, and use its `access()` function:
 
-        ```c
-        if (access(path, F_OK | X_OK) == 0) {
-            // file exists and is executable
-        }
-        else {
-            // file doesn't exist or is not executable
-        }
-        ```
+    ```c
+    if (access(path, F_OK | X_OK) == 0) {
+        // file exists and is executable
+    }
+    else {
+        // file doesn't exist or is not executable
+    }
+    ```
 
     - If the executable isn't found, then simply output an error to the screen, and re-display the `dsh>` prompt.
 
