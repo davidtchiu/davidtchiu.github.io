@@ -84,15 +84,15 @@ While it's true that this code works in Java, **this code is even less desirable
 
 When your program is in execution (known as a **process**), the OS assigns it a virtual address space. Think of this space as the process' very own sandbox. The specific implementation may vary across systems, but for simplicity and consistency with lectures, we'll assume that the OS organizes and orders the address space in the following **segments**:
 
-![](figures/proj3-memlayout.png)
+<img src="figures/proj3-memlayout.png" width="300px">
 
-    - **Code (Text) Segment** stores the binary (executable file) currently running. It is placed near the lowest address.
+- **Code (Text) Segment** stores the binary (executable file) currently running. It is placed near the lowest address.
 
-    - **Data Segment** stores global and static variables that have been initialized with a non-zero or non-NULL value. The related BSS segment stores uninitialized global and static variables.
+- **Data Segment** stores global and static variables that have been initialized with a non-zero or non-NULL value. The related BSS segment stores uninitialized global and static variables.
 
-    - **Heap** stores data allocated by the process during runtime (i.e. with `malloc()` or `calloc()` in C and with new operator in C++ and Java). It grows "upward"
+- **Heap** stores data allocated by the process during runtime (i.e. with `malloc()` or `calloc()` in C and with new operator in C++ and Java). It grows "upward"
 
-    - **Program Stack** stores data (e.g., local variables, function parameters, return addresses) needed to keep track of program execution and scope of function calls. It is placed at the top of the address space, and grows "downward".
+- **Program Stack** stores data (e.g., local variables, function parameters, return addresses) needed to keep track of program execution and scope of function calls. It is placed at the top of the address space, and grows "downward".
 
 ###### How the Program Stack Works (And What Is a Stack Overflow?)
 
