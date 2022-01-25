@@ -483,11 +483,11 @@ git clone <your-github-url-for-this-project>
 
 ```
 
-- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Unbuntu virtual machine using:
+- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Ubuntu virtual machine using:
 
 ```
 
-git clone https://github.com/davidtchiu/cs475-hwk2-heapsort
+git clone https://github.com/davidtchiu/cs475-hwk3-rpncalc
 
 ```
 

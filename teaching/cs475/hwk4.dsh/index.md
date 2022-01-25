@@ -31,25 +31,21 @@ git clone <your-github-url-for-this-project>
 
 ```
 
-- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Unbuntu virtual machine using:
+- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Ubuntu virtual machine using:
 
 ```
 
-git clone https://github.com/davidtchiu/cs475-hwk2-heapsort
+git clone https://github.com/davidtchiu/cs475-hwk4-dsh
 
 ```
-
-- This should download the starter code to your virtual machine, in a directory called `cs475-hwk3-rpncalc`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
 
 #### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `rpncalcSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./rpncalcSol`. This is how your solution should behave when it's done.
+I have included a working solution of my program along with the starter code. The binary executable file is called `dshSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./dshSol`. This is how your solution should behave when it's done.
 
 #### Program Requirements
 
-1. Download the starter file. From the terminal, navigate to the location of this file, and unzip it using tar -zxvf Hwk4_dsh.tar.gz. There are two files given, though you might only see one, and you need to use ls -a to list files, including the hidden ones. You don't need these files until you're ready to test your program. (They do not contain useful source code for this assignment!)
-
-2. As soon as `dsh` starts, the first thing it should do is look for a file called `.dsh_motd` in the current user's home directory on the operating system. MOTD stands for "message of the day," and the file contents may be arbitrarily long and multi-line.
+1. As soon as `dsh` starts, the first thing it should do is look for a file called `.dsh_motd` in the current user's home directory on the operating system. MOTD stands for "message of the day," and the file contents may be arbitrarily long and multi-line.
 
    - To look for this file, you'll need to check whether it exists in the current user's home directory, which is stored in the linux environment variable `HOME`. You'll need to look into C's [getenv()](https://www.tutorialspoint.com/c_standard_library/c_function_getenv.htm) function to extract its value.
 
@@ -58,9 +54,9 @@ I have included a working solution of my program along with the starter code. Th
 
    - If this file doesn't exist in the user's home directory, then move on. Otherwise, you need to print its contents to the screen first. I would expect some simple error-handling to be done here. For instance, if the file exists, but can't be opened due to a lack of permissions, your program should _not_ crash (no need to print an error message though).
 
-3. After printing the MOTD, your shell should provide the user with a command-line prompt: `dsh>`
+2. After printing the MOTD (if exists), your shell should provide the user with a command-line prompt: `dsh>`
 
-4. Check out the example below:
+3. Check out the example below:
 
    ```
    /home/dchiu$ ./dsh
@@ -75,7 +71,7 @@ I have included a working solution of my program along with the starter code. Th
 
    From the Terminal, I run `dsh` to start up David shell, and it prints off the MOTD before sending me to a prompt, awaiting commands. I am now in the David shell environment, and should be able to issue commands just like other when you're inside other command-line shells.
 
-5. At the `dsh>` prompt, the user would be able to enter a command which David shell should attempt to _execute_ as a separate process.
+4. At the `dsh>` prompt, the user would be able to enter a command which David shell should attempt to _execute_ as a separate process.
 
    - Some commands may be followed by a list of arguments (for instance, `ls -l` and `ps au`), so you will have to read in the entire line and parse it later. Do do this, I would recommend looking into using [fgets()](https://www.cplusplus.com/reference/cstdio/fgets/), which has the following signature:
 
