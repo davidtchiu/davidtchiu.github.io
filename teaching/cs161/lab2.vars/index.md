@@ -92,7 +92,7 @@ In the above syntax, expression refers to a Java expression that results in the 
 
   - Field names must be _unique_ in the class.
   - Fields are accessible (can be read, and can be written to) by any constructor or method in the class.
-  - A field named `speed` can be referred to using `this.speed`.
+  - A field named `speed` can be referred to using `this.speed` (note the `this` prefix).
   - **Life-span:** Fields come into existence when the object is created, and they are destroyed only when the object is destroyed.
 
 - **_Local variables (including input parameters)_** are defined inside each method, and they have **local scope**. This means several things:
@@ -100,7 +100,7 @@ In the above syntax, expression refers to a Java expression that results in the 
   - Local variable names must be unique in only within each method.
     - This means you can have a local variable `x` inside multiple methods, and they are all independent from each other.
   - Local variables are accessible (can be read, and can be written to) by only the method within which it is declared
-  - A local variable named `fooo` can be referred to using `fooo`
+  - A local variable or input parameter named `speed` can be referred to simply using `speed` (that is, without the `this` prefix)
   - **Life-span:** Local variables (and input parameters) come into existence when the method is called, and are destroyed when the method terminates.
 
 - All that might not make a whole lot of sense yet, and it's always easier to experience scope through running some code. For this part of the lab, it's more convenient to print the values of variables out to the screen.
