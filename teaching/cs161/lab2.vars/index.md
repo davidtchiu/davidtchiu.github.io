@@ -88,27 +88,31 @@ In the above syntax, expression refers to a Java expression that results in the 
 
 **Important:** Read this section completely before tackling the code. In programming, the scope of a variable is a very important concept to learn early. The scope of a variable refers the set of statements that can access it. For now, we shall focus on just two: local scope and object scope.
 
-- **_Fields (i.e., instance variables)_** that are defined at the top of your class have object scope. This means several things:
+- **_Fields (i.e., instance variables)_** that are defined at the top of your class have **global scope**. This means several things:
 
-  - Field names must be unique in the class, regardless of data type.
-  - Fields are accessible (can be read, and can be written to) by any method in the object
-  - A field named `fooo` can be referred to using `this.fooo`
-  - Life-span: Fields come into existence when the object is created, and they are destroyed when the object is destroyed
+  - Field names must be _unique_ in the class.
+  - Fields are accessible (can be read, and can be written to) by any constructor or method in the class.
+  - A field named `speed` can be referred to using `this.speed`.
+  - **Life-span:** Fields come into existence when the object is created, and they are destroyed only when the object is destroyed.
 
-- **_Local variables (including input parameters)_** are defined inside each method, and they have local scope. This means several things:
+- **_Local variables (including input parameters)_** are defined inside each method, and they have **local scope**. This means several things:
 
-  - Local variable names must be unique in within each method, regardless of type
+  - Local variable names must be unique in only within each method.
+    - This means you can have a local variable `x` inside multiple methods, and they are all independent from each other.
   - Local variables are accessible (can be read, and can be written to) by only the method within which it is declared
   - A local variable named `fooo` can be referred to using `fooo`
-  - Life-span: Local variables come into existence when the method is called, and are destroyed when the method terminates
+  - **Life-span:** Local variables (and input parameters) come into existence when the method is called, and are destroyed when the method terminates.
 
 - All that might not make a whole lot of sense yet, and it's always easier to experience scope through running some code. For this part of the lab, it's more convenient to print the values of variables out to the screen.
 
 - Double-click the `ScopePractice` class to open it. Once again, work through each "test" method in sequence, and answer the questions in the README.
-  - Where required, you can write the following code inside any method to print out the value contained in a variable named `var`.
+
+  - Where required, you can write the following code inside any method to print out the value contained in a variable named `thingToPrint`.
+
     ```java
-    System.out.println(var);
+    System.out.println(thingToPrint);
     ```
+
   - As before, call `reset()` on the object before moving on to the next test method. Record your responses in the README.
 
 #### Grading
