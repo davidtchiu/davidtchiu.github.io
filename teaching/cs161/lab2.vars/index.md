@@ -48,7 +48,7 @@ private dataType fieldName;
 
 For instance, I might declare `private int speed;` to store the current speed of my vehicle objects. I could declare `private String firstName;` to store the first name of `Student` objects.
 
-##### The Assignment Operator `=`
+##### The Assignment ("Gets") Operator: `=`
 
 After a variable or field has been declared, you can use assignment statements to give it a value. An assignment statement has two forms:
 
