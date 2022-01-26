@@ -55,13 +55,13 @@ After a variable or field has been declared, you can use assignment statements t
 1. Use the following syntax (with the `this.` prefix) if you wish to give a field (instance variable) a new value.
 
    ```java
-   this.variableName = expression;
+   this.fieldName = expression;
    ```
 
 2. We haven't spent a ton of time on "local variables" in our lectures yet, but we will soon. For now, just know that if you wish to give a local variable a new value, you should instead use the syntax below.
 
    ```java
-   variableName = expression;
+   localVariableName = expression;
    ```
 
 In the above syntax, expression refers to a Java expression that results in the new value to be stored in the variable or field. The expression can be a literal value like `100`, `"green"`. It could be more complex, like `3 * 9000 + 21`, and it can even contain the name of another variable. If the expression contains the name of another variable, you're telling Java to look inside that variable, retrieve its value, and put that value in the variable on the left-hand side. One good way to get practice with the assignment statement is to read existing code that uses assignment statements, and see if you can predict their results.
