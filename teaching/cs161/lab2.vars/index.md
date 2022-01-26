@@ -52,23 +52,24 @@ For instance, I might declare `private int speed;` to store the current speed of
 
 After a variable or field has been declared, you can use assignment statements to give it a value. An assignment statement has two forms:
 
-Use the following syntax (with the `this.` prefix) if you wish to give a field (instance variable) a new value.
+1. Use the following syntax (with the `this.` prefix) if you wish to give a field (instance variable) a new value.
 
-```java
-this.variableName = expression;
-```
+   ```java
+   this.variableName = expression;
+   ```
 
-We haven't spent a ton of time on "local variables" in our lectures yet, but we will soon. For now, just know that if you wish to give a local variable a new value, you should instead use the syntax below.
+2. We haven't spent a ton of time on "local variables" in our lectures yet, but we will soon. For now, just know that if you wish to give a local variable a new value, you should instead use the syntax below.
 
-```java
-variableName = expression;
-```
+   ```java
+   variableName = expression;
+   ```
 
 In the above syntax, expression refers to a Java expression that results in the new value to be stored in the variable or field. The expression can be a literal value like `100`, `"green"`. It could be more complex, like `3 * 9000 + 21`, and it can even contain the name of another variable. If the expression contains the name of another variable, you're telling Java to look inside that variable, retrieve its value, and put that value in the variable on the left-hand side. One good way to get practice with the assignment statement is to read existing code that uses assignment statements, and see if you can predict their results.
 
 #### Part 2: Completing the Exercises
 
 - Double-click the `AsmtStmtPractice` class and spend a minute familiarizing yourself with its contents. You don't have to understand everything that's going on, but you should be able to pick out what fields there are, as well as each individual method. Objects (or, instances) of this class each have three fields: `x`, `y`, and `z`. Create an object of the class, then double-click it to open an object inspector (shown below) before proceeding:
+
   <img src="figures/asmt_practice.png" />
 
 - Notice that there are various "test" methods in the class. Here's what you'll do:
@@ -144,7 +145,7 @@ Exit BlueJ
 
 #### Credits
 
-Written by David Chiu and Joel Ross.
+Written by Brad Richards.
 
 #### Lab Attendance Policies
 
