@@ -56,7 +56,10 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
 - Finally, it sure would be nice to have a method that would print out your name, birthday, and bio **all at once**. Write a method called `printMyInfo`. Here's the key: You wouldn't want to have to rewrite all those print statements from before! (Code duplication should be avoided always!)
 
-  Instead, We want to simply call (re-use) the other three methods you've just written. To call an existing method, you just have to write `methodName();`, e.g., `printMyName();` would cause Java to find and run the `printMyName` method. Here's an example of what someone's output might like:
+  - Instead, We want to simply call (re-use) the other three methods you've just written. To call an existing method, you just have to write `methodName();`, e.g., `printMyName();` would cause Java to find and run the `printMyName` method.
+    - You can also call a method using the alternate syntax: `this.methodName();`
+
+  Here's an example of what someone's output might like:
 
   ```
   Grace Hopper
