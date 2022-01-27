@@ -34,12 +34,12 @@ The following file(s) have been provided for this lab.
 
 #### Preliminary
 
-- Before you do anything else, let's customize your BlueJ environment:
+You might've already done this, but just in case, let's take some time to customize your BlueJ environment:
 
-  - Open up the project you just downloaded in BlueJ,
-  - From the `BlueJ` menu on the top, select `Preferences`. The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
-  - Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
-  - That should be it for now. Go ahead and start reading the lab assignment with your partner.
+- Open up the project you just downloaded in BlueJ,
+- From the `BlueJ` menu on the top, select `Preferences`. The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
+- Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
+- That should be it for now. Go ahead and start reading the lab assignment with your partner.
 
 #### Part 1: Changing Object State via Assignment
 
