@@ -50,8 +50,6 @@ In Java (and all other programming languages), a variable refers to some unit of
 The particular variable that we have been using thus far in lectures is used to store an object's state. We call these fields (or instance variables). Later, we'll introduce you to a couple other types of variables, each with different usages. Recall the class structure shown below.
 
 ```java
-//optional imports
-
 /**
  * Some comment about the class as a whole.
  * @author David
