@@ -465,7 +465,7 @@ returnType funcName(param1, param2, ...) {
 
   - Note: As is true in Java, any changes made to an array passed as a parameter will persist beyond the scope of the function call! Therefore, we do not need to return `s` in `my_strcat()`.
 
-- Defining all of our functions in the same file before each is used can be a bit of a hassle, and complicated programs can become hard to manage. Like Java's class structure, it would be ideal to split related functions into different files. Go here to learn more about organizing multi-file programs. You are required to do this for your assignment.
+- Defining all of our functions in the same file before each is used can be a bit of a hassle, and complicated programs can become hard to manage. Like Java's class structure, it would be ideal to split related functions into different files. [Go here to learn more about organizing multi-file programs](http://www.cs.cf.ac.uk/Dave/C/node35.html). I usually give you the starter files, but you may want to add some of your own files later on.
 
 - Do these exercises (not graded):
 
