@@ -19,68 +19,68 @@ The following file(s) have been provided for this assignment.
 
 Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk0_AboutMe.zip`. **Windows users:** remember from Lab that you cannot simply double-click on the zip file to extract it! You must right-click on the file, and choose `Extract...`. (Mac users: you _can_ simply double-click on the zip file to extract it!) Commit this to memory!
 
-- Open the project in BlueJ, and you should see a single class called `AboutMe` (orange box icon).
+1. Open the project in BlueJ, and you should see a single class called `AboutMe` (orange box icon).
 
-- Before you do anything else, let's customize your BlueJ environment:
+2. Before you do anything else, let's customize your BlueJ environment:
 
-  - From the `BlueJ` menu on the top, select `Preferences`. The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
-  - Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
-  - Okay, that should be it for now.
+- From the `BlueJ` menu on the top, select `Preferences`. The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
+- Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
+- Okay, that should be it for now.
 
-- You should be back to the project overview window that shows the `AboutMe` icon. Double-click on the `AboutMe` icon to open the source code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
+3. You should be back to the project overview window that shows the `AboutMe` icon. Double-click on the `AboutMe` icon to open the source code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
 
-- Once you have the editor open, you should see a code block that looks like the following:
+4. Once you have the editor open, you should see a code block that looks like the following:
 
-  ```java
-  public void printMyName() {
-    // TODO: Your instruction(s) goes below (remove this comment later)
-  }
-  ```
+```java
+public void printMyName() {
+  // TODO: Your instruction(s) goes below (remove this comment later)
+}
+```
 
-  This block is called a **method** in Java. Let's dissect it a bit:
+This block is called a **method** in Java. Let's dissect it a bit:
 
-  - The method is basically our way of expressing an _algorithm_ in Java. For now, ignore the `public` and `void` keywords. We'll talk about them later in class.
-  - **Method Name:** The name of this method is `printMyName`
-  - **Parameter List:** The pair of parentheses `()` immediately following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data because the parameter list is empty.
-  - **Body:** Following the parameter list, we now see a pair of curly braces `{` and `}` on different lines. The instructions of the `printMyName` algorithm goes in between these braces, as such, the algorithm is called the method's _body_. Each instruction should be placed on a separate line.
-  - **Line Comment:** I put a _comment_ inside the body. In Java, anything that follows the `//` pattern is ignored. That makes it easy for programmers to make notes about their code! Clear and effective commenting is imperative in programming, and will be emphasized in this course. I've used a line comment here to direct your attention to where you need to write your code. You can remove my comment.
+- The method is basically our way of expressing an _algorithm_ in Java. For now, ignore the `public` and `void` keywords. We'll talk about them later in class.
+- **Method Name:** The name of this method is `printMyName`
+- **Parameter List:** The pair of parentheses `()` immediately following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data because the parameter list is empty.
+- **Body:** Following the parameter list, we now see a pair of "curly" braces `{` and `}` found on different lines. All the instructions of your algorithm must go in between the pair of curly braces. Each instruction should be placed on a separate line.
+- **Line Comment:** I put a _comment_ inside the body. In Java, anything that follows the `//` pattern is ignored. That makes it easy for programmers to make notes about their code! Clear and effective commenting is imperative in programming, and will be emphasized in this course. I've used a line comment here to direct your attention to where you need to start writing your code. You can remove my comment later.
 
-- Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax to print a something to the screen is:
+5. Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax to print a something to the screen is:
 
-  ```java
-  System.out.println(stringYouWantPrinted);
-  ```
+   ```java
+   System.out.println(stringYouWantPrinted);
+   ```
 
-  In programming a sequence of symbols or characters is called a _String_. Strings in Java are always enclosed between a pair of double quotes, `"like this"`. If you tried to print out your name without using the quotes, the code won't compile.
+   In programming a sequence of symbols or characters is called a _String_. Strings in Java are always enclosed between a pair of double quotes, `"like this"`. If you tried to print out your name without using the quotes, the code won't compile.
 
-- Go ahead and test this instruction out. Write a print statement inside the body of the `printMyName` method to print out your name.
+6. Go ahead and test this instruction out. Write a print statement inside the body of the `printMyName` method to print out your name.
 
-- After you're done with `printMyName`, it's time to test it out. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
+7. After you're done with `printMyName`, it's time to test it out. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
 
-- Now create a new method called `printBday` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName` code. The new method block can go before or after the `printMyName` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
+8. Now create a new method called `printBday` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName` code. The new method block can go before or after the `printMyName` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
 
-- Next, create a new method called `printBio` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. There are two ways to do this, and I encourage you to try out both ways:
+9. Next, create a new method called `printBio` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. There are two ways to do this, and I encourage you to try out both ways:
 
-  - First way is the obvious one: You can simply use a separate print statement to print out each sentence. `System.out.println(...)` will insert a line break each time it's used.
-  - Second way: Let's say you wanted to use only a _single_ print statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens.
-  - Compile and test it out.
+- First way is the obvious one: You can simply use a separate print statement to print out each sentence. `System.out.println(...)` will insert a line break each time it's used.
+- Second way: Let's say you wanted to use only a _single_ print statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens.
+- Compile and test it out.
 
-- Finally, it sure would be nice to have a method that would print out your name, birthday, and bio **all at once**. Write a method called `printMyInfo`. Here's the key: You wouldn't want to have to rewrite all those print statements from before! (Code duplication should be avoided always!)
+10. Finally, it sure would be nice to have a method that would print out your name, birthday, and bio **all at once**. Write a method called `printMyInfo`. Here's the key: You wouldn't want to have to rewrite all those print statements from before! (Code duplication should be avoided always!)
 
-  - Instead, We want to simply call (re-use) the other three methods you've just written. To call an existing method, you just have to write `methodName();`, e.g., `printMyName();` would cause Java to find and run the `printMyName` method.
-    - You can also call a method using the alternate syntax: `this.methodName();`
+    - Instead, We want to simply call (re-use) the other three methods you've just written. To call an existing method, you just have to write `methodName();`, e.g., `printMyName();` would cause Java to find and run the `printMyName` method.
+      - You can also call a method using the alternate syntax: `this.methodName();`
 
-  Here's an example of what someone's output might like:
+    Here's an example of what someone's output might like:
 
-  ```
-  Grace Hopper
-  12/09/1906
-  Grace Brewster Murray Hopper was an American computer scientist and United States Navy rear admiral.
-  One of the first programmers of the Harvard Mark I computer, she was a pioneer of computer programming who invented one of the first linkers.
-  Hopper was the first to devise the theory of machine-independent programming languages, and the FLOW-MATIC programming language she created using this theory was later extended to create COBOL, an early high-level programming language still in use today.
-  ```
+    ```
+    Grace Hopper
+    12/09/1906
+    Grace Brewster Murray Hopper was an American computer scientist and United States Navy rear admiral.
+    One of the first programmers of the Harvard Mark I computer, she was a pioneer of computer programming who invented one of the first linkers.
+    Hopper was the first to devise the theory of machine-independent programming languages, and the FLOW-MATIC programming language she created using this theory was later extended to create COBOL, an early high-level programming language still in use today.
+    ```
 
-- You're free to add as many more methods or statements as you like!
+11. You're free to add as many more methods or statements as you like!
 
 #### Grading
 
