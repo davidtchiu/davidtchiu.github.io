@@ -90,7 +90,7 @@ This block is called a **method** in Java. Let's dissect it a bit:
 #### Grading
 
 ```
-This assignment will be graded out of a total of 22pts.
+This assignment will be graded out of a total of 25pts.
 
 [3pts] Correct implementation of the printMyName() method.
 
@@ -103,9 +103,12 @@ This assignment will be graded out of a total of 22pts.
        (i.e., the print statements). This method should simply call
        the existing methods that you'd written.
 
+[3pts] Your method names adhere to my specification, down to the
+       casing (upper case, lower case). Check and fix any typos
+       and inconsistent casing before submission.
+
 [10pts] Correctly zipped and submitted your assignment (see below).
        Check with me or with tutors if you're not sure!
-
 ```
 
 #### Submitting Your Assignment
