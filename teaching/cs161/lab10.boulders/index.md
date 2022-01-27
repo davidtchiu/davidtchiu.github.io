@@ -11,6 +11,22 @@ NASA recently called and asked you to consult on their latest astronomical simul
 - To deal with file input/output
 - To deal with data parsing
 
+#### Working with Partners (Please Read)
+
+You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
+
+Here are your assigned partners for today's lab.
+
+```
+[Rodriguez, C, Steller, L]
+[Jones, S, Miller, D, Brown, A]
+[Camblin, F, Grey, E]
+[Murayama, E, Culpepper, A]
+[Roppolo, G, Murphy, C]
+[Jones, B, Strash, K]
+[Wissing, A, Beardsley, M]
+```
+
 #### Required Files
 
 The following file(s) have been provided for this homework.

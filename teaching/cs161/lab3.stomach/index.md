@@ -9,6 +9,22 @@ In this assignment you will use BlueJ to practice creating and calling methods o
 - Practice basic class writing from scratch
 - To learn to use the Random class
 
+#### Working with Partners (Please Read)
+
+You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
+
+Here are your assigned partners for today's lab.
+
+```
+[Murayama, E, Strash, K]
+[Culpepper, A, Steller, L]
+[Jones, S, Rodriguez, C]
+[Beardsley, M, Roppolo, G]
+[Camblin, F, Murphy, C, Jones, B]
+[Grey, E, Brown, A]
+[Wissing, A, Miller, D]
+```
+
 #### Helpful APIs
 
 The API handout that you'll want to have in front of you:

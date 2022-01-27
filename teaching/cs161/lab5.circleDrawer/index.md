@@ -9,6 +9,22 @@ This assignment is all about conditionals and object references! We'll work with
 - Practice using object references
 - Working with object equality
 
+#### Working with Partners (Please Read)
+
+You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
+
+Here are your assigned partners for today's lab.
+
+```
+[Jones, B, Jones, S]
+[Steller, L, Culpepper, A]
+[Camblin, F, Strash, K]
+[Beardsley, M, Murphy, C, Rodriguez, C]
+[Brown, A, Grey, E]
+[Roppolo, G, Murayama, E]
+[Wissing, A, Miller, D]
+```
+
 #### Required Files
 
 The following file(s) have been provided for this homework.

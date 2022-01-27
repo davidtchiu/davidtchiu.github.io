@@ -10,6 +10,22 @@ In this assignment you will use BlueJ to practice creating and calling methods o
 - To understand the difference between local and object (instance) scope
 - To understand the lifetime of certain variables
 
+#### Working with Partners (Please Read)
+
+You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
+
+Here are your assigned partners for today's lab.
+
+```
+[Jones, B, Miller, D]
+[Brown, A, Murphy, C, Wissing, A]
+[Jones, S, Culpepper, A]
+[Strash, K, Grey, E]
+[Roppolo, G, Murayama, E]
+[Steller, L, Beardsley, M]
+[Camblin, F, Rodriguez, C]
+```
+
 #### Required Files
 
 The following file(s) have been provided for this lab.

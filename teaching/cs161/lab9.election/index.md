@@ -12,6 +12,22 @@ This week, we'll write a program that counts ballots cast for an election! In do
 - To use for-each loops to iterate through `HashMaps`
 - Use of wrapper classes, such as `Integer`
 
+#### Working with Partners (Please Read)
+
+You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
+
+Here are your assigned partners for today's lab.
+
+```
+[Jones, B, Murayama, E]
+[Miller, D, Roppolo, G]
+[Murphy, C, Beardsley, M, Rodriguez, C]
+[Grey, E, Camblin, F]
+[Steller, L, Wissing, A]
+[Strash, K, Culpepper, A]
+[Jones, S, Brown, A]
+```
+
 #### Required Files
 
 The following file(s) have been provided for this homework.

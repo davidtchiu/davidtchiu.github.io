@@ -11,6 +11,22 @@ Intrigued, but skeptical, your friend asks you to "show them what you mean." In 
 - To apply critical and scientific thinking to the analysis of algorithms
 - Experience putting together a CS lab report
 
+#### Working with Partners (Please Read)
+
+You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
+
+Here are your assigned partners for today's lab.
+
+```
+[Culpepper, A, Steller, L, Miller, D]
+[Jones, S, Rodriguez, C]
+[Wissing, A, Brown, A]
+[Roppolo, G, Murayama, E]
+[Jones, B, Strash, K]
+[Grey, E, Murphy, C]
+[Camblin, F, Beardsley, M]
+```
+
 #### Required Files
 
 The following file(s) have been provided for this homework.
