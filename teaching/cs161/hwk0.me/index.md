@@ -104,8 +104,8 @@ This assignment will be graded out of a total of 25pts.
        the existing methods that you'd written.
 
 [3pts] Your method names adhere to my specification, down to the
-       casing (upper case, lower case). Check and fix any typos
-       and inconsistent casing before submission.
+       casing (upper case, lower case) of each individual character.
+       Check and fix any typos and inconsistent casing before submission.
 
 [10pts] Correctly zipped and submitted your assignment (see below).
        Check with me or with tutors if you're not sure!
