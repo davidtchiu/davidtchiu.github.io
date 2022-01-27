@@ -15,7 +15,8 @@ const MWRF = [LEC, OFF, LEC, LEC, LEC, WKD, WKD];
 const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
 
 const ASSIGNMENT_COLOR = {
-  labs: "#330099",
+  // labs: "#330099",
+  labs: "#0e84b5",
   homework: "#0e84b5",
   projects: "#003333",
 };
