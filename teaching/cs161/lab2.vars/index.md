@@ -65,9 +65,9 @@ public class SomeClassName {
 
 and that you can declare any number of fields to store your object's state. Any time you need a field, you will first declare its existence using the following syntax:
 
-```java
-private dataType fieldName;
-```
+    ```java
+    private dataType fieldName;
+    ```
 
 For instance, I might declare `private int speed;` to store the current speed of my vehicle objects. I could declare `private String firstName;` to store the first name of `Student` objects.
 
