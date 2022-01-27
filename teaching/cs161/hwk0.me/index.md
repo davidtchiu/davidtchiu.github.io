@@ -23,27 +23,27 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
 2. Before you do anything else, let's customize your BlueJ environment:
 
-- From the `BlueJ` menu on the top, select `Preferences`. The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
-- Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
-- Okay, that should be it for now.
+   - From the `BlueJ` menu on the top, select `Preferences`. The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
+   - Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
+   - Okay, that should be it for now.
 
 3. You should be back to the project overview window that shows the `AboutMe` icon. Double-click on the `AboutMe` icon to open the source code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
 
 4. Once you have the editor open, you should see a code block that looks like the following:
 
-```java
-public void printMyName() {
-  // TODO: Your instruction(s) goes below (remove this comment later)
-}
-```
+   ```java
+   public void printMyName() {
+     // TODO: Your instruction(s) goes below (remove this comment later)
+   }
+   ```
 
-This block is called a **method** in Java. Let's dissect it a bit:
+   This block is called a **method** in Java. Let's dissect it a bit:
 
-- The method is basically our way of expressing an _algorithm_ in Java. For now, ignore the `public` and `void` keywords. We'll talk about them later in class.
-- **Method Name:** The name of this method is `printMyName`
-- **Parameter List:** The pair of parentheses `()` immediately following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data because the parameter list is empty.
-- **Body:** Following the parameter list, we now see a pair of "curly" braces `{` and `}` found on different lines. All the instructions of your algorithm must go in between the pair of curly braces. Each instruction should be placed on a separate line.
-- **Line Comment:** I put a _comment_ inside the body. In Java, anything that follows the `//` pattern is ignored. That makes it easy for programmers to make notes about their code! Clear and effective commenting is imperative in programming, and will be emphasized in this course. I've used a line comment here to direct your attention to where you need to start writing your code. You can remove my comment later.
+   - The method is basically our way of expressing an _algorithm_ in Java. For now, ignore the `public` and `void` keywords. We'll talk about them later in class.
+   - **Method Name:** The name of this method is `printMyName`
+   - **Parameter List:** The pair of parentheses `()` immediately following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data because the parameter list is empty.
+   - **Body:** Following the parameter list, we now see a pair of "curly" braces `{` and `}` found on different lines. All the instructions of your algorithm must go in between the pair of curly braces. Each instruction should be placed on a separate line.
+   - **Line Comment:** I put a _comment_ inside the body. In Java, anything that follows the `//` pattern is ignored. That makes it easy for programmers to make notes about their code! Clear and effective commenting is imperative in programming, and will be emphasized in this course. I've used a line comment here to direct your attention to where you need to start writing your code. You can remove my comment later.
 
 5. Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax to print a something to the screen is:
 
