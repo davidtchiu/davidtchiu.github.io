@@ -37,8 +37,7 @@ The following file(s) have been provided for this lab.
 You might've already done this, but just in case, let's take some time to customize your BlueJ environment:
 
 - Open up the project you just downloaded in BlueJ,
-- If you're on Windows, go to the `Tools` menu on the top, and click `Preferences`.
-- If you're on a Mac, from the `BlueJ` menu on the top, select `Preferences`.
+- If you're on _Windows_, go to the `Tools` menu on the top, and click `Preferences`. If you're on a _Mac_, from the `BlueJ` menu on the top, select `Preferences`.
 - The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
   - If you're on a Windows machine, you can get to `Preferences` from the `Tools` menu on top.
 - Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
