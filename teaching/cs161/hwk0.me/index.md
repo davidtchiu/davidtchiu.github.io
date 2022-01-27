@@ -19,7 +19,15 @@ The following file(s) have been provided for this assignment.
 
 Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk0_AboutMe.zip`. **Windows users:** remember from Lab that you cannot simply double-click on the zip file to extract it! You must right-click on the file, and choose `Extract...`. (Mac users: you _can_ simply double-click on the zip file to extract it!) Commit this to memory!
 
-- and open the project in BlueJ, and you should see a single class called `AboutMe` (orange box icon). Double click to open the source code editor.
+- Open the project in BlueJ, and you should see a single class called `AboutMe` (orange box icon).
+
+- Before you do anything else, let's customize your BlueJ environment:
+
+  - From the `BlueJ` menu on the top, select `Preferences`. The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
+  - Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
+  - Okay, that should be it for now.
+
+- You should be back to the project overview window that shows the `AboutMe` icon. Double-click on the `AboutMe` icon to open the source code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
 
 - Once you have the editor open, you should see a code block that looks like the following:
 
@@ -33,18 +41,20 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
   - The method is basically our way of expressing an _algorithm_ in Java. For now, ignore the `public` and `void` keywords. We'll talk about them later in class.
   - **Method Name:** The name of this method is `printMyName`
-  - **Parameter List:** Any input data that a method accepts is listed in between the set of parentheses `(` and `)` immediately following the method's name. (In this case, our method does _not_ accept any input data because the parameter list is empty.)
-  - **Body:** Following the parameter list, we now see a set of curly braces `{` and `}`. The instructions of the `printMyName` algorithm goes in between these braces, as such, the algorithm is called the method's _body_.
+  - **Parameter List:** The pair of parentheses `()` immediately following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data because the parameter list is empty.
+  - **Body:** Following the parameter list, we now see a pair of curly braces `{` and `}` on different lines. The instructions of the `printMyName` algorithm goes in between these braces, as such, the algorithm is called the method's _body_. Each instruction should be placed on a separate line.
 
-- Most of the code you'll be writing in this class will be inside method bodies, so let's play with our first Java instruction: printing to the screen. The instruction to do this is:
+- Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax of the print instruction is:
 
   ```java
   System.out.println(stringYouWantPrinted);
   ```
 
-- Go ahead and test this out. Write a print statement inside the body of the `printMyName` method to print out your name. Now be careful here... strings in Java are enclosed between a pair of double quotes, `"like this"`. If you tried to print out a your name without using the quotes, the code won't compile. (You should test that too, just to see how Java reacts!)
+  In programming a sequence of symbols or characters is called a _String_. Strings in Java are always enclosed between a pair of double quotes, `"like this"`. If you tried to print out your name without using the quotes, the code won't compile.
 
-- After you're done with `printMyName`, it's time to test it. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if your code works, you shouldn't see any errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench." Right click and choose the `printMyName()` method. You should see your name printed to the screen. Let me know if you don't!
+- Go ahead and test this instruction out. Write a print statement inside the body of the `printMyName` method to print out your name.
+
+- After you're done with `printMyName`, it's time to test it. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you right away of the problem.
 
 - Now create a new method called `printBday` that prints your birthday in `mm/dd/yyyy` format. For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName` code. The new method block can go before or after the `printMyName` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
 
