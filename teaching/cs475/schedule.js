@@ -81,8 +81,8 @@ let days = {
     // wk 2
     "Job scheduling models",
     // "Brief intro to the cmd-line",
-    "Dual-mode operation",
-    "Interrupts, system calls",
+    "Dual-mode operation, interrupts, system calls",
+    "Finish system calls; Start processes",
     // wk 3
     "Process Management: address spaces",
     "Process: PCB, state transitions",
