@@ -26,9 +26,11 @@ Start by downloading a fresh copy of the starter file from the above link. The c
 
   - Can you write this method by calling a couple of the methods you modified earlier?
 
-- Add a new method called `public void shuffleHorizontal(int distance)`. When called, this method causes the circle to do a slow movement to the right by the distance that was given, then back to the left, leaving the circle exactly where it started. (That's assuming the input is positive — if the input is negative, the circle will shuffle left, then right.) Add another block comment describing your new method. If your method is more than a couple of lines, you're going down the wrong track. Again, you do not need to copy-and-paste anything from within the `slowMoveHorizontal` algorithm to write this method. (You should simply re-use, or _call_, `slowMoveHorizontal` to help you do what you want).
+- Add a new method called `public void shuffleHorizontal(int distance)`. When called, this method causes the circle to do a slow movement to the right by the distance that was given, then back to the left, leaving the circle exactly where it started. (That's assuming the input is positive — if the input is negative, the circle will shuffle left, then right.) Add another block comment describing your new method. If your method is more than a couple of lines, you're going down the wrong track. Again, you do not need to copy-and-paste anything from within the `slowMoveHorizontal` algorithm to write this method.
 
-- Add a method called `public void shuffleVertical(int distance)`. The method, like `shuffleHorizontal`, will cause the Circle to do a slow movement to the north, and then back to its original position.
+  - Again, you should reuse (or call) existing methods to help do what you want. Hmm, `slowMoveHorizontal` seems like it could help in some way.
+
+- Add a method called `public void shuffleVertical(int distance)`. The method, like `shuffleHorizontal`, will cause the Circle to do a slow movement to the south, and then back to its original position.
 
 - Add a method called `public void dance()` that inputs an integer named `distance` followed by four String arguments: `firstColor`, `secondColor`, `thirdColor`, and `fourthColor`. It will first change the color's color to `firstColor`, then shuffle the circle to the right by the given distance. Then it circle's color will change to `secondColor` before shuffling to the south by the given distance, and so on, in clockwise fashion for the remaining two colors. Again, you should simply _call_ methods that's already been written.
 
