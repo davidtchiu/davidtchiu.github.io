@@ -642,7 +642,7 @@ I have included a working solution of my program along with the starter code. Th
 1. Inside the project directory, you should find the following files:
 
    - `Makefile`
-   - `employee.h` contains the definition of the Employee structure and declarations of several functions
+   - `employee.h` contains the definition of the Employee struct
    - `heap.h` contains the function declarations related to the heap
    - `heap.c` contains the stubs for the functions defined in `heap.h`
    - `main.c ` contains the `main()` function
