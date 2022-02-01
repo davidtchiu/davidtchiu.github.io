@@ -1,4 +1,4 @@
-## CS 475 - Operating Systems
+## CS 161 - Intro to Computer Science
 
 ### Hwk: David Shell (dsh)
 

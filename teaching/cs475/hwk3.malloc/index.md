@@ -1,4 +1,4 @@
-## CS 161 - Intro to Computer Science
+## CS 475 - Operating Systems
 
 ### Hwk: Dynamic Memory Allocation
 

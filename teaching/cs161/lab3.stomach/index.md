@@ -20,8 +20,8 @@ Here are your assigned partners for today's lab.
 [Culpepper, A, Steller, L]
 [Jones, S, Rodriguez, C]
 [Beardsley, M, Roppolo, G]
-[Camblin, F, Murphy, C, Jones, B]
-[Grey, E, Brown, A]
+[Camblin, F, Murphy, C]
+[Jones, B, Brown, A]
 [Wissing, A, Miller, D]
 ```
 
