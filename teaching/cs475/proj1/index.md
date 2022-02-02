@@ -6,9 +6,15 @@ This project assumes you have a good handle on C (particularly, pointers and dyn
 
 Xinu is an operating system developed by [Prof. Douglas Comer](http://www.xinu.cs.purdue.edu/author.html)'s group at Purdue University. Xinu is used in an impressive number of real computer systems (e.g., embedded controllers and an [IBM mainframe computer](https://en.wikipedia.org/wiki/IBM_System_z9), among others). The description of Xinu from its website:
 
-```
-"XINU stands for Xinu Is Not Unix -- although it shares concepts and even names with Unix, the internal design differs completely. Xinu is a small, elegant operating system that supports dynamic process creation, dynamic memory allocation, network communication, local and remote file systems, a shell, and device-independent I/O functions. The small size makes Xinu suitable for embedded environments."
-```
+    ```
+    "XINU stands for Xinu Is Not Unix -- although it shares concepts and
+    even names with Unix, the internal design differs completely. Xinu
+    is a small, elegant operating system that supports dynamic process
+    creation, dynamic memory allocation, network communication, local
+    and remote file systems, a shell, and device-independent I/O
+    functions. The small size makes Xinu suitable for embedded
+    environments."
+    ```
 
 In this project, you will be implementing an essential data structure, which pervades most OS kernels including Xinu: a (dynamically allocated) queue of processes, known as the Ready Queue. It stores pointers to process control blocks (called "process entries" in Xinu), providing a set of processes for the CPU scheduler to choose from for execution. This project assumes that you have already completed the earlier C primer-assignments.
 
@@ -194,25 +200,203 @@ You need to spend some time exploring Xinu's codebase, specifically, the files i
 - `include/kernel.h`: contains definition of some important constants, typedefs, and function prototypes.
 
   - Types: data types in Xinu are renamed to be more convenient and specific. Notably, you'll see these often:
-    |Type Name in Xinu|Really just a...|
-    |-----------------|----------------|
-    | `byte` | 8-bit `char` |
-    | `bool8` | `byte`|
-    | `int32` | 32-bit `int`|
-    | `uint32` | 32-bit `unsigned int`|
-    | `pid32` | `int32` (a process ID)|
-    | `sid32` | `int32` (a semaphore ID)|
-    | `status` | `int32` (return status of system call: `OK`, `SYSERR`, `TIMEOUT` see below)|
+
+    | Type Name in Xinu | Really just a...                                                            |
+    | ----------------- | --------------------------------------------------------------------------- |
+    | `byte`            | 8-bit `char`                                                                |
+    | `bool8`           | `byte`                                                                      |
+    | `int32`           | 32-bit `int`                                                                |
+    | `uint32`          | 32-bit `unsigned int`                                                       |
+    | `pid32`           | `int32` (a process ID)                                                      |
+    | `sid32`           | `int32` (a semaphore ID)                                                    |
+    | `status`          | `int32` (return status of system call: `OK`, `SYSERR`, `TIMEOUT` see below) |
 
   - Constants: the list of typedefs are followed by constants. You should commit these to memory, but here are some important ones.
+
+    | Name of Constant | Value (Description)                                      |
+    | ---------------- | -------------------------------------------------------- |
+    | `NULL`           | 0 (this is the NULL you worked with for pointers)        |
+    | `OK`             | 1 (used as normal return-status for a system call)       |
+    | `SYSERR`         | -1 (used as error return-status for a system call)       |
+    | `EOF`            | -2 (end of file)                                         |
+    | `TIMEOUT`        | -3 (used as the timeout return-status for a system call) |
+
+##### For Debugging
+
+- `system/kprintf.c`: defines `kprintf()`, which is a system call you can use to ask the the kernel to print something to the console. Used just like regular `printf()`.
+
+##### Process Structures
+
+Xinu processes have a unique identifier of type `pid32`, and are defined by a process control block (PCB) structure, called `struct procent` (process entry).
+
+- `include/process.h`: defines constants (such as process states) and structures (like the PCB) relating to the process. Read through this file and be able to answer the questions below. **Know this:** Toward the end of the file, there are three important global variables (accessible from anywhere) that pertain to processes in Xinu.
+
+  | `pid32 currpid` | The PID of the currently-running process.|
+  | `int32 prcount` | The number of processes in the system.|
+  | `struct procent proctab[]` | The process table. An array of PCBs, indexed by PID.|
+
+- `system/create.c`: defines the system call to create a new process.
+
+- `system/kill.c`: defines the system call to kill a process.
+
+- `system/ready.c`: defines the system call to put process on the ready queue.
+
+- `system/resched.c`: pulls the next process off of the ready queue, and schedules it for CPU execution.
+
+- `system/suspend.c` and `system/resume.c`: defines the system call to suspend and resume a process.
+
+- `system/yield.c`: defines the system call to cause the currently running process to voluntarily yield the CPU to next process on the ready queue.
+
+##### Answer these questions (not graded):
+
+- What is the maximum number of processes accepted by Xinu? Where is it defined?
+
+- What does Xinu define as a "illegal PID"? Find and check out the `isbadpid()` inline function. (Aside: What's an inline function in C?)
+
+- Name all the states in which a Xinu process can be.
+
+- What is the default stack size Xinu assigns each process? Where is it defined? (Recall from the previous assignment that this is called `RLIMIT_STACK` in Linux)
+
+#### Part 4: How Does Xinu Run (and What Is the Null Process)?
+
+When Xinu boots up, the `nulluser()` system call is invoked by the bootstrap, which in turn invokes `sysinit()`. To see what they do, open up this file: `system/initialize.c`
+
+- Inside this file, scroll down to take a look at the `sysinit()` function.
+
+- This function starts out with some code to initialize interrupt vectors and a free-list for memory allocation. About half-way down, it initializes the PCB table:
+
+  ```c
+  static  void    sysinit(void)
+  {
+      //(code omitted)
+
+      /* Initialize process table entries free */
+      for (i = 0; i < NPROC; i++) {
+          prptr = &proctab[i];
+          prptr->prstate = PR_FREE;
+          prptr->prname[0] = NULLCH;
+          prptr->prstkbase = NULL;
+      }
+
+      //(code omitted)
+  }
+  ```
+
+- On Lines 6-11: all entries in the PCB table are initialized. Initially, every slot is free (i.e., in the `PR_FREE` state), the name of each process, `prname` is an empty string, and the stack base pointer `prstkbase` refers to `NULL`.
+
+- The loop implies that there can only be `NPROC` processes existing in the table, and that the array index from 0 to `NPROC-1` serves as the process ID.
+
+Now find the `nulluser()` function, which is the first process (known as Xinu's **null process**) that Xinu runs after it boots.
+
+- The first thing it does is invoke `sysinit()`, which sets up important data structures (see above).
+
+- The code will then print out address-space information (sizes of text, data, heap segments) and enable interrupts.
+
+- Just after the interrupts are enabled, we see the creation of a process named `MAIN1`, running a function called `main()` with various arguments.
+
+  ```c
+  void    nulluser(void)
+  {
+      sysinit();
+
+      //(code omitted)
+
+      //spawn a process running main() from main.c
+      ready(create((void*) main, INITSTK, "MAIN1", 2, 0, NULL), FALSE);
+
+      //schedule the above process
+      while (TRUE)
+      {
+          if (nonempty(readyqueue))
+          {
+              //everytime resched() is called, it pulls the next process off the ready queue
+              resched();
+          }
+      }
+  }
+  ```
+
+- On **Line 8**: A call to `create()` will create a process in Xinu. Remember from your exploration earlier that this function takes as argument:
+
+  1. A function pointer to the code that the process will run (`main()`)
+  2. The stack size in words (`INITSTK`)
+  3. A name for the process (`MAIN1`)
+  4. The number of arguments given to the function referred to (2 here because `main()` takes two arguments)
+  5. List of arguments given to the function referred (0 followed by `NULL`)
+
+  The `create()` function returns the PID that was assigned to this new process, which is in turn input into `ready()`.
+
+  The `ready()` function inputs two arguments. The first is the PID. It will place the given PID on the ready queue. The second argument, `FALSE`, tells Xinu that it should not run the scheduler to schedule another process for execution after this process was introduced to the ready queue.
+
+- On **Line 11-18**: This infinite loop examines the ready queue, and schedules the next process as long as it is non-empty. Notice how, when there are no processes to execute, this portion of the code essentially turns into an infinite no-op loop, waiting for the next process to enter the ready queue.
+
+This gives us a clue as to what this **null process** actually is: when there's no other processes for the CPU to execute, _something_ has to run, to keep the kernel active. (Remember how I said I class that an OS is essentially just sitting around waiting for events to occur?)
+
+#### Part 5: The main() Function
+
+Okay, so the `nulluser()` function created five processes, all executing a function called `main()` with various arguments.
+
+- Let's take a look at this function, which is defined in `system/main.c`:
+
+  ```c
+  #include <xinu.h>
+  #include <stdio.h>
+
+  void printpid()
+  {
+  int i;
+  kprintf("Hello XINU WORLD!\r\n");
+
+      for (i=0; i<10; i++)
+      {
+          kprintf("This is process %d\r\n", currpid);
+
+          //uncomment the line below to see cooperative scheduling
+          //resched();
+      }
+
+  }
+
+  void printargs(uint32 argc, uint32 \*argv)
+  {
+  printpid();
+
+      int i;
+      if (argc > 0)
+      {
+          for (i=0; i<argc; i++)
+              kprintf("%d\n", argv[i]);
+          kprintf("\r\n");
+      }
+
+  }
+
+  int main(uint32 argc, uint32 \*argv)
+  {
+  static uint32 main2args[] = {1, 2, 3};
+  static uint32 main3args[] = {10, 20, 30, 40, 50, 60};
+
+      // Create 5 processes
+      ready(create((void*) printpid, INITSTK, "MAIN1", 2, 0, NULL), FALSE);
+      ready(create((void*) printpid, INITSTK, "MAIN2", 2, 0, NULL), FALSE);
+      ready(create((void*) printpid, INITSTK, "MAIN3", 2, 0, NULL), FALSE);
+      ready(create((void*) printargs, INITSTK, "MAIN4", 2, 3, main2args), FALSE);
+      ready(create((void*) printargs, INITSTK, "MAIN5", 2, 6, main3args), FALSE);
+
+      return 0;
+
+  }
+
+  ```
 
 #### Grading
 
 ```
+
 This assignment will be graded out of 50 points:
 
 [20pt] User input is properly handled, and invalid commands (not found in PATH or
-    current working directory) generates an error.
+current working directory) generates an error.
 
 [5pt] The MOTD is being handled error-free.
 
@@ -221,11 +405,12 @@ This assignment will be graded out of 50 points:
 [5pt] history outputs the last HISTORY_LEN commands.
 
 [3pt] cd [path] works as expected, by changing the current directory to the path
-    (if given), or $HOME (if not given).
+(if given), or $HOME (if not given).
 
 [1pt] exit and pwd works as expected
 
 [1pt] Your program observes good style and commenting.
+
 ```
 
 #### Submitting Your Assignment
@@ -253,3 +438,11 @@ After you have completed the homework, use the following to submit your work on 
 #### Credits
 
 Written by David Chiu. 2022.
+
+```
+
+```
+
+```
+
+```
