@@ -1,10 +1,18 @@
-## CS 161 - Intro to Computer Science
+## CS 475 - Operating Systems
 
-### Hwk: David Shell (dsh)
+### Project 1: Xinu Ready Queue
 
-A _shell_ is an interactive command-line environment in which users can issue commands to the OS. Even with modern OS's support of point-and-click GUIs, many still prefer to use the shell. Today, many shells exist and are supported by Unix-based systems, but the Bourne-Again Shell (bash) is probably the most widely used.
+This project assumes you have a good handle on C (particularly, pointers and dynamic allocation) and basic shell commands. Make sure you have completed the C primer homework assignments before you tackle this project.
 
-Your goal for this assignment is to create your very own shell, David Shell (`dsh`), named after your favorite CS Professor.
+Xinu is an operating system developed by [Prof. Douglas Comer](http://www.xinu.cs.purdue.edu/author.html)'s group at Purdue University. Xinu is used in an impressive number of real computer systems (e.g., embedded controllers and an [IBM mainframe computer](https://en.wikipedia.org/wiki/IBM_System_z9), among others). The description of Xinu from its website:
+
+```
+"XINU stands for Xinu Is Not Unix -- although it shares concepts and even names with Unix, the internal design differs completely. Xinu is a small, elegant operating system that supports dynamic process creation, dynamic memory allocation, network communication, local and remote file systems, a shell, and device-independent I/O functions. The small size makes Xinu suitable for embedded environments."
+```
+
+In this project, you will be implementing an essential data structure, which pervades most OS kernels including Xinu: a (dynamically allocated) queue of processes, known as the Ready Queue. It stores pointers to process control blocks (called "process entries" in Xinu), providing a set of processes for the CPU scheduler to choose from for execution. This project assumes that you have already completed the earlier C primer-assignments.
+
+You are required to work in pairs.
 
 #### ZyBooks References
 
@@ -13,17 +21,15 @@ Your goal for this assignment is to create your very own shell, David Shell (`ds
 
 #### Student Outcomes
 
-- To understand how a simple command-line interface to the OS is implemented.
-- To work with environment variables with `getenv()`
-- To work with simple file handling in C
-- To become familiar with process creation with `fork()` and `execv()`
-- To become familiar with parent-child synchronization with `wait()`
+- To become familiar with the Xinu development and runtime environment
+- To become familiar with the Xinu kernel codebase
+- To provide more experience with pointers and dynamically-allocated structures
 
 #### Starter Code
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk4-dsh](https://github.com/davidtchiu/cs475-hwk4-dsh). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-proj1](https://github.com/davidtchiu/cs475-proj1). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
 ```
 
@@ -35,160 +41,170 @@ git clone <your-github-url-for-this-project>
 
 ```
 
-git clone https://github.com/davidtchiu/cs475-hwk4-dsh
+git clone https://github.com/davidtchiu/cs475-proj1
 
 ```
 
-#### Working Solution
+#### Part 1: Setting up Xinu
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `dshSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./dshSol`. This is how your solution should behave when it's done.
+In this section, we'll get Xinu up and running on a virtual machine.
 
-#### Program Requirements
+1.  Download the following VirtualBox image, that have been prepared to get Xinu up and running:
 
-1. As soon as `dsh` starts, the first thing it should do is look for a file called `.dsh_motd` in the current user's home directory on the operating system. MOTD stands for "message of the day," and the file contents may be arbitrarily long and multi-line.
+    - [xinu-back-end.ova](xinu-back-end.ova) (10.8 KB)
 
-   - To look for this file, you'll need to check whether it exists in the current user's home directory, which is stored in the linux environment variable `HOME`. You'll need to look into C's [getenv()](https://www.tutorialspoint.com/c_standard_library/c_function_getenv.htm) function to extract its value.
+2.  Open up VirtualBox. Then click on the File > Import Appliance... menu. Browse and find the xinu-back-end.ova file you just downloaded, then click Continue.
 
-     - If you're curious to see what's stored inside `HOME`, you can also use the command on the Terminal: `echo $HOME`
-     - In fact, you can `echo` any environment variable `$VAR` to see its value, such as: `$SHELL` (what shell am I using?), `$PWD` (where am I?), `$PATH` (what are the paths to my executables?), ...
+3.  Import `xinu-backend.ova`. **Do not** click to enable "Reinitialize the MAC address of all network cards." Afterwards, you should see the new virtual machine image on the left-hand panel of the VM Manager window.
 
-   - If this file doesn't exist in the user's home directory, then move on. Otherwise, you need to print its contents to the screen first. I would expect some simple error-handling to be done here. For instance, if the file exists, but can't be opened due to a lack of permissions, your program should _not_ crash (no need to print an error message though).
+4.  Highlight `xinu-backend` in the left-hand menu, and click on Settings. From the Settings menu, navigate to `Ports`. Make sure that `Enable Serial Port` and `Connect to Existing Pipe/Socket` are **both checked**. Under Path/address:
 
-2. After printing the MOTD (if exists), your shell should provide the user with a command-line prompt: `dsh>`
+    - If you're on a Linux or Mac: type in `/tmp/xinu_serial`
+    - If you're on Windows: type in `\\.\pipe\xinu_com1`
 
-3. Check out the example below:
+    Click OK to exit Settings.
 
-   ```
-   /home/dchiu$ ./dsh
-   ********** MESSAGE OF THE DAY ************
-   * "Three things matter in life: family,
-   *  friends, and your OS professor."
-   *   - David Chiu, Philosopher
-   ******************************************
+5.  Go back in the Ubuntu VM in which you've been doing all your homework. Download the starter code for this project, and navigate into the `proj1` directory. You'll see the following subdirectories:
 
-   dsh>
-   ```
+    - `compile/` - contains the Makefile and scripts to upload the kernel to the back-end.
+    - `config/` - contains device configurations (do not touch files in this directory).
+    - `device/` - contains device files (do not touch files in this directory).
+    - `include/` - contains header files, which define constants and function prototypes.
+    - `lib/` - contains a small library of standard C functions. The UNIX system libraries are not available.
+    - `system/` - contains the source code for the Xinu kernel.
 
-   From the Terminal, I run `dsh` to start up David shell, and it prints off the MOTD before sending me to a prompt, awaiting commands. I am now in the David shell environment, and should be able to issue commands just like other when you're inside other command-line shells.
+Most of your time in development will be spent in the `include/` and `system/` directories.
 
-4. At the `dsh>` prompt, the user would be able to enter a command which David shell should attempt to _execute_ as a separate process.
+#### Part 2: Compiling and Running Xinu
 
-   - Some commands may be followed by a list of arguments (for instance, `ls -l` and `ps au`), so you will have to read in the entire line and parse it later. Do do this, I would recommend looking into using [fgets()](https://www.cplusplus.com/reference/cstdio/fgets/), which has the following signature:
+You will be coding and compiling Xinu on the Ubuntu machine as you did for your homework.
 
-   ```c
-   char* fgets(
-     char* str, /* OUT */
-     int num,   /* IN  */
-     FILE* stream /* IN */
-   )
-   ```
+1. Navigate into the `compile/` directory. You can type make to compile the kernel, but you'll soon be inundated with compile errors. This is because there are several important functions that you need to implement for this project. Let's clean up the mess by running `make clean`.
 
-   This function will read `num` characters from the `stream`, and place it in a pre-defined string buffer `str`. The `stream`, in our case, is simply `STDIN` (the standard input device). The method will return a pointer to `str`. In your program, if the user's input is longer than 256 characters, you should ignore it and and simply output an error.
+2. Normally, if the compilation was successful, it will create a binary file called `xinu` in the `compile` directory. Now you need to run `./upload.sh` to prepare it for upload onto the back-end VM. Don't worry about this step just yet, because things aren't going to compile.
 
-##### Understanding Program Execution and Paths
+3. However, I've provided you with a precompiled solution called `xinuSol`, so let's run that for now so you can see what to expect for this assignment. Run `./uploadSol.sh` to upload my precompiled kernel to the back-end VM.
 
-After the input is read, `dsh` will need to verify that the command entered is valid. There's an easy way to tell if it's valid, but first, we need to understand how file system paths work. To create a process and run a program, you need to construct its **absolute (or full) path** in the file system. An absolute path to a file, say `ls`, looks like this:
+4. Now on the Terminal, type `sudo minicom`. You'll be prompted for the password. This turns the Terminal window into a serial console that is connected to the back-end VM, effectively emulating a terminal for the back-end VM. Speaking of the back-end...
 
-```
-/bin/ls
-```
+5. At this point, start the `xinu-back-end` virtual machine from VirtualBox. It should take a few seconds for it to automatically retrieve the kernel binary you just "uploaded" from Ubuntu VM and boot it. Because `minicom` turned the Terminal into the screen that's "attached" to the `xinu-back-end` VM, you can see Xinu boot up and run right on the Terminal.
 
-This means that, to locate the `ls` program, the OS needs to first traverse to the "root" directory or folder (that's the initial `/`), and from there, traverse into the `bin` directory. Then from `/bin`, to look for a file named `ls` in there. It's super nice when the user types out the absolute path to the program they want to run, but that's usually not the case. We typically only type `ls`, and it works, which means that shells must do some background processing to figure out _where_ to look for `ls`.
+- It's quite normal for Xinu boot to fail, and you may need to do the following:
+  - First, try repeating to run the `xinu-back-end` from VirtualBox a few times.
+  - If it doesn't resolve on its own, you may need to disable/enable the network on the Ubuntu VM. Then wait a few seconds and try again.
 
-So this is all pointing to a couple of options we need to support. The user might give the absolute path to an executable file, or the user might simply give the name of the executable.
-
-1.  **Option 1 (easy):** The user types in the absolute path to an executable. You know they typed an absolute path if their input starts begins with a `'/'` character! First, check to see if the given path even exists. To do this in C, I would first include the `unistd.h` file on top, and use its `access()` function:
-
-    ```c
-    if (access(path, F_OK | X_OK) == 0) {
-        // file exists and is executable
-    }
-    else {
-        // file doesn't exist or is not executable
-    }
-    ```
-
-    - If the executable isn't found, then simply output an error to the screen, and re-display the `dsh>` prompt.
-
-    - If the executable is found, then there are two further options for execution:
-
-      - **Run in foreground:** Execute the path using `fork()` and `execv()` as you learned in class. The call to `execv()` requires the absolute path to the executable, which you already have. Commands may have an arbitrary number of arguments, which are delimited by white space. The parent process (that is, `dsh`) should `wait()` for the child process to finish. That is, you would not expect to see the `dsh>` shell prompt again _until_ the child process terminates.
-
-      - **Run in background:** If the last character in a valid command is an `&` symbol, it indicates that the command is to be run in the background. In other words, when the shell forks a child process, it should **not** wait for the child to terminate. The OS will commence running the new process concurrently with `dsh`. This means that you'll see `dsh>` being re-displayed immediately by the parent (`dsh`) process. If the child process prints to the screen, it'll interleave its outputs into the terminal.
-
-2.  **Option 2:** The user's input does _not_ start with a `/`. Now we've got some work to do before we can even fork and exec! We need find the true location of the given command, and we'll use the following steps:
-
-    - First, we'll check to see if the executable can be found in the current working directory. That is, the location of where your shell thinks you're in. Look into using `getcwd()`, defined in `unistd.h`. Concatenate the user's input to the value of the current working directory, and see if it exists. If not, then move on to the next step.
-    - If the executable cannot be found in the current working directory, then there are other locations where it can be. These locations are stored in the environment variable `PATH`.
-    - For example, a `PATH` might hold this value:
-      ```
-      /opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
-      ```
-      Basically, what you're seeing here is a colon-delimited string that separates all the different locations to look for an executable. Therefore, you need to split this string up by `:`s, and concatenate the user's input to the end of each token. The first location to try is `/opt/local/bin/`, the second place to try is `/opt/local/sbin/`, and so on. - As soon as you detect that an absolute path to the executable exists, then try to run it using the instructions given above. - Once you've tried all the tokens, then you can output a `Command not found` error message.
-
-##### Builtin Commands
-
-Some commands are not meant to invoke another program. Instead, they are to be handled directly by the shell. For example, when a user inputs `exit`, your shell is not supposed to attempt to find an executable named `exit` in the user's
-PATH! (No such executable exists!) In this case, `dsh` should simply terminate. These special commands are called "builtins."
-
-Here is a list of builtins that your shell needs to support.
-
-- `exit` should terminate dsh.
-
-- `pwd` should print the current working directory. Look into `getcwd()`, defined in `unistd.h`.
-
-- `cd [path]` should change the current working directory to the optionally given path. If path is not given, then dsh should change the working directory to the user's home directory, stored in the environment variable `HOME`. Look into the `chdir()` function, defined in `unistd.h`.
-
-- `history` should print the `HISTORY_LEN` most recent commands executed. Define `HISTORY_LEN` to be 100.
-
-#### Example Output
+If everything went smoothly, you should get this output:
 
 ```
-dsh> cd
+Hello XINU WORLD!
+This is process 2
+This is process 2
+This is process 2
+This is process 2
+This is process 2
+This is process 2
+This is process 2
+This is process 2
+This is process 2
+This is process 2
+Hello XINU WORLD!
+This is process 3
+This is process 3
+This is process 3
+This is process 3
+This is process 3
+This is process 3
+This is process 3
+This is process 3
+This is process 3
+This is process 3
+Hello XINU WORLD!
+This is process 4
+This is process 4
+This is process 4
+This is process 4
+This is process 4
+This is process 4
+This is process 4
+This is process 4
+This is process 4
+This is process 4
+Hello XINU WORLD!
+This is process 5
+This is process 5
+This is process 5
+This is process 5
+This is process 5
+This is process 5
+This is process 5
+This is process 5
+This is process 5
+This is process 5
+1
+2
+3
 
-dsh> ls -la
--rw-r--r--@ 1 dchiu  faculty  199  Feb  3 22:56 .dsh_motd
--rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
+Hello XINU WORLD!
+This is process 6
+This is process 6
+This is process 6
+This is process 6
+This is process 6
+This is process 6
+This is process 6
+This is process 6
+This is process 6
+This is process 6
+10
+20
+30
+40
+50
+60
 
-dsh> NotARealCommand -o
-ERROR: NotARealCommand not found!
-
-dsh> cat feelGood.c
-#include <stdio.h>
-#include <unistd.h>
-int main() {
-  while (1) {
-    printf("Students think your MOTD is inspiring!\n");
-    sleep(4);
-  }
-  return 0;
-}
-
-dsh> gcc -Wall feelGood.c -o feelGood
-
-dsh> ./feelGood &
-
-dsh> ls -l
--rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood
--rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
-Students think your MOTD is inspiring!
-
-dsh> history
-cd
-ls -la
-NotARealCommand -o
-cat feelGood.c
-gcc -Wall feelGood.c -o feelGood
-./feelGood &
-ls -l
-history
-
-dsh> exit
-bash$
-Students think your MOTD is inspiring!
-Students think your MOTD is inspiring!
-Students think your MOTD is inspiring!
+All user processes have completed.
 ```
+
+Afterwards, Xinu is still running over on the back-end VM, but it's in an infinite loop called the `null-process`, and not accepting any other commands (there's no shell). We'll see what this output means later.
+
+6. To exit `minicom`, press and hold `ctrl` then hit `a` followed by pressing `q`. This brings the Terminal back.
+
+7. Shutdown the back-end VM from VirtualBox to terminate Xinu.
+
+8. From here on, remember this workflow as you proceed with development:
+
+- Write your code on Ubuntu VM
+- Navigate into the `compile/` subdirectory
+- Type: `make clean`
+- Type: `make` to compile the Xinu kernel
+- Type: `./upload.sh` to upload the kernel
+- Type: `sudo minicom` to turn your terminal to a screen for Xinu
+- Start up the `xinu-back-end` VM
+
+#### Part 3: Quick Tour of Xinu Structures and Types
+
+You need to spend some time exploring Xinu's codebase, specifically, the files in `include/` and `system/`. I don't expect you to understand everything, but it would be to your benefit to obtain even a high-level understanding of the kernel's structures. I will point out a few important items to spend some time on:
+
+##### Types and Constants
+
+- `include/xinu.h`: unifies the inclusion of all necessary header files. This makes it convenient for when we're developing; we only have to place a single line `#include <xinu.h>` at the top of our files to gain access to all constants and functions.
+
+- `include/prototypes.h`: most system-call signatures are declared here, but implemented elsewhere in `.c` files.
+
+- `include/kernel.h`: contains definition of some important constants, typedefs, and function prototypes.
+
+  - Types: data types in Xinu are renamed to be more convenient and specific. Notably, you'll see these often:
+    |Type Name in Xinu|Really just a...|
+    |-----------------|----------------|
+    | `byte` | 8-bit `char` |
+    | `bool8` | `byte`|
+    | `int32` | 32-bit `int`|
+    | `uint32` | 32-bit `unsigned int`|
+    | `pid32` | `int32` (a process ID)|
+    | `sid32` | `int32` (a semaphore ID)|
+    | `status` | `int32` (return status of system call: `OK`, `SYSERR`, `TIMEOUT` see below)|
+
+  - Constants: the list of typedefs are followed by constants. You should commit these to memory, but here are some important ones.
 
 #### Grading
 
