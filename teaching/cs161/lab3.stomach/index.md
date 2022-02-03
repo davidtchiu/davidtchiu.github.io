@@ -39,8 +39,8 @@ The API handout that you'll want to have in front of you:
 
   - **Fields (Instance Variables):** Your stomach needs to have two fields:
 
-    - A whole number variable to hold the current amount of food sitting in the stomach.
-    - A whole number variable to hold the total amount of food that has been digested.
+    - A whole number variable to hold the current amount of food sitting in the stomach. `ingested` would be a good name for this field.
+    - A whole number variable to hold the total amount of food that has been digested. `digested` would be a good name for this field.
 
       ```java
       private dataType fieldName;
@@ -49,13 +49,14 @@ The API handout that you'll want to have in front of you:
   - **Constructors:** Recall that it is the job of the constructor to set up initial values for the fields. Your class should have two constructors:
 
     - A default constructor. The assumption here is that, when the stomach is created using this constructor, it is empty and has digested no food.
-    - An overloaded constructor that lets users determine a pre-existing amount of food that's been ingested in the stomach.
 
-    ```java
-    public Classname(parameterList) {  //the parameter list is optional
-      // code to initialize fields
-    }
-    ```
+    - A second constructor that lets users input a pre-existing whole-number amount of food that's already been ingested in the stomach.
+
+      ```java
+      public Classname(parameterList) {  //the parameter list is optional
+        // code to initialize fields
+      }
+      ```
 
   - **Methods:** Add the following methods to your class. Test to make sure a method is working before writing the next! Remember what I told you about writing methods? Don't start writing until you've designed it.
 
