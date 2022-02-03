@@ -727,7 +727,7 @@ This assignment will be graded out of 20 points:
 [6pt] BuildHeap is properly implemented to build a min-heap.
 [6pt] Heapsort sorts employees by descending order of their salary.
 [1pt] Your program receives user-input, and does basic error checking.
-[1pt] The README is written and placed in your project directory. Your program observes
+[1pt] Your program observes
 good style and commenting.
 ```
 
