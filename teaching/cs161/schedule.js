@@ -159,7 +159,7 @@ let days = {
     "Writing methods, calling methods, returning",
     "Writing classes: TicketMachine. Printing",
     "Lab 3",
-    "Conditionals",
+    "Lab 3 review",
     // wk 4
     "Else-if; Start data types: primitives",
     "Type-casting (narrowing, widening)",
