@@ -157,12 +157,13 @@ let days = {
     "Writing constructors; parameters, assignment statement",
     // wk 3
     "Writing methods, calling methods, returning",
-    "Writing classes: TicketMachine. Printing",
+    "Writing classes. String concatenation; conditionals (`printTicket()`)",
     "Lab 3",
     "Lab 3 review",
     // wk 4
-    "Else-if; Start data types: primitives",
-    "Type-casting (narrowing, widening)",
+    "Writing classes: Defensive programming and testing (`discount()`)",
+    "More conditionals: else if",
+    // "Type-casting (narrowing, widening)",
     "Lab 4",
     "Classes as types: references, object equivalence",
     // wk 5
