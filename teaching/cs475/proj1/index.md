@@ -344,22 +344,22 @@ Okay, so the `nulluser()` function created five processes, all executing a funct
 
   void printpid()
   {
-  int i;
-  kprintf("Hello XINU WORLD!\r\n");
+    int i;
+    kprintf("Hello XINU WORLD!\r\n");
 
-      for (i=0; i<10; i++)
-      {
+    for (i=0; i<10; i++)
+    {
           kprintf("This is process %d\r\n", currpid);
 
           //uncomment the line below to see cooperative scheduling
           //resched();
-      }
+    }
 
   }
 
   void printargs(uint32 argc, uint32 \*argv)
   {
-  printpid();
+    printpid();
 
       int i;
       if (argc > 0)
@@ -384,65 +384,251 @@ Okay, so the `nulluser()` function created five processes, all executing a funct
       ready(create((void*) printargs, INITSTK, "MAIN5", 2, 6, main3args), FALSE);
 
       return 0;
-
   }
+  ```
+
+- On **Lines 4-16**: the function `printpid()` is defined. It loops and prints out the PID ten times. Remember that currpid is a global variable that always holds the currently running PID.
+
+- On **Lines 18-29**: the function `printargs()` is defined. It takes two arguments as input. They will be passed in from `main()`. This function loops through each argument and prints them out to the console.
+
+- On **Line 31**: Notice that `main()` takes as input two arguments:
+
+  - `uint32 argc`: the number of arguments in argv
+  - `uint32 *argv`: a pointer to the input arguments
+  - These were passed in from `nulluser()` as 0 and `NULL`, respectively.
+
+- On **Lines 33-34**: arguments are defined for the processes created to execute the `printArgs()` function on Line 40 and 41, respectively.
+
+- On **Lines 37-39**: Creates three processes, each of which will run `printpid()`, and places them on the ready queue.
+
+- On **Line 40**: A fourth process is created to run `main()`, but this time, we want to input an array of three integers as arguments to `main()`. We're passing two arguments to `printargs()`, but this time, 3 and an array of three ints main2args.
+
+- On **Line 41**: A fifth process is created to run `main()`, but we're passing this time, 6 and an array of six ints main3args.
+
+- When run, the null process first gains control, and runs `main()` as a process. Then `main()` creates and puts five processes on the ready queue. Because the ready queue is not a priority queue (yet), we'd expect the processes to be run in FIFO scheduling order:
 
   ```
+  Hello XINU WORLD!
+  This is process 2
+  This is process 2
+  This is process 2
+  This is process 2
+  This is process 2
+  This is process 2
+  This is process 2
+  This is process 2
+  This is process 2
+  This is process 2
+  Hello XINU WORLD!
+  This is process 3
+  This is process 3
+  This is process 3
+  This is process 3
+  This is process 3
+  This is process 3
+  This is process 3
+  This is process 3
+  This is process 3
+  This is process 3
+  Hello XINU WORLD!
+  This is process 4
+  This is process 4
+  This is process 4
+  This is process 4
+  This is process 4
+  This is process 4
+  This is process 4
+  This is process 4
+  This is process 4
+  This is process 4
+  Hello XINU WORLD!
+  This is process 5
+  This is process 5
+  This is process 5
+  This is process 5
+  This is process 5
+  This is process 5
+  This is process 5
+  This is process 5
+  This is process 5
+  This is process 5
+  1
+  2
+  3
+
+  Hello XINU WORLD!
+  This is process 6
+  This is process 6
+  This is process 6
+  This is process 6
+  This is process 6
+  This is process 6
+  This is process 6
+  This is process 6
+  This is process 6
+  This is process 6
+  10
+  20
+  30
+  40
+  50
+  60
+
+
+  All user processes have completed.
+  ```
+
+- If we uncomment **Line 14** so that `resched()` is called in `printpid()`, then a process yields itself and calls the scheduler to run the next process on the ready queue for cooperative scheduling. Check out the difference in the output below.
+
+  ```
+  Hello XINU WORLD!
+  This is process 2
+  Hello XINU WORLD!
+  This is process 3
+  Hello XINU WORLD!
+  This is process 4
+  Hello XINU WORLD!
+  This is process 5
+  Hello XINU WORLD!
+  This is process 6
+  This is process 2
+  This is process 3
+  This is process 4
+  This is process 5
+  This is process 6
+  This is process 2
+  This is process 3
+  This is process 4
+  This is process 5
+  This is process 6
+  This is process 2
+  This is process 3
+  This is process 4
+  This is process 5
+  This is process 6
+  This is process 2
+  This is process 3
+  This is process 4
+  This is process 5
+  This is process 6
+  This is process 2
+  This is process 3
+  This is process 4
+  This is process 5
+  This is process 6
+  This is process 2
+  This is process 3
+  This is process 4
+  This is process 5
+  This is process 6
+  This is process 2
+  This is process 3
+  This is process 4
+  This is process 5
+  This is process 6
+  This is process 2
+  This is process 3
+  This is process 4
+  This is process 5
+  This is process 6
+  This is process 2
+  This is process 3
+  This is process 4
+  This is process 5
+  This is process 6
+  1
+  2
+  3
+
+  10
+  20
+  30
+  40
+  50
+  60
+
+
+  All user processes have completed.
+  ```
+
+#### Part 6: Queues in Xinu (Graded)
+
+Queues are essential data structures for operating systems, and Xinu is no exception. The ready queue is used to order processes for CPU scheduling, the sleep queue holds a number of processes that are sleeping and waiting on the timer, other wait queues hold processes that are waiting for I/O to return, and each semaphore has a queue of processes waiting on it. The codebase you have did not come with queues. Your objective is to implement it in Xinu.
+
+You need to make changes to the following files. I marked everywhere that you need to make changes with //TODO comments. Open the following files, find those comments, and add your code.
+
+1. In `include/queue.h`:
+
+- Find `struct queue` and finish declaring its data members. Examples might be a pointer to the `head`, pointer to `tail`, and the queue's `size`.
+
+- Find `struct qentry` and finish declaring its data members also. Each entry must hold a `pid` of the process (recall that pids are of type `pid32`), and pointers to the _previous_ and _next_ queue entries.
+  ![](figures/queue.png)
+
+2. In the following `.c` files, I've provided you with the stubs and all you need to do is complete the implementation guided by the `//TODO` comments. The queue must be dynamically allocated (malloc'd and freed) on the heap. Make the changes in the following files:
+
+   - `system/queue.c` - this file contains queue access and manipulation functions.
+   - `system/newqueue.c` - this file contains the `newqueue()` function, which is used to create and initialize a new queue structure.
+
+   Xinu's supported C libraries differ ever so slightly from the standard C libraries that you used for your homeworks. The dynamic allocation functions are as follows:
+
+   - `void* malloc(uint32 nbytes)` -- this is just like what you've used before. Inputs the number of bytes to allocate on the heap, and returns a pointer to the first byte.
+
+   - `void free(void *memblk, uint32 nbytes)` -- this is a tiny bit different from the `free()` you're used to seeing, in that you must supply it with the number of bytes you'd like to free up.
+
+   It goes without saying that your queue must be free of memory leaks.
+
+3. After you've completed the implementation of the queue structure, we need to add some code to get it working with the Xinu kernel's CPU scheduler. Again, open up and find the `//TODO` comments in the following files:
+
+   - `system/ready.c` - this file contains the `ready()` function, which is used to put an already-created process on the ready queue.
+   - `system/resched.c` - this file contains the `resched()` method, which schedules the next process on the ready queue for execution, while placing the process currently running at the tail of the ready queue.
+
+4. Remember that you can use `kprintf()` to print messages to the console (useful when debugging).
+
+5. On success, your output should match those shown to you earlier in my precompiled solution. If you uncomment `resched()` in `main.c`, you should get the cooperative version of the output, also shown earlier.
+
+6. Please provide a README file in the proj1/ directory that contains your names.
 
 #### Grading
 
 ```
+This assignment will be graded out of 75 points:
 
-This assignment will be graded out of 50 points:
+[5pt] isfull(), isempty(), nonempty() are properly implemented.
 
-[20pt] User input is properly handled, and invalid commands (not found in PATH or
-current working directory) generates an error.
+[5pt] printqueue() is properly implemented. The output format
+      should be [(pid=<p1>), (pid=<p2>), ...], where <pi> refers
+      to a process id.
 
-[5pt] The MOTD is being handled error-free.
+[25pt] newqueue(), enqueue(), dequeue(), getbypid(), and remove()
+      are all properly implemented and are free from memory leaks
 
-[15pt] Running a valid command in-foreground vs. in-background works as expected.
+[35pt] interaction with the ready queue have been properly
+       implemented for resched() and ready()
 
-[5pt] history outputs the last HISTORY_LEN commands.
-
-[3pt] cd [path] works as expected, by changing the current directory to the path
-(if given), or $HOME (if not given).
-
-[1pt] exit and pwd works as expected
-
-[1pt] Your program observes good style and commenting.
-
+[5pt] The README has your name(s) on it.
+      Your program observes good style and commenting.
 ```
 
 #### Submitting Your Assignment
 
-After you have completed the homework, use the following to submit your work on Canvas. I assume you wrote your program inside your virtual machine. There are two options to submit your work.
+After you have completed the assignment, use the following to submit your work on Canvas. I assume you wrote your program inside your virtual machine. There are two options to submit your work.
 
-1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
-2. If you'd rather submit a "zipped" file on Canvas, do the following:
+1. If you pushed all your code to a Github repository: Make sure your Github repo is public, and simply submit the URL to your repo to me on Canvas.
 
-   - From the Terminal in your virtual machine,
-   - Navigate to the directory that contains your homework directory.
-   - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
+2. If you'd rather submit a "zipped" file on Canvas, do the following .
 
-     - For example, if my homework directory is called `hwk4/`, and I want the zipped file to be called `hwk4.tar.gz`, use: `tar -czvf hwk4.tar.gz hwk4/`
-     - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
+   - Open the Terminal, navigate into your project's `compile/` directory. Run `make clean` to remove the binaries.
 
-   - Navigate to our course on Canvas, and find the assignment submission box.
+   - Zip up your project directory: `tar -czvf proj1_name1_name2.tar.gz proj1/` where name1 and name2 refer to your last names.
 
-   - Click on Submit Assignment, and you should be able to "browse" for your file
+3. Go into canvas and click on `Submit Assignment`, and you should be able to "browse" for your file.
 
-   - When you've selected the proper file, click Submit Assignment again to upload it.
+4. When you've selected the proper file, click Submit Assignment again to upload it.
 
-3. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+5. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+
+6. I do not need separate submissions from your partner!
 
 #### Credits
 
 Written by David Chiu. 2022.
-
-```
-
-```
-
-```
-
-```
