@@ -353,7 +353,7 @@ Okay, so the `nulluser()` function created five processes, all executing a funct
 
   }
 
-  void printargs(uint32 argc, uint32 \*argv)
+  void printargs(uint32 argc, uint32 *argv)
   {
     printpid();
 
