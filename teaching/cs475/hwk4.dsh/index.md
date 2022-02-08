@@ -141,6 +141,12 @@ Here is a list of builtins that your shell needs to support.
 
 - `history` should print the `HISTORY_LEN` most recent commands executed. Define `HISTORY_LEN` to be 100.
 
+#### Flowchart of Activities
+
+Phew! That's a lot to take in. The figure below shows the abstract flowchart for this program. This should (hopefully) give you a better idea of what all needs to be done.
+
+![](figures/flowchart.png)
+
 #### Example Output
 
 ```
