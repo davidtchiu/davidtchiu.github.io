@@ -6,15 +6,15 @@ This project assumes you have a good handle on C (particularly, pointers and dyn
 
 Xinu is an operating system developed by [Prof. Douglas Comer](http://www.xinu.cs.purdue.edu/author.html)'s group at Purdue University. Xinu is used in an impressive number of real computer systems (e.g., embedded controllers and an [IBM mainframe computer](https://en.wikipedia.org/wiki/IBM_System_z9), among others). The description of Xinu from its website:
 
-    ```
-    "XINU stands for Xinu Is Not Unix -- although it shares concepts and
-    even names with Unix, the internal design differs completely. Xinu
-    is a small, elegant operating system that supports dynamic process
-    creation, dynamic memory allocation, network communication, local
-    and remote file systems, a shell, and device-independent I/O
-    functions. The small size makes Xinu suitable for embedded
-    environments."
-    ```
+```
+"XINU stands for Xinu Is Not Unix -- although it shares concepts and
+even names with Unix, the internal design differs completely. Xinu
+is a small, elegant operating system that supports dynamic process
+creation, dynamic memory allocation, network communication, local
+and remote file systems, a shell, and device-independent I/O
+functions. The small size makes Xinu suitable for embedded
+environments."
+```
 
 In this project, you will be implementing an essential data structure, which pervades most OS kernels including Xinu: a (dynamically allocated) queue of processes, known as the Ready Queue. It stores pointers to process control blocks (called "process entries" in Xinu), providing a set of processes for the CPU scheduler to choose from for execution. This project assumes that you have already completed the earlier C primer-assignments.
 
@@ -23,7 +23,7 @@ You are required to work in pairs.
 #### ZyBooks References
 
 - String processing
-- Scanning for user inputs
+- Dynamic allocation
 
 #### Student Outcomes
 
@@ -37,19 +37,15 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 - If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-proj1](https://github.com/davidtchiu/cs475-proj1). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
-```
-
-git clone <your-github-url-for-this-project>
-
-```
+  ```
+  git clone <your-github-url-for-this-project>
+  ```
 
 - If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Ubuntu virtual machine using:
 
-```
-
-git clone https://github.com/davidtchiu/cs475-proj1
-
-```
+  ```
+  git clone https://github.com/davidtchiu/cs475-proj1
+  ```
 
 #### Part 1: Setting up Xinu
 
@@ -95,83 +91,83 @@ You will be coding and compiling Xinu on the Ubuntu machine as you did for your 
 
 5. At this point, start the `xinu-back-end` virtual machine from VirtualBox. It should take a few seconds for it to automatically retrieve the kernel binary you just "uploaded" from Ubuntu VM and boot it. Because `minicom` turned the Terminal into the screen that's "attached" to the `xinu-back-end` VM, you can see Xinu boot up and run right on the Terminal.
 
-- It's quite normal for Xinu boot to fail, and you may need to do the following:
-  - First, try repeating to run the `xinu-back-end` from VirtualBox a few times.
-  - If it doesn't resolve on its own, you may need to disable/enable the network on the Ubuntu VM. Then wait a few seconds and try again.
+   - It's quite normal for Xinu boot to fail, and you may need to do the following:
+     - First, try repeating to run the `xinu-back-end` from VirtualBox a few times.
+     - If it doesn't resolve on its own, you may need to disable/enable the network on the Ubuntu VM. Then wait a few seconds and try again.
 
-If everything went smoothly, you should get this output:
+   If everything went smoothly, you should get this output:
 
-```
-Hello XINU WORLD!
-This is process 2
-This is process 2
-This is process 2
-This is process 2
-This is process 2
-This is process 2
-This is process 2
-This is process 2
-This is process 2
-This is process 2
-Hello XINU WORLD!
-This is process 3
-This is process 3
-This is process 3
-This is process 3
-This is process 3
-This is process 3
-This is process 3
-This is process 3
-This is process 3
-This is process 3
-Hello XINU WORLD!
-This is process 4
-This is process 4
-This is process 4
-This is process 4
-This is process 4
-This is process 4
-This is process 4
-This is process 4
-This is process 4
-This is process 4
-Hello XINU WORLD!
-This is process 5
-This is process 5
-This is process 5
-This is process 5
-This is process 5
-This is process 5
-This is process 5
-This is process 5
-This is process 5
-This is process 5
-1
-2
-3
+   ```
+   Hello XINU WORLD!
+   This is process 2
+   This is process 2
+   This is process 2
+   This is process 2
+   This is process 2
+   This is process 2
+   This is process 2
+   This is process 2
+   This is process 2
+   This is process 2
+   Hello XINU WORLD!
+   This is process 3
+   This is process 3
+   This is process 3
+   This is process 3
+   This is process 3
+   This is process 3
+   This is process 3
+   This is process 3
+   This is process 3
+   This is process 3
+   Hello XINU WORLD!
+   This is process 4
+   This is process 4
+   This is process 4
+   This is process 4
+   This is process 4
+   This is process 4
+   This is process 4
+   This is process 4
+   This is process 4
+   This is process 4
+   Hello XINU WORLD!
+   This is process 5
+   This is process 5
+   This is process 5
+   This is process 5
+   This is process 5
+   This is process 5
+   This is process 5
+   This is process 5
+   This is process 5
+   This is process 5
+   1
+   2
+   3
 
-Hello XINU WORLD!
-This is process 6
-This is process 6
-This is process 6
-This is process 6
-This is process 6
-This is process 6
-This is process 6
-This is process 6
-This is process 6
-This is process 6
-10
-20
-30
-40
-50
-60
+   Hello XINU WORLD!
+   This is process 6
+   This is process 6
+   This is process 6
+   This is process 6
+   This is process 6
+   This is process 6
+   This is process 6
+   This is process 6
+   This is process 6
+   This is process 6
+   10
+   20
+   30
+   40
+   50
+   60
 
-All user processes have completed.
-```
+   All user processes have completed.
+   ```
 
-Afterwards, Xinu is still running over on the back-end VM, but it's in an infinite loop called the `null-process`, and not accepting any other commands (there's no shell). We'll see what this output means later.
+   Afterwards, Xinu is still running over on the back-end VM, but it's in an infinite loop called the `null-process`, and not accepting any other commands (there's no shell). We'll see what this output means later.
 
 6. To exit `minicom`, press and hold `ctrl` then hit `a` followed by pressing `q`. This brings the Terminal back.
 
@@ -179,13 +175,13 @@ Afterwards, Xinu is still running over on the back-end VM, but it's in an infini
 
 8. From here on, remember this workflow as you proceed with development:
 
-- Write your code on Ubuntu VM
-- Navigate into the `compile/` subdirectory
-- Type: `make clean`
-- Type: `make` to compile the Xinu kernel
-- Type: `./upload.sh` to upload the kernel
-- Type: `sudo minicom` to turn your terminal to a screen for Xinu
-- Start up the `xinu-back-end` VM
+   - Write your code on Ubuntu VM
+   - Navigate into the `compile/` subdirectory
+   - Type: `make clean`
+   - Type: `make` to compile the Xinu kernel
+   - Type: `./upload.sh` to upload the kernel
+   - Type: `sudo minicom` to turn your terminal to a screen for Xinu
+   - Start up the `xinu-back-end` VM
 
 #### Part 3: Quick Tour of Xinu Structures and Types
 
@@ -371,10 +367,10 @@ Okay, so the `nulluser()` function created five processes, all executing a funct
 
   }
 
-  int main(uint32 argc, uint32 \*argv)
+  int main(uint32 argc, uint32 *argv)
   {
-  static uint32 main2args[] = {1, 2, 3};
-  static uint32 main3args[] = {10, 20, 30, 40, 50, 60};
+      static uint32 main2args[] = {1, 2, 3};
+      static uint32 main3args[] = {10, 20, 30, 40, 50, 60};
 
       // Create 5 processes
       ready(create((void*) printpid, INITSTK, "MAIN1", 2, 0, NULL), FALSE);
