@@ -85,11 +85,12 @@ let days = {
     // wk 3
     "Process Management: address spaces",
     "Process: PCB, state transitions",
-    "Process: fork(), wait(), exec(), zombies and orphans",
+    "Process: fork(), wait(), zombies and orphans",
     // wk 4
+    "Finish Processes: exec()",
     "Thread Management: performance and data sharing",
     "Threads: user vs. kernel; implementation; pthread",
-    "Threads: work sharing example",
+    // "Threads: work sharing example",
     // wk 5
     "CPU Scheduling goals; FCFS, RR",
     "Sched: RR, SJF, SRTF",
