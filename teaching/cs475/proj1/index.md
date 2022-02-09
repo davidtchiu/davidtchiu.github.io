@@ -53,7 +53,7 @@ In this section, we'll get Xinu up and running on a virtual machine.
 
 1.  Download the following VirtualBox image, that have been prepared to get Xinu up and running:
 
-    - [xinu-back-end.ova](xinu-back-end.ova) (10.8 KB)
+    - [xinu-backend.ova](xinu-backend.ova) (10.8 KB)
 
 2.  Open up VirtualBox. Then click on the File > Import Appliance... menu. Browse and find the xinu-back-end.ova file you just downloaded, then click Continue.
 
@@ -81,21 +81,56 @@ Most of your time in development will be spent in the `include/` and `system/` d
 
 You will be coding and compiling Xinu on the Ubuntu machine as you did for your homework.
 
-1. Navigate into the `compile/` directory. You can type make to compile the kernel, but you'll soon be inundated with compile errors. This is because there are several important functions that you need to implement for this project. Let's clean up the mess by running `make clean`.
+1. First, let's make sure our Ubuntu machine is configured to serve up the Xinu OS file. Open a Terminal, and run:
 
-2. Normally, if the compilation was successful, it will create a binary file called `xinu` in the `compile` directory. Now you need to run `./upload.sh` to prepare it for upload onto the back-end VM. Don't worry about this step just yet, because things aren't going to compile.
+   ```
+   sudo service isc-dhcp-server stop
+   sudo service isc-dhcp-server start
+   ```
 
-3. However, I've provided you with a precompiled solution called `xinuSol`, so let's run that for now so you can see what to expect for this assignment. Run `./uploadSol.sh` to upload my precompiled kernel to the back-end VM.
+2. Navigate into the `compile/` directory. You can type make to compile the kernel, but you'll soon be inundated with compile errors. This is because there are several important functions that you need to implement for this project. Let's clean up the mess by running `make clean`.
 
-4. Now on the Terminal, type `sudo minicom`. You'll be prompted for the password. This turns the Terminal window into a serial console that is connected to the back-end VM, effectively emulating a terminal for the back-end VM. Speaking of the back-end...
+3. Normally, if the compilation was successful, it will create a binary file called `xinu` in the `compile` directory. Now you need to run `./upload.sh` to prepare it for upload onto the back-end VM. Don't worry about this step just yet, because things aren't going to compile.
 
-5. At this point, start the `xinu-back-end` virtual machine from VirtualBox. It should take a few seconds for it to automatically retrieve the kernel binary you just "uploaded" from Ubuntu VM and boot it. Because `minicom` turned the Terminal into the screen that's "attached" to the `xinu-back-end` VM, you can see Xinu boot up and run right on the Terminal.
+4. However, I've provided you with a precompiled solution called `xinuSol`, so let's run that for now so you can see what to expect for this assignment. Run `./uploadSol.sh` to upload my precompiled kernel to the back-end VM.
 
-   - It's quite normal for Xinu boot to fail, and you may need to do the following:
-     - First, try repeating to run the `xinu-back-end` from VirtualBox a few times.
-     - If it doesn't resolve on its own, you may need to disable/enable the network on the Ubuntu VM. Then wait a few seconds and try again.
+5. Now on the Terminal, type `sudo minicom`. You'll be prompted for the password. This turns the Terminal window into a serial console that is connected to the back-end VM, effectively emulating a terminal for the back-end VM. Speaking of the back-end...
 
-   If everything went smoothly, you should get this output:
+6. At this point, start the `xinu-back-end` virtual machine from VirtualBox. It should take a few seconds for it to automatically retrieve the kernel binary you just "uploaded" from Ubuntu VM and boot it. Because `minicom` turned the Terminal into the screen that's "attached" to the `xinu-back-end` VM, you can see Xinu boot up and run right on the Terminal.
+
+   - As the `xinu-back-end` boots up in virtual box, there are 3 things that could happen (hopefully it always succeeds):
+
+     - A **successful boot** of Xinu should show this screen in Virtual Box:
+
+       ![](figures/back-end__Running_.png)
+
+       If you see this, then head back over to your Ubuntu machine and check out the the `minicom`. You should see some output from Xinu!
+
+     - A **failed boot** could be because you don't have the DHCP server running on the Ubuntu machine. This happens when your network is working, but Ubuntu is not configured to serve up the xinu OS.
+
+       ![](figures/back-end__Running_fail.png)
+
+       If you see this, then head back over to your Ubuntu machine and open a Terminal. Run:
+
+       ```
+       sudo service isc-dhcp-server stop
+       sudo service isc-dhcp-server start
+       ```
+
+       You may use the following to check if DHCP is running, or if something happened when you tried to start it.
+
+       ```
+       sudo service isc-dhcp-server stop
+       sudo service isc-dhcp-server start
+       ```
+
+     - Another time **failed boot** happens has something to do with your networking setup. When you see the following:
+
+       ![](figures/back-end__Running_fail.png)
+
+       All I can say is, head back to your Ubuntu and turn off both `enp0s3` (Xinu) and `enp0s8` (Your Wifi). Turn just `enp0s3` on and try booting Xinu again. You may need to toggle it a few times before it finally works. Once Xinu finally boots, then try re-enabling `enp0s8` so you can have wifi again. When in doubt, leave wifi off until you need it to submit.
+
+   - Once you manage to get Xinu booted, you should get this output in the `minicom`:
 
    ```
    Hello XINU WORLD!
@@ -169,11 +204,11 @@ You will be coding and compiling Xinu on the Ubuntu machine as you did for your 
 
    Afterwards, Xinu is still running over on the back-end VM, but it's in an infinite loop called the `null-process`, and not accepting any other commands (there's no shell). We'll see what this output means later.
 
-6. To exit `minicom`, press and hold `ctrl` then hit `a` followed by pressing `q`. This brings the Terminal back.
+7. To exit `minicom`, press and hold `ctrl` then hit `a` followed by pressing `q`. This brings the Terminal back.
 
-7. Shutdown the back-end VM from VirtualBox to terminate Xinu.
+8. Shutdown the back-end VM from VirtualBox to terminate Xinu.
 
-8. From here on, remember this workflow as you proceed with development:
+9. From here on, remember this workflow as you proceed with development:
 
    - Write your code on Ubuntu VM
    - Navigate into the `compile/` subdirectory
