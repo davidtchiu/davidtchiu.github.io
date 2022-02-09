@@ -128,6 +128,12 @@ You will be coding and compiling Xinu on the Ubuntu machine as you did for your 
 
        All I can say is, head back to your Ubuntu and turn off both network interfaces `enp0s3` (Xinu) and `enp0s8` (Your Wifi). Turn just `enp0s3` back on and try booting Xinu again. You may need to toggle it a few times before it finally works. (It took me a couple of times.) Once Xinu finally boots, then try re-enabling `enp0s8` so you can have wifi again. When in doubt, leave wifi off until you need it to submit.
 
+     - Finally, you might also see this:
+
+       ![](figures/VirtualBox_-_Guru_Meditation.png)
+
+       This is actually "good" news, because it means your Xinu booted. However, the code you wrote crashed! This is usually caused by a segmentation fault because you're deferencing a bad pointer.
+
    - Once you manage to get Xinu booted, you should get this output in the `minicom`:
 
    ```

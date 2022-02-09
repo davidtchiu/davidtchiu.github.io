@@ -697,19 +697,15 @@ I have included a working solution of my program along with the starter code. Th
    ```
    Name: David
    Salary: 60000
-   Enter another user (y/n)? y
 
    Name: Gabe
    Salary: 75000
-   Enter another user (y/n)? y
 
    Name: Katie
    Salary: 92000
-   Enter another user (y/n)? y
 
    Name: Gabe
    Salary: 40000
-   Enter another user (y/n)? y
 
    Name: Joan
    Salary: 86000
