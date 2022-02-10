@@ -517,7 +517,7 @@ I have included a working solution of my program along with the starter code. Th
 
      - Array-based stack implementations will be returned without grading.
 
-   - `rpn.h` and `rpn.c`: should implement the RPN evaluation algorithm (as given above). You must remember to catch divide-by-zero errors.
+   - `polish.h` and `polish.c`: should implement the RPN evaluation algorithm (as given above). You must remember to catch divide-by-zero errors.
 
    - `main.c`: prompt the user for an RPN expression, evaluate the expression and print the result. You may assume that an expression can be no longer than 100 characters long. Operators and operands may be separated by a space, a tab or a newline.
 
