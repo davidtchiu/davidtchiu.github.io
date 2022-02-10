@@ -325,7 +325,11 @@ The arrow operator provides a cleaner syntax.
 
 Having taken CS 261, I'm assuming that you have a working knowledge of BST's properties, so I won't be spending time describing the actual algorithms. The important thing is that you understand the implementation details in C.
 
-1. Download Hwk3_BST.zip and extract its contents to your working directory. This file contains a Makefile, bst.h, bst.c, and main.c.
+1. Download BST project:
+
+   ```
+   git clone https://github.com/davidtchiu/cs475-hwk3-bst-example
+   ```
 
 2. Structs: We'll assume for simplicity that a BST node holds an integer key, and has pointers to a left and right child nodes. Open up the header file `bst.h`:
 
