@@ -88,12 +88,12 @@ let days = {
         url: "lab3.stomach/",
         due: "2/3/2022",
       },
-      // {
-      //   name: "Lab 4",
-      //   title: "Guessing Game (Conditionals)",
-      //   url: "lab4.guessing/",
-      //   due: "2/10/2022",
-      // },
+      {
+        name: "Lab 4",
+        title: "Guessing Game (Conditionals)",
+        url: "lab4.guessing/",
+        due: "2/10/2022",
+      },
       // {
       //   name: "Lab 5",
       //   title: "Circle Drawer (Objects)",
