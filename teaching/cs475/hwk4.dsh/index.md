@@ -199,14 +199,14 @@ Students think your MOTD is inspiring!
 #### Grading
 
 ```
-This assignment will be graded out of 50 points:
-
-[20pt] User input is properly handled, and invalid commands (not found in PATH or
-    current working directory) generates an error.
+This assignment will be graded out of 70 points:
 
 [5pt] The MOTD is being handled error-free.
 
-[15pt] Running a valid command in-foreground vs. in-background works as expected.
+[35pt] User input is properly handled, and invalid commands (not found in PATH or
+    current working directory) generates an error.
+
+[20pt] Running a valid command  works as expected (in-foreground vs. in-background too).
 
 [5pt] history outputs the last HISTORY_LEN commands.
 
