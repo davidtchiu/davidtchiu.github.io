@@ -25,12 +25,12 @@ let days = {
         url: "hwk3.malloc/",
         due: "2/11/2022",
       },
-      //   {
-      //     name: "Hwk 4",
-      //     title: "David Shell (dsh)",
-      //     url: "hwk4.dsh/",
-      //     due: "2/23/2022",
-      //   },
+      {
+        name: "Hwk 4",
+        title: "David Shell (dsh)",
+        url: "hwk4.dsh/",
+        due: "2/23/2022",
+      },
       //   {
       //     name: "Hwk 5",
       //     title: "Normalization",
@@ -45,32 +45,32 @@ let days = {
       //   },
     ],
     ////////////////////////////// PROJECTS ///////////////////////////////
-    // projects: [
-    //   {
-    //     name: "Proj 1",
-    //     title: "To the Cloud",
-    //     url: "proj1.cloud/",
-    //     due: "9/20/2021",
-    //   },
-    //   {
-    //     name: "Proj 2",
-    //     title: "Server-Side Web Development with PHP",
-    //     url: "proj2.php/",
-    //     due: "10/22/2021", //extended this year only (move back to 10/18 in future)
-    //   },
-    //   {
-    //     name: "Proj 3",
-    //     title: "Project Planning",
-    //     url: "proj3.planning/",
-    //     due: "11/1/2021",
-    //   },
-    //   {
-    //     name: "Proj 4",
-    //     title: "Implementation",
-    //     url: "proj4.impl/",
-    //     due: "12/10/2021",
-    //   },
-    // ],
+    projects: [
+      {
+        name: "Proj 1",
+        title: "Ready Queue",
+        url: "proj1/",
+        due: "3/4/2022",
+      },
+      //   {
+      //     name: "Proj 2",
+      //     title: "Server-Side Web Development with PHP",
+      //     url: "proj2.php/",
+      //     due: "10/22/2021", //extended this year only (move back to 10/18 in future)
+      //   },
+      //   {
+      //     name: "Proj 3",
+      //     title: "Project Planning",
+      //     url: "proj3.planning/",
+      //     due: "11/1/2021",
+      //   },
+      //   {
+      //     name: "Proj 4",
+      //     title: "Implementation",
+      //     url: "proj4.impl/",
+      //     due: "12/10/2021",
+      //   },
+    ],
   },
 
   lectures: [
