@@ -24,7 +24,7 @@ I've created a new project for you that contains the outline of a `Calculator` c
 
 - Your calculator will need to maintain its current value. While we won't have a display like a normal calculator, a `Calculator` object will still need to remember its current value so that it knows what to do when we add to the current value, subtract from it, etc. For this homework, assume that you'll only be working with integer values. Define a new field at the top of the class that will hold the calculator's value. Make sure you give the field a meaningful name so the rest of your code is easier to read.
 
-- Define two constructors: The first should initialize the current value to be zero, and needs no parameters. A constructor that requires no inputs is known as the default constructor. The second should take a single integer argument, and set the calculator's initial value to the specified value.
+- Define two constructors: The first should initialize the current value to be zero, and needs no parameters. A constructor that requires no inputs is known as the default constructor. The second should take a single integer input, and set the calculator's initial value to the specified value.
 
 - Implement an getter (accessor) method called `getValue()` that returns the calculator's current value.
 
@@ -44,7 +44,7 @@ I've created a new project for you that contains the outline of a `Calculator` c
   > 13 - 25 = -12
   ```
 
-- Now add a method called `add()` that takes a single integer input and doesn't return. It should set the calculator's state to be the sum of its old value and the input argument to add. It should also print a message describing the inputs to the addition and the result, as shown below.
+- Now add a method called `add()` that takes a single integer input and doesn't return. It should set the calculator's state to be the sum of its old value and the input to add. It should also print a message describing the inputs to the addition and the result, as shown below.
 
   ```java
   Calculator c1;
@@ -61,7 +61,7 @@ I've created a new project for you that contains the outline of a `Calculator` c
   > 100 + 61 = 161
   ```
 
-- Next, use the patterns above to add a `multiply()` method. It should multiply its argument by the current value.
+- Next, use the patterns above to add a `multiply()` method. It also doesn't return a value. It should multiply its input by the current value.
 
   ```java
   Calculator c1;
@@ -76,9 +76,11 @@ I've created a new project for you that contains the outline of a `Calculator` c
   > 100 * -2 = -200
   ```
 
-- Now it's time to implement `divide()`. It should work like the other three arithmetic methods, but with two major differences: First, it should print an error message if the divisor is zero, and when this the case, your code must skip carrying out the division and simply clear the calculator's current value.
+- Now it's time to implement `divide()`. It should work like the other three arithmetic methods, but with two major differences:
 
-  Second, your calculator should print a warning message if the division is valid (nonzero divisor) but will result in a loss of precision. Since our calculator only works with integers, some divisions will cause the result to be truncated, that is, the fraction portion gets thrown out. For instance, 16 divided by 3 should put 5 as its the current value and output a precision-loss warning.
+  - First, it should print an error message if the input _divisor_ is zero, and when this the case, your code must skip carrying out the division and simply clear the calculator's current value. That is, don't carry out any instructions of `/=` or `/` when this is the case!
+
+  - Second, if the division _can_ be carried out, then you must do a subsequent test to see if the division would result in a loss of precision. Since our calculator only works with integers, some divisions will cause the result to be truncated, that is, the fraction portion gets thrown out. For instance, 16 divided by 3 should put 5 as its the current value and output a precision-loss warning seen below. (Hint: Any time it doesn't divide evenly, that is, with a remainder of zero, you should print the warning.)
 
   ```java
   Calculator c;
@@ -102,7 +104,7 @@ I've created a new project for you that contains the outline of a `Calculator` c
   ```
 
   <!--
-  Now implement a method called `square()`, which takes no arguments and will square the current value. Hint: You are reminded that you should reuse code where possible...
+  Now implement a method called `square()`, which takes no inputs and will square the current value. Hint: You are reminded that you should reuse code where possible...
 
     ```java
     Calculator c = new Calculator(1);
@@ -120,7 +122,7 @@ I've created a new project for you that contains the outline of a `Calculator` c
     ```
     -->
 
-- Next, implement the memory operations. Start with `store()`, which takes no arguments, but causes the calculator's current value to be stored in a memory location. (Hint: You'll need to add a new field to your class.) Then implement `recall()`, which takes no arguments, but causes the stored value to replace the calculator's current value. Also note the expected print-out. For example:
+- Next, implement the memory operations. Start with `store()`, which takes no inputs, but causes the calculator's current value to be stored in a memory location. (Hint: You'll need to add a new field to your class.) Then implement `recall()`, which takes no inputs, but causes the stored value to replace the calculator's current value. Also note the expected print-out. For example:
 
   ```java
   Calculator c;
