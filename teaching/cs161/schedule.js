@@ -19,12 +19,12 @@ let days = {
         url: "hwk2.calc/",
         due: "2/11/2022",
       },
-      // {
-      //   name: "Hwk 3",
-      //   title: "Orca Card",
-      //   url: "hwk3.orca/",
-      //   due: "2/21/2022",
-      // },
+      {
+        name: "Hwk 3",
+        title: "Orca Card",
+        url: "hwk3.orca/",
+        due: "2/21/2022",
+      },
       // {
       //   name: "Hwk 4",
       //   title: "Robots!",
