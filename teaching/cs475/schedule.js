@@ -90,11 +90,11 @@ let days = {
     "Finish Processes: exec()",
     "Thread Management: performance and data sharing",
     "Threads: user vs. kernel; implementation; pthread",
-    // "Threads: work sharing example",
     // wk 5
+    "Threads: work sharing example - parallel sum",
     "CPU Scheduling goals; FCFS, RR",
     "Sched: RR, SJF, SRTF",
-    "Talk about Hwk 4; Sched: Priority, Lottery",
+    // "Talk about Hwk 4; Sched: Priority, Lottery",
     // wk 6
     "Sched: Priority, MLFQ; OSX and Linux",
     "<strong><emph>Review</emph></strong>",
