@@ -87,11 +87,13 @@ private dataType fieldName;
 
 where `dataType` is any primitive (`int`, `double`, `boolean`, ...) or class name (`String`, `Circle`, ...)
 
-Examples
+Example: Maybe a class you're writing needs to remember a tax rate.
 
 ```java
 private double taxRate;
 ```
+
+Example: Maybe you're writing a "student" class that needs to remember a first and last name.
 
 ```java
 private String firstName;
@@ -100,15 +102,19 @@ private String lastName;
 
 ###### **Constructors**
 
-A constructor is code that is run when an instance of the class is created. Generally, the code inside the constructor sets up initial values for all the fields defined in the class.
+A constructor is code that is run when an instance of the class is created. Generally, the code inside the constructor assigns initial values for all the fields defined in the class.
 
 ```java
 public ClassName(param1, param2, ...) {
-  // code to initialize fields
+  // assign values to fields
+  this.field1 = someValue1;
+  this.field2 = someValue2;
 }
 ```
 
 where `ClassName` is the name of the class that the constructor is written for. The input parameters `param1`, `param2`, and so on, can be used to accept inputs, and are entirely optional. When a constructor does not accept any input parameters, it is called the **default constructor**.
+
+- Fields can be accessed using the `this.fieldName` syntax.
 
 Example
 
@@ -129,6 +135,14 @@ public class Circle {
   public Circle() {
     this.xCoord = 100;
     this.yCoord = 200;
+    this.size = 30;
+    this.color = "blue";
+    this.isVisible = false;
+  }
+
+  public Circle(int x, int y) {
+    this.xCoord = x;
+    this.yCoord = y;
     this.size = 30;
     this.color = "blue";
     this.isVisible = false;
