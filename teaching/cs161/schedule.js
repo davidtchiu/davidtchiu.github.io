@@ -166,7 +166,7 @@ let days = {
     "Lab 4",
     "Nested if-statements: else if",
     // wk 5
-    "Types and Type-casting (narrowing, widening)",
+    "Primitives and numeric type-casting (narrowing, widening)",
     "Classes as types: references, object equivalence",
     "Lab 5",
     "Abstraction and modularity: Organism",
