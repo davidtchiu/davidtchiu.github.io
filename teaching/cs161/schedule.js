@@ -168,9 +168,9 @@ let days = {
     // wk 5
     "Types and Type-casting (narrowing, widening)",
     "Classes as types: references, object equivalence",
+    "Lab 5",
     "Abstraction and modularity: Organism",
     // "Abstraction: Working with APIs; Unpacking Strings",
-    "Lab 5",
     // wk 6
     "String exercises",
     "<strong><emph>Review</emph></strong>",
