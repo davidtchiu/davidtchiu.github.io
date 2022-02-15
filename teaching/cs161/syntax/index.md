@@ -87,18 +87,12 @@ private dataType fieldName;
 
 where `dataType` is any primitive (`int`, `double`, `boolean`, ...) or class name (`String`, `Circle`, ...)
 
-Example: Maybe a class you're writing needs to remember a tax rate.
+- Example: Maybe you're writing a "student" class that needs to remember a first and last name.
 
-```java
-private double taxRate;
-```
-
-Example: Maybe you're writing a "student" class that needs to remember a first and last name.
-
-```java
-private String firstName;
-private String lastName;
-```
+  ```java
+  private String firstName;
+  private String lastName;
+  ```
 
 ###### **Constructors**
 
@@ -116,23 +110,9 @@ where `ClassName` is the name of the class that the constructor is written for. 
 
 - Fields can be accessed using the `this.fieldName` syntax.
 
-Example:
+- Example default constructor:
 
-```java
-public class Circle {
-  // fields below related to all circles
-  private int xCoord;
-  private int yCoord;
-  private String color;
-  private int diameter;
-  private boolean isVisible;
-  private double area;
-
-  /**
-   * The default constructor always makes a circle with the following
-   * properties: it's blue, it's placed on the coordinates (100,200),
-   * it has a diameter of 30, and it's not visible at first.
-   */
+  ```java
   public Circle() {
     this.xCoord = 100;
     this.yCoord = 200;
@@ -141,11 +121,10 @@ public class Circle {
     this.isVisible = false;
     this.area = 3.14159 * (diameter/2.0) * (diameter/2.0);
   }
+  ```
 
-  /**
-   * This constructor allows the starting (x,y) coordinates to be
-   * input.
-   */
+- Example constructor with input parameters:
+  ```java
   public Circle(int x, int y) {
     this.xCoord = x;
     this.yCoord = y;
@@ -154,5 +133,4 @@ public class Circle {
     this.isVisible = false;
     this.area = 3.14159 * (diameter/2.0) * (diameter/2.0);
   }
-}
-```
+  ```
