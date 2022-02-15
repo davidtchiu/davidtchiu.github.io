@@ -107,8 +107,8 @@ A constructor is code that is run when an instance of the class is created. Gene
 ```java
 public ClassName(param1, param2, ...) {
   // assign values to fields
-  this.field1 = someValue1;
-  this.field2 = someValue2;
+  this.field1 = expression1;
+  this.field2 = expression2;
 }
 ```
 
@@ -116,7 +116,7 @@ where `ClassName` is the name of the class that the constructor is written for. 
 
 - Fields can be accessed using the `this.fieldName` syntax.
 
-Example
+Example:
 
 ```java
 public class Circle {
@@ -124,8 +124,9 @@ public class Circle {
   private int xCoord;
   private int yCoord;
   private String color;
-  private int size;
+  private int diameter;
   private boolean isVisible;
+  private double area;
 
   /**
    * The default constructor always makes a circle with the following
@@ -135,17 +136,23 @@ public class Circle {
   public Circle() {
     this.xCoord = 100;
     this.yCoord = 200;
-    this.size = 30;
+    this.diameter = 30;
     this.color = "blue";
     this.isVisible = false;
+    this.area = 3.14159 * (diameter/2.0) * (diameter/2.0);
   }
 
+  /**
+   * This constructor allows the starting (x,y) coordinates to be
+   * input.
+   */
   public Circle(int x, int y) {
     this.xCoord = x;
     this.yCoord = y;
-    this.size = 30;
+    this.diameter = 30;
     this.color = "blue";
     this.isVisible = false;
+    this.area = 3.14159 * (diameter/2.0) * (diameter/2.0);
   }
 }
 ```
