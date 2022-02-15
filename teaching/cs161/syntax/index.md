@@ -8,100 +8,130 @@ Java syntax was not emphasized in this lecture. It focuses more on CS as a disci
 
 #### Lecture 2
 
-- **Comments** let us markup and annotate the code to describe what it's doing to ourselves, or to future programmers. Comments are ignored by the compiler.
+##### **Comments**
 
-  - Line comment
+Comments let us markup and annotate the code to describe what it's doing to ourselves, or to future programmers. Comments are ignored by the compiler.
 
-    ```java
-    // This is a line comment
-    ```
+- Line comment
 
-  - Block (multi-line) comment
+  ```java
+  // This is a line comment
+  ```
 
-    ```java
-    /*
-    This is a multi-line comment. It's
-    usually used to describe larger segments
-    of code below it.
-    */
-    ```
+- Block (multi-line) comment
 
-  - Javadocs comments
+  ```java
+  /*
+  This is a multi-line comment. It's
+  usually used to describe larger segments
+  of code below it.
+  */
+  ```
 
-    ```java
-    /**
-     * Javadocs comments are also multi-line. They are
-     * used to describe classes, constructors,
-     * and methods.
-     *
-     * They use @tags like @param, @author, @return, etc.
-     */
-    ```
-
-    Example
-
-    ```java
-    /**
-     * This method returns the larger of the two inputs.
-     * @param x First number
-     * @param y Second number
-     * @return The larger of x and y
-     */
-    public double max(double x, double y) {
-      if (x > y) {
-        return x;
-      }
-      return y;
-    }
-    ```
-
-- **Class Definition**
+- Javadocs comments
 
   ```java
   /**
-   * This class represents a ...
-   * @author David, Michelle
+   * Javadocs comments are also multi-line. They are
+   * used to describe classes, constructors,
+   * and methods.
+   *
+   * They use @tags like @param, @author, @return, etc.
    */
-  public class ClassName {
-    // field(s) go here
+  ```
 
-    // constructor(s) next
+  Example
 
-    // method(s) last
+  ```java
+  /**
+   * This method returns the larger of the two inputs.
+   * @param x First number
+   * @param y Second number
+   * @return The larger of x and y
+   */
+  public double max(double x, double y) {
+    if (x > y) {
+      return x;
+    }
+    return y;
   }
   ```
 
-- **Fields** - Each field stores a "property" for an instance of the class. For example, a Ticket Machine has to remember its "ticket price" among other properties.
+##### Class Definition
 
-  ```java
-  private dataType fieldName;
-  ```
+Classes define cookie cutters for making objects of its type. For instance, the `Circle` **class** that we've been working with can be used to create any number of `Circle`s that we can then use and manipulate however we like.
 
-  where `dataType` is any primitive (`int`, `double`, `boolean`, ...) or class name (`String`, `Circle`, ...)
+```java
+/**
+ * This class represents a ...
+ * @author David, Michelle
+ */
+public class ClassName {
+  // field(s) go first
 
-  Examples
+  // constructor(s) go next
 
-  ```java
-  private double taxRate;
-  ```
+  // method(s) go last
+}
+```
 
-  ```java
-  private String firstName;
-  private String lastName;
-  ```
+Class names are conventionally capitalized, like `String` and `Circle` and `Square`, etc.
 
-- **Constructors** - A constructor is code that is run when an instance of the class is created. Generally, the code inside the constructor sets up initial values for all the fields defined in the class.
+###### Fields (Instance Variables)
 
-  ```java
-  public ClassName(param1, param2, ...) {
-    // code to initialize fields
+Each field, or instance variable, stores a "property" for an instance of the class. For example, a Ticket Machine has to remember its "ticket price" among other properties.
+
+```java
+private dataType fieldName;
+```
+
+where `dataType` is any primitive (`int`, `double`, `boolean`, ...) or class name (`String`, `Circle`, ...)
+
+Examples
+
+```java
+private double taxRate;
+```
+
+```java
+private String firstName;
+private String lastName;
+```
+
+###### **Constructors**
+
+A constructor is code that is run when an instance of the class is created. Generally, the code inside the constructor sets up initial values for all the fields defined in the class.
+
+```java
+public ClassName(param1, param2, ...) {
+  // code to initialize fields
+}
+```
+
+where `ClassName` is the name of the class that the constructor is written for. The input parameters `param1`, `param2`, and so on, can be used to accept inputs, and are entirely optional. When a constructor does not accept any input parameters, it is called the **default constructor**.
+
+Example
+
+```java
+public class Circle {
+  // fields below related to all circles
+  private int xCoord;
+  private int yCoord;
+  private String color;
+  private int size;
+  private boolean isVisible;
+
+  /**
+   * The default constructor always makes a circle with the following
+   * properties: it's blue, it's placed on the coordinates (100,200),
+   * it has a diameter of 30, and it's not visible at first.
+   */
+  public Circle() {
+    this.xCoord = 100;
+    this.yCoord = 200;
+    this.size = 30;
+    this.color = "blue";
+    this.isVisible = false;
   }
-  ```
-
-  where `ClassName` is the name of the class that the constructor is written for. The input parameters `param1`, `param2`, and so on, can be used to accept inputs, and are entirely optional. When a constructor does not accept any input parameters, it is called the **default constructor**.
-
-  Examples
-
-  ```java
-
-  ```
+}
+```
