@@ -48,7 +48,7 @@ The API handout that you'll want to have in front of you:
   b. Change `c1` to green, change size to `50`.
   c. Change `c2` to red, change size to `75`. Then move it down by `50` pixels.
   d. Now create a new `CircleDrawer`, called drawer with its second constructor (the one that requires references to two Circles). Input `c1` and `c2`. The new `CircleDrawer` will now "control" the two circles you've created.
-  e. Inspect the drawer object on the workbench, and you see that first and second store references. Follow the references by double-clicking on the arrows. It opens the inspector for the Circles you created! Look through the fields to convince yourself that these are the same circles. Close out the inspectors before moving on.
+  e. Inspect the drawer object on the workbench, and you see that first and second store references. Follow the references by double-clicking on the arrows. It opens the inspector for the Circles you created! Look through the fields to convince yourself that these are the same circles you just created. Close out the inspectors before moving on.
 
     <img src="figures/drawer2.png" width="300px" border="1px" />
 
