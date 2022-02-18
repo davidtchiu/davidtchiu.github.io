@@ -44,19 +44,19 @@ The API handout that you'll want to have in front of you:
 
 - Notice the `CircleDrawer` class has two constructors. The default constructor is not given references to the two Circles to manage, it just sets both fields to null. The second constructor is given references to two `Circles`, and it sets both fields appropriately.
 
-  a. Using the menus in BlueJ, create two `Circle` objects, named `c1` and `c2`.
-  b. Change `c1` to green, change size to `50`.
-  c. Change `c2` to red, change size to `75`. Then move it down by `50` pixels.
-  d. Now create a new `CircleDrawer`, called drawer with its second constructor (the one that requires references to two Circles). Input `c1` and `c2`. The new `CircleDrawer` will now "control" the two circles you've created.
-  e. Inspect the drawer object on the workbench, and you see that first and second store references. Follow the references by double-clicking on the arrows. It opens the inspector for the Circles you created! Look through the fields to convince yourself that these are the same circles you just created. Close out the inspectors before moving on.
+  - Using the menus in BlueJ, create two `Circle` objects, named `c1` and `c2`.
+  - Change `c1` to green, change size to `50`.
+  - Change `c2` to red, change size to `75`. Then move it down by `50` pixels.
+  - Now create a new `CircleDrawer`, called drawer with its second constructor (the one that requires references to two Circles). Input `c1` and `c2`. The new `CircleDrawer` will now "control" the two circles you've created.
+  - Inspect the drawer object on the workbench, and you see that first and second store references. Follow the references by double-clicking on the arrows. It opens the inspector for the Circles you created! Look through the fields to convince yourself that these are the same circles you just created. Close out the inspectors before moving on.
 
     <img src="figures/drawer2.png" width="300px" border="1px" />
 
-  f. Now call the `drawCircles()` method on the drawer, and notice that both Circles appear. (If you call `eraseCircles()` both disappear!)
+  - Now call the `drawCircles()` method on the drawer, and notice that both Circles appear. (If you call `eraseCircles()` both disappear!)
 
     <img src="figures/drawer1.png" width="300px" border="1px" />
 
-- It's time to start weaning you off the BlueJ menus, and start learning how to do everything in code. Create a new class, and name it `Tester`. Clean up the "boilerplate code" that BlueJ fills in automatically. There are no fields. Now create the `main` method, which always has the same signature below:
+<!-- - It's time to start weaning you off the BlueJ menus, and start learning how to do everything in code. Create a new class, and name it `Tester`. Clean up the "boilerplate code" that BlueJ fills in automatically. There are no fields. Now create the `main` method, which always has the same signature below:
 
   ```java
   public static void main(String[] args) {
@@ -94,25 +94,40 @@ The API handout that you'll want to have in front of you:
   }
   ```
 
-- After you're done, close out the code window. Right click on the `Tester` class and call the main method (Don't create a new `Tester` object on the workbench). You should again see the green and red circles drawn.
+- After you're done, close out the code window. Right click on the `Tester` class and call the main method (Don't create a new `Tester` object on the workbench). You should again see the green and red circles drawn. -->
 
 - Now go back in the `CircleDrawer` class and take a look at `drawCircles()` and `eraseCircles()`. Their code looks pretty innocuous and straightforward. Calling them will make both circles visible or invisible, respectively, but... that's assuming that our `first` and `second` fields actually refer to actual `Circle` objects, and not `null`. Let's test what happens if you tried to call these methods after running the default constructor.
 
-- Go back into the main method in the Tester class, and comment out everything we'd written earlier. Create a `CircleDrawer` using the default constructor, which sets both circles to null. Then call `drawCircles()` on this CircleDrawer. If you run `main()`, the program should crash with a `"Null pointer exception."` That's bad news -- it means our code isn't all that robust.
+- Go back into the main method in the Tester class, and comment out everything we'd written earlier. Create a `CircleDrawer` using the default constructor, which sets both circles to null. Then call `drawCircles()` on this CircleDrawer. If you run `main()`, the program should crash with a `"NullPointeException."` That's bad news -- it means our code isn't all that robust.
 
   Back in the `CircleDrawer` class, add necessary changes to `drawCircles()` and `eraseCircles()` so that no action is taken if either field refers to `null` (use an if-statement to check if either field is `==` to `null`), otherwise both are drawn. Make sure you test these out after you're done.
 
 - Go back in the `CircleDrawer` class. Write a method `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden.
 
+  - But how do you compare the size of two circles?
+  - Hint: You need to _ask_ circles to tell you (return) their diameters. Write a new method in `Circle` to provide that.
+
 - Now modify `CircleDrawer`'s `drawCircles()` method so that it only draws circles with radii greater than `20` and less than `50`. But how do you get a `Circle`'s radius? Add any necessary code to the `Circle` class so that it provides a method to return its own size. Again, test this out back inside main.
 
-- Add a method in `CircleDrawer` called `addCircle()` that takes a `Circle` as input, and it doesn't return anything. This method will first erase both `Circle`s. If either of the two `Circles` (first, second) are `null`, simply add the `Circle` that was input into this method to that `null` reference. If neither reference is pointing to `null`, then promote the second `Circle` to the first, then sets the newly-input `Circle` to be the second. Then draw both Circles. Test it in `main()` before moving on.
+- Add a method in `CircleDrawer` called `addCircle()` that takes a `Circle` as input, and it doesn't return anything. This method will first erase both `Circle`s. Then, if either of the two `Circles` (first, second) are `null`, then simply assign the new `Circle` to that field.
+
+  - If `first` is pointing to `null`, then assign the new `Circle` to `first`.
+  - Otherwise, if `second` is pointing to `null`, then assign the new `Circle` to `second`.
+  - Finally, if neither reference is pointing to `null`, then promote the second `Circle` to the `first`, then sets the newly-input `Circle` to be the `second`.
+
+  After you're done, draw both Circles.
 
 - Write a new method called `replaceSmallest()` that takes a `Circle` as input. In `CircleDrawer`, if either of the two `Circles` (first, second) are `null`, simply add the `Circle` that was input into this method to that `null` reference. If both fields refer to non-null circle objects, this method will replace one of the current circles with the one passed to the method but, unlike `addCircle()`, we'll get rid of the smaller of first and second. We need to respect seniority, though: If first is the smaller, we'll promote second to take its place and add the new circle in second place. If second is the smaller, we'll just replace it with the new circle. In the case of a tie, replace second.
 
-- Finally, add a method to `CircleDrawer` called `drawWhenEquals()` that draws both `Circles` if they are "equal" in _content_. Hide both of them if they aren't equal. Before you can write the method, you need to add an equals method in the Circle class. Let's say that two `Circle`s are equal if they have the same radius. Refer back to the "content equality" notes, if you need a reminder on how these are written. If everything's working, then the following main method should cause both circles to be drawn.
+- Finally, add a method to `CircleDrawer` called `drawWhenEquals()` that draws both `Circles` if they are "equal" in _content_. Hide both of them if they aren't equal. Before you can write the method, you need to add an `equals()` method in the `Circle` class.
+
+  - Let's say that two `Circle`s are equal in content if they have the same size and (x,y) positioning.
+
+  Refer back to the "content equality" notes, if you need a reminder on how these `equals()` methods are written.
+  <!--
 
   ```java
+  If everything's working, then the following main method should cause both circles to be drawn.
   public static void main(String[] args) {
       Circle c1 = new Circle();
       Circle c2 = new Circle();
@@ -123,7 +138,7 @@ The API handout that you'll want to have in front of you:
       CircleDrawer drawer = new CircleDrawer(c1, c2);
       drawer.drawWhenEquals();
   }
-  ```
+  ``` -->
 
 #### Grading
 
