@@ -18,7 +18,7 @@ const ASSIGNMENT_COLOR = {
   // labs: "#330099",
   labs: "#0e84b5",
   homework: "#0e84b5",
-  projects: "#003333",
+  projects: "#0e84b5",
 };
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#d14";

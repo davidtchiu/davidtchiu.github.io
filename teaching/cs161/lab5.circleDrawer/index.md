@@ -7,7 +7,7 @@ This assignment is all about conditionals and object references! We'll work with
 #### Student Outcomes
 
 - Practice using object references
-- Working with object equality
+- Working with object equality (content and reference equality)
 
 #### Working with Partners (Please Read)
 
@@ -48,13 +48,16 @@ The API handout that you'll want to have in front of you:
   - Change `c1` to green, change size to `50`.
   - Change `c2` to red, change size to `75`. Then move it down by `50` pixels.
   - Now create a new `CircleDrawer`, called drawer with its second constructor (the one that requires references to two Circles). Input `c1` and `c2`. The new `CircleDrawer` will now "control" the two circles you've created.
-  - Inspect the drawer object on the workbench, and you see that first and second store references. Follow the references by double-clicking on the arrows. It opens the inspector for the Circles you created! Look through the fields to convince yourself that these are the same circles you just created. Close out the inspectors before moving on.
+
+  - Inspect the `CircleDrawer` object on the workbench, and you see that `first` and `second` store references (arrows). Follow the arrows by double-clicking on them. It opens the inspector to the Circles you created!
 
     <img src="figures/drawer2.png" width="300px" border="1px" />
 
   - Now call the `drawCircles()` method on the drawer, and notice that both Circles appear. (If you call `eraseCircles()` both disappear!)
 
     <img src="figures/drawer1.png" width="300px" border="1px" />
+
+  - So, this gives us some idea about what a `CircleDrawer` object does. It's basically a "puppet master" that bosses around two Circles.
 
 <!-- - It's time to start weaning you off the BlueJ menus, and start learning how to do everything in code. Create a new class, and name it `Tester`. Clean up the "boilerplate code" that BlueJ fills in automatically. There are no fields. Now create the `main` method, which always has the same signature below:
 
@@ -96,11 +99,14 @@ The API handout that you'll want to have in front of you:
 
 - After you're done, close out the code window. Right click on the `Tester` class and call the main method (Don't create a new `Tester` object on the workbench). You should again see the green and red circles drawn. -->
 
-- Now go back in the `CircleDrawer` class and take a look at `drawCircles()` and `eraseCircles()`. Their code looks pretty innocuous and straightforward. Calling them will make both circles visible or invisible, respectively, but... that's assuming that our `first` and `second` fields actually refer to actual `Circle` objects, and not `null`. Let's test what happens if you tried to call these methods after running the default constructor.
+- Now go back in the `CircleDrawer` code and take a look at `drawCircles()` and `eraseCircles()`. Their code looks pretty innocuous and straightforward. Calling them will make both circles visible or invisible, respectively, but... that's assuming that our `first` and `second` fields actually refer to actual `Circle` objects, and not `null`.
 
-- Go back into the main method in the Tester class, and comment out everything we'd written earlier. Create a `CircleDrawer` using the default constructor, which sets both circles to null. Then call `drawCircles()` on this CircleDrawer. If you run `main()`, the program should crash with a `"NullPointeException."` That's bad news -- it means our code isn't all that robust.
+  - Create a `CircleDrawer` object using its default constructor (that's the one with no inputs).
+  - Inspect it, and see that `first` and `second` both point to `null` (no arrows to circle objects as before).
+  - Let's see what happens if you tried to call `drawCircles()` or `eraseCircles()`.
+  - The program should crash with a `"NullPointerException."` That's bad news -- it means our code isn't all that robust.
 
-  Back in the `CircleDrawer` class, add necessary changes to `drawCircles()` and `eraseCircles()` so that no action is taken if either field refers to `null` (use an if-statement to check if either field is `==` to `null`), otherwise both are drawn. Make sure you test these out after you're done.
+- Back in the `CircleDrawer` code, add necessary changes to `drawCircles()` and `eraseCircles()` so that no action is taken if either field refers to `null` (use an if-statement to check if each field is `==` to `null`), otherwise both are drawn. Make sure you test these out after you're done.
 
 - Go back in the `CircleDrawer` class. Write a method `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden.
 

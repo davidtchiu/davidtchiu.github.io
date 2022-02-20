@@ -29,6 +29,23 @@ You are required to work in pairs.
 - To become familiar with the Xinu kernel codebase
 - To provide more experience with pointers and dynamically-allocated structures
 
+#### Pair Assignments
+
+You will be working with the following students. Just one submission per group is sufficient.
+
+```
+[R Weaver, L Aron]
+[K Schuh, J Ota]
+[M Sanchez-Forman, B McAuliffe]
+[R Mathur, A Tinkham, R Pietenpol]
+[A Vermeulen, E Shimanski]
+[B Williams, C Hong]
+[B Gamble, T Gaeta]
+[F Godfrey-Link, J Kaeppel]
+[E Markewitz, S Park]
+[C Brace, L Leary]
+```
+
 #### Starter Code
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
