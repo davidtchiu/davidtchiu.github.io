@@ -92,7 +92,7 @@ let days = {
     "Threads: user vs. kernel; implementation; pthread",
     // wk 5
     "Threads: work sharing example - parallel sum",
-    "CPU Scheduling goals; FCFS, RR",
+    "CPU Scheduling: goals and metrics; FCFS",
     "Sched: RR, SJF",
     // "Talk about Hwk 4; Sched: Priority, Lottery",
     // wk 6
