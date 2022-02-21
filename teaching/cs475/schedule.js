@@ -93,20 +93,21 @@ let days = {
     // wk 5
     "Threads: work sharing example - parallel sum",
     "CPU Scheduling goals; FCFS, RR",
-    "Sched: RR, SJF, SRTF",
+    "Sched: RR, SJF",
     // "Talk about Hwk 4; Sched: Priority, Lottery",
     // wk 6
-    "Sched: Priority, MLFQ; OSX and Linux",
+    "Sched: SRTF, burst prediction",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1 (in person)</emph></strong>",
     // wk 7
+    "Sched: Priority, MLFQ; OSX and Linux",
     "Sched: hyperthreading, multicore considerations",
     "Synchronization: Critical section, locks",
-    "Sync: Implementing locks; priority inversion problem",
     // wk 8
+    "Sync: Implementing locks; priority inversion problem",
     "Sync: Spin locks, priority inversion",
     "Sync: Blocking locks; Semaphores",
-    "Sync: Implementing semaphores; helpful professor problem",
+    // "Sync: Implementing semaphores; helpful professor problem",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
