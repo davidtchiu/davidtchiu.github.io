@@ -51,7 +51,7 @@ For full credit, your class should contain all of the methods described below. T
 
 - Let's also alert the user to their level of balance remaining on the card. Write a method `balanceLevel()` that doesn't require arguments, and `returns` a `String` containing the appropriate message (shown below) based on the current balance. Only one message should be returned. Note that a negative balance cannot happen if you programmed `buyTrip()` properly. If you see a negative balance, go back and fix that method!
 
-  | balance                                      | message to print                        |
+  | balance                                      | message to return                       |
   | -------------------------------------------- | --------------------------------------- |
   | $0                                           | Your card is empty! Top up immediately! |
   | at or below the average trip cost            | Your balance is low!                    |
@@ -67,36 +67,84 @@ For full credit, your class should contain all of the methods described below. T
   OrcaCard my_card = new OrcaCard();
   my_card.topUp(20.5);
   my_card.printSummary();
+  ```
+
+  ```
   > $20.5 left after 0 trip(s).
   > Your balance is high!
   > Your costliest trip so far cost $0
+  ```
 
+  ```java
   my_card.buyTrip(10.00);
+  ```
+
+  ```
   > Success: Ticket purchased.  $9.85 remaining.
+  ```
 
+  ```java
   my_card.getTax()
-  > 0.65   (double)
+  ```
 
+  ```
+  > 0.65 (double)
+  ```
+
+  ```java
   my_card.buyTrip(5);
-  > Success: Ticket purchased.  $4.5249999999999995 remaining.
+  ```
 
+  ```
+  > Success: Ticket purchased. $4.5249999999999995 remaining.
+  ```
+
+  ```java
   my_card.getAverageTripCost()
-  > 7.5   (double)
+  ```
 
+  ```
+  > 7.5 (double)
+  ```
+
+  ```java
   my_card.getTax()
-  > 0.9750000000000001   (double)
+  ```
 
+  ```
+  > 0.9750000000000001 (double)
+  ```
+
+  ```java
   my_card.printSummary();
+  ```
+
+  ```
   > $4.5249999999999995 left after 2 trip(s).
+  ```
 
+  ```java
   my_card.buyTrip(4.50);
-  > Fail: You cannot afford this trip.
+  ```
 
+  ```
+  > Fail: You cannot afford this trip.
+  ```
+
+  ```java
   my_card.topUp(1.00);
   my_card.buyTrip(4.50);
-  > Success: Ticket purchased.  $0.7324999999999995 remaining.
+  ```
 
+  ```
+  > Success: Ticket purchased. $0.7324999999999995 remaining.
+  ```
+
+  ```java
   my_card.printSummary();
+  ```
+
+  ```
   > $0.7324999999999995 left after 3 trip(s).
   > Your balance is low!
   > Your costliest trip so far cost $10
