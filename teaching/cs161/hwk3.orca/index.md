@@ -64,9 +64,9 @@ For full credit, your class should contain all of the methods described below. T
 - You can test out your class in code pad. Except for your version of `printSummary()`, your output should match mine exactly for full credit. Recall that outputs from your program to the terminal are indicated with a `>` sign below.
 
   ```java
-  OrcaCard my_card = new OrcaCard();
-  my_card.topUp(20.5);
-  my_card.printSummary();
+  OrcaCard myCard = new OrcaCard();
+  myCard.topUp(20.5);
+  myCard.printSummary();
   ```
 
   ```
@@ -76,7 +76,7 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```java
-  my_card.buyTrip(10.00);
+  myCard.buyTrip(10.00);
   ```
 
   ```
@@ -84,7 +84,7 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```java
-  my_card.getTax()
+  myCard.getTax()
   ```
 
   ```
@@ -92,7 +92,7 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```java
-  my_card.buyTrip(5);
+  myCard.buyTrip(5);
   ```
 
   ```
@@ -100,7 +100,7 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```java
-  my_card.getAverageTripCost()
+  myCard.getAverageTripCost()
   ```
 
   ```
@@ -108,7 +108,7 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```java
-  my_card.getTax()
+  myCard.getTax()
   ```
 
   ```
@@ -116,7 +116,7 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```java
-  my_card.printSummary();
+  myCard.printSummary();
   ```
 
   ```
@@ -124,7 +124,7 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```java
-  my_card.buyTrip(4.50);
+  myCard.buyTrip(4.50);
   ```
 
   ```
@@ -132,8 +132,8 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```java
-  my_card.topUp(1.00);
-  my_card.buyTrip(4.50);
+  myCard.topUp(1.00);
+  myCard.buyTrip(4.50);
   ```
 
   ```
@@ -141,7 +141,7 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```java
-  my_card.printSummary();
+  myCard.printSummary();
   ```
 
   ```
