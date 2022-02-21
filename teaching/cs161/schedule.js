@@ -25,12 +25,12 @@ let days = {
         url: "hwk3.orca/",
         due: "2/21/2022",
       },
-      // {
-      //   name: "Hwk 4",
-      //   title: "Robots!",
-      //   url: "hwk4.robot/",
-      //   due: "3/4/2022",
-      // },
+      {
+        name: "Hwk 4",
+        title: "Robots!",
+        url: "hwk4.robot/",
+        due: "3/4/2022",
+      },
       // {
       //   name: "Hwk 5",
       //   title: "Loops",
