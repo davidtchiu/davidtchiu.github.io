@@ -29,7 +29,7 @@ let days = {
         name: "Hwk 4",
         title: "Robots!",
         url: "hwk4.robot/",
-        due: "3/4/2022",
+        due: "3/2/2022",
       },
       // {
       //   name: "Hwk 5",
