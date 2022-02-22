@@ -29,7 +29,7 @@ let days = {
         name: "Hwk 4",
         title: "David Shell (dsh)",
         url: "hwk4.dsh/",
-        due: "2/23/2022",
+        due: "2/25/2022",
       },
       //   {
       //     name: "Hwk 5",
