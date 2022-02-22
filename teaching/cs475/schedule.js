@@ -35,13 +35,13 @@ let days = {
         name: "Hwk 5",
         title: "Parallel Matrix Multiplication",
         url: "hwk5.mult/",
-        due: "3/21/2022",
+        due: "3/11/2022",
       },
       {
         name: "Hwk 6",
         title: "Bartender Problem",
         url: "hwk6.joins/",
-        due: "4/4/2022",
+        due: "4/8/2022",
       },
       {
         name: "Hwk 7",
@@ -62,7 +62,7 @@ let days = {
         name: "Proj 2",
         title: "Priority Scheduling",
         url: "proj2/",
-        due: "3/25/2022",
+        due: "3/28/2022",
       },
       {
         name: "Proj 3",
@@ -74,7 +74,7 @@ let days = {
         name: "Proj 4",
         title: "Implementation",
         url: "proj4.impl/",
-        due: "4/25/2022",
+        due: "5/2/2022",
       },
     ],
   },
