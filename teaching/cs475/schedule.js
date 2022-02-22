@@ -31,18 +31,24 @@ let days = {
         url: "hwk4.dsh/",
         due: "2/25/2022",
       },
-      //   {
-      //     name: "Hwk 5",
-      //     title: "Parallel Matrix Multiplication",
-      //     url: "hwk5.mult/",
-      //     due: "11/5/2021",
-      //   },
-      //   {
-      //     name: "Hwk 6",
-      //     title: "Joins!",
-      //     url: "hwk6.joins/",
-      //     due: "11/23/2021",
-      //   },
+      {
+        name: "Hwk 5",
+        title: "Parallel Matrix Multiplication",
+        url: "hwk5.mult/",
+        due: "3/21/2022",
+      },
+      {
+        name: "Hwk 6",
+        title: "Bartender Problem",
+        url: "hwk6.joins/",
+        due: "4/4/2022",
+      },
+      {
+        name: "Hwk 7",
+        title: "Paging Simulator",
+        url: "hwk7.paging/",
+        due: "5/11/2022",
+      },
     ],
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
@@ -50,26 +56,26 @@ let days = {
         name: "Proj 1",
         title: "Ready Queue",
         url: "proj1/",
-        due: "3/4/2022",
+        due: "3/7/2022",
       },
-      //   {
-      //     name: "Proj 2",
-      //     title: "Server-Side Web Development with PHP",
-      //     url: "proj2.php/",
-      //     due: "10/22/2021", //extended this year only (move back to 10/18 in future)
-      //   },
-      //   {
-      //     name: "Proj 3",
-      //     title: "Project Planning",
-      //     url: "proj3.planning/",
-      //     due: "11/1/2021",
-      //   },
-      //   {
-      //     name: "Proj 4",
-      //     title: "Implementation",
-      //     url: "proj4.impl/",
-      //     due: "12/10/2021",
-      //   },
+      {
+        name: "Proj 2",
+        title: "Priority Scheduling",
+        url: "proj2/",
+        due: "3/25/2022",
+      },
+      {
+        name: "Proj 3",
+        title: "Project Planning",
+        url: "proj3/",
+        due: "4/11/2022",
+      },
+      {
+        name: "Proj 4",
+        title: "Implementation",
+        url: "proj4.impl/",
+        due: "4/25/2022",
+      },
     ],
   },
 
