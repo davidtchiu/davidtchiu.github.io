@@ -25,12 +25,6 @@ Here are your assigned partners for today's lab.
 [Wissing, A, Miller, D]
 ```
 
-#### Helpful APIs
-
-The API handout that you'll want to have in front of you:
-
-- [Random](../api/RandomAPI.pdf)
-
 #### The Stomach Class
 
 There is no starter code this week to download. You need to create a new project in BlueJ. Open BlueJ and use the Project > New Project menu. It'll want you to choose a location on your computer to store and save this project. Make sure you choose somewhere appropriate that you won't forget.
@@ -74,14 +68,6 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
   - First, determine what inputs (if any) the method requires (It's early in the semester, so I will tell you in this lab.) For each input, also determine its data type.
   - Next, determine what, if any, this method "owes" the caller. The owed value is called the return value. The data type of the return value is called the return type. The return type is void if the method does not owe the caller anything.
   - Now you're ready to write the method.
-
-  ```java
-  // If the method returns nothing, its return type is void
-  public returnType methodName(parameterList) {
-    // code here
-    // if returnType is non-void, it must have a return statement
-  }
-  ```
 
 - Here are all the methods that your class needs to support. Read each description carefully. After you've designed each method, write it in BlueJ, and test it vigorously before moving on!
 

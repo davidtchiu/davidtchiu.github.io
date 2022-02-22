@@ -58,12 +58,6 @@ Here are your assigned partners for today's lab.
 [Jones, S, Murphy, C]
 ```
 
-<!-- #### Helpful APIs
-
-The API handout that you'll want to have in front of you:
-
-- [Random](../api/RandomAPI.pdf) -->
-
 #### Part 1: The Bare-Bones Guessing Game
 
 - Create a new project in BlueJ using the `Project > New Project` menu option. Inside, you will create just one Java class: `GuessingGame`. We'll start by building a naive class, and eventually build on top of it.
