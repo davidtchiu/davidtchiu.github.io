@@ -35,9 +35,9 @@ You will be working with the following students. Just one submission per group i
 
 ```
 [R Weaver, L Aron]
-[K Schuh, J Ota]
+[K Schuh, J Ota, A Tinkham]
 [M Sanchez-Forman, B McAuliffe]
-[R Mathur, A Tinkham, R Pietenpol]
+[R Mathur, R Pietenpol]
 [A Vermeulen, E Shimanski]
 [B Williams, C Hong]
 [B Gamble, T Gaeta]

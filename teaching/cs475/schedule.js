@@ -33,8 +33,8 @@ let days = {
       },
       //   {
       //     name: "Hwk 5",
-      //     title: "Normalization",
-      //     url: "hwk5.norm/",
+      //     title: "Parallel Matrix Multiplication",
+      //     url: "hwk5.mult/",
       //     due: "11/5/2021",
       //   },
       //   {
