@@ -31,24 +31,24 @@ let days = {
         url: "hwk4.dsh/",
         due: "2/25/2022",
       },
-      {
-        name: "Hwk 5",
-        title: "Parallel Matrix Multiplication",
-        url: "hwk5.mult/",
-        due: "3/11/2022",
-      },
-      {
-        name: "Hwk 6",
-        title: "Bartender Problem",
-        url: "hwk6.joins/",
-        due: "4/4/2022",
-      },
-      {
-        name: "Hwk 7",
-        title: "Paging Simulator",
-        url: "hwk7.paging/",
-        due: "5/11/2022",
-      },
+      // {
+      //   name: "Hwk 5",
+      //   title: "Parallel Matrix Multiplication",
+      //   url: "hwk5.mult/",
+      //   due: "3/11/2022",
+      // },
+      // {
+      //   name: "Hwk 6",
+      //   title: "Bartender Problem",
+      //   url: "hwk6.joins/",
+      //   due: "4/4/2022",
+      // },
+      // {
+      //   name: "Hwk 7",
+      //   title: "Paging Simulator",
+      //   url: "hwk7.paging/",
+      //   due: "5/11/2022",
+      // },
     ],
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
@@ -58,24 +58,24 @@ let days = {
         url: "proj1/",
         due: "3/7/2022",
       },
-      {
-        name: "Proj 2",
-        title: "Priority Scheduling",
-        url: "proj2/",
-        due: "3/25/2022",
-      },
-      {
-        name: "Proj 3",
-        title: "Project Planning",
-        url: "proj3/",
-        due: "4/18/2022",
-      },
-      {
-        name: "Proj 4",
-        title: "Implementation",
-        url: "proj4.impl/",
-        due: "5/2/2022",
-      },
+      // {
+      //   name: "Proj 2",
+      //   title: "Priority Scheduling",
+      //   url: "proj2/",
+      //   due: "3/25/2022",
+      // },
+      // {
+      //   name: "Proj 3",
+      //   title: "Project Planning",
+      //   url: "proj3/",
+      //   due: "4/15/2022",
+      // },
+      // {
+      //   name: "Proj 4",
+      //   title: "Implementation",
+      //   url: "proj4.impl/",
+      //   due: "4/29/2022",
+      // },
     ],
   },
 
