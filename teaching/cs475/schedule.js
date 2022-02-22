@@ -41,7 +41,7 @@ let days = {
         name: "Hwk 6",
         title: "Bartender Problem",
         url: "hwk6.joins/",
-        due: "4/8/2022",
+        due: "4/4/2022",
       },
       {
         name: "Hwk 7",
@@ -62,13 +62,13 @@ let days = {
         name: "Proj 2",
         title: "Priority Scheduling",
         url: "proj2/",
-        due: "3/28/2022",
+        due: "3/25/2022",
       },
       {
         name: "Proj 3",
         title: "Project Planning",
         url: "proj3/",
-        due: "4/11/2022",
+        due: "4/18/2022",
       },
       {
         name: "Proj 4",
