@@ -538,6 +538,17 @@ I have included a working solution of my program along with the starter code. Th
 
 > Evaluate another? (y/n): y
 > Enter an equation (in RPN):
+> -6
+-6.000
+
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
+> -6 -5 *
+30.000
+
+
+> Evaluate another? (y/n): y
+> Enter an equation (in RPN):
 > 23 4 -
 19.000
 
@@ -590,10 +601,11 @@ Exiting...
 ```
 This assignment will be graded out of 20 points:
 [5pt] User input is properly handled.
+[2pt] Negative operands are properly handled.
 [4pt] push() is dynamically allocates a stack element and pushes it on the top of the stack.
 [4pt] pop() removes the top element, returns the stored value, and is free from memory leaks.
 [1pt] size() returns the the number of elements on the stack.
-[6pt] RPN algorithm is properly implemented.
+[4pt] RPN algorithm is properly implemented.
 ```
 
 #### Submitting Your Assignment
