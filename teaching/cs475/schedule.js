@@ -106,7 +106,7 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1 (in person)</emph></strong>",
     // wk 7
-    "Sched: Priority, MLFQ; OSX and Linux",
+    "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
     "Sched: hyperthreading, multicore considerations",
     "Synchronization: Critical section, locks",
     // wk 8
