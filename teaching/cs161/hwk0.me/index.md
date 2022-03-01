@@ -59,7 +59,7 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
 8. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName` code. The new method block can go before or after the `printMyName` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
 
-9. Let's try something more involved. Write a method called `printInitials()` that prints out your first, middle (applicable), and last initials in "block form" (see below). For instance, my initials DTC might be printed as follows:
+9. Let's try something more involved. Write a method called `printInitials()` that prints out your first, middle (applicable), and last initials in "block form" (see below). Notice the formatting --- you should use the letter itself to create the block shape. For instance, my initials DTC might be printed as follows:
 
    ```
    DDDDDD   TTTTTTTTT   CCCCCC
@@ -82,7 +82,7 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
     I live in Gig Harbor with my wife and two kids.
     ```
 
-11. Finally, it sure would be nice to have a method that would print out your name, birthday, and bio **all at once**. Write a method called `printMyInfo`. Here's the key: You wouldn't want to have to rewrite all those print statements from before! (Code duplication should be avoided always!)
+11. Finally, it sure would be nice to have a method that would print out your initials, your name, birthday, and bio **all at once**. Write a method called `printMyInfo`. Here's the key: You wouldn't want to have to _rewrite_ all those print statements from before! (Code duplication should be avoided always!)
 
     - Instead, We want to simply call (re-use) the other three methods you've just written. To call an existing method, you just have to write `methodName();`, e.g., `printMyName();` would cause Java to find and run the `printMyName` method.
 
@@ -90,7 +90,7 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
     ```
      GGGGGGG    HHH   HHH
-    GG     GG   HHH   HHH
+    GG      G   HHH   HHH
     GG          HHHHHHHHH
     GG   GGGG   HHH   HHH
      GGGGGGG    HHH   HHH
@@ -114,11 +114,11 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 ```
 This assignment will be graded out of a total of 25pts.
 
-[3pts] Correct implementation of the printMyName() method.
+[3pts] Correct implementation of the printMyName() method and printBday method.
+
+[3pts] Correct implementation of the printInitials() method.
 
 [3pts] Correct implementation of printBio().
-
-[3pts] Correct implementation of printBday().
 
 [3pts] Correct implementation of printMyInfo. This method should
        not duplicate any code that you had previously written

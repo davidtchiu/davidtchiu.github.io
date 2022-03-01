@@ -1,5 +1,6 @@
 #### TODO
 
+- Why have students create a new zip every time? Just submit the `.java` files.
 - Switch the non-this again.
 - Use instance variables instead of fields
 - Push back return. Don't really use it until CircleDrawer lab 5 and object interaction
