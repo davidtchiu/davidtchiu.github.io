@@ -59,20 +59,42 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
 8. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName` code. The new method block can go before or after the `printMyName` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
 
-9. Next, create a new method called `printBio()` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. There are two ways to do this, and I encourage you to try out both ways:
+9. Let's try something more involved. Write a method called `printInitials()` that prints out your first, middle (applicable), and last initials in "block form" (see below). For instance, my initials DTC might be printed as follows:
 
-   - First way is the obvious one: You can simply use a separate print statement to print out each sentence. `System.out.println(...)` will insert a line break each time it's used.
-   - Second way: Let's say you wanted to use only a _single_ print statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens.
+   ```
+   DDDDDD   TTTTTTTTT   CCCCCC
+   DD  DDD     TTT     CC
+   DD  DDD     TTT     CC
+   DDDDDD      TTT      CCCCCC
+   ```
+
+   You'll need to print multiple lines for this method.
+
+   - The first way to do this is the obvious one: You can simply use more than one print statement to print out each sentence. `System.out.println(...)` will insert a line break each time it's used.
+   - Second way: For a challenge, let's say you wanted to use only a _single_ print statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens.
    - Compile and test it out.
 
-10. Finally, it sure would be nice to have a method that would print out your name, birthday, and bio **all at once**. Write a method called `printMyInfo`. Here's the key: You wouldn't want to have to rewrite all those print statements from before! (Code duplication should be avoided always!)
+10. Next, create a new method called `printBio()` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. For instance, mine might print:
+
+    ```
+    I am a professor of computer science at University of Puget Sound.
+    I started teaching here in 2014.
+    I live in Gig Harbor with my wife and two kids.
+    ```
+
+11. Finally, it sure would be nice to have a method that would print out your name, birthday, and bio **all at once**. Write a method called `printMyInfo`. Here's the key: You wouldn't want to have to rewrite all those print statements from before! (Code duplication should be avoided always!)
 
     - Instead, We want to simply call (re-use) the other three methods you've just written. To call an existing method, you just have to write `methodName();`, e.g., `printMyName();` would cause Java to find and run the `printMyName` method.
-      - You can also call a method using the alternate syntax: `this.methodName();`
 
     Here's an example of what someone's output might like:
 
     ```
+     GGGGGGG    HHH   HHH
+    GG     GG   HHH   HHH
+    GG          HHHHHHHHH
+    GG   GGGG   HHH   HHH
+     GGGGGGG    HHH   HHH
+
     Grace Hopper
     12/09/1906
     Grace Brewster Murray Hopper was an American computer scientist and United States Navy rear admiral.
@@ -80,9 +102,9 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
     Hopper was the first to devise the theory of machine-independent programming languages, and the FLOW-MATIC programming language she created using this theory was later extended to create COBOL, an early high-level programming language still in use today.
     ```
 
-11. You're free to add as many more methods or statements as you like!
+12. You're free to add as many more methods or statements as you like!
 
-12. **Final check:** It's important to note that everything you write in Java is case-sensitive. You _must_ adhere to the proper casing. For instance, when I specify that your method should be named `printMyName`, you cannot name it `Printmyname`. Typos, using the wrong name, or wrong case will screw up our automatic _grading_ code.
+13. **Final check:** It's important to note that everything you write in Java is case-sensitive. You _must_ adhere to the proper casing. For instance, when I specify that your method should be named `printMyName`, you cannot name it `Printmyname`. Typos, using the wrong name, or wrong case will screw up our automatic _grading_ code.
 
     - Go back to make sure your methods adhere to my specification.
     - You will do this for all remaining homework and labs.
