@@ -68,7 +68,7 @@ In this section, we'll get Xinu up and running on a virtual machine.
 
 1.  Download the following VirtualBox image, that have been prepared to get Xinu up and running:
 
-    - [xinu-backend.ova](xinu-backend.ova) (10.8 KB)
+    - [xinu-back-end.ova](xinu-back-end.ova) (10.8 KB)
 
 2.  Open up VirtualBox. Then click on the File > Import Appliance... menu. Browse and find the xinu-back-end.ova file you just downloaded, then click Continue.
 
