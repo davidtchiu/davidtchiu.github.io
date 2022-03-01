@@ -132,13 +132,6 @@ You will be coding and compiling Xinu on the Ubuntu machine as you did for your 
        sudo service isc-dhcp-server start
        ```
 
-       You may use the following to check if DHCP is running, or if something happened when you tried to start it.
-
-       ```
-       sudo service isc-dhcp-server stop
-       sudo service isc-dhcp-server start
-       ```
-
      - Another time **failed boot** happens has something to do with your networking setup. When you see the following:
 
        ![](figures/back-end__Running_fail.png)
