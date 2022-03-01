@@ -72,9 +72,9 @@ In this section, we'll get Xinu up and running on a virtual machine.
 
 2.  Open up VirtualBox. Then click on the File > Import Appliance... menu. Browse and find the xinu-back-end.ova file you just downloaded, then click Continue.
 
-3.  Import `xinu-backend.ova`. **Do not** click to enable "Reinitialize the MAC address of all network cards." Afterwards, you should see the new virtual machine image on the left-hand panel of the VM Manager window.
+3.  Import `xinu-back-end.ova`. **Do not** click to enable "Reinitialize the MAC address of all network cards." Afterwards, you should see the new virtual machine image on the left-hand panel of the VM Manager window.
 
-4.  Highlight `xinu-backend` in the left-hand menu, and click on Settings. From the Settings menu, navigate to `Ports`. Make sure that `Enable Serial Port` and `Connect to Existing Pipe/Socket` are **both checked**. Under Path/address:
+4.  Highlight `xinu-back-end` in the left-hand menu, and click on Settings. From the Settings menu, navigate to `Ports`. Make sure that `Enable Serial Port` and `Connect to Existing Pipe/Socket` are **both checked**. Under Path/address:
 
     - If you're on a Linux or Mac: type in `/tmp/xinu_serial`
     - If you're on Windows: type in `\\.\pipe\xinu_com1`
