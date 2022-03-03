@@ -1,12 +1,12 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Loop Practice (The Basics!)
+### Homework: Loop Practice
 
 In this assignment, you'll be working with loops. It helps to use the David's 4-Step Process for Writing Loops handout I passed out to you in class.
 
 #### Student Outcomes
 
-- Exposure to writing loops.
+- Exposure to writing loops and nested loops.
 
 #### Instructions
 
@@ -104,13 +104,74 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   29
   ```
 
-<!-- #### Extra Credit Opportunity -->
-<!-- Completion of each of the following will yield +1 point per question on your lowest midterm exam.
-I strongly recommend students to complete all of these as well for preparation of future materials. -->
+- **(Nested)** `printDownTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. This method requires a nested loop.
 
-#### Additional Practice Problems
+  ```java
+  Loops l = new Loops();
+  l.printDownTriangle(4);
+  ****
+  ***
+  **
+  *
 
-These won't fetch you any extra credit, but I strongly recommend students to complete all of these as well for preparation of future materials.
+  l.printDownTriangle(10);
+  **********
+  *********
+  ********
+  *******
+  ******
+  *****
+  ****
+  ***
+  **
+  *
+  ```
+
+  - **(Nested)** `reveal()` which inputs an integer `n` and returns a String. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). This method requires a nested loop. Ignore negative input. Recall that `"\n"` can be used to symbolize a "newline" character.
+
+  ```java
+  Loops l = new Loops();
+  System.out.println(l.reveal(4));
+  1---
+  12--
+  123-
+  1234
+
+  System.out.println(l.reveal(8));
+  1-------
+  12------
+  123-----
+  1234----
+  12345---
+  123456--
+  1234567-
+  12345678
+  ```
+
+- **(Nested, involves arrays)** Write a method called `rotate()` that inputs an array of Strings and an integer `N`. If `N > 0`, your method should shift every item in the array one position to the right, and the right-most item would jump to the left. If `N < 0`, you'll want to do the same, but move all items to the left, with left-most item jumping to the right. Complete this rotation `|N|` times. Your method should return the rotated array. (Hint: Start by focusing on writing a loop that can perform a single rotation, shifting each number one spot left/right).
+
+  ```java
+  import java.util.Arrays;  // this is for printing arrays
+
+  Loops loopie = new Loops();
+  String[] arr = {"A", "B", "C", "D", "E"};
+  System.out.println(Arrays.toString(loopie.rotate(arr, 1)));
+  > [E, A, B, C, D]
+
+  System.out.println(Arrays.toString(loopie.rotate(arr, 2)));
+  > [C, D, E, A, B]
+
+  System.out.println(Arrays.toString(loopie.rotate(arr, -3)));
+  > [A, B, C, D, E]
+
+  System.out.println(Arrays.toString(loopie.rotate(arr, 0)));
+  > [A, B, C, D, E]
+  ```
+
+#### Extra Credit Opportunity
+
+Completion of each of the following will yield +1 point per question on your lowest midterm exam.
+I strongly recommend students to complete all of these as well for preparation of future materials.
 
 - **(Not nested; involves arrays)** Write a method called `instancesOf()` that inputs an array of integers, an integer `M`, and an integer
   `N`. This method returns a boolean true if it can find exactly `N` copies of `M` in the array, and false otherwise.
@@ -137,6 +198,31 @@ These won't fetch you any extra credit, but I strongly recommend students to com
   int[] arr = {10,0,40,40,30,20,20,50,20};
   System.out.println(loopie.max(arr));
   > 50
+  ```
+
+- **(Nested)** `printRightTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size
+  `n`, with the straight edge facing east. This method requires a nested loop.
+
+  ```java
+  Loops l = new Loops();
+  l.printRightTriangle(5);
+      *
+     **
+    ***
+   ****
+  *****
+
+  l.printRightTriangle(10);
+           *
+          **
+         ***
+        ****
+       *****
+      ******
+     *******
+    ********
+   *********
+  **********
   ```
 
 - **(Not nested, involves arrays)** Write a method called `isSorted()` that inputs an array of integers, and returns true if the array is in ascending order.
