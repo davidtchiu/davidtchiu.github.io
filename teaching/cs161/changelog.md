@@ -1,10 +1,10 @@
 #### TODO
 
 - Why have students create a new zip every time? Just submit the `.java` files.
-- Switch the non-this again.
+- Switch to non-`this` again.
 - Use instance variables instead of fields
 - Push back return. Don't really use it until CircleDrawer lab 5 and object interaction
-- Start teaching if (5 == x) instead of (x == 5). A debugging lab?
+- Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
 - Consider moving complexity before design
 - Need a better lab 2. It stinks. Maybe have them start manipulating Circle with some scope stuff thrown in
 - Hwk 4 lot cooler if I introduced an Arm class or something…
