@@ -36,7 +36,6 @@ The following file(s) have been provided for this homework.
 
 The API handout that you'll want to have in front of you:
 
-- [Random](../api/RandomAPI.pdf)
 - [Turtle](../api/TurtleAPI.pdf)
 
 #### Preliminary
@@ -170,7 +169,7 @@ Yeah okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be 
 
   - Finally, if the width is longer than the length, you should draw nothing.
 
-  - **You do not need a nested loop (loop inside another loop) to complete this method.**
+  - **You do not need a nested loop (loop inside another) to complete this method.**
 
 #### Part 4: Grids (Nested Loops)
 
@@ -199,22 +198,7 @@ It's amazing how many cool patterns we can now draw with just these method imple
 #### Grading
 
 ```
-This assignment will be graded out of 10 points.
-
-Your TurtleDrawer class has appropriate field(s)
-Your TurtleDrawer has an appropriate constructor (that meets the requirements)
-Your TurtleDrawer includes a drawTriangle() method with an appropriate signature
-Your drawTriangle() method uses the drawPolygon() method
-Your TurtleDrawer includes a drawPolygon() method with an appropriate signature
-Your drawPolygon() method can draw a regular polygon of the given size
-drawPolygon() doesn't try to draw shapes with less than 3 sides
-Your TurtleDrawer includes a drawZigzag() method with an appropriate signature
-Your drawZigzag() method draws a zigzag
-Your drawn zig and zag lines are different colors (as specified by the parameter)
-Your TurtleDrawer includes a drawPattern() method with an appropriate signature
-Your TurtleDrawer includes a drawGrid() method with an appropriate signature
-Your code is properly formatted (indentation, etc) and methods/variables are properly named
-Each of your methods includes a method comment explaining what it does and what its parameters are
+Attendance is necessary to receive credit for lab.
 ```
 
 #### Submitting Your Assignment
