@@ -106,12 +106,12 @@ let days = {
         url: "lab5.circleDrawer/",
         due: "2/17/2022",
       },
-      // {
-      //   name: "Lab 6",
-      //   title: "Turtle Graphics (Loops)",
-      //   url: "lab6.turtle/",
-      //   due: "3/3/2022",
-      // },
+      {
+        name: "Lab 6",
+        title: "Turtle Graphics (Loops)",
+        url: "lab6.turtle/",
+        due: "3/3/2022",
+      },
       // {
       //   name: "Lab 7",
       //   title: "Combo Guesser (Arrays)",
