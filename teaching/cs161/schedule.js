@@ -33,15 +33,21 @@ let days = {
       },
       {
         name: "Hwk 5",
-        title: "Loops (Basics)",
+        title: "Loop Practice (The Basics)",
         url: "hwk5.loops/",
         due: "3/11/2022",
       },
+      {
+        name: "Hwk 6",
+        title: "Nested Loop Practice",
+        url: "hwk6.nestedLoops/",
+        due: "3/25/2022",
+      },
       // {
-      //   name: "Hwk 6",
+      //   name: "Hwk 7",
       //   title: "Tweet Processor",
-      //   url: "hwk6.twitter/",
-      //   due: "4/1/2022",
+      //   url: "hwk7.twitter/",
+      //   due: "4/4/2022",
       // },
       // {
       //   name: "Hwk 7",

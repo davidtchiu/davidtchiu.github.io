@@ -10,20 +10,20 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 #### Instructions
 
-- Open BlueJ and create a new project called `Hwk6_MoreLoops`. This class will not have any fields or constructors. You'll just be writing and testing various methods.Write the following methods:
+- Open BlueJ and create a new project called `Hwk6_MoreLoops`. This class will not have any fields or constructors. Create a new class and name it `NestedLoops`. Write the following methods:
   `
 
 - **(Nested)** `printDownTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. This method requires a nested loop.
 
   ```java
-  Loops l = new Loops();
-  l.printDownTriangle(4);
+  NestedLoops loopie = new NestedLoops();
+  loopie.printDownTriangle(4);
   ****
   ***
   **
   *
 
-  l.printDownTriangle(10);
+  loopie.printDownTriangle(10);
   **********
   *********
   ********
@@ -36,17 +36,42 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   *
   ```
 
+- **(Nested)** `printRightTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size
+  `n`, with the straight edge facing east. This method requires a nested loop.
+
+  ```java
+  NestedLoops loopie = new NestedLoops();
+  loopie.printRightTriangle(5);
+      *
+     **
+    ***
+   ****
+  *****
+
+  loopie.printRightTriangle(10);
+           *
+          **
+         ***
+        ****
+       *****
+      ******
+     *******
+    ********
+   *********
+  **********
+  ```
+
   - **(Nested)** `reveal()` which inputs an integer `n` and returns a String. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). This method requires a nested loop. Ignore negative input. Recall that `"\n"` can be used to symbolize a "newline" character.
 
   ```java
-  Loops l = new Loops();
-  System.out.println(l.reveal(4));
+  NestedLoops loopie = new NestedLoops();
+  System.out.println(loopie.reveal(4));
   1---
   12--
   123-
   1234
 
-  System.out.println(l.reveal(8));
+  System.out.println(loopie.reveal(8));
   1-------
   12------
   123-----
@@ -62,7 +87,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   ```java
   import java.util.Arrays;  // this is for printing arrays
 
-  Loops loopie = new Loops();
+  NestedLoops loopie = new NestedLoops();
   String[] arr = {"A", "B", "C", "D", "E"};
   System.out.println(Arrays.toString(loopie.rotate(arr, 1)));
   > [E, A, B, C, D]
@@ -77,33 +102,6 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   > [A, B, C, D, E]
   ```
 
-<!-- ####
-
-- **(Nested)** `printRightTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size
-  `n`, with the straight edge facing east. This method requires a nested loop.
-
-  ```java
-  Loops l = new Loops();
-  l.printRightTriangle(5);
-      *
-     **
-    ***
-   ****
-  *****
-
-  l.printRightTriangle(10);
-           *
-          **
-         ***
-        ****
-       *****
-      ******
-     *******
-    ********
-   *********
-  **********
-  ``` -->
-
 #### Program Defensively
 
 You can't control how another user or program chooses to use your methods. For each method, think critically about all the things that could go wrong and cause an unintended result (e.g., a runtime error, infinite loop/recursion, etc.). Chances are, I'll be trying all kinds of inputs (negative values, zeroes, nulls, empty-strings, etc.) when I grade your program. The mark of a good programmer is one that can anticipate such scenarios ahead of time and ensure that their program handles all sorts of errors gracefully.
@@ -115,21 +113,11 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 80pts.
-
-[5pts] stringRepeat is properly implemented. It returns the product of two given ints.
-It works with negative inputs.
-
-[5pts] hammingDistance is properly implemented. It returns the number of spots where
-two strings differ.
-
-[10pts] multiply is properly implemented. It returns the product of two given ints.
-It works with negative inputs.
-
-[10pts] findPrimes is implemented. It inputs a positive integer, n, and prints the first
-n primes, each on a separate line..
+This assignment will be graded out of a total of 60pts.
 
 [10pts] printDownTriangle is implemented.
+
+[10pts] printRightTriangle is fully implemented.
 
 [15pts] reveal is implemented. It inputs a positive integer, n, and prints n lines
 of output. Each line of output reveals one more digit.

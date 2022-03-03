@@ -181,12 +181,12 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 80pts.
+This assignment will be graded out of a total of 40pts.
 
 [5pts] stringRepeat is properly implemented. It returns the product of two given ints.
 It works with negative inputs.
 
-[5pts] hammingDistance is properly implemented. It returns the number of spots where
+[10pts] hammingDistance is properly implemented. It returns the number of spots where
 two strings differ.
 
 [10pts] multiply is properly implemented. It returns the product of two given ints.
@@ -194,15 +194,6 @@ It works with negative inputs.
 
 [10pts] findPrimes is implemented. It inputs a positive integer, n, and prints the first
 n primes, each on a separate line..
-
-[10pts] printDownTriangle is implemented.
-
-[15pts] reveal is implemented. It inputs a positive integer, n, and prints n lines
-of output. Each line of output reveals one more digit.
-
-[20pts] rotate is properly implemented. If N > 0, it should shift every item in the array one position
-to the right, and the right-most item would jump to the left-most spot. If N < 0, then it should go the
-reverse direction,
 
 Misc.
     [5pts] You provide Javadocs style comments for any new methods implemented. You include
