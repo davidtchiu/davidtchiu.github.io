@@ -34,7 +34,7 @@ let days = {
       {
         name: "Hwk 5",
         title: "Parallel Matrix Multiplication",
-        url: "hwk5.mult/",
+        url: "hwk5.mmm/",
         due: "3/21/2022",
       },
       // {
