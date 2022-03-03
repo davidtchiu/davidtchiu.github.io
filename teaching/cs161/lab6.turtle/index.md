@@ -85,7 +85,21 @@ Download the BlueJ project from the above link. After you unzip it into your wor
 
       That's simple, and it reveals the code's repetitive structure. The code segments to draw each of the three edges are always the same, so could be placed in a loop that iterates three times (Hey, that's the number of edges for _-this-_ particular shape...).
 
-- *Your task *is to rewrite this method using a loop to replace the above redundant code segment above. You can use either a while-loop or a for-loop to get the job done (they are equal in power). The following code samples, for example, both iterate `n` times, for any `n` that is greater than or equal to zero. Recall that for-loops are generally used for counter-controlled loops, and while-loops are used for sentinel or event-controlled loops.
+- *Your task *is to rewrite this method using a loop to replace the above redundant code segment above. You can use a loop to get the job done. The following code fragment, for example, repeats some segment of code `n` times.
+
+  ```java
+  // first, define a counter
+  int i = 0;
+  while (i < n) {
+
+    /* statements to repeat in here */
+
+    // increment counter by 1
+    i++;
+  }
+  ```
+
+<!-- Recall that for-loops are generally used for counter-controlled loops, and while-loops are used for sentinel or event-controlled loops.
   ```java
   int i = 0;
   while (i < n) {
@@ -97,7 +111,7 @@ Download the BlueJ project from the above link. After you unzip it into your wor
   for (int i = 0; i < n; i++) {
       //statements to repeat n times
   }
-  ```
+  ``` -->
 
 #### Part 2: Polygons
 

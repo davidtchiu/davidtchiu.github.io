@@ -165,7 +165,7 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 70pts.
+This assignment will be graded out of a total of 75pts.
 
 [5pts] Proper fields have been defined. No more -- no less than what is needed
        by the OrcaCard class.
