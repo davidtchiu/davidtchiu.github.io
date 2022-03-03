@@ -7,7 +7,10 @@ Matrix-matrix multiplication (mmm) is a cumbersome, but widely used, application
 In this assignment, you will be implementing and evaluating the performance for sequential and parallel implementations of mmm. You may assume that you'll only be multiplying square matrices. Given two matrices $$a[n,n]$$ and $$b[n,n]$$, their product $$c[n,n]$$ is defined:
 
 $$
-c[i,j] = \sum_{k=0}^{n-1}a[i,k]\cdot b[k,j]\\
+c[i,j] = \sum_{k=0}^{n-1}a[i,k]\cdot b[k,j]
+$$
+
+$$
     \forall~i : 0 \le i \le n-1\\
     \forall~j : 0 \le j \le n-1
 $$
