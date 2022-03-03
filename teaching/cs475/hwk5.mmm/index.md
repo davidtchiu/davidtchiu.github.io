@@ -11,7 +11,10 @@ c[i,j] = \sum_{k=0}^{n-1}a[i,k]\cdot b[k,j]
 $$
 
 $$
-    \forall~i : 0 \le i \le n-1\\
+    \forall~i : 0 \le i \le n-1
+$$
+
+$$
     \forall~j : 0 \le j \le n-1
 $$
 
