@@ -170,7 +170,7 @@ Yeah okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be 
 
   - Finally, if the width is longer than the length, you should draw nothing.
 
-  - **You do not need a nested loop to complete this method.**
+  - **You do not need a nested loop (loop inside another loop) to complete this method.**
 
 #### Part 4: Grids (Nested Loops)
 
