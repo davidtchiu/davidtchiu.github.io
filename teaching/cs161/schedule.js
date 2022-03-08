@@ -184,51 +184,54 @@ let days = {
     "String exercises",
     // wk 7
     "Start loops; reading; tracing",
-    // "Writing loops: while",
-    // "Exam review; Start For loops",
-    "More loop examples",
+    "More loops",
     "Lab 6",
-    "Nested loops",
+    "More loops: Prime number testing, etc.",
     // wk 8
-    "Arrays; Start Bank",
-    "Finish Bank",
-    "Lab 7",
-    "Review Lab 7",
+    "For loops; Nested loops",
+    "Nested loop examples",
+    "Hwk Lab",
+    "Start Arrays",
     // wk 9: spring break
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
     // wk 10
+    "Review Arrays; Start Bank class",
+    "Finish Bank",
+    "Lab 7",
+    "Review Lab 7",
+    // wk 11
     "Start ArrayList",
     "ArrayList",
     "Lab 8",
     "Scanning for input: ChatBot",
-    // wk 11
+    // wk 12
     "Finish ChatBot; Start HashMap",
     "HashMap, for-each loop",
     "Lab 9",
     "HashMap (cont.): Smarter ChatBot",
-    // wk 12
+    // wk 13
     "Start files",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     "File I/O; String parsing; Sorting ArrayLists",
-    // wk 13
+    // wk 14
     "Information hiding, static, main()",
     "enum; IntelliJ IDE",
     "Lab 10",
     "enum; IntelliJ IDE",
-    // wk 14
+    // wk 15
     "Start complexity: Linear and Binary search",
     "Selection sort",
     "Lab 11",
     "Bubble Sort and optimizations",
-    // wk 15
-    "Recursion",
-    "Recursion (cont.)",
-    "Lab 12",
-    "Review Lab 12",
+    // // wk 16
+    // "Recursion",
+    // "Recursion (cont.)",
+    // "Lab 12",
+    // "Review Lab 12",
     // wk 16
     "<strong>Recursion</strong>",
     "<strong><emph>Review</emph></strong>",
