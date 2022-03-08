@@ -196,7 +196,7 @@ One way to combat starvation is through **aging**, where processes eligible for 
 #### Grading
 
 ```
-This assignment will be graded out of 80 points:
+This assignment will be graded out of 55 points:
 
 [20pt] The struct queue and struct qentry now implement a priority queue.
        The enqueue() function must now insert a new entry in descending
