@@ -66,14 +66,14 @@ let days = {
       },
       // {
       //   name: "Proj 3",
-      //   title: "Project Planning",
+      //   title: "Time-Sharing and Locks",
       //   url: "proj3/",
       //   due: "4/15/2022",
       // },
       // {
       //   name: "Proj 4",
-      //   title: "Implementation",
-      //   url: "proj4.impl/",
+      //   title: "Deadlock Detection",
+      //   url: "proj4/",
       //   due: "4/29/2022",
       // },
     ],
