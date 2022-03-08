@@ -224,7 +224,7 @@ After you have completed the assignment, use the following to submit your work o
 
    - Open the Terminal, navigate into your project's `compile/` directory. Run `make clean` to remove the binaries.
 
-   - Zip up your project directory: `tar -czvf proj1_name1_name2.tar.gz proj1/` where name1 and name2 refer to your last names.
+   - Zip up your project directory: `tar -czvf proj2_name1_name2.tar.gz proj2/` where name1 and name2 refer to your last names.
 
 3. Go into canvas and click on `Submit Assignment`, and you should be able to "browse" for your file.
 
