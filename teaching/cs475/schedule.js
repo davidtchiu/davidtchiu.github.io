@@ -58,12 +58,12 @@ let days = {
         url: "proj1/",
         due: "3/7/2022",
       },
-      // {
-      //   name: "Proj 2",
-      //   title: "Priority Scheduling",
-      //   url: "proj2/",
-      //   due: "3/25/2022",
-      // },
+      {
+        name: "Proj 2",
+        title: "Priority Scheduling",
+        url: "proj2/",
+        due: "3/25/2022",
+      },
       // {
       //   name: "Proj 3",
       //   title: "Project Planning",
@@ -108,18 +108,18 @@ let days = {
     // wk 7
     "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
     "Sched: hyperthreading, multicore considerations",
-    "Synchronization: Critical section, locks",
+    "Start Synchronization",
     // wk 8
+    "Synchronization: Critical section, locks",
     "Sync: Implementing locks; priority inversion problem",
     "Sync: Spin locks, priority inversion",
-    "Sync: Blocking locks; Semaphores",
     // "Sync: Implementing semaphores; helpful professor problem",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
-    "Sync: semaphore review; bounded buffer problem",
+    "Sync: Blocking locks; Semaphores",
     "Sync: semaphores: bounded buffer, readers-writers",
     "Sync: monitors and Java",
     // wk 11
