@@ -41,7 +41,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 - If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Ubuntu virtual machine using:
 
   ```
-  git clone https://github.com/davidtchiu/cs475-proj1
+  git clone https://github.com/davidtchiu/cs475-proj2
   ```
 
 #### Part 1: Preliminary
