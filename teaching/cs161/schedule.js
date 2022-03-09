@@ -191,7 +191,7 @@ let days = {
     "For loops; Nested loops",
     "Nested loop examples",
     "Hwk Lab",
-    "Start Arrays",
+    "Finish Nested loops",
     // wk 9: spring break
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",

@@ -12,8 +12,10 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 - Open BlueJ and create a new project called `Hwk5_Loops`. This class will not have any fields or constructors. You'll just be writing and testing various methods.Write the following methods:
 
-- **(Not nested)** `stringRepeat()` which inputs a String `str` and an integer `num`. It returns a String in which `str` is
+- **(Not nested)** `stringRepeat()` which inputs a String `str` and an integer `num` respectively. It returns a String in which `str` is
   is appended to itself `num` times. An empty string should be returned if `nums <= 0`.
+
+  If you typed the following into BlueJ's code pad, you should get the corresponding results.
 
   ```java
   Loops loopie = new Loops();

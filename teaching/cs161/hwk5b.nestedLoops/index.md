@@ -15,6 +15,8 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 - **(Nested)** `printDownTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. This method requires a nested loop.
 
+  If you typed the following into BlueJ's code pad, you should get the corresponding results.
+
   ```java
   NestedLoops loopie = new NestedLoops();
   loopie.printDownTriangle(4);
