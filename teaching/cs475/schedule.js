@@ -111,8 +111,8 @@ let days = {
     "Start Synchronization",
     // wk 8
     "Synchronization: Critical section, locks",
-    "Sync: Implementing locks; priority inversion problem",
-    "Sync: Spin locks, priority inversion",
+    "Sync: Busy waiting and spin-locks; priority inversion problem",
+    "Cancelled",
     // "Sync: Implementing semaphores; helpful professor problem",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
