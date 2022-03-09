@@ -38,9 +38,9 @@ let days = {
         due: "3/11/2022",
       },
       {
-        name: "Hwk 6",
+        name: "Hwk 5b",
         title: "Nested Loop Practice",
-        url: "hwk6.nestedLoops/",
+        url: "hwk5b.nestedLoops/",
         due: "3/25/2022",
       },
       // {
