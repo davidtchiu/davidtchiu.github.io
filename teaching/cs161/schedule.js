@@ -198,7 +198,7 @@ let days = {
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
     // wk 10
-    "Start Arrays; Start Bank class",
+    "Start Arrays; Write the Bank class",
     "Finish Bank",
     "Lab 7",
     "Review Lab 7",
