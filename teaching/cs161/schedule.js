@@ -189,9 +189,9 @@ let days = {
     "More loops: Prime number testing, etc.",
     // wk 8
     "For loops; Nested loops",
-    "Nested loop examples",
+    "Finish nested loops",
     "Hwk Lab",
-    "Finish Nested loops",
+    "Cancelled",
     // wk 9: spring break
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
