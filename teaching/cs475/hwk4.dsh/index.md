@@ -159,7 +159,7 @@ Phew! That's a lot to take in. The figure below shows the abstract flowchart for
 
 This assignment can be tricky to get started, because there are so many pieces that need to come together. Students in the past have gotten stuck on things that ultimately prevented them from getting very far. If I were tackling this assignment, I'd probably work on things in this order:
 
-1. Write a function `char** split(char* str, char* delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings split on the given delimiter. The array should terminated with a `NULL` pointer. For instance, here's how you might use it:
+1. Write a function `char** split(char* str, char* delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings split on the given delimiter. I would start by counting the number of instances of the delimiter can be found in the given string. The number of tokens, let's call it `NUMTOKENS`, is just 1 added to that number. Then, using `malloc()` I would allocate `NUMTOKENS+1` pointers to `char`s. Use `strtok()` to loop through all of the tokens, and assign each to a corresponding place in your new array. Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element if your to `NULL`. (This is why I had you malloc `NUMTOKENS+1`) spots. Here's how you might use your new method:
 
    ```c
    //split cmd on whitespace!
@@ -174,13 +174,13 @@ This assignment can be tricky to get started, because there are so many pieces t
    }
    ```
 
-   Should result in the output below:
+Should result in the output below:
 
-   ```
-   git
-   add
-   .
-   ```
+    ```
+    git
+    add
+    .
+    ```
 
 This function would be a huge workhorse for this project.
 
