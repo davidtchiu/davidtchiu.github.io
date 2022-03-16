@@ -159,7 +159,7 @@ Phew! That's a lot to take in. The figure below shows the abstract flowchart for
 
 This assignment can be tricky to get started, because there are so many pieces that need to come together. Students in the past have gotten stuck on things that ultimately prevented them from getting very far. If I were tackling this assignment, I'd probably work on things in this order:
 
-1. Write a function `char** split(char* delim)`, like Java's `split(..)` that inputs a delimiter and returns an array of strings split on the given delimiter. This function would be a huge workhorse for this project.
+1. Write a function `char** split(char* delim)`, that has the same behavior as Java String's `split(..)` that inputs a delimiter and returns an array of strings split on the given delimiter. This function would be a huge workhorse for this project.
 
 2. Write the main command-prompt loop to repeatedly accept input. Test the `split(..)` function you just wrote on various inputs, including empty string.
 
@@ -169,7 +169,7 @@ This assignment can be tricky to get started, because there are so many pieces t
 
 4. Work on execution when given just the name of an executable.
 
-5. Work on built-ins commands.
+5. Work on built-in commands.
 
 6. Work on handling the MOTD.
 
