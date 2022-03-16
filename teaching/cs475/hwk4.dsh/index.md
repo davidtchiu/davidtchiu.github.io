@@ -159,7 +159,30 @@ Phew! That's a lot to take in. The figure below shows the abstract flowchart for
 
 This assignment can be tricky to get started, because there are so many pieces that need to come together. Students in the past have gotten stuck on things that ultimately prevented them from getting very far. If I were tackling this assignment, I'd probably work on things in this order:
 
-1. Write a function `char** split(char* delim)`, that has the same behavior as Java String's `split(..)` that inputs a delimiter and returns an array of strings split on the given delimiter. This function would be a huge workhorse for this project.
+1. Write a function `char** split(char* str, char* delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings split on the given delimiter. The array should terminated with a `NULL` pointer. For instance, here's how you might use it:
+
+   ```c
+   //split cmd on whitespace!
+   char cmd[] = "git add .";
+   char** terms = split(cmd, " ");
+
+   // print out all the tokens
+   int i = 0;
+   while (terms[i] != NULL) {
+     printf("%s\n", terms[i]);
+     i++;
+   }
+   ```
+
+   Should result in the output below:
+
+   ```
+   git
+   add
+   .
+   ```
+
+This function would be a huge workhorse for this project.
 
 2. Write the main command-prompt loop to repeatedly accept input. Test the `split(..)` function you just wrote on various inputs, including empty string.
 
