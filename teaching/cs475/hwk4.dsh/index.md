@@ -91,6 +91,8 @@ You can also define and set new environment variables (called exporting), but th
 
    This function will read `num` characters from the `stream`, and place it in a pre-defined string buffer `str`. The `stream`, in our case, is simply `STDIN` (the standard input device). The method will return a pointer to `str`. In your program, if the user's input is longer than 256 characters, you should ignore it and and simply output an error.
 
+5. If the input is empty, you should simply re-prompt.
+
 ##### Understanding Program Execution and Paths
 
 After the input is read, `dsh` will need to verify that the command entered is valid. There's an easy way to tell if it's valid, but first, we need to understand how file system paths work. To create a process and run a program, you need to construct its **absolute (or full) path** in the file system. An absolute path to a file, say `ls`, looks like this:
@@ -132,14 +134,14 @@ So this is all pointing to a couple of modes of execution we need to support. Th
       ```
       Basically, what you're seeing here is a colon-delimited string that separates all the different locations to look for an executable. Therefore, you need to split this string up by `:`s, and concatenate the user's input to the end of each token. The first location to try is `/opt/local/bin/`, the second place to try is `/opt/local/sbin/`, and so on. - As soon as you detect that an absolute path to the executable exists, then try to run it using the instructions given above. - Once you've tried all the tokens, then you can output a `Command not found` error message.
 
-##### Builtin Commands
+##### Built-in Commands
 
 Some commands are not meant to invoke another program. Instead, they are to be handled directly by the shell. For example, when a user inputs `exit`, your shell is not supposed to attempt to find an executable named `exit` in the user's
 PATH! (No such executable exists!) In this case, `dsh` should simply terminate. These special commands are called "builtins."
 
-Here is a list of builtins that your shell needs to support.
+Here is a list of built-ins that David shell needs to support.
 
-- `exit` should terminate dsh.
+- `exit` should exit dsh.
 
 - `pwd` should print the current working directory. Look into `getcwd()`, defined in `unistd.h`.
 
@@ -152,6 +154,24 @@ Here is a list of builtins that your shell needs to support.
 Phew! That's a lot to take in. The figure below shows the abstract flowchart for this program. This should (hopefully) give you a better idea of what all needs to be done.
 
 ![](figures/flowchart.png)
+
+#### Hints
+
+This assignment can be tricky to get started, because there are so many pieces that need to come together. Students in the past have gotten stuck on things that ultimately prevented them from getting very far. If I were tackling this assignment, I'd probably work on things in this order:
+
+1. Write a function `char** split(char* delim)`, like Java's `split(..)` that inputs a delimiter and returns an array of strings split on the given delimiter. This function would be a huge workhorse for this project.
+
+2. Write the main command-prompt loop to repeatedly accept input. Test the `split(..)` function you just wrote on various inputs, including empty string.
+
+   - If you're using `fgets()` to accept user inputs, remember that the "enter" key is logged as a `'\n'` character at the end of the string! You'll probably want to truncate that newline character as soon as you obtain the user input, and that's as simple as putting the `'\0'` character in its place.
+
+3. Work on command execution when given the full path to an executable.
+
+4. Work on execution when given just the name of an executable.
+
+5. Work on built-ins commands.
+
+6. Work on handling the MOTD.
 
 #### Example Output
 
