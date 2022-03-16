@@ -159,42 +159,42 @@ Phew! That's a lot to take in. The figure below shows the abstract flowchart for
 
 This assignment can be tricky to get started, because there are so many pieces that need to come together. Students in the past have gotten stuck on things that ultimately prevented them from getting very far. If I were tackling this assignment, I'd probably work on things in this order:
 
-1. Write a function `char** split(char* str, char* delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings split on the given delimiter. I would start by counting the number of instances of the delimiter can be found in the given string. The number of tokens, let's call it `NUMTOKENS`, is just 1 added to that number. Then, using `malloc()` I would allocate `NUMTOKENS+1` pointers to `char`s. Use `strtok()` to loop through all of the tokens, and assign each to a corresponding place in your new array. Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element if your to `NULL`. (This is why I had you malloc `NUMTOKENS+1`) spots. Here's how you might use your new method:
+1.  Write a function `char** split(char* str, char* delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings split on the given delimiter. I would start by counting the number of instances of the delimiter can be found in the given string. The number of tokens, let's call it `NUMTOKENS`, is just 1 added to that number. Then, using `malloc()` I would allocate `NUMTOKENS+1` pointers to `char`s. Use `strtok()` to loop through all of the tokens, and assign each to a corresponding place in your new array. Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element if your to `NULL`. (This is why I had you malloc `NUMTOKENS+1`) spots. Here's how you might use your new method:
 
-   ```c
-   //split cmd on whitespace!
-   char cmd[] = "git add .";
-   char** terms = split(cmd, " ");
+    ```c
+    //split cmd on whitespace!
+    char cmd[] = "git add .";
+    char** terms = split(cmd, " ");
 
-   // print out all the tokens
-   int i = 0;
-   while (terms[i] != NULL) {
-     printf("%s\n", terms[i]);
-     i++;
-   }
-   ```
-
-Should result in the output below:
-
-    ```
-    git
-    add
-    .
+    // print out all the tokens
+    int i = 0;
+    while (terms[i] != NULL) {
+      printf("%s\n", terms[i]);
+      i++;
+    }
     ```
 
-This function would be a huge workhorse for this project.
+    Should result in the output below:
 
-2. Write the main command-prompt loop to repeatedly accept input. Test the `split(..)` function you just wrote on various inputs, including empty string.
+         ```
+         git
+         add
+         .
+         ```
 
-   - If you're using `fgets()` to accept user inputs, remember that the "enter" key is logged as a `'\n'` character at the end of the string! You'll probably want to truncate that newline character as soon as you obtain the user input, and that's as simple as putting the `'\0'` character in its place.
+    This function would be a huge workhorse for this project.
 
-3. Work on command execution when given the full path to an executable.
+2.  Write the main command-prompt loop to repeatedly accept input. Test the `split(..)` function you just wrote on various inputs, including empty string.
 
-4. Work on execution when given just the name of an executable.
+    - If you're using `fgets()` to accept user inputs, remember that the "enter" key is logged as a `'\n'` character at the end of the string! You'll probably want to truncate that newline character as soon as you obtain the user input, and that's as simple as putting the `'\0'` character in its place.
 
-5. Work on built-in commands.
+3.  Work on command execution when given the full path to an executable.
 
-6. Work on handling the MOTD.
+4.  Work on execution when given just the name of an executable.
+
+5.  Work on built-in commands.
+
+6.  Work on handling the MOTD.
 
 #### Example Output
 
