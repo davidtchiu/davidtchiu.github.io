@@ -45,14 +45,20 @@ I have included a working solution of my program along with the starter code. Th
 
 #### Program Requirements
 
+Before we get started, we should first cover what environment variables are within shells. Think of shells as more than just a command-line prompt. They are the user interface to the OS before there were windows and desktops. Just like your windows environment, there are things that the shell needs to remember so that it's customized to you, specifically. Many of these customizations are stored in what are called **environment variables**. On one hand, often hold values that make the shell more convenient to use (for instance, remembering the path to your "home" directory), and on the other, they store values that customize the command-line environment to your liking (for instance, assigning various colors to files and directories.)
+
+There are certain environment variable names that are standard and predefined.
+
+- If you're curious to see what's stored inside the `HOME` variable, you can use the following command: `echo $HOME`
+- You can `echo` any environment variable `$VAR` to see its value, such as: `$SHELL` (what shell am I using?), `$PWD` (where am I?), `$PATH` (what are the paths to my executables?), and so on, ...
+
+You can also define and set new environment variables (called exporting), but that won't be a focus in this assignment.
+
 1. As soon as `dsh` starts, the first thing it should do is look for a file called `.dsh_motd` in the current user's home directory on the operating system. MOTD stands for "message of the day," and the file contents may be arbitrarily long and multi-line.
 
-   - To look for this file, you'll need to check whether it exists in the current user's home directory, which is stored in the linux environment variable `HOME`. You'll need to look into C's [getenv()](https://www.tutorialspoint.com/c_standard_library/c_function_getenv.htm) function to extract its value.
+   - To look for this file, you'll need to check whether it exists in the user's home directory, which is stored in the environment variable, `HOME`. You'll want to look into C's [getenv()](https://www.tutorialspoint.com/c_standard_library/c_function_getenv.htm) function to extract its value.
 
-     - If you're curious to see what's stored inside `HOME`, you can also use the command on the Terminal: `echo $HOME`
-     - In fact, you can `echo` any environment variable `$VAR` to see its value, such as: `$SHELL` (what shell am I using?), `$PWD` (where am I?), `$PATH` (what are the paths to my executables?), ...
-
-   - If this file doesn't exist in the user's home directory, then move on. Otherwise, you need to print its contents to the screen first. I would expect some simple error-handling to be done here. For instance, if the file exists, but can't be opened due to a lack of permissions, your program should _not_ crash (no need to print an error message though).
+   - If the `.dsh_motd` file doesn't exist in the user's home directory, then move on. Otherwise, you need to print its contents to the screen. I would expect some simple error-handling to be done here. For instance, if the file exists, but can't be opened due to a lack of permissions, your program should _not_ crash (no need to print an error message though).
 
 2. After printing the MOTD (if exists), your shell should provide the user with a command-line prompt: `dsh>`
 
@@ -71,7 +77,7 @@ I have included a working solution of my program along with the starter code. Th
 
    From the Terminal, I run `dsh` to start up David shell, and it prints off the MOTD before sending me to a prompt, awaiting commands. I am now in the David shell environment, and should be able to issue commands just like other when you're inside other command-line shells.
 
-4. At the `dsh>` prompt, the user would be able to enter a command which David shell should attempt to _execute_ as a separate process.
+4. At the `dsh>` prompt, the user would be able to enter a command which David Shell should attempt to _execute_ as a separate process.
 
    - Some commands may be followed by a list of arguments (for instance, `ls -l` and `ps au`), so you will have to read in the entire line and parse it later. Do do this, I would recommend looking into using [fgets()](https://www.cplusplus.com/reference/cstdio/fgets/), which has the following signature:
 
@@ -95,9 +101,9 @@ After the input is read, `dsh` will need to verify that the command entered is v
 
 This means that, to locate the `ls` program, the OS needs to first traverse to the "root" directory or folder (that's the initial `/`), and from there, traverse into the `bin` directory. Then from `/bin`, to look for a file named `ls` in there. It's super nice when the user types out the absolute path to the program they want to run, but that's usually not the case. We typically only type `ls`, and it works, which means that shells must do some background processing to figure out _where_ to look for `ls`.
 
-So this is all pointing to a couple of options we need to support. The user might give the absolute path to an executable file, or the user might simply give the name of the executable.
+So this is all pointing to a couple of modes of execution we need to support. The user might give the absolute path to an executable file, or the user might simply give the name of the executable.
 
-1.  **Option 1 (easy):** The user types in the absolute path to an executable. You know they typed an absolute path if their input starts begins with a `'/'` character! First, check to see if the given path even exists. To do this in C, I would first include the `unistd.h` file on top, and use its `access()` function:
+1.  **Mode 1 (easy):** The user types in the absolute path to an executable. You know they typed an absolute path if their input starts begins with a `'/'` character! First, check to see if the given path even exists. To do this in C, I would first include the `unistd.h` file on top, and use its `access()` function:
 
     ```c
     if (access(path, F_OK | X_OK) == 0) {
@@ -116,7 +122,7 @@ So this is all pointing to a couple of options we need to support. The user migh
 
       - **Run in background:** If the last character in a valid command is an `&` symbol, it indicates that the command is to be run in the background. In other words, when the shell forks a child process, it should **not** wait for the child to terminate. The OS will commence running the new process concurrently with `dsh`. This means that you'll see `dsh>` being re-displayed immediately by the parent (`dsh`) process. If the child process prints to the screen, it'll interleave its outputs into the terminal.
 
-2.  **Option 2:** The user's input does _not_ start with a `/`. Now we've got some work to do before we can even fork and exec! We need find the true location of the given command, and we'll use the following steps:
+2.  **Mode 2:** The user's input does _not_ start with a `/`. Now we've got some work to do before we can even fork and exec! We need find the _true_ location of the given command, and we'll use the following steps:
 
     - First, we'll check to see if the executable can be found in the current working directory. That is, the location of where your shell thinks you're in. Look into using `getcwd()`, defined in `unistd.h`. Concatenate the user's input to the value of the current working directory, and see if it exists. If not, then move on to the next step.
     - If the executable cannot be found in the current working directory, then there are other locations where it can be. These locations are stored in the environment variable `PATH`.
