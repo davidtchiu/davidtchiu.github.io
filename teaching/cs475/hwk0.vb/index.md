@@ -36,7 +36,9 @@ It's therefore important that we all share a common environment, so I've prepare
 
 - **Important for Windows Users:** There is a known issue on some Windows machines that does not allow the VM to boot up or import properly. The error you receive from VirtualBox reads, "VT-X is not enabled in BIOS" or something to the effect of "virtualization is disabled". If you are experiencing this, then you need to enable virtualization in your BIOS, which is possible upon a reboot of your computer. I can help you with this, or you can Google how.
 
-- **Important for Macs with Retina display:** Some people have reported sluggishness of the virtual machine, to a point where it becomes unusable. Here's what worked for me. Go to the App Store and download ResolutionTab. Once installed, it puts a new icon on your top menu. Select a lower resolution that is NOT HiDPI. I used something like 1650 x 1050, and it worked great. (I think the important thing is to disable HiDPI -- at least, that's what worked for me).
+- **Important for Mac Users:** Some people have reported sluggishness of the virtual machine, to a point where the delay and lack of responsiveness makes it nearly unusable. Go to the Apple App Store and download **ResolutionTab**. Once installed, it puts a new icon on your top menu. Take note of your current resolution. If you're on a newer Mac, it should be HiDPI (for instance, mine is 1650x1050 HiDIP). Hover over the drop-down menu and choose the same resolution that is **NOT** HiDPI. I used something like 1650 x 1050, and it worked great. I think the important thing is to disable HiDPI when you're using VirtualBox -- the responsiveness should improve immediately.
+
+  - When you're ready to go back to using your Mac, change it back to HiDPI for cleaner screen resolution.
 
 - Once the Ubuntu starts up, you can login with the following credentials:
 
@@ -64,6 +66,14 @@ It's therefore important that we all share a common environment, so I've prepare
     - Now enable `enp0s3` (the top one). Verify that Firefox is still working.
 
   - You may have to do this every time Ubuntu starts up, so some people just leave it running in the background.
+
+- Next, there's been reported issues with keys "sticking" when you're typing, which is super irritating when you're programming. Let's either turn off the "Repeat Keys" setting, at least slow it down some.
+
+  - Go into `Settings` again.
+  - Scroll down until you see `Universal Access`.
+  - Click on `Repeat Keys` and either turn it off, or slow down the speed. (It's sort of a trial and error on everyone's machines to get it just right.)
+
+- While you're still in settings, you might try going into `Mouse and Touchpad`. Some people have suggested that the touchpad scrolling is "backwards." Turn off `Natural Scrolling` if this is the case for you.
 
 - Open up the Terminal. The terminal gives you a shell (most likely the Bourne Again Shell, or bash), which is a command-line environment to interact directly with the operating system (Ubuntu Linux, in our case). Recall the following useful shell commands (Note: in the following listing, parameters enclosed in diamond brackets `<...>` are required and those enclosed in square brackets `[...]` are optional).
 
