@@ -43,12 +43,12 @@ let days = {
         url: "hwk5b.nestedLoops/",
         due: "3/25/2022",
       },
-      // {
-      //   name: "Hwk 7",
-      //   title: "Tweet Processor",
-      //   url: "hwk7.twitter/",
-      //   due: "4/4/2022",
-      // },
+      {
+        name: "Hwk 6",
+        title: "Tweet Processor",
+        url: "hwk6.twitter/",
+        due: "4/8/2022",
+      },
       // {
       //   name: "Hwk 7",
       //   title: "Pooled Testing",
