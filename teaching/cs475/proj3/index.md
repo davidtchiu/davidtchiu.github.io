@@ -20,14 +20,13 @@ You will be working with the following students. Just one submission per group i
 ```
 [J Kaeppel, R Weaver]
 [J Ota, M Sanchez-Forman]
-[L Aron, R Pietenpol]
 [B Gamble, R Mathur]
-[C Hong, C Brace]
+[E Markewitz, C Hong, C Brace]
 [B McAuliffe, B Williams]
 [L Leary, F Godfrey-Link]
 [S Park, K Schuh]
 [A Vermeulen, T Gaeta]
-[E Markewitz, E Shimanski]
+[R Pietenpol, E Shimanski]
 ```
 
 #### Starter Code

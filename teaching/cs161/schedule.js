@@ -212,7 +212,7 @@ let days = {
     "HashMap, for-each loop",
     "Lab 9",
     "HashMap (cont.): Smarter ChatBot",
-    // wk 13
+    // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
     "Start files",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",

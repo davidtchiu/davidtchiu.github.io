@@ -1,8 +1,6 @@
 #### TODO
 
-- Proj 1: Why make them do getFirst and getLast?
-- Proj 1: Do we need prev in the qentry?
-
+- Skip the implementation of semaphores (or just talk about one.)
 - What would a Lab schedule (2 hr) consist of?
 
   - Lab 1: VM, shell, navigation, running binaries; C basics; gcc
@@ -22,4 +20,8 @@
   - Lab 15: Working set?
   - Lab 16:
 
-- Merge Proj1 and Proj2 (Both pretty easy; less to grade)
+- Merge Proj1 and Proj2? I don't know... students still struggling.
+
+# Change Log
+
+- Proj 1: No longer making them do getFirst and getLast.

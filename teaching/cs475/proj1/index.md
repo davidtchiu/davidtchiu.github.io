@@ -109,7 +109,7 @@ You will be coding and compiling Xinu on the Ubuntu machine as you did for your 
 
 4. However, I've provided you with a precompiled solution called `xinuSol`, so let's run that for now so you can see what to expect for this assignment. Run `./uploadSol.sh` to upload my precompiled kernel to the back-end VM.
 
-5. Now on the Terminal, type `sudo minicom`. You'll be prompted for the password. This turns the Terminal window into a serial console that is connected to the back-end VM, effectively emulating a terminal for the back-end VM. Speaking of the back-end...
+5. Now in the Terminal, create a new "tab." Then in the new tab, type `sudo minicom`. You'll be prompted for the password. This turns the Terminal window into a serial console that is connected to the back-end VM, effectively emulating a terminal for the back-end VM. Speaking of the back-end...
 
 6. At this point, start the `xinu-back-end` virtual machine from VirtualBox. It should take a few seconds for it to automatically retrieve the kernel binary you just "uploaded" from Ubuntu VM and boot it. Because `minicom` turned the Terminal into the screen that's "attached" to the `xinu-back-end` VM, you can see Xinu boot up and run right on the Terminal.
 
@@ -218,18 +218,18 @@ You will be coding and compiling Xinu on the Ubuntu machine as you did for your 
 
    Afterwards, Xinu is still running over on the back-end VM, but it's in an infinite loop called the `null-process`, and not accepting any other commands (there's no shell). We'll see what this output means later.
 
-7. To exit `minicom`, press and hold `ctrl` then hit `a` followed by pressing `q`. This brings the Terminal back.
+<!-- 7. To exit `minicom`, press and hold `ctrl` then hit `a` followed by pressing `q`. This brings the Terminal back. -->
 
-8. Shutdown the back-end VM from VirtualBox to terminate Xinu.
+7. Shutdown the back-end VM from VirtualBox to terminate Xinu.
 
-9. From here on, remember this workflow as you proceed with development:
+8. From here on out, remember this workflow as you proceed with development:
 
    - Write your code on Ubuntu VM
    - Navigate into the `compile/` subdirectory
    - Type: `make clean`
    - Type: `make` to compile the Xinu kernel
    - Type: `./upload.sh` to upload the kernel
-   - Type: `sudo minicom` to turn your terminal to a screen for Xinu
+   - Create a new tab in the Terminal, then type: `sudo minicom` to turn your terminal to a screen for Xinu
    - Start up the `xinu-back-end` VM (and troubleshoot if necessary if it doesn't start)
 
 #### Part 3: Quick Tour of Xinu Structures and Types
