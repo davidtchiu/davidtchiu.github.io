@@ -113,41 +113,40 @@ let days = {
     "Synchronization: Critical section, locks",
     "Sync: Busy waiting and spin-locks; priority inversion problem",
     "Cancelled",
-    // "Sync: Implementing semaphores; helpful professor problem",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
     "Sync: Blocking locks; Semaphores",
-    "Sync: semaphores: bounded buffer, readers-writers",
-    "Sync: monitors and Java",
+    "Sync: semaphores",
+    "Sync: Implementing semaphores; helpful professor problem",
     // wk 11
+    "Sync: Bounded buffer problem",
+    "Sync: monitors and Java",
     "Deadlocks (DL): conditions and prevention",
-    "DL: Banker's algorithm",
-    "DL: RAGs, detection and recovery",
     // wk 12
-    "MM: Address binding, relocatability, process loading",
+    "DL: Banker's algorithm",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
+    "DL: RAGs, detection and recovery",
+    "MM: Address binding, relocatability, process loading",
     "MM: Fixed vs. Dynamic Partitioning",
+    // wk 14
     "MM: Segmentation",
     "MM: Paging, 2-level paging",
-    // wk 14
     "MM: Translation Lookaside Buffer (TLB)",
-    "Virtual Memory (VM): demand paging and page fault handlingy",
-    "VM: FIFO, MIN, LRU replacement policies",
     // "Start transactions: ACID, serializability",
     // "Transactions: serializability test, precedence graphs",
     // "Transactions: Concurrency control",
     // wk 15
+    "Virtual Memory (VM): demand paging and page fault handlingy",
+    "VM: FIFO, MIN, LRU replacement policies",
     "VM: Clock; Start memory allocation and working-set model",
+    // wk 16
     "VM: memory allocation (cont.)",
     "VM: malloc(), free()",
-    // wk 16
-    "File System",
-    "File System",
     "<strong>Reading Period</strong>",
     // wk final
     "",
