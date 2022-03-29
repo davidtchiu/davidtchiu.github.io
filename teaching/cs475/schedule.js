@@ -37,12 +37,12 @@ let days = {
         url: "hwk5.mmm/",
         due: "3/21/2022",
       },
-      // {
-      //   name: "Hwk 6",
-      //   title: "Bartender Problem",
-      //   url: "hwk6.joins/",
-      //   due: "4/4/2022",
-      // },
+      {
+        name: "Hwk 6",
+        title: "Bartender Problem",
+        url: "hwk6.joins/",
+        due: "4/11/2022",
+      },
       // {
       //   name: "Hwk 7",
       //   title: "Paging Simulator",
@@ -64,12 +64,12 @@ let days = {
         url: "proj2/",
         due: "3/25/2022",
       },
-      // {
-      //   name: "Proj 3",
-      //   title: "Time-Sharing and Locks",
-      //   url: "proj3/",
-      //   due: "4/15/2022",
-      // },
+      {
+        name: "Proj 3",
+        title: "Time-Sharing and Locks",
+        url: "proj3/",
+        due: "4/18/2022",
+      },
       // {
       //   name: "Proj 4",
       //   title: "Deadlock Detection",
