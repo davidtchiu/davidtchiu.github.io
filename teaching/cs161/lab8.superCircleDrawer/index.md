@@ -19,12 +19,12 @@ You are required to work _together_ on labs. As I mentioned the first day of cla
 Here are your assigned partners for today's lab.
 
 ```
-[Miller, D, Jones, S]
+[Beardsley, M, Miller, D]
 [Strash, K, Murayama, E]
-[Wissing, A, Steller, L]
-[Roppolo, G, Camblin, F]
-[Beardsley, M, Brown, A, Jones, B]
-[Murphy, C, Grey, E]
+[Wissing, A, Camblin, F]
+[Roppolo, G, Steller, L]
+[Brown, A, Murphy, C, Jones, B]
+[Grey, E, Jones, S]
 [Culpepper, A, Rodriguez, C]
 ```
 
