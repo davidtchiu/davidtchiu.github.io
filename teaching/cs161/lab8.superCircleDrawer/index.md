@@ -46,21 +46,21 @@ The API handout that you'll want to have in front of you:
 
 I've created a new project to get you started. Please download and modify `SuperCircleDrawer` instead of creating a new project via BlueJ, otherwise you won't be able to submit the assignment when you're finished. Note: The new project contains the Circle class (with the `getDiameter()` getter method), and a version of the canvas with a larger drawing area. Your `SuperCircleDrawer` class should abide by the following:
 
-- It should contain a collection of `Circles`. Define an instance variable for the `ArrayList` that will be used to hold all of the `Circle` objects.
+- It should contain an `ArrayList` collection of `Circles`. Define an instance variable for the `ArrayList` that will be used to hold all of the `Circle` objects.
 
 - A constructor that inputs an integer argument `numCircles`, the number of `Circles` to add to the initial collection. Then instantiate the `ArrayList` and populate it with `numCircles` circles. Each circle you create and insert into the collection should have a random diameter (from 1 to 100) and a random x and y position. The coordinates should be within the dimensions of the canvas, which is 800 (Width) by 600 (Height). Note the new `moveTo(..)` method that has been provided to circles can be used here.
 
-- An `addCircle(...)` method that takes a single Circle object for input, adds the given circle to the collection, and draws it on the canvas.
-
-- A `drawCircles()` method that takes no arguments, and causes all of the circles in the ArrayList collection to be drawn on the canvas.
+- An `addCircle(..)` method that inputs a single `Circle` object, adds the given circle to the collection, and draws it on the canvas. You do not need to _create_ any Circles in this method. Simply assume that a Circle object has already been created, and is being passed to this method.
 
 - An `eraseCircles()` method that takes no arguments, and erases all of the circles in the collection from the canvas. These circles should not be removed from the list.
 
-- An overloaded `eraseCircles(..)` method that inputs a diameter argument. This method should erase all circles from the canvas that are smaller in size than the given diameter.
+- It's be nice to make the circles re-appear after you erased them. Write a `drawCircles()` method that takes no arguments, and causes all of the circles in the ArrayList collection to be drawn on the canvas.
 
-- A method called `removeSmallest()` that takes no input arguments. This method identifies the smallest circle in the collection and removes it (don't forget to erase it from the canvas first!). In the case of a tie, just remove any one of them.
+- Write a second `eraseCircles(..)` method that inputs a diameter (which is an integer). This method should erase all circles from the canvas that are smaller in size than the given diameter.
 
 - A method called `replace(..)` that takes two arguments circle arguments, `c1` and `c2`. This method should search for `c1` in the collection, and replace it with the circle `c2` in its place. You will want to look into the `indexOf()` and the `set(..)` methods for `ArrayLists`. Don't forget to erase `c1` off the canvas before replacing it! If `c1` doesn't exist, then no action shall be taken.
+
+- A method called `removeSmallest()` that takes no input arguments. This method identifies the smallest circle in the collection and removes it (don't forget to erase it from the canvas first!). In the case of a tie, just remove any one of them.
 
 - A method called `replaceLargest(..)` that takes as argument a circle object. This method identifies the largest circle in the collection and replaces it with the given circle in its place. In the event of a tie, you are to only replace any one of them. You are reminded to re-use any relevant methods to minimize code duplication.
 
