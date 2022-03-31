@@ -58,9 +58,11 @@ I've created a new project to get you started. Please download and modify `Super
 
 - It's be nice to make the circles re-appear after you erased them. Write a `drawCircles()` method that takes no arguments, and causes all of the circles in the ArrayList collection to be drawn on the canvas.
 
-- A method called `removeSmallest()` that takes no inputs. This method identifies the smallest circle in the collection and removes it (don't forget to erase it from the canvas first!). In the case of a tie, just remove any one of them.
+- A method called `removeSmallest()` that takes no inputs. This method identifies the smallest circle in the collection and removes it from the list (don't forget to erase it from the canvas first!). In the case of a tie, just remove either of them.
 
-- A method called `replace(..)` that takes two Circle inputs, `c1` and `c2`. This method should search for `c1` in the collection, and replace it with the circle `c2` in its place. You will want to look into the `indexOf()` and the `set(..)` methods for `ArrayLists`. Don't forget to erase `c1` off the canvas before replacing it! If `c1` doesn't exist, then no action shall be taken.
+- A method called `replace(..)` that takes two Circle inputs, `c1` and `c2`. This method should search for `c1` in the collection, and replace it with the circle `c2` in its place. Don't forget to erase `c1` off the canvas before replacing it! If `c1` doesn't exist, then no action shall be taken.
+
+  - You will want to look into the `indexOf(..)` and the `set(..)` methods for `ArrayLists`.
 
 - A method called `replaceLargest(..)` that takes as argument a circle object. This method identifies the largest circle in the collection and replaces it with the given circle in its place. In the event of a tie, you are to only replace any one of them. You are reminded to re-use any relevant methods to minimize code duplication.
 
