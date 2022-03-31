@@ -54,9 +54,9 @@ I've created a new project to get you started. Please download and modify `Super
 
 - An `eraseCircles()` method that takes no arguments, and erases all of the circles in the collection from the canvas. These circles should not be removed from the list.
 
-- It's be nice to make the circles re-appear after you erased them. Write a `drawCircles()` method that takes no arguments, and causes all of the circles in the ArrayList collection to be drawn on the canvas.
-
 - Write a second `eraseCircles(..)` method that inputs a diameter (which is an integer). This method should erase all circles from the canvas that are smaller in size than the given diameter.
+
+- It's be nice to make the circles re-appear after you erased them. Write a `drawCircles()` method that takes no arguments, and causes all of the circles in the ArrayList collection to be drawn on the canvas.
 
 - A method called `removeSmallest()` that takes no inputs. This method identifies the smallest circle in the collection and removes it (don't forget to erase it from the canvas first!). In the case of a tie, just remove any one of them.
 
