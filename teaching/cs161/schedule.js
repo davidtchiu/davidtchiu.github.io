@@ -118,12 +118,12 @@ let days = {
         url: "lab7.combo/",
         due: "3/24/2022",
       },
-      // {
-      //   name: "Lab 8",
-      //   title: "Super Circle Drawer (ArrayLists)",
-      //   url: "lab8.superCircleDrawer/",
-      //   due: "3/24/2022",
-      // },
+      {
+        name: "Lab 8",
+        title: "Super Circle Drawer (ArrayLists)",
+        url: "lab8.superCircleDrawer/",
+        due: "3/31/2022",
+      },
       // {
       //   name: "Lab 9",
       //   title: "Election (HashMaps)",
