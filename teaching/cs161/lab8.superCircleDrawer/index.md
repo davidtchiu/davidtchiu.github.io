@@ -62,7 +62,7 @@ I've created a new project to get you started. Please download and modify `Super
 
 - A method called `replace(..)` that takes two Circle inputs, `c1` and `c2`. This method should search for `c1` in the collection, and replace it with the circle `c2` in its place. Don't forget to erase `c1` off the canvas before replacing it! If `c1` doesn't exist, then no action shall be taken.
 
-  - You will want to look into the `indexOf(..)` and the `set(..)` methods for `ArrayLists`.
+  - You will want to look into exploiting the `indexOf(..)` and the `set(..)` methods for `ArrayLists`. If you do this right, you won't even have to write a single loop.
 
 - A method called `replaceLargest(..)` that takes as argument a circle object. This method identifies the largest circle in the collection and replaces it with the given circle in its place. In the event of a tie, you are to only replace any one of them. You are reminded to re-use any relevant methods to minimize code duplication.
 

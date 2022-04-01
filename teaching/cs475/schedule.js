@@ -40,7 +40,7 @@ let days = {
       {
         name: "Hwk 6",
         title: "Bartender Problem",
-        url: "hwk6.joins/",
+        url: "hwk6.thebar/",
         due: "4/11/2022",
       },
       // {
