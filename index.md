@@ -6,11 +6,15 @@ My current teaching and research interests include data management and distribut
 
 Here's a link to my [curriculum vitae](CV.pdf).
 
+### Student Feedback for Department
+
+Leave the CS department [some feedback](https://forms.gle/Ltassc7BQkNfnnXB7). This form is anonymous.
+
 ### Recent Activities
 
-- (4/2022) I am chair of the Poster Program at BDCAT 2022, held in Portland Oregon.
+- (4/2022) I am chairing Poster Program at BDCAT 2022, being held in Portland, Oregon.
 - (8/2021) I'm a Faculty Panelist (with Monica DeHart and Melvin Rouse) for the "I Am Puget Sound" student orientation program.
-- (7/2021) I am chair of the Demo/Short Paper Session at SSDBM 2021, and I'm also giving a talk, "Caching Support for Range Query Processing on Bitmap Indices."
+- (7/2021) I am the chair of the Demo/Short Paper Session at SSDBM 2021, and I'm also giving a talk, "Caching Support for Range Query Processing on Bitmap Indices."
 - (5/2021) Our paper on bitmap caching has been accepted to SSDBM 2021 as a long paper. Congrats to Sarah McClain (BS'20), Manya Mutschler-Aldine (BS'21), and Colin Monaghan (BS'22).
 - (6/2020) Elevation to IEEE Senior Member grade.
 - (4/2020) Congrats to Colin Monaghan on receiving a summer research grant to study replacement policies in bitmap index caching.
@@ -20,7 +24,3 @@ Here's a link to my [curriculum vitae](CV.pdf).
 - (4/2019) Congrats to Sarah McClain on receiving a summer research grant to work on semantic caching of bitmap indices.
 - (3/2019) I am serving on the PC for HiPC'19 Please consider submitting a paper.
 - (10/2018) Our paper on distributed bitmap indexing has been accepted for publication at BDCAT'18. It was nominated for the Best Paper award.
-
-### Student Feedback
-
-Leave our department some feedback using our [anonymous feedback form](https://forms.gle/Ltassc7BQkNfnnXB7).
