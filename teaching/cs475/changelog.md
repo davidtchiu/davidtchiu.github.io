@@ -1,6 +1,7 @@
 #### TODO
 
-- Skip the implementation of semaphores (or just talk about one.)
+- Speedup Sync: kip the implementation of semaphores (or just talk about one.)
+- Double check the monitor examples. Notify and continue? Create the animation instead of drawing
 - What would a Lab schedule (2 hr) consist of?
 
   - Lab 1: VM, shell, navigation, running binaries; C basics; gcc
