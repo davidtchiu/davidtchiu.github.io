@@ -80,9 +80,13 @@ To see how `split()` works, let's once again open up BlueJ's codepad. Type the f
 
 ```java
 String post = "Call me Ishmael";
+
+// split the post by space
 String[] terms = post.split(" ");
-for (int i = 0; i < terms.length; i++) {
-    System.out.println(terms[i]);
+
+// print out each term
+for (String term : terms) {
+    System.out.println(term);
 }
 ```
 
