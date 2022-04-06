@@ -124,12 +124,12 @@ let days = {
         url: "lab8.superCircleDrawer/",
         due: "3/31/2022",
       },
-      // {
-      //   name: "Lab 9",
-      //   title: "Election (HashMaps)",
-      //   url: "lab9.election/",
-      //   due: "3/31/2022",
-      // },
+      {
+        name: "Lab 9",
+        title: "Election (HashMaps)",
+        url: "lab9.election/",
+        due: "4/7/2022",
+      },
       // {
       //   name: "Lab 10",
       //   title: "Boulders (File I/O, Parsing)",
