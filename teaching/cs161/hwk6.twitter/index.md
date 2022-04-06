@@ -66,7 +66,7 @@ line
 
 Notice that, after the `line.replace("Ishmael", "David")` was called, it returned the expected result (`"Call me David"`). However, when we check the contents of line, it still stores `"Call me Ishmael"`. Similarly, the `line.substring(5,7)` call returns the expected substring, but line is still untouched. -->
 
-#### Preliminary: String's split() Method
+#### Preliminary: String's `split()` Method
 
 An important `String` method called `split()` deserves additional attention. It is used to chop up a given String (using some separator, called a _delimiter_, into individual pieces, storing those individual pieces in an array (not ArrayList!) and returning that array.
 
@@ -84,9 +84,12 @@ String[] terms = post.split(" ");
 for (int i = 0; i < terms.length; i++) {
     System.out.println(terms[i]);
 }
-> call
-> me
-> Ishmael
+```
+
+```
+call
+me
+Ishmael
 ```
 
 The String variable `post` is split up by space (`" "` was input as the delimiter). The split method stores all the split-up chunks into a string array, and returns this array. The `String[] terms` variable holds this array, and we are able to traverse through its contents as usual.

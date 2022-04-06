@@ -19,19 +19,19 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
   ```java
   Loops loopie = new Loops();
-  System.out.println(loopie.stringRepeat("#", 5));
-  > #####
+  System.out.println(loopie.stringRepeat("$", 5));
+  > $$$$$
 
   System.out.println(loopie.stringRepeat("wuff ", 3));
   > wuff wuff wuff
 
-  System.out.println(loopie.stringRepeat("#", 1));
-  > #
+  System.out.println(loopie.stringRepeat("$", 1));
+  > $
 
-  System.out.println(loopie.stringRepeat("#", 0));
+  System.out.println(loopie.stringRepeat("$", 0));
   >
 
-  System.out.println(loopie.stringRepeat("#", -5));
+  System.out.println(loopie.stringRepeat("$", -5));
   >
 
   System.out.println(loopie.stringRepeat(loopie.stringRepeat("!", 2), 4));
