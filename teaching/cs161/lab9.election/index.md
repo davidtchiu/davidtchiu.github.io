@@ -74,7 +74,7 @@ The API handout that you'll want to have in front of you:
 
 - Write the `winners()` method. It scans your `HashMap` and determines the winner(s). Yes, plural, due to possible ties for first. Stick the winner(s)' names into an `ArrayList` and return it. (Hint: I would first loop through all the values of the HashMap to obtain the highest vote count. Then I would write another loop to determine all the candidates who shared that vote count).
 
-- Write the `printResults()` It should spit out the contents of your `HashMap` in a uniform way, and display the winner(s). It should report the total votes cast, as well as the percentage of votes captured by each candidate. The output should look something like this::
+- Write the `printResults()` It should spit out the contents of your `HashMap` in a uniform way, and display the winner(s). It should report the total votes cast, as well as the percentage of votes captured by each candidate. The output should look something like this:
 
   ```
   ******************************
