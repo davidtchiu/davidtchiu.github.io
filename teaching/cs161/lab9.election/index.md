@@ -46,8 +46,6 @@ The API handout that you'll want to have in front of you:
 
 - Fields: You need to store the election results in a `HashMap`. Each entry is keyed on the candidate's name and maps to the number of votes they've received.
 
-- Browse through the constructor and method-skeletons. The default constructor is already provided to you, but read through it to understand what it's doing.
-
 - Write the `inputVotes()` method. It needs to repeated scan for user input. Each line of input should just contain the name of the candidate who received a vote. For each name that we scan in, we need to examine the `HashMap` to see if that candidate already exists. If not, create a new entry in the map, and give their vote count a 1. If the candidate already exists, you just need to increment their vote by 1. This method should continue asking for candidate names until "quit" is entered. (Make sure "quit" is not added as a candidate!)
 
   After this method is called, your `HashMap` should contain the election result. Double click on the object to ensure that is the case.
