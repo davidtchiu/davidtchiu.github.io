@@ -38,6 +38,7 @@ The following file(s) have been provided for this homework.
 The API handout that you'll want to have in front of you:
 
 - [HashMap](../api/HashMapAPI.pdf)
+- [Scanner](../api/ScannerAPI.pdf)
 
 #### Part I: Ballot Counter
 
