@@ -19,10 +19,10 @@ Here are your assigned partners for today's lab.
 
 ```
 [Rodriguez, C, Steller, L]
-[Jones, S, Miller, D, Brown, A]
+[Jones, S, Miller, D]
+[Murphy, C, Brown, A]
 [Camblin, F, Grey, E]
 [Murayama, E, Culpepper, A]
-[Roppolo, G, Murphy, C]
 [Jones, B, Strash, K]
 [Wissing, A, Beardsley, M]
 ```

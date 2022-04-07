@@ -20,12 +20,11 @@ Here are your assigned partners for today's lab.
 
 ```
 [Jones, B, Murayama, E]
-[Miller, D, Roppolo, G]
-[Murphy, C, Beardsley, M, Rodriguez, C]
-[Grey, E, Camblin, F]
+[Miller, D, Rodriguez, C, Murphy, C]
+[Brown, A, Camblin, F]
 [Steller, L, Wissing, A]
 [Strash, K, Culpepper, A]
-[Jones, S, Brown, A]
+[Jones, S, Grey, E]
 ```
 
 #### Required Files
