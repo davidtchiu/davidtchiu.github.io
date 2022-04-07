@@ -64,14 +64,9 @@ The API handout that you'll want to have in front of you:
     // 'str' is now a key in your hashmap (in no particular order)
     // use map.get(str) to obtain its corresponding value
   }
-
-  // This loop will iterate through all values in the map
-  for (int val : map.values()) {
-    // val refers one of the values in your map (in no particular order)
-  }
   ```
 
-- Write the `margin` method that inputs the names of two candidates. It returns the _difference of votes_ between the two as a percentage. For instance, if one candidate receives 50 votes, and the second candidate receives 60 votes, then the method should return `−0.09`, which is `(50−60)/(50+60)`. If either candidate doesn't exist in the map, or if the sum of their votes is zero, return the `Double.NaN` constant (Not-a-Number).
+- Write the `margin()` method that inputs the names of two candidates. It returns a `double`. For instance, if the first candidate receives 50 votes, and the second candidate receives 60 votes, then the method should return `−0.09`, which is `(50−60)/(50+60)`. If either candidate doesn't exist in the map, or if the sum of their votes is zero, then return the `Double.NaN` constant (Not-a-Number).
 
 - Write the `winners()` method. It scans your `HashMap` and determines the winner(s). Yes, plural, due to possible ties for first. Stick the winner(s)' names into an `ArrayList` and return it. (Hint: I would first loop through all the values of the HashMap to obtain the highest vote count. Then I would write another loop to determine all the candidates who shared that vote count).
 
