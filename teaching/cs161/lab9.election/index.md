@@ -60,13 +60,13 @@ The API handout that you'll want to have in front of you:
 
   // This loop will iterate through all keys the map
   for (String str : map.keySet()) {
-  // 'str' is now a key in your hashmap (in no particular order)
-  // use map.get(str) to obtain its corresponding value
+    // 'str' is now a key in your hashmap (in no particular order)
+    // use map.get(str) to obtain its corresponding value
   }
 
   // This loop will iterate through all values in the map
   for (int val : map.values()) {
-  // val refers one of the values in your map (in no particular order)
+    // val refers one of the values in your map (in no particular order)
   }
   ```
 
