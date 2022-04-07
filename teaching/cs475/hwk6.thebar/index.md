@@ -103,13 +103,13 @@ sem_unlink("/mutex");
 
 ```
 Customer:										| Employee:
-Traveling	Arrived		Ordering	Browsing	At Register	Leaving	| Waiting	Mixing Drinks	At Register	Payment Recv
-----------------------------------------------------------------------------------------+------------------------------------------------------------
+Traveling	Arrived		Ordering	Browsing	Register	Leaving	| Waiting	Mixing		At Register	Payment Recv
+----------------------------------------------------------------------------------------+-----------------------------------------------------------
 Cust 0											|
+											| Bartender
 		Cust 0									|
 				Cust 0							|
 						Cust 0					|
-											| Bartender
 											| 		Bartender
 											| 				Bartender
 								Cust 0			|
@@ -121,29 +121,28 @@ Cust 0											|
 
 ```
 Customer:										| Employee:
-Traveling	Arrived		Ordering	Browsing	At Register	Leaving	| Waiting	Mixing Drinks	At Register	Payment Recv
-----------------------------------------------------------------------------------------+------------------------------------------------------------
+Traveling	Arrived		Ordering	Browsing	Register	Leaving	| Waiting	Mixing		At Register	Payment Recv
+----------------------------------------------------------------------------------------+-----------------------------------------------------------
 Cust 0											|
 Cust 1											|
+											| Bartender
 		Cust 1									|
 				Cust 1							|
 						Cust 1					|
-											| Bartender
 											| 		Bartender
 											| 				Bartender
 								Cust 1			|
 											| 						Bartender
+											| Bartender
 										Cust 1	|
 		Cust 0									|
 				Cust 0							|
 						Cust 0					|
-											| Bartender
 											| 		Bartender
 											| 				Bartender
 								Cust 0			|
 											| 						Bartender
 										Cust 0	|
-
 ```
 
 #### Grading
