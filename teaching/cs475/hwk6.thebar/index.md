@@ -64,10 +64,10 @@ Simulate a bar establishment with the following ground rules for customers and t
 Two important files have been included for you: `semaphore.h` and `fcntl.h`. Here are the useful semaphore functions:
 
 - `sem_t* sem_open(const char *name, int oflag, mode_t mode, unsigned int initialValue)` -- Creates a new semaphore with the given name, mode, and initial value. Important: the given name must begin with a "/" and the initial value must be non-negative.
-- `int sem_post(sem_t *s)` -- Signals the given semaphore, i.e., `V(s)`
-- `int sem_wait(sem_t *s)` -- Waits on the given semaphore, i.e., `P(s)`
-- `int sem_close(sem_t *s)` -- Closes the given semaphore
-- `int sem_unlink(char *name)` -- Removes the given semaphore
+- `int sem_post(sem_t *s)` -- Signals (increments) the semaphore
+- `int sem_wait(sem_t *s)` -- Waits on (then decrements) the semaphore
+- `int sem_close(sem_t *s)` -- Closes connection to the semaphore
+- `int sem_unlink(char *name)` -- Removes the semaphore by its name
 
 The following example gives you an idea of how to use these functions.
 
@@ -96,8 +96,8 @@ sem_unlink("/mutex");
 
 - It is worth noting that, online tutorials on C's semaphores sometimes use functions that have now been deprecated.
 
-  - `sem_init()` -- deprecated: use sem_open() instead.
-  - `sem_destroy()` -- deprecated: use sem_close() and sem_unlink() instead.
+  - `sem_init()` -- deprecated: use `sem_open()` instead.
+  - `sem_destroy()` -- deprecated: use `sem_close()` and `sem_unlink()` instead.
 
 #### Example Output for 1 customer
 
