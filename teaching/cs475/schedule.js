@@ -123,30 +123,28 @@ let days = {
     "Sync: Implementing semaphores; helpful professor problem",
     // wk 11
     "Sync: Bounded buffer problem",
+    "Sync: monitors",
     "Sync: monitors and Java",
-    "Deadlocks (DL): conditions and prevention",
     // wk 12
-    "DL: Banker's algorithm",
+    "Deadlocks (DL): conditions and prevention",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
     "DL: RAGs, detection and recovery",
+    "DL: Banker's algorithm",
     "MM: Address binding, relocatability, process loading",
-    "MM: Fixed vs. Dynamic Partitioning",
     // wk 14
+    "MM: Fixed vs. Dynamic Partitioning",
     "MM: Segmentation",
     "MM: Paging, 2-level paging",
-    "MM: Translation Lookaside Buffer (TLB)",
-    // "Start transactions: ACID, serializability",
-    // "Transactions: serializability test, precedence graphs",
-    // "Transactions: Concurrency control",
     // wk 15
+    "MM: Translation Lookaside Buffer (TLB)",
     "Virtual Memory (VM): demand paging and page fault handlingy",
     "VM: FIFO, MIN, LRU replacement policies",
-    "VM: Clock; Start memory allocation and working-set model",
     // wk 16
+    "VM: Clock; Start memory allocation and working-set model",
     "VM: memory allocation (cont.)",
-    "VM: malloc(), free()",
+    // "VM: malloc(), free()",
     "<strong>Reading Period</strong>",
     // wk final
     "",

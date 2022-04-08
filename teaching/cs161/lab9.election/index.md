@@ -52,7 +52,7 @@ The API handout that you'll want to have in front of you:
 
   After this method is called, your `HashMap` should contain the election result. Double click on the object to ensure that is the case.
 
-- Write the `totalVotes()` method that returns the total number of votes cast.
+- Write the `totalVotes()` method that returns the total number of votes cast for all candidates.
 
   To write this method, you will need to use the `HashMap`'s `keySet()` method. To loop through a `Set` object, you must use a for-each loop. Here's a reminder of how to use a for-each loop over a `HashMap`:
 
@@ -61,7 +61,7 @@ The API handout that you'll want to have in front of you:
 
   // This loop will iterate through all keys the map
   for (String str : map.keySet()) {
-    // 'str' is now a key in your hashmap (in no particular order)
+    // str loops through each key in your hashmap (in no particular order)
     // use map.get(str) to obtain its corresponding value
   }
   ```
