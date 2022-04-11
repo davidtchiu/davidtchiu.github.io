@@ -213,10 +213,10 @@ let days = {
     "Lab 9",
     "HashMap (cont.): Smarter ChatBot",
     // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
-    "Start files",
+    "File I/O; String parsing",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "File I/O; String parsing; Sorting ArrayLists",
+    "File I/O: Finish TreeFile class",
     // wk 14
     "Information hiding, static, main()",
     "enum; IntelliJ IDE",
