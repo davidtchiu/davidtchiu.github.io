@@ -49,12 +49,12 @@ let days = {
         url: "hwk6.twitter/",
         due: "4/8/2022",
       },
-      // {
-      //   name: "Hwk 7",
-      //   title: "Pooled Testing",
-      //   url: "hwk7.pooled/",
-      //   due: "4/13/2021",
-      // },
+      {
+        name: "Hwk 7",
+        title: "Pooled Testing",
+        url: "hwk7.pooled/",
+        due: "4/20/2021",
+      },
       // {
       //   name: "Final Hwk Prep",
       //   title: "Final Homework Proposal (Optional)",
@@ -212,7 +212,7 @@ let days = {
     "HashMap, for-each loop",
     "Lab 9",
     "HashMap (cont.): Smarter ChatBot",
-    // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
+`    // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
     "Start files",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
