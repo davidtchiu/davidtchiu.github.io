@@ -100,11 +100,9 @@ Before you get started: Even though we're reading from and writing to 2D arrays 
      $ ./mmm P 1000
      ```
 
-3. Your `main(int argc, char *argv[])` function should input the following command-line arguments. If any of these are absent, you must inform the user of the proper syntax and terminate.
+3. Your `main(int argc, char *argv[])`. Command-line arguments can be access through `argc` and `argv`. Specifically, `argc` refers to the number of tokens given on the command line, including the command to run the executable itself. `argv` is a string array containing the tokens given (much like the `String[] args` in Java).
 
-   - Command line arguments can be access through `argc` and `argv`. Specifically, `argc` refers to the number of tokens given on the command line, including the command to run the executable itself. `argv` is a string array containing the tokens given on the command line.
-
-4. Dynamically allocating 2D arrays: Because the number of threads and the `SIZE` of the matrices are given at runtime, you must dynamically allocate memory on the heap. Remember to free-up memory when done. To do this, I would store pointers to the input and output matrices in global (thread-shared) scope. A pointer to a 2D array of doubles would look like this: `double **matrix;` Then inside `main()`, you'll need to first allocate `SIZE` number of pointers to doubles. Then, iterate through that array and for each element, allocate `SIZE` number of doubles.
+4. Dynamically allocating 2D arrays: Because the number of threads and the `size` of the matrices are given at runtime, you must dynamically allocate memory on the heap. Remember to free-up memory when done. To do this, should store pointers to the input and output matrices in global (thread-shared) scope. A pointer to a 2D array of doubles would look like this: `double **matrix;` Then inside `main()`, you'll need to first allocate `size` number of pointers to doubles (that's the first dimension in the matrix), then iterate through that array and allocate `size` number of doubles (that's the second dimension of the matrix).
 
 5. Once you allocate the input matrices, you should initialize them with random double values between 0 and 99.
 
