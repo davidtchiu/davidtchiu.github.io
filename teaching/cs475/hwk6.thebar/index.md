@@ -39,19 +39,19 @@ I have included a working solution of my program along with the starter code. Th
 
 Simulate a bar establishment with the following ground rules for customers and the bartender.
 
-- The Bar
+- **The Bar**
 
   - Contains the `main()` method, which inputs an integer argument, `num`, the number of Customers.
   - The establishment is so small, it only has a max capacity of 2: the Bartender and one other Customer. All other Customers wait at outside.
 
-- Bartender Rules
+- **Bartender Rules**
 
-  - Waits until a customer enters the bar.
+  - Waits until a customer arrives and enters the bar.
   - When a customer places an order, it takes the Bartender a random amount of time between 5 ms and 1000 ms to make the drink.
   - When the drink is made the bartender waits for the customer to pay. (While mixing the drink, the customer is browsing some wall art.)
   - The Bartender must wait until the next customer to come and order.
 
-- Customer Rules
+- **Customer Rules**
   - Each customer takes a random amount of time between 20 ms and 5000 ms to travel to the bar. (You'll want to look into `usleep()`)
   - If there's already another customer inside the bar, customers have to wait outside until the bar is empty before entering.
   - Once indoor, the customer can ordering their drink, and afterwards, the customer can browse the wall art for a random amount of time between 3ms and 4000ms.
