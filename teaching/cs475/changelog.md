@@ -14,13 +14,12 @@
   - Lab 7: Threads II: OpenMP?
   - Lab 8: Locks
   - Lab 9: Spring Break
-  - Lab 10: Semaphores/monitors?
-  - Lab 11: Bankers?
+  - Lab 10: Semaphores?
+  - Lab 11: monitors Java
   - Lab 12: Exam 2
-  - Lab 13:
-  - Lab 14:
-  - Lab 15: Working set?
-  - Lab 16:
+  - Lab 13: Bankers?
+  - Lab 14: Graphs?
+  - Lab 15: Work Day
 
 - Merge Proj1 and Proj2? I don't know... students still struggling.
 
