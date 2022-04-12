@@ -57,46 +57,58 @@ I have included a working solution of my program along with the starter code. Th
 
 Before you get started: Even though we're reading from and writing to 2D arrays that are shared amongst all threads, there is actually no need for synchronization (locking, semaphores) in this assignment. You should try understand why synchronization is not necessary for the work done here. Recognize where the threads are reading from, and writing to, and check if race conditions can happen.
 
-1. Your `main(int argc, char *argv[])` function should input the following command-line arguments. If any of these are absent, you must inform the user of the proper syntax and terminate.
+1. To run your program, you must support the following commands:
+
+   ```
+   $ ./mmm S <size>
+   ```
+
+   This will cause your program to run MMM in sequential mode on matrices of `size` by `size` dimension. There is no need to fire off a thread when running in sequential mode. Simply call the MMM function to compute the multiplication.
+
+   or
+
+   ```
+   $ ./mmm P <threads> <size>
+   ```
+
+   This will cause your program to run MMM in parallel mode on matrices of `size` by `size` dimension. Specifically, the specified number of worker threads must be spawned by the main() thread, and the work of matrix multiplication should shared among those threads. The number of threads should be a positive integer.
+
+   In either mode, `size` should also be a positive integer.
+
+2. If the run syntax is incorrect or unexpected, print out an error (with a hint on proper syntax) and terminate.
+
+   - **Proper run syntax:**
+     This syntax will run a sequential version of the code on 25 by 25 matrices.
+
+     ```
+     $ ./mmm S 25
+     ```
+
+     This syntax will run a parallel program on 4 threads and 1000 by 1000 matrices.
+
+     ```
+     $ ./mmm P 4 1000
+     ```
+
+   - **Invalid run syntax:**
+     The version below is incorrect because the size of the matrices does not follow `S`.
+     ```
+     $ ./mmm S
+     ```
+     The version below is incorrect the parallel version expects both the number of threads and the size of matrices, in that order.
+     ```
+     $ ./mmm P 1000
+     ```
+
+3. Your `main(int argc, char *argv[])` function should input the following command-line arguments. If any of these are absent, you must inform the user of the proper syntax and terminate.
 
    - Command line arguments can be access through `argc` and `argv`. Specifically, `argc` refers to the number of tokens given on the command line, including the command to run the executable itself. `argv` is a string array containing the tokens given on the command line.
 
-   - The first command line argument is the _mode_: it can only be `S` or `P`, where `S` specifies that the program should be run sequentially (no multi-threading), and `P` specifies that the program should be parallel.
+4. Dynamically allocating 2D arrays: Because the number of threads and the `SIZE` of the matrices are given at runtime, you must dynamically allocate memory on the heap. Remember to free-up memory when done. To do this, I would store pointers to the input and output matrices in global (thread-shared) scope. A pointer to a 2D array of doubles would look like this: `double **matrix;` Then inside `main()`, you'll need to first allocate `SIZE` number of pointers to doubles. Then, iterate through that array and for each element, allocate `SIZE` number of doubles.
 
-     - Additionally, if the mode is given as `P`, then the argument immediately following `P` must be the number of threads to use in your program. For obvious reasons, it should be a positive integer (yes, 1 is a valid number of threads to create).
+5. Once you allocate the input matrices, you should initialize them with random double values between 0 and 99.
 
-   - The next argument is the `SIZE` of each integer matrix. You will assume that all matrices are square, with `SIZE` many elements in each dimension.
-
-   - If the run syntax is incorrect or unexpected, print out an error (with a hint on proper syntax) and terminate.
-
-     - Proper run syntax:
-       This syntax will run a sequential version of the code on 25 by 25 matrices.
-
-       ```
-       $ ./mmm S 25
-       ```
-
-       This syntax will run a parallel program on 4 threads and 1000 by 1000 matrices.
-
-       ```
-       $ ./mmm P 4 1000
-       ```
-
-     - Invalid run syntax:
-       The version below is incorrect because the size of the matrices does not follow `S`.
-       ```
-       $ ./mmm S
-       ```
-       The version below is incorrect the parallel version expects both the number of threads and the size of matrices, in that order.
-       ```
-       $ ./mmm P 1000
-       ```
-
-2. Dynamically allocating 2D arrays: Because the number of threads and the `SIZE` of the matrices are given at runtime, you must dynamically allocate memory on the heap. Remember to free-up memory when done. To do this, I would store pointers to the input and output matrices in global (thread-shared) scope. A pointer to a 2D array of doubles would look like this: `double **matrix;` Then inside `main()`, you'll need to first allocate `SIZE` number of pointers to doubles. Then, iterate through that array and for each element, allocate `SIZE` number of doubles.
-
-3. Once you allocate the input matrices, you should initialize them with random double values between 0 and 99.
-
-4. **Work-Sharing Approach:** If the parallel mode (`P`) is selected, your `main()` function must split the work evenly/fairly among the threads. There are many ways to do this, and I'll leave this decision up to you. You're welcome to experiment with different approaches!
+6. **Work-Sharing Approach:** If the parallel mode (`P`) is selected, your `main()` function must split the work evenly/fairly among the threads. There are many ways to do this, and I'll leave this decision up to you. You're welcome to experiment with different approaches!
 
    - Would you assign each thread to compute a set of rows in the result? Or a set of columns? Would it make a difference?
    - Maybe you could assign a thread to compute a block of elements instead of rows or columns?
@@ -105,9 +117,9 @@ Before you get started: Even though we're reading from and writing to 2D arrays 
 
    - Which ever approach you use, remember to provide each thread (as an input argument to the thread function) its range of work. It's usually through a `struct`. If you forget how to do this, refer to the examples I gave in class: [Parallel Sum](https://github.com/davidtchiu/cs475-parSum) and [Parallel Sort](https://github.com/davidtchiu/cs475-parInsertionSort).
 
-5. Validation: An important final step is to verify that the parallel version of your code is correct. To do this, you should compare the matrices generated by the sequential algorithm and the parallel algorithm whenever the parallel mode `P` is run. Check that the greatest difference between any two corresponding elements of the output matrices generated by the sequential code and the parallel code is zero.
+7. Validation: An important final step is to verify that the parallel version of your code is correct. To do this, you should compare the matrices generated by the sequential algorithm and the parallel algorithm whenever the parallel mode `P` is run. Check that the greatest difference between any two corresponding elements of the output matrices generated by the sequential code and the parallel code is zero.
 
-6. You must output the time taken, in seconds, for the calculation to take place. To do this, you should use the `rtclock()` function that is provided to you. When running in parallel mode, you should also show the speedup over the sequential version, which is computed to be: $$T_{sequential} / T_{parallel}$$. If you did this right, you should experience significant speedup, since matrix multiplication has a significant fraction of code that is highly parallelizable.
+8. You must output the time taken, in seconds, for the calculation to take place. To do this, you should use the `rtclock()` function that is provided to you. When running in parallel mode, you should also show the speedup over the sequential version, which is computed to be: $$T_{sequential} / T_{parallel}$$. If you did this right, you should experience significant speedup, since matrix multiplication has a significant fraction of code that is highly parallelizable.
 
    - Smoothing the results: Always run the program $$N+1$$ times: throwing away the time for the first run, and report the average time of the subsequent $$N$$ runs. This is to warm-up the cache (first run) and to smooth-out the results. $$N = 3$$ is a good value.
 
