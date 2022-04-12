@@ -46,7 +46,7 @@ Simulate a bar establishment with the following ground rules for customers and t
 
 - **Bartender Rules**
 
-  - Waits until a customer arrives and enters the bar.
+  - Waits until a customer arrives at (and enters) the bar.
   - When a customer places an order, it takes the Bartender a random amount of time between 5 ms and 1000 ms to make the drink.
   - When the drink is made the bartender waits for the customer to pay. (While mixing the drink, the customer is browsing some wall art.)
   - The Bartender must wait until the next customer to come and order.
