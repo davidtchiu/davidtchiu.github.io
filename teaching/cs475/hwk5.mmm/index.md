@@ -71,9 +71,9 @@ Before you get started: Even though we're reading from and writing to 2D arrays 
    $ ./mmm P <threads> <size>
    ```
 
-   This will cause your program to run MMM in parallel mode on matrices of `size` by `size` dimension. Specifically, the specified number of worker threads must be spawned by the main() thread, and the work of matrix multiplication should shared among those threads. The number of threads should be a positive integer.
+   This will cause your program to run MMM in parallel mode on matrices of `size` by `size` dimension. Specifically, the specified number of worker threads must be spawned by the main() thread, and the work of matrix multiplication should shared among those threads. The number of threads should be a positive integer, and it should not exceed `size`.
 
-   In either mode, `size` should also be a positive integer.
+   In either mode, `size` should also be a positive integer. If running in parallel mode, it should be be less than the number of threads.
 
 2. If the run syntax is incorrect or unexpected, print out an error (with a hint on proper syntax) and terminate.
 
@@ -125,7 +125,7 @@ Before you get started: Even though we're reading from and writing to 2D arrays 
 
 #### Example Output
 
-It should be noted that your mileage may vary. I'm running this on a MacOS X system with a an Intel 2.8 GHz Core i7 processor (quad core, hyperthreading enabled) and 16 GB of RAM.
+It should be noted that your mileage may vary. I'm running this on a MacOS X system with a an Intel 2.8 GHz Core i7 processor (quad core, hyper-threading enabled) and 16 GB of RAM.
 
 ```
 # ./mmm
