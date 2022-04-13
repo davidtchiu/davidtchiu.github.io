@@ -179,26 +179,26 @@ How are you supposed to update the RAG in such an environment, when you don't ev
 
 1. Open up `include/lock.h`:
 
-```c
-/* lock.h */
-#define NLOCK   10
+   ```c
+   /* lock.h */
+   #define NLOCK   10
 
-/* Lock state definitions */
-#define LOCK_FREE  0               /* lock table entry is available   */
-#define LOCK_USED  1               /* lock table entry is in use      */
+   /* Lock state definitions */
+   #define LOCK_FREE  0               /* lock table entry is available   */
+   #define LOCK_USED  1               /* lock table entry is in use      */
 
-/* Lock table entry */
-struct  lockentry
-{
-    byte    state;          /* whether entry is LOCK_FREE or LOCK_USED    */
-    mutex_t lock;           /* lock */
-    struct  queue   *wait_queue;    /* queue of waiting processes */
-};
+   /* Lock table entry */
+   struct  lockentry
+   {
+       byte    state;          /* whether entry is LOCK_FREE or LOCK_USED    */
+       mutex_t lock;           /* lock */
+       struct  queue   *wait_queue;    /* queue of waiting processes */
+   };
 
-extern  struct  lockentry locktab[];
+   extern  struct  lockentry locktab[];
 
-#define isbadlock(m)     ((int32)(m) < 0 || (m) >= NLOCK)
-```
+   #define isbadlock(m)     ((int32)(m) < 0 || (m) >= NLOCK)
+   ```
 
 - On Line 2: the NLOCK constant is defined, imposing a hard limit of 10 locks to be in existence. Along with NPROC being earlier set to 20, these two constants will help you define the size of the RAG.
 
@@ -234,82 +234,82 @@ The lock subsystem you just built now lets the Xinu kernel track how many locks 
 
 1. Before we start, I bet you're interested to see what a deadlock looks like. I gave you a file called `system/main.dl.c`. Replace `system/main.c` with this file (but save it as `system/main_phil.c` for later). Let's take a look at what's inside:
 
-```c
-/*  main.c  - main */
+   ```c
+   /*  main.c  - main */
 
-#include <xinu.h>
-#include <stdio.h>
-#include <stdlib.h>
+   #include <xinu.h>
+   #include <stdio.h>
+   #include <stdlib.h>
 
-#define N 2
+   #define N 2
 
-lid32   printer_lock;
-lid32   mylock[N];
-
-
-/**
- * Delay for a random amount of time
- * @param alpha delay factor
- */
-void    holdup(int32 alpha)
-{
-    long delay = rand() * alpha;
-    while (delay-- > 0)
-        ;   //no op
-}
-
-/**
- * Work for a random amount of time
- * @param id ID of worker
- */
-void    work(uint32 id)
-{
-    acquire(printer_lock);
-    kprintf("Worker %d: Buzz buzz buzz\n", id);
-    release(printer_lock);
-    holdup(10000);
-}
+   lid32   printer_lock;
+   lid32   mylock[N];
 
 
-/**
- * Worker code
- * @param id ID of worker
- */
-void    worker(uint32 id)
-{
-    if (id == 0)
-    {
-        acquire(mylock[0]);
-        work(id);
-        acquire(mylock[1]);
-        work(id);
-        release(mylock[1]);
-        release(mylock[0]);
-    }
-    else
-    {
-        acquire(mylock[1]);
-        work(id);
-        acquire(mylock[0]);
-        work(id);
-        release(mylock[0]);
-        release(mylock[1]);
-    }
-}
+   /**
+   * Delay for a random amount of time
+   * @param alpha delay factor
+   */
+   void    holdup(int32 alpha)
+   {
+       long delay = rand() * alpha;
+       while (delay-- > 0)
+           ;   //no op
+   }
 
-int main(uint32 argc, uint32 *argv)
-{
-    int i;
-    printer_lock = lock_create();
-    for (i=0; i<N; i++)
-        mylock[i] = lock_create();
+   /**
+   * Work for a random amount of time
+   * @param id ID of worker
+   */
+   void    work(uint32 id)
+   {
+       acquire(printer_lock);
+       kprintf("Worker %d: Buzz buzz buzz\n", id);
+       release(printer_lock);
+       holdup(10000);
+   }
 
-    ready(create((void*) worker, INITSTK, 15, "Worker 0", 1, 0), FALSE);
-    ready(create((void*) worker, INITSTK, 15, "Worker 1", 1, 1), FALSE);
 
-    return 0;
-}
-```
+   /**
+   * Worker code
+   * @param id ID of worker
+   */
+   void    worker(uint32 id)
+   {
+       if (id == 0)
+       {
+           acquire(mylock[0]);
+           work(id);
+           acquire(mylock[1]);
+           work(id);
+           release(mylock[1]);
+           release(mylock[0]);
+       }
+       else
+       {
+           acquire(mylock[1]);
+           work(id);
+           acquire(mylock[0]);
+           work(id);
+           release(mylock[0]);
+           release(mylock[1]);
+       }
+   }
+
+   int main(uint32 argc, uint32 *argv)
+   {
+       int i;
+       printer_lock = lock_create();
+       for (i=0; i<N; i++)
+           mylock[i] = lock_create();
+
+       ready(create((void*) worker, INITSTK, 15, "Worker 0", 1, 0), FALSE);
+       ready(create((void*) worker, INITSTK, 15, "Worker 1", 1, 1), FALSE);
+
+       return 0;
+   }
+   ```
 
 2. As you can see, two processes are created, and both call `work()`, which essentially pauses awhile before printing a message. The first process attempts to acquire lock0 initially, then does some work, then tries to acquire lock1 before working again, and releasing both locks afterwards. The second process attempts to acquire the locks in reverse order, which creates a simple cycle.
 
@@ -336,34 +336,34 @@ If you run this code, chances are, each process will get to a bit of work, but t
 
 7.  Phew, that's a lot of work! Let's test your deadlock detection algorithm! Return to `compile/`, then recompile and run Xinu. If things are working, it should now catch the deadlock (by printing out the cycle). Because detection is run repeatedly, you should get something close to the following:
 
-```
-Booting Xinu on i386-pc...
+    ```
+    Booting Xinu on i386-pc...
 
-(x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
+    (x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
 
-  16777216 bytes physical memory.
-           [0x00000000 to 0x00FFFFFF]
-     17046 bytes of Xinu code.
-           [0x00000000 to 0x00004295]
-     22678 bytes of data.
-           [0x00004296 to 0x00009B2B]
-    615632 bytes of heap space below 640K.
-  15728640 bytes of heap space above 1M.
-           [0x00100000 to 0x00FFFFFF]
-Worker 0: Buzz buzz buzz
-Worker 1: Buzz buzz buzz
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-...
-```
+      16777216 bytes physical memory.
+              [0x00000000 to 0x00FFFFFF]
+        17046 bytes of Xinu code.
+              [0x00000000 to 0x00004295]
+        22678 bytes of data.
+              [0x00004296 to 0x00009B2B]
+        615632 bytes of heap space below 640K.
+      15728640 bytes of heap space above 1M.
+              [0x00100000 to 0x00FFFFFF]
+    Worker 0: Buzz buzz buzz
+    Worker 1: Buzz buzz buzz
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+    ...
+    ```
 
 #### Part 4: Deadlock Recovery
 
@@ -386,69 +386,69 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
 
 5. If everything's working properly, you'll get something that looks similar to the following:
 
-```
-Booting Xinu on i386-pc...
+   ```
+   Booting Xinu on i386-pc...
 
-(x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
+   (x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
 
-  16777216 bytes physical memory.
-           [0x00000000 to 0x00FFFFFF]
-     17046 bytes of Xinu code.
-           [0x00000000 to 0x00004295]
-     22678 bytes of data.
-           [0x00004296 to 0x00009B2B]
-    615632 bytes of heap space below 640K.
-  15728640 bytes of heap space above 1M.
-           [0x00100000 to 0x00FFFFFF]
-Worker 0: Buzz buzz buzz
-Worker 1: Buzz buzz buzz
-DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-DEADLOCK RECOVER        killing pid=3 to release lockid=2
-Worker 0: Buzz buzz buzz
+     16777216 bytes physical memory.
+             [0x00000000 to 0x00FFFFFF]
+       17046 bytes of Xinu code.
+             [0x00000000 to 0x00004295]
+       22678 bytes of data.
+             [0x00004296 to 0x00009B2B]
+       615632 bytes of heap space below 640K.
+     15728640 bytes of heap space above 1M.
+             [0x00100000 to 0x00FFFFFF]
+   Worker 0: Buzz buzz buzz
+   Worker 1: Buzz buzz buzz
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK RECOVER        killing pid=3 to release lockid=2
+   Worker 0: Buzz buzz buzz
 
 
-All user processes have completed.
-```
+   All user processes have completed.
+   ```
 
 6. Now, let's modify the Dining Philosopher's problem so that deadlocks are not prevented. In other words, once a philosopher acquires a fork, do not try to see if the other fork is available, and simply try to acquire (or wait) for the other fork. To increase likelihood of a deadlock, reduce the number of philosophers to 3. It still may take some time for the deadlock to occur (you may have to modify your code so that philosophers eat more often, but here's one successful output:
 
-```
-Booting Xinu on i386-pc...
+   ```
+   Booting Xinu on i386-pc...
 
-(x86 Xinu) #334 (xinu@xinu-develop-end) Thu 20 Aug 17:05:43 PDT 2015
+   (x86 Xinu) #334 (xinu@xinu-develop-end) Thu 20 Aug 17:05:43 PDT 2015
 
-  16777216 bytes physical memory.
-           [0x00000000 to 0x00FFFFFF]
-     17408 bytes of Xinu code.
-           [0x00000000 to 0x000043FF]
-     18892 bytes of data.
-           [0x00004400 to 0x00008DCB]
-    619056 bytes of heap space below 640K.
-  15728640 bytes of heap space above 1M.
-           [0x00100000 to 0x00FFFFFF]
-Philosopher 0 thinking: zzzzzZZZz
-Philosopher 2 thinking: zzzzzZZZz
-Philosopher 0 eating: nom nom nom
-Philosopher 1 thinking: zzzzzZZZz
-Philosopher 1 thinking: zzzzzZZZz
-Philosopher 2 thinking: zzzzzZZZz
-Philosopher 1 thinking: zzzzzZZZz
-Philosopher 0 eating: nom nom nom
-Philosopher 0 thinking: zzzzzZZZz
-Philosopher 0 thinking: zzzzzZZZz
-Philosopher 2 eating: nom nom nom
-Philosopher 1 thinking: zzzzzZZZz
-Philosopher 2 thinking: zzzzzZZZz
-Philosopher 0 eating: nom nom nom
-Philosopher 2 thinking: zzzzzZZZz
-DEADLOCK DETECTED       pid=3 lockid=2 pid=4 lockid=3 pid=2 lockid=1
-DEADLOCK RECOVER        killing pid=3 to release lockid=2
-Philosopher 1 eating: nom nom nom
-Philosopher 1 eating: nom nom nom
-Philosopher 1 eating: nom nom nom
-Philosopher 1 thinking: zzzzzZZZz
-Philosopher 0 eating: nom nom nom
-```
+     16777216 bytes physical memory.
+             [0x00000000 to 0x00FFFFFF]
+       17408 bytes of Xinu code.
+             [0x00000000 to 0x000043FF]
+       18892 bytes of data.
+             [0x00004400 to 0x00008DCB]
+       619056 bytes of heap space below 640K.
+     15728640 bytes of heap space above 1M.
+             [0x00100000 to 0x00FFFFFF]
+   Philosopher 0 thinking: zzzzzZZZz
+   Philosopher 2 thinking: zzzzzZZZz
+   Philosopher 0 eating: nom nom nom
+   Philosopher 1 thinking: zzzzzZZZz
+   Philosopher 1 thinking: zzzzzZZZz
+   Philosopher 2 thinking: zzzzzZZZz
+   Philosopher 1 thinking: zzzzzZZZz
+   Philosopher 0 eating: nom nom nom
+   Philosopher 0 thinking: zzzzzZZZz
+   Philosopher 0 thinking: zzzzzZZZz
+   Philosopher 2 eating: nom nom nom
+   Philosopher 1 thinking: zzzzzZZZz
+   Philosopher 2 thinking: zzzzzZZZz
+   Philosopher 0 eating: nom nom nom
+   Philosopher 2 thinking: zzzzzZZZz
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=4 lockid=3 pid=2 lockid=1
+   DEADLOCK RECOVER        killing pid=3 to release lockid=2
+   Philosopher 1 eating: nom nom nom
+   Philosopher 1 eating: nom nom nom
+   Philosopher 1 eating: nom nom nom
+   Philosopher 1 thinking: zzzzzZZZz
+   Philosopher 0 eating: nom nom nom
+   ```
 
 #### Grading
 
