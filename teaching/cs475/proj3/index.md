@@ -140,7 +140,7 @@ It is hard to reliably generate consistent ticks using software (you'd probably 
 
    - Line 15: the `clkinit()` function is defined. This will initialize and program our hardware timer.
 
-   - Line 19: we want to program the hardware timer (by writing to its control word register) with the specifications given in the TODO comment. The diagram on Page 6 of the Intel 8254 Programmable Interval Timer Specification is useful. Because the control word is only one byte we'll cast it into a `char`. Use the `outb(port, value)` command, where `port` is the I/O port of the timer's control register, and `value` is the value of the control word.
+   - Line 19: we want to program the hardware timer (by writing to its control-word register) with the specifications given in the TODO comment. The diagram on Page 6 of the Intel 8254 Programmable Interval Timer Specification is useful. Because the control word is only one byte we'll cast it into a `char`. Use the `outb(port, value)` command, where `port` is the I/O port of the timer's control register, and `value` is the value of the control word.
 
    - Line 24: it's time to set the initial value for the countdown. Your timers should have a 1ms granularity -- that is, it should interrupt the CPU at a rate of every 1ms. Hint: all you need to know is that the timer ticks 1,193,000 times per second.
 
@@ -206,7 +206,7 @@ The hardware timer is installed! That's great and all, but it can lead to some r
    }
    ```
 
-   Looks harmless, right? Two processes are created: one prints 'A' ten times, another prints 'B' ten times to stdout. Notice that we don't have to call `resched()` explicitly either, because the timer's interrupt handler will do that for us. Neat!
+   Looks harmless, right? Two processes are created: one prints 'A' ten times, another prints 'B' ten times. Notice that we don't have to call `resched()` explicitly either, because the timer's interrupt handler will do that for us. Neat!
 
 2. Before you compile Xinu, let's define a new type called `mutex_t`, which is just an alias to a `uint32`. Open `include/kernel.h`, and define this new type under the "Xinu-specific" section.
 
@@ -318,12 +318,12 @@ I've started a skeleton file for you, in `system/main_phil.c`. Some noteworthy i
 - You can model the forks as an array of N mutex locks. Each philosopher must obtain both the left and right fork in order to eat. When N = 5, the left and right forks for each philosopher is defined as follows.
 
   ```
-  Phil_ID	Left Fork	Right Fork
+  Phil_ID   Left Fork   Right Fork
   0	      fork[0]	   fork[4]
   1	      fork[1]	   fork[0]
   2	      fork[2]	   fork[1]
   3	      fork[3]	   fork[2]
-  4   	   fork[4]	   fork[3]
+  4	      fork[4]	   fork[3]
   ```
 
 - You must declare and initialize all locks' values in the global scope, not from inside `main()`.
