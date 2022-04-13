@@ -3,7 +3,8 @@
 - Speedup Sync: nip the implementation of semaphores (or just talk about one.)
 - Double check the monitor examples. Notify and continue? Create the animation instead of drawing
 - What would a Lab schedule (2 hr) consist of?
-- BackItUp instead of Bartender? Incorporate semaphores
+- BackItUp instead of MMM.
+- Keep Bartender, but make it harder. Let multiple people in
 
   - Lab 1: VM, shell, navigation, running binaries; C basics; gcc
   - Lab 2: Multi-file, Makefile; Arrays and Strings
