@@ -1,9 +1,498 @@
-[L Leary, F Godfrey-Link, T Gaeta]
+## CS 475 - Operating Systems
+
+### Project 4: Deadlock Detection
+
+At this point, your version of Xinu should be a preemptive, time sharing, environment. To coordinate access to shared resources between multiple processes, we implemented a simple spinlock. As you learned in class, however, using synchronization mechanisms (including locks) can result in situations known as deadlocks, where a set of processes is waiting on each other in a cyclical manner, resulting in starvation for all involved processes.
+
+You probably didn't see a deadlock in your Dining Philosophers implementation. It is possible that every philosopher might try to grab each of their left forks simultaneously, resulting in a deadlock. Well, I did something sneaky in my instructions: I called for the philosophers to release one of their forks if the other fork cannot be acquired. Study the necessary and sufficient deadlock conditions that we went over in class, and figure out which of these conditions is not met, hence preventing deadlocks from occurring.
+
+Even with prevention in place, there was a still a small chance that a deadlock could have occurred in your Dining Philosopher's solution. Ask yourselves what would happen if a process locks the left-fork, then proceeds to check whether the right-fork is taken. Seeing that it's not taken, the philosopher reaches for the fork. However, at this moment, a context switch to the adjacent Philosopher occurs, who grabs the fork. Now this exact situation happens for all remaining Philosophers, resulting in a deadlock. The probability of this situation occurring is vastly limited with five philosophers (you might see it with only two), and I surmise that you probably never saw it happen.
+
+Your assignment is to implement a deadlock-handling mechanism for Xinu. Your first thought was to apply the highly sophisticated "Ostrich Algorithm" you learned in class. However, David would like to remind you that turning in the ostrich approach is a sufficient condition to receive a failing grade for this project. His threat motivates you to build a more robust version of Xinu. In this final project, you will implement a deadlock detection and recovery algorithm based on single-instance resource allocation graphs (RAG).
+
+#### Student Outcomes
+
+- To experience applying graph structures and algorithms to a real-world problem
+- To extend Xinu with support for deadlock detection and recovery
+
+#### Pair Assignments
+
+You will be working with the following students. Just one submission per group is sufficient.
+
+```
+[L Leary, T Gaeta]
 [S Park, M Sanchez-Forman]
 [K Schuh, E Shimanski]
-[J Ota, R Mathur]
+[J Ota, R Mathur, F Godfrey-Link]
 [C Hong, B Williams]
 [B Gamble, B McAuliffe]
 [R Weaver, E Markewitz]
 [A Vermeulen, J Kaeppel]
 [C Brace, R Pietenpol]
+```
+
+#### Starter Code
+
+Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
+
+- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-proj4](https://github.com/davidtchiu/cs475-proj4). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+
+  ```
+  git clone <your-github-url-for-this-project>
+  ```
+
+- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Ubuntu virtual machine using:
+
+  ```
+  git clone https://github.com/davidtchiu/cs475-proj4
+  ```
+
+#### Part 1: Deadlock Detection (Off-Xinu)
+
+Usually, we plow right into Xinu development, but this project's a bit more involved. I'd prefer a better environment for debugging, so it is therefore strongly recommended that you build the deadlock detection algorithm off of the Xinu code base. Don't worry, we'll integrate it into Xinu later.
+
+1. Let's start by defining some constants:
+
+   - `#define NLOCK 10` - the maximum number of locks that your OS can support.
+   - `#define NPROC 20` - the maximum number of processes that your OS can have.
+
+2. Your implementation will be based on cycle detection in a single-instance resource allocation graph (RAG). Recall that a (directed) graph can be represented an adjacency list, or an adjacency matrix. Consider the graph below and its corresponding adjacency matrix and adjacency lists.
+
+   <img width="600px" src="figures/graph.png" border="1px" />
+
+   There is an important space-time tradeoff between the two representations. If space is a constraint, or if the graph is expected to be sparse (i.e., containing few edges), then an adjacency list is used. Conversely, if you have space or if the graph is expected to be dense, then an adjacency matrix is preferred, because updating it can be done in O(1)-time. A RAG is normally sparse, but an OS always tries to minimize overheads. As a system designer, which representation would you prefer? I'll leave you with that decision. Either way will receive full credit.
+
+3. Define the following functions.
+
+   - `void rag_request(int pid, int lockid)` - adds a request edge to the RAG from `pid` to `lockid`.
+
+   - `void rag_alloc(int pid, int lockid)` - adds an allocation edge to the RAG from `lockid` to `pid`. Removes the request edge from `pid` to `lockid`.
+
+   - `void rag_dealloc(int pid, int lockid)` - removes the request or allocation edge from `lockid` to `pid`.
+
+   - `void rag_print()` - prints the adjacency matrix or list representing the current RAG.
+
+   - `void deadlock_detect()` - checks the RAG for cycle(s). For each cycle found, print out DEADLOCK followed by the nodes involved in the cycle. If no cycles are found, then the system is deadlock-free. You should produce no output in this case. You may again recall that cycle-detection is an application of depth-first search (DFS).
+
+4. Now we want to simulate locks being acquired and released by various processes to make sure your implementation is working.
+
+   Your program should input a file containing lock request and deallocation sequences. Each line in this file is a 3-tuple: `pid,req,lockid` where `pid` is the ID of the requesting process, `req` is a request which can be either R (request), A (allocation) or D (deallocation), and `lockid` is ID of the lock.
+
+   For instance, the following file sequence:
+
+   ```
+   1,R,1
+   1,A,1
+   0,R,1
+   1,D,1
+   0,A,1
+   0,D,1
+   ```
+
+   which means:
+
+   ```
+   pid=1 requests lockid=1
+   pid=1 acquires lockid=1
+   pid=0 requests lockid=1
+   pid=1 releases lockid=1
+   pid=0 acquires lockid=1
+   pid=0 releases lockid=1
+   ```
+
+   For each line, you will update the (de)allocation request in the RAG. When the end-of-file is reached, call `deadlock_detect()` to check for deadlocks.
+
+#### Example Interaction:
+
+- Input file: `input_file2`
+
+  ```
+  1,R,1
+  1,A,1
+  0,R,1
+  0,R,2
+  0,A,2
+  1,R,2
+  ```
+
+  Output:
+
+  ```
+  # ./Deadlock < input_file2
+  DEADLOCK        pid=0 lockid=2 pid=1 lockid=1
+  ```
+
+- Input file: `input_file3`
+
+  ```
+  0,R,1
+  0,A,1
+  1,R,1
+  0,R,2
+  0,A,2
+  1,R,2
+  0,D,2
+  1,A,2
+  1,D,1
+  0,D,1
+  ```
+
+  Output:
+
+  ```
+  # ./Deadlock < input_file3
+  ```
+
+- Input file: `input_file4`
+
+  ```
+  0,R,3
+  0,A,3
+  1,R,2
+  1,A,2
+  2,R,1
+  2,A,1
+  3,R,0
+  3,A,0
+  1,R,3
+  2,R,2
+  3,R,1
+  0,R,1
+  ```
+
+  Output:
+
+  ```
+  ./Deadlock < input_file4
+  DEADLOCK    pid=0 lockid=3 pid=1 lockid=2 pid=2 lockid=1
+  ```
+
+Make sure your implementation is working on multiple examples before moving on. Create your own test cases, and draw the single-instance RAGs on a piece of paper to verify!! It is critical that these functions are rigorously tested before Xinu integration.
+
+#### Part 2: Xinu Lock Manager
+
+Before we get started, open `include/xinu.h`, and add `#include `directives for `lock.h` and `deadlock.h`. Next, to make debugging easier (so that your RAG can be printed), let's reduce the number of processes allowed. Change `NPROC` to `20` in both of the following files: `config/Configuration` and `include/process.h`.
+
+In the deadlock detection algorithm you just implemented, there was a finite number of locks (i.e., `NLOCK` was set to 10) and each lock had a corresponding `lockid`. However, in the previous project, you were asked to create a `mutex_t` type, and a programmer can create as many `mutex_t` locks as they like. There's no current way for Xinu to know how many `mutex_t` locks currently exist!
+
+How are you supposed to update the RAG in such an environment, when you don't even know the size of the RAG? In this section, you will build a lock management subsystem, in which you supply users with system calls to create, acquire, release, and destroy locks.
+
+1. Open up `include/lock.h`:
+
+```c
+/* lock.h */
+#define NLOCK   10
+
+/* Lock state definitions */
+#define LOCK_FREE  0               /* lock table entry is available   */
+#define LOCK_USED  1               /* lock table entry is in use      */
+
+/* Lock table entry */
+struct  lockentry
+{
+    byte    state;          /* whether entry is LOCK_FREE or LOCK_USED    */
+    mutex_t lock;           /* lock */
+    struct  queue   *wait_queue;    /* queue of waiting processes */
+};
+
+extern  struct  lockentry locktab[];
+
+#define isbadlock(m)     ((int32)(m) < 0 || (m) >= NLOCK)
+```
+
+- On Line 2: the NLOCK constant is defined, imposing a hard limit of 10 locks to be in existence. Along with NPROC being earlier set to 20, these two constants will help you define the size of the RAG.
+
+- On Lines 9-14: the `lockentry` structure is defined. It has the following data members:
+
+  - `byte state` is assigned either `LOCK_FREE` or `LOCK_USED`. This is to indicate whether the lock has been created or not. Important: this field not used to indicate whether the lock has been acquired or released (see next member)! Initially, this field should be set to LOCK_FREE
+  - `mutex_t lock` is an instance of the mutex lock you created in the previous project, assigned either a `TRUE` or `FALSE` indicating whether the lock has been acquired or not. Initially, this field should be set to `FALSE`.
+  - `struct queue *wait_queue` is a pointer to a queue of processes that are waiting on the lock, including the process that currently owns it.
+
+- On Lines 16: we specify that an array of `lockentry`s is defined in an external file. We'll define this array later.
+
+- On Lines 18: this is a so-called inline function. Basically, anywhere that the symbol `isbadlock(m)` appears in your code, the compiler will replace it with the expression `((int32)(m) < 0 || (m) >= NLOCK)`. This function simply returns whether `m` is a valid `lockid`.
+
+2. Now, we need to define and initialize an array of size `NLOCK` containing `struct lockentry` objects. Open the file called `system/initialize.c`, and under "Declarations of Major Kernel Variables," declare an array named `locktab` (short for lock table) that stores `NLOCK` `lockentry` objects.
+
+3. Now we need to initialize the lock table. In the same file, find the `sysinit()` function, and locate the semaphore initialization. Directly below, loop through each element in the lock table, and initialize all data members. The state should be `LOCK_FREE`, the mutex should start off as `FALSE`, and the queue should point to a new empty queue, not `NULL`.
+
+4. The index for the lock table also serves as a lock's ID. Although we know it's an integer, would be wise to give it a proper name. Open the include/kernel.h file, and under "Xinu-specific Types" add an alias to `int32` from `lid32`. From here on, `lid32` is the data type of the `lockid`.
+
+##### Lock Management Functions
+
+At this point, we have the lock wrapper structures in place, and now we need to the lock management functions.
+
+1. Open up `system/lock.c`. I've given you the code skeletons, and it's your job to fill in the `TODO` comments. You can ignore all the `TODO (RAG)` comments for now, but leave them in place for later. **Important:** it's helpful to remember that the currently-running process is stored in a global variable, `currpid`.
+
+2. It's finally time to test out this new locking system. The code in `system/main.c` should still be the Dining Philosophers implementation from the previous project. Modify the code so that you only use the new system calls we provided in `lock.c`, instead of using `mutex_t` directly. That is, you should remove any code that creates a` mutex_t` variable, and any calls to `mutex_lock()` and `mutex_unlock()`. Instead, you should replace them with `lock_create()`, `acquire()`, and `release()` respectively.
+
+3. Until you get Dining Philosophers working just as before, do not move on. There should be no deadlocks here.
+
+#### Part 3: Deadlock Detection
+
+The lock subsystem you just built now lets the Xinu kernel track how many locks are active in the system. Through each lock's queues, it also knows which processes have acquired (or are waiting for) a particular lock. That's all the information we need to get your deadlock detection algorithm integrated!
+
+1. Before we start, I bet you're interested to see what a deadlock looks like. I gave you a file called `system/main.dl.c`. Replace `system/main.c` with this file (but save it as `system/main_phil.c` for later). Let's take a look at what's inside:
+
+```c
+/*  main.c  - main */
+
+#include <xinu.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define N 2
+
+lid32   printer_lock;
+lid32   mylock[N];
+
+
+/**
+ * Delay for a random amount of time
+ * @param alpha delay factor
+ */
+void    holdup(int32 alpha)
+{
+    long delay = rand() * alpha;
+    while (delay-- > 0)
+        ;   //no op
+}
+
+/**
+ * Work for a random amount of time
+ * @param id ID of worker
+ */
+void    work(uint32 id)
+{
+    acquire(printer_lock);
+    kprintf("Worker %d: Buzz buzz buzz\n", id);
+    release(printer_lock);
+    holdup(10000);
+}
+
+
+/**
+ * Worker code
+ * @param id ID of worker
+ */
+void    worker(uint32 id)
+{
+    if (id == 0)
+    {
+        acquire(mylock[0]);
+        work(id);
+        acquire(mylock[1]);
+        work(id);
+        release(mylock[1]);
+        release(mylock[0]);
+    }
+    else
+    {
+        acquire(mylock[1]);
+        work(id);
+        acquire(mylock[0]);
+        work(id);
+        release(mylock[0]);
+        release(mylock[1]);
+    }
+}
+
+int main(uint32 argc, uint32 *argv)
+{
+    int i;
+    printer_lock = lock_create();
+    for (i=0; i<N; i++)
+        mylock[i] = lock_create();
+
+    ready(create((void*) worker, INITSTK, 15, "Worker 0", 1, 0), FALSE);
+    ready(create((void*) worker, INITSTK, 15, "Worker 1", 1, 1), FALSE);
+
+    return 0;
+}
+```
+
+2. As you can see, two processes are created, and both call `work()`, which essentially pauses awhile before printing a message. The first process attempts to acquire lock0 initially, then does some work, then tries to acquire lock1 before working again, and releasing both locks afterwards. The second process attempts to acquire the locks in reverse order, which creates a simple cycle.
+
+If you run this code, chances are, each process will get to a bit of work, but then deadlock, which prevents them from never being able to work a second time. The processes will remain running, but they make no progress. Because the locks are implemented using busy-wait loops, both processes are now simply eating up CPU cycles and causing it to heat up, at which point your computer's fan will be going at full-speed. Unfortunately, there's no way out, except to reset Xinu. Go ahead and close the back-end VM.
+
+3.  We want Xinu to run your deadlock detection algorithm every once in a while. If a deadlock is present, it should recover by killing one or more of the deadlocked processes (called a victim) to release its hold on a lock.
+
+4.  Back in `system/initialize.c`, declare your RAG, and then initialize it with no edges.
+
+5.  Open up the `include/deadlock.h` file. Add in any constants and typedefs you defined for your code. Then add the function prototypes. Important: because the RAG must be accessible everywhere, redeclare extern a version of your RAG in here.
+
+6.  Now open the `system/deadlock.c` file, and place your deadlock detection functions in it. Once in place, return to `system/lock.c` and fill in the calls to your functions to update the RAGs (guided by the` TODO (RAG)` labels).
+
+    - When to Call Detection: Without preemption, Xinu would never get a chance to run in the presence of a deadlock between user processes. So it's a good thing that the previous project implemented the timer interrupt. Recall that we give control back to Xinu every once in a while (defined by QUANTUM), and when Xinu regains control, it calls `resched()`. Therefore, we can call `deadlock_detect()` inside `resched()`, but it would introduce quite a large overhead to run it each time the scheduler runs.
+
+    - Instead, add some code so that `deadlock_detect()` is called once every **50 times** that `resched()` is called. Because we can't allow deadlock detection to be interrupted, you (the OS) must disable interrupts before calling `deadlock_detect()`, and reenable it after the call is made:
+
+    ```c
+    intmask mask = disable(); //disable interrupts
+    deadlock_detect();
+    //other code with interrupt disabled
+    restore(mask); //reenable interrupts
+    ```
+
+7.  Phew, that's a lot of work! Let's test your deadlock detection algorithm! Return to `compile/`, then recompile and run Xinu. If things are working, it should now catch the deadlock (by printing out the cycle). Because detection is run repeatedly, you should get something close to the following:
+
+```
+Booting Xinu on i386-pc...
+
+(x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
+
+  16777216 bytes physical memory.
+           [0x00000000 to 0x00FFFFFF]
+     17046 bytes of Xinu code.
+           [0x00000000 to 0x00004295]
+     22678 bytes of data.
+           [0x00004296 to 0x00009B2B]
+    615632 bytes of heap space below 640K.
+  15728640 bytes of heap space above 1M.
+           [0x00100000 to 0x00FFFFFF]
+Worker 0: Buzz buzz buzz
+Worker 1: Buzz buzz buzz
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+...
+```
+
+#### Part 4: Deadlock Recovery
+
+Unless we're satisfied with just notifying the users that a deadlock has occurred, it does us no good if we can only detect a deadlock's presence. For the final step, you need to implement a recovery mechanism.
+
+1. Because you were required to print out nodes involved in the deadlock, your code is perfectly capable of identifying all the locks involved, identified by `lockid`.
+
+2. Go back into system/deadlock.c and implement a new function named `deadlock_recove()`. I'll leave the choice of parameters (if any) entirely up to you. This function must:
+
+   - Grab the `lockentry` using a `lockid` that is involved in the deadlock,
+   - Find the ID of the process that currently holds this lock. Kill that process.
+   - Was the victim process waiting on other locks? (Probably). Remove it from those locks' wait queues.
+   - Call `mutex_unlock()` the lock's mutex member
+   - Update the RAG and zero out all the allocation and request edges associated with the victim process, as it has been vanquished from the system.
+   - Print out a message: `"DEADLOCK RECOVER"` followed by the victim's `pid` and `lockid`.
+
+3. Make sure you add this new function's prototype in `include/deadlock.h`.
+
+4. Finally, you must call this function when a deadlock has been detected.
+
+5. If everything's working properly, you'll get something that looks similar to the following:
+
+```
+Booting Xinu on i386-pc...
+
+(x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
+
+  16777216 bytes physical memory.
+           [0x00000000 to 0x00FFFFFF]
+     17046 bytes of Xinu code.
+           [0x00000000 to 0x00004295]
+     22678 bytes of data.
+           [0x00004296 to 0x00009B2B]
+    615632 bytes of heap space below 640K.
+  15728640 bytes of heap space above 1M.
+           [0x00100000 to 0x00FFFFFF]
+Worker 0: Buzz buzz buzz
+Worker 1: Buzz buzz buzz
+DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+DEADLOCK RECOVER        killing pid=3 to release lockid=2
+Worker 0: Buzz buzz buzz
+
+
+All user processes have completed.
+```
+
+6. Now, let's modify the Dining Philosopher's problem so that deadlocks are not prevented. In other words, once a philosopher acquires a fork, do not try to see if the other fork is available, and simply try to acquire (or wait) for the other fork. To increase likelihood of a deadlock, reduce the number of philosophers to 3. It still may take some time for the deadlock to occur (you may have to modify your code so that philosophers eat more often, but here's one successful output:
+
+```
+Booting Xinu on i386-pc...
+
+(x86 Xinu) #334 (xinu@xinu-develop-end) Thu 20 Aug 17:05:43 PDT 2015
+
+  16777216 bytes physical memory.
+           [0x00000000 to 0x00FFFFFF]
+     17408 bytes of Xinu code.
+           [0x00000000 to 0x000043FF]
+     18892 bytes of data.
+           [0x00004400 to 0x00008DCB]
+    619056 bytes of heap space below 640K.
+  15728640 bytes of heap space above 1M.
+           [0x00100000 to 0x00FFFFFF]
+Philosopher 0 thinking: zzzzzZZZz
+Philosopher 2 thinking: zzzzzZZZz
+Philosopher 0 eating: nom nom nom
+Philosopher 1 thinking: zzzzzZZZz
+Philosopher 1 thinking: zzzzzZZZz
+Philosopher 2 thinking: zzzzzZZZz
+Philosopher 1 thinking: zzzzzZZZz
+Philosopher 0 eating: nom nom nom
+Philosopher 0 thinking: zzzzzZZZz
+Philosopher 0 thinking: zzzzzZZZz
+Philosopher 2 eating: nom nom nom
+Philosopher 1 thinking: zzzzzZZZz
+Philosopher 2 thinking: zzzzzZZZz
+Philosopher 0 eating: nom nom nom
+Philosopher 2 thinking: zzzzzZZZz
+DEADLOCK DETECTED       pid=3 lockid=2 pid=4 lockid=3 pid=2 lockid=1
+DEADLOCK RECOVER        killing pid=3 to release lockid=2
+Philosopher 1 eating: nom nom nom
+Philosopher 1 eating: nom nom nom
+Philosopher 1 eating: nom nom nom
+Philosopher 1 thinking: zzzzzZZZz
+Philosopher 0 eating: nom nom nom
+```
+
+#### Grading
+
+```
+This assignment will be graded out of 100 points:
+
+[10pt] Your adjacency list/matrix has been integrated into
+      xinu. The functions rag_dealloc(), rag_alloc(), and
+      rag_request() and rag_print() are all implemented
+      correctly.
+
+[25pt] The lock manager subsystem has been implemented. New system
+      calls, acquire() and release() updates the state of the given
+      lock, and updates the RAG.
+
+[35pt] The cycle (deadlock) detection algorithm is working properly.
+
+[15pt] All nodes involved in the deadlock are clearly indicated.
+
+[15pt] Deadlock recovery is working properly. A deadlocked
+      process is chosen and terminated, releasing the lock
+      to others.
+```
+
+#### Submitting Your Assignment
+
+After you have completed the assignment, use the following to submit your work on Canvas. I assume you wrote your program inside your virtual machine. There are two options to submit your work.
+
+1. If you pushed all your code to a Github repository: Make sure your Github repo is public, and simply submit the URL to your repo to me on Canvas.
+
+2. If you'd rather submit a "zipped" file on Canvas, do the following .
+
+   - Open the Terminal, navigate into your project's `compile/` directory. Run `make clean` to remove the binaries.
+
+   - Zip up your project directory: `tar -czvf proj4_name1_name2.tar.gz proj4/` where name1 and name2 refer to your last names.
+
+3. Go into canvas and click on `Submit Assignment`, and you should be able to "browse" for your file.
+
+4. When you've selected the proper file, click Submit Assignment again to upload it.
+
+5. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+
+6. I do not need separate submissions from your partner!
+
+#### Credits
+
+Written by David Chiu. 2015.
