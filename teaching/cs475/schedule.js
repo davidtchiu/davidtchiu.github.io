@@ -147,8 +147,8 @@ let days = {
     // "VM: malloc(), free()",
     "<strong>Reading Period</strong>",
     // wk final
-    "",
     "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
+    "",
     "",
   ],
 };

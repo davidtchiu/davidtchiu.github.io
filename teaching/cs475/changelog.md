@@ -1,10 +1,14 @@
 #### TODO
 
+- What to do with Xinu? If I go Vbox-less (I have to at some point...)
 - Speedup Sync: nip the implementation of semaphores (or just talk about one.)
 - Double check the monitor examples. Notify and continue? Create the animation instead of drawing
 - What would a Lab schedule (2 hr) consist of?
 - BackItUp instead of MMM.
 - Keep Bartender, but make it harder. Let multiple people in
+- If no Xinu, add sched simulation
+- If no Xinu, add RAG and knots, or Bankers
+- If no Xinu, add a Java project
 
   - Lab 1: VM, shell, navigation, running binaries; C basics; gcc
   - Lab 2: Multi-file, Makefile; Arrays and Strings
