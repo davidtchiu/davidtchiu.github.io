@@ -217,7 +217,7 @@ The hardware timer is installed! That's great and all, but it can lead to some r
    ABABAABABAABBAABABBB
    ```
 
-   If you don't see this interleaving effect, try using a smaller value for `QUANTUM`, for instance, 2 or 3. If changing the `QUANTUM` still doesn't work, then go back inside `system/clkinit.c` and lower the `countdown`. How much to lower it by is trial-and-error. Try 200, then 100, then 50, ...
+   If you don't see this interleaving effect, try using a smaller value for `QUANTUM`, for instance, 2? If changing the `QUANTUM` still doesn't give you interleaving results, then go back inside `system/clkinit.c` and lower the `countdown` so that the interrupt is triggered more frequently (basically, your system is too fast, and it's getting all that work done before the timer expires!). How much to lower it by is trial-and-error. Try 200, then 100, then 50, ...
 
 4. **Critical Section:** The core problem is that the stdout device is a shared resource, and printing to it is a critical section of code that cannot been interrupted to guarantee the correctness of the original intent of your code. That's right, all that effort we put into enabling the hardware timer just made our system very unpredictable. Once again, it falls on the kernel to provide a mechanism to programmers for enabling mutually exclusive access to critical sections of code in a preemptive environment. These mechanisms are known as mutex locks.
 
