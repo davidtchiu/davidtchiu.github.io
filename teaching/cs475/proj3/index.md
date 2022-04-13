@@ -49,7 +49,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 The current version of Xinu is a **cooperative multiprogramming system**, because a running process only gives up the CPU when it terminates, blocks on I/O, or politely relinquishes the CPU by calling `resched()` (that's the cooperative part). What this means is that a not-so-polite process could still hog the CPU until it finishes its job, forcing all other processes to wait. This makes for a system that is not very interactive. Furthermore, if an executing process is in an infinite loop (malicious or just buggy), how does any other process on the ready queue ever get a chance to execute? Indeed, if one of those waiting processes is the kernel itself, then it would never regain control, and that's a big problem.
 
-Luckily, our hardware architecture includes a programmable interval timer (PIT), that can trigger an interrupt at fixed intervals of time known as a `QUANTUM`. A global variable called preempt is initialized to the value of `QUANTUM` milliseconds. Every time the timer triggers, it will interrupt the currently running process, and its handler function hands back control to Xinu, which runs decrements preempt, and if preempt reaches zero, it will call `resched()`. This effectively allows our system to automatically reschedule another process on the queue at fixed intervals -- without explicitly calling `resched()` ourselves. This approach is known as a time-sharing system.
+Luckily, our hardware architecture includes a programmable interval timer (PIT), that can trigger an interrupt at fixed intervals of time known as a `QUANTUM`. A global variable called `preempt` is initialized to the value of `QUANTUM` milliseconds. Every time the timer triggers, it will interrupt the currently running process, and its handler function hands back control to Xinu, which decrements `preempt`, and if `preempt` reaches zero, it will call `resched()`. This effectively allows our system to automatically reschedule another process on the queue at fixed intervals -- without explicitly calling `resched()` ourselves. This approach is known as a time-sharing system.
 
 1. Before we get started, add an `#include` directive for `clock.h` in `include/xinu.h` so that the clock's header is recognized by the OS code base.
 
@@ -57,7 +57,7 @@ Luckily, our hardware architecture includes a programmable interval timer (PIT),
 
 #### Programming the Hardware Timer
 
-It is hard to reliably generate consistent ticks using software (you'd probably understand why, by now), which is why most systems are equip with a hardware timer on the motherboard. On our virtual machine setup, the timer chipset is the Intel 8254-2. This is a programmable hardware timer, meaning we need to tell it what to do when the Xinu boots up. First, we need to understand what we're dealing with.
+It is hard to reliably generate consistent ticks using software (you'd probably understand why, by now), which is why most systems are equip with a hardware timer. On our virtual machine setup, the timer chipset is the Intel 8254-2. This is a programmable hardware timer, meaning we need to tell it what to do when the Xinu boots up. First, we need to understand what we're dealing with.
 
 1. Download the specification for the [Intel 8254 Programmable Interval Timer](8254.pdf) here, and read up to **page 10** before moving on any further. It's okay if you don't understand everything just yet, but you'd know that these are the main takeaways:
 
@@ -67,7 +67,7 @@ It is hard to reliably generate consistent ticks using software (you'd probably 
 
    - A timer will count from its initial value down to 0. When it hits 0, the timer will trigger an interrupt the CPU. The countdown value will automatically reset back to the initial value afterwards.
 
-   - Counter 0 operates at 1.193 Mhz (ticks per second in this context)
+   - Counter 0 operates at 1.193 Mhz (that is, 1,193,000 ticks per second)
 
    - Our goal is to program this timer so that interrupts the CPU every millisecond.
 
