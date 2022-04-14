@@ -177,46 +177,46 @@ In the deadlock detection algorithm you just implemented, there was a finite num
 
 How are you supposed to update the RAG in such an environment, when you don't even know the size of the RAG? In this section, you will build a lock management subsystem, in which you supply users with system calls to create, acquire, release, and destroy locks.
 
-1. Open up `include/lock.h`:
+1.  Open up `include/lock.h`:
 
-   ```c
-   /* lock.h */
-   #define NLOCK   10
+    ```c
+    /* lock.h */
+    #define NLOCK   10
 
-   /* Lock state definitions */
-   #define LOCK_FREE  0               /* lock table entry is available   */
-   #define LOCK_USED  1               /* lock table entry is in use      */
+    /* Lock state definitions */
+    #define LOCK_FREE  0               /* lock table entry is available   */
+    #define LOCK_USED  1               /* lock table entry is in use      */
 
-   /* Lock table entry */
-   struct  lockentry
-   {
-       byte    state;          /* whether entry is LOCK_FREE or LOCK_USED    */
-       mutex_t lock;           /* lock */
-       struct  queue   *wait_queue;    /* queue of waiting processes */
-   };
+    /* Lock table entry */
+    struct  lockentry
+    {
+        byte    state;          /* whether entry is LOCK_FREE or LOCK_USED    */
+        mutex_t lock;           /* lock */
+        struct  queue   *wait_queue;    /* queue of waiting processes */
+    };
 
-   extern  struct  lockentry locktab[];
+    extern  struct  lockentry locktab[];
 
-   #define isbadlock(m)     ((int32)(m) < 0 || (m) >= NLOCK)
-   ```
+    #define isbadlock(m)     ((int32)(m) < 0 || (m) >= NLOCK)
+    ```
 
-- On Line 2: the NLOCK constant is defined, imposing a hard limit of 10 locks to be in existence. Along with NPROC being earlier set to 20, these two constants will help you define the size of the RAG.
+    - On Line 2: the NLOCK constant is defined, imposing a hard limit of 10 locks to be in existence. Along with NPROC being earlier set to 20, these two constants will help you define the size of the RAG.
 
-- On Lines 9-14: the `lockentry` structure is defined. It has the following data members:
+    - On Lines 9-14: the `lockentry` structure is defined. It has the following data members:
 
-  - `byte state` is assigned either `LOCK_FREE` or `LOCK_USED`. This is to indicate whether the lock has been created or not. Important: this field not used to indicate whether the lock has been acquired or released (see next member)! Initially, this field should be set to LOCK_FREE
-  - `mutex_t lock` is an instance of the mutex lock you created in the previous project, assigned either a `TRUE` or `FALSE` indicating whether the lock has been acquired or not. Initially, this field should be set to `FALSE`.
-  - `struct queue *wait_queue` is a pointer to a queue of processes that are waiting on the lock, including the process that currently owns it.
+    - `byte state` is assigned either `LOCK_FREE` or `LOCK_USED`. This is to indicate whether the lock has been created or not. Important: this field not used to indicate whether the lock has been acquired or released (see next member)! Initially, this field should be set to LOCK_FREE
+    - `mutex_t lock` is an instance of the mutex lock you created in the previous project, assigned either a `TRUE` or `FALSE` indicating whether the lock has been acquired or not. Initially, this field should be set to `FALSE`.
+    - `struct queue *wait_queue` is a pointer to a queue of processes that are waiting on the lock, including the process that currently owns it.
 
-- On Lines 16: we specify that an array of `lockentry`s is defined in an external file. We'll define this array later.
+    - On Line 16: we specify that an array of `lockentry`s is defined in an external file. We'll define this array later.
 
-- On Lines 18: this is a so-called inline function. Basically, anywhere that the symbol `isbadlock(m)` appears in your code, the compiler will replace it with the expression `((int32)(m) < 0 || (m) >= NLOCK)`. This function simply returns whether `m` is a valid `lockid`.
+    - On Line 18: this is a so-called inline function. Basically, anywhere that the symbol `isbadlock(m)` appears in your code, the compiler will replace it with the expression `((int32)(m) < 0 || (m) >= NLOCK)`. This function simply returns whether `m` is a valid `lockid`.
 
-2. Now, we need to define and initialize an array of size `NLOCK` containing `struct lockentry` objects. Open the file called `system/initialize.c`, and under "Declarations of Major Kernel Variables," declare an array named `locktab` (short for lock table) that stores `NLOCK` `lockentry` objects.
+2.  Now, we need to define and initialize an array of size `NLOCK` containing `struct lockentry` objects. Open the file called `system/initialize.c`, and under "Declarations of Major Kernel Variables," declare an array named `locktab` (short for lock table) that stores `NLOCK` `lockentry` objects.
 
-3. Now we need to initialize the lock table. In the same file, find the `sysinit()` function, and locate the semaphore initialization. Directly below, loop through each element in the lock table, and initialize all data members. The state should be `LOCK_FREE`, the mutex should start off as `FALSE`, and the queue should point to a new empty queue, not `NULL`.
+3.  Now we need to initialize the lock table. In the same file, find the `sysinit()` function, and locate the semaphore initialization. Directly below, loop through each element in the lock table, and initialize all data members. The state should be `LOCK_FREE`, the mutex should start off as `FALSE`, and the queue should point to a new empty queue, not `NULL`.
 
-4. The index for the lock table also serves as a lock's ID. Although we know it's an integer, would be wise to give it a proper name. Open the include/kernel.h file, and under "Xinu-specific Types" add an alias to `int32` from `lid32`. From here on, `lid32` is the data type of the `lockid`.
+4.  The index for the lock table also serves as a lock's ID. Although we know it's an integer, would be wise to give it a proper name. Open the include/kernel.h file, and under "Xinu-specific Types" add an alias to `int32` from `lid32`. From here on, `lid32` is the data type of the `lockid`.
 
 ##### Lock Management Functions
 
@@ -313,57 +313,57 @@ The lock subsystem you just built now lets the Xinu kernel track how many locks 
 
 2. As you can see, two processes are created, and both call `work()`, which essentially pauses awhile before printing a message. The first process attempts to acquire lock0 initially, then does some work, then tries to acquire lock1 before working again, and releasing both locks afterwards. The second process attempts to acquire the locks in reverse order, which creates a simple cycle.
 
-If you run this code, chances are, each process will get to a bit of work, but then deadlock, which prevents them from never being able to work a second time. The processes will remain running, but they make no progress. Because the locks are implemented using busy-wait loops, both processes are now simply eating up CPU cycles and causing it to heat up, at which point your computer's fan will be going at full-speed. Unfortunately, there's no way out, except to reset Xinu. Go ahead and close the back-end VM.
+   If you run this code, chances are, each process will get to a bit of work, but then deadlock, which prevents them from never being able to work a second time. The processes will remain running, but they make no progress. Because the locks are implemented using busy-wait loops, both processes are now simply eating up CPU cycles and causing it to heat up, at which point your computer's fan will be going at full-speed. Unfortunately, there's no way out, except to reset Xinu. Go ahead and close the back-end VM.
 
-3.  We want Xinu to run your deadlock detection algorithm every once in a while. If a deadlock is present, it should recover by killing one or more of the deadlocked processes (called a victim) to release its hold on a lock.
+3. We want Xinu to run your deadlock detection algorithm every once in a while. If a deadlock is present, it should recover by killing one or more of the deadlocked processes (called a victim) to release its hold on a lock.
 
-4.  Back in `system/initialize.c`, declare your RAG, and then initialize it with no edges.
+4. Back in `system/initialize.c`, declare your RAG, and then initialize it with no edges.
 
-5.  Open up the `include/deadlock.h` file. Add in any constants and typedefs you defined for your code. Then add the function prototypes. Important: because the RAG must be accessible everywhere, redeclare extern a version of your RAG in here.
+5. Open up the `include/deadlock.h` file. Add in any constants and typedefs you defined for your code. Then add the function prototypes. Important: because the RAG must be accessible everywhere, redeclare extern a version of your RAG in here.
 
-6.  Now open the `system/deadlock.c` file, and place your deadlock detection functions in it. Once in place, return to `system/lock.c` and fill in the calls to your functions to update the RAGs (guided by the` TODO (RAG)` labels).
+6. Now open the `system/deadlock.c` file, and place your deadlock detection functions in it. Once in place, return to `system/lock.c` and fill in the calls to your functions to update the RAGs (guided by the` TODO (RAG)` labels).
 
-    - When to Call Detection: Without preemption, Xinu would never get a chance to run in the presence of a deadlock between user processes. So it's a good thing that the previous project implemented the timer interrupt. Recall that we give control back to Xinu every once in a while (defined by QUANTUM), and when Xinu regains control, it calls `resched()`. Therefore, we can call `deadlock_detect()` inside `resched()`, but it would introduce quite a large overhead to run it each time the scheduler runs.
+   - When to Call Detection: Without preemption, Xinu would never get a chance to run in the presence of a deadlock between user processes. So it's a good thing that the previous project implemented the timer interrupt. Recall that we give control back to Xinu every once in a while (defined by QUANTUM), and when Xinu regains control, it calls `resched()`. Therefore, we can call `deadlock_detect()` inside `resched()`, but it would introduce quite a large overhead to run it each time the scheduler runs.
 
-    - Instead, add some code so that `deadlock_detect()` is called once every **50 times** that `resched()` is called. Because we can't allow deadlock detection to be interrupted, you (the OS) must disable interrupts before calling `deadlock_detect()`, and reenable it after the call is made:
+   - Instead, add some code so that `deadlock_detect()` is called once every **50 times** that `resched()` is called. Because we can't allow deadlock detection to be interrupted, you (the OS) must disable interrupts before calling `deadlock_detect()`, and reenable it after the call is made:
 
-    ```c
-    intmask mask = disable(); //disable interrupts
-    deadlock_detect();
-    //other code with interrupt disabled
-    restore(mask); //reenable interrupts
-    ```
+   ```c
+   intmask mask = disable(); //disable interrupts
+   deadlock_detect();
+   //other code with interrupt disabled
+   restore(mask); //reenable interrupts
+   ```
 
-7.  Phew, that's a lot of work! Let's test your deadlock detection algorithm! Return to `compile/`, then recompile and run Xinu. If things are working, it should now catch the deadlock (by printing out the cycle). Because detection is run repeatedly, you should get something close to the following:
+7. Phew, that's a lot of work! Let's test your deadlock detection algorithm! Return to `compile/`, then recompile and run Xinu. If things are working, it should now catch the deadlock (by printing out the cycle). Because detection is run repeatedly, you should get something close to the following:
 
-    ```
-    Booting Xinu on i386-pc...
+   ```
+   Booting Xinu on i386-pc...
 
-    (x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
+   (x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
 
-      16777216 bytes physical memory.
-              [0x00000000 to 0x00FFFFFF]
-        17046 bytes of Xinu code.
-              [0x00000000 to 0x00004295]
-        22678 bytes of data.
-              [0x00004296 to 0x00009B2B]
-        615632 bytes of heap space below 640K.
-      15728640 bytes of heap space above 1M.
-              [0x00100000 to 0x00FFFFFF]
-    Worker 0: Buzz buzz buzz
-    Worker 1: Buzz buzz buzz
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-    ...
-    ```
+     16777216 bytes physical memory.
+             [0x00000000 to 0x00FFFFFF]
+       17046 bytes of Xinu code.
+             [0x00000000 to 0x00004295]
+       22678 bytes of data.
+             [0x00004296 to 0x00009B2B]
+       615632 bytes of heap space below 640K.
+     15728640 bytes of heap space above 1M.
+             [0x00100000 to 0x00FFFFFF]
+   Worker 0: Buzz buzz buzz
+   Worker 1: Buzz buzz buzz
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
+   ...
+   ```
 
 #### Part 4: Deadlock Recovery
 
