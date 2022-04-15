@@ -332,7 +332,7 @@ I've started a skeleton file for you, in `system/main_phil.c`. Some noteworthy i
 
 - The `philosopher()` function is the code executed by each process. It contains an infinite loop, whose body has the following requirements:
 
-  - There is a 30% chance that the philosopher will want to eat, and a 70% chance the philosopher just wants to think. Use `srand(uint32)` to seed the random number generator for each philosopher (just input the philosopher's ID. After seeding, use `rand()` to get a number between `0` and `RAND_MAX`.
+  - There is a 30% chance that the philosopher will want to eat, and a 70% chance the philosopher just wants to think. Use `srand(uint32)` to seed the random number generator for each philosopher (just input the philosopher's ID. After seeding, use `rand()` to get a random integer.
 
   - When the philosopher wants to think, print out a message with the philosopher's ID. Then call `think()` to delay the philosopher's execution by a random amount of time.
 
