@@ -140,7 +140,7 @@ let days = {
     "DL: Banker's algorithm",
     "MM: Address binding, relocatability, process loading",
     // wk 14
-    "MM: Fixed vs. Dynamic Partitioning",
+    "MM: Partitioning (Fixed, Dynamic)",
     "MM: Segmentation",
     "MM: Paging, 2-level paging",
     // wk 15
