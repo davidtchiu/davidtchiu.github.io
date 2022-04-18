@@ -43,8 +43,14 @@ let days = {
         url: "hwk6.thebar/",
         due: "4/11/2022",
       },
+      {
+        name: "Hwk 7",
+        title: "Banker's Algorithm",
+        url: "hwk7.bankers/",
+        due: "4/29/2022",
+      },
       // {
-      //   name: "Hwk 7",
+      //   name: "Hwk 8",
       //   title: "Paging Simulator",
       //   url: "hwk7.paging/",
       //   due: "5/11/2022",
@@ -70,12 +76,12 @@ let days = {
         url: "proj3/",
         due: "4/18/2022",
       },
-      // {
-      //   name: "Proj 4",
-      //   title: "Deadlock Detection",
-      //   url: "proj4/",
-      //   due: "4/29/2022",
-      // },
+      {
+        name: "Proj 4",
+        title: "Deadlock Detection",
+        url: "proj4/",
+        due: "5/4/2022",
+      },
     ],
   },
 
