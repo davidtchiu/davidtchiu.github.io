@@ -145,7 +145,7 @@ let days = {
     "MM: Paging, 2-level paging",
     // wk 15
     "MM: Translation Lookaside Buffer (TLB)",
-    "Virtual Memory (VM): demand paging and page fault handlingy",
+    "Virtual Memory (VM): demand paging",
     "VM: FIFO, MIN, LRU replacement policies",
     // wk 16
     "VM: Clock; Start memory allocation and working-set model",
