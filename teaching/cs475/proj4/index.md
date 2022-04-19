@@ -106,7 +106,7 @@ Usually, we plow right into Xinu development, but this project's a bit more invo
 
     For each line, you will update the (de)allocation request in the RAG. When the end-of-file is reached, call `deadlock_detect()` to check for deadlocks.
 
-#### Example Interaction:
+#### Example Scenarios:
 
 - Input file: `input_file2`
 
