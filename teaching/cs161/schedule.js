@@ -218,15 +218,15 @@ let days = {
     "<strong><emph>Exam 2</emph></strong>",
     "File I/O: Finish TreeFile class",
     // wk 14
-    "Information hiding, static, main()",
-    "enum; IntelliJ IDE",
-    "Lab 10",
-    "enum; IntelliJ IDE",
-    // wk 15
     "Start complexity: Linear and Binary search",
     "Selection sort",
     "Lab 11",
     "Bubble Sort and optimizations",
+    // wk 15
+    "Information hiding, static, main()",
+    "enum; IntelliJ IDE",
+    "Lab 10",
+    "enum; IntelliJ IDE",
     // // wk 16
     // "Recursion",
     // "Recursion (cont.)",
