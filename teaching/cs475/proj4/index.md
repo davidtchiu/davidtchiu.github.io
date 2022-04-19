@@ -78,9 +78,9 @@ Usually, we plow right into Xinu development, but this project's a bit more invo
 
     Your program should input a file containing lock request and deallocation sequences. Each line in this file is a 3-tuple (tab separated) event that has occurred: `pid event lockid`, where: `pid` is the ID of the requesting process, `lockid` is ID of the lock, and `event` can be:
 
-    - `R` The request for a lock has been made from process `pid` to the lock identified by `lockid`
-    - `A` The OS allocates the lock identified by `lockid` to the requesting process
-    - `D` The pid has released (and OS deallocates) the lock identified by `lockid`
+    - `R (request)` The request has been made by process `pid` for the lock identified by `lockid` (add request edge)
+    - `A (allocation)` The OS allocates the lock identified by `lockid` to the requesting process (convert request edge to allocation edge)
+    - `D (deallocation)` If the process has requested, but not yet been allocated, the given `lockid`, then its request is canceled (remove request edge). If the process has been allocated the lock identified by `lockid`, then the OS deallocates the lock identified by `lockid` (remove allocation edge).
 
     For instance, the following file sequence:
 
