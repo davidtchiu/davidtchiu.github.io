@@ -71,7 +71,7 @@ Read top-down, the file specifies the following state:
 - 3 resource types
 - 5 threads
 - There is a total of 10 instances of resource #0, 5 instances of resource #1, and 7 instances of resource #2.
-- The max matrix comes next. In its lifetimes, Thread #0 will require 7 instances of resource #0, 5 instances of resource #1, and 3 instances of resource #2. The other rows of the matrix tell us the lifetime demands of the remaining threads.
+- The max matrix comes next. On the first line, it means that Thread #0 will require 7 instances of resource #0, 5 instances of resource #1, and 3 instances of resource #2 in its lifetime. The other rows of the matrix tell us the lifetime demands of the remaining threads.
 - The allocation matrix comes last. Currently, Thread #0 has been allocated 1 instance of resource #1 and nothing else. The other rows of the allocation matrix tell us the current resource allocation for the remaining threads.
 
 #### Vector/Matrix Functions
