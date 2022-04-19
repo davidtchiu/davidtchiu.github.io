@@ -68,20 +68,20 @@ Here's a sample state file:
 
 Read top-down, the file specifies the following state:
 
-    - 3 resource types
-    - 5 threads
-    - There is a total of 10 instances of resource #0, 5 instances of resource #1, and 7 instances of resource #2.
-    - The max matrix comes next. In its lifetimes, Thread #0 will require 7 instances of resource #0, 5 instances of resource #1, and 3 instances of resource #2. The other rows of the matrix tell us the lifetime demands of the remaining threads.
-    - The allocation matrix comes last. Currently, Thread #0 has been allocated 1 instance of resource #1 and nothing else. The other rows of the allocation matrix tell us the current resource allocation for the remaining threads.
+- 3 resource types
+- 5 threads
+- There is a total of 10 instances of resource #0, 5 instances of resource #1, and 7 instances of resource #2.
+- The max matrix comes next. In its lifetimes, Thread #0 will require 7 instances of resource #0, 5 instances of resource #1, and 3 instances of resource #2. The other rows of the matrix tell us the lifetime demands of the remaining threads.
+- The allocation matrix comes last. Currently, Thread #0 has been allocated 1 instance of resource #1 and nothing else. The other rows of the allocation matrix tell us the current resource allocation for the remaining threads.
 
 #### Vector/Matrix Functions
 
 I would start by writing a small library of simple vector/matrix functions that will be used through out Banker's algorithm. For instance, I implemented functions to:
 
-    - clone vectors/matrices
-    - compare two vectors
-    - add, subtract two vectors/matrices
-    - print the contents of vectors/matrices
+- clone vectors/matrices
+- compare two vectors
+- add, subtract two vectors/matrices
+- print the contents of vectors/matrices
 
 #### File Handling
 
@@ -90,10 +90,10 @@ To open a file for reading, look into [fopen()](https://www.cplusplus.com/refere
 For instance, here's how I've handled the first two lines of the state file:
 
 ```c
-  int NRES; 	// number of resource types
-	int NPROC;	// number of processes
-  fscanf(fp, "%d", &NRES);
-  fscanf(fp, "%d", &NPROC);
+int NRES; 	// number of resource types
+int NPROC;	// number of processes
+fscanf(fp, "%d", &NRES);
+fscanf(fp, "%d", &NPROC);
 ```
 
 The rest of the file can be read using the same method, but be sure to allocate space for those vectors/matrices first!
