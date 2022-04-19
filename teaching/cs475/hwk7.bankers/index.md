@@ -102,10 +102,61 @@ The rest of the file can be read using the same method, but be sure to allocate 
 
 Before you run the safety algorithm, you should do a quick sanity check to ensure the values given in the files are correct. There are two areas in which you need to do this:
 
-- Ensure that the currently allocated resources do not exceed the total number of resources.
-- Ensure each thread's needs do not exceed its max demands for each resource type.
+1. Ensure that the currently allocated resources do not exceed the total number of resources.
+2. Ensure each thread's needs do not exceed its max demands for each resource type.
 
 If either of these tests fail, output an error and exit.
+
+##### Example Failed Test 1 Output
+
+```
+$ less testfail1.txt
+3
+5
+
+0 0 0
+
+7 5 3
+3 2 2
+9 0 2
+2 2 2
+4 3 3
+
+0 1 0
+2 0 0
+3 0 2
+2 1 1
+0 0 2
+
+$ ./bankers testfail1.txt
+Integrity test failed: allocated resources exceed total resources
+```
+
+##### Example Failed Test 2 Output
+
+```
+$ less testfail2.txt
+3
+5
+
+10  5 7
+
+7 5 3
+3 2 2
+2 0 2
+2 2 2
+4 3 3
+
+0 1 0
+2 0 0
+3 0 2
+2 1 1
+0 0 2
+
+$ ./bankers testfail2.txt
+Integrity test failed: allocated resources exceed demand for Thread 2
+Need -1 instances of resource 0
+```
 
 #### The Safety Algorithm
 
