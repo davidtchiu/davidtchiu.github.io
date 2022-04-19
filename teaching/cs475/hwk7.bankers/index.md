@@ -198,16 +198,25 @@ A fair amount of extra credit can be earned and applied to your lowest midterm e
 #### Grading
 
 ```
-This assignment will be graded out of 50 points:
-[5pt]
+This assignment will be graded out of 45 points:
+[2pt] Print out an error message if no file is given on the command line.
 
-[28pt] Proper synchronization is implemented
-       (e.g., customers cannot leave before bartender receives payment).
+[3pt] Print out an error message if the file given on the command line
+      does not exist.
 
-[15pt] Your solution is free from deadlocks and starvation. All customers
-       eventually get served and leave.
+[5pt] The state file is being read into appropriate structures in your
+			program.
 
-[2pt] Your program observes good style and commenting.
+[5pt] Your program determines the contents of the Available vector and the
+		  Need matrix.
+
+[25pt] The safety algorithm is properly implemented, and does not carry
+			 side effects. That is, its execute will not permanently change the
+			 state of your system. (This is why we clone various structures.)
+
+[5pt] Because the number of threads and resource types are unknown until
+		  runtime, your program needs to observe good memory management, including
+			freeing up memory when possible.
 ```
 
 #### Submitting Your Assignment
@@ -221,7 +230,7 @@ After you have completed the homework, use the following to submit your work on 
    - Navigate to the directory that contains your homework directory.
    - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
 
-     - For example, if my homework directory is called `hwk6/`, and I want the zipped file to be called `hwk6.tar.gz`, use: `tar -czvf hwk6.tar.gz hwk6/`
+     - For example, if my homework directory is called `hwk7/`, and I want the zipped file to be called `hwk7.tar.gz`, use: `tar -czvf hwk7.tar.gz hwk7/`
      - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
 
    - Navigate to our course on Canvas, and find the assignment submission box.
@@ -234,4 +243,4 @@ After you have completed the homework, use the following to submit your work on 
 
 #### Credits
 
-Written by David Chiu and Jason Sawin. 2015.
+Written by Adam Smith and David Chiu.
