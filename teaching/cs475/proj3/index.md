@@ -313,7 +313,7 @@ I've started a skeleton file for you, in `system/main_phil.c`. Some noteworthy i
 
 - Replace `system/main.c` with `system/main_phil.c`
 
-- The number of philosophers (and forks) N is defined to be 5. This number is superficial - your solution should work for an arbitrary N greater than 1.
+- The number of philosophers (and forks) N can be `#define`d to be 5.
 
 - The function `delay()` has been defined for you. When called, the process delays execution for a random period of time.
 
