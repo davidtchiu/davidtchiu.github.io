@@ -76,17 +76,17 @@ Usually, we plow right into Xinu development, but this project's a bit more invo
 
 4. Now we want to simulate locks being acquired and released by various processes to make sure your implementation is working.
 
-   Your program should input a file containing lock request and deallocation sequences. Each line in this file is a 3-tuple: `pid,event,lockid` where `pid` is the ID of the requesting process, `event` can be either `R (request for resource)`, `A (allocation of resource)` or `D (deallocation)`, and `lockid` is ID of the lock.
+   Your program should input a file containing lock request and deallocation sequences. Each line in this file is a 3-tuple (tab separated) event that has occurred: `pid event lockid`, where `pid` is the ID of the requesting process, `event` can be either `R (request for resource)`, `A (acquisition of resource)` or `D (deallocation)`, and `lockid` is ID of the lock.
 
    For instance, the following file sequence:
 
    ```
-   1,R,1
-   1,A,1
-   0,R,1
-   1,D,1
-   0,A,1
-   0,D,1
+   1  R  1
+   1  A  1
+   0  R  1
+   1  D  1
+   0  A  1
+   0  D  1
    ```
 
    means:
@@ -107,12 +107,12 @@ Usually, we plow right into Xinu development, but this project's a bit more invo
 - Input file: `input_file2`
 
   ```
-  1,R,1
-  1,A,1
-  0,R,1
-  0,R,2
-  0,A,2
-  1,R,2
+  1   R  1
+  1   A  1
+  0   R  1
+  0   R  2
+  0   A  2
+  1   R  2
   ```
 
   Output:
@@ -125,16 +125,16 @@ Usually, we plow right into Xinu development, but this project's a bit more invo
 - Input file: `input_file3`
 
   ```
-  0,R,1
-  0,A,1
-  1,R,1
-  0,R,2
-  0,A,2
-  1,R,2
-  0,D,2
-  1,A,2
-  1,D,1
-  0,D,1
+  0   R  1
+  0   A  1
+  1   R  1
+  0   R  2
+  0   A  2
+  1   R  2
+  0   D  2
+  1   A  2
+  1   D  1
+  0   D  1
   ```
 
   Output:
@@ -146,18 +146,18 @@ Usually, we plow right into Xinu development, but this project's a bit more invo
 - Input file: `input_file4`
 
   ```
-  0,R,3
-  0,A,3
-  1,R,2
-  1,A,2
-  2,R,1
-  2,A,1
-  3,R,0
-  3,A,0
-  1,R,3
-  2,R,2
-  3,R,1
-  0,R,1
+  0   R  3
+  0   A  3
+  1   R  2
+  1   A  2
+  2   R  1
+  2   A  1
+  3   R  0
+  3   A  0
+  1   R  3
+  2   R  2
+  3   R  1
+  0   R  1
   ```
 
   Output:
