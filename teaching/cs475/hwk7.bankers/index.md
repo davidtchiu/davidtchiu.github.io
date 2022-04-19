@@ -98,9 +98,18 @@ fscanf(fp, "%d", &NPROC);
 
 The rest of the file can be read using the same method, but be sure to allocate space for those vectors/matrices first!
 
+#### Sanity Check
+
+Before you run the safety algorithm, you should do a quick sanity check to ensure the values given in the files are correct. There are two areas in which you need to do this:
+
+- Ensure that the currently allocated resources do not exceed the total number of resources.
+- Ensure each thread's needs do not exceed its max demands for each resource type.
+
+If either of these tests fail, output an error and exit.
+
 #### The Safety Algorithm
 
-Your task is to read in the contents of the given state file, and determine if the state is SAFE or UNSAFE by running the Banker's Safety algorithm. The pseudocode for this algorithm is given below:
+Upon passing the sanity checks, your task is to read in the contents of the given state file, and determine if the state is SAFE or UNSAFE by running the Banker's Safety algorithm. The pseudocode for this algorithm is given below:
 
 ```c
 // m = number of resource types (3)
@@ -198,25 +207,32 @@ A fair amount of extra credit can be earned and applied to your lowest midterm e
 #### Grading
 
 ```
-This assignment will be graded out of 45 points:
+This assignment will be graded out of 55 points:
 [2pt] Print out an error message if no file is given on the command line.
 
 [3pt] Print out an error message if the file given on the command line
       does not exist.
 
 [5pt] The state file is being read into appropriate structures in your
-			program.
+      program.
 
 [5pt] Your program determines the contents of the Available vector and the
-		  Need matrix.
+      Need matrix.
+
+[10pt] Sanity checks to:
+  - Ensure that the currently allocated resources do not exceed the total
+	number of resources.
+
+  - Ensure each thread's needs do not exceed its max demands for each
+	resource type.
 
 [25pt] The safety algorithm is properly implemented, and does not carry
-			 side effects. That is, its execute will not permanently change the
-			 state of your system. (This is why we clone various structures.)
+       side effects. That is, its execute will not permanently change the
+       state of your system. (This is why we clone various structures.)
 
 [5pt] Because the number of threads and resource types are unknown until
-		  runtime, your program needs to observe good memory management, including
-			freeing up memory when possible.
+      untime, your program needs to observe good memory management, including
+      freeing up memory when possible.
 ```
 
 #### Submitting Your Assignment
