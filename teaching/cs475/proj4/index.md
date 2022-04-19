@@ -76,7 +76,7 @@ Usually, we plow right into Xinu development, but this project's a bit more invo
 
 4. Now we want to simulate locks being acquired and released by various processes to make sure your implementation is working.
 
-   Your program should input a file containing lock request and deallocation sequences. Each line in this file is a 3-tuple: `pid,req,lockid` where `pid` is the ID of the requesting process, `req` is a request which can be either R (request), A (allocation) or D (deallocation), and `lockid` is ID of the lock.
+   Your program should input a file containing lock request and deallocation sequences. Each line in this file is a 3-tuple: `pid,event,lockid` where `pid` is the ID of the requesting process, `event` can be either `R (request for resource)`, `A (allocation of resource)` or `D (deallocation)`, and `lockid` is ID of the lock.
 
    For instance, the following file sequence:
 
@@ -89,7 +89,7 @@ Usually, we plow right into Xinu development, but this project's a bit more invo
    0,D,1
    ```
 
-   which means:
+   means:
 
    ```
    pid=1 requests lockid=1
