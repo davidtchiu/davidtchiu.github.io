@@ -119,7 +119,7 @@ boolean isSafe(Available, Alloc, Need) {
 	}
 	// there's an execution order in which all threads
 	if (Finish == [1, 1, ..., 1])
-		return true		// safe!
+		return true	// safe!
 	return false		// unsafe!
 }
 ```
