@@ -51,56 +51,60 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 Usually, we plow right into Xinu development, but this project's a bit more involved. I'd prefer a better environment for debugging, so it is therefore strongly recommended that you build the deadlock detection algorithm off of the Xinu code base. Don't worry, we'll integrate it into Xinu later.
 
-1. Let's start by defining some constants:
+1.  Let's start by defining some constants:
 
-   - `#define NLOCK 10` - the maximum number of locks that your OS can support.
-   - `#define NPROC 20` - the maximum number of processes that your OS can have.
+    - `#define NLOCK 10` - the maximum number of locks that your OS can support.
+    - `#define NPROC 20` - the maximum number of processes that your OS can have.
 
-2. Your implementation will be based on cycle detection in a single-instance resource allocation graph (RAG). Recall that a (directed) graph can be represented an adjacency list, or an adjacency matrix. Consider the graph below and its corresponding adjacency matrix and adjacency lists.
+2.  Your implementation will be based on cycle detection in a single-instance resource allocation graph (RAG). Recall that a (directed) graph can be represented an adjacency list, or an adjacency matrix. Consider the graph below and its corresponding adjacency matrix and adjacency lists.
 
-   <img width="600px" src="figures/graph.png" border="1px" />
+    <img width="600px" src="figures/graph.png" border="1px" />
 
-   There is an important space-time tradeoff between the two representations. If space is a constraint, or if the graph is expected to be sparse (i.e., containing few edges), then an adjacency list is used. Conversely, if you have space or if the graph is expected to be dense, then an adjacency matrix is preferred, because updating it can be done in O(1)-time. A RAG is normally sparse, but an OS always tries to minimize overheads. As a system designer, which representation would you prefer? I'll leave you with that decision. Either way will receive full credit.
+    There is an important space-time tradeoff between the two representations. If space is a constraint, or if the graph is expected to be sparse (i.e., containing few edges), then an adjacency list is used. Conversely, if you have space or if the graph is expected to be dense, then an adjacency matrix is preferred, because updating it can be done in O(1)-time. A RAG is normally sparse, but an OS always tries to minimize overheads. As a system designer, which representation would you prefer? I'll leave you with that decision. Either way will receive full credit.
 
-3. Define the following functions.
+3.  Define the following functions.
 
-   - `void rag_request(int pid, int lockid)` - adds a request edge to the RAG from `pid` to `lockid`.
+    - `void rag_request(int pid, int lockid)` - adds a request edge to the RAG from `pid` to `lockid`.
 
-   - `void rag_alloc(int pid, int lockid)` - adds an allocation edge to the RAG from `lockid` to `pid`. Removes the request edge from `pid` to `lockid`.
+    - `void rag_alloc(int pid, int lockid)` - adds an allocation edge to the RAG from `lockid` to `pid`. Removes the request edge from `pid` to `lockid`.
 
-   - `void rag_dealloc(int pid, int lockid)` - removes the request or allocation edge from `lockid` to `pid`.
+    - `void rag_dealloc(int pid, int lockid)` - removes the request or allocation edge from `lockid` to `pid`.
 
-   - `void rag_print()` - prints the adjacency matrix or list representing the current RAG.
+    - `void rag_print()` - prints the adjacency matrix or list representing the current RAG.
 
-   - `void deadlock_detect()` - checks the RAG for cycle(s). For each cycle found, print out DEADLOCK followed by the nodes involved in the cycle. If no cycles are found, then the system is deadlock-free. You should produce no output in this case. You may again recall that cycle-detection is an application of depth-first search (DFS).
+    - `void deadlock_detect()` - checks the RAG for cycle(s). For each cycle found, print out DEADLOCK followed by the nodes involved in the cycle. If no cycles are found, then the system is deadlock-free. You should produce no output in this case. You may again recall that cycle-detection is an application of depth-first search (DFS).
 
-4. Now we want to simulate locks being acquired and released by various processes to make sure your implementation is working.
+4.  Now we want to simulate locks being acquired and released by various processes to make sure your implementation is working.
 
-   Your program should input a file containing lock request and deallocation sequences. Each line in this file is a 3-tuple (tab separated) event that has occurred: `pid event lockid`, where `pid` is the ID of the requesting process, `event` can be either `R (request for resource)`, `A (acquisition of resource)` or `D (deallocation)`, and `lockid` is ID of the lock.
+    Your program should input a file containing lock request and deallocation sequences. Each line in this file is a 3-tuple (tab separated) event that has occurred: `pid event lockid`, where: `pid` is the ID of the requesting process, `lockid` is ID of the lock, and `event` can be:
 
-   For instance, the following file sequence:
+    - `R` The request for a lock has been made from process `pid` to the lock identified by `lockid`
+    - `A` The OS allocates the lock identified by `lockid` to the requesting process
+    - `D` The pid has released (and OS deallocates) the lock identified by `lockid`
 
-   ```
-   1  R  1
-   1  A  1
-   0  R  1
-   1  D  1
-   0  A  1
-   0  D  1
-   ```
+    For instance, the following file sequence:
 
-   means:
+    ```
+    1  R  1
+    1  A  1
+    0  R  1
+    1  D  1
+    0  A  1
+    0  D  1
+    ```
 
-   ```
-   pid=1 requests lockid=1
-   pid=1 acquires lockid=1
-   pid=0 requests lockid=1
-   pid=1 releases lockid=1
-   pid=0 acquires lockid=1
-   pid=0 releases lockid=1
-   ```
+    means:
 
-   For each line, you will update the (de)allocation request in the RAG. When the end-of-file is reached, call `deadlock_detect()` to check for deadlocks.
+    ```
+    pid=1 requests lockid=1
+    pid=1 acquires lockid=1
+    pid=0 requests lockid=1
+    pid=1 releases lockid=1
+    pid=0 acquires lockid=1
+    pid=0 releases lockid=1
+    ```
+
+    For each line, you will update the (de)allocation request in the RAG. When the end-of-file is reached, call `deadlock_detect()` to check for deadlocks.
 
 #### Example Interaction:
 
