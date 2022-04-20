@@ -240,9 +240,12 @@ $ ./bankers unsafe.txt
 UNSAFE:  T0 T4 can't finish
 ```
 
-#### Extra Credit (+6pts lowest midterm)
+#### Extra Credit
 
-A fair amount of extra credit can be earned and applied to your lowest midterm exam score. To earn the bonus, your program should list _all_ SAFE schedules. The behavior for UNSAFE is unchanged.
+A fair amount of extra credit can be earned if your program can list _all_ SAFE schedules. The behavior for UNSAFE is unchanged. You must tell me which of the following options you'd like me to apply. Exam scores cannot exceed the max score of 100, however. This is an all-or-nothing deal: Your bonus solution must be fully functioning to obtain the points and no partial bonus points will be given.
+
+- Option 1: +6pt applied to your lowest midterm exam score
+- Option 2: +4pt applied to your final exam score
 
 ```
 $ ./bankers safe.txt
