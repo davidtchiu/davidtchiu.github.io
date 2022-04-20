@@ -78,14 +78,14 @@ Read top-down, the file specifies the following state:
 
 I would start by writing a small library of simple vector/matrix functions that will be used through out Banker's algorithm. For instance, I implemented functions to:
 
-- clone vectors/matrices
+- clone (deep copy) vectors/matrices
 - compare two vectors
 - add, subtract two vectors/matrices
 - print the contents of vectors/matrices
 
 #### File Handling
 
-To open a file for reading, look into [fopen()](https://www.cplusplus.com/reference/cstdio/fopen/). If the given state file exists, then `fopen()` should return a non NULL value. Notice the format of the state file. Every "token" is already separated by whitespace (either tab or newline). That's super convenient, because it allows you to use `fscanf()` to reach in each successive token.
+To open a file for reading, look into [fopen()](https://www.cplusplus.com/reference/cstdio/fopen/). If the given state file exists, then `fopen()` should return a non NULL value. Notice the format of the state file. Every "token" is already separated by whitespace (either tab or newline). That's super convenient, because it allows you to simply use successive `fscanf()` calls to grab every token in the file.
 
 For instance, here's how I've handled the first two lines of the state file:
 
@@ -96,7 +96,7 @@ fscanf(fp, "%d", &NRES);
 fscanf(fp, "%d", &NPROC);
 ```
 
-The rest of the file can be read using the same method, but be sure to allocate space for those vectors/matrices first!
+The rest of the file can be read using the same approach, but be sure to allocate space for those vectors/matrices first!
 
 #### Sanity Check
 
