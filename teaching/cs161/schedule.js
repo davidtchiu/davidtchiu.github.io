@@ -67,12 +67,12 @@ let days = {
       //   url: "hwkF.pooled/",
       //   due: "5/4/2021",
       // },
-      // {
-      //   name: "Final Hwk (altnernate)",
-      //   title: "Black Jack",
-      //   url: "hwkF.blackjack/",
-      //   due: "5/2/2022",
-      // },
+      {
+        name: "Final Hwk",
+        title: "Black Jack",
+        url: "hwkF.blackjack/",
+        due: "5/4/2022",
+      },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
@@ -130,12 +130,12 @@ let days = {
         url: "lab9.election/",
         due: "4/7/2022",
       },
-      // {
-      //   name: "Lab 10",
-      //   title: "Boulders (File I/O, Parsing)",
-      //   url: "lab10.boulders/",
-      //   due: "4/4/2022",
-      // },
+      {
+        name: "Lab 10",
+        title: "Boulders (File I/O, Parsing)",
+        url: "lab10.boulders/",
+        due: "4/21/2022",
+      },
       // {
       //   name: "Lab 11",
       //   title: "Playing Cards (Constants, Enum; IntelliJ IDE)",
