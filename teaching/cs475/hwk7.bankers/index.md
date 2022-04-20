@@ -30,6 +30,8 @@ git clone https://github.com/davidtchiu/cs475-hwk7-bankers
 
 I have included a working solution of my program along with the starter code. The binary executable file is called `bankersSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./bankersSol <state file>`. This is how your solution should behave when it's done.
 
+There is a bonus version for this assignment, and the working solution is also provided, called `bankersBonusSol`.
+
 #### The State Input File
 
 Your program will take a single command-line argument: the name of a state file to read. Here is the general format of a state file. If the file is not given on the command line, of if the file is not found, then simply print an error message.
