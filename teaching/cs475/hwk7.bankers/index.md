@@ -184,7 +184,7 @@ boolean isSafe(Available, Alloc, Need) {
 }
 ```
 
-In each iteration of your loop, you should be printing out which thread was chosen to run and the contents of the Work vector (for grading). If all threads can finish, then you should print `SAFE`. The sequence of the simulated execution of threads is a "safe schedule." You just need to print one safe schedule for full credit. If the state is determined `UNSAFE`, then further print out the current Need matrix. Example outputs found below.
+If all threads can finish, then you should print `SAFE`, followed by a "safe schedule", that is, the sequence of the simulated execution of threads such that all threads can finish. You just need to print one safe schedule for full credit. If the state is determined `UNSAFE`, then further print out the threads that can't finish. Example outputs found below.
 
 #### Example SAFE Output
 
@@ -210,12 +210,7 @@ $ less safe.txt
 0 0 2
 
 $ ./bankers safe.txt
-Run thread 1. Work: 5   3       2
-Run thread 3. Work: 7   4       3
-Run thread 0. Work: 7   5       3
-Run thread 2. Work: 10  5       5
-Run thread 4. Work: 10  5       7
-SAFE!
+SAFE:  T1 T3 T0 T2 T4
 ```
 
 #### Example UNSAFE Output
@@ -240,20 +235,32 @@ $ less unsafe.txt
 0 0 2
 
 $ ./bankers unsafe.txt
-Run thread 3. Work: 5   2       3
-Run thread 1. Work: 7   2       3
-Run thread 2. Work: 10  2       5
-UNSAFE! Need:
-7       4       3
-0       0       0
-0       0       0
-0       0       0
-4       3       1
+UNSAFE:  T0 T4 can't finish
 ```
 
-#### Extra Credit (+5pts lowest midterm)
+#### Extra Credit (+6pts lowest midterm)
 
-A fair amount of extra credit can be earned and applied to your lowest midterm exam score. To earn the bonus, your program should list _all_ SAFE schedules.
+A fair amount of extra credit can be earned and applied to your lowest midterm exam score. To earn the bonus, your program should list _all_ SAFE schedules. The behavior for UNSAFE is unchanged.
+
+```
+$ ./bankers safe.txt
+SAFE:  T1 T3 T0 T2 T4
+SAFE:  T1 T3 T0 T4 T2
+SAFE:  T1 T3 T2 T0 T4
+SAFE:  T1 T3 T2 T4 T0
+SAFE:  T1 T3 T4 T0 T2
+SAFE:  T1 T3 T4 T2 T0
+SAFE:  T1 T4 T3 T0 T2
+SAFE:  T1 T4 T3 T2 T0
+SAFE:  T3 T1 T0 T2 T4
+SAFE:  T3 T1 T0 T4 T2
+SAFE:  T3 T1 T2 T0 T4
+SAFE:  T3 T1 T2 T4 T0
+SAFE:  T3 T1 T4 T0 T2
+SAFE:  T3 T1 T4 T2 T0
+SAFE:  T3 T4 T1 T0 T2
+SAFE:  T3 T4 T1 T2 T0
+```
 
 #### Grading
 
