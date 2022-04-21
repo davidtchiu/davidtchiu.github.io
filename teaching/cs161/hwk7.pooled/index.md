@@ -71,7 +71,7 @@ The second file is `pooling384_48_by_pool.txt`. This file has the same format, b
 
 - The first class you will write is `Pool`. A pool consists of a list of samples that have been blended together. Samples are represented with just integers in this project. Write the following:
 
-  - There are two fields: A label or name to identify the pool (like `"A"`, `"B"`, `"C"`, ...) and an ArrayList of integers representing the pool's samples.
+  - There are two fields: A String label to identify the pool (`"A"`, `"B"`, `"C"`, ...) and an ArrayList of integers representing the pool's samples.
 
   - Constructor: Its only constructor takes a pool label as input. It instantiates the ArrayList field, and assigns the input ID.
 
