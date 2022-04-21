@@ -110,7 +110,7 @@ Currently the boulders just pass through each other, which doesn't look very rea
 If you're done early and want some more practice, try the following exercises:
 Make the boulder collision more realistic by taking into account their size.
 
-- Write a new version of the updatePosition method that has the boulders "bounce" back off of the walls rather than wrapping around.
+- Write a new version of the `updatePosition` method that has the boulders "bounce" back off of the walls rather than wrapping around.
 
 - Implement a method called `writeToFile(..)`. It takes another file name as input. This file, you need to open the given file name for writing. When called it should print out information on each of the boulders in the collection into the given file. For full credit, there should be a boulder "number" printed out with each entry, with the first boulder being displayed as #1.
 
