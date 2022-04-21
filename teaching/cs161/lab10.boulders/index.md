@@ -86,7 +86,7 @@ The next objective is to write a class, like `CircleDrawer` from before, that ma
 
   <video alt="Video from Gyazo" width="400" autoplay muted loop playsinline><source src="https://i.gyazo.com/23833682efd385e2c434d4e44f52f55c.mp4" type="video/mp4" /></video>
 
-- Add the `public static void main(String[] args)` method to your `BoulderSim` class. You may want to refer back to the notes for its syntax. The method should simply instantiate a new `BoulderSim` object with the `boulders_data.txt` file we've been working with, and call animate for `200` time steps.
+<!-- - Add the `public static void main(String[] args)` method to your `BoulderSim` class. You may want to refer back to the notes for its syntax. The method should simply instantiate a new `BoulderSim` object with the `boulders_data.txt` file we've been working with, and call animate for `200` time steps. -->
 
 #### Colorful Boulders
 
