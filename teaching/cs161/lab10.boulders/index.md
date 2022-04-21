@@ -127,9 +127,7 @@ Make the boulder collision more realistic by taking into account their size.
 #### Grading
 
 ```
-
-This assignment will be graded out of a total of 10pts.
-
+Attendance is necessary to receive credit for lab.
 ```
 
 #### Submitting Your Assignment

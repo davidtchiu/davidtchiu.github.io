@@ -339,9 +339,7 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 #### Grading
 
 ```
-
-This assignment will be graded out of a total of 10pts.
-
+Attendance is necessary to receive credit for lab.
 ```
 
 #### Submitting Your Assignment

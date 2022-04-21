@@ -79,6 +79,10 @@ Got some extra time? Do the following extensions:
 #### Grading
 
 ```
+Attendance is necessary to receive credit for lab.
+```
+
+<!-- ```
  This assignment will be graded out of a total of 10pts.
 
     The default constructor initializes the ArrayList.
@@ -90,7 +94,7 @@ Got some extra time? Do the following extensions:
     You re-use code whenever possible.
     You provide Javadocs style comments for any new methods implemented.
     You include sufficient inline comments to explain the logic of your methods.
-```
+``` -->
 
 #### Submitting Your Assignment
 

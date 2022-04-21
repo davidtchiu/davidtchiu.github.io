@@ -158,6 +158,11 @@ After testing your `Combination` class thoroughly, create a new `ComboGuesser` c
 #### Grading
 
 ```
+Attendance is necessary to receive credit for lab.
+```
+
+<!--
+```
 This assignment will be graded out of a total of 10 pts, provided:
 
 Combination's constructor randomly generates a combination of the
@@ -179,7 +184,7 @@ The 3-argument constructor is implemented for ComboGuesser.
 guessCombo() is implemented for ComboGuesser.
 
 You re-use code whenever possible.
-```
+``` -->
 
 #### Submitting Your Assignment
 

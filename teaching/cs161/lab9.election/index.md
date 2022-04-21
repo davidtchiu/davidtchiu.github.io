@@ -88,9 +88,7 @@ The API handout that you'll want to have in front of you:
 #### Grading
 
 ```
-
-This assignment will be graded out of a total of 10pts.
-
+Attendance is necessary to receive credit for lab.
 ```
 
 #### Submitting Your Assignment
