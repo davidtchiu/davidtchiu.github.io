@@ -10,6 +10,7 @@ NASA recently called and asked you to consult on their latest astronomical simul
 
 - To deal with file input/output
 - To deal with data parsing
+- More practice with loops and ArrayList
 
 #### Working with Partners (Please Read)
 
