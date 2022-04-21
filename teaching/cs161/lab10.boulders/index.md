@@ -47,10 +47,10 @@ I've created a new project to get you started. Please download and modify Boulde
 
 - Create the `toString()`. It returns a String describing the boulder's state. It should include the size, position, and speed (see below on how it's supposed to be formatted).
 
-- The sample interactions below illustrate the creation a `Boulder` object, and its output from `toString`:
+- The sample interactions on code pad below illustrate the creation a `Boulder` object, and its output from `toString`:
   ```java
   Boulder b = new Boulder(52, 656.063, 240.661, -13.301, 4.454);
-  System.out.println(b.toString())
+  System.out.println(b.toString());
   > Boulder of size 52 is at 656.063, 240.661 with velocity -13.301, 4.454
   ```
 
@@ -74,13 +74,13 @@ The next objective is to write a class, like `CircleDrawer` from before, that ma
   100,50,10,10,20
   ```
 
-  Each line contains data for the state of a Boulder. The values are separated by a comma as follows: (1) `diameter` (2) `xPosition` (3) `yPosition` (4) `xVelocity` (5) `yVelocity`.
+  Each line contains data for the state of a Boulder. The values are separated by a comma as follows: `diameter`, `xPosition`, `yPosition`, `xVelocity`, and `yVelocity`.
 
 - Your constructor should read this file and create the required number of boulders (using the `Boulder()` constructor) and add them to the ArrayList. While you're at it, make sure you call makeVisible on each boulder so they all start out visible. You are reminded that a String can be tokenized using the `split(..)` method. You can also convert strings to doubles and ints using the `Double.parseDouble(..)` and `Integer.parseInt(..)` methods, respectively.
 
 - Once you're done with the constructor, you can test it by creating a new `BoulderSim` object, and passing it the `boulders_data.txt` file. If everything works, you should get no runtime exceptions and see six Boulders on the canvas.
 
-- Move on to `animate(..)` that takes a single integer as its input: the number of update steps that should be performed on the collection of boulders. If the user passes `10` as an input to the method, for example, each boulder in the group should have its position updated, then you should do it again, and again, until each boulder has had its position updated `10` times. (Do not just update the first boulder `10` times, then the second boulder `10` times, etc. That wouldn't look right.)
+- Move on to `animate(..)` which takes a single integer as input: the number of update steps that should be performed on the collection of boulders. If the user passes `10` as an input to the method, for example, each boulder in the group should have its position updated, then you should do it again, and again, until each boulder has had its position updated `10` times. (Do not just update the first boulder `10` times, then the second boulder `10` times, etc. That wouldn't look right.)
 
   It should look something like this, when run except that my boulders collide with each other (you'll deal with collision a little later):
 
