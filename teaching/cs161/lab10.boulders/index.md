@@ -101,7 +101,7 @@ Let's say we wanted to jazz up our boulders a little more.
 
 Currently the boulders just pass through each other, which doesn't look very realistic.
 
-- Add an `overlaps(Boulder other)` method to the Boulder class. It should take another boulder as an input, and return `true` if the input boulder overlaps with our boulder. Two boulders overlap if the **distance** between _our_ boulder's position and the other boulder's position is less than the sum of both boulders' radii. Recall that the Euclidean distance formula is $$\sqrt{(x_{thisBoulder}-x_{otherBoulder})^2+(y_{thisBoulder}-y_{otherBoulder})^2}$$ (There's a `Math.sqrt(..)` method that you can use for calculating the square root.)
+- Add an `overlaps(Boulder other)` method to the Boulder class. It should take another boulder as an input, and return `true` if the input boulder overlaps with our boulder. Two boulders overlap if the **distance** between _our_ boulder's position and the other boulder's position is less than the sum of both boulders' radii. Recall that the Euclidean distance between two points is $$\sqrt{(x_{1}-x_{2})^2+(y_{1}-y_{2})^2}$$ (There's a `Math.sqrt(..)` method that you can use for calculating the square root.)
 
 - Update your `animate()` method so that, for each time-step, it first checks to see if any boulders are overlapping with one another. If they are, they should bounce off of each other. A simple way is by reversing their velocities.
 
