@@ -2,7 +2,7 @@
 
 ### Lab: Boulders
 
-NASA recently called and asked you to consult on their latest astronomical simulations. When they heard you'd worked with managing collections circles on a lab exercise, they hired you on the spot! NASA wants to be able to create large collections of boulder-like objects and simulate their motions on the screen. They've got a few more requests that you can read about below.
+NASA called and asked you to consult on their latest astronomical simulations. When they heard you'd worked with managing collections circles on a lab exercise, they hired you on the spot! NASA wants to be able to create large collections of boulder-like objects and simulate their motions on the screen. They've got a few more requests that you can read about below.
 
 <center><img width="50%" src="figures/boulders.png"/></center>
 
