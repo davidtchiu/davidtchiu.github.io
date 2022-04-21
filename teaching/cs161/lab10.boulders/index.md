@@ -19,11 +19,9 @@ Here are your assigned partners for today's lab.
 
 ```
 [Rodriguez, C, Steller, L]
-[Jones, S, Miller, D]
-[Murphy, C, Brown, A]
+[Jones, S, Culpepper, A]
 [Camblin, F, Grey, E]
-[Murayama, E, Culpepper, A]
-[Jones, B, Strash, K]
+[Jones, B, Murphy, C, Strash, K]
 [Wissing, A, Beardsley, M]
 ```
 
