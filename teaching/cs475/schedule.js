@@ -142,14 +142,15 @@ let days = {
     // wk 14
     "MM: Partitioning (Fixed, Dynamic)",
     "MM: Segmentation",
-    "MM: Paging, 2-level paging",
+    "MM: Paging",
     // wk 15
+    "MM: linked tables; multi-level paging",
     "MM: Translation Lookaside Buffer (TLB)",
     "Virtual Memory (VM): demand paging",
-    "VM: FIFO, MIN, LRU replacement policies",
     // wk 16
+    "VM: FIFO, MIN, LRU replacement policies",
     "VM: Clock; Start memory allocation and working-set model",
-    "VM: memory allocation (cont.)",
+    // "VM: memory allocation (cont.)",
     // "VM: malloc(), free()",
     "<strong>Reading Period</strong>",
     // wk final
