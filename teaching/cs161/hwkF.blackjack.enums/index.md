@@ -24,7 +24,7 @@ You will be copying over your Suit, Card, and Deck classes from lab. If you did 
 
 #### "Hands" Explained
 
-Black Jack requires users to hold a set of cards, generally known as a "Hand." Let's go over its rules. At arbitrary points of the game, a hand contains at least two Cards. The suits are ignored, but the face values of these cards are added together. The objective is to get the sum of the hand as close to **21** as possible, without exceeding it (known as a bust). Initially, a hand starts with two Cards. Users can decide to hit, in which a the top card from the deck is drawn and added to their Hand.
+Black Jack requires users to hold a set of cards, generally known as a "Hand." Let's go over its rules. At arbitrary points of the game, a hand contains at least two Cards. The suits are ignored, but the face values of these cards are added together. The objective is to get the sum of the hand as close to **21** as possible, without exceeding it (known as a bust if you do). Initially, a hand starts with two Cards. Users can decide to hit, in which the top card from the deck is drawn and added to their Hand.
 
 A quick word on face values. The face value of each card can usually be added to the value of the hand, with a few exceptions:
 

@@ -52,7 +52,7 @@ The following file(s) have been provided for this assignment.
 
 #### "Hands" Explained
 
-Black Jack requires users to hold a set of cards, generally known as a "Hand." Let's go over its rules. At arbitrary points of the game, a hand contains at least two Cards. The suits are ignored, but the face values of these cards are added together. The objective is to get the sum of the hand as close to **21** as possible, without exceeding it (known as a bust if you do). Initially, a hand starts with two Cards. Users can decide to hit, in which a the top card from the deck is drawn and added to their Hand.
+Black Jack requires users to hold a set of cards, generally known as a "Hand." Let's go over its rules. At arbitrary points of the game, a hand contains at least two Cards. The suits are ignored, but the face values of these cards are added together. The objective is to get the sum of the hand as close to **21** as possible, without exceeding it (known as a bust if you do). Initially, a hand starts with two Cards.
 
 A quick word on face values. The face value of each card can usually be added to the value of the hand, with a few exceptions:
 
@@ -66,11 +66,7 @@ A quick word on face values. The face value of each card can usually be added to
 
 - This class should keep an `ArrayList` of `Card` objects. This represents all the `Card`s the hand holds.
 
-- This class should keep a reference to a `Deck` object, which represents all the Cards that have yet to be drawn.
-
-- Write a 1-argument constructor that takes as input a `Deck` object. Upon being called, it should remove the top two cards from the Deck, and add them to the hand.
-
-- Write a 2-argument constructor that takes as inputs 2 Card objects and add them to your array list. This method should set the Deck to null. (This constructor is provided only to help you test).
+- Write a 2-argument constructor that takes as inputs 2 Card objects and add them to your array list.
 
 - A method, `int getValue()` which accepts no input arguments. It loops through all the `Card`s in the hand, and sums up their values, using the rules of the game described above. This total is then returned to the caller. Recall that the Ace is handled specially.
 
@@ -80,7 +76,7 @@ A quick word on face values. The face value of each card can usually be added to
 
 - A method, `boolean isBlackJack()` which accepts no input arguments, and determines whether or not the current Hand holds a Black Jack. This can only occur when the the Hand holds exactly two cards, and the value of the Hand is **21**. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s).
 
-- A method, `void hit()` which accepts no input arguments. It draws the top card from the associated `Deck` object and adds it to the current hand. If the hand is already bust, this method performs no action.
+- A method, `void hit()` which accepts no input arguments. It creates a random Card and adds it to the hand. If the hand is already bust, this method performs no action.
 
 - A method, `boolean pushes(Hand other)` which accepts another Hand object as input. It returns true if the current Hand's value ties with the given Hand's value.
 
@@ -187,7 +183,7 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
 
 - Write the `public static void main(String[] args)` method.
 
-  - It starts by printing a "startup/welcome message" to the sucker (I mean human player) who will be playing against your algorithm. Create a Deck here and shuffle it a few times! Then create two Hands: a Hand for the AI and a Hand for the human-player. Make sure both AI and human-player Hands remember the Deck you just created.
+  - It starts by printing a "startup/welcome message" to the sucker (I mean human player) who will be playing against your algorithm. Then create two Hands: a Hand for the AI and a Hand for the human-player.
   - If the human has a Black Jack, then the game ends. That is, neither the human nor the AI gets to hit. (The AI can push if it also gets a Black Jack.) If the human doesn't get a Black Jack however, the game must go on.
   - Print the AI's second Card (but don't reveal the first Card to the human). Also print the human's hand to the screen.
   - Prompt the user to either hit or hold. Scan in the user's response. If they typed in "hit," then deal them another Card and print out their hand again. Continue to prompt them to hit or hold until the human either busts or types in "hold."
