@@ -224,11 +224,12 @@ let days = {
     "Selection sort",
     // wk 15
     "Bubble Sort",
-    "Information hiding",
+    "More complexity: list reversal, palindrome",
     "Special Hwk Lab",
-    "static, main()",
+    "public, private, final",
     // wk 16
-    "enum; IntelliJ IDE",
+    "static, main()",
+    // "enum; IntelliJ IDE",
     "<strong><emph>Review</emph></strong>",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
