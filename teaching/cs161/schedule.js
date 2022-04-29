@@ -71,7 +71,7 @@ let days = {
         name: "Final Hwk",
         title: "Black Jack",
         url: "hwkF.blackjack/",
-        due: "5/4/2022",
+        due: "5/9/2022",
       },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
