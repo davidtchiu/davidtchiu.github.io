@@ -228,8 +228,8 @@ let days = {
     "Special Hwk Lab",
     "public, private, final",
     // wk 16
-    "static, main()",
-    // "enum; IntelliJ IDE",
+    "static, main(); IntelliJ IDE",
+    // "enum; ",
     "<strong><emph>Review</emph></strong>",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
