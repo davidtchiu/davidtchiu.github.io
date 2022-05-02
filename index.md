@@ -6,10 +6,6 @@ My current teaching and research interests include data management and distribut
 
 Here's a link to my [curriculum vitae](CV.pdf).
 
-### Student Feedback for Department
-
-Leave the CS department [some feedback](https://forms.gle/Ltassc7BQkNfnnXB7). This form is anonymous.
-
 ### Recent Activities
 
 - (4/2022) I am co-chairing (with Professor Brian Larkins) the Poster Program at the colocated conferences IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), to be held in Portland, Oregon.
@@ -25,3 +21,7 @@ Leave the CS department [some feedback](https://forms.gle/Ltassc7BQkNfnnXB7). Th
 - (4/2019) Congrats to Sarah McClain on receiving a summer research grant to work on semantic caching of bitmap indices.
 - (3/2019) I am serving on the PC for HiPC'19 Please consider submitting a paper.
 - (10/2018) Our paper on distributed bitmap indexing has been accepted for publication at BDCAT'18. It was nominated for the Best Paper award.
+
+### Student Feedback for Department
+
+Leave the CS department [some feedback](https://forms.gle/Ltassc7BQkNfnnXB7). This form is anonymous.
