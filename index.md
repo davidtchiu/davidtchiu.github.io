@@ -9,7 +9,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 ### Recent Activities
 
 - (4/2022) I am co-chairing (with Professor Brian Larkins) the Poster Program at the colocated conferences IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), to be held in Portland, Oregon.
-- (4/2022) Promoted to Full Professor, University of Puget Sound.
+- (4/2022) Promoted to Full Professor, effective July 2022.
 - (8/2021) I'm a Faculty Panelist (with Monica DeHart and Melvin Rouse) for the "I Am Puget Sound" student orientation program.
 - (7/2021) I am chair of the Demo/Short Paper Session at SSDBM 2021, and I'm also giving a talk, "Caching Support for Range Query Processing on Bitmap Indices."
 - (5/2021) Our paper on bitmap caching has been accepted to SSDBM 2021 as a long paper. Congrats to Sarah McClain (BS'20), Manya Mutschler-Aldine (BS'21), and Colin Monaghan (BS'22).
