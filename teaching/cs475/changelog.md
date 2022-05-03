@@ -1,6 +1,13 @@
 #### TODO
 
 - What to do with Xinu? If I go Vbox-less (I have to at some point...)
+  - Opt 0: turn on low-res mode on Mac
+    - App finder -> Right click on VirtualBox -> Show package contents -> Right click on VirtualBoxVM.app -> low res
+  - Opt 1: remote desktop to localhost seems to work without resTab?
+    - Install VirtualBox Extensions too
+    - Under setting => display, enable remote desktop
+    - Using microsoft remote desktop client, connect to localhost
+    - Hard to test.
 - Speedup Sync: nip the implementation of semaphores (or just talk about one.)
 - Double check the monitor examples. Notify and continue? Create the animation instead of drawing
 - What would a Lab schedule (2 hr) consist of?

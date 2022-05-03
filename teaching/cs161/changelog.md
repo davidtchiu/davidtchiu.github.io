@@ -1,22 +1,15 @@
 #### TODO
 
+- Move static/enum/private/public up (or spread them out)
+- Put starter code on github
 - Spring: Exam 2 move to Week 12, not 13
 - Why have students create a new zip every time? Just submit the `.java` files.
-- Switch to non-`this` again.
 - Call them instance variables instead of fields
 - Push back return. We don't _really_ use it until CircleDrawer lab 5 and object interaction
 - Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
 - Consider moving complexity before design
 - Need a better lab 2. It stinks. Maybe have them start manipulating Circle with some scope stuff thrown in
 - Hwk 4 lot cooler if I introduced an Arm class or something…
-
-- Mapping to Lewis/Loftus 8th ed.
-
-  - Lec 1: Chap 1 (all)
-  - Lec 2a:
-  - Lec 2b: Chap 4.1 - 4.5
-  - Lec 3a (data types): Chap 2
-  - Lec 3b (abstraction):
 
 - Mapping to Horstmann early objects
   - Lec 1: Chap 1 (all)
@@ -35,5 +28,5 @@
 
 #### Change Log
 
-- Added Hwk 0 to remove Hwk gap. (Fall 2022)
--
+- Switch to non-`this` again. (Fall 2022)
+- Added Hwk 0 to remove Hwk gap. (Spring 2021)

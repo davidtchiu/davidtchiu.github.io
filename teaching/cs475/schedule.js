@@ -162,5 +162,5 @@ let days = {
 
 // print out the schedule to HTML
 const schedule = new CourseCalendar("1/17/22", days, MWF);
-// schedule.generateHTMLAssigments();
+schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
