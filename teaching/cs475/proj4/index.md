@@ -228,7 +228,7 @@ At this point, we have the lock wrapper structures in place, and now we need to 
 
 1. Open up `system/lock.c`. I've given you the code skeletons, and it's your job to fill in the `TODO` comments. You can ignore all the `TODO (RAG)` comments for now, but leave them in place for later. **Important:** it's helpful to remember that the currently-running process is stored in a global variable, `currpid`.
 
-2. It's finally time to test out this new locking system. The code in `system/main.c` should still be the Dining Philosophers implementation from the previous project. Modify the code so that you only use the new system calls we provided in `lock.c`, instead of using `mutex_t` directly. That is, you should remove any code that creates a` mutex_t` variable, and any calls to `mutex_lock()` and `mutex_unlock()`. Instead, you should replace them with `lock_create()`, `acquire()`, and `release()` respectively.
+2. It's finally time to test out this new locking system. The code in `system/main_phil.c` should have the Dining Philosophers implementation from the previous project. Modify the code so that you only use the new system calls we provided in `lock.c`, instead of using `mutex_t` directly. That is, you should remove any code that creates a` mutex_t` variable, and any calls to `mutex_lock()` and `mutex_unlock()`. Instead, you should replace them with `lock_create()`, `acquire()`, and `release()` respectively.
 
 3. Until you get Dining Philosophers working just as before, do not move on. There should be no deadlocks here.
 
@@ -375,7 +375,7 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
 
 1. Because you were required to print out nodes involved in the deadlock, your code is perfectly capable of identifying all the locks involved, identified by `lockid`.
 
-2. Go back into system/deadlock.c and implement a new function named `deadlock_recove()`. I'll leave the choice of parameters (if any) entirely up to you. This function must:
+2. Go back into system/deadlock.c and implement a new function named `deadlock_recover()`. I'll leave the choice of parameters (if any) entirely up to you. This function must:
 
    - Grab the `lockentry` using a `lockid` that is involved in the deadlock,
    - Find the ID of the process that currently holds this lock. Kill that process.
@@ -414,7 +414,7 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
    All user processes have completed.
    ```
 
-6. Now, let's modify the Dining Philosopher's problem so that deadlocks are not prevented. In other words, once a philosopher acquires a fork, do not try to see if the other fork is available, and simply try to acquire (or wait) for the other fork. To increase likelihood of a deadlock, reduce the number of philosophers to 3. It still may take some time for the deadlock to occur (you may have to modify your code so that philosophers eat more often, but here's one successful output:
+6. Now let's try to run the dining philosophers solution. To increase likelihood of a deadlock, reduce the number of philosophers to 3. It still may take some time for the deadlock to occur (you may have to modify your code so that philosophers eat more often, but here's one successful output:
 
    ```
    Booting Xinu on i386-pc...
