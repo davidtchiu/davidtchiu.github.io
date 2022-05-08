@@ -319,17 +319,19 @@ The lock subsystem you just built now lets the Xinu kernel track how many locks 
    }
    ```
 
-2. As you can see, two processes are created, and both call `work()`, which essentially pauses awhile before printing a message. The first process attempts to acquire lock0 initially, then does some work, then tries to acquire lock1 before working again, and releasing both locks afterwards. The second process attempts to acquire the locks in reverse order, which creates a simple cycle.
+2. Note that this file is already set up to use your locking API (that is, no refactoring needed as was the case for `main_phil.c`)
+
+3. As you can see, two processes are created, and both call `work()`, which essentially pauses awhile before printing a message. The first process attempts to acquire lock0 initially, then does some work, then tries to acquire lock1 before working again, and releasing both locks afterwards. The second process attempts to acquire the locks in reverse order, which creates a simple cycle.
 
    If you run this code, chances are, each process will get to a bit of work, but then deadlock, which prevents them from never being able to work a second time. The processes will remain running, but they make no progress. Because the locks are implemented using busy-wait loops, both processes are now simply eating up CPU cycles and causing it to heat up, at which point your computer's fan will be going at full-speed. Unfortunately, there's no way out, except to reset Xinu. Go ahead and close the back-end VM.
 
-3. We want Xinu to run your deadlock detection algorithm every once in a while. If a deadlock is present, it should recover by killing one or more of the deadlocked processes (called a victim) to release its hold on a lock.
+4. We want Xinu to run your deadlock detection algorithm every once in a while. If a deadlock is present, it should recover by killing one or more of the deadlocked processes (called a victim) to release its hold on a lock.
 
-4. Back in `system/initialize.c`, declare your RAG, and then initialize it with no edges.
+5. Back in `system/initialize.c`, declare your RAG, and then initialize it with no edges.
 
-5. Open up the `include/deadlock.h` file. Add in any constants and typedefs you defined for your code. Then add the function prototypes. Important: because the RAG must be accessible everywhere, redeclare extern a version of your RAG in here.
+6. Open up the `include/deadlock.h` file. Add in any constants and typedefs you defined for your code. Then add the function prototypes. Important: because the RAG must be accessible everywhere, redeclare extern a version of your RAG in here.
 
-6. Now open the `system/deadlock.c` file, and place your deadlock detection functions in it. Once in place, return to `system/lock.c` and fill in the calls to your functions to update the RAGs (guided by the` TODO (RAG)` labels).
+7. Now open the `system/deadlock.c` file, and place your deadlock detection functions in it. Once in place, return to `system/lock.c` and fill in the calls to your functions to update the RAGs (guided by the` TODO (RAG)` labels).
 
    - When to Call Detection: Without preemption, Xinu would never get a chance to run in the presence of a deadlock between user processes. So it's a good thing that the previous project implemented the timer interrupt. Recall that we give control back to Xinu every once in a while (defined by QUANTUM), and when Xinu regains control, it calls `resched()`. Therefore, we can call `deadlock_detect()` inside `resched()`, but it would introduce quite a large overhead to run it each time the scheduler runs.
 
@@ -342,7 +344,7 @@ The lock subsystem you just built now lets the Xinu kernel track how many locks 
    restore(mask); //reenable interrupts
    ```
 
-7. Phew, that's a lot of work! Let's test your deadlock detection algorithm! Return to `compile/`, then recompile and run Xinu. If things are working, it should now catch the deadlock (by printing out the cycle). Because detection is run repeatedly, you should get something close to the following:
+8. Phew, that's a lot of work! Let's test your deadlock detection algorithm! Return to `compile/`, then recompile and run Xinu. If things are working, it should now catch the deadlock (by printing out the cycle). Because detection is run repeatedly, you should get something close to the following:
 
    ```
    Worker 0: Buzz buzz buzz
