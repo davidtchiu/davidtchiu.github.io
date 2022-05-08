@@ -380,7 +380,7 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
    - Grab the `lockentry` using a `lockid` that is involved in the deadlock,
    - Find the ID of the process that currently holds this lock. Kill that process.
    - Was the victim process waiting on other locks? (Probably). Remove it from those locks' wait queues.
-   - Call `mutex_unlock()` the lock's mutex member
+   - Call `mutex_unlock()` on the lock that was held by the victim process.
    - Update the RAG and zero out all the allocation and request edges associated with the victim process, as it has been vanquished from the system.
    - Print out a message: `"DEADLOCK RECOVER"` followed by the victim's `pid` and `lockid`.
 
