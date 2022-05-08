@@ -377,7 +377,8 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
 
 2. Go back into system/deadlock.c and implement a new function named `deadlock_recover()`. I'll leave the choice of parameters (if any) entirely up to you. This function must:
 
-   - Grab the `lockentry` using a `lockid` that is involved in the deadlock,
+   - Grab the `lockentry` using any `lockid` that is involved in the deadlock.
+   - Dequeue all processes in that lock's wait queue and add them to the ready queue.
    - Find the ID of the process that currently holds this lock. Kill that process.
    - Was the victim process waiting on other locks? (Probably). Remove it from those locks' wait queues.
    - Call `mutex_unlock()` on the lock that was held by the victim process.
@@ -386,7 +387,7 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
 
 3. Make sure you add this new function's prototype in `include/deadlock.h`.
 
-4. Finally, you must call this function when a deadlock has been detected.
+4. Finally, call this function when a deadlock has been detected.
 
 5. If everything's working properly, you'll get something that looks similar to the following:
 
@@ -404,16 +405,23 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
        615632 bytes of heap space below 640K.
      15728640 bytes of heap space above 1M.
              [0x00100000 to 0x00FFFFFF]
-   Worker 0: Buzz buzz buzz
-   Worker 1: Buzz buzz buzz
-   DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
-   DEADLOCK RECOVER        killing pid=3 to release lockid=2
-   Worker 0: Buzz buzz buzz
-
-
-   All user processes have completed.
+    Worker 0 (pid=2): Buzz buzz buzz
+    Worker 1 (pid=3): Buzz buzz buzz
+    DEADLOCK DETECTED       pid=3 rid=2 pid=2 rid=1
+    DEADLOCK RECOVER        killing pid=3 to release lockid=2
+    Worker 0 (pid=2): Buzz buzz buzz
+    Worker 0 (pid=2): Buzz buzz buzz
+    Worker 0 (pid=2): Buzz buzz buzz
+    Worker 0 (pid=2): Buzz buzz buzz
+    Worker 0 (pid=2): Buzz buzz buzz
+    Worker 0 (pid=2): Buzz buzz buzz
+    Worker 0 (pid=2): Buzz buzz buzz
+    Worker 0 (pid=2): Buzz buzz buzz
    ```
 
+   Notice that Worker 1 (pid 3) was selected and killed. Worker 0 continues to work forever...
+
+<!--
 6. Now let's try to run the dining philosophers solution. To increase likelihood of a deadlock, reduce the number of philosophers to 3. It still may take some time for the deadlock to occur (you may have to modify your code so that philosophers eat more often, but here's one successful output:
 
    ```
@@ -452,7 +460,7 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
    Philosopher 1 eating: nom nom nom
    Philosopher 1 thinking: zzzzzZZZz
    Philosopher 0 eating: nom nom nom
-   ```
+   ``` -->
 
 #### Grading
 
