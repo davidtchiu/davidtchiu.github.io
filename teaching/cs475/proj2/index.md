@@ -44,6 +44,10 @@ Starter code for this assignment is provided on the github repo. You are not req
   git clone https://github.com/davidtchiu/cs475-proj2
   ```
 
+#### Solution Executable
+
+I've provided you with a precompiled solution called `xinuSol` in the `compile/` directory. If you're interested to see the proper behavior, navigate to `compile/` and run `./uploadSol.sh` to upload my precompiled kernel to the back-end VM. Then start up the back-end VM and run `minicom`.
+
 #### Part 1: Preliminary
 
 The required mechanisms to support priority scheduling is straightforward. We will start by adding a priority field to the PCB. We will then make the necessary changes to the FIFO queue you wrote for the previous project. Here's what you need to know (and do).

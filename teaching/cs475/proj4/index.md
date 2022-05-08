@@ -47,6 +47,10 @@ Starter code for this assignment is provided on the github repo. You are not req
   git clone https://github.com/davidtchiu/cs475-proj4
   ```
 
+#### Solution Executable
+
+I've provided you with **TWO** precompiled solution called `xinuSol` and `xinuPhilSol` in the `compile/` directory. If you're interested to see the proper behavior, navigate to `compile/` and run `./uploadSol.sh` to upload my precompiled kernel to the back-end VM running the 2 deadlocked worker processes. You can run `./uploadPhilSol.sh` to upload my solution for dining philosophers (N=3). Then start up the back-end VM and run `minicom`.
+
 #### Part 1: Deadlock Detection (Off-Xinu)
 
 Usually, we plow right into Xinu development, but this project's a bit more involved. I'd prefer a better environment for debugging, so it is therefore strongly recommended that you build the deadlock detection algorithm off of the Xinu code base. Don't worry, we'll integrate it into Xinu later.
@@ -228,15 +232,15 @@ At this point, we have the lock wrapper structures in place, and now we need to 
 
 1. Open up `system/lock.c`. I've given you the code skeletons, and it's your job to fill in the `TODO` comments. You can ignore all the `TODO (RAG)` comments for now, but leave them in place for later. **Important:** it's helpful to remember that the currently-running process is stored in a global variable, `currpid`.
 
-2. It's finally time to test out this new locking system. The code in `system/main_phil.c` should have the Dining Philosophers implementation from the previous project. Modify the code so that you only use the new system calls we provided in `lock.c`, instead of using `mutex_t` directly. That is, you should remove any code that creates a` mutex_t` variable, and any calls to `mutex_lock()` and `mutex_unlock()`. Instead, you should replace them with `lock_create()`, `acquire()`, and `release()` respectively.
+2. It's finally time to test out this new locking system. The code in `system/main.c` should have the Dining Philosophers implementation from the previous project. Modify the code so that you only use the new system calls we provided in `lock.c`, instead of using `mutex_t` directly. That is, you should remove any code that creates a` mutex_t` variable, as well as any calls to `mutex_lock()` and `mutex_unlock()`. Instead, you should replace them with `lock_create()`, `acquire()`, and `release()` respectively.
 
-3. Until you get Dining Philosophers working just as before, do not move on. There should be no deadlocks here.
+3. Until you get Dining Philosophers working just as before, do not move on. Unless you get _real_ lucky, there _should_ be no deadlocks here. (But yes, it is possible).
 
 #### Part 3: Deadlock Detection
 
 The lock subsystem you just built now lets the Xinu kernel track how many locks are active in the system. Through each lock's queues, it also knows which processes have acquired (or are waiting for) a particular lock. That's all the information we need to get your deadlock detection algorithm integrated!
 
-1. Before we start, I bet you're interested to see what a deadlock looks like. I gave you a file called `system/main.dl.c`. Replace `system/main.c` with this file (but save it as `system/main_phil.c` for later). Let's take a look at what's inside:
+1. Before we start, I bet you're interested to see what a deadlock looks like. I gave you a file called `system/main.dl.c`. Replace `system/main.c` with this file (but rename the current `main.c` file as `system/main_phil.c` for later testing). Let's take a look at what's inside:
 
    ```c
    /*  main.c  - main */
@@ -341,19 +345,6 @@ The lock subsystem you just built now lets the Xinu kernel track how many locks 
 7. Phew, that's a lot of work! Let's test your deadlock detection algorithm! Return to `compile/`, then recompile and run Xinu. If things are working, it should now catch the deadlock (by printing out the cycle). Because detection is run repeatedly, you should get something close to the following:
 
    ```
-   Booting Xinu on i386-pc...
-
-   (x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
-
-     16777216 bytes physical memory.
-             [0x00000000 to 0x00FFFFFF]
-       17046 bytes of Xinu code.
-             [0x00000000 to 0x00004295]
-       22678 bytes of data.
-             [0x00004296 to 0x00009B2B]
-       615632 bytes of heap space below 640K.
-     15728640 bytes of heap space above 1M.
-             [0x00100000 to 0x00FFFFFF]
    Worker 0: Buzz buzz buzz
    Worker 1: Buzz buzz buzz
    DEADLOCK DETECTED       pid=3 lockid=2 pid=2 lockid=1
@@ -375,12 +366,12 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
 
 1. Because you were required to print out nodes involved in the deadlock, your code is perfectly capable of identifying all the locks involved, identified by `lockid`.
 
-2. Go back into system/deadlock.c and implement a new function named `deadlock_recover()`. I'll leave the choice of parameters (if any) entirely up to you. This function must:
+2. Go back into `system/deadlock.c` and implement a new function named `deadlock_recover()`. I'll leave the choice of parameters (if any) entirely up to you. This function must:
 
    - Grab the `lockentry` using any `lockid` that is involved in the deadlock.
    - Dequeue all processes in that lock's wait queue and add them to the ready queue.
    - Find the ID of the process that currently holds this lock. Kill that process.
-   - Was the victim process waiting on other locks? (Probably). Remove it from those locks' wait queues.
+   - Was the victim process waiting on other locks? (Probably). Remove the process from those locks' wait queues.
    - Call `mutex_unlock()` on the lock that was held by the victim process.
    - Update the RAG and zero out all the allocation and request edges associated with the victim process, as it has been vanquished from the system.
    - Print out a message: `"DEADLOCK RECOVER"` followed by the victim's `pid` and `lockid`.
@@ -392,19 +383,6 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
 5. If everything's working properly, you'll get something that looks similar to the following:
 
    ```
-   Booting Xinu on i386-pc...
-
-   (x86 Xinu) #285 (xinu@xinu-develop-end) Wed 19 Aug 20:58:23 PDT 2015
-
-     16777216 bytes physical memory.
-             [0x00000000 to 0x00FFFFFF]
-       17046 bytes of Xinu code.
-             [0x00000000 to 0x00004295]
-       22678 bytes of data.
-             [0x00004296 to 0x00009B2B]
-       615632 bytes of heap space below 640K.
-     15728640 bytes of heap space above 1M.
-             [0x00100000 to 0x00FFFFFF]
     Worker 0 (pid=2): Buzz buzz buzz
     Worker 1 (pid=3): Buzz buzz buzz
     DEADLOCK DETECTED       pid=3 rid=2 pid=2 rid=1
@@ -419,14 +397,14 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
     Worker 0 (pid=2): Buzz buzz buzz
    ```
 
-   Notice that Worker 1 (pid 3) was selected and killed. Worker 0 continues to work forever...
+   Notice that Worker 1 (pid 3) was selected and killed. Worker 0 continues to work forever.
 
-6. **Optional:** Now let's try to run the dining philosophers solution. To increase likelihood of a deadlock, reduce the number of philosophers to 3. It still may take some time for the deadlock to occur. If you're tired of waiting to see if a deadlock ever happens, you could cheat and add a `holdup(10000)` between the two `release()` calls when a philosopher is finished eating. but here's one successful output:
+6. Now let's try to run the dining philosophers solution by renaming it back to `main.c`. It may take some time for the deadlock to occur (okay, it may never happen). So, if you're tired of waiting to see if a deadlock ever happens, you could cheat and add a `holdup(10000)` between the two `release()` calls when a philosopher is finished eating. Here's one successful output from my end:
 
    ```
    Philosopher 0 (pid=2) thinking: zzzzzzzzzzzzZZZzz
    Philosopher 2 (pid=4) thinking: zzzzzzzzzzzzZZZzz
-   DEADLOCK        pid=3 rid=2 pid=4 rid=3 pid=2 rid=1
+   DEADLOCK DETECTED       pid=3 rid=2 pid=4 rid=3 pid=2 rid=1
    DEADLOCK RECOVER        killing pid=3 to release lockid=2
    Philosopher 2 (pid=4) eating: nom nom nom nom
    Philosopher 2 (pid=4) eating: nom nom nom nom
@@ -436,9 +414,6 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
    Philosopher 2 (pid=4) eating: nom nom nom nom
    Philosopher 2 (pid=4) eating: nom nom nom nom
    Philosopher 0 (pid=2) thinking: zzzzzzzzzzzzZZZzz
-   Philosopher 1 (pid=3) eating: nom nom nom nom
-   DEADLOCK        pid=3 rid=2 pid=4 rid=3 pid=2 rid=1
-   DEADLOCK RECOVER        killing pid=3 to release lockid=2
    Philosopher 2 (pid=4) eating: nom nom nom nom
    Philosopher 2 (pid=4) eating: nom nom nom nom
    Philosopher 2 (pid=4) eating: nom nom nom nom

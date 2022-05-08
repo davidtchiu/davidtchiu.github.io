@@ -45,6 +45,10 @@ Starter code for this assignment is provided on the github repo. You are not req
   git clone https://github.com/davidtchiu/cs475-proj3
   ```
 
+#### Solution Executable
+
+I've provided you with a precompiled solution called `xinuSol` in the `compile/` directory. If you're interested to see the proper behavior, navigate to `compile/` and run `./uploadSol.sh` to upload my precompiled kernel to the back-end VM. Then start up the back-end VM and run `minicom`.
+
 #### Part 1: Preliminary
 
 The current version of Xinu is a **cooperative multiprogramming system**, because a running process only gives up the CPU when it terminates, blocks on I/O, or politely relinquishes the CPU by calling `resched()` (that's the cooperative part). What this means is that a not-so-polite process could still hog the CPU until it finishes its job, forcing all other processes to wait. This makes for a system that is not very interactive. Furthermore, if an executing process is in an infinite loop (malicious or just buggy), how does any other process on the ready queue ever get a chance to execute? Indeed, if one of those waiting processes is the kernel itself, then it would never regain control, and that's a big problem.
