@@ -421,46 +421,34 @@ Unless we're satisfied with just notifying the users that a deadlock has occurre
 
    Notice that Worker 1 (pid 3) was selected and killed. Worker 0 continues to work forever...
 
-<!--
-6. Now let's try to run the dining philosophers solution. To increase likelihood of a deadlock, reduce the number of philosophers to 3. It still may take some time for the deadlock to occur (you may have to modify your code so that philosophers eat more often, but here's one successful output:
+6. **Optional:** Now let's try to run the dining philosophers solution. To increase likelihood of a deadlock, reduce the number of philosophers to 3. It still may take some time for the deadlock to occur. If you're tired of waiting to see if a deadlock ever happens, you could cheat and add a `holdup(10000)` between the two `release()` calls when a philosopher is finished eating. but here's one successful output:
 
    ```
-   Booting Xinu on i386-pc...
-
-   (x86 Xinu) #334 (xinu@xinu-develop-end) Thu 20 Aug 17:05:43 PDT 2015
-
-     16777216 bytes physical memory.
-             [0x00000000 to 0x00FFFFFF]
-       17408 bytes of Xinu code.
-             [0x00000000 to 0x000043FF]
-       18892 bytes of data.
-             [0x00004400 to 0x00008DCB]
-       619056 bytes of heap space below 640K.
-     15728640 bytes of heap space above 1M.
-             [0x00100000 to 0x00FFFFFF]
-   Philosopher 0 thinking: zzzzzZZZz
-   Philosopher 2 thinking: zzzzzZZZz
-   Philosopher 0 eating: nom nom nom
-   Philosopher 1 thinking: zzzzzZZZz
-   Philosopher 1 thinking: zzzzzZZZz
-   Philosopher 2 thinking: zzzzzZZZz
-   Philosopher 1 thinking: zzzzzZZZz
-   Philosopher 0 eating: nom nom nom
-   Philosopher 0 thinking: zzzzzZZZz
-   Philosopher 0 thinking: zzzzzZZZz
-   Philosopher 2 eating: nom nom nom
-   Philosopher 1 thinking: zzzzzZZZz
-   Philosopher 2 thinking: zzzzzZZZz
-   Philosopher 0 eating: nom nom nom
-   Philosopher 2 thinking: zzzzzZZZz
-   DEADLOCK DETECTED       pid=3 lockid=2 pid=4 lockid=3 pid=2 lockid=1
+   Philosopher 0 (pid=2) thinking: zzzzzzzzzzzzZZZzz
+   Philosopher 2 (pid=4) thinking: zzzzzzzzzzzzZZZzz
+   DEADLOCK        pid=3 rid=2 pid=4 rid=3 pid=2 rid=1
    DEADLOCK RECOVER        killing pid=3 to release lockid=2
-   Philosopher 1 eating: nom nom nom
-   Philosopher 1 eating: nom nom nom
-   Philosopher 1 eating: nom nom nom
-   Philosopher 1 thinking: zzzzzZZZz
-   Philosopher 0 eating: nom nom nom
-   ``` -->
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) thinking: zzzzzzzzzzzzZZZzz
+   Philosopher 2 (pid=4) thinking: zzzzzzzzzzzzZZZzz
+   Philosopher 0 (pid=2) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 0 (pid=2) thinking: zzzzzzzzzzzzZZZzz
+   Philosopher 1 (pid=3) eating: nom nom nom nom
+   DEADLOCK        pid=3 rid=2 pid=4 rid=3 pid=2 rid=1
+   DEADLOCK RECOVER        killing pid=3 to release lockid=2
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) eating: nom nom nom nom
+   Philosopher 2 (pid=4) thinking: zzzzzzzzzzzzZZZzz
+   ```
 
 #### Grading
 
