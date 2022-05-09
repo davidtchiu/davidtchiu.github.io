@@ -80,7 +80,7 @@ let days = {
         name: "Proj 4",
         title: "Deadlock Detection",
         url: "proj4/",
-        due: "5/9/2022",
+        due: "5/13/2022",
       },
     ],
   },
