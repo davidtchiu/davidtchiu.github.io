@@ -47,7 +47,7 @@ let days = {
         name: "Hwk 7",
         title: "Extendible Hashing",
         url: "hwk7.btree/",
-        due: "11/29/2021",
+        due: "12/1/2021",
       },
     ],
 
