@@ -49,24 +49,18 @@ let days = {
     // projects: [
     //   {
     //     name: "Proj 1",
-    //     title: "To the Cloud",
+    //     title: "Backend Development with Node.js",
     //     url: "proj1.cloud/",
     //     due: "9/20/2021",
     //   },
     //   {
     //     name: "Proj 2",
-    //     title: "Server-Side Web Development with PHP",
-    //     url: "proj2.php/",
-    //     due: "10/22/2021", //extended this year only (move back to 10/18 in future)
-    //   },
-    //   {
-    //     name: "Proj 3",
     //     title: "Project Planning",
     //     url: "proj3.planning/",
     //     due: "11/1/2021",
     //   },
     //   {
-    //     name: "Proj 4",
+    //     name: "Proj 3",
     //     title: "Implementation",
     //     url: "proj4.impl/",
     //     due: "12/10/2021",
@@ -100,7 +94,7 @@ let days = {
     // wk 4
     "SQL: schema definition; integrity constraints",
     "SQL: selection, joins, set ops",
-    "SQL: outer joins, rename, WITH",
+    "SQL: outer joins, renaming, WITH",
     // wk 5
     "SQL Lab 1",
     "SQL: subqueries: IN, EXISTS; start aggregation",
@@ -110,29 +104,29 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1 (in person)</emph></strong>",
     // wk 7
+    "SQL Lab 3",
     "DB theory: functional dependencies (FD)",
     "Armstrong’s axioms, inference rules",
-    "Normal forms: 1NF, 2NF",
     // wk 8
     "<strong>Fall Break</strong>",
+    "Normal forms: 1NF, 2NF",
     "Shortfalls of 2NF; BCNF",
-    "Canonical cover of FD Sets",
     // wk 9
+    "Canonical cover of FD Sets",
     "Disks and files; access patterns",
     "Disk scheduling; Buffer management",
-    "Database files",
     // wk 10
+    "Database files",
     "File organization of tuples",
+    "Cost analysis; Join algorithms",
+    // wk 11
+    "Start Indexing",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    // wk 11
-    "Cost analysis; Join algorithms",
-    "Start Indexing",
-    "B+Trees: properties, operations",
     // wk 12
+    "B+Trees: properties, operations",
     "B+Trees (cont'd)",
     "Bitmaps",
-    "Bitmaps (cont'd)",
     // wk 13
     "Extendible hashing",
     "<strong>Thanksgiving</strong>",
