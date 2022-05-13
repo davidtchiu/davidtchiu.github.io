@@ -1,5 +1,13 @@
 #### TODO
 
+- New Xinu project 1
+  - Adding xsh commands: ps. Add uptime and cputime (and cputime/uptime)
+  - Adding run <prog> command: a way to run user functions as processes (like in the test/ folder)
+
+- New Xinu project 2: Aging
+  - 
+  - 
+
 - What to do with Xinu? If I go Vbox-less (I have to at some point...)
   - Opt 0: turn on low-res mode on Mac
     - App finder -> Right click on VirtualBox -> Show package contents -> Right click on VirtualBoxVM.app -> low res
@@ -42,5 +50,6 @@
 
 # Change Log
 
+- **Fall'22** Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
 - **Fall'22** Added Bankers as Hwk 7
-- Proj 1: No longer making them do getFirst and getLast.
+- **Fall'22** Proj 1: No longer making them do getFirst and getLast.

@@ -11,7 +11,7 @@ let days = {
         name: "Hwk 2",
         title: "Relational Algebra",
         url: "hwk2.ra/",
-        due: "9/24/2021",
+        due: "9/22/2021",
       },
       {
         name: "Hwk 3",
@@ -37,35 +37,41 @@ let days = {
         url: "hwk6.joins/",
         due: "11/23/2021",
       },
+      {
+        name: "Hwk 7",
+        title: "B+Tree",
+        url: "hwk7.btree/",
+        due: "11/23/2021",
+      },
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
-    projects: [
-      {
-        name: "Proj 1",
-        title: "To the Cloud",
-        url: "proj1.cloud/",
-        due: "9/20/2021",
-      },
-      {
-        name: "Proj 2",
-        title: "Server-Side Web Development with PHP",
-        url: "proj2.php/",
-        due: "10/22/2021", //extended this year only (move back to 10/18 in future)
-      },
-      {
-        name: "Proj 3",
-        title: "Project Planning",
-        url: "proj3.planning/",
-        due: "11/1/2021",
-      },
-      {
-        name: "Proj 4",
-        title: "Implementation",
-        url: "proj4.impl/",
-        due: "12/10/2021",
-      },
-    ],
+    // projects: [
+    //   {
+    //     name: "Proj 1",
+    //     title: "To the Cloud",
+    //     url: "proj1.cloud/",
+    //     due: "9/20/2021",
+    //   },
+    //   {
+    //     name: "Proj 2",
+    //     title: "Server-Side Web Development with PHP",
+    //     url: "proj2.php/",
+    //     due: "10/22/2021", //extended this year only (move back to 10/18 in future)
+    //   },
+    //   {
+    //     name: "Proj 3",
+    //     title: "Project Planning",
+    //     url: "proj3.planning/",
+    //     due: "11/1/2021",
+    //   },
+    //   {
+    //     name: "Proj 4",
+    //     title: "Implementation",
+    //     url: "proj4.impl/",
+    //     due: "12/10/2021",
+    //   },
+    // ],
 
     ////////////////////////////////// LABS ////////////////////////////////
     labs: [
@@ -90,57 +96,51 @@ let days = {
     // wk 3
     "RA: natural join, theta join",
     "RA: outer joins, rename, NULL",
-    "RA: aggregation and grouping <b>(Zoom recording)</b>",
+    "RA: aggregation and grouping",
     // wk 4
     "SQL: schema definition; integrity constraints",
     "SQL: selection, joins, set ops",
     "SQL: outer joins, rename, WITH",
     // wk 5
+    "SQL Lab 1",
     "SQL: subqueries: IN, EXISTS; start aggregation",
     "SQL: grouping and aggregation, triggers, transactions",
-    "SQL Lab Day 1",
     // wk 6
-    "SQL Lab Day 2",
+    "SQL Lab 2",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1 (in person)</emph></strong>",
     // wk 7
     "DB theory: functional dependencies (FD)",
     "Armstrong’s axioms, inference rules",
-    "Class canceled",
+    "Normal forms: 1NF, 2NF",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Normal forms: 1NF, 2NF",
     "Shortfalls of 2NF; BCNF",
-    // wk 9
     "Canonical cover of FD Sets",
+    // wk 9
     "Disks and files; access patterns",
-    "Data access time",
-    // wk 10
     "Disk scheduling; Buffer management",
     "Database files",
+    // wk 10
     "File organization of tuples",
-    // wk 11
-    "Cost analysis: join algorithms",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    // wk 12
-    // "B+Trees: properties, operations",
+    // wk 11
+    "Cost analysis; Join algorithms",
     "Start Indexing",
-    "B+Trees",
-    "B+Trees: complexity analysis",
+    "B+Trees: properties, operations",
+    // wk 12
+    "B+Trees (cont'd)",
+    "Bitmaps",
+    "Bitmaps (cont'd)",
     // wk 13
-    "Project Work Day",
+    "Extendible hashing",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
-    // "Extendible hashing",
-    // "Bitmap indexing",
-    "Project Work Day",
-    "Project Work Day",
-    "Project Work Day",
-    // "Start transactions: ACID, serializability",
-    // "Transactions: serializability test, precedence graphs",
-    // "Transactions: Concurrency control",
+    "Start transactions: ACID, serializability",
+    "Transactions: serializability test, precedence graphs",
+    "Transactions: Concurrency control",
     // wk 15
     "Project Demos",
     "Project Demos",
