@@ -45,7 +45,7 @@ let days = {
       },
       {
         name: "Hwk 7",
-        title: "Bitmap Compression",
+        title: "Extendible Hashing",
         url: "hwk7.btree/",
         due: "11/29/2021",
       },
