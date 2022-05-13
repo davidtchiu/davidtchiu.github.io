@@ -25,14 +25,14 @@ let days = {
         url: "hwk4.dml/",
         due: "10/11/2021",
       },
+      // {
+      //   name: "Hwk 5a",
+      //   title: "Normalization",
+      //   url: "hwk5.norm/",
+      //   due: "10/20/2021",
+      // },
       {
-        name: "Hwk 5a",
-        title: "Normalization",
-        url: "hwk5.norm/",
-        due: "10/20/2021",
-      },
-      {
-        name: "Hwk 5b",
+        name: "Hwk 5",
         title: "Normalization",
         url: "hwk5.norm/",
         due: "10/29/2021",
