@@ -109,42 +109,43 @@ let days = {
     "SQL: grouping and aggregation, triggers, transactions",
     "SQL Lab 2",
     "<strong><emph>Review</emph></strong>",
-    // "SQL Lab 3 (Node.js)",
     // wk 7
-    "<strong><emph>Exam 1 (in person)</emph></strong>",
-    "Design theory: functional dependencies (FD)",
-    "Design: Armstrong’s axioms, inference rules",
+    "<strong><emph>Exam 1</emph></strong>",
+    "App development; SQL injection",
+    "App Lab",
     // wk 8
     "<strong>Fall Break</strong>",
+    "Design theory: functional dependencies (FD)",
+    "Design: Armstrong’s axioms, inference rules",
+    // wk 9
     "Design: Normal forms: 1NF, 2NF",
     "Design: Shortfalls of 2NF; BCNF",
-    // wk 9
     "Design: Canonical cover of FD Sets",
+    // wk 10
     "Disks and files; access patterns",
     "Disk scheduling; Buffer management",
-    // wk 10
     "Database files",
+    // wk 11
     "File organization of tuples",
     "Cost analysis; Join algorithms",
-    // wk 11
-    "Start Indexing",
     "<strong><emph>Review</emph></strong>",
-    "<strong><emph>Exam 2</emph></strong>",
     // wk 12
+    "<strong><emph>Exam 2</emph></strong>",
+    "Start Indexing",
     "B+Trees: properties, operations",
-    "B+Trees (cont'd)",
-    "Bitmaps",
     // wk 13
-    "Extendible hashing",
+    "B+Trees (cont'd)",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
+    "Bitmaps",
+    "Extendible hashing",
     "Start transactions: ACID, serializability",
+    // wk 15
     "Transactions: serializability test, precedence graphs",
     "Transactions: Concurrency control",
-    // wk 15
-    "Project Demos",
-    "Project Demos",
+    // "Project Demos",
+    // "Project Demos",
     "<strong>Reading Period</strong>",
     // wk final
     "",
