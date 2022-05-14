@@ -13,12 +13,12 @@ let days = {
         url: "hwk2.ra/",
         due: "9/22/2021",
       },
-      // {
-      //   name: "Hwk 3",
-      //   title: "Data Preparation",
-      //   url: "hwk3.ddl/",
-      //   due: "10/1/2021",
-      // },
+      {
+        name: "Hwk 3",
+        title: "Data Preparation",
+        url: "hwk3.ddl/",
+        due: "10/8/2021",
+      },
       // {
       //   name: "Hwk 4",
       //   title: "Writing SQL Queries",
@@ -102,12 +102,12 @@ let days = {
     "SQL: selection, joins, set ops",
     "SQL: outer joins, renaming, WITH",
     // wk 5
-    "SQL Lab 1",
     "SQL: subqueries",
     "SQL: grouping and aggregation",
-    // wk 6
     "SQL: grouping and aggregation, triggers, transactions",
-    "SQL Lab 2",
+    // wk 6
+    "SQL Work Day",
+    "SQL Work Day",
     "<strong><emph>Review</emph></strong>",
     // wk 7
     "<strong><emph>Exam 1</emph></strong>",
