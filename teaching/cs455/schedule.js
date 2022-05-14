@@ -124,13 +124,13 @@ let days = {
     // wk 10
     "Disks and files; access patterns",
     "Disk scheduling; Buffer management",
-    "Database files",
-    // wk 11
-    "File organization of tuples",
-    "Cost analysis; Join algorithms",
     "<strong><emph>Review</emph></strong>",
-    // wk 12
+    // wk 11
     "<strong><emph>Exam 2</emph></strong>",
+    "Database files",
+    "File organization of tuples",
+    // wk 12
+    "Cost analysis; Join algorithms",
     "Start Indexing",
     "B+Trees: properties, operations",
     // wk 13
