@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: The Relational Model
+### Hwk: DB Design Theory
 
 #### Student Outcomes
 

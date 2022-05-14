@@ -13,18 +13,18 @@ let days = {
         url: "hwk2.ra/",
         due: "9/22/2021",
       },
-      {
-        name: "Hwk 3",
-        title: "Data Preparation",
-        url: "hwk3.ddl/",
-        due: "10/1/2021",
-      },
-      {
-        name: "Hwk 4",
-        title: "Writing SQL Queries",
-        url: "hwk4.dml/",
-        due: "10/11/2021",
-      },
+      // {
+      //   name: "Hwk 3",
+      //   title: "Data Preparation",
+      //   url: "hwk3.ddl/",
+      //   due: "10/1/2021",
+      // },
+      // {
+      //   name: "Hwk 4",
+      //   title: "Writing SQL Queries",
+      //   url: "hwk4.dml/",
+      //   due: "10/11/2021",
+      // },
       // {
       //   name: "Hwk 5a",
       //   title: "Normalization",
@@ -103,16 +103,17 @@ let days = {
     "SQL: outer joins, renaming, WITH",
     // wk 5
     "SQL Lab 1",
-    "SQL: subqueries: IN, EXISTS; start aggregation",
-    "SQL: grouping and aggregation, triggers, transactions",
+    "SQL: subqueries",
+    "SQL: grouping and aggregation",
     // wk 6
+    "SQL: grouping and aggregation, triggers, transactions",
     "SQL Lab 2",
     "<strong><emph>Review</emph></strong>",
-    "<strong><emph>Exam 1 (in person)</emph></strong>",
+    // "SQL Lab 3 (Node.js)",
     // wk 7
-    "SQL Lab 3",
-    "DB theory: functional dependencies (FD)",
+    "<strong><emph>Exam 1 (in person)</emph></strong>",
     "Armstrong’s axioms, inference rules",
+    "DB theory: functional dependencies (FD)",
     // wk 8
     "<strong>Fall Break</strong>",
     "Normal forms: 1NF, 2NF",
