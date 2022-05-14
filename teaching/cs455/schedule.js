@@ -112,14 +112,14 @@ let days = {
     // "SQL Lab 3 (Node.js)",
     // wk 7
     "<strong><emph>Exam 1 (in person)</emph></strong>",
-    "Armstrong’s axioms, inference rules",
-    "DB theory: functional dependencies (FD)",
+    "Design theory: functional dependencies (FD)",
+    "Design: Armstrong’s axioms, inference rules",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Normal forms: 1NF, 2NF",
-    "Shortfalls of 2NF; BCNF",
+    "Design: Normal forms: 1NF, 2NF",
+    "Design: Shortfalls of 2NF; BCNF",
     // wk 9
-    "Canonical cover of FD Sets",
+    "Design: Canonical cover of FD Sets",
     "Disks and files; access patterns",
     "Disk scheduling; Buffer management",
     // wk 10
