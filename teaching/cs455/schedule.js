@@ -17,14 +17,20 @@ let days = {
         name: "Hwk 3",
         title: "Data Preparation",
         url: "hwk3.ddl/",
-        due: "10/8/2021",
+        due: "10/1/2021",
       },
-      // {
-      //   name: "Hwk 4",
-      //   title: "Writing SQL Queries",
-      //   url: "hwk4.dml/",
-      //   due: "10/11/2021",
-      // },
+      {
+        name: "Hwk 4",
+        title: "Writing SQL Queries",
+        url: "hwk4.dml/",
+        due: "10/11/2021",
+      },
+      {
+        name: "Hwk 5 (analytical)",
+        title: "Normalization",
+        url: "hwk5.norm/",
+        due: "10/27/2021",
+      },
       // {
       //   name: "Hwk 5a",
       //   title: "Normalization",
@@ -32,23 +38,23 @@ let days = {
       //   due: "10/20/2021",
       // },
       {
-        name: "Hwk 5",
+        name: "Hwk 6 (programming)",
         title: "Normalization",
         url: "hwk5.norm/",
-        due: "10/29/2021",
-      },
-      {
-        name: "Hwk 6",
-        title: "Joins!",
-        url: "hwk6.joins/",
-        due: "11/15/2021",
+        due: "11/8/2021",
       },
       {
         name: "Hwk 7",
-        title: "Extendible Hashing",
-        url: "hwk7.btree/",
-        due: "12/1/2021",
+        title: "Joins!",
+        url: "hwk6.joins/",
+        due: "11/19/2021",
       },
+      // {
+      //   name: "Hwk 7",
+      //   title: "Extendible Hashing",
+      //   url: "hwk7.btree/",
+      //   due: "12/1/2021",
+      // },
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
