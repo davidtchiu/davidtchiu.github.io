@@ -2,32 +2,32 @@ let days = {
   assignments: {
     homework: [
       {
-        name: "Hwk 1",
+        name: "Hwk 1 (written)",
         title: "The Relational Model",
         url: "hwk1.rel/",
         due: "9/8/2021",
       },
       {
-        name: "Hwk 2",
+        name: "Hwk 2 (written)",
         title: "Relational Algebra",
         url: "hwk2.ra/",
         due: "9/22/2021",
       },
       {
-        name: "Hwk 3",
+        name: "Hwk 3 (programming)",
         title: "Data Preparation",
         url: "hwk3.ddl/",
         due: "10/1/2021",
       },
       {
-        name: "Hwk 4",
+        name: "Hwk 4 (programming)",
         title: "Writing SQL Queries",
         url: "hwk4.dml/",
         due: "10/11/2021",
       },
       {
-        name: "Hwk 5 (analytical)",
-        title: "Normalization",
+        name: "Hwk 5 (written)",
+        title: "Design Theory",
         url: "hwk5.norm/",
         due: "10/27/2021",
       },
@@ -44,7 +44,7 @@ let days = {
         due: "11/8/2021",
       },
       {
-        name: "Hwk 7",
+        name: "Hwk 7 (programming)",
         title: "Joins!",
         url: "hwk6.joins/",
         due: "11/19/2021",
