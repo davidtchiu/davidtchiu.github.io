@@ -26,10 +26,16 @@ let days = {
         due: "10/11/2021",
       },
       {
-        name: "Hwk 5 (written)",
-        title: "Design Theory",
-        url: "hwk5.norm/",
-        due: "10/27/2021",
+        name: "Hwk 5 (programming)",
+        title: "Design Theory: Closure of FD Sets",
+        url: "hwk5.closure/",
+        due: "10/25/2021",
+      },
+      {
+        name: "Hwk 6 (programming)",
+        title: "Design Theory: BCNF Normalization",
+        url: "hwk6.bcnf/",
+        due: "11/8/2021",
       },
       // {
       //   name: "Hwk 5a",
@@ -38,23 +44,17 @@ let days = {
       //   due: "10/20/2021",
       // },
       {
-        name: "Hwk 6 (programming)",
-        title: "Normalization",
-        url: "hwk5.norm/",
-        due: "11/8/2021",
-      },
-      {
         name: "Hwk 7 (programming)",
         title: "Joins!",
-        url: "hwk6.joins/",
+        url: "hwk7.joins/",
         due: "11/19/2021",
       },
-      // {
-      //   name: "Hwk 7",
-      //   title: "Extendible Hashing",
-      //   url: "hwk7.btree/",
-      //   due: "12/1/2021",
-      // },
+      {
+        name: "Hwk 8",
+        title: "Extendible Hashing",
+        url: "hwk8.btree/",
+        due: "12/1/2021",
+      },
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
@@ -117,45 +117,45 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     // wk 7
     "<strong><emph>Exam 1</emph></strong>",
-    "App development; SQL injection",
-    "App Lab",
+    "Design theory: functional dependencies",
+    "Theory: Armstrong’s axioms, inference rules",
+    // "App development; SQL injection",
+    // "App Lab",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Design theory: functional dependencies (FD)",
-    "Design: Armstrong’s axioms, inference rules",
+    "Theory: 1NF, 2NF",
+    "Theory: BCNF; decomposition",
     // wk 9
-    "Design: Normal forms: 1NF, 2NF",
-    "Design: Shortfalls of 2NF; BCNF",
-    "Design: Canonical cover of FD Sets",
-    // wk 10
+    "Theory: Canonical cover of FD sets",
     "Disks and files; access patterns",
-    "Disk scheduling; Buffer management",
+    "File organization of tuples",
+    // "Disk scheduling; Buffer management",
+    // wk 10
+    "Database files",
+    "Cost analysis; Join algorithms",
     "<strong><emph>Review</emph></strong>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
-    "Database files",
-    "File organization of tuples",
-    // wk 12
-    "Cost analysis; Join algorithms",
     "Start Indexing",
     "B+Trees: properties, operations",
-    // wk 13
+    // wk 12
     "B+Trees (cont'd)",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
-    // wk 14
+    // wk 13
     "Bitmaps",
     "Extendible hashing",
     "Start transactions: ACID, serializability",
-    // wk 15
+    // wk 14
     "Transactions: serializability test, precedence graphs",
     "Transactions: Concurrency control",
-    // "Project Demos",
-    // "Project Demos",
+    // wk 15
+    "Project Demos",
+    "Project Demos",
     "<strong>Reading Period</strong>",
     // wk final
     "",
-    "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
+    "",//<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
     "",
   ],
 };
