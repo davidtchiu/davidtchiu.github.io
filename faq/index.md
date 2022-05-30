@@ -5,11 +5,11 @@
 
   For other concerns, I direct you to use our [anonymous feedback form](https://forms.gle/Ltassc7BQkNfnnXB7). The purpose of this form is for Puget Sound students to provide feedback (both positive and negative) to the CS department, which among others topics, may include anything related to:
 
-      1. Student culture and community
-      2. Student academic experience
-      3. Classroom environment and management
-      4. Tutoring
-      5. Faculty-student interaction
+    1. Student culture and community
+    2. Student academic experience
+    3. Classroom environment and management
+    4. Tutoring
+    5. Faculty-student interaction
 
 - **I'm waitlisted for your course. Can you let me in?**\
   I treat these requests on a case-by-case basis. Things I consider include: your position on the wait list, whether there are alternative sections with space, and whether you need my course to graduate.

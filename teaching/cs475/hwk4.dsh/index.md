@@ -176,11 +176,9 @@ This assignment can be tricky to get started, because there are so many pieces t
 
     Should result in the output below:
 
-         ```
-         git
-         add
-         .
-         ```
+    ```
+    git add .
+    ```
 
     This function would be a huge workhorse for this project.
 
