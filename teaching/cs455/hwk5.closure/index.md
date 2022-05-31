@@ -47,12 +47,32 @@ Starter code for this assignment is provided on the github repo. You are not req
     ```
   - Do not make any changes to this class.
 
-- Next, open up the `FDSet` class, which contains a set of FDs. Again this class has been completed for you, but read it over. Do not make any changes to this class.
+- Next, open up the `FDSet` class, which contains a set of FDs. Again this class has been completed for you. Read it over. Do not make any changes to this class.
 
-- Now open the `FDUtil` class, and write the following two static methods. You're welcome to add as many other helper methods as you need (and you will need to write several helper methods!). Don't worry about the efficiency of these algorithms -- just focus on correctness.
+- Now open the `FDUtil` class, and implement  the following static methods:
+  - Before you start: All of the static methods you need to write must be *immutable*, that is, it should not modify the contents of any structures that are input. In other words, you should begin each method by first cloning (deep copying) the input structures.
 
-  - `public static FDSet fdClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure, i.e., the full set of FDs generated through the repeated applications of Armstrong's Axioms. This method should be immutable, that is, it should not modify the contents of the `fdset` that was input.
+  - `public static FDSet trivial(FDSet fset)` -- This method accepts a set of FDs and applies the trivial rule to all FDs, generating a new (potentially larger) FD set. Recall the trivial rule specifies that any subset of the left-side attributes can be functionally determined by the left-side attributes. For example, if we have $$UXW \rightarrow Z$$, then we also have $$UXW \rightarrow U$$ $$UXW \rightarrow X$$ $$UXW \rightarrow W$$ $$UXW \rightarrow UX$$ $$UXW \rightarrow UW$$ $$UXW \rightarrow XW$$ and $$UXW \rightarrow UXW$$.
   
+  Here's an example output for $$FD = {A \rightarrow B, AB \rightarrow C}$$:
+    ```java
+    FD f1 = new FD(Arrays.asList("A"), Arrays.asList("B")); // A --> B
+    FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
+    FDSet fdset = new FDSet(f1, f2);
+    System.out.println(FDUtil.trivial(fdset));
+    ```
+    ```
+    [A] --> [A]
+    [A] --> [B]
+    [A, B] --> [A]
+    [A, B] --> [B]
+    [A, B] --> [C]
+    [A, B] --> [A, B]
+    ```
+
+
+  - Finally, `public static FDSet fdClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure, i.e., the full set of FDs generated through the repeated applications of Armstrong's Axioms. 
+    
     The example below shows the FD set closure for $$FD = {A \rightarrow B, AB \rightarrow C}$$:
     ```java
     FD f1 = new FD(Arrays.asList("A"), Arrays.asList("B"));       // A --> B
@@ -91,65 +111,21 @@ Starter code for this assignment is provided on the github repo. You are not req
     [A, B, C] --> [A, B, C]
     ```
 
-  - `public static Set<Set<String>> attrClosure(Set<String> attrs, FDSet fdset)` -- This method accepts a set of attribute names and  a set of FDs, then the attribute set's closure. The closure of an attribute set is the full set of attributes that can be functionally determined by it. This method should be immutable, so leave the contents of the input parameters alone. 
+- You're welcome to add as many other helper methods as you need (and you will need to write several helper methods!). Don't worry about the efficiency of these algorithms -- just focus on correctness.
 
-- Finally, open the `Normalizer` class, and provide the following two methods.
-
-  - `public static Set<Set<String>> findSuperKeys(Set<String> relation, FDSet fdset)` -- This method accepts a relation (which is just a set of attribute names) and a set of FDs. It returns the set of super keys in this relation with respect to the given FD set. If any FD contains an attribute that is not listed in the given relation, then thrown an `IllegalArgumentException`.
-
-    ```java
-    FD f1 = new FD(Arrays.asList("A"), Arrays.asList("B"));       // A --> B
-    FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C"));  // AB --> C
-    FDSet fdset = new FDSet(f1, f2);
-
-    Set<String> R1 = new HashSet<>(Arrays.asList("A", "B", "C"));
-    System.out.println(Normalizer.findSuperkeys(R1, fdset));
-    > [[A], [A, B], [A, C], [A, B, C]]
-
-    Set<String> R2 = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
-    System.out.println(Normalizer.findSuperkeys(R2, fdset));
-    > [[D, A], [D, A, B], [D, A, C], [A, B, C, D]]
-
-    Set<String> R3 = new HashSet<>(Arrays.asList("X", "Y"));
-    System.out.println(Normalizer.findSuperkeys(R3, fdset));
-    > Exception in thread "main" java.lang.IllegalArgumentException: FD refers to unknown attributes: [A] --> [B]
-    ```
-
-  - `public static Set<Set<String>> BCNFDecompose(Set<String> relation, FDSet fdset)` -- Finally, this method accepts a relation and a corresponding FD set. It decomposes the given relation into a set of relations that satisfy BCNF. In the examples below, given the same FD set as before, we see that `R1 = [A,B,C]` was already in BCNF (since both `A` and `AB` are superkeys), so the algorithm returns a set containing just `R1`. On the other hand, `R2 = [A,B,C,D]` is decomposed into `[A,B]` and `[A,C,D]`.
-
-    ```java
-    FD f1 = new FD(Arrays.asList("A"), Arrays.asList("B"));       // A --> B
-    FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C"));  // AB --> C
-    FDSet fdset = new FDSet(f1, f2);
-
-    Set<String> R1 = new HashSet<>(Arrays.asList("A", "B", "C"));
-    System.out.println(Normalizer.BCNFDecompose(R1, fdset));
-    > [[A, B, C]]
-
-    Set<String> R2 = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
-    System.out.println(Normalizer.BCNFDecompose(R2, fdset));
-    > [[A, B], [A, C, D]]
-    ```
 
 #### Grading
 
 ```
 This assignment will be graded out of 100 points.
 
-[40pt] Correct implementation of the FD Set Closure algorithm [10pts], 
-which is dependent on the implementations of the trivial [10pts], 
-augmentation [5pts], and transitive rules [5pts].
+[50pt] Correct implementation of the FD Set closure algorithm [20pts], 
+which is dependent on your implementations of:
+  - trivial rule [10pts]
+  - augmentation rule [10pts]
+  - transitive rules [10pts]
 
-[10pt] The Attribute Closure algorithm is properly implemented.
-
-[10pt] The FindAllSuperKeys algorithm is properly implemented. 
-
-[40pt] The BCNF algorithm correctly identifies if a relation satisfies
-BCNF with respect to the given set of FDs. If not, then the relation is
-repeatedly decomposed into a set of BCNF conforming relations. It is imperative
-that you redistribute the original FD set properly after splitting a relation.
-
-[misc] Your program must be written in Java. Non-Java programs will be returned
+[Misc] Your program must be written in Java. Non-Java programs will be returned
        without a grade.
 ```
 
