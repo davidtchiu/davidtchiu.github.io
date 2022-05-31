@@ -14,25 +14,25 @@ let days = {
         due: "9/22/2021",
       },
       {
-        name: "Hwk 3 (programming)",
+        name: "Hwk 3 (coding)",
         title: "Data Preparation",
         url: "hwk3.ddl/",
         due: "10/1/2021",
       },
       {
-        name: "Hwk 4 (programming)",
+        name: "Hwk 4 (coding)",
         title: "Writing SQL Queries",
         url: "hwk4.dml/",
         due: "10/11/2021",
       },
       {
-        name: "Hwk 5 (programming)",
+        name: "Hwk 5 (coding)",
         title: "Design Theory: Closure of FD Sets",
         url: "hwk5.closure/",
         due: "10/25/2021",
       },
       {
-        name: "Hwk 6 (programming)",
+        name: "Hwk 6 (coding)",
         title: "Design Theory: BCNF Normalization",
         url: "hwk6.bcnf/",
         due: "11/8/2021",
@@ -43,17 +43,17 @@ let days = {
       //   url: "hwk5.norm/",
       //   due: "10/20/2021",
       // },
+      // {
+      //   name: "Hwk 7 (coding)",
+      //   title: "Joins!",
+      //   url: "hwk7.joins/",
+      //   due: "11/19/2021",
+      // },
       {
-        name: "Hwk 7 (programming)",
-        title: "Joins!",
-        url: "hwk7.joins/",
-        due: "11/19/2021",
-      },
-      {
-        name: "Hwk 8",
+        name: "Hwk 7 (coding)",
         title: "B+Tree",
-        url: "hwk8.btree/",
-        due: "12/1/2021",
+        url: "hwk7.btree/",
+        due: "11/24/2021",
       },
     ],
 
@@ -148,6 +148,7 @@ let days = {
     "Start transactions: ACID, serializability",
     // wk 14
     "Transactions: serializability test, precedence graphs",
+    "Transactions: Concurrency control",
     "Transactions: Concurrency control",
     // wk 15
     "Project Demos",
