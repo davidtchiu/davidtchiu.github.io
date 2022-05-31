@@ -51,7 +51,7 @@ let days = {
       },
       {
         name: "Hwk 8",
-        title: "Extendible Hashing",
+        title: "B+Tree",
         url: "hwk8.btree/",
         due: "12/1/2021",
       },
