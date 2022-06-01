@@ -13,9 +13,9 @@ In this assignment you will implement algorithms that we've been learning in the
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me via Github.
 
-- The start code is provided here [https://github.com/davidtchiu/cs455-hwk-fdclosure](https://github.com/davidtchiu/cs455-hwk-fdclosure). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project.
+- The start code is provided here [https://github.com/davidtchiu/cs455-hwk-fdclosure](https://github.com/davidtchiu/cs455-hwk-fdclosure). Choose to **fork**_* this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project.
 
--  _*Clone*_ your forked Github repo down to your local working directory using:
+-  **Clone** your forked Github repo down to your local working directory using:
 
   ```
   git clone <your-github-url-for-this-project>
@@ -25,7 +25,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 **You must write this program in Java.** I've provided skeleton code for you to implement. 
 
-- Open up the `FD` class, which models a functional dependency. This class has already been completed for you, but it's worth reading through it to understand its interface, and how I chose to model it. Of particular note:
+1. Open up the `FD` class, which models a functional dependency. This class has already been completed for you, but it's worth reading through it to understand its interface, and how I chose to model it. Of particular note:
   - An `FD` has an attribute set on the left and on the right. The left-hand side attribute set determines the right-hand side.
   - An attribute set is just a set of `String`s (that is `Set<String>`). I used the slightly slower `TreeSet` in my implementation just to order the attribute names when they're printed. (Easier on the eyes when grading.)
   - There are two ways of constructing an `FD` object. The first way accepts the left and right attribute sets as `List`s. Another way accepts them as `Set`s.
@@ -48,9 +48,9 @@ Starter code for this assignment is provided on the github repo. You are not req
 
   - Do not make any changes to this class.
 
-- Next, open up the `FDSet` class, which contains a set of FDs. Again this class has been completed for you. Read it over. Do not make any changes to this class.
+2. Next, open up the `FDSet` class, which contains a set of FDs. Again this class has been completed for you. Read it over. Do not make any changes to this class.
 
-- Now open the `FDUtil` class, and implement  the following static methods:
+3. Now open the `FDUtil` class, and implement  the following static methods:
 
   1. Before you start: All of the static methods you need to write must **not** alter the contents of the input structures. In other words, you should begin each method by first cloning (deep copying) the input structures. I have provided the `clone()` method in both `FD` and `FDSet` for this purpose. 
 
@@ -147,7 +147,7 @@ Starter code for this assignment is provided on the github repo. You are not req
     [A, B, C] --> [A, B, C]
     ```
 
-- Once you have FD Set Closure working, you should be able to test the equality between two FD sets. Recall that two FD sets are equal iff their closures are equal.
+4. Once you have FD Set Closure working, you should be able to test the equality between two FD sets. Recall that two FD sets are equal iff their closures are equal.
   ```java
   // One FD Set = A --> B, AB --> C
   FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> B
