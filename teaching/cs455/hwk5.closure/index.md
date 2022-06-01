@@ -89,7 +89,7 @@ Starter code for this assignment is provided on the github repo. You are not req
     [A, B, C] --> [C]
     ```
 
-  - `public static FDSet trans(FDSet fdset)` -- This method returns a new set of FDs after applying the transitive rule. For example, if we have a set of FDs: $$FD(R) = \{U \rightarrow Z, Z \rightarrow W, X \rightarrow Z\}$$, then this method should return $$U\rightarrow W, X\rightarrow U$$.
+  - `public static FDSet transitive(FDSet fdset)` -- This method returns a new set of FDs after applying the transitive rule. For example, if we have a set of FDs: $$FD(R) = \{U \rightarrow Z, Z \rightarrow W, X \rightarrow Z\}$$, then this method should return $$U\rightarrow W, X\rightarrow U$$.
   
     Here's an example output for $$FD = {A \rightarrow AB, AB \rightarrow C, C \rightarrow D}$$:
     ```java
@@ -97,7 +97,7 @@ Starter code for this assignment is provided on the github repo. You are not req
     FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
     FD f3 = new FD(Arrays.asList("C"), Arrays.asList("D")); // C --> D
     FDSet fdset = new FDSet(f1, f2, f3);
-    System.out.println(FDUtil.trans(fdset));
+    System.out.println(FDUtil.transitive(fdset));
     ```
     ```
     [A] --> [C]
