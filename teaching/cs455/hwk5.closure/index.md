@@ -28,9 +28,13 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
 #### Program Requirements
 
 1. Open up the `FD` class, which models a functional dependency. This class has already been completed for you, but it's worth reading through it to understand its interface, and how I chose to model it. Of particular note:
+
   - An `FD` has an attribute set on the left and on the right. The left-hand side attribute set determines the right-hand side.
+
   - An attribute set is just a set of Strings (that is `Set<String>`). I used the slightly slower `TreeSet` in my implementation just to order the attribute names when they're printed. (Easier on the eyes when grading.)
+
   - There are two ways of constructing an `FD` object. The first way accepts the left and right attribute sets as Lists. Another way accepts them as Sets.
+
   - For instance, $$AD \rightarrow B$$ can be constructed using:
 
       ```java
@@ -157,10 +161,10 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
   FD g1 = new FD(Arrays.asList("A", "B"), Arrays.asList("B")); // AB --> B
   FD g2 = new FD(Arrays.asList("A"), Arrays.asList("C", "B")); // A --> BC
   FD g3 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
-  FDSet gdset = new FDSet(g1, g2, g3);
+  FDSet fdset2 = new FDSet(g1, g2, g3);
 
   // // Test FD equality: fdset and gdset are equal iff their closures are equal
-  System.out.println("Equals? " + (fdset.equals(gdset)));
+  System.out.println("Equals? " + (fdset.equals(fdset2)));
   ```
   The above test case should return `true`.
 
