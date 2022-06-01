@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: Normalization
+### Hwk: FD Set Closure and Armstrong's Axioms
 In this assignment you will implement algorithms that we've been learning in the DB theory lectures. Specifically, you will implement methods to find the FD set closure, attribute set closure, and BCNF decomposition.
 
 
@@ -13,7 +13,7 @@ In this assignment you will implement algorithms that we've been learning in the
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me via Github.
 
-- The start code is provided here [https://github.com/davidtchiu/cs455-hwk6-norm](https://github.com/davidtchiu/cs455-hwk6-norm). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project.
+- The start code is provided here [https://github.com/davidtchiu/cs455-hwk-fdclosure](https://github.com/davidtchiu/cs455-hwk-fdclosure). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project.
 
 -  _*Clone*_ your forked Github repo down to your local working directory using:
 
