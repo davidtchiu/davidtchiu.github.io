@@ -147,7 +147,23 @@ Starter code for this assignment is provided on the github repo. You are not req
     [A, B, C] --> [A, B, C]
     ```
 
+- Once you have FD Set Closure working, you should be able to test the equality between two FD sets. Recall that two FD sets are equal iff their closures are equal.
+  ```java
+  // One FD Set = A --> B, AB --> C
+  FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> B
+  FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
+  FDSet fdset = new FDSet(f1, f2);
 
+  // Another FD set: AB --> B, A --> BC, AB --> C
+  FD g1 = new FD(Arrays.asList("A", "B"), Arrays.asList("B")); // AB --> B
+  FD g2 = new FD(Arrays.asList("A"), Arrays.asList("C", "B")); // A --> BC
+  FD g3 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
+  FDSet gdset = new FDSet(g1, g2, g3);
+
+  // // Test FD equality: fdset and gdset are equal iff their closures are equal
+  System.out.println("Equals? " + (fdset.equals(gdset)));
+  ```
+  The above test case should return `true`.
 
 #### Grading
 
@@ -158,7 +174,7 @@ This assignment will be graded out of 100 points.
 
 [10pts] Augmentation rule
 
-[15pts] Transitive rule. Must be exhaustive (i.e., repeatedly apply
+[15pts] Transitivity rule. Must be exhaustive (i.e., repeatedly apply
 transitivity until there is no change.)
 
 [20pts] Implementation of the FD Set closure algorithm
