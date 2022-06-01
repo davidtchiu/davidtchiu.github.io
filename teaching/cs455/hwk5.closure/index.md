@@ -15,7 +15,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 - The start code is provided here [https://github.com/davidtchiu/cs455-hwk-fdclosure](https://github.com/davidtchiu/cs455-hwk-fdclosure). Choose to **fork** this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project.
 
--  **Clone** your forked Github repo down to your local working directory using:
+-  Clone **your** forked Github repo down to your local working directory using:
 
   ```
   git clone <your-github-url-for-this-project>
