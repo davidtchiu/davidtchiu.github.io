@@ -30,21 +30,21 @@ Starter code for this assignment is provided on the github repo. You are not req
   - An attribute set is just a set of Strings (that is `Set<String>`). I used the slightly slower `TreeSet` in my implementation just to order the attribute names when they're printed. (Easier on the eyes when grading.)
   - There are two ways of constructing an `FD` object. The first way accepts the left and right attribute sets as Lists. Another way accepts them as Sets.
 
-    For instance, $$AD \rightarrow B$$ can be constructed using:
-    ```java
-    Set<String> left = new TreeSet<>();
-    left.add("A");
-    left.add("D");
+  For instance, $$AD \rightarrow B$$ can be constructed using:
+  ```java
+  Set<String> left = new TreeSet<>();
+  left.add("A");
+  left.add("D");
 
-    Set<String> right = new TreeSet<>();
-    right.add("B")
-    
-    FD fd = new FD(left, right);
-    ```
-    or simply,
-    ```java
-    FD fd = new FD(Arrays.asList("A", "D"), Arrays.asList("B"));
-    ```
+  Set<String> right = new TreeSet<>();
+  right.add("B")
+  
+  FD fd = new FD(left, right);
+  ```
+  or simply,
+  ```java
+  FD fd = new FD(Arrays.asList("A", "D"), Arrays.asList("B"));
+  ```
 
   - Do not make any changes to this class.
 
