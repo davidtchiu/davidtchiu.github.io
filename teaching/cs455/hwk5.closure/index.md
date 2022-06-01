@@ -33,20 +33,20 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
   - There are two ways of constructing an `FD` object. The first way accepts the left and right attribute sets as Lists. Another way accepts them as Sets.
   - For instance, $$AD \rightarrow B$$ can be constructed using:
 
-    ```java
-    Set<String> left = new TreeSet<>();
-    left.add("A");
-    left.add("D");
+      ```java
+      Set<String> left = new TreeSet<>();
+      left.add("A");
+      left.add("D");
 
-    Set<String> right = new TreeSet<>();
-    right.add("B")
-    
-    FD fd = new FD(left, right);
-    ```
-    or simply,
-    ```java
-    FD fd = new FD(Arrays.asList("A", "D"), Arrays.asList("B"));
-    ```
+      Set<String> right = new TreeSet<>();
+      right.add("B")
+      
+      FD fd = new FD(left, right);
+      ```
+      or simply,
+      ```java
+      FD fd = new FD(Arrays.asList("A", "D"), Arrays.asList("B"));
+      ```
 
   - Do not make any changes to this class.
 
