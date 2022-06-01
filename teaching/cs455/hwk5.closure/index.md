@@ -21,9 +21,11 @@ Starter code for this assignment is provided on the github repo. You are not req
   git clone <your-github-url-for-this-project>
   ```
 
-#### Program Requirements
+#### Preliminary
+You will need to be familiar with [Java's Set interface](https://docs.oracle.com/javase/7/docs/api/java/util/Set.html). Know how to take a set union, intersection, difference, and how to iterate through Sets. **You must write this program in Java.** I've provided skeleton code for you to implement. 
 
-**You must write this program in Java.** I've provided skeleton code for you to implement. 
+
+#### Program Requirements
 
 1. Open up the `FD` class, which models a functional dependency. This class has already been completed for you, but it's worth reading through it to understand its interface, and how I chose to model it. Of particular note:
   - An `FD` has an attribute set on the left and on the right. The left-hand side attribute set determines the right-hand side.
