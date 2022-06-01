@@ -149,7 +149,7 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
       [A, B, C] --> [A, B, C]
       ```
 
-4. Once you have FD Set Closure working, you should be able to test the equality between two FD sets. Recall that two FD sets are equal iff their closures are equal.
+4. Once you have FD Set Closure working, you should be able to test the equality between two FD sets. Recall that two FD sets are equal iff their closures are equal. There's nothing you need to do here, except  to try out more test cases in order to verify that the equals method works as intended.
 
   ```java
   // One FD Set = A --> B, AB --> C
@@ -163,7 +163,7 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
   FD g3 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
   FDSet fdset2 = new FDSet(g1, g2, g3);
 
-  // // Test FD equality: fdset and gdset are equal iff their closures are equal
+  // Test FD equality: fdset and gdset are equal iff their closures are equal
   System.out.println("Equals? " + (fdset.equals(fdset2)));
   ```
   The above test case should return `true`.
