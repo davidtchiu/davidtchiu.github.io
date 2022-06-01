@@ -13,7 +13,7 @@ In this assignment you will implement algorithms that we've been learning in the
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me via Github.
 
-- The start code is provided here [https://github.com/davidtchiu/cs455-hwk-fdclosure](https://github.com/davidtchiu/cs455-hwk-fdclosure). Choose to **fork**_* this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project.
+- The start code is provided here [https://github.com/davidtchiu/cs455-hwk-fdclosure](https://github.com/davidtchiu/cs455-hwk-fdclosure). Choose to **fork** this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project.
 
 -  **Clone** your forked Github repo down to your local working directory using:
 
