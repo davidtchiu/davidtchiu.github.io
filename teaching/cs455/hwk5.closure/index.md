@@ -29,30 +29,30 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
 
 1. Open up the `FD` class, which models a functional dependency. This class has already been completed for you, but it's worth reading through it to understand its interface, and how I chose to model it. Of particular note:
 
-  - An `FD` has an attribute set on the left and on the right. The left-hand side attribute set determines the right-hand side.
+    - An `FD` has an attribute set on the left and on the right. The left-hand side attribute set determines the right-hand side.
 
-  - An attribute set is just a set of Strings (that is `Set<String>`). I used the slightly slower `TreeSet` in my implementation just to order the attribute names when they're printed. (Easier on the eyes when grading.)
+    - An attribute set is just a set of Strings (that is `Set<String>`). I used the slightly slower `TreeSet` in my implementation just to order the attribute names when they're printed. (Easier on the eyes when grading.)
 
-  - There are two ways of constructing an `FD` object. The first way accepts the left and right attribute sets as Lists. Another way accepts them as Sets.
+    - There are two ways of constructing an `FD` object. The first way accepts the left and right attribute sets as Lists. Another way accepts them as Sets.
 
-  - For instance, $$AD \rightarrow B$$ can be constructed using:
+    - For instance, $$AD \rightarrow B$$ can be constructed using:
 
-      ```java
-      Set<String> left = new TreeSet<>();
-      left.add("A");
-      left.add("D");
+        ```java
+        Set<String> left = new TreeSet<>();
+        left.add("A");
+        left.add("D");
 
-      Set<String> right = new TreeSet<>();
-      right.add("B")
-      
-      FD fd = new FD(left, right);
-      ```
-      or simply,
-      ```java
-      FD fd = new FD(Arrays.asList("A", "D"), Arrays.asList("B"));
-      ```
+        Set<String> right = new TreeSet<>();
+        right.add("B")
+        
+        FD fd = new FD(left, right);
+        ```
+        or simply,
+        ```java
+        FD fd = new FD(Arrays.asList("A", "D"), Arrays.asList("B"));
+        ```
 
-  - Do not make any changes to this class.
+    - Do not make any changes to this class.
 
 2. Next, open up the `FDSet` class, which contains a set of FDs. Again this class has been completed for you. It's really just a wrapper class I wrote to make my grading-life easier. Read it over. Do not make any changes to this class.
 
