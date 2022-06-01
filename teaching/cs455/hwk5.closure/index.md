@@ -6,7 +6,7 @@ In this assignment you will implement algorithms that we've been learning in the
 
 #### Student Outcomes
 
-- To gain insight into the process of design by decomposition.
+- To gain insight into the fundamentals and algorithms of relational design theory
 
 
 #### Starter Code
