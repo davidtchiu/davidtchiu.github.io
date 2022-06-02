@@ -113,11 +113,12 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
     - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure, i.e., the full set of FDs generated through the repeated applications of Armstrong's Axioms. You can find the full algorithm in the notes or in the book, but I'll summarize it here:
   
       ```
-      Inputs: FD(R), a set of functional dependencies for relation R
+      Input: FD(R) -- the set of functional dependencies for some relation R
+
       FD+ = FD(R).clone()
-      Repeat until no change to FD+:
+      Repeat:
         // augmentation
-        Get the set of attributes represented in FD(R)
+        Get the set of attributes that appear in FD(R)
         Union all subsets of these attributes to both sides of all FDs in FD+
         Add these augmented FDs to FD+
 
@@ -126,6 +127,7 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
 
         // transitivity
         Find all transitive FDs in FD+ and add them to FD+
+      Until no change to FD+
       return FD+
       ``` 
     
