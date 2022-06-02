@@ -158,7 +158,26 @@ Set<String> R = new HashSet<>(Arrays.asList("A", "B", "C"));
       Take particular note of the fact that $$A \rightarrow D$$ (via $$A\rightarrow AB$$ and $$AB \rightarrow D$$) is also generated, even though it took an iteration to first generate $$AB \rightarrow D$$. Therefore, this method is exhaustive.
 
 
-    - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure, i.e., the full set of FDs generated through the repeated applications of Armstrong's Axioms. The example below shows the FD set closure for $$FD = \{A \rightarrow B, AB \rightarrow C\}$$:
+    - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure, i.e., the full set of FDs generated through the repeated applications of Armstrong's Axioms. You can find the full algorithm in the notes or in the book, but I'll summarize it here:
+  
+      ```
+      Inputs: FD(R), a set of functional dependencies for relation R
+      FD+ = FD(R).clone()
+      Repeat until no change to FD+:
+        // augmentation
+        Get the set of attributes represented in FD(R)
+        Union all subsets of these attributes to both sides of all FDs in FD+
+        Add these augmented FDs to FD+
+
+        // trivial
+        Find all trivial FDs in FD+ and add them to FD+
+
+        // transitivity
+        Find all transitive FDs in FD+ and add them to FD+
+      return FD+
+      ``` 
+    
+      The example below shows the FD set closure for $$FD = \{A \rightarrow B, AB \rightarrow C\}$$:
 
       ```java
       FD f1 = new FD(Arrays.asList("A"), Arrays.asList("B"));       // A --> B
