@@ -21,15 +21,12 @@ Starter code for this assignment is provided on the github repo. You are not req
   git clone <your-github-url-for-this-project>
   ```
 
-#### Preliminary
+<!-- #### Preliminary
 - Just like the previous assignment, you will need to be familiar with [Java's Set interface](https://docs.oracle.com/javase/7/docs/api/java/util/Set.html). Know how to take a set union, intersection, difference, and how to iterate through Sets. **You must write this program in Java.** I've provided skeleton code for you to implement. 
-
-- Because this assignment builds on the previous one, I have provided the working version of the `FDUtil` class as a .jar file. (Can't be giving out last assignment's solution source for the world to see now, can we?) You will need to import this jar file into your project so that you have access to the `FDUtil` methods. There are lots of tutorials online on how to do this in your preferred Java editor.
-
-- Here's the [documentation](FDUtil/) on the `FDUtil` class.
+ -->
 
 #### Instructions
-You are to provide several supporting methods to perform BCNF decomposition. These are algorithms you should already be familiar with, and have been given in class (and are also covered in Chapter 8 of the book). Given a relation, your program should allow you to (1) determine all superkeys and (2) normalize any given relation to BCNF, with respect to a set of FDs. Here's an example output for the Employee example we've been seeing in class:
+You are to provide several methods to support BCNF decomposition. These are algorithms you should already be familiar with, and have been given in class (and are also covered in Chapter 8 of the book). Given a relation and a set of functional dependencies, your program should allow you to (1) determine all its superkeys and (2) normalize the schema to BCNF. Here's an example output for the Employee schema example we've been seeing in class:
 
 
 ```java
@@ -65,103 +62,155 @@ BCNF Relations: [
 
 #### Program Requirements
 
-1. Attribute sets. There's quite a bit of work involving attribute sets in this assignment. For instance, superkeys are attribute sets, as well as relations. Assume that attribute sets are just a (hash)set of attribute names (strings). For instance, the relation $$R(A,B,C)$$ can be represented using:
+1.  **You must write this program in Java.** I've provided skeleton code for you to implement. 
 
-```java
-// R(A,B,C)
-Set<String> R = new HashSet<>(Arrays.asList("A", "B", "C"));
-```
+2. Because this assignment builds on the previous one, I have provided the working version of the `FDUtil` class as a .jar file. (Can't be giving out last assignment's solution source for the world to see now, can we?) You will need to import this jar file into your project so that you have access to the `FDUtil` methods. There are lots of tutorials online on how to do this in your preferred Java editor.
 
+    - Here's the [documentation](FDUtil/) on the `FDUtil` class.
 
 
+3. There's quite a bit of work involving *attribute sets* in this assignment. For instance, superkeys are attribute sets, and so are relational schemas. Assume that attribute sets are just a (hash)set of attribute names (strings). For instance, the relational schema $$R(A,B,C)$$ can be represented using:
 
-1. Open up the `FD` class, which models a functional dependency. This class has already been completed for you, but it's worth reading through it to understand its interface, and how I chose to model it. Of particular note:
+    ```java
+    // R(A,B,C)
+    Set<String> R = new HashSet<>(Arrays.asList("A", "B", "C"));
+    ```
 
-    - An `FD` has an attribute set on the left and on the right. The left-hand side attribute set determines the right-hand side.
+    So just like the previous assignment, you will need to be familiar with [Java's Set interface](https://docs.oracle.com/javase/7/docs/api/java/util/Set.html). Know how to take a set union, intersection, difference, and how to iterate through Sets.
 
-    - An attribute set is just a set of Strings (that is `Set<String>`). I used the slightly slower `TreeSet` in my implementation just to order the attribute names when they're printed. (Easier on the eyes when grading.)
 
-    - There are two ways of constructing an `FD` object. The first way accepts the left and right attribute sets as Lists. Another way accepts them as Sets.
+4. All of your work will go inside the `Normalizer` class. Implement the following methods. As before, you don't need to emphasize the efficiency of your algorithms. You are welcome to implement as many helper methods as you need.
 
-    - For instance, $$AD \rightarrow B$$ can be constructed using:
-
-        ```java
-        Set<String> left = new TreeSet<>();
-        left.add("A");
-        left.add("D");
-
-        Set<String> right = new TreeSet<>();
-        right.add("B")
-        
-        FD fd = new FD(left, right);
-        ```
-        or simply,
-        ```java
-        FD fd = new FD(Arrays.asList("A", "D"), Arrays.asList("B"));
-        ```
-
-    - Do not make any changes to this class.
-
-2. Next, open up the `FDSet` class, which contains a set of FDs. Again this class has been completed for you. It's really just a wrapper class I wrote to make my grading-life easier. Read it over. Do not make any changes to this class.
-
-3. Now open the `FDUtil` class, and implement the following static methods:
-
-    - Before you start: All of the static methods you need to write must **not** alter the contents of the input structures. In other words, you should begin each method by first cloning (deep copying) the input structures. I have provided the `clone()` method in both `FD` and `FDSet` for this purpose. 
-
-    - You're welcome to add as many other helper methods as you need (and you will need to write several helper methods!). Don't worry about the efficiency of these algorithms -- just focus on correctness.
-
-    - `trivial(FDSet fdset)` -- This method accepts a set of FDs and returns a set of trivial functional dependencies. Recall the trivial rule specifies that any subset of the left-side attributes can be (trivially) determined by the left-side attributes. Here's an example output for $$FD = \{A \rightarrow B, AB \rightarrow C\}$$:
+    - `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. Here is an example that we saw in the slides:
 
       ```java
-      FD f1 = new FD(Arrays.asList("A"), Arrays.asList("B"));       // A --> B
-      FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C"));  // AB --> C
-      FDSet fdset = new FDSet(f1, f2);
-      System.out.println(FDUtil.trivial(fdset));
-      ```
-      ```
-      [A] --> [A]
-      [A, B] --> [A]
-      [A, B] --> [B]
-      [A, B] --> [A, B]
-      ```
-
-    - `augment(FDSet fdset, Set<String> attrs)` -- This method returns a new set of FDs generated by combining of both sides of each FD  with the given set of attributes `attrs`. Here's an example output for $$FD = \{A \rightarrow B, AB \rightarrow C\}$$ augmented with attribute set $$\{C\}$$:
-
-      ```java
-      FD f1 = new FD(Arrays.asList("A"), Arrays.asList("B"));       // A --> B
-      FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C"));  // AB --> C
+      FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
+      FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
       FDSet fdset = new FDSet(f1, f2);
 
-      // We want to augment with C
-      Set<String> attrs = new HashSet<>(Arrays.asList("C"));
-      System.out.println(FDUtil.augment(fdset, attrs));
+      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
+      System.out.println("Superkeys: " + Normalizer.findSuperkeys(People, fdset));
       ```
+      I've formatted the output below for readability:
       ```
-      [A, C] --> [B, C]
-      [A, B, C] --> [C]
+      Superkeys: [
+        [ssn],
+        [ssn, eyecolor],
+        [name, ssn],
+        [name, ssn, eyecolor]
+      ]
       ```
 
-    - `transitive(FDSet fdset)` -- This method returns a new set of FDs after repeatedly applying the transitive rule until no more changes are detected. Here's an example output for $$FD = \{A \rightarrow AB, AB \rightarrow C, C \rightarrow D\}$$:
+    - `isBCNF(Set<String> rel, FDSet fdset)` -- This method determines if the given relational schema is in BCNF with respect to the FD set. Recall that a relational schema is in BCNF iff the left-hand side of all **non-trivial** FDs is a superkey. In the following example, the relational schema we showed previously is in BCNF:
 
       ```java
-      FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> B
-      FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
-      FD f3 = new FD(Arrays.asList("C"), Arrays.asList("D")); // C --> D
+      FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
+      FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
+      FDSet fdset = new FDSet(f1, f2);
+
+      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
+      System.out.println("BCNF? " + Normalizer.isBCNF(People, fdset));
+      ```
+      ```
+      BCNF? true
+      ```
+
+      Here's an example in which People violates BCNF (due to `f3` -- `name` is not a superkey):
+      ```java
+      FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
+      FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
+      FD f3 = new FD(Arrays.asList("name"), Arrays.asList("eyecolor")); // name --> eyecolor (violates BCNF)
       FDSet fdset = new FDSet(f1, f2, f3);
-      System.out.println(FDUtil.transitive(fdset));
-      ```
-      ```
-      [A] --> [C]
-      [A] --> [D]
-      [A, B] --> [D]
-      ```
-      Take particular note of the fact that $$A \rightarrow D$$ (via $$A\rightarrow AB$$ and $$AB \rightarrow D$$) is also generated, even though it took an iteration to first generate $$AB \rightarrow D$$. Therefore, this method is exhaustive.
 
+      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
+      System.out.println("BCNF? " + Normalizer.isBCNF(People, fdset));
+      ```
+      ```
+      BCNF? false
+      ```
+      
+
+    - Finally, `BCNFDecompose(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set, and then returns a set of relational schemas that satisfy BCNF. For ease of grading, please print some information (the current relational schema, its FD Set, and its superkeys) at each decision point (as we do on the board in class) so that I can trace the correctness of your algorithm.
+
+      ```java
+      // R(A,B,C)
+      Set<String> R = new HashSet<>(Arrays.asList("A", "B", "C"));
+
+      FD g1 = new FD(Arrays.asList("A"), Arrays.asList("B", "C")); // A --> BC
+      FD g2 = new FD(Arrays.asList("B"), Arrays.asList("C")); // B --> C
+      FD g3 = new FD(Arrays.asList("A"), Arrays.asList("B")); // A --> B
+      FD g4 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
+      FDSet fdset2 = new FDSet(g1, g2, g3, g4);
+
+      System.out.println("BCNF START");
+      Set<Set<String>> bcnfSchemas2 = Normalizer.BCNFDecompose(R, fdset2);
+      System.out.println("BCNF END");
+      System.out.println("Final BCNF Schemas: " + bcnfSchemas2);
+      ```
+      ```
+      BCNF START
+        Current schema = [A, B, C]
+        Current schema's FD Set = [A --> B, A --> BC, B --> C, AB --> C]
+        Current schema's superkeys = [[A], [A, B], [A, C], [A, B, C]]
+        [A, B, C] is not in BCNF. Splitting on B --> C ...
+        Left Schema = [B, C]
+        Left Schema's FD Set = [B --> C]
+        Left Schema's superkeys = [[B], [B, C]]
+        Right Schema = [A, B]
+        Right Schema's FD Set: [A --> B]
+        Right Schema's superkeys: [[A], [A, B]]
+
+      BCNF END
+      Final BCNF Schemas: [[A, B], [B, C]]
+      ```
+
+      Here's another example:
+      ```java
+      // U(A,B,C,D,E)
+      Set<String> U = new HashSet<>(Arrays.asList("A", "B", "C", "D", "E"));
+
+      FD f1 = new FD(Arrays.asList("A", "E"), Arrays.asList("D")); // AE --> D
+      FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
+      FD f3 = new FD(Arrays.asList("D"), Arrays.asList("B")); // D --> B
+      FDSet fdset = new FDSet(f1, f2, f3);
+
+      System.out.println("BCNF START");
+      Set<Set<String>> bcnfSchemas = Normalizer.BCNFDecompose(U, fdset);
+      System.out.println("BCNF END");
+      System.out.println("Final BCNF Schemas: " + bcnfSchemas);
+      ```
+      ```
+      BCNF START
+        Current schema = [A, B, C, D, E]
+        Current schema's FD Set = [D --> B, AB --> C, AE --> D]
+        Current schema's superkeys = [[E, A], [E, A, B], [E, A, C], [D, E, A], [A, B, C, E], [A, B, D, E], [A, C, D, E], [A, B, C, D, E]]
+        [A, B, C, D, E] is not in BCNF. Splitting on D --> B ...
+        Left Schema = [B, D]
+        Left Schema's FD Set = [D --> B]
+        Left Schema's superkeys = [[D], [D, B]]
+        Right Schema = [A, C, D, E]
+        Right Schema's FD Set: [AE --> D]
+        Right Schema's superkeys: [[E, A, C], [A, C, D, E]]
+
+          Current schema = [A, C, D, E]
+          Current schema's FD Set = [AE --> D]
+          Current schema's superkeys = [[E, A, C], [A, C, D, E]]
+          [A, C, D, E] is not in BCNF. Splitting on AE --> D ...
+          Left Schema = [A, D, E]
+          Left Schema's FD Set = [AE --> D]
+          Left Schema's superkeys = [[E, A], [D, E, A]]
+          Right Schema = [A, C, E]
+          Right Schema's FD Set: []
+          Right Schema's superkeys: [[E, A, C]]
+
+      BCNF END
+      Final BCNF Schemas: [[B, D], [A, C, E], [A, D, E]]
+      ```
 
     - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure, i.e., the full set of FDs generated through the repeated applications of Armstrong's Axioms. You can find the full algorithm in the notes or in the book, but I'll summarize it here:
   
       ```
-      Inputs: FD(R), a set of functional dependencies for relation R
+      Inputs: FD(R), a set of functional dependencies for relational schema R
       FD+ = FD(R).clone()
       Repeat until no change to FD+:
         // augmentation
@@ -175,7 +224,7 @@ Set<String> R = new HashSet<>(Arrays.asList("A", "B", "C"));
         // transitivity
         Find all transitive FDs in FD+ and add them to FD+
       return FD+
-      ``` 
+      ```
     
       The example below shows the FD set closure for $$FD = \{A \rightarrow B, AB \rightarrow C\}$$:
 
@@ -241,7 +290,7 @@ If you're done early and are looking for an additional challenge, you could try 
 
 - Implement a `public static Set<String> findCandidateKeys(Set<String> superkeys)` method in `Normalizer` that inputs a set of super keys and determines the set of candidate key(s).
 
-- Implement a method that will decompose a relation in 2NF.
+- Implement a method that will decompose a relational schema in 2NF.
 
 
 #### Grading
