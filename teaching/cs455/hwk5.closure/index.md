@@ -26,15 +26,15 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
 
 Also, it's imperative for this assignment that you're careful about avoiding side-effects: All of the static methods you need to write must **not** alter the contents of the input structures. I have provided a **copy constructor**  in both `FD` and `FDSet` for this purpose. For instance:
 
-    ```java
-    public static method(FD originalFDset) {
-      FDSet badcopy = originalFDset;   // No!!! badcopy simply points to the input.
-                                        // Any changes to badcopy will cause side effects.
-      FDSet truecopy = new FD(originalFDset);   // Yes! Creates a deep copy of originalFDset
-    }
-    ```
+```java
+public static method(FD originalFDset) {
+  FDSet badcopy = originalFDset;   // No!!! badcopy simply points to the input.
+                                    // Any changes to badcopy will cause side effects.
+  FDSet truecopy = new FD(originalFDset);   // Yes! Creates a deep copy of originalFDset
+}
+```
   
-  - Note that Java's HashSet and TreeSet classes also provide copy constructors! Use them where applicable.
+Note that Java's HashSet and TreeSet classes also provide copy constructors! Use them where applicable.
   
 
 

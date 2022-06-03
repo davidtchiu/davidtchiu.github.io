@@ -21,9 +21,23 @@ Starter code for this assignment is provided on the github repo. You are not req
   git clone <your-github-url-for-this-project>
   ```
 
-<!-- #### Preliminary
+#### Preliminary
 - Just like the previous assignment, you will need to be familiar with [Java's Set interface](https://docs.oracle.com/javase/7/docs/api/java/util/Set.html). Know how to take a set union, intersection, difference, and how to iterate through Sets. **You must write this program in Java.** I've provided skeleton code for you to implement. 
- -->
+
+Also, it's imperative for this assignment that you're careful about avoiding side-effects: All of the static methods you need to write must **not** alter the contents of the input structures. I have provided a **copy constructor**  in both `FD` and `FDSet` for this purpose. For instance:
+
+    ```java
+    public static method(FD originalFDset) {
+      FDSet badcopy = originalFDset;   // No!!! badcopy simply points to the input.
+                                        // Any changes to badcopy will cause side effects.
+      FDSet truecopy = new FD(originalFDset);   // Yes! Creates a deep copy of originalFDset
+    }
+    ```
+  
+  - Note that Java's HashSet and TreeSet classes also provide copy constructors! Use them where applicable.
+  
+
+
 
 #### Instructions
 You are to provide several methods to support BCNF decomposition. These are algorithms you should already be familiar with, and have been given in class (and are also covered in Chapter 8 of the book). Given a relation and a set of functional dependencies, your program should allow you to (1) determine all its superkeys and (2) normalize the schema to BCNF. Here's an example output for the Employee schema example we've been seeing in class:
@@ -69,7 +83,7 @@ BCNF Relations: [
     - Here's the [documentation](FDUtil/) on the `FDUtil` class.
 
 
-3. There's quite a bit of work involving *attribute sets* in this assignment. For instance, superkeys are attribute sets, and so are relational schemas. Assume that attribute sets are just a (hash)set of attribute names (strings). For instance, the relational schema $$R(A,B,C)$$ can be represented using:
+3. There's quite a bit of work involving *attribute sets* in this assignment. Superkeys are attribute sets, and so are relational schemas. Assume that attribute sets are just a (hash)set of attribute names (strings). For instance, the relational schema $$R(A,B,C)$$ can be constructed using this simple inline syntax:
 
     ```java
     // R(A,B,C)
@@ -84,15 +98,12 @@ BCNF Relations: [
     - `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. You should thrown an `IllegalArgumentException` if an FD refers to an attribute that is not in the given relational schema. Here is an example that we saw in the slides:
 
       ```java
-      // People(ssn, name, eyecolor)
-      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
-
-
+      // people(ssn, name, eyecolor)
+      Set<String> people = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
       FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
       FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
       FDSet fdset = new FDSet(f1, f2);
-
-      System.out.println("Superkeys: " + Normalizer.findSuperkeys(People, fdset));
+      System.out.println("Superkeys: " + Normalizer.findSuperkeys(people, fdset));
       ```
       I've formatted the output below for readability:
       ```
