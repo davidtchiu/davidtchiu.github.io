@@ -7,4 +7,4 @@
 - Project to be converted to being more open-ended
 
 # Change Log
-- Normalization homework converted to programming
+- Normalization homework converted to programming: FD set closure (hwk 5) + BCNF (hwk 6)
