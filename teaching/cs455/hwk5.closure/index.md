@@ -28,8 +28,9 @@ Also, it's imperative for this assignment that you're careful about avoiding sid
 
 ```java
 public static method(FD originalFDset) {
-  FDSet badcopy = originalFDset;   // No!!! badcopy simply points to the input.
-                                    // Any changes to badcopy will cause side effects.
+  FDSet badcopy = originalFDset;  // No!!! badcopy simply points to the input.
+                                  // Any changes to badcopy will cause side effects.
+                                  
   FDSet truecopy = new FD(originalFDset);   // Yes! Creates a deep copy of originalFDset
 }
 ```
