@@ -81,14 +81,17 @@ BCNF Relations: [
 
 4. All of your work will go inside the `Normalizer` class. Implement the following methods. As before, you don't need to emphasize the efficiency of your algorithms. You are welcome to implement as many helper methods as you need.
 
-    - `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. Here is an example that we saw in the slides:
+    - `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. You should thrown an `IllegalArgumentException` if an FD refers to an attribute that is not in the given relational schema. Here is an example that we saw in the slides:
 
       ```java
+      // People(ssn, name, eyecolor)
+      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
+
+
       FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
       FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
       FDSet fdset = new FDSet(f1, f2);
 
-      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
       System.out.println("Superkeys: " + Normalizer.findSuperkeys(People, fdset));
       ```
       I've formatted the output below for readability:
@@ -100,6 +103,21 @@ BCNF Relations: [
         [name, ssn, eyecolor]
       ]
       ```
+      Here's an IllegalArgumentException because `eyecolor` is not an attribute in the given schema, but appears in an FD:
+      ```java
+      // People(ssn, name)
+      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name"));
+      FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
+      FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
+      FDSet fdset = new FDSet(f1, f2);
+
+      System.out.println("Superkeys: " + Normalizer.findSuperkeys(People, fdset));
+      ```
+      ```
+      Exception in thread "main" java.lang.IllegalArgumentException: FD refers to unknown attributes: name,ssn --> eyecolor
+        at Normalizer.findSuperkeys(Normalizer.java:132)
+        at Main.main(Main.java:15)
+        ```
 
     - `isBCNF(Set<String> rel, FDSet fdset)` -- This method determines if the given relational schema is in BCNF with respect to the FD set. Recall that a relational schema is in BCNF iff the left-hand side of all **non-trivial** FDs is a superkey. In the following example, the relational schema we showed previously is in BCNF:
 
@@ -115,7 +133,7 @@ BCNF Relations: [
       BCNF? true
       ```
 
-      Here's an example in which People violates BCNF (due to `f3` -- `name` is not a superkey):
+      Here's an example in which People violates BCNF (due to `f3`, as `name` is not a superkey):
       ```java
       FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
       FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
@@ -140,12 +158,12 @@ BCNF Relations: [
       FD g2 = new FD(Arrays.asList("B"), Arrays.asList("C")); // B --> C
       FD g3 = new FD(Arrays.asList("A"), Arrays.asList("B")); // A --> B
       FD g4 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
-      FDSet fdset2 = new FDSet(g1, g2, g3, g4);
+      FDSet fdsetR = new FDSet(g1, g2, g3, g4);
 
       System.out.println("BCNF START");
-      Set<Set<String>> bcnfSchemas2 = Normalizer.BCNFDecompose(R, fdset2);
+      Set<Set<String>> bcnfSchemasR = Normalizer.BCNFDecompose(R, fdsetR);
       System.out.println("BCNF END");
-      System.out.println("Final BCNF Schemas: " + bcnfSchemas2);
+      System.out.println("Final BCNF Schemas: " + bcnfSchemasR);
       ```
       ```
       BCNF START
@@ -172,12 +190,12 @@ BCNF Relations: [
       FD f1 = new FD(Arrays.asList("A", "E"), Arrays.asList("D")); // AE --> D
       FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
       FD f3 = new FD(Arrays.asList("D"), Arrays.asList("B")); // D --> B
-      FDSet fdset = new FDSet(f1, f2, f3);
+      FDSet fdsetU = new FDSet(f1, f2, f3);
 
       System.out.println("BCNF START");
-      Set<Set<String>> bcnfSchemas = Normalizer.BCNFDecompose(U, fdset);
+      Set<Set<String>> bcnfSchemasU = Normalizer.BCNFDecompose(U, fdsetU);
       System.out.println("BCNF END");
-      System.out.println("Final BCNF Schemas: " + bcnfSchemas);
+      System.out.println("Final BCNF Schemas: " + bcnfSchemasU);
       ```
       ```
       BCNF START
@@ -216,22 +234,28 @@ If you're done early and are looking for an additional challenge, you could try 
 
 - Implement a method that will decompose a relational schema in 2NF.
 
+- Implement the canonical cover algorithm that finds the minimalistic representation of an FD set.
+
 
 #### Grading
 
 ```
-This assignment will be graded out of 75 points.
+This assignment will be graded out of 70 points.
 
-[10pts] Trivial rule
+[20pts] Implementation of findSuperKeys() exhaustively generates all superkeys
+of a given relational schema and its FD set. You throw an exception if there is an 
+FD that refers to an unknown attribute in the given schema. Ensure that, when 
+the FD set is empty, then all attributes in the given schema serves as the only superkey.
 
-[10pts] Augmentation rule
+[10pts] Implementation of isBCNF(). It returns true if the left-hand side of all
+non-trivial FDs is a superkey.
 
-[15pts] Transitivity rule. Must be exhaustive (i.e., repeatedly apply
-transitivity until there is no change.)
+[30pts] Implementation of BCNFDeompose(). It returns a set of relational schemas that
+satisfy BCNF. At every split point, you output the schema being split, the violating FD,
+the superkeys for that schema. Also print the same information for the two schemas after
+the split. 
 
-[20pts] Implementation of the FD Set closure algorithm
-
-[10pts] Immutability: None of the methods should modify the content of 
+[10pts] Immutability and no-side effects: None of the methods should modify the content of 
 any input structure.
 
 [Misc] Your program must be written in Java. Non-Java programs will be returned
