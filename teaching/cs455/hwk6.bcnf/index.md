@@ -54,16 +54,13 @@ System.out.println("Final BCNF Schemas: " + Normalizer.BCNFDecompose(employee, e
 Here's the output (though I've formatted the superkeys by hand for readability). As the outputs are sets, it follows no particular ordering.
 ```
 BCNF START
-  Current schema = [cartID, name, title, ssn, wage]
-  Current schema's FD Set = [[ssn] --> [name], [cartID,ssn] --> [title,wage]]
-  Current schema's superkeys = [[cartID, title, wage, ssn], [cartID, title, ssn], [cartID, wage, ssn], [cartID, ssn], [cartID, name, wage, ssn], [cartID, name, ssn], [cartID, name, title, ssn], [cartID, name, title, wage, ssn]]
-  *** Splitting on [ssn] --> [name] ***
-  Left Schema = [name, ssn]
-  Left Schema's FD Set = [[ssn] --> [name]]
-  Left Schema's superkeys = [[name, ssn], [ssn]]
-  Right Schema = [cartID, title, ssn, wage]
-  Right Schema's FD Set = [[cartID,ssn] --> [title,wage]]
-  Right Schema's superkeys: [[cartID, title, wage, ssn], [cartID, title, ssn], [cartID, wage, ssn], [cartID, ssn]]
+ Current schema = [cartID, name, title, ssn, wage]
+ Current schema's superkeys = [[cartID, title, wage, ssn], [cartID, title, ssn], [cartID, wage, ssn], [cartID, ssn], [cartID, name, wage, ssn], [cartID, name, ssn], [cartID, name, title, ssn], [cartID, name, title, wage, ssn]]
+ *** Splitting on [ssn] --> [name] ***
+ Left Schema = [name, ssn]
+ Left Schema's superkeys = [[name, ssn], [ssn]]
+ Right Schema = [cartID, title, ssn, wage]
+ Right Schema's superkeys: [[cartID, title, wage, ssn], [cartID, title, ssn], [cartID, wage, ssn], [cartID, ssn]]
 BCNF END
 
 Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
@@ -92,7 +89,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
 
 4. All of your work will go inside the `Normalizer` class. Implement the following methods. As before, you don't need to emphasize the efficiency of your algorithms. You are welcome to implement as many helper methods as you need.
 
-    - `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. You should thrown an `IllegalArgumentException` if an FD refers to an attribute that is not in the given relational schema. Here is an example that we saw in the slides:
+    - `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. You should thrown an `IllegalArgumentException` if an FD refers to an attribute that is not in the given relational schema. The Attribute Set Closure algorithm you saw in class would be of use here. Here is an example that we saw in the slides:
 
       ```java
       // people(ssn, name, eyecolor)
@@ -156,35 +153,39 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
       ```
       
 
-    - Finally, `BCNFDecompose(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set, and then returns a set of relational schemas that satisfy BCNF. For ease of grading, please print some information (the current relational schema, its FD Set, and its superkeys) at each decision point (as we do on the board in class) so that I can trace the correctness of your algorithm.
+    - Finally, `BCNFDecompose(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set, and then returns a set of relational schemas that satisfy BCNF. For ease of grading, please print some information (the current relational schema, its FD Set, and its superkeys) at each decision point (as we do on the board in class) so that I can trace the correctness of your algorithm. 
+    
+    *Important:* After a split, it is imperative that your algorithm redistributes all FDs in the closure ($$F^+$$) of the given `fdset`. In the example below, notice how `A --> C` is not explicitly listed, but is held in the closure via transitivity. After splitting into `[A, B]` and `[A, C, D]`, had you not distributed `A --> C` to `[A, C, D]`, then the algorithm would've falsely assumed that `[A, C, D]` was in BCNF!
 
       ```java
       // R(A,B,C)
-      Set<String> R = new HashSet<>(Arrays.asList("A", "B", "C"));
-      FD g1 = new FD(Arrays.asList("A"), Arrays.asList("B", "C")); // A --> BC
-      FD g2 = new FD(Arrays.asList("B"), Arrays.asList("C")); // B --> C
-      FD g3 = new FD(Arrays.asList("A"), Arrays.asList("B")); // A --> B
-      FD g4 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
-      FDSet fdsetR = new FDSet(g1, g2, g3, g4);
-      System.out.println("Final BCNF Schemas: " + Normalizer.BCNFDecompose(R, fdsetR);
+      Set<String> S = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
+      FD s1 = new FD(Arrays.asList("A"), Arrays.asList("B")); // A --> B
+      FD s2 = new FD(Arrays.asList("B"), Arrays.asList("C")); // B --> C
+      FDSet fdsetS = new FDSet(s1, s2);
+      System.out.println("Final BCNF Schemas: " + Normalizer.BCNFDecompose(S, fdsetS));
       ```
       ```
       BCNF START
-        Current schema = [A, B, C]
-        Current schema's FD Set = [A --> B, A --> BC, B --> C, AB --> C]
-        Current schema's superkeys = [[A], [A, B], [A, C], [A, B, C]]
-        *** Splitting on B --> C ***
-        Left Schema = [B, C]
-        Left Schema's FD Set = [B --> C]
-        Left Schema's superkeys = [[B], [B, C]]
-        Right Schema = [A, B]
-        Right Schema's FD Set = [A --> B]
-        Right Schema's superkeys: [[A], [A, B]]
+      Current schema = [A, B, C, D]
+      Current schema's superkeys = [[A, D], [A, B, D], [A, C, D], [A, B, C, D]]
+      *** Splitting on A --> B ***
+      Left Schema = [A, B]
+      Left Schema's superkeys = [[A], [A, B]]
+      Right Schema = [A, C, D]
+      Right Schema's superkeys: [[A, D], [A, C, D]]
+        Current schema = [A, C, D]
+        Current schema's superkeys = [[A, D], [A, C, D]]
+        *** Splitting on A --> C ***
+        Left Schema = [A, C]
+        Left Schema's superkeys = [[A], [A, C]]
+        Right Schema = [A, D]
+        Right Schema's superkeys: [[A, D]]
       BCNF END
-      Final BCNF Schemas: [[A, B], [B, C]]
+      Final BCNF Schemas: [[A, B], [A, C], [A, D]]
       ```
 
-      Here's another example:
+      Here's another example of running this algorithm:
       ```java
       // U(A,B,C,D,E)
       Set<String> U = new HashSet<>(Arrays.asList("A", "B", "C", "D", "E"));
@@ -196,28 +197,22 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
       ```
       ```
       BCNF START
-        Current schema = [A, B, C, D, E]
-        Current schema's FD Set = [D --> B, AB --> C, AE --> D]
-        Current schema's superkeys = [[A, E], [A, B, E], [A, C, E], [A, D, E], [A, B, C, E], [A, B, D, E], [A, C, D, E], [A, B, C, D, E]]
-        *** Splitting on D --> B ***
-        Left Schema = [B, D]
-        Left Schema's FD Set = [D --> B]
-        Left Schema's superkeys = [[D], [B, D]]
-        Right Schema = [A, C, D, E]
-        Right Schema's FD Set = [AE --> D]
-        Right Schema's superkeys: [[A, C, E], [A, C, D, E]]
-          Current schema = [A, C, D, E]
-          Current schema's FD Set = [AE --> D]
-          Current schema's superkeys = [[A, C, E], [A, C, D, E]]
-          *** Splitting on AE --> D ***
-          Left Schema = [A, D, E]
-          Left Schema's FD Set = [AE --> D]
-          Left Schema's superkeys = [[A, E], [A, D, E]]
-          Right Schema = [A, C, E]
-          Right Schema's FD Set = []
-          Right Schema's superkeys: [[A, C, E]]
+      Current schema = [A, B, C, D, E]
+      Current schema's superkeys = [[A, E], [A, B, E], [A, C, E], [A, D, E], [A, B, C, E], [A, B, D, E], [A, C, D, E], [A, B, C, D, E]]
+      *** Splitting on D --> B ***
+      Left Schema = [B, D]
+      Left Schema's superkeys = [[D], [B, D]]
+      Right Schema = [A, C, D, E]
+      Right Schema's superkeys: [[A, E], [A, C, E], [A, D, E], [A, C, D, E]]
+        Current schema = [A, C, D, E]
+        Current schema's superkeys = [[A, E], [A, C, E], [A, D, E], [A, C, D, E]]
+        *** Splitting on AD --> C ***
+        Left Schema = [A, C, D]
+        Left Schema's superkeys = [[A, D], [A, C, D]]
+        Right Schema = [A, D, E]
+        Right Schema's superkeys: [[A, E], [A, D, E]]
       BCNF END
-      Final BCNF Schemas: [[B, D], [A, C, E], [A, D, E]]
+      Final BCNF Schemas: [[B, D], [A, C, D], [A, D, E]]
       ```
 
 
