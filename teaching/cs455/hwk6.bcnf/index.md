@@ -222,10 +222,9 @@ If you're done early and are looking for an additional challenge, you could try 
 
 - Implement a `public static Set<String> findCandidateKeys(Set<String> superkeys)` method in `Normalizer` that inputs a set of super keys and determines the set of candidate key(s).
 
-- Implement a method that will decompose a relational schema in 2NF.
+- Implement the canonical cover algorithm that finds the minimal basis of an FD set.
 
-- Implement the canonical cover algorithm that finds the minimalistic representation of an FD set.
-
+- Implement a method that will decompose a relational schema in 3NF.
 
 #### Grading
 
