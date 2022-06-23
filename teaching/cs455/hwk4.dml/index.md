@@ -2,7 +2,7 @@
 
 ### Hwk: Writing SQL Queries
 
-The queries you are asked to perform are realistic. The database models the mini-world of a fictitious company that sells small-scale models of Classic Cars. More information (and practice problems) on the database can be found [here](https://www.richardtwatson.com/dm6e/Reader/ClassicModels.html).
+The queries you are asked to perform are realistic. The database models a fictitious multinational company that sells.
 
 #### Student Outcomes
 
@@ -12,15 +12,15 @@ To write SQL queries for the retrieval of data.
 
 Download the file below, and open it up with SQLite or SQLite DB Browser.
 
-- [classicmodels.db](files/classicmodels.db)
+- [hwk4_models.db](files/hwk4_models.db)
 
 #### Instructions
 
-Start by downloading the classic models database, and open it up in SQLite. I strongly recommend you using a GUI, like DB Browser instead of the command line. Once open, you will find the following schema and quite a bit of data already populated.
+Start by downloading the database file, and open it up in [Antares](https://antares-sql.app/). Once open, you will find the following schema and quite a bit of data already populated.
 
 <center><img src="figures/schema.png" width="500px"/></center>
 
-Take a moment to study the schema, noting the keys. Browse the data in each relation if you wish. Answer the following queries. I've given you the expected results below each query.
+Take a moment to study the schema, noting the foreign and primary keys. Browse the data in each relation to familiarize yourself with the database contents. Answer the following queries. I've given you the expected results below each query.
 
 1. List all customer names and their addresses who don't have a specified sales rep. Order by customer name.
 
@@ -433,7 +433,7 @@ Take a moment to study the schema, noting the keys. Browse the data in each rela
     2002 Suzuki XREO          843246.95
     1952 Alpine Renault 1300  845334.6
     ```
-
+<!-- 
 13. List the average order size for each customer (answer should include customerName, avgQuantity) Order by customer name.
 
     ```
@@ -537,7 +537,7 @@ Take a moment to study the schema, noting the keys. Browse the data in each rela
     Volvo Model Re  161.75
     West Coast Col  255.5
     giftsbymail.co  447.5
-    ```
+    ``` -->
 
 #### Extensions
 
@@ -549,16 +549,19 @@ If you're done early, or are looking for more practice, consider the following e
 #### Grading
 
 ```
-Attendance is required for the 2-day lab.
+I want to be able to run your query set easily. Do not submit your queries in a Word or PDF file! Files not submitted in plain-text format with your queries inside will be returned without a grade. 
+
+[20pt] Completion of the queries Q1 - Q4. (5pts each)
+[80pt] Completion of queries Q5 - Q12.  (10pts each)
+
+Total: 65pts
 ```
 
-<!-- #### Submitting Your Assignment
 
-After you have completed the homework, use the following to submit your work on canvas.
-Remove all .class files from the program directory and zip up your project.
+#### Submitting Your Assignment
 
-Navigate to our course on Canvas. You should see the Homework 6 Dropbox. Click on this link, and you should be able to drag your file right into the submission box. Click "Save Changes". You may submit as often as you'd like before the deadline. I will grade the most recent copy. -->
+After you have completed the homework, use the following to submit your work on Canvas. There are two options to submit your work.
 
-#### Credits
-
-Classic Models sample database by Richard T. Watson. Modified for SQLite by David.
+1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
+2. Alternatively, you can just submit the text file with all the queries listed inside.
+3. You may submit as often as you'd like before the deadline. I will grade the most recent copy.

@@ -127,12 +127,12 @@ You are required to manage your code on github. Finalize and push your code by 1
 #### Scrum Logs
 
 
-
+<!-- 
 #### Grading
 
 ```
 The proposal itself will not be graded, but you will receive feedback from me.
-```
+``` -->
 
 #### Credits
 
