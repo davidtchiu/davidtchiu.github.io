@@ -61,11 +61,16 @@ A short proposal outlining your project should be submitted to me before the pro
   Here's a sample rubric for a game like "Wordle," which is similar to playing Hangman:
 
   ```
-  [10pts] All relations have been normalized to BCNF.
+  [10pts] All relations have been normalized to BCNF. A database schema with primary keys
+  foreign keys have been defined for SQLite.
   
-  [30pts] Implementation of a working account-management system. Users are prompted for credentials if they are not yet logged in. They also have the option of creating a new account.
+  [30pts] Implementation of a working account-management system. Users are prompted for 
+  credentials if they are not yet logged in. They also have the option of creating a 
+  new account.
   
-  [15pts] There is a page for the signed-in user to access their play history via the database, viewing the number of guesses it took them for all previous games, among other stats.
+  [15pts] There is a page for the signed-in user to access their play history via the 
+  database, viewing the number of guesses it took them for all previous games, among 
+  other stats.
   
    ...
   ```
