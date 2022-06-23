@@ -43,17 +43,34 @@ I strongly recommend that the team comes to a consensus on the project vision, s
 
 
 #### Project Proposal Requirements
-A short proposal outlining your project should be submitted to me before the proposal deadline. There is no page limit, but going off the past, roughly 4-5 pages (single spaced) seems about right. There are required sections of the proposal that you have to write:
+A short proposal outlining your project should be submitted to me before the proposal deadline. There is no page limit, but going off the past, roughly 2-3 pages (single spaced) seems about right. There are required sections of the proposal that you have to write:
 
-- Give a name/title to your project, and list the group membership on your proposal.
+- *Title and members:* Give a title to your project, and list the names of your group members on your proposal.
+ 
+- *Section I:* Explain you're hoping to accomplish, addressing all the points below, if applicable:
 
-- *Section I: Proposal*: This section explains what you're hoping to accomplish.
-  - Explain what you are planning to accomplish. Provide original diagrams and figures to help you explain your application.
-  - What problem are you trying to solve? Why is it interesting to you?
-  - Justify the *novelty* component of the project. Explain what doing this project will teach you.
-  - List some expected challenges. How do you expect the project will push you and your team? In what areas do you expect to face challenges? (The challenges may not be technical.)
+  - What problem are you trying to solve? Why is the project interesting to you?
+  - Provide original diagrams and figures to help you explain your application.
+  - Address the *novelty* of the project. Explain what this project will teach you beyond what you'll take away from this course.
+  - List the expected challenges. How do you expect the project will push you and your team? In what areas do you expect to face challenges? (The challenges may not be technical.)
 
-- *Section II: Product Features* -- Next, define _at least two_ significant software features per team member. Here are a few example features for, say, an app for a package-shipping company. (Obviously, the features will vary wildly depending on the kind of project you're doing.)
+- *Section II:* Tentative Grading Rubric
+
+  How do you measure the success of your project? This also gives you a chance to think a little bit more about the details of the project. Work with your team and distribute 100 points across different item. You can model your rubric off of the ones I give you for your assignments. This rubric is only tentative, because we might expect plans to change as time passes. I will be using the finalized version to assign a final grade to your project.
+  
+  Here's a sample rubric for a game like "Wordle," which is similar to playing Hangman:
+
+  ```
+  [10pts] All relations have been normalized to BCNF.
+  
+  [30pts] Implementation of a working account-management system. Users are prompted for credentials if they are not yet logged in. They also have the option of creating a new account.
+  
+  [15pts] There is a page for the signed-in user to access their play history via the database, viewing the number of guesses it took them for all previous games, among other stats.
+  
+   ...
+  ```
+
+<!-- - *Section II:  Features* -- Next, define _at least two_ significant software features per team member. Here are a few example features for, say, an app for a package-shipping company. (Obviously, the features will vary wildly depending on the kind of project you're doing.)
 
   - _Feature 1:_ Customers can login to our system with a username and password, which are both encrypted in the database. The login form has a checkbox option to "Remember me today." If this option is checked upon a successful login, the website will remember them for a 24-hour period (without requiring login if they leave and return to the site later). If not checked, the site will only remember them for a 1-hour period.
   - _Feature 2:_ To provide added security, we will block out an account after 5 unsuccessful login attempts, after which the user must reset their password by following a link that is emailed to the addressed stored in the database for the given the username.
@@ -66,15 +83,17 @@ A short proposal outlining your project should be submitted to me before the pro
 
   It may also be helpful to remember that this proposal is **not** a contract between you and me, so it's okay to be ambitious and list features that you may not get to implement. It's your job, however, to prioritize the "must-have" features over the "nice-to-have" ones. Your goal is to have a working prototype of the fundamental features by the last week of classes, so prioritize wisely!
 
-  You'll also likely experience that this list of features may change over time, and that's okay. Consider this a living document and make adjustments to it over time.
+  You'll also likely experience that this list of features may change over time, and that's okay. Consider this a living document and make adjustments to it over time. -->
 
-- **Section III: Project Management** -- In this section, you will define each team member's role by assigning features to specific team members. As I mentioned earlier, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. And conversely, some complicated features may require multiple students to work on it simultaneously. Some features are also dependent on other features to be implemented first. Therefore, it's important to use software-engineering tools to ensure that everybody's on the same page.
+<!-- In this section, you will define each team member's role by assigning features to specific team members. As I mentioned earlier, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. And conversely, some complicated features may require multiple students to work on it simultaneously. Some features are also dependent on other features to be implemented first. Therefore, it's important to use software-engineering tools to ensure that everybody's on the same page. -->
 
-  - Make a list of tools you'll be using to help you manage your project and workflow. List each tool by name, along with their intended purpose (e.g., git, Figma, slack, trello, etc.)
 
-  - Finally, you must produce a Gantt Chart that communicates your timeline and milestones. Throughout the weeks of your project's implementation, I will hold you accountable based on your proposed timeline, with the understanding that plans and features do change. Here is an example Gantt Chart:
+<!-- - **Section II: Project Management** -- 
+Make a list of tools you'll be using to help you manage your project and workflow. List each tool by name, along with their intended purpose (e.g., git, Figma, slack, trello, etc.) 
 
-    <img src="figures/timeline.png" width="550px"/>
+Finally, you must produce a Gantt Chart that communicates your timeline and milestones. Throughout the weeks of your project's implementation, I will hold you accountable based on your proposed timeline, with the understanding that plans and features do change. Here is an example Gantt Chart:
+
+    <img src="figures/timeline.png" width="550px"/> -->
 
 - **Submission:** The proposal should be in PDF format and uploaded to a github account. Go to [Canvas](https://canvas.pugetsound.edu) and submit the URL to your proposal under the `Project` Dropbox.
 
