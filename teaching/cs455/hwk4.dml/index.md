@@ -2,312 +2,563 @@
 
 ### Hwk: Writing SQL Queries
 
-Now that you've gotten the raw enrollment data stored in a relational database (SQLite), you're finally ready to conduct the analysis that the college wants. Remember that the data, though fake, is an analog to the real data in our university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually run when generating our reports! Cool, eh?
-
-<!-- Finally, they ask you to create triggers to log system activities. -->
+The queries you are asked to perform are realistic. The database models the mini-world of a fictitious company that sells small-scale models of Classic Cars. More information (and practice problems) on the database can be found [here](https://www.richardtwatson.com/dm6e/Reader/ClassicModels.html).
 
 #### Student Outcomes
 
-- To write SQL queries for the retrieval of data.
+To write SQL queries for the retrieval of data.
 
 #### Required Files
 
-The following file(s) have been provided for this assignment.
+Download the file below, and open it up with SQLite or SQLite DB Browser.
 
-- [university-ddl.sql](university-ddl.sql)
-- [university-populate.sql](university-populate.sql)
+- [classicmodels.db](files/classicmodels.db)
 
-#### Populate your Database!
+#### Instructions
 
-Start by downloading the two `.sql` files and reading them into your SQLite3 database. To do this, you can create a new database in DB Browser, and then paste them into the SQL Execution console. The `university-ddl.sql` file contains the schema definition, so load that first. Next, paste in the ``university-populate.sql` file contents. Your database should now be loaded with the correct schema and enrollment data from the previous homework. Let's get to work.
+Start by downloading the classic models database, and open it up in SQLite. I strongly recommend you using a GUI, like DB Browser instead of the command line. Once open, you will find the following schema and quite a bit of data already populated.
 
-#### Writing SQL Queries
+<center><img src="figures/schema.png" width="500px"/></center>
 
-Create a file named `YourLastName_HW4.sql` and store all your queries in the following format:
+Take a moment to study the schema, noting the keys. Browse the data in each relation if you wish. Answer the following queries. I've given you the expected results below each query.
 
-```sql
--- Q0: This is just an example showing the format I expect.
--- This query retrieves every student in the database. It projects
--- only their ID and name.
-SELECT studentID,name
-FROM student;
-
-
--- Q1: Description of the next query..
-SELECT ...
-```
-
-I recommend that you test out your queries directly on the SQLite command-line (or GUI, if you downloaded one). Once you are convinced that your query works, copy it into the `YourLastName_HW4.sql` file for submission. Here are the queries that the college wants you to run. Below each request, I've given you the expected result.
-
- <!-- **Except for the last problem in which you are asked to create an audit table, you are not allowed to make changes to the schema to help you write your queries.**  -->
-
-Furthermore, because the data is being updated constantly in real life, no queries should be written specifically for this instance of the database -- that is, your queries should work in general, regardless of what data is currently stored.
-
-1. Get all courses being taught by the MATH department that start in the afternoon. You may assume that time is in 24hr format, and you're reminded that you can use comparison operators (`<`, `>`) on strings.
+1. List all customer names and their addresses who don't have a specified sales rep. Order by customer name.
 
    ```
-   CourseNum   deptID      CourseName  Location    meetDay     meetTime
-   ----------  ----------  ----------  ----------  ----------  ----------
-   120         MATH        Algebra     MH 10       MW          12:00
-   230         MATH        Linear Alg  HH 308      TR          15:00
-   460         MATH        Calculus 3  WEY 102     TR          12:30
+   customerName   addressLine1  addressLine2  city        state       postalCode
+   -------------  ------------  ------------  ----------  ----------  ----------
+   ANG Resellers  Gran Vía, 1   NULL          Madrid      NULL        28001
+   Anton Designs  c/ Gobelas,   NULL          Madrid      NULL        28023
+   Asian Shoppin  Suntec Tower  8 Temasek     Singapore   NULL        038988
+   Asian Treasur  8 Johnstown   NULL          Cork        Co. Cork    NULL
+   BG&E Collecta  Rte des Arse  NULL          Fribourg    NULL        1700
+   Cramer Spezia  Maubelstr. 9  NULL          Brandenbur  NULL        14776
+   Der Hund Impo  Obere Str. 5  NULL          Berlin      NULL        12209
+   Feuer Online   Heerstr. 22   NULL          Leipzig     NULL        04179
+   Franken Gifts  Berliner Pla  NULL          München     NULL        80805
+   Havel & Zbysz  ul. Filtrowa  NULL          Warszawa    NULL        01-012
+   Kommission Au  Luisenstr. 4  NULL          Münster     NULL        44087
+   Kremlin Colle  2 Pobedy Squ  NULL          Saint Pete  NULL        196143
+   Lisboa Souven  Jardim das r  NULL          Lisboa      NULL        1675
+   Messner Shopp  Magazinweg 7  NULL          Frankfurt   NULL        60528
+   Mit Vergnügen  Forsterstr.   NULL          Mannheim    NULL        68306
+   Natürlich Aut  Taucherstraß  NULL          Cunewalde   NULL        01307
+   Porto Imports  Estrada da s  NULL          Lisboa      NULL        1756
+   Raanan Stores  3 Hagalim Bl  NULL          Herzlia     NULL        47625
+   SAR Distribut  1250 Pretori  NULL          Hatfield    Pretoria    0028
+   Schuyler Impo  Kingsfordweg  NULL          Amsterdam   NULL        1043 GR
+   Stuttgart Col  Adenaueralle  NULL          Stuttgart   NULL        70563
+   Warburg Excha  Walserweg 21  NULL          Aachen      NULL        52066
    ```
 
-2. Return the student, David's, course schedule. You don't have their student ID, but they're the only one with that name. Only `Course`'s attributes should be projected.
+2. List the names of all customers that have a creditLimit between 100,000 and 200,000 inclusively. Order by customer name.
 
    ```
-   deptID      CourseNum   CourseName        Location    meetDay     meetTime
-   ----------  ----------  ----------------  ----------  ----------  ----------
-   CSCI        351         Database Systems  TH 19       MW          12:00
-   CSCI        453         Capstone in Comp  TH 398      MWF         16:00
-   MATH        230         Linear Algebra    HH 308      TR          15:00
+   customerName    creditLimit
+   --------------  -----------
+   AV Stores, Co.  136800.0
+   Amica Models &  113000.0
+   Annas Decorati  107800.0
+   Australian Col  117300.0
+   Collectable Mi  105000.0
+   Corporate Gift  105000.0
+   Corrida Auto R  104600.0
+   Diecast Classi  100600.0
+   Dragon Souveni  103800.0
+   Heintze Collec  120800.0
+   Kellys Gift Sh  110000.0
+   La Rochelle Gi  118200.0
+   Land of Toys I  114900.0
+   Lordine Souven  121400.0
+   Martas Replica  123700.0
+   Mini Classics   102700.0
+   Muscle Machine  138500.0
+   Online Diecast  114200.0
+   Rovelli Gifts   119600.0
+   Saveley & Henr  123900.0
+   Scandinavian G  116400.0
+   Toms Spezialit  120400.0
+   Vida Sport, Lt  141300.0
    ```
 
-3. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the `avg(GPA)` column to `ClassGPA`.
+3. List all employees who have the initials of M.P. or P.M., by name. Order by last name.
 
    ```
-   class       ClassGPA
+   firstName   lastName
    ----------  ----------
-   Freshman    2.44
-   Junior      3.125
-   Senior      3.1
-   Sophomore   2.675
+   Peter       Marsh
+   Mary        Patterson
    ```
 
-4. Identify all students who have a lower GPA than the average of their respective class rank. Sort the results first by class rank, then by the student's name.
+4. List all the products' productNames purchased by Mini Wheels Co. Order the list by product line.
 
    ```
-   studentID studentName  class       gpa         ClassGPA
-   ----------  -----------  ----------  ----------  ----------
-   1661        Logan        Freshman    0.5         2.44
-   1709        Cassandra    Junior      2.8         3.125
-   1934        Kyle         Junior      2.1         3.125
-   1629        Brad         Senior      1.6         3.1
-   1641        Brittany     Senior      2.7         3.1
-   1689        Gabriel      Senior      2.4         3.1
-   1304        Jordan       Senior      2.9         3.1
-   1316        Austin       Sophomore   2.1         2.675
-   1468        Kris         Sophomore   1.0         2.675
+   productName
+   ------------------------
+   1952 Alpine Renault 1300
+   1969 Harley Davidson Ult
+   1996 Moto Guzzi 1100i
+   2003 Harley-Davidson Eag
+   2002 Suzuki XREO
+   1936 Harley Davidson El
+   1997 BMW R 1100 S
+   1960 BSA Gold Star DBD34
+   1958 Setra Bus
+   1940 Ford Pickup Truck
+   1996 Peterbilt 379 Stake
+   1937 Lincoln Berline
+   1936 Mercedes-Benz 500K
+   1934 Ford V8 Coupe
+   18th Century Vintage Hor
+   1917 Maxwell Touring Car
+   1936 Chrysler Airflow
+   1913 Ford Model T Speeds
+   1939 Cadillac Limousine
    ```
 
-5. Get a list of all students who are still undeclared (that is, without a major). Project only the `studentID` and their name. Sort results by `studentID`.
+5. List the customers by customerName whose contact person shares either a first name or last name with any of the company's employees Order by customerName.
 
    ```
-   studentID   studentName
-   ----------  -----------
-   1001        Lia
-   1225        Sarah
-   1282        Kelly
-   1629        Brad
-   1640        Adam
+   customerName
+   --------------------------
+   Australian Collectors, Co.
+   Auto-Moto Classics Inc.
+   Boards & Toys Co.
+   Cambridge Collectables Co.
+   Classic Legends Inc.
+   Collectable Mini Designs C
+   Corporate Gift Ideas Co.
+   Gift Depot Inc.
+   Martas Replicas Co.
+   Mini Classics
+   Mini Wheels Co.
+   Muscle Machine Inc
+   Signal Gift Stores
+   Super Scale Inc.
+   Tekni Collectables Inc.
+   Toys4GrownUps.com
+   West Coast Collectables Co
    ```
 
-6. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented in your results (e.g., History)
+6. List the customers (by name) that are based in the country which is first in the lexicographic order of customer countries. (Hint: In this database instance, that country is Australia). Order by customerName.
 
    ```
-   deptName                    enrolled
-   --------------------------  ----------
-   School of Computer Science  16
-   Department of English       8
-   School of Business          7
-   Department of Mathematics   6
-   Department of Physics       3
-   Department of Anthropology  1
-   Department of History       0
+   customerName
+   ----------------------
+   Annas Decorations, Ltd
+   Australian Collectable
+   Australian Collectors,
+   Australian Gift Networ
+   Souveniers And Things
    ```
 
-7. Identify all valedictorians in all majors. (This is a real query that we have to run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that `ENGL` has two students with the same GPA)
+7. Identify the product(s) by productCode and productName that the company has the least stock of. Order by product code.
 
    ```
-   (Notice that ENGL has two students with the same GPA)
-
-   studentID   studentName  class       major       gpa
-   ----------  -----------  ----------  ----------  ----------
-   1101        Haley        Senior      BUS         4.0
-   1381        Tiffany      Junior      CSCI        4.0
-   1247        Alexis       Senior      ENGL        3.9
-   1487        Erin         Sophomore   ENGL        3.9
-   1101        Haley        Senior      MATH        4.0
-   1510        Jordan       Freshman    PHYS        3.0
-   1709        Cassandra    Junior      SOAN        2.8
+   productCode  productName
+   -----------  ------------------------
+   S24_2000     1960 BSA Gold Star DBD34
    ```
 
-8. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
+8. Identify the offices (by city) that have the least employees and the most employees (answer should include city, numEmps)
 
    ```
-   studentID   studentName  class       major       gpa
-   ----------  -----------  ----------  ----------  ----------
-   1782        Andrew       Sophomore   BUS         3.7
-   1501        Jessica      Freshman    CSCI        3.3
-   1025        John         Senior      ENGL        3.6
-   1510        Jordan       Freshman    MATH        3.0
+   numEmps     city
+   ----------  ----------
+   2           Boston
+   2           London
+   2           NYC
+   2           Tokyo
+   6           San Franci
    ```
 
-<!--
-
-
-9. Find the names, IDs, and the number of courses they are taking, for the students who are enrolled in the most number of courses.
+9. For all Sales Reps list their names (first and last) and the name of the office they work out of and the number of clients they represent. Order by reverse order of numClients
 
    ```
-   studentID   studentName  NumCourses
-   ----------  -----------  ----------
-   1025        John         5
-   1247        Alexis       5
+   firstName   lastName    city        numClients
+   ----------  ----------  ----------  ----------
+   Pamela      Castillo    Paris       10
+   Barry       Jones       London      9
+   George      Vanauf      NYC         8
+   Larry       Bott        London      8
+   Foon Yue    Tseng       NYC         7
+   Gerard      Hernandez   Paris       7
+   Leslie      Jennings    San Franci  6
+   Leslie      Thompson    San Franci  6
+   Julie       Firrelli    Boston      6
+   Steve       Patterson   Boston      6
+   Loui        Bondur      Paris       6
+   Martin      Gerard      Paris       6
+   Andy        Fixter      Sydney      5
+   Peter       Marsh       Sydney      5
+   Mami        Nishi       Tokyo       5
    ```
 
-10. You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so round anything higher than a 4.0 to 4.0. This will likely take two UPDATE statements. Make sure these two statements are done atomically.
+10. List the customer(s) and their total payments (answer should include customerNumber, customerName, totalPayment where totalPayment is the total amount of dollars the customer has paid). Order by totalPayment.
 
     ```
-    (BEFORE)
-    sqlite> select * from student natural join major where major='CSCI';
-    studentID   studentName  class       gpa         major
-    ----------  -----------  ----------  ----------  ----------
-    1381        Tiffany      Junior      4.0         CSCI
-    1709        Cassandra    Junior      2.8         CSCI
-    1316        Austin       Sophomore   2.1         CSCI
-    1911        David        Senior      3.2         CSCI
-    1501        Jessica      Freshman    3.3         CSCI
-    1661        Logan        Freshman    0.5         CSCI
-
-    (AFTER)
-    sqlite> select * from student natural join major where major='CSCI';
-    studentID   studentName  class       gpa         major
-    ----------  -----------  ----------  ----------  ----------
-    1381        Tiffany      Junior      4.0         CSCI
-    1709        Cassandra    Junior      3.8         CSCI
-    1316        Austin       Sophomore   3.1         CSCI
-    1911        David        Senior      4.0         CSCI
-    1501        Jessica      Freshman    4.0         CSCI
-    1661        Logan        Freshman    1.5         CSCI
+    customerNumber  customerName       totalPayment
+    --------------  -----------------  ------------
+    219             Boards & Toys Co.  7918.6
+    198             Auto-Moto Classic  21554.26
+    103             Atelier graphique  22314.36
+    473             Frau da Collezion  25358.32
+    381             Royale Belge       29217.18
+    456             Microscale Inc.    29230.43
+    489             Double Decker Gif  29586.15
+    415             Bavarian Collecta  31310.09
+    173             Cambridge Collect  32198.69
+    362             Gifts4AllAges.com  33533.47
+    328             Tekni Collectable  38281.51
+    347             Men R US Retailer  41506.19
+    487             Signal Collectibl  42570.37
+    144             Volvo Model Repli  43680.65
+    475             West Coast Collec  43748.72
+    471             Australian Collec  44920.76
+    211             King Kong Collect  45480.79
+    344             CAF Imports        46751.14
+    189             Clover Collection  49898.27
+    447             Gift Ideas Corp.   49967.78
+    484             Iberia Gift Impor  50987.85
+    452             Mini Auto Werke    51059.99
+    333             Australian Gift N  55190.16
+    204             Online Mini Colle  55577.26
+    357             GiftsForHim.com    56662.38
+    339             Classic Gift Idea  57939.34
+    256             Auto Associés & C  58876.41
+    450             The Sharp Gifts W  59551.38
+    242             Alpha Cognac       60483.36
+    201             UK Collectables,   61167.18
+    171             Daedalus Designs   61781.7
+    314             Petit Auto         62253.85
+    177             Osaka Souveniers   62361.22
+    495             Diecast Collectab  65541.74
+    412             Extreme Desk Deco  66704.94
+    129             Mini Wheels Co.    66710.56
+    260             Royal Canadian Co  66812.0
+    250             Lyon Souveniers    67659.19
+    216             Enaco Distributor  68520.47
+    233             Québec Home Shopp  68977.67
+    299             Norway Gifts By M  69059.04
+    424             Classic Legends I  69214.33
+    202             Canadian Gift Exc  70122.19
+    455             Super Scale Inc.   70378.65
+    350             Marseille Mini Au  71547.53
+    240             giftsbymail.co.uk  71783.75
+    181             Vitachrome Inc.    72497.64
+    379             Collectables For   73533.65
+    209             Mini Caravy        75859.32
+    128             Blauer See Auto,   75937.76
+    448             Scandinavian Gift  76776.44
+    486             Motor Mint Distri  77726.59
+    319             Mini Classics      78432.16
+    112             Signal Gift Store  80180.98
+    239             Collectable Mini   80375.24
+    324             Stylish Desk Deco  80556.73
+    249             Amica Models & Co  82223.23
+    382             Salzburg Collecta  85060.0
+    406             Auto Canal+ Petit  86436.97
+    172             La Corne Dabondan  86553.52
+    385             Cruz & Sons Co.    87468.3
+    462             FunGiftIdeas.com   88627.49
+    259             Toms Spezialitäte  89223.14
+    227             Heintze Collectab  89909.8
+    386             Lordine Souvenier  90143.31
+    286             Martas Replicas C  90545.37
+    282             Souveniers And Th  91655.61
+    205             Toys4GrownUps.com  93803.3
+    175             Gift Depot Inc.    95424.63
+    186             Toys of Finland,   95546.46
+    311             Oulu Toy Supplies  95706.15
+    167             Herkku Gifts       97562.47
+    157             Diecast Classics   98509.25
+    320             Mini Creations Lt  101872.52
+    334             Suominen Souvenie  103896.74
+    121             Baane Mini Import  104224.79
+    161             Technics Stores I  104545.22
+    166             Handji Gifts& Co   105420.57
+    398             Tokyo Collectable  105548.73
+    145             Danish Wholesale   107446.5
+    131             Land of Toys Inc.  107639.94
+    298             Vida Sport, Ltd    108777.92
+    458             Corrida Auto Repl  112440.09
+    496             Kellys Gift Shop   114497.19
+    363             Online Diecast Cr  116449.29
+    119             La Rochelle Gifts  116949.68
+    353             Reims Collectable  126983.19
+    278             Rovelli Gifts      127529.69
+    146             Saveley & Henriot  130305.35
+    321             Corporate Gift Id  132340.78
+    276             Annas Decorations  137034.22
+    187             AV Stores, Co.     148410.09
+    323             Down Under Souven  154622.08
+    148             Dragon Souveniers  156251.03
+    151             Muscle Machine In  177913.95
+    114             Australian Collec  180585.07
+    124             Mini Gifts Distri  584188.24
+    141             Euro+ Shopping Ch  715738.98
     ```
 
-11. After learning about the GPA mishap, the college now wants to add a new department, Philosophy (PHIL), which will housed in a newly constructed building called Plato's Cave. They will offer a course on PHIL 101: Ethics taught in room CAVE, and all CSCI majors are now required to take it. Add the new department, course, and enrollments. You need to do this in just **three separate statements**. Run these statements in such a way that they cannot be broken up (atomically).
+11. List the product number, product name, and customer name such that the customer has never ordered that product. Order by customerName, productCode.
 
     ```
-    (Showing the contents of the Dept, course, and enroll tables.)
-
-    sqlite> select * from dept order by deptID;
-    deptID      deptName            building
-    ----------  ------------------  -------------
-    BUS         School of Business  McIntyre Hall
-    CSCI        School of Computer  Thompson Hall
-    ENGL        Department of Engl  Wyatt Hall
-    HIST        Department of Hist  Wyatt Hall
-    MATH        Department of Math  Tower of Babe
-    PHIL        Philosophy          Plato's Cave
-    PHYS        Department of Phys  Harned Hall
-    SOAN        Department of Anth  Wyatt Hall
-
-
-    sqlite> select * from course order by deptID,CourseNum;
-    CourseNum   deptID      CourseName  Location    meetDay     meetTime
-    ----------  ----------  ----------  ----------  ----------  ----------
-    122         BUS         Economics   WY 30       MW          13:30
-    351         BUS         Finance     WY 29       TR          12:00
-    122         CSCI        How to Cod  TH 19       TR          12:00
-    351         CSCI        Database S  TH 19       MW          12:00
-    453         CSCI        Capstone i  TH 398      MWF         16:00
-    460         CSCI        Operating   TH 8        MW          14:00
-    520         CSCI        High Perfo  WY 307      TR          15:00
-    101         ENGL        How to Rea  WY 100      MWF         13:00
-    102         ENGL        How to Wri  WY 100      MWF         14:00
-    520         ENGL        Shakespear  HH 20       TR          13:00
-    120         MATH        Algebra     MH 10       MW          12:00
-    230         MATH        Linear Alg  HH 308      TR          15:00
-    320         MATH        Discrete M  TH 307      F           11:00
-    330         MATH        Trigonomet  WEY 113     TR          08:30
-    460         MATH        Calculus 3  WEY 102     TR          12:30
-    101         PHIL        Ethics      CAVE        TR          16:00
-    101         PHYS        How Things  HH 191      MWF         10:00
-    401         PHYS        Quantum Me  HH 372      TR          09:00
-    101         SOAN        Sociology   WY 105      MWF         08:00
-    102         SOAN        Sociology   WY 205      MTWRF       09:00
-
-
-    sqlite> select * from enroll order by deptID,courseNum;
-    CourseNum   deptID      StudentID
-    ----------  ----------  ----------
-    122         BUS         1510
-    122         BUS         1316
-    122         BUS         1282
-    351         BUS         1510
-    351         BUS         1661
-    351         BUS         1025
-    351         BUS         1304
-    351         CSCI        1282
-    351         CSCI        1510
-    351         CSCI        1661
-    351         CSCI        1247
-    351         CSCI        1501
-    351         CSCI        1911
-    351         CSCI        1025
-    351         CSCI        1934
-    453         CSCI        1247
-    453         CSCI        1911
-    453         CSCI        1934
-    460         CSCI        1316
-    460         CSCI        1689
-    460         CSCI        1661
-    520         CSCI        1247
-    520         CSCI        1025
-    101         ENGL        1247
-    101         ENGL        1225
-    102         ENGL        1304
-    520         ENGL        1689
-    520         ENGL        1782
-    520         ENGL        1304
-    520         ENGL        1025
-    520         ENGL        1934
-    120         MATH        1101
-    230         MATH        1101
-    230         MATH        1911
-    230         MATH        1782
-    320         MATH        1247
-    460         MATH        1661
-    101         PHIL        1381
-    101         PHIL        1709
-    101         PHIL        1316
-    101         PHIL        1911
-    101         PHIL        1501
-    101         PHIL        1661
-    101         PHYS        1304
-    101         PHYS        1025
-    401         PHYS        1101
-    102         SOAN        1709
+    productCode  productName                            customerName
+    -----------  -------------------------------------  -------------
+    S10_1678     1969 Harley Davidson Ultimate Chopper  ANG Resellers
+    S10_1949     1952 Alpine Renault 1300               ANG Resellers
+    S10_2016     1996 Moto Guzzi 1100i                  ANG Resellers
+    S10_4698     2003 Harley-Davidson Eagle Drag Bike   ANG Resellers
+    S10_4757     1972 Alfa Romeo GTA                    ANG Resellers
+    S10_4962     1962 LanciaA Delta 16V                 ANG Resellers
+    S12_1099     1968 Ford Mustang                      ANG Resellers
+    S12_1108     2001 Ferrari Enzo                      ANG Resellers
+    S12_1666     1958 Setra Bus                         ANG Resellers
+    S12_2823     2002 Suzuki XREO                       ANG Resellers
+    (too many more to list)
     ```
 
-12. To prevent future tampering, the university wants you to log any activity in the Student table. Create a new table called `student_log` to store the following information: activity in question (insert, deletion, update), student's name, all the old values, and the new values. Finally, create the triggers that will record these activities.
+12. List the profit per product that the company would make if it were able to sell all of that product at MSRP (answer should include productName, profit). Order by profit.
 
-Put these statements in the DDL file that was provided to you. -->
+    ```
+    productName               profit
+    ------------------------  ----------
+    1960 BSA Gold Star DBD34  582.75
+    1928 Ford Phaeton Deluxe  4864.72
+    1997 BMW F650 ST          5868.66
+    1968 Ford Mustang         6747.64
+    Pont Yacht                8818.2
+    F/A 18 Hornet 1/72        14105.6
+    1911 Ford Town Car        14709.6
+    1970 Chevy Chevelle SS 4  24371.25
+    1996 Peterbilt 379 Stake  25258.42
+    2002 Yamaha YZR M1        28314.0
+    The Mayflower             31919.47
+    1962 City of Detroit Str  34693.05
+    P-51-D Mustang            35196.16
+    1936 Mercedes Benz 500k   40121.68
+    Diamond T620 Semi-Skirte  48219.36
+    1958 Chevy Corvette Limi  49441.9
+    1928 Mercedes-Benz SSK    52712.12
+    1969 Dodge Super Bee      60117.12
+    The Schooner Bluenose     61974.99
+    1952 Citroen-15CV         64788.24
+    1938 Cadillac V-16 Presi  68868.93
+    1926 Ford Fire Engine     72345.3
+    18th century schooner     76963.9
+    1939 Chevrolet Deluxe Co  77865.84
+    1954 Greyhound Scenicrui  80845.62
+    Boeing X-32A JSF          82034.73
+    1958 Setra Bus            92797.83
+    1969 Ford Falcon          94378.53
+    The Titanic               96000.48
+    1941 Chevrolet Special D  98187.62
+    1957 Corvette Convertibl  98508.63
+    1900s Vintage Tri-Plane   99822.32
+    1949 Jaguar XK 120        102507.0
+    1970 Dodge Coronet        103601.82
+    1940s Ford truck          113608.96
+    1937 Horch 930V Limousin  114483.9
+    1930 Buick Marquette Pha  117087.96
+    1957 Ford Thunderbird     118925.54
+    1999 Yamaha Speed Boat    146552.19
+    1982 Ducati 996 R         148687.69
+    1982 Ducati 900 Monster   151574.4
+    1940 Ford Pickup Truck    152442.42
+    1974 Ducati 350 Mk3 Desm  153418.72
+    1962 Volkswagen Microbus  154629.15
+    1928 British Royal Navy   154800.36
+    1936 Harley Davidson El   158333.38
+    1934 Ford V8 Coupe        158793.39
+    1972 Alfa Romeo GTA       163640.64
+    1969 Chevrolet Camaro Z2  164794.5
+    1982 Lamborghini Diablo   166198.96
+    1913 Ford Model T Speeds  169780.17
+    1966 Shelby Cobra 427 S/  173202.61
+    HMS Bounty                177465.69
+    1939 Cadillac Limousine   180544.65
+    1971 Alpine Renault 1600  181086.75
+    1936 Chrysler Airflow     188070.3
+    1900s Vintage Bi-Plane    203572.92
+    1948 Porsche 356-A Roads  203880.6
+    Collectable Wooden Train  214656.0
+    1980’s GM Manhattan Expr  216095.62
+    1957 Vespa GS150          224672.58
+    1917 Grand Touring Sedan  226909.2
+    1993 Mazda RX-7           230669.25
+    The Queen Mary            232419.84
+    1940 Ford Delivery Sedan  233191.62
+    American Airlines: B767-  234749.79
+    1936 Mercedes-Benz 500K   256027.75
+    18th Century Vintage Hor  263528.16
+    Corsair F4U ( Bird Cage)  264986.8
+    1903 Ford Model A         267218.77
+    1970 Plymouth Hemi Cuda   271144.44
+    The USS Constitution Shi  271349.73
+    1956 Porsche 356A Coupe   278058.0
+    1970 Triumph Spitfire     286676.5
+    1904 Buick Runabout       291061.9
+    1998 Chrysler Plymouth P  293927.28
+    America West Airlines B7  298470.76
+    1962 LanciaA Delta 16V    300977.12
+    1950s Chicago Surface Li  304647.42
+    1992 Porsche Cayenne Tur  319227.0
+    1932 Alfa Romeo 8C2300 S  319589.81
+    1917 Maxwell Touring Car  329734.71
+    1996 Moto Guzzi 1100i     330918.75
+    American Airlines: MD-11  333043.2
+    1997 BMW R 1100 S         363035.52
+    1937 Lincoln Berline      366149.16
+    1969 Harley Davidson Ult  371978.37
+    1982 Camaro Z28           378735.08
+    1912 Ford Model T Delive  381596.8
+    1961 Chevrolet Impala     381725.19
+    1957 Chevy Pickup         384650.0
+    1968 Dodge Charger        385720.44
+    1985 Toyota Supra         390980.48
+    1964 Mercedes Tour Bus    395310.46
+    2001 Ferrari Enzo         406087.99
+    1969 Dodge Charger        413236.89
+    ATA: B757-300             421527.92
+    2002 Chevy Corvette       424786.62
+    1969 Corvair Monza        427757.64
+    1980s Black Hawk Helicop  428638.6
+    1995 Honda Civic          472573.92
+    1965 Aston Martin DB5     528776.16
+    2003 Harley-Davidson Eag  572936.48
+    1999 Indy 500 Monte Carl  614259.36
+    1932 Model A Ford J-Coup  642152.1
+    1976 Ford Gran Torino     670834.5
+    1948 Porsche Type 356 Ro  711288.8
+    1992 Ferrari 360 Spider   763249.68
+    2002 Suzuki XREO          843246.95
+    1952 Alpine Renault 1300  845334.6
+    ```
+
+13. List the average order size for each customer (answer should include customerName, avgQuantity) Order by customer name.
+
+    ```
+    customerName    avgQuantity
+    --------------  ----------------
+    AV Stores, Co.  592.666666666667
+    Alpha Cognac    229.0
+    Amica Models &  421.5
+    Annas Decorati  367.25
+    Atelier graphi  90.0
+    Australian Col  235.0
+    Australian Col  385.2
+    Australian Gif  181.666666666667
+    Auto Associés   318.5
+    Auto Canal+ Pe  333.666666666667
+    Auto-Moto Clas  95.6666666666667
+    Baane Mini Imp  270.5
+    Bavarian Colle  401.0
+    Blauer See Aut  202.75
+    Boards & Toys   51.0
+    CAF Imports     234.0
+    Cambridge Coll  178.5
+    Canadian Gift   351.5
+    Classic Gift I  334.0
+    Classic Legend  240.0
+    Clover Collect  245.0
+    Collectable Mi  477.0
+    Collectables F  265.0
+    Corporate Gift  361.75
+    Corrida Auto R  387.666666666667
+    Cruz & Sons Co  320.333333333333
+    Daedalus Desig  349.5
+    Danish Wholesa  263.0
+    Diecast Classi  277.75
+    Diecast Collec  347.5
+    Double Decker   178.5
+    Down Under Sou  338.2
+    Dragon Souveni  304.8
+    Enaco Distribu  294.0
+    Euro+ Shopping  358.730769230769
+    Extreme Desk D  351.666666666667
+    Frau da Collez  136.0
+    FunGiftIdeas.c  301.0
+    Gift Depot Inc  301.0
+    Gift Ideas Cor  222.0
+    Gifts4AllAges.  345.333333333333
+    GiftsForHim.co  334.333333333333
+    Handji Gifts&   309.0
+    Heintze Collec  441.0
+    Herkku Gifts    324.333333333333
+    Iberia Gift Im  294.5
+    Kellys Gift Sh  411.75
+    King Kong Coll  298.0
+    La Corne Dabon  278.666666666667
+    La Rochelle Gi  458.0
+    Land of Toys I  407.75
+    Lordine Souven  426.666666666667
+    Lyon Souvenier  228.0
+    Marseille Mini  268.0
+    Martas Replica  488.0
+    Men R US Retai  250.0
+    Microscale Inc  190.5
+    Mini Auto Werk  177.333333333333
+    Mini Caravy     259.666666666667
+    Mini Classics   464.5
+    Mini Creations  380.0
+    Mini Gifts Dis  374.470588235294
+    Mini Wheels Co  230.666666666667
+    Motor Mint Dis  243.333333333333
+    Muscle Machine  443.75
+    Norway Gifts B  393.5
+    Online Diecast  416.0
+    Online Mini Co  286.0
+    Osaka Souvenie  346.0
+    Oulu Toy Suppl  370.0
+    Petit Auto      265.333333333333
+    Québec Home Sh  239.0
+    Reims Collecta  286.6
+    Rovelli Gifts   550.0
+    Royal Canadian  436.5
+    Royale Belge    69.5
+    Salzburg Colle  360.5
+    Saveley & Henr  476.0
+    Scandinavian G  453.0
+    Signal Collect  257.0
+    Signal Gift St  309.666666666667
+    Souveniers And  400.25
+    Stylish Desk D  312.333333333333
+    Suominen Souve  343.666666666667
+    Super Scale In  318.0
+    Technics Store  294.75
+    Tekni Collecta  329.333333333333
+    The Sharp Gift  414.0
+    Tokyo Collecta  287.5
+    Toms Spezialit  468.0
+    Toys of Finlan  350.333333333333
+    Toys4GrownUps.  353.333333333333
+    UK Collectable  348.666666666667
+    Vida Sport, Lt  539.0
+    Vitachrome Inc  262.333333333333
+    Volvo Model Re  161.75
+    West Coast Col  255.5
+    giftsbymail.co  447.5
+    ```
+
+#### Extensions
+
+If you're done early, or are looking for more practice, consider the following exercises.
+
+- Give the relational algebra expressions for all the above queries
+- Go to the [author's page](https://www.richardtwatson.com/dm6e/Reader/ClassicModels.html) for many more query examples!
 
 #### Grading
 
 ```
-Files not submitted in plain-text format will be returned without a grade. (Do not submit your queries in a Word or PDF file!)
-
-[15pt] Completion of the queries Q1 - Q3. (5pts each)
-[50pt] Completion of queries Q4 - Q8.  (10pts each)
-
-Total: 65pts
+Attendance is required for the 2-day lab.
 ```
 
-<!--
-```
-Files submitted not in plain-text format will be returned without a grade.
+<!-- #### Submitting Your Assignment
 
-[15pt] Completion of the queries Q1 - Q3. Each query is of equal value (5pts each)
-[90pt] Completion of remaining problems. Each problem is of equal value (10pts each)
+After you have completed the homework, use the following to submit your work on canvas.
+Remove all .class files from the program directory and zip up your project.
 
-Total: 105pts
-``` -->
-
-#### Submitting Your Assignment
-
-<!-- After you have completed the homework, use the following to submit your work on [Canvas](https://canvas.pugetsound.edu).
-Please submit the modified DDL file (with your triggers and the new audit table defined) and the file containing all of your queries. Zip them together. Files not in plain-text will be returned without a grade. -->
-
-Navigate to our course on [Canvas](https://canvas.pugetsound.edu). Click on this Homework link, and you should be able to drag your file right into the submission box. Click "Save Changes". I just need the file that contains all of your queries. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+Navigate to our course on Canvas. You should see the Homework 6 Dropbox. Click on this link, and you should be able to drag your file right into the submission box. Click "Save Changes". You may submit as often as you'd like before the deadline. I will grade the most recent copy. -->
 
 #### Credits
 
-Written by David Chiu.
+Classic Models sample database by Richard T. Watson. Modified for SQLite by David.
