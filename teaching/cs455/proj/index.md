@@ -9,14 +9,18 @@ The term project is open-ended, and you need to write a proposal telling me what
 - Your code is to be managed and submitted via github, with instructions on how to build and run it.
 
 Here are just some ideas on what you and your team can do:
+
 - Build a small web application (like the kind of work you did for Software Engineering) that requires database back-end support. The novelty will be the need to learn back-end programming to get SQLite or some other RDBMS integrated into your application. It is essential that you learn some security/privacy measures, such as SQL Injection and secured password storage. I would prefer that you do not simply update a previous project.
-  - Novelty: It requires you to learn how to use Node.js libraries for backend programming and database APIs. It requires you understand how to prevent SQL injection attacks.
+
+  - *Novelty:* It requires you to learn how to use Node.js libraries for backend programming and database APIs. It requires you understand how to prevent SQL injection attacks.
 
 - You could also try building a web application, but instead of a relational database, use a NoSQL database such as MongoDB that are becoming increasingly common.
-  - Novelty: Be able to rationalize why one would choose a NoSQL model over the relational model and vice versa. It also requires you to know how to integrate an existing NoSQL database into your web app.
+
+  - *Novelty:* Be able to rationalize why one would choose a NoSQL model over the relational model and vice versa. It also requires you to know how to integrate an existing NoSQL database into your web app.
 
 - Learn to deploy parallel/distributed processing tools like Hadoop. You must use it to solve a real-world problem that requires crunching massive amounts of data (i.e., it is not sufficient to process a toy example.) You must also demonstrate that the Hadoop-based implementation is faster than a single-threaded implementation. For instance, you can use Hadoop to implement Google's PageRank algorithm over the Wikipedia data set.
-  - Novelty: Learning to program using the Map-Reduce paradigm for big-data processing.
+
+  - *Novelty:* Learning to program using the Map-Reduce paradigm for big-data processing.
 
 - Implement a small database system using the language of your choice that supports the evaluation of relational algebra expressions. 
 
@@ -66,10 +70,8 @@ A short proposal outlining your project should be submitted to me before the pro
 
 - **Section III: Project Management** -- In this section, you will define each team member's role by assigning features to specific team members. As I mentioned earlier, not all features are the same size and time-commitment, so it's common for a team member to be assigned more features than others. And conversely, some complicated features may require multiple students to work on it simultaneously. Some features are also dependent on other features to be implemented first. Therefore, it's important to use software-engineering tools to ensure that everybody's on the same page.
 
-  - Make a list of tools you'll be using to help you manage your project and workflow. List each tool by name, along with their intended purpose (e.g., git, figma, slack, trello, etc.)
-    - This is a good time to explore what people use in industry to communicate, or to track bugs, or to design user interfaces, etc.
-    <!-- - You should summarize how you intend to communicate to your team members (e.g., meeting frequency).
-  - You should use project-management tools like [Trello](https://trello.com) to organize your application's features, notes, and to track overall progress. -->
+  - Make a list of tools you'll be using to help you manage your project and workflow. List each tool by name, along with their intended purpose (e.g., git, Figma, slack, trello, etc.)
+
   - Finally, you must produce a Gantt Chart that communicates your timeline and milestones. Throughout the weeks of your project's implementation, I will hold you accountable based on your proposed timeline, with the understanding that plans and features do change. Here is an example Gantt Chart:
 
     <img src="figures/timeline.png" width="550px"/>
@@ -79,6 +81,7 @@ A short proposal outlining your project should be submitted to me before the pro
 
 #### Presentation/Demo Requirements (5% final course grade)
 Be prepared to give a ~15 minute presentation to the class, allowing a ~3 minutes for question and answer. The demo should showcase your application, and every team member must have equal participation in the demo (you will be graded on balance). At minimum, your presentation should show:
+
   - A brief introduction to your project.
   - If applicable, include the DB schema which should be normalized to at least 3NF.
   - List technical (and other) challenges that you had to overcome.
