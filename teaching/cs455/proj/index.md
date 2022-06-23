@@ -8,6 +8,21 @@ The term project is open-ended, and you need to write a proposal telling me what
 - You must make a final presentation during the last week of classes.
 - Your code is to be managed and submitted via github, with instructions on how to build and run it.
 
+
+#### Important Dates
+- Team preferences due: TBD
+- Team assignments (David): TBD
+- Proposal submission deadline: TBD
+- Presentation / demo: Last week
+- Scrum logs and check-ins: weekly, ongoing
+- Code submission: Finals week
+
+
+
+##### Importance of Team Buy-in
+I strongly recommend that the team comes to a consensus on the project vision, so that everyone is equally invested in taking ownership. Project visions borne out of one or two students generally doesn't work well. Something like this has happened in the very recent past... A student was really into Pokemon cards. They convinced the rest of their team members to write a web app to organize all the Pokemon cards in the world, and so that users can manage which cards they own and even trade them and battle each other. Other teammates didn't understand how the battles were played out, which was more complicated than they first thought, but went along with it anyway. The other members were never really invested enough to stay motivated to work on the project, and let's just say that it didn't end well.
+
+
 Here are just some ideas on what you and your team can do:
 
 - Build a small web application (like the kind of work you did for Software Engineering) that requires database back-end support. The novelty will be the need to learn back-end programming to get SQLite or some other RDBMS integrated into your application. It is essential that you learn some security/privacy measures, such as SQL Injection and secured password storage. I would prefer that you do not simply update a previous project.
@@ -28,18 +43,6 @@ Here are just some ideas on what you and your team can do:
 
 - And more! You have a good amount of freedom to propose anything, as long as it's related to database systems. It just needs to satisfy the *novelty* and *significant implementation* requirements.
 
-
-#### Importance of Team Buy-in
-I strongly recommend that the team comes to a consensus on the project vision, so that everyone is equally invested in taking ownership. Project visions borne out of one or two students generally doesn't work well. Something like this has happened in the very recent past... A student was really into Pokemon cards. They convinced the rest of their team members to write a web app to organize all the Pokemon cards in the world, and so that users can manage which cards they own and even trade them and battle each other. Other teammates didn't understand how the battles were played out, which was more complicated than they first thought, but went along with it anyway. The other members were never really invested enough to stay motivated to work on the project, and let's just say that it didn't end well.
-
-
-#### Important Dates
-- Team preferences due: TBD
-- Team assignments (David): TBD
-- Proposal submission deadline: TBD
-- Presentation / demo: Last week
-- Scrum logs and check-ins: weekly, ongoing
-- Code submission: Finals week
 
 
 #### Project Proposal Requirements
