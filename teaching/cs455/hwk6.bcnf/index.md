@@ -87,7 +87,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     So just like the previous assignment, you will need to be familiar with [Java's Set interface](https://docs.oracle.com/javase/7/docs/api/java/util/Set.html). Know how to take a set union, intersection, difference, and how to iterate through Sets.
 
 
-    All of your work for the methods below will go inside the `Normalizer` class. Implement the following methods. As before, you don't need to emphasize the efficiency of your algorithms. You are welcome to implement as many helper methods as you need.
+    All of your work will go inside the `Normalizer` class as static methods. As before, you don't need to worry about the efficiency of your algorithms (because many of them are NP-Hard). You are welcome to implement as many helper methods as you need.
 
 4. Write `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. You should thrown an `IllegalArgumentException` if an FD refers to an attribute that is not in the given relational schema. The Attribute Set Closure algorithm you saw in class would be of use here. Here is an example that we saw in the slides:
 
