@@ -248,7 +248,7 @@ the split.
 any input structure.
 
 [Misc] Your program must be written in Java. Non-Java programs will be returned
-       without a grade.
+without a grade.
 ```
 
 #### Submitting Your Assignment
