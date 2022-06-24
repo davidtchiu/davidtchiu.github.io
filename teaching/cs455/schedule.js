@@ -58,33 +58,33 @@ let days = {
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
-    // projects: [
-    //   {
-    //     name: "Proj 1",
-    //     title: "Backend Development with Node.js",
-    //     url: "proj1.cloud/",
-    //     due: "9/20/2021",
-    //   },
-    //   {
-    //     name: "Proj 2",
-    //     title: "Project Planning",
-    //     url: "proj3.planning/",
-    //     due: "11/1/2021",
-    //   },
-    //   {
-    //     name: "Proj 3",
-    //     title: "Implementation",
-    //     url: "proj4.impl/",
-    //     due: "12/10/2021",
-    //   },
-    // ],
+    projects: [
+      {
+        name: "Project",
+        title: "Database Term Project",
+        url: "proj/",
+        // due: "9/20/2021",
+      },
+      // {
+      //   name: "Proj 2",
+      //   title: "Project Planning",
+      //   url: "proj3.planning/",
+      //   due: "11/1/2021",
+      // },
+      // {
+      //   name: "Proj 3",
+      //   title: "Implementation",
+      //   url: "proj4.impl/",
+      //   due: "12/10/2021",
+      // },
+    ],
 
     ////////////////////////////////// LABS ////////////////////////////////
     labs: [
       {
         name: "Lab",
-        title: "2-Day SQL Bootcamp",
-        url: "lab.sql/",
+        title: "SQL Lab!",
+        url: "lab.pplsoft/",
         // due: "10/5/2021",
       },
     ],
