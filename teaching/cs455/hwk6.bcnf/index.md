@@ -117,14 +117,15 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
   // People(ssn, name)
   Set<String> People = new HashSet<>(Arrays.asList("ssn", "name"));
   FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
-  FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
+  FD f2 = new FD(Arrays.asList("ssn"), Arrays.asList("eyecolor")); // ssn --> eyecolor
   FDSet fdset = new FDSet(f1, f2);
 
   System.out.println("Superkeys: " + Normalizer.findSuperkeys(People, fdset));
   ```
 
   ```
-  Exception in thread "main" java.lang.IllegalArgumentException: FD refers to unknown attributes: [name,ssn] --> [eyecolor]
+  Exception in thread "main" java.lang.IllegalArgumentException
+  FD refers to unknown attributes: [name,ssn] --> [eyecolor]
     at Normalizer.findSuperkeys(Normalizer.java:132)
     at Main.main(Main.java:15)
   ```
