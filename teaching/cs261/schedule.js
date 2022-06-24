@@ -210,15 +210,15 @@ let days = {
     "Lab 9: Sorting Lab",
     "Tree traversal, start BST",
     "BST (cont.): contains(), add(), remove()",
-    // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
+    // wk 13 
     "Finish BST: performance, size(), smallest()",
     "Lab 10: BST Lab",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
     "Start Maps",
-    "HashMap cont.",
     "Lab 11: Open Addressing lab",
+    "HashMap cont.",
     "HashMap: chaining",
     // wk 15
     "<strong><emph>Review</emph></strong>",
