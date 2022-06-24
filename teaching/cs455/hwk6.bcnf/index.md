@@ -87,133 +87,133 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     So just like the previous assignment, you will need to be familiar with [Java's Set interface](https://docs.oracle.com/javase/7/docs/api/java/util/Set.html). Know how to take a set union, intersection, difference, and how to iterate through Sets.
 
 
-4. All of your work will go inside the `Normalizer` class. Implement the following methods. As before, you don't need to emphasize the efficiency of your algorithms. You are welcome to implement as many helper methods as you need.
+    All of your work for the methods below will go inside the `Normalizer` class. Implement the following methods. As before, you don't need to emphasize the efficiency of your algorithms. You are welcome to implement as many helper methods as you need.
 
-    - `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. You should thrown an `IllegalArgumentException` if an FD refers to an attribute that is not in the given relational schema. The Attribute Set Closure algorithm you saw in class would be of use here. Here is an example that we saw in the slides:
+4. Write `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. You should thrown an `IllegalArgumentException` if an FD refers to an attribute that is not in the given relational schema. The Attribute Set Closure algorithm you saw in class would be of use here. Here is an example that we saw in the slides:
 
-      ```java
-      // people(ssn, name, eyecolor)
-      Set<String> people = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
-      FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
-      FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
-      FDSet fdset = new FDSet(f1, f2);
-      System.out.println("Superkeys: " + Normalizer.findSuperkeys(people, fdset));
-      ```
-      I've formatted the output below for readability:
-      ```
-      Superkeys: [
-        [ssn],
-        [ssn, eyecolor],
-        [name, ssn],
-        [name, ssn, eyecolor]
-      ]
-      ```
-      Here's an IllegalArgumentException because `eyecolor` is not an attribute in the given schema, but appears in an FD:
-      ```java
-      // People(ssn, name)
-      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name"));
-      FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
-      FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
-      FDSet fdset = new FDSet(f1, f2);
+```java
+// people(ssn, name, eyecolor)
+Set<String> people = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
+FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
+FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
+FDSet fdset = new FDSet(f1, f2);
+System.out.println("Superkeys: " + Normalizer.findSuperkeys(people, fdset));
+```
+I've formatted the output below for readability:
+```
+Superkeys: [
+  [ssn],
+  [ssn, eyecolor],
+  [name, ssn],
+  [name, ssn, eyecolor]
+]
+```
+Here's an IllegalArgumentException because `eyecolor` is not an attribute in the given schema, but appears in an FD:
+```java
+// People(ssn, name)
+Set<String> People = new HashSet<>(Arrays.asList("ssn", "name"));
+FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
+FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
+FDSet fdset = new FDSet(f1, f2);
 
-      System.out.println("Superkeys: " + Normalizer.findSuperkeys(People, fdset));
-      ```
-      ```
-      Exception in thread "main" java.lang.IllegalArgumentException: FD refers to unknown attributes: [name,ssn] --> [eyecolor]
-        at Normalizer.findSuperkeys(Normalizer.java:132)
-        at Main.main(Main.java:15)
-        ```
+System.out.println("Superkeys: " + Normalizer.findSuperkeys(People, fdset));
+```
+```
+Exception in thread "main" java.lang.IllegalArgumentException: FD refers to unknown attributes: [name,ssn] --> [eyecolor]
+  at Normalizer.findSuperkeys(Normalizer.java:132)
+  at Main.main(Main.java:15)
+```
 
-    - `isBCNF(Set<String> rel, FDSet fdset)` -- This method determines if the given relational schema is in BCNF with respect to the FD set. Recall that a relational schema is in BCNF iff the left-hand side of all **non-trivial** FDs is a superkey. In the following example, the relational schema we showed previously is in BCNF:
+5. Write `isBCNF(Set<String> rel, FDSet fdset)` -- This method determines if the given relational schema is in BCNF with respect to the FD set. Recall that a relational schema is in BCNF iff the left-hand side of all **non-trivial** FDs is a superkey. In the following example, the relational schema we showed previously is in BCNF:
 
-      ```java
-      FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
-      FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
-      FDSet fdset = new FDSet(f1, f2);
+```java
+FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
+FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
+FDSet fdset = new FDSet(f1, f2);
 
-      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
-      System.out.println("BCNF? " + Normalizer.isBCNF(People, fdset));
-      ```
-      ```
-      BCNF? true
-      ```
+Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
+System.out.println("BCNF? " + Normalizer.isBCNF(People, fdset));
+```
+```
+BCNF? true
+```
 
-      Here's an example in which People violates BCNF (due to `f3`, as `name` is not a superkey):
-      ```java
-      FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
-      FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
-      FD f3 = new FD(Arrays.asList("name"), Arrays.asList("eyecolor")); // name --> eyecolor (violates BCNF)
-      FDSet fdset = new FDSet(f1, f2, f3);
+Here's an example in which People violates BCNF (due to `f3`, as `name` is not a superkey):
+```java
+FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
+FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
+FD f3 = new FD(Arrays.asList("name"), Arrays.asList("eyecolor")); // name --> eyecolor (violates BCNF)
+FDSet fdset = new FDSet(f1, f2, f3);
 
-      Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
-      System.out.println("BCNF? " + Normalizer.isBCNF(People, fdset));
-      ```
-      ```
-      BCNF? false
-      ```
+Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
+System.out.println("BCNF? " + Normalizer.isBCNF(People, fdset));
+```
+```
+BCNF? false
+```
       
 
-    - Finally, `BCNFDecompose(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set, and then returns a set of relational schemas that satisfy BCNF. For ease of grading, please print some information (the current relational schema, its FD Set, and its superkeys) at each decision point (as we do on the board in class) so that I can trace the correctness of your algorithm. 
+6.  Finally, `BCNFDecompose(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set, and then returns a set of relational schemas that satisfy BCNF. For ease of grading, please print some information (the current relational schema, its FD Set, and its superkeys) at each decision point (as we do on the board in class) so that I can trace the correctness of your algorithm. 
     
-    *Important:* After a split, it is imperative that your algorithm redistributes all FDs in the closure ($$F^+$$) of the given `fdset`. In the example below, notice how `A --> C` is not explicitly listed, but is held in the closure via transitivity. After splitting into `[A, B]` and `[A, C, D]`, had you not distributed `A --> C` to `[A, C, D]`, then the algorithm would've falsely assumed that `[A, C, D]` was in BCNF!
+  *Important:* After a split, it is imperative that your algorithm redistributes all FDs in the closure ($$F^+$$) of the given `fdset`. In the example below, notice how `A --> C` is not explicitly listed, but is held in the closure via transitivity. After splitting into `[A, B]` and `[A, C, D]`, had you not distributed `A --> C` to `[A, C, D]`, then the algorithm would've falsely assumed that `[A, C, D]` was in BCNF!
 
-      ```java
-      // R(A,B,C)
-      Set<String> S = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
-      FD s1 = new FD(Arrays.asList("A"), Arrays.asList("B")); // A --> B
-      FD s2 = new FD(Arrays.asList("B"), Arrays.asList("C")); // B --> C
-      FDSet fdsetS = new FDSet(s1, s2);
-      System.out.println("Final BCNF Schemas: " + Normalizer.BCNFDecompose(S, fdsetS));
-      ```
-      ```
-      BCNF START
-      Current schema = [A, B, C, D]
-      Current schema's superkeys = [[A, D], [A, B, D], [A, C, D], [A, B, C, D]]
-      *** Splitting on A --> B ***
-      Left Schema = [A, B]
-      Left Schema's superkeys = [[A], [A, B]]
-      Right Schema = [A, C, D]
-      Right Schema's superkeys: [[A, D], [A, C, D]]
-        Current schema = [A, C, D]
-        Current schema's superkeys = [[A, D], [A, C, D]]
-        *** Splitting on A --> C ***
-        Left Schema = [A, C]
-        Left Schema's superkeys = [[A], [A, C]]
-        Right Schema = [A, D]
-        Right Schema's superkeys: [[A, D]]
-      BCNF END
-      Final BCNF Schemas: [[A, B], [A, C], [A, D]]
-      ```
+  ```java
+  // R(A,B,C)
+  Set<String> S = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
+  FD s1 = new FD(Arrays.asList("A"), Arrays.asList("B")); // A --> B
+  FD s2 = new FD(Arrays.asList("B"), Arrays.asList("C")); // B --> C
+  FDSet fdsetS = new FDSet(s1, s2);
+  System.out.println("Final BCNF Schemas: " + Normalizer.BCNFDecompose(S, fdsetS));
+  ```
+  ```
+  BCNF START
+  Current schema = [A, B, C, D]
+  Current schema's superkeys = [[A, D], [A, B, D], [A, C, D], [A, B, C, D]]
+  *** Splitting on A --> B ***
+  Left Schema = [A, B]
+  Left Schema's superkeys = [[A], [A, B]]
+  Right Schema = [A, C, D]
+  Right Schema's superkeys: [[A, D], [A, C, D]]
+    Current schema = [A, C, D]
+    Current schema's superkeys = [[A, D], [A, C, D]]
+    *** Splitting on A --> C ***
+    Left Schema = [A, C]
+    Left Schema's superkeys = [[A], [A, C]]
+    Right Schema = [A, D]
+    Right Schema's superkeys: [[A, D]]
+  BCNF END
+  Final BCNF Schemas: [[A, B], [A, C], [A, D]]
+  ```
 
-      Here's another example of running this algorithm:
-      ```java
-      // U(A,B,C,D,E)
-      Set<String> U = new HashSet<>(Arrays.asList("A", "B", "C", "D", "E"));
-      FD f1 = new FD(Arrays.asList("A", "E"), Arrays.asList("D")); // AE --> D
-      FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
-      FD f3 = new FD(Arrays.asList("D"), Arrays.asList("B")); // D --> B
-      FDSet fdsetU = new FDSet(f1, f2, f3);
-      System.out.println("Final BCNF Schemas: " + Normalizer.BCNFDecompose(U, fdsetU));
-      ```
-      ```
-      BCNF START
-      Current schema = [A, B, C, D, E]
-      Current schema's superkeys = [[A, E], [A, B, E], [A, C, E], [A, D, E], [A, B, C, E], [A, B, D, E], [A, C, D, E], [A, B, C, D, E]]
-      *** Splitting on D --> B ***
-      Left Schema = [B, D]
-      Left Schema's superkeys = [[D], [B, D]]
-      Right Schema = [A, C, D, E]
-      Right Schema's superkeys: [[A, E], [A, C, E], [A, D, E], [A, C, D, E]]
-        Current schema = [A, C, D, E]
-        Current schema's superkeys = [[A, E], [A, C, E], [A, D, E], [A, C, D, E]]
-        *** Splitting on AD --> C ***
-        Left Schema = [A, C, D]
-        Left Schema's superkeys = [[A, D], [A, C, D]]
-        Right Schema = [A, D, E]
-        Right Schema's superkeys: [[A, E], [A, D, E]]
-      BCNF END
-      Final BCNF Schemas: [[B, D], [A, C, D], [A, D, E]]
-      ```
+  Here's another example of running this algorithm:
+  ```java
+  // U(A,B,C,D,E)
+  Set<String> U = new HashSet<>(Arrays.asList("A", "B", "C", "D", "E"));
+  FD f1 = new FD(Arrays.asList("A", "E"), Arrays.asList("D")); // AE --> D
+  FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
+  FD f3 = new FD(Arrays.asList("D"), Arrays.asList("B")); // D --> B
+  FDSet fdsetU = new FDSet(f1, f2, f3);
+  System.out.println("Final BCNF Schemas: " + Normalizer.BCNFDecompose(U, fdsetU));
+  ```
+  ```
+  BCNF START
+  Current schema = [A, B, C, D, E]
+  Current schema's superkeys = [[A, E], [A, B, E], [A, C, E], [A, D, E], [A, B, C, E], [A, B, D, E], [A, C, D, E], [A, B, C, D, E]]
+  *** Splitting on D --> B ***
+  Left Schema = [B, D]
+  Left Schema's superkeys = [[D], [B, D]]
+  Right Schema = [A, C, D, E]
+  Right Schema's superkeys: [[A, E], [A, C, E], [A, D, E], [A, C, D, E]]
+    Current schema = [A, C, D, E]
+    Current schema's superkeys = [[A, E], [A, C, E], [A, D, E], [A, C, D, E]]
+    *** Splitting on AD --> C ***
+    Left Schema = [A, C, D]
+    Left Schema's superkeys = [[A, D], [A, C, D]]
+    Right Schema = [A, D, E]
+    Right Schema's superkeys: [[A, E], [A, D, E]]
+  BCNF END
+  Final BCNF Schemas: [[B, D], [A, C, D], [A, D, E]]
+  ```
 
 
 
