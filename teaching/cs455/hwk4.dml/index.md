@@ -2,7 +2,7 @@
 
 ### Hwk: Writing SQL Queries
 
-The queries you are asked to perform are realistic. The database models a fictitious multinational company that sells.
+The database models a multinational company. The queries you are asked to perform are realistic.
 
 #### Student Outcomes
 
@@ -22,7 +22,7 @@ Start by downloading the database file, and open it up in [Antares](https://anta
 
 Take a moment to study the schema, noting the foreign and primary keys. Browse the data in each relation to familiarize yourself with the database contents. Answer the following queries. I've given you the expected results below each query.
 
-1. List all customer names and their addresses who don't have a specified sales rep. Order by customer name.
+1. Return all customer names and their addresses if they are not represented by a sales rep. Order by customer name.
 
    ```
    customerName   addressLine1  addressLine2  city        state       postalCode
@@ -51,7 +51,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    Warburg Excha  Walserweg 21  NULL          Aachen      NULL        52066
    ```
 
-2. List the names of all customers that have a creditLimit between 100,000 and 200,000 inclusively. Order by customer name.
+2. List the names of all customers that have a credit limit between 100,000 and 200,000 inclusively. Order by customer name.
 
    ```
    customerName    creditLimit
@@ -81,7 +81,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    Vida Sport, Lt  141300.0
    ```
 
-3. List all employees who have the initials of M.P. or P.M., by name. Order by last name.
+3. Return all employees who have the first and last initials of MP or PM. Order by last name.
 
    ```
    firstName   lastName
@@ -90,7 +90,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    Mary        Patterson
    ```
 
-4. List all the products' productNames purchased by Mini Wheels Co. Order the list by product line.
+4. List all the products' names purchased by a company called "Mini Wheels Co." Order the list by product line.
 
    ```
    productName
@@ -116,7 +116,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    1939 Cadillac Limousine
    ```
 
-5. List the customers by customerName whose contact person shares either a first name or last name with any of the company's employees Order by customerName.
+5. List the customers whose contact person shares either a first name or a last name with *any* of the company's employees. Order by customer name.
 
    ```
    customerName
@@ -140,19 +140,8 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    West Coast Collectables Co
    ```
 
-6. List the customers (by name) that are based in the country which is first in the lexicographic order of customer countries. (Hint: In this database instance, that country is Australia). Order by customerName.
 
-   ```
-   customerName
-   ----------------------
-   Annas Decorations, Ltd
-   Australian Collectable
-   Australian Collectors,
-   Australian Gift Networ
-   Souveniers And Things
-   ```
-
-7. Identify the product(s) by productCode and productName that the company has the least stock of. Order by product code.
+6. Return the product(s) by product code and product name that the company has the least stock of. Order by product code. (Hint: Start by counting each product, then find the min of those counts, before identifying which products have those min counts.)
 
    ```
    productCode  productName
@@ -160,7 +149,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    S24_2000     1960 BSA Gold Star DBD34
    ```
 
-8. Identify the offices (by city) that have the least employees and the most employees (answer should include city, numEmps)
+7. Identify the offices (by city) that have the least employees and the most employees (answer should include city, number of employees)
 
    ```
    numEmps     city
@@ -172,7 +161,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    6           San Franci
    ```
 
-9. For all Sales Reps list their names (first and last) and the name of the office they work out of and the number of clients they represent. Order by reverse order of numClients
+8. For all Sales Reps, list their names and the names of the office they work out of, along with the number of clients they represent. Order by reverse order of number of clients
 
    ```
    firstName   lastName    city        numClients
@@ -194,7 +183,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    Mami        Nishi       Tokyo       5
    ```
 
-10. List the customer(s) and their total payments (answer should include customerNumber, customerName, totalPayment where totalPayment is the total amount of dollars the customer has paid). Order by totalPayment.
+9. List the customer(s) and their total payments (answer should include customer number, customer name, total payment where total payment is the total amount of dollars the customer has paid). Order by total payment.
 
     ```
     customerNumber  customerName       totalPayment
@@ -299,7 +288,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     141             Euro+ Shopping Ch  715738.98
     ```
 
-11. List the product number, product name, and customer name such that the customer has never ordered that product. Order by customerName, productCode.
+10. List the product number, product name, and customer name such that the customer has never ordered that product. Order by customer name then product code.
 
     ```
     productCode  productName                            customerName
@@ -317,7 +306,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     (too many more to list)
     ```
 
-12. List the profit per product that the company would make if it were able to sell all of that product at MSRP (answer should include productName, profit). Order by profit.
+11. List the profit per product that the company would make if it were able to sell all of that product at MSRP (answer should include product name, profit). Order by profit.
 
     ```
     productName               profit
@@ -433,8 +422,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     2002 Suzuki XREO          843246.95
     1952 Alpine Renault 1300  845334.6
     ```
-<!-- 
-13. List the average order size for each customer (answer should include customerName, avgQuantity) Order by customer name.
+12. Return the average order size for each customer (results should include customer name, average quantity) Order by customer name.
 
     ```
     customerName    avgQuantity
@@ -537,7 +525,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     Volvo Model Re  161.75
     West Coast Col  255.5
     giftsbymail.co  447.5
-    ``` -->
+    ```
 
 #### Extensions
 
@@ -554,7 +542,7 @@ I want to be able to run your query set easily. Do not submit your queries in a 
 [20pt] Completion of the queries Q1 - Q4. (5pts each)
 [80pt] Completion of queries Q5 - Q12.  (10pts each)
 
-Total: 65pts
+Total: 100pts
 ```
 
 
