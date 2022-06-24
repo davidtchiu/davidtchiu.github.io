@@ -220,7 +220,7 @@ BCNF? false
 #### Optional Extensions
 If you're done early and are looking for an additional challenge, you could try implementing the following extensions:
 
-- Implement a `public static Set<String> findCandidateKeys(Set<String> superkeys)` method in `Normalizer` that inputs a set of super keys and determines the set of candidate key(s).
+- Implement a method that inputs a set of superkeys and determines the set of candidate key(s).
 
 - Implement the canonical cover algorithm that finds the minimal basis of an FD set.
 
