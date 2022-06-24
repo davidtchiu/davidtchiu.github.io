@@ -95,12 +95,12 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
   // people(ssn, name, eyecolor)
   Set<String> people = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
   FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
-  FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
+  FD f2 = new FD(Arrays.asList("ssn"), Arrays.asList("eyecolor")); // ssn --> eyecolor
   FDSet fdset = new FDSet(f1, f2);
   System.out.println("Superkeys: " + Normalizer.findSuperkeys(people, fdset));
   ```
 
-  I've formatted the output below for readability:
+  I've formatted the output below for readability (one superkey per line):
 
   ```
   Superkeys: [
