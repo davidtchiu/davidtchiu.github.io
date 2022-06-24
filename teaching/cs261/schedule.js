@@ -157,10 +157,10 @@ let days = {
     "Inheritance: motivation, abstraction",
     "Inheritance (cont.): this(), super()",
     // wk 2
-    "Polymorphism, the Object class",
+    "<strong><emph>Labor Day (No Class)</emph></strong>",
     "Lab 2: Inheritance Lab",
     "Lab review; the Object class, instanceof, down-casting, method overriding",
-    "Polymorphism: dynamic method dispatch",
+    "Polymorphism, dynamic  dispatch",
     // wk 3
     "Abstract classes",
     "Lab 3: Abstract classes Lab",
