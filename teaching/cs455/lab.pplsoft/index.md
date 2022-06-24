@@ -1,49 +1,38 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: Writing SQL Queries
+### Hwk: Writing SQL Queries for the University Database!
 
-Now that you've gotten the raw enrollment data stored in a relational database (SQLite), you're finally ready to conduct the analysis that the college wants. Remember that the data, though fake, is an analog to the real data in our university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually run when generating our reports! Cool, eh?
+You're finally ready to conduct the analysis that the college wants. The data, though synthetic, is an analog to the real data in our university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually run when generating our year-end reports!
 
-<!-- Finally, they ask you to create triggers to log system activities. -->
 
 #### Student Outcomes
 
 - To write SQL queries for the retrieval of data.
 
 #### Required Files
-
+I've taken the University data that you should have generated from the previous homework and made it available for this lab.
 The following file(s) have been provided for this assignment.
 
-- [university-ddl.sql](university-ddl.sql)
-- [university-populate.sql](university-populate.sql)
+- [university.db](university.db)
 
-#### Populate your Database!
+#### Browse your Database!
+Start by downloading the database file, and open it up in [Antares](https://antares-sql.app/). Open the university.db file that is provided to you, and browse its contents to gauge the schema and where all the data is stored.
 
-Start by downloading the two `.sql` files and reading them into your SQLite3 database. To do this, you can create a new database in DB Browser, and then paste them into the SQL Execution console. The `university-ddl.sql` file contains the schema definition, so load that first. Next, paste in the ``university-populate.sql` file contents. Your database should now be loaded with the correct schema and enrollment data from the previous homework. Let's get to work.
+
 
 #### Writing SQL Queries
-
-Create a file named `YourLastName_HW4.sql` and store all your queries in the following format:
-
-```sql
--- Q0: This is just an example showing the format I expect.
--- This query retrieves every student in the database. It projects
--- only their ID and name.
-SELECT studentID,name
-FROM student;
+To write your queries, open Antares and you should see a `+` sign on the top. When you click on it, Antares will open a new "query" tab. This is where you can write and execute your SQL queries. For each of the following problems, write an SQL query to return the expected results. Your queries should work in general, regardless of what data is currently stored in this instance of the University database. In other words, don't hard code your queries!
 
 
--- Q1: Description of the next query..
-SELECT ...
-```
+1. Return a list of departments that are found in any building starting with "T". Order by dept ID.
+   ```
+   deptID      deptName                        building
+   -------     --------                        --------
+   CSCI        School of Computer Science      Thompson Hall
+   MATH        Department of Mathematics       Tower of Babel
+   ```
 
-I recommend that you test out your queries directly on the SQLite command-line (or GUI, if you downloaded one). Once you are convinced that your query works, copy it into the `YourLastName_HW4.sql` file for submission. Here are the queries that the college wants you to run. Below each request, I've given you the expected result.
-
- <!-- **Except for the last problem in which you are asked to create an audit table, you are not allowed to make changes to the schema to help you write your queries.**  -->
-
-Furthermore, because the data is being updated constantly in real life, no queries should be written specifically for this instance of the database -- that is, your queries should work in general, regardless of what data is currently stored.
-
-1. Get all courses being taught by the MATH department that start in the afternoon. You may assume that time is in 24hr format, and you're reminded that you can use comparison operators (`<`, `>`) on strings.
+2. Get all courses being taught by the MATH department that start in the afternoon. You may assume that time is in 24hr format, and you're reminded that you can use comparison operators (`<`, `>`) on strings. Order by course number.
 
    ```
    CourseNum   deptID      CourseName  Location    meetDay     meetTime
@@ -53,7 +42,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
    460         MATH        Calculus 3  WEY 102     TR          12:30
    ```
 
-2. Return the student, David's, course schedule. You don't have their student ID, but they're the only one with that name. Only `Course`'s attributes should be projected.
+3. Return the student, David's, course schedule. Assume you don't have David's student ID, and that they're the only one with that name. Only `Course`'s attributes should be projected. Order by Dept ID then Course Number.
 
    ```
    deptID      CourseNum   CourseName        Location    meetDay     meetTime
@@ -63,7 +52,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
    MATH        230         Linear Algebra    HH 308      TR          15:00
    ```
 
-3. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the `avg(GPA)` column to `ClassGPA`.
+4. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the `avg(GPA)` column to `ClassGPA`.
 
    ```
    class       ClassGPA
@@ -74,7 +63,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
    Sophomore   2.675
    ```
 
-4. Identify all students who have a lower GPA than the average of their respective class rank. Sort the results first by class rank, then by the student's name.
+5. Identify all students who have a lower GPA than the average of their respective class rank. Sort the results first by class rank, then by the student's name.
 
    ```
    studentID studentName  class       gpa         ClassGPA
@@ -90,7 +79,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
    1468        Kris         Sophomore   1.0         2.675
    ```
 
-5. Get a list of all students who are still undeclared (that is, without a major). Project only the `studentID` and their name. Sort results by `studentID`.
+6. Return a list of all students who are still undeclared (that is, without a major). Project their student ID and their name. Sort results by `studentID`.
 
    ```
    studentID   studentName
@@ -102,7 +91,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
    1640        Adam
    ```
 
-6. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented in your results (e.g., History)
+7. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! 
 
    ```
    deptName                    enrolled
@@ -116,7 +105,18 @@ Furthermore, because the data is being updated constantly in real life, no queri
    Department of History       0
    ```
 
-7. Identify all valedictorians in all majors. (This is a real query that we have to run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that `ENGL` has two students with the same GPA)
+
+8. Find the students who are enrolled in the most number of courses. Report the names, IDs, and the number of courses they are enrolled in.
+
+   ```
+   studentID   studentName  NumCourses
+   ----------  -----------  ----------
+   1025        John         5
+   1247        Alexis       5
+   ```
+
+
+9. Identify all valedictorians in all majors. (This is a real query that we run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that `ENGL`major  has two students with the same GPA and they're both listed!)
 
    ```
    (Notice that ENGL has two students with the same GPA)
@@ -132,7 +132,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
    1709        Cassandra    Junior      SOAN        2.8
    ```
 
-8. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
+10. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
 
    ```
    studentID   studentName  class       major       gpa
@@ -143,23 +143,12 @@ Furthermore, because the data is being updated constantly in real life, no queri
    1510        Jordan       Freshman    MATH        3.0
    ```
 
-<!--
 
-
-9. Find the names, IDs, and the number of courses they are taking, for the students who are enrolled in the most number of courses.
-
-   ```
-   studentID   studentName  NumCourses
-   ----------  -----------  ----------
-   1025        John         5
-   1247        Alexis       5
-   ```
-
-10. You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so round anything higher than a 4.0 to 4.0. This will likely take two UPDATE statements. Make sure these two statements are done atomically.
+11. You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so round anything higher than a 4.0 to 4.0. This should just take two UPDATE statements. 
 
     ```
     (BEFORE)
-    sqlite> select * from student natural join major where major='CSCI';
+    > select * from student natural join major where major='CSCI';
     studentID   studentName  class       gpa         major
     ----------  -----------  ----------  ----------  ----------
     1381        Tiffany      Junior      4.0         CSCI
@@ -170,7 +159,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
     1661        Logan        Freshman    0.5         CSCI
 
     (AFTER)
-    sqlite> select * from student natural join major where major='CSCI';
+    > select * from student natural join major where major='CSCI';
     studentID   studentName  class       gpa         major
     ----------  -----------  ----------  ----------  ----------
     1381        Tiffany      Junior      4.0         CSCI
@@ -181,12 +170,12 @@ Furthermore, because the data is being updated constantly in real life, no queri
     1661        Logan        Freshman    1.5         CSCI
     ```
 
-11. After learning about the GPA mishap, the college now wants to add a new department, Philosophy (PHIL), which will housed in a newly constructed building called Plato's Cave. They will offer a course on PHIL 101: Ethics taught in room CAVE, and all CSCI majors are now required to take it. Add the new department, course, and enrollments. You need to do this in just **three separate statements**. Run these statements in such a way that they cannot be broken up (atomically).
+12. After learning about the GPA mishap, the college now wants to add a new department, Philosophy (PHIL), which will housed in a newly constructed building called Plato's Cave. They will offer a course on PHIL 101: Ethics taught in room CAVE, and all CSCI majors are now required to take it. Add the new department, course, and enrollments. You need to do this in just **three separate statements**. Run these statements in such a way that they cannot be broken up (atomically).
 
     ```
     (Showing the contents of the Dept, course, and enroll tables.)
 
-    sqlite> select * from dept order by deptID;
+    > select * from dept order by deptID;
     deptID      deptName            building
     ----------  ------------------  -------------
     BUS         School of Business  McIntyre Hall
@@ -199,7 +188,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
     SOAN        Department of Anth  Wyatt Hall
 
 
-    sqlite> select * from course order by deptID,CourseNum;
+    > select * from course order by deptID,CourseNum;
     CourseNum   deptID      CourseName  Location    meetDay     meetTime
     ----------  ----------  ----------  ----------  ----------  ----------
     122         BUS         Economics   WY 30       MW          13:30
@@ -224,7 +213,7 @@ Furthermore, because the data is being updated constantly in real life, no queri
     102         SOAN        Sociology   WY 205      MTWRF       09:00
 
 
-    sqlite> select * from enroll order by deptID,courseNum;
+    > select * from enroll order by deptID,courseNum;
     CourseNum   deptID      StudentID
     ----------  ----------  ----------
     122         BUS         1510
@@ -276,37 +265,12 @@ Furthermore, because the data is being updated constantly in real life, no queri
     102         SOAN        1709
     ```
 
+<!-- 
 12. To prevent future tampering, the university wants you to log any activity in the Student table. Create a new table called `student_log` to store the following information: activity in question (insert, deletion, update), student's name, all the old values, and the new values. Finally, create the triggers that will record these activities.
 
 Put these statements in the DDL file that was provided to you. -->
 
-#### Grading
 
-```
-Files not submitted in plain-text format will be returned without a grade. (Do not submit your queries in a Word or PDF file!)
-
-[15pt] Completion of the queries Q1 - Q3. (5pts each)
-[50pt] Completion of queries Q4 - Q8.  (10pts each)
-
-Total: 65pts
-```
-
-<!--
-```
-Files submitted not in plain-text format will be returned without a grade.
-
-[15pt] Completion of the queries Q1 - Q3. Each query is of equal value (5pts each)
-[90pt] Completion of remaining problems. Each problem is of equal value (10pts each)
-
-Total: 105pts
-``` -->
-
-#### Submitting Your Assignment
-
-<!-- After you have completed the homework, use the following to submit your work on [Canvas](https://canvas.pugetsound.edu).
-Please submit the modified DDL file (with your triggers and the new audit table defined) and the file containing all of your queries. Zip them together. Files not in plain-text will be returned without a grade. -->
-
-Navigate to our course on [Canvas](https://canvas.pugetsound.edu). Click on this Homework link, and you should be able to drag your file right into the submission box. Click "Save Changes". I just need the file that contains all of your queries. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
 
 #### Credits
 

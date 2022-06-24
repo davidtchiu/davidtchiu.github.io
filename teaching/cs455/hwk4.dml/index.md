@@ -537,7 +537,9 @@ If you're done early, or are looking for more practice, consider the following e
 #### Grading
 
 ```
-I want to be able to run your query set easily. Do not submit your queries in a Word or PDF file! Files not submitted in plain-text format with your queries inside will be returned without a grade. 
+I want to be able to run your query set easily. Do not submit your queries in a 
+Word or PDF file! Files not submitted in plain-text format with your queries 
+inside will be returned without a grade. 
 
 [20pt] Completion of the queries Q1 - Q4. (5pts each)
 [80pt] Completion of queries Q5 - Q12.  (10pts each)
