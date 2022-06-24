@@ -172,54 +172,53 @@ let days = {
     "Exceptions: throwing, catching",
     "Catching exceptions: checked vs. unchecked, customization",
     // wk 5
-    "Algorithm analysis",
+    "Start Big-O",
     "Lab 5: Exception Lab",
     "Big-O",
-    "Big-O",
+    "Big-O (insertion sort)",
     // wk 6
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    "Finish Big-O",
     "List interface, ArrayList: add(), rellocation",
-    // wk 7
     "ArrayList: remove(), indexOf(); Generics",
-    "Lab 5: ArrayList and Generics lab",
+    // wk 7
     "Linked list: Inner classes; get(), set()",
+    "Lab 6: ArrayList and Generics lab",
     "Linked list:  indexOf(), add()",
+    "Linked list optimizations (tail, iterator)",
     // wk 8
     "<strong>Fall Break</strong>",
     "<strong>Fall Break</strong>",
-    "Linked list optimizations (tail, iterator)",
     "Stack",
-    // wk 9: 
     "Stack (cont.): Dijkstra's 2-Stack Algo; Start Queues",
-    "Lab 6: Queues and Stacks",
+    // wk 9: 
     "Start PriorityQueue; Dijkstra's SSSP",
-    "Finish PriorityQueue; Start Recursion: setup and tracing",
-    // wk 10
+    "Lab 7: Queues and Stacks",
+    "Start Recursion: setup and tracing",
     "Recursion (cont.): code reading, common pitfalls",
-    "Lab 7: Recursion Lab",
+    // wk 10
     "Big-O analysis (telescoping method)",
+    "Lab 8: Recursion Lab",
     "Finish recursion",
+    "Sorting: Merge Sort",
     // wk 11
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "Sorting: Merge Sort",
     "Sorting: Quick Sort",
     // wk 12
     "Start trees and binary trees",
-    "Lab 8: Sorting Lab",
+    "Lab 9: Sorting Lab",
     "Tree traversal, start BST",
     "BST (cont.): contains(), add(), remove()",
     // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
     "Finish BST: performance, size(), smallest()",
-    "Lab 9: BST Lab",
+    "Lab 10: BST Lab",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
     "Start Maps",
     "HashMap cont.",
-    "Lab 10: Open Addressing lab",
+    "Lab 11: Open Addressing lab",
     "HashMap: chaining",
     // wk 15
     "<strong><emph>Review</emph></strong>",
