@@ -20,7 +20,7 @@ Start by downloading the database file, and open it up in [Antares](https://anta
 
 <center><img src="figures/schema.png" width="500px"/></center>
 
-Take a moment to study the schema, noting the foreign and primary keys. Browse the data in each relation to familiarize yourself with the database contents. Answer the following queries. I've given you the expected results below each query.
+Take a moment to study the schema, noting the foreign and primary keys. Browse the data in each relation to familiarize yourself with the database contents. Answer the following queries. Save the queries in a plain text file for submission. I've given you the expected results below each query.
 
 1. Return all customer names and their addresses if they are not represented by a sales rep. Order by customer name.
 
@@ -527,17 +527,11 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     giftsbymail.co  447.5
     ```
 
-#### Extensions
-
-If you're done early, or are looking for more practice, consider the following exercises.
-
-- Give the relational algebra expressions for all the above queries
-- Go to the [author's page](https://www.richardtwatson.com/dm6e/Reader/ClassicModels.html) for many more query examples!
 
 #### Grading
 
 ```
-I want to be able to run your query set easily. Do not submit your queries in a 
+I want to be able to run your query set easily. Do *not* submit your queries in a 
 Word or PDF file! Files not submitted in plain-text format with your queries 
 inside will be returned without a grade. 
 
