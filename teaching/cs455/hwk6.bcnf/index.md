@@ -99,7 +99,9 @@ FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,
 FDSet fdset = new FDSet(f1, f2);
 System.out.println("Superkeys: " + Normalizer.findSuperkeys(people, fdset));
 ```
+
 I've formatted the output below for readability:
+
 ```
 Superkeys: [
   [ssn],
@@ -108,7 +110,9 @@ Superkeys: [
   [name, ssn, eyecolor]
 ]
 ```
+
 Here's an IllegalArgumentException because `eyecolor` is not an attribute in the given schema, but appears in an FD:
+
 ```java
 // People(ssn, name)
 Set<String> People = new HashSet<>(Arrays.asList("ssn", "name"));
@@ -118,6 +122,7 @@ FDSet fdset = new FDSet(f1, f2);
 
 System.out.println("Superkeys: " + Normalizer.findSuperkeys(People, fdset));
 ```
+
 ```
 Exception in thread "main" java.lang.IllegalArgumentException: FD refers to unknown attributes: [name,ssn] --> [eyecolor]
   at Normalizer.findSuperkeys(Normalizer.java:132)
@@ -134,6 +139,7 @@ FDSet fdset = new FDSet(f1, f2);
 Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
 System.out.println("BCNF? " + Normalizer.isBCNF(People, fdset));
 ```
+
 ```
 BCNF? true
 ```
