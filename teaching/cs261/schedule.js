@@ -153,7 +153,7 @@ let days = {
   lectures: [
     // wk 1
     "Introductions: Who are we? Syllabus",
-    "Lab 1",
+    "Lab 1: CS 1 Review",
     "Inheritance: motivation, abstraction",
     "Inheritance (cont.): this(), super()",
     // wk 2
@@ -163,17 +163,17 @@ let days = {
     "Polymorphism: dynamic method dispatch",
     // wk 3
     "Abstract classes",
-    "Lab 3: Abstract class Lab",
+    "Lab 3: Abstract classes Lab",
     "Interfaces and implementations",
     "Multiple implementation, Comparable<T>",
     // wk 4
     "Finish Comparable LibraryBook; Start exceptions",
-    "Lab 4",
+    "Lab 4: Interfaces",
     "Exceptions: throwing, catching",
     "Catching exceptions: checked vs. unchecked, customization",
     // wk 5
     "Algorithm analysis",
-    "Lab 5",
+    "Lab 5: Exception Lab",
     "Big-O",
     "Big-O",
     // wk 6
@@ -214,13 +214,13 @@ let days = {
     // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
     "Finish BST: performance, size(), smallest()",
     "Lab 9: BST Lab",
-    "Heaps: percolate",
-    "Start Maps",
+    "<strong><emph>Thanksgiving</emph></strong>",
+    "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
+    "Start Maps",
     "HashMap cont.",
     "Lab 10: Open Addressing lab",
     "HashMap: chaining",
-    "Start complexity: Linear search",
     // wk 15
     "<strong><emph>Review</emph></strong>",
     "TBD",
