@@ -111,7 +111,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     ]
     ```
 
-  Here's an IllegalArgumentException because `eyecolor` is not an attribute in the given schema, but appears in an FD:
+    Here's an IllegalArgumentException because `eyecolor` is not an attribute in the given schema, but appears in an FD:
 
     ```java
     // People(ssn, name)
@@ -145,7 +145,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     BCNF? true
     ```
 
-  Here's an example in which People violates BCNF (due to `f3`, as `name` is not a superkey):
+    Here's an example in which People violates BCNF (due to `f3`, as `name` is not a superkey):
 
     ```java
     FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
@@ -163,7 +163,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
 
 6.  Finally, `BCNFDecompose(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set, and then returns a set of relational schemas that satisfy BCNF. For ease of grading, please print some information (the current relational schema, its FD Set, and its superkeys) at each decision point (as we do on the board in class) so that I can trace the correctness of your algorithm. 
     
-  *Important:* After a split, it is imperative that your algorithm redistributes all FDs in the closure ($$F^+$$) of the given `fdset`. In the example below, notice how the functional dependency `A --> C` is not explicitly listed in the given FD set, but is held in its closure via transitivity. After splitting the relation into `[A, B]` and `[A, C, D]`, had you not distributed `A --> C` to `[A, C, D]`, then the algorithm would've falsely assumed that `[A, C, D]` was in BCNF!
+    *Important:* After a split, it is imperative that your algorithm redistributes all FDs in the closure ($$F^+$$) of the given `fdset`. In the example below, notice how the functional dependency `A --> C` is not explicitly listed in the given FD set, but is held in its closure via transitivity. After splitting the relation into `[A, B]` and `[A, C, D]`, had you not distributed `A --> C` to `[A, C, D]`, then the algorithm would've falsely assumed that `[A, C, D]` was in BCNF!
 
     ```java
     // R(A,B,C)
@@ -193,7 +193,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     Final BCNF Schemas: [[A, B], [A, C], [A, D]]
     ```
 
-  Here's another example of running this algorithm:
+    Here's another example of running this algorithm:
 
     ```java
     // U(A,B,C,D,E)
