@@ -156,12 +156,12 @@ let days = {
     "<strong>Reading Period</strong>",
     // wk final
     "",
-    "",//<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
+    "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
     "",
   ],
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("8/30/21", days, MWF);
+const schedule = new CourseCalendar("8/29/22", days, MWF);
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();

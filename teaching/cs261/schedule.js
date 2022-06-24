@@ -226,9 +226,9 @@ let days = {
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
-    "<strong><emph>Final Exam (8a - 10a)</strong></emph>",
     "",
     "",
+    "<strong><emph>Final Exam (12p - 2p)</strong></emph>",
     "",
   ],
 };
