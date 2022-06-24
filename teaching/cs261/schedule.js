@@ -152,85 +152,78 @@ let days = {
   },
   lectures: [
     // wk 1
-    "<strong>MLK Day<br/>(no class)</strong>",
-    "Introductions: Who are we? Syllabus (Zoom)",
-    "Lab 1 (Zoom)",
-    "What is CS? (Zoom)",
+    "Introductions: Who are we? Syllabus",
+    "Lab 1",
+    "Inheritance: motivation, abstraction",
+    "Inheritance (cont.): this(), super()",
     // wk 2
-    "CS: hardware, languages",
-    "Circle class: Comments, fields, data types",
-    "Lab 2",
-    "Writing constructors; parameters, assignment statement",
+    "Polymorphism, the Object class",
+    "Lab 2: Inheritance Lab",
+    "Lab review; the Object class, instanceof, down-casting, method overriding",
+    "Polymorphism: dynamic method dispatch",
     // wk 3
-    "Writing methods, calling methods, returning",
-    "Writing classes. String concatenation; conditionals (`printTicket()`)",
-    "Lab 3",
-    "Lab 3 review",
+    "Abstract classes",
+    "Lab 3: Abstract class Lab",
+    "Interfaces and implementations",
+    "Multiple implementation, Comparable<T>",
     // wk 4
-    "If statements; defensive programming and testing (`discount()`)",
-    "More if-statements",
+    "Finish Comparable LibraryBook; Start exceptions",
     "Lab 4",
-    "Nested if-statements: else if",
+    "Exceptions: throwing, catching",
+    "Catching exceptions: checked vs. unchecked, customization",
     // wk 5
-    "Primitives and numeric type-casting (narrowing, widening)",
-    "Classes as types: references, object equivalence",
+    "Algorithm analysis",
     "Lab 5",
-    "Lab 5 review",
-    // "Abstraction: Working with APIs; Unpacking Strings",
+    "Big-O",
+    "Big-O",
     // wk 6
-    "Abstraction and modularity: Organism",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    "String exercises",
+    "Finish Big-O",
+    "List interface, ArrayList: add(), rellocation",
     // wk 7
-    "Start loops; reading; tracing",
-    "More loops",
-    "Lab 6",
-    "More loops: Prime number testing, etc.",
+    "ArrayList: remove(), indexOf(); Generics",
+    "Lab 5: ArrayList and Generics lab",
+    "Linked list: Inner classes; get(), set()",
+    "Linked list:  indexOf(), add()",
     // wk 8
-    "For loops; Nested loops",
-    "Finish nested loops",
-    "Hwk Lab",
-    "Cancelled",
-    // wk 9: spring break
-    "<b>Spring Break</b>",
-    "<b>Spring Break</b>",
-    "<b>Spring Break</b>",
-    "<b>Spring Break</b>",
+    "<strong>Fall Break</strong>",
+    "<strong>Fall Break</strong>",
+    "Linked list optimizations (tail, iterator)",
+    "Stack",
+    // wk 9: 
+    "Stack (cont.): Dijkstra's 2-Stack Algo; Start Queues",
+    "Lab 6: Queues and Stacks",
+    "Start PriorityQueue; Dijkstra's SSSP",
+    "Finish PriorityQueue; Start Recursion: setup and tracing",
     // wk 10
-    "Start Arrays; Write the Bank class",
-    "Finish Bank",
-    "Lab 7",
-    "Review Lab 7",
+    "Recursion (cont.): code reading, common pitfalls",
+    "Lab 7: Recursion Lab",
+    "Big-O analysis (telescoping method)",
+    "Finish recursion",
     // wk 11
-    "Start ArrayList",
-    "ArrayList",
-    "Lab 8",
-    "Scanning for input: ChatBot",
-    // wk 12
-    "Finish ChatBot; Start HashMap",
-    "HashMap, for-each loop",
-    "Lab 9",
-    "HashMap (cont.): Smarter ChatBot",
-    // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
-    "File I/O; String parsing",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "File I/O: Finish TreeFile class",
+    "Sorting: Merge Sort",
+    "Sorting: Quick Sort",
+    // wk 12
+    "Start trees and binary trees",
+    "Lab 8: Sorting Lab",
+    "Tree traversal, start BST",
+    "BST (cont.): contains(), add(), remove()",
+    // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
+    "Finish BST: performance, size(), smallest()",
+    "Lab 9: BST Lab",
+    "Heaps: percolate",
+    "Start Maps",
     // wk 14
+    "HashMap cont.",
+    "Lab 10: Open Addressing lab",
+    "HashMap: chaining",
     "Start complexity: Linear search",
-    "Binary search",
-    "Lab 10",
-    "Selection sort",
     // wk 15
-    "Bubble Sort",
-    "More complexity: list reversal, palindrome",
-    "Special Hwk Lab",
-    "public, private, final",
-    // wk 16
-    "static, main(); IntelliJ IDE",
-    // "enum; ",
     "<strong><emph>Review</emph></strong>",
+    "TBD",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
@@ -242,6 +235,6 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("1/17/2022", days, MWRF);
+const schedule = new CourseCalendar("8/29/2022", days, MTWF);
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
