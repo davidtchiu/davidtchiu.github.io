@@ -138,7 +138,7 @@ let days = {
     "Inheritance: motivation, abstraction",
     "Inheritance (cont.): this(), super()",
     // wk 2
-    "<strong><emph>Labor Day (No Class)</emph></strong>",
+    "<strong><emph>Labor Day<br/>(No Class)</emph></strong>",
     "Lab 2: Inheritance Lab",
     "Object class, instanceof, down-casting, overriding",
     "Polymorphism, dynamic  dispatch",
@@ -151,7 +151,7 @@ let days = {
     "Finish Comparable LibraryBook; Start exceptions",
     "Lab 4: Interfaces",
     "Exceptions: throwing, catching",
-    "Catching exceptions: checked vs. unchecked, customization",
+    "Catching exceptions: (un)checked, customization",
     // wk 5
     "Start Big-O",
     "Lab 5: Exception Lab",
@@ -210,7 +210,7 @@ let days = {
     // wk final
     "",
     "",
-    "<strong><emph>Final Exam (12p - 2p)</strong></emph>",
+    "<strong><emph>Final Exam<br/>(12p - 2p)</strong></emph>",
     "",
   ],
 };
