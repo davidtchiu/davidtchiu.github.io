@@ -298,16 +298,16 @@ ol {
   padding-left: 15px;
 }
 
-// li {
-//   margin: 15px;
-// }
+li {
+  margin: 5px;
+}
 
 ul.menu-depth-odd>li {
-  list-style: disc;
+  list-style-type: disc;
 }
 
 ul.menu-depth-even>li {
-  list-style: circle;
+  list-style-type: circle;
 }
 
 dl dt {
