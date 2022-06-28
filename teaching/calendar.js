@@ -16,9 +16,12 @@ const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
 
 const ASSIGNMENT_COLOR = {
   // labs: "#330099",
-  labs: "#0e84b5",
-  homework: "#0e84b5",
-  projects: "#0e84b5",
+  // labs: "#0e84b5",
+  // homework: "#0e84b5",
+  // projects: "#0e84b5",
+  labs: "#d14",
+  homework: "#d14",
+  projects: "#d14",
 };
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#d14";
@@ -165,7 +168,7 @@ class CourseCalendar {
     // update the HTML element
     const div = document.querySelector("#schedule");
     let h3 = document.createElement("h3");
-    h3.innerHTML = "CALENDAR (TENTATIVE)";
+    h3.innerHTML = "Calendar (Tentative)";
     div.appendChild(h3);
     div.appendChild(table);
   }
