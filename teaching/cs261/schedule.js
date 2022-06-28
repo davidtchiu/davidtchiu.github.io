@@ -189,27 +189,27 @@ let days = {
     // wk 8
     "<strong>Fall Break</strong>",
     "<strong>Fall Break</strong>",
-    "Start stack",
-    "Stack (cont.): Dijkstra's 2-Stack Algo; Start Queues",
-    // wk 9: 
-    "Start PriorityQueue",
-    "Lab 7: Queues and Stacks",
-    "PriorityQueue; Dijkstra's SSSP algo",
+    "Stacks and Queues",
+    "Dijkstra's 2-Stack Algo",
+    // wk 9:
     "Start recursion: setup and tracing",
-    // wk 10
+    "Lab 7: Stacks and Queues",
     "Recursion (cont.): code reading, common pitfalls",
+    "Big-O analysis of recursive algos (telescoping method)",
+    // wk 10
+    "Sorting: Merge Sort",
     "Lab 8: Recursion Lab",
     "Lab review",
-    "Big-O analysis of recursive algos (telescoping method)",
+    "Sorting: Quick Sort",
     // wk 11
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "Sorting: Merge Sort",
-    "Sorting: Quick Sort",
+    "PriorityQueue, Dijkstra's SSSP algo",
+    "PriorityQueue with Heaps",
     // wk 12
-    "Start trees and binary trees",
-    "Lab 9: Sorting Lab",
-    "Tree traversal, start BST",
+    "Start Trees and Binary Trees",
+    "Lab 9: Heaps Lab",
+    "Tree traversal; Start BSTs",
     "BST (cont.): contains(), add(), remove()",
     // wk 13 
     "Finish BST: performance, size(), smallest()",

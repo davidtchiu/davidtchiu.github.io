@@ -289,7 +289,6 @@ dl {
 
 ul {
   list-style-position: inside;
-  list-style: disc;
   padding-left: 20px;
 }
 
@@ -297,6 +296,19 @@ ol {
   list-style-position: inside;
   list-style: decimal;
   padding-left: 20px;
+}
+
+li {
+  margin: 15px;
+}
+
+ul.menu-depth-odd>li {
+  list-style: disc;
+}
+
+ul.menu-depth-even>li {
+  list-style: '-';
+
 }
 
 dl dt {
