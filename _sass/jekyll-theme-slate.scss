@@ -289,6 +289,7 @@ dl {
 
 ul {
   list-style-position: inside;
+  list-style: disc;
   padding-left: 15px;
 }
 
@@ -302,13 +303,13 @@ li {
   margin: 5px;
 }
 
-ul.menu-depth-odd>li {
-  list-style-type: disc;
-}
+// ul.menu-depth-odd>li {
+//   list-style-type: disc;
+// }
 
-ul.menu-depth-even>li {
-  list-style-type: circle;
-}
+// ul.menu-depth-even>li {
+//   list-style-type: circle;
+// }
 
 dl dt {
   font-weight: bold;
