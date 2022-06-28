@@ -10,24 +10,30 @@ let days = {
         name: "Hwk 1",
         title: "Warmup: Letter Counter",
         url: "hwk1/",
-        due: "9/8/2022",
+        due: "9/7/2022",
       },
       {
         name: "Hwk 2",
         title: "TicTacToe",
         url: "hwk2/",
-        due: "9/21/2022",
+        due: "9/19/2022",
       },
       {
         name: "Hwk 3",
         title: "Sentiment Predictor",
         url: "hwk3/",
-        due: "10/2/2022",
+        due: "9/30/2022",
       },
       {
         name: "Hwk 4",
         title: "Something with Lists",
         url: "hwk4/",
+        due: "10/14/2022",
+      },
+      {
+        name: "Hwk 5",
+        title: "Something with Recursion",
+        url: "hwk5/",
         due: "10/21/2022",
       },
       {
