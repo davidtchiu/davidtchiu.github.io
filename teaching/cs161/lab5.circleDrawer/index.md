@@ -129,22 +129,7 @@ The API handout that you'll want to have in front of you:
 
   - Let's say that two `Circle`s are equal in content if they have the same size and (x,y) positioning.
 
-  Refer back to the "content equality" notes, if you need a reminder on how these `equals()` methods are written.
-  <!--
-
-  ```java
-  If everything's working, then the following main method should cause both circles to be drawn.
-  public static void main(String[] args) {
-      Circle c1 = new Circle();
-      Circle c2 = new Circle();
-      c1.moveVertical(100);
-      c1.changeSize(50);
-      c2.changeSize(50);
-
-      CircleDrawer drawer = new CircleDrawer(c1, c2);
-      drawer.drawWhenEquals();
-  }
-  ``` -->
+    Refer back to the "content equality" notes, if you need a reminder on how these `equals()` methods are written.
 
 #### Grading
 
