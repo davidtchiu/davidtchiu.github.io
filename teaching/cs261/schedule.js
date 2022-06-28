@@ -1,84 +1,59 @@
 let days = {
   assignments: {
+    // Hwk 4: You Complete Me (due 10/23/2020)
+    // Hwk 5: Ranked-Choice Vote (due 11/06/2020)
+    // Hwk 6: Pooled Sample Testing (due 11/20/2020)
+    // Hwk 7: Evil Hangman (due 12/09/2020)
+
     homework: [
       {
-        name: "Hwk 0",
-        title: "About Me",
-        url: "hwk0.me/",
-        due: "1/24/2022",
-      },
-      {
         name: "Hwk 1",
-        title: "A Better Circle",
-        url: "hwk1.circle/",
-        due: "2/2/2022",
+        title: "Warmup: Letter Counter",
+        url: "hwk1/",
+        due: "9/8/2022",
       },
       {
         name: "Hwk 2",
-        title: "Calculator",
-        url: "hwk2.calc/",
-        due: "2/11/2022",
+        title: "TicTacToe",
+        url: "hwk2/",
+        due: "9/21/2022",
       },
       {
         name: "Hwk 3",
-        title: "Orca Card",
-        url: "hwk3.orca/",
-        due: "2/21/2022",
+        title: "Sentiment Predictor",
+        url: "hwk3/",
+        due: "10/2/2022",
       },
       {
         name: "Hwk 4",
-        title: "Robots!",
-        url: "hwk4.robot/",
-        due: "3/2/2022",
+        title: "Something with Lists",
+        url: "hwk4/",
+        due: "10/21/2022",
       },
       {
         name: "Hwk 5",
-        title: "Loop Practice (The Basics)",
-        url: "hwk5.loops/",
-        due: "3/11/2022",
-      },
-      {
-        name: "Hwk 5b",
-        title: "Nested Loop Practice",
-        url: "hwk5b.nestedLoops/",
-        due: "3/25/2022",
+        title: "Rank Choice Vote",
+        url: "hwk5/",
+        due: "11/2/2022",
       },
       {
         name: "Hwk 6",
-        title: "Tweet Processor",
-        url: "hwk6.twitter/",
-        due: "4/8/2022",
+        title: "Evil Hangman",
+        url: "hwk6/",
+        due: "3/25/2022",
       },
       {
         name: "Hwk 7",
-        title: "Pooled Testing",
-        url: "hwk7.pooled/",
-        due: "4/20/2022",
-      },
-      {
-        name: "Final Hwk Prep",
-        title: "Final Homework Proposal (Optional)",
-        url: "hwkF.prep/",
-        due: "4/22/2022",
-      },
-      // {
-      //   name: "Final Hwk (alternate)",
-      //   title: "Pooled Testing",
-      //   url: "hwkF.pooled/",
-      //   due: "5/4/2021",
-      // },
-      {
-        name: "Final Hwk",
-        title: "Black Jack",
-        url: "hwkF.blackjack/",
-        due: "5/9/2022",
+        title: "Huffman Encoding",
+        url: "hwk7/",
+        due: "12/8/2022",
       },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
       {
         name: "Lab 1",
-        title: "Draw My Picture (BlueJ)",
+        title: "Review: Around the Farm",
         url: "lab1.bluej/",
         due: "1/20/2022",
       },
