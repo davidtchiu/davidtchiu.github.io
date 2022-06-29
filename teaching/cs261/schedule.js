@@ -1,10 +1,5 @@
 let days = {
   assignments: {
-    // Hwk 4: You Complete Me (due 10/23/2020)
-    // Hwk 5: Ranked-Choice Vote (due 11/06/2020)
-    // Hwk 6: Pooled Sample Testing (due 11/20/2020)
-    // Hwk 7: Evil Hangman (due 12/09/2020)
-
     homework: [
       {
         name: "Hwk 1",
@@ -38,22 +33,22 @@ let days = {
       },
       {
         name: "Hwk 6",
-        title: "Recursion",
-        url: "hwk5/",
+        title: "Expression Trees (Recursive Structs)",
+        url: "hwk6/",
         due: "11/11/2022",
       },
       {
         name: "Hwk 7",
         title: "Huffman Encoding (Binary Trees, Recursion)",
         url: "hwk7/",
-        due: "11/22/2022",
+        due: "11/28/2022",
       },
-      {
-        name: "Hwk 8",
-        title: "Evil Hangman (Maps)",
-        url: "hwk8/",
-        due: "12/6/2022",
-      },
+      // {
+      //   name: "Hwk 8",
+      //   title: "Evil Hangman (Maps)",
+      //   url: "hwk8/",
+      //   due: "12/6/2022",
+      // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
@@ -189,7 +184,7 @@ let days = {
     "PriorityQueue with Heaps",
     // wk 12
     "Start Trees and Binary Trees",
-    "Lab 9: Heaps Lab",
+    "Lab 9: Fractals Lab",
     "Tree traversal; Start BSTs",
     "BST (cont.): contains(), add(), remove()",
     // wk 13 
