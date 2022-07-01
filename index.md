@@ -1,14 +1,12 @@
 ### Biosketch
 
-I am a Professor of Computer Science at the [University of Puget Sound](https://pugetsound.edu/mathematics-computer-science-current-students). I obtained my PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [Systems Group](https://cse.osu.edu/research/systems). At Ohio State, I worked under the supervision of [Gagan Agrawal](https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en), and my dissertation was on the dynamic composition, performance modeling, and optimizations of scientific workflows over distributed cloud computing environments. I also worked on (and continue to work on) problems involving cloud data management. Before that, I worked under [Paul S. Wang](https://en.wikipedia.org/wiki/Paul_S._Wang) at ICM/Kent State for my BS and MS degrees.
-
-My current teaching and research interests include data management and distributed cloud computing. I am a member of the ACM and a senior member of IEEE.
+I am Professor of Computer Science at the [University of Puget Sound](https://pugetsound.edu/mathematics-computer-science-current-students). I obtained my PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [Systems Group](https://cse.osu.edu/research/systems). At Ohio State, I worked under the supervision of [Gagan Agrawal](https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en). My dissertation topic was on the dynamic composition, performance modeling, and optimizations of scientific workflows over distributed cloud computing environments. I also worked on (and continue to work on) problems involving cloud data management. Before that, I worked under [Paul S. Wang](https://en.wikipedia.org/wiki/Paul_S._Wang) at ICM/Kent State for my BS and MS degrees. My current teaching and research interests include data management and distributed cloud computing. I am a member of the ACM and a senior member of IEEE.
 
 Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
 
-- (5/2022) I am co-chairing (with Brian Larkins) the Poster Program at IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), to be held in Portland, Oregon.
+- (5/2022) I am co-chairing the Poster Program at IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), to be held in Portland, Oregon.
 - (4/2022) Promoted to Full Professor, effective July 2022.
 - (4/2022) I am serving as a PC member for IDEAS 2022.
 - (8/2021) I'm a Faculty Panelist (with Monica DeHart and Melvin Rouse) for the "I Am Puget Sound" student orientation program.
