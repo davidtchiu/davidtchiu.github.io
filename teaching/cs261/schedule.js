@@ -9,7 +9,7 @@ let days = {
       },
       {
         name: "Hwk 2",
-        title: "TicTacToe",
+        title: "TicTacToe (Inheritance)",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk2/",
         due: "9/19/2022",
       },
@@ -17,38 +17,32 @@ let days = {
         name: "Hwk 3",
         title: "You Complete Me",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk3.ycm/",
-        due: "9/30/2022",
+        due: "10/3/2022",
       },
       {
         name: "Hwk 4",
         title: "Sentiment Predictor",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk4.sent/",
-        due: "10/14/2022",
+        due: "10/17/2022",
       },
       {
         name: "Hwk 5",
         title: "Rank Choice Vote (Priority Queue)",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk5.rcv",
-        due: "10/28/2022",
+        due: "10/31/2022",
       },
       {
         name: "Hwk 6",
-        title: "Expression Trees (Recursive Structs)",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.expr",
-        due: "11/11/2022",
+        title: "Evil Hangman",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.ehm",
+        due: "11/16/2022",
       },
       {
         name: "Hwk 7",
         title: "Huffman Encoding (Binary Trees, Recursion)",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
-        due: "11/28/2022",
-      },
-      // {
-      //   name: "Hwk 8",
-      //   title: "Evil Hangman (Maps)",
-      //   url: "hwk8/",
-      //   due: "12/6/2022",
-      // },
+        due: "11/14/2022",
+      }
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
@@ -102,10 +96,10 @@ let days = {
       },
       {
         name: "Lab 9",
-        title: "Election (HashMaps)",
-        url: "lab9.election/",
-        due: "4/7/2022",
-      },
+        title: "Expression Trees (Recursive Structs)",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab9.expr",
+        due: "11/11/2022",
+        },
       {
         name: "Lab 10",
         title: "Boulders (File I/O, Parsing)",
@@ -184,7 +178,7 @@ let days = {
     "PriorityQueue with Heaps",
     // wk 12
     "Start Trees and Binary Trees",
-    "Lab 9: Fractals Lab",
+    "Lab 9: Expression Trees Lab",
     "Tree traversal; Start BSTs",
     "BST (cont.): contains(), add(), remove()",
     // wk 13 
