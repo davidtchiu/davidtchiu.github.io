@@ -1,4 +1,6 @@
 # TODO
+- Need to update board work for chap 8
+
 
 # Change Log
 - Make car models into Hwk 4; Make peoplesoft into Lab (6/22)

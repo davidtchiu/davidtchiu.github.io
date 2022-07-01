@@ -27,7 +27,7 @@ let days = {
       },
       {
         name: "Hwk 5",
-        title: "Rank Choice Vote (Priority Queue)",
+        title: "Rank Choice Vote",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk5.rcv",
         due: "10/31/2022",
       },
@@ -39,9 +39,9 @@ let days = {
       },
       {
         name: "Hwk 7",
-        title: "Huffman Encoding (Binary Trees, Recursion)",
+        title: "Compression",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
-        due: "11/14/2022",
+        due: "12/14/2022",
       }
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
@@ -98,7 +98,7 @@ let days = {
         name: "Lab 9",
         title: "Expression Trees (Recursive Structs)",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab9.expr",
-        due: "11/11/2022",
+        due: "11/2/2022",
         },
       {
         name: "Lab 10",
