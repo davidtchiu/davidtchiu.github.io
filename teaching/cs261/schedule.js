@@ -23,7 +23,7 @@ let days = {
         name: "Hwk 4",
         title: "Sentiment Predictor",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk4.sent/",
-        due: "10/17/2022",
+        due: "10/19/2022",
       },
       {
         name: "Hwk 5",
@@ -35,13 +35,13 @@ let days = {
         name: "Hwk 6",
         title: "Evil Hangman",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.ehm",
-        due: "11/16/2022",
+        due: "11/14/2022",
       },
       {
         name: "Hwk 7",
         title: "Compression",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
-        due: "12/14/2022",
+        due: "12/5/2022",
       }
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
