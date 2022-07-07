@@ -9,7 +9,7 @@ let days = {
       },
       {
         name: "Hwk 2",
-        title: "TicTacToe (Inheritance)",
+        title: "TicTacToe Player",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk2/",
         due: "9/19/2022",
       },
