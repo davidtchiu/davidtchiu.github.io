@@ -198,8 +198,8 @@ let days = {
     "HashMap cont.",
     "HashMap: chaining",
     // wk 15
-    "<strong><emph>Review</emph></strong>",
     "TBD",
+    "Hwk Lab",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
