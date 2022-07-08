@@ -6,17 +6,17 @@ The database models a multinational company. The queries you are asked to perfor
 
 #### Student Outcomes
 
-To write SQL queries for the retrieval of data.
+To write SQL queries for the retrieval and manipulation of data.
 
 #### Required Files
 
-Download the file below, and open it up with SQLite or SQLite DB Browser.
+Download the database file below.
 
 - [hwk4_models.db](files/hwk4_models.db)
 
 #### Instructions
 
-Start by downloading the database file, and open it up in [Antares](https://antares-sql.app/). Once open, you will find the following schema and quite a bit of data already populated.
+Start by opening up the database file in [Antares](https://antares-sql.app/). Once open, you will find the following schema and quite a bit of data already populated.
 
 <center><img src="figures/schema.png" width="500px"/></center>
 
