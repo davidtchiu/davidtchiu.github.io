@@ -29,13 +29,13 @@ let days = {
         name: "Hwk 5 (coding)",
         title: "Design Theory - Closure of FD Sets",
         url: "hwk5.closure/",
-        due: "10/22/2022",
+        due: "10/24/2022",
       },
       {
         name: "Hwk 6 (coding)",
         title: "Design Theory - BCNF Normalization",
         url: "hwk6.bcnf/",
-        due: "11/3/2022",
+        due: "11/9/2022",
       },
       // {
       //   name: "Hwk 5a",
