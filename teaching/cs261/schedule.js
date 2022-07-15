@@ -50,7 +50,7 @@ let days = {
         name: "Lab 1",
         title: "Review: Around the Farm",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab1/",
-        due: "9/2/2022",
+        due: "8/31/2022",
       },
       {
         name: "Lab 2",
