@@ -1,5 +1,7 @@
 ### Conference Organization
 
+- Poster Chair, BDCAT'22, UCC'22
+- PC Member, IDEAS'22
 - Session Chair, _"Demos and Short Papers"_, SSDBM'21
 - PC Member, IDEAS'21, BDCAT'21
 - PC Member, BDCAT'20, IDEAS'20
