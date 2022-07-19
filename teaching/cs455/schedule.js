@@ -11,19 +11,19 @@ let days = {
         name: "Hwk 2 (written)",
         title: "Relational Algebra",
         url: "hwk2.ra/",
-        due: "9/22/2022",
+        due: "9/21/2022",
       },
       {
         name: "Hwk 3 (coding)",
         title: "Data Preparation",
         url: "hwk3.ddl/",
-        due: "10/1/2022",
+        due: "9/30/2022",
       },
       {
         name: "Hwk 4 (coding)",
         title: "Writing SQL Queries",
         url: "hwk4.dml/",
-        due: "10/11/2022",
+        due: "10/12/2022",
       },
       {
         name: "Hwk 5 (coding)",
@@ -118,7 +118,7 @@ let days = {
     // wk 7
     "<strong><emph>Exam 1</emph></strong>",
     "Design theory: functional dependencies",
-    "Theory: Armstrong’s axioms, inference rules",
+    "Theory: closures, Armstrong’s axioms",
     // "App development; SQL injection",
     // "App Lab",
     // wk 8
@@ -126,29 +126,29 @@ let days = {
     "Theory: 1NF, 2NF",
     "Theory: BCNF; decomposition",
     // wk 9
-    "Theory: Canonical cover of FD sets",
+    "Theory: Dependency preservation",
+    "Theory: Canonical cover; 3NF synthesis",
     "Disks and files; access patterns",
-    "File organization of tuples",
     // "Disk scheduling; Buffer management",
     // wk 10
+    "File organization of tuples",
     "Database files",
-    "Cost analysis; Join algorithms",
     "<strong><emph>Review</emph></strong>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
+    "Cost analysis; Join algorithms",
     "Start Indexing",
-    "B+Trees: properties, operations",
     // wk 12
-    "B+Trees (cont'd)",
+    "B+Trees: properties, operations",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 13
+    "B+Trees (cont'd)",
     "Bitmaps",
     "Extendible hashing",
-    "Start transactions: ACID, serializability",
     // wk 14
+    "Start transactions: ACID, serializability",
     "Transactions: serializability test, precedence graphs",
-    "Transactions: Concurrency control",
     "Transactions: Concurrency control",
     // wk 15
     "Project Demos",
