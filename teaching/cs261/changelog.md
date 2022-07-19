@@ -1,4 +1,5 @@
 # TODO
+- Remove or redo names on labs
 - Exam 1 implementation worth too much
 - Need to reformat all assignments to .md
 - Get assignments on github

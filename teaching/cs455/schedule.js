@@ -49,12 +49,12 @@ let days = {
       //   url: "hwk7.joins/",
       //   due: "11/19/2021",
       // },
-      {
-        name: "Hwk 7 (coding)",
-        title: "B+Tree",
-        url: "hwk7.btree/",
-        due: "11/24/2021",
-      },
+      // {
+      //   name: "Hwk 7 (coding)",
+      //   title: "B+Tree",
+      //   url: "hwk7.btree/",
+      //   due: "11/24/2021",
+      // },
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
