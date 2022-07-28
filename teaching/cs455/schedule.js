@@ -7,36 +7,36 @@ let days = {
         url: "hwk1.rel/",
         due: "9/8/2022",
       },
-      {
-        name: "Hwk 2 (written)",
-        title: "Relational Algebra",
-        url: "hwk2.ra/",
-        due: "9/21/2022",
-      },
-      {
-        name: "Hwk 3 (coding)",
-        title: "Data Preparation",
-        url: "hwk3.ddl/",
-        due: "9/30/2022",
-      },
-      {
-        name: "Hwk 4 (coding)",
-        title: "Writing SQL Queries",
-        url: "hwk4.dml/",
-        due: "10/12/2022",
-      },
-      {
-        name: "Hwk 5 (coding)",
-        title: "Design Theory - Closure of FD Sets",
-        url: "hwk5.closure/",
-        due: "10/24/2022",
-      },
-      {
-        name: "Hwk 6 (coding)",
-        title: "Design Theory - BCNF Normalization",
-        url: "hwk6.bcnf/",
-        due: "11/9/2022",
-      },
+      // {
+      //   name: "Hwk 2 (written)",
+      //   title: "Relational Algebra",
+      //   url: "hwk2.ra/",
+      //   due: "9/21/2022",
+      // },
+      // {
+      //   name: "Hwk 3 (coding)",
+      //   title: "Data Preparation",
+      //   url: "hwk3.ddl/",
+      //   due: "9/30/2022",
+      // },
+      // {
+      //   name: "Hwk 4 (coding)",
+      //   title: "Writing SQL Queries",
+      //   url: "hwk4.dml/",
+      //   due: "10/12/2022",
+      // },
+      // {
+      //   name: "Hwk 5 (coding)",
+      //   title: "Design Theory - Closure of FD Sets",
+      //   url: "hwk5.closure/",
+      //   due: "10/24/2022",
+      // },
+      // {
+      //   name: "Hwk 6 (coding)",
+      //   title: "Design Theory - BCNF Normalization",
+      //   url: "hwk6.bcnf/",
+      //   due: "11/9/2022",
+      // },
       // {
       //   name: "Hwk 5a",
       //   title: "Normalization",
@@ -58,13 +58,13 @@ let days = {
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
-    projects: [
-      {
-        name: "Project",
-        title: "Database Term Project",
-        url: "proj/",
-        // due: "9/20/2021",
-      },
+    // projects: [
+    //   {
+    //     name: "Project",
+    //     title: "Database Term Project",
+    //     url: "proj/",
+    //     // due: "9/20/2021",
+    //   },
       // {
       //   name: "Proj 2",
       //   title: "Project Planning",
@@ -77,17 +77,17 @@ let days = {
       //   url: "proj4.impl/",
       //   due: "12/10/2021",
       // },
-    ],
+    // ],
 
     ////////////////////////////////// LABS ////////////////////////////////
-    labs: [
-      {
-        name: "Lab",
-        title: "SQL Lab!",
-        url: "lab.pplsoft/",
-        // due: "10/5/2021",
-      },
-    ],
+    // labs: [
+    //   {
+    //     name: "Lab",
+    //     title: "SQL Lab!",
+    //     url: "lab.pplsoft/",
+    //     // due: "10/5/2021",
+    //   },
+    // ],
   },
 
   lectures: [
