@@ -117,7 +117,7 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     // wk 7
     "<strong><emph>Exam 1</emph></strong>",
-    "Design theory: functional dependencies",
+    "Design Theory: functional dependencies",
     "Theory: closures, Armstrong’s axioms",
     // "App development; SQL injection",
     // "App Lab",

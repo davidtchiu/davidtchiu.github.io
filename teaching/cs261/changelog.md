@@ -5,8 +5,8 @@
 - Get assignments on github
 
 # Change Log
-- Added Comparable to Lab 4 (currently too easy/short)
-- Hwk 6 now Evil Hangman with recursion requirements
-- Move expression tree back into Lab 9 (Linked structures, recursion)
-- Removed pooled testing
-- Scatter sorting algos throughout the course. Do a couple during big-O; do a couple more during recursion
+- Added Comparable to Lab 4 (Fall 22)
+- Hwk 6 now Evil Hangman with recursion requirements (Fall 22)
+- Move expression tree back into Lab 9 - Linked structures, recursion (Fall 22)
+- Removed pooled testing (Fall 22)
+- Scatter sorting algos throughout the course. Do a couple during big-O; do a couple more during recursion (Fall 22)
