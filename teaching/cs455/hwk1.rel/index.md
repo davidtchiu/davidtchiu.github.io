@@ -22,19 +22,20 @@ Print this assignment with single-side pages. Fill in your name above, and write
 #### Grading
 
 ```
-This assignment is graded out of 44 pts:
+This assignment is graded out of 54 pts:
 
-[2pt] Completion of problem 1.
-[2pt] Completion of problem 2.
-[4pt] Completion of problem 3.
-[6pts] Completion of problem 4a and 4b (3pts each)
-[30pt total] Completion of problem 5, including:
-  [5pts] Design of the movie, actor, and user relations.
-  [5pts] Tracking of movies seen.
-  [5pts] Tracking of movie ratings.
-  [5pts] Tracking of actor and movie comments.
-  [5pts] Tracking of actor roles.
-  [5pts] Redundancy is minimized, and extraneous attributes are not introduced.
+[3pt] Completion of problem 1.
+[3pt] Completion of problem 2.
+[3pt] Completion of problem 3.
+[5pts] Completion of problem 4 
+[16pts] Completion of problem 5a and 5b (8pts each)
+[24pt total] Completion of problem 6, including:
+  [4pts] Design of the movie, actor, and user relations.
+  [4pts] Tracking of movies seen.
+  [4pts] Tracking of movie ratings.
+  [4pts] Tracking of actor and movie comments.
+  [4pts] Tracking of actor roles.
+  [4pts] Redundancy is minimized, and extraneous attributes are not introduced.
 ```
 
 #### Submitting Your Assignment
