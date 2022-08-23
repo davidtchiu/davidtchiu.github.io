@@ -46,7 +46,7 @@ let days = {
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
-      {
+      // {
       //   name: "Lab 1",
       //   title: "Review: Around the Farm",
       //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab1/",
