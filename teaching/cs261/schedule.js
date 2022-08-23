@@ -47,11 +47,11 @@ let days = {
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
       {
-        name: "Lab 1",
-        title: "Review: Around the Farm",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab1/",
-        due: "8/31/2022",
-      },
+      //   name: "Lab 1",
+      //   title: "Review: Around the Farm",
+      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab1/",
+      //   due: "8/31/2022",
+      // },
       // {
       //   name: "Lab 2",
       //   title: "Inheritance Lab",

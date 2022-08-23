@@ -27,8 +27,8 @@ This assignment is graded out of 54 pts:
 [3pt] Completion of problem 1.
 [3pt] Completion of problem 2.
 [3pt] Completion of problem 3.
-[5pts] Completion of problem 4 
-[16pts] Completion of problem 5a and 5b (8pts each)
+[5pts] Completion of problem 4.
+[16pts] Completion of problem 5a and 5b. (8pts each)
 [24pt total] Completion of problem 6, including:
   [4pts] Design of the movie, actor, and user relations.
   [4pts] Tracking of movies seen.
