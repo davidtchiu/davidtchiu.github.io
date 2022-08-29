@@ -85,6 +85,9 @@ Intro to Computer Science -->
 
 ### Teaching Awards
 
+- **President's Excellence in Teaching Award**\
+  University of Puget Sound, 2022
+
 - **Diversity Council Award**\
   WSU Vancouver, 2010
 

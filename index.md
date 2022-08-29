@@ -1,12 +1,13 @@
 ### Biosketch
 
-I'm a Professor of Computer Science at the [University of Puget Sound](https://pugetsound.edu/mathematics-computer-science-current-students), where I also served as chair from 2019-22. Prior to my appointment at Puget Sound, I obtained my PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [Systems Group](https://cse.osu.edu/research/systems).  I worked under the supervision of [Gagan Agrawal](https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en) (now Associate Dean at Augusta) on problems involving the dynamic composition, performance modeling, and optimizations of scientific workflows over distributed cloud computing environments. I also worked under [Paul S. Wang](https://en.wikipedia.org/wiki/Paul_S._Wang) at the Institute of Computational Mathematics (ICM/Kent State) on the transmission of mathematics education modules.
+I'm a Professor of Computer Science at the [University of Puget Sound](https://pugetsound.edu/mathematics-computer-science-current-students), where I also served as chair from 2019-22. Prior to my appointment at Puget Sound, I was on the CS faculty at WSU Vancouver. I obtained a Ph.D. in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [Systems Group](https://cse.osu.edu/research/systems) under the supervision of [Gagan Agrawal](https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en) (now Associate Dean at Augusta). I worked on problems involving the dynamic composition, performance modeling, and optimizations of scientific workflows over distributed cloud computing environments. I also worked under [Paul S. Wang](https://en.wikipedia.org/wiki/Paul_S._Wang) at the Institute of Computational Mathematics (ICM/Kent State) on the transmission of mathematics education modules for my BS/MS degrees. My current teaching and research interests include database management, distributed cloud computing, and the web.
 
-My current teaching and research interests include data management,  distributed cloud computing, and the web. I am a member of the ACM and a senior member of IEEE. Here's a link to my [curriculum vitae](CV.pdf).
+I am the recipient of the Kristine Bartanen Research Award (2016) and the President's Excellence in Teaching Award (2022) at the University of Puget Sound. Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
 
-- (5/2022) I am co-chairing the Poster Program at IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), to be held in Portland, Oregon.
+- (8/2022) I'm honored to be selected for the President's Excellence in Teaching Award, University of Puget Sound.
+- (5/2022) I am co-chairing the Poster Program at IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), both to be held in Portland, Oregon in December.
 - (4/2022) Promoted to Full Professor, effective July 2022.
 - (4/2022) I am serving as a PC member for IDEAS 2022.
 - (8/2021) I'm a Faculty Panelist (with Monica DeHart and Melvin Rouse) for the "I Am Puget Sound" student orientation program.
