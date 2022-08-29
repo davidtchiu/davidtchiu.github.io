@@ -2,7 +2,9 @@
 
 I'm a Professor of Computer Science at the [University of Puget Sound](https://pugetsound.edu/mathematics-computer-science-current-students), where I also served as chair from 2019-22. Prior to my appointment at Puget Sound, I was on the CS faculty at WSU Vancouver. I obtained a Ph.D. in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu) as a member of the [Systems Group](https://cse.osu.edu/research/systems) under the supervision of [Gagan Agrawal](https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en) (now Associate Dean at Augusta). I worked on problems involving the dynamic composition, performance modeling, and optimizations of scientific workflows over distributed cloud computing environments. I also worked under [Paul S. Wang](https://en.wikipedia.org/wiki/Paul_S._Wang) at the Institute of Computational Mathematics (ICM/Kent State) on the transmission of mathematics education modules for my BS/MS degrees. My current teaching and research interests include database management, distributed cloud computing, and the web.
 
-I am the recipient of the Kristine Bartanen Research Award (2016) and the President's Excellence in Teaching Award (2022) at the University of Puget Sound. Here's a link to my [curriculum vitae](CV.pdf).
+I am the recipient of the Kristine Bartanen Research Award (2016) and the President's Excellence in Teaching Award (2022) at the University of Puget Sound. I am a member of ACM and a senior member of IEEE.
+
+Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
 
