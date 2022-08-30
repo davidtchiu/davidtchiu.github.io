@@ -117,7 +117,7 @@ let days = {
   lectures: [
     // wk 1
     "Introductions: Who are we? Syllabus",
-    "Lab 1: CS 1 Review",
+    "Lab 1: Review",
     "Inheritance: motivation, abstraction",
     "Inheritance (cont.): this(), super()",
     // wk 2

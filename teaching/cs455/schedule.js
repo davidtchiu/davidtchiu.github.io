@@ -5,7 +5,7 @@ let days = {
         name: "Hwk 1 (written)",
         title: "The Relational Model",
         url: "hwk1.rel/",
-        due: "9/8/2022",
+        due: "9/9/2022",
       },
       // {
       //   name: "Hwk 2 (written)",
