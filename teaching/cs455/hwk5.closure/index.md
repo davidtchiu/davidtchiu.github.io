@@ -125,7 +125,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
         AB --> D    // This comes from AB --> C and C --> D
       ]
       ```
-      Take particular note of the fact that $$A \rightarrow D$$ (via $$A\rightarrow AB$$ and $$AB \rightarrow D$$) is also generated, even though it took an iteration to first generate $$AB \rightarrow D$$. Therefore, this method is exhaustive.
+      Take particular note of the fact that $$A \rightarrow D$$ (via $$A\rightarrow C$$ and $$C \rightarrow D$$) is also generated, even though it took an iteration to first generate $$A \rightarrow C$$. Therefore, this method is exhaustive.
 
 
     - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure, i.e., the full set of FDs generated through the repeated applications of Armstrong's Axioms. You can find the full algorithm in the notes or in the book, but I'll summarize it here:
