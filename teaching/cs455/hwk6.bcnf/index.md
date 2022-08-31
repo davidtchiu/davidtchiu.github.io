@@ -24,17 +24,17 @@ Starter code for this assignment is provided on the github repo. You are not req
 #### Preliminary
 - Just like the previous assignment, you will need to be familiar with [Java's Set interface](https://docs.oracle.com/javase/7/docs/api/java/util/Set.html). Know how to take a set union, intersection, difference, and how to iterate through Sets. **You must write this program in Java.** I've provided skeleton code for you to implement. 
 
-Also, it's imperative for this assignment that you're careful about avoiding side-effects: All of the static methods you need to write must **not** alter the contents of the input structures. I have provided a **copy constructor**  in both `FD` and `FDSet` for this purpose. For instance:
+- Also, it's imperative for this assignment that you're careful about avoiding side-effects: All of the static methods you need to write must **not** alter the contents of the input structures. I have provided a **copy constructor**  in both `FD` and `FDSet` for this purpose. For instance:
 
 ```java
-public static method(FD originalFDset) {
-  FDSet badcopy = originalFDset;   // Don't do this!!! badcopy simply references the input FD set.
-                                    // Any changes to badcopy will cause side effects.
-  FDSet truecopy = new FD(originalFDset);   // Yes! Creates a deep copy of originalFDset
+public static method(FD originalFD) {
+  FDSet badcopy = originalFD;   // Don't do this!!! badcopy simply points to the input.
+                                // Any changes to badcopy will cause side effects to originalFD.
+  FDSet truecopy = new FD(originalFD);   // Yes! Creates a deep copy of originalFD
 }
 ```
   
-  - Note that Java's HashSet and TreeSet classes also provide copy constructors! Use them where applicable.
+- Note that Java's own `HashSet` and `TreeSet` classes also provide copy constructors! Use them where applicable.
   
 
 
