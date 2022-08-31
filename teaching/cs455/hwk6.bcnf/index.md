@@ -80,7 +80,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
 3. There's quite a bit of work involving *attribute sets* in this assignment. Superkeys are attribute sets, and so are relational schemas. Assume that attribute sets are just a (hash)set of attribute names (strings). For instance, the relational schema $$R(A,B,C)$$ can be constructed using this simple inline syntax:
 
     ```java
-    // R(A,B,C)
+    // Here's a relation schema R(A,B,C)
     Set<String> R = new HashSet<>(Arrays.asList("A", "B", "C"));
     ```
 
@@ -92,11 +92,11 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
 4. Write `findSuperkeys(Set<String> rel, FDSet fdset)` -- This method accepts a relational schema and an FD set and returns a set of superkeys for the given schema. A superkey is a set of attributes that can functionally determine all attributes in the relational schema. This is an algorithm we've gone through in class and is also in the book. You should thrown an `IllegalArgumentException` if an FD refers to an attribute that is not in the given relational schema. The Attribute Set Closure algorithm you saw in class would be of use here. Here is an example that we saw in the slides:
 
     ```java
-    // people(ssn, name, eyecolor)
-    Set<String> people = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
     FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
     FD f2 = new FD(Arrays.asList("ssn"), Arrays.asList("eyecolor")); // ssn --> eyecolor
     FDSet fdset = new FDSet(f1, f2);
+
+    Set<String> people = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor")); // Relation people(ssn, name, eyecolor)
     System.out.println("Superkeys: " + Normalizer.findSuperkeys(people, fdset));
     ```
 
@@ -114,12 +114,11 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     Here's an IllegalArgumentException because `eyecolor` is not an attribute in the given schema, but appears in an FD:
 
     ```java
-    // People(ssn, name)
-    Set<String> People = new HashSet<>(Arrays.asList("ssn", "name"));
     FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
     FD f2 = new FD(Arrays.asList("ssn"), Arrays.asList("eyecolor")); // ssn --> eyecolor
     FDSet fdset = new FDSet(f1, f2);
 
+    Set<String> people = new HashSet<>(Arrays.asList("ssn", "name")); // Relation people(ssn, name)
     System.out.println("Superkeys: " + Normalizer.findSuperkeys(People, fdset));
     ```
 
@@ -137,8 +136,8 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     FD f2 = new FD(Arrays.asList("ssn", "name"), Arrays.asList("eyecolor")); // ssn,name --> eyecolor
     FDSet fdset = new FDSet(f1, f2);
 
-    Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
-    System.out.println("BCNF? " + Normalizer.isBCNF(People, fdset));
+    Set<String> people = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor")); // Relation people(ssn,name,eyecolor)
+    System.out.println("BCNF? " + Normalizer.isBCNF(people, fdset));
     ```
 
     ```
@@ -153,8 +152,8 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     FD f3 = new FD(Arrays.asList("name"), Arrays.asList("eyecolor")); // name --> eyecolor (violates BCNF)
     FDSet fdset = new FDSet(f1, f2, f3);
 
-    Set<String> People = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor"));
-    System.out.println("BCNF? " + Normalizer.isBCNF(People, fdset));
+    Set<String> people = new HashSet<>(Arrays.asList("ssn", "name", "eyecolor")); // Relation people(ssn,name,eyecolor)
+    System.out.println("BCNF? " + Normalizer.isBCNF(people, fdset));
     ```
     ```
     BCNF? false
@@ -166,8 +165,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     *Important:* After a split, it is imperative that your algorithm redistributes all FDs in the closure ($$F^+$$) of the given `fdset`. In the example below, notice how the functional dependency `A --> C` is not explicitly listed in the given FD set, but is held in its closure via transitivity. After splitting the relation into `[A, B]` and `[A, C, D]`, had you not distributed `A --> C` to `[A, C, D]`, then the algorithm would've falsely assumed that `[A, C, D]` was in BCNF!
 
     ```java
-    // R(A,B,C)
-    Set<String> S = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
+    Set<String> S = new HashSet<>(Arrays.asList("A", "B", "C", "D")); // Relation S(A,B,C,D)
     FD s1 = new FD(Arrays.asList("A"), Arrays.asList("B")); // A --> B
     FD s2 = new FD(Arrays.asList("B"), Arrays.asList("C")); // B --> C
     FDSet fdsetS = new FDSet(s1, s2);
@@ -196,8 +194,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     Here's another example of running this algorithm:
 
     ```java
-    // U(A,B,C,D,E)
-    Set<String> U = new HashSet<>(Arrays.asList("A", "B", "C", "D", "E"));
+    Set<String> U = new HashSet<>(Arrays.asList("A", "B", "C", "D", "E"));  // Relation U(A,B,C,D,E)
     FD f1 = new FD(Arrays.asList("A", "E"), Arrays.asList("D")); // AE --> D
     FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
     FD f3 = new FD(Arrays.asList("D"), Arrays.asList("B")); // D --> B

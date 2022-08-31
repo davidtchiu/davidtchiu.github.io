@@ -194,7 +194,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
 4. Once you have FD Set Closure working, you should be able to test the equality between two FD sets. Recall that two FD sets are equal iff their closures are equal. There's nothing you need to do here, except  to try out more test cases in order to verify that the equals method works as intended.
 
     ```java
-    // One FD Set = A --> B, AB --> C
+    // One FD Set = A --> AB, AB --> C
     FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> AB
     FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
     FDSet fdset = new FDSet(f1, f2);
