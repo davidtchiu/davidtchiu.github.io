@@ -112,7 +112,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
     - `transitive(FDSet fdset)` -- This method returns a new set of FDs after repeatedly applying the transitive rule until no more changes are detected. Here's an example output for $$FD = \{A \rightarrow AB, AB \rightarrow C, C \rightarrow D\}$$:
 
       ```java
-      FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> B
+      FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> BA
       FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
       FD f3 = new FD(Arrays.asList("C"), Arrays.asList("D")); // C --> D
       FDSet fdset = new FDSet(f1, f2, f3);
@@ -195,7 +195,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
 
     ```java
     // One FD Set = A --> B, AB --> C
-    FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> B
+    FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> AB
     FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
     FDSet fdset = new FDSet(f1, f2);
 
