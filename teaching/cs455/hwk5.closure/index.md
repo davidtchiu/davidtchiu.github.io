@@ -112,7 +112,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
     - `transitive(FDSet fdset)` -- This method returns a new set of FDs after *repeatedly* applying the transitive rule until no more new FDs are detected. Here's an example output for $$FD = \{A \rightarrow AB, AB \rightarrow C, C \rightarrow D\}$$:
 
       ```java
-      FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> BA
+      FD f1 = new FD(Arrays.asList("A"), Arrays.asList("A", "B")); // A --> AB
       FD f2 = new FD(Arrays.asList("A", "B"), Arrays.asList("C")); // AB --> C
       FD f3 = new FD(Arrays.asList("C"), Arrays.asList("D")); // C --> D
       FDSet fdset = new FDSet(f1, f2, f3);
@@ -120,9 +120,9 @@ For this assignment, you're welcome to add as many other helper methods as you n
       ```
       ```
       [
-        A --> C
-        A --> D
-        AB --> D
+        A --> C     // This comes from A --> AB and AB --> C
+        A --> D     // This comes from A --> C and C --> D
+        AB --> D    // This comes from AB --> C and C --> D
       ]
       ```
       Take particular note of the fact that $$A \rightarrow D$$ (via $$A\rightarrow AB$$ and $$AB \rightarrow D$$) is also generated, even though it took an iteration to first generate $$AB \rightarrow D$$. Therefore, this method is exhaustive.
