@@ -11,8 +11,8 @@ Here's is a list of my former research advisees and a half-hearted effort of tra
 - Sarah Walling-Bell (BS'20, Puget Sound) → University of Washington
 - Sarah McClain (BS'20, Puget Sound) → Panorama Education, Boston
 - Jared Polonitza (BS'19, Puget Sound) → Chalice Networks
-- Sam Burdick (BS'18, Puget Sound) → AWS → PhD @ Ohio State
-- Jahrme Risner (BS'18, Puget Sound) → Google
+- Sam Burdick (BS'18, Puget Sound) → Amazon → PhD @ Ohio State
+- Jahrme Risner (BS'18, Puget Sound) → Google, Mountain View
 - Jack Burns (BS'18, Puget Sound) → Loopie Seattle
 - Patrick Ryan (BS'18, Puget Sound) → T-Mobile, Bellevue
 - Christine Li (BS'17, Puget Sound) → Columbia University
