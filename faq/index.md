@@ -44,7 +44,7 @@
   - _"How long has it been since I last interacted with David?"_ If it's been multiple years since you graduated, I may not remember enough details about you as a student. I'd likely have to rely on data like grades and GPA, which may no longer represent you.
 
 - **Can I list you for a job reference?**\
-  I am generally find with this, as long as I've had you in some courses. I don't have to know you and your work with as much detail than I would if I were asked to provide a letter, but you're still reminded that I'm honest about my evaluations of students, so a lot of the things from the previous question still apply.
+  I am generally fine with this, as long as I've had you in my courses. You're reminded that I'm honest about my evaluations of students, so a lot of the things from the previous question still apply.
 
 - **Can we connect on social media?**\
-  I'm happy to connect with my students and alumni on [LinkedIn](http://www.linkedin.com/in/davidtchiu). I'm not on FB, Twitter, Instagram, ... if you happen to find me on those platforms, it's a fake account. There is also a [CS department group](https://www.linkedin.com/groups/1864577/) on LinkedIn that you should request to join.
+  I'm happy to connect with students and alumni on [LinkedIn](http://www.linkedin.com/in/davidtchiu). There is also a [CS department group](https://www.linkedin.com/groups/1864577/) on LinkedIn that you should request to join, and a [Math/CS Department Instagram](https://www.instagram.com/ups_mathcs/) that you can follow.
