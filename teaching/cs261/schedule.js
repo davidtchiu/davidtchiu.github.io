@@ -52,12 +52,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab1/",
         due: "8/31/2022",
       },
-      // {
-      //   name: "Lab 2",
-      //   title: "Inheritance Lab",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab2/",
-      //   due: "9/7/2022",
-      // },
+      {
+        name: "Lab 2",
+        title: "Inheritance Lab",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab2/",
+        due: "9/7/2022",
+      },
       // {
       //   name: "Lab 3",
       //   title: "Abstract Classes Lab",
