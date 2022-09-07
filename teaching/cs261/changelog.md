@@ -1,5 +1,6 @@
 # TODO
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
+- Lec 1b: polymorphism -- Can I use pipe-cleaners somehow?
 - Remove or redo names on labs
 - Need to reformat all assignments to .md
 - Exam 1 implementation worth too much
