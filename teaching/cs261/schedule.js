@@ -123,7 +123,7 @@ let days = {
     // wk 2
     "<strong><emph>Labor Day<br/>(No Class)</emph></strong>",
     "Lab 2: Inheritance Lab",
-    "Object class, instanceof, down-casting, overriding",
+    "Object class, instanceof, down-casting, @Override",
     "Polymorphism, dynamic  dispatch",
     // wk 3
     "Abstract classes",

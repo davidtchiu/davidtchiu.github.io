@@ -1,11 +1,12 @@
 # TODO
+- Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 - Remove or redo names on labs
-- Exam 1 implementation worth too much
 - Need to reformat all assignments to .md
-- Get assignments on github
+- Exam 1 implementation worth too much
+- Get assignment starter code on github
 
 # Change Log
-- Added Comparable to Lab 4 (Fall 22)
+- Rewrote interface lab (Lab 4) to consider checksums (Fall 22)
 - Hwk 6 now Evil Hangman with recursion requirements (Fall 22)
 - Move expression tree back into Lab 9 - Linked structures, recursion (Fall 22)
 - Removed pooled testing (Fall 22)
