@@ -7,12 +7,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk1/",
         due: "9/7/2022",
       },
-      // {
-      //   name: "Hwk 2",
-      //   title: "TicTacToe Player",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk2/",
-      //   due: "9/19/2022",
-      // },
+      {
+        name: "Hwk 2",
+        title: "TicTacToe Player",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk2/",
+        due: "9/19/2022",
+      },
       // {
       //   name: "Hwk 3",
       //   title: "You Complete Me",
