@@ -94,23 +94,23 @@ let days = {
     // wk 1
     "Why DBMS? Data independence",
     "Relational model; set theory",
-    "Keys and schema",
+    "Connection to set theory",
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
+    "Keys and schema",
     "Relational algebra",
-    "RA: expression trees; composition",
     // wk 3
+    "RA: expression trees; composition",
     "RA: natural join, theta join",
     "RA: outer joins, rename, NULL",
-    "RA: aggregation and grouping",
     // wk 4
+    "RA: aggregation and grouping",
     "SQL: schema definition; integrity constraints",
     "SQL: selection, joins, set ops",
-    "SQL: outer joins, renaming, WITH",
     // wk 5
+    "SQL: outer joins, renaming, WITH",
     "SQL: subqueries",
     "SQL: grouping and aggregation",
-    "SQL: grouping and aggregation, triggers, transactions",
     // wk 6
     "SQL Work Day",
     "SQL Work Day",
