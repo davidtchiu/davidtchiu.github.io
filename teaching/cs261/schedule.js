@@ -58,12 +58,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab2/",
         due: "9/7/2022",
       },
-      // {
-      //   name: "Lab 3",
-      //   title: "Abstract Classes Lab",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab3/",
-      //   due: "9/14/2022",
-      // },
+      {
+        name: "Lab 3",
+        title: "Abstract Classes Lab",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab3/",
+        due: "9/14/2022",
+      },
       // {
       //   name: "Lab 4",
       //   title: "Interface Lab ",

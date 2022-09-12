@@ -7,12 +7,12 @@ let days = {
         url: "hwk1.rel/",
         due: "9/12/2022",
       },
-      // {
-      //   name: "Hwk 2 (written)",
-      //   title: "Relational Algebra",
-      //   url: "hwk2.ra/",
-      //   due: "9/21/2022",
-      // },
+      {
+        name: "Hwk 2 (written)",
+        title: "Relational Algebra",
+        url: "hwk2.ra/",
+        due: "9/23/2022",
+      },
       // {
       //   name: "Hwk 3 (coding)",
       //   title: "Data Preparation",
@@ -93,15 +93,15 @@ let days = {
   lectures: [
     // wk 1
     "Why DBMS? Data independence",
-    "Relational model; set theory",
-    "Connection to set theory",
+    "Review of set theory",
+    "Relational Model: Connection to sets",
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
-    "Keys and schema",
-    "Relational algebra",
+    "Relational Model: keys",
+    "Relational Model: designing schema",
     // wk 3
-    "RA: expression trees; composition",
-    "RA: natural join, theta join",
+    "Relational Algebra: selection, projection, and query plans",
+    "RA: natural join",
     "RA: outer joins, rename, NULL",
     // wk 4
     "RA: aggregation and grouping",
