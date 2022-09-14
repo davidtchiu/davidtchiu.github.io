@@ -1,5 +1,5 @@
 #### TODO
-
+- Grading: Model rubric off 261
 - Change books - Mapping to Horstmann early objects
   - Lec 1: Chap 1 (all)
   - Lec 2a (Circle): Chap 2.1-2.2
