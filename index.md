@@ -9,7 +9,6 @@ I am the recipient of the  [2022 President's Excellence in Teaching Award](https
 Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
-- (8/2022) I have received the 2022 President's Excellence in Teaching Award, University of Puget Sound.
 - (8/2022) We have received an NSF grant to provide travel scholarships to students attending IEEE/ACM UCC 2022 and BDCAT 2022 conferences.
 - (5/2022) I am co-chairing the Poster Program at IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), both to be held in Portland, Oregon in December.
 - (4/2022) Promoted to Full Professor, effective July 2022.
