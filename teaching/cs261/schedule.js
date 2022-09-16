@@ -131,7 +131,7 @@ let days = {
     "Interfaces and implementations",
     "Multiple implementation, Comparable<T>",
     // wk 4
-    "Finish Comparable LibraryBook; Start exceptions",
+    "Start exceptions",
     "Lab 4: Interfaces",
     "Exceptions: throwing, catching",
     "Catching exceptions: (un)checked, customization",
