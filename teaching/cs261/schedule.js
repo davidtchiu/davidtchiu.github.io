@@ -13,12 +13,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk2/",
         due: "9/19/2022",
       },
-      // {
-      //   name: "Hwk 3",
-      //   title: "You Complete Me",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk3.ycm/",
-      //   due: "9/28/2022",
-      // },
+      {
+        name: "Hwk 3",
+        title: "You Complete Me",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk3.ycm/",
+        due: "9/28/2022",
+      },
       // {
       //   name: "Hwk 4",
       //   title: "Sentiment Predictor",
@@ -64,12 +64,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab3/",
         due: "9/14/2022",
       },
-      // {
-      //   name: "Lab 4",
-      //   title: "Interface Lab ",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab4/",
-      //   due: "9/21/2022",
-      // },
+      {
+        name: "Lab 4",
+        title: "Interface Lab ",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab4/",
+        due: "9/21/2022",
+      },
       // {
       //   name: "Lab 5",
       //   title: "Exceptions Lab",
