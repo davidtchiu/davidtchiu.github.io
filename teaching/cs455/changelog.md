@@ -1,5 +1,6 @@
 # TODO
 - Need to update board work for theory
+- Hwk 1: Remove Q2 (too obvious from Q1)
 
 # Change Log
 - Make car models into Hwk 4; Make peoplesoft into Lab (6/22)
