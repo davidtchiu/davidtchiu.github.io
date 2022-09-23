@@ -134,9 +134,9 @@ let days = {
     "Start exceptions",
     "Lab 4: Interfaces",
     "Exceptions: throwing, catching",
-    "Catching exceptions: (un)checked, customization",
+    "Customizing exceptions; Start Big-O",
     // wk 5
-    "Start Big-O",
+    "Big-O",
     "Lab 5: Exception Lab",
     "Big-O",
     "Big-O (insertion sort)",
