@@ -107,31 +107,31 @@ let days = {
     // wk 4
     "RA: aggregation and grouping",
     "SQL: schema definition; integrity constraints",
-    "SQL: selection, joins, set ops",
+    "SQL: foreign keys; insert, delete, update operations",
     // wk 5
+    "SQL: selection, joins, set ops",
     "SQL: outer joins, renaming, WITH",
     "SQL: subqueries",
-    "SQL: grouping and aggregation",
     // wk 6
+    "SQL: grouping and aggregation",
     "SQL Work Day",
     "SQL Work Day",
-    "<strong><emph>Review</emph></strong>",
     // wk 7
+    "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     "Design Theory: functional dependencies",
-    "Theory: closures, Armstrong’s axioms",
     // "App development; SQL injection",
     // "App Lab",
     // wk 8
     "<strong>Fall Break</strong>",
+    "Theory: closures, Armstrong’s axioms",
     "Theory: 1NF, 2NF",
-    "Theory: BCNF; decomposition",
     // wk 9
+    "Theory: BCNF; decomposition",
     "Theory: Dependency preservation",
     "Theory: Canonical cover; 3NF synthesis",
-    "Disks and files; access patterns",
-    // "Disk scheduling; Buffer management",
     // wk 10
+    // "Disks and files; access patterns",
     "File organization of tuples",
     "Database files",
     "<strong><emph>Review</emph></strong>",
