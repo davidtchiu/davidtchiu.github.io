@@ -17,7 +17,7 @@ let days = {
         name: "Hwk 3",
         title: "You Complete Me",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk3.ycm/",
-        due: "9/30/2022",
+        due: "10/3/2022",
       },
       // {
       //   name: "Hwk 4",
