@@ -139,7 +139,7 @@ let days = {
     "Big-O",
     "Lab 5: Exception Lab",
     "Big-O",
-    "Big-O (insertion sort)",
+    "Big-O (binary search)",
     // wk 6
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
