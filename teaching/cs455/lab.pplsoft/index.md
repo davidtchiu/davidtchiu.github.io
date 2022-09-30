@@ -172,98 +172,98 @@ For each of the following problems, write an SQL query to return the expected re
 
 12. After learning about the GPA mishap, the college now wants to add a new department, `Philosophy (PHIL)`, which will housed in a newly constructed building called `Plato's Cave`. They will offer a course on `PHIL 101: Ethics` taught in room `CAVE`, and all CSCI majors SQL statements**.
 
-   ```
-   (Showing the contents of the Dept, course, and enroll tables.)
+      ```
+      (Showing the contents of the Dept, course, and enroll tables.)
 
-   > select * from dept order by deptID;
-   deptID      deptName            building
-   ----------  ------------------  -------------
-   BUS         School of Business  McIntyre Hall
-   CSCI        School of Computer  Thompson Hall
-   ENGL        Department of Engl  Wyatt Hall
-   HIST        Department of Hist  Wyatt Hall
-   MATH        Department of Math  Tower of Babe
-   PHIL        Philosophy          Plato's Cave
-   PHYS        Department of Phys  Harned Hall
-   SOAN        Department of Anth  Wyatt Hall
-
-
-   > select * from course order by deptID,CourseNum;
-   CourseNum   deptID      CourseName  Location    meetDay     meetTime
-   ----------  ----------  ----------  ----------  ----------  ----------
-   122         BUS         Economics   WY 30       MW          13:30
-   351         BUS         Finance     WY 29       TR          12:00
-   122         CSCI        How to Cod  TH 19       TR          12:00
-   351         CSCI        Database S  TH 19       MW          12:00
-   453         CSCI        Capstone i  TH 398      MWF         16:00
-   460         CSCI        Operating   TH 8        MW          14:00
-   520         CSCI        High Perfo  WY 307      TR          15:00
-   101         ENGL        How to Rea  WY 100      MWF         13:00
-   102         ENGL        How to Wri  WY 100      MWF         14:00
-   520         ENGL        Shakespear  HH 20       TR          13:00
-   120         MATH        Algebra     MH 10       MW          12:00
-   230         MATH        Linear Alg  HH 308      TR          15:00
-   320         MATH        Discrete M  TH 307      F           11:00
-   330         MATH        Trigonomet  WEY 113     TR          08:30
-   460         MATH        Calculus 3  WEY 102     TR          12:30
-   101         PHIL        Ethics      CAVE        TR          16:00
-   101         PHYS        How Things  HH 191      MWF         10:00
-   401         PHYS        Quantum Me  HH 372      TR          09:00
-   101         SOAN        Sociology   WY 105      MWF         08:00
-   102         SOAN        Sociology   WY 205      MTWRF       09:00
+      > select * from dept order by deptID;
+      deptID      deptName            building
+      ----------  ------------------  -------------
+      BUS         School of Business  McIntyre Hall
+      CSCI        School of Computer  Thompson Hall
+      ENGL        Department of Engl  Wyatt Hall
+      HIST        Department of Hist  Wyatt Hall
+      MATH        Department of Math  Tower of Babe
+      PHIL        Philosophy          Plato's Cave
+      PHYS        Department of Phys  Harned Hall
+      SOAN        Department of Anth  Wyatt Hall
 
 
-   > select * from enroll order by deptID,courseNum;
-   CourseNum   deptID      StudentID
-   ----------  ----------  ----------
-   122         BUS         1510
-   122         BUS         1316
-   122         BUS         1282
-   351         BUS         1510
-   351         BUS         1661
-   351         BUS         1025
-   351         BUS         1304
-   351         CSCI        1282
-   351         CSCI        1510
-   351         CSCI        1661
-   351         CSCI        1247
-   351         CSCI        1501
-   351         CSCI        1911
-   351         CSCI        1025
-   351         CSCI        1934
-   453         CSCI        1247
-   453         CSCI        1911
-   453         CSCI        1934
-   460         CSCI        1316
-   460         CSCI        1689
-   460         CSCI        1661
-   520         CSCI        1247
-   520         CSCI        1025
-   101         ENGL        1247
-   101         ENGL        1225
-   102         ENGL        1304
-   520         ENGL        1689
-   520         ENGL        1782
-   520         ENGL        1304
-   520         ENGL        1025
-   520         ENGL        1934
-   120         MATH        1101
-   230         MATH        1101
-   230         MATH        1911
-   230         MATH        1782
-   320         MATH        1247
-   460         MATH        1661
-   101         PHIL        1381
-   101         PHIL        1709
-   101         PHIL        1316
-   101         PHIL        1911
-   101         PHIL        1501
-   101         PHIL        1661
-   101         PHYS        1304
-   101         PHYS        1025
-   401         PHYS        1101
-   102         SOAN        1709
-   ```
+      > select * from course order by deptID,CourseNum;
+      CourseNum   deptID      CourseName  Location    meetDay     meetTime
+      ----------  ----------  ----------  ----------  ----------  ----------
+      122         BUS         Economics   WY 30       MW          13:30
+      351         BUS         Finance     WY 29       TR          12:00
+      122         CSCI        How to Cod  TH 19       TR          12:00
+      351         CSCI        Database S  TH 19       MW          12:00
+      453         CSCI        Capstone i  TH 398      MWF         16:00
+      460         CSCI        Operating   TH 8        MW          14:00
+      520         CSCI        High Perfo  WY 307      TR          15:00
+      101         ENGL        How to Rea  WY 100      MWF         13:00
+      102         ENGL        How to Wri  WY 100      MWF         14:00
+      520         ENGL        Shakespear  HH 20       TR          13:00
+      120         MATH        Algebra     MH 10       MW          12:00
+      230         MATH        Linear Alg  HH 308      TR          15:00
+      320         MATH        Discrete M  TH 307      F           11:00
+      330         MATH        Trigonomet  WEY 113     TR          08:30
+      460         MATH        Calculus 3  WEY 102     TR          12:30
+      101         PHIL        Ethics      CAVE        TR          16:00
+      101         PHYS        How Things  HH 191      MWF         10:00
+      401         PHYS        Quantum Me  HH 372      TR          09:00
+      101         SOAN        Sociology   WY 105      MWF         08:00
+      102         SOAN        Sociology   WY 205      MTWRF       09:00
+
+
+      > select * from enroll order by deptID,courseNum;
+      CourseNum   deptID      StudentID
+      ----------  ----------  ----------
+      122         BUS         1510
+      122         BUS         1316
+      122         BUS         1282
+      351         BUS         1510
+      351         BUS         1661
+      351         BUS         1025
+      351         BUS         1304
+      351         CSCI        1282
+      351         CSCI        1510
+      351         CSCI        1661
+      351         CSCI        1247
+      351         CSCI        1501
+      351         CSCI        1911
+      351         CSCI        1025
+      351         CSCI        1934
+      453         CSCI        1247
+      453         CSCI        1911
+      453         CSCI        1934
+      460         CSCI        1316
+      460         CSCI        1689
+      460         CSCI        1661
+      520         CSCI        1247
+      520         CSCI        1025
+      101         ENGL        1247
+      101         ENGL        1225
+      102         ENGL        1304
+      520         ENGL        1689
+      520         ENGL        1782
+      520         ENGL        1304
+      520         ENGL        1025
+      520         ENGL        1934
+      120         MATH        1101
+      230         MATH        1101
+      230         MATH        1911
+      230         MATH        1782
+      320         MATH        1247
+      460         MATH        1661
+      101         PHIL        1381
+      101         PHIL        1709
+      101         PHIL        1316
+      101         PHIL        1911
+      101         PHIL        1501
+      101         PHIL        1661
+      101         PHYS        1304
+      101         PHYS        1025
+      401         PHYS        1101
+      102         SOAN        1709
+      ```
 
 
 13. To prevent future tampering, the university wants you to log any activity in the Student table. Create a new table called `student_log` to store the following information: activity in question (insert, deletion, update), student's name, all the old values, and the new values. Finally, create the triggers that will record these activities.
