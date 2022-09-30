@@ -135,40 +135,40 @@ For each of the following problems, write an SQL query to return the expected re
 
 10. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
 
-   ```
-   studentID   studentName  class       major       gpa
-   ----------  -----------  ----------  ----------  ----------
-   1782        Andrew       Sophomore   BUS         3.7
-   1501        Jessica      Freshman    CSCI        3.3
-   1025        John         Senior      ENGL        3.6
-   1510        Jordan       Freshman    MATH        3.0
-   ```
+      ```
+      studentID   studentName  class       major       gpa
+      ----------  -----------  ----------  ----------  ----------
+      1782        Andrew       Sophomore   BUS         3.7
+      1501        Jessica      Freshman    CSCI        3.3
+      1025        John         Senior      ENGL        3.6
+      1510        Jordan       Freshman    MATH        3.0
+      ```
 
 11. You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so round anything higher than a 4.0 to 4.0. This should just take two UPDATE statements. 
 
-   ```
-   (BEFORE)
-   > select * from student natural join major where major='CSCI';
-   studentID   studentName  class       gpa         major
-   ----------  -----------  ----------  ----------  ----------
-   1381        Tiffany      Junior      4.0         CSCI
-   1709        Cassandra    Junior      2.8         CSCI
-   1316        Austin       Sophomore   2.1         CSCI
-   1911        David        Senior      3.2         CSCI
-   1501        Jessica      Freshman    3.3         CSCI
-   1661        Logan        Freshman    0.5         CSCI
+      ```
+      (BEFORE)
+      > select * from student natural join major where major='CSCI';
+      studentID   studentName  class       gpa         major
+      ----------  -----------  ----------  ----------  ----------
+      1381        Tiffany      Junior      4.0         CSCI
+      1709        Cassandra    Junior      2.8         CSCI
+      1316        Austin       Sophomore   2.1         CSCI
+      1911        David        Senior      3.2         CSCI
+      1501        Jessica      Freshman    3.3         CSCI
+      1661        Logan        Freshman    0.5         CSCI
 
-   (AFTER)
-   > select * from student natural join major where major='CSCI';
-   studentID   studentName  class       gpa         major
-   ----------  -----------  ----------  ----------  ----------
-   1381        Tiffany      Junior      4.0         CSCI
-   1709        Cassandra    Junior      3.8         CSCI
-   1316        Austin       Sophomore   3.1         CSCI
-   1911        David        Senior      4.0         CSCI
-   1501        Jessica      Freshman    4.0         CSCI
-   1661        Logan        Freshman    1.5         CSCI
-   ```
+      (AFTER)
+      > select * from student natural join major where major='CSCI';
+      studentID   studentName  class       gpa         major
+      ----------  -----------  ----------  ----------  ----------
+      1381        Tiffany      Junior      4.0         CSCI
+      1709        Cassandra    Junior      3.8         CSCI
+      1316        Austin       Sophomore   3.1         CSCI
+      1911        David        Senior      4.0         CSCI
+      1501        Jessica      Freshman    4.0         CSCI
+      1661        Logan        Freshman    1.5         CSCI
+      ```
 
 12. After learning about the GPA mishap, the college now wants to add a new department, `Philosophy (PHIL)`, which will housed in a newly constructed building called `Plato's Cave`. They will offer a course on `PHIL 101: Ethics` taught in room `CAVE`, and all CSCI majors SQL statements**.
 
