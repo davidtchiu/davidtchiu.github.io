@@ -134,10 +134,10 @@ let days = {
     // "Disks and files; access patterns",
     "File organization of tuples",
     "Database files",
-    "<strong><emph>Review</emph></strong>",
-    // wk 11
-    "<strong><emph>Exam 2</emph></strong>",
     "Cost analysis; Join algorithms",
+    // wk 11
+    "<strong><emph>Review</emph></strong>",
+    "<strong><emph>Exam 2</emph></strong>",
     "Start Indexing",
     // wk 12
     "B+Trees: properties, operations",
