@@ -144,7 +144,6 @@ For each of the following problems, write an SQL query to return the expected re
    1510        Jordan       Freshman    MATH        3.0
    ```
 
-
 11. You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so round anything higher than a 4.0 to 4.0. This should just take two UPDATE statements. 
 
    ```
@@ -171,7 +170,7 @@ For each of the following problems, write an SQL query to return the expected re
    1661        Logan        Freshman    1.5         CSCI
    ```
 
-12. After learning about the GPA mishap, the college now wants to add a new department, Philosophy (PHIL), which will housed in a newly constructed building called Plato's Cave. They will offer a course on PHIL 101: Ethics taught in room CAVE, and all CSCI majors are now required to take it. Add the new department, course, and enrollments. You need to do this in just **three separate statements**. Run these statements in such a way that they cannot be broken up (atomically).
+12. After learning about the GPA mishap, the college now wants to add a new department, `Philosophy (PHIL)`, which will housed in a newly constructed building called `Plato's Cave`. They will offer a course on `PHIL 101: Ethics` taught in room `CAVE`, and all CSCI majors SQL statements**.
 
    ```
    (Showing the contents of the Dept, course, and enroll tables.)
