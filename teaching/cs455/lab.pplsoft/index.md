@@ -16,12 +16,13 @@ The following file(s) have been provided for this assignment.
 - [university.db](university.db)
 
 #### Browse your Database!
-Start by downloading the database file, and open it up in [Antares](https://antares-sql.app/). Open the university.db file that is provided to you, and browse its contents to gauge the schema and where all the data is stored.
+Start by downloading the database file, and open it up in [DB Browser](https://sqlitebrowser.org/) or [Antares](https://antares-sql.app/). Open the `university.db` file that is provided to you, and browse its contents to gauge the schema and where all the data is stored.
 
 
 
 #### Writing SQL Queries
-To write your queries, open Antares and you should see a `+` sign on the top. When you click on it, Antares will open a new "query" tab. This is where you can write and execute your SQL queries. For each of the following problems, write an SQL query to return the expected results. Your queries should work in general, regardless of what data is currently stored in this instance of the University database. In other words, don't hard code your queries!
+<!-- To write your queries, open Antares and you should see a `+` sign on the top. When you click on it, Antares will open a new "query" tab. This is where you can write and execute your SQL queries.  -->
+For each of the following problems, write an SQL query to return the expected results. Your queries should work in general, regardless of what data is currently stored in this instance of the University database. In other words, don't hard code your queries!
 
 
 1. Return a list of departments that are found in any building starting with "T". Order by dept ID.
