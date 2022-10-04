@@ -19,12 +19,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk3.ycm/",
         due: "10/3/2022",
       },
-      // {
-      //   name: "Hwk 4",
-      //   title: "Sentiment Predictor",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk4.sent/",
-      //   due: "10/19/2022",
-      // },
+      {
+        name: "Hwk 4",
+        title: "Sentiment Predictor",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk4.sent/",
+        due: "10/19/2022",
+      },
       // {
       //   name: "Hwk 5",
       //   title: "Rank Choice Vote",
