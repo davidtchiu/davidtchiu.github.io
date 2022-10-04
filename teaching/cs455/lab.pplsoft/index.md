@@ -170,7 +170,7 @@ For each of the following problems, write an SQL query to return the expected re
       1661        Logan        Freshman    1.5         CSCI
       ```
 
-12. After learning about the GPA mishap, the college now wants to add a new department, `Philosophy (PHIL)`, which will housed in a newly constructed building called `Plato's Cave`. They will offer a course on `PHIL 101: Ethics` taught in room `CAVE`, and all CSCI majors SQL statements**.
+12. After learning about the GPA mishap, the college now wants to add a new department, `Philosophy (PHIL)`, which will housed in a newly constructed building called `Plato's Cave`. They will offer a course on `PHIL 101: Ethics` taught in room `CAVE`, and all CSCI majors SQL statements.
 
       ```
       (Showing the contents of the Dept, course, and enroll tables.)
@@ -266,7 +266,7 @@ For each of the following problems, write an SQL query to return the expected re
       ```
 
 
-13. To prevent future tampering, the university wants you to log any activity in the Student table. Create a new table called `student_log` to store the following information: activity in question (insert, deletion, update), student's name, all the old values, and the new values. Finally, create the triggers that will record these activities.
+<!-- 13. To prevent future tampering, the university wants you to log any activity in the Student table. Create a new table called `student_log` to store the following information: activity in question (insert, deletion, update), student's name, all the old values, and the new values. Finally, create the triggers that will record these activities. -->
 
 Put these statements in the DDL file that was provided to you.
 
