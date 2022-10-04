@@ -23,7 +23,7 @@ let days = {
         name: "Hwk 4",
         title: "Sentiment Predictor",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk4.sent/",
-        due: "10/19/2022",
+        due: "10/14/2022",
       },
       // {
       //   name: "Hwk 5",
