@@ -20,12 +20,12 @@ let days = {
         due: "10/3/2022",
       },
     
-      // {
-      //   name: "Hwk 4 (coding)",
-      //   title: "Writing SQL Queries",
-      //   url: "hwk4.dml/",
-      //   due: "10/12/2022",
-      // },
+      {
+        name: "Hwk 4 (coding)",
+        title: "Writing SQL Queries",
+        url: "hwk4.dml/",
+        due: "10/12/2022",
+      },
       // {
       //   name: "Hwk 5 (coding)",
       //   title: "Design Theory - Closure of FD Sets",
@@ -81,14 +81,14 @@ let days = {
     // ],
 
     ////////////////////////////////// LABS ////////////////////////////////
-    // labs: [
-    //   {
-    //     name: "Lab",
-    //     title: "SQL Lab!",
-    //     url: "lab.pplsoft/",
-    //     // due: "10/5/2021",
-    //   },
-    // ],
+    labs: [
+      {
+        name: "Lab",
+        title: "SQL Lab!",
+        url: "lab.pplsoft/",
+        // due: "10/5/2021",
+      },
+    ],
   },
 
   lectures: [

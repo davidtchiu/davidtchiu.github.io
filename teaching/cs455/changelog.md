@@ -2,7 +2,8 @@
 - Need to update board work for theory
 - Hwk 1: Remove Q2 (too obvious from Q1)
 - Hwk 2: Split up last page for more room. Do away with Q6
-
+- Don't put off labs until the end. Make one lab go sooner. Make an easier lab for day 1, then make the current lab shorter.
+  
 # Change Log
 - Make car models into Hwk 4; Make peoplesoft into Lab (6/22)
 - Project converted to being more open-ended (6/22)
