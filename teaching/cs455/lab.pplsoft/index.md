@@ -92,7 +92,7 @@ For each of the following problems, write an SQL query to return the expected re
    1640        Adam
    ```
 
-7. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! 
+7. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! Oh weird, did you know that you can select constants as a column? For instance, try running `select studentName,1234 from student` and see what you get. How might that be useful here?
 
    ```
    deptName                    enrolled
