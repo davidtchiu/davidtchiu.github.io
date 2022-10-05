@@ -16,7 +16,7 @@ The following file(s) have been provided for this assignment.
 - [university.db](university.db)
 
 #### Browse your Database!
-Start by downloading the database file, and open it up in [DB Browser](https://sqlitebrowser.org/) or [Antares](https://antares-sql.app/). Open the `university.db` file that is provided to you, and browse its contents to gauge the schema and where all the data is stored.
+Start by downloading the database file, and open it up in [DB Browser](https://sqlitebrowser.org/) or [Antares](https://antares-sql.app/). Open the `university.db` file that is provided to you, and browse its contents to gauge the schema and where all the data is stored.<br/><br/>
 
 <img src="universitySchema.png"/>
 
