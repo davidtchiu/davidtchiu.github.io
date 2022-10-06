@@ -268,7 +268,6 @@ For each of the following problems, write an SQL query to return the expected re
 
 <!-- 13. To prevent future tampering, the university wants you to log any activity in the Student table. Create a new table called `student_log` to store the following information: activity in question (insert, deletion, update), student's name, all the old values, and the new values. Finally, create the triggers that will record these activities. -->
 
-Put these statements in the DDL file that was provided to you.
 
 
 
