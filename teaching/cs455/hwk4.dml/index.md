@@ -16,7 +16,7 @@ Download the database file below.
 
 #### Instructions
 
-Start by opening up the database file in [Antares](https://antares-sql.app/). Once open, you will find the following schema and quite a bit of data already populated.
+Start by opening up the database file in DB Browser or [Antares](https://antares-sql.app/). Once open, you will find the following schema and quite a bit of data already populated.
 
 <center><img src="figures/schema.png" width="500px"/></center>
 

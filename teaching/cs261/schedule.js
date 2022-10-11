@@ -76,12 +76,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab5/",
         due: "9/28/2022",
       },
-      // {
-      //   name: "Lab 6",
-      //   title: "ArrayLists Lab",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab6/",
-      //   due: "10/12/2022",
-      // },
+      {
+        name: "Lab 6",
+        title: "ArrayLists Lab",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab6/",
+        due: "10/12/2022",
+      },
       // {
       //   name: "Lab 7",
       //   title: "Stacks and Queues Lab",
