@@ -306,7 +306,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     (too many more to list)
     ```
 
-11. List the profit per product that the company would make if it were able to sell all of that product at MSRP (answer should include product name, profit). Order by profit. This is a shorter/easier query than the previous ones. (You should get 110 rows)
+11. List the profit per product that the company would make if it were able to sell all of that product at MSRP instead of "buy price" (answer should include product name, profit). Order by profit. This is a shorter/easier query than the previous ones. (You should get 110 rows)
 
     ```
     productName               profit
