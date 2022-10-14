@@ -183,7 +183,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    Mami        Nishi       Tokyo       5
    ```
 
-9. List the customer(s) and their total payments (answer should include customer number, customer name, total payment where total payment is the total amount of dollars the customer has paid). Order by total payment.
+9. List the customer(s) and their total payments (answer should include customer number, customer name, total payment where total payment is the total amount of dollars the customer has paid). Order by total payment. You should get 98 rows.
 
     ```
     customerNumber  customerName       totalPayment
@@ -288,7 +288,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     141             Euro+ Shopping Ch  715738.98
     ```
 
-10. List the product number, product name, and customer name such that the customer has never ordered that product. Order by customer name then product code.
+10. List the product number, product name, and customer name such that the customer has never ordered that product. Order by customer name then product code. You should get 10,888 rows.
 
     ```
     productCode  productName                            customerName
@@ -306,7 +306,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     (too many more to list)
     ```
 
-11. List the profit per product that the company would make if it were able to sell all of that product at MSRP (answer should include product name, profit). Order by profit.
+11. List the profit per product that the company would make if it were able to sell all of that product at MSRP (answer should include product name, profit). Order by profit. (You should get 110 rows)
 
     ```
     productName               profit
@@ -422,7 +422,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     2002 Suzuki XREO          843246.95
     1952 Alpine Renault 1300  845334.6
     ```
-12. Return the average order size for each customer (results should include customer name, average quantity) Order by customer name. To get you started, you'll need to first find the sum of all orderQuantities for each orderNumber. Then you'll want to find the customers who made those individual orderNumbers, to find all orders that a customer has made. Finally, average out the summed order quantities.
+12. Return the average order size for each customer (results should include customer name, average quantity) Order by customer name. To get you started, you'll need to first find the sum of all orderQuantities for each orderNumber. Then you'll want to find the customers who made those individual orderNumbers, to find all orders that a customer has made. Finally, average out the summed order quantities. (You should get 98 rows.)
 
     ```
     customerName    avgQuantity
