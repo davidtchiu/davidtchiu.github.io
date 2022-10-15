@@ -149,7 +149,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    S24_2000     1960 BSA Gold Star DBD34
    ```
 
-7. Identify the offices (by city) that have the least employees and the most employees (answer should include city, number of employees)
+7. Identify the offices (by city name) that have the least employees and the most employees (answer should include city, number of employees)
 
    ```
    numEmps     city
