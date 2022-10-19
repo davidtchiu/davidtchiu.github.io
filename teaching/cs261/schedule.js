@@ -25,6 +25,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk4.sent/",
         due: "10/14/2022",
       },
+      {
+        name: "Hwk 5",
+        title: "Doubly Linked List",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk5.LL",
+        due: "10/28/2022",
+      },
       // {
       //   name: "Hwk 5",
       //   title: "Rank Choice Vote",
