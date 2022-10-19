@@ -26,12 +26,12 @@ let days = {
         url: "hwk4.dml/",
         due: "10/14/2022",
       },
-      // {
-      //   name: "Hwk 5 (coding)",
-      //   title: "Design Theory - Closure of FD Sets",
-      //   url: "hwk5.closure/",
-      //   due: "10/24/2022",
-      // },
+      {
+        name: "Hwk 5 (coding)",
+        title: "Design Theory - Closure of FD Sets",
+        url: "hwk5.closure/",
+        due: "10/24/2022",
+      },
       // {
       //   name: "Hwk 6 (coding)",
       //   title: "Design Theory - BCNF Normalization",
