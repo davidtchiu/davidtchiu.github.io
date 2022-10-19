@@ -124,26 +124,27 @@ let days = {
     // "App Lab",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Theory: functional dependencies, closure",
-    "Theory: closure and keys; Armstrong’s axioms",
+    "Theory: functional dependencies, FD-set closure",
+    "Theory: Armstrong's Axioms, proof of inference rules",
     // wk 9
-    "Theory: 1NF, 2NF",
-    "Theory: BCNF; decomposition",
-    "Theory: Dependency preservation",
+    "Theory: Attribute closure and keys",
+    "Theory: Normal Forms: 1NF, 2NF",
+    "Theory: BCNF; decomposition algo",
     // wk 10
     // "Disks and files; access patterns",
-    "Theory: Canonical cover; 3NF synthesis",
+    "Theory: Importance of dependency preservation",
+    "Theory: Canonical cover; 3NF synthesis algo",
     "File organization of tuples",
-    "Database files",
     // wk 11
+    "Database files",
     "Cost analysis; Join algorithms",
     "<strong><emph>Review</emph></strong>",
-    "<strong><emph>Exam 2</emph></strong>",
     // wk 12
-    "Start Indexing",
+    "<strong><emph>Exam 2</emph></strong>",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 13
+    "Start Indexing",
     "B+Trees: properties, operations",
     "B+Trees (cont'd)",
     // "Bitmaps",
