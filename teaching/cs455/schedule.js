@@ -30,7 +30,7 @@ let days = {
         name: "Hwk 5 (coding)",
         title: "Design Theory - Closure of FD Sets",
         url: "hwk5.closure/",
-        due: "10/24/2022",
+        due: "10/28/2022",
       },
       // {
       //   name: "Hwk 6 (coding)",
