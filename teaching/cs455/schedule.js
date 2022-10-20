@@ -124,15 +124,15 @@ let days = {
     // "App Lab",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Theory: functional dependencies, FD-set closure",
-    "Theory: Armstrong's Axioms, proof of inference rules",
+    "Theory: functional dependencies, Attribute set closure",
+    "Theory: Review of attribute-set closure; superkeys algorithm",
     // wk 9
-    "Theory: Attribute closure and keys",
+    "Theory: FD-set closure; Armstrong's Axioms, proof of inference rules",
     "Theory: Normal Forms: 1NF, 2NF",
-    "Theory: BCNF; decomposition algo",
+    "Theory: BCNF; Decomposition algorithm",
     // wk 10
     // "Disks and files; access patterns",
-    "Theory: Importance of dependency preservation",
+    "Theory: Dependency preservation",
     "Theory: Canonical cover; 3NF synthesis algo",
     "File organization of tuples",
     // wk 11

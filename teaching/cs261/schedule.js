@@ -159,8 +159,8 @@ let days = {
     // wk 8
     "<strong>Fall Break</strong>",
     "<strong>Fall Break</strong>",
-    "Stacks and Queues",
-    "Dijkstra's 2-Stack Algo",
+    "Stacks and Dijkstra's Infix Algo",
+    "Queues",
     // wk 9:
     "PriorityQueue, Dijkstra's SSSP algo",
     "Lab 7: Stacks and Queues",
