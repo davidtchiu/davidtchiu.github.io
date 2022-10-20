@@ -159,23 +159,23 @@ let days = {
     // wk 8
     "<strong>Fall Break</strong>",
     "<strong>Fall Break</strong>",
-    "Stacks and Dijkstra's Infix Algo",
-    "Queues",
+    "Stacks and Infix Algo",
+    "Queue, PriorityQueue, Dijkstra's Algo",
     // wk 9:
-    "PriorityQueue, Dijkstra's SSSP algo",
-    "Lab 7: Stacks and Queues",
     "Start recursion: setup and tracing",
+    "Lab 7: Stacks and Queues",
     "Recursion (cont.): code reading, common pitfalls",
-    // wk 10
     "Big-O analysis of recursive algos (telescoping method)",
+    // wk 10
+    "Sorting: Merge Sort",
     "Lab 8: Recursion Lab",
     "Lab review",
-    "Sorting: Merge Sort",
+    "Sorting: Quick Sort",
     // wk 11
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "Sorting: Quick Sort",
-    "PriorityQueue with Heaps",
+    "Heaps: percolate/heapify",
+    "Heaps: PriorityQueue revisited",
     // wk 12
     "Start Trees and Binary Trees",
     "Lab 9: Expression Trees Lab",
