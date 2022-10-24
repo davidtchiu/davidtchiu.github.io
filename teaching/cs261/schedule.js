@@ -88,12 +88,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab6/",
         due: "10/12/2022",
       },
-      // {
-      //   name: "Lab 7",
-      //   title: "Stacks and Queues Lab",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab7/",
-      //   due: "10/26/2022",
-      // },
+      {
+        name: "Lab 7",
+        title: "Stacks and Queues Lab",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab7/",
+        due: "10/26/2022",
+      },
       // {
       //   name: "Lab 8",
       //   title: "Recursion Lab",
