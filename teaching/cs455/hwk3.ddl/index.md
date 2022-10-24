@@ -141,7 +141,10 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 	location, day, and time. Some courses can be cross listed. For instance, 
 	the course Discrete Math might belong to both CS and Math departments! By 
 	itself, neither course number nor deptID are unique in this relation, but the
-	two taken together is. No courses can be taught before '07:00' or after '17:00'.
+	two taken together is. No courses can be taught before '07:00' or after '17:00'. Yes
+	the leading "0" matters for single-digit hours, since time is represented as a string
+	and will be compared lexicographically. (Therefore, '7:00' > '17:00', which is clearly 
+	not true.)
 	I would use a TEXT field to store meeting days and meeting times (Hint: recall that
 	<code>&gt;</code> and <code>&lt;</code> operators can be used with TEXT fields).
 	</p>

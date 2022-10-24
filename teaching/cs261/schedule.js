@@ -159,18 +159,19 @@ let days = {
     // wk 8
     "<strong>Fall Break</strong>",
     "<strong>Fall Break</strong>",
-    "Stacks and Infix Algo",
+    "Stacks, Infix Algo",
     "Queue, PriorityQueue, Dijkstra's Algo",
     // wk 9:
-    "Start recursion: setup and tracing",
+    "PriorityQueue, Dijkstra's Algo",
     "Lab 7: Stacks and Queues",
+    "Start recursion: setup and tracing",
     "Recursion (cont.): code reading, common pitfalls",
-    "Big-O analysis of recursive algos (telescoping method)",
     // wk 10
-    "Sorting: Merge Sort",
+    "Big-O analysis of recursive algos (telescoping method)",
     "Lab 8: Recursion Lab",
     "Lab review",
-    "Sorting: Quick Sort",
+    "Sorting: Merge Sort",
+//    "Sorting: Quick Sort",
     // wk 11
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",

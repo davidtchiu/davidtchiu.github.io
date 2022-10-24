@@ -7,6 +7,7 @@
   - Make SQL lab into work days for the Hwk 4
   - Hwk 4 => Car models? Univ with harder questions?
 - Redo the study guides so that the topics are listed
+- Hwk 3: be clear that ENG=>ENGL is the only replacement? Or remove it. Be clear that no illegal insert statement shall be generated!
 
 # Change Log
 - Make car models into Hwk 4; Make peoplesoft into Lab (6/22)
