@@ -70,9 +70,11 @@ For this assignment, you're welcome to add as many other helper methods as you n
 
     - Do not make any changes to this class.
 
-2. Next, open up the `FDSet` class, which contains a set of FDs. Again this class has been completed for you. It's really just a wrapper class I wrote to make my grading-life easier. Read it over. Note that a method, `powerSet(Set<E> inputSet)` is given. Test it out so you know how to use it. Do not make any changes to this class.
+2. Next, open up the `FDSet` class, which contains a set of FDs. Again this class has been completed for you. It's really just a wrapper class I wrote to make my grading-life easier. Read it over. 
 
 3. Now open the `FDUtil` class, and implement the following static methods:
+
+    - Note that a method, `powerSet(Set<E> inputSet)` is given. Test it out so you know how to use it. Do not make any changes to this class.
 
     - `trivial(FDSet fdset)` -- This method accepts a set of FDs and returns a new set of trivial FD stemming from the input set. Recall the trivial rule specifies that any subset of the left-side attributes can be (trivially) determined by the left-side attributes. Essentially, for each FD $$\alpha\rightarrow \beta$$ in the input set, find all subsets $$\gamma \subseteq \alpha$$. Then generate a new FD $$\alpha \rightarrow \gamma$$. Here's an example output for $$F = \{A \rightarrow B, AB \rightarrow C\}$$:
 
