@@ -120,8 +120,6 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     "Design Theory: functional dependencies",
-    // "App development; SQL injection",
-    // "App Lab",
     // wk 8
     "<strong>Fall Break</strong>",
     "Theory: functional dependencies, Attribute set closure",
@@ -141,15 +139,15 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     // wk 12
     "<strong><emph>Exam 2</emph></strong>",
-    "<strong>Thanksgiving</strong>",
-    "<strong>Thanksgiving</strong>",
-    // wk 13
     "Start Indexing",
     "B+Trees: properties, operations",
+    // wk 13
     "B+Trees (cont'd)",
-    // "Bitmaps",
-    "Extendible hashing",
+    "<strong>Thanksgiving</strong>",
+    "<strong>Thanksgiving</strong>",
     // wk 14
+    // "Bitmaps",
+    // "Extendible hashing",
     "Start transactions: ACID, serializability",
     "Transactions: serializability test, precedence graphs",
     "Transactions: Concurrency control",
