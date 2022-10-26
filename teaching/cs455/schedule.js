@@ -126,12 +126,12 @@ let days = {
     "Theory: Review of attribute-set closure; superkeys algorithm",
     // wk 9
     "Theory: FD-set closure; Armstrong's Axioms, proof of inference rules",
-    "Theory: Normal Forms: 1NF, 2NF",
-    "Theory: BCNF; Decomposition algorithm",
+    "Theory: Normal Forms: 1NF, 2NF, BCNF",
+    "Theory: Dependency preservation",
     // wk 10
     // "Disks and files; access patterns",
-    "Theory: Dependency preservation",
-    "Theory: Canonical cover; 3NF synthesis algo",
+    "Theory: Canonical cover; 3NF",
+    "Files and Disks",
     "File organization of tuples",
     // wk 11
     "Database files",

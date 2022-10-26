@@ -8,6 +8,7 @@
   - Hwk 4 => Car models? Univ with harder questions?
 - Redo the study guides so that the topics are listed
 - Hwk 3: be clear that ENG=>ENGL is the only replacement? Or remove it. Be clear that no illegal insert statement shall be generated!
+- Hwk 5: Don't give powerSet?
 
 # Change Log
 - Make car models into Hwk 4; Make peoplesoft into Lab (6/22)
