@@ -131,11 +131,11 @@ let days = {
     // wk 10
     // "Disks and files; access patterns",
     "Theory: Canonical cover; 3NF",
-    "Files and Disks",
-    "File organization of tuples",
+    "Files: Disks, files, and access patterns",
+    "Files: Structure of tuples",
     // wk 11
-    "Database files",
-    "Cost analysis; Join algorithms",
+    "Files: Organization of tuples",
+    "Files: Cost analysis; Join algorithms",
     "<strong><emph>Review</emph></strong>",
     // wk 12
     "<strong><emph>Exam 2</emph></strong>",
