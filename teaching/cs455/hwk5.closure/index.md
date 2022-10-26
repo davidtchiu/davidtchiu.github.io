@@ -133,22 +133,22 @@ For this assignment, you're welcome to add as many other helper methods as you n
     - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure, i.e., the full set of FDs generated through the repeated applications of Armstrong's Axioms. You can find the full algorithm in the notes or in the book, but I'll summarize it here:
   
       ```
-      Input: FD(R) -- the set of functional dependencies for some relation R
+      Input: F, a set of functional dependencies
 
-      FD+ = Copy of FD(R)
+      F+ = Copy of F
       Repeat:
         // augmentation
-        Get the set of attributes that appear in FD(R)
-        Union all subsets of these attributes to both sides of all FDs in FD+
-        Add these augmented FDs to FD+
+        Get the set of attributes that appear in F
+        Union all subsets of these attributes to both sides of all FDs in F+
+        Add these augmented FDs to F+
 
         // trivial
-        Find all trivial FDs in FD+ and add them to FD+
+        Find all trivial FDs in F+ and add them to F+
 
         // transitivity
-        Find all transitive FDs in FD+ and add them to FD+
-      Until no change to FD+
-      return FD+
+        Find all transitive FDs in F+ and add them to F+
+      Until no change to F+
+      return F+
       ``` 
     
       The example below shows the FD set closure for $$F = \{A \rightarrow B, AB \rightarrow C\}$$:
