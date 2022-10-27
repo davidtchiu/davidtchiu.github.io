@@ -2,7 +2,7 @@
 
 ### Database Term Project
 The term project is open-ended, and you need to write a short proposal (1 page is sufficient) outlining what you and your team are hoping to accomplish. The only requirements for the term project are listed as follows:
-- Novelty: You are required to learn and apply something new about databases that was not covered in class.
+- Novelty: You are required to learn and apply something new about data management and/or databases that was not covered in class.
 - You are required to work in teams of 2-3 students.
 - You are required to build out a significant application. 
 - You are required to practice scrum and record daily progress.
