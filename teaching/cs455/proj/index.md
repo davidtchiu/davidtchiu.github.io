@@ -1,7 +1,7 @@
 ## CS 455 - Principles of Database Systems
 
 ### Database Term Project
-The term project is open-ended, and you need to write a short proposal telling me what you and your team are hoping to accomplish. The only requirements for the term project are listed as follows:
+The term project is open-ended, and you need to write a short proposal (1 page is sufficient) outlining what you and your team are hoping to accomplish. The only requirements for the term project are listed as follows:
 - Novelty: You are required to learn and apply something new about databases that was not covered in class.
 - You are required to work in teams of 2-3 students.
 - You are required to build out a significant application. 
@@ -13,7 +13,7 @@ The term project is open-ended, and you need to write a short proposal telling m
 #### Important Dates
 - Team preferences due via email to David: Sunday, Oct 30, 2022
 - Team assignments (from David): Monday, Oct 31, 3022
-- Proposal submission deadline: Sunday, Nov 6, 2022
+- 1-page proposal deadline: Sunday, Nov 6, 2022
 - Presentation / demo: Last week before finals
 - Scrum logs and check-ins: weekly, ongoing
 - Code submission: Finals week
