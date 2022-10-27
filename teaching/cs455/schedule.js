@@ -39,12 +39,6 @@ let days = {
       //   due: "11/9/2022",
       // },
       // {
-      //   name: "Hwk 5a",
-      //   title: "Normalization",
-      //   url: "hwk5.norm/",
-      //   due: "10/20/2021",
-      // },
-      // {
       //   name: "Hwk 7 (coding)",
       //   title: "Joins!",
       //   url: "hwk7.joins/",
@@ -84,18 +78,6 @@ let days = {
         url: "proj/",
         due: "12/16/2022",
       },
-      // {
-      //   name: "Proj 2",
-      //   title: "Project Planning",
-      //   url: "proj3.planning/",
-      //   due: "11/1/2021",
-      // },
-      // {
-      //   name: "Proj 3",
-      //   title: "Implementation",
-      //   url: "proj4.impl/",
-      //   due: "12/10/2021",
-      // },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
@@ -145,10 +127,10 @@ let days = {
     // wk 9
     "Theory: FD-set closure; Armstrong's Axioms, proof of inference rules",
     "Theory: Normal Forms: 1NF, 2NF, BCNF",
-    "Theory: Dependency preservation",
+    "Theory: Lossless join; dependency preservation",
     // wk 10
     // "Disks and files; access patterns",
-    "Theory: Canonical cover; 3NF",
+    "Theory: Canonical cover; 3NF synthesis",
     "Files: Disks, files, and access patterns",
     "Files: Structure of tuples",
     // wk 11
