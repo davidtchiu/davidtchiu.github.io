@@ -59,13 +59,13 @@ let days = {
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
-    // projects: [
-    //   {
-    //     name: "Project",
-    //     title: "Database Term Project",
-    //     url: "proj/",
-    //     // due: "9/20/2021",
-    //   },
+    projects: [
+      {
+        name: "Project",
+        title: "Database Term Project",
+        url: "proj/",
+        due: "12/8/2022",
+      },
       // {
       //   name: "Proj 2",
       //   title: "Project Planning",
@@ -78,7 +78,7 @@ let days = {
       //   url: "proj4.impl/",
       //   due: "12/10/2021",
       // },
-    // ],
+    ],
 
     ////////////////////////////////// LABS ////////////////////////////////
     labs: [
