@@ -61,19 +61,19 @@ let days = {
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
       {
-        name: "Project-Teams",
+        name: "Project Teams",
         title: "Team Preferences",
         url: "proj/",
         due: "10/28/2022",
       },
       {
-        name: "Project-Prop",
+        name: "Project Prop",
         title: "Project Proposal",
         url: "proj/",
         due: "11/4/2022",
       },
       {
-        name: "Project-pres",
+        name: "Project Demo",
         title: "Project Demo",
         url: "proj/",
         due: "12/5/2022",
