@@ -11,17 +11,16 @@ The term project is open-ended, and you need to write a short proposal (1 page i
 
 
 #### Important Dates
-- Team preferences due via email to David: Monday, Oct 31, 2022
-- 1-page proposal deadline: Sunday, Nov 6, 2022
-- Presentation / demo: Last week before finals
+- Team preferences due via email to David: Friday, Oct 28, 2022
+- 1-page proposal deadline: Friday, Nov 4, 2022
+- Presentation / demo: Monday, Dec 5, 2022
+- Code submission: Friday, Dec 16, 2022
 - Scrum logs and check-ins: weekly, ongoing
-- Code submission: Finals week
 
 
 
 ##### Importance of Team Buy-in
-I strongly recommend that the team comes to a consensus on the project vision, so that everyone is equally invested in taking ownership. Project visions borne out of one or two students generally doesn't work well. Something like this has happened in the very recent past... A student was really into Pokemon cards. They convinced the rest of their team members to write a web app to organize all the Pokemon cards in the world, and so that users can manage which cards they own and even trade them and battle each other. Other teammates didn't understand how the battles were played out, which was more complicated than they first thought, but went along with it anyway. The other members were never really invested enough to stay motivated to work on the project, and let's just say that it didn't end well.
-
+I strongly recommend that the team comes to a consensus on the project vision, so that everyone is equally invested in taking ownership. Project visions borne out of one or two students generally doesn't work well. Something like this has happened in the very recent past... A student was really into Pokemon cards. They convinced the rest of their team members to write a web app to organize all the Pokemon cards in the world, and so that users can manage which cards they own and even trade them and battle each other. Other teammates didn't understand how the battles were played out (which was far more complicated than they thought) but went along with it anyway. The other members were never invested enough in the project to stay motivated. 
 
 Here are just some ideas on what you and your team can do:
 
@@ -41,12 +40,14 @@ Here are just some ideas on what you and your team can do:
 
 - Explore 4th Normal Form (4NF). Come up with examples of relations that satisfy 3NF/BCNF, but not 4NF. Implement algorithms (such as the ones we've written in the past) to model multivalued dependencies and decompose relations into 4NF.
 
-- And more! You have a good amount of freedom to propose anything, as long as it's related to database systems. It just needs to satisfy the *novelty* and *significant implementation* requirements.
+- You could learn, implement, and visualize a new indexing method, such as an R-Tree for indexing geospatial data.
+
+- And more! You have a high degree of freedom to propose anything, as long as it's related to databases and data management. It just needs to satisfy the *novelty* and *significant implementation* requirements.
 
 
 
 #### Project Proposal Requirements
-A short proposal outlining your project should be submitted to me before the proposal deadline. There is no page limit, but going off the past, roughly 2-3 pages (single spaced) seems about right. There are required sections of the proposal that you have to write:
+A short proposal outlining your project should be submitted to me before the proposal deadline. One page ought to suffice, but there's no page limit. There are required sections of the proposal that you have to write:
 
 - *Title and members:* Give a title to your project, and list the names of your group members on your proposal.
  
@@ -106,25 +107,33 @@ Finally, you must produce a Gantt Chart that communicates your timeline and mile
 - **Submission:** The proposal should be in PDF format and uploaded to a github account. Go to [Canvas](https://canvas.pugetsound.edu) and submit the URL to your proposal under the `Project` Dropbox.
 
 
-#### Presentation/Demo Requirements (5% final course grade)
+#### Project Code Repository
+You are required to manage your code on github. As soon as you are able, please share with me the URL to your code repository. Finalize and push your code by 11:59pm on day of our exams. You *must* include a `readme.md` file that includes some basic instructions on how to deploy your code (with examples, if applicable.)
+
+
+#### Scrum Records
+As a way to keep everyone accountable, you must share a Google Document/Sheet that records your scrum activities. I assume that you and your group will be meeting regularly, but please reserve a weekly meeting to run scrum. At the beginning of each week, everyone must answer these questions:
+
+1. What did I accomplish since our last meeting?
+2. What do I hope to have done by the end of the week?
+3. What elements might impede me from accomplishing my goals for the week?
+
+Please have someone record everyone's responses to these questions. I will check in regularly to ensure good progress is being made by all team members.
+
+
+#### Presentation/Demo Requirements 
 Be prepared to give a ~15 minute presentation to the class, allowing a ~3 minutes for question and answer. The demo should showcase your application, and every team member must have equal participation in the demo (you will be graded on balance). At minimum, your presentation should show:
 
-  - A brief introduction to your project.
+  - A quick introduction to your project.
   - If applicable, include the DB schema which should be normalized to at least 3NF.
   - List technical (and other) challenges that you had to overcome.
   - List lessons-learned and reflections.
-  - Conclusion.
 
-Good presentations are a mixture of slides and a live demonstration of the unique features of your project. (Think about what you had to do for CS 240.) The presentation must be organized, which means you should prepare a "script," with fluid transitions from one group member to another. It is recommended that you do a few dry-runs to iron out all the wrinkles before the class demo.
+Good presentations usually consists of a light use of slides and a live demonstration of the unique features of your project. (Think about what you had to do for CS 240.) The presentation must be organized, which means you should prepare a "script," with fluid transitions from one team member to another. It is recommended that you do a few dry-runs to iron out all the wrinkles before the class demo.
 
 - **Submission:** Your slides should also be uploaded to a github account, unless you used Google Slides. In either case, go to [Canvas](https://canvas.pugetsound.edu) and submit the URL to your proposal under the `Project - Presentation` Dropbox.
 
 
-#### Project Code
-You are required to manage your code on github. Finalize and push your code by 11:59pm on day of our exams. You *must* include a `readme.md` file that includes some basic instructions on how to deploy your code (with examples, if applicable.)
-
-
-#### Scrum Logs
 
 
 <!-- 
@@ -133,7 +142,7 @@ You are required to manage your code on github. Finalize and push your code by 1
 ```
 The proposal itself will not be graded, but you will receive feedback from me.
 ``` -->
-
+<!-- 
 #### Credits
 
-Written by David Chiu. 2022.
+Written by David Chiu. 2022. -->
