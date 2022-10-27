@@ -11,8 +11,7 @@ The term project is open-ended, and you need to write a short proposal (1 page i
 
 
 #### Important Dates
-- Team preferences due via email to David: Sunday, Oct 30, 2022
-- Team assignments (from David): Monday, Oct 31, 3022
+- Team preferences due via email to David: Monday, Oct 31, 2022
 - 1-page proposal deadline: Sunday, Nov 6, 2022
 - Presentation / demo: Last week before finals
 - Scrum logs and check-ins: weekly, ongoing

@@ -61,10 +61,28 @@ let days = {
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
       {
-        name: "Project",
-        title: "Database Term Project",
+        name: "Project-Teams",
+        title: "Team Preferences",
         url: "proj/",
-        due: "12/8/2022",
+        due: "10/28/2022",
+      },
+      {
+        name: "Project-Prop",
+        title: "Project Proposal",
+        url: "proj/",
+        due: "11/4/2022",
+      },
+      {
+        name: "Project-pres",
+        title: "Project Demo",
+        url: "proj/",
+        due: "12/5/2022",
+      },
+      {
+        name: "Project-Code",
+        title: "Project Code",
+        url: "proj/",
+        due: "12/16/2022",
       },
       // {
       //   name: "Proj 2",
