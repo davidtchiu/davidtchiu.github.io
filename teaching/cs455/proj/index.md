@@ -45,7 +45,7 @@ Here are just some ideas on what you and your team can do:
 - And more! You have a high degree of freedom to propose anything, as long as it's related to databases and data management. It just needs to satisfy the *novelty* and *significant implementation* requirements.
 
 
-
+[prop](#prop)
 #### Project Proposal Requirements
 A short proposal outlining your project should be submitted to me before the proposal deadline. One page ought to suffice, but there's no page limit. There are required sections of the proposal that you have to write:
 
@@ -106,11 +106,11 @@ Finally, you must produce a Gantt Chart that communicates your timeline and mile
 
 - **Submission:** The proposal should be in PDF format and uploaded to a github account. Go to [Canvas](https://canvas.pugetsound.edu) and submit the URL to your proposal under the `Project` Dropbox.
 
-
+[github](#github)
 #### Project Code Repository
 You are required to manage your code on github. As soon as you are able, please share with me the URL to your code repository. Finalize and push your code by 11:59pm on day of our exams. You *must* include a `readme.md` file that includes some basic instructions on how to deploy your code (with examples, if applicable.)
 
-
+[scrum](#scrum)
 #### Scrum Records
 As a way to keep everyone accountable, you must share a Google Document/Sheet that records your scrum activities. I assume that you and your group will be meeting regularly, but please reserve a weekly meeting to run scrum. At the beginning of each week, everyone must answer these questions:
 
@@ -120,7 +120,7 @@ As a way to keep everyone accountable, you must share a Google Document/Sheet th
 
 Please have someone record everyone's responses to these questions. I will check in regularly to ensure good progress is being made by all team members.
 
-
+[demo](#demo)
 #### Presentation/Demo Requirements 
 Be prepared to give a ~15 minute presentation to the class, allowing a ~3 minutes for question and answer. The demo should showcase your application, and every team member must have equal participation in the demo (you will be graded on balance). At minimum, your presentation should show:
 
