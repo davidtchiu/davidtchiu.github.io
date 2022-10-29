@@ -32,12 +32,12 @@ let days = {
         url: "hwk5.closure/",
         due: "10/28/2022",
       },
-      // {
-      //   name: "Hwk 6 (coding)",
-      //   title: "Design Theory - BCNF Normalization",
-      //   url: "hwk6.bcnf/",
-      //   due: "11/9/2022",
-      // },
+      {
+        name: "Hwk 6 (coding)",
+        title: "Design Theory - BCNF Normalization",
+        url: "hwk6.bcnf/",
+        due: "11/9/2022",
+      },
       // {
       //   name: "Hwk 7 (coding)",
       //   title: "Joins!",
