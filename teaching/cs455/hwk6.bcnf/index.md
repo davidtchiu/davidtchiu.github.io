@@ -234,7 +234,7 @@ If you're done early and are looking for an additional challenge, you could try 
 #### Grading
 
 ```
-This assignment will be graded out of 70 points.
+This assignment will be graded out of 80 points.
 
 [20pts] Implementation of findSuperKeys() exhaustively generates all superkeys
 of a given relational schema and its FD set. You throw an exception if there is an 
@@ -244,12 +244,12 @@ the FD set is empty, then all attributes in the given schema serves as the only 
 [10pts] Implementation of isBCNF(). It returns true if the left-hand side of all
 non-trivial FDs is a superkey.
 
-[30pts] Implementation of BCNFDeompose(). It returns a set of relational schemas that
+[40pts] Implementation of BCNFDeompose(). It returns a set of relational schemas that
 satisfy BCNF. At every split point, you output the schema being split, the violating FD,
 the superkeys for that schema. Also print the same information for the two schemas after
 the split. 
 
-[10pts] Immutability and no-side effects: None of the methods should modify the content of 
+[5pts] Immutability and no-side effects: None of the methods should modify the content of 
 any input structure.
 
 [Misc] Your program must be written in Java. Non-Java programs will be returned

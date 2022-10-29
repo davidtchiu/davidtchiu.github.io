@@ -216,7 +216,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
 #### Grading
 
 ```
-This assignment will be graded out of 75 points.
+This assignment will be graded out of 65 points.
 
 [10pts] Trivial rule
 
