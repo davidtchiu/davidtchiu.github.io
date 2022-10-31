@@ -32,9 +32,9 @@ let days = {
         due: "10/28/2022",
       },
       {
-        name: "Hwk 5",
+        name: "Hwk 6",
         title: "Ranked Choice Voting",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk5.rcv",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.rcv",
         due: "11/11/2022",
       },
       // {
