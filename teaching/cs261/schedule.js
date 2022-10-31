@@ -31,12 +31,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk5.LL",
         due: "10/28/2022",
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Rank Choice Vote",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk5.rcv",
-      //   due: "10/31/2022",
-      // },
+      {
+        name: "Hwk 5",
+        title: "Ranked Choice Voting",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk5.rcv",
+        due: "11/11/2022",
+      },
       // {
       //   name: "Hwk 6",
       //   title: "Evil Hangman",
@@ -94,12 +94,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab7/",
         due: "10/26/2022",
       },
-      // {
-      //   name: "Lab 8",
-      //   title: "Recursion Lab",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab8/",
-      //   due: "11/2/2022",
-      // },
+      {
+        name: "Lab 8",
+        title: "Recursion Lab",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab8/",
+        due: "11/2/2022",
+      },
       // {
       //   name: "Lab 9",
       //   title: "Expression Trees (Recursive Structs)",
