@@ -171,27 +171,26 @@ let days = {
     "Lab 8: Recursion Lab",
     "Recursion (cont.): Big-O of binary search, fibonacci",
     "Recursion (cont.): Merge sort",
-//    "Sorting: Quick Sort",
     // wk 11
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "Heaps: percolate/heapify",
-    "Heaps: PriorityQueue revisited",
-    // wk 12
+    "Recursion (cont.): Quick Sort",
     "Start Trees and Binary Trees",
-    "Lab 9: Expression Trees Lab",
+    // wk 12
     "Tree traversal; Start BSTs",
+    "Lab 9: Expression Trees Lab",
     "BST (cont.): contains(), add(), remove()",
+    "BST (cont.): performance, size(), smallest()",
     // wk 13 
-    "Finish BST: performance, size(), smallest()",
+    "Heaps: heapify; PriorityQueue",
     "Lab 10: BST Lab",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
     "Start Maps",
     "Lab 11: Open Addressing lab",
-    "HashMap cont.",
-    "HashMap: chaining",
+    "HashMap (cont.)",
+    "HashMap (cont.): chaining",
     // wk 15
     "TBD",
     "Hwk Lab",
