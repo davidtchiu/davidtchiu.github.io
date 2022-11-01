@@ -36,7 +36,7 @@ let days = {
         name: "Hwk 6 (coding)",
         title: "Design Theory - BCNF Normalization",
         url: "hwk6.bcnf/",
-        due: "11/9/2022",
+        due: "11/11/2022",
       },
       // {
       //   name: "Hwk 7 (coding)",
