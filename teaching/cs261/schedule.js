@@ -167,10 +167,10 @@ let days = {
     "Start recursion: setup and tracing",
     "Recursion (cont.): code reading, common pitfalls",
     // wk 10
-    "Big-O analysis of recursive algos (telescoping method)",
+    "Recursion (cont.): Big-O (telescoping method)",
     "Lab 8: Recursion Lab",
-    "Lab review",
-    "Sorting: Merge Sort",
+    "Recursion (cont.): Big-O of binary search, fibonacci",
+    "Recursion (cont.): Merge sort",
 //    "Sorting: Quick Sort",
     // wk 11
     "<strong><emph>Review</emph></strong>",
