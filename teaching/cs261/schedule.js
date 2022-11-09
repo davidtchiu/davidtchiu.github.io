@@ -174,7 +174,7 @@ let days = {
     // wk 11
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "Binary Trees and traversal",
+    "Trees,  Binary Trees",
     "Start Binary Search Trees",
     // wk 12
     "BST (cont.): contains(), add(), remove()",
