@@ -129,7 +129,18 @@ For this assignment, you're welcome to add as many other helper methods as you n
       ```
       Take particular note of the fact that $$A \rightarrow D$$ (via $$A\rightarrow C$$ and $$C \rightarrow D$$) is also generated, even though it took an iteration to first generate $$A \rightarrow C$$. Therefore, this method is exhaustive.
 
-
+      Here's another example:
+      ```java
+      FD f1 = new FD(Arrays.asList("A"), Arrays.asList("C", "B")); // A --> CB
+      FD f2 = new FD(Arrays.asList("C"), Arrays.asList("D", "E")); // C --> DE
+      FDSet fdset = new FDSet(f1, f2);
+      System.out.println(FDUtil.transitive(fdset));
+      ```
+      ```
+      [
+        A --> DE     // This comes from A --> CB and C --> DE
+      ]
+      ```
     - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure, i.e., the full set of FDs generated through the repeated applications of Armstrong's Axioms. You can find the full algorithm in the notes or in the book, but I'll summarize it here:
   
       ```
