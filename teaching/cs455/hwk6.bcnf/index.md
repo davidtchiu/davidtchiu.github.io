@@ -124,7 +124,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
 
     ```
     Exception in thread "main" java.lang.IllegalArgumentException
-    FD refers to unknown attributes: [name,ssn] --> [eyecolor]
+    The following FD refers to unknown attributes: [ssn] --> [eyecolor]
       at Normalizer.findSuperkeys(Normalizer.java:132)
       at Main.main(Main.java:15)
     ```
