@@ -111,7 +111,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
     ]
     ```
 
-    Here's an IllegalArgumentException because `eyecolor` is not an attribute in the given schema, but appears in an FD:
+    Here's an IllegalArgumentException because `eyecolor` is not an attribute in the given schema, but appears in an FD (in `f2`):
 
     ```java
     FD f1 = new FD(Arrays.asList("ssn"), Arrays.asList("name")); // ssn --> name
