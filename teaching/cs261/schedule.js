@@ -175,7 +175,7 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     "Trees,  Binary Trees",
-    "Start Binary Search Trees",
+    "Tree Traversal; Start Binary Search Trees (BST)",
     // wk 12
     "BST (cont.): contains(), add(), remove()",
     "Lab 9: Expression Trees Lab",
