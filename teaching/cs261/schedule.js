@@ -43,12 +43,12 @@ let days = {
       //   url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.ehm",
       //   due: "11/14/2022",
       // },
-      // {
-      //   name: "Hwk 7",
-      //   title: "Compression",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
-      //   due: "12/5/2022",
-      // }
+      {
+        name: "Hwk 7",
+        title: "Huffman Encoding",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
+        due: "12/7/2022",
+      }
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
