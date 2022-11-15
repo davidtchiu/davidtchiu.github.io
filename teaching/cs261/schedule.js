@@ -100,12 +100,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab8/",
         due: "11/2/2022",
       },
-      // {
-      //   name: "Lab 9",
-      //   title: "Expression Trees (Recursive Structs)",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab9.expr",
-      //   due: "11/16/2022",
-      //   },
+      {
+        name: "Lab 9",
+        title: "Expression Trees (Recursive Structs)",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab9.expr",
+        due: "11/16/2022",
+        },
       //   {
       //     name: "Lab 10",
       //     title: "BST Lab",
