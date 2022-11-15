@@ -47,7 +47,7 @@ let days = {
         name: "Hwk 7",
         title: "Huffman Encoding",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
-        due: "12/7/2022",
+        due: "12/6/2022",
       }
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
