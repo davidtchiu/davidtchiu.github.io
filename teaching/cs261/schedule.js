@@ -194,7 +194,7 @@ let days = {
     // wk 15
     "Sorting",
     "Hwk Lab",
-    "<strong>Reading Period</strong>",
+    "Sorting (cont.)",
     "<strong>Reading Period</strong>",
     // wk final
     "",
