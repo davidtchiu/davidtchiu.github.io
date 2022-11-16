@@ -193,7 +193,7 @@ let days = {
     "HashMap (cont.): chaining",
     // wk 15
     "Sorting",
-    "Hwk Lab",
+    "Lab 11: Sorting Lab",
     "Sorting (cont.)",
     "<strong>Reading Period</strong>",
     // wk final
