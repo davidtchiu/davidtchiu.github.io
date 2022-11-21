@@ -142,7 +142,7 @@ let days = {
     "Start Indexing",
     "B+Trees: properties, operations",
     // wk 13
-    "B+Trees (cont'd)",
+    "B+Trees (cont'd): height and performance",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
