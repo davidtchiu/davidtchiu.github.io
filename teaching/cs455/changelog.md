@@ -9,6 +9,7 @@
 - Hwk 3: be clear that ENG=>ENGL is the only replacement? Or remove it. Be clear that no illegal insert statement shall be generated!
 - Hwk 5: Don't give powerSet?
 - Still not doing a good enough job explaining what the 3rd property of 3NF does to include the DP relations. Work out a proof using cover Fc
+- Cut down on Indexing (1st day) and go right into B+Trees
 
 # Change Log
 - Updated board work for theory

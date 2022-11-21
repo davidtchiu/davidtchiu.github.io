@@ -146,11 +146,13 @@ let days = {
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
+    "Indexing: Dynamic hashing",
+    "Indexing: Consistent hashing",
+    "Indexing: Bitmaps",
     // "Bitmaps",
-    // "Extendible hashing",
-    "Start transactions: ACID, serializability",
-    "Transactions: serializability test, precedence graphs",
-    "Transactions: Concurrency control",
+    // "Start transactions: ACID, serializability",
+    // "Transactions: serializability test, precedence graphs",
+    // "Transactions: Concurrency control",
     // wk 15
     "Project Demos",
     "Project Demos",
