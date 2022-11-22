@@ -106,12 +106,12 @@ let days = {
         url: "https://cs.pugetsound.edu/~dchiu/cs261/lab9.expr",
         due: "11/16/2022",
         },
-      //   {
-      //     name: "Lab 10",
-      //     title: "BST Lab",
-      //     url: "https://cs.pugetsound.edu/~dchiu/cs261/lab10/",
-      //     due: "11/23/2022",
-      //   },
+        {
+          name: "Lab 10",
+          title: "BST Lab",
+          url: "https://cs.pugetsound.edu/~dchiu/cs261/lab10/",
+          due: "11/23/2022",
+        },
       //   {
       //     name: "Lab 11",
       //     title: "Maps Lab",
