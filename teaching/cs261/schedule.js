@@ -187,14 +187,14 @@ let days = {
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
-    "Start Maps",
+    "Start HashMaps: Open Addressing",
     "Lab 11: Open Addressing lab",
-    "HashMap (cont.)",
     "HashMap (cont.): chaining",
+    "Start Sorting",
     // wk 15
-    "Sorting",
+    "Sorting: MergeSort",
     "Lab 12: Sorting Lab",
-    "Sorting (cont.)",
+    "Sorting: QuickSort",
     "<strong>Reading Period</strong>",
     // wk final
     "",
