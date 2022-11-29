@@ -112,12 +112,12 @@ let days = {
           url: "https://cs.pugetsound.edu/~dchiu/cs261/lab10/",
           due: "11/23/2022",
         },
-      //   {
-      //     name: "Lab 11",
-      //     title: "Maps Lab",
-      //     url: "https://cs.pugetsound.edu/~dchiu/cs261/lab11/",
-      //     due: "11/30/2022",
-      //   },
+        {
+          name: "Lab 11",
+          title: "Maps Lab",
+          url: "https://cs.pugetsound.edu/~dchiu/cs261/lab11.map/",
+          due: "11/30/2022",
+        },
     ],
   },
   lectures: [
@@ -193,7 +193,7 @@ let days = {
     "HashMap (cont.): chaining",
     // wk 15
     "Sorting",
-    "Lab 11: Sorting Lab",
+    "Lab 12: Sorting Lab",
     "Sorting (cont.)",
     "<strong>Reading Period</strong>",
     // wk final
