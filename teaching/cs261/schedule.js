@@ -198,9 +198,9 @@ let days = {
     "HashMap (cont.): chaining",
     "Cancelled",
     // wk 15
-    "Sorting: MergeSort",
-    "Lab 12: Sorting Lab",
-    "Sorting: QuickSort",
+    "Sorting: MergeSort (Zoom)",
+    "Homework Lab",
+    "Sorting: QuickSort (Zoom)",
     "<strong>Reading Period</strong>",
     // wk final
     "",
