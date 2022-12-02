@@ -118,12 +118,12 @@ let days = {
           url: "https://cs.pugetsound.edu/~dchiu/cs261/lab11.map/",
           due: "11/30/2022",
         },
-        {
-          name: "Lab 12",
-          title: "Sorting Lab",
-          url: "https://cs.pugetsound.edu/~dchiu/cs261/lab12.sorters/",
-          due: "12/7/2022",
-        },
+        // {
+        //   name: "Lab 12",
+        //   title: "Sorting Lab",
+        //   url: "https://cs.pugetsound.edu/~dchiu/cs261/lab12.sorters/",
+        //   due: "12/7/2022",
+        // },
     ],
   },
   lectures: [

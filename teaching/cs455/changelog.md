@@ -7,7 +7,7 @@
   - Hwk 4 => Car models? Univ with harder questions?
 - Redo the study guides so that the topics are listed
 - Hwk 3: be clear that ENG=>ENGL is the only replacement? Or remove it. Be clear that no illegal insert statement shall be generated!
-- Hwk 5: Don't give powerSet?
+- Hwk 5: Don't give powerSet? The .jar file isn't working for anyone.
 - Still not doing a good enough job explaining what the 3rd property of 3NF does to include the DP relations. Work out a proof using cover Fc
 - Cut down on Indexing (1st day) and go right into B+Trees
 

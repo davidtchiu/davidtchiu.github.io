@@ -154,8 +154,8 @@ let days = {
     // "Transactions: serializability test, precedence graphs",
     // "Transactions: Concurrency control",
     // wk 15
-    "Project Demos",
-    "Project Demos",
+    "Project Demos on Zoom",
+    "Project Demos on Zoom",
     "<strong>Reading Period</strong>",
     // wk final
     "",
