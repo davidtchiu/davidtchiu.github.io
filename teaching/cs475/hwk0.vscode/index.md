@@ -57,7 +57,7 @@ It's therefore important that we all code a common environment, so I've prepared
 
   If you see this, congrats, you're all set up. If not, let me know.
 
-# Using the Terminal and Editor
+# Using the Terminal (Shell) and Editor
 - You only have to do the steps listed in the previous section that one time. Let's get a feel for how to start up the coding environment from this point forward.
 
 - Quit VS Code, and start it back up again.
@@ -68,12 +68,20 @@ It's therefore important that we all code a common environment, so I've prepared
 
 - You will be prompted for your password, and afterwards, you should see the contents of your home directory once again.
 
-- The command-line terminal should show up on the bottom of your screen. Here's what mine looks like:
+- The command-line terminal (also called a _shell_) should show up on the bottom of your screen. Here's what mine looks like:
 
   <img src="figures/dchiu__SSH__149_165_174_87_.png" width="400px" />
 
-  Before "windows" were invented, the terminal was the _only_ user interface to operating systems. We use it to do everything that you can do with windows: accessing your files and folders, running and quitting programs, editing files, etc. Because the Linux server that I provided is "headless" (i.e., stripped down OS that doesn't support windows and graphical interfaces), you need to know the basics of how to navigate the command line.
+  Before "windows" were invented, the shell was the _only_ user interface to operating systems. We use it to do everything that you can do with windows: accessing your files and folders, running and quitting programs, editing files, etc. Because the Linux server that I provided is "headless" (i.e., stripped down OS that doesn't support windows and graphical interfaces), you need to know the basics of how to navigate the command-line shell.
   
+- There are some shell commands that you can play with. Some more useful than others. For instance:
+  - `w`: prints a list of users currently logged in to the server.
+  - `uptime`: displays how long the system has been running.
+  - `uname -a`: displays the information for the OS kernel.
+  - `top`: displays the usage of the machine's resources. It lists the processes that are the "top" resource consumers. Type `q` to exit.
+  - `ps x`: displays the processes you have running.
+  - `ps aux`: displays the all processes on the system.
+
 - Before we get started, print this cheatsheet so you have it in front of you. It doesn't include *all* the commands that are available, but it does cover the essentials:
 
   - [Command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Unix_command_cheatsheet.pdf)
@@ -82,7 +90,7 @@ It's therefore important that we all code a common environment, so I've prepared
 
 - **File System as Trees:** Think of the computer's file system as a tree (okay really it's a graph, but let's keep it simple), where the nodes can be directories (that is, folders) and files. As in all trees, edges represent a parent-child relationship. In the context of file systems, this parent-child relationship expresses the what files and directories (children) are enclosed within a (parent) directory. Clearly, files are always leaf nodes (they don't have children), but directories may have children. The root node of the file system is called the **root directory** -- just think of it as the top-level directory that stores _everything_.
 
-- Everything's still a little abstract, so let's run the `tree` command to see the file system. From your terminal, run:
+- Everything's still a little abstract, so let's run the `tree` command to see the file system. From your shell, run:
   ```
   $ tree
   ```
@@ -107,31 +115,54 @@ It's therefore important that we all code a common environment, so I've prepared
 
   - Another detail to notice from the output is that this is only a partial view of the file system. Clearly, there are thousands of more files stored on this machine, but this output only shows you what's pertinent. When you start the terminal, the OS *already placed* you inside the **current working directory**. The default cwd is your "home directory". This is the folder that has been assigned to your account, which no one else (except me and you) should be able access. When you run `tree`, it only shows you the file system rooted at your cwd.
 
-- **Paths (Slashes and Dots)** Before you can master the terminal, you have to understand what **paths** are. Paths are used to locate specific files and directories in the machine's file system. For instance, my **Home Directory** is `/home/dchiu`. 
+- **Paths (Slashes and Dots)** Before you can master working on the shell, you have to understand what **paths** are. Paths are used to locate specific files and directories in the machine's file system. For instance, my **Home Directory** is `/home/dchiu`. 
 
   - **Slashes:**  The slashes `/` in a path important. They denote directory descent. So `/home/dchiu/` means: traverse into the root directory (`/`), then into the `home/` directory, and finally into the `dchiu/` directory. The trailing slash is optional. `/home/dchiu` is the same as `/home/dchiu/`
 
-  - **Relative Paths:** All the paths that we've seen thus far are called _Full (or Absolute) Paths_. That is, you have to give the full location to the resource starting all the way from the beginning at the root directory. This gets old fast. If my current working directory is `/home/dchiu/Web/Teaching/cs475/2023/spring` and I simply want to edit `AAA.txt` and then `BBB.txt` within it, it would drive you nuts to have to type out the full paths each time. To make our lives easier, there are shortcuts we can use:
-
-    - `./` means the current working directory. 
+  - **Shortcuts:** All the paths that we've seen thus far are called _Full (or Absolute) Paths_. That is, you have to give the full location to the resource starting all the way from the beginning at the root directory. This gets old fast. If my current working directory is `/home/dchiu/Web/Teaching/cs475/2023/spring` and I simply want to edit `AAA.txt` and then `BBB.txt` within it, it would drive you nuts to have to type out the full paths each time. To make our lives easier, there are shortcuts we can use:
+    - `/` is the root directory of the file system.
+    - `~/` is a shortcut to your home directory.
+    - `~user/` is a shortcut to some other user's home directory. (You won't have access, but an admin would.)
+    - `./` is the current working directory. 
       - If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`
       - It is worth mentioning that `./` is often implied when it's not given. If I opened `AAA.txt`, it's the same as opening `./AAA.txt`
-    - `../` means the parent of the current working directory (1 level up)
-      - Yes, you can stack these. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on.
+    - `../` is the parent of the current working directory (1 level up)
+      - Yes, you can chained these together. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on.
       - So if I wanted to open `CCC.txt` in the directory containing the Fall semester of 2021, I could use `../../2021/fall/CCC.txt`
-  
+
+### Self Test
+Where would the following paths take you?
+      - `~/../..` (Solution: Two levels up from your home directory. So if your home directory is `/home/dchiu`, you would now be addressing `/`, which is the root directory.)
+      - `./.././` (Solution: One level up from current working directory. The first and last `.` are inconsequential. This path is equivalent to `../`)
+      - Know why these paths are invalid: `/..`, `/~`, `./~`
+
+## File System Navigation
+Now that we understand path expressions, we can finally make sense of some native commands. In the following syntax, anything enclosed within `<angle brackets>` are required parameters, and anything within `[square brackets]` are optional.
+
+Here is a list of syntax related to navigating your file system.
+  - `pwd`: prints your current (present) working directory
+  - `cd [path]`: changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory. Note the following two special paths:
+  - `ls -l [path]`: lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory
+  - `tree [path]`: prints the file structure rooted at the optional given path. 
+  - `less [path-to-file]`: opens the file in read-only mode. Use `j` and `k` to scroll up and down. Use `[space]` to scroll a page down. Use `q` to quit.
+
+### Self Test
 
 
-- Here's a [bootcamp](https://davidtchiu.github.io/teaching/cs240/lab.cmd/) from my other course you can try out.
 
-- `pwd`: returns your current (or present) working directory
-- `cd [path]`: changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory. Note the following two special paths:
-  - `.` returns the current directory
-  - `..` returns the parent directory
-  - Paths can be chained. For instance, cd `../../a/` will navigate you up two parent directories, then into `a/`
-- `ls -l [path]`: lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory
+
+## File System Manipulation
+
 - `mkdir <name>`: creates directory called name in current working directory
-- `code [name]`: opens the VS Code editor on the given file name
+
+    - **Pro Tip: Tab Completion** Most shells provide a useful tool called tab-completion. 
+
+## Running Programs
+
+- `mkdir <name>`: creates directory called name in current working directory
+
+    - **Pro Tip: Tab Completion** Most shells provide a useful tool called tab-completion. 
+
 
 
 #### Credits
