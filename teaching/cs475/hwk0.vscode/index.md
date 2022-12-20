@@ -52,8 +52,10 @@ It's therefore important that we all code a common environment, so I've prepared
 -  You may be prompted for your password again, followed by a prompt to trust and accept the secure certificate. Click yes on this screen.
 
 - If you did all the steps correctly, you should see the contents of your home directory on the left-side panel. Here's what mine looks like:
-<img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_.png" width="250px" />
-If you see this, congrats, you're all set up. If not, let me know.
+
+  <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_.png" width="250px" />
+
+  If you see this, congrats, you're all set up. If not, let me know.
 
 # Using the Terminal and Editor
 - You only have to do the steps listed in the previous section that one time. Let's get a feel for how to start up the coding environment from this point forward.
@@ -66,10 +68,6 @@ If you see this, congrats, you're all set up. If not, let me know.
 
 - You will be prompted for your password, and afterwards, you should see the contents of your home directory once again.
 
-<!-- - This time, click on the **New Folder...** button, and create a new folder (directory) called `hwk0` without spaces.
-
-- Then right-click on `hwk0` and select **Open in Integrated Terminal** to bring up the command line terminal on the bottom of the screen.
--->
 - The command-line terminal should show up on the bottom of your screen. Here's what mine looks like:
 
   <img src="figures/dchiu__SSH__149_165_174_87_.png" width="400px" />
