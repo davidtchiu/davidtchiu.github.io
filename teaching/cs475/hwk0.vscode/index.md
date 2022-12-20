@@ -72,13 +72,46 @@ It's therefore important that we all code a common environment, so I've prepared
   - The command-line terminal should show up on the bottom of your screen. Here's what mine looks like:
   <img src="figures/dchiu__SSH__149_165_174_87_.png" width="400px" />
 
-    Before "windows" were invented, the terminal used the be the _only_ user interface to operating systems. Because the Linux server that I provided is "headless" (i.e., stripped down and doesn't support windows and graphical interfaces), you need to know the basics of how to navigate the command line.
+    Before "windows" were invented, the terminal was the _only_ user interface to operating systems. We use it to do everything that you can do with windows: accessing your files and folders, running and quitting programs, editing files, etc. Because the Linux server that I provided is "headless" (i.e., stripped down OS that doesn't support windows and graphical interfaces), you need to know the basics of how to navigate the command line.
     
   - Before we get started, print this cheatsheet so you have it in front of you. It doesn't include *all* the commands that are available, but it does cover the essentials:
 
     - [Command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Unix_command_cheatsheet.pdf)
 
+## Files, Directories, and Paths
+
+  - **File System as Trees:** Think of the computer's file system as a tree (okay really it's a graph, but let's keep it simple), where the nodes can be directories (that is, folders) and files. As in all trees, edges represent a parent-child relationship. In the context of file systems, this parent-child relationship expresses the what files and directories (children) are enclosed within a (parent) directory. Clearly, files are always leaf nodes (they don't have children), but directories may have children. The root node of the file system is called the **root directory** -- just think of it as the top-level directory that stores _everything_.
+
+  - Everything's still a little abstract, so let's run the `tree` command to see the file system. From your terminal, run:
+    ```
+    $ tree
+    ```
+    Here's my output:
+    ```
+    dchiu@os-class:~$ tree
+    .
+    ├── Testing
+    │   ├── a.out
+    │   └── test.c
+    └── snap
+        └── tree
+            ├── 18
+            ├── common
+            └── current -> 18
+
+    6 directories, 2 files
+    dchiu@os-class:~$ 
+    ```
+
+    - As you can see, the `tree` command recursively descends all directories and subdirectories. This shows that I have two directories currently: one named `Testing` and another named `snap`. `Testing` has two files in it: `a.out` and `test.c`. We know they're files because they are leaf nodes. Inside the `snap` directory, we have yet another directory called `tree`. Interestingly, check out the `current` file. It's not really a file at all... it's actually a **symbolic link** (that is, a shortcut or alias) to the file named `18`.
+  
+    - Another detail to notice from the output is that it only shows the tree rooted at the current working directory. You see, when you start the terminal, the OS *places* you inside a directory. 
+
+  - Before you can master the terminal, you have to understand how **paths** work. Paths are used to locate specific nodes (files and directories) in the file system. 
+
   - 
+
+
 
 
   - Here's a [bootcamp](https://davidtchiu.github.io/teaching/cs240/lab.cmd/) from my other course you can try out.
