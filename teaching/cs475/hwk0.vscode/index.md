@@ -142,11 +142,13 @@ It's therefore important that we all code a common environment, so I've prepared
 - Now that we understand path expressions, we can finally make sense of some native commands. In the following syntax, anything enclosed within `<angle brackets>` are required parameters, and anything within `[square brackets]` are optional.
 
   Here is a list of syntax related to navigating your file system.
-  - `pwd`: prints your current (present) working directory
-  - `cd [path]`: changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory. Note the following two special paths:
-  - `ls -l [path]`: lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory
-  - `tree [path]`: prints the file structure rooted at the optional given path. 
-  - `less [path-to-file]`: opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Use `[space]` to scroll a page down. Use `q` to quit.
+  |Command|Description|
+  |--------------|---------------------------------------------|
+  |`pwd`         | prints your current (present) working directory|
+  |`cd [path]`   | changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory|
+  |`ls -l [path]`| lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory|
+  |`tree [path]` | prints the file structure rooted at the optional given path. If path is not given, then it defaults to your current working directory
+  |`less [path-to-file]`| opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Use `[space]` to scroll a page down. Use `q` to quit.
 
 - Using `git`, download a project from my git repo to your home directory, by typing on separate lines:
 
