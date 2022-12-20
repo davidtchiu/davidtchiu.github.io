@@ -113,9 +113,13 @@ It's therefore important that we all code a common environment, so I've prepared
 
   - **Relative Paths:** All the paths that we've seen thus far are called _Full (or Absolute) Paths_. That is, you have to give the full location to the resource starting all the way from the beginning at the root directory. This gets old fast. If my current working directory is `/home/dchiu/Web/Teaching/cs475/2023/spring` and I simply want to edit `AAA.txt` and then `BBB.txt` within it, it would drive you nuts to have to type out the full paths each time. To make our lives easier, there are shortcuts we can use:
 
-    - `./` means the current working directory
+    - `./` means the current working directory. 
+      - If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`
+      - It is worth mentioning that `./` is often implied when it's not given. If I opened `AAA.txt`, it's the same as opening `./AAA.txt`
     - `../` means the parent of the current working directory (1 level up)
-      - Yes, you can stack these. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on..
+      - Yes, you can stack these. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on.
+      - So if I wanted to open `CCC.txt` in the directory containing the Fall semester of 2021, I could use `../../2021/fall/CCC.txt`
+  
 
 
 - Here's a [bootcamp](https://davidtchiu.github.io/teaching/cs240/lab.cmd/) from my other course you can try out.
