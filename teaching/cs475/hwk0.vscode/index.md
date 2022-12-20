@@ -61,7 +61,8 @@ If you see this, congrats, you're all set up. If not, let me know.
 - Quit VS Code, and start it back up again.
 
 - On the left-hand, you'll see a new button on the far left called **Remote Explorer**. Click on it, then click on the profile you want to connect. It should simply be `/home/yourUserName`.
-<img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_2.png" width="250px" />
+
+  <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_2.png" width="250px" />
 
 - You will be prompted for your password, and afterwards, you should see the contents of your home directory once again.
 
@@ -70,7 +71,8 @@ If you see this, congrats, you're all set up. If not, let me know.
 - Then right-click on `hwk0` and select **Open in Integrated Terminal** to bring up the command line terminal on the bottom of the screen.
 -->
 - The command-line terminal should show up on the bottom of your screen. Here's what mine looks like:
-<img src="figures/dchiu__SSH__149_165_174_87_.png" width="400px" />
+
+  <img src="figures/dchiu__SSH__149_165_174_87_.png" width="400px" />
 
   Before "windows" were invented, the terminal was the _only_ user interface to operating systems. We use it to do everything that you can do with windows: accessing your files and folders, running and quitting programs, editing files, etc. Because the Linux server that I provided is "headless" (i.e., stripped down OS that doesn't support windows and graphical interfaces), you need to know the basics of how to navigate the command line.
   
