@@ -129,22 +129,18 @@ It's therefore important that we all code a common environment, so I've prepared
     |  `/` | the root directory of the file system|
     | `~/` | shortcut to your home directory |
     |`~user/`|  shortcut to some other user's home directory. (You won't have access, but an admin would.) |
-    | `./` | the current working directory. |
+    | `./` | the current working directory. If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`. |
     | `../`| the parent of the current working directory (1 level up). |
 
-    -  If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`
-  
-    - It is worth mentioning that `./` is often implied when it's not given. If I opened `AAA.txt`, it's the same as opening `./AAA.txt`
+  - It is worth mentioning that `./` is often implied when it's not given. If I opened `AAA.txt`, it's the same as opening `./AAA.txt`
 
-    - You can chain these together. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on.
+  - You can chain these together. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on. So if I wanted to open `CCC.txt` in the directory containing the Fall semester of 2021, I could use `../../2021/fall/CCC.txt.`
+
+  - Where would the following paths take you?
     
-    - So if I wanted to open `CCC.txt` in the directory containing the Fall semester of 2021, I could use `../../2021/fall/CCC.txt.`
-
-    - Where would the following paths take you?
-      
-      1. `~/../..` (Solution: Two levels up from your home directory. So if your home directory is `/home/dchiu`, you would now be addressing `/`, which is the root directory.)
-      2. `./.././` (Solution: One level up from current working directory. The first and last `.` are inconsequential. This path is equivalent to `../`)
-      3. Know why these paths are invalid: `/..`, `/~`, `./~`
+    1. `~/../..` (Solution: Two levels up from your home directory. So if your home directory is `/home/dchiu`, you would now be addressing `/`, which is the root directory.)
+    2. `./.././` (Solution: One level up from current working directory. The first and last `.` are inconsequential. This path is equivalent to `../`)
+    3. Know why these paths are invalid: `/..`, `/~`, `./~`
 
 #### File System Navigation
 - Now that we understand path expressions, we can finally make sense of some native commands. In the following syntax, anything enclosed within `<angle brackets>` are required parameters, and anything within `[square brackets]` are optional.
@@ -157,7 +153,7 @@ It's therefore important that we all code a common environment, so I've prepared
   |`cd [path]`   | changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory |
   |`ls -l [path]`| lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory |
   |`tree [path]` | prints the file structure rooted at the optional given path. If path is not given, then it defaults to your current working directory |
-  |`less [path-to-file]`| opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Use `[space]` to scroll a page down. Use `q` to quit. |
+  |`less [pathToFile]`| opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Hit the spacebar to scroll down a page. Use `q` to quit. |
 
 - Using `git`, download a project from my git repo to your home directory, by typing on separate lines:
 
