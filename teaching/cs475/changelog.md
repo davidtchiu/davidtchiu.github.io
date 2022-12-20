@@ -50,6 +50,6 @@
 
 # Change Log
 
-- **Fall'22** Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
-- **Fall'22** Added Bankers as Hwk 7
-- **Fall'22** Proj 1: No longer making them do getFirst and getLast.
+- **Spring'22** Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
+- **Spring'22** Added Bankers for Hwk 7
+- **Spring'22** Proj 1: No longer making them do getFirst and getLast.
