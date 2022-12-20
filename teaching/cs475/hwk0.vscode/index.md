@@ -91,9 +91,9 @@ It's therefore important that we all code a common environment, so I've prepared
 
 #### Path Expressions
 
-- **File System as Trees:** Think of the computer's file system as a tree (okay really it's a graph, but let's keep it simple), where the nodes can be directories (that is, folders) and files. As in all trees, edges represent a parent-child relationship. In the context of file systems, this parent-child relationship expresses the what files and directories (children) are enclosed within a (parent) directory. Clearly, files are always leaf nodes (they don't have children), but directories may have children. The root node of the file system is called the **root directory** -- just think of it as the top-level directory that stores _everything_.
+1. **File System as Trees:** Think of the computer's file system as a tree (okay really it's a graph, but let's keep it simple), where the nodes can be directories (that is, folders) and files. As in all trees, edges represent a parent-child relationship. In the context of file systems, this parent-child relationship expresses the what files and directories (children) are enclosed within a (parent) directory. Clearly, files are always leaf nodes (they don't have children), but directories may have children. The root node of the file system is called the **root directory** -- just think of it as the top-level directory that stores _everything_.
 
-- Everything's still a little abstract, so let's run the `tree` command to see the file system. From your shell, run:
+2. Everything's still a little abstract, so let's run the `tree` command to see the file system. From your shell, run:
 
   ```bash
   $ tree
@@ -117,36 +117,32 @@ It's therefore important that we all code a common environment, so I've prepared
   dchiu@os-class:~$ 
   ```
 
-  - As you can see, the `tree` command recursively descends all directories and subdirectories. This shows that I have two directories currently: one named `Testing` and another named `snap`. `Testing` has two files in it: `a.out` and `test.c`. We know they're files because they are leaf nodes. Inside the `snap` directory, we have yet another directory called `tree`. Interestingly, check out the `current` file. It's not really a file at all... it's actually a **symbolic link** (that is, a shortcut or alias) to the file named `18`.
+  1. As you can see, the `tree` command recursively descends all directories and subdirectories. This shows that I have two directories currently: one named `Testing` and another named `snap`. `Testing` has two files in it: `a.out` and `test.c`. We know they're files because they are leaf nodes. Inside the `snap` directory, we have yet another directory called `tree`. Interestingly, check out the `current` file. It's not really a file at all... it's actually a **symbolic link** (that is, a shortcut or alias) to the file named `18`.
 
-  - Another detail to notice from the output is that this is only a partial view of the file system. Clearly, there are thousands of more files stored on this machine, but this output only shows you what's pertinent. When you start the terminal, the OS *already placed* you inside the **current working directory**. The default cwd is your "home directory". This is the folder that has been assigned to your account, which no one else (except me and you) should be able access. When you run `tree`, it only shows you the file system rooted at your cwd.
+  2. Another detail to notice from the output is that this is only a partial view of the file system. Clearly, there are thousands of more files stored on this machine, but this output only shows you what's pertinent. When you start the terminal, the OS *already placed* you inside the **current working directory**. The default cwd is your "home directory". This is the folder that has been assigned to your account, which no one else (except me and you) should be able access. When you run `tree`, it only shows you the file system rooted at your cwd.
 
-- **Paths (Slashes and Dots)** Before you can master working on the shell, you have to understand what **paths** are. Paths are used to locate specific files and directories in the machine's file system. For instance, my **Home Directory** is `/home/dchiu`. 
+3. **Paths (Slashes and Dots)** Before you can master working on the shell, you have to understand what **paths** are. Paths are used to locate specific files and directories in the machine's file system. For instance, my **Home Directory** is `/home/dchiu`. 
 
-  - **Slashes:**  The slashes `/` in a path important. They denote directory descent. So `/home/dchiu/` means: traverse into the root directory (`/`), then into the `home/` directory, and finally into the `dchiu/` directory. The trailing slash is optional. `/home/dchiu` is the same as `/home/dchiu/`
+  1. **Slashes:**  The slashes `/` in a path important. They denote directory descent. So `/home/dchiu/` means: traverse into the root directory (`/`), then into the `home/` directory, and finally into the `dchiu/` directory. The trailing slash is optional. `/home/dchiu` is the same as `/home/dchiu/`
 
-  - **Shortcuts:** All the paths that we've seen thus far are called _Full (or Absolute) Paths_. That is, you have to give the full location to the resource starting all the way from the beginning at the root directory. This gets old fast. If my current working directory is `/home/dchiu/Web/Teaching/cs475/2023/spring` and I simply want to edit `AAA.txt` and then `BBB.txt` within it, it would drive you nuts to have to type out the full paths each time. To make our lives easier, there are shortcuts we can use:
+  2. **Shortcuts:** All the paths that we've seen thus far are called _Full (or Absolute) Paths_. That is, you have to give the full location to the resource starting all the way from the beginning at the root directory. This gets old fast. If my current working directory is `/home/dchiu/Web/Teaching/cs475/2023/spring` and I simply want to edit `AAA.txt` and then `BBB.txt` within it, it would drive you nuts to have to type out the full paths each time. To make our lives easier, there are shortcuts we can use:
 
     | Path Shortcut | Description |
     | :--- | :--- |
     |  `/` | The root directory of the file system |
     | `~/` | Your home directory |
     |`~user/`| Some other user's home directory. (You won't have access, but an admin would.) |
-    | `./` | Your current working directory. If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`. |
-    | `../`| The parent of your current working directory (1 level up). |
+    | `./` | Your current working directory. It's worth mentioning that `./` is implied when it's not given. If I opened `AAA.txt`, it's the same as opening `./AAA.txt`. |
+    | `../`| The parent of your current working directory (1 level up). You can chain these together. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on. So if I wanted to open `CCC.txt` in the directory containing the Fall semester of 2021, I could use `../../2021/fall/CCC.txt.` |
 
-  - It is worth mentioning that `./` is often implied when it's not given. If I opened `AAA.txt`, it's the same as opening `./AAA.txt`
+3. Where would the following paths take you?
 
-  - You can chain these together. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on. So if I wanted to open `CCC.txt` in the directory containing the Fall semester of 2021, I could use `../../2021/fall/CCC.txt.`
-
-  - Where would the following paths take you?
-    
-    1. `~/../..` (Solution: Two levels up from your home directory. So if your home directory is `/home/dchiu`, you would now be addressing `/`, which is the root directory.)
-    2. `./.././` (Solution: One level up from current working directory. The first and last `./` are inconsequential. This path is equivalent to `../`)
-    3. Know why these paths are invalid: `/..`, `/~`, `./~`
+  1. `~/../..` (Solution: Two levels up from your home directory. So if your home directory is `/home/dchiu`, you would now be addressing `/`, which is the root directory.)
+  2. `./.././` (Solution: One level up from current working directory. The first and last `./` are inconsequential. This path is equivalent to `../`)
+  3. Know why these paths are invalid: `/..`, `/~`, `./~`
 
 #### File System Navigation
-- Now that we understand path expressions, we can finally make sense of some native commands. In the following syntax, anything enclosed within `<angle brackets>` are required parameters, and anything within `[square brackets]` are optional.
+1. Now that we understand path expressions, we can finally make sense of some native commands. In the following syntax, anything enclosed within `<angle brackets>` are required parameters, and anything within `[square brackets]` are optional.
 
   Here is a list of syntax related to navigating your file system.
 
@@ -158,14 +154,14 @@ It's therefore important that we all code a common environment, so I've prepared
   |`tree [path]` | Prints the file structure rooted at the optional given path. If path is not given, then it defaults to your current working directory |
   |`less [pathToFile]`| Opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Hit the spacebar to scroll down a page. Use `q` to quit. |
 
-- Using `git`, download a project from my git repo to your home directory, by typing on separate lines:
+2. Using `git`, download a project from my git repo to your home directory, by typing on separate lines:
 
   ```bash
   $ cd ~
   $ git clone 
   ```
 
-- 
+3. 
 
 
 
