@@ -124,13 +124,13 @@ It's therefore important that we all code a common environment, so I've prepared
 
   - **Shortcuts:** All the paths that we've seen thus far are called _Full (or Absolute) Paths_. That is, you have to give the full location to the resource starting all the way from the beginning at the root directory. This gets old fast. If my current working directory is `/home/dchiu/Web/Teaching/cs475/2023/spring` and I simply want to edit `AAA.txt` and then `BBB.txt` within it, it would drive you nuts to have to type out the full paths each time. To make our lives easier, there are shortcuts we can use:
 
-    |Path Shortcut|Description|
-    |--------------|---------------------------------------------|
+    | Path Shortcut | Description |
+    | :--- | :--- |
     |  `/` | the root directory of the file system|
     | `~/` | shortcut to your home directory |
-    |`~user/`|  shortcut to some other user's home directory. (You won't have access, but an admin would.)|
-    | `./` | the current working directory. 
-    | `../`| the parent of the current working directory (1 level up). 
+    |`~user/`|  shortcut to some other user's home directory. (You won't have access, but an admin would.) |
+    | `./` | the current working directory. |
+    | `../`| the parent of the current working directory (1 level up). |
 
     -  If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`
   
@@ -151,13 +151,13 @@ It's therefore important that we all code a common environment, so I've prepared
 
   Here is a list of syntax related to navigating your file system.
 
-  |Command|Description|
-  |--------------|---------------------------------------------|
-  |`pwd`         | prints your current (present) working directory|
-  |`cd [path]`   | changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory|
-  |`ls -l [path]`| lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory|
-  |`tree [path]` | prints the file structure rooted at the optional given path. If path is not given, then it defaults to your current working directory
-  |`less [path-to-file]`| opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Use `[space]` to scroll a page down. Use `q` to quit.
+  | Command | Description |
+  | :--- | :--- |
+  |`pwd`         | prints your current (present) working directory |
+  |`cd [path]`   | changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory |
+  |`ls -l [path]`| lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory |
+  |`tree [path]` | prints the file structure rooted at the optional given path. If path is not given, then it defaults to your current working directory |
+  |`less [path-to-file]`| opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Use `[space]` to scroll a page down. Use `q` to quit. |
 
 - Using `git`, download a project from my git repo to your home directory, by typing on separate lines:
 
