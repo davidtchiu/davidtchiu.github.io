@@ -57,7 +57,7 @@ It's therefore important that we all code a common environment, so I've prepared
 
   If you see this, congrats, you're all set up. If not, let me know.
 
-# Using the Terminal (Shell) and Editor
+#### Using the Terminal (Shell) and Editor
 - You only have to do the steps listed in the previous section that one time. Let's get a feel for how to start up the coding environment from this point forward.
 
 - Quit VS Code, and start it back up again.
@@ -86,15 +86,18 @@ It's therefore important that we all code a common environment, so I've prepared
 
   - [Command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Unix_command_cheatsheet.pdf)
 
-## Files, Directories, and Paths
+#### Files, Directories, and Paths
 
 - **File System as Trees:** Think of the computer's file system as a tree (okay really it's a graph, but let's keep it simple), where the nodes can be directories (that is, folders) and files. As in all trees, edges represent a parent-child relationship. In the context of file systems, this parent-child relationship expresses the what files and directories (children) are enclosed within a (parent) directory. Clearly, files are always leaf nodes (they don't have children), but directories may have children. The root node of the file system is called the **root directory** -- just think of it as the top-level directory that stores _everything_.
 
 - Everything's still a little abstract, so let's run the `tree` command to see the file system. From your shell, run:
-  ```
+
+  ```bash
   $ tree
   ```
+
   Here's my output:
+
   ```
   dchiu@os-class:~$ tree
   .
@@ -130,28 +133,34 @@ It's therefore important that we all code a common environment, so I've prepared
       - Yes, you can chained these together. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on.
       - So if I wanted to open `CCC.txt` in the directory containing the Fall semester of 2021, I could use `../../2021/fall/CCC.txt`
 
-### Self Test
-Where would the following paths take you?
-      - `~/../..` (Solution: Two levels up from your home directory. So if your home directory is `/home/dchiu`, you would now be addressing `/`, which is the root directory.)
-      - `./.././` (Solution: One level up from current working directory. The first and last `.` are inconsequential. This path is equivalent to `../`)
-      - Know why these paths are invalid: `/..`, `/~`, `./~`
+    - Where would the following paths take you?
+      1. `~/../..` (Solution: Two levels up from your home directory. So if your home directory is `/home/dchiu`, you would now be addressing `/`, which is the root directory.)
+      2. `./.././` (Solution: One level up from current working directory. The first and last `.` are inconsequential. This path is equivalent to `../`)
+      3. Know why these paths are invalid: `/..`, `/~`, `./~`
 
-## File System Navigation
-Now that we understand path expressions, we can finally make sense of some native commands. In the following syntax, anything enclosed within `<angle brackets>` are required parameters, and anything within `[square brackets]` are optional.
+#### File System Navigation
+- Now that we understand path expressions, we can finally make sense of some native commands. In the following syntax, anything enclosed within `<angle brackets>` are required parameters, and anything within `[square brackets]` are optional.
 
-Here is a list of syntax related to navigating your file system.
+  Here is a list of syntax related to navigating your file system.
   - `pwd`: prints your current (present) working directory
   - `cd [path]`: changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory. Note the following two special paths:
   - `ls -l [path]`: lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory
   - `tree [path]`: prints the file structure rooted at the optional given path. 
-  - `less [path-to-file]`: opens the file in read-only mode. Use `j` and `k` to scroll up and down. Use `[space]` to scroll a page down. Use `q` to quit.
+  - `less [path-to-file]`: opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Use `[space]` to scroll a page down. Use `q` to quit.
 
-### Self Test
+- Using `git`, download a project from my git repo to your home directory, by typing on separate lines:
+
+  ```bash
+  $ cd ~
+  $ git clone 
+  ```
+
+- 
 
 
 
 
-## File System Manipulation
+#### File System Manipulation
 
 - `mkdir <name>`: creates directory called name in current working directory
 
