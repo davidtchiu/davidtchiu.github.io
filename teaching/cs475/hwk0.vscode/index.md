@@ -75,18 +75,21 @@ It's therefore important that we all code a common environment, so I've prepared
   Before "windows" were invented, the shell was the _only_ user interface to operating systems. We use it to do everything that you can do with windows: accessing your files and folders, running and quitting programs, editing files, etc. Because the Linux server that I provided is "headless" (i.e., stripped down OS that doesn't support windows and graphical interfaces), you need to know the basics of how to navigate the command-line shell.
   
 - There are some shell commands that you can play with. Some more useful than others. For instance:
-  - `w`: prints a list of users currently logged in to the server.
-  - `uptime`: displays how long the system has been running.
-  - `uname -a`: displays the information for the OS kernel.
-  - `top`: displays the usage of the machine's resources. It lists the processes that are the "top" resource consumers. Type `q` to exit.
-  - `ps x`: displays the processes you have running.
-  - `ps aux`: displays the all processes on the system.
+
+  | Command | Description |
+  | :--- | :--- |
+  | `w` | Prints a list of users currently logged in to the server. |
+  | `uptime` | Displays how long the system has been running since last shutdown. |
+  | `uname -a` | Displays the information for the OS kernel. |
+  | `top` | Displays the usage of the machine's resources. It lists the processes that are the "top" resource consumers. Type `q` to exit. |
+  | `ps x` | Displays the processes you have running. |
+  | `ps aux` | Displays the all processes on the system. |
 
 - Before we get started, print this cheatsheet so you have it in front of you. It doesn't include *all* the commands that are available, but it does cover the essentials:
 
-  - [Command-line cheat sheet](https://commons.wikimedia.org/wiki/File:Unix_command_cheatsheet.pdf)
+  - [Command cheat sheet](https://commons.wikimedia.org/wiki/File:Unix_command_cheatsheet.pdf)
 
-#### Files, Directories, and Paths
+#### Path Expressions
 
 - **File System as Trees:** Think of the computer's file system as a tree (okay really it's a graph, but let's keep it simple), where the nodes can be directories (that is, folders) and files. As in all trees, edges represent a parent-child relationship. In the context of file systems, this parent-child relationship expresses the what files and directories (children) are enclosed within a (parent) directory. Clearly, files are always leaf nodes (they don't have children), but directories may have children. The root node of the file system is called the **root directory** -- just think of it as the top-level directory that stores _everything_.
 
@@ -126,11 +129,11 @@ It's therefore important that we all code a common environment, so I've prepared
 
     | Path Shortcut | Description |
     | :--- | :--- |
-    |  `/` | the root directory of the file system|
-    | `~/` | shortcut to your home directory |
-    |`~user/`|  shortcut to some other user's home directory. (You won't have access, but an admin would.) |
-    | `./` | the current working directory. If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`. |
-    | `../`| the parent of the current working directory (1 level up). |
+    |  `/` | The root directory of the file system |
+    | `~/` | Your home directory |
+    |`~user/`| Some other user's home directory. (You won't have access, but an admin would.) |
+    | `./` | Your current working directory. If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`. |
+    | `../`| The parent of your current working directory (1 level up). |
 
   - It is worth mentioning that `./` is often implied when it's not given. If I opened `AAA.txt`, it's the same as opening `./AAA.txt`
 
@@ -139,7 +142,7 @@ It's therefore important that we all code a common environment, so I've prepared
   - Where would the following paths take you?
     
     1. `~/../..` (Solution: Two levels up from your home directory. So if your home directory is `/home/dchiu`, you would now be addressing `/`, which is the root directory.)
-    2. `./.././` (Solution: One level up from current working directory. The first and last `.` are inconsequential. This path is equivalent to `../`)
+    2. `./.././` (Solution: One level up from current working directory. The first and last `./` are inconsequential. This path is equivalent to `../`)
     3. Know why these paths are invalid: `/..`, `/~`, `./~`
 
 #### File System Navigation
@@ -149,11 +152,11 @@ It's therefore important that we all code a common environment, so I've prepared
 
   | Command | Description |
   | :--- | :--- |
-  |`pwd`         | prints your current (present) working directory |
-  |`cd [path]`   | changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory |
-  |`ls -l [path]`| lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory |
-  |`tree [path]` | prints the file structure rooted at the optional given path. If path is not given, then it defaults to your current working directory |
-  |`less [pathToFile]`| opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Hit the spacebar to scroll down a page. Use `q` to quit. |
+  |`pwd`         | Prints your current (present) working directory |
+  |`cd [path]`   | Changes your current working directory to path. If path is not given, then it (usually) defaults to your home directory |
+  |`ls -l [path]`| Lists files and directories in the optional given path. If path is not given, then it defaults to your current working directory |
+  |`tree [path]` | Prints the file structure rooted at the optional given path. If path is not given, then it defaults to your current working directory |
+  |`less [pathToFile]`| Opens the file in read-only mode (you can't edit the file). Use `j` and `k` to scroll up and down. Hit the spacebar to scroll down a page. Use `q` to quit. |
 
 - Using `git`, download a project from my git repo to your home directory, by typing on separate lines:
 
@@ -173,7 +176,7 @@ It's therefore important that we all code a common environment, so I've prepared
 
     - **Pro Tip: Tab Completion** Most shells provide a useful tool called tab-completion. 
 
-## Running Programs
+#### Running Programs
 
 - `mkdir <name>`: creates directory called name in current working directory
 
