@@ -123,17 +123,25 @@ It's therefore important that we all code a common environment, so I've prepared
   - **Slashes:**  The slashes `/` in a path important. They denote directory descent. So `/home/dchiu/` means: traverse into the root directory (`/`), then into the `home/` directory, and finally into the `dchiu/` directory. The trailing slash is optional. `/home/dchiu` is the same as `/home/dchiu/`
 
   - **Shortcuts:** All the paths that we've seen thus far are called _Full (or Absolute) Paths_. That is, you have to give the full location to the resource starting all the way from the beginning at the root directory. This gets old fast. If my current working directory is `/home/dchiu/Web/Teaching/cs475/2023/spring` and I simply want to edit `AAA.txt` and then `BBB.txt` within it, it would drive you nuts to have to type out the full paths each time. To make our lives easier, there are shortcuts we can use:
-    - `/` is the root directory of the file system.
-    - `~/` is a shortcut to your home directory.
-    - `~user/` is a shortcut to some other user's home directory. (You won't have access, but an admin would.)
-    - `./` is the current working directory. 
-      - If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`
-      - It is worth mentioning that `./` is often implied when it's not given. If I opened `AAA.txt`, it's the same as opening `./AAA.txt`
-    - `../` is the parent of the current working directory (1 level up)
-      - Yes, you can chained these together. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on.
-      - So if I wanted to open `CCC.txt` in the directory containing the Fall semester of 2021, I could use `../../2021/fall/CCC.txt`
+
+    |Path Shortcut|Description|
+    |--------------|---------------------------------------------|
+    |  `/` | the root directory of the file system|
+    | `~/` | shortcut to your home directory |
+    |`~user/`|  shortcut to some other user's home directory. (You won't have access, but an admin would.)|
+    | `./` | the current working directory. 
+    | `../`| the parent of the current working directory (1 level up). 
+
+    -  If I opened `./AAA.txt`, it is the same as opening `/home/dchiu/Web/Teaching/cs475/2023/spring/AAA.txt`
+  
+    - It is worth mentioning that `./` is often implied when it's not given. If I opened `AAA.txt`, it's the same as opening `./AAA.txt`
+
+    - You can chain these together. `../../` means 2 levels up from the current working directory. If you want to go 3 levels up, then you can use `../../../`, and so on.
+    
+    - So if I wanted to open `CCC.txt` in the directory containing the Fall semester of 2021, I could use `../../2021/fall/CCC.txt.`
 
     - Where would the following paths take you?
+      
       1. `~/../..` (Solution: Two levels up from your home directory. So if your home directory is `/home/dchiu`, you would now be addressing `/`, which is the root directory.)
       2. `./.././` (Solution: One level up from current working directory. The first and last `.` are inconsequential. This path is equivalent to `../`)
       3. Know why these paths are invalid: `/..`, `/~`, `./~`
@@ -142,6 +150,7 @@ It's therefore important that we all code a common environment, so I've prepared
 - Now that we understand path expressions, we can finally make sense of some native commands. In the following syntax, anything enclosed within `<angle brackets>` are required parameters, and anything within `[square brackets]` are optional.
 
   Here is a list of syntax related to navigating your file system.
+
   |Command|Description|
   |--------------|---------------------------------------------|
   |`pwd`         | prints your current (present) working directory|
