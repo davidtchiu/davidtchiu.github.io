@@ -85,52 +85,52 @@ It's therefore important that we all code in a common environment, so I've prepa
 #### Our First C Program
 1. From your home directory, create a new directory called `hwk0`, navigate into it, and create a new file called `hwk0.c`.
 
-  ```bash
-  cd ~
-  mkdir hwk0
-  touch hwk0.c
-  ```
+    ```bash
+    cd ~
+    mkdir hwk0
+    touch hwk0.c
+    ```
 
 2. You should see the `hwk0.c` file show up on the left-hand panel of VS Code. Clicking on it will open it up in the editor. Type in the following "hello world program."
 
-  ```c
-  #include <stdio.h>
+    ```c
+    #include <stdio.h>
 
-  int main(int argc, char *argv[]) {
-    const int n = 10;
-    int x;
-    for (x = 0; x < n; x++) {
-      printf("Hello world %d of %d!\n", x, n);
+    int main(int argc, char *argv[]) {
+      const int n = 10;
+      int x;
+      for (x = 0; x < n; x++) {
+        printf("Hello world %d of %d!\n", x, n);
+      }
+      return 0;
     }
-    return 0;
-  }
-  ```
+    ```
 
 3. Save it from VS Code, and go back down to the terminal window to compile and run it:
 
-  ```bash
-  $ gcc -Wall hwk0.c
-  ```
+    ```bash
+    $ gcc -Wall hwk0.c
+    ```
   Here, `gcc` is the name of the C compiler (gnu c compiler). The `-Wall` flag instructs the compiler to display warnings (even if the code compiles.)
 
   The executable file that is produced is called `a.out`. Type `ls` to make sure it's there. If you don't see `a.out` that means the compilation failed, and there was a syntax error. To run it, use:
 
-  ```bash
-  $ ls
-  a.out hwk0.c
+    ```bash
+    $ ls
+    a.out hwk0.c
 
-  $ ./a.out
-  Hello world 0 of 10!
-  Hello world 1 of 10!
-  Hello world 2 of 10!
-  Hello world 3 of 10!
-  Hello world 4 of 10!
-  Hello world 5 of 10!
-  Hello world 6 of 10!
-  Hello world 7 of 10!
-  Hello world 8 of 10!
-  Hello world 9 of 10!
-  ```
+    $ ./a.out
+    Hello world 0 of 10!
+    Hello world 1 of 10!
+    Hello world 2 of 10!
+    Hello world 3 of 10!
+    Hello world 4 of 10!
+    Hello world 5 of 10!
+    Hello world 6 of 10!
+    Hello world 7 of 10!
+    Hello world 8 of 10!
+    Hello world 9 of 10!
+    ```
 
 4. If you see this output, then you just ran your first C program! Hopefully this gives you a clear idea about how C development will work in this class.
 
@@ -138,9 +138,9 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 1. It seems a bit strange that your executable would be named something arbitrary like `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <name>` flag. 
 
-  ```bash
-  $ gcc -Wall -o helloworld hwk0.c
-  ```
+    ```bash
+    $ gcc -Wall -o helloworld hwk0.c
+    ```
 
   This would output the binary as `helloworld`, and you can run it using `./helloworld`.
 
@@ -157,52 +157,52 @@ It's therefore important that we all code in a common environment, so I've prepa
   
 5. Here's an example `Makefile`, with 3 rules (`all`, `queue.o`, and `clean`). Each rule has the following syntax:
   
-  ```make
-  <ruleName>: <list of dependencies>
-      command
-  ```
+    ```makefile
+    <ruleName>: <list of dependencies>
+        command
+    ```
   
   Let's take a look at the following `Makefile`, which is used to compile this program:
   
-  ```makefile
-  all: main.c queue.h defs.h queue.o
-  	    gcc -Wall -o simu main.c queue.o
+    ```makefile
+    all: main.c queue.h defs.h queue.o
+          gcc -Wall -o simu main.c queue.o
 
-  queue.o: queue.h queue.c
-        gcc -Wall -c queue.c
+    queue.o: queue.h queue.c
+          gcc -Wall -c queue.c
 
-  clean:
-        rm -f simu *.o
-  ```
+    clean:
+          rm -f simu *.o
+    ```
 
 6. **Important** If the `Makefile` is present, then running the command `make [rule]` in the same directory will attempt to compile the program. If the rule is not given, then the first rule will be run.
 
 7. Back in the `Makefile`, the `all` rule says that, for it to run, it must first check for the existence of `main.c`, `queue.h`, `defs.h`, and `queue.o`. If all these files exist, then it will run the associated command below it to produce the `simu`  file. However, if any of those files are missing, then the `make` utility will search for a rule that produces the missing dependency.
 
-8.  In this case, the `queue.o` is missing, so `make` searches for the `queue.o` rule and tries to resolve that first. The `queue.o` rule requires the `queue.h` and `queue.c` files (which are both present in the current working directory). Thus, it runs:
+8. In this case, the `queue.o` is missing, so `make` searches for the `queue.o` rule and tries to resolve that first. The `queue.o` rule requires the `queue.h` and `queue.c` files (which are both present in the current working directory). Thus, it runs:
 
-  ```bash
-  gcc -Wall -c queue.c
-  ```
+    ```bash
+    gcc -Wall -c queue.c
+    ```
 
-  The `-c` flag produces a corresponding object file, `queue.o`. This file is not executable, but contains the compiled binary for the code found in `queue.h` and `queue.c`.
+    The `-c` flag produces a corresponding object file, `queue.o`. This file is not executable, but contains the compiled binary for the code found in `queue.h` and `queue.c`.
 
 9. If your queue files compile, then `queue.o` will be generated by the compiler. Now that `queue.o` is present, the `make` utility will now return to the `all` rule. This time, it will have all the necessary dependencies resolved for compiling `main.c` into the `simu` executable.
 
-  Here's what it would look like if they were all successfully compiled:
+    Here's what it would look like if they were all successfully compiled:
 
-  ```bash
-  $ make
-  gcc -Wall -c queue.c
-  gcc -Wall -o simu main.c queue.o
-  ```
+    ```bash
+    $ make
+    gcc -Wall -c queue.c
+    gcc -Wall -o simu main.c queue.o
+    ```
 
 10. You might have noticed the unused rule `clean` on the bottom of the `Makefile`. Notice that it has no dependencies, and is basically a shortcut for deleting any file ending in `.o` and the file named `simu`. In other words, `make clean` would remove all the binary files. This is useful to do right before a submission, or before uploading to git. They take up space, and no one really wants those temporary files.
 
-  ```bash
-  $ make clean
-  rm -f simu *.o
-  ```
+    ```bash
+    $ make clean
+    rm -f simu *.o
+    ```
 
 11. Here's the good and bad news. Good: I will provide you with a `Makefile` for every assignment, so that you can just type `make` to compile. The bad: You need to follow my file structure, or learn how to edit your `Makefile` to include your own files. This leads to less flexibility, and, not everyone agrees with my way of splitting the files apart. All in all, and I would say that it's good form to learn how to write `Makefile`s if you're a serious C programmer, but I'll leave it as an external exercise.
 
