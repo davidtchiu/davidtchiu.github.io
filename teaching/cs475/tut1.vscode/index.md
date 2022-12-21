@@ -132,7 +132,7 @@ It's therefore important that we all code in a common environment, so I've prepa
     Hello world 9 of 10!
     ```
 
-4. If you see this output, then you just ran your first C program! Hopefully this gives you a clear idea about how C development will work in this class.
+4. If you see this output, then you just ran your first C program for this class! Hopefully this gives you a clear idea about how C development will work in this class.
 
 #### Makefiles: Multi-File Compiling
 
