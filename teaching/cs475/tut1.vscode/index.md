@@ -111,9 +111,9 @@ It's therefore important that we all code in a common environment, so I've prepa
     ```bash
     $ gcc -Wall hwk0.c
     ```
-  Here, `gcc` is the name of the C compiler (gnu c compiler). The `-Wall` flag instructs the compiler to display warnings (even if the code compiles.)
+    Here, `gcc` is the name of the C compiler (gnu c compiler). The `-Wall` flag instructs the compiler to display warnings (even if the code compiles.)
 
-  The executable file that is produced is called `a.out`. Type `ls` to make sure it's there. If you don't see `a.out` that means the compilation failed, and there was a syntax error. To run it, use:
+    The executable file that is produced is called `a.out`. Type `ls` to make sure it's there. If you don't see `a.out` that means the compilation failed, and there was a syntax error. To run it, use:
 
     ```bash
     $ ls
@@ -142,7 +142,7 @@ It's therefore important that we all code in a common environment, so I've prepa
     $ gcc -Wall -o helloworld hwk0.c
     ```
 
-  This would output the binary as `helloworld`, and you can run it using `./helloworld`.
+    This would output the binary as `helloworld`, and you can run it using `./helloworld`.
 
 2. As your programs grow in complexity, good programming practice teaches us to split the program into multiple files (as you do in Java). The problem is that, unlike Java, the `gcc` does not automatically resolve file dependencies. If a file `AAA.c` uses functions that are defined elsewhere in `BBB.c`, then `BBB.c` must be compiled first into an object file (ends with `.o`) before `AAA.c` can be compiled. 
 
@@ -162,7 +162,7 @@ It's therefore important that we all code in a common environment, so I've prepa
         command
     ```
   
-  Let's take a look at the following `Makefile`, which is used to compile this program:
+    Let's take a look at the following `Makefile`, which is used to compile this program:
   
     ```makefile
     all: main.c queue.h defs.h queue.o
