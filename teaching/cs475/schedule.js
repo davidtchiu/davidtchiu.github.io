@@ -5,61 +5,61 @@ let days = {
         name: "Hwk 0",
         title: "Setting up VS Code",
         url: "hwk0.vscode/",
-        due: "1/21/2022",
+        due: "1/19/2023",
       },
       {
         name: "Hwk 1",
         title: "Getting Started with C",
         url: "hwk1.ws/",
-        due: "1/24/2022",
+        due: "1/23/2023",
       },
       {
         name: "Hwk 2",
         title: "Pointers, Arrays, Strings",
         url: "hwk2.ptrs/",
-        due: "1/31/2022",
+        due: "1/30/2023",
       },
       {
         name: "Hwk 3",
         title: "Dynamic Allocation",
         url: "hwk3.malloc/",
-        due: "2/7/2022",
+        due: "2/6/2023",
       },
       {
         name: "Hwk 4",
         title: "David Shell (dsh)",
         url: "hwk4.dsh/",
-        due: "2/21/2022",
+        due: "2/20/2023",
       },
       {
         name: "Hwk 5",
         title: "Parallel Matrix Multiplication",
         url: "hwk5.mmm/",
-        due: "3/2/2022",
+        due: "3/2/2023",
       },
       {
         name: "Hwk 6",
         title: "Scheduling?",
         url: "hwk6.sched/",
-        due: "3/11/2022",
+        due: "3/11/2023",
       },
       {
         name: "Hwk 7",
         title: "Bartender Problem",
         url: "hwk7.thebar/",
-        due: "4/1/2022",
+        due: "4/1/2023",
       },
       {
         name: "Hwk 8",
         title: "Banker's Algorithm",
         url: "hwk8.bankers/",
-        due: "4/18/2022",
+        due: "4/18/2023",
       },
       {
         name: "Hwk 9",
         title: "Paging Simulator",
         url: "hwk9.paging/",
-        due: "5/4/2022",
+        due: "5/4/2023",
       },
     ],
     ////////////////////////////// PROJECTS ///////////////////////////////
@@ -94,39 +94,39 @@ let days = {
   lectures: [
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
-    "What is an operating system?",
-    "A brief history of computing",
+    "Intro: What is OS?",
+    "C Lab (Attendance required; Bring laptops)",
     // wk 2
-    "Job scheduling models",
-    "Dual-mode operation, interrupts, system calls",
-    "Finish system calls",
+    "Intro: History of computer systems",
+    "Intro: Job scheduling models",
+    "C Lab (Attendance required; Bring laptops)",
     // wk 3
-    "Process Management: address spaces",
+    "Intro: Dual-mode operation, interrupts, system calls",
+    "Intro: Finish system calls",
+    "C Lab (Attendance required; Bring laptops)",
+    // wk 4
     "Process: PCB, state transitions",
     "Process: fork(), wait(), zombies and orphans",
-    // wk 4
     "Finish Processes: exec()",
-    "Thread Management: performance and data sharing",
-    "Threads: user vs. kernel; implementation; pthread",
     // wk 5
+    "Threads: performance and data sharing",
+    "Threads: user vs. kernel; implementation; pthread",
     "Threads: work sharing example - parallel sum",
-    "CPU Scheduling: goals and metrics; FCFS",
-    "Sched: RR, SJF, SRTF",
-    // "Talk about Hwk 4; Sched: Priority, Lottery",
     // wk 6
     // "Sched: SRTF, burst prediction",
-    "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
+    "CPU Scheduling: goals and metrics; FCFS",
     "<strong><emph>Review</emph></strong>",
-    "<strong><emph>Exam 1 (in person)</emph></strong>",
+    "<strong><emph>Exam 1</emph></strong>",
     // wk 7
     // "Sched: hyperthreading, multicore considerations",
+    "Sched: RR, SJF, SRTF",
+    "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
     "Start Synchronization",
     // wk 8
     "Synchronization: Critical section, locks",
     "Sync: Busy waiting and spin-locks; priority inversion problem",
-    "Cancelled",
-    // wk 9
     "<strong><emph>Spring break</emph></strong>",
+    // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
