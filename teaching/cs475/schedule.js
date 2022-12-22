@@ -3,85 +3,91 @@ let days = {
     homework: [
       {
         name: "Hwk 0",
-        title: "Virtual Machine",
-        url: "hwk0.vb/",
+        title: "Setting up VS Code",
+        url: "hwk0.vscode/",
         due: "1/21/2022",
       },
       {
         name: "Hwk 1",
         title: "Getting Started with C",
         url: "hwk1.ws/",
-        due: "1/28/2022",
+        due: "1/24/2022",
       },
       {
         name: "Hwk 2",
         title: "Pointers and Arrays",
         url: "hwk2.ptrs/",
-        due: "2/4/2022",
+        due: "1/31/2022",
       },
       {
         name: "Hwk 3",
         title: "Dynamic Allocation",
         url: "hwk3.malloc/",
-        due: "2/11/2022",
+        due: "2/7/2022",
       },
       {
         name: "Hwk 4",
         title: "David Shell (dsh)",
         url: "hwk4.dsh/",
-        due: "2/25/2022",
+        due: "2/21/2022",
       },
       {
         name: "Hwk 5",
         title: "Parallel Matrix Multiplication",
         url: "hwk5.mmm/",
-        due: "3/21/2022",
+        due: "3/2/2022",
       },
       {
         name: "Hwk 6",
-        title: "Bartender Problem",
-        url: "hwk6.thebar/",
-        due: "4/11/2022",
+        title: "Scheduling?",
+        url: "hwk6.sched/",
+        due: "3/11/2022",
       },
       {
         name: "Hwk 7",
+        title: "Bartender Problem",
+        url: "hwk7.thebar/",
+        due: "4/1/2022",
+      },
+      {
+        name: "Hwk 8",
         title: "Banker's Algorithm",
-        url: "hwk7.bankers/",
-        due: "5/2/2022",
-      },
-      // {
-      //   name: "Hwk 8",
-      //   title: "Paging Simulator",
-      //   url: "hwk7.paging/",
-      //   due: "5/11/2022",
-      // },
-    ],
-    ////////////////////////////// PROJECTS ///////////////////////////////
-    projects: [
-      {
-        name: "Proj 1",
-        title: "Ready Queue",
-        url: "proj1/",
-        due: "3/7/2022",
-      },
-      {
-        name: "Proj 2",
-        title: "Priority Scheduling",
-        url: "proj2/",
-        due: "3/25/2022",
-      },
-      {
-        name: "Proj 3",
-        title: "Time-Sharing and Locks",
-        url: "proj3/",
+        url: "hwk8.bankers/",
         due: "4/18/2022",
       },
       {
-        name: "Proj 4",
-        title: "Deadlock Detection",
-        url: "proj4/",
-        due: "5/13/2022",
+        name: "Hwk 9",
+        title: "Paging Simulator",
+        url: "hwk9.paging/",
+        due: "5/4/2022",
       },
+    ],
+    ////////////////////////////// PROJECTS ///////////////////////////////
+    projects: [
+    //   {
+    //     name: "Proj 1",
+    //     title: "Ready Queue",
+    //     url: "proj1/",
+    //     due: "3/7/2022",
+    //   },
+    //   {
+    //     name: "Proj 2",
+    //     title: "Priority Scheduling",
+    //     url: "proj2/",
+    //     due: "3/25/2022",
+    //   },
+    //   {
+    //     name: "Proj 3",
+    //     title: "Time-Sharing and Locks",
+    //     url: "proj3/",
+    //     due: "4/18/2022",
+    //   },
+    //   {
+    //     name: "Proj 4",
+    //     title: "Deadlock Detection",
+    //     url: "proj4/",
+    //     due: "5/13/2022",
+    //   },
     ],
   },
 
@@ -105,15 +111,15 @@ let days = {
     // wk 5
     "Threads: work sharing example - parallel sum",
     "CPU Scheduling: goals and metrics; FCFS",
-    "Sched: RR, SJF",
+    "Sched: RR, SJF, SRTF",
     // "Talk about Hwk 4; Sched: Priority, Lottery",
     // wk 6
-    "Sched: SRTF, burst prediction",
+    // "Sched: SRTF, burst prediction",
+    "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1 (in person)</emph></strong>",
     // wk 7
-    "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
-    "Sched: hyperthreading, multicore considerations",
+    // "Sched: hyperthreading, multicore considerations",
     "Start Synchronization",
     // wk 8
     "Synchronization: Critical section, locks",

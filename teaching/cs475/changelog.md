@@ -1,5 +1,18 @@
-#### TODO
+# TODO
+- Rewrite Hwk 1 to be shorter or to use & instead. Emphasize string functions. Should I still use scanf?
+- Rewrite Hwk 2 to sort an array of strings. Keep heapsort? Use quicksort? Just priorityQueue
+- Rewrite Hwk 3 to introduce structs and typedef along with malloc? How about supedLS? 
+- New Hwk 6: scheduler sim (easier form of it)? Or something multithreaded with a simple lock
 
+# Change Log
+- **Spring'23** No more projects. More aggressive timeline for Homework 1, 2, 3. 
+- **Spring'23** Wrote a new first homework to get students working on VS Code remote env.
+- **Spring'23** Transitioned off VirtualBox. Now using remote dev on Jetstream VM.
+- **Spring'22** Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
+- **Spring'22** Added Bankers for Hwk 7
+- **Spring'22** Proj 1: No longer making them do getFirst and getLast.
+
+# Xinu thoughts
 - New Xinu project 1
   - Adding xsh commands: ps. Add uptime and cputime (and cputime/uptime)
   - Adding run <prog> command: a way to run user functions as processes (like in the test/ folder)
@@ -47,9 +60,3 @@
   - Lab 15: Work Day
 
 - Remove prev edges, then merge Proj1 and Proj2?
-
-# Change Log
-
-- **Spring'22** Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
-- **Spring'22** Added Bankers for Hwk 7
-- **Spring'22** Proj 1: No longer making them do getFirst and getLast.
