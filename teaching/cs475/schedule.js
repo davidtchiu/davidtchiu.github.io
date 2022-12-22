@@ -9,19 +9,19 @@ let days = {
       },
       {
         name: "Hwk 1",
-        title: "Getting Started with C",
+        title: "Getting Started with C (wordstat)",
         url: "hwk1.ws/",
         due: "1/23/2023",
       },
       {
         name: "Hwk 2",
-        title: "Pointers, Arrays, Strings",
+        title: "Pointers, Arrays, Strings (sorting)",
         url: "hwk2.ptrs/",
         due: "1/30/2023",
       },
       {
         name: "Hwk 3",
-        title: "Dynamic Allocation",
+        title: "Dynamic Allocation (supedLS)",
         url: "hwk3.malloc/",
         due: "2/6/2023",
       },
@@ -33,7 +33,7 @@ let days = {
       },
       {
         name: "Hwk 5",
-        title: "Parallel Matrix Multiplication",
+        title: "Multithreading (mmm)",
         url: "hwk5.mmm/",
         due: "3/6/2023",
       },
@@ -45,7 +45,7 @@ let days = {
       // },
       {
         name: "Hwk 6",
-        title: "Bartender Problem",
+        title: "Bartender Problem (thebar)",
         url: "hwk6.thebar/",
         due: "4/1/2023",
       },
@@ -57,7 +57,7 @@ let days = {
       },
       {
         name: "Hwk 9",
-        title: "Paging Simulator",
+        title: "Paging Simulator (vmm)",
         url: "hwk9.paging/",
         due: "5/4/2023",
       },
