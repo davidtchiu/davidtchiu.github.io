@@ -35,18 +35,18 @@ let days = {
         name: "Hwk 5",
         title: "Parallel Matrix Multiplication",
         url: "hwk5.mmm/",
-        due: "3/2/2023",
+        due: "3/6/2023",
       },
+      // {
+      //   name: "Hwk 6",
+      //   title: "Scheduling?",
+      //   url: "hwk6.sched/",
+      //   due: "3/11/2023",
+      // },
       {
         name: "Hwk 6",
-        title: "Scheduling?",
-        url: "hwk6.sched/",
-        due: "3/11/2023",
-      },
-      {
-        name: "Hwk 7",
         title: "Bartender Problem",
-        url: "hwk7.thebar/",
+        url: "hwk6.thebar/",
         due: "4/1/2023",
       },
       {
@@ -114,11 +114,12 @@ let days = {
     "Threads: work sharing example - parallel sum",
     // wk 6
     // "Sched: SRTF, burst prediction",
-    "CPU Scheduling: goals and metrics; FCFS",
+    "C Lab (Attendance required; Bring laptops)",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
     // "Sched: hyperthreading, multicore considerations",
+    "Scheduling: goals and metrics; FCFS",
     "Sched: RR, SJF, SRTF",
     "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
     "Start Synchronization",
