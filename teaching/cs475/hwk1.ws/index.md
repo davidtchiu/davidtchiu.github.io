@@ -247,15 +247,15 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
 
 - Referring back to the source file:
 
-  - Lines **2-3**: the random number generator functions `srand()` and `rand()` are imported from `stdlib.h`. We also include `time.h` to gain access to the `time()` function, which returns the number of seconds elapsed since 00:00 Jan 1, 1970 (known as Unix Time or Epoch Time).
+  - **Lines 2-3**: the random number generator functions `srand()` and `rand()` are imported from `stdlib.h`. We also include `time.h` to gain access to the `time()` function, which returns the number of seconds elapsed since 00:00 Jan 1, 1970 (known as Unix Time or Epoch Time).
 
-  - Lines **9-10**: declare and initialize two arrays.
+  - **Lines 9-10**: declare and initialize two arrays.
 
-  - Lines **13-16**: shows the common for-loop to access array elements. One thing to point out is that the indexing variable cannot be declared in the for-loop in C.
+  - **Lines 13-16**: shows the common for-loop to access array elements. One thing to point out is that the indexing variable cannot be declared in the for-loop in C.
 
-  - Lines 19: to use the random number generator, we need to first seed it with an unsigned integer. It is common to the current time as the seed.
+  - **Line 19**: to use the random number generator, we need to first seed it with an unsigned integer. It is common to the current time as the seed.
 
-  - Lines 23: after seeding, we can call `rand()` return a number in the range of [0, RAND_MAX].
+  - **Lines 23**: after seeding, we can call `rand()` return a number in the range of [0, RAND_MAX].
 
 - **Do these exercises (not graded):**
 
