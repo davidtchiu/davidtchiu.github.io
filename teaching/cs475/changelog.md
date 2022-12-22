@@ -1,10 +1,10 @@
 # TODO
-- Rewrite Hwk 1 to be shorter or to use & instead. Emphasize string functions. Should I still use scanf?
 - Rewrite Hwk 2 to sort an array of strings. Keep heapsort? Use quicksort? Just priorityQueue
 - Rewrite Hwk 3 to introduce structs and typedef along with malloc? How about supedLS? 
 - New Hwk 6: scheduler sim (easier form of it)? Or something multithreaded with a simple lock
 
 # Change Log
+- **Spring'23** Rewrite Hwk 1 to be shorter (removed structs) or to use & instead. Emphasize string functions and fgets().
 - **Spring'23** No more projects. More aggressive timeline for Homework 1, 2, 3. 
 - **Spring'23** Wrote a new first homework to get students working on VS Code remote env.
 - **Spring'23** Transitioned off VirtualBox. Now using remote dev on Jetstream VM.

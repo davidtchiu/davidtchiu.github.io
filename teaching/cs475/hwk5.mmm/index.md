@@ -244,9 +244,10 @@ This assignment will be graded out of 45 points:
 After you have completed the homework, use the following to submit your work on Canvas. I assume you wrote your program inside your virtual machine. There are two options to submit your work.
 
 1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
+
 2. If you'd rather submit a "zipped" file on Canvas, do the following:
 
-   - From the Terminal in your virtual machine,
+   - From the Terminal, navigate to the directory that contains your homework directory.
    - Navigate to the directory that contains your homework directory.
    - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
 

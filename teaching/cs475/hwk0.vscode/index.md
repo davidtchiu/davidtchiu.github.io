@@ -208,7 +208,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 
 #### Submission
-There is no submission for this tutorial. 
+There is no submission for this tutorial.
 
 
 #### Credits

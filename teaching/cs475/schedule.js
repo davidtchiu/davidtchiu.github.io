@@ -15,7 +15,7 @@ let days = {
       },
       {
         name: "Hwk 2",
-        title: "Pointers and Arrays",
+        title: "Pointers, Arrays, Strings",
         url: "hwk2.ptrs/",
         due: "1/31/2022",
       },
@@ -167,6 +167,6 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("1/17/22", days, MWF);
+const schedule = new CourseCalendar("1/16/23", days, MWF);
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
