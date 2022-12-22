@@ -37,23 +37,23 @@ let days = {
         url: "hwk5.mmm/",
         due: "3/6/2023",
       },
-      // {
-      //   name: "Hwk 6",
-      //   title: "Scheduling?",
-      //   url: "hwk6.sched/",
-      //   due: "3/11/2023",
-      // },
       {
-        name: "Hwk 6 (thebar)",
+        name: "Hwk 6 (simple sync?)",
+        title: "Simple mutex",
+        url: "hwk6.mutex/",
+        due: "3/20/2023",
+      },
+      {
+        name: "Hwk 7 (thebar)",
         title: "Bartender Problem ",
-        url: "hwk6.thebar/",
-        due: "4/1/2023",
+        url: "hwk7.thebar/",
+        due: "4/3/2023",
       },
       {
         name: "Hwk 7 (bankers)",
         title: "Banker's Algorithm",
         url: "hwk7.bankers/",
-        due: "4/18/2023",
+        due: "4/17/2023",
       },
       {
         name: "Hwk 8 (vmm)",
@@ -95,15 +95,15 @@ let days = {
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What is OS?",
-    "C Lab (Attendance required; Bring laptops)",
+    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 2
     "Intro: History of computer systems",
     "Intro: Job scheduling models",
-    "C Lab (Attendance required; Bring laptops)",
+    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 3
     "Intro: Dual-mode operation, interrupts, system calls",
     "Intro: Finish system calls",
-    "C Lab (Attendance required; Bring laptops)",
+    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 4
     "Process: PCB, state transitions",
     "Process: fork(), wait(), zombies and orphans",
@@ -111,40 +111,40 @@ let days = {
     // wk 5
     "Threads: performance and data sharing",
     "Threads: user vs. kernel; implementation; pthread",
-    "Threads: work sharing example - parallel sum",
+    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 6
     // "Sched: SRTF, burst prediction",
-    "C Lab (Attendance required; Bring laptops)",
+    "Threads: work sharing example - parallel sum",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
     // "Sched: hyperthreading, multicore considerations",
     "Scheduling: goals and metrics; FCFS",
     "Sched: RR, SJF, SRTF",
+    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
+    // wk 8
     "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
     "Start Synchronization",
-    // wk 8
     "Synchronization: Critical section, locks",
-    "Sync: Busy waiting and spin-locks; priority inversion problem",
-    "<strong><emph>Spring break</emph></strong>",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
+    "<strong><emph>Spring break</emph></strong>",
     // wk 10
+    "Sync: Busy waiting and spin-locks; priority inversion problem",
     "Sync: Blocking locks; Semaphores",
     "Sync: semaphores",
-    "Sync: Implementing semaphores; helpful professor problem",
     // wk 11
+    "Sync: Implementing semaphores; helpful professor problem",
     "Sync: Bounded buffer problem",
-    "Sync: monitors",
     "Sync: monitors and Java",
     // wk 12
     "Deadlocks (DL): conditions and prevention",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
-    "DL: RAGs, detection and recovery",
     "DL: Banker's algorithm",
+    "DL: RAGs, detection and recovery",
     "MM: Address binding, relocatability, process loading",
     // wk 14
     "MM: Partitioning (Fixed, Dynamic)",
