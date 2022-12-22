@@ -539,6 +539,7 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
 ##### Sample Output
 
 ```
+$ ./wordstat 
 Enter strings (# to stop):
 APPle caT
 orangE goat
@@ -546,100 +547,76 @@ greenish blue fish
 #
 *** WORD STATS MENU ***
 Enter 1 to print vowel and consonant frequency.
-Enter 2 to print word count.
-Enter 3 to print histogram.
-Enter 4 to return to inputting more strings.
-Enter 5 to quit.
-> 1
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+1
+
 Vowels = 14 (41.18%), Consonants = 20 (58.82%), Total= 34
 
 *** WORD STATS MENU ***
 Enter 1 to print vowel and consonant frequency.
-Enter 2 to print word count.
-Enter 3 to print histogram.
-Enter 4 to return to inputting more strings.
-Enter 5 to quit.
-> 2
-Words: 7
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+2
+        *                                           
+*       *                                           
+*       *   *                                       
+*       *   * * *     *   * * *   * * *             
+* * *   * * * * *     *   * * *   * * * *           
+a b c d e f g h i j k l m n o p q r s t u v w x y z 
+4 1 1 0 5 1 3 2 2 0 0 2 0 2 2 2 0 2 2 2 1 0 0 0 0 0 
 
 *** WORD STATS MENU ***
 Enter 1 to print vowel and consonant frequency.
-Enter 2 to print word count.
-Enter 3 to print histogram.
-Enter 4 to return to inputting more strings.
-Enter 5 to quit.
-> 3
-        *
-*       *
-*       *   *
-*       *   * * *     *   * * *   * * *
-* * *   * * * * *     *   * * *   * * * *
-a b c d e f g h i j k l m n o p q r s t u v w x y z
-4 1 1 0 5 1 3 2 2 0 0 2 0 2 2 2 0 2 2 2 1 0 0 0 0 0
-
-*** WORD STATS MENU ***
-Enter 1 to print vowel and consonant frequency.
-Enter 2 to print word count.
-Enter 3 to print histogram.
-Enter 4 to return to inputting more strings.
-Enter 5 to quit.
-> 4
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+3
 Enter strings (# to stop):
-> grey SHARK
-> !!!!!!!!
-> @#$@#$@#$
-> #
-
+grey SHARK
+!!@@!##
+@#@#@#@#
+#
 *** WORD STATS MENU ***
 Enter 1 to print vowel and consonant frequency.
-Enter 2 to print word count.
-Enter 3 to print histogram.
-Enter 4 to return to inputting more strings.
-Enter 5 to quit.
-> 1
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+1
+
 Vowels = 16 (37.21%), Consonants = 27 (62.79%), Total= 43
 
 *** WORD STATS MENU ***
 Enter 1 to print vowel and consonant frequency.
-Enter 2 to print word count.
-Enter 3 to print histogram.
-Enter 4 to return to inputting more strings.
-Enter 5 to quit.
-> 2
-Words: 9
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+2
+        *                                           
+*       *                                           
+*       *   *                     *                 
+*       *   * *                   * *               
+*       *   * * *     *   * * *   * * *             
+* * *   * * * * *   * *   * * *   * * * *       *   
+a b c d e f g h i j k l m n o p q r s t u v w x y z 
+5 1 1 0 6 1 4 3 2 0 1 2 0 2 2 2 0 4 3 2 1 0 0 0 1 0 
 
 *** WORD STATS MENU ***
 Enter 1 to print vowel and consonant frequency.
-Enter 2 to print word count.
-Enter 3 to print histogram.
-Enter 4 to return to inputting more strings.
-Enter 5 to quit.
-> 3
-        *
-*       *
-*       *   *                     *
-*       *   * *                   * *
-*       *   * * *     *   * * *   * * *
-* * *   * * * * *   * *   * * *   * * * *       *
-a b c d e f g h i j k l m n o p q r s t u v w x y z
-5 1 1 0 6 1 4 3 2 0 1 2 0 2 2 2 0 4 3 2 1 0 0 0 1 0
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+19
+Error: Unknown option 19.
 
 *** WORD STATS MENU ***
 Enter 1 to print vowel and consonant frequency.
-Enter 2 to print word count.
-Enter 3 to print histogram.
-Enter 4 to return to inputting more strings.
-Enter 5 to quit.
-> 19
-Error: Unknown option 19. Try again.
-
-*** WORD STATS MENU ***
-Enter 1 to print vowel and consonant frequency.
-Enter 2 to print word count.
-Enter 3 to print histogram.
-Enter 4 to return to inputting more strings.
-Enter 5 to quit.
-> 5
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+4
 Exiting...
 ```
 
@@ -650,11 +627,11 @@ This assignment will be graded out of 20 points:
 
 [1pt] Appropriate constants have been defined
 
-[1pt] Array(s) and strings are created using a constant size
+[1pt] Array(s) and strings are created using a constant length
 
-[6pt] Your program handles multiple-word inputs
+[6pt] Your program handles multiple-word inputs (with spaces)
 
-[4pt] Your program updates counts and histogram appropriately
+[4pt] Your program updates the histogram appropriately
 
 [5pt] Your program prints a vertical (not horizontal) histogram
 
@@ -670,13 +647,14 @@ This assignment will be graded out of 20 points:
 After you have completed the homework, use the following to submit your work on Canvas. I assume you wrote your program inside your virtual machine. There are two options to submit your work.
 
 1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
+
 2. If you'd rather submit a "zipped" file on Canvas, do the following:
 
-   - From the Terminal in your virtual machine,
-   - Navigate to the directory that contains your homework directory.
+   - From the Terminal, navigate to the directory that contains your homework directory.
    - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
 
      - For example, if my homework directory is called `hwk1/`, and I want the zipped file to be called `hwk1.tar.gz`, use: `tar -czvf hwk1.tar.gz hwk1/`
+     
      - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
 
    - Navigate to our course on Canvas, and find the assignment submission box.
