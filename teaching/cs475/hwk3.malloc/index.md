@@ -430,16 +430,8 @@ Having taken CS 261, I'm assuming that you have a working knowledge of BST's pro
        }
    }
    ```
-<!-- 
-###### Do these exercises (not graded):
 
-1. Implement `int min(BST *tree)` and `int max(BST *tree)`, which input a pointer to the `BST` and returns the min and max values in the BST, respectively.
 
-2. Implement `int treeSum(BST *tree)`, which inputs a pointer to the `BST`, adds up all the node values and returns the sum.
-
-3. Implement `void printInOrder(BST *tree)`, which inputs a pointer to the `BST` and uses in-order traversal to print all values in ascending order.
-
-4. Implement `void delete(BST *tree, int key)`, which inputs a pointer to the `BST`, and deletes the node with the given value. Remember to `free()` up the deleted node. (Remember from your CS II course that there are 3 cases to handle.) -->
 
 ##### Assignment: ls2 -- A Recursive `ls` (Graded)
 
@@ -497,10 +489,10 @@ Mode 2 example for `ls2 simCache.exe`:
 
 ```bash
 $ ./ls2 simCache.exe
-  Asmt1/ (directory)
-    simCache.exe (34981 bytes)
-    FunDir/ (directory)
-        simCache.exe (34981 bytes)
+Asmt1/ (directory)
+  simCache.exe (34981 bytes)
+  FunDir/ (directory)
+      simCache.exe (34981 bytes)
 ```
 
 #### Grading
