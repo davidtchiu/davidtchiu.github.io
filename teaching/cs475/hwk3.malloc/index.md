@@ -454,8 +454,9 @@ Having taken CS 261, I'm assuming that you have a working knowledge of BST's pro
     - Note that the second parameter of `lstat()` accepts an *output parameter* (remember what those are from the previous assignment?), where it will store a `struct` with the file/directory's information.
       - One of the fields in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `lstat()`ed is a *regular file* or a *directory* using `IS_REG(mode_t m)` and `IS_DIR(mode_t m)` functions respectively. You can ignore all other types of files.
 
-4. One decision you'll need to make that is related to dynamic memory allocation is how to store the list of strings that you'll eventually need to print out. This is particularly the case for running **mode 2** of your program, where a non-match of a file in any subdirectory means you wouldn't want to print the parent directories either!
-    - You could, for instance, create a linked list of strings using a new `struct` that you define (akin to my BST example), or perhaps just simply a resizable array of strings would do? 
+4. One major decision you'll need to make that is related to dynamic memory allocation is how to store the list of strings that you'll eventually need to print out to the terminal. (In my case, each directory/file name was kept as a separate "line" and printed out at the the end.) This is particularly the case for running **mode 2** of your program, where a non-match of a file in any subdirectory means you wouldn't want to print the parent directories either!
+    - You could, for instance, create a linked list (or stack?) of strings using a new `struct` that you define (akin to my BST example)? 
+      - Remember that it's not sufficient to only `malloc()` enough space for the list or stack nodes. You also need to `malloc()` enough space to store each file/directory name within that node!
     - I'll leave the choice up to you, but don't forget to `free()` everything up that you `malloc()` as soon as you're done using that memory!
 
 5. Other header files you may want to look into before getting started on this assignment:
