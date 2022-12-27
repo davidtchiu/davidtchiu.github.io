@@ -435,15 +435,15 @@ Having taken CS 261, I'm assuming that you have a working knowledge of BST's pro
 
 ##### Assignment: ls2 -- A Recursive `ls` (Graded)
 
-1. As you know,  the `ls` (when given no other command-line arguments) command lists all files and directories in your current working directory, `.`. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. Name your program `ls2`, and it should run in *two modes*:
+1. As you know,  the `ls` (when given no other command-line arguments) command lists all files and directories in your current working directory `"."`. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. Name your program `ls2`, and it should run in *two modes*:
 
-  - **Mode 1:** The first mode runs when the user does not pass in a command-line
-  argument to `main()`. It should recursively show all files' name and size (in bytes) and
-  descend down all subdirectories. You do not need to worry about displaying anything
-  other than regular files and directories.
-  
-  - **Mode 2:** The second mode runs when the user passes a single command-line argument,
-  `filename`. Your program should only show files with names exactly matching the given `filename`. It should also include all the directories (and subdirectories) that contain files with names matching the given argument. The program should avoid showing the directory chain if the file is not found in its subdirectory.
+    - **Mode 1:** The first mode runs when the user does not pass in a command-line
+    argument to `main()`. It should recursively show all files' name and size (in bytes) and
+    descend down all subdirectories. You do not need to worry about displaying anything
+    other than regular files and directories.
+    
+    - **Mode 2:** The second mode runs when the user passes a single command-line argument,
+    `filename`. Your program should only show files with names exactly matching the given `filename`. It should also include all the directories (and subdirectories) that contain files with names matching the given argument. The program should avoid showing the directory chain if the file is not found in its subdirectory.
 
 2. You will want to check out the following Unix system calls for C through `#include <unistd.h>`:
   `opendir()`, `readdir()`, `chdir()`, `closedir()`, and more.
