@@ -18,6 +18,13 @@ This is the second part of a multi-part primer on C. In this tutorial-assignment
 - To understand the connection between pointers and arrays.
 
 
+#### Instructions
+
+Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 0](../hwk0.vscode).
+
+  - Once you're logged in, you can open a terminal from the `Terminal` menu.
+
+
 ##### Part 0: Structs and Typedef
 
 C is not an object-oriented language, but it does support object-like elements called `struct`. I like to think of `struct`s as classes in Java with only public fields and no methods. Let's see how it's used.
@@ -768,7 +775,7 @@ I have included a working solution of my program along with the starter code. Th
 
 2. Implement the following functions inside `heap.c`:
 
-   - `void heapify(struct Employee *A, int i, int n)`: This function inputs a pointer to an array
+   - `void heapify(Employee *A, int i, int n)`: This function inputs a pointer to an array
      `A`, an index `i`, and the size of the array `n`. The function assumes the trees that rooted at
      `left_child(i)` and `right_child(i)` already satisfy the min-heap property, but that `A[i]`
      may be larger than its children. This function should trickle `A[i]`

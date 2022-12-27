@@ -19,7 +19,9 @@ This is the first part of a multi-part primer on C. You will be programming a si
 
 #### Instructions
 
-Open your virtual machine, and log in. Open up a Terminal window to the shell. If you don't know what I'm referring to, complete [Hwk 0](../hwk0.vb).
+Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 0](../hwk0.vscode).
+
+  - Once you're logged in, you can open a terminal from the `Terminal` menu.
 
 ##### Part I: The Basics
 
