@@ -443,68 +443,65 @@ Having taken CS 261, I'm assuming that you have a working knowledge of BST's pro
 
 ##### Assignment: ls2 -- A Recursive `ls` (Graded)
 
-1. In Unix, the `ls` command lists all files and directories in your current working directory. Your task is to write a recursive version of the `ls` command. Name your program `ls2`, and it should run in *two modes*:
+1. As you know,  the `ls` (when given no other command-line arguments) command lists all files and directories in your current working directory, `.`. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. Name your program `ls2`, and it should run in *two modes*:
 
-  - The first mode runs when the user does not pass in a command line
+  - **Mode 1:** The first mode runs when the user does not pass in a command-line
   argument to `main()`. It should recursively show all files' name and size (in bytes) and
   descend down all subdirectories. You do not need to worry about displaying anything
   other than regular files and directories.
   
-  - The second mode runs when the user passes a single command line argument,
-  `filename`. Your program should only show files with
-  names matching the given `filename`. It should also include all the directories (and
-  directory chains) that contain files matching the argument. The program should avoid showing the directory chain if the file is not found in its subdirectory.
+  - **Mode 2:** The second mode runs when the user passes a single command-line argument,
+  `filename`. Your program should only show files with names exactly matching the given `filename`. It should also include all the directories (and subdirectories) that contain files with names matching the given argument. The program should avoid showing the directory chain if the file is not found in its subdirectory.
 
-  - You will want to check out the following Unix system calls for C through `#include <unistd.h>`:
+2. You will want to check out the following Unix system calls for C through `#include <unistd.h>`:
   `opendir()`, `readdir()`, `chdir()`, `closedir()`, and more.
     - When you read the contents of a directory, ignore any references to `.` and `..`
 
-  - To test what a file actually is (a regular file? a link? a directory?) and to get information on the file (how big is it?) you'll want to look into using `lstat()` provided in `#include <sys/stat.h>` 
+3. To test what a file actually is (a regular file? a link? a directory?) and to get information on the file (how big is it?) you'll want to look into using `lstat()` provided in `#include <sys/stat.h>` 
     - [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
     - Note that the second parameter of `lstat()` accepts an *output parameter* (remember what those are from the previous assignment?), where it will store a `struct` with the file/directory's information.
       - One of the fields in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `lstat()`ed is a *regular file* or a *directory* using `IS_REG(mode_t m)` and `IS_DIR(mode_t m)` functions respectively. You can ignore all other types of files.
 
-2. One decision you'll need to make that is related to dynamic memory allocation is how to store the list of strings that you'll eventually need to print out. This is particularly the case for running **mode 2** of your program, where a non-match of a file in any subdirectory means you wouldn't want to print the parent directories either!
+4. One decision you'll need to make that is related to dynamic memory allocation is how to store the list of strings that you'll eventually need to print out. This is particularly the case for running **mode 2** of your program, where a non-match of a file in any subdirectory means you wouldn't want to print the parent directories either!
     - You could, for instance, create a linked list of strings using a new `struct` that you define (akin to my BST example), or perhaps just simply a resizable array of strings would do? 
     - I'll leave the choice up to you, but don't forget to `free()` everything up that you `malloc()` as soon as you're done using that memory!
 
-3. Other header files you may want to look into before getting started on this assignment:
+5. Other header files you may want to look into before getting started on this assignment:
     - [dirent.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/dirent.h.html) for `DIR` type for representing a directory stream.
     - [sys/types.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/types.h.html) for `mode_t`.
 
-4.  Your `ls2` program only needs to list the files in the current working directory. That is, you do not have to give it an argument to recursively list files in any arbitrary directory. 
+6.  Your `ls2` program only needs to list the files in the current working directory. That is, you do not have to give it an argument to recursively list files in any arbitrary directory. 
 
+##### Sample outputs:
 
+Mode 1 example. No command-line argument.
+```bash
+$ ./ls2
+ls2.c (930 bytes)
+ls2.exe (23022 bytes)
+Asmt1/ (directory)
+    simCache.c (1342 bytes)
+    simCache.exe (34981 bytes)
+    JavaDir/ (directory)
+        simCache.java (987 bytes)
+        simCache.class (43222 bytes)
+    FunDir/ (directory)
+        moo.exe (4567876 bytes)
+        bark.exe (432 bytes) 
+        meow.txt (77337733 bytes)
+        simCache.exe (34981 bytes)
+Asmt4/ (directory)
+```
 
-Sample outputs:
+Mode 2 example for `ls2 simCache.exe`:
 
-  ```bash
-  $ ls2
-	ls2.c (930 bytes)
-	ls2.exe (23022 bytes)
-	Asmt1/ (directory)
-	   simCache.c (1342 bytes)
-	   simCache.exe (34981 bytes)
-	   JavaDir/ (directory)
-	       simCache.java (987 bytes)
-	       simCache.class (43222 bytes)
-	   FunDir/ (directory)
-	       moo.exe (4567876 bytes)
-	       bark.exe (432 bytes) 
-	       meow.txt (77337733 bytes)
-	       simCache.exe (34981 bytes)
-	Asmt4/ (directory)
-  ```
-
-The following is an example output for `ls2 simCache.exe`:
-
-  ```bash
-  $ ls2 simCache.exe
-    Asmt1/ (directory)
-      simCache.exe (34981 bytes)
-      FunDir/ (directory)
-          simCache.exe (34981 bytes)
-  ```
+```bash
+$ ./ls2 simCache.exe
+  Asmt1/ (directory)
+    simCache.exe (34981 bytes)
+    FunDir/ (directory)
+        simCache.exe (34981 bytes)
+```
 
 #### Grading
 
