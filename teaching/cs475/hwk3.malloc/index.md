@@ -500,12 +500,10 @@ Asmt1/ (directory)
 
 ```
 This assignment will be graded out of 20 points:
-[5pt] User input is properly handled.
-[2pt] Negative operands are properly handled.
-[4pt] push() is dynamically allocates a stack element and pushes it on the top of the stack.
-[4pt] pop() removes the top element, returns the stored value, and is free from memory leaks.
-[1pt] size() returns the the number of elements on the stack.
-[4pt] RPN algorithm is properly implemented.
+[3pt] Your program recursively descends all subdirectories.
+[3pt] Implementation of Mode 1.
+[4pt] Implementation of Mode 2.
+[10pt] Management of your dynamically allocated data structure for storing files/directory listing.
 ```
 
 #### Submitting Your Assignment
