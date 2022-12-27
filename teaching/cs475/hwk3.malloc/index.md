@@ -446,13 +446,13 @@ Having taken CS 261, I'm assuming that you have a working knowledge of BST's pro
     `filename`. Your program should only show files with names exactly matching the given `filename`. It should also include all the directories (and subdirectories) that contain files with names matching the given argument. The program should avoid showing the directory chain if the file is not found in its subdirectory.
 
 2. You will want to check out the following Unix system calls for C through `#include <unistd.h>`:
-  `opendir()`, `readdir()`, `chdir()`, `closedir()`, and more.
+  `opendir()`, `readdir()`, `closedir()`.
     - When you read the contents of a directory, ignore any references to `.` and `..`
 
-3. To test what a file actually is (a regular file? a link? a directory?) and to get information on the file (how big is it?) you'll want to look into using `lstat()` provided in `#include <sys/stat.h>` 
+3. To test what a file actually is (a regular file? a link? a directory?) and to get information on the file (how big is it?) you'll want to look into using `lstat(..)` provided in `#include <sys/stat.h>` 
     - [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
-    - Note that the second parameter of `lstat()` accepts an *output parameter* (remember what those are from the previous assignment?), where it will store a `struct` with the file/directory's information.
-      - One of the fields in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `lstat()`ed is a *regular file* or a *directory* using `IS_REG(mode_t m)` and `IS_DIR(mode_t m)` functions respectively. You can ignore all other types of files.
+    - Note that the second parameter of `lstat(..)` accepts an *output parameter* (remember what those are from the previous assignment?), where it will store a `struct` with the file/directory's information.
+      - One of the fields in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `lstat(..)`ed is a *regular file* or a *directory* using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. You should ignore all other types of files.
 
 4. One major decision you'll need to make that is related to dynamic memory allocation is how to store the list of strings that you'll eventually need to print out to the terminal. (In my case, each directory/file name was kept as a separate "line" and printed out at the the end.) This is particularly the case for running **mode 2** of your program, where a non-match of a file in any subdirectory means you wouldn't want to print the parent directories either!
     - You could, for instance, create a linked list (or stack?) of strings using a new `struct` that you define (akin to my BST example)? 
@@ -464,6 +464,8 @@ Having taken CS 261, I'm assuming that you have a working knowledge of BST's pro
     - [sys/types.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/types.h.html) for `mode_t`.
 
 6.  Your `ls2` program only needs to list the files in the current working directory. That is, you do not have to give it an argument to recursively list files in any arbitrary directory. 
+
+7.  Output formatting: The names of directories must be followed with the suffix `/ (directory)`. Names of files must be followed by the number of bytes occupied by that file. If a file or directory is found within a subdirectory, its name must be indented by four spaces. Files and directories in the listing does not needed to sorted in any particular order.
 
 ##### Sample outputs:
 
@@ -502,8 +504,8 @@ Asmt1/ (directory)
 This assignment will be graded out of 20 points:
 [3pt] Your program recursively descends all subdirectories.
 [3pt] Implementation of Mode 1.
-[4pt] Implementation of Mode 2.
-[10pt] Management of your dynamically allocated data structure for storing files/directory listing.
+[6pt] Implementation of Mode 2.
+[8pt] Management of your dynamically allocated data structure for storing files/directory listing.
 ```
 
 #### Submitting Your Assignment
