@@ -283,12 +283,39 @@ All right, so we've seen how to create an array on the heap, but still, this is 
 
 In the code below, we use `malloc()` to create 4 bytes (`sizeof(int)`) on the heap. `malloc()`, as always will return the address of the 0th byte that it allocated. We then tell C to interpret the 4 bytes as an `int` by simply casting the address into an `int*` pointer, which is then stored in `p`.
 
-```c
-int *p = (int*) malloc(sizeof(int));
-*p = 0; // initialize the content referred by p to 0
-```
+  ```c
+  int *p = (int*) malloc(sizeof(int));
+  *p = 0; // initialize the content referred by p to 0
+  ```
 
-The true strength of `malloc()` lies in allowing us to create and manage dynamic data structures that are unbounded in size, like linked lists and trees. Assume we've declared the following `struct` for a Linked List node:
+###### Part 4a: Creating Strings (Know this!)
+Know this, because you'll be doing this a lot! We can now use `malloc()` to create *just enough* space for new strings. For instance, suppose I wanted to write a function `createEmail()` that accepts two strings `user` and `domain`, and returns the string `user@domain`.
+
+  ```c
+  char* createEmail(char* user, char* domain) {
+    // create a new string buffer (it may not be an empty string)
+    char *email = (char*) malloc(strlen(user) + strlen(domain) + 2);    
+    email[0] = '\0';  //empty the string
+
+    strcat(email, user); // copy user over
+    strcat(email, "@"); // append @
+    strcat(email, domain);  // append domain
+    return email;
+  }
+  ```
+
+In the above code:
+  - On **Line 2** we `malloc()` just the right amount of space for the email string. The size is the length of the `user` + `domain` + `2`. Hmm, why add `2`? (1 is for the `@` symbol. 1 for the terminating `\0` character) 
+
+  - On **Line 3** here we're presented with a rather annoying thing with `malloc()`. It does not zero out the contents after it allocates the space. All `malloc()` does is return the pointer to the first byte back to you. That means there could be existing garbage stored in the memory that was allocated! Therefore, we need to set the string to an empty string (which is equivalent to setting a string's 0th position to the `\0` character.)
+
+  - With enough storage on hand, the subsequent `strcat()` calls have enough space to concatenate and build up this string. (`strcat()` automatically terminates the string.)
+
+  - On **Last Line** we return the address to the `email`, or rather, to the first byte of the allocated memory. Because the memory to store `email` is created on the heap, it does not disappear after the return statement.
+
+
+###### Part 4b: Instantiating Structs (Know this too!!)
+A great strength of `malloc()` lies in allowing us to create and manage dynamic data structures that are unbounded in size, like linked lists and trees. Assume we've declared the following `struct` for a Linked List node:
 
 ```c
 /** Here's a node for a linked list, say */
@@ -318,7 +345,7 @@ Notice the new operator `->` that can be used to access pointers to `struct`s. I
 
 The arrow (->) operator provides a cleaner syntax, and is generally used for dereferencing members in struct pointers!
 
-##### Example: Binary Search Trees (BST)
+###### Example: Binary Search Trees (BST)
 
 Having taken CS 261, I'm assuming that you have a working knowledge of BST's properties, so I won't be spending time describing the actual algorithms. The important thing is that you understand the implementation details in C.
 
@@ -598,11 +625,11 @@ I have included a working solution of my program along with the starter code. Th
               main (41 bytes)
       ```
 
-2. **What's the stack for?** You'll notice that I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. You should study `stack.c` to see how I use `malloc()` in various spots and `free()` up the resources too.
+3. **What's the stack for?** You'll notice that I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. You should study `stack.c` to see how I use `malloc()` in various spots and `free()` up the resources too.
     - When designing this program, you'll notice that your algorithm can't simply print every file or directory as soon as you encounter them. You might get away with it in Mode 1, but Mode 2 requires that you keep a collection of directories and files you actually want to print at the end.
     - You can use the stack to store a list of files/directories that you wish to print.
 
-3. **UNIX system calls**
+4. **UNIX system calls**
 
     - To open up directories and check what's inside, you will want to check out the following system calls through `#include <unistd.h>`:`opendir()`, `readdir()`, `closedir()`.
       - When you read the contents of a directory, ignore any references to `.` and `..`
@@ -613,13 +640,14 @@ I have included a working solution of my program along with the starter code. Th
       - Note that the second parameter of `lstat(..)` accepts an *output parameter* (remember what those are from the previous assignment?), where it will store a `struct` with the file/directory's information.
       - One of the fields in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `lstat(..)`ed is a *regular file* or a *directory* using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. As mentioned earlier, you should ignore all other types of files.
 
-4. Other header files you may want to look into before getting started on this assignment:
+5. Other header files you may want to look into before getting started on this assignment:
     - [dirent.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/dirent.h.html) for `DIR` type for representing a directory stream. This is to be used in conjunction with `opendir()` system call.
     - [sys/types.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/types.h.html) for `mode_t`.
 
-5.  **Output formatting:** The names of *directories* must be followed with the suffix `"/ (directory)"`. Names of *regular files* must be followed by the suffix `"(nnn bytes)"` where `nnn` is the number of bytes occupied by that file. If a file or directory is found within a subdirectory, its name must be indented by four spaces to signify that it is enclosed within the above directory.
+6.  **Output formatting:** The names of *directories* must be followed with the suffix `"/ (directory)"`. Names of *regular files* must be followed by the suffix `"(nnn bytes)"` where `nnn` is the number of bytes occupied by that file. If a file or directory is found within a subdirectory, its name must be indented by four spaces to signify that it is enclosed within the above directory.
     - Luckily, the listing does not needed to sorted in any particular order.
 
+7. Although the `.git/` directory exists (as it did in my sample output), it still may be wise to create your own "test-dummy" directory structure so that you test your program. 
 
 
 #### Grading
