@@ -112,7 +112,12 @@ I have included a working solution of my program along with the starter code. Th
 
 #### Program Requirements
 
-In this assignment you are to create a thread-safe hashmap library `ts_hashmap_t`. Before getting too far, we should remind ourselves of the basic structure of a hashmap. A hashmap can be implemented using an array of linked lists. That is,
+In this assignment you are to create a thread-safe hashmap library `ts_hashmap_t`. Before getting too far, we should remind ourselves of the basic structure of a hashmap. A hashmap can be implemented using an array of lists of key-value entries, as follows:
+
+![](figures/hashmap.png)
+
+**Index calculation:** In the example above, to calculate the array index, you take the `key`  of the entry and (1) cast it into an `unsigned int`, then (2) modulo by the size of the array. That should tell you which array position to focus on. Because the array element points to the head of the entry list, you can then walk the list to search for a key.
+
 
 ```c
 #define INITIAL_CAPACITY 37
@@ -136,7 +141,7 @@ typedef struct ts_hashmap_t {
 
 The `ts_hashmap_t` supports the following functions:
 
-   - `ts_hashmap_t *initmap()`: returns a pointer to a new thread-safe hashmap. The initial hashmap capacity of the hashtable should be allocated to be `INITIAL_CAPACITY`.
+   - `ts_hashmap_t *initmap()`: returns a pointer to a new thread-safe hashmap. The initial  size of the array should be allocated to be `INITIAL_CAPACITY`.
 
    - `int containsKey(ts_hashmap_t *map, void *key)`: returns 1 if the `key` is found in the hashmap, or 0 otherwise.
 
