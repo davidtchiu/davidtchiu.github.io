@@ -2,86 +2,82 @@
 
 ### Hwk: Thread-Safe HashMap
 
-Have you ever wondered why Java offers both a `Hashtable<K,V>` class and a `HashMap<K,V>` class? If you compare their interfaces and behaviors, they have the same functionality. When would you prefer one over another? It has everything to do with synchronization and multithreading. Here's the catch: the `HashMap<K,V>` class is not *safe* to be accessed by multiple threads. Meaning that, there are no built-in synchronization mechanisms that avoid race conditions. Therefore, if you're writing a  program in which multiple threads are putting/getting/searching a shared HashMap, there is no guarantee of correctness unless you use its thread-safe version, `Hashtable<K,V>`.
+Have you ever wondered why Java offers both a `Hashtable<K,V>` class and a `HashMap<K,V>` class? If you compare their interfaces and behaviors, they have the same functionality. When would you prefer one over another? It has everything to do with synchronization and multithreading. It turns out that `HashMap<K,V>` is not *safe* to be accessed by multiple thread, there are no built-in synchronization mechanisms that avoid race conditions. Therefore, if you're ever writing a  program in which multiple threads are putting/getting/searching a shared HashMap, you must use its thread-safe counterpart, `Hashtable<K,V>`.
 
-When programming, you should always first check the documentations to ensure that the data structure is thread safe. (Other thread-safe structures include `Vector<E>` and `Stack<E>`.) On the other hand, if you know that your implementation will always be single-threaded, then a `HashMap<K,V>` would not only suffice, but would even be faster to use, because it has been implemented without any synchronization considerations. And since all of your programs have been single-threaded, a `HashMap<K,V>` has always served its purpose.
+When programming, you should always check the documentations to ensure that the data structure is thread safe. (Other thread-safe structures include `Vector<E>` and `Stack<E>`.) On the other hand, if you know that your implementation will always be single-threaded, then a `HashMap<K,V>` would not only suffice, but would even be faster to use, because it has been implemented without any synchronization considerations. And since all of your programs have been single-threaded, a `HashMap<K,V>` has always served its purpose.
 
 #### Thread Safety Example
-A data structure is called *thread-safe* if it can be accessed by multiple threads concurrently without risking correctness. Take a linked list, for instance. The code to remove the head element may look something like the following:
+A data structure is called *thread-safe* if it can be accessed by multiple threads concurrently without risking correctness. Take an unsafe linked list, for instance. The code to remove the head element may look something like the following:
 
-```c
-void* removeHead(LinkedList *list) {
-   if (list->head == NULL) {
-      return NULL;   // do nothing!
+   ```c
+   void* removeHead(LinkedList *list) {
+      if (list->head == NULL) {
+         return NULL;   // do nothing!
+      }
+      void* retval = list->head->data; // save for return
+      list->head = list->head->next;   // unlink the current head
+      free(list->head); // deallocate head node
+      return retval;
    }
-   void* retval = list->head->data; // save for return
-   list->head = list->head->next;   // unlink the current head
-   free(list->head); // deallocate head node
-   return retval;
-}
-```
+   ```
 
-If no provisions has been made to make it thread safe, then when two threads both seek to remove the head element simultaneously, they may end up in a race condition. 
+If no provisions has been made to make it thread safe, then when two threads both seek to remove the head element simultaneously, they may end up in a race condition.    Suppose the linked list stores `[A,B,C,D,E]`, then two concurrent calls to `removeHead()` should yield `A` and `B` and leave only `[C,D,E]` remaining in the list.
 
-```
-Suppose the linked list stores [A,B,C]
+   ```
+   Thread T1 and T2 both run removeHead(list);
+   T1 sees that there's a head element A
+   T1 saves A for later return
+   T2 sees that there's a head element A (!race here!)
+   T1 unlinks the head element
+   T2 saves A for later return
+   T1 frees A
+   T1 returns A
+   T2 unlinks the head element (head is now C! B is lost!)
+   T2 frees A 
+   T2 returns A
+   ``` 
 
-Thread T1 and T2 both run removeHead(list);
-T1 sees that there's a head element A
-T1 saves A for later return
-T2 sees that there's a head element A (!race here!)
-T1 unlinks the head element
-T2 saves A for later return
-T1 frees A
-T1 returns A
-T2 unlinks the head element (head is now C! B is lost)
-T2 frees A (segfault! Pointer to A is stale)
-``` 
+In this scenario, `A` is returned by both threads, and the list is now `[C,D,E]`. And that's just *one* way things could've gone wrong. To make this linked list thread-safe, the threads *should have* locked out the list so that another thread can't enter and make progress in the critical section. Something like this pseudocode would suffice.
 
-To make this linked list thread-safe, the threads *should have* locked out the list so that another thread can't enter. Something like this pseudocode would suffice.
-```c
-void* removeHead(LinkedList *list) {
-   acquire(lock); // acquire lock
-   if (list->head == NULL) {
-      release(lock); // release lock
-      return NULL;
+   ```c
+   void* removeHead(LinkedList *list) {
+      acquire(lock); // acquire lock
+      if (list->head == NULL) {
+         release(lock); // release lock to let another thread in
+         return NULL;
+      }
+      void* retval = list->head->data;
+      list->head = list->head->next;
+      free(list->head);
+      release(lock); // release lock to let another thread in
+      return retval;
    }
-   void* retval = list->head->data;
-   list->head = list->head->next;
-   free(list->head);
-   release(lock); // release lock
-   return retval;
-}
-```
+   ```
 
-Because any thread running `removeHead()` must first lock (or possibly wait for another thread to leave) the function, if the only possible outcomes are correct:
+Because any thread running `removeHead()` must first lock (or possibly wait for another thread to release) the function, if the only possible outcomes are correct. Here's one correct run:
 
-```
-Suppose the linked list stores [A,B,C]
+   ```
+   Thread T1 and T2 both run removeHead(list);
+   T1 locks
+   T1 sees that there's a head element A
+   T2 locks (and waits)
+   T1 saves A for later return
+   T1 unlinks the head element (Head now B)
+   T1 frees A
+   T1 returns A
+   T1 unlocks (T2 is released)
+   T2 sees that there's a head element B
+   T2 saves B for later return
+   T2 unlinks the head element (Head now C)
+   T2 frees B
+   T2 returns B
+   ``` 
 
-Thread T1 and T2 both run removeHead(list);
-T1 locks
-T1 sees that there's a head element A
-T2 locks (and waits)
-T1 saves A for later return
-T1 unlinks the head element (Head now B)
-T1 frees A
-T1 returns A
-T1 unlocks (T2 is released)
-T2 sees that there's a head element B
-T2 saves B for later return
-T2 unlinks the head element (Head now C)
-T2 frees B (segfault)
-T2 returns B
-``` 
-
-
-In this assignment, you are to provide a thread-safe HashMap library.
+In this assignment, you are to provide a thread-safe hash table library for C.
 
 
 #### ZyBooks References
 
-- 2D arrays
 - Memory allocation of 2D arrays
 
 #### Student Outcomes
@@ -112,77 +108,45 @@ git clone https://github.com/davidtchiu/cs475-hwk5-mmm
 
 #### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `mmmSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./mmmSol`. This is how your solution should behave when it's done.
+I have included a working solution of my program along with the starter code. The binary executable file is called `hashmapSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./hashmapSol`. 
 
 #### Program Requirements
 
-Before you get started: Even though we're reading from and writing to 2D arrays that are shared amongst all threads, there is actually no need for synchronization (locking, semaphores) in this assignment. You should try understand why synchronization is not necessary for the work done here. Recognize where the threads are reading from, and writing to, and check if race conditions can happen.
+In this assignment you are to create a thread-safe hashmap library `ts_hashmap_t`. Before getting too far, we should remind ourselves of the basic structure of a hashmap. A hashmap can be implemented using an array of linked lists. That is,
 
-1. To run your program, you must support the following commands:
+```c
+#define INITIAL_CAPACITY 37
 
-   ```
-   $ ./mmm S <size>
-   ```
+// A hashmap entry stores the key, value
+// and a pointer to the next entry
+typedef struct ts_entry_t {
+   void *key;
+   void *value;
+   struct entry_t *next;
+} ts_entry_t;
 
-   This will cause your program to run MMM in sequential mode on matrices of `size` by `size` dimension. There is no need to fire off a thread when running in sequential mode. Simply call the MMM function to compute the multiplication.
+// A hashmap contains an array of pointers to entries,
+// the capacity of the array, and the size (number of entries stored)
+typedef struct ts_hashmap_t {
+   ts_entry_t **table;
+   int capacity;
+   int size;
+} ts_hashmap_t;
+```
 
-   or
+The `ts_hashmap_t` supports the following functions:
 
-   ```
-   $ ./mmm P <threads> <size>
-   ```
+   - `ts_hashmap_t *initmap()`: returns a pointer to a new thread-safe hashmap. The initial hashmap capacity of the hashtable should be allocated to be `INITIAL_CAPACITY`.
 
-   This will cause your program to run MMM in parallel mode on matrices of `size` by `size` dimension. Specifically, the specified number of worker threads must be spawned by the main() thread, and the work of matrix multiplication should shared among those threads. The number of threads should be a positive integer, and it should not exceed `size`.
+   - `int containsKey(ts_hashmap_t *map, void *key)`: returns 1 if the `key` is found in the hashmap, or 0 otherwise.
 
-   In either mode, `size` should also be a positive integer. If running in parallel mode, it should be be less than the number of threads.
+   - `int containsValue(ts_hashmap_t *map, void *value)`: returns 1 if the `value` is found in the hashmap, or 0 otherwise.
 
-2. If the run syntax is incorrect or unexpected, print out an error (with a hint on proper syntax) and terminate.
+   - `void* get(ts_hashmap_t *map, void* key)`: searches for the given `key` and returns the associated value if found. Otherwise, return `NULL`.
 
-   - **Proper run syntax:**
-     This syntax will run a sequential version of the code on 25 by 25 matrices.
+   - `void* put(ts_hashmap_t *map, void *key, void *value)`: inserts a new entry that contains the given `key` and `value` and return `NULL`. If the `key` already exists, then its associated value is replaced with the given `value` and the old value is returned. 
 
-     ```
-     $ ./mmm S 25
-     ```
-
-     This syntax will run a parallel program on 4 threads and 1000 by 1000 matrices.
-
-     ```
-     $ ./mmm P 4 1000
-     ```
-
-   - **Invalid run syntax:**
-     The version below is incorrect because the size of the matrices does not follow `S`.
-     ```
-     $ ./mmm S
-     ```
-     The version below is incorrect the parallel version expects both the number of threads and the size of matrices, in that order.
-     ```
-     $ ./mmm P 1000
-     ```
-
-3. Your `main(int argc, char *argv[])`. Command-line arguments can be access through `argc` and `argv`. Specifically, `argc` refers to the number of tokens given on the command line, including the command to run the executable itself. `argv` is a string array containing the tokens given (much like the `String[] args` in Java).
-
-4. Dynamically allocating 2D arrays: Because the number of threads and the `size` of the matrices are given at runtime, you must dynamically allocate memory on the heap. Remember to free-up memory when done. To do this, should store pointers to the input and output matrices in global (thread-shared) scope. A pointer to a 2D array of doubles would look like this: `double **matrix;` Then inside `main()`, you'll need to first allocate `size` number of pointers to doubles (that's the first dimension in the matrix), then iterate through that array and allocate `size` number of doubles (that's the second dimension of the matrix).
-
-5. Once you allocate the input matrices, you should initialize them with random double values between 0 and 99.
-
-6. **Work-Sharing Approach:** If the parallel mode (`P`) is selected, your `main()` function must split the work evenly/fairly among the threads. There are many ways to do this, and I'll leave this decision up to you. You're welcome to experiment with different approaches!
-
-   - Would you assign each thread to compute a set of rows in the result? Or a set of columns? Would it make a difference?
-   - Maybe you could assign a thread to compute a block of elements instead of rows or columns?
-
-   This decision will likely impact the performance of your parallel algorithm. Let's see how well you can do! You must also run the code sequentially, so that you can compare the speeds! (See below on how to clock speeds).
-
-   - Which ever approach you use, remember to provide each thread (as an input argument to the thread function) its range of work. It's usually through a `struct`. If you forget how to do this, refer to the examples I gave in class: [Parallel Sum](https://github.com/davidtchiu/cs475-parSum) and [Parallel Sort](https://github.com/davidtchiu/cs475-parInsertionSort).
-
-7. Validation: An important final step is to verify that the parallel version of your code is correct. To do this, you should compare the matrices generated by the sequential algorithm and the parallel algorithm whenever the parallel mode `P` is run. Check that the greatest difference between any two corresponding elements of the output matrices generated by the sequential code and the parallel code is zero.
-
-8. You must output the time taken, in seconds, for the calculation to take place. To do this, you should use the `rtclock()` function that is provided to you. When running in parallel mode, you should also show the speedup over the sequential version, which is computed to be: $$T_{sequential} / T_{parallel}$$. If you did this right, you should experience significant speedup, since matrix multiplication has a significant fraction of code that is highly parallelizable.
-
-   - Smoothing the results: Always run the program $$N+1$$ times: throwing away the time for the first run, and report the average time of the subsequent $$N$$ runs. This is to warm-up the cache (first run) and to smooth-out the results. $$N = 3$$ is a good value.
-
-   - Only clock the relevant portions of code. For instance, I would not consider the time it takes to allocate and free-up memory for the matrices, since these are performed for both sequential and parallel versions. However, you must take into account the time it takes to create, join, and free-up threads in the parallel version, since they are considered necessary overheads for using threads.
+   - `void rehash*(ts_hashmap_t *map)`: allocates a new hash array, doubling its current capacity. All existing entries must be "rehashed" (or re-put) into the correct places in this larger table.
 
 #### Example Output
 

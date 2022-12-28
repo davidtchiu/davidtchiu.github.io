@@ -41,7 +41,7 @@ git clone <your-github-url-for-this-project>
 
 ```
 
-- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Ubuntu virtual machine using:
+- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your VS Code using:
 
 ```
 
@@ -51,7 +51,7 @@ git clone https://github.com/davidtchiu/cs475-hwk5-mmm
 
 #### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `mmmSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./mmmSol`. This is how your solution should behave when it's done.
+I have included a working solution of my program along with the starter code. The binary executable file is called `mmmSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./mmmSol`. 
 
 #### Program Requirements
 
