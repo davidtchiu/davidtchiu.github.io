@@ -387,7 +387,7 @@ Notice the new operator `->` that can be used to access pointers to `struct`s. I
 
 The arrow (->) operator provides a cleaner syntax, and is generally used for dereferencing members in struct pointers!
 
-##### Assignment: `ls2` -- A Suped-Up `ls` (Graded)
+#### Assignment: `ls2` -- A Suped-Up `ls` (Graded)
 As you know,  the `ls` UNIX command lists all files and directories in a given directory. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. On top of the recursive descent into subdirectories, your version of `ls` can also perform a search.
 
 ###### Starter Code

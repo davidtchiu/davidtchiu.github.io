@@ -1,22 +1,79 @@
 ## CS 475 - Operating Systems
 
-### Hwk: Multi-Threaded Matrix Multiplication
+### Hwk: Thread-Safe HashMap
 
-Matrix-matrix multiplication (mmm) is a cumbersome, but widely used, application. It's used in graphics, scientific computing, engineering applications, Deep Learning and AI, and so on. It's no wonder it is found in many benchmarking suites for evaluating system performance and new chipsets. Fortunately, it's also highly parallelizable.
+A data structure is called *thread-safe* if it can be accessed by multiple threads concurrently without risking correctness. Take a linked list, for instance. The code to remove the head element may look something like the following:
 
-In this assignment, you will be implementing and evaluating the performance for sequential and parallel implementations of mmm. You may assume that you'll only be multiplying square matrices. Given two matrices $$a[n,n]$$ and $$b[n,n]$$, their product $$c[n,n]$$ is defined:
+```c
+void* removeHead(LinkedList *list) {
+   if (list->head == NULL) {
+      return NULL;   // do nothing!
+   }
+   void* retval = list->head->data; // save for return
+   list->head = list->head->next;   // unlink the current head
+   free(list->head); // deallocate head node
+   return retval;
+}
+```
 
-$$
-c[i,j] = \sum_{k=0}^{n-1}a[i,k]\cdot b[k,j]
-$$
+If no provisions has been made to make it thread safe, then when two threads both seek to remove the head element simultaneously, they may end up in a race condition. 
 
-$$
-    \forall~i : 0 \le i \le n-1
-$$
+```
+Suppose the linked list stores [A,B,C]
 
-$$
-    \forall~j : 0 \le j \le n-1
-$$
+Thread T1 and T2 both run removeHead(list);
+T1 sees that there's a head element A
+T1 saves A for later return
+T2 sees that there's a head element A (!race here!)
+T1 unlinks the head element
+T2 saves A for later return
+T1 frees A
+T1 returns A
+T2 unlinks the head element (head is now C! B is lost)
+T2 frees A (segfault! Pointer to A is stale)
+``` 
+
+To make this linked list thread-safe, the threads *should have* locked out the list so that another thread can't enter. Something like this pseudocode would suffice.
+```c
+void* removeHead(LinkedList *list) {
+   acquire(lock); // acquire lock
+   if (list->head == NULL) {
+      release(lock); // release lock
+      return NULL;
+   }
+   void* retval = list->head->data;
+   list->head = list->head->next;
+   free(list->head);
+   release(lock); // release lock
+   return retval;
+}
+```
+
+Because any thread running `removeHead()` must first lock (or possibly wait for another thread to leave) the function, if the only possible outcomes are correct:
+
+```
+Suppose the linked list stores [A,B,C]
+
+Thread T1 and T2 both run removeHead(list);
+T1 locks
+T1 sees that there's a head element A
+T2 locks (and waits)
+T1 saves A for later return
+T1 unlinks the head element (Head now B)
+T1 frees A
+T1 returns A
+T1 unlocks (T2 is released)
+T2 sees that there's a head element B
+T2 saves B for later return
+T2 unlinks the head element (Head now C)
+T2 frees B (segfault)
+T2 returns B
+``` 
+
+Have you ever wondered why Java offers a `Hashtable<K,V>` class and a `HashMap<K,V>` class? If you compare their interfaces and behaviors, they have the same functionality. So, what's the point of using one over another? It has everything to do with and multithreading. `Hashtable<K,V>` is not *safe* to be accessed by multiple threads. Meaning that, there are no built-in synchronization mechanisms that protect concurrent access from race conditions. Therefore, if you're writing a Java program in which multiple threads need to gain access to a data structure, you should first check out the documentations to ensure that the data structure is thread safe. On the other hand, if you know that your implementation will always be single-threaded, then a `Hashtable<K,V>` would be slightly faster to use, because it has been implemented without any synchronization.
+
+In this assignment, you are to provide a thread-safe HashMap library.
+
 
 #### ZyBooks References
 
