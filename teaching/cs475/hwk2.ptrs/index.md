@@ -761,7 +761,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 ###### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `heapsortSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./heapsortSol`. This is how your solution should behave when it's done.
+I have included a working solution of my program along with the starter code. The binary executable file is called `heapsortSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./heapsortSol`.
 
 ###### Program Requirements
 
