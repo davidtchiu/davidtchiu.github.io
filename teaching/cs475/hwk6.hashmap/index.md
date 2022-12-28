@@ -2,6 +2,11 @@
 
 ### Hwk: Thread-Safe HashMap
 
+Have you ever wondered why Java offers both a `Hashtable<K,V>` class and a `HashMap<K,V>` class? If you compare their interfaces and behaviors, they have the same functionality. When would you prefer one over another? It has everything to do with synchronization and multithreading. Here's the catch: the `HashMap<K,V>` class is not *safe* to be accessed by multiple threads. Meaning that, there are no built-in synchronization mechanisms that avoid race conditions. Therefore, if you're writing a  program in which multiple threads are putting/getting/searching a shared HashMap, there is no guarantee of correctness unless you use its thread-safe version, `Hashtable<K,V>`.
+
+When programming, you should always first check the documentations to ensure that the data structure is thread safe. (Other thread-safe structures include `Vector<E>` and `Stack<E>`.) On the other hand, if you know that your implementation will always be single-threaded, then a `HashMap<K,V>` would not only suffice, but would even be faster to use, because it has been implemented without any synchronization considerations. And since all of your programs have been single-threaded, a `HashMap<K,V>` has always served its purpose.
+
+#### Thread Safety Example
 A data structure is called *thread-safe* if it can be accessed by multiple threads concurrently without risking correctness. Take a linked list, for instance. The code to remove the head element may look something like the following:
 
 ```c
@@ -70,7 +75,6 @@ T2 frees B (segfault)
 T2 returns B
 ``` 
 
-Have you ever wondered why Java offers a `Hashtable<K,V>` class and a `HashMap<K,V>` class? If you compare their interfaces and behaviors, they have the same functionality. So, what's the point of using one over another? It has everything to do with and multithreading. `Hashtable<K,V>` is not *safe* to be accessed by multiple threads. Meaning that, there are no built-in synchronization mechanisms that protect concurrent access from race conditions. Therefore, if you're writing a Java program in which multiple threads need to gain access to a data structure, you should first check out the documentations to ensure that the data structure is thread safe. On the other hand, if you know that your implementation will always be single-threaded, then a `Hashtable<K,V>` would be slightly faster to use, because it has been implemented without any synchronization.
 
 In this assignment, you are to provide a thread-safe HashMap library.
 
