@@ -15,7 +15,6 @@ Your goal for this assignment is to create your very own shell, David Shell (`ds
 
 - To understand how a simple command-line interface to the OS is implemented.
 - To work with environment variables with `getenv()`
-- To work with simple file handling in C
 - To become familiar with process creation with `fork()` and `execv()`
 - To become familiar with parent-child synchronization with `wait()`
 
@@ -41,105 +40,119 @@ git clone https://github.com/davidtchiu/cs475-hwk4-dsh
 
 #### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `dshSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./dshSol`. This is how your solution should behave when it's done.
+I have included a working solution of my program along with the starter code. The binary executable file is called `dshSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./dshSol`. 
 
-#### Program Requirements
+#### Preliminary: Environment Variables
 
-Before we get started, we should first cover what environment variables are within shells. Think of shells as more than just a command-line prompt. They are the user interface to the OS before there were windows and desktops. Just like your windows environment, there are things that the shell needs to remember so that it's customized to you, specifically. Many of these customizations are stored in what are called **environment variables**. On one hand, often hold values that make the shell more convenient to use (for instance, remembering the path to your "home" directory), and on the other, they store values that customize the command-line environment to your liking (for instance, assigning various colors to files and directories.)
+Before we get started, we should first cover what environment variables are within shells. I tend to think of shells to be a suped-up command-line interface. They are the user interface to the OS before there were windows and desktops. Just like your windows environment, there are things that the shell needs to remember so that it's customized to you, specifically. Many of these customizations are stored in what are called **environment variables**. On one hand, often hold values that make the shell more convenient to use (for instance, remembering the path to your "home" directory), and on the other, they store values that customize the command-line environment to your liking (for instance, assigning various colors to files and directories.)
 
-There are certain environment variable names that are standard and predefined.
+There are certain environment variables that are standard and predefined.
 
-- If you're curious to see what's stored inside the `HOME` variable, you can use the following command: `echo $HOME`
-- You can `echo` any environment variable `$VAR` to see its value, such as: `$SHELL` (what shell am I using?), `$PWD` (where am I?), `$PATH` (what are the paths to my executables?), and so on, ...
+- If you're curious to see what's stored inside the `HOME` variable, you can use the following command on the command line:
 
-You can also define and set new environment variables (called exporting), but that won't be a focus in this assignment.
+    ```
+    $ echo $HOME
+    /home/dchiu
+    ```
 
-1. As soon as `dsh` starts, the first thing it should do is look for a file called `.dsh_motd` in the current user's home directory on the operating system. MOTD stands for "message of the day," and the file contents may be arbitrarily long and multi-line.
+- You can also `echo` any environment variable `$VAR` to see its value, such as: `$SHELL` (what shell am I using?), `$PWD` (where am I?), `$PATH` (what are the paths to my executables?), and so on, ...
 
-   - To look for this file, you'll need to check whether it exists in the user's home directory, which is stored in the environment variable, `HOME`. You'll want to look into C's [getenv()](https://www.tutorialspoint.com/c_standard_library/c_function_getenv.htm) function to extract its value.
+- Importantly for this assignment, to return the value of an environment variable, you can use the function [getenv()](https://man7.org/linux/man-pages/man3/getenv.3.html), provided in `#include <stdlib.h>`.
 
-   - If the `.dsh_motd` file doesn't exist in the user's home directory, then move on. Otherwise, you need to print its contents to the screen. I would expect some simple error-handling to be done here. For instance, if the file exists, but can't be opened due to a lack of permissions, your program should _not_ crash (no need to print an error message though).
 
-2. After printing the MOTD (if exists), your shell should provide the user with a command-line prompt: `dsh>`
+#### Handling Input
 
-3. Check out the example below:
+1. As soon as `dsh` starts, it should repeatedly provide the user with a command-line prompt: `dsh> ` Check out the example below:
 
-   ```
-   /home/dchiu$ ./dsh
-   ********** MESSAGE OF THE DAY ************
-   * "Three things matter in life: family,
-   *  friends, and your OS professor."
-   *   - David Chiu, Philosopher
-   ******************************************
+    ```
+    $ ./dsh
+    dsh>
+    ```
 
-   dsh>
-   ```
+    From the Terminal, I run `./dsh` and it prints off the motd before sending me to a prompt, awaiting commands. I am now in the David Shell (dsh) environment, and am able to issue commands just like other when you're inside other shell.
 
-   From the Terminal, I run `dsh` to start up David shell, and it prints off the MOTD before sending me to a prompt, awaiting commands. I am now in the David shell environment, and should be able to issue commands just like other when you're inside other command-line shells.
-
-4. At the `dsh>` prompt, the user would be able to enter a command which David Shell should attempt to _execute_ as a separate process.
+2. At the `dsh>` prompt, the user would be able to enter a command which David Shell should attempt to _execute_ as a *separate* process.
 
    - Some commands may be followed by a list of arguments (for instance, `ls -l` and `ps au`), so you will have to read in the entire line and parse it later. Do do this, I would recommend looking into using [fgets()](https://www.cplusplus.com/reference/cstdio/fgets/), which has the following signature:
 
-   ```c
-   char* fgets(
-     char* str, /* OUT */
-     int num,   /* IN  */
-     FILE* stream /* IN */
-   )
-   ```
+    ```c
+    char* fgets(
+      char* str, /* OUT */
+      int num,   /* IN  */
+      FILE* stream /* IN */
+    )
+    ```
 
-   This function will read `num` characters from the `stream`, and place it in a pre-defined string buffer `str`. The `stream`, in our case, is simply `STDIN` (the standard input device). The method will return a pointer to `str`. In your program, if the user's input is longer than 256 characters, you should ignore it and and simply output an error.
+    This function will read `num` characters from the `stream`, and place it in a pre-defined string buffer `str`. The `stream`, in our case, is simply `stdin` (the standard input device). The method will return a pointer to `str`. In your program, if the user's input is longer than 256 characters, you should ignore it and and simply output an error.
+    Example:
+    ```c
+    char *line = (char*) malloc(256); // create an empty buffer to store the input
+    fgets(line, 256, stdin);  // reads up to 256 characters into the buffer
+    ```
+    
+      - You too may assume that user input will occupy no more than 256 characters.
+      - Keep in mind that `fgets(..)` will gobble up everything you enter, including the trailing newline character from hitting the `enter` key!
 
-5. If the input is empty, you should simply re-prompt.
+3. Once you have the input line, you should *trim* it (that is, remove all preceding and trailing white space). If the trimmed input is an empty string (or rather, just a string that contains just a newline character), you should simply re-prompt.
 
 ##### Understanding Program Execution and Paths
 
-After the input is read, `dsh` will need to verify that the command entered is valid. There's an easy way to tell if it's valid, but first, we need to understand how file system paths work. To create a process and run a program, you need to construct its **absolute (or full) path** in the file system. An absolute path to a file, say `ls`, looks like this:
+After the line of  input is read, `dsh` will need to verify that the command entered is *valid*. There's an easy way to tell if it's valid, but first, we need to understand how file system paths work. To create a process and run a program, you need to construct its **full path** in the file system. An full path to a program, say `ls`, looks like this:
 
-```
-/bin/ls
-```
+  ```
+  /bin/ls
+  ```
 
-This means that, to locate the `ls` program, the OS needs to first traverse to the "root" directory or folder (that's the initial `/`), and from there, traverse into the `bin` directory. Then from `/bin`, to look for a file named `ls` in there. It's super nice when the user types out the absolute path to the program they want to run, but that's usually not the case. We typically only type `ls`, and it works, which means that shells must do some background processing to figure out _where_ to look for `ls`.
+To locate the `ls` program, the OS needs to first traverse to the "root" directory or folder (that's the initial `/`), and from there, traverse into the `bin` directory. Then from `/bin`, to look for a file named `ls` in there. It's really nice when the user types out the full path to the program they want to run, but that's usually not going to be the case. (Try typing `/bin/ls` in your terminal. It works as advertised!) We typically only type `ls`, and it works, which means that shells must do some background processing to figure out _where_ to look for `ls`. 
 
-So this is all pointing to a couple of modes of execution we need to support. The user might give the absolute path to an executable file, or the user might simply give the name of the executable.
+So this is all pointing to a couple of modes of execution we need to support. The user might give the full path to an executable file, or the user might simply give the name of the executable file they want to run.
 
-1.  **Mode 1 (easy):** The user types in the absolute path to an executable. You know they typed an absolute path if their input starts begins with a `'/'` character! First, check to see if the given path even exists. To do this in C, I would first include the `unistd.h` file on top, and use its `access()` function:
+1.  **Mode 1 (full path given):** Say the user types in the full path to an executable. You know they typed a full path if their input starts begins with a `'/'` character! First, check to see if the given path even exists. To do this in C, I would first include the `unistd.h` file, and use its `access()` function:
 
     ```c
     if (access(path, F_OK | X_OK) == 0) {
-        // file exists and is executable
+        // File exists and is executable! Can run!
     }
     else {
-        // file doesn't exist or is not executable
+        // No good! File doesn't exist or is not executable!
+        // Alert user and re-prompt
     }
     ```
 
-    - If the executable isn't found, then simply output an error to the screen, and re-display the `dsh>` prompt.
+    - If the executable isn't found or if it can't be executed (see above snippet), then simply output an error to the screen, and re-display the `dsh>` prompt.
 
     - If the executable is found, then there are two further options for execution:
 
-      - **Run in foreground:** Execute the path using `fork()` and `execv()` as you learned in class. The call to `execv()` requires the absolute path to the executable, which you already have. Commands may have an arbitrary number of arguments, which are delimited by white space. The parent process (that is, `dsh`) should `wait()` for the child process to finish. That is, you would not expect to see the `dsh>` shell prompt again _until_ the child process terminates.
+      - **Run in foreground:** Execute the path using `fork()` and `execv()` as you learned in class. The call to `execv()` requires the *full path* to the executable, which the user already gave you. Commands may have an arbitrary number of arguments that follow it, which are delimited by whitespace. You'll need to input the command line arguments into an array of strings, and pass it along to `execv()`.
+      When running a process in the foreground, the parent process (that is, `dsh`) must `wait()` for the child process to finish. Therefore, you would not expect to see the `dsh>` shell prompt again _until_ the child process terminates.
 
-      - **Run in background:** If the last character in a valid command is an `&` symbol, it indicates that the command is to be run in the background. In other words, when the shell forks a child process, it should **not** wait for the child to terminate. The OS will commence running the new process concurrently with `dsh`. This means that you'll see `dsh>` being re-displayed immediately by the parent (`dsh`) process. If the child process prints to the screen, it'll interleave its outputs into the terminal.
+          - This is the usual mode of execution when you're on the terminal!
 
-2.  **Mode 2:** The user's input does _not_ start with a `/`. Now we've got some work to do before we can even fork and exec! We need find the _true_ location of the given command, and we'll use the following steps:
+      - **Run in background:** If the last character in a valid command is an `&` symbol, it indicates that the command is to be run in the background. In other words, when the shell forks a child, it should **not** wait for the child to exit. After forking, the OS will commence running the new process concurrently with `dsh` (and all other processes). This means that you'll see `dsh>` being re-displayed immediately by the parent (`dsh`) process. If the child process prints to the screen, it'll interleave its outputs into the terminal.
 
-    - First, we'll check to see if the executable can be found in the current working directory. That is, the location of where your shell thinks you're in. Look into using `getcwd()`, defined in `unistd.h`. Concatenate the user's input to the value of the current working directory, and see if it exists. If not, then move on to the next step.
-    - If the executable cannot be found in the current working directory, then there are other locations where it can be. These locations are stored in the environment variable `PATH`.
+        - This mode is useful when you're multitasking, and need to spin off a program, but get your command-line right back so you can run other programs!
+
+2.  **Mode 2 (full path construction):** This case triggers when the input does _not_ start with a `/`. Now we've got some work to do before we can even `fork` and `exec`! We need find the _true_ location of the given command, and we'll use the following steps:
+
+    - First, we'll check to see if the executable file can be found in the current working directory. That is, the location of where your shell thinks you're in. Look into using `getcwd()`, defined in `unistd.h`. Concatenate the user's input to the value of the current working directory, and see if it exists. If not, then move on to the next step.
+      
+      - For instance, if I typed `ls2` and my current working directory is `/home/dchiu`, then the first place my program would be `/home/dchiu/ls2`. Of course, this file may or may not exist... read on!
+
+    - If the executable is found in the current working directory, then execute it and we're done! If it cannot be found in the current working directory, then there are other paths where it can be found. These paths are stored in the environment variable `PATH`.
+
     - For example, a `PATH` might hold this value:
       ```
       /opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin
       ```
-      Basically, what you're seeing here is a colon-delimited string that separates all the different locations to look for an executable. Therefore, you need to split this string up by `:`s, and concatenate the user's input to the end of each token. The first location to try is `/opt/local/bin/`, the second place to try is `/opt/local/sbin/`, and so on. - As soon as you detect that an absolute path to the executable exists, then try to run it using the instructions given above. - Once you've tried all the tokens, then you can output a `Command not found` error message.
+      Basically, what you're seeing here is a `:`-delimited string that separates all the different locations to look for an executable file. Therefore, you need to split this string by `:`s, and concatenate the user's input to the end of each token. 
+      
+      Again, if I typed `ls2`, then the first location to try is `/opt/local/bin/ls2`, the second place to try is `/opt/local/sbin/ls2`, and so on. As soon as you detect that a full path to the executable exists, then try to run it and be done! Once you've tried all the paths in the environment variable, then you can output a `Command not found` error message and reprompt  for the next command.
 
-##### Built-in Commands
+##### Support of Built-in Commands
 
-Some commands are not meant to invoke another program. Instead, they are to be handled directly by the shell. For example, when a user inputs `exit`, your shell is not supposed to attempt to find an executable named `exit` in the user's
-PATH! (No such executable exists!) In this case, `dsh` should simply terminate. These special commands are called "builtins."
+Some commands are not meant to invoke another program. Instead, they are to be handled directly by the shell by calling functions that you built-in. For example, when a user inputs `exit`, your shell is not supposed to attempt to find an executable named `exit` in the user's PATH!  In this case, `dsh` should simply terminate by exiting the loop. These special commands are called "builtins."
 
-Here is a list of built-ins that David shell needs to support.
+Here is a list of built-in commands that David shell needs to support.
 
 - `exit` should exit dsh.
 
@@ -149,13 +162,13 @@ Here is a list of built-ins that David shell needs to support.
 
 - `history` should print the `HISTORY_LEN` most recent commands executed. Define `HISTORY_LEN` to be 100.
 
-#### Flowchart of Activities
+##### Flowchart of Activities
 
 Phew! That's a lot to take in. The figure below shows the abstract flowchart for this program. This should (hopefully) give you a better idea of what all needs to be done.
 
 ![](figures/flowchart.png)
 
-#### Hints
+##### Hints
 
 This assignment can be tricky to get started, because there are so many pieces that need to come together. Students in the past have gotten stuck on things that ultimately prevented them from getting very far. If I were tackling this assignment, I'd probably work on things in this order:
 
@@ -186,19 +199,18 @@ This assignment can be tricky to get started, because there are so many pieces t
 
     - If you're using `fgets()` to accept user inputs, remember that the "enter" key is logged as a `'\n'` character at the end of the string! You'll probably want to truncate that newline character as soon as you obtain the user input, and that's as simple as putting the `'\0'` character in its place.
 
-3.  Work on command execution when given the full path to an executable.
 
-4.  Work on execution when given just the name of an executable.
+3.  Work on built-in commands next.
 
-5.  Work on built-in commands.
+4.  Work on command execution when given the full path to an executable. (Mode 1)
 
-6.  Work on handling the MOTD.
+5.  Work on execution when given just the name of an executable. (Mode 2)
+
 
 #### Example Output
 
 ```
 dsh> cd
-
 dsh> ls -la
 -rw-r--r--@ 1 dchiu  faculty  199  Feb  3 22:56 .dsh_motd
 -rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
@@ -211,7 +223,7 @@ dsh> cat feelGood.c
 #include <unistd.h>
 int main() {
   while (1) {
-    printf("Students think your MOTD is inspiring!\n");
+    printf("Students think you're inspiring!\n");
     sleep(4);
   }
   return 0;
@@ -224,7 +236,7 @@ dsh> ./feelGood &
 dsh> ls -l
 -rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood
 -rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
-Students think your MOTD is inspiring!
+Students think you're inspiring!
 
 dsh> history
 cd
@@ -237,10 +249,10 @@ ls -l
 history
 
 dsh> exit
-bash$
-Students think your MOTD is inspiring!
-Students think your MOTD is inspiring!
-Students think your MOTD is inspiring!
+$
+Students think you're inspiring!
+Students think you're inspiring!
+Students think you're inspiring!
 ```
 
 #### Grading
@@ -248,12 +260,10 @@ Students think your MOTD is inspiring!
 ```
 This assignment will be graded out of 70 points:
 
-[5pt] The MOTD is being handled error-free.
-
 [35pt] User input is properly handled, and invalid commands (not found in PATH or
     current working directory) generates an error.
 
-[20pt] Running a valid command  works as expected (in-foreground vs. in-background too).
+[25pt] Running a valid command works as expected (in-foreground vs. in-background too).
 
 [5pt] history outputs the last HISTORY_LEN commands.
 

@@ -289,7 +289,7 @@ In the code below, we use `malloc()` to create 4 bytes (`sizeof(int)`) on the he
   ```
 
 ###### Part 4a: Creating Strings (Know this!)
-Know this, because you'll be doing this a lot! We can now use `malloc()` to create *just enough* space for new strings. For instance, suppose I wanted to write a function `createEmail()` that accepts two strings `user` and `domain`, and returns the string `user@domain`.
+Pay attention here, because you'll be doing this a lot! We can now use `malloc()` to create *just enough* space for new strings. For instance, suppose I wanted to write a function `createEmail()` that accepts two strings `user` and `domain`, and returns the string `user@domain`.
 
   ```c
   char* createEmail(char* user, char* domain) {
@@ -297,7 +297,7 @@ Know this, because you'll be doing this a lot! We can now use `malloc()` to crea
     char *email = (char*) malloc(strlen(user) + strlen(domain) + 2);    
     email[0] = '\0';  //empty the string
 
-    strcat(email, user); // copy user over
+    strcpy(email, user); // copy user over
     strcat(email, "@"); // append @
     strcat(email, domain);  // append domain
     return email;
@@ -307,12 +307,17 @@ Know this, because you'll be doing this a lot! We can now use `malloc()` to crea
 In the above code:
   - On **Line 2** we `malloc()` just the right amount of space for the email string. The size is the length of the `user` + `domain` + `2`. Hmm, why add `2`? (1 is for the `@` symbol. 1 for the terminating `\0` character) 
 
-  - On **Line 3** here we're presented with a rather annoying thing with `malloc()`. It does not zero out the contents after it allocates the space. All `malloc()` does is return the pointer to the first byte back to you. That means there could be existing garbage stored in the memory that was allocated! Therefore, we need to set the string to an empty string (which is equivalent to setting a string's 0th position to the `\0` character.)
+  - On **Line 3** here we're presented with a rather annoying thing with `malloc()`. It does not clear out the contents after it allocates the space (that's actually a feature, because it's faster to leave the memory as-is). All `malloc()` does is return the pointer to the first byte it allocated back to you. That means there could be existing garbage stored in the memory that was allocated! Therefore, we need to set the string to an empty string (which is equivalent to setting a string's 0th position to the `\0` character.)
 
-  - With enough storage on hand, the subsequent `strcat()` calls have enough space to concatenate and build up this string. (`strcat()` automatically terminates the string.)
+    - If you would rather that C clears out the contents of newly-allocated memory, you should use `calloc()` instead.
+
+  - With enough storage on hand now, the subsequent `strcpy()` and `strcat()` calls have enough space to concatenate and build up this string. (`strcat()` automatically terminates the string.)
 
   - On **Last Line** we return the address to the `email`, or rather, to the first byte of the allocated memory. Because the memory to store `email` is created on the heap, it does not disappear after the return statement.
 
+**Check-In Exercise** Doing the exercise below will be fruitful, because you'll likely use it for this assignment and others.
+
+  - Write a function `char* strrepeat(char *str, unsigned int nrepeat)` to return a newly allocated string `nrepeat` copies of `str` concatenated together. For instance, `strrepeat("hi", 3)` returns a pointer to `hihihi`, and `strrepeat("hi", 0)` returns simply an empty string (that is, a char array of size 1, which contains just the null character `\0`).
 
 ###### Part 4b: Instantiating Structs (Know this too!!)
 A great strength of `malloc()` lies in allowing us to create and manage dynamic data structures that are unbounded in size, like linked lists and trees. Assume we've declared the following `struct` for a Linked List node:
@@ -344,7 +349,7 @@ Notice the new operator `->` that can be used to access pointers to `struct`s. I
 ```
 
 The arrow (->) operator provides a cleaner syntax, and is generally used for dereferencing members in struct pointers!
-
+<!-- 
 ###### Example: Binary Search Trees (BST)
 
 Having taken CS 261, I'm assuming that you have a working knowledge of BST's properties, so I won't be spending time describing the actual algorithms. The important thing is that you understand the implementation details in C.
@@ -457,7 +462,7 @@ Having taken CS 261, I'm assuming that you have a working knowledge of BST's pro
        }
    }
    ```
-
+ -->
 
 
 ##### Assignment: `ls2` -- A Suped-Up `ls` (Graded)
