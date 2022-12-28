@@ -20,8 +20,8 @@ let days = {
         due: "1/30/2023",
       },
       {
-        name: "Hwk 3 (supedLS)",
-        title: "Dynamic Allocation",
+        name: "Hwk 3 (ls2)",
+        title: "Dynamic Memory Allocation",
         url: "hwk3.malloc/",
         due: "2/6/2023",
       },

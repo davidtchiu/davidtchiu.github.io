@@ -277,7 +277,7 @@ Now that we understand how the stack is managed, we return to the original probl
 
     - While "garbage collection" is automatically handled by many modern languages like Java, we don't have that luxury in C! It is completely up to the programmer to decide when free memory from the heap. Be sensitive to this when programming!
 
-##### Part 4: Dynamic Memory Allocation
+##### Part 5: Dynamic Memory Allocation
 
 All right, so we've seen how to create an array on the heap, but still, this is assuming that the user would at some point know the size of the array. But `malloc()` is more general than that. It can be used to allocate _any_ amount of memory on the heap, even a single `int`, `double`, or `struct`. It all simply depends on what _data type_ the programmer can casts the returned `void*` pointer into.
 
@@ -288,7 +288,7 @@ In the code below, we use `malloc()` to create 4 bytes (`sizeof(int)`) on the he
   *p = 0; // initialize the content referred by p to 0
   ```
 
-###### Part 4a: Creating Strings (Know this!)
+###### Part 5a: Creating Strings (Know this!)
 Pay attention here, because you'll be doing this a lot! We can now use `malloc()` to create *just enough* space for new strings. For instance, suppose I wanted to write a function `createEmail()` that accepts two strings `user` and `domain`, and returns the string `user@domain`.
 
   ```c
@@ -319,7 +319,44 @@ In the above code:
 
   - Write a function `char* strrepeat(char *str, unsigned int nrepeat)` to return a newly allocated string `nrepeat` copies of `str` concatenated together. For instance, `strrepeat("hi", 3)` returns a pointer to `hihihi`, and `strrepeat("hi", 0)` returns simply an empty string (that is, a char array of size 1, which contains just the null character `\0`).
 
-###### Part 4b: Instantiating Structs (Know this too!!)
+
+###### Part 5b: Allocating Multidimensional Arrays (Know this too!!)
+It is often the case that you'll need to allocate a multidimensional array on the heap. For instance, what if you needed a list of strings? To accomplish this takes two steps (one in each "dimension" of the array.) Here's an example to create an N by M array of ints.
+
+```c
+// malloc a size N array of pointers to ints
+int **array = (int**) malloc(sizeof(int*) * N);
+
+// iterate through each row and malloc a size N array of ints
+for (int i = 0; i < N; i++) {
+    array[i] = (int*) malloc(sizeof(int) * M;)
+}
+// can now have access to array[i][j]
+```
+
+- **Line 1-2** The `**` syntax may at first seem confusing. However, recall from the last tutorial that an array is just a pointer. So, an array of pointers can be interpreted to be a pointer to pointers. Therefore, `array` has been declared as `**array`. Indeed, if you need a 3 dimensional array, then you would use `***array`.
+
+    - You should also pay attention to the first `malloc()` call. Notice that we're asking for N times the `sizeof(int*)`, that is, the size of a pointer to `int`s, because we're not storing `int`s themselves in this array, we're storing pointers in this array!
+
+    - The return value of `malloc()` is then casted into `(int**)`, since, again, `malloc()` returns a generic pointer to a pointer in this case, and you need to tell C that it's actually a pointer to a pointer to an int.
+
+- **Lines 5-7** The `**array` you just allocated is just a single dimension array of pointers (rows). Now we have to allocate the other dimension (columns). To do this, you need to iterate through all `N` positions and call `malloc()` on each row!
+
+    - The `malloc()` calls here look far more familiar. We just need to allocate M `ints` and cast it to an integer pointer (`int*`) before assignment to the ith row.
+
+- You will need to free this structure later on. Do so by individually freeing every row, then free the original 2D pointer.
+
+```c
+// free each row
+for (int i = 0; i < N; i++) {
+    free(array[i]);
+}
+// free original array
+free(array);
+```
+
+
+###### Part 5c: Instantiating Structs (Know this too!!)
 A great strength of `malloc()` lies in allowing us to create and manage dynamic data structures that are unbounded in size, like linked lists and trees. Assume we've declared the following `struct` for a Linked List node:
 
 ```c
@@ -349,121 +386,6 @@ Notice the new operator `->` that can be used to access pointers to `struct`s. I
 ```
 
 The arrow (->) operator provides a cleaner syntax, and is generally used for dereferencing members in struct pointers!
-<!-- 
-###### Example: Binary Search Trees (BST)
-
-Having taken CS 261, I'm assuming that you have a working knowledge of BST's properties, so I won't be spending time describing the actual algorithms. The important thing is that you understand the implementation details in C.
-
-1. Download BST project:
-
-   ```
-   git clone https://github.com/davidtchiu/cs475-hwk3-bst-example
-   ```
-
-2. Structs: We'll assume for simplicity that a BST node holds an integer key, and has pointers to a left and right child nodes. Open up the header file `bst.h`:
-
-   ```c
-   /**
-   *  Each BST node has an integer key,
-   *  and pointers to its parent, left child, and right child.
-   */
-   typedef struct BSTNode {
-       int key;
-       struct BSTNode *parent; //pointer to parent
-       struct BSTNode *left;   //pointer to left childs
-       struct BSTNode *right;  //pointer to right child
-   } BSTNode;
-
-   /** BST struct stores just a pointer to the root node */
-   typedef struct BST {
-       BSTNode *root;  //pointer to root of tree
-   } BST;
-   ```
-
-3. Insertion:
-
-   ```c
-   /**
-    * Creates a new BSTNode holding val, then inserts val into tree rooted at root
-    * @param root  Pointer to a binary search tree
-    * @param val   Value to be inserted
-    */
-   void insert(BST *tree, int val) {
-       //create and initialize new node
-       BSTNode *newNode = (BSTNode*) malloc(sizeof(BSTNode));
-       newNode->key = val;
-       newNode->left = NULL;
-       newNode->right = NULL;
-
-       //find node to attach newNode
-       if (tree->root == NULL) {
-           tree->root = newNode;
-       }
-       else {
-           //loop to find where to insert the new node
-           BSTNode *currentNode = tree->root;
-           BSTNode *parentNode = NULL;
-           while (currentNode != NULL) {
-               parentNode = currentNode;
-               if (key > currentNode->key) {
-                   currentNode = currentNode->right;   //descend down right subtree
-               }
-               else {
-                   currentNode = currentNode->left;    //descend down left subtree
-               }
-           }
-           //link up newNode
-           if (key > parentNode->key) {
-               parentNode->right = newNode;
-           }
-           else {
-               parentNode->left = newNode;
-           }
-       }
-   }
-   ```
-
-   - On **Line 8**: creates a `BSTNode` on the heap, referenced by `newNode`.
-
-   - On **Lines 9-11 (Important)**:  the arrow syntax I introduced earlier. The arrow syntax is used to access data members referenced by a `struct` pointer. Its syntax `p->val` is just a short-hand for `(*p).val`.
-
-   - On **Lines 14-16**: is the trivial case where there is no root node. We simply set the `newNode` as the tree's root.
-
-   - On **Lines 18-29**: iterates to search for the node (`parentNode`) to insert `newNode` under.
-
-   - On **Lines 30-36**: inserts `newNode` as a child under the `parentNode`.
-
-4. Freeing up memory. Recall from earlier that garbage collection is super important to avoid **memory leaks**. For instance, if we were writing the `remove()` function, you'll need to remember to `free()` the `BSTNode` being deleted. In this example below, we want to clear everything off the existing tree.
-
-   ```c
-   /**
-    * Frees up space allocated by BST
-    * @param tree Pointer to the tree
-    */
-   void freeTree(BST *tree) {
-       freeTreeNode(tree->root);
-   }
-
-   /**
-    * Recursive helper function
-    */
-   void freeTreeNode(BSTNode *node) {
-       if (node != NULL) {
-           if (node->left == NULL && node->right == NULL) {     //leaf
-               printf("Freeing %d\n", node->key);
-               free(node);
-           }
-           else {   //non-leaf node
-               freeTreeNode(node->left);
-               freeTreeNode(node->right);
-               printf("Freeing %d\n", node->key);
-               free(node);
-           }
-       }
-   }
-   ```
- -->
-
 
 ##### Assignment: `ls2` -- A Suped-Up `ls` (Graded)
 As you know,  the `ls` UNIX command lists all files and directories in a given directory. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. On top of the recursive descent into subdirectories, your version of `ls` can also perform a search.
