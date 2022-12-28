@@ -42,7 +42,7 @@ git clone https://github.com/davidtchiu/cs475-hwk4-dsh
 
 I have included a working solution of my program along with the starter code. The binary executable file is called `dshSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./dshSol`. 
 
-#### Preliminary: Environment Variables
+#### Preliminary: Access of Environment Variables
 
 Before we get started, we should first cover what environment variables are within shells. I tend to think of shells to be a suped-up command-line interface. They are the user interface to the OS before there were windows and desktops. Just like your windows environment, there are things that the shell needs to remember so that it's customized to you, specifically. Many of these customizations are stored in what are called **environment variables**. On one hand, often hold values that make the shell more convenient to use (for instance, remembering the path to your "home" directory), and on the other, they store values that customize the command-line environment to your liking (for instance, assigning various colors to files and directories.)
 
