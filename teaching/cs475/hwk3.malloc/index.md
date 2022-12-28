@@ -626,10 +626,11 @@ I have included a working solution of my program along with the starter code. Th
 
 ```
 This assignment will be graded out of 20 points:
-[3pt] Your program recursively descends all subdirectories.
+[2pt] Your program recursively descends all subdirectories.
 [3pt] Implementation of Mode 1.
-[6pt] Implementation of Mode 2.
-[8pt] Management of your dynamically allocated data structure for storing files/directory listing.
+[10pt] Implementation of Mode 2.
+[3pt] Your output of files and directories conforms to the specified format.
+[2pt] Your program properly resolves command line arguments.
 ```
 
 #### Submitting Your Assignment
