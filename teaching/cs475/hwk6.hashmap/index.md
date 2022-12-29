@@ -178,7 +178,9 @@ Here are some properties you should keep in mind while programming:
 
 4. **Writing a Tester (main)** Testing the correctness of your implementation takes a bit of effort. I would write a main function to create any number of threads, and each thread continuously puts/gets/dels 1000s of keys into the same shared hashmap. Use the `printmap()` function that I provided to print out the contents of the map after the threads join back up.
 
-   - You won't be graded on this, because I'll use my own tester. So, I'll leave it up to you on how to systematically test the correctness of your hashmap, but it should be rigorous.
+   - You may want to figure out how to "control" the randomness your tests so that you can repeat the same test on a single-threaded version vs. a multi-threaded version and produce the same output.
+
+   - You won't be graded on this, because I'll use my own tester. So, I'll leave it up to you on how to systematically test the correctness of your hashmap, but it should be rigorous and revealing.
 
 
 #### Example Output
