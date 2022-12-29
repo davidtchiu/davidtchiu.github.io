@@ -114,7 +114,7 @@ I have included a working solution of my program along with the starter code. Th
 
 In this assignment you are to create a thread-safe (ts) hashmap library `ts_hashmap_t`. A hashmap can be implemented using an array of linked-lists of key-value entries, as follows:
 
-![](figures/hashmap.png)
+<img src="figures/hashmap.png" width="200px">
 
 Here are some properties you should keep in mind while programming:
 
