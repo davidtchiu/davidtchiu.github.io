@@ -105,7 +105,7 @@ git clone https://github.com/davidtchiu/cs475-hwk6-ts_hashmap
 
 I have included a working solution of my program along with the starter code. The binary executable file is called `hashtestSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./hashtestSol`. 
 
-#### Program Requirements
+#### Introduction: HashMap
 
 In this assignment you are to create a thread-safe (ts) hashmap library `ts_hashmap_t`. A hashmap can be implemented using an array of linked-lists of key-value entries, as follows:
 
@@ -142,6 +142,9 @@ Here are some properties you should keep in mind while programming:
       - If you have time, you should look into how to support arbitrary key and value types.
 
    - **Index Calculation** In the example above, to calculate the array index, you take the `key` of the entry and (1) cast it into an `unsigned int`, then (2) modulo by the size of the array. That should tell you which array position to hone in on. Because the array element points to the head of the entry list (or `NULL`), you can then walk the list of entries to search for a key.
+
+
+#### Program Requirements
 
 1. Your program should accept exactly 2 arguments on the command line:
     ```bash
