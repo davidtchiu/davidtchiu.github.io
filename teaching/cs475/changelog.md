@@ -1,13 +1,14 @@
 # TODO
 
 # Change Log
-- **Spring'23** Wrote new Hwk 6 on thread-safe hashmap
-- **Spring'23** Modified Hwk 4 to remove .dsh_motd.
-- **Spring'23** Modified Hwk 3 to cover string initialization; added more string examples; and ls2 instead of rpncalc
+- **Spring'23** Wrote a new Hwk 6 on thread-safe hashmap
+- **Spring'23** Modified Hwk 4 to remove .dsh_motd
+- **Spring'23** Modified Hwk 3 to cover string allocation, 2D array allocation; struct allocation; added more string examples; and assignment now more challenging ls2 (syscalls) instead of rpncalc (no syscalls)
 - **Spring'23** Modified Hwk 2 to include structs
 - **Spring'23** Modified Hwk 1 to be shorter (removed structs) or to use & instead. Emphasize string functions and fgets().
+- **Spring'23** Wrote a new Hwk 0 to get students started on remote VS Code.
 - **Spring'23** No more projects. More aggressive timeline for Homework 1, 2, 3. 
-- **Spring'23** Wrote a new first homework to get students working on VS Code remote env.
+- **Spring'23** Testing out five lab-work days.
 - **Spring'23** Transitioned off VirtualBox. Now using remote dev on Jetstream VM.
 - **Spring'22** Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
 - **Spring'22** Added Bankers for Hwk 7
