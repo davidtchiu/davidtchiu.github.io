@@ -38,10 +38,10 @@ let days = {
         due: "3/6/2023",
       },
       {
-        name: "Hwk 6 (simple sync?)",
-        title: "Simple mutex",
-        url: "hwk6.mutex/",
-        due: "3/20/2023",
+        name: "Hwk 6 (ts_hashmap)",
+        title: "Thread-Safe Hashmap",
+        url: "hwk6.hashmap/",
+        due: "3/22/2023",
       },
       {
         name: "Hwk 7 (thebar)",
@@ -53,14 +53,14 @@ let days = {
         name: "Hwk 8 (bankers)",
         title: "Banker's Algorithm",
         url: "hwk8.bankers/",
-        due: "4/17/2023",
+        due: "4/21/2023",
       },
-      {
-        name: "Hwk 9 (vmm)",
-        title: "Paging Simulator (vmm)",
-        url: "hwk9.paging/",
-        due: "5/4/2023",
-      },
+      // {
+      //   name: "Hwk 9 (vmm)",
+      //   title: "Paging Simulator (vmm)",
+      //   url: "hwk9.paging/",
+      //   due: "5/4/2023",
+      // },
     ],
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [

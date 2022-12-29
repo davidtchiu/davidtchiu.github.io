@@ -70,19 +70,15 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 - If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk6-ts_hashmap](https://github.com/davidtchiu/cs475-hwk6-ts_hashmap). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
-```
-
-git clone <your-github-url-for-this-project>
-
-```
+   ```
+   git clone <your-github-url-for-this-project>
+   ```
 
 - If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your VS Code using:
 
-```
-
-git clone https://github.com/davidtchiu/cs475-hwk6-ts_hashmap
-
-```
+   ```
+   git clone https://github.com/davidtchiu/cs475-hwk6-ts_hashmap
+   ```
 
 #### Working Solution
 
