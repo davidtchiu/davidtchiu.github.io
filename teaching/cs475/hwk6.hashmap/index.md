@@ -37,24 +37,7 @@ If no provisions has been made to make it thread safe, then when two threads bot
    T2 returns A
    ``` 
 
-In this scenario, `A` is returned by both threads, and the list is now `[C,D,E]`. And that's just *one* way things could've gone wrong. To make this linked list thread-safe, the threads *should have* locked out the list so that another thread can't enter and make progress in the critical section. Something like this pseudocode would suffice.
-
-   ```c
-   void* removeHead(LinkedList *list) {
-      acquire(lock); // acquire lock
-      if (list->head == NULL) {
-         release(lock); // release lock to let another thread in
-         return NULL;
-      }
-      void* retval = list->head->data;
-      list->head = list->head->next;
-      free(list->head);
-      release(lock); // release lock to let another thread in
-      return retval;
-   }
-   ```
-
-Because any thread running `removeHead()` must first lock (or possibly wait for another thread to release) the function, if the only possible outcomes are correct. Here's one correct run:
+In this scenario, `A` is returned by both threads, and the list is now `[C,D,E]`. And that's just *one* way things could've gone wrong. To make this linked list thread-safe, the threads *should have* locked out the list so that another thread can't enter and make progress in the critical section. Because any thread running `removeHead()` must first lock (or possibly wait for another thread to release) the function, if the only possible outcomes are correct. Here's a correct run:
 
    ```
    Thread T1 and T2 both run removeHead(list);
@@ -73,13 +56,13 @@ Because any thread running `removeHead()` must first lock (or possibly wait for 
    T2 returns B
    ``` 
 
-In this assignment, you are to provide a thread-safe hash table library for C.
+In this assignment, you are to provide a thread-safe hashmap library for C.
 
 
 #### Student Outcomes
 
+- To understand the concept of thread safe structures.
 - To be exposed to synchronization of threads using mutex locks.
-- To write a multi-threaded program using the `pthread` library.
 
 #### Starter Code
 
@@ -113,7 +96,7 @@ In this assignment you are to create a thread-safe (ts) hashmap library `ts_hash
 
 Here are some properties you should keep in mind while programming:
 
-   - **Hash Map Structure** There are two basic hashmap implementations: open-addressing vs. chaining. You will consider the chaining approach for this assignment. In this approach (which is pictured above), you will allocate a fixed array (`table`) of pointers to a list of key-value entries. The size of this array (i.e., the maximum number of lists you can have) is given as the `capacity` of your hashmap. The `size` refers to the number of entries stored in the map.
+   - **HashMap Structure** There are two basic hashmap implementations: open-addressing vs. chaining. You will consider the chaining approach for this assignment. In this approach (which is pictured above), you will allocate a fixed array (`table`) of pointers to a list of key-value entries. The size of this array (i.e., the maximum number of lists you can have) is given as the `capacity` of your hashmap. The `size` refers to the number of entries stored in the map.
 
       ```c
       // A hashmap contains an array of pointers to entries,
@@ -157,10 +140,6 @@ Here are some properties you should keep in mind while programming:
 
    - `ts_hashmap_t *initmap(capacity)`: returns a pointer to a new thread-safe hashmap. The initial  size of the array should be allocated to `capacity`. This function **does not** need to be thread-safe.
 
-   - `int containsKey(ts_hashmap_t *map, int key)`: returns 1 if the `key` is found in the hashmap, or 0 otherwise.
-
-   - `int containsValue(ts_hashmap_t *map, int value)`: returns 1 if the `value` is found in the hashmap, or 0 otherwise.
-
    - `int get(ts_hashmap_t *map, int key)`: searches for the given `key` and returns the associated value if found. Otherwise, return constant `INT_MAX`.
 
    - `int put(ts_hashmap_t *map, int key, int value)`: inserts a new entry that contains the given `key` and `value` and return constant `INT_MAX`. If the `key` already exists, then its associated value is replaced with the given `value` and the old value is returned. 
@@ -170,9 +149,11 @@ Here are some properties you should keep in mind while programming:
 
 3. **Thread-Safety Considerations** I would start by writing and testing (aggressively) the above functions without considering threads. Make sure everything is working before you worry about threads and mutual exclusion. Next, I would play around with locks just to get used to them. To explore locks, you'll need to `#include <pthread.h>`. A lock is of the type `pthread_mutex_t`, and you can use the constructor `pthread_mutex_init(..)` to initialize it. Once initialized, you can use `pthread_mutex_lock(..)` and `pthread_mutex_unlock(..)`. 
 
-   The next thing you'll want to do is to determine how you'll enforce mutual exclusion in the hashmap functions. Should you introduce one lock? Multiple locks? How would this decision affect the parallel performance of your hashmap? Where do you declare the lock(s) to ensure that all threads can access them?
-
+   The next thing you'll want to do is to determine how you'll enforce mutual exclusion in the hashmap functions. Should you introduce one lock? Multiple locks? How would this decision affect the parallel performance of your hashmap? Where do you declare the lock(s) to ensure that all threads can access them? 
    Once you have your locks declared in initialized in the right place, you'll just have to go back into the hashmap functions and add in the lock/unlock calls to enforce mutual exclusion. 
+
+   - Users of your library must not be burdened with the creation and management of any locks. That is, they should be oblivious to the fact that locks even exist. Therefore, all of the management of your locks should all be done in above functions, hidden away from users.
+
 
 4. **Writing a Tester (main)** Testing the correctness of your implementation takes a bit of effort. I would write a main function to create any number of threads, and each thread continuously puts/gets/dels 1000s of keys into the same shared hashmap. Use the `printmap()` function that I provided to print out the contents of the map after the threads join back up.
 
@@ -217,23 +198,24 @@ $ ./hashtest 400 13
 #### Grading
 
 ```
-This assignment will be graded out of 45 points:
+This assignment will be graded out of 85 points:
 
 [5pt] User input is properly handled, and invalid commands generates an error.
 
 [10pt] initmap() dynamically allocates a new thread-safe map on the heap. All 
 fields are initialized.
 
-[20pt] Parallel version of mmm is properly implemented.
+[15pt] A thread-safe version of get() is implemented. 
 
-[5pt] You must verify that parallel version is correct by comparing the result
-      matrix with one generated using the sequential algorithm.
+[20pt] A thread-safe version of put() is implemented. 
 
-[5pt] Your work-sharing model for the parallel version is producing good
-      performance.
+[20pt] A thread-safe version of del() is implemented. 
 
-[5pt] You are properly timing your results over multiple runs, and timing only
-      relevant portions of code.
+[5pt] The creation and management of locks should be hidden from users.
+
+[5pt] All locks should be hidden from users.
+
+[5pt] You properly free up any dynamically allocated memory.
 ```
 
 #### Submitting Your Assignment
