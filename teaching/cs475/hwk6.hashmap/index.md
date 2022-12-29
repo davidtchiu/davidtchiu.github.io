@@ -93,11 +93,11 @@ git clone <your-github-url-for-this-project>
 
 ```
 
-- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your Ubuntu virtual machine using:
+- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your VS Code using:
 
 ```
 
-git clone https://github.com/davidtchiu/cs475-hwk5-mmm
+git clone https://github.com/davidtchiu/cs475-hwk6-ts_hashmap
 
 ```
 
@@ -109,7 +109,7 @@ I have included a working solution of my program along with the starter code. Th
 
 In this assignment you are to create a thread-safe (ts) hashmap library `ts_hashmap_t`. A hashmap can be implemented using an array of linked-lists of key-value entries, as follows:
 
-<img src="figures/hashmap.png" width="200px">
+<img src="figures/hashmap.png" width="350px">
 
 Here are some properties you should keep in mind while programming:
 
