@@ -108,144 +108,110 @@ git clone https://github.com/davidtchiu/cs475-hwk5-mmm
 
 #### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `hashmapSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./hashmapSol`. 
+I have included a working solution of my program along with the starter code. The binary executable file is called `hashtestSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./hashtestSol`. 
 
 #### Program Requirements
 
-In this assignment you are to create a thread-safe hashmap library `ts_hashmap_t`. Before getting too far, we should remind ourselves of the basic structure of a hashmap. A hashmap can be implemented using an array of lists of key-value entries, as follows:
+In this assignment you are to create a thread-safe (ts) hashmap library `ts_hashmap_t`. A hashmap can be implemented using an array of linked-lists of key-value entries, as follows:
 
 ![](figures/hashmap.png)
 
-**Index calculation:** In the example above, to calculate the array index, you take the `key`  of the entry and (1) cast it into an `unsigned int`, then (2) modulo by the size of the array. That should tell you which array position to focus on. Because the array element points to the head of the entry list, you can then walk the list to search for a key.
+Here are some properties you should keep in mind while programming:
+
+   - **Hash Map Structure** There are two basic hashmap implementations: open-addressing vs. chaining. You will consider the chaining approach for this assignment. In this approach (which is pictured above), you will allocate a fixed array (`table`) of pointers to a list of key-value entries. The size of this array (i.e., the maximum number of lists you can have) is given as the `capacity` of your hashmap. The `size` refers to the number of entries stored in the map.
+
+      ```c
+      // A hashmap contains an array of pointers to entries,
+      // the capacity of the array, and the size (number of entries stored)
+      typedef struct ts_hashmap_t {
+         ts_entry_t **table;  // pointer to an array of entry pointers
+         int capacity;  // size of the table (table[] array length)
+         int size;      // number of entries currently stored
+      } ts_hashmap_t;
+      ```
+
+   - **Entries** Each key-value pair must be encapsulated in a `ts_entry_t` struct. Besides the key and value, the struct also stores a pointer to the next struct, allowing us to form a linked list of entries. The struct is declared in `ts_hashmap.h`:
+
+      ```c
+      // A hashmap entry stores the key, value
+      // and a pointer to the next entry
+      typedef struct ts_entry_t {
+         int key;
+         int value;
+         struct ts_entry_t *next;   // pointer to next entry
+      } ts_entry_t;
+      ```
+   
+      - While a true hashmap allows for any type of data to serve as both key and value, to simplify our implementation, we will assume that all keys and values are `int`s.
+
+      - If you have time, you should look into how to support arbitrary key and value types.
+
+   - **Index Calculation** In the example above, to calculate the array index, you take the `key` of the entry and (1) cast it into an `unsigned int`, then (2) modulo by the size of the array. That should tell you which array position to hone in on. Because the array element points to the head of the entry list (or `NULL`), you can then walk the list of entries to search for a key.
+
+1. Your program should accept exactly 2 arguments on the command line:
+    ```bash
+    $ ./hashtest <num threads> <hashmap capacity>
+    ```
+   - The `num threads` argument tells your program how many threads it must create to randomly get/put/del keys.
+   - The `hashmap capacity` argument is the size of the table array that your hashmap should initialize.
+
+2. You must provide the following thread-safe functions:
+
+   - `ts_hashmap_t *initmap(capacity)`: returns a pointer to a new thread-safe hashmap. The initial  size of the array should be allocated to `capacity`. This function **does not** need to be thread-safe.
+
+   - `int containsKey(ts_hashmap_t *map, int key)`: returns 1 if the `key` is found in the hashmap, or 0 otherwise.
+
+   - `int containsValue(ts_hashmap_t *map, int value)`: returns 1 if the `value` is found in the hashmap, or 0 otherwise.
+
+   - `int get(ts_hashmap_t *map, int key)`: searches for the given `key` and returns the associated value if found. Otherwise, return constant `INT_MAX`.
+
+   - `int put(ts_hashmap_t *map, int key, int value)`: inserts a new entry that contains the given `key` and `value` and return constant `INT_MAX`. If the `key` already exists, then its associated value is replaced with the given `value` and the old value is returned. 
+
+   - `int del(ts_hashmap_t *map, int key)`: deletes an entry that contains the given `key` and return the previously associated value. If the `key` did not exist, return the constant `INT_MAX`. 
 
 
-```c
-#define INITIAL_CAPACITY 37
+3. **Thread-Safety Considerations** I would start by writing and testing (aggressively) the above functions without considering threads. Make sure everything is working before you worry about threads and mutual exclusion. Next, I would play around with locks just to get used to them. To explore locks, you'll need to `#include <pthread.h>`. A lock is of the type `pthread_mutex_t`, and you can use the constructor `pthread_mutex_init(..)` to initialize it. Once initialized, you can use `pthread_mutex_lock(..)` and `pthread_mutex_unlock(..)`. 
 
-// A hashmap entry stores the key, value
-// and a pointer to the next entry
-typedef struct ts_entry_t {
-   void *key;
-   void *value;
-   struct entry_t *next;
-} ts_entry_t;
+   The next thing you'll want to do is to determine how you'll enforce mutual exclusion in the hashmap functions. Should you introduce one lock? Multiple locks? How would this decision affect the parallel performance of your hashmap? Where do you declare the lock(s) to ensure that all threads can access them?
 
-// A hashmap contains an array of pointers to entries,
-// the capacity of the array, and the size (number of entries stored)
-typedef struct ts_hashmap_t {
-   ts_entry_t **table;
-   int capacity;
-   int size;
-} ts_hashmap_t;
-```
+   Once you have your locks declared in initialized in the right place, you'll just have to go back into the hashmap functions and add in the lock/unlock calls to enforce mutual exclusion. 
 
-The `ts_hashmap_t` supports the following functions:
+4. **Writing a Tester (main)** Testing the correctness of your implementation takes a bit of effort. I would write a main function to create any number of threads, and each thread continuously puts/gets/dels 1000s of keys into the same shared hashmap. Use the `printmap()` function that I provided to print out the contents of the map after the threads join back up.
 
-   - `ts_hashmap_t *initmap()`: returns a pointer to a new thread-safe hashmap. The initial  size of the array should be allocated to be `INITIAL_CAPACITY`.
+   - You won't be graded on this, because I'll use my own tester. So, I'll leave it up to you on how to systematically test the correctness of your hashmap, but it should be rigorous.
 
-   - `int containsKey(ts_hashmap_t *map, void *key)`: returns 1 if the `key` is found in the hashmap, or 0 otherwise.
-
-   - `int containsValue(ts_hashmap_t *map, void *value)`: returns 1 if the `value` is found in the hashmap, or 0 otherwise.
-
-   - `void* get(ts_hashmap_t *map, void* key)`: searches for the given `key` and returns the associated value if found. Otherwise, return `NULL`.
-
-   - `void* put(ts_hashmap_t *map, void *key, void *value)`: inserts a new entry that contains the given `key` and `value` and return `NULL`. If the `key` already exists, then its associated value is replaced with the given `value` and the old value is returned. 
-
-   - `void rehash*(ts_hashmap_t *map)`: allocates a new hash array, doubling its current capacity. All existing entries must be "rehashed" (or re-put) into the correct places in this larger table.
 
 #### Example Output
+In the output below, my tester spawns the given number of threads from the command line. Each thread has a 33% chance of doing either a del, get, or put. Then a random key  between 0 and 99 is generated for that chosen operation. Each thread runs this in a loop 100 times. Obviously, due to the randomness of the tests I'm running, the outputs below are mine alone. If there were race conditions, you would likely expect a segmentation fault and/or duplicated entries during the test. 
 
-It should be noted that your mileage may vary. I'm running this on a MacOS X system with a an Intel 2.8 GHz Core i7 processor (quad core, hyper-threading enabled) and 16 GB of RAM.
-
+Here's a run with 2 threads on a capacity of 1
 ```
-# ./mmm
-Usage: ./mmm <mode> [num threads] <size>
+$ ./hashtest 2 1
+[0] -> (9,9) -> (10,10) -> (13,13) -> (14,14) -> (18,18) -> (21,21) -> (22,22) -> (24,24) -> (29,29) -> (31,31) -> (35,35) -> (39,39) -> (41,41) -> (46,46) -> (50,50) -> (51,51) -> (58,58) -> (67,67) -> (68,68) -> (74,74) -> (78,78) -> (76,76) -> (77,77) -> (84,84) -> (90,90) -> (85,85) -> (86,86) -> (87,87) -> (88,88) -> (97,97)
+```
 
+Here's a run with 40 threads on a capacity of 1
+```
+$ ./hashtest 40 1
+[0] -> (63,63) -> (36,36) -> (37,37) -> (38,38) -> (45,45) -> (49,49) -> (4,4) -> (6,6) -> (8,8) -> (56,56) -> (57,57) -> (66,66) -> (50,50) -> (76,76) -> (84,84) -> (17,17) -> (29,29) -> (9,9) -> (30,30) -> (33,33) -> (34,34) -> (41,41) -> (74,74) -> (77,77) -> (48,48) -> (52,52) -> (53,53) -> (78,78) -> (82,82) -> (83,83) -> (85,85) -> (89,89) -> (92,92) -> (93,93) -> (97,97)
+```
 
-# ./mmm S
-Usage: ./mmm <mode> [num threads] <size>
-
-
-# ./mmm S 10
-========
-mode: sequential
-thread count: 1
-size: 10
-========
-Sequential Time: 0.000577 sec
-
-
-# ./mmm S 100
-========
-mode: sequential
-thread count: 1
-size: 100
-========
-Sequential Time: 0.004690 sec
-
-
-# ./mmm P 100
-Error: parallel mode requires <size>
-
-
-# ./mmm P 2 10
-========
-mode: parallel
-thread count: 2
-size: 10
-========
-Sequential Time: 0.000616 sec
-Parallel Time: 0.000086 sec
-Speedup: 7.177778
-Verifying... largest error between parallel and sequential matrix: 0.000000
-
-
-# ./mmm P 2 100
-========
-mode: parallel
-thread count: 2
-size: 100
-========
-Sequential Time: 0.004705 sec
-Parallel Time: 0.001822 sec
-Speedup: 2.582439
-Verifying... largest error between parallel and sequential matrix: 0.000000
-
-
-# ./mmm P 4 200
-========
-mode: parallel
-thread count: 4
-size: 200
-========
-Sequential Time: 0.042224 sec
-Parallel Time: 0.006170 sec
-Speedup: 6.843651
-Verifying... largest error between parallel and sequential matrix: 0.000000
-
-
-# ./mmm P 4 300
-========
-mode: parallel
-thread count: 4
-size: 300
-========
-Sequential Time: 0.150054 sec
-Parallel Time: 0.019833 sec
-Speedup: 7.565840
-Verifying... largest error between parallel and sequential matrix: 0.000000
-
-
-# ./mmm P 4 1000
-========
-mode: parallel
-thread count: 4
-size: 1000
-========
-Sequential Time: 11.276177 sec
-Parallel Time: 0.743291 sec
-Speedup: 15.170611
-Verifying... largest error between parallel and sequential matrix: 0.000000
+Here's a run with 400 threads on a capacity of 13.
+```
+$ ./hashtest 400 13
+[0] -> (13,13) -> (39,39) -> (78,78) -> (65,65)
+[1] -> (27,27) -> (53,53) -> (79,79) -> (92,92)
+[2] -> (28,28) -> (54,54) -> (15,15) -> (41,41)
+[3] -> (16,16) -> (94,94) -> (29,29) -> (81,81)
+[4] -> (69,69) -> (17,17) -> (30,30) -> (43,43)
+[5] -> (5,5) -> (18,18) -> (83,83) -> (96,96)
+[6] -> (58,58) -> (71,71) -> (84,84)
+[7] -> (98,98)
+[8] -> (34,34)
+[9] -> (61,61) -> (87,87)
+[10] -> 
+[11] -> (50,50) -> (24,24)
+[12] -> (64,64) -> (77,77)
 ```
 
 #### Grading
@@ -255,7 +221,8 @@ This assignment will be graded out of 45 points:
 
 [5pt] User input is properly handled, and invalid commands generates an error.
 
-[5pt] Sequential version of mmm is properly implemented.
+[10pt] initmap() dynamically allocates a new thread-safe map on the heap. All 
+fields are initialized.
 
 [20pt] Parallel version of mmm is properly implemented.
 
