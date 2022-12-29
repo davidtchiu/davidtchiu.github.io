@@ -37,30 +37,14 @@ If no provisions has been made to make it thread safe, then when two threads bot
    T2 returns A
    ``` 
 
-In this scenario, `A` is returned by both threads, and the list is now `[C,D,E]`. And that's just *one* way things could've gone wrong. To make this linked list thread-safe, the threads *should have* locked out the list so that another thread can't enter and make progress in the critical section. Because any thread running `removeHead()` must first lock (or possibly wait for another thread to release) the function, if the only possible outcomes are correct. Here's a correct run:
-
-   ```
-   Thread T1 and T2 both run removeHead(list);
-   T1 locks
-   T1 sees that there's a head element A
-   T2 locks (and waits)
-   T1 saves A for later return
-   T1 unlinks the head element (Head now B)
-   T1 frees A
-   T1 returns A
-   T1 unlocks (T2 is released)
-   T2 sees that there's a head element B
-   T2 saves B for later return
-   T2 unlinks the head element (Head now C)
-   T2 frees B
-   T2 returns B
-   ``` 
+In this scenario, `A` is incorrectly returned by both threads, and the list is now `[C,D,E]`. And that's just *one* way things could've gone wrong, among many other unpredictable results. (Honestly, most would probably end in a segfault.) To make this linked list thread-safe, the threads *should have* locked out the list so that another thread can't enter and make progress in the critical section. 
 
 In this assignment, you are to provide a thread-safe hashmap library for C.
 
 
 #### Student Outcomes
 
+- To implement a classic dynamically allocated hashmap in C.
 - To understand the concept of thread safe structures.
 - To be exposed to synchronization of threads using mutex locks.
 
@@ -92,6 +76,18 @@ In this assignment you are to create a thread-safe (ts) hashmap library `ts_hash
 
 Here are some properties you should keep in mind while programming:
 
+   - **Entries** Each key-value pair must be encapsulated in a `ts_entry_t` struct. Besides the key and value, the struct also stores a pointer to the next struct, allowing us to form a linked list of entries. The struct is declared in `ts_hashmap.h`:
+
+      ```c
+      // A hashmap entry stores the key, value
+      // and a pointer to the next entry
+      typedef struct ts_entry_t {
+         int key;
+         int value;
+         struct ts_entry_t *next;   // pointer to next entry
+      } ts_entry_t;
+      ```
+
    - **HashMap Structure** There are two basic hashmap implementations: open-addressing vs. chaining. You will consider the chaining approach for this assignment. In this approach (which is pictured above), you will allocate a fixed array (`table`) of pointers to a list of key-value entries. The size of this array (i.e., the maximum number of lists you can have) is given as the `capacity` of your hashmap. The `size` refers to the number of entries stored in the map.
 
       ```c
@@ -104,17 +100,7 @@ Here are some properties you should keep in mind while programming:
       } ts_hashmap_t;
       ```
 
-   - **Entries** Each key-value pair must be encapsulated in a `ts_entry_t` struct. Besides the key and value, the struct also stores a pointer to the next struct, allowing us to form a linked list of entries. The struct is declared in `ts_hashmap.h`:
 
-      ```c
-      // A hashmap entry stores the key, value
-      // and a pointer to the next entry
-      typedef struct ts_entry_t {
-         int key;
-         int value;
-         struct ts_entry_t *next;   // pointer to next entry
-      } ts_entry_t;
-      ```
    
       - While a true hashmap allows for any type of data to serve as both key and value, to simplify our implementation, we will assume that all keys and values are `int`s.
 
