@@ -2,11 +2,13 @@
 
 ### Hwk: Thread-Safe HashMap
 
-Have you ever wondered why Java offers both a `Hashtable<K,V>` class and a `HashMap<K,V>` class? If you compare their interfaces and behaviors, they have the same functionality. When would you prefer one over another? It has everything to do with synchronization and multithreading. It turns out that `HashMap<K,V>` is not *safe* to be accessed by multiple thread, there are no built-in synchronization mechanisms that avoid race conditions. Therefore, if you're ever writing a  program in which multiple threads are putting/getting/searching a shared HashMap, you must use its thread-safe counterpart, `Hashtable<K,V>`.
+HashMaps (also called Hash Tables or Dictionaries) are one of the most versatile and powerful data structures due to its support of O(1) operations. Besides arrays, they are quite possibly the most ubiquitous data structures in use today.
 
-When programming, you should always check the documentations to ensure that the data structure is thread safe. (Other thread-safe structures include `Vector<E>` and `Stack<E>`.) On the other hand, if you know that your implementation will always be single-threaded, then a `HashMap<K,V>` would not only suffice, but would even be faster to use, because it has been implemented without any synchronization considerations. And since all of your programs have been single-threaded, a `HashMap<K,V>` has always served its purpose.
+But have you ever wondered why Java offers both a `Hashtable<K,V>` class and a `HashMap<K,V>` class? If you compare their interfaces and behaviors, they have the same functionality. When would you prefer one over another? This choice, it turns out, has everything to do with synchronization and multithreading. It turns out that a `HashMap<K,V>` cannot be *safely*  accessed by multiple threads. It has  no built-in synchronization mechanisms that avoid race conditions when many threads are concurrently calling `put`, `get`, and `delete` on it. If you're ever writing a multithreaded program, you must use its thread-safe counterpart, `Hashtable<K,V>`.
 
-#### Thread Safety Example
+When programming, you should always check the documentation to ensure that the data structure is thread safe. (For instance, another thread-safe approach includes using `Vector<E>` instead of `ArrayList<E>`.) On the other hand, if you know that your program will always be single-threaded, then a `HashMap<K,V>` would not only suffice, but it would even be faster to use, because it has been implemented without any synchronization considerations. 
+
+#### Thread Safety 
 A data structure is called *thread-safe* if it can be accessed by multiple threads concurrently without risking correctness. Take an unsafe linked list, for instance. The code to remove the head element may look something like the following:
 
    ```c
@@ -21,7 +23,7 @@ A data structure is called *thread-safe* if it can be accessed by multiple threa
    }
    ```
 
-If no provisions has been made to make it thread safe, then when two threads both seek to remove the head element simultaneously, they may end up in a race condition.    Suppose the linked list stores `[A,B,C,D,E]`, then two concurrent calls to `removeHead()` should yield `A` and `B` and leave only `[C,D,E]` remaining in the list.
+If no provision has been made to make access to the list thread safe, when two (or more) threads seek to remove the head element simultaneously, they may end up in a race condition. Suppose the linked list currently stores `[A,B,C,D,E]`, then two calls to `removeHead()` should yield `A` and `B` respectively, and leave  `[C,D,E]` remaining in the list. However, consider the following scenario:
 
    ```
    Thread T1 and T2 both run removeHead(list);
@@ -37,7 +39,7 @@ If no provisions has been made to make it thread safe, then when two threads bot
    T2 returns A
    ``` 
 
-In this scenario, `A` is incorrectly returned by both threads, and the list is now `[C,D,E]`. And that's just *one* way things could've gone wrong, among many other unpredictable results. (Honestly, most would probably end in a segfault.) To make this linked list thread-safe, the threads *should have* locked out the list so that another thread can't enter and make progress in the critical section. 
+In this scenario, `A` is incorrectly returned by both threads, and the list is now `[C,D,E]`. And that's just *one* way things could go wrong, among many other unpredictable results. (Honestly, most incorrect runs would probably segfault.) To make this linked list thread-safe, each thread *should have* locked out access to the list so that another thread can't enter and make progress in the critical section. 
 
 In this assignment, you are to provide a thread-safe hashmap library for C.
 
@@ -129,23 +131,22 @@ Here are some properties you should keep in mind while programming:
    - `int del(ts_hashmap_t *map, int key)`: deletes an entry that contains the given `key` and return the previously associated value. If the `key` did not exist, return the constant `INT_MAX`. 
 
 
-3. **Thread-Safety Considerations** I would start by writing and testing (aggressively) the above functions without considering threads. Make sure everything is working before you worry about threads and mutual exclusion. Next, I would play around with locks just to get used to them. To explore locks, you'll need to `#include <pthread.h>`. A lock is of the type `pthread_mutex_t`, and you can use the constructor `pthread_mutex_init(..)` to initialize it. Once initialized, you can use `pthread_mutex_lock(..)` and `pthread_mutex_unlock(..)`. 
+3. **Thread-Safety Considerations** I would start by writing the above functions without considering thread safety at all. Just get them to work first, before you worry about threads and mutual exclusion. Next, I would play around with locks  in C  just to get used to them. To explore locks, you'll need to `#include <pthread.h>`. A lock is of the type `pthread_mutex_t`, and you can use the constructor `pthread_mutex_init(..)` to initialize it. Once initialized, you can use `pthread_mutex_lock(..)` and `pthread_mutex_unlock(..)`. 
 
-   The next thing you'll want to do is to determine how you'll enforce mutual exclusion in the hashmap functions. Should you introduce one lock? Multiple locks? How would this decision affect the parallel performance of your hashmap? Where do you declare the lock(s) to ensure that all threads can access them? 
-   Once you have your locks declared in initialized in the right place, you'll just have to go back into the hashmap functions and add in the lock/unlock calls to enforce mutual exclusion. 
+   Once you feel pretty good about how to create and use locks, you'll want  determine how you'll enforce mutual exclusion in the hashmap functions. Should you introduce one lock for each map? Multiple locks? How would this decision affect the parallel performance of your hashmap? Where do you declare the lock(s) to ensure that all threads can access them?   Once you have your locks declared in initialized in the right place, you'll just have to go back into the hashmap functions and add in the lock/unlock calls to enforce mutual exclusion. 
 
-   - Users of your library must not be burdened with the creation and management of any locks. That is, they should be oblivious to the fact that locks even exist. Therefore, all of the management of your locks should all be done in above functions, hidden away from users.
+   **Important** Users of your library must not be burdened with the creation and management of any locks. That is, they should be oblivious to the fact that locks even exist. Therefore, all of the management of your locks should all be done in above functions, hidden  from users.
 
 
-4. **Writing a Tester (main)** Testing the correctness of your implementation takes a bit of effort. I would write a main function to create any number of threads, and each thread continuously puts/gets/dels 1000s of keys into the same shared hashmap. Use the `printmap()` function that I provided to print out the contents of the map after the threads join back up.
+4. **Writing a Good Tester (main)** Testing the correctness of your implementation takes a bit of effort. I would write a main function to create any number of threads, and each thread continuously puts/gets/dels 1000s of keys into the same shared hashmap. Use the `printmap()` function that I provided to print out the contents of the map after the threads join back up.
 
-   - You may want to figure out how to "control" the randomness your tests so that you can repeat the same test on a single-threaded version vs. a multi-threaded version and produce the same output.
+   - You may want to figure out how to "control" the randomness your tests so that you can repeat the same test on a single-threaded version vs. a multi-threaded version and produce the same output. Hint: Look into what it means to "seed" a random number generator, and play with `srand()` and `rand()`.
 
    - You won't be graded on this, because I'll use my own tester. So, I'll leave it up to you on how to systematically test the correctness of your hashmap, but it should be rigorous and revealing.
 
 
 #### Example Output
-In the output below, my tester spawns the given number of threads from the command line. Each thread has a 33% chance of doing either a del, get, or put. Then a random key  between 0 and 99 is generated for that chosen operation. Each thread runs this in a loop 100 times. Obviously, due to the randomness of the tests I'm running, the outputs below are mine alone. If there were race conditions, you would likely expect a segmentation fault and/or duplicated entries during the test. 
+In the output below, my tester spawns the given number of threads from the command line. Each thread has a 33% chance of doing either a `del`, `get`, or `put`. Then a random key between 0 and 99 is generated for that chosen operation. Each thread runs this in a loop 100 times. Obviously, due to the randomness of the tests I'm running, the outputs below are mine alone. If race conditions were present, however, you would likely expect a segmentation fault and/or duplicated keys during the test. 
 
 Here's a run with 2 threads on a capacity of 1
 ```

@@ -33,7 +33,7 @@ let days = {
       },
       {
         name: "Hwk 5 (mmm)",
-        title: "Multithreading",
+        title: "Matrix Multiplication",
         url: "hwk5.mmm/",
         due: "3/6/2023",
       },
