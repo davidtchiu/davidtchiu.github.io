@@ -76,21 +76,16 @@ Because any thread running `removeHead()` must first lock (or possibly wait for 
 In this assignment, you are to provide a thread-safe hash table library for C.
 
 
-#### ZyBooks References
-
-- Memory allocation of 2D arrays
-
 #### Student Outcomes
 
+- To be exposed to synchronization of threads using mutex locks.
 - To write a multi-threaded program using the `pthread` library.
-- To work with the work-sharing paradigm in parallel computing.
-- To be exposed to timing runs and producing results for performance evaluation.
 
 #### Starter Code
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk5-mmm](https://github.com/davidtchiu/cs475-hwk5-mmm). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk6-ts_hashmap](https://github.com/davidtchiu/cs475-hwk6-ts_hashmap). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your Ubuntu virtual machine, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
 ```
 
