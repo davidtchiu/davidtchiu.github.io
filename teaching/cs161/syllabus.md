@@ -1,13 +1,6 @@
 ## CS 161 - Introduction to Computer Science
 ### Syllabus (Fall 2023)
 
-Instructor: [David Chiu](https://davidtchiu.github.io)\
-Course Calendar: [https://davidtchiu.github.io/teaching/cs161/](https://davidtchiu.github.io/teaching/cs161/)\
-Office: Thompson Hall 303 (TH 303)\
-Office Hours: Thompson Hall 303 (TH 303)
-  - Mon/Wed/Fri 4:00 - 5:00
-  - Thu 9:00 - 11:00
-  - By appointment
 
 #### Course Description
 This course is an introduction to computer science and programming. The programming language Java is used to illustrate concepts in computer science. The course emphasizes the use of the computer as a problem-solving tool and the development of good programming style. CS 161 is the introductory course for students planning to major or minor in computer science. A weekly lab is required.
@@ -80,7 +73,7 @@ Participation points will be given based on:
 Laptop computers and other handheld devices are a common distraction during lectures. Except on lab days and for those who can provide documentation of need from the office of SAA, please don't bring your laptops to lectures. Please turn your phones off, or at least put your phones on silent during lecture.
 
 ##### Academic Integrity
-You should uphold the school's *Student Integrity Code*. Any suspected cheating (plagiarizing code, copying homework solutions, etc.) will be reported to the Registrar, which may result in possible suspension/expulsion and loss of financial aid. See this link in [Student Handbook](https://www.pugetsound.edu/student-life/personal-safety/student-handbook/academic-handbook/academic-integrity}{http://www.pugetsound.edu/student-life/personal-safety/student-handbook/academic-handbook/academic-integrity) for more info.
+You should uphold the school's *Student Integrity Code*. Any suspected cheating (plagiarizing code, copying homework solutions, etc.) will be reported to the Registrar, which may result in possible suspension/expulsion and loss of financial aid. 
 
 ##### Student Accessibility and Accommodation (SAA)
 If you have a physical, psychological, medical or learning disability that may impact your course work, please contact Peggy Perno, Director of the Office of Accessibility and Accommodation, 105 Howarth, 253.879.3395. She will determine with you what accommodations are necessary and appropriate. All information and documentation is confidential.
