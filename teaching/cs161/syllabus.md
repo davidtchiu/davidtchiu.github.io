@@ -1,18 +1,13 @@
 ## CS 161 - Introduction to Computer Science
 ### Syllabus (Fall 2023)
 
-**Instructor:** [David Chiu](https://davidtchiu.github.io)\
-**Course Calendar:** [https://davidtchiu.github.io/teaching/cs161/](https://davidtchiu.github.io/teaching/cs161/)\
-**Office:** Thompson Hall 303 (TH 303)\
-**Office Hours:** Thompson Hall 303 (TH 303)
+Instructor: [David Chiu](https://davidtchiu.github.io)\
+Course Calendar: [https://davidtchiu.github.io/teaching/cs161/](https://davidtchiu.github.io/teaching/cs161/)\
+Office: Thompson Hall 303 (TH 303)\
+Office Hours: Thompson Hall 303 (TH 303)
   - Mon/Wed/Fri 4:00 - 5:00
   - Thu 9:00 - 11:00
   - By appointment
-
-#### Where and When
-**Lecture:** Mon/Wed/Fri 10:00 - 10:50 in TH 409\
-**Lab:** Thu 11:00am - 12:50pm in TH 409\
-**Final Exam:** Mon, May 8, 8:00am - 10:00am in TH 409
 
 #### Course Description
 This course is an introduction to computer science and programming. The programming language Java is used to illustrate concepts in computer science. The course emphasizes the use of the computer as a problem-solving tool and the development of good programming style. CS 161 is the introductory course for students planning to major or minor in computer science. A weekly lab is required.
