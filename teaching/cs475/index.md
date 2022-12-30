@@ -1,11 +1,11 @@
 ## CS 475: Operating Systems
 
-**Instructor:** [David Chiu](https://davidtchiu.github.io)
-**Office:** Thompson Hall 303
-**Office Hours:** 
+Instructor: [David Chiu](https://davidtchiu.github.io)
+Office: Thompson Hall 303
+Office Hours: 
   - Mon/Wed/Fri 4:00 - 5:00; Thu 9:00 - 11:00
   - Or, by appointment
-
+  
 ### Class Resources
 - [Syllabus](syllabus)
 - [Notes and Sample Code](https://canvas.pugetsound.edu)
