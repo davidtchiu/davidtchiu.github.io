@@ -1,4 +1,4 @@
-## CS 161 - Introduction to Computer Science
+## CS 161: Introduction to Computer Science
 
 **Instructor:** [David Chiu](https://davidtchiu.github.io)\
 **Office:** Thompson Hall 303 (TH 303)\
