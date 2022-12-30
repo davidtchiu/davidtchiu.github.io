@@ -51,7 +51,7 @@ class CourseCalendar {
    * Creates and updates HTML element with list of assignments
    */
   generateHTMLAssigments() {
-    const span = document.querySelector("#schedule");
+    const div = document.querySelector("#schedule");
 
     for (let assignType of Object.keys(this.days.assignments)) {
       if (this.days.assignments[assignType].length > 0) {
@@ -74,8 +74,8 @@ class CourseCalendar {
         let h3 = document.createElement("h3");
         h3.innerHTML = assignType.charAt(0).toUpperCase() + 
           assignType.slice(1); // section label here
-        span.appendChild(h3);
-        span.appendChild(ul);
+        div.appendChild(h3);
+        div.appendChild(ul);
       }
     }
   }
