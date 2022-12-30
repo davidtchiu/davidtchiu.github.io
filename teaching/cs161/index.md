@@ -2,14 +2,13 @@
 
 Instructor: David Chiu\
 Office: Thompson Hall 303\
-Office Hours: 
-  - Mon/Wed/Fri 4:00 - 5:00; Thu 9:00 - 11:00
-  - Or, by appointment
 
 ### Where and When
-- Lecture: Mon/Wed/Fri 10:00 - 10:50 in TH 409\
-- Lab: Thu 11:00am - 12:50pm in TH 409\
-- Final Exam: Mon, May 8, 8:00am - 10:00am in TH 409
+- Lecture: Mon/Wed/Fri 10:00 - 10:50 in TH 409
+- Lab: Thu 11:00 - 12:50 in TH 409
+- Office Hours: 
+  - Mon/Wed/Fri 4:00 - 5:00; Thu 9:00 - 11:00
+  - Or, by appointment
 
 ### Class Resources
 - [Syllabus](syllabus)

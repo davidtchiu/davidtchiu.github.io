@@ -1,27 +1,41 @@
-## CS 161 Syllabus
+## CS 475 Syllabus
 
 
 #### Course Description
-This course is an introduction to computer science and programming. The programming language Java is used to illustrate concepts in computer science. The course emphasizes the use of the computer as a problem-solving tool and the development of good programming style. CS 161 is the introductory course for students planning to major or minor in computer science. A weekly lab is required.
+One the most complex software systems ever assembled, the modern operating system serves as the interface between the human and the machine. This course traces how the simple idea of "resource sharing"  unravels into some of the most confounding problems and original breakthroughs in computer science. Course topics include process and thread management, input/output, CPU scheduling, synchronization primitives, memory management, and file systems. Students taking this course will learn how to deal with the intricacies of low-level programming, parallel computing and synchronization problems, and will also receive kernel-development experience through the design and implementation of various subsystems in a real operating system. The C programming language will be used. 
 
 #### Prerequisites
-Three years of high-school mathematics, MATH 110 Pre-Calculus, or equivalent. Students with transfer credit for CSCI 161 may not take this course.
+A grade of C- or higher in the following course(s) is required:
+ - CSCI 281 - Assembly Language and Computer Architecture
 
 #### Required Textbook
-[Cay Horstmann. Java Concepts: Early Objects.](https://www.amazon.com/Java-Concepts-Cay-S-Horstmann/dp/1119056500)
+
+- Silberschatz, Galvin, and Gagne. [Operating Systems Concepts](https://www.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/0470128720). 8th Ed. or greater. (Required)
+- [Programming in C](https://learn.zybooks.com/zybook/PUGETSOUNDCSCI475ChiuSpring2023). ZyBooks. (Required)
+    ```
+     Sign in or create an account at: learn.zybooks.com
+     Enter zyBook code: PUGETSOUNDCSCI475ChiuSpring2023
+     Subscribe
+    ```
+  
+#### Student Course Outcomes
+Students taking this course will:
+- Be proficient in the C programming language.
+- Be proficient in the use of the Linux environment for coding, compilation, debugging, and testing.
+- Design and implement concurrent programs using proper synchronization techniques.
+- Evaluate the merits and downfalls of various CPU scheduling, memory management, and deadlock handling policies.
+- Gain experience with key components in an OS kernel.
 
 
 #### Course Topics
-- Computational thinking
-- Object-oriented programming
-- Arithmetic manipulation
-- Conditional logic
-- Loops
-- Methods
-- Basic data structures
-- Input/output: file and user interaction
-- Elementary complexity analysis
-
+- The history and current state of computer systems
+- Process management
+- Threads
+- Interrupts and system calls
+- CPU scheduling
+- Synchronization of concurrent programs
+- Memory management and virtual memory
+- File system
 
 #### CS Community Statement
 Students taking this course range from those with no prior background in programming to those with substantial experience and prior coursework. Because this course is an introduction to computer science, I do not expect students to have had any prior experience in programming. The course will work best if we respect and welcome each other no matter what level of "readiness" we are at, and we all support one another in learning. I will not tolerate behaviors that could negatively affect another student’s classroom experience. Such behaviors might include: making rude or condescending comments, snickering at others’ questions or comments, talking over other individuals, and so on. I reserve the right to withdraw a student from this class who is repeatedly exhibiting such behavior.
@@ -35,8 +49,7 @@ The following grade cutoffs are upper bounds. They might come down, but will not
 |   | % Weight |
 | :--- | :--- |
 | Participation | 3 |
-| Lab Assignments | 10 |
-| Homework Assignments | 35 |
+| Homework Assignments | 45 |
 | Midterm I | 15 |
 | Midterm II | 17 |
 | Final Exam | 20 |
