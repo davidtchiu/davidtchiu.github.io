@@ -1,7 +1,7 @@
 ## CS 161 - Introduction to Computer Science
 ### Syllabus (Fall 2023)
 
-**Instructor:** [Prof. David Chiu](https://davidtchiu.github.io)\
+**Instructor:** [David Chiu](https://davidtchiu.github.io)\
 **Course Calendar:** [https://davidtchiu.github.io/teaching/cs161/](https://davidtchiu.github.io/teaching/cs161/)\
 **Office:** Thompson Hall 303 (TH 303)\
 **Office Hours:** Thompson Hall 303 (TH 303)
