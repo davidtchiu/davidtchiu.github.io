@@ -8,7 +8,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 #### Student Outcomes
 - Setting up VS code for remote development on a Linux server
-- Compiling and running your first C program
+- Compiling and running your first C program for this class
 
 #### Installing Development Tools
 
@@ -59,7 +59,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 #### Using the Terminal (Shell) and Editor
 - You only have to do the steps listed in the previous section that one time. Let's get a feel for how to start up the coding environment from this point forward.
 
-- Quit VS Code, and start it back up again.
+- Quit VS Code, and open it back up again.
 
 - On the left-hand, you'll see a new button on the far left called **Remote Explorer**. Click on it, then click on the profile you want to connect. It should simply be `/home/yourUserName`.
 
@@ -67,22 +67,29 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - You will be prompted for your password, and afterwards, you should see the contents of your home directory once again.
 
-- The command-line terminal (also called a _shell_) should show up on the bottom of your screen. Here's what mine looks like:
+- The command-line terminal (also called a _shell_) should show up on the bottom of your screen. If it's not there, go to the `Terminal` menu and select `New Terminal`. Here's what mine looks like:
 
   <img src="figures/dchiu__SSH__149_165_174_87_.png" width="400px" />
 
   Before "windows" were invented, the shell was the _only_ user interface to operating systems. We use it to do everything that you can do with windows: accessing your files and folders, running and quitting programs, editing files, etc. Because the Linux server that I provided is "headless" (i.e., stripped down OS that doesn't support windows and graphical interfaces), so you will need to do a lot of things on the shell.
   
-- **Pro Tips:** I assume you've have a basic working knowledge of the command-line shell, but here are some time-saving tips. 
+- **Pro Tips:** I assume you've have a working knowledge of the command-line shell, but here are some time-saving tips. 
 
   | Tip |  |
   | :--- | :--- |
-  | `[tab]` and `[tab]+[tab]`| Type the first few letters of a file or directory, and hit `[tab]` to auto-complete. When the result is ambiguous, hit `[tab]` twice. |
-  | `up`/`down` keys | Hitting the `up` key will display the most recently-run command. You can hit `up` multiple times. |
+  | `[tab]` and `[tabtab]`| Type the first few letters of a file or directory, and hit `[tab]` to auto-complete. When the result is ambiguous, hit `[tab]` twice. |
+  | `up` and `down` keys | Hitting the `up` key will display the most recently-run command. You can hit `up` multiple times. |
   | `history` | Shows you a list of recently-run commands. |
   | `ctrl + c` | Will interrupt the currently-running command, and return the shell prompt. |
 
+
+- If you need a refresher on how to work on the shell, here are some resources (Strongly recommended)
+  - [Linux Command Cheatsheet](https://www.guru99.com/linux-commands-cheat-sheet.html)
+  - [The Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
+
+
 #### Our First C Program
+
 1. From your home directory, create a new directory called `hwk0`, navigate into it, and create a new file called `hwk0.c`.
 
     ```bash
