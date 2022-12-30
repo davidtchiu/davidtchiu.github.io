@@ -121,98 +121,147 @@ Before you get started: Even though we're reading from and writing to 2D arrays 
 
 #### Example Output
 
-It should be noted that your mileage may vary. I'm running this on a MacOS X system with a an Intel 2.8 GHz Core i7 processor (quad core, hyper-threading enabled) and 16 GB of RAM.
+It should be noted that your mileage may vary, but yours should track my performance.
 
+Sequential Mode Tests:
 ```
-# ./mmm
+$ ./mmm
 Usage: ./mmm <mode> [num threads] <size>
 
 
-# ./mmm S
+$ ./mmm S
 Usage: ./mmm <mode> [num threads] <size>
 
 
-# ./mmm S 10
-========
-mode: sequential
-thread count: 1
-size: 10
-========
-Sequential Time: 0.000577 sec
-
-
-# ./mmm S 100
+$ ./mmm S 100
 ========
 mode: sequential
 thread count: 1
 size: 100
 ========
-Sequential Time: 0.004690 sec
+Sequential Time (avg of 3 runs): 0.008636 sec
 
 
-# ./mmm P 100
-Error: parallel mode requires <size>
-
-
-# ./mmm P 2 10
+$ ./mmmSol S 200
 ========
-mode: parallel
-thread count: 2
-size: 10
+mode: sequential
+thread count: 1
+size: 200
 ========
-Sequential Time: 0.000616 sec
-Parallel Time: 0.000086 sec
-Speedup: 7.177778
-Verifying... largest error between parallel and sequential matrix: 0.000000
+Sequential Time (avg of 3 runs): 0.067976 sec
 
 
-# ./mmm P 2 100
+$ ./mmmSol S 500
+========
+mode: sequential
+thread count: 1
+size: 500
+========
+Sequential Time (avg of 3 runs): 1.047883 sec
+```
+
+Parallel Mode Tests:
+```
+$ ./mmm P 100
+Usage: parallel mode requires [num threads]
+
+
+$ ./mmmSol P 2 100
 ========
 mode: parallel
 thread count: 2
 size: 100
 ========
-Sequential Time: 0.004705 sec
-Parallel Time: 0.001822 sec
-Speedup: 2.582439
+Sequential Time (avg of 3 runs): 0.008550 sec
+Parallel Time (avg of 3 runs): 0.005048 sec
+Speedup: 1.693560
 Verifying... largest error between parallel and sequential matrix: 0.000000
 
 
-# ./mmm P 4 200
+$ ./mmmSol P 4 100
+========
+mode: parallel
+thread count: 4
+size: 100
+========
+Sequential Time (avg of 3 runs): 0.008634 sec
+Parallel Time (avg of 3 runs): 0.002534 sec
+Speedup: 3.407119
+Verifying... largest error between parallel and sequential matrix: 0.000000
+
+
+$ ./mmm P 2 200
+========
+mode: parallel
+thread count: 2
+size: 200
+========
+Sequential Time (avg of 3 runs): 0.067534 sec
+Parallel Time (avg of 3 runs): 0.035498 sec
+Speedup: 1.902490
+Verifying... largest error between parallel and sequential matrix: 0.000000
+
+
+$ ./mmm P 4 200
 ========
 mode: parallel
 thread count: 4
 size: 200
 ========
-Sequential Time: 0.042224 sec
-Parallel Time: 0.006170 sec
-Speedup: 6.843651
+Sequential Time (avg of 3 runs): 0.068096 sec
+Parallel Time (avg of 3 runs): 0.017955 sec
+Speedup: 3.792578
 Verifying... largest error between parallel and sequential matrix: 0.000000
 
 
-# ./mmm P 4 300
+$ ./mmm P 2 500
+========
+mode: parallel
+thread count: 2
+size: 500
+========
+Sequential Time (avg of 3 runs): 1.048724 sec
+Parallel Time (avg of 3 runs): 0.545044 sec
+Speedup: 1.924108
+Verifying... largest error between parallel and sequential matrix: 0.000000
+
+
+$ ./mmm P 4 500
 ========
 mode: parallel
 thread count: 4
-size: 300
+size: 500
 ========
-Sequential Time: 0.150054 sec
-Parallel Time: 0.019833 sec
-Speedup: 7.565840
+Sequential Time (avg of 3 runs): 1.054960 sec
+Parallel Time (avg of 3 runs): 0.272851 sec
+Speedup: 3.866431
 Verifying... largest error between parallel and sequential matrix: 0.000000
 
 
-# ./mmm P 4 1000
+$ ./mmmSol P 2 1000
+========
+mode: parallel
+thread count: 2
+size: 1000
+========
+Sequential Time (avg of 3 runs): 8.370532 sec
+Parallel Time (avg of 3 runs): 4.330151 sec
+Speedup: 1.933081
+Verifying... largest error between parallel and sequential matrix: 0.000000
+
+
+$ ./mmmSol P 4 1000
 ========
 mode: parallel
 thread count: 4
 size: 1000
 ========
-Sequential Time: 11.276177 sec
-Parallel Time: 0.743291 sec
-Speedup: 15.170611
+Sequential Time (avg of 3 runs): 8.409772 sec
+Parallel Time (avg of 3 runs): 2.184148 sec
+Speedup: 3.850367
 Verifying... largest error between parallel and sequential matrix: 0.000000
 ```
+
 
 #### Grading
 
