@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Tutorial: Setting up Remote Development
+### Hwk 0: Remote C Development in VS Code
 
 In this ungraded tutorial, we will set you up to develop on a remote server. Here's why we must do this, instead of developing on your own machines. C is a very finicky language, and is highly dependent on the  environment on which it compiles and executes. This is everybody's worst nightmare: turning in an assignment you spent hours on, only to have it not compile or execute on your instructor's machine. Indeed, having a common compiling and runtime environment was what made Java (and the Java Virtual Machine  JVM) so successful when it was introduced in the mid-90s. Today, most languages have a common runtime environment, and C has certainly made significant efforts to being more portable across systems, but alas I find that it's still very system dependent.
 

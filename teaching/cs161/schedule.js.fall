@@ -1,4 +1,14 @@
 let days = {
+  resources: [
+    {
+      name: "Course Syllabus",
+      url: "syllabus"
+    },
+    {
+      name: "Notes and Sample Code",
+      url: "https://canvas.pugetsound.edu"
+    },
+  ],
   assignments: {
     homework: [
       {

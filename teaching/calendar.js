@@ -48,6 +48,32 @@ class CourseCalendar {
   }
 
   /**
+   * 
+   */
+  generateHTMLResources() {
+    const div = document.querySelector("#schedule");
+
+    if (this.days.resources.length > 0) {
+      let ul = document.createElement("ul");
+      for (let res of this.days.resources) {
+        let li = document.createElement("li");
+        let anchor = document.createElement("a");
+        anchor.href = res.url;
+        anchor.innerHTML = `${res.name}: ${res.url}`;
+        li.appendChild(anchor);
+        ul.appendChild(li);
+      }
+
+      // update the HTML element
+      let h3 = document.createElement("h3");
+      h3.innerHTML = assignType.charAt(0).toUpperCase() + 
+        assignType.slice(1); // section label here
+      div.appendChild(h3);
+      div.appendChild(ul);
+    }
+  }
+
+  /**
    * Creates and updates HTML element with list of assignments
    */
   generateHTMLAssigments() {
