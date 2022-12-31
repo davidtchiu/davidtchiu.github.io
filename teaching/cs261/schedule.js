@@ -1,5 +1,15 @@
 let days = {
   assignments: {
+    resources: [
+      {
+        name: "Course Syllabus",
+        url: "syllabus"
+      },
+      {
+        name: "Notes and Sample Code",
+        url: "https://canvas.pugetsound.edu"
+      },
+    ],
     homework: [
       {
         name: "Hwk 1",
@@ -212,5 +222,6 @@ let days = {
 
 // print out the schedule to HTML
 const schedule = new CourseCalendar("8/29/2022", days, MTWF);
+schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
