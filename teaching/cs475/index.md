@@ -1,13 +1,13 @@
 ## CS 475: Operating Systems
 
 Instructor: David Chiu\
-Office: Thompson Hall 303\
+Office: Thompson Hall 303
 
 
 ### Where and When
 - Lecture: Mon/Wed/Fri 3:00 - 3:50 in TH 409
 - Office Hours: 
-  - Mon/Wed/Fri 4:00 - 5:00; Thu 9:00 - 11:00
+  - Mon/Wed/Fri 4:00 - 5:00
   - Or, by appointment
   
 ### Class Resources

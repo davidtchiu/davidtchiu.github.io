@@ -1,13 +1,13 @@
 ## CS 161: Introduction to Computer Science
 
 Instructor: David Chiu\
-Office: Thompson Hall 303\
+Office: Thompson Hall 303
 
 ### Where and When
 - Lecture: Mon/Wed/Fri 10:00 - 10:50 in TH 409
 - Lab: Thu 11:00 - 12:50 in TH 409
 - Office Hours: 
-  - Mon/Wed/Fri 4:00 - 5:00; Thu 9:00 - 11:00
+  - Mon/Wed/Fri 4:00 - 5:00
   - Or, by appointment
 
 ### Class Resources
