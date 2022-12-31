@@ -82,10 +82,10 @@ It's therefore important that we all code in a common environment, so I've prepa
 
   | Tip |  |
   | :--- | :--- |
-  | `[tab]` and `[tabtab]`| Type the first few letters of a file or directory, and hit `[tab]` to auto-complete. When the result is ambiguous, hit `[tab]` twice in quick succession to reveal all the matches. |
+  | `[tab]` and `[tab-tab]`| Type the first few letters of a file or directory, and hit `[tab]` to auto-complete. When the result is ambiguous, hit `[tab]` twice in quick succession to reveal all the matches. |
   | `up` and `down` keys | Hitting the `up` key will display the most recently-run command. You can hit `up` continuously to scroll through your command history. |
   | `history` | Shows you a list of recently-run commands. |
-  | `ctrl + c` | Will interrupt the currently-running command, and return the shell prompt. |
+  | `ctrl + c` | Will interrupt the currently-running command, and return the shell prompt. I suspect you'll be using this one a lot! You use it to terminate a process that you ran.|
   | `ctrl + u` | Will reset your cursor (deletes everything you've typed on the same line.) |
   | `ctrl + l` | Will clear the terminal window. |
 
