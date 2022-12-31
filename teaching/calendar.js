@@ -48,7 +48,7 @@ class CourseCalendar {
   }
 
   /**
-   * 
+   * Creates and updates HTML element with list of resources
    */
   generateHTMLResources() {
     const div = document.querySelector("#schedule");
@@ -59,7 +59,7 @@ class CourseCalendar {
         let li = document.createElement("li");
         let anchor = document.createElement("a");
         anchor.href = res.url;
-        anchor.innerHTML = `${res.name}: ${res.url}`;
+        anchor.innerHTML = `${res.name}`;
         li.appendChild(anchor);
         ul.appendChild(li);
       }
