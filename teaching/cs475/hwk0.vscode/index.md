@@ -100,10 +100,21 @@ It's therefore important that we all code in a common environment, so I've prepa
 1. From your home directory, create a new directory called `hwk0`, navigate into it, and create a new file called `hwk0.c`.
 
     ```bash
-    cd ~
-    mkdir hwk0
-    touch hwk0.c
+    $ cd ~
+    $ mkdir hwk0
+    $ cd hwk0
+    $ touch hwk0.c
     ```
+
+    - The first command `cd ~` changes your working directory to your "home directory" (yes `~` is just a shortcut to your home directory... which is nice because you can't ever get lost if you remember that simple fact!)
+
+    - The 2nd command `mkdir hwk0` creates a new directory (folder) within your home directory named `hwk0`.
+
+    - The 3rd command `cd hwk0` now changes your working directory to within the `hwk0` directory you just created.
+
+    - Finally, `touch hwk0.c` creates a new file called `hwk0.c` within the current working directory. 
+
+    - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but what's the fun in that? Plus, this puts your navigates your Terminal to the same directory as your new project folder.
 
 2. You should see the `hwk0.c` file show up on the left-hand panel of VS Code. Clicking on it will open it up in the editor. Type in the following "hello world program."
 
