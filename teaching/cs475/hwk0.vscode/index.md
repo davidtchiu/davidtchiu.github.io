@@ -159,28 +159,30 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 4. If you see this output, then you just ran your first C program for this class! Hopefully this gives you a clear idea about how C development will work in this class.
 
-#### Makefiles: Multi-File Compiling
-
-1. It seems a bit strange that your executable would be named something arbitrary like `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <name>` flag. 
+5. It seems a bit strange that your executable would be named something arbitrary like `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <name>` flag. 
 
     ```bash
     $ gcc -Wall -o helloworld hwk0.c
     ```
 
-    This would output the binary as `helloworld`, and you can run it using `./helloworld`.
-
-2. As your programs grow in complexity, good programming practice teaches us to split the program into multiple files (as you do in Java). The problem is that, unlike Java, the `gcc` does not automatically resolve file dependencies. If a file `AAA.c` uses functions that are defined elsewhere in `BBB.c`, then `BBB.c` must be compiled first into an object file (ends with `.o`) before `AAA.c` can be compiled. 
-
-3. To manage dependencies, you need to create a file called `Makefile` and it's usually put in the same directory as all your source code. A `Makefile` contains rules and allows you to determine the order in which files are compiled. They are absolutely imperative for managing larger C projects. 
+    This would output the binary as `helloworld`, and you can run it using `./helloworld` on the command-line.
 
 
-4. Let's see an example. Suppose we're writing a project that contains the following files:
+#### Makefiles: Multi-File Compiling
+
+
+1. As your programs grow in complexity, good programming practice teaches us to split the program into multiple files (as you do in Java). The problem is that, unlike Java, the `gcc` does not automatically resolve file dependencies. If a file `AAA.c` uses functions that are defined elsewhere in `BBB.c`, then `BBB.c` must be compiled first into an object file (ends with `.o`) before `AAA.c` can be compiled. 
+
+2. To manage dependencies, you need to create a file called `Makefile` and it's usually put in the same directory as all your source code. A `Makefile` contains rules and allows you to determine the order in which files are compiled. They are absolutely imperative for managing larger C projects. 
+
+
+3. Let's see an example. Suppose we're writing a project that contains the following files:
   - `queue.h` -- contains the shared variables, constants, and function declarations of queues
   - `queue.c` -- contains the implementation of queue functions
   - `defs.h` -- contains some other declarations, like structs and other constants unrelated to the queue
   - `main.c`-- contains the `main()` method and uses the things declared in `queue.h` and `defs.h`
   
-5. Here's an example `Makefile`, with 3 rules (`all`, `queue.o`, and `clean`). Each rule has the following syntax:
+4. Here's an example `Makefile`, with 3 rules (`all`, `queue.o`, and `clean`). Each rule has the following syntax:
   
     ```makefile
     <ruleName>: <list of dependencies>
@@ -200,11 +202,11 @@ It's therefore important that we all code in a common environment, so I've prepa
           rm -f simu *.o
     ```
 
-6. **Important** If the `Makefile` is present, then running the command `make [rule]` in the same directory will attempt to compile the program. If the rule is not given, then the first rule will be run.
+5. **Important** If the `Makefile` is present, then running the command `make [rule]` in the same directory will attempt to compile the program. If the rule is not given, then the first rule will be run.
 
-7. Back in the `Makefile`, the `all` rule says that, for it to run, it must first check for the existence of `main.c`, `queue.h`, `defs.h`, and `queue.o`. If all these files exist, then it will run the associated command below it to produce the `simu`  file. However, if any of those files are missing, then the `make` utility will search for a rule that produces the missing dependency.
+6. Back in the `Makefile`, the `all` rule says that, for it to run, it must first check for the existence of `main.c`, `queue.h`, `defs.h`, and `queue.o`. If all these files exist, then it will run the associated command below it to produce the `simu`  file. However, if any of those files are missing, then the `make` utility will search for a rule that produces the missing dependency.
 
-8. In this case, the `queue.o` is missing, so `make` searches for the `queue.o` rule and tries to resolve that first. The `queue.o` rule requires the `queue.h` and `queue.c` files (which are both present in the current working directory). Thus, it runs:
+7. In this case, the `queue.o` is missing, so `make` searches for the `queue.o` rule and tries to resolve that first. The `queue.o` rule requires the `queue.h` and `queue.c` files (which are both present in the current working directory). Thus, it runs:
 
     ```bash
     gcc -Wall -c queue.c
@@ -212,7 +214,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
     The `-c` flag produces a corresponding object file, `queue.o`. This file is not executable, but contains the compiled binary for the code found in `queue.h` and `queue.c`.
 
-9. If your queue files compile, then `queue.o` will be generated by the compiler. Now that `queue.o` is present, the `make` utility will now return to the `all` rule. This time, it will have all the necessary dependencies resolved for compiling `main.c` into the `simu` executable.
+8. If your queue files compile, then `queue.o` will be generated by the compiler. Now that `queue.o` is present, the `make` utility will now return to the `all` rule. This time, it will have all the necessary dependencies resolved for compiling `main.c` into the `simu` executable.
 
     Here's what it would look like if they were all successfully compiled:
 
@@ -222,7 +224,7 @@ It's therefore important that we all code in a common environment, so I've prepa
     gcc -Wall -o simu main.c queue.o
     ```
 
-10. You might have noticed the unused rule `clean` on the bottom of the `Makefile`. Notice that it has no dependencies, and is basically a shortcut for deleting any file ending in `.o` and the file named `simu`. In other words, `make clean` would remove all the binary files. This is usually done right before a submission, or before uploading to github. Those .o files take up space, and no one really wants those temporary files anyway.
+9. You might have noticed the unused rule `clean` on the bottom of the `Makefile`. Notice that it has no dependencies, and is basically a shortcut for deleting any file ending in `.o` and the file named `simu`. In other words, `make clean` would remove all the binary files. This is usually done right before a submission, or before uploading to github. Those .o files take up space, and no one really wants those temporary files anyway.
 
     ```bash
     $ make clean
@@ -230,7 +232,7 @@ It's therefore important that we all code in a common environment, so I've prepa
     ```
 
 
-11. Here's the good and bad news. Good: I will provide you with a `Makefile` for every assignment, so that you can just type `make` to compile. The bad: You need to follow my file structure, or learn how to edit your `Makefile` to include your own files. This leads to less flexibility, and, not everyone agrees with my way of splitting the files apart. All in all, and I would say that it's good form to learn how to write `Makefile`s if you're a serious C programmer, but I'll leave it as an external exercise.
+10. Here's the good and bad news. Good: I will provide you with a `Makefile` for every assignment, so that you can just type `make` to compile. The bad: You need to follow my file structure, or learn how to edit your `Makefile` to include your own files. This leads to less flexibility, and, not everyone agrees with my way of splitting the files apart. All in all, and I would say that it's good form to learn how to write `Makefile`s if you're a serious C programmer, but I'll leave it as an external exercise.
 
 
 #### Submission
