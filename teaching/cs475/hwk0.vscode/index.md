@@ -32,7 +32,8 @@ It's therefore important that we all code in a common environment, so I've prepa
   ```
   The IP address and your username will not change during this class, but  you *can* change your password later. Your initial password is your UPS ID (usually a long sequence of integers starting with 5.)
 
-- Back in VS Code, click on the `View` menu and select `Command Palette`. Then type: `Remote-SSH: Add New SSH Host...`. It should auto-complete after typing the first few letters. Choose to run this command. In the box that pops up, enter:
+
+- Open up VS Code, then click on the `View` menu and select `Command Palette`. Then type: `Remote-SSH: Add New SSH Host...`. It should auto-complete after typing the first few letters. Choose to run this command. In the box that pops up, enter:
   ```
   ssh yourPugetSoundUsername@IPAddress
   ```
@@ -41,11 +42,11 @@ It's therefore important that we all code in a common environment, so I've prepa
   ssh dchiu@149.165.174.87
   ```
 
-- Next, VS Code may ask you to choose an SSH configuration file. Just select the one that's highlighted.
+- Next, VS Code may ask you to choose an SSH configuration file. If it asks, just select the one that's already selected.
 
-- You'll then be prompted for your password. Enter the one that I assigned you.
+- You'll then be prompted for your password in a box at the top. Enter the one that I assigned you.
 
-- VS Code will then ask you what platform the remote server is using. Select `Linux` in the option menu. Then it's going to take a bit of time to install the necessary files to get you set up.
+- VS Code might then ask you what platform the remote server is using. If it asks, select `Linux` in the option menu. Then it's going to take a bit of time to install the necessary files to get you set up.
 
 - Once everything is set up, you should see an empty VS Code editor. On the left-side panel, click on the button called `Open Folder`. Choose `/home/yourUsername` (which should be the default option). Important: This "path" `/home/yourUsername` is known as your **home directory** on the server. Only you (and I) have access to it, so don't worry about the privacy of your code. Think of it as your private, personal folder on the server. This is where all your code will go for this class.
 
