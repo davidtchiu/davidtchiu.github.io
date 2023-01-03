@@ -201,7 +201,7 @@ let days = {
     "For loops; Nested loops",
     "Finish nested loops",
     "Hwk Lab",
-    "Cancelled",
+    "Start Arrays",
     // wk 9: spring break
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
@@ -219,13 +219,13 @@ let days = {
     "Scanning for input: ChatBot",
     // wk 12
     "Finish ChatBot; Start HashMap",
-    "HashMap, for-each loop",
-    "Lab 9",
-    "HashMap (cont.): Smarter ChatBot",
-    // wk 13 (Exam way too late -- needs to be Wk 12 for next offering)
-    "File I/O; String parsing",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
+    "HashMap, for-each loop",
+    // wk 13
+    "HashMap (cont.): Smarter ChatBot",
+    "File I/O; String parsing",
+    "Lab 9",
     "File I/O: Finish TreeFile class",
     // wk 14
     "Start complexity: Linear search",
