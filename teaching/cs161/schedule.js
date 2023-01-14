@@ -90,7 +90,7 @@ let days = {
         name: "Lab 1",
         title: "Draw My Picture (BlueJ)",
         url: "lab1.bluej/",
-        due: "1/19/2023",
+        due: "1/20/2023",
       },
       // {
       //   name: "Lab 2",
@@ -163,7 +163,7 @@ let days = {
   lectures: [
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
-    "Introductions: Who are we? Syllabus (Zoom)",
+    "Introductions: Who are we? Syllabus",
     "Lab 1",
     "What is CS?",
     // wk 2

@@ -1,4 +1,6 @@
 # TODO
+- Hwk TheBar - Let any number of threads into the bar; Need to process them in order.
+- 
 
 # Change Log
 - **Spring'23** Wrote a new Hwk 6 on thread-safe hashmap

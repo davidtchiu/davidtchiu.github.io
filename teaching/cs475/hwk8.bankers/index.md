@@ -164,7 +164,7 @@ Upon passing the sanity checks, your task is to read in the contents of the give
 // m = number of resource types (3)
 // n = number of threads (5)
 
-boolean isSafe(Available, Alloc, Need) {
+isSafe(Available, Alloc, Need) {
 
 	Work[m] = Available.clone();
 	Finish[n] = [0, 0, ..., 0] for all 0 <= i < n

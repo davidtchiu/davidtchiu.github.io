@@ -91,17 +91,17 @@ When your program is in execution (known as a **process**), the OS gives it a vi
 
 - **Data Segment** stores global and static variables that have been initialized with a non-zero or non-NULL value. The related BSS segment stores uninitialized global and static variables.
 
-- **Heap** stores data allocated by the process during runtime (i.e. with `malloc()` or `calloc()` in C and with new operator in C++ and Java). It grows "upward"
+- **Heap** stores data allocated by the process during runtime (i.e. with `malloc()` or `calloc()` in C and with new operator in C++ and Java). When arbitrary amounts of memory are allocated during runtime, we all this process *dynamic memory allocation*. You'll learn how to do this in a bit, but you'll also need to take care in freeing up any memory that was dynamically allocated.
 
-- **Program Stack** stores data (e.g., local variables, function parameters, return addresses) needed to keep track of program execution and scope of function calls. It is placed at the top of the address space, and grows "downward".
+- **Program Stack** stores data (e.g., local variables, function parameters, return addresses) needed to keep track of program execution and scope of function calls. As your program makes a function call, your stack *grows* by pushing input parameters, local variables declared within that function, and a return address. Collectively, the set of these values make up the function's **stack frame**. As the function returns, all values in its frame are popped off the stack, causing the stack to *shrink*, and returning the stack's frame to the caller function's scope.
 
 ###### How the Program Stack Works (And What Is a Stack Overflow?)
 
 When a process is created, the OS allocates `RLIMIT_STACK` bytes for the stack in that process' address space. A user cannot increase this stack size, but can decrease it. Here's how the stack is used:
 
-- From `main()`, where the program starts running, its command-line arguments and local variables are pushed onto the stack, which grows downwards towards the address `MAX - RLIMIT_STACK`. This data, together with the return address make up what is known as `main()`'s *stack frame*. When `main()` calls another method, a new stack frame is created, and its return address, arguments, and local variables are pushed onto the stack. When a function returns, all the data in its frame are popped off the stack, and we jump back to the return address that was also pushed on, thus restoring the caller's **scope**.
+- From `main(int argc, char *argv[])`, where the program starts running, its command-line arguments `argc` and `argc[]` and any local variables are pushed onto the stack, which grows  towards  address `MAX - RLIMIT_STACK`. When `main()` calls another function, a new stack frame is for the function is created by pushing any return address, arguments, and local variables onto the stack. When a function returns, all the values in its frame are popped off, and control jumps back to the return address that was also pushed on, thus restoring the caller function's **scope**.
 
-- **Stack Overflow**: The stack is allowed to grow and shrink so as long as it stays within the bounds imposed by `RLIMIT_STACK`. Unfortunately, violating this threshold is all too easy. Take a look at the following example, which contains an infinite recursion:
+- **Stack Overflow**: The stack is allowed to grow and shrink so as long as it stays within the bounds imposed by `RLIMIT_STACK`. Unfortunately, violating this threshold is easy. Take a look at the following example, which contains an infinite recursion:
 
   ```c
   #include <stdio.h>
@@ -111,13 +111,13 @@ When a process is created, the OS allocates `RLIMIT_STACK` bytes for the stack i
       f(depth+1);
   }
 
-  int main() {
+  int main(int argc, char* argv[]) {
       f(1);
       return 0;
   }
   ```
 
-- Unlike a program that gets stuck in an infinite loop, programs infinite recursions _will_ eventually crash. Let's check why. Let's see the output of a run of this program:
+- Unlike a program that gets stuck in an infinite loop, programs infinite recursions _will_ eventually crash. Let's see the output of a run of this program:
 
   ```c
   ...
@@ -129,22 +129,22 @@ When a process is created, the OS allocates `RLIMIT_STACK` bytes for the stack i
   Segmentation fault
   ```
 
-- The dreaded **segmentation fault**, a historical umbrella term that means your program tried to access an invalid memory location in its address space. In this particular example, each call to `f(..)` involves pushing the return address followed by pushing int depth on the stack. The stack breaches the `RLIMIT_STACK` limit with the *393036th* recursive call to `f(..)`. When the program tries to push a frame beyond that threshold, the memory-management unit of the OS detects this problem and throws the segmentation fault. The OS kills the offending process, causing it to crash.
+- The dreaded **segmentation fault**, a historical umbrella term that means your program tried to access an invalid memory location in its address space. In this particular example, each recursive call to `f(..)` involves pushing the return address followed by pushing a new value for `int depth` onto  the stack. The stack breaches the `RLIMIT_STACK` limit on the *393036th* recursive call to `f(..)`. When the program tries to push a frame beyond that threshold, the memory-management unit of the OS detects this violation and throws a segmentation fault and terminates the offending process.
 
-  - Indeed, an infinite recursion always crashes the program because the program continues to use up space (on the stack). In contrast, an infinite loop might not eat up stack frames, and that's probably why you've rarely seen an infinite loop be terminated by the OS.
+  - Indeed, an infinite recursion always crashes the program because the program continues to gobble up space on the stack. Because each of the recursive calls is still waiting for the next one to return, no frames ever gets popped off. In contrast, you've probably rarely seen an infinite loop be terminated by the OS, and the reason becomes clear. Each loop iteration has to finish before starting the next iteration. This implies that any function calls you're making must have returned within the body of the loop. This manages the stack size from growing uncontrollably.
 
-<!-- - What's my machine's `RLIMIT_STACK` you ask? This value varies across systems. To find out what this value is on your machine, you can use the shell command `ulimit`. The `-a` option shows all resource limits defined by your OS. If you're only interested in the stack size, you can specify the `-s` flag.
+- What's my machine's `RLIMIT_STACK` you ask? This value varies across systems. To find out what this value is on your machine, you can use the shell command `ulimit`. The `-a` option shows all resource limits defined by your OS. If you're only interested in the stack size, you can specify the `-s` flag.
 
   ```
   $ ulimit -s
   10240
   ```
 
-- The number reported by `ulimit` is in KB ($$2^{10}$$ bytes), so my machine gives each running process a 10MB stack. -->
+- The number reported by `ulimit` is in KB ($$2^{10}$$ bytes), so my machine gives each running process a 10 MB stack.
 
 ##### Part 3: Revisiting the Problem of Unknown Array Sizes at Runtime
 
-Now that we understand how the stack is managed, we return to the original problem of dealing with array sizes that are unknown until runtime. Here's the problematic code we saw earlier:
+Now that we understand how the program stack works, we return to the original problem of dealing with array sizes that are unknown until runtime. Here's the problematic code we saw earlier:
 
 - The problem is on **Line 19**:
 
@@ -385,7 +385,12 @@ Notice the new operator `->` that can be used to access pointers to `struct`s. I
 (*newNode).next = NULL;
 ```
 
-The arrow (->) operator provides a cleaner syntax, and is generally used for dereferencing members in struct pointers!
+The arrow operator `->` provides a cleaner syntax to deference a pointer to a struct field!!
+
+##### Part 6: Debugging and Memory Leaks
+
+
+
 
 #### Assignment: `ls2` -- A Suped-Up `ls` (Graded)
 As you know,  the `ls` UNIX command lists all files and directories in a given directory. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. On top of the recursive descent into subdirectories, your version of `ls` can also perform a search.
@@ -552,7 +557,7 @@ I have included a working solution of my program along with the starter code. Th
               main (41 bytes)
       ```
 
-3. **What's the stack for?** You'll notice that I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. You should study `stack.c` to see how I use `malloc()` in various spots and `free()` up the resources too.
+3. **What's the stack library for?** You'll notice that I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. You should study `stack.c` to see how I use `malloc()` in various spots and `free()` up the resources too.
     - When designing this program, you'll notice that your algorithm can't simply print every file or directory as soon as you encounter them. You might get away with it in Mode 1, but Mode 2 requires that you keep a collection of directories and files you actually want to print at the end.
     - You can use the stack to store a list of files/directories that you wish to print.
 

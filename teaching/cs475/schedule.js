@@ -17,7 +17,7 @@ let days = {
         name: "Hwk 0 (vscode)",
         title: "Setting up VS Code",
         url: "hwk0.vscode/",
-        due: "1/19/2023",
+        due: "1/18/2023",
       },
       {
         name: "Hwk 1 (wordstat)",
