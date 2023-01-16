@@ -1,14 +1,4 @@
 ### Teaching
-
-<!--
-* Introduction to Computer Science
-* Computer Science II
-* Capstone in Computer Science
-* High-Performance Computing
-* Principles of Database Systems
-* Operating Systems
-* Web Data Management -->
-
 My teaching focuses on the areas of data management and computer systems. I teach the following courses on a regular rotation at Puget Sound:
 
 - [CS 161 - Introduction to Computer Science](cs161/)
@@ -20,8 +10,9 @@ My teaching focuses on the areas of data management and computer systems. I teac
 
 Other courses taught:
 
+- Intro to Programming for Engineers and Scientists
 - High-Performance Computing
-- Search Engines
+- Web Data Management
 
 <!-- Spring 2020
 CS 161 - Introduction to Computer Science
@@ -88,11 +79,8 @@ Intro to Computer Science -->
 - **President's Excellence in Teaching Award**\
   University of Puget Sound, 2022
 
-- **Diversity Council Award**\
-  WSU Vancouver, 2010
-
 - **Outstanding Graduate Student Teaching (Eleanor Quinlan Memorial) Award**\
   Department of Computer Science and Engineering, The Ohio State University, 2010
 
 - **Preparing Future Faculty (PFF) Fellow**\
-  The Ohio State University, (Mentor: Prof. Joan Krone @ Denison University), 2009
+  The Ohio State University, (Mentor: Professor Joan Krone @ Denison University), 2009
