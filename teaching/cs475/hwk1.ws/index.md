@@ -26,17 +26,20 @@ Open your VS Code and get connected to your Remote Development environment. If y
 ##### Part I: The Basics
 
 - From your shell, create a directory to store your first program. Let's call this directory `learningTypes/`.
+
   ```bash
-  mkdir learningTypes
+  $ mkdir learningTypes
   ```
+
 - Now navigate inside this directory:
+
   ```bash
-  cd learningTypes
+  $ cd learningTypes
   ```
 - Now let's create a new file using the VSCode editor.
 
   ```bash
-  code types.c
+  $ code types.c
   ```
 
   Paste in the following code, and we'll discuss what each line means later in this assignment.
@@ -158,7 +161,7 @@ Open your VS Code and get connected to your Remote Development environment. If y
 
   - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters `'y'` then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, prompt again. (Hint: C's while-loop syntax is exactly the same as Java's).
 
-##### About That `char` Data Type...
+##### About That `char` Type...
 
 It is worth giving special attention to the char data type. A `char` is essentially an 8-bit integer. That means chars can represent $$2^8 = 256$$ numbers, and each map to a unique character under the ASCII standard. Below I list a few notable mappings, but click here to see the [full list of ASCII codes](https://www.asciitable.com/).
 
@@ -219,7 +222,7 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
 
   #define MAX_VALS 5
 
-  int main()
+  int main(int argc, char *argv[])
   {
       int A[] = {4,3,2,1};
       double B[MAX_VALS];
@@ -257,7 +260,7 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
 
   - The size of the array must be a constant. That is, you cannot input the size of the array from the user, then create the array later. There will be a workaround for this later when we introduce memory allocation (malloc).
 
-  - There is no easy way to determine the size of the array (i.e., no equivalent of `arrayName.length` in Java). This shouldn't be a problem, since arrays must have had a known, constant size when created. But it's up to *you* to track every array's length!
+  - There is no easy way to determine the size of an existing array (i.e., no equivalent of `arrayName.length` in Java). This shouldn't be a problem, since arrays must have had a known size when created. But it's up to *the programmer* to track every array's length!
 
 - Referring back to the source file:
 
@@ -280,7 +283,7 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
 
 ##### Strings
 
-A string in C is essentially an array of `chars`, with one important caveat: The character sequence must be terminated with the null character `'\0'`, which has an integer value of 0. Therefore, C strings are also called "null-terminated strings."
+A string in C is essentially an array of `chars`, with one important caveat: The character sequence **must** be terminated with the null character `'\0'`, which has an integer value of 0. Therefore, C strings are also called "null-terminated strings."
 
 - The following code creates a character array of size 20, and is initialized with a string of length 11, `"Puget Sound"`. Even though the string is only 11 characters long, it actually occupies 12 elements to store the terminating null character.
 
@@ -300,7 +303,7 @@ A string in C is essentially an array of `chars`, with one important caveat: The
   str[11] = '\0';
   ```
 
-- Like Java, a literal in C is enclosed in double-quotes. When assigned as follows, it has the same effect as the code above. The null character is hidden when using this format.
+- Like Java, a literal in C is enclosed in double-quotes. When assigned as follows, it has the same effect as the code above. The null character is hidden when using this syntax. Initialization is the **only time** it is appropriate to use the assignment operator for strings.
 
   ```c
   char str[20] = "Puget Sound";
@@ -309,7 +312,7 @@ A string in C is essentially an array of `chars`, with one important caveat: The
 - After this initialization, the contents of str are shown below. The null character is appended at `str[11]` automatically. Although the remaining unused characters (`str[12]`, ..., `str[19]`) are shown in the figure as having `'\0'`, C may not make any guarantee of this.
   ![](figures/str1.png)
 
-- **Caveat: This is a biggie, and is very different than Java.** The only time you should be using the assignment operator on strings is during initialization (above). Let's suppose we want to re-assign `str` to `"Loggers"`. Unfortunately, unlike Java, the assignment operator will not work here:
+- **Caveat: This is a biggie, and is very different than other languages.** The *only* time you should be using the assignment operator for strings is during initialization (above). Let's suppose we want to re-assign `str` to the string `"Loggers"`. Unfortunately, the assignment operator will not work!
 
   ```c
   #include <stdio.h>
@@ -327,57 +330,47 @@ A string in C is essentially an array of `chars`, with one important caveat: The
   }
   ```
 
-- Instead, we need to write this very cumbersome code to copy one string to another.
+- Instead, we need to write this very cumbersome code to copy one string to another variable.
 
   ```c
-  #include <stdio.h>
-  #define MAX_LEN 20
-
-  int main() {
-      char str[MAX_LEN] = "Puget Sound";
-      char str2[MAX_LEN] = "Loggers";
-
-      //assign str2 to str by copying str2 over
-      int i;
-      for (i=0; i < MAX_LEN && str2[i] != '\0'; i++)
-          str[i] = str2[i];
-      str[i] = '\0';  //don't forget to terminate str!
-
-      printf("%s ", str);
-      return 0;
+  //assign str2 to str by copying str2 over
+  int i;
+  for (i = 0; i < MAX_LEN && str2[i] != '\0'; i++) {
+    str[i] = str2[i];
   }
+  str[i] = '\0';  //don't forget to terminate str!
   ```
 
   After the code runs, `str` would contain:
   ![](figures/str2.png)
 
-- Important! You need to be sure that `str` was declared with enough storage to hold the newly assigned string _plus_ the terminating NULL character! If `str` didn't have the capacity, then you didn't plan far enough ahead! For now, Strings in C are usually declared as `char` arrays having "too much capacity," but that'll change once we talk about memory allocation (malloc).
+- Important! You need to be sure that `str` was declared with enough storage to hold the newly assigned string _plus_ the terminating NULL character!  For now, strings in C are usually declared as `char` arrays having "too much capacity," but that'll change once we talk about memory allocation (malloc).
 
 - As you can imagine, manipulating strings in C can be a pain because you need to do everything at the array level. Forgetting something as simple as terminating the string could have dire consequences. Fortunately, C provides a standard string library `string.h` to help us out. Here are a few useful functions:
 
-  - You should check out [string.h](http://www.cplusplus.com/reference/cstring/) library for the full list of functions.
+  - You should really check out [string.h](http://www.cplusplus.com/reference/cstring/) library for the full list of string functions.
   - `strlen(str)`: returns the length of `str`.
-  - `strncpy(dest, src, num)`: copies the first `num` characters of `src` to `dest`, and null-terminates.
-  - `strncat(dest, src, num)`: concatenates the first `num` characters of `src` to `dest`, and null terminates.
+  - `strcpy(dest, src)`: copies  `src` to `dest`, and null-terminates.
+  - `strcat(dest, src)`: concatenates  `src` to `dest`, and null terminates.
   - `strcmp(str1, str2)`: Just like `compareTo(String)` in Java. This function compares the given strings and returns `0` if equal, a positive int if `str1` is greater than `str2`, and a negative integer otherwise.
   - `sprintf(dest, format, ...)`: This is the most versatile way of building a string. It's got a similar syntax to `printf()`, except instead of printing the string out, the string is placed in `dest`.
 
-- Instead of writing our own, we could therefore use `strncpy()` to copy strings.
+- Instead of writing our own, we could therefore use `strcpy()` to copy strings.
 
   ```c
   #include <stdio.h>
   #include <string.h> //import the string library
   #define MAX_LEN 20
 
-  int main() {
+  int main(int argc, char *argv[]) {
       char str[MAX_LEN] = "Puget Sound";  // using = for initialization is okay
       char str2[MAX_LEN] = "Loggers";
 
-      strncpy(str, str2, strlen(str2));    // replace "Puget Sound" with "Loggers"
+      strcpy(str, str2);    // replace "Puget Sound" with "Loggers"
       printf("%s\n", str);  // prints "Loggers"
 
-      strncat(str, " Rule", 5);   // concatenates " Rule" to str
-      printf("%s\n", str);      // prints "Loggers Rule"
+      strcat(str, " Rule");   // concatenates " Rule" to str
+      printf("%s\n", str);    // prints "Loggers Rule"
 
       int x = 0, y = 1;
       sprintf(str, "x is %d, y is %d", x, y); // easiest way to assign a formatted string
@@ -393,11 +386,9 @@ A string in C is essentially an array of `chars`, with one important caveat: The
 
   - **Line 9**: copies all 7 characters from `str2` to `str`. The function automatically appends the terminating null character at `str[7]`.
 
-  - **Line 10**: when `printf()` is called to print str, it prints every character up to, and not including `'\0'`.
-
   - **Lines 12**: concatenates " Rule" to the end of str, and appends terminating character.
 
-  - **Lines 15-16**: The `strcpy()` function is only good for assigning a string. However, we often need to mix types. The `stdio.h` library includes a `sprintf()` that is used like `printf()`, but the string gets stored inside the variable. (Yes it null terminates.)
+  - **Lines 15-16**: The `strcpy()` function is only good for copying a string to another variable. However, we often need to mix types (e.g. strings concatenated with numbers). The `stdio.h` library includes a `sprintf()` that is used like `printf()`, but the string gets stored inside the variable. (Yes it null terminates.)
 
     - Warning: On Lines 9, 12, and 16, it is assumed that the programmer had allocated enough space in str to hold the new string.
 
@@ -549,6 +540,9 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
 7. Your program must contain several well-defined functions.
 
 8. The bars in the histogram that you print must be vertical (see below). Point deductions will be taken if you print horizontal bars.
+
+
+
 
 ##### Sample Output
 
