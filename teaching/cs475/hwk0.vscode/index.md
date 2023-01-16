@@ -135,7 +135,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 3. Save it from VS Code, and go back down to the terminal window to compile and run it:
 
     ```bash
-    $ gcc -Wall hwk0.c
+    $ gcc -Wall -g hwk0.c
     ```
     Here, `gcc` is the name of the C compiler (gnu c compiler). The `-Wall` flag instructs the compiler to display warnings (even if the code compiles.)
 
@@ -163,7 +163,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 5. It seems a bit strange that your executable would be named something arbitrary like `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <name>` flag. 
 
     ```bash
-    $ gcc -Wall -o helloworld hwk0.c
+    $ gcc -Wall -g -o helloworld hwk0.c
     ```
 
     This would output the binary as `helloworld`, and you can run it using `./helloworld` on the command-line.
