@@ -1,9 +1,9 @@
 # TODO
 - Hwk TheBar - Let any number of threads into the bar; Need to process them in order.
-- 
+- Go back to NULL out dangling pointers in solutions and examples
 
 # Change Log
-- **Spring'23** Wrote a new Hwk 6 on thread-safe hashmap
+- **Spring'23** Added a short valgrind tutorial to Hwk 3.
 - **Spring'23** Modified Hwk 4 to remove .dsh_motd
 - **Spring'23** Modified Hwk 3 to cover string allocation, 2D array allocation; struct allocation; added more string examples; and assignment now more challenging ls2 (syscalls) instead of rpncalc (no syscalls)
 - **Spring'23** Modified Hwk 2 to include structs

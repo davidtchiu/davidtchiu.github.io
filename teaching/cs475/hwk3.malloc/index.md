@@ -12,6 +12,7 @@ Pointers are still a bit mysterious, because we still haven't seen the need for 
 
 - To understand the motivation for dynamic memory allocation.
 - To become familiar with memory management functions:`malloc()`, `realloc()`, and `free()`.
+- To learn how to debug heap memory access using valgrind.
 - To make system calls.
 
 #### Instructions
