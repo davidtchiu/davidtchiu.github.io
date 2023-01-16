@@ -178,7 +178,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 2. To manage dependencies, you need to create a file called `Makefile` and it's usually put in the same directory as all your source code. A `Makefile` contains rules and allows you to determine the order in which files are compiled. They are absolutely imperative for managing larger C projects. 
 
 
-3. Let's see an example. Suppose we're writing a project that contains the following files:
+3. Let's see an example. Suppose we're writing a project that contains the following files (no, I did not provide these files to you -- it's just an example for this narrative):
   - `queue.h` -- contains the shared variables, constants, and function declarations of queues
   - `queue.c` -- contains the implementation of queue functions
   - `defs.h` -- contains some other declarations, like structs and other constants unrelated to the queue
