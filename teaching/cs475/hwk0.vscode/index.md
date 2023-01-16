@@ -85,7 +85,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
   Before graphical user interfaces (GUIs) were possible, the shell was the _only_ user interface to operating systems. We use it to do everything that you can do with GUIs: accessing your files and folders, running and quitting programs, editing files, etc. Because the Linux server that I provided is "headless" (i.e., a stripped-down OS that doesn't support GUIs), you will need to know how to work inside the shell.
   
-- **Pro Tips:** I assume you've have a working knowledge of the command-line shell, but here are some time-saving tips. 
+- **Pro Tips:** I assume you have a working knowledge of the command-line shell, but here are some time-saving tips. 
 
   | Tip |  |
   | :--- | :--- |
@@ -138,19 +138,16 @@ It's therefore important that we all code in a common environment, so I've prepa
     }
     ```
 
-3. Save it from VS Code, and go back down to the terminal window to compile and run it:
+3. Save it and go back down to the terminal window to compile and run it:
 
     ```bash
     $ gcc -Wall -g hwk0.c
     ```
-    Here, `gcc` is the name of the C compiler (gnu c compiler). The `-Wall` flag instructs the compiler to display warnings (even if the code compiles.)
+    Here, `gcc` is the name of the C compiler (gnu c compiler). The `-Wall` flag instructs the compiler to display warnings (even if the code compiles.) The `-g` flag generates debugging information for debuggers that we'll use later on.
 
-    The executable file that is produced is called `a.out`. Type `ls` to make sure it's there. If you don't see `a.out` that means the compilation failed, and there was a syntax error. To run it, use:
+    The executable file that is produced is called `a.out`. Type `ls` on the terminal to make sure it's there. If you don't see `a.out`, that means the compilation failed and there was a syntax error that need to fix. To run it, use the command `./<executable-file>`:
 
     ```bash
-    $ ls
-    a.out hwk0.c
-
     $ ./a.out
     Hello world 0 of 10!
     Hello world 1 of 10!
@@ -164,9 +161,7 @@ It's therefore important that we all code in a common environment, so I've prepa
     Hello world 9 of 10!
     ```
 
-4. If you see this output, then you just ran your first C program for this class! Hopefully this gives you a clear idea about how C development will work in this class.
-
-5. It seems a bit strange that your executable would be named something arbitrary like `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <name>` flag. 
+4. It seems a bit odd that your executable file would be named `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <name>` flag. 
 
     ```bash
     $ gcc -Wall -g -o helloworld hwk0.c
