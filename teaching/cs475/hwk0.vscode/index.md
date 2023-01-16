@@ -54,9 +54,10 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - VS Code might then ask you what platform the remote server is using. If it asks, select `Linux` in the option menu. Then it's going to take a bit of time to install the necessary files to get you set up.
 
-- Once everything is set up, you should see a front page with some information and options on it. Go ahead and exit out of this page to show an empty VS Code editor. On the left-side panel, click on the button called `Open Folder`. Choose `/home/yourUsername` (which should be the default option). Important: This "path" `/home/yourUsername` is known as your **home directory** on the server. Only you (and I) have access to it, so don't worry about the privacy of your code. Think of it as your private, personal folder on the server. This is where all your code will go for this class.
+- Once everything is set up, you should see a front page with some information and options on it. Go ahead and exit out of this page to show an empty VS Code editor. 
+  - From the left-side panel, click on the top button called "Explorer" that looks like like two sheets of paper. Then click on the button called `Open Folder`. Choose `/home/yourUsername` (which should be the default option). Important: This "path" `/home/yourUsername` is known as your **home directory** on the server. Only you (and I) have access to it, so don't worry about the privacy of your code. Think of it as your private, personal folder on the server. This is where all your code will go for this class.
 
--  You may be prompted for your password again, followed by a prompt to trust and accept the secure certificate. Click `yes` on this dialog box.
+-  You may be prompted for your password again, followed by a prompt to trust and accept the secure certificate. Click the checkbox then select `yes` on this dialog box.
 
 - If you did all the steps correctly, you should see the contents of your home directory on the left-side panel. Here's what mine looks like:
 
