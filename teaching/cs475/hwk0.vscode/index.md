@@ -46,7 +46,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - Now click on the "Remote Explorer" button the left-hand panel, shown below. Near the top left, select the `Remote` option from the pull-down menu that may have "Container" selected currently. 
 
-  <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_2.png" width="250px" />
+  <img src="figures/Visual_Studio_Code_and_schedule_js_—_davidtchiu_github_io.png" width="300px" />
 
 - Now you should see the `149.165.174.87` and your username below it. Click on the arrow next to your username to connect.
 

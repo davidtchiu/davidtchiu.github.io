@@ -15,61 +15,61 @@ let days = {
         name: "Hwk 0",
         title: "About Me",
         url: "hwk0.me/",
-        due: "1/23/2023",
+        due: "1/23/2023", // Mon
       },
       // {
       //   name: "Hwk 1",
       //   title: "A Better Circle",
       //   url: "hwk1.circle/",
-      //   due: "2/2/2022",
+      //   due: "2/3/2023", // Fri
       // },
       // {
       //   name: "Hwk 2",
       //   title: "Calculator",
       //   url: "hwk2.calc/",
-      //   due: "2/11/2022",
+      //   due: "2/10/2023", // Fri
       // },
       // {
       //   name: "Hwk 3",
       //   title: "Orca Card",
       //   url: "hwk3.orca/",
-      //   due: "2/21/2022",
+      //   due: "2/20/2023", //Mon
       // },
       // {
       //   name: "Hwk 4",
       //   title: "Robots!",
       //   url: "hwk4.robot/",
-      //   due: "3/2/2022",
+      //   due: "3/1/2023", //Wed
       // },
       // {
       //   name: "Hwk 5",
       //   title: "Loop Practice (The Basics)",
       //   url: "hwk5.loops/",
-      //   due: "3/11/2022",
+      //   due: "3/10/2023",  // Fri
       // },
       // {
       //   name: "Hwk 5b",
       //   title: "Nested Loop Practice",
       //   url: "hwk5b.nestedLoops/",
-      //   due: "3/25/2022",
+      //   due: "3/22/2023",  // Wed
       // },
       // {
       //   name: "Hwk 6",
       //   title: "Tweet Processor",
       //   url: "hwk6.twitter/",
-      //   due: "4/8/2022",
+      //   due: "4/7/2023", // Fri
       // },
       // {
       //   name: "Hwk 7",
       //   title: "Pooled Testing",
       //   url: "hwk7.pooled/",
-      //   due: "4/20/2022",
+      //   due: "4/19/2023",  // Wed
       // },
       // {
       //   name: "Final Hwk Prep",
       //   title: "Final Homework Proposal (Optional)",
       //   url: "hwkF.prep/",
-      //   due: "4/22/2022",
+      //   due: "4/21/2022",  // Fri
       // },
       // // {
       // //   name: "Final Hwk (alternate)",
@@ -81,7 +81,7 @@ let days = {
       //   name: "Final Hwk",
       //   title: "Black Jack",
       //   url: "hwkF.blackjack/",
-      //   due: "5/9/2022",
+      //   due: "5/8/2023", // Mon (exam period)
       // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
