@@ -1,8 +1,8 @@
 ## CS 161 - Intro to Computer Science
 
-### Hwk: Getting Started with C
+### Hwk: Getting Started on C
 
-This is the first part of a multi-part primer on C. You will be programming a simple interactive program in C, and getting familiarized with your programming environment on Linux.
+This is the first part of a multi-part primer on C, a lower-level language that is commonly used in systems programming. This tutorial is written for students who have prior experience in another language (say, Java), so you will often see me making comparisons to language features found in Java.
 
 #### ZyBooks Reading
 
@@ -132,7 +132,7 @@ Open your VS Code and get connected to your Remote Development environment. If y
 
   - **Lines 7-10**: are called preprocessor directives. The `#include <stdio.h>` is like an `import` statement in Java. The `stdio.h` library provides many useful functions for input/output. The `#define <name> [value]` directive defines constant with an optional value.
 
-  - **Line 12**: begins definition of the main function. Its functionality is the same as Java's `main()` method. Studying its signature, it returns an `int` and like Java, it allows arguments to be input from the command-line (more on this later).
+  - **Line 12**: In C, the only necessary function you need to write is `main()`. Its functionality is the same as Java's `main()` method, in that, it's where the program execution begins. Studying its declaration, we find that it returns an `int` and like Java, it allows arguments to be input directly from the command-line (more on command-line arguments later).
   
   - **Lines 14 to 18**: defines some local variables. C supports: `char` (8-bits), `int` (32-bits), `float` (32-bits), and `double` (64-bits). Finally, note that strings in C are simply `char` arrays (more on strings later).
   
