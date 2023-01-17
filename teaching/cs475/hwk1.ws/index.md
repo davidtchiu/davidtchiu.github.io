@@ -161,13 +161,13 @@ Open your VS Code and get connected to your Remote Development environment. If y
 
   - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters `'y'` then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, prompt again. (Hint: C's while-loop syntax is exactly the same as Java's).
 
-##### About That `char` Type...
+##### More about `char`
 
 It is worth giving special attention to the char data type. A `char` is essentially an 8-bit integer. That means chars can represent $$2^8 = 256$$ numbers, and each map to a unique character under the ASCII standard. Below I list a few notable mappings, but click here to see the [full list of ASCII codes](https://www.asciitable.com/).
 
-- Do not confuse the character, `'0'` (which has an ASCII integer value of `48`), with `'\0'` (which has an ASCII integer value of 0). The character `\0` is called the "NULL character" and it plays a big role with C strings, which we'll look at soon.
+- Do not confuse the character, `'0'` (which has an ASCII integer value of `48`), with `'\0'` (which has an ASCII integer value of 0). The character `\0` is called the "NULL character" and it plays a big role with C strings.
 
-- To see that `char`s are really stored as integers, you can print them out using the `%d` formatter to obtain their ASCII values. You can even type-cast `int`s into `char`s, and vice versa.
+- To see that `char`s are really stored numerically, you can print them out using the `%d` formatter to view their ASCII values. You can even type-cast `int`s into `char`s, and vice versa.
 
   ```c
   printf("%c = %d\n", 'A', 'A');  //prints A = 65
@@ -184,28 +184,27 @@ It is worth giving special attention to the char data type. A `char` is essentia
   printf("%d\n", x);  //prints 35, the ASCII value of '#'
   ```
 
-- Therefore, it is possible to do some arithmetics directly on chars, which may look a bit wonky, but can be useful. We could do the following to convert any letter to upper case by subtracting an offset of `32`:
+- Therefore, it is possible to do some arithmetics directly on chars, which may look a bit wonky at first, but can be useful. For instance, we could  convert any letter to upper case by subtracting an offset of `32`:
 
   ```c
-  //make sure c is a lower-case letter in the alphabet
   if (c >= 'a' && c <= 'z') {
       c -= 32;
   }
   ```
 
-- Check out the [ctype](https://www.cplusplus.com/reference/cctype/) library for useful functions on chars.
+- Check out the [ctype](https://www.cplusplus.com/reference/cctype/) library for other useful functions on chars.
 
 ##### Array Basics
 
-C has array support, but unlike Java, arrays in C are not considered objects. C's arrays are even more fundamental. That means there's no `new` keyword. Also, we don't have that nice `array.length` field to tell us the length of an array, so it is the programmer who must always keep track of, and pass along, each array's length. Curiously, there's also no memory protection. You may be able to access out of bounds elements, without an exception being thrown (there are no such thing as "exceptions" in C!), which is not a good thing!
+C has array support, but unlike Java, arrays in C are not considered objects. C's arrays are even more fundamental. That means we don't have that nice `array.length` field to tell us the length of an array, so it is the programmer who must always keep track of, and pass along, each array's length. There's also no memory protection -- so you may be able to access out of bounds elements, without an exception being thrown at runtime! Therefore it is especially important to check for 1-off errors.
 
 - The syntax to create an array is:
 
   ```c
-  dataType arrayName[size];
+  dataType arrayName[N];
   ```
 
-  where `size` is a constant integer. Alternatively, you can also create an array with known values:
+  where `N` is a constant integer. Alternatively, you can also create an array with known values:
 
 - The syntax to create an array is:
 
@@ -256,19 +255,15 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
   50.00 95.00 79.00 37.00 92.00
   ```
 
-- Note a few important differences from Java's arrays:
+- Note a few important differences from Java's handling of arrays:
 
-  - The size of the array must be a constant. That is, you cannot input the size of the array from the user, then create the array later. There will be a workaround for this later when we introduce memory allocation (malloc).
+  - You *should not* input the size of the array from the user, then create the array later. There will be a workaround for this limitation after we introduce memory allocation (malloc) in the next tutorial.
 
-  - There is no easy way to determine the size of an existing array (i.e., no equivalent of `arrayName.length` in Java). This shouldn't be a problem, since arrays must have had a known size when created. But it's up to *the programmer* to track every array's length!
+  - There is no easy way to determine the size of an existing array. This shouldn't be a problem, since arrays must have had a known size when created. So if you're writing a function that inputs an array, you should also pass along the array's size.
 
 - Referring back to the source file:
 
   - **Lines 2-3**: the random number generator functions `srand()` and `rand()` are imported from `stdlib.h`. We also include `time.h` to gain access to the `time()` function, which returns the number of seconds elapsed since 00:00 Jan 1, 1970 (known as Unix Time or Epoch Time).
-
-  - **Lines 9-10**: declare and initialize two arrays.
-
-  - **Lines 13-16**: shows the common for-loop to access array elements. One thing to point out is that the indexing variable cannot be declared in the for-loop in C.
 
   - **Line 19**: to use the random number generator, we need to first seed it with an unsigned integer. It is common to the current time as the seed.
 
@@ -281,11 +276,11 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
   - What happens if you use `rand()` without seeding it first? Eliminate the call to `srand()`, and run the program a few times. What does this tell you about the connection between `srand()` and `rand()`?
 
 
-##### Strings
+##### C Strings
 
-A string in C is essentially an array of `chars`, with one important caveat: The character sequence **must** be terminated with the null character `'\0'`, which has an integer value of 0. Therefore, C strings are also called "null-terminated strings."
+A string in C is essentially an array of `chars`, with one important caveat: The character sequence **must** be terminated with the null character `'\0'`.
 
-- The following code creates a character array of size 20, and is initialized with a string of length 11, `"Puget Sound"`. Even though the string is only 11 characters long, it actually occupies 12 elements to store the terminating null character.
+- The following code creates a `char` array of size 20, and is initialized with a string of length 11, `"Puget Sound"`. Note that, although the string is only 11 characters long, it actually occupies 12 elements to store the terminating NULL character.
 
   ```c
   char str[20];
@@ -303,13 +298,13 @@ A string in C is essentially an array of `chars`, with one important caveat: The
   str[11] = '\0';
   ```
 
-- Like Java, a literal in C is enclosed in double-quotes. When assigned as follows, it has the same effect as the code above. The null character is hidden when using this syntax. Initialization is the **only time** it is appropriate to use the assignment operator for strings.
+- Like Java, a string-literal in C is enclosed in double-quotes. When assigned as follows, it has the same effect as the code above. The NULL character does not appear in this syntax. however, string initialization is the **only time** you can assign a literal to a string variable.
 
   ```c
   char str[20] = "Puget Sound";
   ```
 
-- After this initialization, the contents of str are shown below. The null character is appended at `str[11]` automatically. Although the remaining unused characters (`str[12]`, ..., `str[19]`) are shown in the figure as having `'\0'`, C may not make any guarantee of this.
+- After this initialization, the contents of `str` are shown below. The null character is appended at `str[11]` automatically. Although the remaining unused characters (`str[12]`, ..., `str[19]`) are shown in the figure as having `'\0'`, C may not make any guarantee of this.
   ![](figures/str1.png)
 
 - **Caveat: This is a biggie, and is very different than other languages.** The *only* time you should be using the assignment operator for strings is during initialization (above). Let's suppose we want to re-assign `str` to the string `"Loggers"`. Unfortunately, the assignment operator will not work!
@@ -318,7 +313,7 @@ A string in C is essentially an array of `chars`, with one important caveat: The
   #include <stdio.h>
   #define MAX_LEN 20
 
-  int main() {
+  int main(int argc, char *argv[]) {
       char str[MAX_LEN] = "Puget Sound";
       char str2[MAX_LEN] = "Loggers";
 
