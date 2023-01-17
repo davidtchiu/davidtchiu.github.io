@@ -44,11 +44,9 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - Next, VS Code may ask you to choose an SSH configuration file. If it asks, just select the one that's already selected. 
 
-- Now click on the "Remote Explorer" button the left-hand panel, shown below. Near the top left, select the `Remote` option from the pull-down menu that may have "Container" selected currently. 
+- Now click on the "Remote Explorer" button the left-hand panel, shown below. Near the top left, select the `Remote` option from the pull-down menu that may have "Container" selected currently. Now you should see the `149.165.174.87` and your username below it. Click on the arrow next to your username to connect.
 
   <img src="figures/Visual_Studio_Code_and_schedule_js_—_davidtchiu_github_io.png" width="300px" />
-
-- Now you should see the `149.165.174.87` and your username below it. Click on the arrow next to your username to connect.
 
 - You'll be prompted for your password in a box at the top. Enter the one that I assigned you. (Your Puget Sound ID starting with 5)
 
