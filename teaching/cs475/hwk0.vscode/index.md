@@ -80,7 +80,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - **Accessing the Terminal** The command-line terminal (also called a _shell_) should show up on the bottom of your VS Code editor. If it's not there, go up to the `Terminal` menu and select `New Terminal`. Here's what mine looks like:
 
-  <img src="figures/dchiu__SSH__149_165_174_87_.png" width="400px" />
+  <img src="figures/dchiu__SSH__149_165_174_87_.png" width="500px" />
 
   Before graphical user interfaces (GUIs) were possible, the shell was the _only_ user interface to operating systems. We use it to do everything that you can do with GUIs: accessing your files and folders, running and quitting programs, editing files, etc. Because the Linux server that I provided is "headless" (i.e., a stripped-down OS that doesn't support GUIs), you will need to know how to work inside the shell.
   
