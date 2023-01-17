@@ -111,7 +111,7 @@ typedef <data type> <alias>;
   /**
   * Main function
   */
-  int main() {
+  int main(int argc, char *argv[]) {
       emp_t employeeID;
       printf("Enter an employee id: ");
       scanf("%u", &employeeID);   // read input as unsigned int (%u) into employeeID.
@@ -149,7 +149,7 @@ typedef <data type> <alias>;
 A variable is a symbol that is associated with: (a) its data type and (b) its location in memory. To understand pointers, we need to have a grasp on both. We'll start discussion with the former. Consider the following code snippet:
 
 ```c
-int main() {
+int main(int argc, char *argv[]) {
     char letter = 'p';
     int days = 365;
     double amt = 90000.75;
@@ -171,7 +171,7 @@ Notice from the figure above that that an `int` takes up four contiguous bytes, 
 ```c
 #include <stdio.h>
 
-int main()
+int main(int argc, char *argv[])
 {
     char letter = 'p';
     int days = 365;
@@ -260,14 +260,14 @@ size of 0.5 * 400 / 2: 8 bytes
      > 6
      ```
 
-   - *Line 30*: holds the result of an integer expression, which returns an `int`
+   - **Line 30**: holds the result of an integer expression, which returns an `int`
 
      ```c
      printf("size of 3/2: %lu bytes\n", sizeof(3/2));
      > 4
      ```
 
-   - L*ine 31*: holds the result of a mixed arithmetic expression, which returns a `double`
+   - **Line 31**: holds the result of a mixed arithmetic expression, which returns a `double`
 
      ```c
      printf("size of 0.5 * 400 / 2: %lu bytes\n", sizeof(0.5 * 400 / 2));

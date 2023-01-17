@@ -71,7 +71,7 @@ int getNumEmployees() {
 }
 
 
-int main() {
+int main(int argc, char *argv[]) {
     // Just ask for the array size first
     int num_employees = getNumEmployees();
     Employee my_employees[num_employees]; // just create an array that holds num_employees
@@ -212,7 +212,7 @@ Now that we understand how the program stack works, we return to the original pr
     return num;
   }
 
-  int main() {
+  int main(int argc, char *argv[]) {
     int num_employees = getNumEmployees();
     Employee *my_employees = (Employee*) malloc(num_employees * sizeof(Employee));  // on the heap!
 
@@ -355,9 +355,11 @@ for (int i = 0; i < N; i++) {
 // free each row
 for (int i = 0; i < N; i++) {
     free(array[i]);
+    array[i] = NULL;
 }
 // free original array
 free(array);
+array = NULL;
 ```
 
 
@@ -451,7 +453,7 @@ Further down the report, you'll see another segment:
 ==359874==    still reachable: 0 bytes in 0 blocks
 ==359874==         suppressed: 0 bytes in 0 blocks
 ```
-Here valgrind *suspects* that it has detected a memory leak. Reading the report can be a bit misleading though. It appears the problem occurred inside the `malloc()` function on line 393 of `vg_replace_malloc.c`, but that's highly doubtful. So you'll have to look to the next line, indicating that leak originates on the call to `malloc()` on Line 6 of *our* program. It says that 80 bytes (indeed `sizeof(int) * 20` == 80) were malloc'd, but never freed before the program terminated. Adding a call to `free(buf)` before the program exits would have solved this leak.
+Here valgrind *suspects* that it has detected a memory leak. Reading the report can be a bit misleading though. It appears the problem occurred inside the `malloc()` function on line 393 of `vg_replace_malloc.c`, but that's highly doubtful. So you'll have to look to the next line, indicating that leak originates on the call to `malloc()` on Line 6 of *our* program. It says that 80 bytes (indeed `sizeof(int) * 20` == 80) were malloc'd, but never freed before the program terminated. Adding a call to `free(buf1)` before the program exits would have solved this leak.
 
 **Important** For all programs (starting from this assignment) that you write from now on, valgrind should absolutely be a part of your debugging workflow to save you hours of time.
 
