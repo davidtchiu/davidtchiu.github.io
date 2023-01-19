@@ -48,16 +48,20 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 5. Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax to print a something to the screen is:
 
    ```java
-   System.out.println(stringYouWantPrinted);
+   System.out.println(thingYouWantPrinted);
    ```
 
-   In programming a sequence of symbols or characters is called a _String_. Strings in Java are always enclosed between a pair of double quotes, `"like this"`. If you tried to print out your name without using the quotes, the code won't compile.
+   When programming, a sequence of symbols or characters is called a _String_. Strings in Java are always enclosed between a pair of double quotes, `"like this"`. If you tried to print out your name without using the quotes, the code won't compile.
 
-6. Go ahead and test this instruction out. Write a print statement inside the body of the `printMyName` method to print out your name.
+6. Go ahead and test this instruction out. Write a print statement inside the body of the `printMyName()` method to print out your name.
 
-7. After you're done with `printMyName()`, it's time to test it out. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
+7. After you're done with `printMyName()`, it's time to test it out. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right-click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
 
-8. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName` code. The new method block can go before or after the `printMyName` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
+8. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName` code. The new method block can go before or after the `printMyName()` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
+
+   - Uh oh. Did the print-out from the previous interactions get erased when you called `printBday()`? Don't worry, there's an easy way to fix that. Click anywhere on the output screen, and from the menu up top, click `Options` then uncheck `Clear screen at method call`. This should save all the outputs on the screen from before.
+
+   - Saving old outputs on the screen *will* get annoying though, when your programs get more complicated. So just remember that you can always re-enable this option.
 
 9. Let's try something more involved. Write a method called `printInitials()` that prints out your first, middle (applicable), and last initials in "block form" (see below). Notice the formatting --- you should use the letter itself to create the block shape. For instance, my initials DTC might be printed as follows:
 
@@ -79,7 +83,7 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
     ```
     I am a professor of computer science at University of Puget Sound.
     I started teaching here in 2014.
-    I live in Gig Harbor with my wife and two kids.
+    I live in Tacoma, WA.
     ```
 
 11. Finally, it sure would be nice to have a method that would print out your initials, your name, birthday, and bio **all at once**. Write a method called `printMyInfo`. Here's the key: You wouldn't want to have to _rewrite_ all those print statements from before! (Code duplication should be avoided always!)
@@ -90,16 +94,22 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
     ```
      GGGGGGG    HHH   HHH
-    GG      G   HHH   HHH
+    GG     GG   HHH   HHH
     GG          HHHHHHHHH
     GG   GGGG   HHH   HHH
      GGGGGGG    HHH   HHH
 
     Grace Hopper
     12/09/1906
-    Grace Brewster Murray Hopper was an American computer scientist and United States Navy rear admiral.
-    One of the first programmers of the Harvard Mark I computer, she was a pioneer of computer programming who invented one of the first linkers.
-    Hopper was the first to devise the theory of machine-independent programming languages, and the FLOW-MATIC programming language she created using this theory was later extended to create COBOL, an early high-level programming language still in use today.
+    Grace Brewster Murray Hopper was an American computer scientist and 
+    United States Navy rear admiral. One of the first programmers of the 
+    Harvard Mark I computer, she was a pioneer of computer programming 
+    who invented one of the first linkers.
+    
+    Hopper was the first to devise the theory of machine-independent 
+    programming languages, and the FLOW-MATIC programming language she 
+    created using this theory was later extended to create COBOL, an 
+    early high-level programming language still in use today.
     ```
 
 12. You're free to add as many more methods or statements as you like!

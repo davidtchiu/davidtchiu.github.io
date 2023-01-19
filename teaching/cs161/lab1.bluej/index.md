@@ -115,7 +115,7 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
     - You **can't** flip any shapes.
     - You **can**, however overlap shapes, and the shape that you move last will appear on top.
 
-  - Now take your design from paper to screen! **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** There is no "record" function in BlueJ -- open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window and type in the steps. This recording becomes the algorithm to create your drawing.
+  - Now take your design from paper to screen. **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** There is no "record" function in BlueJ -- open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window and type in the steps. (You can record your steps under **Part III, question 5**). This recording becomes the algorithm for anyone (or anything -- any computer) to create your drawing.
 
   - When you're done, erase your drawing by clicking on the reset arrow &#8617;, and wait until "time" is called.
 
