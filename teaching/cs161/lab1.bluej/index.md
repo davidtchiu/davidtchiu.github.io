@@ -107,7 +107,7 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
   - To remove Pac-Man, you can click on the reset arrow &#8617; found at the _bottom right corner_ of BlueJ. This will reset the entire process.
 
-  - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (maybe just 3-4 shapes should suffice) because your partner will have to reproduce your drawing before the lab period is over! Before you design anything, keep in mind the following limitations in our simple tool (though these would all be great functionalities to add in a future assignment!):
+  - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (just 4-5 shapes should suffice) because your partner will have to reproduce your drawing before the lab period is over! Before you design anything, keep in mind the following limitations in our simple tool (though these would all be great functionalities to add in a future assignment!):
 
     - You **can't** stretch or shrink a circle into an oval.
     - You **can't** stretch or shrink a square into a rectangle (but you *can* line two squares up next to each other)
@@ -119,7 +119,7 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
   - When you're done, erase your drawing by clicking on the reset arrow &#8617;, and wait until "time" is called.
 
-  - When I call "time", you will need to find another student and exchange algorithms (you can email them your algorithm, for example). By following their algorithm exactly as written (even if you think you found an error), you should be able to reproduce each other's drawings!
+  - You will need to find another student and exchange algorithms (you can email them your algorithm, or take a picture of it with your phone, for example). By following their algorithm exactly as written (even if you think you found an error), you should be able to reproduce each other's drawings!
 
   - Once you are finished, give your partner some feedback: Describe whether there were any problems you ran into when following the algorithm. (It's okay for there to be problems -- you aren't getting graded on that.)
 
