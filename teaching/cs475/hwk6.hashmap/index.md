@@ -192,7 +192,7 @@ fields are initialized.
 
 [5pt] All locks should be hidden from users.
 
-[5pt] You properly free up any dynamically allocated memory.
+[5pt] Your program is free of memory leaks and dangling pointers.
 ```
 
 #### Submitting Your Assignment

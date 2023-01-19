@@ -645,12 +645,13 @@ I have included a working solution of my program along with the starter code. Th
 #### Grading
 
 ```
-This assignment will be graded out of 20 points:
+This assignment will be graded out of 25 points:
 [2pt] Your program recursively descends all subdirectories.
 [3pt] Implementation of Mode 1.
 [10pt] Implementation of Mode 2.
 [3pt] Your output of files and directories conforms to the specified format.
 [2pt] Your program properly resolves command line arguments.
+[5pt] Your program is free of memory leaks and dangling pointers.
 ```
 
 #### Submitting Your Assignment

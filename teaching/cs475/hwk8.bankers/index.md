@@ -10,7 +10,7 @@
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk7-bankers](https://github.com/davidtchiu/cs475-hwk7-bankers). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk8-bankers](https://github.com/davidtchiu/cs475-hwk8-bankers). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
       ```
       git clone <your-github-url-for-this-project>
@@ -177,7 +177,8 @@ isSafe(Available, Alloc, Need) {
 }
 ```
 
-If all threads can finish, then you should print `SAFE`, followed by a "safe schedule", that is, the sequence of the simulated execution of threads such that all threads can finish. You just need to print one safe schedule for full credit. If the state is determined `UNSAFE`, then further print out the threads that can't finish. Example outputs found below.
+If all threads can finish, then you should print `SAFE`, followed by a "safe schedule", that is, the sequence of the simulated execution of threads such that all threads can finish. You just need to find and print **ALL** safe schedule for full credit. If the state is determined `UNSAFE`, then further print out the threads that can't finish. Example outputs found below.
+
 
 #### Example SAFE Output
 
@@ -204,6 +205,21 @@ $ less safe.txt
 
 $ ./bankers safe.txt
 SAFE:  T1 T3 T0 T2 T4
+SAFE:  T1 T3 T0 T4 T2
+SAFE:  T1 T3 T2 T0 T4
+SAFE:  T1 T3 T2 T4 T0
+SAFE:  T1 T3 T4 T0 T2
+SAFE:  T1 T3 T4 T2 T0
+SAFE:  T1 T4 T3 T0 T2
+SAFE:  T1 T4 T3 T2 T0
+SAFE:  T3 T1 T0 T2 T4
+SAFE:  T3 T1 T0 T4 T2
+SAFE:  T3 T1 T2 T0 T4
+SAFE:  T3 T1 T2 T4 T0
+SAFE:  T3 T1 T4 T0 T2
+SAFE:  T3 T1 T4 T2 T0
+SAFE:  T3 T4 T1 T0 T2
+SAFE:  T3 T4 T1 T2 T0
 ```
 
 #### Example UNSAFE Output
@@ -231,7 +247,7 @@ $ ./bankers unsafe.txt
 UNSAFE:  T0 T4 can't finish
 ```
 
-#### Extra Credit
+<!-- #### Extra Credit
 
 A fair amount of extra credit can be earned if your program can list _all_ SAFE schedules. The behavior for UNSAFE is unchanged. You must tell me which of the following options you'd like me to apply. Exam scores cannot exceed the max score of 100, however. This is an all-or-nothing deal: Your bonus solution must be fully functioning to obtain the points and no partial bonus points will be given.
 
@@ -240,28 +256,13 @@ A fair amount of extra credit can be earned if your program can list _all_ SAFE 
 
 ```
 $ ./bankers safe.txt
-SAFE:  T1 T3 T0 T2 T4
-SAFE:  T1 T3 T0 T4 T2
-SAFE:  T1 T3 T2 T0 T4
-SAFE:  T1 T3 T2 T4 T0
-SAFE:  T1 T3 T4 T0 T2
-SAFE:  T1 T3 T4 T2 T0
-SAFE:  T1 T4 T3 T0 T2
-SAFE:  T1 T4 T3 T2 T0
-SAFE:  T3 T1 T0 T2 T4
-SAFE:  T3 T1 T0 T4 T2
-SAFE:  T3 T1 T2 T0 T4
-SAFE:  T3 T1 T2 T4 T0
-SAFE:  T3 T1 T4 T0 T2
-SAFE:  T3 T1 T4 T2 T0
-SAFE:  T3 T4 T1 T0 T2
-SAFE:  T3 T4 T1 T2 T0
-```
+
+``` -->
 
 #### Grading
 
 ```
-This assignment will be graded out of 55 points:
+This assignment will be graded out of 75 points:
 [2pt] Print out an error message if no file is given on the command line.
 
 [3pt] Print out an error message if the file given on the command line
@@ -281,8 +282,10 @@ This assignment will be graded out of 55 points:
 	resource type.
 
 [25pt] The safety algorithm is properly implemented, and does not carry
-       side effects. That is, its execute will not permanently change the
+       side effects. That is, its execution will not permanently change the
        state of your system. (This is why we clone various structures.)
+
+[20pt] If the state is safe, your algorithm prints *all* safe schedules.
 
 [5pt] Because the number of threads and resource types are unknown until
       untime, your program needs to observe good memory management, including

@@ -15,7 +15,7 @@ I need your help to finish my code! I got things started, so take a look at the 
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk6-thebar](https://github.com/davidtchiu/cs475-hwk6-thebar). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From  VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk7-thebar](https://github.com/davidtchiu/cs475-hwk7-thebar). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From  VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
 	```
 	git clone <your-github-url-for-this-project>
@@ -139,7 +139,7 @@ Cust 1											|
 #### Grading
 
 ```
-This assignment will be graded out of 50 points:
+This assignment will be graded out of 55 points:
 [5pt] Threads are correctly spawned and reaped. Semaphore creation and
        removal are correctly managed.
 
@@ -150,6 +150,8 @@ This assignment will be graded out of 50 points:
        eventually get served and leave.
 
 [2pt] Your program observes good style and commenting.
+
+[5pt] Your program is free of memory leaks and dangling pointers.
 ```
 
 #### Submitting Your Assignment

@@ -260,13 +260,13 @@ Verifying... largest error between parallel and sequential matrix: 0.000000
 #### Grading
 
 ```
-This assignment will be graded out of 45 points:
+This assignment will be graded out of 60 points:
 
 [5pt] User input is properly handled, and invalid commands generates an error.
 
 [5pt] Sequential version of mmm is properly implemented.
 
-[20pt] Parallel version of mmm is properly implemented.
+[30pt] Parallel version of mmm is properly implemented.
 
 [5pt] You must verify that parallel version is correct by comparing the result
       matrix with one generated using the sequential algorithm.
@@ -276,6 +276,8 @@ This assignment will be graded out of 45 points:
 
 [5pt] You are properly timing your results over multiple runs, and timing only
       relevant portions of code.
+
+[5pt] Your program is free of memory leaks and dangling pointers.
 ```
 
 #### Submitting Your Assignment

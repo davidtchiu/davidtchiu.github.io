@@ -248,9 +248,9 @@ Students think you're inspiring!
 #### Grading
 
 ```
-This assignment will be graded out of 70 points:
+This assignment will be graded out of 80 points:
 
-[35pt] User input is properly handled, and invalid commands (not found in PATH or
+[40pt] User input is properly handled, and invalid commands (not found in PATH or
     current working directory) generates an error.
 
 [25pt] Running a valid command works as expected (in-foreground vs. in-background too).
@@ -263,6 +263,8 @@ This assignment will be graded out of 70 points:
 [1pt] exit and pwd works as expected
 
 [1pt] Your program observes good style and commenting.
+
+[5pt] Your program is free of memory leaks and dangling pointers.
 ```
 
 #### Submitting Your Assignment
