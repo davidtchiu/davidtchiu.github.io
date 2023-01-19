@@ -15,17 +15,12 @@ I need your help to finish my code! I got things started, so take a look at the 
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk6-thebar](https://github.com/davidtchiu/cs475-hwk6-thebar). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk6-thebar](https://github.com/davidtchiu/cs475-hwk6-thebar). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From  VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
 	```
 	git clone <your-github-url-for-this-project>
 	```
 
-- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your VS Code using:
-
-	```
-	git clone https://github.com/davidtchiu/cs475-hwk6-thebar
-	```
 
 #### Working Solution
 
@@ -159,26 +154,9 @@ This assignment will be graded out of 50 points:
 
 #### Submitting Your Assignment
 
-After you have completed the homework, use the following to submit your work on Canvas. I assume you wrote your program inside your VS Code. There are two options to submit your work.
+1. Commit and push your code to your Github repo. Make sure your repo is public (or private and accessible by me).
 
-1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
-
-2. If you'd rather submit a "zipped" file on Canvas, do the following:
-
-   - From the Terminal, navigate to the directory that contains your homework directory.
-   - Navigate to the directory that contains your homework directory.
-   - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
-
-     - For example, if my homework directory is called `hwk6/`, and I want the zipped file to be called `hwk6.tar.gz`, use: `tar -czvf hwk6.tar.gz hwk6/`
-     - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
-
-   - Navigate to our course on Canvas, and find the assignment submission box.
-
-   - Click on Submit Assignment, and you should be able to "browse" for your file
-
-   - When you've selected the proper file, click Submit Assignment again to upload it.
-
-3. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+2. On canvas, simply submit the URL to your Github repo. No other form of submission is accepted.
 
 #### Credits
 

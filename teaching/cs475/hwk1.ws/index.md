@@ -485,19 +485,13 @@ You are to create a program generates some basics statistics given user-input st
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- If you want to submit your code on Github, do this step. If not, you may skip this step. Make sure you already have a Github account. Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk1-wordstat](https://github.com/davidtchiu/cs475-hwk1-wordstat). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your VS Code remote development environment open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk1-wordstat](https://github.com/davidtchiu/cs475-hwk1-wordstat). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL of _your_ newly forked project. Then follow the rest of the instructions below. From your VS Code remote development environment, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
   ```
   git clone <your-github-url-for-this-project>
   ```
 
-- If you aren't planning to submit your assignment via a Github link, then you can simply download the starter files onto your VS Code remote development using:
-
-  ```
-  git clone https://github.com/davidtchiu/cs475-hwk1-wordstat
-  ```
-
-- This should download the starter code to your virtual machine, in a directory called `cs475-hwk1-wordstat`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
+- This should download the starter code to your in a directory called `cs475-hwk1-wordstat`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
 
 - `Makefile` - Do not make changes to this file. It is used for compiling.
 - `menu.h` - This file should contain menu-option constants, function declarations
@@ -647,26 +641,9 @@ This assignment will be graded out of 20 points:
 
 #### Submitting Your Assignment
 
-After you have completed the homework, use the following to submit your work on Canvas. I assume you wrote your program inside your virtual machine. There are two options to submit your work.
+1. Commit and push your code to your Github repo. Make sure your repo is public (or private and accessible by me).
 
-1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
-
-2. If you'd rather submit a "zipped" file on Canvas, do the following:
-
-   - From the Terminal, navigate to the directory that contains your homework directory.
-   - Zip up your homework directory: `tar -czvf <file_name>.tar.gz <homework_dir>`
-
-     - For example, if my homework directory is called `hwk1/`, and I want the zipped file to be called `hwk1.tar.gz`, use: `tar -czvf hwk1.tar.gz hwk1/`
-     
-     - You can un-zip this file later using: `tar -xzvf <file_name>.tar.gz`
-
-   - Navigate to our course on Canvas, and find the assignment submission box.
-
-   - Click on Submit Assignment, and you should be able to "browse" for your file
-
-   - When you've selected the proper file, click Submit Assignment again to upload it.
-
-3. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+2. On canvas, simply submit the URL to your Github repo. No other form of submission is accepted.
 
 #### Credits
 

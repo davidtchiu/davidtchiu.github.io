@@ -96,7 +96,7 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
      GGGGGGG    HHH   HHH
     GG     GG   HHH   HHH
     GG          HHHHHHHHH
-    GG   GGGG   HHH   HHH
+    GG   GGGGG  HHH   HHH
      GGGGGGG    HHH   HHH
 
     Grace Hopper
