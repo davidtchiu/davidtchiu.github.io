@@ -57,13 +57,13 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
 7. After you're done with `printMyName()`, it's time to test it out. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right-click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
 
-8. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName` code. The new method block can go before or after the `printMyName()` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
+8. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName()` code. The new method block can go before or after the `printMyName()` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
 
-   - Uh oh. Did the print-out from the previous interactions get erased when you called `printBday()`? Don't worry, there's an easy way to fix that. Click anywhere on the output screen, and from the menu up top, click `Options` then uncheck `Clear screen at method call`. This should save all the outputs on the screen from before.
+   - Uh oh. Did the print-out from the previous interactions get reset when you called `printBday()`? Don't worry, there's an easy way to fix that. Click anywhere on the output screen, and from the menu up top, click `Options` then uncheck `Clear screen at method call`. This should save all the outputs on the screen from before.
 
    - Saving old outputs on the screen *will* get annoying though, when your programs get more complicated. So just remember that you can always re-enable this option.
 
-9. Let's try something more involved. Write a method called `printInitials()` that prints out your first, middle (applicable), and last initials in "block form" (see below). Notice the formatting --- you should use the letter itself to create the block shape. For instance, my initials DTC might be printed as follows:
+9. Let's try something a little more involved. Write a method called `printInitials()` that prints out your first, middle (if applicable), and last initials in "block form" (see below). Notice the formatting --- you should use the letter itself to create the block shape. For instance, my initials DTC might be printed as follows:
 
    ```
    DDDDDD   TTTTTTTTT   CCCCCC
@@ -74,8 +74,8 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
    You'll need to print multiple lines for this method.
 
-   - The first way to do this is the obvious one: You can simply use more than one print statement to print out each sentence. `System.out.println(...)` will insert a line break each time it's used.
-   - Second way: For a challenge, let's say you wanted to use only a _single_ print statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens.
+   - The first way to do this is perhaps the obvious way: You can simply call `System.out.println(...)` multiple times. Each call will automatically insert a line-break at the end of the line.
+   - Second way: Let's say you wanted to use only a _single_ print statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line-break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens in the output.
    - Compile and test it out.
 
 10. Next, create a new method called `printBio()` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. For instance, mine might print:
@@ -86,11 +86,11 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
     I live in Tacoma, WA.
     ```
 
-11. Finally, it sure would be nice to have a method that would print out your initials, your name, birthday, and bio **all at once**. Write a method called `printMyInfo`. Here's the key: You wouldn't want to have to _rewrite_ all those print statements from before! (Code duplication should be avoided always!)
+11. Finally, it sure would be nice to have a method that would print out your initials, your name, birthday, and bio **all at once**, instead of having to call separate methods. Write a method called `printMyInfo()`. Here's the key: You wouldn't want to have to _rewrite_ all those print statements from before! (Pro-tip: Code duplication should be avoided --- always!)
 
-    - Instead, We want to simply call (re-use) the other three methods you've just written. To call an existing method, you just have to write `methodName();`, e.g., `printMyName();` would cause Java to find and run the `printMyName` method.
+    - Instead, We want to simply call (re-use) the other three methods you've already written. To **call** an existing method from the code itself, you just have to write `methodName();` in the body of `printMyInfo()`.
 
-    Here's an example of what someone's output might like:
+    Here's an example of what someone's output might like after calling `printMyInfo()`:
 
     ```
      GGGGGGG    HHH   HHH
@@ -112,12 +112,16 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
     early high-level programming language still in use today.
     ```
 
-12. You're free to add as many more methods or statements as you like!
+12. Feel free to play with it more and customize your outputs however you like. You're free to add as many methods or statements as you like! Experiment with things like:
 
-13. **Final check:** It's important to note that everything you write in Java is case-sensitive. You _must_ adhere to the proper casing. For instance, when I specify that your method should be named `printMyName`, you cannot name it `Printmyname`. Typos, using the wrong name, or wrong case will screw up our automatic _grading_ code.
+   - How would you print out a "tab?"
+   - How would you print out a double quote (")?
+   - What if you didn't want `System.out.println(...)` to automatically insert a line-break at the end of the line? Is there another method to print without a line break?
 
-    - Go back to make sure your methods adhere to my specification.
-    - You will do this for all remaining homework and labs.
+13. **Final check:** It's important to note that everything you write in Java is case-sensitive. You _must_ adhere to the proper casing. For instance, when I specify that your method should be named `printMyName()`, you should not name it `printmyname()`. Typos, using the wrong name, or wrong case will screw up our automatic _grading_ tool.
+
+    - Go back to make sure your methods adhere to my given specification.
+    - Remember to do this for all remaining homework and labs.
 
 #### Grading
 
@@ -130,7 +134,7 @@ This assignment will be graded out of a total of 25pts.
 
 [3pts] Correct implementation of printBio().
 
-[3pts] Correct implementation of printMyInfo. This method should
+[3pts] Correct implementation of printMyInfo(). This method should
        not duplicate any code that you had previously written
        (i.e., the print statements). This method should simply call
        the existing methods that you'd written.
