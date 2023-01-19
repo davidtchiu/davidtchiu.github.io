@@ -107,9 +107,10 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
   - To remove Pac-Man, you can click on the reset arrow &#8617; found at the _bottom right corner_ of BlueJ. This will reset the entire process.
 
-  - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (maybe just 3-4 shapes should suffice) because your partner will have to reproduce your drawing before the lab period is over! Before you design anything, keep in mind the following limitations in our simple tool:
+  - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (maybe just 3-4 shapes should suffice) because your partner will have to reproduce your drawing before the lab period is over! Before you design anything, keep in mind the following limitations in our simple tool (though these would all be great functionalities to add in a future assignment!):
 
-    - You **can't** stretch or shrink a circle into an oval; or a square into a rectangle.
+    - You **can't** stretch or shrink a circle into an oval.
+    - You **can't** stretch or shrink a square into a rectangle (but you *can* line two squares up next to each other)
     - You **can't** rotate any shapes.
     - You **can't** flip any shapes.
     - You **can**, however overlap shapes, and the shape that you move last will appear on top.
