@@ -168,7 +168,7 @@ let days = {
     "What is CS?",
     // wk 2
     "CS: hardware, languages",
-    "Circle class: Comments, fields, data types",
+    "Reading Java code: comments, fields, data types",
     "Lab 2",
     "Writing constructors; parameters, assignment statement",
     // wk 3

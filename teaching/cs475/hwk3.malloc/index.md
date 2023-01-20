@@ -367,7 +367,7 @@ array = NULL;
 ```
 
 
-###### Part 5c: Instantiating Structs (Know this too!!)
+###### Part 5c: Instantiating Structs (Know this also!!!)
 A great strength of `malloc()` lies in allowing us to create and manage dynamic data structures that are unbounded in size, like linked lists and trees. Assume we've declared the following `struct` for a Linked List node:
 
 ```c
