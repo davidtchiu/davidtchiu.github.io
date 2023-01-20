@@ -149,24 +149,21 @@ typedef <data type> <alias>;
 A variable is a symbol that is associated with: (a) its data type and (b) its location in memory. To understand pointers, we need to have a grasp on both. We'll start discussion with the former. Consider the following code snippet:
 
 ```c
-int main(int argc, char *argv[]) {
-    char letter = 'p';
-    int days = 365;
-    double amt = 90000.75;
-
-    //(more code omitted)
-}
+char letter = 'p';
+int days = 365;
+double amt = 90000.75;
 ```
 
 Although high-level languages like C, Java, etc., hide it from us, the three variables have to exist *somewhere* in your computer's memory. Let's take a look at a make-believe snapshot of my computer's memory as it runs the code shown above.
 
 You might recall from your architecture class that a **CPU word** is the fundamental unit of data transfer between memory and CPU. In these tutorials, we'll assume that a word is a block of four contiguous bytes (i.e., 32-bits), though it is worth mentioning that many CPUs now fully support 8-byte words (i.e., 64-bits).
 
-In the figure to the left, only the word's start address is shown, but know that each byte within the word addressable too. When a CPU requests the byte located at a certain address, say `1117`, then the *full* word ranging from address `1116` to `1119` is automatically retrieved from memory and brought into one of the CPU's 32-bit registers. The CPU then extracts the desired byte from the word, if necessary (sometimes you don't need to access a particular byte within the word).\
- <img border="1" width="400px" src="figures/proj2-ex1.png"/>
+In the figure below, only each word's start address is shown, but know that each byte within the word addressable too. When a CPU requests the byte located at a certain address, say `1117`,  the *full* word ranging from address `1116` to `1119` is automatically retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte from the word, if necessary.\
+
+ <img border="1" width="450px" src="figures/proj2-ex1.png"/>
 
 **Important Operator: `sizeof()`**
-Notice from the figure above that that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each  type actually vary across architectures. **So how did I know these storage requirements apply to my computer?** C provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies in memory. Let's see what it does.
+Notice from the figure above that that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each  type actually vary across architectures. **So how did I know these storage requirements apply to my machine?** C provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies in memory. Let's see what it does.
 
 ```c
 #include <stdio.h>
@@ -290,7 +287,7 @@ size of 0.5 * 400 / 2: 8 bytes
 
 ##### Part 2: Understanding Variables - Addressing
 
-Every piece of data in your program, including variables and literals (e.g., 2, 3.14, etc.), is stored in your computer using two pieces: (1) its content, and (2) its location address in memory. As programmers, we generally only have control over its content. It's up to your OS to find a location to store it. It is possible, however, for programmers to ask the system for the addresses of your data. 
+Every piece of data in your program, including variables and literals (e.g., 2, 3.14, etc.), is stored in your computer using two pieces: (1) its content, and (2) its location address in memory. We generally only have control over its content. It's up to your OS to find a location in memory to store it. It is possible, however, for programmers to ask the system for the addresses of your data. 
 
 This section focuses on the support for working with a variable's location in C. In particular, we will focus on three new syntax: the address-of operator (`&var`), the pointer-declaration operator (`type *var`), and the de-reference operator (`*var` and `var->field`).
 
@@ -316,7 +313,7 @@ This section focuses on the support for working with a variable's location in C.
    printf("Value of ptr: %p\n", ptr);
    ```
 
-2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**.\
+2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**.
 
 3. Here is an example output when this program is executed.
 
@@ -416,8 +413,8 @@ Now that we have a good handle on data types and addressing, let's put everythin
    double *a = NULL, *b = NULL, c = 10;
    b = &c; //point b at c
    a = b;  //point a at c
-   *b = 15; // c is now 15
-   *a += 5; // c is now 20
+   *b = 15; // dereference b! c is now 15
+   *a += 5; // dereference a! c is now 20
    ```
 
 - Memory contents after Line 4's assignment statement `*b = 15`.\
@@ -434,7 +431,7 @@ Now that we have a good handle on data types and addressing, let's put everythin
 
   - **Do this. For real.** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? (If you need help figuring this out, read on to the next section and try again.)
 
-##### Part 4: Function's "Output" Parameters
+##### Part 4: "Output" Parameters
 Haven't you ever wished that a function/method could return more than one thing? To do this Java, you always had to create a new class that stored multiple values, or returned an array or other data structure. You can also do any of the above in C, but pointers give us another way to "return" multiple values.
 
 1. Consider the following function used to swap the values of two integer variables:
@@ -523,8 +520,8 @@ Haven't you ever wished that a function/method could return more than one thing?
      #include <stdio.h>
 
      typedef struct Student {
-     float gpa;
-     char name[25];
+      float gpa;
+      char name[25];
      } Student;
 
      /**
@@ -536,7 +533,7 @@ Haven't you ever wished that a function/method could return more than one thing?
        *gpaOut = 0.0;
      }
 
-     int main() {
+     int main(int argc, char *argv[]) {
        Student stu;
 
        printf("Enter a name: ");
@@ -553,13 +550,13 @@ Haven't you ever wished that a function/method could return more than one thing?
      ```
 
      ```
-       Enter a name: David
-       Enter a GPA: 4.0
-       Name: David, GPA: 4.00
-       Name: David, GPA: 0.00
+     Enter a name: David
+     Enter a GPA: 4.0
+     Name: David, GPA: 4.00
+     Name: David, GPA: 0.00
      ```
 
-##### Part 5: Pointers' Connection to Arrays (Pointer Arithmetic)
+##### Part 5: Connection to Arrays (Pointer Arithmetic)
 In this section, we'll explore the relationship between pointers and arrays (and strings).
     
 1.  Study the following source file, then compile and run it.
@@ -686,7 +683,7 @@ In this section, we'll explore the relationship between pointers and arrays (and
         }
     }
 
-    int main() {
+    int main(int argc, char *argv[]) {
         char univ[] = "puget sound";
         strToUpper(univ);
         printf("%s\n", univ);
@@ -709,9 +706,9 @@ In this section, we'll explore the relationship between pointers and arrays (and
     - **Line 19:** The main function creates a string and we assume it is placed in bytes 272372 to 272383.
 
     - **Line 20 (and Line 7):** calls `strToUpper(univ)`, which implicitly creates a pointer variable `s` that refers to the first character in `univ`. The memory contents at this point is shown below:\
-      <img border="1" width="250px" src="figures/proj2-str2upper1.png" />\
+      <img border="1" width="350px" src="figures/proj2-str2upper1.png" />\
       Right before `strToUpper()` returns, the memory contents are shown below:\
-      <img border="1" width="250px" src="figures/proj2-str2upper2.png" />\
+      <img border="1" width="350px" src="figures/proj2-str2upper2.png" />\
       Every time `s++` is called (Line 13), it increments the pointer to the next character in `univ`. Eventually, `s` points to `univ[11]`, allowing it to break out of the loop.
 
 ###### Do these exercises (not graded):

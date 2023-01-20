@@ -434,7 +434,7 @@ returnType funcName(param1, param2, ...) {
       s[i] = '\0';    // don't forget to NULL-terminate string s
   }
 
-  int main() {
+  int main(int argc, char *argv[]) {
       char str[20] = "Hello";
       my_strcat(str, " World!!");
       printf("%s", str);
