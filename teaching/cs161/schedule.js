@@ -8,6 +8,14 @@ let days = {
       name: "Notes and Sample Code",
       url: "https://canvas.pugetsound.edu"
     },
+    {
+      name: "Download BlueJ",
+      url: "https://bluej.org"
+    },
+    {
+      name: "Download Google Drive App",
+      url: "https://www.google.com/drive/download/"
+    },
   ],
   assignments: {
     homework: [
@@ -165,7 +173,7 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Introductions: Who are we? Syllabus",
     "Lab 1",
-    "What is CS?",
+    "What is CS? Algorithms",
     // wk 2
     "CS: hardware, languages",
     "Reading Java code: comments, fields, data types",

@@ -469,7 +469,6 @@ You're ready to write your first C program for this class! This assignment tries
 
 You are to create a program generates some basics statistics given user-input strings. When your program begins, it should ask the user to enter a string. Once it is entered, your program should parse all words out of this string, and update the following stats:
 
-- Word count
 - Vowel count
 - Consonant count
 - A histogram of letter-use frequency
