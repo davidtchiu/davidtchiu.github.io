@@ -169,33 +169,35 @@ Now that we understand how the program stack works, we return to the original pr
   [name=Michelle, sal=40000], [name=David, sal=30000]
   ```
 
+  Okay that succeeded because only needed to store 2 employees on the stack. But what about... 2000000?
+
   ```
   $ ./employees
   Number of employees you need to store: 2000000
   Segmentation fault
   ```
 
-  The first time I run the program, I only needed to create two `Employee` objects, which fits on the stack without issue. Thinking my program can scale, the second run, I create two million `Employees`, but the program crashes immediately due to stack overflow.
+- Clearly, a program that crashes depending on the magnitude of a user's input is troubling, and is why you should avoid creating unknown-sized arrays on the _stack_. That foreshadows a different location that can store arbitrarily-sized structures.
 
-- Clearly, a program that crashes depending on an arbitrary input should be avoided, and is why you should avoid creating unknown-sized arrays on the _stack_. That foreshadows a different location that can store arbitrarily-sized structures.
+##### Part 4: Heap to the Rescue!!
 
-##### Part 4: Heap to the Rescue!
+- To deal with the stack-overflow problem, we need to allocate unknown-sized memory in some large area of the address space. The **Heap** segment serves this  purpose. So, whenever we need a new array, struct, string, etc., during runtime, we'll create a pointer on the stack to refer to some location on the **heap** where this potentially large structure will live.
 
-- To deal with the stack-overflow problem, we need to allocate unknown-sized memory off the stack, in some large, free area of memory. The **Heap** segment in the address space serves this  purpose. Instead, when we need a new array, struct, string, etc., during runtime, we'll create a pointer on the stack to refer to some location on the **heap** where this potentially large structure will reside.
+- In fact, allocating memory on the heap is  what Java does every time the `new` keyword is used to construct an Object. In this section, we'll see how C supports memory allocation (and deallocation) on the heap.
 
-- In fact, allocating memory on the heap is actually what Java does every time the `new` keyword is used to create an Object. In this section, we'll see how C supports memory allocation (and deallocation) on the heap.
+- There are four important memory allocation functions you should know. To gain access to them, we need to  `#include <stdlib.h>`. These functions are:
 
-- There are four important memory allocation functions you should know. To gain access to them, we need to first `#include <stdlib.h>`. These functions are:
-
-  1.  `void* malloc(size_t size)`: allocates `size` contiguous bytes on the heap, and returns a pointer to the first byte. Note that `size_t` is just a `typedef` alias to `unsigned int`. Importantly, because the returned pointer is `void *`, the programmer must cast it to the desired data type before dereferencing (think the generic `Object` type in Java). On failure, `NULL` is returned.
+  1.  `void* malloc(size_t size)`: allocates `size` contiguous bytes on the heap, and returns a pointer to the first byte. Note that `size_t` is just a `typedef` alias to `unsigned int`. Importantly, because the returned pointer is `void *`, the programmer must cast it to the desired data type before dereferencing (think the generic `Object` type in Java). On failure, `NULL` is returned. (Why might `malloc` fail?)
 
   2.  `void* calloc(size_t num, size_t size)`: is an alternative function to  `malloc()`. It takes as input an unsigned integer `num` (number of elements) and `size` (number of bytes per element). It attempts to allocate `num * size` bytes on the heap. One difference from `malloc()` is that it will also initialize the entire allocated block to zeroes. On success, it returns a `void*` pointer to the first byte of the newly allocated block. On failure, `NULL` is returned.
 
-  3.  `void* realloc(void *ptr, size_t size)`: is used to change the size of an already-allocated block of memory on the heap. It takes as input a generic `void*` pointer to a block of memory, and a new `size`, which may be smaller or larger than the current allocation. On failure, `NULL` is returned. Caveat: the location of the allocated block might change, which is why a `void*` pointer to a potentially different starting address is returned.
+  3.  `void* realloc(void *ptr, size_t size)`: is used to change the size of an already-allocated block of memory on the heap. It takes as input a pointer to an existing block of memory on the heap, and a new `size`, which may be smaller or larger than the current allocation. On failure, `NULL` is returned. Caveat: the location of the allocated block might change, which is why a `void*` pointer to a potentially different starting address is returned.
 
-  4.  `void free(void *ptr)`: is used to deallocate, or free-up, the space that was previously allocated on the heap. It takes as input a pointer to the already-allocated memory block, and returns nothing. Important! It is extremely important to free up memory when it is no longer being used (Unlike Java, C does not garbage collect user-allocated memory automatically). When a user fails to free up un-used space, it leads to memory leaks, which can be very hard to track down after the fact.
+  4.  `void free(void *ptr)`: is used to deallocate, or free-up, the space that was previously allocated on the heap. It takes as input a pointer to the already-allocated memory block, and returns nothing. **Important!** It is crucial that you free up memory as soon as it is no longer being used (Unlike Java, C does not garbage collect user-allocated memory automatically). When a user fails to free up un-used space, it leads to **memory leaks**, which can cause your process to bloat and take up massive amounts of resources over its lifetime.
 
-- As an exercise, let's see how I could refactor the problematic employee code so that it allocates the array on the heap.
+      - Have you ever suspected that an app you use suffers from memory leaks? This is a very common problem in games and other memory-intensive applications. Next time an app that you use seems to be growing in memory usage in uncontrolled ways, it may be a memory leak that needs to be fixed.
+
+- Let's see how I could refactor the problematic employee code so that it allocates the array on the heap instead of on the stack.
 
   ```c
   #include <stdio.h>
@@ -233,15 +235,13 @@ Now that we understand how the program stack works, we return to the original pr
 
 - In the code:
 
-  - On **Line 3**: the `stdlib.h` library is imported to gain access to memory allocation functions.
-
-  - On **Line 17:** there's a lot of information on this line. Let's break it up into pieces and talk about each one separately.
+  - On **Line 17:** there's a lot of information on this line. Let's break it down into pieces and talk about each one separately.
 
       ```c
       Employee *my_employees = (Employee*) malloc(num_employees * sizeof(Employee));  // on the heap!
       ```
 
-    Remember the goal is to create an array that contains `num_employees` elements of `Employee`. Therefore, we need to use `malloc()` to request `num_employees * sizeof(Employee)` bytes on the heap.
+    Remember the goal is to create an array on the *heap* that contains `num_employees` elements of type `Employee`. Therefore, we need to use `malloc()` to request `num_employees * sizeof(Employee)` bytes on the heap.
 
     - For example, assume that the `Employee` struct is declared as follows:
 
@@ -254,9 +254,9 @@ Now that we understand how the program stack works, we return to the original pr
       } Employee;
       ```
 
-    - Then `sizeof(Employee) == 20` because `name` is a char array of length 16 and `salary` is an 4-byte integer. Therefore, `malloc()` is going to try to allocate a block of `num_employees * 20` bytes on the heap, and return the address of the first byte of this block.
+    - Then `sizeof(Employee) == 20` because `name` is a char array of length 16 and `salary` is an 4-byte integer. So `malloc()` will to try to allocate a block of `num_employees * 20` bytes on the heap, and return the address of the first byte of this block.
 
-    - Next, we cast whatever `malloc()` returns to a pointer to Employee, `(Employee*)`. Remember that `malloc()` is type-agnostic; it doesn't care about what kind of data you intend to store in the newly allocated memory. Therefore, it returns a `void*` pointer, which means we need to cast it into the desired pointer type. Without the cast, C wouldn't know what the byte boundaries are for each `Employee` object to do pointer-arithmetic. Furthermore, it wouldn't be able to associate `.name` with the first 16 bytes, and `.salary` with the last four bytes.
+    - Remember that `malloc()` is type-agnostic; it doesn't care about what kind of data you intend to store in the newly allocated memory. Therefore, it returns a `void*` pointer, which means we need to cast this pointer into the desired pointer type. Without the cast, C wouldn't know what the byte-boundaries are for each `Employee` object to do pointer-arithmetic! Furthermore, it wouldn't be able to associate `.name` with the first 16 bytes, and `.salary` with the last four bytes.
 
   - On **Line 21-25**:
 
@@ -269,29 +269,33 @@ Now that we understand how the program stack works, we return to the original pr
     }
     ```
 
-    Remember from the previous primer that we learned the array-index syntax `my_employees[i]` is really a short-hand for `*(my_employees+i)`? Because of the earlier cast, C knows to skip `sizeof(Employee) == 20` bytes every time `i` is incremented. How convenient that we can use the array-index syntax in this context to dereference each 20-byte block as an `Employee`!
+    Remember from the previous primer that we learned the array-index syntax `my_employees[i]` is really a short-hand for `*(my_employees+i)`? Because of the earlier cast to `Employee*`, C now knows to skip `sizeof(Employee)` bytes every time `i` is incremented. How convenient that we can use the array-index syntax in this context to dereference each 20-byte block as an `Employee`!!
 
-  - On **Line 30 (important word on Garbage Collection)**: This line _frees_ up the `num_employees * sizeof(Employee)` bytes off the heap, so that the space can be reclaimed and used by another part of the process. Be careful! After freeing it, `my_employees` now points to an invalid address. If you try to dereference `my_employees` now (as in Lines 21-25), you'll receive a **segmentation fault**!
+  - On **Line 30 (important word on Garbage Collection)**: This line _frees_ up the `num_employees * sizeof(Employee)` bytes off the heap, so that the space can be reclaimed and used by another part of the process. Be careful! After freeing it, `my_employees` now points to an *invalid* address. If you try to dereference `my_employees` now (as in Lines 21-25), you'll receive a **segmentation fault**!
 
-    - If your program doesn't free up memory that's no longer being used, then the memory remains allocated on the heap! You can never reclaim this memory because there are no longer any pointers referencing its location.
+    - If your program doesn't free up memory that's no longer being used, then the memory remains allocated on the heap! You can never be able to reclaim this memory because there are no longer any pointers referencing its location. This is called a **memory leak**, which will cause your program to eat up increasing amounts of memory, until it exits.
 
-    - This is called a **memory leak**, which will cause your program to eat up increasing amounts of memory over time, sucking up system resources.
+    - While "garbage collection" is automatically handled by many modern languages like Java and Python, we don't have that luxury in C. It is completely up to the programmer to decide when free memory from the heap. Be sensitive to this when programming!
 
-    - While "garbage collection" is automatically handled by many modern languages like Java, we don't have that luxury in C! It is completely up to the programmer to decide when free memory from the heap. Be sensitive to this when programming!
+  - On **Line 31 (avoiding dangling pointers)**: It is good defensive practice to set pointers to `NULL` immediately after freeing -- here's why. After freeing, the pointer is *still* pointing at that location (i.e. it's dangling). However, once heap memory has been freed, that chunk of memory can be re-used by another call to `malloc` elsewhere in your program! This leads to two potential problems:
 
-  - On **Line 31 (avoiding dangling pointers)**: It is good defensive practice to set pointers to `NULL` immediately after freeing -- here's why. If the pointer is not assigned to `NULL`, then it is *still* pointing that that location (i.e. it's dangling). However, once heap memory has been freed, that chunk of heap memory can be re-used by another call to malloc elsewhere in your program. If, for some reason, you re-use the pointer, then it will corrupt the memory that is in use by the other part of your program.
+    1. If you re-use the pointer and assign something new to it, then it will corrupt the memory that is in use by the other part of your program! This is the primary problem!
+
+    2. If you `free()` that pointer again (say you have multiple `free()` statements in different functions), then it will deallocate the memory that was in use by the other part of your program!
 
 
 ##### Part 5: Dynamic Memory Allocation
+<!-- 
+So we've seen how to create an array on the heap, but `malloc()` is more general than that. It can be used to allocate _any_ amount of memory on the heap, even a single `int`, `double`, or just a `struct`. 
 
-All right, so we've seen how to create an array on the heap, but still, this is assuming that the user would at some point know the size of the array. But `malloc()` is more general than that. It can be used to allocate _any_ amount of memory on the heap, even a single `int`, `double`, or `struct`. It all simply depends on what _data type_ the programmer can casts the returned `void*` pointer into.
-
-In the code below, we use `malloc()` to create 4 bytes (`sizeof(int)`) on the heap. `malloc()`, as always will return the address of the 0th byte that it allocated. We then tell C to interpret the 4 bytes as an `int` by simply casting the address into an `int*` pointer, which is then stored in `p`.
+In the code below, we use `malloc()` to create just a single integer on the heap. `malloc()`, as always, will return the address of the first byte. We then tell C to interpret the 4 bytes as an `int` by simply casting the address into an `int*` pointer, which is then stored in `p`.
 
   ```c
   int *p = (int*) malloc(sizeof(int));
   *p = 0; // initialize the content referred by p to 0
   ```
+
+You should understand that pointer `p` exists on the stack (in main's frame), and it's pointing at value 0, which is on the heap. -->
 
 ###### Part 5a: Creating Strings (Know this!)
 Pay attention here, because you'll be doing this a lot! We can now use `malloc()` to create *just enough* space for new strings. For instance, suppose I wanted to write a function `createEmail()` that accepts two strings `user` and `domain`, and returns the string `user@domain`.
