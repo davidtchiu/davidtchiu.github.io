@@ -736,7 +736,7 @@ Heaps are a projection of a balanced binary tree onto arrays. They serve many pu
   - `right_child(i) = 2(i+1)`
 - The _min-heap property_: Every node's value must be less-than-or-equal-to the value of its children. That is, `A[parent(i)] <= A[i]` for all `i`. The figure below shows an example of a min-heap of size 12.
 
-   <img width="400px" src="figures/heap.png" />
+   <img width="500px" src="figures/heap.png" />
 
 ###### Starter Code
 

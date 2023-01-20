@@ -2,7 +2,7 @@
 
 ### Hwk: Dynamic Memory Allocation
 
-Pointers are still a bit mysterious, because we still haven't seen the need for them yet. Indeed, with exception to `swap()`, all the previous code examples can be done easily without pointers. In this section, we introduce the prevailing motivation for pointers: dynamic memory allocation.
+Pointers are still a bit mysterious, because we still haven't seen a real need for them yet. Sure, it was cool to know that they are intrinsically connected to arrays, but still, with exception to `swap()`, all the code examples shown in the previous tutorial can be done easily without pointers. In this section, we introduce the prevailing motivation for pointers: heap memory allocation.
 
 #### ZyBooks Reading
 
@@ -23,7 +23,7 @@ Open your VS Code and get connected to your Remote Development environment.
 
 ##### Part 1: Motivation
 
-Using the last primer as a motivating example, recall that we stored a fixed-size array (heap) of Employees, whose information was entered by the user. But in general, the number of employees we need to store is not known until runtime. To deal with this issue, we define the max number of employees `MAX` as a constant, and then we ask the user for the number of employees they expect to have in this particular run:
+Using the last homework as a motivating example, recall that we stored an array of Employees, whose information was entered by the user. But in general, the number of employees we need to store is *not known* until runtime. To deal with this issue, we define the max number of employees `MAX` as a constant, and then we ask the user for the number of employees they expect to have in this particular run:
 
 ```c
 #include <stdio.h>
@@ -42,7 +42,7 @@ int getNumEmployees() {
 
 int main(int argc, char *argv[]) {
     int i;
-    Employee my_employees[MAX];             // create array to hold 100,000 employees
+    Employee my_employees[MAX];             // create array that can hold up to 100,000 employees
     int num_employees = getNumEmployees();  // how many does the user *really* need?
 
     // fill employee info
@@ -52,10 +52,10 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-**The code above is undesirable for several reasons.** First, `MAX` is entirely arbitrary and defined at the programmer's discretion. Second, a company can never have more than `MAX` employees: the program would either not run, or will fail when a user tried to start with more. Third, for the runs that do not require anywhere close to
-MAX employees, this program ends up wasting quite a bit of space.
+**The code above is undesirable for several reasons.** First, `MAX` is entirely arbitrary and defined at the programmer's discretion. Secondly, for the runs that do not require anywhere close to
+`MAX` employees, this program ends up wasting quite a bit of space.
 
-Okay. You might think the above example seems contrived. After all, why didn't we ask the user for the number of employees first, and then create the array using that size. Consider the following code:
+Okay. You might think the above example seems contrived. After all, why didn't we ask the user for the number of employees first, and then create the array using that size. Consider the following code that *would* work in Java (but not C!):
 
 ```c
 #include <stdio.h>
@@ -84,21 +84,21 @@ While it's true that this code works in Java, **this code is even less desirable
 
 ##### Part 2: Address Spaces
 
-When your program is in execution (known as a **process**), the OS gives it a virtual address space. Think of this space as the process' very own sandbox. It's where all its resources (variables, open files, etc.) will live. We'll assume that the OS organizes and orders the address space in the following **segments**:
+When your program is in execution (known as a **process**), the OS gives it a virtual address space. Think of this space as the process' very own sandbox. It's where all its resources (variables, open files, etc.) will live. We'll assume that the OS organizes each process' address space in the following **segments**:
 
-<img src="figures/proj3-memlayout.png" width="300px">
+<img src="figures/proj3-memlayout.png" width="400px">
 
 - **Code (Text) Segment** stores the binary (executable file) currently running. It is placed near the lowest address.
 
 - **Data Segment** stores global and static variables that have been initialized with a non-zero or non-NULL value. The related BSS segment stores uninitialized global and static variables.
 
-- **Heap** stores data allocated by the process during runtime (i.e. with `malloc()` or `calloc()` in C and with new operator in C++ and Java). When arbitrary amounts of memory are allocated during runtime, we all this process *dynamic memory allocation*. You'll learn how to do this in a bit, but you'll also need to take care in freeing up any memory that was dynamically allocated.
+- **Heap** stores data allocated by the process during runtime. When arbitrary amounts of memory are allocated during runtime, we all this process *dynamic memory allocation*. You'll learn how to do this in a bit!
 
-- **Program Stack** stores data (e.g., local variables, function parameters, return addresses) needed to keep track of program execution and scope of function calls. As your program makes a function call, your stack *grows* by pushing input parameters, local variables declared within that function, and a return address. Collectively, the set of these values make up the function's **stack frame**. As the function returns, all values in its frame are popped off the stack, causing the stack to *shrink*, and returning the stack's frame to the caller function's scope.
+- **Program Stack** stores data (e.g., local variables, function parameters, return addresses) needed to keep track of program execution and scope of function calls. As your program makes a function call, your stack *grows* by pushing input parameters, local variables declared within that function, and a return address. Collectively, the set of these values make up the function's **frame**. As the function returns, all values in its frame are popped off the stack, causing the stack to *shrink*, and returning the stack's frame to the caller function's scope.
 
 ###### How the Program Stack Works (And What Is a Stack Overflow?)
 
-When a process is created, the OS allocates `RLIMIT_STACK` bytes for the stack in that process' address space. A user cannot increase this stack size, but can decrease it. Here's how the stack is used:
+When a process starts running, the OS allocates `RLIMIT_STACK` bytes for that process' stack. A user cannot increase this stack size, but can decrease it. Here's how the stack is used:
 
 - From `main(int argc, char *argv[])`, where the program starts running, its command-line arguments `argc` and `argc[]` and any local variables are pushed onto the stack, which grows  towards  address `MAX - RLIMIT_STACK`. When `main()` calls another function, a new stack frame is for the function is created by pushing any return address, arguments, and local variables onto the stack. When a function returns, all the values in its frame are popped off, and control jumps back to the return address that was also pushed on, thus restoring the caller function's **scope**.
 
@@ -132,8 +132,8 @@ When a process is created, the OS allocates `RLIMIT_STACK` bytes for the stack i
 
 - The dreaded **segmentation fault**, a historical umbrella term that means your program tried to access an invalid memory location in its address space. In this particular example, each recursive call to `f(..)` involves pushing the return address followed by pushing a new value for `int depth` onto  the stack. The stack breaches the `RLIMIT_STACK` limit on the *393036th* recursive call to `f(..)`. When the program tries to push a frame beyond that threshold, the memory-management unit of the OS detects this violation and throws a segmentation fault and terminates the offending process.
 
-  - Indeed, an infinite recursion always crashes the program because the program continues to gobble up space on the stack. Because each of the recursive calls is still waiting for the next one to return, no frames ever gets popped off. In contrast, you've probably rarely seen an infinite loop be terminated by the OS, and the reason becomes clear. Each loop iteration has to finish before starting the next iteration. This implies that any function calls you're making must have returned within the body of the loop. This manages the stack size from growing uncontrollably.
-
+  - Indeed, an infinite recursion always crashes the program because the program continues to gobble up space on the stack. Because each of the recursive calls is still waiting for the next one to return, no frames are ever popped off. In contrast, you've probably rarely seen an infinite loop be terminated by the OS, and now the reason is clear. 
+<!-- 
 - What's my machine's `RLIMIT_STACK` you ask? This value varies across systems. To find out what this value is on your machine, you can use the shell command `ulimit`. The `-a` option shows all resource limits defined by your OS. If you're only interested in the stack size, you can specify the `-s` flag.
 
   ```
@@ -141,7 +141,7 @@ When a process is created, the OS allocates `RLIMIT_STACK` bytes for the stack i
   10240
   ```
 
-- The number reported by `ulimit` is in KB ($$2^{10}$$ bytes), so my machine gives each running process a 10 MB stack.
+- The number reported by `ulimit` is in KB ($$2^{10}$$ bytes), so my machine gives each running process a 10 MB stack. -->
 
 ##### Part 3: Revisiting the Problem of Unknown Array Sizes at Runtime
 
