@@ -12,6 +12,7 @@
 - Hwk 4 lot cooler if I introduced an Arm class or something…
 
 #### Change Log
+- **Spring 2023**: Use Lab 1 to cover lecture 1 up to def'n of algorithms.
 - **Spring 2023**: Change books - Mapping to Horstmann early objects
   - Lec 1: Chap 1 (all)
   - Lec 2a (Circle): Chap 2.1-2.2

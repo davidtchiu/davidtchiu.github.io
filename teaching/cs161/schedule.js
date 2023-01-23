@@ -172,20 +172,20 @@ let days = {
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
     "Introductions: Who are we? Syllabus",
-    "Lab 1",
-    "What is CS? Algorithms",
+    "What is CS? Plus, Lab 1",
+    "Algorithms, hardware, languages",
     // wk 2
-    "CS: hardware, languages",
     "Reading Java code: comments, fields, data types",
+    "Constructors; input parameters, assignment statements",
     "Lab 2",
-    "Writing constructors; parameters, assignment statement",
+    "Methods, calling methods, returning values",
     // wk 3
-    "Writing methods, calling methods, returning",
-    "Writing classes. String concatenation; conditionals (`printTicket()`)",
+    "Printing, String concatenation; conditionals in printTicket()",
+    "Writing classes",
     "Lab 3",
     "Lab 3 review",
     // wk 4
-    "If statements; defensive programming and testing (`discount()`)",
+    "If statements; defensive programming and testing in discount()",
     "More if-statements",
     "Lab 4",
     "Nested if-statements: else if",
