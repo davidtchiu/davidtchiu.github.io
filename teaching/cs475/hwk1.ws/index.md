@@ -458,7 +458,7 @@ returnType funcName(param1, param2, ...) {
 
   - Write a function that inputs a string, and converts it to upper-case.
 
-  - Can you figure out how a Java function like `Integer.parseInt()` might be implemented in C? That is, given a string like `"365"`, return `356 (int)`.
+  - Can you figure out how a Java function like `Integer.parseInt()` might be implemented in C? That is, given a string like `"365"`, return `365 (int)`.
 
   - Write a function `void merge(int A[], int B[], int C[], int lengthA, int lengthB, int lengthC)` that inputs 2 sorted int arrays `A` and `B`, and an "output" array `C`. The function merges `A` and `B` into a sorted sequence in array `C`. Because the function doesn't know the arrays' lengths, you must also input those as params.
 
