@@ -184,7 +184,7 @@ Add the following method to your Stomach class: `public double getAverageAmountD
 #### Grading
 
 ```
-This assignment will be graded out of 10 points, provided:
+This assignment will be graded out of 2 points, provided:
 
 You were in attendance.
 Your Stomach class is properly implemented and passes all tests.

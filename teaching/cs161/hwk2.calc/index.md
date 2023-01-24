@@ -182,11 +182,12 @@ There's no extra credit for these extensions, but completing one or more will he
 ```
 This assignment will be graded out of a total of 70pts.
 
-[5pts] Appropriate fields have been defined for this class.
+[5pts] Appropriate instance variables have been defined for this class.
+       No local variables are defined as instance variables.
 
 [10pts] Both constructors are properly implemented.
 
-[15pts] The add, substract, and multiply method have been implemented.
+[15pts] The add, subtract, and multiply method have been implemented.
 
 [5pts] The square method have been implemented, and reuses code you've already written.
 

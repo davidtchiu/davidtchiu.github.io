@@ -141,7 +141,7 @@ Have some free time? There are no limitations to the content you want to display
 #### Grading
 
 ```
-This assignment will be graded out of 10 points, provided you do all the following:
+This assignment will be graded out of 2 points, provided you do all the following:
 
 - Attended lab.
 - You submitted a README.txt with a detailed and precise algorithm for producing a
