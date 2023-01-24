@@ -2,7 +2,7 @@
 
 ### Lab: Variables and Scope
 
-In this assignment you will use BlueJ to practice creating and calling methods on some limited Shape objects. You will manipulate these shapes to create a simple picture of Pac-Man. You will then create a picture of your own.
+In this lab, you'll get familiarized with the concepts of data types, variables, assignment statements, and scope. You'll be modifying the `Triangle` shape class to add some functionalities.
 
 #### Student Outcomes
 
@@ -15,7 +15,7 @@ In this assignment you will use BlueJ to practice creating and calling methods o
 
 The following file(s) have been provided for this lab.
 
-- [Lab2_Explore.zip](Lab2_Explore.zip)
+- [Lab2_Triangle.zip](Lab2_Triangle.zip)
 
 #### Preliminary
 
