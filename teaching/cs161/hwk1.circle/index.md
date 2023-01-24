@@ -69,4 +69,4 @@ This assignment will be graded out of a total of 30pts.
 Adapted for use from a previous assignment by Brad Richards. Shape classes provided by BlueJ.
 
 
-{% include ../footers/footer.md %}
+{% include_relative /teaching/cs161/footers/footer.md %}
