@@ -147,5 +147,5 @@ This assignment will be graded out of a total of 25pts.
        Check with me or with tutors if you're not sure!
 ```
 
-{% include_relative ../footers/footer.md %}
+{% include footers/footer.md %}
 
