@@ -58,7 +58,7 @@ private dataType variableName;
 
 For instance, I might declare `private int speed;` to store the current speed of my vehicle objects. I could declare `private String firstName;` to store the first name of `Student` objects.
 
-1. Modify the `Triangle` class to store a new instance variable, its `area` and its `perimeter`. It doesn't matter if they go first or last in line of your instance-variable section. Before you declare each one, you ought to be thinking ahead --- what kind of data do they hold? Integers? Strings? Doubles? Choose the right data type, and declare them now.
+1. Modify the `Triangle` class to store two new instance variables, its `area` and its `perimeter`. It doesn't matter if they go first or last in line of your instance-variable section. Before you declare each one, you ought to be thinking ahead --- what kind of data do they hold? Integers? Strings? Doubles? Choose the right data type, and declare them now.
 
 2. Back in the BlueJ workbench, create a new `Triangle` instance and inspect its state by double clicking it. You should see the two new instance variables you just declared, but alas, they are showing up as zeroes.
 
@@ -158,7 +158,7 @@ In this section, let's focus on local variables, so you can appreciate when they
 
 10. After you've made these changes, compile and create another `Triangle`. Move it around horizontally to ensure that the print-outs are working. Now double-click on the `Triangle` object and you should find that the `oldXPosition` and `oldYPosition` instance variables are gone.
 
-   - Less state (fewer instance variables) is generally a good thing. Having too much state could mean that the programmer may lose track of things in the future.
+    - Less state (fewer instance variables) is generally a good thing. Having too much state could mean that the programmer may lose track of things in the future.
 
 
 #### Part III: Input Parameters
