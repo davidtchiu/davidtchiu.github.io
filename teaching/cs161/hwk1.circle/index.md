@@ -20,15 +20,15 @@ Start by downloading a fresh copy of the starter file from the above link. The c
 
 - Modify the `moveUp()`, `moveDown()`, `moveLeft()`, and `moveRight()` methods so that they each move the Circle 30 units instead of 20. Make sure you test these afterwards so you know they're working! One way to check is to track down the Circle's x and y coordinates before and after the move.
 
-- Next, it's slightly irritating that when you create new Circles, they're not automatically shown on the canvas. Modify the **constructor** code so that Circles are visible (on the screen) when they're created. That is, you have to change their initial state when they are created. This isn't as easy as simply assigning `true` to the `this.isVisible` field. Is there an existing method in the same class you can call (use) instead that will make the Circle pop up on the canvas, as well as having it set its `this.isVisible` field to `true`? Also ensure that new circles are yellow instead of blue. Make sure you test our your code before moving on!
+- Next, it's slightly irritating that when you create new Circles, they're not automatically shown on the canvas. Modify the **constructor** code so that Circles are visible (on the screen) when they're created. That is, you have to change their initial state when they are created. This isn't as easy as simply assigning `true` to the `isVisible` field. Is there an existing method in the same class you can call (use) instead that will make the Circle pop up on the canvas, as well as having it set its `isVisible` field to `true`? Also ensure that new circles are yellow instead of blue. Make sure you test our your code before moving on!
 
 - Add a new method called `public void moveNorthEast()` to the Circle class. It requires to input parameters, and when called, it should move the circle up by a distance of 30 units and then to the right by a distance of 30 units. Then add a block comment to the code describing your new method.
 
   - Can you write this method by calling a couple of the methods you modified earlier?
 
-- Add a new method called `public void shuffleHorizontal(int distance)`. When called, this method causes the circle to do a slow movement to the right by the distance that was given, then back to the left, leaving the circle exactly where it started. (That's assuming the input is positive — if the input is negative, the circle will shuffle left, then right.) Add another block comment describing your new method. If your method is more than a couple of lines, you're going down the wrong track. Again, you do not need to copy-and-paste anything from within the `slowMoveHorizontal` algorithm to write this method.
+- Add a new method called `public void shuffleHorizontal(int distance)`. When called, this method causes the circle to do a slow movement to the right by the distance that was given, then back to the left, leaving the circle exactly where it started. (That's assuming the input is positive — if the input is negative, the circle will shuffle left, then right.) Add another block comment describing your new method. If your method is more than a couple of lines, you're going down the wrong track. You should not have to do any copying and pasting of existing code.
 
-  - Again, you should reuse (or call) existing methods to help do what you want. Hmm, `slowMoveHorizontal` seems like it could help in some way.
+  - Again, you should reuse (or call) existing methods to help do what you want. Hmm, `slowMoveHorizontal` seems like it could help in some way. 
 
 - Add a method called `public void shuffleVertical(int distance)`. The method, like `shuffleHorizontal`, will cause the Circle to do a slow movement to the south, and then back to its original position.
 

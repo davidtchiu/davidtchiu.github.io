@@ -228,7 +228,7 @@ Exit BlueJ
 
 #### Credits
 
-Written by Brad Richards.
+Written by David Chiu. 2023.
 
 #### Lab Attendance Policies
 
