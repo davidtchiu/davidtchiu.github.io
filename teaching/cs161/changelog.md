@@ -1,5 +1,4 @@
 #### TODO
-- Grading: Model rubric off 261
 - Move static/enum/private/public up (or spread them out)
 - Put starter code on github
 - Spring: Exam 2 move to Week 12, not 13
