@@ -113,8 +113,8 @@ let days = {
     "Intro: Job scheduling models",
     "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 3
-    "Intro: Dual-mode operation, interrupts, system calls",
-    "Intro: Finish system calls",
+    "Booting, dual-mode operation, interrupts",
+    "Finish system calls",
     "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 4
     "Start Processes: PCB, state transitions",

@@ -5,6 +5,10 @@ let days = {
       url: "syllabus"
     },
     {
+      name: "Community Statement",
+      url: "community"
+    },
+    {
       name: "Notes and Sample Code",
       url: "https://canvas.pugetsound.edu"
     },
@@ -21,7 +25,7 @@ let days = {
     homework: [
       {
         name: "Hwk 0",
-        title: "About Me",
+        title: "All About Me",
         url: "hwk0.me/",
         due: "1/23/2023", // Mon
       },
