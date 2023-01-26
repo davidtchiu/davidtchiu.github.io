@@ -81,7 +81,7 @@ private dataType variableName;
 
       - You may want to lookup (on Google) how to find the area and perimeter of an *isosceles triangle*, given its height and width. Here's a hint for perimeter though. In the figure below, you know the width and height of the Triangle. You just need to figure out the length of the sides, which you can determine using Pythagorean Theorem.
 
-        <img src="figures/lab2_fig1.png"/>
+            <img src="figures/lab2_fig1.png"/>
 
       - You'll need know this for calculating the perimeter. If you need to take the square root of a value `x`, you can use the built-in Java function `Math.sqrt(x)`. Also, to take `x` to the `y`th power ($$x^y$$), you can use `Math.pow(x,y)`
 
@@ -98,7 +98,7 @@ We know that instance variables store an object's current *state*. But that's no
 
 In this section, let's focus on local variables, so you can appreciate when they should be used.
 
-1. Find the `moveHorizontal()` method in your source code. Suppose we now want the Triangle to output (print) its *old* coordinate position after you call `moveHorizontal()` to move it. Here's what it should look like:
+1. Find the `moveHorizontal()` method in your source code. Here's what it should look like:
     ```java
     public void moveHorizontal(int distance) {
         erase();
@@ -108,13 +108,13 @@ In this section, let's focus on local variables, so you can appreciate when they
     ```
     - Studying its algorithm, this method does nothing more than simply erasing the Triangle off the canvas, updating the `xPosition` of its instance state, then re-drawing the Triangle on the canvas. The erasing and re-drawing happens so quickly that it appears as if the Triangle moved places instantly.
 
-2. If you wanted to print its old position, then we need to *save* its x and y positions *before* they get updated. To save the current positions, we'll need to introduce two variables (again, it's up to you to determine what the data types should be for the 2 variables.)
+2. Suppose we now want the Triangle to output (print) its *old* coordinate position the Triangle moves. To do that, we need to *save* its x and y positions *before* they get updated in the `moveHorizontal()` code. To save the current positions, we'll need to introduce two variables  (one for each coordinate).
 
-3. For now, add two **instance variables** near the top of the source code, and you can name them `oldXPosition` and `oldYPosition`.
+3. For now, add two **instance variables** near the top of the source code, and you can name them `oldXPosition` and `oldYPosition`. Go back to your notes (or book) to see the syntax for declaring new instance variables. 
 
-4. Then go back in your `moveHorizontal()` method, and assign the current x and y positions to the `oldXPosition` and `oldYPosition` instance variables. I would do these assignment statements before `erase()` is called.
+4. Then go back in your `moveHorizontal()` method, and assign the current x and y positions to the `oldXPosition` and `oldYPosition` instance variables anytime before `xPosition` is updated.
 
-5. Now, under `draw()`, print out the old positions and the new positions. Recall that, to print something to the screen, you can use this syntax:
+5. Now, below the call to `draw()`, print out the old positions and the new positions. Recall that, to print something to the screen, you can use this syntax:
 
     ```java
     System.out.println("stringYouWantToPrint");
@@ -124,12 +124,11 @@ In this section, let's focus on local variables, so you can appreciate when they
     System.out.println("stringYouWantToPrint" + someVariable + "moreString" + anotherVariable);
     ```
 
-    For instance, the following will print something to the effect of: `Old X: 50` on one line.
+    For instance, the following will print something to the effect of: `"Old X is 50"` on the *same* line.
     ```java
-    System.out.println("Old X: " + oldXPosition);
+    System.out.println("Old X is " + oldXPosition);
     ```
-    Play with the string to print both old X and old Y on the same line.
-
+    Play with the string to print both old X and old Y values on the *same* line.
 
 6. Test it out, and see if everything's working before moving on.
 
@@ -160,10 +159,16 @@ In this section, let's focus on local variables, so you can appreciate when they
 
     - **Tip: Keep it as tidy as possible.** Less state (i.e., fewer instance variables) is generally preferable. Having too many instance variables could mean that the programmer may lose track of variables and have too much to manage in the future.
 
-11. Update `moveVertical()` to also output its old coordinates.
+11. Now update `moveVertical()` to also print its old coordinates.
 
 #### Part III: Input Parameters
-The last type of variable are input parameters. Input parameters allow users to provide input to a constructor or a method. Therefore, they are only found on the first line of constructors and methods. Here's the syntax:
+The last type of variables in Java are  input parameters. Input parameters allow callers to provide values (called **arguments**) to a constructor or a method. Therefore, input parameters are always found on the first line of constructors' and methods's declaration. Here's the syntax for constructors and methods, respectively:
+
+```java
+public ClassName(listOfInputParameters) {
+  // body of constructor omitted
+}
+```
 
 ```java
 public void someMethod(listOfInputParameters) {
@@ -184,19 +189,74 @@ public void someMethod(listOfInputParameters) {
 
 3. Therefore, input parameters are nothing more than local variables to the method, except that they hold the values of given arguments! All input parameters are destroyed when the method exits.
 
-4. Create a new `Triangle()` constructor that accepts the starting height and width. You may name these input parameters `initialHeight` and `initialWidth`. Don't forget that you'll need to declare their data types.
-    - Assign the instance variables `height` and `width` to these values in order to save them.
-    - All other instance variables should be assigned to the same values as in the original constructor.
+4. Write a new `Triangle()` constructor that accepts the starting height and width. You may name these input parameters `initialHeight` and `initialWidth` (honestly, you can name them whatever you like as long as their names make sense and are legal). Don't forget that you'll also need to declare their data types.
+    
+    - Next, assign the instance variables `height` and `width` to these values in order to save them.
+    
+    - All other instance variables should be assigned to the same values as in the original (default) constructor.
 
 5. Test out your code to ensure that you can now create Triangles of customized height and width.
 
+    - You might as well ensure that the perimeter and areas still check out too!
+
 6. Go back in your new constructor and rename the input parameters to just `height` and `width` (yes, the same names as your instance variables.)
+
     - Does it still compile?
-    - Does it still work when you construct a new Triangle? Think about why this is.
+    - Does it still work when you construct a new Triangle? Think about why this is the case.
 
 7. Create a new method `changeSizeAndColor()` that accepts 3 parameters, a new width, height, and color. Put in the code to change its size and color concurrently. To help do this, you should be calling existing methods instead of copying-and-pasting code.
     
+#### Part IV: Writing Effective Comments
 
+I've mentioned that effective commenting is an important habit for programmers to form. The reason is for documenting your code for posterity... and for yourself. There are generally two types of comments that I look for when grading: *line comments* and *Javadocs comments*.
+
+**Line comments** are free-form. They are used to describe blocks of code that you write. Their syntax is easy to remember. For instance:
+
+    ```java
+    public void moveHorizontal(int distance) {
+        // This is a line comment!
+        erase();
+        xPosition += distance;
+        draw();
+
+        // This is another line comment!
+    }
+    ```
+    Use line comments whenever you've written a chunk of code and its purpose and function may not be obvious.
+
+**Javadocs comments** are more structured. You should write a Javadocs comment on top of every class definition, on top of each constructor, and on top of each method. For instance. Here's an example class comment:
+
+    ```java
+    /**
+     * This is a class that simulates cars. blah blah blah
+     * @author David
+     * @version 1/26/2023
+     */
+    public class Car {
+        // code omitted
+    }
+    ```
+
+    Here's a Javadocs comment for a method:
+
+    ```java
+    /**
+     * This method moves a Triangle horizontally by the 
+     * given distance.
+     * 
+     * @param distance A distance (in pixels) to displace
+     */
+    public void moveHorizontal(int distance) {
+        // This is a line comment!
+        erase();
+        xPosition += distance;
+        draw();
+    }
+    ```
+
+        Note the use of `@tags` in the Javadocs comments.
+
+Go ahead and add comments to the new constructor and method that you wrote for this lab.
 
 #### Grading
 
