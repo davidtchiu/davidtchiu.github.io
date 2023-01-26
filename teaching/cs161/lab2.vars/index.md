@@ -79,7 +79,9 @@ private dataType variableName;
 
       - Recall that the syntax to assign a value to a variable is: `variableName = expr;`, where `expr` is any algebraic expression. For instance, if I were inputing the area of a *square*, the expression would be `area = width * length;` (assuming `width` and `length` are the instance variable's names.)
 
-      - You may want to lookup (on Google) how to find the area and perimeter of an *isosceles triangle*, given its height and width.
+      - You may want to lookup (on Google) how to find the area and perimeter of an *isosceles triangle*, given its height and width. Here's a hint for perimeter though. In the figure below, you know the width and height of the Triangle. You just need to figure out the length of the sides, which you can determine using Pythagorean Theorem.
+
+        <img src="figures/lab2_fig1.png"/>
 
       - You'll need know this for calculating the perimeter. If you need to take the square root of a value `x`, you can use the built-in Java function `Math.sqrt(x)`. Also, to take `x` to the `y`th power ($$x^y$$), you can use `Math.pow(x,y)`
 
@@ -104,7 +106,7 @@ In this section, let's focus on local variables, so you can appreciate when they
         draw();
     }
     ```
-    - Studying its algorithm, this method does nothing more than simply erasing the Triangle off the canvas, updating the `xPosition` of its instance state, then re-drawing the Triangle on the canvas. The erasing and re-drawing happens to quickly that it appears like the Triangle moved places.
+    - Studying its algorithm, this method does nothing more than simply erasing the Triangle off the canvas, updating the `xPosition` of its instance state, then re-drawing the Triangle on the canvas. The erasing and re-drawing happens so quickly that it appears as if the Triangle moved places instantly.
 
 2. If you wanted to print its old position, then we need to *save* its x and y positions *before* they get updated. To save the current positions, we'll need to introduce two variables (again, it's up to you to determine what the data types should be for the 2 variables.)
 
@@ -129,9 +131,9 @@ In this section, let's focus on local variables, so you can appreciate when they
     Play with the string to print both old X and old Y on the same line.
 
 
-6. Test it out, and see if everything's working. (It should!)
+6. Test it out, and see if everything's working before moving on.
 
-7. Once everything checks out, inspect the `Triangle`'s state and you should see the `oldXPosition` and `oldYPosition` instance variables. **But this begs the question.** Why are a Triangle's old positions even stored as part of its current state? 
+7. Once everything checks out, inspect the `Triangle`'s state and you should see the `oldXPosition` and `oldYPosition` instance variables. **But this begs the question.** Why are a Triangle's *old* positions even stored as part of its *current* state? 
 
     *You should always ask yourself these questions when you  introduce new variables:*
     - Would the object benefit from memorizing and always carrying these new values in the future? Should they be an intrinsic part of the object's state of existence? (If so, the variable should be an instance variable.)
@@ -156,12 +158,12 @@ In this section, let's focus on local variables, so you can appreciate when they
 
 10. After you've made these changes, compile and create another `Triangle`. Move it around horizontally to ensure that the print-outs are working. Now double-click on the `Triangle` object and you should find that the `oldXPosition` and `oldYPosition` instance variables are gone.
 
-    - Less state (fewer instance variables) is generally a good thing. Having too much state could mean that the programmer may lose track of things in the future.
+    - **Tip: Keep it as tidy as possible.** Less state (i.e., fewer instance variables) is generally preferable. Having too many instance variables could mean that the programmer may lose track of variables and have too much to manage in the future.
 
 11. Update `moveVertical()` to also output its old coordinates.
 
 #### Part III: Input Parameters
-The last type of variable are input parameters. Input parameters allow users to provide input to a constructor or method. Therefore, they are only found on the first line of constructors and methods. Here's the syntax:
+The last type of variable are input parameters. Input parameters allow users to provide input to a constructor or a method. Therefore, they are only found on the first line of constructors and methods. Here's the syntax:
 
 ```java
 public void someMethod(listOfInputParameters) {
@@ -169,18 +171,18 @@ public void someMethod(listOfInputParameters) {
 }
 ```
 
-1. Go down to the `moveHorizontal()` method again, and you need to only examine the first line of the method. Here it is again:
+1. Go  and find the `moveHorizontal()` method again, and you need to only examine the first line of the method. Here it is again:
 
     ```java
     public void moveHorizontal(int distance) {
     ```
 
-2. There is one input parameter, `int distance`, that is accepted by this method. In fact, this method can't even be executed until the caller inputs a valid value for `distance`. 
-    - The value that is given to `distance` upon calling it is known as an **argument** for that input.
-    - The `distance` parameter captures the given argument, and it can be used as a variable in the remaining code for `moveHorizontal()`
-    - If your method or constructor accepts multiple parameters, then you can separate them with a comma.
+2. This method has exactly one input parameter, `int distance`, that is accepted. In fact, this method can't even be executed until the caller inputs a valid input value for `distance`. 
+    - If your method or constructor accepts multiple input parameters, then you should separate them with a comma.
+    - The value that is given to `distance` upon calling it is known as the **argument** for that input.
+    - The `distance` parameter captures the given argument, and it can be treated as a local variable in the code for `moveHorizontal()`
 
-3. Therefore, input parameters are nothing more than local variables to the method, except that they store the value of given arguments! All input parameters are destroyed when the method exits.
+3. Therefore, input parameters are nothing more than local variables to the method, except that they hold the values of given arguments! All input parameters are destroyed when the method exits.
 
 4. Create a new `Triangle()` constructor that accepts the starting height and width. You may name these input parameters `initialHeight` and `initialWidth`. Don't forget that you'll need to declare their data types.
     - Assign the instance variables `height` and `width` to these values in order to save them.
