@@ -212,17 +212,17 @@ I've mentioned that effective commenting is an important habit for programmers t
 
 **Line comments** are free-form. They are used to describe blocks of code that you write. Their syntax is easy to remember. For instance:
 
-    ```java
-    public void moveHorizontal(int distance) {
-        // This is a line comment!
-        erase();
-        xPosition += distance;
-        draw();
+```java
+public void moveHorizontal(int distance) {
+    // This is a line comment!
+    erase();
+    xPosition += distance;
+    draw();
 
-        // This is another line comment!
-    }
-    ```
-    Use line comments whenever you've written a chunk of code and its purpose and function may not be obvious.
+    // This is another line comment!
+}
+```
+Use line comments whenever you've written a chunk of code and its purpose and function may not be obvious.
 
 **Javadocs comments** are more structured. You should write a Javadocs comment on top of every class definition, on top of each constructor, and on top of each method. For instance. Here's an example class comment:
 
