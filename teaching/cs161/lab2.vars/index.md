@@ -226,35 +226,35 @@ I've mentioned that effective commenting is an important habit for programmers t
 
 **Javadocs comments** are more structured. You should write a Javadocs comment on top of every class definition, on top of each constructor, and on top of each method. For instance. Here's an example class comment:
 
-    ```java
-    /**
-     * This is a class that simulates cars. blah blah blah
-     * @author David
-     * @version 1/26/2023
-     */
-    public class Car {
-        // code omitted
-    }
-    ```
+```java
+/**
+ * This is a class that simulates cars. blah blah blah
+ * @author David
+ * @version 1/26/2023
+ */
+public class Car {
+    // code omitted
+}
+```
 
-    Here's a Javadocs comment for a method:
+Here's a Javadocs comment for a method:
 
-    ```java
-    /**
-     * This method moves a Triangle horizontally by the 
-     * given distance.
-     * 
-     * @param distance A distance (in pixels) to displace
-     */
-    public void moveHorizontal(int distance) {
-        // This is a line comment!
-        erase();
-        xPosition += distance;
-        draw();
-    }
-    ```
+```java
+/**
+ * This method moves a Triangle horizontally by the 
+ * given distance.
+ * 
+ * @param distance A distance (in pixels) to displace
+ */
+public void moveHorizontal(int distance) {
+    // This is a line comment!
+    erase();
+    xPosition += distance;
+    draw();
+}
+```
 
-        Note the use of `@tags` in the Javadocs comments.
+Note the use of `@tags` in the Javadocs comments.
 
 Go ahead and add comments to the new constructor and method that you wrote for this lab.
 
