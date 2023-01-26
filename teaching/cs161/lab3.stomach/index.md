@@ -2,13 +2,14 @@
 
 ### Lab: Writing the Stomach Class
 
-In this assignment you will use BlueJ to practice creating and calling methods on some limited Shape objects. You will manipulate these shapes to create a simple picture of Pac-Man. You will then create a picture of your own.
+In this assignment you will write your first class from scratch. This class models a very rudimentary stomach, which can ingest food, and digest food.
 
 #### Student Outcomes
 
 - Practice basic class writing from scratch
-- To learn to use the Random class
+- To learn to use objects of the `Random` class to generate random numbers
 
+<!-- 
 #### Working with Partners (Please Read)
 
 You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
@@ -23,7 +24,7 @@ Here are your assigned partners for today's lab.
 [Camblin, F, Murphy, C]
 [Jones, B, Brown, A]
 [Wissing, A, Miller, D]
-```
+``` -->
 
 #### The Stomach Class
 
@@ -58,7 +59,10 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
   - A second constructor that lets users input a pre-existing whole-number amount of food that's already been ingested in the stomach.
 
     ```java
-    public Classname(parameterList) {  //the parameter list is optional
+    /**
+     * This constructor creates a stomach object
+     */
+    public Classname(parameterList) {
       // code to initialize fields
     }
     ```
@@ -85,7 +89,7 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
       import java.util.Random;
       ```
 
-    - In the body of `digest()`, create a local variable of type `Random` as follows:
+    - In the body of `digest()`, create a local variable of type `Random` (Yes classes can be used like data types!) as follows:
 
       ```java
       Random rng = new Random();   // Create a random number generator called 'rng'
@@ -97,8 +101,8 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
       ```java
       Random rng = new Random();
-      int x = rng.nextInt(10);     // Get a random number between 0 and 9, and
-                                   // store it in local variable 'x'
+      int x = rng.nextInt(10);     // returns a random number between 0 and 9, and
+                                   // stores it in local variable 'x'
       ```
 
       This will store a random integer between 0 and 9 in `x`.

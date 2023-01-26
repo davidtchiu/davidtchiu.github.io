@@ -2,7 +2,7 @@
 
 ### Lab: Combo Guesser
 
-Davi was pretty impressed with your program that found all those loaded dice. He has been talking you up to his poker buddies. One of them, who wishes to remain anonymous, wants your help installing a new electronic lock on the safe (like the one shown to the right) in which he keeps his poker winnings.
+David was pretty impressed with your program that found all those loaded dice. He has been talking you up to his poker buddies. One of them, who wishes to remain anonymous, wants your help installing a new electronic lock on the safe (like the one shown to the right) in which he keeps his poker winnings.
 
 The "combination" for the lock is a sequence of integers, and the anonymous poker player is trying to decide how long this key sequence should be (how many numbers it contains), and the range of values used for each number in the key (between zero and some upper limit). He wants to make sure it's hard for intruders to guess, but his memory isn't what it used to be, so he also he wants to keep it on the simple side if possible.
 
