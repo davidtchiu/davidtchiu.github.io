@@ -22,7 +22,7 @@ Start by downloading a fresh copy of the starter file from the above link. The c
 
 - Next, it's slightly irritating that when you create new Circles, they're not automatically shown on the canvas. Modify the **constructor** code so that Circles are visible (on the screen) when they're created. That is, you have to change their initial state when they are created. This isn't as easy as simply assigning `true` to the `isVisible` field. Is there an existing method in the same class you can call (use) instead that will make the Circle pop up on the canvas, as well as having it set its `isVisible` field to `true`? Also ensure that new circles are yellow instead of blue. Make sure you test our your code before moving on!
 
-- Add a new method called `public void moveNorthEast()` to the Circle class. It requires to input parameters, and when called, it should move the circle up by a distance of 30 units and then to the right by a distance of 30 units. Then add a block comment to the code describing your new method.
+- Add a new method called `public void moveNorthEast()` to the Circle class. It requires *no* input parameters, and when called, it should move the circle up by a distance of 30 units and then to the right by a distance of 30 units. Then add a block comment to the code describing your new method.
 
   - Can you write this method by calling a couple of the methods you modified earlier?
 
