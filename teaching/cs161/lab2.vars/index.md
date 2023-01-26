@@ -85,7 +85,7 @@ private dataType variableName;
 
       - You'll need know this for calculating the perimeter. If you need to take the square root of a value `x`, you can use the built-in Java function `Math.sqrt(x)`. Also, to take `x` to the `y`th power ($$x^y$$), you can use `Math.pow(x,y)`
 
-4. Create a new `Triangle` to see if your `area` and `perimeter` fields are now populating. If you did everything above correctly, you should've gotten 600.0 for area and 140.0 for perimeter.
+4. Create a new `Triangle` to see if your `area` and `perimeter` fields are now populating. If you did everything above correctly, you should've gotten 600.0 for area and roughly 112.11 for perimeter.
 
 5. But is this the only place where a triangle's `area` and `perimeter` need to be updated? Scroll further down the source code and see if there are any methods that might require the `area` and `perimeter` to be updated. Put in the assignment statements in those method(s) as well. Test again to make sure everything's working.
 
