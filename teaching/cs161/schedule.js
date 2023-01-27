@@ -212,7 +212,7 @@ let days = {
     // wk 8
     "For loops; Nested loops",
     "Finish nested loops",
-    "Hwk Lab",
+    "Lab 7",
     "Start Arrays",
     // wk 9: spring break
     "<b>Spring Break</b>",
@@ -222,12 +222,12 @@ let days = {
     // wk 10
     "Start Arrays; Write the Bank class",
     "Finish Bank",
-    "Lab 7",
-    "Review Lab 7",
+    "Lab 8",
+    "Review Lab 8",
     // wk 11
     "Start ArrayList",
     "ArrayList",
-    "Lab 8",
+    "Lab 9",
     "Scanning for input: ChatBot",
     // wk 12
     "Finish ChatBot; Start HashMap",
@@ -237,17 +237,17 @@ let days = {
     // wk 13
     "HashMap (cont.): Smarter ChatBot",
     "File I/O; String parsing",
-    "Lab 9",
+    "Lab 10",
     "File I/O: Finish TreeFile class",
     // wk 14
     "Start complexity: Linear search",
     "Binary search",
-    "Lab 10",
+    "Lab 11",
     "Selection sort",
     // wk 15
     "Bubble Sort",
     "More complexity: list reversal, palindrome",
-    "Special Hwk Lab",
+    "Hwk Lab",
     "public, private, final",
     // wk 16
     "static, main(); IntelliJ IDE",

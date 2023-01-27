@@ -1,15 +1,15 @@
 #### TODO
-- Move static/enum/private/public up (or spread them out)
+- Hwk 1 can be due 2 days sooner now.
 - Put starter code on github
-- Spring: Exam 2 move to Week 12, not 13
 - Why have students create a new zip every time? Just submit the `.java` files.
-- Push back return. We don't _really_ use it until CircleDrawer lab 5 and object interaction
+- Move static/enum/private/public up (or spread them out)
 - Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
 - Consider moving complexity before design
-- Need a better lab 2. It stinks. Maybe have them start manipulating Circle with some scope stuff thrown in
 - Hwk 4 lot cooler if I introduced an Arm class or something…
 
 #### Change Log
+- **Spring 2023**: Added new Lab 6: Diamonds (abstraction)
+- **Spring 2023**: Added new Lab 2: Triangles (variables)
 - **Spring 2023**: Call them instance variables instead of fields
 - **Spring 2023**: Use Lab 1 to cover lecture 1 up to def'n of algorithms.
 - **Spring 2023**: Change books - Mapping to Horstmann early objects
