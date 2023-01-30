@@ -51,13 +51,13 @@ In this project, you will put in the work to write a class of (alarm) Clocks.
 
 - Next, create a new method called `tickDown()`. It should have the opposite effect of `tickUp()`. Each call should tick the minute down by one. Again, beware of "boundary conditions" just like before.
 
-- Now add a new method called `toString()` that returns a String, and inputs whether the string should be returned in military (24-hour) style. If the `military` option is `false`, this method should return the current time as a string in the following format `"hh:mm am/pm"`. Otherwise (the military option is set to `true`), you should return the current time as a string `"hh:mm`, but remember to add 12 to the hour if it's current pm.
+- Now add a new method called `showTime()` that returns nothing, and inputs whether the string should be returned in military (24-hour) style. If the `military` option is `false`, this method should return the current time as a string in the following format `"hh:mm am/pm"`. Otherwise (the military option is set to `true`), you should return the current time as a string `"hh:mm`, but remember to add 12 to the hour if it's current pm.
 
   - Note that the format calls for you to concatenate a leading 0 to the hour or minute if the current hour or minute is single-digit.
 
   - For example, suppose your clock's state is set to hour = 9, minute = 4, pm = true.
-    - Calling `toString(false)` would return: `"09:04 pm"`
-    - Calling `toString(true)` would return: `"21:04"`
+    - Calling `showTime(false)` would print: `"09:04 pm"`
+    - Calling `showTime(true)` would print: `"21:04"`
 
 
 #### Alarm Function
@@ -75,19 +75,6 @@ When you've tested everything you've written so far, let's add some new function
 
 - Next, inside `tickUp()`, you'll need to add some code to check if the current time (after ticking up) matches the alarm time. If the hour, minute, and am/pm status all match, then you should print `***** BEEP BEEP BEEP *****` to the terminal. Make sure `tickDown()` also checks for the alarm to go off.
 
-#### Extending the Homework
-
-There's no extra credit for these extensions, but completing one or more will help you achieve enlightenment.
-
-- Write a method `random(int low, int high)` that sets the current value to a random integer between `low` and `high`, inclusive. You should test your method thoroughly:
-
-  - Make sure your `low` and `high` are indeed inclusive (i.e., both values can be set)
-  - Make sure `low` and `high` can both accept negative values.
-  - When `low` is greater than `high`, this method should have no effect.
-  - When `low` is equal to `high`, it should always set the current value to the same number (For instance, calling `random(10,10)` will always put `10` in the current value.)
-
-- Define additional methods that add functionality to your calculator (e.g., square root, sin, etc.). You've seen how to take square roots using `Math.sqrt()`, but you can learn more about how to get Java to calculate the remaining functions by reading the [online documentation](http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html) for the `Math` class.
-
 #### Grading
 
 ```
@@ -104,7 +91,7 @@ This assignment will be graded out of a total of 100pts.
 [20pts] tickDown() moves the clock back by 1 minute, which may cause am/pm to flip. It may   
         also cause the hour and minutes to "wrap around" to the beginning.
 
-[20pts] The toString() method accepts an input and returns the current time in either 
+[20pts] The showTime() method accepts an input and prints the current time in either 
         military (24-hour) time, or 12-hour time with am/pm status. If either hour or minute is single digit, then a leading 0 is appended.
 
 [10pts] The setAlarm() and unsetAlarm() methods are properly implemented.
