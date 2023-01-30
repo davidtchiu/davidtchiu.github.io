@@ -1,15 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
 ### Homework: Clock
-- Clock(int hr, int min, boolean pm)
-- void tickUp() - ticks minutes up. Alarm may go off.
-- void tickDown() - tickets minutes down. Alarm may go off.
-- String toString(boolean military): alarm set?
-- void setAlarm(int hr, int min, boolean pm)
-- void unsetAlarm()
-- boolean alarmSet()
-- void addMinutes(int minutes)
-
 
 
 #### Student Outcomes
@@ -22,155 +13,67 @@
 
 #### Required Files
 
-The following file(s) have been provided for this assignment.
+There are no starter files provided for this project. To create a new project, follow these instructions:   
+  1. Open BlueJ. It might show you the most recently opened project, but that's okay.
+  2. Click on the `BlueJ` menu (called `File` menu in Windows) on top.
+  3. Select `New Project...`
+  4. BlueJ will ask you for a project name. You can name it `OrcaCard` or whatever you see fit.
+  5. Then it asks you for the location to store the project. Click `Choose` and I'd put it along with your other projects for this class (hopefully in a Google Drive folder).
+  6. Then click `OK`. BlueJ will automatically give you a sample class. You can remove it, and start clean.
 
-- [Hwk2_Calculator.zip](Hwk2_Calculator.zip)
 
 #### Instructions
 
-I've created a new project for you that contains the outline of a `Calculator` class. Please download and modify `Calculator` Project instead of creating a new project via BlueJ. The `Calculator` class currently has some sample methods to remind you of the syntax, but you should delete any code you don't use before submitting. The steps below will guide you through creating the necessary fields and constructors, then the four arithmetic operators, and finally the memory-related functions. Good style is important! Make sure you write comments above each of the methods as you go, indent your code properly, and use meaningful variable and parameter names in your code. In the descriptions below, the text I'm showing illustrates an interaction with your `Calculator` class in the code pad window. You can perform equivalent tests via the point-and-click interface if you prefer.
+In this project, you will put in the work to write a class of (alarm) Clocks.
 
-- Your calculator will need to maintain its current value. While we won't have a display like a normal calculator, a `Calculator` object will still need to remember its current value so that it knows what to do when we add to the current value, subtract from it, etc. For this homework, assume that you'll only be working with integer values. Define a new field at the top of the class that will hold the calculator's value. Make sure you give the field a meaningful name so the rest of your code is easier to read.
+- **Instance Variables:** What do all clocks need to remember about themselves? Well, your clocks for this project need to store the hour, minute, and whether it is am/pm. (You can ignore seconds.) For the am/pm indicator, I would use a `boolean` data type to store an instance variable called `pm`.
 
-- Define two constructors: The first should initialize the current value to be zero, and needs no parameters. A constructor that requires no inputs is known as the default constructor. The second should take a single integer input, and set the calculator's initial value to the specified value.
+- **Define two constructors:** The first (default constructor) should initialize the current time to 00:00, and needs no input parameters.  The second constructor should be written to accept the hour, minute, and a boolean indicating whether the clock should be read as am or pm.
 
-- Implement an getter (accessor) method called `getValue()` that returns the calculator's current value.
+- Implement a method called `tickUp()`. It returns and inputs nothing. Calling it will tick the minute up by one. Be careful though. If the current minute is at 59, then `tickUp()` should cause the hour to increment, and reset the minute to 0. Taking this idea further, if the hour increments from 11 to 12, then the am/pm state needs to be flipped. Furthermore, if the hour increments from 12, then you need to set it back to 1! the current time is 11:59, then `tickUp()` should not only reset the minute to 0, but reset the hour to 1, as well as "flipping" am to pm, or vice versa.
 
-- First, let's add a `subtract()` method. It should accept a single integer input. The `subtract()` method should subtract its input from the calculator's current value and it does not return a value. It should also print a single line of output describing the arithmetic operation, its inputs, and result. For example, if you typed each line below into BlueJ's code pad, you should get the corresponding results. (The lines starting with `>` means it's been output from BlueJ onto the terminal.)
+  - Yes this will require you to write if-statements in order to test if your hours/minutes are in one of those boundary conditions.
 
-  ```java
-  Calculator c;
-  c = new Calculator(20);
+  - Test by creating a clock representing 11:59pm.
 
-  c.subtract(5);
-  > 20 - 5 = 15
+    <img src="figures/BlueJ___Create_Object.png" width="400px" />
 
-  c.subtract(2);
-  > 15 - 2 = 13
+  - Inspect the object to ensure your state is correct:
 
-  c.subtract(25);
-  > 13 - 25 = -12
-  ```
+    <img src="figures/BlueJ___Object_Inspector_-_clock1__Clock_Number_of_fields_6.png" width="400px" />
 
-- Now add a method called `add()` that takes a single integer input and doesn't return. It should set the calculator's state to be the sum of its old value and the input to add. It should also print a message describing the inputs to the addition and the result, as shown below.
 
-  ```java
-  Calculator c1;
-  c1 = new Calculator();
-  c1.add(5);
-  > 0 + 5 = 5
+  - Ticking up the clock once should make it 12:00am. Inspect the object after you tick up to show:
 
-  c1.add(10);
-  > 5 + 10 = 15
+    <img src="figures/BlueJ___Object_Inspector_-_clock1__Clock_Number_of_fields_7.png" width="400px" />
 
-  Calculator c2;
-  c2 = new Calculator(100);
-  c2.add(61);
-  > 100 + 61 = 161
-  ```
+  - Test out some other times (with no wraparounds), just to convince yourself that you're doing everything properly.
 
-- Next, use the patterns above to add a `multiply()` method. It also doesn't return a value. It should multiply its input by the current value.
+- Next, create a new method called `tickDown()`. It should have the opposite effect of `tickUp()`. Each call should tick the minute down by one. Again, beware of "boundary conditions" just like before.
 
-  ```java
-  Calculator c1;
-  c1 = new Calculator();
-  c1.add(100);
-  > 0 + 100 = 100
+- Now add a new method called `toString()` that returns a String, and inputs whether the string should be returned in military (24-hour) style. If the `military` option is `false`, this method should return the current time as a string in the following format `"hh:mm am/pm"`. Otherwise (the military option is set to `true`), you should return the current time as a string `"hh:mm`, but remember to add 12 to the hour if it's current pm.
 
-  c1.multiply(1);
-  > 100 * 1 = 100
+  - Note that the format calls for you to concatenate a leading 0 to the hour or minute if the current hour or minute is single-digit.
 
-  c1.multiply(-2);
-  > 100 * -2 = -200
-  ```
+  - For example, suppose your clock's state is set to hour = 9, minute = 4, pm = true.
+    - Calling `toString(false)` would return: `"09:04 pm"`
+    - Calling `toString(true)` would return: `"21:04"`
 
-- Now it's time to implement `divide()`. It should work like the other three arithmetic methods, but with two major differences:
 
-  - First, it should print an error message if the input _divisor_ is zero, and when this the case, your code must skip carrying out the division and simply clear the calculator's current value. That is, don't carry out any instructions of `/=` or `/` when this is the case!
+#### Alarm Function
+When you've tested everything you've written so far, let's add some new functionalities. Specifically, we want to add an alarm function.
 
-  - Second, if the division _can_ be carried out, then you must do a subsequent test to see if the division would result in a loss of precision. Since our calculator only works with integers, some divisions will cause the result to be truncated, that is, the fraction portion gets thrown out. For instance, 16 divided by 3 should put 5 as its the current value and output a precision-loss warning seen below. (Hint: Any time it doesn't divide evenly, that is, with a remainder of zero, you should print the warning.)
+- We need to store more instance variables. Add 3 more instance variables, that will capture the hour, minute, and am/pm of the alarm.
 
-  ```java
-  Calculator c;
-  c = new Calculator(40);
-  c.divide(2);
-  > 40 / 2 = 20
+- Because you added instance variables, you need to go back into your constructors to initialize them. Let's go ahead and initialize them to `-1`, `-1`, and `false`, respectively.
 
-  c.divide(3);
-  > Warning: division resulted in loss of precision.
-  > 20 / 3 = 6
+- Write a new method `setAlarm()` that returns nothing, but takes as input the hour, minute, and am/pm of an alarm the caller would like to set. Assign your new instance variables to the values that are input.
 
-  c.divide(2);
-  > 6 / 2 = 3
+- Write a method called `unsetAlarm()` that returns nothing, and resets the hour, minute, and am/pm status of your alarm to `-1`, `-1`, and `false`, respectively.
 
-  c.divide(-1);
-  > 3 / -1 = -3
+- Writ a method `alarmSet()` that accepts no inputs, but returns the status of the alarm. If the hour and minute of the alarm are both set to `-1`, then this method returns `false` (that is, no alarm is set). Otherwise, this method returns `true`.
 
-  c.divide(0);
-  > Error: division by zero -- value cleared.
-  > -3 / 0 = 0
-  ```
-
-  <!--
-  Now implement a method called `square()`, which takes no inputs and will square the current value. Hint: You are reminded that you should reuse code where possible...
-
-    ```java
-    Calculator c = new Calculator(1);
-    c.add(1);
-    > 1 + 1 = 2
-
-    c.square();
-    > 2 * 2 = 4
-
-    c.square();
-    > 4 * 4 = 16
-
-    c.square();
-    > 16 * 16 = 256
-    ```
-    -->
-
-- Next, implement the memory operations. Start with `store()`, which takes no inputs, but causes the calculator's current value to be stored in a memory location. (Hint: You'll need to add a new field to your class.) Then implement `recall()`, which takes no inputs, but causes the stored value to replace the calculator's current value. Also note the expected print-out. For example:
-
-  ```java
-  Calculator c;
-  c = new Calculator(20);
-  c.add(3);
-  > 20 + 3 = 23
-
-  c.store();
-  > 23 --> mem
-
-  c.multiply(5);
-  > 23 * 5 = 115
-
-  c.recall();
-  > mem --> 23
-
-  c.add(10);
-  > 23 + 10 = 33
-  ```
-
-- Add a new method `exchange()` that exchanges the value stored in the calculator's memory with the calculator's current value. Also note the expected print-out. For example:
-
-  ```java
-  Calculator c;
-  c = new Calculator(20);
-  c.store();
-  > 20 --> mem
-
-  c.add(10);
-  > 20 + 10 = 30
-
-  c.exchange();
-  > 20 <--> 30
-
-  c.add(1);
-  > 20 + 1 = 21
-
-  c.recall();
-  > mem --> 30
-  ```
+- Next, inside `tickUp()`, you'll need to add some code to check if the current time (after ticking up) matches the alarm time. If the hour, minute, and am/pm status all match, then you should print `***** BEEP BEEP BEEP *****` to the terminal. Make sure `tickDown()` also checks for the alarm to go off.
 
 #### Extending the Homework
 
@@ -188,23 +91,26 @@ There's no extra credit for these extensions, but completing one or more will he
 #### Grading
 
 ```
-This assignment will be graded out of a total of 70pts.
+This assignment will be graded out of a total of 100pts.
 
 [5pts] Appropriate instance variables have been defined for this class.
        No local variables are defined as instance variables.
 
 [10pts] Both constructors are properly implemented.
 
-[15pts] The add, subtract, and multiply method have been implemented.
+[20pts] tickUp() moves the clock ahead by 1 minute, which may cause am/pm to flip. It may   
+        also cause the hour and minutes to "wrap around" to the beginning.
 
-[5pts] The square method have been implemented, and reuses code you've already written.
+[20pts] tickDown() moves the clock back by 1 minute, which may cause am/pm to flip. It may   
+        also cause the hour and minutes to "wrap around" to the beginning.
 
-[15pts] The divide has been implemented without runtime bugs. Appropriate error and warning
-        messages are printed.
+[20pts] The toString() method accepts an input and returns the current time in either 
+        military (24-hour) time, or 12-hour time with am/pm status. If either hour or minute is single digit, then a leading 0 is appended.
 
-[10pts] The recall and store methods have been implemented.
+[10pts] The setAlarm() and unsetAlarm() methods are properly implemented.
 
-[5pts] The exchange method has been implemented.
+[10pts] tickUp() and tickDown() further print out ***** BEEP BEEP BEEP **** if the time now 
+        matches the alarm that is set.
 
 [5pts] You include sufficient inline and block comments to explain the logic of your methods.
 ```

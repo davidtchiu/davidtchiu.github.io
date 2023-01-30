@@ -23,7 +23,7 @@ and output.
 
 For full credit, your class should contain all of the methods described below. They should have exactly the same name as shown, take the correct arguments, and return the correct information. (I will run a program that creates instances of your class and tests them, and if your names or other details differ, my testing code won't compile.) The assignment is less specific about the instance variables (fields) you'll need — you'll have to figure out what you need to store in order to implement the methods below.
 
-- Start by creating a new BlueJ project, called `Hwk3_OrcaCard`. Inside, create a new class called `OrcaCard`.
+- Start by creating a new BlueJ project, called `OrcaCard`. Inside, create a new class called `OrcaCard`.
 
 - Your class needs to be able to keep track of how much money is currently stored on the card.
 
@@ -35,21 +35,21 @@ For full credit, your class should contain all of the methods described below. T
 
   - A second constructor should take a single argument as input (the sales tax rate). Your code should ensure that a valid rate was entered (i.e., can't be negative). If a rate is detected as being invalid, you should default the rate to 6.5%.
 
-  - Know this: This thinking-ahead, anticipating possible errors, then writing code to prevent them, is called **Defensive Programming**. This is an extremely important programming practice, as it could prevent bugs and security vulnerabilities in your code.
+  - Know this: The thinking-ahead, anticipating possible errors, and writing code to prevent them, is called **Defensive Programming**. This is an extremely important programming practice, as it could prevent bugs and security vulnerabilities in your code.
 
-- A method called `topUp()` that takes a single argument (the amount to add to the current balance) and adjusts the balance but doesn't return anything. You are reminded to program defensively...
+- A method called `topUp()` that takes a single input argument (the amount to add to the current balance) and adjusts the balance but doesn't return anything. You are reminded to program defensively...
 
-- We'll simulate the process of "swiping" the card via the `buyTrip()` method. It should take a double as a parameter (the cost of the trip), but we're required to pay tax on the cost of the trip as well. Thus, in the body of your method you'll need to calculate how much we owe in tax, and decrease the balance by the cost of the trip plus tax. The `buyTrip()` method should return void. You should also keep a separate running total of the amount of tax collected, so that we can report it to the IRS when necessary.
+- We'll simulate the process of "swiping" the card via the `buyTrip()` method. It should take the cost of the trip for input, but we're required to pay tax on the cost of the trip as well. Thus, in the body of your method you'll need to calculate how much we owe in tax, and decrease the balance by the cost of the trip **plus** tax. The `buyTrip()` method should return void. You should also keep a separate running total of the amount of tax collected, so that we can report it to the IRS when necessary.
 
-  For full credit, you should use a conditional in `buyTrip()` that checks whether you can afford the trip. If not, print an error message but don't adjust the balance on the card or the tax collected. If there are sufficient funds for the trip, do the bookkeeping described in the paragraph above and print a success message that includes the remaining balance on the card.
+  For full credit, you should use conditional statement(s) in `buyTrip()` that checks whether you can afford the trip (plus tax). If not, print an error message but don't adjust the balance on the card or the tax collected. If there are sufficient funds for the trip, do the bookkeeping described in the paragraph above and print a success message that includes the remaining balance on the card.
 
-- Report it to the IRS you say? We'll need a `getTax()` method. It doesn't take any arguments, but should return the total amount of tax collected during "swipes" of the card.
+- Report it to the IRS you say? We'll need a `getTax()` method. It doesn't take any input arguments, but should return the total amount of tax collected during "swipes" of the card.
 
-- It might be good to keep a record of the costliest trip you've ever taken. Write a method called `getCostliestTrip()` that returns that information.
+- It might be good to keep a record of the costliest trip you've ever taken. Write a method called `getCostliestTrip()` that returns that information. The costliest trip **does not** need to include the tax.
 
-- We'll also add a `getAverageTripCost()` method. It doesn't need any arguments, but it should return the average cost of the trips paid for by this card. Ignore the tax we pay on the trips when computing the average.
+- We'll also add a `getAverageTripCost()` method. It doesn't need any arguments, but it should return the average cost of the trips paid for by this card. Ignore the tax we pay on the trips when computing the average. The average trip cost **does not** include the tax.
 
-- Let's also alert the user to their level of balance remaining on the card. Write a method `balanceLevel()` that doesn't require arguments, and `returns` a `String` containing the appropriate message (shown below) based on the current balance. Only one message should be returned. Note that a negative balance cannot happen if you programmed `buyTrip()` properly. If you see a negative balance, go back and fix that method!
+- Let's also alert the user to their level of balance remaining on the card. Write a method `balanceLevel()` that doesn't require arguments, and `return` a `String` containing the appropriate message (shown below) based on the current balance. Only one message should be returned. Note that a negative balance cannot happen if you programmed `buyTrip()` properly. If you see a negative balance, go back and fix that method!
 
   | balance                                      | message to return                       |
   | -------------------------------------------- | --------------------------------------- |
@@ -59,10 +59,19 @@ For full credit, your class should contain all of the methods described below. T
   | at or below five times the average trip cost | Your balance is sufficient!             |
   | anything higher                              | Your balance is high!                   |
 
-- Finally, write a `printSummary()` method that prints (does not `return`) information about the ORCA card object. The output should contain: the card's current balance, the number of trips taken, the balance-level message from the method you just wrote previously. It should also print your costliest trip on a separate line.
+- Finally, write a `printSummary()` method that prints (not `return`!) information about the ORCA card object. The output should contain: the card's current balance, the number of trips taken, the balance-level message from the method you just wrote previously. It should also print your costliest trip on a separate line.
 
-- You can test out your class in code pad. Except for your version of `printSummary()`, your output should match mine exactly for full credit. Recall that outputs from your program to the terminal are indicated with a `>` sign below.
+  For instance, the output to the terminal might look like this:
+  ```
+  $20 left after 1 trip(s)
+  Your balance is high!
+  Your costliest trip so far: $4.5
+  ```
 
+#### Sample Output
+You can test out your class in BlueJ's code pad. Your output should match mine exactly for full credit. Outputs on the terminal are shown directly below.
+
+  Create an Orca Card with a balance of $20.50, and print its summary.
   ```java
   OrcaCard myCard = new OrcaCard();
   myCard.topUp(20.5);
@@ -70,49 +79,54 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```
-  > $20.5 left after 0 trip(s).
-  > Your balance is high!
-  > Your costliest trip so far cost $0
+  $20.5 left after 0 trip(s)
+  Your balance is high!
+  Your costliest trip so far: $0.0
   ```
 
+  Let's purchase a $10 trip. But remember, your balance needs to reflect the cost of the trip and the tax.
   ```java
   myCard.buyTrip(10.00);
   ```
 
   ```
-  > Success: Ticket purchased.  $9.85 remaining.
+  Success: Ticket purchased.  $9.85 remaining.
   ```
 
+  Given a tax rate of 6.5%, the card should have collected $0.65 of taxes for the $10 trip.
   ```java
-  myCard.getTax()
+  System.out.println(myCard.getTax());
   ```
 
   ```
-  > 0.65 (double)
+  0.65
   ```
 
+  Now buy a $5 trip.
   ```java
   myCard.buyTrip(5);
   ```
 
   ```
-  > Success: Ticket purchased. $4.5249999999999995 remaining.
+  Success: Ticket purchased.  $4.5249999999999995 remaining
   ```
 
+  We've bought 2 trips for $15 total (not including tax), so the average trip should be $7.50.
   ```java
-  myCard.getAverageTripCost()
+  System.out.println(myCard.getAverageTripCost());
   ```
 
   ```
-  > 7.5 (double)
+  7.5
   ```
 
+  The amount of taxes collected should now be:
   ```java
-  myCard.getTax()
+  System.out.println(myCard.getTax());
   ```
 
   ```
-  > 0.9750000000000001 (double)
+  0.9750000000000001
   ```
 
   ```java
@@ -120,15 +134,18 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```
-  > $4.5249999999999995 left after 2 trip(s).
+  $4.5249999999999995 left after 2 trip(s)
+  Your balance is low!
+  Your costliest trip so far: $10.0
   ```
 
+  
   ```java
   myCard.buyTrip(4.50);
   ```
 
   ```
-  > Fail: You cannot afford this trip.
+  Fail: You cannot afford this trip.
   ```
 
   ```java
@@ -137,7 +154,7 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```
-  > Success: Ticket purchased. $0.7324999999999995 remaining.
+  Success: Ticket purchased.  $0.732499999999999 remaining
   ```
 
   ```java
@@ -145,9 +162,9 @@ For full credit, your class should contain all of the methods described below. T
   ```
 
   ```
-  > $0.7324999999999995 left after 3 trip(s).
-  > Your balance is low!
-  > Your costliest trip so far cost $10
+  $0.732499999999999 left after 3 trip(s)
+  Your balance is low!
+  Your costliest trip so far: $10.0
   ```
 
 #### Extending the Homework
