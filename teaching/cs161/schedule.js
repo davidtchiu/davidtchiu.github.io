@@ -182,10 +182,10 @@ let days = {
     "Reading Java code: comments, fields, data types",
     "Constructors; input parameters, assignment statements",
     "Lab 2",
-    "Methods, calling methods, returning values",
+    "Variable: instance, local, input; lifetime and scope",
     // wk 3
-    "Printing, String concatenation; conditionals in printTicket()",
-    "Writing classes",
+    "Methods and returning; Finish Circle, start TicketMachine",
+    "Printing, String concatenation; conditionals",
     "Lab 3",
     "Lab 3 review",
     // wk 4
