@@ -19,7 +19,7 @@ There are no starter files provided for this project. To create a new project, f
   1. Open BlueJ. It might show you the most recently opened project, but that's okay.
   2. Click on the `BlueJ` menu (called `File` menu in Windows) on top.
   3. Select `New Project...`
-  4. BlueJ will ask you for a project name. You can name it `OrcaCard` or whatever you see fit.
+  4. BlueJ will ask you for a project name. You can name it `Clock` or whatever you see fit.
   5. Then it asks you for the location to store the project. Click `Choose` and I'd put it along with your other projects for this class (hopefully in a Google Drive folder).
   6. Then click `OK`. BlueJ will automatically give you a sample class. You can remove it, and start clean.
 
@@ -30,7 +30,7 @@ There are no starter files provided for this project. To create a new project, f
 
 - **Define two constructors:** The first (default constructor) should initialize the current time to 00:00, and needs no input parameters.  The second constructor should be written to accept the hour, minute, and a boolean indicating whether the clock should be read as am or pm.
 
-- Implement a method called `tickUp()`. It returns and inputs nothing. Calling it will tick the minute up by one. Be careful though. If the current minute is at 59, then `tickUp()` should cause the hour to increment, and reset the minute to 0. Taking this idea further, if the hour increments from 11 to 12, then the am/pm state needs to be flipped. Furthermore, if the hour increments from 12, then you need to set it back to 1! 
+- Implement a method called `tickUp()`. It returns and inputs nothing. Calling it will tick the minute up by one. Be careful though. If the current minute is at 59, then `tickUp()` must cause the hour to increment too, and you should reset the minute to 0 instead of incrementing it to 60! Taking this idea further, if the hour increments from 11 to 12, then the am/pm state needs to be flipped! Furthermore, if the hour increments from 12 to 13, then you need to set the hour back to 1!
 
   - Yes you need to to write if-statements in order to test if your hours/minutes are in one of those boundary conditions.
 
@@ -47,17 +47,13 @@ There are no starter files provided for this project. To create a new project, f
 
     <img src="figures/BlueJ___Object_Inspector_-_clock1__Clock_Number_of_fields_7.png" width="300px" />
 
-  - Test out some other times (with no wraparounds), just to convince yourself that you're doing everything properly.
+  - Test your method out using some other times just to convince yourself that you're doing everything properly.
 
-- Next, create a new method called `tickDown()`. It should have the opposite effect of `tickUp()`. Each call should tick the minute down by one. Again, beware of "boundary conditions" just like before.
+- Next, create a new method called `tickDown()`. It should have the opposite effect of `tickUp()`! Each call should tick the minute down by one. Again, beware of "boundary conditions" just like before. Try starting the clock to 1:00 am, and `tickDown()`. Verify that you should get 12:59 am. Likewise, setting the clock to 12:01 am, and calling `tickDown()` twice should yield 11:59 pm.
 
-- Now add a new method called `showTime()` that returns nothing, and inputs whether the string should be returned in military (24-hour) style. If the `military` option is `false`, this method should return the current time as a string in the following formats `"hh:mm am"` or `"hh:mm pm"`. Otherwise (the military option is set to `true`), you should return the current time as a string `"hh:mm`, but remember to add 12 to the hour if it's current pm.
+- Now add a new method called `showTime()` that inputs and returns nothing. This method should print either the string `"hh:mm am"` or `"hh:mm pm"`, based on the current time stored in the clock.
 
-  - Note that the format calls for you to concatenate a leading 0 to the hour or minute if the current hour or minute is single-digit.
-
-  - For example, suppose your clock's state is set to hour = 9, minute = 4, pm = true.
-    - Calling `showTime(false)` would print: `"09:04 pm"`
-    - Calling `showTime(true)` would print: `"21:04"`
+  - Note that the format calls for you to concatenate a leading 0 to the hour or minute if the current hour or minute is single-digit. For example, suppose your clock's state is set to hour = 9, minute = 4, pm = true. Then calling `showTime()` would print: `"09:04 pm"`
 
 
 
@@ -76,25 +72,27 @@ When you've tested everything you've written so far, let's add some new function
 
 - Next, inside `tickUp()`, you'll need to add some code to check if the current time (after ticking up) matches the alarm time. If the hour, minute, and am/pm status all match, then you should print `***** BEEP BEEP BEEP *****` to the terminal. Make sure `tickDown()` also checks for the alarm to go off.
 
+#### Extension (24-HR Time)
+Hey if you have some time and want to make your alarm clock super cool, try adding a method called `show24HrTime()` that prints the current time in 24-hour format (no am/pm needed). Recall that 12:00am is shown as 00:00, and that if it's between 1pm to 11pm, you need to add 12 to the hour! For instance, 10:00pm should be displayed as 22:00.
+
 #### Grading
 
 ```
-This assignment will be graded out of a total of 100pts.
+This assignment will be graded out of a total of 85pts.
 
 [5pts] Appropriate instance variables have been defined for this class.
        No local variables are defined as instance variables.
 
 [10pts] Both constructors are properly implemented.
 
-[20pts] tickUp() moves the clock ahead by 1 minute, which may cause am/pm to flip. It may   
+[15pts] tickUp() moves the clock ahead by 1 minute, which may cause am/pm to flip. It may   
         also cause the hour and minutes to "wrap around" to the beginning.
 
-[20pts] tickDown() moves the clock back by 1 minute, which may cause am/pm to flip. It may   
+[15pts] tickDown() moves the clock back by 1 minute, which may cause am/pm to flip. It may   
         also cause the hour and minutes to "wrap around" to the beginning.
 
-[20pts] The showTime() method accepts an input and prints the current time in either 
-        military (24-hour) time, or 12-hour time with am/pm status. If either hour or 
-        minute is single digit, then a leading 0 is appended.
+[15pts] The showTime() method accepts an input and prints the current time in either 
+        If either hour or minute is single digit, then a leading 0 is appended.
 
 [10pts] The setAlarm() and unsetAlarm() methods are properly implemented.
 
