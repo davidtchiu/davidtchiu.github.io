@@ -7,6 +7,7 @@ In this assignment you will write your first class from scratch. This class mode
 #### Student Outcomes
 
 - Practice basic class writing from scratch
+- Practice with integer operations
 - To learn to use objects of the `Random` class to generate random numbers
 
 <!-- 
@@ -34,10 +35,15 @@ You should see a blank project window. Using the button, create a new class call
 
 ```java
 /**
- * Some comments here
+ * Some comments here about my stomach class
+ * @author <your name>
  */
 public class Stomach {
+  // instance variables first
 
+  // constructors next
+
+  // methods last
 }
 ```
 
@@ -46,11 +52,8 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 - **Fields (Instance Variables):** Your stomach needs to have two fields:
 
   - A whole number variable to hold the current amount of food sitting in the stomach. `ingested` would be a good name for this field.
-  - A whole number variable to hold the total amount of food that has been digested. `digested` would be a good name for this field.
 
-    ```java
-    private dataType fieldName;
-    ```
+  - A whole number variable to hold the total amount of food that has been digested. `digested` would be a good name for this field.
 
 - **Constructors:** Recall that it is the job of the constructor to set up initial values for the fields. Your class should have two constructors:
 
@@ -62,7 +65,7 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
     /**
      * This constructor creates a stomach object
      */
-    public Classname(parameterList) {
+    public Stomach(param1, param2, ...]) {
       // code to initialize fields
     }
     ```
@@ -97,7 +100,7 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
       Now, `rng` is a variable that stores a `Random` object. You can think of it as a random number generator that you can request to spit out a number whenever you need one!
 
-    - Then you can call its `nextInt(int n)` method to fetch a random integer between 0 (inclusive) and n (exclusive). For example:
+    - Then you can call the `rng`'s `nextInt(int n)` method to fetch a random integer between 0 (inclusive) and n (exclusive). For example:
 
       ```java
       Random rng = new Random();
@@ -117,45 +120,45 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
 - **The Test Code:** Here's some code to test your Stomach class. Copy and paste **all** of the following code block into Blue's code pad. Ask one of us if you don't remember where the code pad is. If your class is bug-free, your output should look similar to mine farther down below.
 
-```java
-System.out.println("Creating a new stomach...");
-Stomach s = new Stomach();
-System.out.println(s.toString());
-System.out.println();
+  ```java
+  System.out.println("Creating a new stomach...");
+  Stomach s = new Stomach();
+  System.out.println(s.toString());
+  System.out.println();
 
-System.out.println("Eating breakfast...");
-s.ingest(5);
-System.out.println(s.toString());
-System.out.println();
+  System.out.println("Eating breakfast...");
+  s.ingest(5);
+  System.out.println(s.toString());
+  System.out.println();
 
-System.out.println("Digesting...");
-s.digest();
-System.out.println(s.toString());
-System.out.println();
+  System.out.println("Digesting...");
+  s.digest();
+  System.out.println(s.toString());
+  System.out.println();
 
-System.out.println("Eating lunch...");
-s.ingest(10);
-System.out.println(s.toString());
-System.out.println();
+  System.out.println("Eating lunch...");
+  s.ingest(10);
+  System.out.println(s.toString());
+  System.out.println();
 
-System.out.println("Eating an early dinner...");
-s.ingest(20);
-System.out.println(s.toString());
-System.out.println();
+  System.out.println("Eating an early dinner...");
+  s.ingest(20);
+  System.out.println(s.toString());
+  System.out.println();
 
-System.out.println("Digesting...");
-s.digest();
-System.out.println(s.toString());
-System.out.println();
+  System.out.println("Digesting...");
+  s.digest();
+  System.out.println(s.toString());
+  System.out.println();
 
-// Let's see how much food remains in our stomach
-int a = s.getAmountFood();
-System.out.println("We still have " + a + " units of food in our stomach");
+  // Let's see how much food remains in our stomach
+  int a = s.getAmountFood();
+  System.out.println("We still have " + a + " units of food in our stomach");
 
-int d = s.getAmountDigested();
-System.out.println("Total we have digested " + d + " units of food");
-System.out.println();
-```
+  int d = s.getAmountDigested();
+  System.out.println("Total we have digested " + d + " units of food");
+  System.out.println();
+  ```
 
 - If everything is working, you should get something similar to what I got below. Because `digest()` is random, most your values will likely differ. But read through your output carefully to make sure everything makes sense.
 

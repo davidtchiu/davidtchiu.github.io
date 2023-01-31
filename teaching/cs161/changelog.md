@@ -8,6 +8,7 @@
 - Hwk 4 lot cooler if I introduced an Arm class or something…
 
 #### Change Log
+- **Spring 2023**: Replaced Hwk 2 with Alarm Clock (more conditionals)
 - **Spring 2023**: Added new Lab 6: Diamonds (abstraction)
 - **Spring 2023**: Added new Lab 2: Triangles (variables)
 - **Spring 2023**: Call them instance variables instead of fields
