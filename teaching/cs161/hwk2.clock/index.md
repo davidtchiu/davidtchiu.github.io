@@ -68,9 +68,42 @@ When you've tested everything you've written so far, let's add some new function
 
 - Write a method called `unsetAlarm()` that returns nothing, and resets the hour, minute, and am/pm status of your alarm to `-1`, `-1`, and `false`, respectively.
 
-- Writ a method `alarmSet()` that accepts no inputs, but returns the status of the alarm. If the hour and minute of the alarm are both set to `-1`, then this method returns `false` (that is, no alarm is set). Otherwise, this method returns `true`.
+- Write a method `isAlarmSet()` that accepts no inputs, but returns the status of the alarm. If the hour and minute of the alarm are both set to `-1`, then this method returns `false` (that is, no alarm is set). Otherwise, this method returns `true`.
 
 - Next, inside `tickUp()`, you'll need to add some code to check if the current time (after ticking up) matches the alarm time. If the hour, minute, and am/pm status all match, then you should print `***** BEEP BEEP BEEP *****` to the terminal. Make sure `tickDown()` also checks for the alarm to go off.
+
+#### Example Output
+Here's a sample interaction of my working clock. If you type out the commands in your BlueJ Code Pad, you should get outputs that match mine. The lines below starting with `>` denote output to the terminal.
+
+Specifically, I create a clock given a time of 11:57 pm. Then I tick up 3 times and show that it is now properly showing 12:00 am (the minutes wrapped around to 00, and the hour incremented to 12; additionally, pm flipped to am.) Next, I set an alarm for 11:58 pm, which we're already past. So I tick down twice, and the clock reaches 11:58 pm, setting off the alarm. Finally, I print off the state of the alarm to show that it is currently set. So I unset the alarm, and print off the state again.
+
+```java
+Clock myClock = new Clock(11, 57, true);
+myClock.showTime();
+> 11:57 pm
+
+myClock.tickUp();
+myClock.tickUp();
+myClock.tickUp();
+myClock.showTime();
+> 12:00 am
+
+myClock.setAlarm(11, 58, true);
+myClock.tickDown();
+myClock.tickDown();
+> ****** BEEP BEEP BEEP ******
+
+myClock.showTime();
+> 11:58 pm
+
+System.out.println(myClock.alarmSet());
+> true
+
+myClock.unsetAlarm();
+System.out.println(myClock.alarmSet());
+> false
+```
+
 
 #### Extension (24-HR Time)
 Hey if you have some time and want to make your alarm clock super cool, try adding a method called `show24HrTime()` that prints the current time in 24-hour format (no am/pm needed). Recall that 12:00am is shown as 00:00, and that if it's between 1pm to 11pm, you need to add 12 to the hour! For instance, 10:00pm should be displayed as 22:00.
@@ -94,7 +127,7 @@ This assignment will be graded out of a total of 85pts.
 [15pts] The showTime() method accepts an input and prints the current time in either 
         If either hour or minute is single digit, then a leading 0 is appended.
 
-[10pts] The setAlarm() and unsetAlarm() methods are properly implemented.
+[10pts] The setAlarm(),  unsetAlarm(), and isAlarmSet() methods are properly implemented.
 
 [10pts] tickUp() and tickDown() further print out ***** BEEP BEEP BEEP **** if the time now 
         matches the alarm that is set.
