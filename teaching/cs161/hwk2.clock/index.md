@@ -4,7 +4,7 @@
 
 Clocks are cool. At a glance, they seem like just a glorified counter, ticking seconds, minutes, and hours up by one. But when we dig into them a bit more, we realize that there's actually a lot more detail that goes into properly implementing them. For instance, the minutes reset to 0 when they reach 60. The hours reset to 1 when they reach 13. We also need to keep track of am and pm, and that they change when the clock strikes 12.
 
-<img src="figures/clock-icon.png" />
+<img src="figures/clock-icon.png" width="400px" />
 
 In this project, you will put in the work to write a class of (alarm) clocks from scratch! I'll take you through the process of identifying your instance variables, and get you started on writing constructors and methods. You will have to have a pretty good handle on integer operations and writing if-else statements.
 
@@ -32,7 +32,9 @@ There are no starter files provided for this project. To create a new project, f
 
 - **Instance Variables:** What do all clocks need to remember about themselves? Well, your clocks for this project need to store the hour, minute, and whether it is am/pm. (You can ignore seconds.) For the am/pm indicator, I would use a `boolean` data type to store an instance variable called `pm`.
 
-- **Define two constructors:** The constructor should be written to accept the hour, minute, and a boolean indicating whether the clock should be read as am or pm. Take the caller's inputs and store them in the corresponding instance variables. If you need a refresher on how to do this, check out Lab 2 (Triangle), or go to your class notes on Circle and TicketMachine.
+- **Define a constructor:** The Clock constructor should be written to accept the hour, minute, and a boolean indicating whether the clock should be read as am or pm. Take the caller's inputs and store them in the corresponding instance variables. If you need a refresher on how to do this, check out Lab 2 (Triangle), or go to your class notes on Circle and TicketMachine.
+
+  - However, you need to be *defensive* here. A user could give you a value for `hour` that is not within the range of 1 to 12. When this is the case, set the hour to 12 instead. A bad value for `minute` that is outside the range of 0 and 59 could also be given. When that's the case, set the minutes to 0.
 
 - Implement a method called `tickUp()`. It does not return and it inputs nothing. Calling it will increment the minute counter by one. Be careful though. If the current minute counter is at 59, then `tickUp()` must cause the hour to increment too, and you should reset the minute to 0 instead of incrementing it to 60! Taking this idea further, if the hour increments from 11 to 12, then the am/pm state needs to be flipped! Furthermore, if the hour increments from 12 to 13, then you need to reset the hour counter back to 1!
 
@@ -109,8 +111,13 @@ System.out.println(myClock.alarmSet());
 ```
 
 
-#### Extension (24-HR Time)
-Hey if you have some time and want to make your alarm clock super cool, try adding a method called `show24HrTime()` that prints the current time in 24-hour format (no am/pm needed). Recall that 12:00am is shown as 00:00, and that if it's between 1pm to 11pm, you need to add 12 to the hour! For instance, 10:00pm should be displayed as 22:00.
+#### Optional Extensions
+If you have some time to spare and want to extend your clock, try doing the following optional challenges:
+
+  - Add a method called `show24HrTime()` that prints the current time in 24-hour format (no am/pm needed). Recall that 12:00am is shown as 00:00, and that if it's between 1pm to 11pm, you need to add 12 to the hour! For instance, 10:00pm should be displayed as 22:00. (Don't worry, we'll ignore it when grading, but give kudos if you properly implemented it.)
+
+  - Add a method called `addMinutes(int min)` that adds a given number of minutes `min` to the current time. Your clock needs to reflect any changes the addition would have had on the hours and the am/pm status. Don't forget that `min` can be given as a negative number too...
+
 
 #### Grading
 
@@ -120,7 +127,9 @@ This assignment will be graded out of a total of 85pts.
 [5pts] Appropriate instance variables have been defined for this class.
        No local variables are defined as instance variables.
 
-[10pts] Both constructors are properly implemented.
+[10pts] The constructor is properly implemented and defenseive to bad inputs. Upon 
+        receiving a bad hour, set the hour to 12. Set the minutes to 0 if a bad input
+        is given to it.
 
 [15pts] tickUp() moves the clock ahead by 1 minute, which may cause am/pm to flip. It may   
         also cause the hour and minutes to "wrap around" to the beginning.
