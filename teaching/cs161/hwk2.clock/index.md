@@ -1,6 +1,8 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Clock
+### Homework: Alarm Clock
+
+In this project, you will put in the work to write a class of (alarm) Clocks from scratch! I'll take you through the process of identifying your instance variables, and get you started on writing constructors and methods. You will have to have a pretty good handle on integer operations and writing if-else statements.
 
 
 #### Student Outcomes
@@ -24,34 +26,32 @@ There are no starter files provided for this project. To create a new project, f
 
 #### Instructions
 
-In this project, you will put in the work to write a class of (alarm) Clocks.
-
 - **Instance Variables:** What do all clocks need to remember about themselves? Well, your clocks for this project need to store the hour, minute, and whether it is am/pm. (You can ignore seconds.) For the am/pm indicator, I would use a `boolean` data type to store an instance variable called `pm`.
 
 - **Define two constructors:** The first (default constructor) should initialize the current time to 00:00, and needs no input parameters.  The second constructor should be written to accept the hour, minute, and a boolean indicating whether the clock should be read as am or pm.
 
-- Implement a method called `tickUp()`. It returns and inputs nothing. Calling it will tick the minute up by one. Be careful though. If the current minute is at 59, then `tickUp()` should cause the hour to increment, and reset the minute to 0. Taking this idea further, if the hour increments from 11 to 12, then the am/pm state needs to be flipped. Furthermore, if the hour increments from 12, then you need to set it back to 1! the current time is 11:59, then `tickUp()` should not only reset the minute to 0, but reset the hour to 1, as well as "flipping" am to pm, or vice versa.
+- Implement a method called `tickUp()`. It returns and inputs nothing. Calling it will tick the minute up by one. Be careful though. If the current minute is at 59, then `tickUp()` should cause the hour to increment, and reset the minute to 0. Taking this idea further, if the hour increments from 11 to 12, then the am/pm state needs to be flipped. Furthermore, if the hour increments from 12, then you need to set it back to 1! 
 
-  - Yes this will require you to write if-statements in order to test if your hours/minutes are in one of those boundary conditions.
+  - Yes you need to to write if-statements in order to test if your hours/minutes are in one of those boundary conditions.
 
   - Test by creating a clock representing 11:59pm.
 
-    <img src="figures/BlueJ___Create_Object.png" width="400px" />
+    <img src="figures/BlueJ___Create_Object.png" width="350px" />
 
   - Inspect the object to ensure your state is correct:
 
-    <img src="figures/BlueJ___Object_Inspector_-_clock1__Clock_Number_of_fields_6.png" width="400px" />
+    <img src="figures/BlueJ___Object_Inspector_-_clock1__Clock_Number_of_fields_6.png" width="300px" />
 
 
   - Ticking up the clock once should make it 12:00am. Inspect the object after you tick up to show:
 
-    <img src="figures/BlueJ___Object_Inspector_-_clock1__Clock_Number_of_fields_7.png" width="400px" />
+    <img src="figures/BlueJ___Object_Inspector_-_clock1__Clock_Number_of_fields_7.png" width="300px" />
 
   - Test out some other times (with no wraparounds), just to convince yourself that you're doing everything properly.
 
 - Next, create a new method called `tickDown()`. It should have the opposite effect of `tickUp()`. Each call should tick the minute down by one. Again, beware of "boundary conditions" just like before.
 
-- Now add a new method called `showTime()` that returns nothing, and inputs whether the string should be returned in military (24-hour) style. If the `military` option is `false`, this method should return the current time as a string in the following format `"hh:mm am/pm"`. Otherwise (the military option is set to `true`), you should return the current time as a string `"hh:mm`, but remember to add 12 to the hour if it's current pm.
+- Now add a new method called `showTime()` that returns nothing, and inputs whether the string should be returned in military (24-hour) style. If the `military` option is `false`, this method should return the current time as a string in the following formats `"hh:mm am"` or `"hh:mm pm"`. Otherwise (the military option is set to `true`), you should return the current time as a string `"hh:mm`, but remember to add 12 to the hour if it's current pm.
 
   - Note that the format calls for you to concatenate a leading 0 to the hour or minute if the current hour or minute is single-digit.
 
@@ -128,4 +128,4 @@ Exit BlueJ
 
 #### Credits
 
-Adapted for use from a previous assignment by Brad Richards. Shape classes provided by BlueJ.
+Written by David Chiu. 2023.
