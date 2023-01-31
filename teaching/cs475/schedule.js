@@ -123,19 +123,18 @@ let days = {
     // wk 5
     "Start Threads: Performance and data sharing; Amdahl's Law",
     "Threads: User vs. kernel; C pthread library",
-    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
+    "Threads: Work sharing example - parallel sum",
     // wk 6
     // "Sched: SRTF, burst prediction",
-    "Threads: Work sharing example - parallel sum",
+    "Start Scheduling: goals and metrics; FCFS",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
-    // "Sched: hyperthreading, multicore considerations",
     "Start Scheduling: goals and metrics; FCFS",
     "Sched: RR, SJF, SRTF",
-    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
-    // wk 8
     "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
+    // wk 8
+    "Sched: hyperthreading, multicore considerations",
     "Start Synchronization: critical section",
     "Sync: locks, atomicity",
     // wk 9
@@ -149,14 +148,14 @@ let days = {
     // wk 11
     "Sync: helpful professor problem",
     "Sync: bounded-buffer problem",
-    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
-    // wk 12
     "Sync: monitors and java",
+    // wk 12
+    "Start Deadlocks: prevention",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
-    "Start Deadlocks: prevention",
     "DL: Banker's algorithm",
+    "DL: RAGs, detection and recovery",
     "DL: RAGs, detection and recovery",
     // wk 14
     "Start Memory Management: virtual addressing",
