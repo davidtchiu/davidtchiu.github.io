@@ -93,7 +93,8 @@ This assignment will be graded out of a total of 100pts.
         also cause the hour and minutes to "wrap around" to the beginning.
 
 [20pts] The showTime() method accepts an input and prints the current time in either 
-        military (24-hour) time, or 12-hour time with am/pm status. If either hour or minute is single digit, then a leading 0 is appended.
+        military (24-hour) time, or 12-hour time with am/pm status. If either hour or 
+        minute is single digit, then a leading 0 is appended.
 
 [10pts] The setAlarm() and unsetAlarm() methods are properly implemented.
 
