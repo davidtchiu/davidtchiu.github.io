@@ -32,13 +32,13 @@ There are no starter files provided for this project. To create a new project, f
 
 - **Instance Variables:** What do all clocks need to remember about themselves? Well, your clocks for this project need to store the hour, minute, and whether it is am/pm. (You can ignore seconds.) For the am/pm indicator, I would use a `boolean` data type to store an instance variable called `pm`.
 
-- **Define two constructors:** The first (default constructor) should initialize the current time to 00:00, and needs no input parameters.  The second constructor should be written to accept the hour, minute, and a boolean indicating whether the clock should be read as am or pm.
+- **Define two constructors:** The constructor should be written to accept the hour, minute, and a boolean indicating whether the clock should be read as am or pm. Take the caller's inputs and store them in the corresponding instance variables. If you need a refresher on how to do this, check out Lab 2 (Triangle), or go to your class notes on Circle and TicketMachine.
 
-- Implement a method called `tickUp()`. It returns and inputs nothing. Calling it will tick the minute up by one. Be careful though. If the current minute is at 59, then `tickUp()` must cause the hour to increment too, and you should reset the minute to 0 instead of incrementing it to 60! Taking this idea further, if the hour increments from 11 to 12, then the am/pm state needs to be flipped! Furthermore, if the hour increments from 12 to 13, then you need to set the hour back to 1!
+- Implement a method called `tickUp()`. It does not return and it inputs nothing. Calling it will increment the minute counter by one. Be careful though. If the current minute counter is at 59, then `tickUp()` must cause the hour to increment too, and you should reset the minute to 0 instead of incrementing it to 60! Taking this idea further, if the hour increments from 11 to 12, then the am/pm state needs to be flipped! Furthermore, if the hour increments from 12 to 13, then you need to reset the hour counter back to 1!
 
-  - Yes you need to to write if-statements in order to test if your hours/minutes are in one of those boundary conditions.
+  - You need to write if-statements to test if your hours/minutes are in one of those boundary conditions. I would draw it out on paper (and in English) before trying to code it up.
 
-  - Test by creating a clock representing 11:59pm.
+  - If you've coded everything up, test by creating a clock representing 11:59pm.
 
     <img src="figures/BlueJ___Create_Object.png" width="350px" />
 
@@ -53,13 +53,13 @@ There are no starter files provided for this project. To create a new project, f
 
   - Test your method out using some other times just to convince yourself that you're doing everything properly.
 
-- Next, create a new method called `tickDown()`. It should have the opposite effect of `tickUp()`! Each call should tick the minute down by one. Again, beware of "boundary conditions" just like before. Try starting the clock to 1:00 am, and `tickDown()`. Verify that you should get 12:59 am. Likewise, setting the clock to 12:01 am, and calling `tickDown()` twice should yield 11:59 pm.
+- Next, create a new method called `tickDown()`. It should have the opposite effect of `tickUp()`! Each call should tick the minute down by one. Again, beware of "boundary conditions" just like before. Try starting the clock to 1:00 am, and `tickDown()`. Verify that you should get 12:59 am. Likewise, setting the clock to 12:01 am, and calling `tickDown()` twice should now yield a time of 11:59 pm.
 
-- Now add a new method called `showTime()` that inputs and returns nothing. This method should print either the string `"hh:mm am"` or `"hh:mm pm"`, based on the current time stored in the clock.
+- Now add a new method called `showTime()` that inputs and returns nothing. This method should print either the string `"hh:mm am"` or `"hh:mm pm"`, where `hh` is the 2-digit hour counter, and `mm` is the 2-digit minute counter. 
 
-  - Note that the format calls for you to concatenate a leading 0 to the hour or minute if the current hour or minute is single-digit. For example, suppose your clock's state is set to hour = 9, minute = 4, pm = true. Then calling `showTime()` would print: `"09:04 pm"`
+  - Note that the 2-digit `hh` and `mm` format calls for you to concatenate a leading `0` to the hour or minute counter if they are single-digit. For example, suppose your clock's state is set to hour = 9, minute = 4, pm = true. Then calling `showTime()` would print: `09:04 pm` and not simply `9:4 pm`.
 
-
+  - You should find it helpful to create a local String variable and assigning it to the empty string `""` first. Then "build" this string up piece by piece. After you're done building the string, print it out before exiting the method.
 
 #### Alarm Function
 When you've tested everything you've written so far, let's add some new functionalities. Specifically, we want to add an alarm function.

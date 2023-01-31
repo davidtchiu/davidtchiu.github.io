@@ -1,6 +1,7 @@
 # TODO
 - Hwk TheBar - Let any number of threads into the bar; Need to process them in order.
 - Go back to NULL out dangling pointers in solutions and examples
+- Move off of zyBooks. Use diveintosystems instead for C guide.
 
 # Change Log
 - **Spring'23** Added a short valgrind tutorial to Hwk 3.
@@ -10,7 +11,7 @@
 - **Spring'23** Modified Hwk 1 to be shorter (removed structs) or to use & instead. Emphasize string functions and fgets().
 - **Spring'23** Wrote a new Hwk 0 to get students started on remote VS Code.
 - **Spring'23** No more projects. More aggressive timeline for Homework 1, 2, 3. 
-- **Spring'23** Testing out five lab-work days.
+- **Spring'23** Testing out 3 lab-work days.
 - **Spring'23** Transitioned off VirtualBox. Now using remote dev on Jetstream VM.
 - **Spring'22** Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
 - **Spring'22** Added Bankers for Hwk 7
