@@ -2,7 +2,11 @@
 
 ### Homework: Alarm Clock
 
-In this project, you will put in the work to write a class of (alarm) Clocks from scratch! I'll take you through the process of identifying your instance variables, and get you started on writing constructors and methods. You will have to have a pretty good handle on integer operations and writing if-else statements.
+Clocks are cool. At a glance, they seem like just a glorified counter, ticking seconds, minutes, and hours up by one. But when we dig into them a bit more, we realize that there's actually a lot more detail that goes into properly implementing them. For instance, the minutes reset to 0 when they reach 60. The hours reset to 1 when they reach 13. We also need to keep track of am and pm, and that they change when the clock strikes 12.
+
+<img src="http://clipart-library.com/new_gallery/73-731711_digital-clock-png-digital-alarm-clock-icon-png.png" />
+
+In this project, you will put in the work to write a class of (alarm) clocks from scratch! I'll take you through the process of identifying your instance variables, and get you started on writing constructors and methods. You will have to have a pretty good handle on integer operations and writing if-else statements.
 
 
 #### Student Outcomes
