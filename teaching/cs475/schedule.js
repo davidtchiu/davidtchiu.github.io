@@ -113,62 +113,61 @@ let days = {
     "Intro: Job scheduling models",
     "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 3
-    "Booting, dual-mode operation, interrupts",
-    "Traps and system calls",
+    "Invoking OS: Booting, interrupts",
+    "Invoking OS: Traps and system calls",
     "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 4
-    "Start Processes: PCB, state transitions",
-    "Process: fork, wait, zombies and orphans",
-    "Process: exec",
+    "Processes: PCB, state transitions",
+    "Processes: fork(), wait()",
+    "Processes: exec() system call",
     // wk 5
-    "Start Threads: Performance and data sharing; Amdahl's Law",
+    "Threads: Performance and data sharing; Amdahl's Law",
     "Threads: User vs. kernel; C pthread library",
     "Threads: Work sharing example - parallel sum",
     // wk 6
-    // "Sched: SRTF, burst prediction",
-    "Start Scheduling: goals and metrics; FCFS",
+    "Scheduling: goals and metrics; FCFS",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
-    "Start Scheduling: goals and metrics; FCFS",
     "Sched: RR, SJF, SRTF",
     "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
-    // wk 8
     "Sched: hyperthreading, multicore considerations",
-    "Start Synchronization: critical section",
+    // wk 8
+    "Synchronization: critical section",
     "Sync: locks, atomicity",
+    "Sync: spin locks; priority inversion problem",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
-    "Sync: spin locks; priority inversion problem",
     "Sync: blocking locks; start semaphores",
     "Sync: semaphores",
-    // wk 11
     "Sync: helpful professor problem",
+    // wk 11
     "Sync: bounded-buffer problem",
     "Sync: monitors and java",
-    // wk 12
     "Start Deadlocks: prevention",
+    // wk 12
+    "DL: Banker's algorithm",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
-    "DL: Banker's algorithm",
     "DL: RAGs, detection and recovery",
-    "DL: RAGs, detection and recovery",
-    // wk 14
-    "Start Memory Management: virtual addressing",
+    "Memory Management: virtual addressing",
     "MM: memory partitioning",
+    // wk 14
     "MM: segmentation",
-    // wk 15
     "MM: paging",
     "MM: multi-level paging",
-    "Start Virtual Memory",
     // "MM: translation Lookaside Buffer (TLB)",
-    // wk 16
-    "VM: Replacement policies",
+    // wk 15
+    "Start Virtual Memory",
+    "VM: Replacement policies: FIFO, LRU",
     "VM: Clock",
+    // wk 16
+    "File System",
+    "File System",
     "<strong>Reading Period</strong>",
     //; Start memory allocation and working-set model",
     // "VM: memory allocation (cont.)",
