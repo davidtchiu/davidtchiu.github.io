@@ -192,7 +192,7 @@ let days = {
     // wk 3
     "Methods and returning; Finish Circle, start TicketMachine",
     "Printing, String concatenation; conditionals",
-    "Lab 3",
+    "Code Pad; Classes as Types; Lab 3",
     "Lab 3 review; More on if-statements",
     // wk 4
     "Defensive programming and testing: discount()",
