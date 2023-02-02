@@ -114,7 +114,7 @@ let days = {
     "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 3
     "Booting, dual-mode operation, interrupts",
-    "Finish system calls",
+    "Traps and system calls",
     "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 4
     "Start Processes: PCB, state transitions",
