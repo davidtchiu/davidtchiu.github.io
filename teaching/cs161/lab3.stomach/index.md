@@ -151,7 +151,6 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
   System.out.println(s.toString());
   System.out.println();
 
-  // Let's see how much food remains in our stomach
   int a = s.getAmountFood();
   System.out.println("We still have " + a + " units of food in our stomach");
 

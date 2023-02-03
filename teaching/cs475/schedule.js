@@ -37,12 +37,12 @@ let days = {
         url: "hwk3.malloc/",
         due: "2/6/2023",
       },
-      // {
-      //   name: "Hwk 4 (dsh)",
-      //   title: "David Shell",
-      //   url: "hwk4.dsh/",
-      //   due: "2/20/2023",
-      // },
+      {
+        name: "Hwk 4 (dsh)",
+        title: "David Shell",
+        url: "hwk4.dsh/",
+        due: "2/17/2023",
+      },
       // {
       //   name: "Hwk 5 (mmm)",
       //   title: "Matrix Multiplication",
