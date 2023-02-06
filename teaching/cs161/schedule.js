@@ -193,12 +193,12 @@ let days = {
     "Methods and returning; Finish Circle, start TicketMachine",
     "Printing, String concatenation; conditionals",
     "Code Pad; Classes as Types; Lab 3",
-    "Lab 3 review; More on if-statements",
+    "Lab 3 review; Defensive Programming",
     // wk 4
-    "Defensive programming and testing: discount()",
     "Nested if-statements",
-    "Lab 4",
     "Else-if statements",
+    "Lab 4",
+    "Lab 4 review; Data Types",
     // wk 5
     "Primitives and numeric type-casting (narrowing, widening)",
     "Classes as types: references, object equivalence",
