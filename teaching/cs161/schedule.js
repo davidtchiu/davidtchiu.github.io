@@ -195,8 +195,8 @@ let days = {
     "Code Pad; Classes as Types; Lab 3",
     "Lab 3 review; Defensive Programming",
     // wk 4
-    "Nested if-statements",
-    "Else-if statements",
+    "Nested if-statements; else-if statements",
+    "Logical operators",
     "Lab 4",
     "Lab 4 review; Data Types",
     // wk 5

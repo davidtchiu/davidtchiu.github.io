@@ -117,9 +117,9 @@ let days = {
     "Invoking OS: Traps and system calls",
     "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 4
-    "Processes: PCB, state transitions",
-    "Processes: fork(), wait()",
-    "Processes: exec() system call",
+    "Processes: PCB, address space, program stack",
+    "Processes: state transitions, fork()",
+    "Processes: fork(), wait(), exec() system calls",
     // wk 5
     "Threads: Performance and data sharing; Amdahl's Law",
     "Threads: User vs. kernel; C pthread library",
