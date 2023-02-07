@@ -163,21 +163,21 @@ This assignment can be tricky to get started, because there are so many pieces t
 
 1. First, you need to figure out how to create an array of strings. This is important for calling `execv()`. Because strings are themselves, an array of strings is essentially a 2D array (or a pointer to pointers). You can create an array of `num` strings as follows:
 
-  ```c
-  // this creates num pointers to strings
-  char **array = (char**) malloc(num * sizeof(char*));
+    ```c
+    // this creates num pointers to strings
+    char **array = (char**) malloc(num * sizeof(char*));
 
-  // this loops through each array element and instantiates
-  // an array of capacity CAP
-  for (int i = 0; i < num; i++) {
-    array[i] = (char*) malloc(CAP * sizeof(char));
-  }
+    // this loops through each array element and instantiates
+    // an array of capacity CAP
+    for (int i = 0; i < num; i++) {
+      array[i] = (char*) malloc(CAP * sizeof(char));
+    }
 
-  // now I can assign strings to individual array elements
-  for (int i = 0; i < num; i++) {
-    strcpy(array[i], "hello world");
-  }
-  ```
+    // now I can assign strings to individual array elements
+    for (int i = 0; i < num; i++) {
+      strcpy(array[i], "hello world");
+    }
+    ```
 
 2.  Write a function `char** split(char* str, char* delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings (tokens) split on the given delimiter. I would start by counting the number of instances of the delimiter can be found in the given string. The number of tokens, let's call it `NUMTOKENS`, is just 1 added to that number. Then, using `malloc()` I would allocate `NUMTOKENS+1` pointers to `char`s (see previous bullet point). Use `strtok()` to loop through all of the tokens, and assign each to a corresponding place in your new array (using `strcpy()`). Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element of your array to `NULL`. (This is why I had you malloc `NUMTOKENS+1` elements). Here's how you might use your new method:
 
