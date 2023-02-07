@@ -113,8 +113,7 @@ So this is all pointing to a couple of modes of execution we need to support. Th
 
     - If the executable is found, then there are two further options for execution:
 
-      - **Run in foreground:** Execute the path using `fork()` and `execv()` as you learned in class. The call to `execv()` requires the *full path* to the executable, which the user already gave you. Commands may have an arbitrary number of arguments that follow it, which are delimited by whitespace. You'll need to input the command line arguments into an array of strings, and pass it along to `execv()`.
-      When running a process in the foreground, the parent process (that is, `dsh`) must `wait()` for the child process to finish. Therefore, you would not expect to see the `dsh>` shell prompt again _until_ the child process terminates.
+      - **Run in foreground:** Execute the path using `fork()` and `execv()` as you learned in class. The call to `execv()` requires the *full path* to the executable, which the user already gave you. Commands may have an arbitrary number of arguments that follow it, which are delimited by whitespace. You'll need to input the command line arguments into an array of strings, and pass it along to `execv()`.  When running a process in the foreground, the parent process (that is, `dsh`) must `wait()` for the child process to finish. Therefore, you would not expect to see the `dsh>` shell prompt again _until_ the child process terminates.
 
           - This is the usual mode of execution when you're on the terminal!
 
@@ -162,7 +161,25 @@ Phew! That's a lot to take in. The figure below shows the abstract flowchart for
 
 This assignment can be tricky to get started, because there are so many pieces that need to come together. Students in the past have gotten stuck on things that ultimately prevented them from getting very far. If I were tackling this assignment, I'd probably work on things in this order:
 
-1.  Write a function `char** split(char* str, char* delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings split on the given delimiter. I would start by counting the number of instances of the delimiter can be found in the given string. The number of tokens, let's call it `NUMTOKENS`, is just 1 added to that number. Then, using `malloc()` I would allocate `NUMTOKENS+1` pointers to `char`s. Use `strtok()` to loop through all of the tokens, and assign each to a corresponding place in your new array. Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element if your to `NULL`. (This is why I had you malloc `NUMTOKENS+1`) spots. Here's how you might use your new method:
+1. First, you need to figure out how to create an array of strings. This is important for calling `execv()`. Because strings are themselves, an array of strings is essentially a 2D array (or a pointer to pointers). You can create an array of `num` strings as follows:
+
+  ```c
+  // this creates num pointers to strings
+  char **array = (char**) malloc(num * sizeof(char*));
+
+  // this loops through each array element and instantiates
+  // an array of capacity CAP
+  for (int i = 0; i < num; i++) {
+    array[i] = (char*) malloc(CAP * sizeof(char));
+  }
+
+  // now I can assign strings to individual array elements
+  for (int i = 0; i < num; i++) {
+    strcpy(array[i], "hello world");
+  }
+  ```
+
+2.  Write a function `char** split(char* str, char* delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings (tokens) split on the given delimiter. I would start by counting the number of instances of the delimiter can be found in the given string. The number of tokens, let's call it `NUMTOKENS`, is just 1 added to that number. Then, using `malloc()` I would allocate `NUMTOKENS+1` pointers to `char`s (see previous bullet point). Use `strtok()` to loop through all of the tokens, and assign each to a corresponding place in your new array (using `strcpy()`). Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element of your array to `NULL`. (This is why I had you malloc `NUMTOKENS+1` elements). Here's how you might use your new method:
 
     ```c
     //split cmd on whitespace!
@@ -180,21 +197,23 @@ This assignment can be tricky to get started, because there are so many pieces t
     Should result in the output below:
 
     ```
-    git add .
+    git
+    add
+    .
     ```
 
     This function would be a huge workhorse for this project.
 
-2.  Write the main command-prompt loop to repeatedly accept input. Test the `split(..)` function you just wrote on various inputs, including empty string.
+3.  Write the main command-prompt loop to repeatedly accept input. Test the `split(..)` function you just wrote on various inputs, including empty string.
 
     - If you're using `fgets()` to accept user inputs, remember that the "enter" key is logged as a `'\n'` character at the end of the string! You'll probably want to truncate that newline character as soon as you obtain the user input, and that's as simple as putting the `'\0'` character in its place.
 
 
-3.  Work on built-in commands next.
+4.  Work on built-in commands next.
 
-4.  Work on command execution when given the full path to an executable. (Mode 1)
+5.  Work on command execution when given the full path to an executable. (Mode 1)
 
-5.  Work on execution when given just the name of an executable. (Mode 2)
+6.  Work on execution when given just the name of an executable. (Mode 2)
 
 
 #### Example Output
