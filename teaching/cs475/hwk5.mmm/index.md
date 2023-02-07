@@ -94,6 +94,48 @@ Before you get started: Even though we're reading from and writing to 2D arrays 
 
 4. Dynamically allocating 2D arrays: Because the number of threads and the `size` of the matrices are given at runtime, you must dynamically allocate memory on the heap. Remember to free-up memory when done. To do this, should store pointers to the input and output matrices in global (thread-shared) scope. A pointer to a 2D array of doubles would look like this: `double **matrix;` Then inside `main()`, you'll need to first allocate `size` number of pointers to doubles (that's the first dimension in the matrix), then iterate through that array and allocate `size` number of doubles (that's the second dimension of the matrix).
 
+   To accomplish this takes two steps (one in each "dimension" of the array.) Here's an example to create an N by M array of ints.
+
+      ```c
+      // declare this somewhere in global scope (for thread sharing)
+      int **array;
+      ```
+
+      - The `**` syntax may at first seem confusing. However, recall from the last tutorial that an array is just a pointer. So, an array of pointers can be interpreted to be a pointer to pointers. Therefore, `array` has been declared as `**array`. Indeed, if you need a 3 dimensional array, then you would use `***array`.
+
+   Elsewhere in code,
+      ```c
+      // malloc a size N array of pointers to ints
+      array = (int**) malloc(sizeof(int*) * N);
+
+      // iterate through each row and malloc a size N array of ints
+      for (int i = 0; i < N; i++) {
+         array[i] = (int*) malloc(sizeof(int) * M;)
+      }
+      // can now have access to array[i][j]
+      ```
+
+      - Pay attention to the first `malloc()`. Notice that we're asking for N times `sizeof(int*)` bytes, that is, the size of a pointer to `int`s, because we're not storing `int`s themselves in this array, we're storing pointers in this array!
+
+      - The return value of `malloc()` is then casted into `(int**)`, since, `malloc()` returns a generic void* pointer to a pointer in this case, and you need to tell C that it's actually a pointer to a pointer to an int.
+
+      - The `**array` you just allocated is just a single dimension array of pointers (think of them as rows in a 2D array). Now we have to allocate the *other* dimension (columns). To do this, you need to iterate through all `N` positions and call `malloc()` for each row!
+
+         - The `malloc()` here looks far more familiar. We just need to allocate M `int`s and cast it to an integer pointer (`int*`) before assignment to the ith row.
+
+      - Don't forget, you will need to free the 2D array later on. Do so by individually freeing every row, then free the original 2D pointer.
+
+         ```c
+         // free each row
+         for (int i = 0; i < N; i++) {
+            free(array[i]);
+            array[i] = NULL;  // remove dangling pointer
+         }
+         // free original array
+         free(array);
+         array = NULL;  //remove dangling pointer
+         ```
+
 5. Once you allocate the input matrices, you should initialize them with random double values between 0 and 99.
 
 6. **Work-Sharing Approach:** If the parallel mode (`P`) is selected, your `main()` function must split the work evenly/fairly among the threads. There are many ways to do this, and I'll leave this decision up to you. You're welcome to experiment with different approaches!

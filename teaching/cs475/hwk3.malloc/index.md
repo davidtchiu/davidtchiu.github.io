@@ -329,45 +329,9 @@ In the above code:
   - Write a function `char* strrepeat(char *str, unsigned int nrepeat)` to return a newly allocated string `nrepeat` copies of `str` concatenated together. For instance, `strrepeat("hi", 3)` returns a pointer to `hihihi`, and `strrepeat("hi", 0)` returns simply an empty string (that is, a char array of size 1, which contains just the null character `\0`).
 
 
-###### Part 5b: Allocating Multidimensional Arrays (Know this too!!)
-It is often the case that you'll need to allocate a multidimensional array on the heap. For instance, what if you needed a list of strings? To accomplish this takes two steps (one in each "dimension" of the array.) Here's an example to create an N by M array of ints.
-
-```c
-// malloc a size N array of pointers to ints
-int **array = (int**) malloc(sizeof(int*) * N);
-
-// iterate through each row and malloc a size N array of ints
-for (int i = 0; i < N; i++) {
-    array[i] = (int*) malloc(sizeof(int) * M;)
-}
-// can now have access to array[i][j]
-```
-
-- **Line 1-2** The `**` syntax may at first seem confusing. However, recall from the last tutorial that an array is just a pointer. So, an array of pointers can be interpreted to be a pointer to pointers. Therefore, `array` has been declared as `**array`. Indeed, if you need a 3 dimensional array, then you would use `***array`.
-
-    - You should also pay attention to the first `malloc()` call. Notice that we're asking for N times the `sizeof(int*)`, that is, the size of a pointer to `int`s, because we're not storing `int`s themselves in this array, we're storing pointers in this array!
-
-    - The return value of `malloc()` is then casted into `(int**)`, since, again, `malloc()` returns a generic pointer to a pointer in this case, and you need to tell C that it's actually a pointer to a pointer to an int.
-
-- **Lines 5-7** The `**array` you just allocated is just a single dimension array of pointers (rows). Now we have to allocate the other dimension (columns). To do this, you need to iterate through all `N` positions and call `malloc()` on each row!
-
-    - The `malloc()` calls here look far more familiar. We just need to allocate M `ints` and cast it to an integer pointer (`int*`) before assignment to the ith row.
-
-- You will need to free this structure later on. Do so by individually freeing every row, then free the original 2D pointer.
-
-```c
-// free each row
-for (int i = 0; i < N; i++) {
-    free(array[i]);
-    array[i] = NULL;
-}
-// free original array
-free(array);
-array = NULL;
-```
 
 
-###### Part 5c: Instantiating Structs (Know this also!!!)
+###### Part 5b: Instantiating Structs (Know this also!!!)
 A great strength of `malloc()` lies in allowing us to create and manage dynamic data structures that are unbounded in size, like linked lists and trees. Assume we've declared the following `struct` for a Linked List node:
 
 ```c
