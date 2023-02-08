@@ -155,13 +155,13 @@ Here is a list of built-in commands that David shell needs to support.
 
 Phew! That's a lot to take in. The figure below shows the abstract flowchart for this program. This should (hopefully) give you a better idea of what all needs to be done.
 
-![](figures/flowchart.png)
+<img src="figures/flowchart.png" width="500px" />
 
 ##### Hints
 
 This assignment can be tricky to get started, because there are so many pieces that need to come together. Students in the past have gotten stuck on things that ultimately prevented them from getting very far. If I were tackling this assignment, I'd probably work on things in this order:
 
-1. First, you need to figure out how to create an array of strings. This is important for calling `execv()`. Because strings are themselves, an array of strings is essentially a 2D array (or a pointer to pointers). You can create an array of `num` strings as follows:
+1. First, you need to figure out how to create an array of strings. This is important for invoking the `execv()` system call later on, and for the `split()` function (see next bullet point). Because strings are themselves arrays, then an array of strings is essentially a 2D array (or a pointer to pointers to chars). You can create an array of `num` strings as follows:
 
     ```c
     // this creates num pointers to strings
@@ -179,12 +179,12 @@ This assignment can be tricky to get started, because there are so many pieces t
     }
     ```
 
-2.  Write a function `char** split(char* str, char* delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings (tokens) split on the given delimiter. I would start by counting the number of instances of the delimiter can be found in the given string. The number of tokens, let's call it `NUMTOKENS`, is just 1 added to that number. Then, using `malloc()` I would allocate `NUMTOKENS+1` pointers to `char`s (see previous bullet point). Use `strtok()` to loop through all of the tokens, and assign each to a corresponding place in your new array (using `strcpy()`). Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element of your array to `NULL`. (This is why I had you malloc `NUMTOKENS+1` elements). Here's how you might use your new method:
+2.  Write a function `char** split(char *str, char *delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings (tokens) split on the given delimiter. I would start by counting the number of instances of the delimiter in `str`. The number of tokens, let's call it `NUMTOKENS`, is just 1 added to that number. Then, using `malloc()` I would allocate `NUMTOKENS+1` pointers to `char`s (see previous bullet point). Use `strtok()` to loop through all of the tokens, and assign each to a corresponding place in your new array (using `strcpy()`). Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element of your array to `NULL`. (This is why I had you malloc `NUMTOKENS+1` elements). Here's how you might use your new method:
 
     ```c
     //split cmd on whitespace!
     char cmd[] = "git add .";
-    char** terms = split(cmd, " ");
+    char **terms = split(cmd, " ");
 
     // print out all the tokens
     int i = 0;
@@ -206,14 +206,13 @@ This assignment can be tricky to get started, because there are so many pieces t
 
 3.  Write the main command-prompt loop to repeatedly accept input. Test the `split(..)` function you just wrote on various inputs, including empty string.
 
-    - If you're using `fgets()` to accept user inputs, remember that the "enter" key is logged as a `'\n'` character at the end of the string! You'll probably want to truncate that newline character as soon as you obtain the user input, and that's as simple as putting the `'\0'` character in its place.
+    - You should be using `fgets()` to accept user inputs. Remember that the "enter" key is logged as a `'\n'` character at the end of the string! You'll probably want to truncate that newline character as soon as you obtain the user input, and that's as simple as putting the `'\0'` character in its place.
 
-
-4.  Work on built-in commands next.
+4.  Work on handling the built-in commands next.
 
 5.  Work on command execution when given the full path to an executable. (Mode 1)
 
-6.  Work on execution when given just the name of an executable. (Mode 2)
+6.  Finally, work on execution when given just the name of an executable. (Mode 2)
 
 
 #### Example Output
