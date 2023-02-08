@@ -44,7 +44,7 @@ Open up the BlueJ project. You'll find that there's a slightly improved `Triangl
 
 #### Part I: Diamonds
 
-Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shape classes. But as you know, there are code in the other shape classes that we still don't know how to read. But no worries, such is the power of abstraction! Let's get started...
+Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shape classes. But as you know, there are code in the other shape classes that we still don't know how to read. But no worries, such is the power of abstraction -- we don't have to care about those details! Let's get started...
 
 1. Create a new class called `Diamond`. For now, a diamond needs only to store references to two `Triangles` as its instance variables. Declare those now. Because of their placement, I would name them `top` and `bottom`.
 
@@ -54,28 +54,29 @@ Our objective is to create a new class that can create  `Diamond`s with the same
 
 4. Next, write in the `makeInvisible()` and `makeVisible()` methods to toggle visibility of the diamond. Then move on to `changeColor(String newColor)` to change the color of the diamond. As you write these methods, you should notice how satisfying it is to be able to call the individual triangle's methods.
 
-    - We don't even have to care about *how* the Triangle goes about performing its own actions. All we need to do is trust that it works, and use those methods where we need it!
+    - **Abstraction is about trust**. Notice that, to get the diamond to perform these actions, we don't even have to care about *how* each Triangle goes about performing its own actions. All we need to do is **trust** that it works for a triangle, and use those methods where we need it!
 
-    - In each of these methods, you should not be writing more than 2 lines of code to get the job done.
+    - In each of these methods, you should not be writing more than two lines of code to get the job done.
 
 5. Now write in `moveVertical(int distance)` and `moveHorizontal(int distance)`. Again, the work we have to do is minimal.
 
-6. Let's move on to something a little more challenging: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
+#### Part II: Challenges
+1. Let's move on to something a little more challenging: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
 
     - However, this will introduce a new problem. The triangles, upon changing size, may be overlapping each other, or they could be spread apart!
 
     - You'll need to do some more work to bring them back together so that their bases touch again! That means you'll need to move one of the triangles up or down to adjust for the offset. But how much do you move by...?
 
-7. Nice work! The last piece we're missing are the "slow move" methods. Go ahead and start writing the `slowMoveHorizontal(int distance)` method. Again, this is trickier than expected. You can't just tell the top and bottom triangles to `slowMoveHorizontal` themselves, because the diamond would be split apart, instead of moving along as one shape.
+2. Nice work! The last piece we're missing are the "slow move" methods. Go ahead and start writing the `slowMoveHorizontal(int distance)` method. Again, this is trickier than expected. You can't just tell the top and bottom triangles to `slowMoveHorizontal` themselves, because the diamond would be split apart, instead of moving along as one shape.
 
     - Here's a hint: the `moveHorizontal(int distance)` method you wrote previously *does* appear to move the whole diamond instantaneously. What if you called this method repeatedly on a distance of 1? (Write a loop!)
 
     - Don't forget that you need to ensure that a negative distance input should slow move the diamond to the left!
 
-8. Finally, finish `slowMoveVertical(int distance)`.
+3. Finally, finish `slowMoveVertical(int distance)`.
 
 #### Reflections: Problem Decomposition and Thinking Abstractly
-Hopefully, through this lab, you can see how useful it is to think abstractly. We broke down a bigger problem (how to build a diamond?) and made the key insight that diamonds are no more than 2 triangles, which we already have. Then all the rest is just a matter of getting the triangles to do our bidding. Knowing this, it's easy to see how we might create new shapes and add them to our toolkit. 
+Hopefully, through this lab, you can see how useful it is to think abstractly. We broke down a bigger problem ("How to build a diamond?") and made the key insight that diamonds are nothing more than just 2 triangles, whose code we already have. Then all the rest is just a matter of bossing around the triangles so that they look and act like diamonds! Knowing this, it's easy to see how we might create new shapes and add them to our toolkit. 
 
 #### Extra Challenge
 Can you create a **parallelogram** with two diamonds? Can you create a restricted **rectangle** with two squares? How about a **wand** with a skinny rectangle and a circle on top? How about a pac-man object that gets automatically drawn every time you create it (it's just 2 circles and a white triangle!), and you can slow move it, close and open its mouth, and so on.
