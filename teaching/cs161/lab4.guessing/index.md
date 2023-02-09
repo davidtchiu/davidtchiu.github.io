@@ -82,21 +82,19 @@ Here are your assigned partners for today's lab.
 
   - The constructor should also greet the player with a message and inform them of the range of numbers from which to guess. See the interaction in the beginning of this lab for a sample greeting. Check-in with us before moving on to ensure correctness.
 
-- You will need to write a `guess()` method that is called every time the user wants to guess a number. This method should take a whole number as its parameter, and it does not `return` a value. When the user calls `guess()`, several things need to happen:
+- You will need to write a `guess(...)` method that is called every time the user wants to guess a number. This method should take a whole number as its parameter, and it does not `return` a value. When the user calls `guess(...)`, several things need to happen:
 
-  - The method compares the input parameter with the secret number.
+  - The method compares the input parameter with the stored *secret number*. If the user's guess is correct, you should print out a message congratulating the user, and let them know how many guesses it took them. (Again, see the sample output at the top of this page to understand the format of your printed message). If the user's guess is wrong, then you need to tell the user whether their guess needs to be **"higher"** or **"lower"**.
 
-  - If the user's guess is correct, you should print out a message congratulating the user, and let them know how many guesses it took them. (Again, see above output to see the format of your print statement).
+  - Double-check that your program works by playing games multiple times. To make testing easier, remember that you can inspect the game object to see what the *secret number* actually is. If there is ever any behavior that seems wrong, go back to your code and try to figure out what caused that!
 
-  - If the user's guess is wrong, then you need to tell the user whether their guess needs to be "higher" or "lower".
-
-  - Double-check that your program works by playing multiple games. (You can peek inside the object to see what the secret number actually is). If there is ever any behavior that seems wrong, stop and try to figure out what caused that!
+      - Don't be afraid to go in your code to print out the values of variables when figuring out what went wrong! That's common practice while "debugging."
 
 #### Part 2: Upgrading the Game
 
 With a bare-bones version of the `GuessingGame` written, you should now include the following functionalities.
 
-- **Upgrade #1 - Congratulate or Mock the Player:** When the user guesses the answer correctly, we now want to either mock or compliment them depending on the number of guesses it took. (Now your game needs to know how many tries it's taking the user!) Using the table below, print out the appropriate message when the guess is correct.
+- **Upgrade #1 - Congratulate (or Mock) the Player:** After the user *correctly* guesses the answer, we want the game to say something depending on the number of guesses that it took them. (Now your game needs to remember how many guesses it's taken the player!) Take a look at the table below. Print out the appropriate message when the guess is correct.
 
   | Guesses    | Message to Print                 |
   | ---------- | -------------------------------- |
@@ -109,20 +107,21 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
 
   It may be helpful to get out a piece of paper and draw the **flowchart** before you start writing the code.
 
-- **Upgrade #2 - Game Over:** Finally, once the user correctly guesses the secret number, your game right now continues to allow more guesses to be made (go ahead try it, I'll wait!). Update your code so that, when more guesses are made after the game ends, you should print out something like the following, instead of telling them if their guess was right or not.
+- **Upgrade #2 - Game Over:** Once the user correctly guesses the secret number, your game currently continues to allow more guesses to be made (go ahead try it, I'll wait!). Update your code so that, when more guesses are made after the game ends, you should print out something like the following, instead of telling them if their guess was right or not.
 
   ```
   Game Over: You won!
   You guessed that the secret number was 37 in 5 tries.
   ```
 
-  Hint: Your game needs to know whether the player has _already_ won... sounds like a field that stores a `boolean` could be of use? Remember that boolean variables can only store either `true` or `false`.
+  Hint: Your game *now* needs to further know whether the player has _already_ won... sounds like an instance variable that stores a `boolean` value could be of use? Remember that boolean variables can only store either `true` or `false`.
 
-- **Upgrade #3 - Hot or Cold:** This next one is a little harder. When a user guesses wrong, currently your code only tells them to go higher or lower. Now, print out a message corresponding to how close their guess was to the secret number. Print a different message depending on its _distance_ from the secret number.
+- **Upgrade #3 - Hot or Cold:** This next one is a little more challenging, but it will force you to work with `else if` statements. It may be helpful to get out a piece of paper and draw the **flowchart** before you start writing the code.
 
-  - For example, if the secret number is 35, and the user guesses either 34 or 36, then both guesses should generate "scalding hot."
-  - It's slightly annoying that you have to check to see if the distance of the guess from the secret number is 1 or -1.
-  - (Hint: What if you wrote a method, called `public int abs(int x)`, to `return` the **absolute value** of a number `x`? How might it be useful in this situation?)
+  When a user guesses wrong, currently your code only tells them to go higher or lower. In addition to this, we now want to print out a message corresponding to how *close* their guess was. Print a different message depending on its _distance_ from the secret number.
+
+    - For example, if the secret number is 35, and the user guesses either 34 or 36, then both guesses should generate "scalding hot."
+    - It's slightly annoying that you have to check to see if the distance of the guess from the secret number is 1 or -1. (Hint: What if you wrote a method, called `public int abs(int x)`, to `return` the **absolute value** of a number `x`? How might it be useful in this situation?)
 
     | Distance from Secret | Message to Print              |
     | -------------------- | ----------------------------- |
@@ -135,17 +134,16 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
     | Within 20            | "extremely cold"              |
     | More than 20 away    | "icy freezing miserably cold" |
 
-  Again, it may be helpful to get out a piece of paper and draw the **flowchart** before you start writing the code.
 
 #### Optional Extensions
 
-- If you're done, and want a bit more challenge, do this upgrade. There have been complaints that some people are really bad at guessing, and are hogging too much of your program's time. It would be really nice if we could `limit` the numbers of guesses the player gets to make. Before you dive into the code, think critically about what needs to happen inside your `guess()` method. Here are its specifications:
+- If you're done and want a bit more challenge, do this upgrade. It would be really nice if we could limit the numbers of guesses the player gets to make each time they play. Before you dive into the code, think critically about what needs to happen inside your `guess(..)` method. Here are its specifications:
 
   - You are going to want to another constructor that allows you to initialize the game with a parameter that inputs the limit on the number of guesses. Store this limit. Make sure you update the existing constructor to give initialize limit with a value. Worth considering: What value should you set this limit if there is no limit?
 
   - If the limit has been reached without the user successfully guessing, then the game is over, and you need to flag it as such (the work you did previously in `Upgrade #2` may come in handy).
 
-  - However, this breaks the code you wrote for `Upgrade #1`. That is, when the user tries to `guess() `again, the message it prints assumes they got it right! This is no longer correct. If the user met the limit, and still didn't get it right, you should instead print:
+  - However, this breaks the code you wrote for `Upgrade #1`. That is, when the user tries to `guess(..) `again, the message it prints assumes they got it right! This is no longer correct. If the user met the limit, and still didn't get it right, you should instead print:
 
     ```
     Game Over: You Lost!
