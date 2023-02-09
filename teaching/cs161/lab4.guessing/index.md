@@ -104,7 +104,7 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
   | 5 to 6     | "Not bad!"                       |
   | 7          | "I think you can do better..."   |
   | 8 to 9     | "Stop playing"                   |
-  | 10 or more | "Worst performance of all time." |
+  | 10 or more | "Worst of all time" |
 
   It may be helpful to get out a piece of paper and draw the **flowchart** before you start writing the code.
 
@@ -123,16 +123,16 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
   - It's slightly annoying that you have to check to see if the distance of the guess from the secret number is 1 or -1.
   - (Hint: What if you wrote a method, called `public int abs(int x)`, to `return` the **absolute value** of a number `x`? How might it be useful in this situation?)
 
-  | Distance from Secret | Message to Print              |
-  | -------------------- | ----------------------------- |
-  | Within 1             | "scalding hot"                |
-  | Within 2             | "extremely warm"              |
-  | Within 3             | "very warm"                   |
-  | Within 5             | "warm"                        |
-  | Within 8             | "cold"                        |
-  | Within 13            | "very cold"                   |
-  | Within 20            | "extremely cold"              |
-  | More than 20 away    | "icy freezing miserably cold" |
+    | Distance from Secret | Message to Print              |
+    | -------------------- | ----------------------------- |
+    | Within 1             | "scalding hot"                |
+    | Within 2             | "extremely warm"              |
+    | Within 3             | "very warm"                   |
+    | Within 5             | "warm"                        |
+    | Within 8             | "cold"                        |
+    | Within 13            | "very cold"                   |
+    | Within 20            | "extremely cold"              |
+    | More than 20 away    | "icy freezing miserably cold" |
 
   Again, it may be helpful to get out a piece of paper and draw the **flowchart** before you start writing the code.
 
@@ -158,7 +158,7 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
 #### Grading
 
 ```
-This assignment will be graded out of 10 points, provided:
+This assignment will be graded out of 2 points, provided:
 
 - You attended lab.
 - You got through part 1 at the minimum, and made good progress on part 2.
