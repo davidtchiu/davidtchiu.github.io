@@ -16,8 +16,9 @@ and output.
 #### Student Outcomes
 
 - Practice writing classes from scratch.
-- Understanding and putting the concept of defensive programming into practice.
-- More if-then-else statements.
+- Exposure to integer divide and type conversion.
+- Putting defensive programming into practice.
+- More work on if-else-if statements.
 
 #### Instructions
 
