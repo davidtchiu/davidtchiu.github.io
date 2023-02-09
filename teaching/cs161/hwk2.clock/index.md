@@ -74,7 +74,7 @@ When you've tested everything you've written so far, let's add some new function
 
 - Write a method called `unsetAlarm()` that returns nothing, and resets the hour, minute, and am/pm status of your alarm to `-1`, `-1`, and `false`, respectively.
 
-- Write a method `isAlarmSet()` that accepts no inputs, but returns the status of the alarm. If the hour and minute of the alarm are both set to `-1`, then this method returns `false` (that is, no alarm is set). Otherwise, this method returns `true`.
+- Write a method `isAlarmSet()` that accepts no inputs, but returns the status of the alarm as a `boolean`. If the hour and minute of the alarm are both set to `-1`, then this method returns `false` (that is, no alarm is set). Otherwise, this method returns `true`.
 
 - Next, inside `tickUp()`, you'll need to add some code to check if the current time (after ticking up) matches the alarm time. If the hour, minute, and am/pm status all match, then you should print `***** BEEP BEEP BEEP *****` to the terminal. Make sure `tickDown()` also checks for the alarm to go off.
 
@@ -102,11 +102,11 @@ myClock.tickDown();
 myClock.showTime();
 > 11:58 pm
 
-System.out.println(myClock.alarmSet());
+System.out.println(myClock.isAlarmSet());
 > true
 
 myClock.unsetAlarm();
-System.out.println(myClock.alarmSet());
+System.out.println(myClock.isAlarmSet());
 > false
 ```
 
