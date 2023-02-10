@@ -8,41 +8,36 @@ you add funds to it and can then swipe the card to charge rides on the various
 services. In addition to keeping track of the balance and paying for rides, "our"
 ORCA card will also keep track of things like the number of trips that have been
 taken and the amount of tax that has been collected. This assignment will give
-you some additional practice with fields, methods, constructors, conditionals,
+you some additional practice with instance variables, methods, constructors, conditionals,
 and output.
 
 <img width="300px" src="figures/orca_cards.png"/>
 
 #### Student Outcomes
 
-- Practice writing classes from scratch.
 - Exposure to integer divide and type conversion.
 - Putting defensive programming into practice.
-- More work on if-else-if statements.
+- More work on if/else-if/else statements.
 
 #### Instructions
 
 For full credit, your class should contain all of the methods described below. They should have exactly the same name as shown, take the correct arguments, and return the correct information. (I will run a program that creates instances of your class and tests them, and if your names or other details differ, my testing code won't compile.) The assignment is less specific about the instance variables (fields) you'll need — you'll have to figure out what you need to store in order to implement the methods below.
 
-- Start by creating a new BlueJ project, called `OrcaCard`. Inside, create a new class called `OrcaCard`.
-
-- Your class needs to be able to keep track of how much money is currently stored on the card.
-
-- Implement and document the following constructors or methods. Remember to write-a-little and test (repeat)!
+- Start by creating a new BlueJ project, called `OrcaCard`. Inside, create a new class called `OrcaCard`. Your class needs to be able to keep track of how much money is currently stored on the card.
 
 - You need to implement two constructors:
 
-  - A default constructor should set the sales tax rate to 6.5% (input as a double: 0.065). Set all other counters (keep reading) to zero.
+  - A default constructor should set the sales tax rate to 6.5% (input as a `double`: 0.065). Set all other counters (keep reading) to zero.
 
   - A second constructor should take a single argument as input (the sales tax rate). Your code should ensure that a valid rate was entered (i.e., can't be negative). If a rate is detected as being invalid, you should default the rate to 6.5%.
 
   - Know this: The thinking-ahead, anticipating possible errors, and writing code to prevent them, is called **Defensive Programming**. This is an extremely important programming practice, as it could prevent bugs and security vulnerabilities in your code.
 
-- A method called `topUp()` that takes a single input argument (the amount to add to the current balance) and adjusts the balance but doesn't return anything. You are reminded to program defensively...
+- A method called `topUp(..)` that takes a single input argument (the amount to add to the current balance) and adjusts the balance but doesn't return anything. You are reminded to program defensively...
 
-- We'll simulate the process of "swiping" the card via the `buyTrip()` method. It should take the cost of the trip for input, but we're required to pay tax on the cost of the trip as well. Thus, in the body of your method you'll need to calculate how much we owe in tax, and decrease the balance by the cost of the trip **plus** tax. The `buyTrip()` method should return void. You should also keep a separate running total of the amount of tax collected, so that we can report it to the IRS when necessary.
+- We'll simulate the process of "swiping" the card via the `buyTrip(..)` method. It should take the cost of the trip for input, but we're required to pay tax on the cost of the trip as well. Thus, in the body of your method you'll need to calculate how much we owe in tax, and decrease the balance by the cost of the trip **plus** tax. The `buyTrip(..)` method should return void. You should also keep a separate running total of the amount of tax collected, so that we can report it to the IRS when necessary.
 
-  For full credit, you should use conditional statement(s) in `buyTrip()` that checks whether you can afford the trip (plus tax). If not, print an error message but don't adjust the balance on the card or the tax collected. If there are sufficient funds for the trip, do the bookkeeping described in the paragraph above and print a success message that includes the remaining balance on the card.
+  For full credit, you should use conditional statement(s) in `buyTrip(..)` that checks whether you can afford the trip (plus tax). If not, print an error message but don't adjust the balance on the card or the tax collected. If there are sufficient funds for the trip, do the bookkeeping described in the paragraph above and print a success message that includes the remaining balance on the card.
 
 - Report it to the IRS you say? We'll need a `getTax()` method. It doesn't take any input arguments, but should return the total amount of tax collected during "swipes" of the card.
 
