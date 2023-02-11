@@ -148,9 +148,8 @@ Here is a list of built-in commands that David shell needs to support.
 - `pwd` should print the current working directory. Look into `getcwd()`, defined in `unistd.h`.
 
 - `cd [path]` should change the current working directory to the optionally given path. If path is not given, then dsh should change the working directory to the user's home directory, stored in the environment variable `HOME`. Look into the `chdir()` function, defined in `unistd.h`.
-<!-- 
-- `history` should print the `HISTORY_LEN` most recent commands executed. Define `HISTORY_LEN` to be 100.
- -->
+
+
 ##### Flowchart of Activities
 
 Phew! That's a lot to take in. The figure below shows the abstract flowchart for this program. This should (hopefully) give you a better idea of what all needs to be done.
