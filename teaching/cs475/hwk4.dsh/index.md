@@ -148,9 +148,9 @@ Here is a list of built-in commands that David shell needs to support.
 - `pwd` should print the current working directory. Look into `getcwd()`, defined in `unistd.h`.
 
 - `cd [path]` should change the current working directory to the optionally given path. If path is not given, then dsh should change the working directory to the user's home directory, stored in the environment variable `HOME`. Look into the `chdir()` function, defined in `unistd.h`.
-
+<!-- 
 - `history` should print the `HISTORY_LEN` most recent commands executed. Define `HISTORY_LEN` to be 100.
-
+ -->
 ##### Flowchart of Activities
 
 Phew! That's a lot to take in. The figure below shows the abstract flowchart for this program. This should (hopefully) give you a better idea of what all needs to be done.
@@ -246,16 +246,6 @@ dsh> ls -l
 -rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
 Students think you're inspiring!
 
-dsh> history
-cd
-ls -la
-NotARealCommand -o
-cat feelGood.c
-gcc -Wall feelGood.c -o feelGood
-./feelGood &
-ls -l
-history
-
 dsh> exit
 $
 Students think you're inspiring!
@@ -273,14 +263,12 @@ This assignment will be graded out of 80 points:
 
 [25pt] Running a valid command works as expected (in-foreground vs. in-background too).
 
-[5pt] history outputs the last HISTORY_LEN commands.
-
-[3pt] cd [path] works as expected, by changing the current directory to the path
+[5pt] cd [path] works as expected, by changing the current directory to the path
     (if given), or $HOME (if not given).
 
-[1pt] exit and pwd works as expected
+[3pt] exit and pwd works as expected
 
-[1pt] Your program observes good style and commenting.
+[2pt] Your program observes good style and commenting.
 
 [5pt] Your program is free of memory leaks and dangling pointers.
 ```
