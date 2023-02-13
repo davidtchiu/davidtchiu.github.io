@@ -119,19 +119,20 @@ let days = {
     // wk 4
     "Processes: PCB, address space, program stack",
     "Processes: state transitions, fork()",
-    "Processes: fork(), wait(), exec() system calls",
+    "Processes: wait(); zombies and orphans",
     // wk 5
+    "Processes: exec() system call; Start Threads",
     "Threads: Performance and data sharing; Amdahl's Law",
     "Threads: User vs. kernel; C pthread library",
-    "Threads: Work sharing example - parallel sum",
     // wk 6
-    "Scheduling: goals and metrics; FCFS",
+    "Threads: Work sharing example - parallel sum",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
+    "Scheduling: goals and metrics; FCFS",
     "Sched: RR, SJF, SRTF",
     "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
-    "Sched: hyperthreading, multicore considerations",
+    // "Sched: hyperthreading, multicore considerations",
     // wk 8
     "Synchronization: critical section",
     "Sync: locks, atomicity",
