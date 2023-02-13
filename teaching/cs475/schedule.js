@@ -122,8 +122,9 @@ let days = {
     "Processes: wait(); zombies and orphans",
     // wk 5
     "Processes: exec() system call; Start Threads",
+    // "Threads: TCB structs; user vs kernel threads",
+    "Threads: User vs. kernel threads; pthread library",
     "Threads: Performance and data sharing; Amdahl's Law",
-    "Threads: User vs. kernel; C pthread library",
     // wk 6
     "Threads: Work sharing example - parallel sum",
     "<strong><emph>Review</emph></strong>",
