@@ -167,9 +167,9 @@ This assignment can be tricky to get started, because there are so many pieces t
     char **array = (char**) malloc(num * sizeof(char*));
 
     // this loops through each array element and instantiates
-    // an array of capacity CAP
+    // an array of chars of length: CAPACITY
     for (int i = 0; i < num; i++) {
-      array[i] = (char*) malloc(CAP * sizeof(char));
+      array[i] = (char*) malloc(CAPACITY * sizeof(char));
     }
 
     // now I can assign strings to individual array elements
@@ -178,7 +178,15 @@ This assignment can be tricky to get started, because there are so many pieces t
     }
     ```
 
-2.  Write a function `char** split(char *str, char *delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and string delimiter, and return an array of substrings (tokens) split on the given delimiter. I would start by counting the number of instances of the delimiter in `str`. The number of tokens, let's call it `NUMTOKENS`, is just 1 added to that number. Then, using `malloc()` I would allocate `NUMTOKENS+1` pointers to `char`s (see previous bullet point). Use `strtok()` to loop through all of the tokens, and assign each to a corresponding place in your new array (using `strcpy()`). Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element of your array to `NULL`. (This is why I had you malloc `NUMTOKENS+1` elements). Here's how you might use your new method:
+2.  Write a function `char** split(char *str, char *delim)`, that has the same behavior as Java String's `split(..)`. Your function should input a string `str`, and a string delimiter, and return an array of substrings (tokens) split on the given delimiter. 
+
+    - First, figure out the number of tokens that you will end up with. I would do this by counting the number of instances of the delimiter found in `str`. The number of tokens is just 1 plus that number and call this value `numTokens`.
+
+    - Now use the previous bullet point to allocate `numTokens+1` pointers to chars. Then write your loop to malloc `numTokens` arrays of chars. (Yes, it is crucial that you only loop up to `numTokens`, and not `numTokens+1`).
+
+    - Use the string function `strtok()` to loop through all of the tokens, and assign each to a corresponding element in your new array by using `strcpy()`. 
+
+    - Because the user of your function wouldn't know the size of the array that you're returning, make sure you set the final element of your array to `NULL`. (This is why I had you malloc `NUMTOKENS+1` spots in the first place). Here's how you might use your new method:
 
     ```c
     //split cmd on whitespace!
