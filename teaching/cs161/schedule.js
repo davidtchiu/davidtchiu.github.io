@@ -122,12 +122,12 @@ let days = {
         url: "lab4.guessing/",
         due: "2/10/2023",
       },
-      // {
-      //   name: "Lab 5",
-      //   title: "Circle Drawer (Objects)",
-      //   url: "lab5.circleDrawer/",
-      //   due: "2/17/2023",
-      // },
+      {
+        name: "Lab 5",
+        title: "Circle Drawer (Objects)",
+        url: "lab5.circleDrawer/",
+        due: "2/17/2023",
+      },
       // {
       //   name: "Lab 7",
       //   title: "Diamonds (Object Abstraction; Basic Loops)",
