@@ -201,9 +201,9 @@ let days = {
     "Lab 4 review; Data Types",
     // wk 5
     "Primitives and numeric type-casting (narrowing, widening)",
-    "Classes as types: references, object equivalence",
+    "Classes as types: references, null",
     "Lab 5",
-    "Lab 5 review; ",
+    "Lab 5 review; Object comparison",
     // "Abstraction: Working with APIs; Unpacking Strings",
     // wk 6
     "Abstraction and modularity: Organism",
