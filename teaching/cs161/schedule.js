@@ -203,13 +203,13 @@ let days = {
     "Primitives and numeric type-casting (narrowing, widening)",
     "Classes as types: references, object equivalence",
     "Lab 5",
-    "Lab 5 review",
+    "Lab 5 review; ",
     // "Abstraction: Working with APIs; Unpacking Strings",
     // wk 6
     "Abstraction and modularity: Organism",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    "String exercises",
+    "Using APIs: Strings",
     // wk 7
     "Start loops; reading; tracing",
     "More loops",

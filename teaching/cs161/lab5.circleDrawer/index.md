@@ -116,13 +116,13 @@ The API handout that you'll want to have in front of you:
   - But how do you compare the *sizes* of two circles? 
   - You need to _ask_ circles to tell you (return) their diameters. Write a new method inside `Circle` called `getDiameter()` to do that.
 
-- Now modify `CircleDrawer`'s `drawCircles()` method so that it only draws circles with radii strictly greater than `20` and strictly less than `50`. But how do you get a `Circle`'s radius? Add any necessary code to the `Circle` class so that it provides a method to return its own size. Again, test this out back inside main. Ahem -- that means if your Circle's diameter is say, **41**, it should be drawn. Test out your code.
+- Now **modify** the `drawCircles()` method so that it only draws circles with radii strictly greater than `20` and strictly less than `50`. But how do you get a `Circle`'s radius? Add any necessary code to the `Circle` class so that it provides a method to return its own size. Again, test this out back inside main. Ahem -- that means if your Circle's diameter is say, **41**, it should be drawn. Test out your code.
 
-- Add a method in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 10 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
+- **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 10 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
 
   - If either circle is `null`, simply return 0.
 
-- Add a method in `CircleDrawer` called `addCircle()` that takes a `Circle` as input, and it doesn't return anything. This method will first erase both `Circle`s. If *either* of the two instance variables (`first`, `second`) are pointing to `null`, then simply assign the new `Circle` to that field.
+- **Add a method** in `CircleDrawer` called `addCircle()` that takes a `Circle` as input, and it doesn't return anything. This method will first erase both `Circle`s. If *either* of the two instance variables (`first`, `second`) are pointing to `null`, then simply assign the new `Circle` to that field.
 
   - If `first` is pointing to `null`, then assign the new `Circle` to `first`.
   - Otherwise, if `second` is pointing to `null`, then assign the new `Circle` to `second`.
@@ -134,9 +134,15 @@ The API handout that you'll want to have in front of you:
   - If `first` is smaller, we'll promote second to take its place, and add the new circle in `second`'s place.
   - If `second` is the smaller, we'll just replace it with the new circle. In the case of a tie, replace second.
 
+
+<!-- 
+
 - Finally, add a method to `CircleDrawer` called `drawWhenEquals()` that draws both `Circles` if they are "equal" in _content_. Hide both of them if they aren't "equal." Before you can write the method, you need to add an `equals()` method in the `Circle` class.
 
   - Let's say that two `Circle`s are equal in content if they have the same size and (x,y) positioning. Refer back to the "content (deep) equality" notes, if you need a reminder on how these `equals()` methods are written.
+
+-->
+
 
 #### Grading
 
