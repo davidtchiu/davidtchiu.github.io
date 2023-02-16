@@ -147,26 +147,9 @@ The API handout that you'll want to have in front of you:
 #### Grading
 
 ```
-This lab assignment will be graded out of a total of 2 pts provided the following
-items are completed.
-
-- Circles have an boolean equals(Circle other) method that returns true
-  if the content of the current circle is the same as the other circle being
-  compared.
-
-- drawCircles() and eraseCircle() do not suffer from NullPointerException.
-
-- The addCircle() method is properly implemented.
-
-- drawLarger() that only draws the larger of the two circles. The smaller one
-  should be hidden.
-
-- The drawWhenEquals() method is properly implemented.
-
-- You provide Javadocs style comments for any new methods implemented.
-
-- You include sufficient inline comments to explain the logic of your methods.
+This assignment will be graded out of 2 points. Attedance required.
 ```
+
 
 #### Submitting Your Assignment
 
