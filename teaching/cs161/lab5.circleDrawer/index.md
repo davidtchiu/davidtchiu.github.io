@@ -118,19 +118,16 @@ The following file(s) have been provided for this homework.
 
   - If either circle is `null`, simply return 0.
 
-- **Add a method** in `CircleDrawer` called `addCircle()` that inputs a `Circle` object, and it doesn't return anything. This method will first erase both `Circle`s. If *either* of the two instance variables (`first`, `second`) are pointing to `null`, then simply assign the new `Circle` to that field.
+- **Add a method** in `CircleDrawer` called `addCircle()` that inputs a `Circle` object, and it doesn't return anything. This method will first erase both `Circle`s. If *either* of the two instance variables (`first`, `second`) are pointing to `null`, then simply assign the new `Circle` to that field. If neither reference is pointing to `null`, then promote the second `Circle` to the `first`, then sets the newly-input `Circle` to be the `second`. After you're done, make both Circles visible.
 
-  - If `first` is pointing to `null`, then assign the new `Circle` to `first`.
-  - Otherwise, if `second` is pointing to `null`, then assign the new `Circle` to `second`.
-  - Finally, if neither reference is pointing to `null`, then promote the second `Circle` to the `first`, then sets the newly-input `Circle` to be the `second`.
+  - To test, I would create 3 circles in BlueJ. Then create a CircleDrawer using the default constructor so that both `first` and `second` are `null`. Then call `addCircle()` 3 consecutive times (on the 3 circles you created).
 
-  After you're done, make both Circles visible.
+- **Add a method** called `swapCircles()` that inputs and returns nothing. Calling this method will cause  `first` to now point to whatever `second` held, and vice versa. 
 
-- **Add a method** called `swapCircles()` that inputs and returns nothing. Calling this method will exchange the contents of `first` and `second`. 
-
-- **Add a method** called `replaceSmallest()` that takes a `Circle` as input. In `CircleDrawer`, if either of the two instance variables are `null`, simply add the `Circle` that was input, just as before. If both instance variables are non-null, this method must replace the smaller circle with the new one. We need to respect seniority, though:
-  - If `first` is smaller, we'll promote second to take its place, and add the new circle in `second`'s place.
-  - If `second` is the smaller, we'll just replace it with the new circle. In the case of a tie, replace second.
+- **Add a method** called `replaceSmallest()` that takes a `Circle` as input. In `CircleDrawer`, if either of the two instance variables are `null`, simply add the new circle into the empty slot. If both instance variables are non-null, this method must replace the smaller circle with the new one. We need to respect seniority, though:
+  - If `first` is smaller, we'll first promote `second` to take its place, and assign the new circle in `second`'s place.
+  - If `second` is smaller, we'll just replace it with the new circle. In the case of a tie, replace second.
+  - This method seems to have quite a bit of similarities to `addCircle()`. You don't need to, but kudos if you can figure out how to utilize `addCircle()` and `swapCircles()` to simplify writing this method.
 
 
 
