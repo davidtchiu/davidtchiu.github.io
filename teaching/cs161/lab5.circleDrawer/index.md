@@ -34,13 +34,6 @@ The following file(s) have been provided for this homework.
 
 - [Lab5_CircleDrawer.zip](Lab5_CircleDrawer.zip)
 
-#### Helpful APIs
-
-The API handout that you'll want to have in front of you:
-
-- [Circle](../api/CircleAPI.pdf)
-- [Random](../api/RandomAPI.pdf)
-
 #### Instructions
 
 - Download the `CircleDrawer` project from the link above and extract its contents, then start BlueJ and open the project. Take a moment to familiarize yourself with the code in the `CircleDrawer` class. A `CircleDrawer` contains two instance variables as references to a pair of Circles (named `first` and `second`).
