@@ -102,7 +102,7 @@ The following file(s) have been provided for this homework.
   - Let's see what happens if you tried to call `drawCircles()` or `eraseCircles()`.
   - The program should **crash** with a `"NullPointerException."` That's bad news -- it means our code isn't all that robust.
 
-- Back in the `CircleDrawer` code, add necessary changes to `drawCircles()` and `eraseCircles()` so that no action is taken if either field refers to `null` (use an if-statement to check if each field is `==` to `null`), otherwise both are drawn. Make sure you test these out after you're done.
+- Back in the `CircleDrawer` code, add necessary changes to `drawCircles()` and `eraseCircles()` so that no action is taken if either field refers to `null`. To do this, use an if-statement to check if each field is `==` or `!=` to the keyword `null`. Make sure you test these out after you're done.
 
 - Now **modify** the `drawCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
 
