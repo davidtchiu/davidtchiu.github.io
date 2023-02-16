@@ -123,10 +123,10 @@ let days = {
     // wk 5
     "Processes: exec() system call",
     // "Threads: TCB structs; user vs kernel threads",
-    "Threads: Start Threads; User vs. kernel threads; pthread library",
-    "Threads: Performance and data sharing; Amdahl's Law",
+    "Start Threads; User vs. kernel threads",
+    "Threads: pthread library",
     // wk 6
-    "Threads: Work sharing example - parallel sum",
+    "Threads: Performance and data sharing; Amdahl's Law",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
