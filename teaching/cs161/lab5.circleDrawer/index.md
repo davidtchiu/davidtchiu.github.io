@@ -111,28 +111,32 @@ The API handout that you'll want to have in front of you:
 
 - Back in the `CircleDrawer` code, add necessary changes to `drawCircles()` and `eraseCircles()` so that no action is taken if either field refers to `null` (use an if-statement to check if each field is `==` to `null`), otherwise both are drawn. Make sure you test these out after you're done.
 
-- Go back in the `CircleDrawer` class. **Write a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then draw both of them.
+- Now **modify** the `drawCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
 
-  - But how do you compare the *sizes* of two circles? 
-  - You need to _ask_ circles to tell you (return) their diameters. Write a new method inside `Circle` called `getDiameter()` to do that.
+  - But how do you get a `Circle`'s radius? Add any necessary code to the `Circle` class so that it provides a method to return its diameter. Again, test this out back.
 
-- Now **modify** the `drawCircles()` method so that it only draws circles with radii strictly greater than `20` and strictly less than `50`. But how do you get a `Circle`'s radius? Add any necessary code to the `Circle` class so that it provides a method to return its own size. Again, test this out back inside main. Ahem -- that means if your Circle's diameter is say, **41**, it should be drawn. Test out your code.
+  - Ahem -- that means if your Circle's diameter is say, **41**, it should be drawn. Test out your code.
+
+- Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then draw both of them.
 
 - **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 10 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
 
   - If either circle is `null`, simply return 0.
 
-- **Add a method** in `CircleDrawer` called `addCircle()` that takes a `Circle` as input, and it doesn't return anything. This method will first erase both `Circle`s. If *either* of the two instance variables (`first`, `second`) are pointing to `null`, then simply assign the new `Circle` to that field.
+- **Add a method** in `CircleDrawer` called `addCircle()` that inputs a `Circle` object, and it doesn't return anything. This method will first erase both `Circle`s. If *either* of the two instance variables (`first`, `second`) are pointing to `null`, then simply assign the new `Circle` to that field.
 
   - If `first` is pointing to `null`, then assign the new `Circle` to `first`.
   - Otherwise, if `second` is pointing to `null`, then assign the new `Circle` to `second`.
   - Finally, if neither reference is pointing to `null`, then promote the second `Circle` to the `first`, then sets the newly-input `Circle` to be the `second`.
 
-  After you're done, draw both Circles.
+  After you're done, make both Circles visible.
+
+- **Add a method** called `swapCircles()` that inputs and returns nothing. Calling this method will exchange the contents of `first` and `second`. 
 
 - **Add a method** called `replaceSmallest()` that takes a `Circle` as input. In `CircleDrawer`, if either of the two instance variables are `null`, simply add the `Circle` that was input, just as before. If both instance variables are non-null, this method must replace the smaller circle with the new one. We need to respect seniority, though:
   - If `first` is smaller, we'll promote second to take its place, and add the new circle in `second`'s place.
   - If `second` is the smaller, we'll just replace it with the new circle. In the case of a tie, replace second.
+
 
 
 <!-- 
