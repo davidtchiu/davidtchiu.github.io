@@ -225,7 +225,6 @@ This assignment can be tricky to get started, because there are so many pieces t
 #### Example Output
 
 ```
-dsh> cd
 dsh> ls -la
 -rw-r--r--@ 1 dchiu  faculty  199  Feb  3 22:56 .dsh_motd
 -rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
