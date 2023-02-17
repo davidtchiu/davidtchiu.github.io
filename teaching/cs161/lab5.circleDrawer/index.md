@@ -108,9 +108,11 @@ The following file(s) have been provided for this homework.
 
 - Now **modify** the `drawCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
 
-  - But how do you get a `Circle`'s radius? Add any necessary code to the `Circle` class so that it provides a method to return its diameter. Again, test this out back.
+  - But how do you get a `Circle`'s radius? One way is to go into `Circle` and making the `diameter` public instead of private. However this is a practice considered highly dangerous because it exposes `diameter` to unwanted changes.
 
-  - Ahem -- that means if your Circle's diameter is say, **41**, it should be drawn. Test out your code.
+  - You should instead add a method in  the `Circle` class that returns its diameter. 
+
+  - Again, test this out. Ahem -- if your Circle's diameter is say, **41**, it *should* be drawn. 
 
 - Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then draw both of them.
 
