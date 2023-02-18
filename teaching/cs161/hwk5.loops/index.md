@@ -12,7 +12,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 - Open BlueJ and create a new project called `Hwk5_Loops`. This class will not have any fields or constructors. You'll just be writing and testing various methods.Write the following methods:
 
-- **(Not nested)** `stringRepeat()` which inputs a String `str` and an integer `num` respectively. It returns a String in which `str` is
+- Write `stringRepeat()` which inputs a String `str` and an integer `num` respectively. It returns a String in which `str` is
   is appended to itself `num` times. An empty string should be returned if `nums <= 0`.
 
   If you typed the following into BlueJ's code pad, you should get the corresponding results.
@@ -38,7 +38,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   > !!!!!!!!
   ```
 
-- **(Not nested)** Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the String API handy to help you.
+- Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the String API handy to help you.
 
   ```java
   Loops loopie = new Loops();
@@ -58,7 +58,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   > 0
   ```
 
-- **(Not nested)** `multiply()` which inputs two integers `A` and `B` and returns the product from multiplying them together. Your solution must use a loop to add `A` together `B` times (or vice versa). It must also handle negative inputs. Your loops can iterate at most `|A|` or `|B|` times, and ensure that your solution does not rely on integer overflow. Nested loops are not necessary for this problem. As an optional challenge, can you do this with only one loop?
+- Write `multiply()` which inputs two integers `A` and `B` and returns the product from multiplying them together. Your solution must use a loop to add `A` together `B` times (or vice versa). It must also handle negative inputs. Your loops can iterate at most `|A|` or `|B|` times, and ensure that your solution does not rely on integer overflow. Nested loops are not necessary for this problem. As an optional challenge, can you do this with only one loop?
 
   ```java
   Loops l = new Loops();
@@ -76,7 +76,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   > 20
   ```
 
-- **(Not nested)** `findPrimes()` inputs an integer `n` and prints the first `n` prime numbers, beginning with `2`. (We had written a prime number checker in class. Use it!) This method requires just a single loop if you use the `isPrime()` method we wrote in class.
+- Write `findPrimes()` inputs an integer `n` and prints the first `n` prime numbers, beginning with `2`. (We had written a prime number checker in class. Use it!) This method requires just a single loop if you use the `isPrime()` method we wrote in class.
 
   ```java
   Loops l = new Loops();
@@ -106,70 +106,56 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   29
   ```
 
-<!-- #### Extra Credit Opportunity -->
-<!-- Completion of each of the following will yield +1 point per question on your lowest midterm exam.
-I strongly recommend students to complete all of these as well for preparation of future materials. -->
-
-#### Additional Practice Problems
-
-These won't fetch you any extra credit, but I strongly recommend students to complete all of these as well for preparation of future materials.
-
-- **(Not nested; involves arrays)** Write a method called `instancesOf()` that inputs an array of integers, an integer `M`, and an integer
-  `N`. This method returns a boolean true if it can find exactly `N` copies of `M` in the array, and false otherwise.
-
+- Write a method `String decimal2Binary(int num)` that inputs a non-negative integer, and returns the binary representation of that integer. You may assume that the input is non-negative. You might remember the algorithm from class: If `num` is 0, simply return the string `"0"` and you're done (zero is just 0 in both binary and in decimal!). Otherwise, divide `num` by `2`. The remainder, which is either a one or zero, is appended to the *left* of the current binary string. Repeat these steps until `num` reduces to 0.
   ```java
-  import java.util.Arrays;  // this is for printing arrays
+  Loops l = new Loops();
+  l.decimal2Binary(0)
+  > "0"   (String)
 
-  Loops loopie = new Loops();
-  int[] arr = {10,0,40,40,30,20,20,50,20}
-  System.out.println(loopie.instancesOf(arr, 50, 1));
-  > true
+  l.decimal2Binary(1)
+  > "1"   (String)
 
-  System.out.println(loopie.instancesOf(arr, 20, 1));
-  > false
+  l.decimal2Binary(5)
+  > "101"
 
-  System.out.println(loopie.instancesOf(arr, 20, 3));
-  > true
+  l.decimal2Binary(6)
+  > "110"
+
+  l.decimal2Binary(7)
+  > "111"
+
+  l.decimal2Binary(55)
+  > "110111"
+
+  l.decimal2Binary(256)
+  > "100000000"
   ```
 
-- **(Not nested; involves arrays)** Write a method called `max()` that inputs an array of integers. This method returns the largest number in the array.
+#### Extra Challenge
+For no extra credit points, write the method `int binary2Decimal(String num)` that converts a binary number to an integer in base 10. For your reference, to take 2 to the *ith* power, you can use the method `Math.pow(2,i)`.
 
   ```java
-  Loops loopie = new Loops();
-  int[] arr = {10,0,40,40,30,20,20,50,20};
-  System.out.println(loopie.max(arr));
-  > 50
-  ```
+  Loops l = new Loops();
+  l.binary2Decimal("0")
+  > 0   (int)
 
-- **(Not nested, involves arrays)** Write a method called `isSorted()` that inputs an array of integers, and returns true if the array is in ascending order.
+  l.binary2Decimal("1")
+  > 1   (int)
 
-  ```java
-  Loops loopie = new Loops();
+  l.binary2Decimal("100")
+  > 4   (int)
 
-  int A[] = {2,4,6,8,10};
-  System.out.println(loopie.isSorted(A));
-  > true
+  l.binary2Decimal("1001")
+  > 9   (int)
 
-  int B[] = {10};
-  System.out.println(loopie.isSorted(B));
-  > true
+  l.binary2Decimal("1010")
+  > 10   (int)
 
-  int C[] = {30,40,10,50,60};
-  System.out.println(loopie.isSorted(C));
-  > false
-  ```
+  l.binary2Decimal("1011")
+  > 11   (int)
 
-- **(Not nested, involves arrays)** Write a method called `merge()` that inputs two arrays of integers which are both guaranteed to be sorted in ascending order (you can assume so). This method combines the two arrays into a single array in ascending order.
-
-  ```java
-  import java.util.Arrays;  // this is for printing arrays
-
-  Loops loopie = new Loops();
-  int[] A = {2,4,6,8,10};
-  int[] B = {1,3,5};
-
-  System.out.println(Arrays.toString(loopie.merge(A,B)));
-  > [1,2,3,4,5,6,8,10]
+  l.binary2Decimal("1010100")
+  > 84   (int)
   ```
 
 #### Program Defensively
@@ -183,19 +169,21 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 40pts.
+This assignment will be graded out of a total of 50pts.
 
-[5pts] stringRepeat is properly implemented. It returns the product of two given ints.
+[5pts] stringRepeat() is properly implemented. It returns the product of two given ints.
 It works with negative inputs.
 
-[10pts] hammingDistance is properly implemented. It returns the number of spots where
+[10pts] hammingDistance() is properly implemented. It returns the number of spots where
 two strings differ.
 
-[10pts] multiply is properly implemented. It returns the product of two given ints.
+[10pts] multiply() is properly implemented. It returns the product of two given ints.
 It works with negative inputs.
 
-[10pts] findPrimes is implemented. It inputs a positive integer, n, and prints the first
-n primes, each on a separate line..
+[10pts] findPrimes() is implemented. It inputs a positive integer, n, and prints the first
+n primes, each on a separate line.
+
+[10pts] decimal2Binary() is implemented. 
 
 Misc.
     [5pts] You provide Javadocs style comments for any new methods implemented. You include

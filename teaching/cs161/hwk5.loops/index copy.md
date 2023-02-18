@@ -168,6 +168,70 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   > [A, B, C, D, E]
   ```
 
+#### Additional Practice Problems
+
+These won't fetch you any extra credit, but I strongly recommend students to complete all of these as well for preparation of future materials.
+
+- **(Involves arrays)** Write a method called `instancesOf()` that inputs an array of integers, an integer `M`, and an integer
+  `N`. This method returns a boolean true if it can find exactly `N` copies of `M` in the array, and false otherwise.
+
+  ```java
+  import java.util.Arrays;  // this is for printing arrays
+
+  Loops loopie = new Loops();
+  int[] arr = {10,0,40,40,30,20,20,50,20}
+  System.out.println(loopie.instancesOf(arr, 50, 1));
+  > true
+
+  System.out.println(loopie.instancesOf(arr, 20, 1));
+  > false
+
+  System.out.println(loopie.instancesOf(arr, 20, 3));
+  > true
+  ```
+
+- **(Involves arrays)** Write a method called `max()` that inputs an array of integers. This method returns the largest number in the array.
+
+  ```java
+  Loops loopie = new Loops();
+  int[] arr = {10,0,40,40,30,20,20,50,20};
+  System.out.println(loopie.max(arr));
+  > 50
+  ```
+
+- **(Involves arrays)** Write a method called `isSorted()` that inputs an array of integers, and returns true if the array is in ascending order.
+
+  ```java
+  Loops loopie = new Loops();
+
+  int A[] = {2,4,6,8,10};
+  System.out.println(loopie.isSorted(A));
+  > true
+
+  int B[] = {10};
+  System.out.println(loopie.isSorted(B));
+  > true
+
+  int C[] = {30,40,10,50,60};
+  System.out.println(loopie.isSorted(C));
+  > false
+  ```
+
+- **(Involves arrays)** Write a method called `merge()` that inputs two arrays of integers which are both guaranteed to be sorted in ascending order (you can assume so). This method combines the two arrays into a single array in ascending order.
+
+  ```java
+  import java.util.Arrays;  // this is for printing arrays
+
+  Loops loopie = new Loops();
+  int[] A = {2,4,6,8,10};
+  int[] B = {1,3,5};
+
+  System.out.println(Arrays.toString(loopie.merge(A,B)));
+  > [1,2,3,4,5,6,8,10]
+  ```
+
+
+
 #### Extra Credit Opportunity
 
 Completion of each of the following will yield +1 point per question on your lowest midterm exam.
