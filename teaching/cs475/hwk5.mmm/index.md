@@ -17,7 +17,8 @@ $$
 $$
     \forall~j : 0 \le j \le n-1
 $$
-For simplicity, you may assume that you'll only be multiplying square matrices.
+
+For simplicity, you may assume that you'll only be multiplying square matrices in this assignment.
 
 
 #### ZyBooks References
