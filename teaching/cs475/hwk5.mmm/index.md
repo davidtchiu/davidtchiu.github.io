@@ -2,9 +2,9 @@
 
 ### Hwk: Multi-Threaded Matrix Multiplication
 
-Matrix-matrix multiplication (mmm) is a cumbersome, but widely used, application. It's used in graphics, scientific computing, engineering applications, Deep Learning and AI, and so on. It's no wonder it is found in many benchmarking suites for evaluating system performance and new chipsets. Fortunately, it's also highly parallelizable.
+Matrix-matrix multiplication (mmm) is a cumbersome, important process. It's commonly used in computer graphics, scientific computing, engineering applications, deep learning and AI, and so on. It's no wonder that mmm is found in many benchmarking suites for evaluating system performance and new architectures.
 
-In this assignment, you will be implementing and evaluating the performance for sequential and parallel implementations of mmm. You may assume that you'll only be multiplying square matrices. Given two matrices $$a[n,n]$$ and $$b[n,n]$$, their product $$c[n,n]$$ is defined:
+In this assignment, you will be implementing the parallel implementation of mmm.  Given two matrices $$a[n,n]$$ and $$b[n,n]$$, their product $$c[n,n]$$ is defined:
 
 $$
 c[i,j] = \sum_{k=0}^{n-1}a[i,k]\cdot b[k,j]
@@ -17,6 +17,8 @@ $$
 $$
     \forall~j : 0 \le j \le n-1
 $$
+For simplicity, you may assume that you'll only be multiplying square matrices.
+
 
 #### ZyBooks References
 
@@ -45,7 +47,7 @@ I have included a working solution of my program along with the starter code. Th
 
 #### Program Requirements
 
-Before you get started: Even though we're reading from and writing to 2D arrays that are shared amongst all threads, there is actually no need for synchronization (locking, semaphores) in this assignment. You should try understand why synchronization is not necessary for the work done here. Recognize where the threads are reading from, and writing to, and check if race conditions can happen.
+Before you get started: In this assignment each thread is writing to its own isolated location in memory. That is, threads are not contending to read/write from the *same* locations, and therefore **race conditions are not possible**. You should verify that this is the case. This helps simplify our parallelization work, because we don't need to synchronize their access across threads.
 
 1. To run your program, you must support the following commands:
 
@@ -92,18 +94,18 @@ Before you get started: Even though we're reading from and writing to 2D arrays 
 
 3. Your `main(int argc, char *argv[])`. Command-line arguments can be access through `argc` and `argv`. Specifically, `argc` refers to the number of tokens given on the command line, including the command to run the executable itself. `argv` is a string array containing the tokens given (much like the `String[] args` in Java).
 
-4. Dynamically allocating 2D arrays: Because the number of threads and the `size` of the matrices are given at runtime, you must dynamically allocate memory on the heap. Remember to free-up memory when done. To do this, should store pointers to the input and output matrices in global (thread-shared) scope. A pointer to a 2D array of doubles would look like this: `double **matrix;` Then inside `main()`, you'll need to first allocate `size` number of pointers to doubles (that's the first dimension in the matrix), then iterate through that array and allocate `size` number of doubles (that's the second dimension of the matrix).
+4. Dynamically allocating 2D arrays: Because the number of threads and the `size` of the matrices are given at runtime, you *must*  allocate memory on the heap. Remember to free-up memory and clean up any dangling pointers when you're done using them. I would should store pointers to the input and output matrices in global scope. A pointer to a 2D array of `doubles` would look like this: `double **matrix;` Then inside `main()`, you'll need to first allocate `size` number of pointers to doubles (that's the first dimension in the matrix), then iterate through that array and allocate `size` number of doubles (that's the second dimension of the matrix).
 
-   To accomplish this takes two steps (one in each "dimension" of the array.) Here's an example to create an N by M array of ints.
+   To accomplish this takes two steps (one in each "dimension" of the array.) Here's an example to create an N by M array of `ints`.
 
       ```c
       // declare this somewhere in global scope (for thread sharing)
       int **array;
       ```
 
-      - The `**` syntax may at first seem confusing. However, recall from the last tutorial that an array is just a pointer. So, an array of pointers can be interpreted to be a pointer to pointers. Therefore, `array` has been declared as `**array`. Indeed, if you need a 3 dimensional array, then you would use `***array`.
+      - The `**` syntax may at first seem confusing. However, recall from the last tutorial that an array is just a pointer. So, an array of pointers can be interpreted to be a pointer to pointers. Therefore, `array` has been declared as `**array`. (If you ever needed a 3 dimensional array, then you would use `***array`, and so on.)
 
-   Elsewhere in code,
+   Elsewhere in your code,
       ```c
       // malloc a size N array of pointers to ints
       array = (int**) malloc(sizeof(int*) * N);
@@ -114,14 +116,6 @@ Before you get started: Even though we're reading from and writing to 2D arrays 
       }
       // can now have access to array[i][j]
       ```
-
-      - Pay attention to the first `malloc()`. Notice that we're asking for N times `sizeof(int*)` bytes, that is, the size of a pointer to `int`s, because we're not storing `int`s themselves in this array, we're storing pointers in this array!
-
-      - The return value of `malloc()` is then casted into `(int**)`, since, `malloc()` returns a generic void* pointer to a pointer in this case, and you need to tell C that it's actually a pointer to a pointer to an int.
-
-      - The `**array` you just allocated is just a single dimension array of pointers (think of them as rows in a 2D array). Now we have to allocate the *other* dimension (columns). To do this, you need to iterate through all `N` positions and call `malloc()` for each row!
-
-         - The `malloc()` here looks far more familiar. We just need to allocate M `int`s and cast it to an integer pointer (`int*`) before assignment to the ith row.
 
       - Don't forget, you will need to free the 2D array later on. Do so by individually freeing every row, then free the original 2D pointer.
 
@@ -136,24 +130,24 @@ Before you get started: Even though we're reading from and writing to 2D arrays 
          array = NULL;  //remove dangling pointer
          ```
 
-5. Once you allocate the input matrices, you should initialize them with random double values between 0 and 99.
+5. Once you successfully allocate the input matrices, you should initialize them with random double values between 0 and 99. Look into the [rand()](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm) function.
 
-6. **Work-Sharing Approach:** If the parallel mode (`P`) is selected, your `main()` function must split the work evenly/fairly among the threads. There are many ways to do this, and I'll leave this decision up to you. You're welcome to experiment with different approaches!
+6. **Work-Sharing Approach:** If the parallel mode (`P`) is selected, your `main()` function must split the work evenly among threads. There are many ways to do this, and I'll leave this decision up to you. You're welcome to experiment with different approaches!
 
-   - Would you assign each thread to compute a set of rows in the result? Or a set of columns? Would it make a difference?
+   - Maybe you can assign each thread to compute a set of rows in the result? A set of columns?  Would it make a difference in speed?
    - Maybe you could assign a thread to compute a block of elements instead of rows or columns?
 
-   This decision will likely impact the performance of your parallel algorithm. Let's see how well you can do! You must also run the code sequentially, so that you can compare the speeds! (See below on how to clock speeds).
+   This decision will likely impact the performance of your parallel algorithm. Let's see how well you can do! You must also run the code sequentially, so that you can compare the speeds! (See below on how to clock the speeds).
 
-   - Which ever approach you use, remember to provide each thread (as an input argument to the thread function) its range of work. It's usually through a `struct`. If you forget how to do this, refer to the examples I gave in class: [Parallel Sum](https://github.com/davidtchiu/cs475-parSum) and [Parallel Sort](https://github.com/davidtchiu/cs475-parInsertionSort).
+   - Which ever work-sharing approach you use, remember to provide each thread (as an input argument to the thread function) its range of work. As I showed in class, this is usually through a `struct`. If you forget how to do this, refer to the examples I gave in class: [Parallel Sum](https://github.com/davidtchiu/cs475-parSum) and [Parallel Sort](https://github.com/davidtchiu/cs475-parInsertionSort).
 
-7. Validation: An important final step is to verify that the parallel version of your code is correct. To do this, you should compare the matrices generated by the sequential algorithm and the parallel algorithm whenever the parallel mode `P` is run. Check that the greatest difference between any two corresponding elements of the output matrices generated by the sequential code and the parallel code is zero.
+7. Validation: An important final step is to verify that the parallel version of your code is correct. To do this, you should compare the matrices generated by the sequential algorithm and the parallel algorithm whenever the parallel mode `P` is run. Write a function to check that the greatest difference between any two corresponding elements of the output matrices generated by the sequential code and the parallel code is zero. This function does not need to be parallelized, and is only called after you run and clocked both sequential and parallel versions of code in `P` mode.
 
-8. You must output the time taken, in seconds, for the calculation to take place. To do this, you should use the `rtclock()` function that is provided to you. When running in parallel mode, you should also show the speedup over the sequential version, which is computed to be: $$T_{sequential} / T_{parallel}$$. If you did this right, you should experience significant speedup, since matrix multiplication has a significant fraction of code that is highly parallelizable.
+8. You must output the time taken, in seconds, for the calculation to take place. To do this, you should use the `rtclock()` function that is provided to you. When running in parallel mode, you should also show the **speedup** over the sequential version, defined $$T_{sequential} / T_{parallel}$$. If you did this right, you should experience significant speedup, since matrix multiplication has a significant fraction of code that is highly parallelizable.
 
-   - Smoothing the results: Always run the program $$N+1$$ times: throwing away the time for the first run, and report the average time of the subsequent $$N$$ runs. This is to warm-up the cache (first run) and to smooth-out the results. $$N = 3$$ is a good value.
+   - Smoothing the results: Always run your program $$4$$ times: throwing away the time for the first run, and report the average time of the subsequent $$3$$ runs. This is to warm-up the cache (first run) and to smooth-out the results.
 
-   - Only clock the relevant portions of code. For instance, I would not consider the time it takes to allocate and free-up memory for the matrices, since these are performed for both sequential and parallel versions. However, you must take into account the time it takes to create, join, and free-up threads in the parallel version, since they are considered necessary overheads for using threads.
+   - Only clock the relevant portions of code. For instance, do not consider the time it takes to allocate and free-up memory for the matrices, since these are performed for both sequential and parallel versions. Further, do not account for the time to verify the correctness of the parallel version. However, you must take into account the time it takes to create, join, and free-up threads in the parallel version, since they are considered necessary overheads for using threads.
 
 #### Example Output
 

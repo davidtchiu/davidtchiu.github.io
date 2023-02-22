@@ -43,12 +43,12 @@ let days = {
         url: "hwk4.dsh/",
         due: "2/20/2023",
       },
-      // {
-      //   name: "Hwk 5 (mmm)",
-      //   title: "Matrix Multiplication",
-      //   url: "hwk5.mmm/",
-      //   due: "3/3/2023",
-      // },
+      {
+        name: "Hwk 5 (mmm)",
+        title: "Matrix Multiplication",
+        url: "hwk5.mmm/",
+        due: "3/3/2023",
+      },
       // {
       //   name: "Hwk 6 (ts_hashmap)",
       //   title: "Thread-Safe Hashmap",
