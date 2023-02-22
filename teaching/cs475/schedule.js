@@ -47,7 +47,7 @@ let days = {
         name: "Hwk 5 (mmm)",
         title: "Matrix Multiplication",
         url: "hwk5.mmm/",
-        due: "3/3/2023",
+        due: "3/6/2023",
       },
       // {
       //   name: "Hwk 6 (ts_hashmap)",
