@@ -19,14 +19,14 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
   ```java
   Loops loopie = new Loops();
-  System.out.println(loopie.stringRepeat("$", 5));
-  > $$$$$
+  System.out.println(loopie.stringRepeat("David", 5));
+  > DavidDavidDavidDavidDavid
 
   System.out.println(loopie.stringRepeat("wuff ", 3));
   > wuff wuff wuff
 
-  System.out.println(loopie.stringRepeat("$", 1));
-  > $
+  System.out.println(loopie.stringRepeat("David", 1));
+  > David
 
   System.out.println(loopie.stringRepeat("$", 0));
   >
@@ -61,39 +61,39 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 - Write `multiply()` which inputs two integers `A` and `B` and returns the product from multiplying them together. Your solution must use a loop to add `A` together `B` times (or vice versa). It must also handle negative inputs. Your loops can iterate at most `|A|` or `|B|` times, and ensure that your solution does not rely on integer overflow. Nested loops are not necessary for this problem. As an optional challenge, can you do this with only one loop?
 
   ```java
-  Loops l = new Loops();
-  System.out.println(l.multiply(3,4));
+  Loops loopie = new Loops();
+  System.out.println(loopie.multiply(3,4));
   > 12
-  System.out.println(l.multiply(19,0));
+  System.out.println(loopie.multiply(19,0));
   > 0
-  System.out.println(l.multiply(0,19));
+  System.out.println(loopie.multiply(0,19));
   > 0
-  System.out.println(l.multiply(-2,9));
+  System.out.println(loopie.multiply(-2,9));
   > -18
-  System.out.println(l.multiply(10,-9));
+  System.out.println(loopie.multiply(10,-9));
   > -90
-  System.out.println(l.multiply(-4,-5));
+  System.out.println(loopie.multiply(-4,-5));
   > 20
   ```
 
 - Write `findPrimes()` inputs an integer `n` and prints the first `n` prime numbers, beginning with `2`. (We had written a prime number checker in class. Use it!) This method requires just a single loop if you use the `isPrime()` method we wrote in class.
 
   ```java
-  Loops l = new Loops();
-  l.findPrimes(5);
+  Loops loopie = new Loops();
+  loopie.findPrimes(5);
   2
   3
   5
   7
   11
 
-  l.findPrimes(1);
+  loopie.findPrimes(1);
   2
 
-  l.findPrimes(0);
+  loopie.findPrimes(0);
   (no output)
 
-  l.findPrimes(10);
+  loopie.findPrimes(10);
   2
   3
   5
@@ -108,26 +108,26 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 - Write a method `String decimal2Binary(int num)` that inputs a non-negative integer, and returns the binary representation of that integer. You may assume that the input is non-negative. You might remember the algorithm from class: If `num` is 0, simply return the string `"0"` and you're done (zero is just 0 in both binary and in decimal!). Otherwise, divide `num` by `2`. The remainder, which is either a one or zero, is appended to the *left* of the current binary string. Repeat these steps until `num` reduces to 0.
   ```java
-  Loops l = new Loops();
-  l.decimal2Binary(0)
+  Loops loopie = new Loops();
+  loopie.decimal2Binary(0)
   > "0"   (String)
 
-  l.decimal2Binary(1)
+  loopie.decimal2Binary(1)
   > "1"   (String)
 
-  l.decimal2Binary(5)
+  loopie.decimal2Binary(5)
   > "101"
 
-  l.decimal2Binary(6)
+  loopie.decimal2Binary(6)
   > "110"
 
-  l.decimal2Binary(7)
+  loopie.decimal2Binary(7)
   > "111"
 
-  l.decimal2Binary(55)
+  loopie.decimal2Binary(55)
   > "110111"
 
-  l.decimal2Binary(256)
+  loopie.decimal2Binary(256)
   > "100000000"
   ```
 
@@ -135,26 +135,26 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 For no extra credit points, write the method `int binary2Decimal(String num)` that converts a binary number to an integer in base 10. For your reference, to take 2 to the *ith* power, you can use the method `Math.pow(2,i)`.
 
   ```java
-  Loops l = new Loops();
-  l.binary2Decimal("0")
+  Loops loopie = new Loops();
+  loopie.binary2Decimal("0")
   > 0   (int)
 
-  l.binary2Decimal("1")
+  loopie.binary2Decimal("1")
   > 1   (int)
 
-  l.binary2Decimal("100")
+  loopie.binary2Decimal("100")
   > 4   (int)
 
-  l.binary2Decimal("1001")
+  loopie.binary2Decimal("1001")
   > 9   (int)
 
-  l.binary2Decimal("1010")
+  loopie.binary2Decimal("1010")
   > 10   (int)
 
-  l.binary2Decimal("1011")
+  loopie.binary2Decimal("1011")
   > 11   (int)
 
-  l.binary2Decimal("1010100")
+  loopie.binary2Decimal("1010100")
   > 84   (int)
   ```
 

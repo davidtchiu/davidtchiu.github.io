@@ -65,13 +65,13 @@ let days = {
       //   name: "Hwk 8 (bankers)",
       //   title: "Banker's Algorithm",
       //   url: "hwk8.bankers/",
-      //   due: "4/21/2023",
+      //   due: "4/14/2023",
       // },
       // {
       //   name: "Hwk 9 (vmm)",
       //   title: "Paging Simulator (vmm)",
       //   url: "hwk9.paging/",
-      //   due: "5/4/2023",
+      //   due: "5/3/2023",
       // },
     ],
     ////////////////////////////// PROJECTS ///////////////////////////////
