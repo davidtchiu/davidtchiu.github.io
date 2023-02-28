@@ -10,9 +10,9 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 #### Instructions
 
-- Open BlueJ and create a new project called `Hwk5_Loops`. This class will not have any fields or constructors. You'll just be writing and testing various methods.Write the following methods:
+- Open BlueJ and create a new project called `Hwk5_Loops`. This class will not have any fields or constructors. You'll just be writing and testing various methods. Write the following methods:
 
-- Write `stringRepeat()` which inputs a String `str` and an integer `num` respectively. It returns a String in which `str` is
+<!-- - Write `stringRepeat()` which inputs a String `str` and an integer `num` respectively. It returns a String in which `str` is
   is appended to itself `num` times. An empty string should be returned if `nums <= 0`.
 
   If you typed the following into BlueJ's code pad, you should get the corresponding results.
@@ -36,9 +36,54 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
   System.out.println(loopie.stringRepeat(loopie.stringRepeat("!", 2), 4));
   > !!!!!!!!
+  ``` -->
+
+- The Collatz conjecture is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you repeat these steps enough times, `n` the Collatz conjecture states that `n` will eventually reach 1. (Note that this conjecture still has not been proven!) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` reaches 1. (The numbers that appear in the sequence are also called "Hailstone Numbers.")
+
+  ```java
+  loopie.collatz(1);
+  > 1
+
+  loopie.collatz(2);
+  > 2
+  > 1
+
+  loopie.collatz(3);
+  > 3
+  > 10
+  > 5
+  > 16
+  > 8
+  > 4
+  > 2
+  > 1
   ```
 
-- Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the String API handy to help you.
+- Write a method called `runningSum` that inputs two integers `low` and `high`, and adds all numbers between `low` to `high` (inclusive), and returns this sum. If `low` is greater than `high`, then you must exchange these values before proceeding with the summation.
+
+
+  ```java
+  Loops loopie = new Loops();
+  System.out.println(loopie.runningSum(0,1));
+  > 1
+  
+  System.out.println(loopie.runningSum(9,9));
+  > 9
+  
+  System.out.println(loopie.runningSum(1,100));
+  > 5050
+  
+  System.out.println(loopie.runningSum(100,1));
+  > 5050
+  
+  System.out.println(loopie.runningSum(500,-500));
+  > 0
+
+  System.out.println(loopie.runningSum(-1000,-150));
+  > -489325
+  ```
+
+- Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the **String API** handy to help you out. Particularly, you will need a way to extract an individual character out of both strings and compare them. You will also need to a way to determine the length of a string to see if you even need to proceed with count. 
 
   ```java
   Loops loopie = new Loops();
@@ -169,10 +214,14 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 50pts.
+This assignment will be graded out of a total of 65pts.
 
-[5pts] stringRepeat() is properly implemented. It returns the product of two given ints.
-It works with negative inputs.
+[10pts] runningSum() is properly implemented. It returns the sum of all numbers between
+low and high, inclusive. If low is greater than high, then you should exchange those
+values.
+
+[10pts] collatz() is properly implemented. It prints out the collatz sequence from the 
+given positive integer n to 1.
 
 [10pts] hammingDistance() is properly implemented. It returns the number of spots where
 two strings differ.
