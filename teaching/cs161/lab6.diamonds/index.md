@@ -40,19 +40,21 @@ In this lab, you'll create a new shape that's been missing from our toolkit, dia
 
 #### Preliminary: An Improved Triangle Class
 
-Open up the BlueJ project. You'll find that there's a slightly improved `Triangle` class. This `Triangle` sports a new method called `flip()`, which requires no input arguments and returns void. Play around with it to see it in action, but there shouldn't be any surprises as to what it does.
+Open up the BlueJ project. You'll find that there's a slightly improved `Triangle` class. This `Triangle` sports a new method called `flip()`, which requires no input arguments and returns void. Play around with it to see it in action. As you flip the diamond, notice that it is flipped "in place." That is, it doesn't just turn over downwards.
 
 #### Part I: Diamonds
 
 Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shape classes we've seen thus far. But as you know, there is code in the other shape classes that we still don't know how to read. But no worries, such is the power of abstraction -- we don't have to care about those details! Let's get started...
 
-1. Create a new class called `Diamond`. Notice that a diamond can be formed using two Triangles (which we have), with one flipped upside down and positioned properly.  For now, a diamond needs only to store references to these two `Triangles` as  instance variables. Declare those now. Because of their placement, I would name them `top` and `bottom`.
+1. Create a new class called `Diamond`. Notice that a diamond can be formed using two Triangles (which we have), with one flipped upside down and positioned properly.  For now, a diamond needs only to store references to these two `Triangles` as  instance variables. Because of their placement, I would name them `top` and `bottom`.
 
-    - You might as well go ahead and store the `height` and `width` of the diamond as instance variables too. They are both integers.
+    - You might as well go ahead and store the diamond's `height` and `width`  as instance variables too. They are both integers.
 
-2. Write a constructor that  accepts two inputs: the `height` and `width` of the new diamond. First, it needs to instantiate both `top` and `bottom` triangles. Think of each triangle as occupying exactly half of the height of the new diamond. You need to flip the bottom triangle upside down, and then move it into place so that the *bases* of the triangles touch. Make the whole diamond visible too.
+2. Write a constructor that  accepts two inputs: the `height` and `width` of the new diamond. First, it needs to instantiate both `top` and `bottom` triangles. Think of each triangle as occupying **half** of the height of the new diamond. You need to flip the bottom triangle upside down, and then move it vertically into place so that the *bases* of the triangles touch. Make the whole diamond visible too.
     
     - Don't forget to resize the triangles. How large do you need to make these triangles to ensure that your diamond is of the given dimensions? 
+
+    - To test, create a few diamonds with various dimensions. Make sure the two triangles are always connected at the base regardless of your diamond's dimensions.
 
 
 3. Next, write in the `makeInvisible()` and `makeVisible()` methods to toggle visibility of the diamond. Then move on to `changeColor(String newColor)` to change the color of the diamond. As you write these two methods, you should notice how satisfying it is to be able to call on the individual triangle's methods.
@@ -64,11 +66,13 @@ Our objective is to create a new class that can create  `Diamond`s with the same
 4. Now write in `moveVertical(int distance)` and `moveHorizontal(int distance)`. Again, the work we have to do is minimal.
 
 #### Part II: Challenges
+Before moving on to the next method, you have to familiarize yourself with how the triangle's `changeSize()` method works. Create a triangle and make it visible. Then change its size (it doesn't matter if you make it bigger or smaller.) Notice that the top vertex remains in the same place. Now flip the triangle upside down. Change the size again. Notice the top still remains in place, and it's the bottom vertex that moved up or down. Knowing that whatever is on "top" remains constant will help you write the next method.
+
 1. Let's move on to something a little more challenging: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
 
     - However, this will introduce a new problem. The triangles, upon changing their size, may  overlap each other or they could be spread farther apart!
 
-    - You'll need to move the bottom triangle up or down to adjust for this gap. But how much do you move it by...? 
+    - This can be a bit tricky. You'll need to move the bottom triangle up or down to adjust for this gap. But how much do you move it by...? **(Hint: it's a good thing we know the old height of the diamond...)** Recall that when you resize a triangle, the top never changes along the vertical axis -- it's the bottom of the triangle that moves. Draw on a piece of paper to gain insight into when you'd need to move the bottom one up and when you'd need to move the bottom one down (and by how much).
 
 2. Nice work!! The last piece we're missing are the "slow move" methods. Go ahead and start writing the `slowMoveHorizontal(int distance)` method. Again, this is trickier than expected. You can't just tell the top and bottom triangles to `slowMoveHorizontal` themselves, because the diamond would be split apart as each triangle moves in sequence, instead of the whole diamond moving along as one.
 
