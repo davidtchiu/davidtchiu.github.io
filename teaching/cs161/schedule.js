@@ -53,12 +53,12 @@ let days = {
         url: "hwk4.robot/",
         due: "3/1/2023", //Wed
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Loop Practice (The Basics)",
-      //   url: "hwk5.loops/",
-      //   due: "3/10/2023",  // Fri
-      // },
+      {
+        name: "Hwk 5",
+        title: "Loop Practice (The Basics)",
+        url: "hwk5.loops/",
+        due: "3/10/2023",  // Fri
+      },
       // {
       //   name: "Hwk 5b",
       //   title: "Nested Loop Practice",
@@ -128,12 +128,12 @@ let days = {
         url: "lab5.circleDrawer/",
         due: "2/17/2023",
       },
-      // {
-      //   name: "Lab 7",
-      //   title: "Diamonds (Object Abstraction; Basic Loops)",
-      //   url: "lab6.diamonds/",
-      //   due: "3/3/2023",
-      // },
+      {
+        name: "Lab 6",
+        title: "Diamonds (Abstraction)",
+        url: "lab6.diamonds/",
+        due: "3/3/2023",
+      },
       // {
       //   name: "Lab 7",
       //   title: "Turtle Graphics (Loops)",
