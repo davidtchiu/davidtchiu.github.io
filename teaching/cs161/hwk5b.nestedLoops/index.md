@@ -10,7 +10,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 #### Instructions
 
-- Open BlueJ and create a new project called `Hwk6_MoreLoops`. This class will not have any fields or constructors. Create a new class and name it `NestedLoops`. Write the following methods:
+- Open BlueJ and create a new project. Create a new class and name it `NestedLoops`. This class will not have any fields or constructors.  Write the following methods:
   `
 
 - **(Nested)** `printDownTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. This method requires a nested loop.
@@ -63,7 +63,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   **********
   ```
 
-  - **(Nested)** `reveal()` which inputs an integer `n` and returns a String. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). This method requires a nested loop. Ignore negative input. Recall that `"\n"` can be used to symbolize a "newline" character.
+- **(Nested)** `reveal()` which inputs an integer `n` and returns a String. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). This method requires a nested loop. Ignore negative input. Recall that `"\n"` can be used to symbolize a "newline" character.
 
   ```java
   NestedLoops loopie = new NestedLoops();
@@ -124,13 +124,13 @@ This assignment will be graded out of a total of 60pts.
 [15pts] reveal is implemented. It inputs a positive integer, n, and prints n lines
 of output. Each line of output reveals one more digit.
 
-[20pts] rotate is properly implemented. If N > 0, it should shift every item in the array one position
-to the right, and the right-most item would jump to the left-most spot. If N < 0, then it should go the
-reverse direction,
+[20pts] rotate is properly implemented. If N > 0, it should shift every item in the 
+array one position to the right, and the right-most item would jump to the left-most 
+spot. If N < 0, then it should go the reverse direction.
 
 Misc.
-    [5pts] You provide Javadocs style comments for any new methods implemented. You include
-           sufficient inline comments to explain the logic of your methods.
+[5pts] You provide Javadocs style comments for any new methods implemented. You include
+sufficient inline comments to explain the logic of your methods.
 ```
 
 #### Submitting Your Assignment

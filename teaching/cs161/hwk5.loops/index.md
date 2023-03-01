@@ -38,25 +38,26 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   > !!!!!!!!
   ``` -->
 
-- The Collatz conjecture is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you repeat these steps enough times, `n` the Collatz conjecture states that `n` will eventually reach 1. (Note that this conjecture still has not been proven!) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` reaches 1. (The numbers that appear in the sequence are also called "Hailstone Numbers.")
+- The famous **Collatz conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` reaches 1. (Fun fact: The numbers that appear in the sequence are also called "Hailstone Numbers.")
 
   ```java
+  Loops loopie = new Loops();
   loopie.collatz(1);
-  > 1
+  1
 
   loopie.collatz(2);
-  > 2
-  > 1
+  2
+  1
 
   loopie.collatz(3);
-  > 3
-  > 10
-  > 5
-  > 16
-  > 8
-  > 4
-  > 2
-  > 1
+  3
+  10
+  5
+  16
+  8
+  4
+  2
+  1
   ```
 
 - Write a method called `runningSum` that inputs two integers `low` and `high`, and adds all numbers between `low` to `high` (inclusive), and returns this sum. If `low` is greater than `high`, then you must exchange these values before proceeding with the summation.
@@ -109,14 +110,19 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   Loops loopie = new Loops();
   System.out.println(loopie.multiply(3,4));
   > 12
+
   System.out.println(loopie.multiply(19,0));
   > 0
+  
   System.out.println(loopie.multiply(0,19));
   > 0
+  
   System.out.println(loopie.multiply(-2,9));
   > -18
+  
   System.out.println(loopie.multiply(10,-9));
   > -90
+  
   System.out.println(loopie.multiply(-4,-5));
   > 20
   ```
