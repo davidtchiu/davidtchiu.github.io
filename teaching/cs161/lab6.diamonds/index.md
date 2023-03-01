@@ -35,7 +35,7 @@ The following file(s) have been provided for this homework.
 
 In this lab, you'll create a new shape that's been missing from our toolkit, diamonds. But instead of creating diamonds from scratch (and reinventing the wheel), we'll make a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles needs to be flipped upside down. Given that we have a `Triangle` class to our disposal, it will vastly simplify our work in constructing `Diamond`s.
 
-  <img src="figures/lab6_diamond.png" width="200px" />
+  <img src="figures/lab6_diamond.png" width="100px" />
 
 
 #### Preliminary: An Improved Triangle Class
