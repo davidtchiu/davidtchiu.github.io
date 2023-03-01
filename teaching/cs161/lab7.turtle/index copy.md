@@ -84,7 +84,7 @@ Download the BlueJ project from the above link. After you unzip it into your wor
 
       That's simple, and it reveals the code's repetitive structure. The code segments to draw each of the three edges are always the same, so could be placed in a loop that iterates three times (Hey, that's the number of edges for _-this-_ particular shape...).
 
-- *Your task* is to rewrite this method using a loop to replace the above redundant code segment above. You can use a loop to get the job done. The following code fragment, for example, repeats some segment of code `n` times.
+- *Your task *is to rewrite this method using a loop to replace the above redundant code segment above. You can use a loop to get the job done. The following code fragment, for example, repeats some segment of code `n` times.
 
   ```java
   // first, define a counter
@@ -148,7 +148,7 @@ Yeah okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be 
 
 #### Part 3: Zigzags
 
-- Zigzags are great sweatpants and haircut patterns, but it turns out they're also great ways for us to teach loops. Make a new method, called `drawZigzag`, that takes as input two double arguments. The first argument is length, which specifies the length of the zigzag line to be drawn. The second argument width, which serves as **both** the width and the zigzagging interval (see below for illustration). In addition, it should take as input two String arguments: `zigColor` and `zagColor`.
+- Zigzags: It turns out that these zigzags lines don't just make for great sweatpants and haircut patterns. Zigzags are also great ways for us to teach loops. Make a new method, called `drawZigzag`, that takes as input two double arguments. The first argument is length, which specifies the length of the zigzag line to be drawn. The second argument width, which serves as both the width and the zigzagging interval (see below for illustration). In addition, it should take as input two String arguments: `zigColor` and `zagColor`.
 
   <center>
   <code>drawZigzag(400, 50, "green", "blue");</code><br/>
@@ -157,13 +157,13 @@ Yeah okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be 
 
 - Things worth considering:
 
-  - For convenience, let's call the lines that move vertically along the width a zig-line, and the longer lines that sweep back across a zag-line
+  - For convenience, let's call the lines that move vertically along the width a zig line, and the longer lines that sweep back across a zag line
 
-  - In the picture above, the turtle was initially facing east. Therefore, when I call this method, I expect that the zigzag will be drawn horizontally to the east. But notice how the first zig-line is actually vertical. Therefore you need to ensure that your turtle is always facing north before drawing the zigs-lines.
+  - In the picture above, the turtle was initially facing east. Therefore, when I call this method, I expect that the zigzag will be drawn horizontally, and to the east. But notice how the first zig-line is actually vertical.
 
   - Next, you need to determine the length of the zag-lines, as well as the angle of your turns. (Hint: These sawtooth shapes sure remind me of [right triangles](https://mathworld.wolfram.com/PythagoreanTheorem.html))
 
-  - Think about the loop condition, which is related to how much you should draw per iteration. A single zig-line plus zag-line combination (looks like a sawtooth) appears to be the minimally repeated pattern.
+  - Think about the loop condition, which is related to how much you should draw per iteration. A single zig-line plus zag-line combination (looks like a tooth) appears to be the minimally repeated pattern.
 
   - Make sure your zig-lines and zag-lines are alternating colors.
 

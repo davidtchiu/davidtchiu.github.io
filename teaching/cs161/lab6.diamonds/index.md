@@ -1,7 +1,13 @@
 ## CS 161 - Intro to Computer Science
 
 ### Lab: Diamonds (Abstraction and Modularity)
+David is a Rihanna super fan. One day, while jamming to his favorite tune ``Diamonds,'' he realized diamonds aren't even a part of the _shapes_ toolkit he gives to his CS 161 students. A travesty! He wants you to fix that in this lab.
 
+You'll create a Diamond class, but instead of creating diamonds from scratch (and saving ourselves from copying and pasting other shape classes), we'll make a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles first needs to be flipped upside down and placed right below the other, as shown below. Given that we already have a `Triangle` class in our toolkit, it will vastly simplify our work in constructing `Diamond`s.
+
+  <img src="figures/lab6_diamond.png" width="100px" />
+
+This lab is all about abstraction and object interaction. 
 
 #### Student Outcomes
 
@@ -31,11 +37,6 @@ The following file(s) have been provided for this homework.
 
 - [Lab6_Diamonds.zip](Lab6_Diamonds.zip)
 
-#### Instructions
-
-In this lab, you'll create a new shape that's been missing from our toolkit, diamonds. But instead of creating diamonds from scratch (and reinventing the wheel), we'll make a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles needs to be flipped upside down. Given that we have a `Triangle` class to our disposal, it will vastly simplify our work in constructing `Diamond`s.
-
-  <img src="figures/lab6_diamond.png" width="100px" />
 
 
 #### Preliminary: An Improved Triangle Class
@@ -115,7 +116,7 @@ Exit BlueJ
 
 #### Credits
 
-Written by Brad Richards.
+Written by David Chiu. 2023.
 
 #### Lab Attendance Policies
 
