@@ -1,9 +1,9 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Diamonds (Abstraction and Modularity)
-David is a Rihanna super fan. One day, while jamming to his favorite tune ``Diamonds,'' he realized diamonds aren't even a part of the _shapes_ toolkit he gives to his CS 161 students. A travesty! He wants you to fix that in this lab.
+### Lab: Diamonds (Abstraction)
+David is a Rihanna super fan. While jamming to his favorite tune ``Diamonds,'' he realized diamonds aren't  a part of the _shapes_ toolkit he gives to his CS 161 students. He wants you to fix that in this lab.
 
-You'll create a Diamond class, but instead of creating diamonds from scratch (and saving ourselves from copying and pasting other shape classes), we'll make a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles first needs to be flipped upside down and placed right below the other, as shown below. Given that we already have a `Triangle` class in our toolkit, it will vastly simplify our work in constructing `Diamond`s.
+Instead of creating diamonds from scratch (and saving ourselves from copying and pasting other shape classes), we'll make a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles needs to be flipped upside down and placed right below the other, as shown below. Given that we already have a `Triangle` class in our toolkit, it will vastly simplify our work in constructing `Diamond`s.
 
   <img src="figures/lab6_diamond.png" width="100px" />
 
@@ -41,26 +41,30 @@ The following file(s) have been provided for this homework.
 
 #### Preliminary: An Improved Triangle Class
 
-Open up the BlueJ project. You'll find that there's a slightly improved `Triangle` class. This `Triangle` sports a new method called `flip()`, which requires no input arguments and returns void. Play around with it to see it in action. As you flip the diamond, notice that it is flipped "in place." That is, it doesn't just turn over downwards.
+You'll find that there's a slightly improved `Triangle` class. This `Triangle` sports a new method called `flip()`. Play around with it to see it in action. As you flip the triangle, notice that it is flipped "in place." That is, it doesn't just turn over downwards. This behavior is important to know because you'll have to move it to the right place.
 
 #### Part I: Diamonds
 
-Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shape classes we've seen thus far. But as you know, there is code in the other shape classes that we still don't know how to read. But no worries, such is the power of abstraction -- we don't have to care about those details! Let's get started...
+Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shapes we've seen thus far. But as you know, there is code in the other shape classes that we still don't know how to read or what they do underneath the hood. But no worries, such is the power of abstraction. *Truth is, we don't have to know those implementation details!* Let's get started...
 
-1. Create a new class called `Diamond`. Notice that a diamond can be formed using two Triangles (which we have), with one flipped upside down and positioned properly.  For now, a diamond needs only to store references to these two `Triangles` as  instance variables. Because of their placement, I would name them `top` and `bottom`.
+1. Create a new class called `Diamond`. A diamond can be formed using two Triangles (which we have), with one flipped upside down and positioned properly. For now, your `Diamond` class only needs to store references to these two `Triangles` as  instance variables. Because of their placement, I would name them `top` and `bottom`.
 
-    - You might as well go ahead and store the diamond's `height` and `width`  as instance variables too. They are both integers.
+    - You might as well go ahead and store a diamond's `height` and `width`  as instance variables too. They are both integers.
 
-2. Write a constructor that  accepts two inputs: the `height` and `width` of the new diamond. First, it needs to instantiate both `top` and `bottom` triangles. Think of each triangle as occupying **half** of the height of the new diamond. You need to flip the bottom triangle upside down, and then move it vertically into place so that the *bases* of the triangles touch. Make the whole diamond visible too.
-    
+2. Write a constructor that  accepts two inputs: the `height` and `width` of a  diamond object. First, it needs to *instantiate* both `top` and `bottom` triangles.
+
     - Don't forget to resize the triangles. How large do you need to make these triangles to ensure that your diamond is of the given dimensions? 
 
+    - Each triangle essentially occupies **half** of the height of the new diamond, and they both have the same width as the diamond. You need to flip the bottom triangle upside down, and then move it vertically into place so that the *bases* of the triangles touch. 
+
+    - Make the whole diamond visible too, before leaving the constructor.
+    
     - To test, create a few diamonds with various dimensions. Make sure the two triangles are always connected at the base regardless of your diamond's dimensions.
 
 
 3. Next, write in the `makeInvisible()` and `makeVisible()` methods to toggle visibility of the diamond. Then move on to `changeColor(String newColor)` to change the color of the diamond. As you write these two methods, you should notice how satisfying it is to be able to call on the individual triangle's methods.
 
-    - **Abstraction is about trust**. Notice that, to get the diamond to perform these actions, we don't even have to care about *how* each Triangle goes about performing its own actions. All we need to do is **trust** that it works for a triangle, and use those methods where we need it!
+    - **Abstraction is about trust**. Notice that, to get the diamond to perform these actions, we don't even have to know about *how* each Triangle goes about performing its own actions. All we need to do is **trust** that it works, and use those methods where we need to!
 
     - In each of these methods, you should not be writing more than two lines of code to get the job done.
 
