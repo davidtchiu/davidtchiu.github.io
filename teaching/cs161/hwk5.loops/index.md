@@ -6,11 +6,13 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 #### Student Outcomes
 
-- Exposure to writing loops.
+- Exposure to writing simple loops.
 
 #### Instructions
 
-- Open BlueJ and create a new project called `Hwk5_Loops`. This class will not have any fields or constructors. You'll just be writing and testing various methods. Write the following methods:
+- Open BlueJ and create a new project called `Hwk5_Loops`. This class will not have any fields or constructors. You'll just be writing and testing various methods. 
+
+- Before you start, read through each of the prompts and decide if it is a **counter-controlled** loop or an **event-controlled* loop. Once you've determined the type of loop, go back to your notes and use the 4-step template that I provided you for writing each loop type.
 
 <!-- - Write `stringRepeat()` which inputs a String `str` and an integer `num` respectively. It returns a String in which `str` is
   is appended to itself `num` times. An empty string should be returned if `nums <= 0`.
@@ -38,7 +40,14 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   > !!!!!!!!
   ``` -->
 
-- The famous **Collatz conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` reaches 1. (Fun fact: The numbers that appear in the sequence are also called "Hailstone Numbers.")
+- We'll start with an easy one, and I'll guide you through it. The famous **Collatz conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` reaches 1. (Fun fact: The numbers that appear in the sequence are also called "Hailstone Numbers.")
+
+Clues:
+  - This is an event-controlled loop. The event we're hoping eventually occurs is `n == 1`.
+  - Being an event-controlled loop, there is no need for a counter.
+  - The looping condition is the **negation** of the event.
+
+Output:
 
   ```java
   Loops loopie = new Loops();
@@ -62,6 +71,8 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 - Write a method called `runningSum` that inputs two integers `low` and `high`, and adds all numbers between `low` to `high` (inclusive), and returns this sum. If `low` is greater than `high`, then you must exchange these values before proceeding with the summation.
 
+Clues:
+  - Hmm there seems to be a definite beginning and end to this problem.
 
   ```java
   Loops loopie = new Loops();
