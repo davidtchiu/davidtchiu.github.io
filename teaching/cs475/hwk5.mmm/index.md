@@ -97,7 +97,7 @@ Before you get started: In this assignment each thread is writing to its own iso
 
 4. Dynamically allocating 2D arrays: Because the number of threads and the `size` of the matrices are given at runtime, you *must*  allocate memory on the heap. Remember to free-up memory and clean up any dangling pointers when you're done using them. I would should store pointers to the input and output matrices in global scope. A pointer to a 2D array of `doubles` would look like this: `double **matrix;` Then inside `mmm_init()`, you'll need to first allocate `size` number of pointers to doubles (that's the first dimension in the matrix), then iterate through that array and allocate `size` number of doubles (that's the second dimension of the matrix).
 
-   To accomplish this takes two steps (one in each "dimension" of the array.) Here's an example to create an N by M array of `ints`.
+      To accomplish this takes two steps (one in each "dimension" of the array.) Here's an example to create an N by M array of `ints`.
 
       ```c
       // declare this somewhere in global scope (for thread sharing)
@@ -106,7 +106,8 @@ Before you get started: In this assignment each thread is writing to its own iso
 
       - The `**` syntax may at first seem confusing. However, recall from the last tutorial that an array is just a pointer. So, an array of pointers can be interpreted to be a pointer to pointers. Therefore, `array` has been declared as `**array`. (If you ever needed a 3 dimensional array, then you would use `***array`, and so on.)
 
-   Elsewhere in your code,
+      Elsewhere in your code,
+   
       ```c
       // malloc a size N array of pointers to ints
       array = (int**) malloc(sizeof(int*) * N);
@@ -118,7 +119,7 @@ Before you get started: In this assignment each thread is writing to its own iso
       // can now have access to array[i][j]
       ```
 
-      - Don't forget, you will need to free the 2D array later on. Do so by individually freeing every row, then free the original 2D pointer.
+   - Don't forget, you will need to free the 2D array later on. Do so by individually freeing every row, then free the original 2D pointer.
 
          ```c
          // free each row
