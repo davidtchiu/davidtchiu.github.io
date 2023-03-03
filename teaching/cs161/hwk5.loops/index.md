@@ -42,58 +42,58 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 - We'll start with an easy one, and I'll guide you through it. The famous **Collatz conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` reaches 1. (Fun fact: The numbers that appear in the sequence are also called "Hailstone Numbers.")
 
-Clues:
-  - This is an event-controlled loop. The event we're hoping eventually occurs is `n == 1`.
-  - Being an event-controlled loop, there is no need for a counter.
-  - The looping condition is the **negation** of the event.
+  Clues:
+    - This is an event-controlled loop. The event we're hoping eventually occurs is `n == 1`.
+    - Being an event-controlled loop, there is no need for a counter.
+    - The looping condition is the **negation** of the event.
 
-Output:
+  Output:
 
-  ```java
-  Loops loopie = new Loops();
-  loopie.collatz(1);
-  1
+    ```java
+    Loops loopie = new Loops();
+    loopie.collatz(1);
+    1
 
-  loopie.collatz(2);
-  2
-  1
+    loopie.collatz(2);
+    2
+    1
 
-  loopie.collatz(3);
-  3
-  10
-  5
-  16
-  8
-  4
-  2
-  1
-  ```
+    loopie.collatz(3);
+    3
+    10
+    5
+    16
+    8
+    4
+    2
+    1
+    ```
 
 - Write a method called `runningSum` that inputs two integers `low` and `high`, and adds all numbers between `low` to `high` (inclusive), and returns this sum. If `low` is greater than `high`, then you must exchange these values before proceeding with the summation.
 
-Clues:
-  - Hmm there seems to be a definite beginning and end to this problem.
+  Clues:
+    - Hmm there seems to be a definite beginning and end to this problem.
 
-  ```java
-  Loops loopie = new Loops();
-  System.out.println(loopie.runningSum(0,1));
-  > 1
-  
-  System.out.println(loopie.runningSum(9,9));
-  > 9
-  
-  System.out.println(loopie.runningSum(1,100));
-  > 5050
-  
-  System.out.println(loopie.runningSum(100,1));
-  > 5050
-  
-  System.out.println(loopie.runningSum(500,-500));
-  > 0
+    ```java
+    Loops loopie = new Loops();
+    System.out.println(loopie.runningSum(0,1));
+    > 1
+    
+    System.out.println(loopie.runningSum(9,9));
+    > 9
+    
+    System.out.println(loopie.runningSum(1,100));
+    > 5050
+    
+    System.out.println(loopie.runningSum(100,1));
+    > 5050
+    
+    System.out.println(loopie.runningSum(500,-500));
+    > 0
 
-  System.out.println(loopie.runningSum(-1000,-150));
-  > -489325
-  ```
+    System.out.println(loopie.runningSum(-1000,-150));
+    > -489325
+    ```
 
 - Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the **String API** handy to help you out. Particularly, you will need a way to extract an individual character out of both strings and compare them. You will also need to a way to determine the length of a string to see if you even need to proceed with count. 
 
