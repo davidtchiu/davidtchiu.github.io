@@ -47,7 +47,7 @@ let days = {
         name: "Hwk 5 (mmm)",
         title: "Matrix Multiplication",
         url: "hwk5.mmm/",
-        due: "3/6/2023",
+        due: "3/7/2023",
       },
       // {
       //   name: "Hwk 6 (ts_hashmap)",
@@ -133,37 +133,37 @@ let days = {
     "Scheduling: goals and metrics; FCFS",
     "Sched: RR, SJF, SRTF",
     "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
-    // "Sched: hyperthreading, multicore considerations",
     // wk 8
+    "Sched: hyperthreading, multicore considerations",
     "Synchronization: critical section",
     "Sync: locks, atomicity",
-    "Sync: spin locks; priority inversion problem",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
+    "Sync: spin locks; priority inversion problem",
     "Sync: blocking locks; start semaphores",
     "Sync: semaphores",
-    "Sync: helpful professor problem",
     // wk 11
+    "Sync: helpful professor problem",
     "Sync: bounded-buffer problem",
     "Sync: monitors and java",
-    "Start Deadlocks: prevention",
     // wk 12
-    "DL: Banker's algorithm",
+    "Start Deadlocks: prevention",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
+    "DL: Banker's algorithm",
     "DL: RAGs, detection and recovery",
     "Memory Management: virtual addressing",
-    "MM: memory partitioning",
     // wk 14
+    "MM: memory partitioning",
     "MM: segmentation",
     "MM: paging",
-    "MM: multi-level paging",
     // "MM: translation Lookaside Buffer (TLB)",
     // wk 15
+    // "MM: multi-level paging",
     "Start Virtual Memory",
     "VM: Replacement policies: FIFO, LRU",
     "VM: Clock",
