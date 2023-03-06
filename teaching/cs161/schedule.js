@@ -216,30 +216,30 @@ let days = {
     "Lab 6",
     "More loops: Prime number testing, etc.",
     // wk 8
-    "For loops; Nested loops",
-    "Finish nested loops",
+    "Nested loops",
+    "Start Arrays; Write the Bank class",
     "Lab 7",
-    "Start Arrays",
+    "Finish Bank",
     // wk 9: spring break
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
     // wk 10
-    "Start Arrays; Write the Bank class",
-    "Finish Bank",
+    "Start ArrayList",
+    "ArrayList",
     "Lab 8",
     "Review Lab 8",
     // wk 11
-    "Start ArrayList",
-    "ArrayList",
-    "Lab 9",
     "Scanning for input: ChatBot",
-    // wk 12
     "Finish ChatBot; Start HashMap",
+    "Lab 9",
+    "HashMap, for-each loop",
+    // wk 12
+    "TBD",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "HashMap, for-each loop",
+    "TBA",
     // wk 13
     "HashMap (cont.): Smarter ChatBot",
     "File I/O; String parsing",
