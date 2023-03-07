@@ -11,7 +11,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 #### Instructions
 
-**READ THIS** Before we get started, it should be noted that I do not expect you to complete this lab within the period. You will get credit for attending and for making progress. So, **don't get discouraged or frustrated** -- this can be a particularly difficult lab because we're still at the point where we're trying to wrap our minds around loops and arrays!
+**READ THIS** Before we get started, it should be noted that I do not expect you to complete this lab within the period. You will get credit for attending and for making progress. So **don't get discouraged or frustrated** -- this can be a particularly difficult lab because we're still at the point where we're trying to wrap our minds around loops and arrays!
 
 You can view any problems you weren't able to solve during the lab period as review problems -- they are a good study tool. 
 
@@ -60,7 +60,7 @@ Let's work on a couple methods that input arrays. The problems in this section c
 ##### Part II: Nested Loops
 Let's try our hand at writing some nested loops.
 
-- **(Nested Loops)** `printRightTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. Hint: For each row `i`, you must first print `n-i` spaces followed by `i` asterisks.
+1. **(Nested Loops)** `printRightTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. Hint: For each row `i`, you must first print `n-i` spaces followed by `i` asterisks.
 
   ```java
   LoopsLab loopie = new LoopsLab();
@@ -84,7 +84,7 @@ Let's try our hand at writing some nested loops.
   **********
   ```
 
-- **(Nested Loops)** `reveal()` which inputs an integer `n` and returns a String. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). This method requires a nested loop. Ignore negative input. 
+2. **(Nested Loops)** `reveal()` which inputs an integer `n` and returns a String. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). This method requires a nested loop. Ignore negative input. 
 
   ```java
   LoopsLab loopie = new LoopsLab();
@@ -127,7 +127,7 @@ The ones below are more challenging, but give it a go!
   ```
 
 
-2. **(Arrays + Nested Loops)** Write a method called `median()` which inputs an integer array and returns the median. The median of an array is defined to be the value in the list that has an equal number of values larger and smaller than itself. For instance, the median of `[3, 5, 7, 3, 9, 8, 2]` is `5`, because there are three numbers less than 5, and three numbers greater than 5. For each value `x[i]` in the array `x`, you need to traverse the array again and count up the numbers greater than and less than `x[i]` (keep two counters). If these counters are equal, then return `x[i]` to be the median.
+2. **(Arrays + Nested Loops)** Write a method called `median()` which inputs an integer array and returns the median. The median of an array is defined to be the value in the list that has an equal number of values larger and smaller than itself. For instance, the median of `[3, 5, 7, 3, 9, 8, 2]` is `5`, because there are three numbers less than 5, and three numbers greater than 5. For each value `x[i]` in the array `x`, you need to traverse the array again (skipping itserlf) and count up the values greater than and less than `x[i]` (keep two counters). If these counters are equal, then return `x[i]` to be the median.
 
   - The algorithm described above only works for odd-length arrays, so make sure you use those for input while testing. (How would you modify your algorithm to work with even-length arrays?)
 
@@ -142,7 +142,10 @@ The ones below are more challenging, but give it a go!
   > 7
   ```
 
-3. **(Arrays + Nested Loops: challenging)** Write a method called `vertBarGraph()` which does the same as above, but prints a vertical bar graph. This method can be quite challenging. Give it your best shot! Here's an example of what it does.
+##### Challenges
+If you've got a good grasp on this stuff, and want a real challenge. Try this one.
+
+- **(Arrays + Nested Loops: challenging)** Write a method called `vertBarGraph()` which does the same as above, but prints a vertical bar graph. This method can be quite challenging. Give it your best shot! Here's an example of what it does.
 
   ```java
   LoopsLab loopie = new LoopsLab();
@@ -156,25 +159,6 @@ The ones below are more challenging, but give it a go!
   * * * * *
   ```
 
-4. **(Arrays + Nested Loops: challenging)** Write a method called `rotate()` that inputs an array of Strings and an integer `N`. If `N > 0`, your method should shift every item in the array one position to the right, and the right-most item would jump to the left. If `N < 0`, you'll want to do the same, but move all items to the left, with left-most item jumping to the right. Complete this rotation `|N|` times. Your method should return the rotated array. (Hint: Start by focusing on writing a loop that can perform a single rotation, shifting each number one spot left/right).
-
-  ```java
-  import java.util.Arrays;  // this is for printing arrays
-
-  LoopsLab loopie = new LoopsLab();
-  String[] arr = {"A", "B", "C", "D", "E"};
-  System.out.println(Arrays.toString(loopie.rotate(arr, 1)));
-  > [E, A, B, C, D]
-
-  System.out.println(Arrays.toString(loopie.rotate(arr, 2)));
-  > [C, D, E, A, B]
-
-  System.out.println(Arrays.toString(loopie.rotate(arr, -3)));
-  > [A, B, C, D, E]
-
-  System.out.println(Arrays.toString(loopie.rotate(arr, 0)));
-  > [A, B, C, D, E]
-  ```
 
 #### Program Defensively
 
