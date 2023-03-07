@@ -60,6 +60,12 @@ let days = {
         due: "3/10/2023",  // Fri
       },
       // {
+      //   name: "Hwk 6",
+      //   title: "Combo Guesser",
+      //   url: "hwk6.combo/",
+      //   due: "3/22/2023", // Wed
+      // },
+      // {
       //   name: "Hwk 5b",
       //   title: "Nested Loop Practice",
       //   url: "hwk5b.nestedLoops/",
@@ -136,8 +142,8 @@ let days = {
       },
       // {
       //   name: "Lab 7",
-      //   title: "Turtle Graphics (Loops)",
-      //   url: "lab6.turtle/",
+      //   title: "Loops and Arrays Lab",
+      //   url: "lab7.loops/",
       //   due: "3/10/2023",
       // },
       // {
