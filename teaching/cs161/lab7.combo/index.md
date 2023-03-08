@@ -2,11 +2,11 @@
 
 ### Lab: Combo Guesser
 
-David was pretty impressed with your program that found all those loaded dice. He has been talking you up to his poker buddies. One of them, who wishes to remain anonymous, wants your help installing a new electronic lock on the safe (like the one shown to the right) in which he keeps his poker winnings.
+David is pretty impressed with all the programs that you've been writing! He has been talking you up to his buddies. One of them, who wishes to remain anonymous, wants your help installing a new electronic lock on the safe (like the one shown to the right) to store their valuables. The safe is one of those fancy ones that allow you to "program" its combination.
 
-The "combination" for the lock is a sequence of integers, and the anonymous poker player is trying to decide how long this key sequence should be (how many numbers it contains), and the range of values used for each number in the key (between zero and some upper limit). He wants to make sure it's hard for intruders to guess, but his memory isn't what it used to be, so he also he wants to keep it on the simple side if possible.
+The "key" for the lock is just a sequence (array) of integers, and David's friend is trying to decide how long this key sequence should be (how many numbers it contains), and the range of values used for each number in the key (between zero and some upper limit). They want to make sure it's hard for intruders to guess, but their memory isn't what it used to be, so they also to keep it on the simple side, if possible.
 
-Your job is to help estimate the "strength" of various combination configurations. Sure, you could just calculate the total number of possible combinations (really it's permutations), given the length of a combination and the range of possible values at each position, and use that to estimate the strength of a configuration but it'll be more fun to write a program to test it!
+Your job is to help estimate the "strength" of various combination configurations. Sure, you could just calculate the total number of possible combinations (permutations), given the length of a combination and the range of possible values at each position, and use that to estimate the strength of a configuration but it'll be more fun to write a program to test it!
 
 #### Student Outcomes
 

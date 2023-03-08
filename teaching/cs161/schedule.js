@@ -193,7 +193,7 @@ let days = {
     // wk 2
     "Reading Java code: comments, fields, data types",
     "Constructors; input parameters, assignment statements",
-    "Lab 2",
+    "Lab 2: Triangle",
     "Variable: instance, local, input; lifetime and scope",
     // wk 3
     "Methods and returning; Finish Circle, start TicketMachine",
@@ -203,12 +203,12 @@ let days = {
     // wk 4
     "Nested if-statements; else-if statements",
     "Logical operators",
-    "Lab 4",
+    "Lab 4: Secret Number",
     "Lab 4 review; Data Types",
     // wk 5
     "Primitives and numeric type-casting (narrowing, widening)",
     "Classes as types: references, null",
-    "Lab 5",
+    "Lab 5: Circle Drawer",
     "Lab 5 review; Object comparison",
     // "Abstraction: Working with APIs; Unpacking Strings",
     // wk 6
@@ -219,12 +219,12 @@ let days = {
     // wk 7
     "Start loops; reading; tracing",
     "More loops",
-    "Lab 6",
+    "Lab 6: Diamonds",
     "More loops: Prime number testing, etc.",
     // wk 8
     "Nested loops",
     "Start Arrays; Write the Bank class",
-    "Lab 7",
+    "Lab 7: Turtle",
     "Finish Bank",
     // wk 9: spring break
     "<b>Spring Break</b>",
@@ -232,10 +232,10 @@ let days = {
     "<b>Spring Break</b>",
     "<b>Spring Break</b>",
     // wk 10
+    "Arrays of objects: TurtleMob",
     "Start ArrayList",
-    "ArrayList",
-    "Lab 8",
-    "Review Lab 8",
+    "Lab 8: ComboGuesser",
+    "More ArrayList",
     // wk 11
     "Scanning for input: ChatBot",
     "Finish ChatBot; Start HashMap",

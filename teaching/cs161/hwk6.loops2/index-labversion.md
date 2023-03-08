@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Loops and Arrays
+### Homework: Loops and Arrays
 
 In this assignment, you'll be working with arrays, loops, and nested loops. 
 
