@@ -99,102 +99,102 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 3. Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the **String API** handy to help you out. Particularly, you will need a way to extract an individual character out of both strings and compare them. You will also need to a way to determine the length of a string to see if you even need to proceed with count. 
 
-  ```java
-  Loops loopie = new Loops();
-  System.out.println(loopie.hammingDistance("01010101", "10101010"));
-  > 8
+    ```java
+    Loops loopie = new Loops();
+    System.out.println(loopie.hammingDistance("01010101", "10101010"));
+    > 8
 
-  System.out.println(loopie.hammingDistance("David", "Davis"));
-  > 1
+    System.out.println(loopie.hammingDistance("David", "Davis"));
+    > 1
 
-  System.out.println(loopie.hammingDistance("david", "Davis"));
-  > 2
+    System.out.println(loopie.hammingDistance("david", "Davis"));
+    > 2
 
-  System.out.println(loopie.hammingDistance("david", ""));
-  > -1
+    System.out.println(loopie.hammingDistance("david", ""));
+    > -1
 
-  System.out.println(loopie.hammingDistance("Grace", "Grace"));
-  > 0
-  ```
+    System.out.println(loopie.hammingDistance("Grace", "Grace"));
+    > 0
+    ```
 
 4. Write `multiply()` which inputs two integers `A` and `B` and returns the product from multiplying them together. Your solution must use a loop to add `A` together `B` times (or vice versa). It must also handle negative inputs. Your loops can iterate at most `|A|` or `|B|` times, and ensure that your solution does not rely on integer overflow. Nested loops are not necessary for this problem. As an optional challenge, can you do this with only one loop?
 
-  ```java
-  Loops loopie = new Loops();
-  System.out.println(loopie.multiply(3,4));
-  > 12
+    ```java
+    Loops loopie = new Loops();
+    System.out.println(loopie.multiply(3,4));
+    > 12
 
-  System.out.println(loopie.multiply(19,0));
-  > 0
-  
-  System.out.println(loopie.multiply(0,19));
-  > 0
-  
-  System.out.println(loopie.multiply(-2,9));
-  > -18
-  
-  System.out.println(loopie.multiply(10,-9));
-  > -90
-  
-  System.out.println(loopie.multiply(-4,-5));
-  > 20
-  ```
+    System.out.println(loopie.multiply(19,0));
+    > 0
+    
+    System.out.println(loopie.multiply(0,19));
+    > 0
+    
+    System.out.println(loopie.multiply(-2,9));
+    > -18
+    
+    System.out.println(loopie.multiply(10,-9));
+    > -90
+    
+    System.out.println(loopie.multiply(-4,-5));
+    > 20
+    ```
 
 5. Write `findPrimes()` inputs an integer `n` and prints the first `n` prime numbers, beginning with `2`. (We had written a prime number checker in class. Use it!) This method requires just a single loop if you use the `isPrime()` method we wrote in class.
 
-  ```java
-  Loops loopie = new Loops();
-  loopie.findPrimes(5);
-  2
-  3
-  5
-  7
-  11
+    ```java
+    Loops loopie = new Loops();
+    loopie.findPrimes(5);
+    2
+    3
+    5
+    7
+    11
 
-  loopie.findPrimes(1);
-  2
+    loopie.findPrimes(1);
+    2
 
-  loopie.findPrimes(0);
-  (no output)
+    loopie.findPrimes(0);
+    (no output)
 
-  loopie.findPrimes(10);
-  2
-  3
-  5
-  7
-  11
-  13
-  17
-  19
-  23
-  29
-  ```
+    loopie.findPrimes(10);
+    2
+    3
+    5
+    7
+    11
+    13
+    17
+    19
+    23
+    29
+    ```
 
 6. Write a method `String decimal2Binary(int num)` that inputs a non-negative integer, and returns the binary representation of that integer. You may assume that the input is non-negative. You might remember the algorithm from class: If `num` is 0, simply return the string `"0"` and you're done (zero is just 0 in both binary and in decimal!). Otherwise, divide `num` by `2`. The remainder, which is either a one or zero, is appended to the *left* of the current binary string. Repeat these steps until `num` reduces to 0.
 
-  ```java
-  Loops loopie = new Loops();
-  loopie.decimal2Binary(0)
-  > "0"   (String)
+    ```java
+    Loops loopie = new Loops();
+    loopie.decimal2Binary(0)
+    > "0"   (String)
 
-  loopie.decimal2Binary(1)
-  > "1"   (String)
+    loopie.decimal2Binary(1)
+    > "1"   (String)
 
-  loopie.decimal2Binary(5)
-  > "101"
+    loopie.decimal2Binary(5)
+    > "101"
 
-  loopie.decimal2Binary(6)
-  > "110"
+    loopie.decimal2Binary(6)
+    > "110"
 
-  loopie.decimal2Binary(7)
-  > "111"
+    loopie.decimal2Binary(7)
+    > "111"
 
-  loopie.decimal2Binary(55)
-  > "110111"
+    loopie.decimal2Binary(55)
+    > "110111"
 
-  loopie.decimal2Binary(256)
-  > "100000000"
-  ```
+    loopie.decimal2Binary(256)
+    > "100000000"
+    ```
 
 #### Extra Challenge
 For no extra credit points, write the method `int binary2Decimal(String num)` that converts a binary number to an integer in base 10. For your reference, to take 2 to the *ith* power, you can use the method `Math.pow(2,i)`.
