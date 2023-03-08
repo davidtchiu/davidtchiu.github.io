@@ -2,7 +2,9 @@
 
 ### Lab: Loops and Arrays
 
-In this assignment, you'll be working with loops. It helps to use the David's 4-Step Process for Writing Loops handout I passed out to you in class.
+In this assignment, you'll be working with arrays, loops, and nested loops. 
+
+**READ THIS** Before we get started, it should be noted that I do not expect you to complete this lab within the period. You will get credit for attending and for making progress. So **don't get discouraged or frustrated** -- this can be a particularly difficult assignment because we're still at the point where we're trying to wrap our minds around loops and arrays!
 
 #### Student Outcomes
 
@@ -11,7 +13,6 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 #### Instructions
 
-**READ THIS** Before we get started, it should be noted that I do not expect you to complete this lab within the period. You will get credit for attending and for making progress. So **don't get discouraged or frustrated** -- this can be a particularly difficult lab because we're still at the point where we're trying to wrap our minds around loops and arrays!
 
 You can view any problems you weren't able to solve during the lab period as review problems -- they are a good study tool. 
 
@@ -27,7 +28,7 @@ Let's work on a couple methods that input arrays. The problems in this section c
     - You can always find the length of the array using: `arrayName.length`
     - To access a certain element of the array, use `arrayName[pos]` where `pos` is the integer address of the element you seek.
 
-  If you got everything to work, here's a sample output of what it should look like on code pad:
+    If you got everything to work, here's a sample output of what it should look like on code pad:
 
     ```java
     LoopsLab loopie = new LoopsLab();
