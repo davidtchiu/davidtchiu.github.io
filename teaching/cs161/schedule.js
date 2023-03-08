@@ -59,12 +59,12 @@ let days = {
         url: "hwk5.loops/",
         due: "3/10/2023",  // Fri
       },
-      // {
-      //   name: "Hwk 6",
-      //   title: "Loops Practice II",
-      //   url: "hwk6.loops2/",
-      //   due: "3/24/2023", // Fri
-      // },
+      {
+        name: "Hwk 6",
+        title: "Loops Practice II",
+        url: "hwk6.loops2/",
+        due: "3/24/2023", // Fri
+      },
       // {
       //   name: "Hwk 5b",
       //   title: "Nested Loop Practice",
