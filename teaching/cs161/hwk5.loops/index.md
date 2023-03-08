@@ -46,7 +46,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
     Clues:
     - This is an event-controlled loop. The event we're hoping eventually occurs is `n == 1`.
-    - Being an event-controlled loop, there is no need for a counter.
+    - Being an event-controlled loop, there is no need for a separate counter.
     - The looping condition is the **negation** of the event.
 
     Output:

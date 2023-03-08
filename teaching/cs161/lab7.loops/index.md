@@ -21,9 +21,7 @@ Open BlueJ and create a new project. Create a new class and name it `LoopsLab`. 
 
 Let's work on a couple methods that input arrays. The problems in this section can be solved *without* using nested loops.
 
-1. **(Arrays + Loop)**  Write a method called `countEvens()` which inputs an integer array and returns the number of even integers in the array. 
-
-  Here are some things that can help.
+1. **(Arrays + Loop)**  Write a method called `countEvens()` which inputs an integer array and returns the number of even integers in the array. Here are some things that can help.
 
     - An array of integers is declared using: `int[] arrayName`
     - You can always find the length of the array using: `arrayName.length`
@@ -31,79 +29,79 @@ Let's work on a couple methods that input arrays. The problems in this section c
 
   If you got everything to work, here's a sample output of what it should look like on code pad:
 
-  ```java
-  LoopsLab loopie = new LoopsLab();
-  int[] list1 = {-4, -1, 2, 3, 4, 5, 6, 6};
-  System.out.println(loopie.countEvens(list1));
-  > 5
+    ```java
+    LoopsLab loopie = new LoopsLab();
+    int[] list1 = {-4, -1, 2, 3, 4, 5, 6, 6};
+    System.out.println(loopie.countEvens(list1));
+    > 5
 
-  int[] list2 = {};
-  System.out.println(loopie.countEvens(list2));
-  > 0
-  ```
+    int[] list2 = {};
+    System.out.println(loopie.countEvens(list2));
+    > 0
+    ```
 
 2. **(Arrays + Loop)** Write a method called `rotateRight()` that inputs an array of Strings and shifts every element in the array one position to the right. The right-most item would then jump to the first position. 
 
-  ```java
-  import java.util.Arrays;  // this is for printing arrays
+    ```java
+    import java.util.Arrays;  // this is for printing arrays
 
-  LoopsLab loopie = new LoopsLab();
-  String[] list1 = {"A", "B", "C", "D", "E"};
-  System.out.println(Arrays.toString(loopie.rotateRight(list1)));
-  > [E, A, B, C, D]
+    LoopsLab loopie = new LoopsLab();
+    String[] list1 = {"A", "B", "C", "D", "E"};
+    System.out.println(Arrays.toString(loopie.rotateRight(list1)));
+    > [E, A, B, C, D]
 
-  String[] list2 = {};
-  System.out.println(Arrays.toString(loopie.rotateRight(list2)));
-  > []
-  ```
+    String[] list2 = {};
+    System.out.println(Arrays.toString(loopie.rotateRight(list2)));
+    > []
+    ```
 
 ##### Part II: Nested Loops
 Let's try our hand at writing some nested loops.
 
 1. **(Nested Loops)** `printRightTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. Hint: For each row `i`, you must first print `n-i` spaces followed by `i` asterisks.
 
-  ```java
-  LoopsLab loopie = new LoopsLab();
-  loopie.printRightTriangle(5);
-      *
-     **
-    ***
-   ****
-  *****
+    ```java
+    LoopsLab loopie = new LoopsLab();
+    loopie.printRightTriangle(5);
+        *
+      **
+      ***
+    ****
+    *****
 
-  loopie.printRightTriangle(10);
-           *
-          **
-         ***
-        ****
-       *****
-      ******
-     *******
-    ********
-   *********
-  **********
-  ```
+    loopie.printRightTriangle(10);
+            *
+            **
+          ***
+          ****
+        *****
+        ******
+      *******
+      ********
+    *********
+    **********
+    ```
 
 2. **(Nested Loops)** `reveal()` which inputs an integer `n` and returns a String. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). This method requires a nested loop. Ignore negative input. 
 
-  ```java
-  LoopsLab loopie = new LoopsLab();
-  System.out.println(loopie.reveal(4));
-  1---
-  12--
-  123-
-  1234
+    ```java
+    LoopsLab loopie = new LoopsLab();
+    System.out.println(loopie.reveal(4));
+    1---
+    12--
+    123-
+    1234
 
-  System.out.println(loopie.reveal(8));
-  1-------
-  12------
-  123-----
-  1234----
-  12345---
-  123456--
-  1234567-
-  12345678
-  ```
+    System.out.println(loopie.reveal(8));
+    1-------
+    12------
+    123-----
+    1234----
+    12345---
+    123456--
+    1234567-
+    12345678
+    ```
 
 ##### Part III: Arrays + Nested Loops
 The ones below are more challenging, but give it a go!
@@ -111,36 +109,36 @@ The ones below are more challenging, but give it a go!
 
 1. **(Arrays + Nested Loops)** Write a method called `barGraph()` which inputs an integer array and prints a horizontal bar graph based on the contents of that array. Say the array `[3, 6, 4]` is input. Your method should print 3 asterisks on the first line, followed by 6 asterisks on the next line, followed by 4 asterisks on the last line. You may assume all values in the array are nonnegative. Here's an example:
 
-  ```java
-  LoopsLab loopie = new LoopsLab();
-  int[] list1 = {6, 4, 3, 5, 6};
-  loopie.barGraph(list1);
-  > ******
-  > ****
-  > ***
-  > *****
-  > ******
+    ```java
+    LoopsLab loopie = new LoopsLab();
+    int[] list1 = {6, 4, 3, 5, 6};
+    loopie.barGraph(list1);
+    ******
+    ****
+    ***
+    *****
+    ******
 
-  int[] list2 = {5};
-  loopie.barGraph(list2);
-  > *****
-  ```
+    int[] list2 = {5};
+    loopie.barGraph(list2);
+    *****
+    ```
 
 
 2. **(Arrays + Nested Loops)** Write a method called `median()` which inputs an integer array and returns the median. The median of an array is defined to be the value in the list that has an equal number of values larger and smaller than itself. For instance, the median of `[3, 5, 7, 3, 9, 8, 2]` is `5`, because there are three numbers less than 5, and three numbers greater than 5. For each value `x[i]` in the array `x`, you need to traverse the array again (skipping itserlf) and count up the values greater than and less than `x[i]` (keep two counters). If these counters are equal, then return `x[i]` to be the median.
 
-  - The algorithm described above only works for odd-length arrays, so make sure you use those for input while testing. (How would you modify your algorithm to work with even-length arrays?)
+    - The algorithm described above only works for odd-length arrays, so make sure you use those for input while testing. (How would you modify your algorithm to work with even-length arrays?)
 
-  ```java
-  LoopsLab loopie = new LoopsLab();
-  int[] list1 = {6, 3, 5, 6, 4};
-  System.out.println(loopie.median(list1));
-  > 4
+    ```java
+    LoopsLab loopie = new LoopsLab();
+    int[] list1 = {6, 3, 5, 6, 4};
+    System.out.println(loopie.median(list1));
+    > 4
 
-  int[] list2 = {7};
-  System.out.println(loopie.median(list2));
-  > 7
-  ```
+    int[] list2 = {7};
+    System.out.println(loopie.median(list2));
+    > 7
+    ```
 
 ##### Challenges
 If you've got a good grasp on this stuff, and want a real challenge. Try this one.
