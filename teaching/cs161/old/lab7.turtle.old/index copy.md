@@ -42,6 +42,8 @@ The API handout that you'll want to have in front of you:
 
 Download the BlueJ project from the above link. After you unzip it into your working directory, navigate into the project folder. Inside, you will see a `Turtle` class. **You do not need to make changes to this class.** You only need to know its public methods (given in the [Turtle API](TurtleAPI.pdf) hand out).
 
+#### Part 1
+
 - All code for this lab should be written in the `TurtleDrawer` class. Again, **do not make changes** to the `Turtle` class. Before we begin, you may want to familiarize yourselves with the `Turtle` class by creating an object on the workbench and playing with its methods.
   Create a new class, called TurtleDrawer, with the following requirements:
 
@@ -82,20 +84,37 @@ Download the BlueJ project from the above link. After you unzip it into your wor
 
       That's simple, and it reveals the code's repetitive structure. The code segments to draw each of the three edges are always the same, so could be placed in a loop that iterates three times (Hey, that's the number of edges for _-this-_ particular shape...).
 
-- *Your task* is to rewrite this method using a loop to replace the above redundant code segment above. You can use a loop to get the job done. The following code fragment, for example, repeats some segment of code `n` times.
+- *Your task *is to rewrite this method using a loop to replace the above redundant code segment above. You can use a loop to get the job done. The following code fragment, for example, repeats some segment of code `n` times.
 
   ```java
-  for (int i = 0; i < n; i++) {
+  // first, define a counter
+  int i = 0;
+  while (i < n) {
 
     /* statements to repeat in here */
 
+    // increment counter by 1
+    i++;
   }
   ```
 
+<!-- Recall that for-loops are generally used for counter-controlled loops, and while-loops are used for sentinel or event-controlled loops.
+  ```java
+  int i = 0;
+  while (i < n) {
+      //statements to repeat n times
+      i++;
+  }
+  ```
+  ```java
+  for (int i = 0; i < n; i++) {
+      //statements to repeat n times
+  }
+  ``` -->
 
 #### Part 2: Polygons
 
-Okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be made to be more generalized. If we needed to write new methods just to draw a square (4 sides), a pentagon (5 sides), hexagon (6 sides), etc., then when would we ever stop writing methods? A better alternative would be to write a single method that inputs, along with the `sideLength`, the number of sides, `numSides`, and a `pen` color color for the polygon you wish to draw.
+Yeah okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be made to be more general. If we needed to write new methods just to draw a square (4 sides), a pentagon (5 sides), hexagon (6 sides), etc., then when would we ever stop writing methods?! A better alternative would be to write a single method that inputs, along with the `sideLength`, the number of sides, `numSides`, and a `pen` color color for the polygon you wish to draw.
 
 - Name this new method `drawPolygon`. If `numSides` is entered as less than 3, then this method should do nothing.
 
@@ -127,8 +146,32 @@ Okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be made 
 
   So, by keeping `drawTriangle` around, we can ensure that our new upgrade is backward-compatible. However, we might warn the user the `drawTriangle` is now "deprecated," and it could be removed in future versions of our code. This makes for a much smoother transition.
 
+#### Part 3: Zigzags
 
-#### Part 3: Grids (Nested Loops)
+- Zigzags: It turns out that these zigzags lines don't just make for great sweatpants and haircut patterns. Zigzags are also great ways for us to teach loops. Make a new method, called `drawZigzag`, that takes as input two double arguments. The first argument is length, which specifies the length of the zigzag line to be drawn. The second argument width, which serves as both the width and the zigzagging interval (see below for illustration). In addition, it should take as input two String arguments: `zigColor` and `zagColor`.
+
+  <center>
+  <code>drawZigzag(400, 50, "green", "blue");</code><br/>
+  <img src="figures/lab6_turtle_zigzag.png" width="350px" border="1" style="background-color: white;" />
+  </center>
+
+- Things worth considering:
+
+  - For convenience, let's call the lines that move vertically along the width a zig line, and the longer lines that sweep back across a zag line
+
+  - In the picture above, the turtle was initially facing east. Therefore, when I call this method, I expect that the zigzag will be drawn horizontally, and to the east. But notice how the first zig-line is actually vertical.
+
+  - Next, you need to determine the length of the zag-lines, as well as the angle of your turns. (Hint: These sawtooth shapes sure remind me of [right triangles](https://mathworld.wolfram.com/PythagoreanTheorem.html))
+
+  - Think about the loop condition, which is related to how much you should draw per iteration. A single zig-line plus zag-line combination (looks like a tooth) appears to be the minimally repeated pattern.
+
+  - Make sure your zig-lines and zag-lines are alternating colors.
+
+  - Finally, if the width is longer than the length, you should draw nothing.
+
+  - **You do not need a nested loop (loop inside another) to complete this method.**
+
+#### Part 4: Grids (Nested Loops)
 
 - You can use the method you just implemented to draw a grid. Think of an `H * W` grid as having `W` cells across (number of columns) by
   `H` cells vertically (number of rows).

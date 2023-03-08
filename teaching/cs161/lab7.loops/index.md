@@ -59,7 +59,7 @@ Let's work on a couple methods that input arrays. The problems in this section c
 ##### Part II: Nested Loops
 Let's try our hand at writing some nested loops.
 
-1. **(Nested Loops)** `printRightTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. Hint: For each row `i`, you must first print `n-i` spaces followed by `i` asterisks.
+1. **(Nested Loops)** `printRightTriangle()` which inputs an integer `n` and does not return. It prints a right triangle (see below) of height and base of size `n`, with the straight edge facing east. Hint: For each row `r`, you must determine how many spaces followed by how many asterisks... might them both be some function of `r`? Ignore negative input.
 
     ```java
     LoopsLab loopie = new LoopsLab();
