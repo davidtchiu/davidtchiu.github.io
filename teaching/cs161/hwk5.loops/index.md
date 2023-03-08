@@ -44,12 +44,12 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 1. We'll start with an easy one, and I'll guide you through it. The famous **Collatz conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` reaches 1. (Fun fact: The numbers that appear in a sequence are also called "Hailstone Numbers.")
 
-  Clues:
+    Clues:
     - This is an event-controlled loop. The event we're hoping eventually occurs is `n == 1`.
     - Being an event-controlled loop, there is no need for a counter.
     - The looping condition is the **negation** of the event.
 
-  Output:
+    Output:
 
     ```java
     Loops loopie = new Loops();
@@ -73,7 +73,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 2. Write a method called `runningSum` that inputs two integers `low` and `high`, and adds all numbers between `low` to `high` (inclusive), and returns this sum. If `low` is greater than `high`, then you must exchange these values before proceeding with the summation.
 
-  Clues:
+    Clues:
     - Hmm there seems to be a definite beginning and end to this problem.
 
     ```java
@@ -171,6 +171,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
   ```
 
 6. Write a method `String decimal2Binary(int num)` that inputs a non-negative integer, and returns the binary representation of that integer. You may assume that the input is non-negative. You might remember the algorithm from class: If `num` is 0, simply return the string `"0"` and you're done (zero is just 0 in both binary and in decimal!). Otherwise, divide `num` by `2`. The remainder, which is either a one or zero, is appended to the *left* of the current binary string. Repeat these steps until `num` reduces to 0.
+
   ```java
   Loops loopie = new Loops();
   loopie.decimal2Binary(0)
