@@ -111,16 +111,19 @@ Let's work on a couple methods that input arrays. The problems in this section c
     - You can always find the length of the string using: `stringName.length()`
     - To access a certain character of the string, use `stringName.charAt(pos)` where `pos` is the integer address of the character you seek.
     - A single character `c`, which is of `char` type, can be compared to another character using `if (c == 'A')`
+    - Beware of integer divide, when you need to return a fraction.
+    - To make use of divide-and-conquer, I'd write a helper (private) method that returns whether a given character is a vowel.
 
     ```java
     AdvancedLoops loopie = new AdvancedLoops();
-    int[] list1 = {-4, -1, 2, 3, 4, 5, 6, 6};
-    System.out.println(loopie.countEvens(list1));
-    > 5
+    System.out.println(loopie.vowelRatio("Hello world"));
+    > 0.2727272727
 
-    int[] list2 = {};
-    System.out.println(loopie.countEvens(list2));
-    > 0
+    System.out.println(loopie.vowelRatio("eieieieieieieaaaaa"));
+    > 1.0
+
+    System.out.println(loopie.vowelRatio("abba"));
+    > 0.5
     ```
 
 
@@ -133,22 +136,21 @@ Let's write some algorithms that require nested loops to repeatedly iterate over
     AdvancedLoops loopie = new AdvancedLoops();
     int[] list1 = {6, 4, 3, 5, 6};
     loopie.barGraph(list1);
-    ******
-    ****
-    ***
-    *****
-    ******
+    * * * * * *
+    * * * *
+    * * *
+    * * * * *
+    * * * * * *
 
     int[] list2 = {5};
     loopie.barGraph(list2);
-    *****
+    * * * * *
     ```
 
 
 
 ##### Challenges
-If you've got a good grasp on this stuff, and want a real challenge. Try this one.
-
+If you've got a good grasp on this stuff, and want a real challenge. Try these!
 
 - **(Arrays + Nested Loops)** Write a method called `median()` which inputs an integer array and returns the median. The median of an array is defined to be the value in the list that has an equal number of values larger and smaller than itself. For instance, the median of `[3, 5, 7, 3, 9, 8, 2]` is `5`, because there are three numbers less than 5, and three numbers greater than 5. For each value `x[i]` in the array `x`, you need to traverse the array again (skipping itserlf) and count up the values greater than and less than `x[i]` (keep two counters). If these counters are equal, then return `x[i]` to be the median.
 
@@ -191,18 +193,22 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 60pts.
+This assignment will be graded out of a total of 90pts.
 
-[10pts] printDownTriangle is implemented.
-
-[10pts] printRightTriangle is fully implemented.
-
-[15pts] reveal is implemented. It inputs a positive integer, n, and prints n lines
+[15pts] reveal() is implemented. It inputs a positive integer, n, and prints n lines
 of output. Each line of output reveals one more digit.
 
-[20pts] rotate is properly implemented. If N > 0, it should shift every item in the 
-array one position to the right, and the right-most item would jump to the left-most 
-spot. If N < 0, then it should go the reverse direction.
+[15pts] printFactorials() is implemented. It inputs a non-negative integer, n, and prints
+out 0!, 1!, 2!, ..., (n-1)!, n!, each on a separate line.
+
+[15pts] rotateRight() is properly implemented. Each element in the array is shifted 
+by one place to the right. The last element is dropped in the front.
+
+[20pts] vowelRatio() is implemented. This method returns the fraction of letters that are
+vowels in the given string.
+
+[20pts] barGraph() is implememted. This method prints out a horizontal bar graph, with
+each bar of asterisks representing the number in the corresponding array element.
 
 Misc.
 [5pts] You provide Javadocs style comments for any new methods implemented. You include

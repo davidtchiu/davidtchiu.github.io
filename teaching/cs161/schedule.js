@@ -55,15 +55,15 @@ let days = {
       },
       {
         name: "Hwk 5",
-        title: "Loop Practice (The Basics)",
+        title: "Loops Practice I",
         url: "hwk5.loops/",
         due: "3/10/2023",  // Fri
       },
       // {
       //   name: "Hwk 6",
-      //   title: "Combo Guesser",
-      //   url: "hwk6.combo/",
-      //   due: "3/22/2023", // Wed
+      //   title: "Loops Practice II",
+      //   url: "hwk6.loops2/",
+      //   due: "3/24/2023", // Fri
       // },
       // {
       //   name: "Hwk 5b",
