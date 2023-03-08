@@ -65,21 +65,21 @@ Let's try our hand at writing some nested loops.
     LoopsLab loopie = new LoopsLab();
     loopie.printRightTriangle(5);
         *
-      **
+       **
       ***
-    ****
+     ****
     *****
 
     loopie.printRightTriangle(10);
-            *
+             *
             **
-          ***
+           ***
           ****
-        *****
+         *****
         ******
-      *******
+       *******
       ********
-    *********
+     *********
     **********
     ```
 
@@ -130,16 +130,16 @@ The ones below are more challenging, but give it a go!
 
     - The algorithm described above only works for odd-length arrays, so make sure you use those for input while testing. (How would you modify your algorithm to work with even-length arrays?)
 
-    ```java
-    LoopsLab loopie = new LoopsLab();
-    int[] list1 = {6, 3, 5, 6, 4};
-    System.out.println(loopie.median(list1));
-    > 4
+      ```java
+      LoopsLab loopie = new LoopsLab();
+      int[] list1 = {6, 3, 5, 6, 4};
+      System.out.println(loopie.median(list1));
+      > 4
 
-    int[] list2 = {7};
-    System.out.println(loopie.median(list2));
-    > 7
-    ```
+      int[] list2 = {7};
+      System.out.println(loopie.median(list2));
+      > 7
+      ```
 
 ##### Challenges
 If you've got a good grasp on this stuff, and want a real challenge. Try this one.
