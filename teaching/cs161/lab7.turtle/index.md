@@ -148,7 +148,7 @@ Okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be made 
       Your browser does not support the video tag.
     </video>
 
-#### Optional: Making Your Own Drawings
+#### Making Your Own Drawings
 
 It's amazing how many cool patterns we can now draw with just these method implemented. Your task is to create your very own pattern by combining loops and those previous methods you wrote. Create a method called `drawMyPattern` and try looping while calling the methods that we already wrote to see if you end up with some neat patterns.
 
@@ -161,7 +161,7 @@ Attendance is necessary to receive credit for lab.
 #### Submitting Your Assignment
 
 After you have completed the assignment, use the following to submit your work.
-Exit BlueJ
+Exit BlueJ.
 
 - Open your computer's File Finder (some times called File Explorer). Locate the project folder.
 
