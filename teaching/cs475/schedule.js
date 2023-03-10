@@ -49,12 +49,12 @@ let days = {
         url: "hwk5.mmm/",
         due: "3/7/2023",
       },
-      // {
-      //   name: "Hwk 6 (ts_hashmap)",
-      //   title: "Thread-Safe Hashmap",
-      //   url: "hwk6.hashmap/",
-      //   due: "3/22/2023",
-      // },
+      {
+        name: "Hwk 6 (ts_hashmap)",
+        title: "Thread-Safe Hashmap",
+        url: "hwk6.hashmap/",
+        due: "3/27/2023", // after break
+      },
       // {
       //   name: "Hwk 7 (thebar)",
       //   title: "Bartender Problem ",
