@@ -38,7 +38,7 @@ Let's try our hand at writing some (doubly) nested loops. Remember that there's 
     12345678
     ```
 
-2. **(Nested Loops)** The factorial of $$x$$, written $$x!$$ is defined $$x \times (x-1) \times (x-2) \times ... \times 2 \times 1$$. There's a special case if $$0! = 1$$. Write a method `printFactorials()` which inputs an integer `n`. It prints out the factorial of all numbers between `0` and `n`. You may assume that `n` is nonnegative. (Hint: 0! should be printed out unconditionally. Then start into the loops!) Again, in designing this method, think about how many rows you need (starting from 1! -- and that's your outer loop), then decide what you need to do per row to compute the factorial at that row number and that's your inner loop.
+2. **(Nested Loops)** The factorial of $$x$$, written $$x!$$ is defined $$x \times (x-1) \times (x-2) \times ... \times 2 \times 1$$. There's also a special case of $$0! = 1$$. Write a method `printFactorials()` which inputs an integer `n`. It prints out the factorial of all numbers between `0` and `n`. You may assume that `n` is nonnegative. (Hint: 0! should be printed out unconditionally. Then start into the loops!) Again, in designing this method, think about how many rows you need (starting from 1! -- and that's your outer loop), then decide what you need to do per row to compute the factorial at that row number and that's your inner loop.
 
     ```java
     AdvancedLoops loopie = new AdvancedLoops();
@@ -85,7 +85,7 @@ Let's try our hand at writing some (doubly) nested loops. Remember that there's 
 
 Let's work on a couple methods that input arrays. The problems in this section can be solved *without* using nested loops.
 
-3. **(Arrays + Loop)** Write a method called `rotateRight()` that inputs an array of Strings and shifts every element in the array one position to the right. The right-most item would then jump to the first position. Here are some things that can help.
+3. **(Arrays + Non-Nested Loop)** Write a method called `rotateRight()` that inputs an array of Strings and shifts every element in the array one position to the right. The right-most item would then jump to the first position. Here are some things that can help.
 
     - An array of integers is declared using: `int[] arrayName`
     - You can always find the length of the array using: `arrayName.length`
@@ -105,13 +105,12 @@ Let's work on a couple methods that input arrays. The problems in this section c
     ```
 
 
-4. **(Strings + Loop)**  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters that are vowels in the string. Assume that `y` is not a vowel. Here are some things to remember about Strings that can help.
+4. **(Strings + Non-Nested Loop)**  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters that are vowels in the string. Assume that `y` is not a vowel. Here are some things to remember about Strings that can help.
 
     - You can always find the length of the string using: `stringName.length()`
     - To access a certain character of the string, use `stringName.charAt(pos)` where `pos` is the integer address of the character you seek.
-    - A single character `c`, which is of `char` type, can be compared to another character using `if (c == 'A')`
-    - Beware of integer divide, when you need to return a fraction.
-    - To make use of divide-and-conquer, I'd write a helper (private) method that returns whether a given character is a vowel.
+    - A single character `c`, which is of `char` type, can be compared to another character using something like, `if (c == 'A')`
+    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character is a vowel. Beware of upper vs. lower case. (Yes this method should work for both cases.)
 
     ```java
     AdvancedLoops loopie = new AdvancedLoops();
@@ -149,7 +148,7 @@ Let's write some algorithms that require nested loops to repeatedly iterate over
 
 
 ##### Challenges
-If you've got a good grasp on this stuff, and want a real challenge. Try these!
+If you feel like you've got a good grasp on this stuff, and want a real challenge. Try these!
 
 - **(Arrays + Nested Loops)** Write a method called `median()` which inputs an integer array and returns the median. The median of an array is defined to be the value in the list that has an equal number of values larger and smaller than itself. For instance, the median of `[3, 5, 7, 3, 9, 8, 2]` is `5`, because there are three numbers less than 5, and three numbers greater than 5. For each value `x[i]` in the array `x`, you need to traverse the array again (skipping itserlf) and count up the values greater than and less than `x[i]` (keep two counters). If these counters are equal, then return `x[i]` to be the median.
 
