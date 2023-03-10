@@ -15,9 +15,9 @@ Open BlueJ and create a new project. Create a new class and name it `AdvancedLoo
 
 
 ##### Part I: Nested Loops
-Let's try our hand at writing some (doubly) nested loops.
+Let's try our hand at writing some (doubly) nested loops. Remember that there's a formula to writing doubly-nested loops. You should always be thinking 2-dimensionally. For the problems below, first figure out how many "rows" (height) you need (Outer Loop). Then figure out what you need to do each "row." (Inner Loop)
 
-1. **(Nested Loops)** Write a method `reveal()` which inputs an integer `n` and returns nothing. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). Ignore negative input. (Hint: For each row `r`, how many numbers do you need to print up to? How many dashes follow?)
+1. **(Nested Loops)** Write a method `reveal()` which inputs an integer `n` and returns nothing. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). Ignore negative input. (Hint: For each row `r`, how many numbers do you need to print up to? How many dashes follow? Use the `printRightTriangle()` method we saw in class for inspiration.)
 
     ```java
     AdvancedLoops loopie = new AdvancedLoops();
@@ -38,7 +38,7 @@ Let's try our hand at writing some (doubly) nested loops.
     12345678
     ```
 
-2. **(Nested Loops)** The factorial of $$x$$, written $$x!$$ is defined $$x \times (x-1) \times (x-2) \times ... \times 2 \times 1$$. There's a special case if $$x = 0$$, then $$x! = 1$$. Write a method `printFactorials()` which inputs an integer `n`. It prints out the factorial of all numbers between `0` and `n`. You may assume that `n` is nonnegative. 
+2. **(Nested Loops)** The factorial of $$x$$, written $$x!$$ is defined $$x \times (x-1) \times (x-2) \times ... \times 2 \times 1$$. There's a special case if $$0! = 1$$. Write a method `printFactorials()` which inputs an integer `n`. It prints out the factorial of all numbers between `0` and `n`. You may assume that `n` is nonnegative. (Hint: 0! should be printed out unconditionally. Then start into the loops!) Again, in designing this method, think about how many rows you need (starting from 1! -- and that's your outer loop), then decide what you need to do per row to compute the factorial at that row number and that's your inner loop.
 
     ```java
     AdvancedLoops loopie = new AdvancedLoops();
@@ -52,7 +52,6 @@ Let's try our hand at writing some (doubly) nested loops.
 
     loopie.printFactorials(0);
     0! == 1
-    1! == 1
 
     loopie.printFactorials(1);
     0! == 1
