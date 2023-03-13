@@ -148,9 +148,18 @@ Okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be made 
       Your browser does not support the video tag.
     </video>
 
-#### Making Your Own Drawings
+#### Part 4: Create Your Own Drawings
 
 It's amazing how many cool patterns we can now draw with just these method implemented. Your task is to create your very own pattern by combining loops and those previous methods you wrote. Create a method called `drawMyPattern` and try looping while calling the methods that we already wrote to see if you end up with some neat patterns.
+
+Whatever you do, be creative! Use a nested loop (or a triply nested loop)! But here are some ideas you can try.
+
+  - Try drawing a zigzag or a spiral.
+
+  - Try drawing a honeycomb pattern, or try drawing a brick pattern (in which the bricks on the next row up overlap with two bricks on the row below it.)
+
+  - Try making an abyss: This will get you close: Write a method to draw a 10-sided shape. After one is drawn, increase the length of each side, and draw another. Repeat until something of a blackhole emerges. 
+
 
 #### Grading
 

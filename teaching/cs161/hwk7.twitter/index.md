@@ -121,11 +121,11 @@ Do not attempt this assignment without thorough understanding of the String meth
 
 - Write an `isMention()` method that takes a single term (not an entire tweet), as argument, and return whether it is a mention. A term is a mention if the first letter is an `@` sign, and excluding the `@` sign, the term is at least one letter long. This method does not modify any fields.
 
-- Write a `processTweet()` method that takes a String tweet as input. A tweet can contain regular words, #hashtags, and @mentions. Here is what this method needs to do:
+- Write a `processTweet()` method that takes a String tweet as input. A tweet string can contain regular words, #hashtags, and @mentions. Here is what this method needs to do:
 
-  - Step through every term in the tweet and update the counts required for `toString()` (see code example).
+  - Split the tweet up into an array of substrings, using whitespace as your delimiter. Step through every term in the tweet and update the counts required for `toString()` (see code example).
 
-  - When you come across a `#hashtag`, you need to update the history as follows. First, the history should not contain any duplicates (i.e., every time you come across one, you need to see whether it already exists in your ArrayList, and add it in only if it's new!). You should ignore case, so if `#computing` is in the history, then `#COMPUTING` should not be added.
+  - When you come across a `#hashtag`, you need to update the *history* as follows. First, the history should not contain any duplicates (i.e., every time you come across one, you need to see whether it already exists in your ArrayList, and add it in only if it's new!). You should ignore case, so if `#ups` is in the history, then `#UPS` should not be added.
 
 - Write a method called `toString()` that will return a string containing the number of tweets, number of hashtags, number of mentions, and the number of terms processed (hashtags and mentions also count as terms). Additionally, you should report the number of characters (which includes spaces) and the average number of characters per tweet. Lastly, it reports the history of observed `#hashtag`s. You must print in this format: each #hashtag must be separated by a space and printed on the same line. This method should print `(no hashtags found)` if none has been observed. For instance, when you print what this method returns, you might get something that looks like the following:
 
@@ -140,12 +140,13 @@ Do not attempt this assignment without thorough understanding of the String meth
 
 - Now write a class called `TweetStats` and create the `public static void main(String[] args)` method. Inside this method, you should first instantiate a `TweetProcessor` object. Then use a `Scanner` to accept tweets from the user on the Terminal. For each tweet that your program obtains from the user, you'll _process_ (i.e., by calling `processTweet()`) it using the `TweetProcessor`. Continuously prompt the user for another tweet (just like we saw with ChatBot during lecture.)
 
-  There are two special commands you must listen for though.
+  There are two special commands you must listen for on the command line.
 
-  - The first is `.status`. If this command is given, then call and print the results of the TweetProcess's `toString()` method to get a report of the stats that the TweetProcessor has collected so far. Your program should continue to prompt for input afterwards.
+  - The first is `.status`. If this command is given, then  print the results of the TweetProcess' `toString()` method to get a report of the stats collected so far. Your program should continue to prompt for input after printing.
+
   - The second is `.quit`. If this command is given, then your loop/program should terminate. Call and print the results of the TweetProcess's `toString()` method to get a report of final stats.
 
-  is input (make sure not to process `.quit` as if it were a tweet!) Then call `toString()` on the TweetProcessor object and print out its return value.
+  - If the user's input isn't exactly either of those commands, then assume that the input is a Tweet (make sure not to process `.quit` as if it were a tweet!). Process the tweet, update your stats, and re-prompt.
 
   For instance, let's say the following tweets are input to my program:
 
