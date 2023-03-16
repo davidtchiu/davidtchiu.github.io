@@ -128,9 +128,9 @@ Let's take a sec to understand that a 16-digit credit number actually represents
       > 7
       ```
 
-- After you've implemented and tested `twoDigitSum()` we can finally finish off **Step 2**. Back inside the `validate()` method, place all the sums in another array of size 15 (because we don't want to overwrite the original `payload`.) To do this, you can just instantiate a local array variable inside the method. Fill this local array with the numbers you obtained. Obviously, you'll need to call your `twoDigitSum()` helper method inside `validate()`.
+  - After you've implemented and tested `twoDigitSum()` we can finally finish off **Step 2**. Back inside the `validate()` method, place all the sums in another array of size 15 (because we don't want to overwrite the original `payload`.) To do this, you can just instantiate a local array variable inside the method. Fill this local array with the numbers you obtained. Obviously, you'll need to call your `twoDigitSum()` helper method inside `validate()`.
 
-- **Step 3:** Finally, we need to add up all the values in the local array you populated in **Step 2** in order to obtain: 6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78. Then add in the checksum to obtain 78 + 2 == 80, and calculate 80 % 10. Because this result is zero, this credit card number validates!
+  - **Step 3:** Finally, we need to add up all the values in the local array you populated in **Step 2** in order to obtain: 6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78. Then add in the checksum to obtain 78 + 2 == 80, and calculate 80 % 10. Because this result is zero, this credit card number validates!
 
 - To test, go back and run the `main` method. You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a>
 	lets you generate  valid credit card numbers! 
