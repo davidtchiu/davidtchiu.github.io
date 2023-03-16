@@ -28,21 +28,40 @@ If no provision has been made to make access to the list thread safe, when two (
 
    ```
    Thread T1 and T2 concurrently call removeHead(list)
-   T1 sees that there's a head element, A
-   T1 saves a pointer to the current head
+   T1 sees that there's a head element, with data A
+   T1 saves an oldHead pointer to the current head
    T1 saves A for later return
-   T2 sees that there's a head element A (!! race here !!)
-   T2 saves a pointer to the current head
-   T2 saves A for later return (may segfault here!)
+   T2 sees that there's a head element, with data A (!! Race Here !!)
+   T2 saves an oldHead pointer to the current head (oldHead still gets A.)
+   T2 saves A for later return (Nope. Should've gotten B.)
    T1 updates the head element to B
-   T2 updates the head element to B
+   T2 updates the head element to B (Nope.)
    T1 frees oldHead
    T1 returns A
-   T2 frees oldHead
+   T2 frees oldHead (Double-free Error.)
    T2 returns A
    ``` 
 
-In this scenario, `A` is incorrectly returned by both threads, and the list is still `[B,C,D,E]`. And that's just *one* way things could go wrong, among many other unpredictable results. (Honestly, most incorrect runs would probably segfault.) To make this linked list thread-safe, each thread *should have* locked out access to the list so that another thread can't enter and make progress in the critical section. 
+In this scenario, `A` is incorrectly returned by both threads, and the list is still `[B,C,D,E]`. And that's just *one* way (among many) that things could go wrong. (Honestly, most incorrect runs would probably seg-fault.) To make this linked list thread-safe, each thread *should have* locked out access to the list so that another thread can't enter and make progress in the critical section. In other words, something to this effect:
+
+   ```c
+   void* removeHead(LinkedList *list) {
+      lock();
+
+      // <<entering critial section>>
+      if (list->head == NULL) {
+         return NULL;   // do nothing!
+      }
+      Node *oldHead = list->head;
+      void* retval = oldHead->data; // save for return
+      list->head = oldHead->next;   // update the head
+      free(oldHead);  // deallocate old head node
+      // <<leaving critial section>>
+
+      release();
+      return retval;
+   }
+   ```
 
 In this assignment, you are to provide a thread-safe hashmap library for C.
 
@@ -67,7 +86,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 I have included a working solution of my program along with the starter code. The binary executable file is called `hashtestSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./hashtestSol`. 
 
-#### Introduction: HashMap
+#### Introduction: HashMap Structure and Functions
 
 In this assignment you are to create a thread-safe (ts) hashmap library `ts_hashmap_t`. A hashmap can be implemented using an array of linked-lists of key-value entries, as follows:
 
