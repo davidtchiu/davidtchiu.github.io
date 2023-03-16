@@ -9,37 +9,40 @@ But have you ever wondered why Java offers both a `Hashtable<K,V>` class and a `
 When programming, you should always check the documentation to ensure that the data structure is thread safe. (For instance, another thread-safe approach includes using `Vector<E>` instead of `ArrayList<E>`.) On the other hand, if you know that your program will always be single-threaded, then a `HashMap<K,V>` would not only suffice, but it would even be faster to use, because it has been implemented without any synchronization considerations. Same goes for `ArrayLists`.
 
 #### Thread Safety 
-A data structure is called *thread-safe* if it can be accessed by multiple threads concurrently without risking correctness. Take an unsafe linked list, for instance. Assume that a node in a linked list has a `data` and `next` fields. The `LinkedList` structure itself only stores a pointer to the head node. The code to remove the head element may look something like the following:
+A data structure is called *thread-safe* if it can be accessed by multiple threads concurrently without risking losing data. Take an unsafe linked list, for instance. Assume that a node in a linked list has a `data` and `next` fields. The `LinkedList` structure itself only stores a pointer to the head node. The code to remove the head element may look something like the following:
 
    ```c
    void* removeHead(LinkedList *list) {
       if (list->head == NULL) {
          return NULL;   // do nothing!
       }
-      void* retval = list->head->data; // save for return
-      free(list->head); // deallocate head node
-      list->head = list->head->next;   // update the head
+      Node *oldHead = list->head;
+      void* retval = oldHead->data; // save for return
+      list->head = oldHead->next;   // update the head
+      free(oldHead);  // deallocate old head node
       return retval;
    }
    ```
 
-If no provision has been made to make access to the list thread safe, when two (or more) threads seek to remove the head element simultaneously, they may end up in a race condition. Suppose the linked list currently stores `[A,B,C,D,E]`, then two calls to `removeHead()` should yield `A` and `B` respectively, and leave  `[C,D,E]` remaining in the list. However, consider the following scenario:
+If no provision has been made to make access to the list thread safe, when two (or more) threads seek to remove the head element simultaneously, they may end up in a race condition. Suppose the linked list currently stores `[A,B,C,D,E]`, then two calls to `removeHead()` should yield `A` and `B` respectively (we don't care whether `A` and `B` ends up in T1's hands or T2's), but it should leave `[C,D,E]` remaining in the list. However, consider the following scenario:
 
    ```
-   Thread T1 and T2 both run removeHead(list);
-   T1 sees that there's a head element A
+   Thread T1 and T2 concurrently call removeHead(list)
+   T1 sees that there's a head element, A
+   T1 saves a pointer to the current head
    T1 saves A for later return
-   T2 sees that there's a head element A (!race here!)
-   T1 unlinks the head element
-   T2 saves A for later return
-   T1 frees A
+   T2 sees that there's a head element A (!! race here !!)
+   T2 saves a pointer to the current head
+   T2 saves A for later return (may segfault here!)
+   T1 updates the head element to B
+   T2 updates the head element to B
+   T1 frees oldHead
    T1 returns A
-   T2 unlinks the head element (head is now C! B is lost!)
-   T2 frees A 
+   T2 frees oldHead
    T2 returns A
    ``` 
 
-In this scenario, `A` is incorrectly returned by both threads, and the list is now `[C,D,E]`. And that's just *one* way things could go wrong, among many other unpredictable results. (Honestly, most incorrect runs would probably segfault.) To make this linked list thread-safe, each thread *should have* locked out access to the list so that another thread can't enter and make progress in the critical section. 
+In this scenario, `A` is incorrectly returned by both threads, and the list is still `[B,C,D,E]`. And that's just *one* way things could go wrong, among many other unpredictable results. (Honestly, most incorrect runs would probably segfault.) To make this linked list thread-safe, each thread *should have* locked out access to the list so that another thread can't enter and make progress in the critical section. 
 
 In this assignment, you are to provide a thread-safe hashmap library for C.
 
