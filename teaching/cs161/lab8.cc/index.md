@@ -2,7 +2,7 @@
 
 ### Lab: Credit Card Validation
 
-Many things across the world are associated with unique identifiers. For instance, just about every item for sale has a 12 or 13-digit universal product code (UPC barcode) that can be scanned to identify the product being sold. Every car has a unique 17-character vehicle identification number (VIN), and most credit cards have a unique 16-digit number. With the average number length being quite long, it is expected that people might make mistakes when typing them out. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) That's a big problem! How would we efficiently ensure that a given number is correct?
+Many things across the world are associated with unique identifiers. Most credit cards have a unique 16-digit number. With the average number length being this long,  people often make mistakes when filling out a form. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) Back before the Internet and Web existed, how did our credit card readers immediately determine when a credit card number was entered in error? That is the topic of today's lab!
 
 
 #### Student Outcomes
@@ -10,31 +10,42 @@ Many things across the world are associated with unique identifiers. For instanc
 - Using arrays
 - Using loops to access array elements
 
-
-
 #### Required Files
 
 The following file(s) have been provided for this homework.
 
 - [Lab8_CC.zip](Lab8_CC.zip)
 
-##### Validating Credit Cards (Luhn's Algorithm)
+#### Validating Credit Cards (Luhn's Algorithm)
 
-- Download the lab file, extract it, and open it up. For this project, you don't need to make any changes to the `Main` or the `GUI` class. Right-click on the `Main` class and run the `main` method. In the window that pops up, leave everything as is, and click "OK". This should bring up a graphical user interface (GUI -- pronounced "gooey") that asks for a credit card number. Nothing you enter will work at this point.
+- Download the lab file, extract it, and open it up. For this project, you don't need to make any changes to the `Main` or the `GUI` class. Right-click on the `Main` class and run the `main` method. In the window that pops up, leave everything as is, and click "OK". This should bring up a graphical user interface (or, GUI -- pronounced "gooey") that asks for a credit card number. Nothing you enter will work at this point, so try it out briefly and close the dialog.
 
 - Open the `CCValidator` class. You just need the two instance variables:
 
-  - An int array that we will call `payload`. This array will be used to represent the first 15 digits of a 16-digit credit card number.
-  - An int we'll call `checksum`. The checksum is always the last (16th) digit of a credit card number.
+  - An `int` array that we will call `payload`. This array will be used to represent the first 15 digits of a 16-digit credit card number.
 
-- Write a method called `loadSequence()` that takes as input a `String` credit card number. This method should first check to see if the number is 16 digits. If not, then return `false` immediately. You will want to refer to your **String API**. Otherwise, you'll need to do the following:
+  - An `int` we'll call `checksum`. The checksum is always the last (16th) digit of a credit card number.
 
-  - Use the `charAt()` method in the **String API** to extract and store the final digit in the credit card number in your `checksum` field. However, `charAt()` returns a `char` and not an `int` data type. So you'll also need to convert this `char` into an `int` by calling `Character.getNumericValue()` on the character to return the `int` for storage.
+- Write a default constructor that instantiates your `payload` array (recall that the payload of a credit card number is the first 15 digits). Go ahead and set the `checksum` to 0.
 
-  - Next, you'll want to instantiate your `payload` array (recall that the payload of a credit card number is the first 15 digits). Then iterate through the input string and extract every digit (just as you did previously) into its corresponding position in `payload`.
+- Write a method called `loadSequence()` that takes as input a `String` credit card number. This method should first check to see if the number is 16 digits. If not, then return `false` immediately. You will want to refer to your **String API** to get the length of a string. Otherwise, you'll need to do the following:
 
-  - After all that is done, return `true`.
+  - Use the `charAt()` method in the **String API** to extract and store the final digit in the credit card number in your `checksum` field. But there's a small problem. `charAt()` returns a `char` and not an `int`, so you'll also need to a conversion by calling `Character.getNumericValue()` on the last digit before storing it in `checksum`.
 
+  - Next, iterate through the input string and extract every digit (just as you did previously) into its corresponding position in `payload`. After all that is done, return `true`.
+
+  - Test it out using some 16-digit strings, like `"3979250428219432"`. Inspect your `CCValidator` object to ensure that the payload and checksum are properly assigned.
+
+- Next, write a method called `toString()` that returns the credit card number as a `String`. To do this, you'll need to build up a string by running through your `payload` array and concatenating all of the digits together, including the checksum at the end. For better readability, each group of 4 digits should should be separated by space. Here's what it should look like:
+
+    ```java
+    CCValidator reader = new CCValidator();
+    reader.loadSequence("3979250428219432");
+    System.out.println(reader.toString());
+
+    > 3979 2504 2821 9432
+    ```
+    
 - Next, you'll want to start writing another method called `validate()` that returns a `boolean` and inputs nothing. The algorithm you're about to write is known as [Luhn's Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) and it's implemented in just about every credit-card reading device in the world! It gets complicated though, so you should read through this whole section before starting to code.
 
   - **Step 1:** Starting with the right-most digit of the `payload`, double that digit and moving left,  double every other digit that you encounter. Of the numbers that you doubled, add all digits of those numbers up (for instance, `18` becomes `1 + 8 == 9`). Now sum up all the digits including the checksum. Then take `s % 10`, where `s` is the sum from the previous step. If the modulo is zero, then the credit number is valid. Otherwise, it's invalid.
