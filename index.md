@@ -1,16 +1,22 @@
 ### Biosketch
 
-<img style="float-left" src="david.jpg" width="200px"/>
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 5px;">
 
-<span style="float-right">
-I'm a Professor of Computer Science at the [University of Puget Sound](https://pugetsound.edu/mathematics-computer-science-current-students), where I also served a term as department chair from 2019-22. I am the Student of Color Residential Community (SCRC) Faculty Advisor at Puget Sound.
+  <div style="float-left" >
+    <img src="david.jpg" width="200px"/>
+  </div>
 
-I obtained a PhD in Computer Science and Engineering from the [Ohio State University](https://cse.osu.edu) (2010) as a member of the [Systems Group](https://cse.osu.edu/research/systems). Under the supervision of [Gagan Agrawal](https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en) (now Associate Dean at Augusta), I worked on problems in the dynamic composition, performance modeling, and optimizations of scientific workflows over distributed cloud computing environments. I also worked under [Paul S. Wang](https://en.wikipedia.org/wiki/Paul_S._Wang) at the Institute of Computational Mathematics (ICM/Kent State) on the transmission of mathematics education modules for my BS/MS degrees. My current teaching and research interests include database management, distributed cloud computing, and the web. I am a member of ACM and a senior member of the IEEE.
+  <div style="float-right">
+  I'm a Professor of Computer Science at the [University of Puget Sound](https://pugetsound.edu/mathematics-computer-science-current-students), where I also served a term as department chair from 2019-22. I am the Student of Color Residential Community (SCRC) Faculty Advisor at Puget Sound.
 
-I am the recipient of the 2017 Kristine Bartanen Research Award and the [2022 President's Award for Excellence in Teaching](https://www.pugetsound.edu/presidents-excellence-teaching-award) from the University of Puget Sound.
+  I obtained a PhD in Computer Science and Engineering from the [Ohio State University](https://cse.osu.edu) (2010) as a member of the [Systems Group](https://cse.osu.edu/research/systems). Under the supervision of [Gagan Agrawal](https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en) (now Associate Dean at Augusta), I worked on problems in the dynamic composition, performance modeling, and optimizations of scientific workflows over distributed cloud computing environments. I also worked under [Paul S. Wang](https://en.wikipedia.org/wiki/Paul_S._Wang) at the Institute of Computational Mathematics (ICM/Kent State) on the transmission of mathematics education modules for my BS/MS degrees. My current teaching and research interests include database management, distributed cloud computing, and the web. I am a member of ACM and a senior member of the IEEE.
 
-Here's a link to my [curriculum vitae](CV.pdf).
-</span>
+  I am the recipient of the 2017 Kristine Bartanen Research Award and the [2022 President's Award for Excellence in Teaching](https://www.pugetsound.edu/presidents-excellence-teaching-award) from the University of Puget Sound.
+
+  Here's a link to my [curriculum vitae](CV.pdf).
+  </div>
+</div>
+
 
 ### Recent Activities
 - (2/2023) I'm honored to be selected as the inaugural Student of Color Residential Community (SCRC) Faculty Advisor, University of Puget Sound.
