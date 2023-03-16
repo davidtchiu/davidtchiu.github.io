@@ -65,12 +65,12 @@ let days = {
         url: "hwk6.loops2/",
         due: "3/24/2023", // Fri
       },
-      // {
-      //   name: "Hwk 5b",
-      //   title: "Nested Loop Practice",
-      //   url: "hwk5b.nestedLoops/",
-      //   due: "3/22/2023",  // Wed
-      // },
+      {
+        name: "Hwk 7",
+        title: "Schelling? Sudoku (files)? TTT (user input)",
+        url: "hwk6.loops2/",
+        due: "4/5/2023", // Fri
+      },
       // {
       //   name: "Hwk 6",
       //   title: "Tweet Processor",
@@ -235,17 +235,18 @@ let days = {
     "Array exercises",
     "Arrays of objects: TurtleMob",
     "Lab 8: ComboGuesser (arrays)",
-    "Start ArrayList",
+    "2D Arrays",
     // wk 11
+    "Start ArrayList",
     "More ArrayList",
-    "Scanning for input: ChatBot",
     "Lab 9: Super Circle Drawer",
-    "Finish ChatBot; Start HashMap",
+    "Scanning for input: ChatBot",
     // wk 12
-    "HashMap",
+    "Finish ChatBot; Start HashMap",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "TBA",
+    "Lab 10: Super Circle Drawer",
+    "HashMap",
     // wk 13
     "HashMap (cont.): Smarter ChatBot",
     "Files; String parsing",
@@ -259,7 +260,7 @@ let days = {
     // wk 15
     "Bubble Sort",
     "More complexity: list reversal, palindrome",
-    "Hwk Lab",
+    "Lab 12",
     "public, private, final",
     // wk 16
     "static, main(); IntelliJ IDE",

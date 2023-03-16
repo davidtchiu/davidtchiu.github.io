@@ -232,7 +232,7 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 90.
+This assignment will be graded out of a total of 90 pts.
 
     [2pts]  Appropriate constructor(s) have been implemented.
 

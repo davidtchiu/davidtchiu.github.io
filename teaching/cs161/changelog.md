@@ -1,6 +1,7 @@
 #### TODO
+- Consider doing exams on Fridays.
 - Hwk 1 can be due 2 days sooner now.
-- Put starter code on github
+- Put starter code on github.
 - Why have students create a new zip every time? Just submit the `.java` files.
 - Move static/enum/private/public up (or spread them out)
 - Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
