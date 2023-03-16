@@ -148,14 +148,14 @@ let days = {
       },
       // {
       //   name: "Lab 8",
-      //   title: "ComboGuesser (Arrays)",
-      //   url: "lab8.combo/",
+      //   title: "Validator (Arrays)",
+      //   url: "lab8.cc/",
       //   due: "3/24/2023",
       // },
       // {
       //   name: "Lab 9",
       //   title: "Super Circle Drawer (ArrayLists)",
-      //   url: "lab8.superCircleDrawer/",
+      //   url: "lab9.superCircleDrawer/",
       //   due: "3/31/2023",
       // },
       // {
@@ -234,7 +234,7 @@ let days = {
     // wk 10
     "Array exercises",
     "Arrays of objects: TurtleMob",
-    "Lab 8: ComboGuesser (arrays)",
+    "Lab 8: CC Validator (arrays)",
     "Start ArrayList",
     // wk 11
     "More ArrayList",
