@@ -75,10 +75,10 @@ Intro to Computer Science -->
 
 ### Teaching Awards
 
-- **President's Excellence in Teaching Award**\
+- **President's Award for Excellence in Teaching**\
   University of Puget Sound, 2022
 
-- **Outstanding Graduate Student Teaching (Eleanor Quinlan Memorial) Award**\
+- **Outstanding Graduate Student Teaching (Quinlan Memorial) Award**\
   Department of Computer Science and Engineering, The Ohio State University, 2010
 
 - **Preparing Future Faculty (PFF) Fellow**\
