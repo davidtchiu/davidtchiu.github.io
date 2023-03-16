@@ -1,13 +1,12 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Book ISBN Validation
+### Lab: Credit Card Validation
 
-Many things across the world are associated with unique identifiers. For instance, just about every item for sale has a 12 or 13-digit universal product code (UPC barcode) that can be scanned to identify the product being sold. Every car has a unique 17-character vehicle identification number (VIN), and most credit cards have a unique 16-digit number. With the average code length being quite long, it is expected that people might make mistakes when typing them out. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) What's worse, even if you typed the code out correctly, it can be corrupted when it's sent over a network and while it's being stored on disk. That's a big problem! How would we efficiently ensure that a given code is correct?
+Many things across the world are associated with unique identifiers. For instance, just about every item for sale has a 12 or 13-digit universal product code (UPC barcode) that can be scanned to identify the product being sold. Every car has a unique 17-character vehicle identification number (VIN), and most credit cards have a unique 16-digit number. With the average number length being quite long, it is expected that people might make mistakes when typing them out. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) That's a big problem! How would we efficiently ensure that a given number is correct?
 
 
 #### Student Outcomes
 
-- Practice writing methods for object comparison
 - Using arrays
 - Using loops to access array elements
 
@@ -36,11 +35,11 @@ The following file(s) have been provided for this homework.
 
   - After all that is done, return `true`.
 
-- Write a method called `validate()` that returns a `boolean` and inputs nothing. The algorithm you're about to write is known as [Luhn's Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) and it's implemented in just about every credit-card reading device in the world! 
+- Next, you'll want to start writing another method called `validate()` that returns a `boolean` and inputs nothing. The algorithm you're about to write is known as [Luhn's Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) and it's implemented in just about every credit-card reading device in the world! It gets complicated though, so you should read through this whole section before starting to code.
 
-  - Starting with the right-most digit of the payload, double that digit and moving left, you need to double every other digit you encounter. Of the numbers that you doubled, add all digits of those numbers up (for instance, `18` becomes `1 + 8 == 9`). Now sum up all the digits including the checksum. Then take `s % 10`, where `s` is the sum from the previous step. If the modulo is zero, then the credit number is valid. Otherwise, it's invalid.
+  - **Step 1:** Starting with the right-most digit of the `payload`, double that digit and moving left,  double every other digit that you encounter. Of the numbers that you doubled, add all digits of those numbers up (for instance, `18` becomes `1 + 8 == 9`). Now sum up all the digits including the checksum. Then take `s % 10`, where `s` is the sum from the previous step. If the modulo is zero, then the credit number is valid. Otherwise, it's invalid.
 
-  - For instance, let's say that I entered my 16-digit credit card info manually into an online form: 3979250428219432. The payload is 397925042821943 and the checksum is the last number of my credit card number: 2. Starting from the right-most digit of the payload, we'll double every other digit to obtain "Step 1":
+  - For instance, let's say that I entered my 16-digit credit card info manually into an online form: 3979250428219432. The payload is 397925042821943 and the checksum is the last number of my credit card number: 2. Starting from the right-most digit of the payload, we'll double every other digit to obtain the results for "Step 1" below:
 
     <table border="1">
       <tr>
@@ -100,28 +99,27 @@ The following file(s) have been provided for this homework.
       </table>
 
 
-- Then in "Step 2" we add up all the all the digits for any number that we doubled in Step 1. This seems hard, but there's pattern to it all. But because you're only doubling a single digit that ranges from 0 to 9 in Step 1, the doubled numbers here can only range from 0, 2, 4, 6, ..., 18. Of those, you only need to worry about half of them, because you just need to be concerned about adding up the two-digit numbers: 10, 12, 14, 16, and 18. These numbers add up to 1, 3, 5, 7, and 9, respectively. Say, there's a pattern ... do you recognize it?
+  - **Step 2:** Then add up all the all the digits for any number that we doubled back in **Step 1**. This seems rather difficult, but look for a pattern... Because you're multiplying by 2 on a single digit that ranges from 0 to 9 from **Step 1**, the doubled numbers here can only range from 0, 2, 4, 6, ..., 18. Of those, you only need to worry about half of them, because you just need to be concerned about adding up the two-digit numbers: 10, 12, 14, 16, and 18. These numbers add up to 1, 3, 5, 7, and 9, respectively. Do you recognize what you need to do in order to convert 10 to 1? 12 to 3? Etc.? Once you recognize the pattern, you'll want to write the following method.
 
-Write a helper method called `twoDigitSum()` that inputs an integer, adds up the digits in the input, and returns this sum. If the number is a single-digit, then just return the number trivially. If you did it properly, you should get outputs like:
+    Write a helper method called `twoDigitSum()` that inputs an integer, adds up the digits in the input, and returns this sum. If the number is a single-digit, then just return the number trivially. If you did it properly, you should get outputs like:
 
-  ```java
-  twoDigitSum(5)
-  > 5
+      ```java
+      twoDigitSum(5)
+      > 5
 
-  twoDigitSum(0)
-  > 0
+      twoDigitSum(0)
+      > 0
 
-  twoDigitSum(12)
-  > 3
+      twoDigitSum(12)
+      > 3
 
-  twoDigitSum(16)
-  > 7
-  ```
+      twoDigitSum(16)
+      > 7
+      ```
 
-- After you've implemented and tested `twoDigitSum()` we can finally finish off "Step 2". Back inside the `validate()` method, place all the sums in another array of size 15 (because we don't want to overwrite the original `payload`.) To do this, you can just instantiate a local array variable inside the method. Fill this local array with the numbers you obtained in "Step 2."
+- After you've implemented and tested `twoDigitSum()` we can finally finish off **Step 2**. Back inside the `validate()` method, place all the sums in another array of size 15 (because we don't want to overwrite the original `payload`.) To do this, you can just instantiate a local array variable inside the method. Fill this local array with the numbers you obtained. Obviously, you'll need to call your `twoDigitSum()` helper method inside `validate()`.
 
-- Finally, we add up all the values resulting from "Step 2" in your local array to obtain: 
-6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78. Then add in the checksum to obtain 78 + 2 == 80, and calculate 80 % 10. Because this result is zero, this credit card number validates.
+- **Step 3:** Finally, we need to add up all the values in the local array you populated in **Step 2** in order to obtain: 6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78. Then add in the checksum to obtain 78 + 2 == 80, and calculate 80 % 10. Because this result is zero, this credit card number validates!
 
 - To test, go back and run the `main` method. You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a>
 	lets you generate  valid credit card numbers! 
