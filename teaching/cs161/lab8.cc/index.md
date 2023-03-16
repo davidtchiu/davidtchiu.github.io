@@ -17,9 +17,9 @@ Many things across the world are associated with unique identifiers. For instanc
 
 The following file(s) have been provided for this homework.
 
-- [Lab7_ComboGuesser.zip](Lab7_ComboGuesser.zip)
+- [Lab8_CC.zip](Lab8_CC.zip)
 
-##### Validating Credit Cards: Luhn's Algorithm
+##### Validating Credit Cards (Luhn's Algorithm)
 
 - Download the lab file, extract it, and open it up. For this project, you don't need to make any changes to the `Main` or the `GUI` class. Right-click on the `Main` class and run the `main` method. In the window that pops up, leave everything as is, and click "OK". This should bring up a graphical user interface (GUI -- pronounced "gooey") that asks for a credit card number. Nothing you enter will work at this point.
 
@@ -36,7 +36,7 @@ The following file(s) have been provided for this homework.
 
   - After all that is done, return `true`.
 
-- Write a method called `validate()` that returns a `boolean` and inputs nothing. The algorithm you're about to write is known as **Luhn's Algorithm** and it's implemented in just about every credit-card reading device in the world! 
+- Write a method called `validate()` that returns a `boolean` and inputs nothing. The algorithm you're about to write is known as [Luhn's Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) and it's implemented in just about every credit-card reading device in the world! 
 
   - Starting with the right-most digit of the payload, double that digit and moving left, you need to double every other digit you encounter. Of the numbers that you doubled, add all digits of those numbers up (for instance, `18` becomes `1 + 8 == 9`). Now sum up all the digits including the checksum. Then take `s % 10`, where `s` is the sum from the previous step. If the modulo is zero, then the credit number is valid. Otherwise, it's invalid.
 
@@ -123,7 +123,8 @@ Write a helper method called `twoDigitSum()` that inputs an integer, adds up the
 - Finally, we add up all the values resulting from "Step 2" in your local array to obtain: 
 6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78. Then add in the checksum to obtain 78 + 2 == 80, and calculate 80 % 10. Because this result is zero, this credit card number validates.
 
-
+- To test, go back and run the `main` method. You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a>
+	lets you generate  valid credit card numbers! 
 
 
 #### Submitting Your Assignment
