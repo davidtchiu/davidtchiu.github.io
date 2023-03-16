@@ -1,11 +1,11 @@
 ### Biosketch
 
-<div style="display: grid; column-gap: 5px;">
-  <div style="float-left">
-  I'm a Professor of Computer Science at the [University of Puget Sound](https://pugetsound.edu/mathematics-computer-science-current-students), where I also served a term as department chair from 2019-22. I am the Student of Color Residential Community (SCRC) Faculty Advisor at Puget Sound.
+<div style="display: grid; grid-template-columns: auto auto;">
+  <div>
+  I'm a Professor of Computer Science at the <a href="https://pugetsound.edu/mathematics-computer-science-current-student">University of Puget Sound</a>, where I also served a term as department chair from 2019-22. I am currently the Student of Color Residential Community (SCRC) Faculty Advisor at Puget Sound.
   </div>
-  <div style="float-right">
-    <img src="david.jpg" width="200px"/>
+  <div>
+    <img src="david.jpg" width="180px"/>
   </div>
 </div>
 
