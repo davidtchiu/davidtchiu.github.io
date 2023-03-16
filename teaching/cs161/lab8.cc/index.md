@@ -132,7 +132,7 @@ Let's take a sec to understand that a 16-digit credit number actually represents
 
   - **Step 3:** Finally, we need to add up all the values in the local array you populated in **Step 2** in order to obtain: 6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78. Then add in the checksum to obtain 78 + 2 == 80, and calculate 80 % 10. Because this result is zero, this credit card number validates!
 
-- To test, go back and run the `main` method. You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a>
+- To test, go back and run the `main()` method of the `Main` class. You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a>
 	lets you generate  valid credit card numbers! 
 
 
