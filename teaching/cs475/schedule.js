@@ -122,7 +122,6 @@ let days = {
     "Processes: wait(); zombies and orphans",
     // wk 5
     "Processes: exec() system call",
-    // "Threads: TCB structs; user vs kernel threads",
     "Start Threads; User vs. kernel threads",
     "Threads: pthread library",
     // wk 6
@@ -136,21 +135,21 @@ let days = {
     // wk 8
     "Sched: hyperthreading, multicore considerations",
     "Synchronization: critical section",
-    "Sync: locks, atomicity",
+    "Sync: atomicity; spin locks",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
-    "Sync: spin locks; priority inversion problem",
-    "Sync: blocking locks; start semaphores",
+    "Sync: blocking locks",
     "Sync: semaphores",
-    // wk 11
     "Sync: helpful professor problem",
+    // wk 11
     "Sync: bounded-buffer problem",
     "Sync: monitors and java",
+    "Start Deadlocks",
     // wk 12
-    "Start Deadlocks: prevention",
+    "DL: prevention",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
@@ -168,7 +167,7 @@ let days = {
     "VM: Replacement policies: FIFO, LRU",
     "VM: Clock",
     // wk 16
-    "File System",
+    "Start File System",
     "File System",
     "<strong>Reading Period</strong>",
     //; Start memory allocation and working-set model",

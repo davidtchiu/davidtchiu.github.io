@@ -1,5 +1,6 @@
 ### Conference Organization
 
+- PC Member, IDEAS'23
 - Poster Chair, BDCAT'22, UCC'22
 - PC Member, IDEAS'22
 - Session Chair, _"Demos and Short Papers"_, SSDBM'21
@@ -31,8 +32,9 @@
 
 ### Service to the University
 
-- Chair of Computer Science, University of Puget Sound (2019 - )
-- Student Life Committee, University of Puget Sound (2021 - )
+- SCRC Faculty Advisor, University of Puget Sound (2023 - )
+- Chair of Computer Science, University of Puget Sound (2019 - 2022)
+- Student Life Committee, University of Puget Sound (2021 - 2022)
 - Lantz Committee, University of Puget Sound (2021)
 - Chair, Data Science Program Committee, University of Puget Sound (2020 - 2021)
 - Chair, Data Science Search Committee, University of Puget Sound (2020)

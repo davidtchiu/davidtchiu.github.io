@@ -66,15 +66,9 @@ let days = {
         due: "3/24/2023", // Fri
       },
       // {
-      //   name: "Hwk 5b",
-      //   title: "Nested Loop Practice",
-      //   url: "hwk5b.nestedLoops/",
-      //   due: "3/22/2023",  // Wed
-      // },
-      // {
-      //   name: "Hwk 6",
+      //   name: "Hwk 7",
       //   title: "Tweet Processor",
-      //   url: "hwk6.twitter/",
+      //   url: "hwk7.twitter/",
       //   due: "4/7/2023", // Fri
       // },
       // {
