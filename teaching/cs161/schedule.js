@@ -221,10 +221,10 @@ let days = {
     "Lab 7: Turtle",
     "Start Arrays; Write the Bank class",
     // wk 9: spring break
-    "<b>Spring Break</b>",
-    "<b>Spring Break</b>",
-    "<b>Spring Break</b>",
-    "<b>Spring Break</b>",
+    "<strong><emph>Spring break</emph></strong>",
+    "<strong><emph>Spring break</emph></strong>",
+    "<strong><emph>Spring break</emph></strong>",
+    "<strong><emph>Spring break</emph></strong>",
     // wk 10
     "Array exercises",
     "Arrays of objects: TurtleMob",

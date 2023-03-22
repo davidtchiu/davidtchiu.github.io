@@ -135,7 +135,7 @@ let days = {
     // wk 8
     "Sched: hyperthreading, multicore considerations",
     "Synchronization: critical section",
-    "Sync: atomicity; spin locks",
+    "Sync: spin locks; atomic ops",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
@@ -143,10 +143,10 @@ let days = {
     // wk 10
     "Sync: blocking locks",
     "Sync: semaphores",
-    "Sync: helpful professor problem",
+    "Sync: more semaphores",
     // wk 11
-    "Sync: bounded-buffer problem",
-    "Sync: monitors and java",
+    "Sync: monitors and condition variables",
+    "Sync: synchronization in Java",
     "Start Deadlocks",
     // wk 12
     "DL: prevention",
