@@ -96,11 +96,17 @@ Let's work on a couple methods that input arrays. The problems in this section c
 
     AdvancedLoops loopie = new AdvancedLoops();
     String[] list1 = {"A", "B", "C", "D", "E"};
-    System.out.println(Arrays.toString(loopie.rotateRight(list1)));
+    loopie.rotateRight(list1);
+    System.out.println(Arrays.toString(list1));
     > [E, A, B, C, D]
 
+    loopie.rotateRight(list1);
+    System.out.println(Arrays.toString(list1));
+    > [D, E, A, B, C]
+
     String[] list2 = {};
-    System.out.println(Arrays.toString(loopie.rotateRight(list2)));
+    loopie.rotateRight(list2);
+    System.out.println(Arrays.toString(list2));
     > []
     ```
 
