@@ -227,24 +227,24 @@ let days = {
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
     "Array exercises",
-    "Arrays of objects: TurtleMob",
+    "Array exercises; for-each",
     "Lab 8: CC Validator (arrays)",
-    "Start ArrayList",
+    "Arrays of objects: TurtleMob",
     // wk 11
+    "Start ArrayList",
     "More ArrayList",
-    "Scanning for input: ChatBot",
     "Lab 9: Super Circle Drawer",
-    "Finish ChatBot; Start HashMap",
+    "Scanning for input: ChatBot",
     // wk 12
-    "HashMap",
+    "Finish ChatBot; Start HashMap",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "TBA",
+    "HashMap (cont.)",
     // wk 13
-    "HashMap (cont.): Smarter ChatBot",
-    "Files; String parsing",
+    "Smarter chatbot; string parsing",
+    "Files",
     "Lab 10",
-    "Files: Finish TreeFile class",
+    "Files (cont.)",
     // wk 14
     "Start complexity: Linear search",
     "Binary search",
