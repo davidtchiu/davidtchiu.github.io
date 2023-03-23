@@ -2,7 +2,7 @@
 
 ### Lab: Credit Card Validation
 
-Many things across the world are associated with unique identifiers. Most credit cards have a unique 16-digit number. With the average number length being this long,  people often make mistakes when filling out a form. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) Back before the Internet and Web existed, how did our credit card readers immediately determine when a credit card number was entered in error? That is the topic of today's lab!
+Most credit cards carry a unique 16-digit number. With the length being this long,  people often make mistakes when filling out a form or giving it over the phone. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) Back before the Internet and Web existed, how did our credit card readers immediately determine when a credit card number was entered incorrectly? That is the topic of today's lab!
 
 
 
