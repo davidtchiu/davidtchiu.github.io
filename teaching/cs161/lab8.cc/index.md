@@ -21,7 +21,7 @@ The following file(s) have been provided for this homework.
 
 #### Validating Credit Cards (Luhn's Algorithm)
 
-Let's take a sec to understand that a 16-digit credit number actually represents two pieces of information. The first 15 digits is the "real" credit number, called the payload. The final digit of the credit card number is called the "checksum." To determine whether a given credit card number is valid, there's a slick algorithm that does some transformations on the payload and checksum. If the credit card number is valid, then the payload and checksum "matches" in some way.
+Let's take a sec to understand that a 16-digit credit number actually represents two pieces of information. The first 15 digits are the "real" credit number, called the *payload*. The final digit of the credit card number is called the *checksum*. To determine whether a given credit card number is valid, there's a slick algorithm that does some transformations on the payload to render it down to a single number, and then it checks it against the checksum. If the credit card number is valid, then the payload and checksum "matches" in pre-defined way.
 
 - Download the lab file, extract it, and open it up. For this project, you don't need to make any changes to the `Main` or the `GUI` class. 
 
