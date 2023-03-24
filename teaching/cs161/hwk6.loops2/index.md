@@ -116,7 +116,8 @@ Let's work on a couple methods that input arrays. The problems in this section c
     - You can always find the length of the string using: `stringName.length()`
     - To access a certain character of the string, use `stringName.charAt(pos)` where `pos` is the integer address of the character you seek.
     - A single character `c`, which is of `char` type, can be compared to another character using something like, `if (c == 'A')`
-    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character is a vowel. Beware of upper vs. lower case. (Yes this method should work for both cases.)
+    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char` data type) is a vowel. Beware of upper vs. lower case. (Yes this method should work for both cases.)
+    - Finally, beware as always of integer divide!
 
     ```java
     AdvancedLoops loopie = new AdvancedLoops();
@@ -171,7 +172,7 @@ If you feel like you've got a good grasp on this stuff, and want a real challeng
       > 7
       ```
 
-- **(Arrays + Nested Loops)** Write a method called `vertBarGraph()` which does the same as above, but prints a vertical bar graph. This method can be quite challenging. Give it your best shot! Here's an example of what it does.
+- **(Arrays + Nested Loops)** Write a method called `vertBarGraph()` which  prints a vertical bar graph whose lengths are given in the array. This method can be somewhat challenging, because you have to print the bar chart top-down. Give it your best shot! Here's an example of what it does.
 
   ```java
   AdvancedLoops loopie = new AdvancedLoops();
