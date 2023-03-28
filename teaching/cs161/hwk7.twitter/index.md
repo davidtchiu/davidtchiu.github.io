@@ -121,7 +121,7 @@ Do not attempt this assignment without thorough understanding of the String meth
 
 - Write a default constructor that initializes the fields.
 
-- Write a method `reset()` that will clear all the stats accumulated. The `history` of hashtags must also be cleared.
+- Write a method `reset()` that will clear all the stats accumulated. The `history` of hashtags must also be cleared (that is, do not instantiate a new empty ArrayList in its stead)
 
 - Write an `isHashtag()` method that takes a single term (not a entire tweet) as argument, and returns whether it is a hashtag. A term is a hashtag if the first letter is a `#` sign, and excluding the `#` sign, the term is at least one letter long. This method does not modify any fields.
 
@@ -147,7 +147,7 @@ Do not attempt this assignment without thorough understanding of the String meth
   History (3): #chop #hack #loggerup
   ```
 
-- Now write a class called `TweetStats` and create the `public static void main(String[] args)` method. Inside this method, you should first instantiate a `TweetProcessor` object. Then use a `Scanner` to accept tweets from the user on the Terminal. For each tweet that your program obtains from the user, you'll _process_ (i.e., by calling `processTweet()`) it using the `TweetProcessor`. Continuously prompt the user for another tweet (just like we saw with ChatBot during lecture.)
+- Now write a class called `TweetStats` and create the `public static void main(String[] args)` method. Inside this method, you should first instantiate a `TweetProcessor` object. Then use a `Scanner` to accept tweets from the user on the Terminal. For each tweet that your program obtains from the user, you'll _process_ (i.e., by calling `processTweet(..)`) it using the `TweetProcessor`. Continuously prompt the user for another tweet (just like we saw with ChatBot during lecture.)
 
   There are two special commands you must listen for on the command line.
 
@@ -173,7 +173,7 @@ Do not attempt this assignment without thorough understanding of the String meth
   > Characters per tweet: 25.0
   > Hashtags: 4
   > Mentions: 1
-  > History (2): #hack #chop
+  > History (2): #chop #hack
 
   Enter a tweet (.status or .quit): The Lady Logs vie for the D3 championship! #LoggerUp @univpugetsound
 
@@ -185,7 +185,7 @@ Do not attempt this assignment without thorough understanding of the String meth
   > Characters per tweet: 57.25
   > Hashtags: 6
   > Mentions: 4
-  > History (3): #hack #chop #loggerup
+  > History (3): #chop #hack #loggerup
 
   Enter a tweet (.status or .quit): I like sandwiches
 
@@ -195,7 +195,7 @@ Do not attempt this assignment without thorough understanding of the String meth
   > Characters per tweet: 49.2
   > Hashtags: 6
   > Mentions: 4
-  > History (3): #hack #chop #loggerup
+  > History (3): #chop #hack #loggerup
   ```
 
 <!-- - Now write a class called `TweetStats` and create the `main()` method. I've input some tweets in there and print out the stats.
