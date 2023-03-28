@@ -66,6 +66,10 @@ line
 
 Notice that, after the `line.replace("Ishmael", "David")` was called, it returned the expected result (`"Call me David"`). However, when we check the contents of line, it still stores `"Call me Ishmael"`. Similarly, the `line.substring(5,7)` call returns the expected substring, but line is still untouched. -->
 
+#### Useful APIs
+Before you get started, you'll want to have the ArrayList API and the String API in front of you. You can find links to both on our canvas page.
+
+
 #### Preliminary: String's `split()` Method
 
 An important `String` method called `split()` deserves additional attention. It is used to chop up a given String (using some separator, called a _delimiter_, into individual pieces, storing those individual pieces in an array (not ArrayList!) and returning that array.
