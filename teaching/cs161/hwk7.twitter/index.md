@@ -98,24 +98,30 @@ Ishmael
 
 The String variable `post` is split up by space (`" "` was input as the delimiter). The split method stores all the split-up chunks into a string array, and returns this array. The `String[] terms` variable holds this array, and we are able to traverse through its contents as usual.
 
-You don't need to turn this in, but before you move on, see if you can do the following exercise:
+#### Preliminary II: String Comparison
 
-- Say you have a string called roster, which stores a list of names of Professors as one long string like this: `David Chiu, Adam Smith, Brad Richards, America Chambers`. Each Professor's name is separated by a comma in the String. Write a method `makeUserName` that accepts roster as input, and prints each person's username on a separate line. A username is constructed using the first letter of first name appended with the last name. The entire username must be lower case. If done correctly, this method should print:
+At a certain point in this assignment, you'll need to determine whether one string comes alphabetically before or after another string. To find out, you can use the string's `compareTo(String s)` method. This method returns a negative value if the current string comes before the input string. It returns 0 if the strings are equal. Finally, it returns a positive value if the current string comes after the input string.
 
-```
-dchiu
-asmith
-brichards
-achambers
+```java
+String t1 = "zebra";
+String t2 = "alligator";
+
+if (t1.compareTo(t2) < 0) {
+  // this won't fire since alligator comes 
+  // alphabetically before zebra
+}
+else {
+  // this will fire
+}
 ```
 
 #### Program Requirements
 
-Do not attempt this assignment without thorough understanding of the String methods in its API. Create a new project in BlueJ named `TweetProcessor`. This class allows users to input tweets, and it will generate some useful statistics given those tweets. It also maintains an ArrayList of the most recently seen hashtags. We'll refer to this list as the history.
+Do not attempt this assignment without thorough understanding of the String methods in its API. Create a new project in BlueJ named `TweetProcessor`. This class allows users to input tweets, and it will generate some useful statistics given those tweets. It also maintains an `ArrayList` of the most recently seen hashtags. We'll refer to this list as the `history`.
 
 - Write a default constructor that initializes the fields.
 
-- Write a method `reset()` that will clear all the stats accumulated. The history of hashtags must also be cleared.
+- Write a method `reset()` that will clear all the stats accumulated. The `history` of hashtags must also be cleared.
 
 - Write an `isHashtag()` method that takes a single term (not a entire tweet) as argument, and returns whether it is a hashtag. A term is a hashtag if the first letter is a `#` sign, and excluding the `#` sign, the term is at least one letter long. This method does not modify any fields.
 
@@ -125,7 +131,10 @@ Do not attempt this assignment without thorough understanding of the String meth
 
   - Split the tweet up into an array of substrings, using whitespace as your delimiter. Step through every term in the tweet and update the counts required for `toString()` (see code example).
 
-  - When you come across a `#hashtag`, you need to update the *history* as follows. First, the history should not contain any duplicates (i.e., every time you come across one, you need to see whether it already exists in your ArrayList, and add it in only if it's new!). You should ignore case, so if `#ups` is in the history, then `#UPS` should not be added.
+  - When you come across a `#hashtag`, you need to update the *history* as follows. First, the history should not contain any duplicates (i.e., every time you come across one, you need to see whether it already exists in your `ArrayList`, and add it in only if it's never been seen!). You should ignore case, so if `#ups` is in the history, then `#UPS` should not be added. Finally, any new hashtag should be added in **alphabetical order** into the list.
+
+    - This is a reminder that ArrayLists has two `add(..)` methods. One that always adds a new element to the tail of the list, and one that lets you add an element to an arbitrary location.
+
 
 - Write a method called `toString()` that will return a string containing the number of tweets, number of hashtags, number of mentions, and the number of terms processed (hashtags and mentions also count as terms). Additionally, you should report the number of characters (which includes spaces) and the average number of characters per tweet. Lastly, it reports the history of observed `#hashtag`s. You must print in this format: each #hashtag must be separated by a space and printed on the same line. This method should print `(no hashtags found)` if none has been observed. For instance, when you print what this method returns, you might get something that looks like the following:
 
@@ -135,7 +144,7 @@ Do not attempt this assignment without thorough understanding of the String meth
   Characters per tweet: 49.2
   Hashtags: 6
   Mentions: 4
-  History (3): #hack #chop #loggerup
+  History (3): #chop #hack #loggerup
   ```
 
 - Now write a class called `TweetStats` and create the `public static void main(String[] args)` method. Inside this method, you should first instantiate a `TweetProcessor` object. Then use a `Scanner` to accept tweets from the user on the Terminal. For each tweet that your program obtains from the user, you'll _process_ (i.e., by calling `processTweet()`) it using the `TweetProcessor`. Continuously prompt the user for another tweet (just like we saw with ChatBot during lecture.)
@@ -232,7 +241,7 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 90 pts.
+This assignment will be graded out of a total of 85 pts.
 
     [2pts]  Appropriate constructor(s) have been implemented.
 
@@ -241,25 +250,26 @@ This assignment will be graded out of a total of 90 pts.
     [10pts] isHashtag() and isMention() have been implemented using
             proper calls to String methods.
 
+    [20pts] Your ArrayList of hashtags is alphabetized.
+
+    [5pts]  No duplicate hashtags should be in your ArrayList.
+            (Ignore case)
+
     [10pts] toString() is properly implemented.
 
-    [30pts] processTweet successfully implemented to tokenize
+    [20pts] processTweet() successfully implemented to tokenize
             tweet using split() and update the stats accordingly.
 
-    [10pts] processTweet manages an ArrayList of hashtags. A new
-            hashtag is only added when it doesn't already exist
-            (ignore case).
-
-    [15pts] The main() method in TweetStat continuously accepts
+    [10pts] The main() method in TweetStat continuously accepts
             user input in the form of a tweet, and it processes
             each one as soon as it's input. The only exception is
             when .quit is entered, which terminates the loop/program
             and prints out the stats of all the tweets that were
             input.
 
-    [5pts] You re-use code whenever possible.
+    [3pts] You re-use code whenever possible.
 
-    [5pts] You provide Javadocs style comments for any new methods
+    [2pts] You provide Javadocs style comments for any new methods
            implemented. You include sufficient inline
            comments to explain the logic of your methods.
 ```

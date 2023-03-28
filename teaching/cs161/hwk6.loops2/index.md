@@ -116,7 +116,7 @@ Let's work on a couple methods that input arrays. The problems in this section c
     - You can always find the length of the string using: `stringName.length()`
     - To access a certain character of the string, use `stringName.charAt(pos)` where `pos` is the integer address of the character you seek.
     - A single character `c`, which is of `char` type, can be compared to another character using something like, `if (c == 'A')`
-    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char` data type) is a vowel. Beware of upper vs. lower case. (Yes this method should work for both cases.)
+    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char` data type) is a vowel. Beware of upper vs. lower case. (Yes this method should work for both cases.) Assume that `y` is not a vowel. 
     - Finally, beware as always of integer divide!
 
     ```java

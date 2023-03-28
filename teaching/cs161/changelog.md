@@ -1,4 +1,5 @@
 #### TODO
+- Need one more nested loop array problem in Hwk 6. Not super challenging though.
 - Consider doing exams on Fridays.
 - Hwk 1 can be due 2 days sooner now.
 - Put starter code on github.
@@ -9,6 +10,7 @@
 - Hwk 4 lot cooler if I introduced an Arm class or something…
 
 #### Change Log
+- **Spring 2023**: Replaced combo with Luhn's in Lab 8.
 - **Spring 2023**: Added runningSum and collatz to Hwk 5. Removed strrepeat()
 - **Spring 2023**: Replaced Hwk 2 with Alarm Clock (more conditionals)
 - **Spring 2023**: Added new Lab 6: Diamonds (abstraction)
