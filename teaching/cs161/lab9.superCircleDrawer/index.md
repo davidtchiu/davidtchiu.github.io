@@ -66,7 +66,7 @@ I've created a new project to get you started. Please download and modify `Super
 - A method called `replaceLargest(..)` that takes as argument a circle object. This method identifies the largest circle in the collection and replaces it with the given circle in its place. In the event of a tie, you are to only replace any one of them. You are reminded to re-use any relevant methods to minimize code duplication.
 
 
-- A method called `drawExtremes()` that takes no arguments and draws only the largest and smallest circles in the collection (all others should be hidden). In the case of a tie in either extreme case, you must draw all of the ones that are tied. As a hint, I would create a local ArrayList to store circles that should be drawn. Write some code to add the biggest one(s) and the smallest one(s) to this list.
+- A method called `drawExtremes()` that takes no arguments and draws only the largest and smallest circles in the collection (all others should be hidden). In the case of a tie in either extreme case, you must draw all of the ones that are tied. As a hint, I would start by find the biggest and smallest diameters of the circles in your collection. Then I would create a local ArrayList to store circles that should be drawn. Add the circles whose diameters match either the biggest or smallest diameters that you found previously.
 
 
 <!-- #### Optional Extensions
