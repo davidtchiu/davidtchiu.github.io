@@ -11,7 +11,7 @@ Professor Pacman has requested that you implement a new and improved version of 
 #### Student Outcomes
 
 - To manage objects with `ArrayList`s
-
+<!-- 
 #### Working with Partners (Please Read)
 
 You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
@@ -26,13 +26,13 @@ Here are your assigned partners for today's lab.
 [Brown, A, Murphy, C, Jones, B]
 [Grey, E, Jones, S]
 [Culpepper, A, Rodriguez, C]
-```
+``` -->
 
 #### Required Files
 
 The following file(s) have been provided for this homework.
 
-- [Lab8_SuperCircleDrawer.zip](Lab8_SuperCircleDrawer.zip)
+- [Lab9_SuperCircleDrawer.zip](Lab9_SuperCircleDrawer.zip)
 
 #### Helpful APIs
 
@@ -40,7 +40,6 @@ The API handout that you'll want to have in front of you:
 
 - [ArrayList](../api/ArrayListAPI.pdf)
 - [Circle](../api/CircleAPI.pdf)
-- [Random](../api/RandomAPI.pdf)
 
 #### Instructions
 
@@ -54,27 +53,30 @@ I've created a new project to get you started. Please download and modify `Super
 
 - An `eraseCircles()` method that takes no arguments, and erases all of the circles in the collection from the canvas. These circles should not be removed from the list.
 
-- Write a second `eraseCircles(..)` method that inputs a diameter (which is an integer). This method should erase all circles from the canvas that are smaller in size than the given diameter.
+- Write a second `eraseCircles(..)` method that inputs a diameter. This method should erase all circles from the canvas that are smaller in size than the given diameter.
 
 - It's be nice to make the circles re-appear after you erased them. Write a `drawCircles()` method that takes no arguments, and causes all of the circles in the ArrayList collection to be drawn on the canvas.
 
 - A method called `removeSmallest()` that takes no inputs. This method identifies the smallest circle in the collection and removes it from the list (don't forget to erase it from the canvas first!). In the case of a tie, just remove either of them.
 
-- A method called `replace(..)` that takes two Circle inputs, `c1` and `c2`. This method should search for `c1` in the collection, and replace it with the circle `c2` in its place. Don't forget to erase `c1` off the canvas before replacing it! If `c1` doesn't exist, then no action shall be taken.
+- A method called `replace(..)` that takes two Circle inputs, `c1` and `c2`. This method should search for `c1` in the existing collection, and replace it with the circle `c2` in its place. Don't forget to erase `c1` off the canvas before replacing it! If `c1` doesn't exist, then no action shall be taken.
 
-  - You will want to look into exploiting the `indexOf(..)` and the `set(..)` methods for `ArrayLists`. If you do this right, you won't even have to write a single loop.
+  - You will want to exploit the `indexOf(..)` and the `set(..)` methods for `ArrayLists`. If you do this right, you won't even have to write a single loop.
 
 - A method called `replaceLargest(..)` that takes as argument a circle object. This method identifies the largest circle in the collection and replaces it with the given circle in its place. In the event of a tie, you are to only replace any one of them. You are reminded to re-use any relevant methods to minimize code duplication.
 
-#### Optional Extensions
+
+- A method called `drawExtremes()` that takes no arguments and draws only the largest and smallest circles in the collection (all others should be hidden). In the case of a tie in either extreme case, you must draw all of the ones that are tied. 
+
+
+<!-- #### Optional Extensions
 
 Got some extra time? Do the following extensions:
 
 - `drawLargeCircles()` method will draw all Circles in the collection that have a diameter greater than 30, and hide all others.
 
-- A method called `doubleDiameters()` that takes no arguments and causes all circles in the collection to double in size.
+- A method called `doubleDiameters()` that takes no arguments and causes all circles in the collection to double in size. -->
 
-- A method called `drawExtremeCircles()` that takes no arguments and causes only the largest and smallest circles in the collection to be drawn. In the case of a tie in either case, it doesn't matter which one of the circles you draw, but you should only draw one. All other circles should be hidden.
 
 #### Grading
 
