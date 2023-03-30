@@ -11,22 +11,8 @@ Professor Pacman has requested that you implement a new and improved version of 
 #### Student Outcomes
 
 - To manage objects with `ArrayList`s
-<!-- 
-#### Working with Partners (Please Read)
 
-You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
 
-Here are your assigned partners for today's lab.
-
-```
-[Beardsley, M, Miller, D]
-[Strash, K, Murayama, E]
-[Wissing, A, Camblin, F]
-[Roppolo, G, Steller, L]
-[Brown, A, Murphy, C, Jones, B]
-[Grey, E, Jones, S]
-[Culpepper, A, Rodriguez, C]
-``` -->
 
 #### Required Files
 
