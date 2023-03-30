@@ -44,11 +44,11 @@ Using Java monitors and support of condition variables, simulate a one lane brid
 
 #### `BridgeInterface` 
 
-You are primarily required to write the `OneLaneBridge` class, which must `implement` the `BridgeInterface`. The `BridgeInterface` requires that you implement just the following methods:
+You are primarily required to write the `OneLaneBridge` class, which must `implement` the `BridgeInterface`. The `BridgeInterface` requires that you implement just the following two methods:
 
-- 
+- `void arrive(Car car) throws InterruptedException`: 
 
-- 
+- `void exit(Car car) throws InterruptedException`: 
 
 
 
