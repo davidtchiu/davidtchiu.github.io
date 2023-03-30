@@ -45,11 +45,13 @@ I've created a new project to get you started. Please download and modify `Super
 
 - A method called `removeSmallest()` that takes no inputs. This method identifies the smallest circle in the collection and removes it from the list (don't forget to erase it from the canvas first!). In the case of a tie, just remove either of them.
 
-- A method called `replace(..)` that takes two Circle inputs, `c1` and `c2`. This method should search for `c1` in the existing collection, and replace it with the circle `c2` in its place. Don't forget to erase `c1` off the canvas before replacing it! If `c1` doesn't exist, then no action shall be taken.
+- A method called `replace(..)` that takes two Circle inputs, `c1` and `c2`. This method should search for `c1` in the existing collection, and replace it with the circle `c2` in its place. Don't forget to erase `c1` off the canvas before replacing it! `c2` should be made visible. If `c1` doesn't exist, then no action shall be taken.
 
   - You will want to exploit the `indexOf(..)` and the `set(..)` methods for `ArrayLists`. If you do this right, you won't even have to write a single loop.
 
-- A method called `replaceLargest(..)` that takes as argument a circle object. This method identifies the largest circle in the collection and replaces it with the given circle in its place. In the event of a tie, you are to only replace any one of them. You are reminded to re-use any relevant methods to minimize code duplication.
+  - To test, I would create two circles on the BlueJ workbench. Color them differently, and add one of them to the collection. Then you can call `replace()` given the new circle. This should cause the new one to be drawn, and the old one to be removed.
+
+- A method called `replaceLargest(..)` that takes as argument a circle object. This method identifies the largest circle in the collection and replaces it with the given circle in its place. In the event of a tie, you are to only replace any one of them. You are reminded to re-use the previous method to minimize code duplication. 
 
 
 - A method called `drawExtremes()` that takes no arguments and draws only the largest and smallest circles in the collection (all others should be hidden). In the case of a tie in either extreme case, you must draw all of the ones that are tied. As a hint, I would start by find the biggest and smallest diameters of the circles in your collection by iterating through all your circles. Then run through your circles again, and test each one to see if it matches one of those extreme diameters.
