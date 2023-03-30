@@ -33,7 +33,7 @@ I've created a new project to get you started. Please download and modify `Super
 
 - It should contain an `ArrayList` collection of `Circles`. Define an instance variable for the `ArrayList` that will be used to hold all of the `Circle` objects.
 
-- A constructor that inputs an integer argument `numCircles`, the number of `Circles` to add to the initial collection. Then instantiate the `ArrayList` and populate it with `numCircles` circles. Each circle you create and insert into the collection should have a random diameter (from 1 to 100) and a random x and y position. The coordinates should be within the dimensions of the canvas, which is 800 (Width) by 600 (Height). Note the new `moveTo(..)` method that has been provided to circles can be used here.
+- A constructor that inputs an integer argument `numCircles`, the number of `Circles` to add to the initial collection. Then instantiate the `ArrayList` and populate it with `numCircles` circles. Each circle you create and insert into the collection should have a random diameter (from 1 to 100) and a random x and y position. The coordinates should be within the dimensions of the canvas, which is 800 (Width) by 600 (Height). Go ahead and make the circle **visible** too. Note the new `moveTo(..)` method that has been provided to circles can be used here. 
 
 - An `addCircle(..)` method that inputs a single `Circle` object, adds the given circle to the collection, and draws it on the canvas. You do not need to _create_ any Circles in this method. Simply assume that a Circle object has already been created, and is being passed to this method.
 

@@ -46,9 +46,9 @@ Using Java monitors and support of condition variables, simulate a one lane brid
 
 You are primarily required to write the `OneLaneBridge` class, which must `implement` the `BridgeInterface`. The `BridgeInterface` requires that you implement just the following two methods:
 
-- `void arrive(Car car) throws InterruptedException`: 
+- `void arrive(Car car) throws InterruptedException`: This method is called by a car when it wants to enter the bridge. This method has to determine whether the thread which called it must wait, or is allowed to proceed on to the bridge. Specifically, a car can't enter the bridge when there are too many cars on it or if it's going against the current flow of traffic.
 
-- `void exit(Car car) throws InterruptedException`: 
+- `void exit(Car car) throws InterruptedException`: This method is called by a car when it wants to exit the bridge. But any car can call this method at any time, we have to put in some "guard rails" to make sure that a car on the bridge can't just randomly disappear off the bridge when there are still cars in front of it. When a car leaves, it should also indicate that it's possible for other cars (traveling in the same direction) to get on the bridge.
 
 
 
