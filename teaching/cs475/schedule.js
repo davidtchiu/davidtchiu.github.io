@@ -147,22 +147,21 @@ let days = {
     // wk 11
     "Sync: monitors and condition variables",
     "Sync: synchronization in Java",
-    "Start Deadlocks",
+    "Start deadlock conditions",
     // wk 12
-    "DL: prevention",
+    "DL: RAGs, detection and recovery",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
     "DL: Banker's algorithm",
-    "DL: RAGs, detection and recovery",
     "Memory Management: virtual addressing",
-    // wk 14
     "MM: memory partitioning",
+    // wk 14
     "MM: segmentation",
     "MM: paging",
+    "MM: multi-level paging",
     // "MM: translation Lookaside Buffer (TLB)",
     // wk 15
-    // "MM: multi-level paging",
     "Start Virtual Memory",
     "VM: Replacement policies: FIFO, LRU",
     "VM: Clock",
