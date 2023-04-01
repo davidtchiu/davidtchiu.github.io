@@ -226,19 +226,20 @@ All cars have crossed!!
 #### Grading
 
 ```
-This assignment will be graded out of 55 points:
-[5pt] Threads are correctly spawned and reaped. Semaphore creation and
-       removal are correctly managed.
+This assignment will be graded out of 80 points:
+[5pt] Threads are correctly spawned and joined.
 
-[28pt] Proper synchronization is implemented
-       (e.g., customers cannot leave before bartender receives payment).
+[5pt] Captures bad input.
 
-[15pt] Your solution is free from deadlocks and starvation. All customers
-       eventually get served and leave.
+[25pt] Correct implementation of arrive(). Cars must wait if there are
+too many currently on the bridghe, or if the bridge's direction flow is
+opposite of the car's.
 
-[2pt] Your program observes good style and commenting.
+[25pt] Correct implementation of exit(). Cars are removed from the 
+bridge in the order they arrived.
 
-[5pt] Your program is free of memory leaks and dangling pointers.
+[20pt] Your solution is free from deadlocks and starvation. All cars
+       eventually get to go on the bridge and exit.
 ```
 
 #### Submitting Your Assignment
