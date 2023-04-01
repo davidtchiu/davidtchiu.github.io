@@ -64,13 +64,13 @@ Here's how to interpret the following outputs. Each time a car is allowed to ent
 
 To ensure your output is correct, look for these things:
 
-- First, note that a car is represented by a tuple `<carID,dir,time>`, the car's ID, the direction it's moving, and the time it was allowed to enter the bridge.
+- First, note that a car is represented by a tuple `<carID,dir,time>`, the car's ID, the direction it's moving, and the time it was allowed to enter the bridge. Recall that cars with even IDs are moving in direction `true`.
 
 - At any time, all cars' directions must match the bridge's direction.
 
-- The bridge's direction should not change until the bridge empties out. That should be followed by another block of outputs whose directions match the new direction, and so on.
+- The bridge's direction should not change until the bridge empties out. That should be followed by another block of outputs whose directions match the new direction.
 
-- Finally, take a look at each car's entry time (last entry in a car's tuple). The cars should always be ordered by its entry time. The cars should also exit the bridge in the order of its entry time. That is, two cars $$c_i$$ and $$c_j$$ which enter the bridge at times $$t_i$$ and $$t_j$$ respectively, must exit the bridge in order $$(c_i,c_j) : i < j \implies t_i < t_j$$.
+- Finally, take a look at each car's entry time (last entry in a car's tuple). The cars should always be ordered by its entry time. The cars should also exit the bridge in the order of its entry time. That is, two cars $$c_i$$ and $$c_j$$ which enter the bridge at times $$t_i$$ and $$t_j$$ respectively, such that $$t_i < t_j$$, must exit the bridge in order $$c_i, c_j ~ (i < j \implies t_i < t_j)$$.
 
 #### Example Output for 1 car
 ```
