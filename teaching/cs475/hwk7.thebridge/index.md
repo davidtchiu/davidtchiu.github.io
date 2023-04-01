@@ -16,7 +16,7 @@ Your task is to write a Java program to solve the One Lane Bridge Problem, coord
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk7-thebar](https://github.com/davidtchiu/cs475-hwk7-thebar). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From  VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk7-thebridge](https://github.com/davidtchiu/cs475-hwk7-thebridge). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From  VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
 	```
 	git clone <your-github-url-for-this-project>
@@ -25,7 +25,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 #### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `thebridgeSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./thebridgeSol`. This is how your solution should behave when it's done.
+I have included a working solution of my program along with the starter code. The `.class` files are stored in the `Sol/` directory. You can simply navigate in there from the terminal and run `java BridgeRunner <bridge limit> <num cars>`. This is how your solution should behave when it's done.
 
 #### One Lane Bridge Problem
 
@@ -70,18 +70,37 @@ To ensure your output is correct, look for these things:
 
 - The bridge's direction should not change until the bridge empties out. That should be followed by another block of outputs whose directions match the new direction.
 
-- Finally, take a look at each car's entry time (last entry in a car's tuple). The cars should always be ordered by its entry time. The cars should also exit the bridge in the order of its entry time. That is, two cars $$c_i$$ and $$c_j$$ which enter the bridge at times $$t_i$$ and $$t_j$$ respectively, such that $$t_i < t_j$$, must exit the bridge in order $$c_i, c_j ~ (i < j \implies t_i < t_j)$$.
+- Finally, take a look at each car's entry time (last entry in a car's tuple). The cars should always be ordered by its entry time. The cars should also exit the bridge in the order of its entry time. That is, two cars $$c_i$$ and $$c_j$$ which enter the bridge at times $$t_i$$ and $$t_j$$ respectively, such that $$t_i < t_j$$, must exit the bridge in order $$c_i, c_j$$.
 
-#### Example Output for 1 car
+#### BridgeRunner Class
+This class contains `main()` and runs the simulator. It must input two integers from the command line, the number of cars that the bridge can hold simultaneously (bridge limit) and the number of cars (threads) in the simulation. If either of these values are not given, or if either is given to be negative, print a message and exit (see "bad input" output below).
+
+Your class then needs to create a `OneLaneBridge` object, and run the specified number of car threads. Make sure you pass your `OneLaneBridge` object when you construct each car. Print out the message `All cars have crossed!!` once all threads have joined.
+
+#### Example Output for Bad Input
 ```
+$ javac BridgeRunner.java
+$ java BridgeRunner
+Usage: javac BridgeRunner <bridge limit> <num cars>
+
+$ java BridgeRunner 0 5
+Error: bridge limit and/or num cars must be positive.
+```
+
+#### Example Output for 1 car, limit 3
+```
+$ javac BridgeRunner.java
+$ java BridgeRunner 3 1
 Bridge (dir=true): [<car=0,dir=true,t=0>]
 Bridge (dir=true): []
 All cars have crossed!!
 ```
 
-#### Example Output for 5 cars
+#### Example Output for 5 cars, limit 3
 
 ```
+$ javac BridgeRunner.java
+$ java BridgeRunner 3 5
 Bridge (dir=true): [<car=2,dir=true,t=0>]
 Bridge (dir=true): [<car=2,dir=true,t=0>, <car=4,dir=true,t=1>]
 Bridge (dir=true): [<car=4,dir=true,t=1>]
@@ -95,9 +114,11 @@ Bridge (dir=false): []
 All cars have crossed!!
 ```
 
-#### Example Output for 50 cars
+#### Example Output for 50 cars, limit 3
 
 ```
+$ javac BridgeRunner.java
+$ java BridgeRunner 3 50
 Bridge (dir=true): [<car=22,dir=true,t=0>]
 Bridge (dir=true): [<car=22,dir=true,t=0>, <car=18,dir=true,t=1>]
 Bridge (dir=true): [<car=22,dir=true,t=0>, <car=18,dir=true,t=1>, <car=2,dir=true,t=2>]
