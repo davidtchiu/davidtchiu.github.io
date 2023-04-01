@@ -234,7 +234,7 @@ let days = {
     "Start ArrayList",
     "More ArrayList",
     "Lab 9: Super Circle Drawer",
-    "Scanning for input: ChatBot",
+    "Wrapper classes; Accepting user input (Scanner)",
     // wk 12
     "Finish ChatBot; Start HashMap",
     "<strong><emph>Review</emph></strong>",
