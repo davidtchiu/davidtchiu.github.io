@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: One Lane Bridge (Synchronization)
+### Hwk: One Lane Bridge (Java Synchronization)
 
 In low-traffic areas, some bridges might only support one lane of thru traffic. This means that two-lane roads must merge down to just one lane before cars on either side can use the bridge. This is potentially dangerous if cars don't coordinate with each other on both sides. Thinking this through, a line of cars on one end of the bridge must determine which direction the bridge traffic is currently flowing. If cars from the other side are moving across, then all cars in the opposing direction must wait until the other side empties out. What's more, these one-lane bridges are usually pretty old and decrepit, so there may be load restrictions that need to be followed (no more than, say, five vehicles at a time). 
 
@@ -70,7 +70,7 @@ To ensure your output is correct, look for these things:
 
 - The bridge's direction should not change until the bridge empties out. That should be followed by another block of outputs whose directions match the new direction, and so on.
 
-- Finally, take a look at each car's entry time (last entry in a car's tuple). The cars should always be ordered by its entry time. The cars should also exit the bridge in the order of its entry time. That is, two cars $$c_i$$ and $$c_j$$ which enters the bridge at time $$t_i$$ and $$t_j$$ must exit the bridge in order $$(i,j) : i < j \implies t_i < t_j$$.
+- Finally, take a look at each car's entry time (last entry in a car's tuple). The cars should always be ordered by its entry time. The cars should also exit the bridge in the order of its entry time. That is, two cars $$c_i$$ and $$c_j$$ which enter the bridge at times $$t_i$$ and $$t_j$$ respectively, must exit the bridge in order $$(c_i,c_j) : i < j \implies t_i < t_j$$.
 
 #### Example Output for 1 car
 ```
