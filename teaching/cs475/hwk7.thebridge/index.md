@@ -48,7 +48,7 @@ I have provided you with the `Car` class. Let's take a look at what it does. Eac
 
 #### The `Bridge` Abstract Class and `OneLaneBridge`
 
-You are primarily required to write the `OneLaneBridge` class, which must `extend` the `Bridge` abstract class. `OneLaneBridge` requires that you implement just the following two methods:
+You are primarily required to write the `OneLaneBridge` class, which must `extends` the `Bridge` abstract class. `OneLaneBridge` requires that you implement just the following two methods:
 
 - `void arrive(Car car) throws InterruptedException`: This Bridge method is called by a car when the car wants to enter the bridge. This method has to determine whether the thread which called it must wait, or is allowed to proceed on to the bridge. Specifically, a car can't enter the bridge when there are too many cars on it or if it's going against the current flow of traffic.
 

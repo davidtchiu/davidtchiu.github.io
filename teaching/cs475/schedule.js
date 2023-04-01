@@ -55,12 +55,12 @@ let days = {
         url: "hwk6.hashmap/",
         due: "3/27/2023", // after break
       },
-      // {
-      //   name: "Hwk 7 (thebar)",
-      //   title: "Bartender Problem ",
-      //   url: "hwk7.thebar/",
-      //   due: "4/3/2023",
-      // },
+      {
+        name: "Hwk 7 (OneLaneBridge)",
+        title: "The One Lane Bridge ",
+        url: "hwk7.thebridge/",
+        due: "4/14/2023",
+      },
       // {
       //   name: "Hwk 8 (bankers)",
       //   title: "Banker's Algorithm",
