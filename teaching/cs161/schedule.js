@@ -77,12 +77,12 @@ let days = {
       //   url: "hwk7.pooled/",
       //   due: "4/19/2023",  // Wed
       // },
-      // {
-      //   name: "Final Hwk Prep",
-      //   title: "Final Homework Proposal (Optional)",
-      //   url: "hwkF.prep/",
-      //   due: "4/21/2022",  // Fri
-      // },
+      {
+        name: "Final Hwk Prop",
+        title: "Final Homework Proposal (Optional)",
+        url: "hwkF.prep/",
+        due: "4/14/2023",  // Fri
+      },
       // // {
       // //   name: "Final Hwk (alternate)",
       // //   title: "Pooled Testing",
