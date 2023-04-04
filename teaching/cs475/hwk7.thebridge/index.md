@@ -54,9 +54,9 @@ You are primarily required to write the `OneLaneBridge` class, which must `exten
 
 	- When the car is allowed to enter the bridge, use the car's `setEntryTime(currentTime)` method to set the entry time. Add the car to the bridge list. Then print the bridge list so we can see (and ensure) that there are no more than 3 cars on the bridge. Finally, increment `currentTime` by 1.
 
-- `void exit(Car car) throws InterruptedException`: This Bridge method is called by a car when the car wants to exit the bridge. But any car can call this method at any time, we have to put in some "guard rails" to make sure that a car on the bridge can't just randomly disappear off the bridge when there are still cars in front of it. When a car leaves, it could potentially allow other cars (traveling in the same direction) to get on the bridge.
+- `void exit(Car car) throws InterruptedException`: This Bridge method is called by a car when it wants to exit the bridge. But any car can call this method at any time, so we have to put in some "guard rails" to make sure that a car on the bridge can't just randomly disappear off the bridge when there are still cars in front of it. 
 
-	- When a car is allowed to leave the bridge, remove the car from the bridge list. Then print the bridge list so that we can see there's one fewer car (and the car that left had better been at the head of the list!). If the bridge is empty, the bridge should "flip directions" to let in all cars which are waiting to go. Do not change `currentTime` when exiting.
+	- When it's the car's turn to exit the bridge, remove the car from the list. Then print the bridge list so that we can see there's one fewer car (and the car that left had better been at the head of the list!). When a car leaves, signal to other cars that might be waiting to get on the bridge. Do not change `currentTime` when exiting.
 
 
 #### Outputs
@@ -226,19 +226,23 @@ All cars have crossed!!
 #### Grading
 
 ```
-This assignment will be graded out of 80 points:
+This assignment will be graded out of 75 points:
+
 [5pt] Threads are correctly spawned and joined.
 
 [5pt] Captures bad input.
 
 [25pt] Correct implementation of arrive(). Cars must wait if there are
-too many currently on the bridghe, or if the bridge's direction flow is
-opposite of the car's.
+too many currently on the bridge, or if the bridge's direction flow is
+opposite of the car's. 
 
-[25pt] Correct implementation of exit(). Cars are removed from the 
-bridge in the order they arrived.
+[5pt]  To ensure progress, if the bridge is empty, the car to 
+	     enter sets the current flow of direction.
 
-[20pt] Your solution is free from deadlocks and starvation. All cars
+[20pt] Correct implementation of exit(). Importantly, Cars are removed
+from the bridge in the order in which they arrived.
+
+[15pt] Your solution is free from deadlocks and starvation. All cars
        eventually get to go on the bridge and exit.
 ```
 
