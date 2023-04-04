@@ -3,11 +3,11 @@
 - Hwk 3: Don't give them a stack. It's confusing them. Give them a list.
 - Hwk 3: Do I need to talk about creating arrays of strings this early? Maybe save for Hwk 4.
 - Hwk 3: More hand-holding. For instance, tell them their recursive method should return 1 or 0 depending on whether something was found. Then use that value to determine if the current directory should be printed.
-- Hwk TheBar - Let any number of threads into the bar; Need to process them in order.
-- Go back to NULL out dangling pointers in solutions and examples
 - Move off of zyBooks. Use diveintosystems instead for C guide.
 
 # Change Log
+- **Spring'23** Replaced Hwk 7 thebar (C) with thebridge (Java)
+- **Spring'23** Added Hwk 6 ts_hashmap (locks)
 - **Spring'23** Added a short valgrind tutorial to Hwk 3.
 - **Spring'23** Modified Hwk 4 to remove .dsh_motd
 - **Spring'23** Modified Hwk 3 to cover string allocation, 2D array allocation; struct allocation; added more string examples; and assignment now more challenging ls2 (syscalls) instead of rpncalc (no syscalls)
