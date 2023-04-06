@@ -68,7 +68,7 @@ let days = {
       //   due: "4/26/2023",
       // },
       {
-        name: "Bonus",
+        name: "Extra Credit",
         title: "Bonus Tech Report",
         url: "hwkB.report/",
         due: "5/3/2023",

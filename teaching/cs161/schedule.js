@@ -251,10 +251,10 @@ let days = {
     "Lab 11",
     "Selection sort",
     // wk 15
+    "<strong><emph>Cancelled</emph></strong>",
     "Bubble Sort",
+    "Lab 12",
     "More complexity: list reversal, palindrome",
-    "Hwk Lab",
-    "public, private, final",
     // wk 16
     "static, main(); IntelliJ IDE",
     // "enum; ",

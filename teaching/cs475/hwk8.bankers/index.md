@@ -4,7 +4,21 @@
 
 #### Student Outcomes
 
-- To learn and implement Banker's algorithm for deadlock avoidance
+- To learn and implement Banker's algorithm for deadlock avoidance.
+
+#### Work in Groups
+
+You are required  to work in groups for this assignment. Please write in your names in the given `README.md` file as part of the project repo. Here are your assigned groups:
+
+```
+Abram R, Sasha S, Jaykob W
+Aidan T, Brian M,  Henry B
+Caleb P, Emilee O, Jonah K
+Langston A, Lucas G, Matthew A
+Matthew Z, Nick P, Owen R-L
+Jared V, Georgia K, Mitch H
+Svetlana S, Zale F, Penny R
+```
 
 #### Starter Code
 
