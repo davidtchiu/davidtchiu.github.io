@@ -1,4 +1,5 @@
 # TODO
+- Let them pair up on a few homework assignments
 - Give them (much) more time for Hwk 3. Maybe make it due on Wednesday or Friday.
 - Hwk 3: Don't give them a stack. It's confusing them. Give them a list.
 - Hwk 3: Do I need to talk about creating arrays of strings this early? Maybe save for Hwk 4.
