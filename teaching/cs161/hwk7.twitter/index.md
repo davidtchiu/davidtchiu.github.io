@@ -146,7 +146,7 @@ Do not attempt this assignment without thorough understanding of the String meth
     - This is a reminder that ArrayLists has two `add(..)` methods. One that always adds a new element to the tail of the list, and one that lets you add an element to an arbitrary location.
 
 
-- Write a method called `toString()` that will return a string containing the number of tweets, number of hashtags, number of mentions, and the number of terms processed (hashtags and mentions also count as terms). Additionally, you should report the number of characters (which includes spaces) and the average number of characters per tweet. Lastly, it reports the history of observed `#hashtag`s. You must print in this format: each #hashtag must be separated by a space and printed on the same line. This method should print `(no hashtags found)` if none has been observed. For instance, when you print what this method returns, you might get something that looks like the following:
+- Write a method called `toString()` that will return a string containing the number of tweets, number of hashtags, number of mentions, and the number of terms processed (hashtags and mentions also count as terms). Additionally, you should report the number of characters (which includes spaces) and the average number of characters per tweet. Lastly, it reports the history of observed `#hashtag`s. You must display in this format: each #hashtag must be separated by a space and printed on the same line. This method should display `(no hashtags found)` if none has been observed. For instance, when you print what this method returns, you might get something that looks like the following:
 
   ```
   Tweets: 5
