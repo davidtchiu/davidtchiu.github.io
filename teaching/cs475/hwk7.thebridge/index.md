@@ -32,7 +32,7 @@ I have included a working solution of my program along with the starter code. Th
 Using Java monitors and support of condition variables, simulate a one lane bridge with the following synchronization correctness properties. Do not use Java `Semaphore`s or `ReentrantLock`s to solve this problem. This problem can be solved using `synchronized` blocks, and the `wait()/notify()/notifyAll()` semantics of condition variables.
 
 - **Bridge Properties**
-	- The bridge can hold no more than 3 cars at a time.
+	- The bridge can hold no more than `<bridge limit>` cars at a time.
   - The bridge stores a `boolean` variable, `direction`, that indicates the direction in which bridge traffic is currently allowed to flow.
 
 - **Car Properties**
