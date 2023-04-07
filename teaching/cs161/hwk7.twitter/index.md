@@ -72,7 +72,7 @@ Before you get started, you'll want to have the ArrayList API and the String API
 
 #### Preliminary: String's `split()` Method
 
-An important `String` method called `split()` deserves additional attention. It is used to chop up a given String (using some separator, called a _delimiter_, into individual pieces, storing those individual pieces in an array (not ArrayList!) and returning that array.
+The  `String` API provides a useful method that you'll be using called called `split()`. It is used to chop up a given String using some separator (called a _delimiter_) into smaller pieces, storing those individual pieces in an array (not ArrayList!) and returning that array to the caller.
 
 <!-- Here is its signature and description: -->
 
@@ -80,7 +80,7 @@ An important `String` method called `split()` deserves additional attention. It 
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | `String[] split(String delimiter)` | Splits this string around matches of the given delimiter, and returns an array containing those split-pieces | -->
 
-To see how `split()` works, let's once again open up BlueJ's codepad. Type the following into the codepad, line-by-line.
+To see how `split()` works, open up BlueJ's codepad. Type the following into the codepad, line-by-line.
 
 ```java
 String post = "Call me Ishmael";
@@ -88,9 +88,9 @@ String post = "Call me Ishmael";
 // split the post by space
 String[] terms = post.split(" ");
 
-// print out each term
-for (String term : terms) {
-    System.out.println(term);
+// print out each term, t
+for (String t : terms) {
+    System.out.println(t);
 }
 ```
 
@@ -100,24 +100,30 @@ me
 Ishmael
 ```
 
-The String variable `post` is split up by space (`" "` was input as the delimiter). The split method stores all the split-up chunks into a string array, and returns this array. The `String[] terms` variable holds this array, and we are able to traverse through its contents as usual.
+The String variable `post` is split up by space (`" "` was input as the delimiter). The split method stores all the split-up chunks into a string array, and returns this array. The `String[] terms` variable holds this array, and we are able to traverse through its contents as usual. You'll be using the `split()` method to break up a Tweet in this assignment.
 
 #### Preliminary II: String Comparison
 
-At a certain point in this assignment, you'll need to determine whether one string comes alphabetically before or after another string. To find out, you can use the string's `compareTo(String s)` method. This method returns a negative value if the current string comes before the input string. It returns 0 if the strings are equal. Finally, it returns a positive value if the current string comes after the input string.
+At a certain point in this assignment, you'll need to determine whether one string comes alphabetically (actually, lexicographically) before or after another string. To find out, you can use the `compareTo(String s)` method, which is also provided in the `String` API. This method returns a negative value if the current string comes *before* the input string. It returns 0 if the two strings are equal. Finally, it returns a positive value if the current string comes *after* the input string.
 
 ```java
 String t1 = "zebra";
 String t2 = "alligator";
 
-if (t1.compareTo(t2) < 0) {
-  // this won't fire since alligator comes 
-  // alphabetically before zebra
+if (t1.compareTo(t2) == 0) {
+  // this won't fire since "alligator" is 
+  // clearly not equal to "zebra"
+}
+else if (t1.compareTo(t2) < 0) {
+  // this won't fire since "alligator" comes 
+  // lexicographically before "zebra"
 }
 else {
   // this will fire
 }
 ```
+You will use this `compareTo(...)` method to insert #hashtags in lexicographical ordering in a list for one of the later methods you have to write.
+
 
 #### Program Requirements
 
@@ -127,13 +133,13 @@ Do not attempt this assignment without thorough understanding of the String meth
 
 - Write a method `reset()` that will clear all the stats accumulated. The `history` of hashtags must also be cleared (that is, do not instantiate a new empty ArrayList in its stead)
 
-- Write an `isHashtag()` method that takes a single term (not a entire tweet) as argument, and returns whether it is a hashtag. A term is a hashtag if the first letter is a `#` sign, and excluding the `#` sign, the term is at least one letter long. This method does not modify any fields.
+- Write an `isHashtag()` method that takes a single term (not a entire tweet) as argument, and returns whether it is a hashtag. A term is a hashtag if the first letter is a `#` symbol, and excluding the `#` sign, the term is at least one letter long. This method does not modify any fields.
 
-- Write an `isMention()` method that takes a single term (not an entire tweet), as argument, and return whether it is a mention. A term is a mention if the first letter is an `@` sign, and excluding the `@` sign, the term is at least one letter long. This method does not modify any fields.
+- Write an `isMention()` method that takes a single term (not an entire tweet), as argument, and return whether it is a mention. A term is a mention if the first letter is an `@` symbol, and excluding the `@` sign, the term is at least one letter long. This method does not modify any fields.
 
-- Write a `processTweet()` method that takes a String tweet as input. A tweet string can contain regular words, #hashtags, and @mentions. Here is what this method needs to do:
+- Write a `processTweet()` method that takes a String tweet as input. A tweet string can contain regular terms, #hashtags, and @mentions. Here is what this method needs to do:
 
-  - Split the tweet up into an array of substrings, using whitespace as your delimiter. Step through every term in the tweet and update the counts required for `toString()` (see code example).
+  - Split the tweet up into an array of smaller terms, using a whitespace as your delimiter (as you saw in the "I am Ishmael" example above). Step through every term in the tweet and update all the counts.
 
   - When you come across a `#hashtag`, you need to update the *history* as follows. First, the history should not contain any duplicates (i.e., every time you come across one, you need to see whether it already exists in your `ArrayList`, and add it in only if it's never been seen!). You should ignore case, so if `#ups` is in the history, then `#UPS` should not be added. Finally, any new hashtag should be added in **alphabetical order** into the list.
 
