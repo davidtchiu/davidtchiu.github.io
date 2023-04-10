@@ -239,12 +239,12 @@ let days = {
     "Finish ChatBot; Start HashMap",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "HashMap (cont.)",
-    // wk 13
     "Smarter chatbot; string parsing",
+    // wk 13
     "Files",
-    "Lab 10",
     "Files (cont.)",
+    "Lab 10",
+    "Review lab",
     // wk 14
     "Start complexity: Linear search",
     "Binary search",
