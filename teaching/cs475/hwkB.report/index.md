@@ -41,7 +41,9 @@ Prepare a technical report on an OS of choice. The OS does not have to be curren
 #### Grading
 This assignment will be graded out of **+20 points**.  Any points fetched will be applied directly to your overall homework score. 
 
+```
 [5pt] Process/Thread support section.
 [5pt] CPU Scheduling section.
 [5pt] Memory management section.
 [5pt] Grammar and spelling.
+```
