@@ -162,14 +162,15 @@ let days = {
     "MM: multi-level paging",
     // "MM: translation Lookaside Buffer (TLB)",
     // wk 15
+    "<strong><emph>Cancelled<br/>4:00-6:00</emph></strong>",
     "Start Virtual Memory",
     "VM: Replacement policies: FIFO, LRU",
-    "VM: Clock",
     // wk 16
-    "Start File System",
-    "File System",
+    "VM: Clock",
+    "Memory allocation and working set",
+    // "Start File System",
+    // "File System",
     "<strong>Reading Period</strong>",
-    //; Start memory allocation and working-set model",
     // "VM: memory allocation (cont.)",
     // "VM: malloc(), free()",
     // wk final
