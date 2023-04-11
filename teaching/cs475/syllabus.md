@@ -11,12 +11,14 @@ A grade of C- or higher in the following course(s) is required:
 #### Required Textbook
 
 - Silberschatz, Galvin, and Gagne. [Operating Systems Concepts](https://www.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/0470128720). 8th Ed. or greater. (Required)
+- [Dive into Systems](https://diveintosystems.org/book/)
+<!-- 
 - [Programming in C](https://learn.zybooks.com/zybook/PUGETSOUNDCSCI475ChiuSpring2023). ZyBooks. (Required)
     ```
      Sign in or create an account at: learn.zybooks.com
      Enter zyBook code: PUGETSOUNDCSCI475ChiuSpring2023
      Subscribe
-    ```
+    ``` -->
   
 #### Student Course Outcomes
 Students taking this course will:
