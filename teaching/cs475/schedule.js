@@ -162,7 +162,7 @@ let days = {
     "MM: multi-level paging",
     // "MM: translation Lookaside Buffer (TLB)",
     // wk 15
-    "<strong><emph>Cancelled<br/>4:00-6:00</emph></strong>",
+    "<strong><emph>Cancelled</emph></strong>",
     "Start Virtual Memory",
     "VM: Replacement policies: FIFO, LRU",
     // wk 16
