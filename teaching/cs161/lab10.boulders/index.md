@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Boulders
+### Lab: Boulders (File Handling)
 
 NASA called and asked you to consult on their latest astronomical simulations. When they heard you'd worked with managing collections circles on a lab exercise, they hired you on the spot! NASA wants to be able to create large collections of boulder-like objects and simulate their motions on the screen. They've got a few more requests that you can read about below.
 
@@ -8,10 +8,10 @@ NASA called and asked you to consult on their latest astronomical simulations. W
 
 #### Student Outcomes
 
-- To deal with file input/output
-- To deal with data parsing
+- To deal with file handling in Java
+- To deal with String parsing
 - More practice with loops and ArrayList
-
+<!-- 
 #### Working with Partners (Please Read)
 
 You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
@@ -24,7 +24,7 @@ Here are your assigned partners for today's lab.
 [Camblin, F, Grey, E]
 [Jones, B, Murphy, C, Strash, K]
 [Wissing, A, Beardsley, M]
-```
+``` -->
 
 #### Required Files
 

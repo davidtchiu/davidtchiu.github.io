@@ -15,6 +15,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 
 ### Recent Activities
+- (4/2023) Congrats to Julia Kaeppel on receiving a McCormick Student Research Award to work on query reorganization.
 - (2/2023) I'm serving as the inaugural Student of Color Residential Community (SCRC) Faculty Advisor, University of Puget Sound.
 - (1/2023) I was featured in the ["Five Questions"](https://www.pugetsound.edu/stories/five-questions-university-puget-sound-professor-computer-science-david-chiu) series.
 - (8/2022) We have received an NSF grant to provide travel scholarships to students attending IEEE/ACM UCC 2022 and BDCAT 2022 conferences. I am also chairing the student travel awards committee.

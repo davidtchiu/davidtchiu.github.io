@@ -233,7 +233,7 @@ let days = {
     // wk 11
     "Start ArrayList",
     "More ArrayList",
-    "Lab 9: Super Circle Drawer",
+    "Lab 9: Super CircleDrawer (ArrayList)",
     "Wrapper classes; Accepting user input (Scanner)",
     // wk 12
     "Finish ChatBot; Start HashMap",
@@ -243,7 +243,7 @@ let days = {
     // wk 13
     "Files",
     "Files (cont.)",
-    "Lab 10",
+    "Lab 10: Files and HashMaps",
     "Review lab",
     // wk 14
     "Start complexity: Linear search",
