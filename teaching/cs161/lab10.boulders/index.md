@@ -20,8 +20,10 @@ The following file(s) have been provided for this homework.
 
 #### Helpful APIs
 
-The API handout that you'll want to have in front of you:
+The API handouts that you'll want to have in front of you:
 
+- [ArrayList](../api/ArrayListAPI.pdf)
+- [HashMap](../api/HashMapAPI.pdf)
 - [Scanner](../api/ScannerAPI.pdf)
 
 #### Part I: Boulders
