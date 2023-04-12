@@ -152,18 +152,18 @@ let days = {
         url: "lab9.superCircleDrawer/",
         due: "3/31/2023",
       },
-      {
-        name: "Lab 10",
-        title: "Election (Files and HashMaps)",
-        url: "lab10.election/",
-        due: "4/14/2023",
-      },
       // {
       //   name: "Lab 10",
-      //   title: "Boulders (File I/O, Parsing)",
-      //   url: "lab10.boulders/",
-      //   due: "4/21/2023",
+      //   title: "Election (Files and HashMaps)",
+      //   url: "lab10.election/",
+      //   due: "4/14/2023",
       // },
+      {
+        name: "Lab 10",
+        title: "Boulders (File I/O, Parsing)",
+        url: "lab10.boulders/",
+        due: "4/14/2023",
+      },
       // // {
       // //   name: "Lab 11",
       // //   title: "Playing Cards (Constants, Enum; IntelliJ IDE)",

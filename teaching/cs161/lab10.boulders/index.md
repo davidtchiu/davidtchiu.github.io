@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Boulders (File Handling)
+### Lab: Boulders (File Handling + HashMaps)
 
 NASA called and asked you to consult on their latest astronomical simulations. When they heard you'd worked with managing collections circles on a lab exercise, they hired you on the spot! NASA wants to be able to create large collections of boulder-like objects and simulate their motions on the screen. They've got a few more requests that you can read about below.
 
@@ -9,22 +9,8 @@ NASA called and asked you to consult on their latest astronomical simulations. W
 #### Student Outcomes
 
 - To deal with file handling in Java
+- To deal with HashMaps in Java
 - To deal with String parsing
-- More practice with loops and ArrayList
-<!-- 
-#### Working with Partners (Please Read)
-
-You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
-
-Here are your assigned partners for today's lab.
-
-```
-[Rodriguez, C, Steller, L]
-[Jones, S, Culpepper, A]
-[Camblin, F, Grey, E]
-[Jones, B, Murphy, C, Strash, K]
-[Wissing, A, Beardsley, M]
-``` -->
 
 #### Required Files
 
@@ -89,19 +75,24 @@ The next objective is to write a class, like `CircleDrawer` from before, that ma
 
 <!-- - Add the `public static void main(String[] args)` method to your `BoulderSim` class. You may want to refer back to the notes for its syntax. The method should simply instantiate a new `BoulderSim` object with the `boulders_data.txt` file we've been working with, and call animate for `200` time steps. -->
 
-#### Colorful Boulders
+#### Festive Boulders
 
-Let's say we wanted to jazz up our boulders a little more.
+Let's say we wanted to jazz up our boulders by adding some colors.
 
-- Go in your file finder and open up your `boulders_data.txt` file and add a color to the end of each row. You need to separate the colors with a comma, and available colors include: `black`, `red`, `green`, `blue`, `yellow`, `magenta`. Save the file after you're done.
+- Go in your file finder and open up your `boulders_data.txt` file and add a color to the end of each row. Remember to add a comma. The available colors include: `black`, `red`, `green`, `blue`, `yellow`, `magenta`. Save the file after you're done.
 
-- Refactor your code to account for the colors in the file.
+- Refactor your code to account for the colors listed in the file.
+
+- Write a new method, `associateByColor()` that returns a `HashMap` of colors and lists of boulders. Specifically, we want the hashmap to store all the different colors in the "key" column. Each color maps to a list (ArrayList) of Boulders that share that color. You'll need to start by creating a local `HashMap` variable. Then iterate through your Boulders list, examining each boulder `b`'s color.
+    - If `b`'s color doesn't already exist in your new `HashMap` then add (`put()`) a new entry in your map by first constructing a new, empty ArrayList of boulders, and adding `b` to the end of this list. 
+    - Otherwise, if `b`'s color already exists in your map, then simply add `b` to the corresponding list.
+    - Don't forget to return this `HashMap` when you're done.
 
 #### Collision Detection
 
-Currently the boulders just pass through each other, when they should be colliding and bouncing off of one another.
+Currently the boulders just pass through each other, which looks okay if we assume that we're looking at a 3D space and that they're actually quite far apart from each other. But what if we assumed that we're looking at a 2D view? They should be colliding and bouncing off of one another.
 
-- Add an `overlaps(Boulder other)` method to the Boulder class. It should take another boulder as an input, and return `true` if the input boulder overlaps with our boulder. Two boulders overlap if the **distance** between _our_ boulder's position and the other boulder's position is less than the sum of both boulders' radii. Recall that the Euclidean distance between two points is $$\sqrt{(x_{1}-x_{2})^2+(y_{1}-y_{2})^2}$$ (There's a `Math.sqrt(..)` method that you can use for calculating the square root.)
+- Add an `overlaps(Boulder other)` method to the `Boulder` class. It should take another boulder as an input, and return `true` if the other boulder overlaps with this boulder. Two boulders overlap if the **distance** between _our_ boulder's position and the other boulder's position is less than the sum of both boulders' radii. For distance measurement, you can use the Euclidean distance formula, $$\sqrt{(x_{1}-x_{2})^2+(y_{1}-y_{2})^2}$$. (There's a `Math.sqrt(..)` method that you can use for calculating the square root.)
 
 - Update your `animate()` method so that, for each time-step, it first checks to see if any boulders are overlapping with one another. If they are, they should bounce off of each other. A simple way to achieve this is by reversing their velocities.
 
