@@ -160,7 +160,7 @@ let days = {
       // },
       {
         name: "Lab 10",
-        title: "Boulders (File I/O, Parsing)",
+        title: "Boulders (Files)",
         url: "lab10.boulders/",
         due: "4/14/2023",
       },
@@ -243,7 +243,7 @@ let days = {
     // wk 13
     "Files",
     "Files (cont.)",
-    "Lab 10: Files and HashMaps",
+    "Lab 10: Files",
     "Review lab",
     // wk 14
     "Start complexity: Linear search",
