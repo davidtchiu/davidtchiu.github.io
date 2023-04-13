@@ -8,7 +8,7 @@ NASA called and asked you to consult on their latest astronomical simulations. W
 
 #### Student Outcomes
 
-- To deal with file handling in Java
+- To work with file handling in Java
 - To deal with HashMaps in Java
 - To deal with String parsing
 
@@ -28,11 +28,11 @@ The API handouts that you'll want to have in front of you:
 
 #### Part I: Boulders
 
-I've created a new project to get you started. Please download and modify Boulders instead of creating a new project via BlueJ. There's a `Canvas` class that helps display our objects, a Boulder class (that's smart enough to wrap instances around at the edges of the screen), and a `BoulderSim` class that's mostly empty at this point. First you'll make a few small improvements to the Boulder class, then define methods in the `BoulderSim` class.
+I've created a new project to get you started.  There's a `Canvas` class that helps display our objects, a Boulder class (that's smart enough to wrap instances around at the edges of the screen), and a `BoulderSim` class that's mostly empty at this point. First you'll make a few small improvements to the Boulder class, then define methods in the `BoulderSim` class.
 
-- Open the `Boulder` class. Try to understand this class by reading its fields and available methods. You'll see quite a bit of similarities with the Circle class, except that Boulders keep track of velocities. Note that it has a constructor, and the constructor expects the user to pass in most of the information about the new boulder they want (position, speed, size).
+- Open the `Boulder` class. Try to understand this class by reading its fields and available methods. You'll see quite a bit of similarities with the `Circle` class, except that `Boulders` keep track of velocities. Note that it has a constructor, and the constructor expects the user to pass in most of the information about the new boulder they want (including its initial position, velocities, and size).
 
-- Create a couple `Boulders` and test them out on canvas. Check their state after running `updatePosition()` to see what that does.
+- Create a couple `Boulders` and test them out. Check their state after running `updatePosition()` to see what that does.
 
 - Create the `toString()`. It returns a String describing the boulder's state. It should include the size, position, and speed (see below on how it's supposed to be formatted).
 
@@ -45,13 +45,9 @@ I've created a new project to get you started. Please download and modify Boulde
 
 #### Part II: BoulderSim and File Handling
 
-We currently have a way to draw boulders on the canvas, but if we were to add all the boulders into our program by hand, it would take forever and it would be error-prone due to human fallacies! Instead, NASA has collected the sizes, starting positions, and velocities of each boulder in a comma-separated file. This file is named `boulders_data.txt`, and it's been provided to you in the project folder. You can open it up to see its contents, if you're curious!
+We currently have a way to draw boulders on the canvas, but if we were to add all the boulders into our program by hand, it would take forever and it would be error-prone! Instead, NASA has collected the sizes, starting positions, and velocities of each boulder in a comma-separated file. This file is named `boulders_data.txt`, and it's been provided to you in the project folder. You should open it up to see its contents!
 
-The next objective is to write a class, like `CircleDrawer` from before, that manages a collection of Boulders. This class will read from the `boulders_data.txt` and construct `Boulders` based on the properties given in the file. Then it will allow us to simulate the motions of all these boulders over time.
-
-- Open up `BoulderSim`. You'll see a constructor and a couple methods that need to be filled in. But first, an instance of the `BoulderSim` class needs to contain a collection of Boulder instances so that it can make them all move around the screen. Start by defining an instance variable for the ArrayList that will be used to hold all of the `Boulders`.
-
-- Implement the constructor, which inputs the name of the file containing the boulders' data. Before we dig into what the constructor does, let's have a look at the boulder file's format. Here is the content of `boulders_data.txt`, which is given to you in the project:
+Here is the content of `boulders_data.txt`, which is given to you in the project:
 
   ```
   50,372.1875893819677,133.87776166702926,11.932056023677355,-10.554410451924971
@@ -65,11 +61,17 @@ The next objective is to write a class, like `CircleDrawer` from before, that ma
 
   Each line contains data for the state of a Boulder. The values are separated by a comma as follows: `diameter`, `xPosition`, `yPosition`, `xVelocity`, and `yVelocity`.
 
-- Your constructor should read this file and create the required number of boulders (using the `Boulder()` constructor) and add them to the ArrayList. While you're at it, make sure you call makeVisible on each boulder so they all start out visible. You are reminded that a String can be tokenized using the `split(..)` method. You can also convert strings to doubles and ints using the `Double.parseDouble(..)` and `Integer.parseInt(..)` methods, respectively.
+- The next objective is to write a class that manages an ArrayList of `Boulders`. This class will read from the `boulders_data.txt` and construct `Boulders` based on the properties given in the file. Then it will allow us to simulate the motions of all these boulders over time.
 
-- Once you're done with the constructor, you can test it by creating a new `BoulderSim` object, and passing it the `boulders_data.txt` file. If everything works, you should get no runtime exceptions and see six Boulders on the canvas.
 
-- Move on to `animate(..)` which takes a single integer as input: the number of update steps that should be performed on the collection of boulders. If the user passes `10` as an input to the method, for example, each boulder in the group should have its position updated, then you should do it again, and again, until each boulder has had its position updated `10` times. (Do not just update the first boulder `10` times, then the second boulder `10` times, etc. That wouldn't look right.)
+- Implement the `BoulderSim` constructor, which inputs the name of the file containing the boulder data. Your constructor should read this file and create the required number of boulders (using the `Boulder(..)` constructor) and add them to the `ArrayList`. While you're at it, make sure you call `makeVisible` on each boulder so they all start out visible. As you read in your file, you are reminded that a `String` can be tokenized using the `split(..)` method. You can also convert strings to `doubles` and `ints` using the `Double.parseDouble(..)` and `Integer.parseInt(..)` methods, respectively.
+
+  - Remember that, since the constructor is opening a file, you must specify that it `throws FileNotFoundException`.
+  - Remember to `close()` out the Scanner after you're finished reading the file.
+
+- Once you're done writing the constructor, you can test it by creating a new `BoulderSim` object, and passing it the `boulders_data.txt` file. If everything works, you should get no runtime exceptions and see six Boulders on the canvas.
+
+- Move on to `animate(..)` which takes an `int` as input: the number of update steps that should be performed on the collection of boulders. If the user passes `10` as an input to the method, for example, each boulder in the group should have its position updated, then you should run it again, and again, until each boulder has had its position updated `10` times. (Do not just update the first boulder `10` times, then the second boulder `10` times, etc. That wouldn't look right.)
 
   It should look something like this, when run except that my boulders collide with each other (you'll deal with collision a little later):
 
@@ -81,9 +83,13 @@ The next objective is to write a class, like `CircleDrawer` from before, that ma
 
 Let's say we wanted to jazz up our boulders by adding some colors.
 
-- Go in your file finder and open up your `boulders_data.txt` file and add a color to the end of each row. Remember to add a comma. The available colors include: `black`, `red`, `green`, `blue`, `yellow`, `magenta`. Save the file after you're done.
+- Go in your file finder and open up your `boulders_data.txt` file and add a color to the end of each row (i.e., the last column of each row, separated by comma). Remember to add a comma. The available colors include: `black`, `red`, `green`, `blue`, `yellow`, `magenta`. Save the file after you're done.
 
-- Refactor your code to account for the colors listed in the file.
+- But now that the file's content has changed, your code need to account for colors! Modify your code so that it additionally reads in the new column of data. Additional to creating the boulders themselves, you'll need to change its color to the color listed in the file!
+
+- **Food for Thought** You should find it slightly irritating that a change to the file causes you to change the program. What if I had asked you to add the color into the first or second column of the file, instead of the last column? How would your program change? Would it be a bigger pain to ensure that your program still works?
+
+  - It would be nice if your programs didn't have to be modified and recompiled every time a change in the file's format occurs. This is called **Data Independence**, and is one of the key problems of computer science. We study this problem in the field of *Database Systems*, an upper-division elective.
 
 #### Collision Detection
 
