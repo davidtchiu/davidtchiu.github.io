@@ -85,11 +85,6 @@ Let's say we wanted to jazz up our boulders by adding some colors.
 
 - Refactor your code to account for the colors listed in the file.
 
-- Write a new method, `associateByColor()` that returns a `HashMap` of colors and lists of boulders. Specifically, we want the hashmap to store all the different colors in the "key" column. Each color maps to a list (ArrayList) of Boulders that share that color. You'll need to start by creating a local `HashMap` variable. Then iterate through your Boulders list, examining each boulder `b`'s color.
-    - If `b`'s color doesn't already exist in your new `HashMap` then add (`put()`) a new entry in your map by first constructing a new, empty ArrayList of boulders, and adding `b` to the end of this list. 
-    - Otherwise, if `b`'s color already exists in your map, then simply add `b` to the corresponding list.
-    - Don't forget to return this `HashMap` when you're done.
-
 #### Collision Detection
 
 Currently the boulders just pass through each other, which looks okay if we assume that we're looking at a 3D space and that they're actually quite far apart from each other. But what if we assumed that we're looking at a 2D view? They should be colliding and bouncing off of one another.
