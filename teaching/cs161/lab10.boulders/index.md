@@ -9,8 +9,8 @@ NASA called and asked you to consult on their latest astronomical simulations. W
 #### Student Outcomes
 
 - To work with file handling in Java
-- To deal with HashMaps in Java
 - To deal with String parsing
+- Practice with loops and lists
 
 #### Required Files
 
@@ -23,7 +23,6 @@ The following file(s) have been provided for this homework.
 The API handouts that you'll want to have in front of you:
 
 - [ArrayList](../api/ArrayListAPI.pdf)
-- [HashMap](../api/HashMapAPI.pdf)
 - [Scanner](../api/ScannerAPI.pdf)
 
 #### Part I: Boulders
