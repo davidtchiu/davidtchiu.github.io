@@ -5,12 +5,10 @@
 <img width="400px" src="https://scx1.b-cdn.net/csz/news/800/2017/heresthebest.jpg" />
 
 In this lab, you will create classes that model playing cards and decks of playing
-cards. The goal of this lab is to familiarize you with the IntelliJ editor.
-You will practice using enum classes, and the `main()` method.
+cards. You will practice using enum classes, and the `main()` method.
 
 #### Student Outcomes
 
-- Use of the IntelliJ IDE
 - Practice writing/using `enum` classes
 - Practice writing the `main()` method
 
