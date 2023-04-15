@@ -14,11 +14,13 @@ You will practice using enum classes, and the `main()` method.
 - Practice writing/using `enum` classes
 - Practice writing the `main()` method
 
+<!--
 #### Required Files
 
 The following file(s) have been provided for this homework.
 
 - [Download IntelliJ IDEA](https://www.jetbrains.com/idea/)
+-->
 
 #### Helpful APIs
 
@@ -26,6 +28,8 @@ The API handout that you'll want to have in front of you:
 
 - [ArrayList](../api/ArrayListAPI.pdf)
 - [Random](../api/RandomAPI.pdf)
+
+<!--
 
 #### Part 1: Running a Simple Program in IntelliJ
 
@@ -58,7 +62,9 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 
   <img src="figures/intellij4_newclass.png" width="700px" />
 
-#### Part 2: Card Class and Suit Enum
+-->
+
+#### Part 1: Card Class and Suit Enum
 
 - Start writing the `Card` class. Each `Card` has a face-value and a suit.
 
@@ -139,10 +145,8 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 - The `toString()` Method: As you test your methods, you might've been tempted to print out the Card objects. Let's try doing that and see what happens:
 
   ```java
-  public static void main(String[] args) {
       Card card1 = new Card(Suit.DIAMOND, 1);
       System.out.println("This card is: " + card1);
-  }
   ```
 
   ```
@@ -152,7 +156,7 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 
   Your output might look bit different, but in general, it appears to be garbage. What could be going on? Well, we're telling Java to print out an object that isn't a String. When this happens, Java will try to find and call the `toString()` method on your object, but we haven't implemented a `toString()` method for Card.
 
-- Write a new method called toString, which takes no inputs and returns a String. It should be noted that all toString methods have this signature. This method should return the a String `<S,V>` where `S` and `V` are the suit and face value, respectively. The face value `V` must replace 1 with "A", 11 with "J", 12 with "Q", and 13 with "K". If you implemented this method correctly, you should get the following output instead of the cryptic one above:
+- Write a new method called `toString()`, which takes no inputs and returns a String. It should be noted that all toString methods have this signature. This method should return the a String `<S,V>` where `S` and `V` are the suit and face value, respectively. The face value `V` must replace 1 with "A", 11 with "J", 12 with "Q", and 13 with "K". If you implemented this method correctly, you should get the following output instead of the cryptic one above:
 
   ```
   > ------------ HERE IS THE OUTPUT -------------
@@ -161,11 +165,12 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 
 - Important: Notice how we don't even need to call `card1.toString()` (although that would also work). This is because `toString()` is special; it is called automatically by Java whenever an object is used in the context of a `String`.
 
-#### Part 3: The Deck Class
+#### Part 2: The Deck Class
 
-- Now let's create the `Deck` class in IntelliJ.
+- Now let's create the `Deck` class. This class stores an `ArrayList` of `Cards`. Go ahead and create that field.
 
-- This class stores an `ArrayList` of `Cards`. Go ahead and create that field. Here's where a professional editor like IntelliJ shines: Try declaring the field without first importing the `java.util.ArrayList` class. You'll see that `ArrayList` is in red. Right-click on Array`List, and you'll see `"Show Context Actions"` shown below.
+<!--
+Here's where a professional editor like IntelliJ shines: Try declaring the field without first importing the `java.util.ArrayList` class. You'll see that `ArrayList` is in red. Right-click on Array`List, and you'll see `"Show Context Actions"` shown below.
 
   <img src="figures/intellij5_suggest.png" width="400px" />
 
@@ -175,6 +180,8 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
   to see a list of suggestions. They might not always be correct, but they're usually quite on-point.
 
   <img src="figures/intellij6_suggest2.png" width="400px" />
+
+-->
 
 - Now write the default constructor, which adds the standard 52 cards to the list:
 
@@ -201,7 +208,7 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 
   - `String toString()`: Returns a string containing each card in the `Deck` on a separate line.
 
-- Here's what it should look like when you create and print and deck.
+- Here's what it should look like when you create and print and deck. You can test by creating a new class called `Main`, and copying the code below. From outside, right-click on `Main` and run the `main(...)` method.
 
   ```java
   public class Main {

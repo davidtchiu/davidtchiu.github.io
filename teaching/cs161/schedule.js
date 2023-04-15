@@ -164,12 +164,12 @@ let days = {
         url: "lab10.boulders/",
         due: "4/14/2023",
       },
-      // // {
-      // //   name: "Lab 11",
-      // //   title: "Playing Cards (Constants, Enum; IntelliJ IDE)",
-      // //   url: "lab11.cards/",
-      // //   due: "4/28/2023",
-      // // },
+      {
+        name: "Lab 11",
+        title: "Playing Cards (Constants, Enum)",
+        url: "lab11.cards/",
+        due: "4/21/2023",
+      },
       // // {
       // //   name: "Lab 11",
       // //   title: "Elementary Complexity Analysis",
@@ -246,19 +246,19 @@ let days = {
     "Lab 10: Files",
     "Review lab",
     // wk 14
+    "Information hiding; constants",
+    "Static scope and enums",
+    "Lab 11: Deck",
     "Start complexity: Linear search",
-    "Binary search",
-    "Lab 11",
-    "Selection sort",
     // wk 15
     "<strong><emph>Cancelled</emph></strong>",
+    "Binary search",
+    "Selection sort",
+    "Lab 12: Complexity",
     "Bubble Sort",
-    "Lab 12",
-    "More complexity: list reversal, palindrome",
     // wk 16
-    "static, main(); IntelliJ IDE",
-    // "enum; ",
-    "<strong><emph>Review</emph></strong>",
+    "Recursion",
+    "Recursion",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
