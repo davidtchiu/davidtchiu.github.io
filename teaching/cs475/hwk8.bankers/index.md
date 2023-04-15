@@ -4,17 +4,17 @@
 
 #### Student Outcomes
 
-- To learn and implement Banker's algorithm for deadlock avoidance.
+- To learn and implement Banker's algorithm for deadlock avoidance/detection.
 
 #### Work in Groups
 
 You are required  to work in groups for this assignment. Please write in your names in the given `README.md` file as part of the project repo. Here are your assigned groups:
 
 ```
-Abram R, Sasha S, Jaykob W
+Lucas G, Sasha S, Langston A
 Aidan T, Brian M,  Henry B
 Caleb P, Emilee O, Jonah K
-Langston A, Lucas G, Matthew A
+Abram R, Matthew A, Jaykob W
 Matthew Z, Nick P, Owen R-L
 Jared V, Georgia K, Mitch H
 Svetlana S, Zale F, Penny R
@@ -194,7 +194,7 @@ isSafe(Available, Alloc, Need) {
 If all threads can finish, then you should print `SAFE`, followed by a "safe schedule", that is, the sequence of the simulated execution of threads such that all threads can finish. You just need to find and print **ALL** safe schedule for full credit. If the state is determined `UNSAFE`, then further print out the threads that can't finish. Example outputs found below.
 
 
-#### Example SAFE Output
+#### Example Safe Output
 
 It is worth keeping in mind that multiple SAFE schedules may exist, so your output may differ from mine.
 
@@ -236,7 +236,7 @@ SAFE:  T3 T4 T1 T0 T2
 SAFE:  T3 T4 T1 T2 T0
 ```
 
-#### Example UNSAFE Output
+#### Example Unsafe Output
 
 ```
 $ less unsafe.txt
