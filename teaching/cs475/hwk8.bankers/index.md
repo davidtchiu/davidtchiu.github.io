@@ -26,9 +26,9 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 - **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk8-bankers](https://github.com/davidtchiu/cs475-hwk8-bankers). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
-      ```
-      git clone <your-github-url-for-this-project>
-      ```
+		```
+		git clone <your-github-url-for-this-project>
+		```
 
 
 #### Working Solution
