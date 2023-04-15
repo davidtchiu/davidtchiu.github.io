@@ -1,4 +1,5 @@
 # TODO
+- Move off of Deadlocks in favor of File Systems. Need a simpler MMU homework.
 - Let them pair up on a few homework assignments
 - Give them (much) more time for Hwk 3. Maybe make it due on Wednesday or Friday.
 - Hwk 3: Don't give them a stack. It's confusing them. Give them a list.

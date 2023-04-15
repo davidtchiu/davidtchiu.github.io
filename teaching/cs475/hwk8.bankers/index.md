@@ -191,7 +191,7 @@ isSafe(Available, Alloc, Need) {
 }
 ```
 
-If all threads can finish, then you should print `SAFE`, followed by a "safe schedule", that is, the sequence of the simulated execution of threads such that all threads can finish. You just need to find and print **ALL** safe schedule for full credit. If the state is determined `UNSAFE`, then further print out the threads that can't finish. Example outputs found below.
+If all threads can finish, then you should print `SAFE`, followed by all "safe schedules", that is, the sequence of the simulated execution of threads such that all threads can finish. Even though a single safe schedule is sufficient for determining that the current state is safe, you need to find and print **ALL** safe schedules for full credit. If the state is determined `UNSAFE`, then further print out the threads that can't finish. Example outputs found below.
 
 
 #### Example Safe Output
