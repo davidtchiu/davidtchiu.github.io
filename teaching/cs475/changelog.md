@@ -1,27 +1,32 @@
 # TODO
+- I think I have to take the first week to teach C. Then give them just one or two significant C programs.
 - Move off of Deadlocks in favor of File Systems. Need a simpler MMU homework.
 - Let them pair up on a few homework assignments
 - Give them (much) more time for Hwk 3. Maybe make it due on Wednesday or Friday.
 - Hwk 3: Don't give them a stack. It's confusing them. Give them a list.
 - Hwk 3: Do I need to talk about creating arrays of strings this early? Maybe save for Hwk 4.
 - Hwk 3: More hand-holding. For instance, tell them their recursive method should return 1 or 0 depending on whether something was found. Then use that value to determine if the current directory should be printed.
-- Move off of zyBooks. Use diveintosystems instead for C guide.
+- Move off of zyBooks. Use diveintosystems instead for C.
 
 # Change Log
-- **Spring'23** Replaced Hwk 7 thebar (C) with thebridge (Java)
-- **Spring'23** Added Hwk 6 ts_hashmap (locks)
-- **Spring'23** Added a short valgrind tutorial to Hwk 3.
-- **Spring'23** Modified Hwk 4 to remove .dsh_motd
-- **Spring'23** Modified Hwk 3 to cover string allocation, 2D array allocation; struct allocation; added more string examples; and assignment now more challenging ls2 (syscalls) instead of rpncalc (no syscalls)
-- **Spring'23** Modified Hwk 2 to include structs
-- **Spring'23** Modified Hwk 1 to be shorter (removed structs) or to use & instead. Emphasize string functions and fgets().
-- **Spring'23** Wrote a new Hwk 0 to get students started on remote VS Code.
-- **Spring'23** No more projects. More aggressive timeline for Homework 1, 2, 3. 
-- **Spring'23** Testing out 3 lab-work days.
-- **Spring'23** Transitioned off VirtualBox. Now using remote dev on Jetstream VM.
-- **Spring'22** Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
-- **Spring'22** Added Bankers for Hwk 7
-- **Spring'22** Proj 1: No longer making them do getFirst and getLast.
+
+## Spring'22
+- Replaced Hwk 7 thebar (C) with OneLaneBridge (Java)
+- Added Hwk 6 ts_hashmap (locks)
+- Added a short valgrind tutorial to Hwk 3.
+- Modified Hwk 4 to remove .dsh_motd
+- Modified Hwk 3 to cover string allocation, 2D array allocation; struct allocation; added more string examples; and assignment now more challenging ls2 (syscalls) instead of rpncalc (no syscalls)
+- Modified Hwk 2 to include structs
+- Modified Hwk 1 to be shorter (removed structs) or to use & instead. Emphasize string functions and fgets().
+- Wrote a new Hwk 0 to get students started on remote VS Code.
+- No more projects. More aggressive timeline for Homework 1, 2, 3. 
+- Testing out 3 lab-work days.
+- Transitioned off VirtualBox. Now using remote dev on Jetstream VM.
+
+## Spring'22
+- Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
+- Added Bankers for Hwk 7
+- Proj 1: No longer making them do getFirst and getLast.
 
 # Xinu thoughts
 - New Xinu project 1

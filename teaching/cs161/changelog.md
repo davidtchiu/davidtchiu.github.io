@@ -1,12 +1,10 @@
 #### TODO
-- Need one more nested loop array problem in Hwk 6. Not super challenging though.
-- Consider doing exams on Fridays.
-- Hwk 1 can be due 2 days sooner now.
-- Put starter code on github.
+- Need one more nested loop array problem in Hwk 6. Not a super challenging one though.
+- Consider doing exams on Fridays instead of Thursdays to preserve Lab? What about TA hours?
+- Hwk 1 can be due 2 days earlier now.
 - Why have students create a new zip every time? Just submit the `.java` files.
 - Move static/enum/private/public up (or spread them out)
 - Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
-- Consider moving complexity before design
 - Hwk 4 lot cooler if I introduced an Arm class or something…
 
 #### Change Log
