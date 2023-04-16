@@ -248,16 +248,15 @@ let days = {
     // wk 14
     "Information hiding; constants",
     "Static scope and enums",
-    "Lab 11: Deck",
+    "Lab 11: enum",
     "Start complexity: Linear search",
     // wk 15
     "<strong><emph>Cancelled</emph></strong>",
     "Binary search",
+    "Lab 12",
     "Selection sort",
-    "Lab 12: Complexity",
-    "Bubble Sort",
     // wk 16
-    "Recursion",
+    "Bubble Sort",
     "Recursion",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
