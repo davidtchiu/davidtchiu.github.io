@@ -17,38 +17,6 @@ The following file(s) have been provided for this assignment.
 
 - [Hwk8_BlackJack_pre.zip](Hwk8_BlackJack_pre.zip)
 
-#### The Card Class
-
-- Start writing the `Card` class. Each `Card` has a face-value and a suit.
-
-  - The `faceValue` is an integer from 1, 2, 3, 4, ..., 12, and 13
-  - The `suit` is a String with the following options: `CLUB`, `SPADE`, `HEART`, `DIAMOND`.
-
-- You need to implement two constructors:
-
-  - A default constructor that randomly generates a suit and face value. For the face value, you simply need to generate an integer between 1 and 13 (inclusive). What do you do to generate a random suit?
-
-  - A second constructor that takes as input a given suit and face value (in that order). If the given face value or suit is not legal (for instance, the face value was given as a negative number, or a number greater than 13, or if the suit was entered as anything but club, spade, heart, or diamond), then you should print out an error message, and instead create a random legal Card.
-
-- Implement the following methods.
-
-  - `int getFaceValue()`: Getter for this card's face value.
-
-  - `String getSuit()`: Getter for this card's suit
-
-- Write a new method called toString, which takes no inputs and returns a String. It should be noted that all toString methods have this signature. This method should return the a String `<SUIT,FACEVALUE>` but replace the suit and face values with the values of the Card. In addition, the face value must replace 1 with "A", 11 with "J", 12 with "Q", and 13 with "K". If you implemented this method correctly, you should get the following output:
-
-  ```java
-  Card card = new Card("DIAMOND", 1);
-  System.out.println(card);
-  ```
-
-  ```
-  > ------------ HERE IS THE OUTPUT -------------
-  > This card is: <DIAMOND,A>
-  ```
-
-- Important: Notice how we don't even need to call `card1.toString()` (although that would also work). This is because `toString()` is special; it is called automatically by Java whenever an object is used in the context of a `String`.
 
 #### "Hands" Explained
 
@@ -90,8 +58,8 @@ A quick word on face values. The face value of each card can usually be added to
 - The first example below shows the effect of counting Aces.
 
   ```java
-  Card c1 = new Card("CLUB", 1);
-  Card c2 = new Card("DIAMOND", 1);
+  Card c1 = new Card(Suit.CLUB, 1);
+  Card c2 = new Card(Suit.DIAMOND, 1);
   Hand myHand = new Hand(c1, c2);
   System.out.println(myHand);
 
@@ -116,8 +84,8 @@ A quick word on face values. The face value of each card can usually be added to
 - The following example shows a Black Jack, and some subsequent hits.
 
   ```java
-  Card c1 = new Card("CLUB", 1);
-  Card c2 = new Card("SPADE", 12);
+  Card c1 = new Card(Suit.CLUB, 1);
+  Card c2 = new Card(Suit.SPADE, 12);
   Hand myHand = new Hand(c1, c2);
   myHand.isBlackJack()
   > true   (boolean)
@@ -142,8 +110,8 @@ A quick word on face values. The face value of each card can usually be added to
 
   ```java
   //start with the same hands (both Black Jacks, in fact)
-  Hand myHand = new Hand(new Card("CLUB", 1), new Card("SPADE", 10));
-  Hand yourHand = new Hand(new Card("DIAMOND", 1), new Card("CLUB", 13));
+  Hand myHand = new Hand(new Card(Suit.CLUB, 1), new Card(Suit.SPADE, 10));
+  Hand yourHand = new Hand(new Card(Suit.DIAMOND, 1), new Card(Suit.CLUB, 13));
   myHand.defeats(yourHand)
   > false   (boolean)
 

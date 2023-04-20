@@ -88,7 +88,7 @@ Within the main method, print out some dummy message within main. Save it, and t
 
   - A default constructor that randomly generates a suit and face value. For the face value, you simply need to generate an integer between 1 and 13 (both inclusive). What do you do to generate a random suit?
 
-    How do you create a random suit? Here's a hint. The `Suit.values()` method returns an array of all the constants in the `Suit` enum class.
+    How do you create a random suit? Here's a hint. The `Suit.values()` method returns an *array* of all the constants you listed in the `Suit` enum class.
 
 
   - A second constructor that takes as input a given suit and face value. If the given face value or suit is not legal. For instance, the face value was given as a negative number, or a number greater than 13, then you should print out an error message, and instead create a random legal Card.
