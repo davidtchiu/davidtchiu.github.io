@@ -62,16 +62,29 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 
 -->
 
-#### Part 1: Card Class and Suit Enum
+#### Preliminary: The main() Method
+Create a new class called `Main`. Inside the class, you should provide a single main method. Feel free to copy and paste the segment below:
+
+```java
+public static void main(String[] args) {
+  System.out.println("Test");
+}
+```
+Within the main method, print out some dummy message within main. Save it, and to run the main method, simply right-click on the `Main` class, and call the `main()` method. Hit enter on the dialog box that pops up.
+
+#### Part 1: Card Class and Suit Enum Class
 
 - Start writing the `Card` class. Each `Card` has a face-value and a suit.
 
-  - The `faceValue` is an integer from 1, 2, 3, 4, ..., 12, and 13
+  - The `faceValue` is an integer from 1, 2, 3, 4, ..., 12, and 13.
   - The `suit` is a constant with the following options: `CLUB`, `SPADE`, `HEART`, `DIAMOND`.
 
 - Before going any further, create a new `enum` class called `Suit`, which defines `CLUB`, `SPADE`, `HEART`, `DIAMOND`. Now ensure that your `Card`'s `suit` field is of a `Suit` data type.
 
-- You need to implement two constructors:
+- Back in `Card`, 
+
+
+- you need to implement two constructors:
 
   - A default constructor that randomly generates a suit and face value. For the face value, you simply need to generate an integer between 1 and 13 (both inclusive). What do you do to generate a random suit?
 
@@ -340,6 +353,74 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
   <HEART,3>
   <HEART,A>
   ```
+
+- Let's also give users a quick and dirty way of obtaining a deck using a `static` method. Write a `public static` method called `makeShuffledDeck()` that returns a shuffled deck of course. You can use it like this:
+
+  ```java
+  public class Main {
+
+      public static void main(String[] args) {
+          Deck myDeck = Deck.makeShuffledDeck();
+          System.out.println(myDeck);
+      }
+  }
+  ```
+
+  ```
+  <HEART,10>
+  <DIAMOND,5>
+  <CLUB,9>
+  <SPADE,2>
+  <DIAMOND,2>
+  <DIAMOND,8>
+  <SPADE,4>
+  <SPADE,6>
+  <CLUB,Q>
+  <SPADE,8>
+  <HEART,5>
+  <HEART,J>
+  <SPADE,10>
+  <CLUB,7>
+  <SPADE,Q>
+  <SPADE,K>
+  <CLUB,2>
+  <DIAMOND,6>
+  <DIAMOND,Q>
+  <CLUB,4>
+  <HEART,6>
+  <HEART,K>
+  <CLUB,6>
+  <SPADE,J>
+  <DIAMOND,7>
+  <CLUB,8>
+  <CLUB,10>
+  <HEART,7>
+  <CLUB,J>
+  <CLUB,K>
+  <CLUB,5>
+  <HEART,2>
+  <DIAMOND,A>
+  <SPADE,5>
+  <HEART,4>
+  <HEART,8>
+  <CLUB,A>
+  <HEART,9>
+  <SPADE,7>
+  <HEART,Q>
+  <DIAMOND,K>
+  <DIAMOND,3>
+  <CLUB,3>
+  <DIAMOND,J>
+  <SPADE,3>
+  <SPADE,A>
+  <DIAMOND,4>
+  <SPADE,9>
+  <DIAMOND,9>
+  <DIAMOND,10>
+  <HEART,3>
+  <HEART,A>
+  ```
+
 
 #### Grading
 
