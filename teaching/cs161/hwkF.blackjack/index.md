@@ -8,6 +8,7 @@ Business at David's Casino is flourishing, but customers have been complaining t
 
 #### Student Outcomes
 
+- Use of constants, enums
 - Writing the main method
 - Scanning for user input
 
@@ -15,12 +16,15 @@ Business at David's Casino is flourishing, but customers have been complaining t
 
 The following file(s) have been provided for this assignment.
 
-- [Hwk8_BlackJack_pre.zip](Hwk8_BlackJack_pre.zip)
+- [Hwk8_BlackJack.zip](Hwk8_BlackJack.zip)
 
+#### The Suit Enumeration Class, Card Class, and Deck Class.
+
+You will be copying over your Suit, Card, and Deck classes from lab. If you did not finish this class during lab period, go ahead and finishing them now.
 
 #### "Hands" Explained
 
-Black Jack requires users to hold a set of cards, generally known as a "Hand." Let's go over its rules. At arbitrary points of the game, a hand contains at least two Cards. The suits are ignored, but the face values of these cards are added together. The objective is to get the sum of the hand as close to **21** as possible, without exceeding it (known as a bust if you do). Initially, a hand starts with two Cards.
+Black Jack requires users to hold a set of cards, generally known as a "Hand." Let's go over its rules. At arbitrary points of the game, a hand contains at least two Cards. The suits are ignored, but the face values of these cards are added together. The objective is to get the sum of the hand as close to **21** as possible, without exceeding it (known as a bust if you do). Initially, a hand starts with two Cards. Users can decide to hit, in which the top card from the deck is drawn and added to their Hand.
 
 A quick word on face values. The face value of each card can usually be added to the value of the hand, with a few exceptions:
 
@@ -34,7 +38,11 @@ A quick word on face values. The face value of each card can usually be added to
 
 - This class should keep an `ArrayList` of `Card` objects. This represents all the `Card`s the hand holds.
 
-- Write a 2-argument constructor that takes as inputs 2 Card objects and add them to your array list.
+- This class should keep a reference to a `Deck` object, which represents all the Cards that have yet to be drawn.
+
+- Write a 1-argument constructor that takes as input a `Deck` object. Upon being called, it should remove the top two cards from the Deck, and add them to the hand.
+
+- Write a 2-argument constructor that takes as inputs 2 Card objects and add them to your array list. This method should set the Deck to null. (This constructor is provided only to help you test).
 
 - A method, `int getValue()` which accepts no input arguments. It loops through all the `Card`s in the hand, and sums up their values, using the rules of the game described above. This total is then returned to the caller. Recall that the Ace is handled specially.
 
@@ -44,7 +52,7 @@ A quick word on face values. The face value of each card can usually be added to
 
 - A method, `boolean isBlackJack()` which accepts no input arguments, and determines whether or not the current Hand holds a Black Jack. This can only occur when the the Hand holds exactly two cards, and the value of the Hand is **21**. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s).
 
-- A method, `void hit()` which accepts no input arguments. It creates a random Card and adds it to the hand. If the hand is already bust, this method performs no action.
+- A method, `void hit()` which accepts no input arguments. It draws the top card from the associated `Deck` object and adds it to the current hand. If the hand is already bust, this method performs no action.
 
 - A method, `boolean pushes(Hand other)` which accepts another Hand object as input. It returns true if the current Hand's value ties with the given Hand's value.
 
@@ -63,22 +71,22 @@ A quick word on face values. The face value of each card can usually be added to
   Hand myHand = new Hand(c1, c2);
   System.out.println(myHand);
 
-  > <CLUB,A> <DIAMOND,A> (12)
+  > <club,A> <diamond,A> (12)
 
   myHand.hit(); //got a queen (10)!
   System.out.println(myHand);
 
-  > <CLUB,A> <DIAMOND,A> <DIAMOND,Q> (12)
+  > <club,A> <diamond,A> <diamond,Q> (12)
 
   myHand.hit(); //got another Ace (1)!
   System.out.println(myHand);
 
-  > <CLUB,A> <DIAMOND,A> <DIAMOND,Q> <HEART,A> (13)
+  > <club,A> <diamond,A> <diamond,Q> <heart,A> (13)
 
   myHand.hit(); //got a jack (10)!
   System.out.println(myHand);
 
-  > <CLUB,A> <DIAMOND,A> <DIAMOND,Q> <HEART,A> <DIAMOND,J> (23 -- Bust!)
+  > <club,A> <diamond,A> <diamond,Q> <heart,A> <diamond,J> (23 -- Bust!)
   ```
 
 - The following example shows a Black Jack, and some subsequent hits.
@@ -91,19 +99,19 @@ A quick word on face values. The face value of each card can usually be added to
   > true   (boolean)
 
   System.out.println(myHand);
-  > <DIAMOND,A> <SPADE,Q> (21 -- Black Jack!)
+  > <club,A> <spade,Q> (21 -- Black Jack!)
 
   myHand.hit();
   System.out.println(myHand);
-  > <DIAMOND,A> <SPADE,Q> <HEART,5> (16)
+  > <club,A> <spade,Q> <heart,5> (16)
 
   myHand.hit();
   System.out.println(myHand);
-  > <DIAMOND,A> <SPADE,Q> <HEART,5> <SPADE,J> (26 -- Bust!)
+  > <club,A> <spade,Q> <heart,5> <spade,J> (26 -- Bust!)
 
   myHand.hit(); //hit should have no effect since hand is bust
   System.out.println(myHand);
-  > <DIAMOND,A> <SPADE,Q> <HEART,5> <SPADE,J> (26 -- Bust!)
+  > <club,A> <spade,Q> <heart,5> <spade,J> (26 -- Bust!)
   ```
 
 - The final example shows the effect of comparing two hands.
@@ -126,10 +134,10 @@ A quick word on face values. The face value of each card can usually be added to
   > true   (boolean)
 
   System.out.println(yourHand);
-  > <CLUB,A> <SPADE,10> <HEART,7> (18)
+  > <club,A> <spade,10> <heart,7> (18)
 
   System.out.println(myHand);
-  > <CLUB,A> <SPADE,10> (21 -- Black Jack!)
+  > <club,A> <spade,10> (21 -- Black Jack!)
 
   myHand.hit();
   myHand.hit();
@@ -140,7 +148,7 @@ A quick word on face values. The face value of each card can usually be added to
   > true   (boolean)
 
   System.out.println(myHand);
-  > <CLUB,A> <SPADE,10> <CLUB,6> <SPADE,J> (27 -- Bust!)
+  > <club,A> <spade,10> <club,6> <spade,J> (27 -- Bust!)
   ```
 
 #### Writing the Game Class
@@ -151,7 +159,7 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
 
 - Write the `public static void main(String[] args)` method.
 
-  - It starts by printing a "startup/welcome message" to the sucker (I mean human player) who will be playing against your algorithm. Then create two Hands: a Hand for the AI and a Hand for the human-player.
+  - It starts by printing a "startup/welcome message" to the sucker (I mean human player) who will be playing against your algorithm. Create a Deck here and shuffle it a few times! Then create two Hands: a Hand for the AI and a Hand for the human-player. Make sure both AI and human-player Hands remember the Deck you just created.
   - If the human has a Black Jack, then the game ends. That is, neither the human nor the AI gets to hit. (The AI can push if it also gets a Black Jack.) If the human doesn't get a Black Jack however, the game must go on.
   - Print the AI's second Card (but don't reveal the first Card to the human). Also print the human's hand to the screen.
   - Prompt the user to either hit or hold. Scan in the user's response. If they typed in "hit," then deal them another Card and print out their hand again. Continue to prompt them to hit or hold until the human either busts or types in "hold."
@@ -164,14 +172,14 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
 ```
 *** Welcome to Black Jack! Prepare to lose. ***
 
-AI: <???>, <DIAMOND,10>
-Player: <DIAMOND,3> <HEART,A> (14)
+AI: <???>, <diamond,10>
+Player: <diamond,3> <heart,A> (14)
 
 What will you do (enter either hold or hit)?
 > hit
 
-AI: <???>, <DIAMOND,10>
-Player: <DIAMOND,3> <HEART,A> <SPADE,5> (19)
+AI: <???>, <diamond,10>
+Player: <diamond,3> <heart,A> <spade,5> (19)
 
 What will you do (enter either hold or hit)?
 > hold
@@ -180,39 +188,39 @@ What will you do (enter either hold or hit)?
 ***      Game Over      ***
 ***      You win!       ***
 ***************************
-AI: <DIAMOND,4> <DIAMOND,10> <SPADE,2> <CLUB,7> (23 -- Bust!)
-Player: <DIAMOND,3> <HEART,A> <SPADE,5> (19)
+AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
+Player: <diamond,3> <heart,A> <spade,5> (19)
 ```
 
 - The second example shows that neither AI and human busts, but human wins.
 
 ```
 *** Welcome to Black Jack! Prepare to lose. ***
-AI: <???>, <DIAMOND,A>
-Player: <DIAMOND,3> <DIAMOND,4> (7)
+AI: <???>, <diamond,A>
+Player: <diamond,3> <diamond,4> (7)
 What will you do (enter either hold or hit)?
 hit
 
-AI: <???>, <DIAMOND,A>
-Player: <DIAMOND,3> <DIAMOND,4> <SPADE,7> (14)
+AI: <???>, <diamond,A>
+Player: <diamond,3> <diamond,4> <spade,7> (14)
 What will you do (enter either hold or hit)?
 hit
 
-AI: <???>, <DIAMOND,A>
-Player: <DIAMOND,3> <DIAMOND,4> <SPADE,7> <DIAMOND,4> (18)
+AI: <???>, <diamond,A>
+Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> (18)
 What will you do (enter either hold or hit)?
 hit
 
-AI: <???>, <DIAMOND,A>
-Player: <DIAMOND,3> <DIAMOND,4> <SPADE,7> <DIAMOND,4> <DIAMOND,2> (20)
+AI: <???>, <diamond,A>
+Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
 What will you do (enter either hold or hit)?
 hold
 ***************************
 ***      Game Over      ***
 ***      You win!       ***
 ***************************
-AI: <DIAMOND,8> <DIAMOND,A> (19)
-Player: <DIAMOND,3> <DIAMOND,4> <SPADE,7> <DIAMOND,4> <DIAMOND,2> (20)
+AI: <diamond,8> <diamond,A> (19)
+Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
 ```
 
 - The third example shows the human busting.
@@ -220,20 +228,20 @@ Player: <DIAMOND,3> <DIAMOND,4> <SPADE,7> <DIAMOND,4> <DIAMOND,2> (20)
 ```
 *** Welcome to Black Jack! Prepare to lose. ***
 
-AI: <???>, <CLUB,3>
-Player: <CLUB,J> <HEART,6> (16)
+AI: <???>, <club,3>
+Player: <club,J> <heart,6> (16)
 What will you do (enter either hold or hit)?
 hit
 
-AI: <???>, <CLUB,3>
-Player: <CLUB,J> <HEART,6> <DIAMOND,6> (22 -- Bust!)
+AI: <???>, <club,3>
+Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
 
 ***************************
 ***      Game Over      ***
 ***      You lose!      ***
 ***************************
-AI: <CLUB,3> <CLUB,3> (6)
-Player: <CLUB,J> <HEART,6> <DIAMOND,6> (22 -- Bust!)
+AI: <club,3> <club,3> (6)
+Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
 ```
 
 - The final example shows a push (tie).
@@ -241,16 +249,16 @@ Player: <CLUB,J> <HEART,6> <DIAMOND,6> (22 -- Bust!)
 ```
 *** Welcome to Black Jack! Prepare to lose. ***
 
-AI: <???>, <CLUB,K>
-Player: <DIAMOND,10> <HEART,8> (18)
+AI: <???>, <club,K>
+Player: <diamond,10> <heart,8> (18)
 What will you do (enter either hold or hit)?
 hold
 ***************************
 ***      Game Over      ***
 ***      You pushed     ***
 ***************************
-AI: <CLUB,2> <CLUB,K> <SPADE,5> <CLUB,A> (18)
-Player: <DIAMOND,10> <HEART,8> (18)
+AI: <club,2> <club,K> <spade,5> <club,A> (18)
+Player: <diamond,10> <heart,8> (18)
 ```
 
 #### Extensions
