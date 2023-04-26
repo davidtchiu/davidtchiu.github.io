@@ -357,23 +357,19 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
   <HEART,A>
   ```
 
-- Let's also give users a quick and dirty way of obtaining a deck using a `static` method. Write a `public static` method called `makeShuffledDeck()` that returns a shuffled deck of course. You can use it like this:
+- We can also give users a quick and dirty way of obtaining a deck using a `static` method. Write a `public static` method called `createShuffledDeck()` that returns a shuffled deck of cards. You can use it like this:
 
   ```java
   public class Main {
 
       public static void main(String[] args) {
-          Deck myDeck = Deck.makeShuffledDeck();
+          Deck myDeck = Deck.createShuffledDeck();
           System.out.println(myDeck);
       }
   }
   ```
 
   ```
-  <HEART,10>
-  <DIAMOND,5>
-  <CLUB,9>
-  <SPADE,2>
   <DIAMOND,2>
   <DIAMOND,8>
   <SPADE,4>
@@ -386,6 +382,10 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
   <CLUB,7>
   <SPADE,Q>
   <SPADE,K>
+  <HEART,10>
+  <DIAMOND,5>
+  <CLUB,9>
+  <SPADE,2>
   <CLUB,2>
   <DIAMOND,6>
   <DIAMOND,Q>
@@ -402,6 +402,8 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
   <CLUB,K>
   <CLUB,5>
   <HEART,2>
+  <HEART,A>
+  <DIAMOND,J>
   <DIAMOND,A>
   <SPADE,5>
   <HEART,4>
@@ -413,15 +415,13 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
   <DIAMOND,K>
   <DIAMOND,3>
   <CLUB,3>
-  <DIAMOND,J>
-  <SPADE,3>
-  <SPADE,A>
   <DIAMOND,4>
   <SPADE,9>
   <DIAMOND,9>
   <DIAMOND,10>
   <HEART,3>
-  <HEART,A>
+  <SPADE,3>
+  <SPADE,A>
   ```
 
 

@@ -159,8 +159,8 @@ let days = {
     // wk 14
     "MM: segmentation",
     "MM: paging",
-    "MM: multi-level paging",
-    // "MM: translation Lookaside Buffer (TLB)",
+    // "MM: multi-level paging",
+    "MM: translation caching",
     // wk 15
     "<strong><emph>Cancelled</emph></strong>",
     "Start Virtual Memory",
