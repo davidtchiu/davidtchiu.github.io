@@ -32,35 +32,34 @@ A quick word on face values. The face value of each card can usually be added to
 - Another (much more complicated) exception is the Ace (1) card, which carries a value of either **1** or **11** when totaled, depending on circumstances. It's a bit tricky. Here's the rule for determining the value of an Ace card in your hand:
   - The value of an Ace is _11_ if it does not cause the hand to bust.
   - The value of an Ace is _1_, otherwise.
-  - Keep in mind there could be several Aces in a single hand... so even in the highly unlikely scenario that if you somehow end up with a hand of 21 Ace cards, they should all count as 1, and leave you with a 21!
-  - To get you started, I'll give out a hint. For each Ace in your hand, add 11 to the value. For instance, if had 3 Aces and a 5 in your hand, give yourself a value of 38. Now adjust the value down to 18 (11 + 1 + 1 + 5).
+  - Keep in mind there could be several Aces in a single hand... so even in the highly unlikely scenario where you somehow end up with a hand of 21 Ace cards, they should all count as 1, and leave you with a hand value of 21!
+  - **I'll give out a hint:** For each Ace in your hand, go ahead and just add 11 to the value. For instance, if had 3 Aces and a 5 in your hand, give yourself a value of 38. Now, you just need to figure out how to adjust the value down --- in this case, to 18 (= 11 + 1 + 1 + 5).
 
 #### Writing the Hand Class
 
-- This class should keep an `ArrayList` of `Card` objects. This represents all the `Card`s the hand holds.
+- This class should keep a list of `Card`s. I'll leave it up to you to determine a good data structure to use to store these cards, but it should be fairly obviously.
 
-- This class should keep a reference to a `Deck` object, which represents all the Cards that have yet to be drawn.
+- This class should keep a reference to a `Deck` object, which represents all the `Card`s that have yet to be drawn.
 
 - Write a 1-argument constructor that takes as input a `Deck` object. Upon being called, it should remove the top two cards from the Deck, and add them to the hand.
 
-- Write a 3-argument constructor that takes as inputs 2 `Card` objects and add them to your array list. The third argument is a `Deck` object. (This constructor is provided only to help you test).
+- Write a 3-argument constructor that takes as inputs 2 `Card` objects and add them to your list. The third argument is a `Deck` object. 
 
 - A method, `int getValue()` which accepts no input arguments. It loops through all the `Card`s in the hand, and sums up their values, using the rules of the game described above. This total is then returned to the caller. Recall that the Ace is handled specially.
 
-- A method, `Card getCardAt(int index)` which accepts an index to the current Hand, and returns the Card at the given index. If the index is out of range, this method should return null.
+- A method, `Card getCardAt(int index)` which accepts an index to the current Hand, and returns the Card at the given index. If the index is out of range, this method should return `null`.
 
-- A method, `boolean isBust()` which accepts no input arguments, and determines whether or not the value of the hand exceeds 21 (i.e., 21 is not bust!)
+- A method, `boolean isBust()` which determines whether or not the hand is "bust." A hand is bust when value of the hand *exceeds* 21.
 
-- A method, `boolean isBlackJack()` which accepts no input arguments, and determines whether or not the current Hand holds a Black Jack. This can only occur when the the Hand holds exactly two cards, and the value of the Hand is **21**. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s).
+- A method, `boolean isBlackJack()` which determines whether or not the current Hand holds a Black Jack. This can *only* occur when the the `Hand` holds exactly two cards, and the value of the Hand is **21**. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s is not a Black Jack).
 
-- A method, `void hit()` which accepts no input arguments. It draws the top card from the associated `Deck` object and adds it to the current hand. If the hand is already bust, this method performs no action.
+- A method, `void hit()` that draws the top card from the associated `Deck` instance variable and adds it to the current hand. If the hand is already bust, this method should have no effect.
 
-- A method, `boolean pushes(Hand other)` which accepts another Hand object as input. It returns true if the current Hand's value ties with the given Hand's value.
+- A method, `boolean pushes(Hand other)` which accepts another `Hand` as input. It returns true if the current Hand's value ties the other Hand.
 
-- A method, `boolean defeats(Hand other)` which accepts another Hand object as its only argument. It compares the current hand with the given hand, and:
+- A method, `boolean defeats(Hand other)` which accepts another `Hand` as its only argument. It compares the current Hand with the given Hand, and:
 
-  - It returns `true` if the other hand is bust, and the current hand is not. It also returns `true` if neither hand is bust, and the current hand's value is higher than the other.
-  - It returns `false` otherwise.
+  - A hand defeats the other, if the other hand is bust, and the current hand is not. It also defeats the other if neither hand is bust, and the current hand's value is higher than the other.
 
 - The `String toString()` method, which returns a String representing the Hand. The String should show each Card in the hand on the same line, followed by the value of the Hand and whether it is bust, and whether it is a Black Jack on the same line. See code examples below for help.
 
