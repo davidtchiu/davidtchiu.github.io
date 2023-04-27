@@ -29,10 +29,11 @@ Black Jack requires users to hold a set of cards, generally known as a "Hand." L
 A quick word on face values. The face value of each card can usually be added to the value of the hand, with a few exceptions:
 
 - Jack (11), Queen (12), and King (13) all carry a value of **10** when added to the hand.
-- Another (much more complicated) exception is the Ace (1) card, which carries a value of either **1** or **11** when totaled, depending on circumstances. Here's the rule for adding an Ace card:
-  - The value of an Ace is _11_ if adding it does not cause the hand to bust.
+- Another (much more complicated) exception is the Ace (1) card, which carries a value of either **1** or **11** when totaled, depending on circumstances. It's a bit tricky. Here's the rule for determining the value of an Ace card in your hand:
+  - The value of an Ace is _11_ if it does not cause the hand to bust.
   - The value of an Ace is _1_, otherwise.
-    Keep in mind there could be several Aces in a single hand.
+  - Keep in mind there could be several Aces in a single hand... so even in the highly unlikely scenario that if you somehow end up with a hand of 21 Ace cards, they should all count as 1, and leave you with a 21!
+  - To get you started, I'll give out a hint. For each Ace in your hand, add 11 to the value. For instance, if had 3 Aces and a 5 in your hand, give yourself a value of 38. Now adjust the value down to 18 (11 + 1 + 1 + 5).
 
 #### Writing the Hand Class
 
@@ -42,7 +43,7 @@ A quick word on face values. The face value of each card can usually be added to
 
 - Write a 1-argument constructor that takes as input a `Deck` object. Upon being called, it should remove the top two cards from the Deck, and add them to the hand.
 
-- Write a 2-argument constructor that takes as inputs 2 Card objects and add them to your array list. This method should set the Deck to null. (This constructor is provided only to help you test).
+- Write a 3-argument constructor that takes as inputs 2 `Card` objects and add them to your array list. The third argument is a `Deck` object. (This constructor is provided only to help you test).
 
 - A method, `int getValue()` which accepts no input arguments. It loops through all the `Card`s in the hand, and sums up their values, using the rules of the game described above. This total is then returned to the caller. Recall that the Ace is handled specially.
 
@@ -66,9 +67,10 @@ A quick word on face values. The face value of each card can usually be added to
 - The first example below shows the effect of counting Aces.
 
   ```java
+  Deck dealerDeck = new Deck();
   Card c1 = new Card(Suit.CLUB, 1);
   Card c2 = new Card(Suit.DIAMOND, 1);
-  Hand myHand = new Hand(c1, c2);
+  Hand myHand = new Hand(c1, c2, dealerDeck);
   System.out.println(myHand);
 
   > <club,A> <diamond,A> (12)
@@ -92,9 +94,10 @@ A quick word on face values. The face value of each card can usually be added to
 - The following example shows a Black Jack, and some subsequent hits.
 
   ```java
+  Deck dealerDeck = new Deck();
   Card c1 = new Card(Suit.CLUB, 1);
   Card c2 = new Card(Suit.SPADE, 12);
-  Hand myHand = new Hand(c1, c2);
+  Hand myHand = new Hand(c1, c2, dealerDeck);
   myHand.isBlackJack()
   > true   (boolean)
 
@@ -118,8 +121,9 @@ A quick word on face values. The face value of each card can usually be added to
 
   ```java
   //start with the same hands (both Black Jacks, in fact)
-  Hand myHand = new Hand(new Card(Suit.CLUB, 1), new Card(Suit.SPADE, 10));
-  Hand yourHand = new Hand(new Card(Suit.DIAMOND, 1), new Card(Suit.CLUB, 13));
+  Deck dealerDeck = new Deck();
+  Hand myHand = new Hand(new Card(Suit.CLUB, 1), new Card(Suit.SPADE, 10), dealerDeck);
+  Hand yourHand = new Hand(new Card(Suit.DIAMOND, 1), new Card(Suit.CLUB, 13), dealerDeck);
   myHand.defeats(yourHand)
   > false   (boolean)
 
