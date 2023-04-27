@@ -49,7 +49,7 @@ A quick word on face values. The face value of each card can usually be added to
 
 - A method, `Card getCardAt(int index)` which accepts an index to the current Hand, and returns the Card at the given index. If the index is out of range, this method should return null.
 
-- A method, `boolean isBust()` which accepts no input arguments, and determines whether or not the value of the hand exceeds 21.
+- A method, `boolean isBust()` which accepts no input arguments, and determines whether or not the value of the hand exceeds 21 (i.e., 21 is not bust!)
 
 - A method, `boolean isBlackJack()` which accepts no input arguments, and determines whether or not the current Hand holds a Black Jack. This can only occur when the the Hand holds exactly two cards, and the value of the Hand is **21**. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s).
 
