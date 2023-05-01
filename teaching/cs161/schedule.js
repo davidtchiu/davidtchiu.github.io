@@ -254,10 +254,10 @@ let days = {
     "<strong><emph>Cancelled</emph></strong>",
     "Binary search",
     "Lab 12",
-    "Selection sort",
+    "Sorting",
     // wk 16
+    "Selection sort",
     "Bubble Sort",
-    "Recursion",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
