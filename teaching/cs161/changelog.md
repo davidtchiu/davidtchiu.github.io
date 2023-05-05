@@ -1,4 +1,6 @@
 #### TODO
+- I should do a small unit on debugging and hand out rubber ducks sooner. BlueJ debugger tool. Problems like reverse(), edge cases, removing items from a list, ...
+  - I'd have to cut hashmap. Not a huge deal if I do.
 - Need one more nested loop array problem in Hwk 6. Not a super challenging one though.
 - Consider doing exams on Fridays instead of Thursdays to preserve Lab? What about TA hours?
 - Hwk 1 can be due 2 days earlier now.

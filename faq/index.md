@@ -31,9 +31,9 @@
   Yes, make an appointment with me. And the earlier the better. We should be having this conversation ideally when you're in your 3rd year. I'll be happy to set up an appointment. The Math/CS faculty also run a grad school panel every year year in Fall, so watch out for the announcements in your email.
 
 - **Can you write me a letter of recommendation?**\
-  The impact of a letter begins with the reliability of its writer, so I don't write puff pieces because I happen to like you. Know that I _will_ list your weaknesses along with strengths in your work and personality. If I agree to write your letter, I would tell you any weaknesses I'd list (if any), and let you decide if you still want me to proceed. Know that good grades in isolation don't really impress me (nor many readers of the letter). "A" students are everywhere, and there's always someone with a better record than you. So you need to ask yourself, _"What separates me from the rest?"_ What impresses people in addition to good grades are your attitudes, actions, and how you treat others.
+  The impact of a letter begins with the reliability of its writer, so I don't write puff pieces because I happen to like you. Know that I _will_ list your weaknesses along with strengths. If I agree to write your letter, I would tell you any weaknesses I'd list (if any), and let you decide if you still want me to proceed. Know that good grades in isolation don't really impress me (nor many readers of the letter). "A" students are everywhere, and there's always someone with a better record than you. So you need to ask yourself, _"What separates me from the rest?"_ What impresses people in addition to good grades are your attitudes, actions, and how you treat others.
 
-  - _"Is David a relevant judge?"_ Try to gauge how much I'd know about your current strengths and weaknesses for the position to which you are applying. Just because you got a good grade in my CS 1 or CS 2 class doesn't mean I would know anything about your qualfications for graduate school or a job as a software developer.
+  - _"Is David a relevant judge?"_ Try to gauge how much I'd know about your current strengths and weaknesses for the position to which you are applying. Just because you got a good grade in my CS 1 or CS 2 class doesn't mean I would know anything about your qualifications for graduate school or a job as a software developer.
 
   - _"Have I been a good citizen in the department?"_ Good grades are not sufficient for me to write you a decent letter. How do you treat people? Are you easy to work with? If you've demonstrated any immaturity, rudeness, or inappropriateness in my classroom or in general, don't bother asking me for a letter.
 
@@ -42,6 +42,8 @@
   - _"Have I provided David with enough information?"_ Have you provided me with a current resume or CV? Do you have a description of the position? How about a draft cover letter declaring your interests and qualifications? Until you can provide these items, you aren't ready to ask for letters!
 
   - _"How long has it been since I last interacted with David?"_ If it's been multiple years since you graduated, I may not remember enough details about you as a student. I'd likely have to rely on data like grades and GPA, which may no longer represent you.
+
+  - If you believe that David is qualified, please fill out this [request form](https://forms.gle/vyHiYT8RH8ehTihA7).
 
 - **Can I list you for a job reference?**\
   I am generally fine with this, as long as I've had you in my courses. You're reminded that I'm honest about my evaluations of students, so a lot of the things from the previous question still apply.
