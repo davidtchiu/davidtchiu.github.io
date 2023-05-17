@@ -175,7 +175,7 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("8/29/22", days, MWF);
+const schedule = new CourseCalendar("8/28/23", days, MWF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();

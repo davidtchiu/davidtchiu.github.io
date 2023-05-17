@@ -223,7 +223,7 @@ let days = {
     // wk final
     "",
     "",
-    "<strong><emph>Final Exam<br/>(12p - 2p)</strong></emph>",
+    "<strong><emph>Final Exam<br/>12:00-2:00</strong></emph>",
     "",
   ],
 };

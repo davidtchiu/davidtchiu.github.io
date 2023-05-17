@@ -1,26 +1,26 @@
-## CS 161 Syllabus
+## CS 261 Syllabus
 
 
 #### Course Description
-This course is an introduction to computer science and programming. The programming language Java is used to illustrate concepts in computer science. The course emphasizes the use of the computer as a problem-solving tool and the development of good programming style. CS 161 is the introductory course for students planning to major or minor in computer science. A weekly lab is required.
+This course is a continuation of the topics introduced in CSCI 161. It provides an introduction to the study of fundamental data structures and their associated algorithms. Students will learn about lists, stacks, queues, trees, sorting, searching, abstract data types, and object-oriented programming using Java, and learn how to choose appropriate data structures and algorithms for particular problems. 
 
 #### Prerequisites
-Three years of high-school mathematics, MATH 110 Pre-Calculus, or equivalent. Students with transfer credit for CSCI 161 may not take this course.
+A grade of C- or higher in the following course is required, or with permission from the instructor:
+- CSCI 161: Introduction to Computer Science
+Students with transfer credit for CSCI 261 may not take this course.
 
 #### Required Textbook
-[Cay Horstmann. Java Concepts: Early Objects.](https://www.amazon.com/Java-Concepts-Cay-S-Horstmann/dp/1119056500)
+[Koffman and Wolfgang. Data Structures: Abstraction and Design Using Java. 3rd edition or higher.](https://www.amazon.com/Data-Structures-Abstraction-Design-Using/dp/1119703611/)
 
 
 #### Course Topics
-- Computational thinking
-- Object-oriented programming
-- Arithmetic manipulation
-- Conditional logic
-- Loops
-- Methods
-- Basic data structures
-- Input/output: file and user interaction
-- Elementary complexity analysis
+- Inheritance and polymorphism
+- Exception handling
+- Basic principles of complexity analysis and the "Big-O" notation
+- Data structures and associated operations (including lists, queues, stack, trees, and maps)
+- Recursion and recursive data structures
+- Sorting algorithms
+
 
 
 #### CS Community Statement
@@ -28,42 +28,56 @@ Students taking this course range from those with no prior background in program
 
 The goals of this course can only be accomplished in a setting of mutual respect, where ideas, questions, and misconceptions can be discussed with civility. As your instructor, I am committed to creating a classroom environment that welcomes all students, regardless of their identities (e.g., race, class, gender, sexual orientation, religious beliefs). I firmly believe that everyone in the class is fully capable of engaging and grasping the material, and that the world of computing is stronger when it includes the broadest possible set of perspectives. We all have unconscious biases, and I will try to continually examine my judgments, words, and actions to keep my biases in check and treat everyone fairly. I hope that you will do the same. If you feel comfortable, please let me know if there is anything I can do to make sure everyone is encouraged to succeed in this class.
 
+#### Student Learning Outcomes
+Upon completion of this course, students will be able to:
+- Design and implement reasonably sized Java programs from scratch, maximizing code reuse.
+- Gracefully handle error-reporting in Java programs.
+- Analyze an algorithm using big-$O$ notation.
+- Make informed decisions on choosing an appropriate data structure for a given task by understanding their tradeoffs and considering their performance in the common case.
+
 
 #### Grading
 The following grade cutoffs are upper bounds. They might come down, but will not be set higher: A = 95, A- = 90, B+ = 87, B = 83, B- = 80, C+ = 77, C = 73, C- = 70, D+ = 67, D = 64, D- = 60, F = $<$ 60. Your overall grade will be composed as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Participation | 3 |
+| Attendance and Participation | 3 |
 | Lab Assignments | 10 |
 | Homework Assignments | 35 |
 | Midterm I | 15 |
 | Midterm II | 17 |
 | Final Exam | 20 |
 
+##### Lab Assignments
+Labs provide a low stakes, hands-on, and collaborative way to learn the materials. As such, they only represent 10% of your final grade. You may choose to work alone, or with whomever you like during lab. **However, you must submit your own work.**
 
+For full credit, you must attend weekly labs and submit your lab assignments by the next day. Each lab is worth 2 points, with a simple grading policy:
+- On-time attendance + completion (due next day): 2 points
+- Late attendance or minimal effort: 1 point
+- No-show or no submission: 0 points
 
-##### Late Penalty, Exam Makeup, and Extensions
-For each day either a homework assignment is late (including weekends), a $$3^d\%$$ deduction, where $$d$$ is the number of days late, will be assessed. Because ample amounts of time are provided to complete each assignment (usually around 1-2 weeks) no extensions be will given for homework assignments, unless you are experiencing are unique circumstances or for accommodations.
 Because labs are always due the next day and are graded on attendance and effort, there is no extension for labs.
 
+##### Homework Assignments
+Homework assignments are assigned every 1.5 - 2 weeks. Unless otherwise noted, you are to work on homework assignments alone. You are welcome to brainstorm with others (including tutors) for ideas, but any code you submit should be yours.
+
+**Do not copy code you find on the web and/or ChatGPT.** This is considered plagiarism. Please see the "Academic Integrity" section below.
+
+##### Homework Late Penalty and Extensions
+For each day that an assignment is late (including weekends), a $$3^d\%$$ deduction, where $$d$$ is the number of days late, will be assessed. Because ample amounts of time are provided to complete each assignment (usually around 1-2 weeks) no extensions be will given for homework assignments, unless you are experiencing unique circumstances or for accommodations.
 
 ##### Exams
 There will be two midterms and a final exam. They will cover topics discussed in the lectures, readings from the assigned textbook, and assignments. The exams are cumulative. Study guides are provided and selected problems are reviewed on the lecture preceding the day of the exam. You are allowed a page of notes (front and back) on all exams. 
 
-- Make-up: I expect you to be present on the day of exams. I do not offer make-up exams unless you can demonstrate documented extenuating circumstances. (These do not count: having a minor illness, family visiting, etc.)
+- Make-up: I expect you to be present on the day of exams. I do not offer make-up exams unless you can demonstrate documented extenuating circumstances. (These do not count as extenuating circumstances: experiencing a cold, overslept, family visiting, etc.)
 
 - Accommodations: It is *your* responsibility to inform me if you will be taking it at SAA well-ahead of time, so that I have time to get the exams over to their office.
 
-- The following items are prohibited: Phones, headphones, and other mobile devices.
+- The following items are prohibited on the day of exams: Graphing calculators, phones, headphones, and other mobile devices.
 
 
-##### Discretionary
-Participation points will be given based on:
-- Regular lecture and lab attendance
-- Classroom participation
-- Timeliness
-- Refraining from activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, ...
+##### Attendance and Participation
+Regular attendance and participation are required. Attendance, to be graded out of 10 points, applies towards your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
 
 
 #### Course Policies

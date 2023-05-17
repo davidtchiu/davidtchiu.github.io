@@ -41,12 +41,36 @@ The following grade cutoffs are upper bounds. They might come down, but will not
 | Midterm II | 17 |
 | Final Exam | 20 |
 
+##### Lab Assignments
+Labs provide a low stakes, hands-on, and collaborative way to learn the materials. As such, they only represent 10% of your final grade. You may choose to work alone, or with whomever you like during lab. **However, you must submit your own work.**
 
+For full credit, you must attend weekly labs and submit your lab assignments by the next day. Each lab is worth 2 points, with a simple grading policy:
+- On-time attendance + completion (due next day): 2 points
+- Late attendance or minimal effort: 1 point
+- No-show or no submission: 0 points
 
-##### Late Penalty, Exam Makeup, and Extensions
-For each day either a homework assignment is late (including weekends), a $$3^d\%$$ deduction, where $$d$$ is the number of days late, will be assessed. Because ample amounts of time are provided to complete each assignment (usually around 1-2 weeks) no extensions be will given for homework assignments, unless you are experiencing are unique circumstances or for accommodations.
 Because labs are always due the next day and are graded on attendance and effort, there is no extension for labs.
 
+##### Homework Assignments
+Homework assignments are assigned every 1.5 - 2 weeks. Unless otherwise noted, you are to work on homework assignments alone. You are welcome to brainstorm with others (including tutors) for ideas, but any code you submit should be yours.
+
+**Do not copy code you find on the web and/or ChatGPT.** This is considered plagiarism. Please see the "Academic Integrity" section below.
+
+##### Homework Late Penalty and Extensions
+For each day that an assignment is late (including weekends), a $$3^d\%$$ deduction, where $$d$$ is the number of days late, will be assessed. Because ample amounts of time are provided to complete each assignment (usually around 1-2 weeks) no extensions be will given for homework assignments, unless you are experiencing unique circumstances or for accommodations.
+
+##### Exams
+There will be two midterms and a final exam. They will cover topics discussed in the lectures, readings from the assigned textbook, and assignments. The exams are cumulative. Study guides are provided and selected problems are reviewed on the lecture preceding the day of the exam. You are allowed a page of notes (front and back) on all exams. 
+
+- Make-up: I expect you to be present on the day of exams. I do not offer make-up exams unless you can demonstrate documented extenuating circumstances. (These do not count as extenuating circumstances: experiencing a cold, overslept, family visiting, etc.)
+
+- Accommodations: It is *your* responsibility to inform me if you will be taking it at SAA well-ahead of time, so that I have time to get the exams over to their office.
+
+- The following items are prohibited on the day of exams: Graphing calculators, phones, headphones, and other mobile devices.
+
+
+##### Attendance and Participation
+Regular attendance and participation are required. Attendance, to be graded out of 10 points, applies towards your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
 
 ##### Exams
 There will be two midterms and a final exam. They will cover topics discussed in the lectures, readings from the assigned textbook, and assignments. The exams are cumulative. Study guides are provided and selected problems are reviewed on the lecture preceding the day of the exam. You are allowed a page of notes (front and back) on all exams. 
