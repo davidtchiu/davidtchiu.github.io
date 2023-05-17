@@ -158,56 +158,20 @@ After testing your `Combination` class thoroughly, create a new `ComboGuesser` c
 #### Grading
 
 ```
-Attendance is necessary to receive credit for lab.
+This assignment will be graded out of 2 points, provided that:
+- You were in attendance and on-time.
+- Completed all required methods.
 ```
 
-<!--
-```
-This assignment will be graded out of a total of 10 pts, provided:
-
-Combination's constructor randomly generates a combination of the
-given length and max (limit) per number.
-
-The toString() method has been implemented, according to the format,
-in the Combination class. For instance, a comma should not be
-generated after the last number.
-
-setValue() has been implemented, and will only operate on inputs
-within the allowed range.
-
-The equals() method is properly implemented in Combination.
-Returns true if the number sequence that is stored in a
-given Combination object matches this combination sequence.
-
-The 3-argument constructor is implemented for ComboGuesser.
-
-guessCombo() is implemented for ComboGuesser.
-
-You re-use code whenever possible.
-``` -->
 
 #### Submitting Your Assignment
+Follow these instructor to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
 
-After you have completed the assignment, use the following to submit your work.
-Exit BlueJ
+- Navigate to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
 
-- Open your computer's File Finder (some times called File Explorer). Locate the project folder.
+- Upload all files ending in  `.java` from your project folder.
 
-- Right-click on the project folder, then:
-
-  - If using Windows, select Send to then Zip file
-  - If using MacOS, select Compress ... items
-  - This step takes your selected creates a .zip file that you will submit to me.
-
-  It's really important you got this right. If you have doubts, ask one of us to check for you! I recommend that you double-check by opening the zip file, and investigating the contents to ensure that all the files are in there.
-
-- Navigate to our course page on Canvas and click on the assignment to which you are submitting.
-
-- Click on Submit Assignment, and you should be able to "browse" for your file
-
-- Select the `.zip` you just created, and click Submit Assignment again to upload it.
-
-- You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+- Click "Submit Assignment" again to upload it.
 
 #### Credits
 
