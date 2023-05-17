@@ -28,14 +28,14 @@ let days = {
       {
         name: "Hwk 2",
         title: "TicTacToe Player",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk2/",
-        due: "9/19/2022",
+        url: "hwk2.ttt/",
+        due: "9/15/2023",
       },
       {
         name: "Hwk 3",
         title: "You Complete Me",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk3.ycm/",
-        due: "10/3/2022",
+        url: "hwk3.ycm/",
+        due: "9/29/2023",
       },
       {
         name: "Hwk 4",
