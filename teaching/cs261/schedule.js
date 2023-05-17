@@ -13,10 +13,6 @@ let days = {
       url: "https://canvas.pugetsound.edu"
     },
     {
-      name: "Download BlueJ",
-      url: "https://bluej.org"
-    },
-    {
       name: "Download Google Drive App",
       url: "https://www.google.com/drive/download/"
     },
@@ -233,7 +229,7 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("8/29/2022", days, MTWF);
+const schedule = new CourseCalendar("8/28/2023", days, MTWF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
