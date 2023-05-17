@@ -1,15 +1,27 @@
 let days = {
+  resources: [
+    {
+      name: "Course Syllabus",
+      url: "syllabus"
+    },
+    {
+      name: "Community Statement",
+      url: "community"
+    },
+    {
+      name: "Notes and Sample Code",
+      url: "https://canvas.pugetsound.edu"
+    },
+    {
+      name: "Download BlueJ",
+      url: "https://bluej.org"
+    },
+    {
+      name: "Download Google Drive App",
+      url: "https://www.google.com/drive/download/"
+    },
+  ],
   assignments: {
-    resources: [
-      {
-        name: "Course Syllabus",
-        url: "syllabus"
-      },
-      {
-        name: "Notes and Sample Code",
-        url: "https://canvas.pugetsound.edu"
-      },
-    ],
     homework: [
       {
         name: "Hwk 1",
