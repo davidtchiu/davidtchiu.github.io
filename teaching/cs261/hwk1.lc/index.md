@@ -1,13 +1,11 @@
 ## CS 261 - Computer Science II
 
-### Warmup: Letter Counter
+### Warmup Assignment: Letter Counter
 
 This first assignment will give you a chance to refresh your Java programming basics and get reacquainted with your favorite development environment. Your task, to be completed individually, is to write a class that gathers information on the frequency with which letters appear in a sample of text. The specifics are spelled out in the next section, and you can use this code to test your class.
 
 This assignment does not require inheritance.
-#### Student Outcomes
 
-- To practice writing methods and constructors.
 
 #### Required Files
 
