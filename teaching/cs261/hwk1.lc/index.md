@@ -40,7 +40,8 @@ You are reminded to declare *constants* where necessary, and runtime errors from
 #### Sample Output
 If your program is correct, then running the `main(..)` method from the class I provided should generate the following output.
 
-```Frequencies after 317 characters:
+```
+Frequencies after 317 characters:
 a:  ######################  (5.36%)
 b:  ##  (.63%)
 c:  ##################  (4.42%)

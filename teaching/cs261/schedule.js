@@ -22,8 +22,8 @@ let days = {
       {
         name: "Hwk 1",
         title: "Warmup: Letter Counter",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk1/",
-        due: "9/7/2022",
+        url: "hwk1.lc/",
+        due: "9/6/2023",
       },
       {
         name: "Hwk 2",
