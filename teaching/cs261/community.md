@@ -2,7 +2,7 @@
 
 Students taking this course range from those with no prior background in programming to those with substantial experience and prior coursework. Because this course is an introduction to computer science, I do not expect students to have had any prior experience in programming. The course will work best if we respect and welcome each other no matter what level of readiness we are at, and we all support one another in learning.
 
-I will not tolerate behaviors that could negatively affect another student’s classroom experience. Such behaviors might include: making rude or condescending remarks, snickering at others’ questions or comments, talking over other individuals, and so on. I reserve the right to withdraw a student from this class who is repeatedly exhibiting such behavior.
+I do not tolerate behaviors that could negatively affect another student’s classroom experience. Such behaviors might include: making rude or condescending remarks, snickering at others’ questions or comments, talking over other individuals, and so on. I reserve the right to withdraw a student from this class who is repeatedly exhibiting such behavior.
 
 The goals of this course can only be accomplished in a setting of mutual respect, where ideas, questions, and misconceptions can be discussed with civility. As your instructor, I am committed to creating a classroom environment that welcomes all students, regardless of their identities (e.g., race, class, gender, sexual orientation, religious beliefs).
 
