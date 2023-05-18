@@ -66,7 +66,7 @@ let days = {
         title: "Huffman Codes",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
         due: "11/29/2023",
-      }
+      },
       {
         name: "Hwk 9",
         title: "Evil Hangman",
