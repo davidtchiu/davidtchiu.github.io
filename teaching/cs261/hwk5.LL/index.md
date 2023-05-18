@@ -121,42 +121,42 @@ $$O(n)$$ time (where $$n$$ is the number of stored items), so you would not want
 
 Even after all the enhancements we've made, there are still two major concerns with the singly linked list's performance. [1] a reverse (backward) traversal of the singly linked list would be a really costly operation (you saw that with `sumDown()` already), and [2] removing any element (including the tail) is still slow, because you always need to find the deleted `Node`'s previous `Node` in order to link up the remaining list. To illustrate problem [1], try running something like the following, and observe how many hops it takes:
 
-    ```java
-    SinglyLinkedList<String> list = new SinglyLinkedList<>();
-    list.add("dopey");
-    list.add("doc");
-    list.add("doughy");
-    list.add("dorky");
-    list.resetHopCount();
+```java
+SinglyLinkedList<String> list = new SinglyLinkedList<>();
+list.add("dopey");
+list.add("doc");
+list.add("doughy");
+list.add("dorky");
+list.resetHopCount();
 
-    for (int i = list.size()-1; i >= 0; i--) {
-        System.out.println(list.get(i));
-    }
-    System.out.println("Hops taken to traverse list in reverse order: " + list.getHopCount());
-    > Hops taken to traverse list in reverse order: 6
-    ```
+for (int i = list.size()-1; i >= 0; i--) {
+    System.out.println(list.get(i));
+}
+System.out.println("Hops taken to traverse list in reverse order: " + list.getHopCount());
+> Hops taken to traverse list in reverse order: 6
+```
 
-    What's the running time of the above loop in terms of Big-O? Hint: It's worse than $$O(n)$$. Why   is this? Because we're accessing the list in reverse order, the iterator is not helping us at all. The `getNodeAt()` method has to reset and start from 0 for every call, because the current index is less than the previous index.
+What's the running time of the above loop in terms of Big-O? Hint: It's worse than $$O(n)$$. Why   is this? Because we're accessing the list in reverse order, the iterator is not helping us at all. The `getNodeAt()` method has to reset and start from 0 for every call, because the current index is less than the previous index.
 
-    To illustrate problem [2], try the following:
+To illustrate problem [2], try the following:
 
-    ```java
-    SinglyLinkedList<String> list = new SinglyLinkedList<>();
-    list.add("dopey");
-    list.add("doc");
-    list.add("doughy");
-    list.add("dorky");
-    list.resetHopCount();
+```java
+SinglyLinkedList<String> list = new SinglyLinkedList<>();
+list.add("dopey");
+list.add("doc");
+list.add("doughy");
+list.add("dorky");
+list.resetHopCount();
 
-    // remove all items from the tail
-    for (int i = 0; i < list.size(); i++) {
-        list.remove(list.size()-1);
-    }
-    System.out.println("Hops taken to remove given item: " + list.getHopCount());
-    > Hops taken to remove given item: 6
-    ```
+// remove all items from the tail
+for (int i = 0; i < list.size(); i++) {
+    list.remove(list.size()-1);
+}
+System.out.println("Hops taken to remove given item: " + list.getHopCount());
+> Hops taken to remove given item: 6
+```
 
-    Notice that removing from the tail still requires hops! But why? We added a tail reference! Ah, the problem is that, in order to remove from the tail, it is calling removeAfter(node). This means it must first find the node preceding the tail node, requiring O(n) time, so having a tail reference doesn't help at all when removing the tail node (it only helps in adding to the tail).
+Notice that removing from the tail still requires hops! But why? We added a tail reference! Ah, the problem is that, in order to remove from the tail, it is calling removeAfter(node). This means it must first find the node preceding the tail node, requiring O(n) time, so having a tail reference doesn't help at all when removing the tail node (it only helps in adding to the tail).
 
 **Double links:** The running time of reverse list traversal could be improved if we make a "simple" change: Instead of only storing a reference to the next node, what if each node also stored a reference to its previous node? Such a structure is called a doubly linked list.
 
