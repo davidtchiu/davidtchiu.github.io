@@ -46,7 +46,7 @@ The following file(s) have been provided for this homework.
 - [movieReviews.txt](movieReviews.txt)
 
 #### Team Assignments
-For this project you'll be working in teams.
+For this project you'll be working in teams. Please ensure that you listed all of your team members in a Javadocs comment at the top of each `.java` file.
 
 #### Data Set
 Start a new project in your preferred editor, then download a copy of movieReviews.txt. Put it in your project folder. Open the file so that you get a chance to understand its format. Each line contains a movie review, and the sentiment of that review is the first number.
@@ -73,10 +73,10 @@ You do need to implement two simple classes, so I can grade your programs:
 
 1. The model: You need to track every word that appears in the review, along with their score (explained below) and occurrences. For instance, let's say there are only two reviews in my movie file:
 
-```
-4 I love love love this film !
-2 Had a love - hate relationship with this movie .
-```
+    ```
+    4 I love love love this film !
+    2 Had a love - hate relationship with this movie .
+    ```
 
 The word "love" appears 4 times in the file (shows up in both reviews). Notice that, for each time the word love appears, the score of the corresponding movie review is added to "love's" total. Therefore, with respect to this small training file, "love" has a total score of 14 (= 4 + 4 + 4 + 2). The word "hate" appears just once, and has a total score of 2. Ignore all punctuation found in the training file.
 
@@ -125,7 +125,7 @@ The Predict-O-Matic 2000 isn't perfect. The following extensions can be done for
 
 - Another problem is that there are a lot of words that really contribute no sentiment. For instance, "a," "the," "he", "she", etc. If you get unlucky with your training file, some of these common words may be assigned non-neutral score and bias your results. These are known as Stop Words. Process the review file and remove the top $$n$$ most frequently occurring words.
 
--= Phrases like "not bad" has a neutral or even positive sentiment. However, because our program scores each word independently, the score of "not" would be averaged with the score for "bad." Independently, these words probably take on a negative sentiment, so Predict-O-Matic 2000 would likely think the review is negative. Modify your program so that it considers 
+- Phrases like "not bad" has a neutral or even positive sentiment. However, because our program scores each word independently, the score of "not" would be averaged with the score for "bad." Independently, these words probably take on a negative sentiment, so Predict-O-Matic 2000 would likely think the review is negative. Modify your program so that it considers 
 $$n$$-grams $$(n>1)$$, i.e., score every sequence of $$n$$ consecutive words.
 
 #### Grading
@@ -201,14 +201,12 @@ Total: 100
 ```
 
 #### Submitting Your Assignment
-Follow these instructor to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+
+- If this is a team assignment, please ensure that you listed all of your team members in a Javadocs comment at the top of each `.java` file.
 
 - Navigate to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
 
 - Upload all the files ending in `.java` from your project folder.
 
 - Click "Submit Assignment" again to upload it.
-
-#### Credits
-
-Written by Brad Richards.

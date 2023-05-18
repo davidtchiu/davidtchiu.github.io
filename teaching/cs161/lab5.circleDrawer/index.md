@@ -149,7 +149,7 @@ This assignment will be graded out of 2 points, provided that:
 
 
 #### Submitting Your Assignment
-Follow these instructor to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
 
 - Navigate to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
 

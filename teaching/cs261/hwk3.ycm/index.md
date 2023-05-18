@@ -167,12 +167,12 @@ Total: 80
 ```
 
 #### Submitting Your Assignment
-Follow these instructor to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+
+- If this is a team assignment, please ensure that you listed all of your team members in a Javadocs comment at the top of each `.java` file.
 
 - Navigate to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
 
 - Upload all the files ending in `.java` from your project folder.
 
 - Click "Submit Assignment" again to upload it.
-
-

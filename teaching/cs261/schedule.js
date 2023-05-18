@@ -46,7 +46,7 @@ let days = {
       {
         name: "Hwk 5",
         title: "Doubly Linked List",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk5.LL",
+        url: "hwk5.LL/",
         due: "10/18/2023",
       },
       {
