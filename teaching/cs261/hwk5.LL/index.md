@@ -46,9 +46,9 @@ The following file(s) have been provided for this homework.
     > [dopey, doughy, dorky]
     ```
 
-You should first complete the helper methods, `removeFirst` and `removeAfter`. Their "stubs" are given in the file. Like I did in class for addFirst and addAfter, you should start by drawing out what you need to happen to your "links" in order to delete the Node object. You do not need to traverse any nodes to complete these two helper methods. They are both in $$O(1)$$.
+    You should first complete the helper methods, `removeFirst` and `removeAfter`. Their "stubs" are given in the file. Like I did in class for addFirst and addAfter, you should start by drawing out what you need to happen to your "links" in order to delete the Node object. You do not need to traverse any nodes to complete these two helper methods. They are both in $$O(1)$$.
 
-After you have completed these helper methods, then work on the `public remove(..)` methods. Test them to ensure they're working. Try all sorts of edge cases until you are convinced.
+    After you have completed these helper methods, then work on the `public remove(..)` methods. Test them to ensure they're working. Try all sorts of edge cases until you are convinced.
 
 
 
@@ -57,7 +57,7 @@ After you have completed these helper methods, then work on the `public remove(.
     - `getHopCount()`: An accessor that returns the current value of the counter.
     - `resetHopCount()`: A void method that sets the count back to zero.
 
-Using these methods, we can now get a peek at the complexity of our methods. Try this out:
+    Using these methods, we can now get a peek at the complexity of our methods. Try this out:
 
     ```java
     SinglyLinkedList<String> list = new SinglyLinkedList<>();
@@ -76,7 +76,7 @@ Using these methods, we can now get a peek at the complexity of our methods. Try
     > Hops taken 11
     ```
 
-You should try to understand why it took 6 steps to add five elements to the tail of the singly linked list before moving on.
+    You should try to understand why it took 6 steps to add five elements to the tail of the singly linked list before moving on.
 
 
 4. Now write a `ListTester` class with the following static methods:
@@ -90,7 +90,7 @@ You should try to understand why it took 6 steps to add five elements to the tai
 5. Next, write a method called `public void reverse()` that reverses the contents of your linked list. Here's the catch: for full credit, this method must run in 
 $$O(n)$$ time (where $$n$$ is the number of stored items), so you would not want to make repeated calls to your `get()`, `set()`, `add()` or `remove()` methods. Instead, you should manipulate the `Node` objects directly: Identify the tail element, unlink it, and move it to the head. Then grab the new tail node and move it behind the new head, and so on.
 
-Just like the above, add in a statement to count any time a "hop" is made. Then run `reverse()` a few times in the Tester code to ensure that your implementation is indeed $$O(n)$$.
+    Just like the above, add in a statement to count any time a "hop" is made. Then run `reverse()` a few times in the Tester code to ensure that your implementation is indeed $$O(n)$$.
 
 
 #### Optimizations
@@ -138,7 +138,7 @@ Even after all the enhancements we've made, there are still two major concerns w
 
     What's the running time of the above loop in terms of Big-O? Hint: It's worse than $$O(n)$$. Why   is this? Because we're accessing the list in reverse order, the iterator is not helping us at all. The `getNodeAt()` method has to reset and start from 0 for every call, because the current index is less than the previous index.
 
-To illustrate problem [2], try the following:
+    To illustrate problem [2], try the following:
 
     ```java
     SinglyLinkedList<String> list = new SinglyLinkedList<>();
@@ -156,7 +156,7 @@ To illustrate problem [2], try the following:
     > Hops taken to remove given item: 6
     ```
 
-Notice that removing from the tail still requires hops! But why? We added a tail reference! Ah, the problem is that, in order to remove from the tail, it is calling removeAfter(node). This means it must first find the node preceding the tail node, requiring O(n) time, so having a tail reference doesn't help at all when removing the tail node (it only helps in adding to the tail).
+    Notice that removing from the tail still requires hops! But why? We added a tail reference! Ah, the problem is that, in order to remove from the tail, it is calling removeAfter(node). This means it must first find the node preceding the tail node, requiring O(n) time, so having a tail reference doesn't help at all when removing the tail node (it only helps in adding to the tail).
 
 **Double links:** The running time of reverse list traversal could be improved if we make a "simple" change: Instead of only storing a reference to the next node, what if each node also stored a reference to its previous node? Such a structure is called a doubly linked list.
 
