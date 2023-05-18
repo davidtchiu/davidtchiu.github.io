@@ -1,6 +1,5 @@
-let days = {
-  assignments: {
-    resources: [
+let days = { 
+  resources: [
       {
         name: "Course Syllabus",
         url: "syllabus"
@@ -10,6 +9,7 @@ let days = {
         url: "https://canvas.pugetsound.edu"
       },
     ],
+  assignments: {
     homework: [
       {
         name: "Hwk 1",
