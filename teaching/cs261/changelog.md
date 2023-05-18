@@ -1,14 +1,10 @@
 # TODO
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 - Lec 1b: polymorphism -- Can I use pipe-cleaners somehow?
-- Remove or redo names on labs
-- Need to reformat all assignments to .md
 - Exam 1 implementation worth too much
 - Get assignment starter code on github
-- Hwk 2: Get rid of the tournament competition
 - Might consider adding Exceptions into Lab 4: Interfaces, and go with a perf lab for Lab 5?
 - Big-O: Don't spend anymore time talking about caching, and all that. Just move on to counting steps.
-- Hwk 3.ycm: Get rid of time-complexity requirement. Leave basic exception handling.
 - Hwk 3: Need to be more instructive on free-form Hwk assignments. Maybe wean them in over time.
 - Consider changing Lab 6 to LinkedList lab (problem is scheduling, but do I really need to implement MyArrayList?)
 - Hwk 3-4: Get rid of the punctuation Exception stuff. Simply keep the 2-scoring.
