@@ -40,7 +40,7 @@ let days = {
       {
         name: "Hwk 4",
         title: "Sentiment Predictor",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk4.sent/",
+        url: "hwk4.sent/",
         due: "10/6/2023",
       },
       {
@@ -57,22 +57,22 @@ let days = {
       },
       {
         name: "Hwk 7",
-        title: "Recursion",
+        title: "PriorityQueue? Heapsort?",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.rcv",
         due: "11/10/2023",
       },
       {
         name: "Hwk 8",
-        title: "Huffman Codes",
+        title: "Huffman Encoding",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
         due: "11/29/2023",
       },
-      {
-        name: "Hwk 9",
-        title: "Evil Hangman",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.ehm",
-        due: "11/14/2023",
-      },
+      // {
+      //   name: "Hwk 9",
+      //   title: "Evil Hangman",
+      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.ehm",
+      //   due: "11/29/2023",
+      // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
