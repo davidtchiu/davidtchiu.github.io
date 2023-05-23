@@ -57,22 +57,16 @@ let days = {
       },
       {
         name: "Hwk 7",
-        title: "PriorityQueue? Heapsort?",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.rcv",
-        due: "11/10/2023",
+        title: "Evil Hangman",
+        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.ehm",
+        due: "11/13/2023",
       },
       {
         name: "Hwk 8",
         title: "Huffman Encoding",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
-        due: "11/29/2023",
+        due: "11/4/2023",
       },
-      // {
-      //   name: "Hwk 9",
-      //   title: "Evil Hangman",
-      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.ehm",
-      //   due: "11/29/2023",
-      // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
