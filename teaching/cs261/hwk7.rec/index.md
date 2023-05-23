@@ -15,40 +15,42 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 1. Write a static method called `Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is itself.
 
-		```java
-    Queue<Double> q0 = new LinkedList<>();
-    System.out.println(q0);
-		> []
-    System.out.println(Recursion.reverseQueue(q0));
-		> []
+	 ```java
+	 Queue<Double> q0 = new LinkedList<>();
+	 System.out.println(q0);
+	 > []
+	 System.out.println(Recursion.reverseQueue(q0));
+	 > []
 
-    Queue<String> q1 = new LinkedList<>();
-    q1.add("A");
-    q1.add("B");
-    q1.add("C");
-    q1.add("D");
-    q1.add("E");
-    System.out.println(q1);
-		> [A, B, C, D, E]
+	 Queue<String> q1 = new LinkedList<>();
+	 q1.add("A");
+	 q1.add("B");
+	 q1.add("C");
+	 q1.add("D");
+	 q1.add("E");
+	 System.out.println(q1);
+	 > [A, B, C, D, E]
 
-    System.out.println(Recursion.reverseQueue(q1));
-		> [E, D, C, B, A]
+	 System.out.println(Recursion.reverseQueue(q1));
+	 > [E, D, C, B, A]
 
-    Queue<Integer> q2 = new LinkedList<>();
-    q2.add(100);
-    q2.add(200);
-    q2.add(300);
-    System.out.println(q2);
-		> [100, 200, 300]
+	 Queue<Integer> q2 = new LinkedList<>();
+	 q2.add(100);
+	 q2.add(200);
+	 q2.add(300);
+	 System.out.println(q2);
+	 > [100, 200, 300]
 
-    System.out.println(Recursion.reverseQueue(q2));
-		> [300, 200, 100]
+	 System.out.println(Recursion.reverseQueue(q2));
+	 > [300, 200, 100]
 
-    System.out.println(Recursion.reverseQueue(q2));
-		> [100, 200, 300]
-		```
+	 System.out.println(Recursion.reverseQueue(q2));
+	 > [100, 200, 300]
+	 ```
 
-2. Write a static method, `void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. Any value of `x` that is less than 2 by definition does not have any prime factors. **Hint:** 
+
+
+2. Write a static method, `void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. **Hint:** Any value of `x` that is less than 2 by definition does not have any prime factors. Otherwise, find the smallest integer that divides evenly into `x`...
 
 		```java
     System.out.println("Prime factors of 0");
