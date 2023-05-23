@@ -52,7 +52,7 @@ let days = {
       {
         name: "Hwk 6",
         title: "Ranked Choice Voting",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.rcv",
+        url: "hwk6.rcv",
         due: "10/30/2023",
       },
       {
