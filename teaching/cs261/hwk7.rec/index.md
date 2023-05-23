@@ -6,7 +6,7 @@ In this assignment, you'll be working with arrays, loops, and nested loops. This
 
 #### Student Outcomes
 
-- Exposure to writing recursive algorithms.
+- Writing recursive algorithms of varying degrees of difficulty.
 
 #### Instructions
 
@@ -30,7 +30,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
     q1.add("E");
     System.out.println(q1);
 		> [A, B, C, D, E]
-		
+
     System.out.println(Recursion.reverseQueue(q1));
 		> [E, D, C, B, A]
 
@@ -48,8 +48,57 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 		> [100, 200, 300]
 		```
 
+2. Write a static method, `void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. Any value of `x` that is less than 2 by definition does not have any prime factors. **Hint:** 
 
-1. A permutation is a sequencing of the elements in a given set. Write a static method called `List<List<E>> permute(List<E> items)` that takes as input a list of elements recursively determines all permutations of the given list. For instance, if a list contains `[A,B,C]` then this method should return the list containing 6 permuted lists: `[A,B,C]`, `[A,C,B]`, `[B,A,C]`, `[B,C,A]`, `[C,A,B]`, and `[C,B,A]`. Do not report duplicate permutations. It should be noted that the permutation of an empty list is also empty list. Also note that, if your list is size $$n$$, then you have $$n!$$ permutations.
+		```java
+    System.out.println("Prime factors of 0");
+    Recursion.printPrimeFactors(0);
+		> (no output)
+
+    System.out.println("Prime factors of 2");
+    Recursion.printPrimeFactors(2);
+		> 2
+
+    System.out.println("Prime factors of 4");
+    Recursion.printPrimeFactors(4);
+		> 2
+		> 2
+
+    System.out.println("Prime factors of 6");
+    Recursion.printPrimeFactors(6);
+		> 2
+		> 3
+
+    System.out.println("Prime factors of 7");
+    Recursion.printPrimeFactors(7);
+		> 7
+
+    System.out.println("Prime factors of 99");
+    Recursion.printPrimeFactors(99);
+		> 3
+		> 3
+		> 11
+
+    System.out.println("Prime factors of 121");
+    Recursion.printPrimeFactors(121);
+		> 11
+		> 11
+
+    System.out.println("Prime factors of 1024");
+    Recursion.printPrimeFactors(1024);
+		> 2
+		> 2
+		> 2
+		> 2
+		> 2
+		> 2
+		> 2
+		> 2
+		> 2
+		> 2
+		```
+
+1. A permutation is a sequencing of the elements in a given set. Write a static method called `List<List<E>> permute(List<E> items)` that takes as input a list of elements recursively determines all permutations of the given list. For instance, if a list contains 3 elements `[A,B,C]` then this method should return the list containing $$3! = 6$$ permuted lists: `[A,B,C]`, `[A,C,B]`, `[B,A,C]`, `[B,C,A]`, `[C,A,B]`, and `[C,B,A]`. Do not report duplicate permutations. It should be noted that the permutation of an empty list is also empty list. Also note that, if your list is size $$n$$, then you have $$n!$$ permutations. 
 
 	 **Hint:** Write a private helper method that inputs 
 
@@ -71,154 +120,6 @@ Create a new project and create a class called `Recursion`. Put all of the follo
     1234567-
     12345678
     ```
-
-2. **(Nested Loops)** The factorial of $$x$$, written $$x!$$ is defined $$x \times (x-1) \times (x-2) \times ... \times 2 \times 1$$. There's also a special case of $$0! = 1$$. Write a method `printFactorials()` which inputs an integer `n`. It prints out the factorial of all numbers between `0` and `n`. You may assume that `n` is nonnegative. (Hint: 0! should be printed out unconditionally. Then start into the loops!) Again, in designing this method, think about how many rows you need (starting from 1! -- and that's your outer loop), then decide what you need to do per row to compute the factorial at that row number and that's your inner loop.
-
-    ```java
-    AdvancedLoops loopie = new AdvancedLoops();
-    loopie.printFactorials(5);
-    0! == 1
-    1! == 1
-    2! == 2
-    3! == 6
-    4! == 24
-    5! == 120
-
-    loopie.printFactorials(0);
-    0! == 1
-
-    loopie.printFactorials(1);
-    0! == 1
-    1! == 1
-
-    loopie.printFactorials(20);
-    0! == 1
-    1! == 1
-    2! == 2
-    3! == 6
-    4! == 24
-    5! == 120
-    6! == 720
-    7! == 5040
-    8! == 40320
-    9! == 362880
-    10! == 3628800
-    11! == 39916800
-    12! == 479001600
-    13! == 6227020800
-    14! == 87178291200
-    15! == 1307674368000
-    16! == 20922789888000
-    17! == 355687428096000
-    18! == 6402373705728000
-    19! == 121645100408832000
-    20! == 2432902008176640000
-    ```
-
-##### Part II: Arrays/Strings and Loops
-
-Let's work on a couple methods that input arrays. The problems in this section can be solved *without* using nested loops.
-
-3. **(Arrays + Non-Nested Loop)** Write a method called `rotateRight()` that inputs an array of Strings and shifts every element in the array one position to the right. The right-most item would then jump to the first position. Here are some things that can help.
-
-    - An array of integers is declared using: `int[] arrayName`
-    - You can always find the length of the array using: `arrayName.length`
-    - To access a certain element of the array, use `arrayName[pos]` where `pos` is the integer address of the element you seek.
-
-    ```java
-    import java.util.Arrays;  // this is for printing arrays
-
-    AdvancedLoops loopie = new AdvancedLoops();
-    String[] list1 = {"A", "B", "C", "D", "E"};
-    loopie.rotateRight(list1);
-    System.out.println(Arrays.toString(list1));
-    > [E, A, B, C, D]
-
-    loopie.rotateRight(list1);
-    System.out.println(Arrays.toString(list1));
-    > [D, E, A, B, C]
-
-    String[] list2 = {};
-    loopie.rotateRight(list2);
-    System.out.println(Arrays.toString(list2));
-    > []
-    ```
-
-
-4. **(Strings + Non-Nested Loop)**  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters that are vowels in the string. Assume that `y` is not a vowel. Here are some things to remember about Strings that can help.
-
-    - You can always find the length of the string using: `stringName.length()`
-    - To access a certain character of the string, use `stringName.charAt(pos)` where `pos` is the integer address of the character you seek.
-    - A single character `c`, which is of `char` type, can be compared to another character using something like, `if (c == 'A')`
-    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char` data type) is a vowel. Beware of upper vs. lower case. (Yes this method should work for both cases.) Assume that `y` is not a vowel. 
-    - Finally, beware as always of integer divide!
-
-    ```java
-    AdvancedLoops loopie = new AdvancedLoops();
-    System.out.println(loopie.vowelRatio("Hello world"));
-    > 0.2727272727
-
-    System.out.println(loopie.vowelRatio("eieieieieieieaaaaa"));
-    > 1.0
-
-    System.out.println(loopie.vowelRatio("abba"));
-    > 0.5
-    ```
-
-
-##### Part III: Arrays + Nested Loops
-Let's write some algorithms that require nested loops to repeatedly iterate over arrays.
-
-5. **(Arrays + Nested Loops)** Write a method called `barGraph()` which inputs an integer array and prints a horizontal bar graph based on the contents of that array. Say the array `[3, 6, 4]` is input. Your method should print 3 asterisks on the first line, followed by 6 asterisks on the next line, followed by 4 asterisks on the last line. You may assume all values in the array are nonnegative. Here's an example:
-
-    ```java
-    AdvancedLoops loopie = new AdvancedLoops();
-    int[] list1 = {6, 4, 3, 5, 6};
-    loopie.barGraph(list1);
-    * * * * * *
-    * * * *
-    * * *
-    * * * * *
-    * * * * * *
-
-    int[] list2 = {5};
-    loopie.barGraph(list2);
-    * * * * *
-    ```
-
-
-
-##### Challenges
-If you feel like you've got a good grasp on this stuff, and want a real challenge. Try these!
-
-- **(Arrays + Nested Loops)** Write a method called `median()` which inputs an integer array and returns the median. The median of an array is defined to be the value in the list that has an equal number of values larger and smaller than itself. For instance, the median of `[3, 5, 7, 3, 9, 8, 2]` is `5`, because there are three numbers less than 5, and three numbers greater than 5. For each value `x[i]` in the array `x`, you need to traverse the array again (skipping itserlf) and count up the values greater than and less than `x[i]` (keep two counters). If these counters are equal, then return `x[i]` to be the median.
-
-    - The algorithm described above only works for odd-length arrays, so make sure you use those for input while testing. (How would you modify your algorithm to work with even-length arrays?)
-
-      ```java
-      AdvancedLoops loopie = new AdvancedLoops();
-      int[] list1 = {6, 3, 5, 6, 4};
-      System.out.println(loopie.median(list1));
-      > 4
-
-      int[] list2 = {7};
-      System.out.println(loopie.median(list2));
-      > 7
-      ```
-
-- **(Arrays + Nested Loops)** Write a method called `vertBarGraph()` which  prints a vertical bar graph whose lengths are given in the array. This method can be somewhat challenging, because you have to print the bar chart top-down. Give it your best shot! Here's an example of what it does.
-
-  ```java
-  AdvancedLoops loopie = new AdvancedLoops();
-  int[] list1 = {6, 3, 4, 5, 6};
-  loopie.vertBarGraph(list1);
-  *       *
-  *     * *
-  *   * * *
-  * * * * *
-  * * * * *
-  * * * * *
-  ```
 
 
 #### Program Defensively
