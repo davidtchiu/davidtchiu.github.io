@@ -91,7 +91,7 @@ let days = {
       {
         name: "Lab 3",
         title: "Abstract Classes Lab",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab3/",
+        url: "lab3.lib/",
         due: "9/14/2022",
       },
       {

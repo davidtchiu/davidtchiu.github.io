@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Inheritance Lab: 
+### Lab 2: Inheritance
 
 This week you'll reinforce inheritance topics you've learned in class by working with a set of Java classes that inherit from one another. You'll see how one class can build off of another, get practice with constructors, learn about the relationship between types and functionality, and wrap up with an exercise that combines inheritance and parameter types.
 
