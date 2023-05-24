@@ -16,7 +16,8 @@ As a side note, "lossy" compression algorithms are no less important and common:
 You are required to work in teams on this assignment. I've used a sophisticated matching algorithm to produce the groups listed below. (Ok, it's just random, but I did write a program to do it!) Do not start writing any code until you've met with your team member(s) and discussed the assignment and possible approaches. For best results, I expect you to work physically together. I will assume that each member of the team has contributed equally to the project. If that assumption isn't true, please contact me privately.
 
 #### Required Files
-
+Please download the following starter pack:
+- [Hwk_Huffman.zip](Hwk_Huffman.zip)
 
 #### Provided Interfaces and Classes
 Download the `Huffman` project and open it in your favorite IDE. It contains the following files,
@@ -41,7 +42,7 @@ Download the `Huffman` project and open it in your favorite IDE. It contains the
 To understand how text compression is going to work, you have to first grasp how text is represented in its raw, uncompressed state.
 
 ##### ASCII Codes for Symbol Representation
-For computers to represent and display human-readable symbols, it commonly references the ASCII standard (see here). ASCII represents 256 unique human-readable symbols, which means $$\ceil{\log_2{265}} = 8$$ bits (equivalent to one byte) of storage is required to store each symbol in a text file. For instance, the symbol `a` is represented by `01100001` in binary (which is `97` in decimal). Let's say a file contains the string, `go loggers`. In ASCII it would be coded as the following 80-bit sequence: `01100111`   `01101111`   `00100000`   `01101100`   `01101111`   `01100111`   `01100111`   `01100101`   `01110010`   `01110011`.
+For computers to represent and display human-readable symbols, it commonly references the ASCII standard (see here). ASCII represents 256 unique human-readable symbols, which means $$\lceil{\log_2{265}}\rceil = 8$$ bits (equivalent to one byte) of storage is required to store each symbol in a text file. For instance, the symbol `a` is represented by `01100001` in binary (which is `97` in decimal). Let's say a file contains the string, `go loggers`. In ASCII it would be coded as the following 80-bit sequence: `01100111`   `01101111`   `00100000`   `01101100`   `01101111`   `01100111`   `01100111`   `01100101`   `01110010`   `01110011`.
 
 
 ##### Variable Length Codes
@@ -268,9 +269,10 @@ Complete (compression ratio: 0.5536852259268011)
 
 Inflating data/Pride.huff into data/Pride_inflated.txt
 ```
-##### Gone with the Wind
 
-```Term    Frequency       Code
+##### Gone with the Wind
+```
+Term    Frequency       Code
     0.16707911627146116 110
 e   0.09555135970305302 001
 t   0.06574328160385509 1001
