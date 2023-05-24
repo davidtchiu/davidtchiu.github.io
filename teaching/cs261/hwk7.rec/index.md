@@ -144,18 +144,18 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 	 **Hint:** Base case: If your string is shorter than two letters, then create a `TreeSet<String>`, add the string to it, and return the set.
 
-    ```java
-		System.out.println(Recursion.permute("a"));
-		> [a]
-    System.out.println(Recursion.permute("ab"));
-		> [ab, ba]
+			```java
+			System.out.println(Recursion.permute("a"));
+			> [a]
+			System.out.println(Recursion.permute("ab"));
+			> [ab, ba]
 
-    System.out.println(Recursion.permute("abc"));
-		> [abc, acb, bac, bca, cab, cba]
+			System.out.println(Recursion.permute("abc"));
+			> [abc, acb, bac, bca, cab, cba]
 
-    System.out.println(Recursion.permute("abcd"));
-		> [abcd, abdc, acbd, acdb, adbc, adcb, bacd, badc, bcad, bcda, bdac, bdca, cabd, cadb, cbad, cbda, cdab, cdba, dabc, dacb, dbac, dbca, dcab, dcba]
-    ```
+			System.out.println(Recursion.permute("abcd"));
+			> [abcd, abdc, acbd, acdb, adbc, adcb, bacd, badc, bcad, bcda, bdac, bdca, cabd, cadb, cbad, cbda, cdab, cdba, dabc, dacb, dbac, dbca, dcab, dcba]
+			```
 
 #### Program Defensively
 
