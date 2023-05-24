@@ -49,7 +49,6 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 ```
 
 
-
 2. Write a static method, `void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. **Hint:** Any value of `x` that is less than 2 by definition does not have any prime factors. Otherwise, start by finding the smallest integer greater than 1 that divides evenly into `x` ...
 
 	 ```java
@@ -100,11 +99,11 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 > 2
 	 ```
 
-3. If you've ever used a tool like Photoshop, you may be familiar with the **flood-fill utility**, which allows you to fill an entire segment of the image with a different color. For example, say you flood-fill the cell at `A[1][2]` with a replacement value of 8 (image below on the left). But since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So only does `A[1][2]` need to change from 3 to 8, but so do all of its four directional neighbors (to its north, east, south, and west). If this process is applied recursively, then the fill will be correctly propagated.
+3. If you've ever used a tool like Photoshop, you may be familiar with the **flood-fill utility**, which allows you to fill an entire segment of the image with a different color. For example, say you flood-fill the cell at `A[1][2]` with a replacement value of 8 (image below on the left). But since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So only does `A[1][2]` need to change from 3 to 8, but so do all of its four directional neighbors (to its north, east, south, and west). If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond the edges!
 
-	 <img src="figures/flood_fill.png" />
+	 <img src="figures/flood_fill.png" width="350px" />
 
-   Write a method `void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value of `r`.
+   Write a method `void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value of `r`. In the outputs below, assume that `print2DArray()` is a static method that prints out 2D arrays.
 
    ```java
 	 int[][] img1 = {
@@ -116,20 +115,20 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
    System.out.println("Before filling:");
    print2DArray(img1);
-	 >	1       1       7       5
-	 >	1       3       3       3
-	 >	6       5       5       3
-	 >	2       2       3       3
+   >	1       1       7       5
+   >	1       3       3       3
+   >	6       5       5       3
+   >	2       2       3       3
 
    Recursion.floodFill(img1, 1, 2, 8);
 
    System.out.println("After filling:");
-	 print2DArray(img1);
-	 >	1       1       7       5
-	 >	1       8       8       8
-	 >	6       5       5       8
-	 >	2       2       8       8
-	 ```
+   print2DArray(img1);
+   >	1       1       7       5
+   >	1       8       8       8
+   >	6       5       5       8
+   >	2       2       8       8
+   ```
 
 
 4. A permutation is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a set of permutations of the remaining substring. Then for each string in the returned set, insert the first character back into every position of the string and add each to a new set. Return the set when finished.
