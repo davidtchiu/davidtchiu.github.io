@@ -57,15 +57,21 @@ let days = {
       },
       {
         name: "Hwk 7",
-        title: "Evil Hangman",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.ehm",
+        title: "Recursion",
+        url: "hwk7.rec",
         due: "11/13/2023",
       },
+      // {
+      //   name: "Hwk 7",
+      //   title: "Evil Hangman",
+      //   url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk6.ehm",
+      //   due: "11/13/2023",
+      // },
       {
         name: "Hwk 8",
         title: "Huffman Encoding",
         url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
-        due: "11/4/2023",
+        due: "12/4/2023",
       },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
