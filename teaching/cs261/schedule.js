@@ -69,8 +69,8 @@ let days = {
       // },
       {
         name: "Hwk 8",
-        title: "Huffman Encoding",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/hwk7.huff",
+        title: "Data Compression (Huffman)",
+        url: "hwk8.huff",
         due: "12/4/2023",
       },
     ],
