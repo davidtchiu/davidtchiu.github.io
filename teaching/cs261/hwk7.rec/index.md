@@ -2,7 +2,9 @@
 
 ### Homework: Recursion Exercises
 
-In this assignment, you'll be working with arrays, loops, and nested loops. This assignment can be quite challenging, so start early. Don't get too frustrated if you can't figure out how to write a method. Use the design approaches that you've learned in class. Seek tutoring or office-hours help from me.
+In this assignment, you'll be working with recursion. This assignment can be quite challenging, so start early. Don't get too frustrated if you can't figure out how to write a method. Use the design approaches that you've learned in class. Seek tutoring or office-hours help from me.
+
+For full credit, all methods must be static, and recursive. To be clear, this doesn't necessarily mean that loops can't exist at all in your algorithms. In fact, in two of the problems below (findPrimeFactors and permute), you will need recursion and loops.
 
 #### Student Outcomes
 
@@ -117,7 +119,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 > 2
 	 ```
 
-4. If you've ever used a tool like Photoshop, you may be familiar with the **flood-fill utility**, which allows you to fill an entire segment of the image with a different color. For example, say you flood-fill the cell at `A[1][2]` with a replacement value of 8 (image below on the left). But since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So only does `A[1][2]` need to change from 3 to 8, but so do all of its four directional neighbors (to its north, east, south, and west). If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond the edges!
+4. If you've ever used a tool like Photoshop, you may be familiar with the **Flood Fill (Paint Can) utility**, which allows you to fill an entire segment of the image with a  color of  choice. For example, say you flood-filled the cell at `A[1][2]` with a replacement value of 8 (image below on the left). Since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So, not only does `A[1][2]` need to change from 3 to 8, but so might all of its four directional neighbors (to its north, east, south, and west), and their neighbors, and theirs, and so on. If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond the edges!
 
 	 <img src="figures/flood_fill.png" width="450px" />
 
