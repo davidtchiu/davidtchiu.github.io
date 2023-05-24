@@ -368,12 +368,49 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 80pts.
+HWK: Data Compression (Huffman)
 
-[75pts] Each problem is worth 15 pts regardless of difficulty.
+======================================
 
-[5pts] You provide Javadocs style comments for any new methods implemented. You include
-sufficient inline comments to explain the logic of your methods.
+[10pts] Your file reader is inputting correctly, reading and recording the
+frequencies of every unique character, including tabs and newlines.
+
+======================================
+
+[10pts] Your huffman tree is built properly.
+
+======================================
+
+[20pts] Your toString() method produces the term-frequency map, along with each unique
+term's Huffman code. The map is to be sorted on descending frequency, and if there are ties,
+the code should be increasing in length.
+
+======================================
+
+[20pts] The correct Huffman code is being generated for each term. Your
+code may be "flipped" when compared with mine, but the length must be the same. What I mean
+by flipped is that 1010 may be otherwise encoded as 0101.
+
+======================================
+
+[20pts] lookup() and reverseLookup() are efficient.
+
+
+======================================
+
+[20pts] Test files. I use four files to test various scenarios. Two of them contain various
+random letters from the alphabet, with both cases. Two of them just contain some random
+ASCII art. You will receive 5pts per file.
+
+======================================
+
+[-0pts] Misc. deductions
+
+
+======================================
+
+
+Total:  100
 ```
 
 #### Submitting Your Assignment
