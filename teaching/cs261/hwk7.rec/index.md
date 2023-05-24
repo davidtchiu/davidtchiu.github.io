@@ -13,7 +13,7 @@ In this assignment, you'll be working with arrays, loops, and nested loops. This
 Create a new project and create a class called `Recursion`. Put all of the following static methods in this class.
 
 
-1. Write a static method called `Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is itself.
+1. Write a static method called `Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is the queue itself.
 
 	 ```java
 	 Queue<Double> q0 = new LinkedList<>();
@@ -140,29 +140,22 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 	 - For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`
 	 	 - For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`
 
- Write a static method called `SortedSet<String> permute(String str)` that takes as input a string and recursively returns a `SortedSet` of all permutations of that string. It should be noted that the only permutation of an empty string is also an empty string. Similarly, the only permutation of a single-character string is that character. Also note that, if your string is of length $$n$$, then you have set of $$n!$$ permutations. 
+ 	 Write a static method called `SortedSet<String> permute(String str)` that takes as input a string and recursively returns a `SortedSet` of all permutations of that string. It should be noted that the only permutation of an empty string is also an empty string. Similarly, the only permutation of a single-character string is that character. Also note that, if your string is of length $$n$$, then you have set of $$n!$$ permutations. 
 
 	 **Hint:** Base case: If your string is shorter than two letters, then create a `TreeSet<String>`, add the string to it, and return the set.
 
     ```java
-    AdvancedLoops loopie = new AdvancedLoops();
-    loopie.reveal(4);
-    1---
-    12--
-    123-
-    1234
+		System.out.println(Recursion.permute("a"));
+		> [a]
+    System.out.println(Recursion.permute("ab"));
+		> [ab, ba]
 
-    loopie.reveal(8);
-    1-------
-    12------
-    123-----
-    1234----
-    12345---
-    123456--
-    1234567-
-    12345678
+    System.out.println(Recursion.permute("abc"));
+		> [abc, acb, bac, bca, cab, cba]
+
+    System.out.println(Recursion.permute("abcd"));
+		> [abcd, abdc, acbd, acdb, adbc, adcb, bacd, badc, bcad, bcda, bdac, bdca, cabd, cadb, cbad, cbda, cdab, cdba, dabc, dacb, dbac, dbca, dcab, dcba]
     ```
-
 
 #### Program Defensively
 
