@@ -155,10 +155,11 @@ Download the project file and extract it into somewhere convenient. Open the pro
 
 - As always, test your code using various edge cases to ensure that everything works as expected!
 
-#### Generic Typing (Diamond Notation)
+#### Part II: Generic Typing
 Now our `MyArrayList` now stores unlimited `doubles`! Wait,that's not how *real* ArrayLists work! They are supposed to be able to store any type of object. In this section we refactor our `MyArrayList` to accept generic types.
 
 - Refactoring the MyList Interface: Copy and paste the following code into your `MyList` interface.
+
   ```java
    /**
     * An abbreviated List<E> interface
@@ -320,7 +321,9 @@ Now our `MyArrayList` now stores unlimited `doubles`! Wait,that's not how *real*
   > 1
   ```
 
-#### Other Methods
+#### Part III:  Other Methods
+These methods are not part of the `List<E>` or `MyList<E>` interface, but are good practice.
+
 - Write a method in `MyArrayList` class, void `reverse()` that reverses the contents in the list. To be space-efficient, your method should not allocate a new internal array. What is the running time of this algorithm?
 
 - Write a method in `MyArrayList<E>` class,  `void interleave(MyArrayList<E> other)` that adds all items in the given list in alternating order with the items in the current list. For instance, if the current list contains `[0,0,3,2]`, and the given list contains `[3,5,1,7,-2,8]`, then the list should contain `[0,3,0,5,3,1,2,7,-2,8]` after this method is called. To be space-efficient, your method should not allocate a new array, that is, try reusing the current list of `MyArrayList<E>` methods. Does your method work if either list is empty? What is the running time of this algorithm?
