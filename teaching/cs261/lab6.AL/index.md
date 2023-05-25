@@ -321,12 +321,15 @@ Now our `MyArrayList` now stores unlimited `doubles`! Wait,that's not how *real*
   > 1
   ```
 
-#### Part III:  Other Methods
-These methods are not part of the `List<E>` or `MyList<E>` interface, but are good practice.
+#### Part III:  Other `List<E>` Methods
+These methods are also part of the standard `List<E>`. Let's go ahead and implement them as well.
 
-- Write a method in `MyArrayList` class, void `reverse()` that reverses the contents in the list. To be space-efficient, your method should not allocate a new internal array. What is the running time of this algorithm?
+- Write the method, `void addAll(int index, MyList<E> other)` that adds all elements in the input list to the specified position.
 
-- Write a method in `MyArrayList<E>` class,  `void interleave(MyArrayList<E> other)` that adds all items in the given list in alternating order with the items in the current list. For instance, if the current list contains `[0,0,3,2]`, and the given list contains `[3,5,1,7,-2,8]`, then the list should contain `[0,3,0,5,3,1,2,7,-2,8]` after this method is called. To be space-efficient, your method should not allocate a new array, that is, try reusing the current list of `MyArrayList<E>` methods. Does your method work if either list is empty? What is the running time of this algorithm?
+  - Now you should be able to write the method, `void addAll(MyList<E> other)` quite easily. This simply adds all elements in the input list to the end of the current list. 
+
+
+- Write the method `void removeAll(MyList<E> list)` that removes all elements in the input list from the current list.
 
 #### Grading
 

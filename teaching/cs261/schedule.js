@@ -115,7 +115,7 @@ let days = {
       {
         name: "Lab 7",
         title: "Stacks and Queues Lab",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab7/",
+        url: "lab7.melody/",
         due: "10/26/2022",
       },
       {
