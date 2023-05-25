@@ -97,19 +97,19 @@ let days = {
       {
         name: "Lab 4",
         title: "Interface Lab ",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab4/",
+        url: "lab4.interface/",
         due: "9/21/2022",
       },
       {
         name: "Lab 5",
         title: "Exceptions Lab",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab5/",
+        url: "lab5.exc/",
         due: "9/28/2022",
       },
       {
         name: "Lab 6",
         title: "ArrayLists Lab",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab6/",
+        url: "lab6.AL/",
         due: "10/12/2022",
       },
       {

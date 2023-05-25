@@ -205,6 +205,8 @@ We need to do some work on `GUI` so that it can work with any validator we've cr
 
 - Go back to the main method in the Main class, and verify that you can startup a GUI for any validator without changing any code in the GUI class. This is the beauty and power of *polymorphism*!
 
+#### Optional
+Make more validators! There are [many different ID sequences](https://en.wikipedia.org/wiki/Check_digit) out there that uses a checksum. Look up how to check vehicle identification numbers (VINs); bank routing numbers, etc.
 
 
 
