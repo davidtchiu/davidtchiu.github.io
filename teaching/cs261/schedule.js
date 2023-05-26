@@ -139,7 +139,7 @@ let days = {
         {
           name: "Lab 11",
           title: "Maps Lab",
-          url: "https://cs.pugetsound.edu/~dchiu/cs261/lab11.map/",
+          url: "lab11.map/",
           due: "11/30/2022",
         },
         // {
