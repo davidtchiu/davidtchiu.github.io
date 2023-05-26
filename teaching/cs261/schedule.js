@@ -121,7 +121,7 @@ let days = {
       {
         name: "Lab 8",
         title: "Recursion Lab",
-        url: "https://cs.pugetsound.edu/~dchiu/cs261/lab8/",
+        url: "lab8.rec/",
         due: "11/2/2022",
       },
       {
