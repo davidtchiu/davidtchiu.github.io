@@ -130,7 +130,131 @@ Because these are meant to be code reading exercises, do not run the code in Blu
 
   In addition to the three questions, answer the following. Check your edge cases: What inputs for `i` and `j` might produce a stack overflow? How would you fix the code so that an overflow is not possible?
 
-- Harder still, let's try this one. When tracing its execution, you must remember that, after it receives the value returned from the recursive call, it still has work to do! Trace it with about 5 random numbers thrown in 
+- Harder still, let's try this one. When tracing its execution, you must remember that, after it receives the value returned from the recursive call, it still has work to do! Trace it with about 5 random numbers thrown in `list` in no particular ordering, and `pos = 0`.
+
+  ```java
+  public static int mystery3(int[] list, int pos) {
+    if (pos == list.length-1) {
+        return list[pos];
+    }
+    else {
+        int rest = mystery3(list, pos+1);
+        if (list[pos] < rest) {
+            return list[pos];
+        }
+        else {
+            return rest;
+        }
+    }
+  }
+  ```
+
+  In addition to the three questions, answer the following. Why is it imperative that `pos` starts with 0 when initially calling this algorithm? What would happen if `pos < 0`? What if `pos > 0`?
+
+- Okay last one! What does the following method do?. Hint: Trace it with `mystery4(2,4)`, and then with `mystery4(2,-2)`.
+
+  ```java
+  public static double mystery4(double a, double b) {
+      if (b < 0) {
+          return mystery4(1 / a, -b);
+      }
+      else if (b == 0) {
+          return 1;
+      }
+      else if (b == 1) {
+          return a;
+      }
+      if (b % 2 == 0) {
+          return mystery4(a, b/2) * mystery4(a, b/2);
+      }
+      else {
+          return a * mystery4(a, (b-1)/2) * mystery4(a, (b-1)/2);
+      }
+  }
+  ```
+
+#### Part II: Fixing Bugs in Recursive Methods
+
+Open up the `RecursionBugs` class in the project, which contains the following methods. Each of these methods contains a runtime error. Trace them with different inputs on paper. Identify the error(s) and fix it (them) directly in the class for full credit.
+
+- This method is supposed to print out every other integer from `n` down to 0, for `n >= 0`. Hint: It seems to only work about half the time when I try with various inputs.
+
+  ```java
+  public static void skipPrint(int n) {
+      if (n == 0) {
+          System.out.println(0);
+      }
+      else {
+          System.out.println(n);
+          skipPrint(n-2);
+      }
+  }
+  ```
+
+- This method is supposed to perform linear search recursively. It takes as input a list of integers, a search key, and the head position of the unexplored sublist (`head` must be input as 0 initially). If found, it returns the position of the `key`. If not found, it returns `-1`.
+
+  ```java
+  public static int linearSearch(int[] list, int key) {
+      return linearSearch(list, key, 0);
+  }
+
+  private static int linearSearch(int[] list, int key, int head) {
+      if (key == list[head]) {
+          return head;
+      }
+      if (key != list[head]) {
+          return -1;
+      }
+      return linearSearch(list, key, head + 1);
+  }
+  ```
+
+- Finally, the following method accepts a list of integers and returns a new list containing just the even numbers from the input list. Further, it must not leave the input list empty after calling it. The code looks promising, but it does neither of those things.
+
+  ```java
+  public static List<Integer> evens(List<Integer> nums) {
+      if (nums.size() == 0) {
+          return new LinkedList<Integer>();
+      }
+      else {
+          int firstItem = nums.get(0);
+          List<Integer> evensFromTail = evens(nums);
+          if (firstItem % 2 == 0) {
+              evensFromTail.add(0, firstItem);
+          }
+          return evensFromTail;
+      }
+  }
+  ```
+
+#### Part III: Writing Recursive Methods
+In this last section of the lab, let's test your hand at implementing some recursive methods. These can be somewhat challenging for first-timers. It is not imperative that you get ALL of these written before end of lab. However, you should try to get at least the first two done (the rest would be good review problems for exams). For each of the tasks, I'll define the problem statement and give you a hint on how to think recursively. Open the `Recursion` class, and start writing these methods in there.
+
+- **Count the Number of Digits in an Integer**
+	Write a recursive method `countDigits(...)` that returns the number of digits in an integer. For instance, `countDigits(40)` is 2, `countDigits(10000)` is 5, `countDigits(9)` is 1, and `countDigits(-928)` is 3.	You can determine the number of digits an integer `n` has by repeatedly dividing `n` by 10. Hint: When `n < 10`, it is just	one digit long, and every time you are able to divide `n` by 10, you have another digit to add to the count. Notice that
+	your solution should work for negative values. I would start by getting it to work for positive values first.
+
+- **Find the Greatest Common Divisor (Euclid's Algorithm)**
+	Write a recursive method `gcd(int m,int n)` that returns the greatest common divisor (GCD) between two positive integers `m` and `n`. 	The GCD of `m` and `n` is the largest integer that can evenly divide both numbers. For example, the GCD between `m = 14` and `n = 49` is `7`. The GCD between `m = 15` and `n = 19` is `1`. The GCD between
+	`m` and `n` is either: 
+
+  - the smaller of the two values if it can evenly divide the larger value, or
+  - the GCD between the smaller value and the remainder of the larger value when divided by the smaller value
+
+- **Consecutive Values:**
+  Write a recursive method `isConsecutive(...)` that accepts a `List<Integer>` as input, and returns `true` if the list contains a sequence of consecutive integers and `false` otherwise. Consecutive integers in  ascending order, as in `5, 6, 7, 8, 9`, etc. For example, if a variable called list stores the values `[3, 3, 3, 4, 5, 6, 7, 8, 9]`, then the call should return `true`. If the list instead stored `[3, 4, 5, 6, 7, 12, 13]` then the call should return false because the numbers 7 and 12 are not consecutive. Hints:
+
+  - A list is consecutive if the first two numbers are consecutive, and the remaining sublist is also consecutive.
+  - This method returns true for lists with fewer than two items.
+  - You are allowed the destroy the list.
+  - You may assume the list is not passed as `null`.
+
+- **List reversal:** Given a `List<E>`, reverse its contents recursively. Your solution must work for both even and odd sized arrays. Hint: List reversal has no effect on arrays containing zero or one element.
+
+- **Prime number testing:** Given a positive integer `n`, `n` is prime if and only if it is only divisible evenly by 1 and itself. Hint: create a helper method that inputs `n` and a counter 
+`k` that is initially input as 2. There are two base cases: (1) when `k` reaches 
+`n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n`
+ is not prime. Figure out what to return in each of these cases. The recursive case simply calls itself on `k+1`, moving the counter closer to `n`.
 
 #### Grading
 
