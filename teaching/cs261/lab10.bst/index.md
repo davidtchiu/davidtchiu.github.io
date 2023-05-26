@@ -187,7 +187,7 @@ I've created a new project to get you started. Please download and open it. Firs
 
 - For the last one, I highly suggest you going back to the notes to remind yourselves how node removal works. The `void remove(E target)` method attempts to remove the node containing the given key. You need to first find the "victim" node in the tree you wish to remove. Because this is a little more complicated, I'll give you some hints on what you need to do.
 
-  - Create a helper method `private Node<E> removeHelper(Node<E> localRoot, E target)`. It removes the `target` value from the subtree that is rooted by `localRoot` and returns the new root of the subtree after the node's removal. That's a super important point to remember, and worth repeating. This method returns the ROOT of the subtree after removal of the target.
+  Create a helper method `private Node<E> removeHelper(Node<E> localRoot, E target)`. It removes the `target` value from the subtree that is rooted by `localRoot` and returns the new root of the subtree after the node's removal. That's a super important point to remember, and worth repeating. This method returns the ROOT of the subtree after removal of the target.
 
   - Base case 1: if `localRoot` is `null`, then the subtree is empty, and you won't find the target here, so return `null`.
 
