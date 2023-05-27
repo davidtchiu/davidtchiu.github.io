@@ -43,17 +43,34 @@ Students taking this course range from those with no prior background in program
 
 The goals of this course can only be accomplished in a setting of mutual respect, where ideas, questions, and misconceptions can be discussed with civility. As your instructor, I am committed to creating a classroom environment that welcomes all students, regardless of their identities (e.g., race, class, gender, sexual orientation, religious beliefs). I firmly believe that everyone in the class is fully capable of engaging and grasping the material, and that the world of computing is stronger when it includes the broadest possible set of perspectives. We all have unconscious biases, and I will try to continually examine my judgments, words, and actions to keep my biases in check and treat everyone fairly. I hope that you will do the same. If you feel comfortable, please let me know if there is anything I can do to make sure everyone is encouraged to succeed in this class.
 
-
-#### Grading
-The following grade cutoffs are upper bounds. They might come down, but will not be set higher: A = 95, A- = 90, B+ = 87, B = 83, B- = 80, C+ = 77, C = 73, C- = 70, D+ = 67, D = 64, D- = 60, F = $<$ 60. Your overall grade will be composed as follows:
+#### Grades
+Your overall grade is broken down as as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Participation | 3 |
-| Homework Assignments | 45 |
-| Midterm I | 15 |
-| Midterm II | 17 |
-| Final Exam | 20 |
+| Participation | 3% |
+| Lab Assignments | 10% |
+| Homework Assignments | 35% |
+| Midterm I | 15% |
+| Midterm II | 17% |
+| Final Exam | 20% |
+
+These are my cutoffs for assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+).
+
+| Final Average  | Letter Grade |
+| :--- | :--- |
+| 100% - 95% | A |
+| 94% - 90% | A- |
+| 89% - 87% | B+ |
+| 86% - 83% | B |
+| 82% - 80% | B- |
+| 79% - 77% | C+ |
+| 76% - 73% | C |
+| 72% - 70% | C- |
+| 69% - 67% | D+ |
+| 66% - 63% | D |
+| 62% - 60% | D- |
+| 59% and below | F |
 
 
 
@@ -72,12 +89,10 @@ There will be two midterms and a final exam. They will cover topics discussed in
 - The following items are prohibited: Phones, headphones, and other mobile devices.
 
 
-##### Discretionary
-Participation points will be given based on:
-- Regular lecture and lab attendance
-- Classroom participation
-- Timeliness
-- Refraining from activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, ...
+
+##### Attendance and Participation
+Regular attendance and participation are required. Attendance, to be graded out of 10 points, applies towards your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
+
 
 
 #### Course Policies

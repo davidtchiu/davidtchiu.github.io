@@ -29,18 +29,34 @@ Upon completion of this course, students will be able to:
 - Analyze an algorithm using "Big-O" notation.
 - Make informed decisions on choosing an appropriate data structure for a given task by understanding their tradeoffs and considering their performance in the common case.
 
-
-#### Grading
-The following grade cutoffs are upper bounds. They might come down, but will not be set higher: A = 95, A- = 90, B+ = 87, B = 83, B- = 80, C+ = 77, C = 73, C- = 70, D+ = 67, D = 64, D- = 60, F = $<$ 60. Your overall grade will be composed as follows:
+#### Grades
+Your overall grade is broken down as as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Attendance and Participation | 3 |
-| Lab Assignments | 10 |
-| Homework Assignments | 35 |
-| Midterm I | 15 |
-| Midterm II | 17 |
-| Final Exam | 20 |
+| Participation | 3% |
+| Lab Assignments | 10% |
+| Homework Assignments | 35% |
+| Midterm I | 15% |
+| Midterm II | 17% |
+| Final Exam | 20% |
+
+These are my cutoffs for assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+).
+
+| Final Average  | Letter Grade |
+| :--- | :--- |
+| 100% - 95% | A |
+| 94% - 90% | A- |
+| 89% - 87% | B+ |
+| 86% - 83% | B |
+| 82% - 80% | B- |
+| 79% - 77% | C+ |
+| 76% - 73% | C |
+| 72% - 70% | C- |
+| 69% - 67% | D+ |
+| 66% - 63% | D |
+| 62% - 60% | D- |
+| 59% and below | F |
 
 ##### Lab Assignments
 Labs provide a low stakes, hands-on, and collaborative way to learn the materials. As such, they only represent 10% of your final grade. You may choose to work alone, or with whomever you like during lab. **However, you must submit your own work.**
