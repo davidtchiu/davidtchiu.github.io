@@ -41,22 +41,6 @@ Your overall grade is broken down as as follows:
 | Midterm II | 17% |
 | Final Exam | 20% |
 
-These are my cutoffs for assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+).
-
-| Final Average  | Letter Grade |
-| :--- | :--- |
-| 100% - 95% | A |
-| 94% - 90% | A- |
-| 89% - 87% | B+ |
-| 86% - 83% | B |
-| 82% - 80% | B- |
-| 79% - 77% | C+ |
-| 76% - 73% | C |
-| 72% - 70% | C- |
-| 69% - 67% | D+ |
-| 66% - 63% | D |
-| 62% - 60% | D- |
-| 59% and below | F |
 
 ##### Lab Assignments
 Labs provide a low stakes, hands-on, and collaborative way to learn the materials. As such, they only represent 10% of your final grade. You may choose to work alone, or with whomever you like during lab. **However, you must submit your own work.**
@@ -89,6 +73,23 @@ There will be two midterms and a final exam. They will cover topics discussed in
 ##### Attendance and Participation
 Regular attendance and participation are required. Attendance, to be graded out of 10 points, applies towards your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
 
+##### Final Letter Grades
+These are the cutoffs when assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+).
+
+| Final Average  | Letter Grade |
+| :--- | :--- |
+| 100% - 95% | A |
+| 94% - 90% | A- |
+| 89% - 87% | B+ |
+| 86% - 83% | B |
+| 82% - 80% | B- |
+| 79% - 77% | C+ |
+| 76% - 73% | C |
+| 72% - 70% | C- |
+| 69% - 67% | D+ |
+| 66% - 63% | D |
+| 62% - 60% | D- |
+| 59% and below | F |
 
 #### Course Policies
 
