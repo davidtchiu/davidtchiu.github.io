@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: Writing SQL Queries for the University Database!
+### SQL Lab 1: Writing SQL Queries for the University Database!
 
 You're finally ready to conduct the analysis that the college wants. The data, though synthetic, is an analog to the real data in our university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually run when generating our year-end reports!
 
@@ -16,16 +16,29 @@ The following file(s) have been provided for this assignment.
 - [university.db](university.db)
 
 #### Browse your Database!
-Start by downloading the database file, and open it up in [DB Browser](https://sqlitebrowser.org/) or [Antares](https://antares-sql.app/). Open the `university.db` file that is provided to you, and browse its contents to gauge the schema and where all the data is stored.<br/><br/>
+Start by downloading the database file, and open it up in [DB Browser](https://sqlitebrowser.org/), or  an online tool like [https://sqliteonline.com/](https://sqliteonline.com/). Open the `university.db` file that is provided to you, and browse its contents to gauge the schema and where all the data is stored.<br/><br/>
 
 <img src="universitySchema.png"/>
 
 #### Writing SQL Queries
-<!-- To write your queries, open Antares and you should see a `+` sign on the top. When you click on it, Antares will open a new "query" tab. This is where you can write and execute your SQL queries.  -->
-For each of the following problems, write an SQL query to return the expected results. Your queries should work in general, regardless of what data is currently stored in this instance of the University database. In other words, don't hard code your queries!
+For each of the following problems, write an SQL query to return the expected results. Your queries should work in general, regardless of what data is currently stored in this instance of the University database. In other words, don't hard code your queries to work for only the given database instance!
+
+#### Day 1: Basic Queries
 
 
-1. Return a list of departments that are found in any building starting with "T". Order by dept ID.
+1. Return the list of first-year (freshman) students. Sort results by reverse order of GPA.
+
+   ```
+   studentID   name     rank        gpa
+   ---------   ----     ----        ---
+   1501	      Jessica	Freshman	   3.3
+   1510	      Jordan	Freshman	   3.0
+   1225	      Sarah    Freshman	   2.9
+   1282	      Kelly    Freshman	   2.5
+   1661	      Logan    Freshman	   0.5
+   ```
+
+2. Return a list of departments that are found in any building starting with `"T"`. Order by `dept ID`.
    ```
    deptID      deptName                        building
    -------     --------                        --------
@@ -33,7 +46,7 @@ For each of the following problems, write an SQL query to return the expected re
    MATH        Department of Mathematics       Tower of Babel
    ```
 
-2. Get all courses being taught by the MATH department that start in the afternoon. You may assume that time is in 24hr format, and you're reminded that you can use comparison operators (`<`, `>`) on strings. Order by course number.
+3. Get all courses being taught by the `MATH` department that start in the afternoon. You may assume that time is in 24-hour format, and you're reminded that you can use comparison operators (`<`, `>`) on strings. Order by course number.
 
    ```
    CourseNum   deptID      CourseName  Location    meetDay     meetTime
@@ -43,7 +56,7 @@ For each of the following problems, write an SQL query to return the expected re
    460         MATH        Calculus 3  WEY 102     TR          12:30
    ```
 
-3. Return the student, David's, course schedule. Assume you don't have David's student ID, and that they're the only one with that name. Only `Course`'s attributes should be projected. Order by Dept ID then Course Number.
+4. Return the student, David's, course schedule. Assume you don't have David's student ID, and that they're the only one with that name. Only `Course`'s attributes should be projected. Order by `DeptID` then by Course Number.
 
    ```
    deptID      CourseNum   CourseName        Location    meetDay     meetTime
@@ -53,7 +66,40 @@ For each of the following problems, write an SQL query to return the expected re
    MATH        230         Linear Algebra    HH 308      TR          15:00
    ```
 
-4. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the `avg(GPA)` column to `ClassGPA`.
+5. Return a list of courses taught in Wyatt Hall.
+
+   ```
+   101	SOAN	Sociology 1	WY 105	MWF	08:00	Department of Anthropology	Wyatt Hall
+   102	SOAN	Sociology 2	WY 205	MTWRF	09:00	Department of Anthropology	Wyatt Hall
+   101	ENGL	How to Read	WY 100	MWF	13:00	Department of English	Wyatt Hall
+   102	ENGL	How to Write	WY 100	MWF	14:00	Department of English	Wyatt Hall
+   520	ENGL	Shakespeare Was Da Bomb	HH 20	TR	13:00	Department of English	Wyatt Hall
+   ```
+
+6. Haley's advisor wants to know what courses they're taking in their major.
+   
+   ```
+   deptID   courseNum
+   ------   ---------
+   MATH	   120
+   MATH	   230
+   ```
+
+7. Return a list of all students who are still undeclared (that is, without a major). Project their student ID and their name. Sort results by `studentID`.
+
+   ```
+   studentID   studentName
+   ----------  -----------
+   1001        Lia
+   1225        Sarah
+   1282        Kelly
+   1629        Brad
+   1640        Adam
+   ```
+
+#### Day 2: Aggregation and Grouping
+
+8. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the `avg(GPA)` field to `ClassGPA`.
 
    ```
    class       ClassGPA
@@ -64,10 +110,10 @@ For each of the following problems, write an SQL query to return the expected re
    Sophomore   2.675
    ```
 
-5. Identify all students who have a lower GPA than the average of their respective class rank. Sort the results first by class rank, then by the student's name.
+9. Q6: Identify all students who have a lower GPA than the average of his/her respective class rank. Sort the results by class rank and the student's name.
 
    ```
-   studentID studentName  class       gpa         ClassGPA
+   studentID   studentName  class       gpa         ClassGPA
    ----------  -----------  ----------  ----------  ----------
    1661        Logan        Freshman    0.5         2.44
    1709        Cassandra    Junior      2.8         3.125
@@ -80,19 +126,7 @@ For each of the following problems, write an SQL query to return the expected re
    1468        Kris         Sophomore   1.0         2.675
    ```
 
-6. Return a list of all students who are still undeclared (that is, without a major). Project their student ID and their name. Sort results by `studentID`.
-
-   ```
-   studentID   studentName
-   ----------  -----------
-   1001        Lia
-   1225        Sarah
-   1282        Kelly
-   1629        Brad
-   1640        Adam
-   ```
-
-7. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! Oh weird, did you know that you can select constants as a column? For instance, try running `select studentName,1234 from student` and see what you get. How might that be useful here?
+10. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! Oh weird, did you know that you can select constants as a column? For instance, try running `select studentName,1234 from student` and see what you get. How might that be useful here?
 
    ```
    deptName                    enrolled
@@ -107,7 +141,7 @@ For each of the following problems, write an SQL query to return the expected re
    ```
 
 
-8. Find the students who are enrolled in the most number of courses. Report the names, IDs, and the number of courses they are enrolled in.
+11. Find the students who are enrolled in the most number of courses. Report the names, IDs, and the number of courses they are enrolled in.
 
    ```
    studentID   studentName  NumCourses
@@ -117,7 +151,7 @@ For each of the following problems, write an SQL query to return the expected re
    ```
 
 
-9. Identify all valedictorians in all majors. (This is a real query that we run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that `ENGL`major  has two students with the same GPA and they're both listed!)
+12. Identify all valedictorians in all majors. (This is a real query that we run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that `ENGL`major  has two students with the same GPA and they're both listed!)
 
    ```
    (Notice that ENGL has two students with the same GPA)
@@ -133,7 +167,7 @@ For each of the following problems, write an SQL query to return the expected re
    1709        Cassandra    Junior      SOAN        2.8
    ```
 
-10. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
+13. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
 
       ```
       studentID   studentName  class       major       gpa
@@ -144,7 +178,7 @@ For each of the following problems, write an SQL query to return the expected re
       1510        Jordan       Freshman    MATH        3.0
       ```
 
-11. You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so round anything higher than a 4.0 to 4.0. This should just take two UPDATE statements. 
+14. You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so round anything higher than a 4.0 to 4.0. This should just take two UPDATE statements. 
 
       ```
       (BEFORE)
@@ -170,7 +204,7 @@ For each of the following problems, write an SQL query to return the expected re
       1661        Logan        Freshman    1.5         CSCI
       ```
 
-12. After learning about the GPA mishap, the college now wants to add a new department, `Philosophy (PHIL)`, which will housed in a newly constructed building called `Plato's Cave`. They will offer a course on `PHIL 101: Ethics` taught in room `CAVE`, and all CSCI majors SQL statements.
+15. After learning about the GPA mishap, the college now wants to add a new department, `Philosophy (PHIL)`, which will housed in a newly constructed building called `Plato's Cave`. They will offer a course on `PHIL 101: Ethics` taught in room `CAVE`, and all CSCI majors SQL statements.
 
       ```
       (Showing the contents of the Dept, course, and enroll tables.)
@@ -264,13 +298,6 @@ For each of the following problems, write an SQL query to return the expected re
       401         PHYS        1101
       102         SOAN        1709
       ```
-
-
-<!-- 13. To prevent future tampering, the university wants you to log any activity in the Student table. Create a new table called `student_log` to store the following information: activity in question (insert, deletion, update), student's name, all the old values, and the new values. Finally, create the triggers that will record these activities. -->
-
-
-
-
 #### Credits
 
 Written by David Chiu.

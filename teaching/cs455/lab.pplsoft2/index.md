@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### SQL Lab 1: Writing SQL Queries for the University Database!
+### Hwk: Writing SQL Queries for the University Database!
 
 You're finally ready to conduct the analysis that the college wants. The data, though synthetic, is an analog to the real data in our university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually run when generating our year-end reports!
 
@@ -43,7 +43,7 @@ For each of the following problems, write an SQL query to return the expected re
    460         MATH        Calculus 3  WEY 102     TR          12:30
    ```
 
-3. Return the student, David's, course schedule. Assume you don't have David's student ID, and that they're the only one with that name. Only `Course`'s attributes should be projected. Order by `DeptID` then by Course Number.
+3. Return the student, David's, course schedule. Assume you don't have David's student ID, and that they're the only one with that name. Only `Course`'s attributes should be projected. Order by Dept ID then Course Number.
 
    ```
    deptID      CourseNum   CourseName        Location    meetDay     meetTime
@@ -80,17 +80,11 @@ For each of the following problems, write an SQL query to return the expected re
    1468        Kris         Sophomore   1.0         2.675
    ```
 
-6. Return a list of all students who are still undeclared (that is, without a major). Project their student ID and their name. Sort results by `studentID`.
 
-   ```
-   studentID   studentName
-   ----------  -----------
-   1001        Lia
-   1225        Sarah
-   1282        Kelly
-   1629        Brad
-   1640        Adam
-   ```
+
+<!-- 13. To prevent future tampering, the university wants you to log any activity in the Student table. Create a new table called `student_log` to store the following information: activity in question (insert, deletion, update), student's name, all the old values, and the new values. Finally, create the triggers that will record these activities. -->
+
+
 
 
 #### Credits
