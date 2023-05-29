@@ -11,12 +11,12 @@ let days = {
       },
     ],
     homework: [
-      // {
-      //   name: "Hwk 1 (written)",
-      //   title: "The Relational Model",
-      //   url: "hwk1.rel/",
-      //   due: "9/12/2022",
-      // },
+      {
+        name: "Hwk 1 (written)",
+        title: "The Relational Model",
+        url: "hwk1.rel/",
+        due: "9/11/2023",
+      },
       // {
       //   name: "Hwk 2 (written)",
       //   title: "Relational Algebra",
@@ -63,7 +63,7 @@ let days = {
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
-    projects: [
+    // projects: [
       // {
       //   name: "Project Teams",
       //   title: "Team Preferences",
@@ -88,16 +88,16 @@ let days = {
       //   url: "proj/",
       //   due: "12/16/2022",
       // },
-    ],
+    // ],
 
     ////////////////////////////////// LABS ////////////////////////////////
-    labs: [
-      {
-        name: "Lab",
-        title: "SQL Lab!",
-        url: "lab.pplsoft/",
-      },
-    ],
+    // labs: [
+    //   {
+    //     name: "Lab",
+    //     title: "SQL Lab!",
+    //     url: "lab.pplsoft/",
+    //   },
+    // ],
   },
 
   lectures: [

@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### SQL Lab 1: Writing SQL Queries for the University Database!
+### SQL Lab: Writing SQL Queries for the University Database!
 
 You're finally ready to conduct the analysis that the college wants. The data, though synthetic, is an analog to the real data in our university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually run when generating our year-end reports!
 
@@ -110,7 +110,7 @@ For each of the following problems, write an SQL query to return the expected re
    Sophomore   2.675
    ```
 
-9. Q6: Identify all students who have a lower GPA than the average of his/her respective class rank. Sort the results by class rank and the student's name.
+9. Identify all students who have a lower GPA than the average of his/her respective class rank. Sort the results by class rank and the student's name.
 
    ```
    studentID   studentName  class       gpa         ClassGPA
