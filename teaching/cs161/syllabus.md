@@ -80,7 +80,7 @@ There will be two midterms and a final exam. They will cover topics discussed in
 Regular attendance and participation are required. Attendance, to be graded out of 10 points, applies towards your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
 
 ##### Final Letter Grades
-These are the cutoffs when assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+).
+These are the cutoffs when assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+).  The cutoffs below might come down, but will not be set higher.
 
 | Final Average  | Letter Grade |
 | :--- | :--- |

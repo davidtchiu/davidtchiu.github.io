@@ -11,43 +11,43 @@ let days = {
       },
     ],
     homework: [
-      {
-        name: "Hwk 1 (written)",
-        title: "The Relational Model",
-        url: "hwk1.rel/",
-        due: "9/12/2022",
-      },
-      {
-        name: "Hwk 2 (written)",
-        title: "Relational Algebra",
-        url: "hwk2.ra/",
-        due: "9/23/2022",
-      },
-      {
-        name: "Hwk 3 (coding)",
-        title: "Data Preparation",
-        url: "hwk3.ddl/",
-        due: "10/3/2022",
-      },
+      // {
+      //   name: "Hwk 1 (written)",
+      //   title: "The Relational Model",
+      //   url: "hwk1.rel/",
+      //   due: "9/12/2022",
+      // },
+      // {
+      //   name: "Hwk 2 (written)",
+      //   title: "Relational Algebra",
+      //   url: "hwk2.ra/",
+      //   due: "9/23/2022",
+      // },
+      // {
+      //   name: "Hwk 3 (coding)",
+      //   title: "Data Preparation",
+      //   url: "hwk3.ddl/",
+      //   due: "10/3/2022",
+      // },
     
-      {
-        name: "Hwk 4 (coding)",
-        title: "Writing SQL Queries",
-        url: "hwk4.dml/",
-        due: "10/14/2022",
-      },
-      {
-        name: "Hwk 5 (coding)",
-        title: "Design Theory - Closure of FD Sets",
-        url: "hwk5.closure/",
-        due: "10/28/2022",
-      },
-      {
-        name: "Hwk 6 (coding)",
-        title: "Design Theory - BCNF Normalization",
-        url: "hwk6.bcnf/",
-        due: "11/11/2022",
-      },
+      // {
+      //   name: "Hwk 4 (coding)",
+      //   title: "Writing SQL Queries",
+      //   url: "hwk4.dml/",
+      //   due: "10/14/2022",
+      // },
+      // {
+      //   name: "Hwk 5 (coding)",
+      //   title: "Design Theory - Closure of FD Sets",
+      //   url: "hwk5.closure/",
+      //   due: "10/28/2022",
+      // },
+      // {
+      //   name: "Hwk 6 (coding)",
+      //   title: "Design Theory - BCNF Normalization",
+      //   url: "hwk6.bcnf/",
+      //   due: "11/11/2022",
+      // },
       // {
       //   name: "Hwk 7 (coding)",
       //   title: "Joins!",
@@ -64,30 +64,30 @@ let days = {
 
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
-      {
-        name: "Project Teams",
-        title: "Team Preferences",
-        url: "proj/",
-        due: "10/28/2022",
-      },
-      {
-        name: "Project Prop",
-        title: "Project Proposal",
-        url: "proj/",
-        due: "11/4/2022",
-      },
-      {
-        name: "Project Demo",
-        title: "Project Demo",
-        url: "proj/",
-        due: "12/5/2022",
-      },
-      {
-        name: "Project-Code",
-        title: "Project Code",
-        url: "proj/",
-        due: "12/16/2022",
-      },
+      // {
+      //   name: "Project Teams",
+      //   title: "Team Preferences",
+      //   url: "proj/",
+      //   due: "10/28/2022",
+      // },
+      // {
+      //   name: "Project Prop",
+      //   title: "Project Proposal",
+      //   url: "proj/",
+      //   due: "11/4/2022",
+      // },
+      // {
+      //   name: "Project Demo",
+      //   title: "Project Demo",
+      //   url: "proj/",
+      //   due: "12/5/2022",
+      // },
+      // {
+      //   name: "Project-Code",
+      //   title: "Project Code",
+      //   url: "proj/",
+      //   due: "12/16/2022",
+      // },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
@@ -96,7 +96,6 @@ let days = {
         name: "Lab",
         title: "SQL Lab!",
         url: "lab.pplsoft/",
-        // due: "10/5/2021",
       },
     ],
   },
@@ -121,51 +120,53 @@ let days = {
     // wk 5
     "SQL: selection, joins, set ops",
     "SQL: outer joins, renaming, WITH",
-    "SQL: subqueries",
+    "SQL Work Day",
     // wk 6
+    "SQL: subqueries",
     "SQL: grouping and aggregation",
-    "SQL Work Day",
-    "SQL Work Day",
+    "SQL: triggers",
     // wk 7
+    "SQL Work Day",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    "Design Theory: functional dependencies",
     // wk 8
     "<strong>Fall Break</strong>",
+    "Design Theory: functional dependencies",
     "Theory: functional dependencies, Attribute set closure",
-    "Theory: Review of attribute-set closure; superkeys algorithm",
     // wk 9
+    "Theory: Review of attribute-set closure; superkeys algorithm",
     "Theory: FD-set closure; Armstrong's Axioms, proof of inference rules",
     "Theory: Normal Forms: 1NF, 2NF, BCNF",
-    "Theory: Lossless join; dependency preservation",
     // wk 10
     // "Disks and files; access patterns",
+    "Theory: Lossless join; dependency preservation",
     "Theory: Canonical cover; 3NF synthesis",
     "Files: Disks, files, and access patterns",
-    "Files: Structure of tuples",
     // wk 11
-    "Files: Organization of tuples",
-    "Files: Cost analysis; Join algorithms",
+    "Files: Disks, files, and access patterns",
+    "Start Indexing",
     "<strong><emph>Review</emph></strong>",
+     // "Files: Structure of tuples",
+     // "Files: Organization of tuples",
+     // "Files: Cost analysis; Join algorithms",
     // wk 12
     "<strong><emph>Exam 2</emph></strong>",
-    "Start Indexing",
     "B+Trees: properties, operations",
-    // wk 13
     "B+Trees (cont'd): height and performance",
+    // wk 13
+    "Indexing: Dynamic hashing",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
-    "Indexing: Dynamic hashing",
-    "Indexing: Consistent hashing",
-    "Indexing: Bitmaps",
+    "Start transactions: ACID, serializability",
+    "Transactions: serializability test, precedence graphs",
+    "Transactions: Concurrency control",
+    // "Indexing: Consistent hashing",
+    // "Indexing: Bitmaps",
     // "Bitmaps",
-    // "Start transactions: ACID, serializability",
-    // "Transactions: serializability test, precedence graphs",
-    // "Transactions: Concurrency control",
     // wk 15
-    "Project Demos on Zoom",
-    "Project Demos on Zoom",
+    "Project Demos",
+    "Project Demos",
     "<strong>Reading Period</strong>",
     // wk final
     "",
