@@ -141,20 +141,20 @@ let days = {
     // "Disks and files; access patterns",
     "Theory: Lossless join; dependency preservation",
     "Theory: Canonical cover; 3NF synthesis",
-    "Files: Disks, files, and access patterns",
+    "Disk and Files: access patterns",
     // wk 11
-    "Files: Disks, files, and access patterns",
-    "Start Indexing",
+    "Disk scheduling",
     "<strong><emph>Review</emph></strong>",
+    "<strong><emph>Exam 2</emph></strong>",
      // "Files: Structure of tuples",
      // "Files: Organization of tuples",
      // "Files: Cost analysis; Join algorithms",
     // wk 12
-    "<strong><emph>Exam 2</emph></strong>",
-    "B+Trees: properties, operations",
-    "B+Trees (cont'd): height and performance",
+    "Start Indexing",
+    "B+Tree properties, operations",
+    "B+Tree (cont'd): height and performance",
     // wk 13
-    "Indexing: Dynamic hashing",
+    "Dynamic hashing",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14

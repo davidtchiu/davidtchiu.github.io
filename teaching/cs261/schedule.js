@@ -39,9 +39,9 @@ let days = {
       },
       {
         name: "Hwk 4",
-        title: "Sentiment Predictor",
-        url: "hwk4.sent/",
-        due: "10/6/2023",
+        title: "Evil Hangman",
+        url: "hwk4.ehm/",
+        due: "10/9/2023",
       },
       {
         name: "Hwk 5",
