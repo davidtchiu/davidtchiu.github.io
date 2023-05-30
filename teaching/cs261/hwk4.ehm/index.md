@@ -29,9 +29,9 @@ For this project you'll be working in teams. Please ensure that you listed all o
 
 In case you aren't familiar with the game Hangman, the rules are as follows:
 
-    - One player chooses a secret word, then writes out a number of dashes equal to the word length.
-    - The other player begins guessing letters. Whenever she guesses a letter contained in the hidden word, the first player reveals each instance of that letter in the word. Otherwise, the guess is wrong.
-    - The game ends either when all the letters in the word have been revealed or when the guesser has run out of guesses.
+- One player chooses a secret word, then writes out a number of dashes equal to the word length.
+- The other player begins guessing letters. Whenever she guesses a letter contained in the hidden word, the first player reveals each instance of that letter in the word. Otherwise, the guess is wrong.
+- The game ends either when all the letters in the word have been revealed or when the guesser has run out of guesses.
 
 Fundamental to the game is the fact the first player accurately represents the word she has chosen. That way, when the other players guess letters, she can reveal whether that letter is in the word. But what happens if the player doesn't do this? This gives the player who chooses the hidden word an enormous advantage. For example, suppose that you're the player trying to guess the word, and at some point you end up revealing letters until you arrive at this point with only one guess remaining: `DO_BLE`.
 
