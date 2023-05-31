@@ -6,7 +6,14 @@ Read: Not that I need to worry, but before we get started, a word of caution. Th
 
 It's hard to write computer programs to play games. When we as humans sit down to play a game, we can draw on past experience, adapt to our opponents' strategies, and learn from our mistakes. Computers, on the other hand, blindly follow a preset algorithm that (hopefully) causes it to act somewhat intelligently. Though computers have bested their human masters in some games, most notably checkers and chess, the programs that do so often draw on hundreds of years of human game experience and use extraordinarily complex algorithms and optimizations to outcalculate their opponents...
 
+![evil-hangman.png](figures/evil-hangman.png)
+
+
 While there are many viable strategies for building competitive computer game players, there is one approach that has been fairly neglected in modern research – cheating. Why spend all the effort trying to teach a computer the nuances of strategy when you can simply write a program to play dirty and win handily all the time? In this assignment, you will build a mischievous program that bends the rules of Hangman to trounce its human opponent time and time again. In doing so, you'll cement your skills with abstract data types and iterators, and will hone your general programming savvy. Plus, you'll end up with a piece of software which will be highly entertaining. At least, from your perspective.
+
+#### Teams
+You are required to work in teams on this assignment. I've used a sophisticated matching algorithm to produce the groups listed below. (Ok, it's just random, but I did write a program to do it!) Do not start writing any code until you've met with your team member(s) and discussed the assignment and possible approaches. For best results, I expect you to work physically together. I will assume that each member of the team has contributed equally to the project. If that assumption isn't true, please contact me privately.
+
 
 #### Student Objectives
 - To practice with file handling and text processing.
@@ -25,7 +32,6 @@ For this project you'll be working in teams. Please ensure that you listed all o
 
 
 #### Overview of Evil Hangman
-![evil-hangman.png](figures/evil-hangman.png)
 
 In case you aren't familiar with the game Hangman, the rules are as follows:
 
