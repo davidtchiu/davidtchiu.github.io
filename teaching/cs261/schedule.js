@@ -214,11 +214,11 @@ let days = {
     "Start HashMaps: Open Addressing",
     "Lab 11: Open Addressing lab",
     "HashMap (cont.): chaining",
-    "Cancelled",
+    "Sorting: MergeSort",
     // wk 15
-    "Sorting: MergeSort (Zoom)",
+    "Sorting: QuickSort",
     "Homework Lab",
-    "Sorting: QuickSort (Zoom)",
+    "Sorting: QuickSort",
     "<strong>Reading Period</strong>",
     // wk final
     "",
