@@ -1,6 +1,6 @@
 ## Student of Color Residential Community (SCRC)
 
-Mentor: David Chiu\
+Mentor: David Chiu, Professor of Computer Science\
 Meeting Time: Tuesday ??? in Seward Hall\
 Contact: [dchiu@pugetsound.edu](mailto:dchiu@pugetsound.edu)
 
