@@ -1,10 +1,9 @@
-## CS 455 - Principles of Database Systems
+## Student of Color Residential Community (SCRC)
 
-Instructor: David Chiu\
-Lecture: Mon/Wed/Fri 3:00 - 3:50 in TH 409\
-Office Hours: Mon/Wed/Fri 9:00 - 10:00 in TH 303, or by appointment
+Mentor: David Chiu\
+Meeting Time: Tuesday ??? in Seward Hall\
+Contact: [dchiu@pugetsound.edu](mailto:dchiu@pugetsound.edu)
 
-- [SQL Lab](lab.sql/) (Solution) -->
 
 <!-- David's schedule generator! Do not touch -->
 <div id="schedule">&nbsp;</div>

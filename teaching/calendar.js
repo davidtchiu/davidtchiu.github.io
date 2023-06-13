@@ -13,6 +13,7 @@ const TR = [OFF, LEC, OFF, LEC, OFF, WKD, WKD];
 const MWF = [LEC, OFF, LEC, OFF, LEC, WKD, WKD];
 const MWRF = [LEC, OFF, LEC, LEC, LEC, WKD, WKD];
 const MTWF = [LEC, LEC, LEC, OFF, LEC, WKD, WKD];
+const MTWRF = [LEC, LEC, LEC, LEC, LEC, WKD, WKD];
 
 const ASSIGNMENT_COLOR = {
   // labs: "#330099",
