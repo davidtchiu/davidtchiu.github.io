@@ -152,7 +152,7 @@ let days = {
     // wk 12
     "Start Indexing",
     "B+Tree properties, operations",
-    "B+Tree (cont'd): height and performance",
+    "B+Tree performance",
     // wk 13
     "Dynamic hashing",
     "<strong>Thanksgiving</strong>",
