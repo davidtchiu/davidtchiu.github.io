@@ -78,8 +78,9 @@ There will be two midterms and a final exam. They will cover topics discussed in
 ##### Attendance and Participation
 Regular attendance and participation are required. Attendance, to be graded out of 10 points, applies towards your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
 
+
 ##### Final Letter Grades
-These are the cutoffs when assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+).
+These are the cutoffs when assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+). The cutoffs below might come down, but will not be set higher.
 
 | Final Average  | Letter Grade |
 | :--- | :--- |
@@ -96,28 +97,24 @@ These are the cutoffs when assigning your final letter grades. Please note that 
 | 62% - 60% | D- |
 | 59% and below | F |
 
-#### Course Policies
 
 ##### No Laptops, No Phones
 Laptop computers and other handheld devices are a common distraction during lectures. Except on lab days and for those who can provide documentation of need from the office of SAA, please don't bring your laptops to lectures. Please turn your phones off, or at least put your phones on silent during lecture.
 
-##### Academic Integrity
-You should uphold the school's *Student Integrity Code*. Any suspected cheating (plagiarizing code, copying homework solutions, etc.) will be reported to the Registrar, which may result in possible suspension/expulsion and loss of financial aid. 
 
-##### Student Accessibility and Accommodation (SAA)
-If you have a physical, psychological, medical or learning disability that may impact your course work, please contact Peggy Perno, Director of the Office of Accessibility and Accommodation, 105 Howarth, 253.879.3395. She will determine with you what accommodations are necessary and appropriate. All information and documentation is confidential.
+#### University, Academic, and Administrative Policies
+There are many university policies and resources that offer guidance on how to be safe and make the most of your college education. Here are a few that you should take a moment to review:
 
-##### Classroom Emergency Response Guidance
-Please review university emergency preparedness and response procedures posted at [https://www.pugetsound.edu/emergency](https://www.pugetsound.edu/emergency). There is a link on the university home page. Familiarize yourself with hall exit doors and the designated gathering area for your class and laboratory buildings.
- 
-If building evacuation becomes necessary (e.g., earthquake), meet your instructor at the designated gathering area so she/he can account for your presence. Then wait for further instructions. Do not return to the building or classroom until advised by a university emergency response representative.
- 
-If confronted by an act of violence, be prepared to make quick decisions to protect your safety. Flee the area by running away from the source of danger if you can safely do so. If this is not possible, shelter in place by securing classroom or lab doors and windows, closing blinds, and turning off room lights. Lie on the floor out of sight and away from windows and doors. Place cell phones or pagers on vibrate so that you can receive messages quietly. Wait for further instructions.
+- Please review university emergency preparedness, response procedures and a training video posted at [www.pugetsound.edu/emergency/](https://www.pugetsound.edu/emergency/).
 
-##### Student Bereavement Policy
-The University of Puget Sound recognizes that a time of bereavement can be difficult for a student. Therefore,  the university provides a Student Bereavement Policy for students facing the loss of a family member. Students are normally eligible for, and faculty members are expected to grant, three consecutive weekdays of excused absences, without penalty, for the death of a family member, including parent, grandparent, sibling, or persons living in the same household. Should the student feel that additional days are necessary, the student must request additional bereavement leave from the Dean of Students or the Dean's designee. In the event of the death of another family member or friend not explicitly included within this policy, a bereaved student may petition for grief absence through the Dean of Students’ office for approval.
+- Protect yourself and others from COVID-19 by following our ongoing campus safety protocols, posted here: [www.pugetsound.edu/emergency/communicable-disease-outbreak-prevention/university-response-covid-19/protect-yourself](https://www.pugetsound.edu/emergency/communicable-disease-outbreak-prevention/university-response-covid-19/protect-yourself)
 
-##### Student Religious Accommodation
-The university provides reasonable religious accommodations for academic courses and programs, and the university policy is found [here](https://www.pugetsound.edu/about/offices-services/human-resources/policies/campus-policies/student-religious-accommodations-in-academic-courses-or-programs}{https://www.pugetsound.edu/about/offices-services/human-resources/policies/campus-policies/student-religious-accommodations-in-academic-courses-or-programs).
+- For information on academic and administrative policies (such as policies on grade policies, leaves of absence, declaring a major, academic integrity, and academic petitions) please refer to the University Bulletin located here: [www.pugetsound.edu/sites/default/files/2023-08/AD23BULLETIN_online_Academic%20and%20Administrative%20Policies.pdf](https://www.pugetsound.edu/sites/default/files/2023-08/AD23BULLETIN_online_Academic%20and%20Administrative%20Policies.pdf)
 
+- If you are seeking a religious accommodation in an academic course or program, please follow the process provided in the university’s policy on Student Religious Accommodations in Academic Courses or Programs, available at [www.pugetsound.edu/office-university-counsel/policies/campuswide-policies/student-religious-accommodations-academic-courses-or-programs](https://www.pugetsound.edu/office-university-counsel/policies/campuswide-policies/student-religious-accommodations-academic-courses-or-programs)
 
+- If you have any concerns about prohibited harassment or discrimination that may be affecting you or others at Puget Sound, please contact the university’s Title IX Coordinator/Equal Opportunity Officer, Wheelock 218, 253.879.3793, website: [www.pugetsound.edu/title-ix-equal-opportunity](https://www.pugetsound.edu/title-ix-equal-opportunity), email: [titleix-eoo@pugetsound.edu](mailto:titleix-eoo@pugetsound.edu). The Title IX Coordinator/Equal Opportunity Officer can explain available options and help address concerns informally or formally.
+
+- If you have a physical, psychological, medical or learning disability that may impact you as a student at Puget Sound, please contact Student Accessibility and Accommodation, Howarth 105, 253.879.3399, website: [pugetsound.edu/saa](https://pugetsound.edu/saa), email: [saa@pugetsound.edu](mailto:saa@pugetsound.edu). They will determine with you what accommodations are necessary and appropriate.
+
+- You must uphold the school's Academic Integrity Code found here: [https://www.pugetsound.edu/academic-integrity](https://www.pugetsound.edu/academic-integrity). Any suspected cheating (plagiarizing code, copying homework solutions, etc.) will be reported to the Registrar, which may result in possible suspension/expulsion and loss of financial aid. 
