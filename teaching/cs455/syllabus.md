@@ -53,12 +53,12 @@ Homework assignments are a mix of paper-based and coding-based. They account for
 For each day that an assignment is late (including weekends), a $$3^d\%$$ deduction, where $$d$$ is the number of days late, will be assessed. Because ample amounts of time are provided to complete each assignment (usually around 1-2 weeks) no extensions be will given for homework assignments, unless you are experiencing unique circumstances or for accommodations.
 
 ##### Term Project
-There will be an open-ended group project assigned about mid-way through the course. The most successful teams meet and physically work together at an agreed-upon location and time -- that is, *uno animo*. It is a good idea to set up version control environments and practice scrum, to ensure everyone has something to do and is making progress. A final presentation will be given in the last week of classes (prior to finals week). Each member of the team should contribute equally to the assignment, and every student in a team will receive the same grade.
+There will be an open-ended group project assigned about mid-way through the course. The most successful teams meet and physically work together at an agreed-upon location and time -- that is, *uno animo*. It is a good idea to set up version control environments and practice scrum, to ensure everyone has something to do and is making progress. A final presentation will be given toward the end of the semester. Each member of the team should contribute equally to the assignment. Students on the same team may receive different grades based on perceived effort and contributions (via scrum logs and git commit history).
 
 
 
 ##### Exams
-There will be two midterms and a final exam. They will cover topics discussed in the lectures, readings from the assigned textbook, and assignments. The exams are cumulative. Study guides are provided and selected problems are reviewed on the lecture preceding the day of the exam. You are allowed a page of notes (front and back) on all exams. 
+There will be two midterm exams. They will cover topics discussed in the lectures, readings from the assigned textbook, and assignments. The exams are cumulative. Study guides are provided and selected problems are reviewed on the lecture preceding the day of the exam. You are allowed a page of notes (front and back) on all exams. 
 
 - Make-up: I expect you to be present on the day of exams. I do not offer make-up exams unless you can demonstrate documented extenuating circumstances. (These do not count as extenuating circumstances: experiencing a cold, overslept, family visiting, etc.)
 
