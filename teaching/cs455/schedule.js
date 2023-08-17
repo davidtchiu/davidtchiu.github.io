@@ -165,12 +165,12 @@ let days = {
     // "Indexing: Bitmaps",
     // "Bitmaps",
     // wk 15
-    "Project Demos",
-    "Project Demos",
+    "TBD",
+    "TBD",
     "<strong>Reading Period</strong>",
     // wk final
     "",
-    "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
+    "<strong><emph>Final Presentation<br/>4:00-6:00</emph></strong>",
     "",
   ],
 };
