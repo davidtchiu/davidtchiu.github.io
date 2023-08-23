@@ -145,7 +145,7 @@ My research interests intersect topics in cloud computing and data management. I
 - Agricola Faculty Research Award, University of Puget Sound, 2019
 - Best Paper Finalist, IEEE/ACM BDCAT 2018
 - Kristine Bartanen Research Award, University of Puget Sound, 2017
-- McCormick Faculty Research Award, University of Puget Sound, 2016
+- McCormick Faculty Research Award, University of Puget Sound, 2016, 2023
 - Best Poster Award, Consortium for Computing Sciences in Colleges, Northwest Region, 2015
 - Best Student Paper Finalist, International Conference on Web-based Education, 2005
 - Best Student Paper Award, IEEE ITCC, 2004

@@ -34,9 +34,9 @@ Your overall grade is broken down as as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Participation | 3% |
+| Participation | 5% |
 | Lab Assignments | 10% |
-| Homework Assignments | 35% |
+| Homework Assignments | 33% |
 | Midterm I | 15% |
 | Midterm II | 17% |
 | Final Exam | 20% |
@@ -70,8 +70,9 @@ There will be two midterms and a final exam. They will cover topics discussed in
 - The following items are prohibited on the day of exams: Graphing calculators, phones, headphones, and other mobile devices.
 
 
-##### Attendance and Participation
+##### Attendance and Disruption
 Regular attendance and participation are required. Attendance, to be graded out of 10 points, applies towards your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
+
 
 ##### Final Letter Grades
 These are the cutoffs when assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+). The cutoffs below might come down, but will not be set higher.
@@ -93,7 +94,8 @@ These are the cutoffs when assigning your final letter grades. Please note that 
 
 
 ##### No Laptops, No Phones
-Laptop computers and other handheld devices are a common distraction during lectures. Except on lab days and for those who can provide documentation of need from the office of SAA, please don't bring your laptops to lectures. Please turn your phones off, or at least put your phones on silent during lecture.
+Laptop computers and other handheld devices are a common distraction during lectures. Except on lab days and for those who can provide documentation of need from the office of SAA, please don't bring your laptops to lectures. Please turn your phones off, or put your phones on silent during class. If you need to take an important call, please go outside. Texting during class is prohibited and will affect your participation points.
+
 
 
 #### University, Academic, and Administrative Policies
