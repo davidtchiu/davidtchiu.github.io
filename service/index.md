@@ -1,7 +1,8 @@
 ### Conference Organization
 
-- PC Member, IDEAS'23
+- PC Member, IDEAS'23, BDCAT'23
 - Poster Chair, BDCAT'22, UCC'22
+- Student Awards Chair, BDCAT'22, UCC'22
 - PC Member, IDEAS'22
 - Session Chair, _"Demos and Short Papers"_, SSDBM'21
 - PC Member, IDEAS'21, BDCAT'21
@@ -33,9 +34,9 @@
 ### Service to the University
 
 - SCRC Faculty Advisor, University of Puget Sound (2023 - )
+- Student Life Committee, University of Puget Sound (2021 - )
 - Chair of Computer Science, University of Puget Sound (2019 - 2022)
-- Student Life Committee, University of Puget Sound (2021 - 2022)
-- Lantz Committee, University of Puget Sound (2021)
+- Lantz Sabbatical Award Committee, University of Puget Sound (2021)
 - Chair, Data Science Program Committee, University of Puget Sound (2020 - 2021)
 - Chair, Data Science Search Committee, University of Puget Sound (2020)
 - Curriculum Taskforce (CTF), University of Puget Sound (2018 - )
@@ -53,7 +54,7 @@
 
 ### Volunteering and Community Outreach
 
-- Mentor, Google Summer of Code (2011-present)
+- Mentor, Google Summer of Code
 - Faculty Participant, MESA Engineering Day (2011, 2012)
 - Mentor, Broader Engagement (Mentor/Protege) Program at Supercomputing'11, Seattle, WA (2011)
 - Lead Judge, Oral Presentations at MESA Day, Clark Community College, Vancouver WA (2011)

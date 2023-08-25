@@ -3,13 +3,13 @@
 <div style="display: grid; grid-template-columns: auto auto; column-gap: 15px;">
   <div>
   <p>
-  I'm a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>, where I also served a 3-year term as department chair from 2019-22. I am currently the Faculty Advisor to the university's <a href="https://www.pugetsound.edu/living-learning-communities/students-color-residential-community">Students of Color Residential Community</a>.
+  David Chiu is currently a Professor in the Department of Mathematics and Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>.  He served a term as Department Chair from 2019-22, and is currently the advisor to the href="https://www.pugetsound.edu/living-learning-communities/students-color-residential-community">Students of Color Living-and-Learning Community</a>.
   </p>
   <p>
-  I received a PhD in Computer Science and Engineering from the <a href="https://cse.osu.edu">Ohio State University</a> as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. I studied under the supervision of <a href="https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en">Gagan Agrawal</a> (now founding Director of UGA's School of Computing), working on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows over cloud computing environments. Prior to Ohio State, I studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> at the Institute of Computational Mathematics (Kent State) on the transmission of math education modules for my BS/MS degrees. My current teaching and research interests span databases, distributed cloud computing, and the web. I am a member of ACM and a senior member of the IEEE.
+  He received a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was supervised by <a href="https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en">Gagan Agrawal</a> (now founding Director of UGA's School of Computing), and worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows over cloud computing environments. He also studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> at the Institute of Computational Mathematics on the transmission of math education modules for his BS and MS degrees in Computer Science. He has published numerous papers in database management and cloud computing, and regularly serves on conference organization and program committees.
   </p>
   <p>
-  I am the recipient of the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">2022 President's Award for Excellence in Teaching</a> and the 2017 Kristine Bartanen Research Award from the University of Puget Sound. 
+  He has over 20 years of teaching experience at the university level, and is engaged in research with undergraduate students. David is the recipient of multiple teaching and research awards, including the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022) and the Bartanen Faculty Research Award (2016) both from the University of Puget Sound. He is a Member of ACM and a Senior Member of IEEE.
   </p>
   </div>
   <div style="vertical-align: top;">
@@ -22,9 +22,10 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 
 ### Recent Activities
+- (8/2023) Appointed to serve on the Total Compensation and Benefits Project, University of Puget Sound.
 - (7/2023) Serving on the PC for [BDCAT 2023](https://bdcat-conference.org/).
 - (4/2023) Congrats to Julia Kaeppel on receiving a McCormick Student Research Award.
-- (2/2023) Serving as the inaugural Student of Color Residential Community (SCRC) Faculty Advisor, University of Puget Sound.
+- (2/2023) Appointed to serve as the inaugural Advisor to Student of Color Residential Community (SCRC), University of Puget Sound.
 - (1/2023) Featured in the ["Five Questions Series"](https://www.pugetsound.edu/stories/five-questions-university-puget-sound-professor-computer-science-david-chiu) in [Arches](https://www.pugetsound.edu/arches-magazine) magazine.
 - (8/2022) Received an NSF grant to provide travel scholarships to students attending IEEE/ACM UCC 2022 and BDCAT 2022 conferences. I am also chairing the student travel awards committee.
 - (8/2022) Received the President's Award for Excellence in Teaching.
