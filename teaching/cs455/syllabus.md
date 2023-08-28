@@ -1,4 +1,10 @@
-## CS 455 Syllabus
+## CS 455 - Principles of Database Systems - Syllabus
+
+#### Course Info
+- Instructor: David Chiu
+- Web page: [https://davidtchiu.github.io/teaching/cs455/](https://davidtchiu.github.io/teaching/cs455/)
+- Email: [dchiu@pugetsound.edu](mailto://dchiu@pugetsound.edu)
+
 
 #### Course Description
 The management of data is one of the classical problems in computing. This course centers around the fundamental concepts and theory behind the relational data model, which addresses numerous problems that plague data management, including data independence, access, consistency, and information loss. Course topics include the relational data model, database languages (e.g., SQL), relational database theory, database design (by decomposition), query execution, and considerations that affect system performance. Students will design database schemas that effectively model an organization's information and write applications that require database integration. Students will also gain insight through the implementation of influential data structures and algorithms that are commonly used in modern relational database systems.

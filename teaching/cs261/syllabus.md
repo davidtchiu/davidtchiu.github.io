@@ -1,5 +1,9 @@
-## CS 261 Syllabus
+## CS 261 - Computer Science II - Syllabus
 
+#### Course Info
+- Instructor: David Chiu
+- Web page: [https://davidtchiu.github.io/teaching/cs261/](https://davidtchiu.github.io/teaching/cs261/)
+- Email: [dchiu@pugetsound.edu](mailto://dchiu@pugetsound.edu)
 
 #### Course Description
 This course is a continuation of the topics introduced in CSCI 161. It provides an introduction to the study of fundamental data structures and their associated algorithms. Students will learn about lists, stacks, queues, trees, sorting, searching, abstract data types, and object-oriented programming using Java, and learn how to choose appropriate data structures and algorithms for particular problems. 
