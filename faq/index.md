@@ -1,6 +1,6 @@
 ### Student FAQs
 
-- **I want to leave the department some feedback anonymously.**\
+- **I want to leave the department anonymous feedback.**\
   Comments on an instructor's pedagogical choices or teaching style that are specific to a particular course are perhaps best expressed on the end-of-semester Student Evaluation Forms. Academic concerns such as suggestions for course offerings or requests for academic accommodation should be discussed with your advisor instead.
 
   For other concerns, I direct you to use our [anonymous feedback form](https://forms.gle/Ltassc7BQkNfnnXB7). The purpose of this form is for Puget Sound students to provide feedback (both positive and negative) to the CS department, which among others topics, may include anything related to:

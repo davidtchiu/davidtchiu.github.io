@@ -70,12 +70,12 @@ let days = {
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
-      {
-        name: "Lab 1",
-        title: "Review: Around the Farm",
-        url: "lab1.farm/",
-        due: "8/30/2023",
-      },
+      // {
+      //   name: "Lab 1",
+      //   title: "Review: Around the Farm",
+      //   url: "lab1.farm/",
+      //   due: "8/30/2023",
+      // },
       // {
       //   name: "Lab 2",
       //   title: "Inheritance Lab",
@@ -147,7 +147,7 @@ let days = {
   lectures: [
     // wk 1
     "Introductions: Who are we? Syllabus",
-    "Lab 1: Review",
+    "Lab 1: CS1 Review",
     "Inheritance: motivation, abstraction",
     "Inheritance (cont.): this(), super()",
     // wk 2
