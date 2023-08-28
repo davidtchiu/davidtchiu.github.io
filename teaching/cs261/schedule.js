@@ -70,12 +70,12 @@ let days = {
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
-      // {
-      //   name: "Lab 1",
-      //   title: "Review: Around the Farm",
-      //   url: "lab1.farm/",
-      //   due: "8/30/2023",
-      // },
+      {
+        name: "Lab 1",
+        title: "Review: Around the Farm",
+        url: "lab1.farm/",
+        due: "8/30/2023",
+      },
       // {
       //   name: "Lab 2",
       //   title: "Inheritance Lab",
