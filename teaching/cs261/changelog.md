@@ -7,6 +7,7 @@
 - Big-O: Don't spend anymore time talking about caching, and all that. Just move on to counting steps.
 
 # Change Log
+- Precede Lab 1 with a "Warm-up" to show them how to create a project folder in Google Drive (Fall 23)
 - Moved evil hangman to Hwk 4, replacing Sentiment Analysis (Fall 23)
 - Created a recursion homework. Just exercises? (Fall 23)
 - Hwk 3: Need to be more instructive on free-form Hwk assignments. (Fall 23)

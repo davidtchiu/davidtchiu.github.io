@@ -25,12 +25,12 @@ let days = {
         url: "hwk1.lc/",
         due: "9/4/2023",
       },
-      // {
-      //   name: "Hwk 2",
-      //   title: "TicTacToe Player",
-      //   url: "hwk2.ttt/",
-      //   due: "9/13/2023",
-      // },
+      {
+        name: "Hwk 2",
+        title: "TicTacToe Player",
+        url: "hwk2.ttt/",
+        due: "9/13/2023",
+      },
       // {
       //   name: "Hwk 3",
       //   title: "You Complete Me",
@@ -39,7 +39,7 @@ let days = {
       // },
       // {
       //   name: "Hwk 4",
-      //   title: "Evil Hangman (Teams)",
+      //   title: "Evil Hangman",
       //   url: "hwk4.ehm/",
       //   due: "10/9/2023",
       // },
@@ -51,19 +51,19 @@ let days = {
       // },
       // {
       //   name: "Hwk 6",
-      //   title: "Ranked Choice Voting (Teams)",
+      //   title: "Ranked Choice Voting (Paired)",
       //   url: "hwk6.rcv",
       //   due: "10/30/2023",
       // },
       // {
       //   name: "Hwk 7",
-      //   title: "Recursion",
+      //   title: "Recursion (Paired?)",
       //   url: "hwk7.rec",
       //   due: "11/13/2023",
       // },
       // {
       //   name: "Hwk 8",
-      //   title: "Data Compression (Teams)",
+      //   title: "Data Compression (Paired)",
       //   url: "hwk8.huff",
       //   due: "12/4/2023",
       // },
@@ -76,12 +76,12 @@ let days = {
         url: "lab1.farm/",
         due: "8/30/2023",
       },
-      // {
-      //   name: "Lab 2",
-      //   title: "Inheritance Lab",
-      //   url: "lab2.dice/",
-      //   due: "9/6/2023",
-      // },
+      {
+        name: "Lab 2",
+        title: "Inheritance Lab",
+        url: "lab2.dice/",
+        due: "9/6/2023",
+      },
       // {
       //   name: "Lab 3",
       //   title: "Abstract Classes Lab",
