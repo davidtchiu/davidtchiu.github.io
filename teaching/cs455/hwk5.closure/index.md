@@ -74,7 +74,20 @@ For this assignment, you're welcome to add as many other helper methods as you n
 
 3. Now open the `FDUtil` class, and implement the following static methods:
 
-    - Note that a method, `powerSet(Set<E> inputSet)` is given. Test it out so you know how to use it. 
+    - `powerSet(Set<E> inputSet)` -- This method returns the power set of the given set, so it returns a set of sets. Recall that the power set of $$S$$ is all subsets of $$S$$, including the empty set. You'll want to write this method recursively. Here's a hint. The base case is reached when the `inputSet` is empty, and you'll want to return a new set containing an empty set. Otherwise, remove an element from the `inputSet`, and call `powerSet` recursively to obtain the power set of the remaining elements. Then iterate through the returned power set. Create a copy of each set and union the removed element with each copy. Add each copy to the set of sets, and return it.
+
+      For instance, say `[A,B]` was input. Your algorithm would remove `A`, and call `powerSet` on `[B]`, which would in turn remove `B` and call `powerSet` on an empty set `[]`, reaching the base case. This causes `[[]]` (a set containing the empty set) to be returned. Your algorithm iterates through `[[]]` and unions `B` with the lone element `[]` to produce `[[], [B}]`. That's returned and the algorithm unions `A` with both elements to finally produce `[[], [A], [B], [A,B]]`.
+
+      ```java
+      Set<String> s = new TreeSet<>();
+      s.add("A");
+      s.add("B");
+      s.add("C");
+      System.out.println(FDUtil.powerSet(s));
+      ```
+      ```
+      [[], [A], [B], [C], [A, B], [A, C], [B, C], [A, B, C]]
+      ```
 
     - `trivial(FDSet fdset)` -- This method accepts a set of FDs and returns a new set of trivial FD stemming from the input set. Recall the trivial rule specifies that any subset of the left-side attributes can be (trivially) determined by the left-side attributes. Essentially, for each FD $$\alpha\rightarrow \beta$$ in the input set, find all subsets $$\gamma \subseteq \alpha$$. Then generate a new FD $$\alpha \rightarrow \gamma$$. Here's an example output for $$F = \{A \rightarrow B, AB \rightarrow C\}$$:
 
