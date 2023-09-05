@@ -1,9 +1,9 @@
 # TODO
+- Lab 2: fix the crookedDie should update real history
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 - Lec 1b: polymorphism -- Can I use pipe-cleaners somehow?
 - Exam 1 implementation worth too much
 - Get assignment starter code on github
-- Might consider adding Exceptions into Lab 4: Interfaces, and go with a perf lab for Lab 5?
 - Big-O: Don't spend anymore time talking about caching, and all that. Just move on to counting steps.
 
 # Change Log

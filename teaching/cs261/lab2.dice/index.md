@@ -26,11 +26,11 @@ Take a moment to familiarize yourself with the three `Die` classes. The `BasicDi
 
   - In case you're using Eclipse or IntelliJ, you'll want to create a new class -- we can just call it `Main`, and write the `public static void main(String[] args)` method, and creating objects, like `BasicDie bd = new BasicDie(6);`. To see what methods are available, type `bd.` and your editor should show you a list of accessible methods.
 
-  - Play around with the classes until you see how each of them works. Can you see when the `CrookedDie` cheats? Does a `CrookedDie` have a history? Does it match the rolled values?
+  - Play around with the classes until you see how each of them works. Can you see when the `CrookedDie` cheats? Does a `CrookedDie` have a history? Does it match the rolled values? Why or why not?
 
 - Add a `getNumRolls()` method to `BasicDie` that returns the number of times the die has been rolled. After compiling and testing this method on a `BasicDie`, do some experiments to see in which other classes the new method is available.
 
-- Add a `printHistory()` method to the `HistoryDie` class. It should loop through the history array and print out its contents. Try to make the printout look pretty and informative, and make sure you include both the value and the number of times it has been rolled in your output. For example, on a six-sided die that has been rolled 29 times, the output might look like this:
+- Add a `printHistory()` method to the `HistoryDie` class. It should loop through the history array and print out its contents. Try to make the printout look pretty and informative, and make sure you include both the face value and the number of times it has been rolled in your output. For example, on a six-sided die that has been rolled 29 times, the output might look like this (where the left hand side is the face value, and the right hand value is the number of times it has landed on the corresponding face value.):
 
   ```
   1: 5
@@ -56,7 +56,7 @@ Take a moment to familiarize yourself with the three `Die` classes. The `BasicDi
 
 - Uncomment the code from the last two steps. (Put the super call back in `HistoryDie`, and make sure `BasicDie` has its no-argument constructor again.) Now comment out the entire constructor in the `HistoryDie` class. Try to create an instance of `HistoryDie` and see what happens. Can you create one? What sort of output is printed? If you double-click on the instance, what can you learn about its internal state (the contents of its fields)? What happens when you roll it? Why?
 
-- We can create a `CrookedDie` via its one-argument constructor — the one that takes the desired number of sides as a parameter. As shown in the code example below, it's not possible to create a `CrookedDie` using a no-argument (default) constructor. Modify the code so `CrookedDie` has a no-argument constructor that creates a `CrookedDie` with six sides. Feel free to modify other classes as well, but try to accomplish the goal without making numSides public or protected in the BasicDie class.
+- We can create a `CrookedDie` via its one-argument constructor — the one that takes the desired number of sides as a parameter. As shown in the code example below, it's not possible to create a `CrookedDie` using a no-argument (default) constructor. Modify the code so `CrookedDie` has a no-argument constructor that creates a `CrookedDie` with six sides. Feel free to modify other classes as well, but try to accomplish the goal without making `numSides` either `public` or `protected` in the `BasicDie` class.
 
   You should confirm that this is true. If you're using Eclipse/IntelliJ, in `public static void main(String[] args)` method type in the following code. (Or alternatively, you can type out the following code in BlueJ's codepad, if you're using BlueJ.)
 

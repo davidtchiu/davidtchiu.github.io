@@ -36,7 +36,7 @@ let days = {
       //   title: "You Complete Me",
       //   url: "hwk3.ycm/",
       //   due: "9/25/2023",
-      // },
+      // }, 
       // {
       //   name: "Hwk 4",
       //   title: "Evil Hangman",
