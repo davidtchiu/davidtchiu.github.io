@@ -103,7 +103,7 @@ let days = {
   lectures: [
     // wk 1
     "Why DBMS? Data independence",
-    "Review of set theory",
+    "Data independence",
     "Relational Model: Connection to sets",
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
