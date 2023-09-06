@@ -198,11 +198,11 @@ to repeatedly generate random locations until you find one that is free.
 
 
 ----------------------------------------------------------
-[5/5pts] You include sufficient comments to explain the logic of your methods.
+[2/2pts] You include sufficient comments to explain the logic of your methods.
 
 
 ----------------------------------------------------------
-[5/5pts] You include sufficient Javadocs comments for each class and method.
+[3/3pts] You include sufficient Javadocs comments for each class and method.
 ```
 
 #### Submitting Your Assignment
