@@ -1,12 +1,11 @@
 # TODO
-- Lab 2: fix the crookedDie should update real history
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
-- Lec 1b: polymorphism -- Can I use pipe-cleaners somehow?
 - Exam 1 implementation worth too much
 - Get assignment starter code on github
 - Big-O: Don't spend anymore time talking about caching, and all that. Just move on to counting steps.
 
 # Change Log
+- AbstractClasses and Interfaces: Save time and don't code those up anymore. (Fall 23)
 - Precede Lab 1 with a "Warm-up" to show them how to create a project folder in Google Drive (Fall 23)
 - Moved evil hangman to Hwk 4, replacing Sentiment Analysis (Fall 23)
 - Created a recursion homework. Just exercises? (Fall 23)
