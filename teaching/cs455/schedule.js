@@ -17,12 +17,12 @@ let days = {
         url: "hwk1.rel/",
         due: "9/11/2023",
       },
-      // {
-      //   name: "Hwk 2 (written)",
-      //   title: "Relational Algebra",
-      //   url: "hwk2.ra/",
-      //   due: "9/22/2023",
-      // },
+      {
+        name: "Hwk 2 (written)",
+        title: "Relational Algebra",
+        url: "hwk2.ra/",
+        due: "9/22/2023",
+      },
       // {
       //   name: "Hwk 3 (coding)",
       //   title: "Data Preparation",

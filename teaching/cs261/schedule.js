@@ -31,12 +31,12 @@ let days = {
         url: "hwk2.ttt/",
         due: "9/13/2023",
       },
-      // {
-      //   name: "Hwk 3",
-      //   title: "You Complete Me",
-      //   url: "hwk3.ycm/",
-      //   due: "9/25/2023",
-      // }, 
+      {
+        name: "Hwk 3",
+        title: "You Complete Me",
+        url: "hwk3.ycm/",
+        due: "9/25/2023",
+      }, 
       // {
       //   name: "Hwk 4",
       //   title: "Evil Hangman",
@@ -158,7 +158,7 @@ let days = {
     // wk 3
     "Abstract classes",
     "Lab 3: Abstract classes Lab",
-    "Interfaces and implementations",
+    "Interfaces",
     "Multiple implementation, Comparable<T>",
     // wk 4
     "Start exceptions",
