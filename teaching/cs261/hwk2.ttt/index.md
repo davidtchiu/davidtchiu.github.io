@@ -105,7 +105,7 @@ System.out.println(b.toString());
     > "Spassky"   (String)
     ```
 
-3. Extend `Player` again to create a `RandomPlayer` class. Objects of this type select from among the open positions on the board randomly. You could generate random row and column values until you find a position that's open, but I don't want you to, because the runtime of that loop would be unbounded. (Yeah I know it's unlikely to take more than a few iterations, but it's just bad code design). Instead, keep a list of empty cells, and randomly select one of those cells to fill. If the board is already full, your method should return without modifying the board. Here's a couple of random players in action, though you'll obviously get different results:
+3. Extend `Player` again to create a `RandomPlayer` class. Objects of this type select from among the open positions on the board randomly. You *could* generate random row and column values until you find a position that's open, but I don't want you to, because the runtime of that loop would be unbounded. (Yeah I know it's unlikely to take more than a few iterations, but it's just bad code design). Instead, keep a list of open cells, and randomly select one of those cells to fill. If the board is already full, your method should return without modifying the board. Here's a couple of random players in action, though you'll obviously get different results:
 
     ```java
     Board b = new Board();

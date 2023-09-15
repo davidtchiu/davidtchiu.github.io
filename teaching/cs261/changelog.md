@@ -1,5 +1,5 @@
 # TODO
-
+- AutoComplete homework -- make it have interfaces they need to implement
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 - Exam 1 implementation worth too much
 - Get assignment starter code on github

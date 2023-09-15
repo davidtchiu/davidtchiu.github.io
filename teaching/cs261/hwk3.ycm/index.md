@@ -16,6 +16,7 @@ For this assignment, you will implement autocomplete by sorting the terms by que
 
 #### Student Objectives
 - Designing an object-oriented project from scratch.
+- Reading from files.
 - Catching exceptions.
 - Exposure to interfaces.
 - Implementing the Comparable interface.
@@ -88,6 +89,13 @@ try to guess what it is! Type .quit to exit the program.
 6647580 hills
 6606600 highest
 4568010 highly
+
+> ig
+3832170	ignorant
+3515240	ignorance
+727606	ignored
+521515	ignore
+394855	ignoble
 
 > good
 96660200    good
