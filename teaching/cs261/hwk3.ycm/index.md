@@ -12,7 +12,6 @@ Autocompletion is pervasive in modern applications. As the user types, the progr
 
 In these examples, the application predicts how likely it is that the user is typing each query and presents to the user a list of the top-matching queries, in descending order of weight. These weights are determined by historical data, such as box office revenue for movies, frequencies of search queries from other Google users, or the typing history of a cell phone user. For the purposes of this assignment, you will have access to a set of all possible queries and associated weights (and these queries and weights will not change).
 
-For this assignment, you will implement autocomplete by sorting the terms by query string; searching to find all query strings that start with a given prefix; and sorting the matching terms by weight.
 
 #### Student Objectives
 - Designing an object-oriented project from scratch.
@@ -45,7 +44,7 @@ I think you'll need at least three classes:
 
 2. When the user types in a query, which may be only the prefix of a word of interest, you must search through your list of terms and return a list of all terms whose prefixes match the given prefix. For instance, if the query was How then your List might contain: how, howdy, howl, howling, howitzer, and so on.
 
-3. The list of autocompleted terms must then be sorted in descending order of the terms' frequencies. Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. You may call `Collections.sort()` static method for this step, but how do you now sort the list of terms by frequency? 
+3. The list of autocompleted terms must then be sorted in descending order of the terms' frequencies. Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. You may call `Collections.sort()` static method for this step, but how do you sort the list of terms by their frequency? 
 
 4. You must provide a `UserInterface` class, that contains a single method, `public static void main(String[] args)`. If there are other static methods in this class, they must be made private so that they're hidden from the user. The main method should simply instantiate and start your program.
 
