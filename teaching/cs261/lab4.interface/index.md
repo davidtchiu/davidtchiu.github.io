@@ -1,10 +1,8 @@
 ## CS 261 - Computer Science II
 
-### Lab 4: Interfaces and Polymorphism
+### Lab 4: Interfaces
 
 Many things across the world are associated with unique identifiers. For instance, just about every item for sale has a 12 or 13-digit universal product code (UPC barcode) that can be scanned to identify the product being sold. Every car has a unique 17-character vehicle identification number (VIN), and most credit cards have a unique 16-digit number. With the average code length being quite long, it is expected that people might make mistakes when typing them out. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) What's worse, even if you typed the code out correctly, it can be corrupted when it's sent over a network and while it's being stored on disk. That's a big problem! How would we efficiently ensure that a given code is correct?
-
-This week you'll get some hands-on practice with abstract classes and polymorphism. This lab considers a class hierarchy that models books in a library.
 
 <img src="figures/Barcode-anatomy.jpg" width="400px"/>
 
@@ -17,7 +15,7 @@ Now let's say a student is trying to find me on the faculty directory. However, 
 
 Even though this basic method can be quite effective, it is of course, not at all full-proof. For instance, if a student merely flipped a couple digits of my ID, say from `21586` to `25186`, it would not affect the sum due to the commutativity of addition, leading our algorithm to think that the code is valid. Therefore, different checksum algorithms of varying degrees of complexity exist... which leads us into the assignment.
 
-This week you'll get some hands-on practice with interfaces and polymorphism.
+This week you'll explore these algorithms, and get hands-on experience with interfaces.
 
 #### Objectives
 - Practice with interfaces and polymorphism
@@ -75,7 +73,7 @@ Let's go ahead support these longer codes as well. The algorithms are very simil
   - `5060043069636` - Stainless Steel Paris Metro Pocket Map (I <st>used to</st> buy the stupidest things)
 
 
-#### Part III: Checking Book ISBN's
+#### Part III: Validating Book ISBN's
 Cool. Another set of items that have unique IDs are books, called ISBNs. You're probably already familiar with ISBNs, because you may have had to look up the ISBNs just to ensure that you're buying the right book for your classes. (You can, for instance, search by ISBN on eBay and Amazon).
 
 - ISBN's are checked quite differently than UPCs, so we'll need a completely new class. Create a new class called `ISBNValidator` and you'll want to include the same three instance variables from before and the same two methods: `loadSequence()` and `validate()`.
