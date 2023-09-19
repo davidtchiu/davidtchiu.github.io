@@ -229,7 +229,7 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 #### Credits
 
-Based on a previous lab by Professor Henry Walker, Grinnell College.
+Written by David Chiu. 2023.
 
 #### Lab Attendance Policies
 
