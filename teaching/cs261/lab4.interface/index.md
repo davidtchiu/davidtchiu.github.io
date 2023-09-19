@@ -70,7 +70,7 @@ Let's go ahead support these longer codes as well. The algorithms are very simil
 - Try testing some 13-digit UPC codes I found in my drawer:
 
   - `0021563106916` - Gear Aid Repair Tape
-  - `5060043069636` - Stainless Steel Paris Metro Pocket Map (I <st>used to</st> buy the stupidest things)
+  - `5060043069636` - Stainless Steel Paris Metro Pocket Map
 
 
 #### Part III: Validating Book ISBN's
@@ -93,8 +93,29 @@ Cool. Another set of items that have unique IDs are books, called ISBNs. You're 
 
 An interesting note: You have probably noticed that there also exists (more commonly nowadays) a 13-digit ISBN code for most modern books. The algorithm to validate the ISBN13 codes is actually the same algorithm for checking UPC13 codes. If you're curious to test this claim, grab the nearest book with a 13-digit ISBN code; change the GUI back to using UPCValidator, and test.
 
-#### Part IV: Credit Card Numbers (Luhn's Algorithm)
-The last validator we'll build can validate credit card numbers. There are several ways, but we'll implement [Luhn's Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm). Create a new class called CCValidator and once again, you just need the same three instance variables, and the same two methods we've been implementing all along: `loadSequence()` and `validate()`. Luhn's Algorithm is a little more complicated than the previous 3. Here are the specifics. **It gets complicated, so you should read through this whole section before starting to code.**
+
+#### Part IV: Create and Use an Interface
+Okay, great, we got the `GUI` to work with the different "validators," but it's a lot of work just to get the `GUI` to accept different validators! We can't expect people to edit the `GUI` class' code and recompile every time we want to fire up a different validation scheme!
+
+We need to do some work on `GUI` so that it can work with any validator we've created and any future validators we have yet to write! That will require making the `GUI` polymorphic: the constructor should be able to take either kind of validator object and control it.
+
+**Important (know this!):** Since the the validator schemes only share methods by name (the bodies of the methods generally have nothing that's similar or reusable), an abstract class wouldn't make a whole lot of sense, as there's no methods that would make sense to inherit from a superclass! Therefore, when all methods are abstract in the superclass, it's a good indication that we need an Interface. We'll use an `interface` to pull this off.
+
+- Figure out which methods need to be included in a new interface, that you'll call `Validatable`. (What are the methods that the GUI expects all validators to be able to do?) This is an easy one: just the two methods we've been writing over and over.
+
+- Write the `Validatable` interface. Remember that interfaces don't have instance variables or constructors. You can also leave off certain keywords (like `public`). You may want to refer to your notes for the syntax.
+
+- Modify the `UPCValidator` and `ISBNValidator` classes  so that they implement the new interface. Use the `@Override` tag on top of every method implementation. You do not need to specify that `UPC13Validator` also implements `Validatable`, because it is a subclass of `UPCValidator`. It wouldn't be wrong to, just redundant.
+
+- Now go back and edit the GUI class to use the interface. Just so we're on the same page, here's the resulting class diagram.
+
+  <img src="figures/bluej_validator.png" width="500px"/>
+
+- Go back to the main method in the Main class, and verify that you can startup a GUI for any validator without changing any code in the GUI class. This is power of *interfaces*!
+
+
+#### Optional: Credit Card Numbers (Luhn's Algorithm)
+This is an optional exercise, but good practice. There are several ways to validate credit card numbers, but we'll implement [Luhn's Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm). Create a new class called CCValidator and once again, you just need the same three instance variables, and the same two methods we've been implementing all along: `loadSequence()` and `validate()`. Luhn's Algorithm is a little more complicated than the previous 3. Here are the specifics. **It gets complicated, so you should read through this whole section before starting to code.**
 
 - **Step 1:** I would start by creating a copy of `payload` array, because you'll be modifying the numbers. Then working off the copy, starting with the right-most digit, double that digit and moving left, double every other digit that you encounter. 
 
@@ -181,9 +202,9 @@ The last validator we'll build can validate credit card numbers. There are sever
   - **Step 3:** Finally, you'll need to add up all the values in order to obtain: `6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78`. Then add in the checksum to obtain `78 + 2 == 80`, and calculate `80 % 10`. Because this result is zero, this credit card number validates!
 
 
-- Change the `GUI` code so that it works with `CCValidator` instead, just like you did before for ISBN's. Test and make sure your `CCValidator` is working.  You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a> lets you generate valid credit card numbers! How convenient (be ethical please)!
+<!-- - Change the `GUI` code so that it works with `CCValidator`, just like you did before for ISBN's. Test and make sure your `CCValidator` is working.  You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a> lets you generate valid credit card numbers! How convenient (be ethical please)! -->
 
-
+<!-- 
 #### Part V: Create and Use an Interface
 Okay, great, we got the `GUI` to work with the different validators, but it's a lot of work just to get the `GUI` to accept different validators! We can't expect people to edit the `GUI` code and recompile every time we want to fire up a different validation scheme!
 
@@ -195,13 +216,13 @@ We need to do some work on `GUI` so that it can work with any validator we've cr
 
 - Write the `Validatable` interface. Remember that interfaces don't have instance variables or constructors. You can also leave off certain keywords (like `public`). You may want to refer to your notes for the syntax.
 
-- Modify the `UPCValidator`, `ISBNValidator`, and `CCValidator` classes slightly so that they implement the new interface. Use the @Override tag on top of every method implementation. You do not need to specify that `UPC13Validator` also implements `Validatable`, because it is a subclass of `UPCValidator`. It wouldn't be wrong to, just redundant.
+- Modify the `UPCValidator`, `ISBNValidator`, and `CCValidator` classes slightly so that they implement the new interface. Use the `@Override` tag on top of every method implementation. You do not need to specify that `UPC13Validator` also implements `Validatable`, because it is a subclass of `UPCValidator`. It wouldn't be wrong to, just redundant.
 
 - Now go back and edit the GUI class to use the interface. Just so we're on the same page, here's the resulting class diagram.
 
   <img src="figures/bluej_validator.png" width="500px"/>
 
-- Go back to the main method in the Main class, and verify that you can startup a GUI for any validator without changing any code in the GUI class. This is the beauty and power of *polymorphism*!
+- Go back to the main method in the Main class, and verify that you can startup a GUI for any validator without changing any code in the GUI class. This is the beauty and power of *polymorphism*! -->
 
 #### Optional
 Make more validators! There are [many different ID sequences](https://en.wikipedia.org/wiki/Check_digit) out there that uses a checksum. Look up how to check vehicle identification numbers (VINs); bank routing numbers, etc.
