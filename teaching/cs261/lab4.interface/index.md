@@ -35,12 +35,12 @@ Take a moment to familiarize yourself with the four classes in the project. Ther
 
   - Now open up the `UPCValidator` class. We'll deal with Universal Product Codes (UPC) first, because it's a easy scheme. Most UPC's are 12-digits long, but newer ones may be 13. We'll focus on the 12-digit UPC for this section. (Find a barcode around you and check for yourselves!) In the class, notice that there are 3 instance variables: `int checksum` (the last digit in a UPC), `int[] payload` (the first 11 digits of the UPC) and `int LENGTH `(which is already set to 12, the proper length of a UPC code sequence). There is no constructor, but implement the methods below.
 
-  - `public boolean loadSequence(String sequence)`: This method inputs a 12-digit UPC code as a string, and populates the payload and the checksum. You should read in the first 11-digits into the payload array (remember to first instantiate the array to be size 11, or `LENGTH-1`), and extract the final digit into the checksum variable. Hints: you can grab a specific character from a string using its `charAt(..)` method, and importantly, you can convert a char to an integer using the static method `Character.getNumericValue(..)`.
+  - `public boolean loadSequence(String sequence)`: This method inputs a 12-digit UPC code as a string, and populates the payload and the checksum. You should read in the first 11-digits into the payload array (remember to first instantiate the array to be size 11, or `LENGTH-1`), and extract the final digit into the `checksum` instance variable. Hints: you can grab a specific character from a string using its `charAt(..)` method, and importantly, you can convert a `char` to an `int` using the static method `Character.getNumericValue(..)`
 
-    **Important:** If the given string is not of size `LENGTH`, then you should immediately return `false`. We'll see a more elegant way of handling these input errors next week (throwing exceptions).
+    **Important:** If the given string is not of size `LENGTH` (i.e., 11 in this particular case), then you should immediately return `false`. We'll see a more elegant way of handling these input errors next week (throwing exceptions).
 
 
-  - `public boolean validate()`: This method implements the validation algorithm for UPC codes. Add up all the numbers in the even positions of the payload array (starting with position [0]). Multiply this sum by 3. Next, add up all the digits in the odd positions of the payload. Add up the two sums and take the modulo-10 result. We'll call this result, `r` (for remainder). If this result is 0, then compare the checksum with 0 for equality. Otherwise, compare the checksum with `(10−r)` to see if they're equal.
+  - `public boolean validate()`: This method implements the validation algorithm for UPC codes. Add up all the numbers in the even positions of the payload array (starting with position `[0]`). Multiply this sum by 3. Next, add up all the digits in the odd positions of the payload. Add up the two sums and take the modulo-10 result. We'll call this result, `r` (for remainder). If this result is 0, then compare the checksum with 0 for equality. Otherwise, compare the checksum with `(10−r)` to see if they're equal.
 
     For example, let's say the UPC is `096619194261`. The payload would be `09661919426` and the checksum is `1`. The sum of the even positions of the payload is `0+6+1+1+4+6 == 18`. This value is multiplied by 3 to obtain 54. The sum of the odd positions of the payload is: `9+6+9+9+2 == 35`. Together, the sums produce `54+35 == 89`, which gives us `89%10 == 9 == r`. Because `r` is nonzero, we compare `(10−9)` against our checksum of `1`. This is a valid UPC (Indeed, a bag of Ancient Grains Granola that is sitting next to me as I type this).
 
@@ -59,7 +59,7 @@ I alluded to the fact that newer UPC's have a longer 13-digit version. The longe
 
 Let's go ahead support these longer codes as well. The algorithms are very similar to UPC's, so aspects of the UPC validator algorithms can be reused!
 
-- Create a subclass of `UPCValidator` called `UPC13Validator`. There are no instance variables or constructors for this class;  everything it needs, it's already inheriting from `UPCValidator` via the `protected` and `public` keywords.
+- Create a subclass of `UPCValidator` called `UPC13Validator`. There are no instance variables or constructors for this class;  everything it needs, it's already inheriting from `UPCValidator`!
 
 - Override the `loadSequence()` method first. It should set the `LENGTH` instance variable in the superclass to 13 (you have direct access to it from this class), and then simply call the superclass' `loadSequence()` method, because the `payload` and `checksum` extraction algorithms are exactly the same as before.
 
@@ -98,8 +98,6 @@ An interesting note: You have probably noticed that there also exists (more comm
 Okay, great, we got the `GUI` to work with the different "validators," but it's a lot of work just to get the `GUI` to accept different validators! We can't expect people to edit the `GUI` class' code and recompile every time we want to fire up a different validation scheme!
 
 We need to do some work on `GUI` so that it can work with any validator we've created and any future validators we have yet to write! That will require making the `GUI` polymorphic: the constructor should be able to take either kind of validator object and control it.
-
-**Important (know this!):** Since the the validator schemes only share methods by name (the bodies of the methods generally have nothing that's similar or reusable), an abstract class wouldn't make a whole lot of sense, as there's no methods that would make sense to inherit from a superclass! Therefore, when all methods are abstract in the superclass, it's a good indication that we need an Interface. We'll use an `interface` to pull this off.
 
 - Figure out which methods need to be included in a new interface, that you'll call `Validatable`. (What are the methods that the GUI expects all validators to be able to do?) This is an easy one: just the two methods we've been writing over and over.
 
