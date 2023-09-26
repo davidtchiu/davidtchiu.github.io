@@ -25,6 +25,8 @@ This week you'll explore these algorithms, and get hands-on experience with inte
 The following file(s) have been provided for this lab.
 - [Lab_Validator.zip](Lab_Validator.zip)
 
+#### Part 0: The Validatable Interface
+I've created a GUI (graphical user interface) class that can be used to 
 
 #### Part I: Validating UPC's
 Take a moment to familiarize yourself with the four classes in the project. There's a `GUI` (graphical user interface) class, and another class that can be controlled by it (`UPCValidator`) which still needs to be completed, and a Main with a main method that starts the GUI. Run the main method to start up the GUI now.

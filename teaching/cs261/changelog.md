@@ -1,4 +1,5 @@
 # TODO
+- How to shorten the first 3 weeks? Potentially get rid of exception handling.
 - AutoComplete homework -- make it have interfaces they need to implement
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 - Exam 1 implementation worth too much

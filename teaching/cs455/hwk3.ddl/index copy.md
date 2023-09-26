@@ -19,7 +19,7 @@ The following file(s) have been provided for this assignment.
 
 #### Raw Enrollment Data
 
-To best serve you, the university provided a dump of its enrollment data into a comma-delimited file. A snippet of this file, shown below,  represents just 0.01% of the actual size of data to see if you can build a database around it for querying and more manageable analysis. They say that the remaining 99.99% of the data set follow the same format. **You are not allowed to make changes to the file given to you.**
+To best serve you, the university provided a dump of its enrollment data into a comma-delimited file. (Aside: This is how data usually is presented to you in the real world.). They give you a snippet of this file, shown below, which represents just 0.01% of the actual size of data to see if you can build a database around it for querying and more manageable analysis. They say that the remaining 99.99% of the data set follow the same format. **You are not allowed to make changes to this file.**
 
 ```
 studentID,studentName,class,gpa,major,CourseNum,deptID,CourseName,Location,meetDay,meetTime,deptName,building
@@ -78,12 +78,12 @@ studentID,studentName,class,gpa,major,CourseNum,deptID,CourseName,Location,meetD
 1934,Kyle,Junior,2.1,BUS;ENGL,520,ENGL,Shakespeare Was Da Bomb,HH 20,TR,13:00,Department of English,Wyatt Hall
 ```
 
-Each line in this file represents a student enrollment. For instance, take a look at Kyle's (`1934`) info at the tail end of this file. Kyle is a `BUS` and `ENGL` double-major who is enrolled in CSCI 351, ENGL 520, and CSCI 453 (the latter enrollment a bit harder to find). At the end of each row, the last two tokens (department name and building) refer to the department in which the course is offered (and not the student's major). Take note of all the problems this file suffers from:
+Each line in this file represents a student enrollment. For instance, take a look at Kyle's (1934) info at the tail end of this file. Kyle is a BUS and ENGL double-major who is enrolled in CSCI 351, ENGL 520, and CSCI 453 (the latter enrollment a bit harder to find). At the end of each row, the last two tokens (department name and building) refer to the department in which the course is offered (and not the student's major). Take note of all the problems this file suffers from:
 
 1. **Redundancies**: It is easy to see that a student's information is duplicated for each course they are enrolled in.
 2. **Multi-valued attributes:** One of the attributes can have multiple values. A student can have 0-2 majors, and each of them is separated by a colon.
 3. **Incomplete data:** When a student is not enrolled in any course, the course-enrollment fields are delimited with commas, but there's no data. Look at Lia's (first row) information. She does not have a major and is not enrolled in any courses. Now take a look at the courses without the student info, like MATH 330 (Trigonometry). These are courses that exist on the books that no one is enrolled in. There are also departments without student or course info. This is the case for the History Department (4th row). This happens when an existing department has not yet added any courses to the schedule.
-4. **Inconsistencies:** The redundancies led to bad or stale data over time. School administrators alert you that sometimes "ENGL" is mislabeled as simply "ENG" (they say you can assume that's the only major people screw keep up) and that some people tend to abbreviate "Junior" as "JR" and "Senior" as "SR" under a student's class rank. (The abbreviated versions need to be corrected to the full spelling).
+4. **Inconsistencies:** The redundancies led to bad or stale data over time. School administrators alert you that sometimes "ENGL" is mislabeled as simply "ENG" (that's the only one people screw up) and that some people tend to abbreviate "Junior" as "JR" and "Senior" as "SR" under a student's class rank. (The abbreviated versions need to be corrected to the full spelling).
 
 #### Task 1: Schema Definition
 

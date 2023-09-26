@@ -2,7 +2,7 @@
 
 ### Sentiment Analysis
 
-Sentiment Analysis is a "Big Data" problem which seeks to determine the general attitude of a writer given some text they have written. For instance, we would like to have a program that could look at the text "The film was a breath of fresh air " and realize that it was a positive statement, while "It made me want to poke out my eye balls " is negative. This is just one application of an important class of algorithms called Machine Learning, a branch of CS that explores the construction and study of algorithms that can learn from data. Such algorithms operate by building a model from example inputs and using that model to make preditions or decisions.
+Sentiment Analysis is a "Big Data" problem which seeks to determine the general attitude of a writer given some text they have written. For instance, we would like to have a program that could look at the text "The film was a breath of fresh air " and realize that it was a positive statement, while "It made me want to poke out my eye balls " is negative. This is just one application of an important class of algorithms called Machine Learning, a branch of CS that explores the construction and study of algorithms that can learn from data. Such algorithms operate by building a model from example inputs and using that model to make predictions or decisions.
 
 ```
 ////////////////////////////////////
@@ -42,11 +42,9 @@ You are going to search through a file containing movie reviews from the Rotten 
 
 The following file(s) have been provided for this homework.
 
-- [movieReviews_short.txt](movieReviews_short.txt)
-- [movieReviews.txt](movieReviews.txt)
-
-#### Team Assignments
-For this project you'll be working in teams. Please ensure that you listed all of your team members in a Javadocs comment at the top of each `.java` file.
+- [movieReviews.txt](movieReviews.txt) - A dump of Rotten Tomatoes reviews.
+- [SentimentAnalysis.java](SentimentAnalysis.java) - An interface that your "bot" needs to implement.
+- [BadReviewFormatException.java](BadReviewFormatException.java) - A checked exception class.
 
 #### Data Set
 Start a new project in your preferred editor, then download a copy of movieReviews.txt. Put it in your project folder. Open the file so that you get a chance to understand its format. Each line contains a movie review, and the sentiment of that review is the first number.
@@ -56,17 +54,15 @@ You might also notice some strange formatting, but that's by design. For instanc
 #### Object-Oriented Design
 In this assignment you'll be mostly responsible for coming up with your own class designs. First things first, though. Read this assignment in entirety to understand the problem you need to solve before even starting to think about what classes and methods you'll need. 
 
-Get together with your teammates, and on a whiteboard or sheet of paper, design the UML class diagram. What classes do you think you'll need? How do they relate to each other (What are the client classes? Are there opportunities for inheritance?) Do any of them need to implement comparable or any other interface? What methods will you provide in each class, and how are they used by client classes?
+On a whiteboard or sheet of paper, design the UML class diagram. Note that I have given you an interface that must be implemented by your "core" movie review-bot class. What classes do you think you'll need? How do they relate to each other (What are the client classes? Are there opportunities for inheritance?) Do any of them need to implement comparable or any other interface? What methods will you provide in each class, and how are they used by client classes?
 
-Projects containing only 1 class will probably fail. Think modularly. Decompose large classes into manageable pieces when possible. Think back to my lectures in which I showed you the UML diagram of the Farm project. Just by examining the UML diagram, it should be rather intuitive to understand each class' roles, and how your code is going to work together.
+Projects containing only 1 class will probably fail. Decompose large classes into manageable pieces when possible. Think back to my lectures in which I showed you the UML diagram of the Farm project. Just by examining the UML diagram, it should be rather intuitive to understand each class' roles, and how your code is going to work together.
 
-It is a very bad idea to start coding before your entire team agrees to the class design. Any changes to your overall UML diagram must be agreed upon before they are made. Feel free to come talk to me or your tutors about your initial design.
+It is a very bad idea to start coding before you have class diagram designed.  Feel free to come talk to me or your tutors about your initial design.
 
-You do need to implement two simple classes, so I can grade your programs:
+You do need to implement following class, so I can grade your program:
 
 - `UserInterface` -- This class simply contains the `main()` method, which I will run and expect kind of interaction shown in the beginning of this assignment. You should work this class into your UML diagram.
-- `BadReviewFormatException` -- This class represents a checked exception that you will throw (explained later).
-
 
 
 #### Instructions
@@ -99,6 +95,12 @@ In my running example, ignoring punctuation, your model would contain the follow
 If my input was "love and hate", then your program would produce an average score of 
 $$\frac{(14/4) + (2/1)}{2} = 2.75$$, leading your program to claim that it was a positive sentiment. Notice that, the word "and" was ignored in the scoring because it does not appear in my model.
 
+4. A movie review from the file should always be formatted as follows: `[score] <space> [review]`. In one of the methods you need to implement, `parseReview()`, if the given review does not adhere to this format, then your method must throw a `BadReviewFormatException`. That is, if the first character is not a score from 0 to 4, then throw the exception. Likewise, if an empty review follows the space, then throw the exception.
+
+   The caller of `parseReview()` must handle any exceptions gracefully, instead of allowing it to reach the JVM and crash the program. 
+
+
+<!-- 
 #### Big-O Commenting Requirements
 Your training and prediction algorithms should observe fast runtimes. Experiment with different kinds of lists to store your data. You can use other data structures too, but that's not necessary for this assignment.
 
@@ -116,8 +118,8 @@ Requirement: In light of what we've been learning in class, in addition to the J
  * @param str A given string
  * @return something
  */
-```
-
+``` -->
+<!-- 
 #### Extension
 The Predict-O-Matic 2000 isn't perfect. The following extensions can be done for those interested in improving its accuracy, but for no extra credit.
 
@@ -126,7 +128,7 @@ The Predict-O-Matic 2000 isn't perfect. The following extensions can be done for
 - Another problem is that there are a lot of words that really contribute no sentiment. For instance, "a," "the," "he", "she", etc. If you get unlucky with your training file, some of these common words may be assigned non-neutral score and bias your results. These are known as Stop Words. Process the review file and remove the top $$n$$ most frequently occurring words.
 
 - Phrases like "not bad" has a neutral or even positive sentiment. However, because our program scores each word independently, the score of "not" would be averaged with the score for "bad." Independently, these words probably take on a negative sentiment, so Predict-O-Matic 2000 would likely think the review is negative. Modify your program so that it considers 
-$$n$$-grams $$(n>1)$$, i.e., score every sequence of $$n$$ consecutive words.
+$$n$$-grams $$(n>1)$$, i.e., score every sequence of $$n$$ consecutive words. -->
 
 #### Grading
 ```
@@ -134,26 +136,25 @@ CS 261 Homework (Sentiment Analysis)
 
 
 ----------------------------------------------------------
-[15pts] Class design
+[10pts] Class design
 
 > Your class design demonstrates good modularity.
 
 > Demonstrates good use of inheritance and interfaces, if applicable.
 
+> Your program must fully implement the given SentimentAnalysis interface.
 
 ----------------------------------------------------------
 [10pts] Exception handling
 
 > Your program gracefully handles checked exceptions.
 
+> Your program throws the checked exception as specified.
 
 ----------------------------------------------------------
-[30pts] Accuracy of Model Training
-
+[15pts] Accuracy of Model Training
 
 > Your trainer ignores the case of all words from the file.
-
-> Your trainer ignores punctuation.
 
 > Your trainer accurately captures stats for every unique word encountered.
 
@@ -173,13 +174,6 @@ your model.
 > Your program exits when no input is given.
 
 ----------------------------------------------------------
-[15pts] Big-O
-
-> You predict accurately the Big-O of each method in the javadocs comment
-for that method.
-
-
-----------------------------------------------------------
 [5pts] Comments
 
 > You include sufficient Javadocs comments for each class and method.
@@ -196,7 +190,7 @@ for that method.
 Suggestions (No Deductions)
 
 
-Total: 100
+Total: 65
 
 ```
 

@@ -37,12 +37,12 @@ let days = {
         url: "hwk3.ycm/",
         due: "9/25/2023",
       }, 
-      // {
-      //   name: "Hwk 4",
-      //   title: "Evil Hangman",
-      //   url: "hwk4.ehm/",
-      //   due: "10/9/2023",
-      // },
+      {
+        name: "Hwk 4",
+        title: "Sentiment Analysis",
+        url: "hwk4.sent/",
+        due: "10/9/2023",
+      },
       // {
       //   name: "Hwk 5",
       //   title: "Doubly Linked List",
@@ -94,12 +94,12 @@ let days = {
         url: "lab4.interface/",
         due: "9/20/2023",
       },
-      // {
-      //   name: "Lab 5",
-      //   title: "Exceptions Lab",
-      //   url: "lab5.exc/",
-      //   due: "9/27/2023",
-      // },
+      {
+        name: "Lab 5",
+        title: "Exceptions Lab",
+        url: "lab5.exc/",
+        due: "9/27/2023",
+      },
       // {
       //   name: "Lab 6",
       //   title: "ArrayLists Lab",
@@ -164,12 +164,12 @@ let days = {
     "Start exceptions",
     "Lab 4: Interfaces",
     "Exceptions: throwing, catching",
-    "Customizing exceptions; Start Big-O",
+    "Start Big-O",
     // wk 5
     "Big-O",
     "Lab 5: Exception Lab",
-    "Big-O",
-    "Big-O (binary search)",
+    "Big-O: binary search",
+    "Big-O: Wrap-up",
     // wk 6
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
