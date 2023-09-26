@@ -108,7 +108,7 @@ So far the lab has focused on catching exceptions — handling error conditions 
 
 - Then change `Tester`'s main method so that it tries to create a `HistoryDie` with negative sides and run the program. What should happen when the `main` method runs?
 
-- Let's say that, instead of an `InvalidArgumentException`, which is pretty generic, you want to throw something more specific to your class. In fact, entering a non-positive number of sides attempts to create an invalid die. Create a new *unchecked* exception, called `InvalidDieException`. Consider the following figure so you know which superclass to extend from.
+- Let's say that, instead of an `IllegalArgumentException`, which is pretty generic, you want to throw something more specific to your class. In fact, entering a non-positive number of sides attempts to create an invalid die. Create a new *unchecked* exception, called `InvalidDiceException`. Consider the following figure so you know which superclass to extend from.
 
   ![exception hierarchy](figures/exceptionHierarchy.png)
 
@@ -117,11 +117,11 @@ So far the lab has focused on catching exceptions — handling error conditions 
 
 - Rewrite your code so that it throws your new exception type, instead of the an `IllegalArgumentException`, and try invoking it by creating a bad die in `main()`. Does your code compile without warning?
 
-- Modify `InvalidDieException` so that it is a *checked* exception instead. Your code should no longer compile. First, you need to indicate in the BasicDie constructor that it possibly throws this exception. (You should also update the Javadocs comment to include a `@throws` tag.)
+- Modify `InvalidDiceException` so that it is a *checked* exception instead. Your code should no longer compile. First, you need to indicate in the BasicDie constructor that it possibly throws this exception. (You should also update the Javadocs comment to include a `@throws` tag.)
 
 - What else calls the `BasicDie(int numSides)` constructor? The compiler now tells you, because the caller code must now explicitly deal with this exception. (A *checked* exception puts the onus on the programmer to do something with it).
 
-- Using the compiler as a guide, go through each place that calls the `BasicDie(int numSides)` constructor, and decide whether it's best to play hot potato and just throw an `InvalidDieException` down to its caller, or if you should try to suppress the exception by catching it instead.
+- Using the compiler as a guide, go through each place that calls the `BasicDie(int numSides)` constructor, and decide whether it's best to play hot potato and just throw an `InvalidDiceException` down to its caller, or if you should try to suppress the exception by catching it instead.
 
 #### Part IV: Odds and Ends
 - Note that the `rollAll()` method in DieRoller takes a parameter of type `List`. Look at the Java documentation for `List`. Is it a standard Java class? An interface? An abstract class? What benefit do we get from using a parameter of type `List` instead of `ArrayList`, for example? Add some code to the main method to create an appropriate argument for `rollAll()` and verify that it works when called.
