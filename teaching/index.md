@@ -11,7 +11,7 @@ My teaching focuses on the areas of data management and computer systems. I teac
 Other courses taught:
 
 - High-Performance Computing
-- Web Data Management
+- Search Engines
 
 <!-- Spring 2020
 CS 161 - Introduction to Computer Science
