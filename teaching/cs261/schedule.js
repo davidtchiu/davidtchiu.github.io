@@ -169,7 +169,7 @@ let days = {
     "Big-O",
     "Lab 5: Exception Lab",
     "Big-O: binary search",
-    "Big-O: Wrap-up",
+    "<strong><emph>Class Cancelled</emph></strong>",
     // wk 6
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",

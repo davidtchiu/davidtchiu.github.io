@@ -120,11 +120,11 @@ let days = {
     // wk 5
     "SQL: selection, joins, set ops",
     "SQL: outer joins, renaming, WITH",
-    "SQL Work Day",
+    "<strong><emph>Class Cancelled</emph></strong>",
     // wk 6
+    "SQL Work Day",
     "SQL: subqueries",
     "SQL: grouping and aggregation",
-    "SQL: triggers",
     // wk 7
     "SQL Work Day",
     "<strong><emph>Review</emph></strong>",

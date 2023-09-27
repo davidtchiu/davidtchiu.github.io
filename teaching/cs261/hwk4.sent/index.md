@@ -80,20 +80,20 @@ The word "love" appears 4 times in the file (shows up in both reviews). Notice t
 
 3. After it's done training, then prompt the users to input a review for which your program will then proceed to predict the sentiment. Just like in the beginning of this homework writeup, you ask users to provide a review (or just press enter to quit). You can assume that what is typed is formatted so that the punctuations are separated by space, and that punctuation should be ignored when scoring. Score the sentiment of the review by computing the average score of all the words in the user input. Any score that is $$2 \pm 0.1$$ is considered neutral. Anything below that threshold is negative, and anything above is positive.
 
-In my running example, ignoring punctuation, your model would contain the following "word info" objects:
+    In my running example, ignoring punctuation, your model would contain the following "word info" objects:
 
-- "love", occurred: 4, score: 14
-- "I", occurred: 1, score: 4
-- "hate", occurred: 1, score: 2
-- "this", occurred: 2, score: 6
-- "film", occurred: 1, score: 4
-- "a", occurred: 1, score: 2
-- "relationship", occurred: 1, score: 2
-- "with", occurred: 1, score: 2
-- "movie", occurred: 1, score: 2
+    - "love", occurred: 4, score: 14
+    - "I", occurred: 1, score: 4
+    - "hate", occurred: 1, score: 2
+    - "this", occurred: 2, score: 6
+    - "film", occurred: 1, score: 4
+    - "a", occurred: 1, score: 2
+    - "relationship", occurred: 1, score: 2
+    - "with", occurred: 1, score: 2
+    - "movie", occurred: 1, score: 2
 
-If my input was "love and hate", then your program would produce an average score of 
-$$\frac{(14/4) + (2/1)}{2} = 2.75$$, leading your program to claim that it was a positive sentiment. Notice that, the word "and" was ignored in the scoring because it does not appear in my model.
+    If my input was "love and hate", then your program would produce an average score of 
+    $$\frac{(14/4) + (2/1)}{2} = 2.75$$, leading your program to claim that it was a positive sentiment. Notice that, the word "and" was ignored in the scoring because it does not appear in my model.
 
 4. A movie review from the file should always be formatted as follows: `[score] <space> [review]`. In one of the methods you need to implement, `parseReview()`, if the given review does not adhere to this format, then your method must throw a `BadReviewFormatException`. That is, if the first character is not a score from 0 to 4, then throw the exception. Likewise, if an empty review follows the space, then throw the exception.
 
