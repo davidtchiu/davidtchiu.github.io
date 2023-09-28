@@ -74,7 +74,7 @@ You do need to implement following class, so I can grade your program:
     2 Had a love - hate relationship with this movie .
     ```
 
-The word "love" appears 4 times in the file (shows up in both reviews). Notice that, for each time the word love appears, the score of the corresponding movie review is added to "love's" total. Therefore, with respect to this small training file, "love" has a total score of 14 (= 4 + 4 + 4 + 2). The word "hate" appears just once, and has a total score of 2. Ignore all punctuation found in the training file.
+    The word "love" appears 4 times in the file (shows up in both reviews). Notice that, for each time the word love appears, the score of the corresponding movie review is added to "love's" total. Therefore, with respect to this small training file, "love" has a total score of 14 (= 4 + 4 + 4 + 2). The word "hate" appears just once, and has a total score of 2. Ignore all punctuation found in the training file.
 
 2. Training the model: After you've opened the training file, read the file in its entirety. Assign scores and occurrences to each word you encounter in the file as I explained earlier. You should only have one object per unique word in your collection. We'll call the collection of these "word info" objects the model. This training process can take your program a little bit of time (a few seconds).
 
