@@ -10,8 +10,7 @@ You're finally ready to conduct the analysis that the college wants. The data, t
 - To write SQL queries for the retrieval of data.
 
 #### Required Files
-I've taken the University data that you should have generated from the previous homework and made it available for this lab.
-The following file(s) have been provided for this assignment.
+The following file have been provided for this assignment.
 
 - [university.db](university.db)
 

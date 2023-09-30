@@ -2,7 +2,6 @@
 - How to shorten the first 3 weeks? Potentially get rid of exception handling.
 - AutoComplete homework -- make it have interfaces they need to implement
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
-- Exam 1 implementation worth too much
 - Get assignment starter code on github
 - Big-O: Don't spend anymore time talking about caching, and all that. Just move on to counting steps.
 

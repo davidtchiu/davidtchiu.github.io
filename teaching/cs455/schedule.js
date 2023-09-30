@@ -91,13 +91,13 @@ let days = {
     // ],
 
     ////////////////////////////////// LABS ////////////////////////////////
-    // labs: [
-    //   {
-    //     name: "Lab",
-    //     title: "SQL Lab!",
-    //     url: "lab.pplsoft/",
-    //   },
-    // ],
+    labs: [
+      {
+        name: "Lab",
+        title: "SQL Lab!",
+        url: "lab.pplsoft/",
+      },
+    ],
   },
 
   lectures: [
