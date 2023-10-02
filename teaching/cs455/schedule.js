@@ -27,7 +27,7 @@ let days = {
         name: "Hwk 3 (coding)",
         title: "Data Preparation",
         url: "hwk3.ddl/",
-        due: "10/4/2023",
+        due: "10/6/2023",
       },
     
       // {
