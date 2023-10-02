@@ -1,11 +1,12 @@
 # TODO
 - How to shorten the first 3 weeks? Potentially get rid of exception handling.
-- AutoComplete homework -- make it have interfaces they need to implement
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 - Get assignment starter code on github
-- Big-O: Don't spend anymore time talking about caching, and all that. Just move on to counting steps.
+
 
 # Change Log
+- Hwk 4 sentiment -- make it have interfaces they need to implement (Fall 23)
+- Big-O: Don't do Binary Search until recursion (Fall 23)
 - Interface slides: Next time, make it so that radios, TVs have different names for different functions. (Fall 23)
 - AbstractClasses and Interfaces: Save time and don't code those up anymore. (Fall 23)
 - Precede Lab 1 with a "Warm-up" to show them how to create a project folder in Google Drive (Fall 23)

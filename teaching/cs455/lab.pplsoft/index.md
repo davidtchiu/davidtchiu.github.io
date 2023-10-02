@@ -25,7 +25,7 @@ For each of the following problems, write an SQL query to return the expected re
 #### Day 1: Basic Queries
 
 
-1. Return the list of first-year (freshman) students. Sort results by reverse order of GPA.
+1. Return the list of first-year (freshman) students. Sort results by descending order of GPA.
 
    ```
    studentID   name     rank        gpa
@@ -37,7 +37,8 @@ For each of the following problems, write an SQL query to return the expected re
    1661	      Logan    Freshman	   0.5
    ```
 
-2. Return a list of departments that are found in any building starting with `"T"`. Order by `dept ID`.
+2. Return a list of departments that are housed in any building starting with the letter `"T"`. Order by `dept ID`.
+
    ```
    deptID      deptName                        building
    -------     --------                        --------
@@ -45,7 +46,7 @@ For each of the following problems, write an SQL query to return the expected re
    MATH        Department of Mathematics       Tower of Babel
    ```
 
-3. Get all courses being taught by the `MATH` department that start in the afternoon. You may assume that time is in 24-hour format, and you're reminded that you can use comparison operators (`<`, `>`) on strings. Order by course number.
+3. Get all courses being taught by the `MATH` department that start in the afternoon. You may assume that time is in 24-hour format and that single-digit hours are prefixed with `"0"` (e.g., `"07:00"` not `"7:00"`). Order the results by course number.
 
    ```
    CourseNum   deptID      CourseName  Location    meetDay     meetTime
@@ -55,7 +56,7 @@ For each of the following problems, write an SQL query to return the expected re
    460         MATH        Calculus 3  WEY 102     TR          12:30
    ```
 
-4. Return the student, David's, course schedule. Assume you don't have David's student ID, and that they're the only one with that name. Only `Course`'s attributes should be projected. Order by `DeptID` then by Course Number.
+4. Return David's, course schedule. Assume you don't have David's student ID, and that they're the only one with that name (not likely in practice, but roll with it). Only `Course`'s attributes should be projected. Order by `DeptID` then by `Course Number`.
 
    ```
    deptID      CourseNum   CourseName        Location    meetDay     meetTime
@@ -75,8 +76,8 @@ For each of the following problems, write an SQL query to return the expected re
    520	ENGL	Shakespeare Was Da Bomb	HH 20	TR	13:00	Department of English	Wyatt Hall
    ```
 
-6. Haley's advisor wants to know what courses they're taking in their major.
-   
+6. Haley's advisor wants to know what courses she's taking in her major. Assume you don't know what her major is when writing this query.
+ 
    ```
    deptID   courseNum
    ------   ---------
@@ -84,7 +85,7 @@ For each of the following problems, write an SQL query to return the expected re
    MATH	   230
    ```
 
-7. Return a list of all students who are still undeclared (that is, without a major). Project their student ID and their name. Sort results by `studentID`.
+7. Return a list of all students who are still undeclared (i.e., are without a major). Project their student ID and their name. Sort results by `studentID`.
 
    ```
    studentID   studentName
