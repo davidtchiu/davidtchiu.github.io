@@ -30,8 +30,8 @@ For each of the following problems, write an SQL query to return the expected re
    ```
    studentID   name     rank        gpa
    ---------   ----     ----        ---
-   1501	      Jessica	Freshman	   3.3
-   1510	      Jordan	Freshman	   3.0
+   1501	      Jessica  Freshman	   3.3
+   1510	      Jordan   Freshman	   3.0
    1225	      Sarah    Freshman	   2.9
    1282	      Kelly    Freshman	   2.5
    1661	      Logan    Freshman	   0.5
