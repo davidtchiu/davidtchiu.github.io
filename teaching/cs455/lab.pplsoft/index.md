@@ -128,44 +128,44 @@ For each of the following problems, write an SQL query to return the expected re
 
 10. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! Oh weird, did you know that you can select constants as a column? For instance, try running `select studentName,1234 from student` and see what you get. How might that be useful here?
 
-   ```
-   deptName                    enrolled
-   --------------------------  ----------
-   School of Computer Science  16
-   Department of English       8
-   School of Business          7
-   Department of Mathematics   6
-   Department of Physics       3
-   Department of Anthropology  1
-   Department of History       0
-   ```
+      ```
+      deptName                    enrolled
+      --------------------------  ----------
+      School of Computer Science  16
+      Department of English       8
+      School of Business          7
+      Department of Mathematics   6
+      Department of Physics       3
+      Department of Anthropology  1
+      Department of History       0
+      ```
 
 
 11. Find the students who are enrolled in the most number of courses. Report the names, IDs, and the number of courses they are enrolled in.
 
-   ```
-   studentID   studentName  NumCourses
-   ----------  -----------  ----------
-   1025        John         5
-   1247        Alexis       5
-   ```
+      ```
+      studentID   studentName  NumCourses
+      ----------  -----------  ----------
+      1025        John         5
+      1247        Alexis       5
+      ```
 
 
 12. Identify all valedictorians in all majors. (This is a real query that we run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that `ENGL`major  has two students with the same GPA and they're both listed!)
 
-   ```
-   (Notice that ENGL has two students with the same GPA)
+      ```
+      (Notice that ENGL has two students with the same GPA)
 
-   studentID   studentName  class       major       gpa
-   ----------  -----------  ----------  ----------  ----------
-   1101        Haley        Senior      BUS         4.0
-   1381        Tiffany      Junior      CSCI        4.0
-   1247        Alexis       Senior      ENGL        3.9
-   1487        Erin         Sophomore   ENGL        3.9
-   1101        Haley        Senior      MATH        4.0
-   1510        Jordan       Freshman    PHYS        3.0
-   1709        Cassandra    Junior      SOAN        2.8
-   ```
+      studentID   studentName  class       major       gpa
+      ----------  -----------  ----------  ----------  ----------
+      1101        Haley        Senior      BUS         4.0
+      1381        Tiffany      Junior      CSCI        4.0
+      1247        Alexis       Senior      ENGL        3.9
+      1487        Erin         Sophomore   ENGL        3.9
+      1101        Haley        Senior      MATH        4.0
+      1510        Jordan       Freshman    PHYS        3.0
+      1709        Cassandra    Junior      SOAN        2.8
+      ```
 
 13. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
 
