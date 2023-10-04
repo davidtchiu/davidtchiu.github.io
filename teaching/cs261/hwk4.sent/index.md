@@ -54,11 +54,7 @@ You might also notice some strange formatting, but that's by design. For instanc
 #### Object-Oriented Design
 In this assignment you'll be mostly responsible for coming up with your own class designs. First things first, though. Read this assignment in entirety to understand the problem you need to solve before even starting to think about what classes and methods you'll need. 
 
-On a whiteboard or sheet of paper, design the UML class diagram. Note that I have given you an interface that must be implemented by your "core" movie review-bot class. What classes do you think you'll need? How do they relate to each other (What are the client classes? Are there opportunities for inheritance?) Do any of them need to implement comparable or any other interface? What methods will you provide in each class, and how are they used by client classes?
-
-Projects containing only 1 class will probably fail. Decompose large classes into manageable pieces when possible. Think back to my lectures in which I showed you the UML diagram of the Farm project. Just by examining the UML diagram, it should be rather intuitive to understand each class' roles, and how your code is going to work together.
-
-It is a very bad idea to start coding before you have class diagram designed.  Feel free to come talk to me or your tutors about your initial design.
+On a whiteboard or sheet of paper, design the UML class diagram. Note that I have given you an interface that must be implemented by your "core" movie review-bot class. What classes do you think you'll need? How do they relate to each other (What are the client classes? Are there opportunities for inheritance?) Do any of them need to implement comparable or any other interface? What methods will you provide in each class, and how are they used by client classes? Projects containing only one or two classes will probably be too hard to manage. Decompose large classes into manageable pieces when possible. It is a very bad idea to start coding before you have class diagram designed.  Feel free to come talk to me or your tutors about your initial design.
 
 You do need to implement following class, so I can grade your program:
 
