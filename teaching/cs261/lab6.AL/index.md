@@ -156,9 +156,9 @@ Download the project file and extract it into somewhere convenient. Open the pro
 - As always, test your code using various edge cases to ensure that everything works as expected!
 
 #### Part II: Generic Typing
-Now our `MyArrayList` now stores unlimited `doubles`! Wait,that's not how *real* ArrayLists work! They are supposed to be able to store any type of object. In this section we refactor our `MyArrayList` to accept generic types.
+Now our `MyArrayList` now stores unlimited `doubles`, but they are supposed to be able to store any type of object. In this section we refactor our `MyArrayList` to accept generic types.
 
-- Refactoring the MyList Interface: Copy and paste the following code into your `MyList` interface.
+- First, refactor the `MyList` Interface: Copy and paste the following code directly into your `MyList` interface file, replacing what used to be there.
 
   ```java
    /**
@@ -274,7 +274,7 @@ Now our `MyArrayList` now stores unlimited `doubles`! Wait,that's not how *real*
     }
   ```
 
-- Refactoring the Class Header: Back in your `MyArrayList` class, you need to update the class header so that it accepts a generic type. We will name this type `E`. If you need a reminder on this syntax, click on the button below.
+- Back in your `MyArrayList` class, you need to update the class header so that it accepts a generic type. We will name this type `E`. If you need a reminder on this syntax, click on the button below.
 
   ```java
   public class MyArrayList<E> implements MyList<E> {
@@ -302,7 +302,7 @@ Now our `MyArrayList` now stores unlimited `doubles`! Wait,that's not how *real*
   }
   ```
 
-- Refactoring the Remaining Code: Go through the remaining methods and replace any reference to the old data type to the generic type, `E`. This includes all return types, local variables, and input parameters. Important: One thing you need to pay attention to is anywhere you're testing for equivalence using `==` or `!=`. You had to use these operators when comparing `doubles`, but now you're comparing objects, and `==` and `!=` are no longer useful.
+- Refactoring the Remaining Code: Go through the remaining methods and replace any reference to the old data type to the generic type, `E`. This includes all return types, local variables, and input parameters. Important: One thing you need to pay attention to is anywhere you're testing for equivalence using `==` or `!=`. You had to use these operators when comparing `doubles`, but now you're comparing objects, and `==` and `!=` are no longer useful. Use the `equals()` method instead.
 
 - Important! Testing: After you're done making all the changes, let's make sure things are working as we'd expect. Here's an example showing my list holding Doubles and Strings.
 

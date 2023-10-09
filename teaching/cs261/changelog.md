@@ -1,6 +1,8 @@
-# TODO
-- How to shorten the first 3 weeks? Potentially get rid of exception handling.
+# Notes to Future Self
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
+
+# TODO
+- How to shorten the first 3 weeks? (Can't get rid of exceptions.)
 - Get assignment starter code on github
 
 
