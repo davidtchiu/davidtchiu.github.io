@@ -1,6 +1,6 @@
 # TODO
-- Maybe I should incorporate the laptop into all SQL courses and have them follow me along.
-  - Would I still need the lab days?
+- Incorporate the laptop into all SQL courses and have them follow along and give them small group work.
+- Move exam 1 up a week.
 - I should really think about the first two days. Just talk about problems and move on to sets.
 - There's a lot (too much?) exam 1 practice, between the labs, Hwk, and RGs. How to better balance?
 - Redo the study guides so that the topics are listed
