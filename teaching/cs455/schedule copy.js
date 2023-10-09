@@ -131,40 +131,40 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Disk and Files: access patterns",
-    "Disk scheduling",
+    "Design Theory: functional dependencies",
+    "Theory: functional dependencies, Attribute set closure",
     // wk 9
-    "Start Indexing",
-    "B+Tree properties, operations",
-    "B+Tree performance",
+    "Theory: Review of attribute-set closure; superkeys algorithm",
+    "Theory: FD-set closure; Armstrong's Axioms, proof of inference rules",
+    "Theory: Normal Forms: 1NF, 2NF, BCNF",
     // wk 10
-    "Dynamic hashing",
-    "Consistent hashing",
-    "Bitmap indexing",
     // "Disks and files; access patterns",
+    "Theory: Lossless join; dependency preservation",
+    "Theory: Canonical cover; 3NF synthesis",
+    "Disk and Files: access patterns",
     // wk 11
-    "Bitmap indexing",
+    "Disk scheduling",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
      // "Files: Structure of tuples",
      // "Files: Organization of tuples",
      // "Files: Cost analysis; Join algorithms",
     // wk 12
-    "Design Theory: functional dependencies",
-    "Theory: functional dependencies, Attribute set closure",
-    "Theory: Review of attribute-set closure; superkeys algorithm",
+    "Start Indexing",
+    "B+Tree properties, operations",
+    "B+Tree performance",
     // wk 13
-    "Theory: FD-set closure; Armstrong's Axioms, proof of inference rules",
+    "Dynamic hashing",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
-    "Theory: Normal Forms: 1NF, 2NF, BCNF",
-    "Theory: Lossless join; dependency preservation",
-    "Theory: Canonical cover; 3NF synthesis",
-    // wk 15
+    "Indexing: Bitmaps",
+    "Bitmaps",
     "Start transactions: ACID, serializability",
+    // "Indexing: Consistent hashing",
+    // wk 15
     "Transactions: serializability test, precedence graphs",
-    // "Transactions: Concurrency control",
+    "Transactions: Concurrency control",
     "<strong>Reading Period</strong>",
     // wk final
     "",
