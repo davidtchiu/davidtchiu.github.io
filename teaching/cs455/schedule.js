@@ -33,7 +33,7 @@ let days = {
         name: "Hwk 4 (coding)",
         title: "Writing SQL Queries",
         url: "hwk4.dml/",
-        due: "10/18/2023",
+        due: "10/20/2023",
       },
       // {
       //   name: "Hwk 5 (coding)",
