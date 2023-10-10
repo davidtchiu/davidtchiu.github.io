@@ -46,7 +46,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
   > -1
   ```
 
-- Write `MyList subList(int fromIndex, int toIndex)` - Returns a view of the portion of this list between the specified `fromIndex` (inclusive), and `toIndex` (exclusive). Don't be confused by the fact that you should return a `MyList`. After all, `MyArrayList` is a `MyList`, so there's no need to "upcast" or anything. Just instantiate and return another `MyArrayList` sublist. The contents of the `MyArrayList` should remain unchanged after this call. Also, what is the running time of this algorithm?
+- Write `MyList subList(int fromIndex, int toIndex)` - Returns a view of the portion of this list between the specified `fromIndex` (inclusive), and `toIndex` (exclusive). Don't be confused by the fact that you should return a `MyList`. After all, `MyArrayList` is a `MyList`, so there's no need to "upcast" or anything. Just instantiate and return another `MyArrayList` sublist. The contents of the `MyArrayList` should remain unchanged after this call.
 
   ```java
   MyList list_A = new MyArrayList();
@@ -75,7 +75,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
   > [10, 20, 30]
   ```
 
-- Write `void removeRange(int fromIndex, int toIndex)` - Removes from this list all of the elements whose index is between `fromIndex` (inclusive), and `toIndex` (exclusive). You should reuse the remove method. What is the running time of this algorithm?
+- Write `void removeRange(int fromIndex, int toIndex)` - Removes from this list all of the elements whose index is between `fromIndex` (inclusive), and `toIndex` (exclusive). You should reuse the remove method. 
 
   ```java
   MyList list = new MyArrayList();
@@ -102,7 +102,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
   > [3]
   ```
 
-- Write `boolean equals(Object other)` - This method returns true if the current list is equivalent to the input list (yes, you have to down-cast `other` to a `MyArrayList` object first). For two lists to be equal, they must contain the same items in the same order. What is the running time of this algorithm?
+- Write `boolean equals(Object other)` - This method returns true if the current list is equivalent to the input list (yes, you have to down-cast `other` to a `MyArrayList` object first). For two lists to be equal, they must contain the same items in the same order. 
 
   ```java
   // Here's a list
@@ -127,7 +127,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
   > true
   ```
 
-- Write `boolean retainAll(MyList list)` - Retains only the elements in this list that are contained in the specified list. This method returns `true` if changes were made to the current list and `false` otherwise. You should reuse the `remove()` method. What is the running time of this algorithm?
+- Write `boolean retainAll(MyList list)` - Retains only the elements in this list that are contained in the specified list. This method returns `true` if changes were made to the current list and `false` otherwise. You should reuse the `remove()` method. 
 
   ```java
   // Here's a list
