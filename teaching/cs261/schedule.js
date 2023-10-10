@@ -43,12 +43,12 @@ let days = {
         url: "hwk4.sent/",
         due: "10/9/2023",
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Doubly Linked List",
-      //   url: "hwk5.LL/",
-      //   due: "10/20/2023",
-      // },
+      {
+        name: "Hwk 5",
+        title: "Doubly Linked List",
+        url: "hwk5.LL/",
+        due: "10/20/2023",
+      },
       // {
       //   name: "Hwk 6",
       //   title: "Ranked Choice Voting (Paired)",
