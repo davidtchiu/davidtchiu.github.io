@@ -152,7 +152,7 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 #### Credits
 
-Based on a previous lab by Professor Henry Walker, Grinnell College.
+Based on a previous lab by Professor Brad Richards.
 
 #### Lab Attendance Policies
 

@@ -19,9 +19,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
 
 - Open up the `MyList` interface first. Surprise! There's a bunch of new abstract methods you need to implement (you're welcome!) They are: `lastIndexOf`, `removeRange`, `subList`, and `retainAll`. Yes, these abstract methods are also found in Java's standard `List` interface, so there's a point to implementing these! (In fact, there's even quite a bit more methods to write if we were to really implement the `List` standard interface.)
 
-- Before you dive into coding, make sure you read the Javadocs of the old methods, and the new ones.
-
-- Write `int lastIndexOf(double item)` - searches for the specified item in the list and returns the last position in which it was found. If not found, return -1. When you're ready to test it, try out the following code example:
+- Implement `int lastIndexOf(double item)` - searches for the specified item in the list and returns the last position in which it was found. If not found, return -1. When you're ready to test it, try out the following code example:
 
   ```java
   MyList list = new MyArrayList();
@@ -34,7 +32,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
   list.add(3);
 
   System.out.println(list.toString());
-  > [3, 5, 7, 9, 11, 13, 3]
+  > [3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 3.0]
 
   System.out.println(list.lastIndexOf(11));
   > 4
@@ -46,7 +44,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
   > -1
   ```
 
-- Write `MyList subList(int fromIndex, int toIndex)` - Returns a view of the portion of this list between the specified `fromIndex` (inclusive), and `toIndex` (exclusive). Don't be confused by the fact that you should return a `MyList`. After all, `MyArrayList` is a `MyList`, so there's no need to "upcast" or anything. Just instantiate and return another `MyArrayList` sublist. The contents of the `MyArrayList` should remain unchanged after this call.
+- Write `MyList subList(int fromIndex, int toIndex)` - Returns a view of the portion of this list between the specified `fromIndex` (inclusive), and `toIndex` (exclusive). Don't be confused by the fact that you should return a `MyList`. After all, `MyArrayList` is a `MyList`, so just instantiate and return another `MyArrayList` with the elements in the specified range. The contents of the current `MyArrayList` should remain unchanged after this call.
 
   ```java
   MyList list_A = new MyArrayList();
@@ -57,22 +55,21 @@ Download the project file and extract it into somewhere convenient. Open the pro
   list_A.add(50);
   list_A.add(60);
   System.out.println(list_A);
-  > [10, 20, 30, 40, 50, 60]
-
-  // gimme the full list back
-  MyList list_B = list_A.subList(0, list_A.size());
-  System.out.println(list_B);
-  > [10, 20, 30, 40, 50, 60]
+  > [10.0, 20.0, 30.0, 40.0, 50.0, 60.0]
 
   // gimme the last half of the list
   MyList list_C = list_A.subList(list_A.size()/2, list_A.size());
   System.out.println(list_C);
-  > [40, 50, 60]
+  > [40.0, 50.0, 60.0]
 
   // gimme the first half of the list
   MyList list_D = list_A.subList(0, list_A.size()/2);
   System.out.println(list_D);
-  > [10, 20, 30]
+  > [10.0, 20.0, 30.0]
+
+  // original list remains unchanged
+  System.out.println(list_A);
+  > [10.0, 20.0, 30.0, 40.0, 50.0, 60.0]
   ```
 
 - Write `void removeRange(int fromIndex, int toIndex)` - Removes from this list all of the elements whose index is between `fromIndex` (inclusive), and `toIndex` (exclusive). You should reuse the remove method. 
@@ -88,18 +85,18 @@ Download the project file and extract it into somewhere convenient. Open the pro
   list.add(3);
 
   System.out.println(list);
-  > [3, 5, 7, 9, 11, 13, 3]
+  > [3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 3.0]
 
   list.removeRange(3,1);
   > Exception: java.lang.IllegalArgumentException (Range out of bounds: 3,1)
 
   list.removeRange(1,3);
   System.out.println(list);
-  > [3, 9, 11, 13, 3]
+  > [3.0, 9.0, 11.0, 13.0, 3.0]
 
   list.removeRange(1, list.size());
   System.out.println(list);
-  > [3]
+  > [3.0]
   ```
 
 - Write `boolean equals(Object other)` - This method returns true if the current list is equivalent to the input list (yes, you have to down-cast `other` to a `MyArrayList` object first). For two lists to be equal, they must contain the same items in the same order. 
@@ -139,18 +136,18 @@ Download the project file and extract it into somewhere convenient. Open the pro
   list_A.add(3);
   list_A.add(1);
   System.out.println(list_A);
-  > [1, 2, 2, 1, 3, 1]
+  > [1.0, 2.0, 2.0, 1.0, 3.0, 1.0]
 
   // Here's a list of things to retain        
   MyList list_B = new MyArrayList();
   list_B.add(2);
   list_B.add(3);
   System.out.println(list_B);
-  > [2, 3]
+  > [2.0, 3.0]
 
   list_A.retainAll(list_B);
   System.out.println(list_A);
-  > [2, 2, 3]
+  > [2.0, 2.0, 3.0]
   ```
 
 - As always, test your code using various edge cases to ensure that everything works as expected!
@@ -351,7 +348,7 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 #### Credits
 
-Based on a previous lab by Professor Henry Walker, Grinnell College.
+Written by David Chiu. 2023.
 
 #### Lab Attendance Policies
 
