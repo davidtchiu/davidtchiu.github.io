@@ -126,7 +126,7 @@ For each of the following problems, write an SQL query to return the expected re
    1468        Kris         Sophomore   1.0         2.675
    ```
 
-10. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! Oh weird, did you know that you can select constants as a column? For instance, try running `select studentName,1234 from student` and see what you get. How might that be useful here?
+10. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! Did you know that counting a NULL value gives you a 0? Wild!
 
       ```
       deptName                    enrolled
