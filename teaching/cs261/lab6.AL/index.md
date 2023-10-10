@@ -17,7 +17,7 @@ The following file(s) have been provided for this lab.
 #### Part I: Completing the MyArrayList Implementation
 Download the project file and extract it into somewhere convenient. Open the project up in your preferred IDE, and you shall find a MyList interface and a class, `MyArrayList` that we've started implementing in class.
 
-- Open up the `MyList` interface first. Surprise! There's a bunch of new abstract methods you need to implement! They are: `lastIndexOf`, `removeRange`, `subList`, and `retainAll`. Yes, these abstract methods are also found in Java's standard `List` interface, so there's a point to implementing these! (In fact, there's quite a bit more methods to write if we were to really implement the `List` standard interface.)
+- Open up the `MyList` interface first. Surprise! There's a bunch of new abstract methods you need to implement (you're welcome!) They are: `lastIndexOf`, `removeRange`, `subList`, and `retainAll`. Yes, these abstract methods are also found in Java's standard `List` interface, so there's a point to implementing these! (In fact, there's even quite a bit more methods to write if we were to really implement the `List` standard interface.)
 
 - Before you dive into coding, make sure you read the Javadocs of the old methods, and the new ones.
 
@@ -46,7 +46,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
   > -1
   ```
 
-- Write `MyList subList(int fromIndex, int toIndex)` - Returns a view of the portion of this list between the specified `fromIndex` (inclusive), and `toIndex` (exclusive). Don't be confused by the fact that you should return a `MyList`. After all, `MyArrayList` is a `MyList`, so there's no need to upcast. The contents of your `MyArrayList` should remain unchanged after this call. Also, what is the running time of this algorithm?
+- Write `MyList subList(int fromIndex, int toIndex)` - Returns a view of the portion of this list between the specified `fromIndex` (inclusive), and `toIndex` (exclusive). Don't be confused by the fact that you should return a `MyList`. After all, `MyArrayList` is a `MyList`, so there's no need to "upcast" or anything. Just instantiate and return another `MyArrayList` sublist. The contents of the `MyArrayList` should remain unchanged after this call. Also, what is the running time of this algorithm?
 
   ```java
   MyList list_A = new MyArrayList();
@@ -102,7 +102,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
   > [3]
   ```
 
-- Write `boolean equals(Object other)` - This method returns true if the current list is equivalent to the input list (yes, you have to down-cast other to a `MyArrayList` object first). For two lists to be equal, they must contain the same items in the same positions. What is the running time of this algorithm?
+- Write `boolean equals(Object other)` - This method returns true if the current list is equivalent to the input list (yes, you have to down-cast `other` to a `MyArrayList` object first). For two lists to be equal, they must contain the same items in the same order. What is the running time of this algorithm?
 
   ```java
   // Here's a list
@@ -127,7 +127,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
   > true
   ```
 
-- Write `boolean retainAll(MyList list)` - Retains only the elements in this list that are contained in the specified list. This method returns `true` if changes were made to the current list and `false` otherwise. You should reuse the remove method. What is the running time of this algorithm?
+- Write `boolean retainAll(MyList list)` - Retains only the elements in this list that are contained in the specified list. This method returns `true` if changes were made to the current list and `false` otherwise. You should reuse the `remove()` method. What is the running time of this algorithm?
 
   ```java
   // Here's a list
@@ -158,7 +158,7 @@ Download the project file and extract it into somewhere convenient. Open the pro
 #### Part II: Generic Typing
 Now our `MyArrayList` now stores unlimited `doubles`, but they are supposed to be able to store any type of object. In this section we refactor our `MyArrayList` to accept generic types.
 
-- First, refactor the `MyList` Interface: Copy and paste the following code directly into your `MyList` interface file, replacing what used to be there.
+- First Copy and paste the following code directly into your `MyList` interface file, replacing what used to be there. All references to `double` have been replaced with `E`.
 
   ```java
    /**
@@ -296,8 +296,8 @@ Now our `MyArrayList` now stores unlimited `doubles`, but they are supposed to b
 
   ```java
   public MyArrayList(int init_cap) {
-    capacity = init_cap;
-    the_data = (E[]) new Object[init_cap]; //initiates the array of Objects
+    this.capacity = init_cap;
+    this.the_data = (E[]) new Object[init_cap]; //initiates the array of Objects
                                            //the cast to E[] is required
   }
   ```
@@ -321,8 +321,8 @@ Now our `MyArrayList` now stores unlimited `doubles`, but they are supposed to b
   > 1
   ```
 
-#### Part III:  Other `List<E>` Methods
-These methods are also part of the standard `List<E>`. Let's go ahead and implement them as well.
+#### Part III: Optional `List<E>` Methods
+If you have time still, or just want some more practice, these methods below are also part of the standard `List<E>`.
 
 - Write the method, `void addAll(int index, MyList<E> other)` that adds all elements in the input list to the specified position.
 
