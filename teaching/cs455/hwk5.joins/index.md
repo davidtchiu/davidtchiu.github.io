@@ -114,22 +114,22 @@ The following file(s) have been provided for this assignment.
 #### Database Files
 Inside the `data/` directory in the given project starter file, you find a set of files. Each file contains data for a table in the following schema:
 
-	![schema.png](schema.png)
+![schema.png](schema.png)
 
 The format of these files is as follows, where `attr_i` is the name of the ith attribute and `val_i` is the value of the ith attribute.
 
-	```txt
-	#attr_1|attr_2|...|attr_N
-	#sorting_attr (possible)
-	val_1|val_2|...|val_N
-	val_1|val_2|...|val_N
-	val_1|val_2|...|val_N
-	val_1|val_2|...|val_N
-	val_1|val_2|...|val_N
-	.
-	.
-	.
-	```
+```txt
+#attr_1|attr_2|...|attr_N
+#sorting_attr (possible)
+val_1|val_2|...|val_N
+val_1|val_2|...|val_N
+val_1|val_2|...|val_N
+val_1|val_2|...|val_N
+val_1|val_2|...|val_N
+.
+.
+.
+```
 
 Comments in the files are preceded by a `#` character. The comment on the first line has all the attribute names. The second comment may or may not exist. If it's specified, then it contains the name of the attribute by which all tuples in the file is sorted. If this comment does not exist, then the tuples are not sorted in any way. It's a good idea to open them up just to see what's stored inside before moving on. Here are some characteristics of all the relations, which you will find useful when testing.
 
