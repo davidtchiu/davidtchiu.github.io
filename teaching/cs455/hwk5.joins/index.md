@@ -50,22 +50,22 @@ The following file(s) have been provided for this assignment.
 	// of the common attribute
 	map = new hashmap
 	for each tuple r in R {
-		if (!map.containsKey(r.c)) {
-			insert <key=r.c, value=r> into map
+		
+		List L = map.get(r.c)
+		if (L == null) {
+			L = new List()
+			map.put(r.c, new List())
 		}
-		else {
-					exception: Hash-join cannot be performed
-					exception: The common attribute in R must be unique
-					return T
-		}
+		add r to List L
 	}
 
 	// Phase II: Join up with S
 	for each tuple s in S {
-				if (s.c in map) {
-					r = lookup(s.c) in map
-					create new tuple (r,s) and add it to T
-				}
+		if (s.c in map) {
+			List L = map.get(s.c)
+			for each tuple r in L:
+				create new tuple (r,s) and add it to T
+		}
 	}
 	return T
 	```
@@ -80,10 +80,10 @@ The following file(s) have been provided for this assignment.
 	// Let t.c denote the value of attribute c in some tuple t
 
 	if (R is not sorted on values of c) {
-			sort R on R.c
+		sort R on R.c
 	}
 	if (S is not sorted on values of c) {
-			sort S on S.c
+		sort S on S.c
 	}
 
 	T = empty relation
@@ -92,19 +92,19 @@ The following file(s) have been provided for this assignment.
 	while (i < R.size() && j < S.size()) {
 		// Match found, enter merge phase
 		if (R[i].c == S[j].c) {
-				while (R[i].c == S[j].c && i < R.size()) {
-					k = j
-					while (R[i].c == S[k].c && k < S.size()) {
-							create new tuple (R[i], S[k]) and add it to T
-							k++
-					}
-					i++
+			while (R[i].c == S[j].c && i < R.size()) {
+				k = j
+				while (R[i].c == S[k].c && k < S.size()) {
+					create new tuple (R[i], S[k]) and add it to T
+					k++
 				}
+				i++
+			}
 		}
 		else if (R[i].c < S[j].c)
-				i++
+			i++
 		else
-				j++
+			j++
 	}
 	return T
 	```
@@ -218,7 +218,7 @@ officeCode|city|phone|addressLine1|addressLine2|state|country|postalCode|territo
 Time = 2.806131 ms
 ```
 
-Here is $offices \bowtie employees$ over hash join:
+Here is $$offices \bowtie employees$$ over hash join:
 
 ```txt
 Available relations:
