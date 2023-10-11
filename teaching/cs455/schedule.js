@@ -37,8 +37,8 @@ let days = {
       },
       // {
       //   name: "Hwk 5 (coding)",
-      //   title: "Disk Scheduling",
-      //   url: "hwk5.disk/",
+      //   title: "Joins",
+      //   url: "hwk5.joins/",
       //   due: "10/27/2023",
       // },
       // {
@@ -137,10 +137,10 @@ let days = {
     // wk 8
     "<strong>Fall Break</strong>",
     "Disk and Files: access patterns",
-    "Disk scheduling",
+    "Tuple organization",
     // wk 9
-    "Start Indexing",
-    "B+Tree properties, operations",
+    "Join processing",
+    "Start Indexing: B+Tree",
     "B+Tree performance",
     // wk 10
     "Dynamic hashing",
