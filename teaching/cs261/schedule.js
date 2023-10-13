@@ -47,7 +47,7 @@ let days = {
         name: "Hwk 5",
         title: "Doubly Linked List",
         url: "hwk5.LL/",
-        due: "10/20/2023",
+        due: "10/23/2023",
       },
       // {
       //   name: "Hwk 6",

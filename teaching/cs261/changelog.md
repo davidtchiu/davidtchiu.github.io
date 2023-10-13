@@ -2,7 +2,10 @@
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 
 # TODO
+- Get rid of bin-search from Big-O, but add selection sort, replacing doTask algos.
 - How to shorten the first 3 weeks? (Can't get rid of exceptions.)
+- But do something about exceptions. It's just not clear when to throw/catch.
+  - Maybe need a better lab?
 - Get assignment starter code on github
 
 
