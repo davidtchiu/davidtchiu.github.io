@@ -389,7 +389,7 @@ CourseNum   deptID      StudentID
 [misc] Files not submitted in plain-text format will be returned without a grade.
 
 
-Total: 60pts
+Total: 65pts
 ```
 
 #### Submitting Your Assignment

@@ -2,6 +2,7 @@
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 
 # TODO
+- Get rid of reverse() in Hwk 5 (DLL)
 - Get rid of bin-search from Big-O, but add selection sort, replacing doTask algos.
 - How to shorten the first 3 weeks? (Can't get rid of exceptions.)
 - But do something about exceptions. It's just not clear when to throw/catch.

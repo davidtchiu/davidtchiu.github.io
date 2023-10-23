@@ -141,7 +141,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    ```
 
 
-6. Return the product(s) by product code and product name that the company has the least stock of. Order by product code. (Hint: Start by counting each product, then find the min of those counts, before identifying which products have those min counts.)
+6. Return the product(s) by product code and product name that the company has the least stock of. Order by product code. (Hint: Start with the quantity for each product, then find the min of those quantities, before identifying which products have those min counts.)
 
    ```
    productCode  productName
@@ -422,7 +422,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     2002 Suzuki XREO          843246.95
     1952 Alpine Renault 1300  845334.6
     ```
-12. Return the average order size for each customer (results should include customer name, average quantity) Order by customer name. To get you started, you'll need to first find the sum of all orderQuantities for each orderNumber. Then you'll want to find the customers who made those individual orderNumbers, to find all orders that a customer has made. Finally, average out the summed order quantities. (You should get 98 rows.)
+12. Return the average order size for each customer (results should include customer name, average quantity). Order by customer name. To get you started, you'll need to first find the sum of all orderQuantities for each orderNumber. Then you'll want to find the customers who made those individual orderNumbers, to find all orders that a customer has made. Finally, average out the summed order quantities. (You should get 98 rows.)
 
     ```
     customerName    avgQuantity

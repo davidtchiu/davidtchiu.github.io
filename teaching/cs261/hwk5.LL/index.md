@@ -105,15 +105,15 @@ $$O(n)$$ time (where $$n$$ is the number of stored items), so you would not want
 
     Add **two** new fields to `SinglyLinkedList`: An integer to record the most recently accessed position (index) in the list, and a `Node` reference that points to the corresponding list node. Modify the code so that all calls to add, get, and remove update these fields. Those methods should take advantage of the new information when possible as well. For example, if we do a `get(107)` and the previous access to the list was at index 98, the list traversal should start at 98 and work its way to 107 rather than starting at 0. Think carefully about where to add this new code before you make any changes — if you put it in the right places it can be done without a lot of effort.
 
-    After you make this modification, here's the cost of adding 10000 elements, summing up, and summing down, respectively.
+    After you make this modification, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
 
     ```
     > Adding 10000 elements: took 9998 hops
-    > Summing up: 4978493 took 9999 hops
-    > Summing down: 4978493 took 49995000 hops
+    > Summing up: 49995000 took 9998 hops
+    > Summing down: 49995000 took 49995001 hops
     ```
 
-    We've managed to make left-to-right accesses to the list much faster through location caching... but notice that summing down is still taking a lot of steps! Let's fix that next.
+    We've managed to make left-to-right accesses to the list much faster through location caching... but notice that summing down is still taking a lot of steps! That's because, to gradually access the list in reverse order, we still need to start from the head when identifying the next node. Let's fix that next.
 
 
 
@@ -173,6 +173,21 @@ Notice that removing from the tail still requires hops! But why? We added a tail
     - If the given index is to the left of the iterator, and is closer to the iterator than the head, then traverse left (using the previous links) from the iterator.
 
     - Don't forget to update the "hop counts" when traversing left too!
+
+- After you make this modification, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
+
+    ```
+    Adding 10000 elements:  took 0 hops
+    Summing up: 49995000 took 9998 hops
+    Summing down: 49995000 took 9998 hops
+    ```
+
+- Here's another test. I wrote a loop to remove the last element from the list 10000 times. Here's the before and after:
+
+    ```
+    Before doubly linked. Removing last: took 49985001 hops
+    After doubly linked. Removing last: took 9999 hops
+    ```
 
 #### Grading
 ```
