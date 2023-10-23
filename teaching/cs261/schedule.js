@@ -106,12 +106,12 @@ let days = {
         url: "lab6.AL/",
         due: "10/11/2023",
       },
-      // {
-      //   name: "Lab 7",
-      //   title: "Stacks and Queues Lab",
-      //   url: "lab7.melody/",
-      //   due: "10/25/2023",
-      // },
+      {
+        name: "Lab 7",
+        title: "Stacks and Queues Lab",
+        url: "lab7.melody/",
+        due: "10/25/2023",
+      },
       // {
       //   name: "Lab 8",
       //   title: "Recursion Lab",
