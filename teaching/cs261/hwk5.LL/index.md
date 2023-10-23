@@ -87,10 +87,7 @@ The following file(s) have been provided for this homework.
 
     - A `main()` method that creates a list containing 10,000 integers, passes that list to `sumUp()`, then passes it to `sumDown()`. For full credit, main should print how many "hops" were required for each of those three steps (creating the list, summing up, and summing down). Don't forget to reset the hop counter between the steps.
 
-5. Next, write a method called `public void reverse()` that reverses the contents of your linked list. Here's the catch: for full credit, this method must run in 
-$$O(n)$$ time (where $$n$$ is the number of stored items), so you would not want to make repeated calls to your `get()`, `set()`, `add()` or `remove()` methods. Instead, you should manipulate the `Node` objects directly: Identify the tail element, unlink it, and move it to the head. Then grab the new tail node and move it behind the new head, and so on.
-
-    Just like the above, add in a statement to count any time a "hop" is made. Then run `reverse()` a few times in the Tester code to ensure that your implementation is indeed $$O(n)$$.
+5. Next, write a method called `public void reverse()` that reverses the contents of your linked list. You should manipulate the `Node` objects directly: Identify the tail element, unlink it, and move it to the head. Then grab the new tail node and move it behind the new head, and so on.
 
 
 #### Optimizations
