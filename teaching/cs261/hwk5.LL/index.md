@@ -182,8 +182,8 @@ Notice that removing from the tail still requires hops! But why? We added a tail
 - Here's another test. I wrote a loop to remove the last element from the list 10000 times. Here's the before and after:
 
     ```
-    Before doubly linked. Removing last: took 49985001 hops
-    After doubly linked. Removing last: took 9999 hops
+    Still singly linked. Remove-last 10000 times: took 49985001 hops
+    After doubly linked. Remove-last 10000 times: took 9999 hops
     ```
 
 #### Grading
