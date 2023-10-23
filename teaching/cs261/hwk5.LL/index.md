@@ -108,7 +108,7 @@ $$O(n)$$ time (where $$n$$ is the number of stored items), so you would not want
     After you make this modification, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
 
     ```
-    > Adding 10000 elements: took 9998 hops
+    > Adding 10000 elements: took 0 hops
     > Summing up: 49995000 took 9998 hops
     > Summing down: 49995000 took 49995001 hops
     ```
