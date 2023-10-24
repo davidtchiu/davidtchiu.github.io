@@ -286,7 +286,7 @@ We suggest the following development strategy for solving this program:
   > What would you like to do? duration
   26.0 seconds long
   > What would you like to do? tempo
-  > Percentage? .5
+  > Percentage? 2
 
   > What would you like to do? duration
   52.0 seconds long
