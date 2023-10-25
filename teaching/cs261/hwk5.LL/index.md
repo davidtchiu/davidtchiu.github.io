@@ -92,17 +92,15 @@ The following file(s) have been provided for this homework.
 
 #### Optimizations
 
-- **Optimizing tail accesses:** As we know, the 1-argument `add()` method inserts a new item to the tail of the list. In practice, it is one of the most common operations on lists, so this has to be fast. In the current implementation, adding to the tail would be an $$O(n)$$ operation. Study the code and convince yourself this is true before moving on. In our effort to "make the common case fast," we shall attempt to reduce its complexity!
+- **Optimizing tail accesses:** As we know, the 1-argument `add()` method inserts a new item to the tail of the list. In practice, it is one of the most common operations on lists, so this has to be fast. In the current implementation, adding to the tail would be an $$O(n)$$ operation. 
 
-    Modify your class so that it stores a reference to the tail node in the list, that is, a tail node in addition to the head node. When adding an item to the end of the list, you'd just have to link it up to the current tail node, and update the tail reference to refer to the new node you just added. There is no more need to traverse the list just to identify the tail node. This means the 1-argument $$add()$$ would now be an $$O(1)$$ operation! Don't forget to test that the tail is being updated properly on different scenarios. For instance, try adding to an empty list, a list with one element, a list with many elements, etc.
+    Modify your class so that it additionally stores a reference to the tail node. When adding an item to the end of the list, you'd just have to link it after tail node, and update the tail reference to refer to the new node. You just need to make the changes inside `addFirst()` and `addAfter()`. Similarly, you must also ensure that the "remove" methods update the tail too. Make any changes you need to `removeFirst()` and `removeLast()`.
 
-    In addition to changes in the "add" methods, you must also ensure that the "remove" methods update the tail too...
+- **Location Caching (Iterator):** When calling `sumUp()`, it's really annoying that for each item in the list we have to start all over at the head again to find it. To get the $$ith$$ node, you'd currently have to make $$i−1$$ hops! (When adding the item at index 99 to the total, we have to start at the front of the list again and find index 99 even though we were just at index 98 on the previous iteration of the loop!) One improvement would be to add some internal state to our linked list class so that it "remembers" (or caches) the most recently-accessed position in the list.
 
-- **Location Caching (Iterator):** When calling `sumUp()`, it's really annoying that for each item in the list we have to start all over at the head again to find it. To get the $$ith$$ node, you'd currently have to make $$i−1$$ hops! (When adding the item at index 99 to the total, we have to start at the front of the list again and find index 99 even though we were just at index 98 on the previous iteration of the loop!) One simple performance improvement would be to add some internal state to our linked list class so that it "remembers" (or caches) the most recently-accessed position in the list.
+    Add **two** new fields to `SinglyLinkedList`: An integer to record the most recently accessed position (index) in the list, and a `Node` reference that points to the corresponding list node. Modify your `getNodeAt()` method to take advantage of the new information when possible. For example, if we do a `get(107)` and the previous access to the list was at index `98`, the list traversal should start at `98` and work its way to `107` rather than starting at `0`. 
 
-    Add **two** new fields to `SinglyLinkedList`: An integer to record the most recently accessed position (index) in the list, and a `Node` reference that points to the corresponding list node. Modify the code so that all calls to add, get, and remove update these fields. Those methods should take advantage of the new information when possible as well. For example, if we do a `get(107)` and the previous access to the list was at index 98, the list traversal should start at 98 and work its way to 107 rather than starting at 0. Think carefully about where to add this new code before you make any changes — if you put it in the right places it can be done without a lot of effort.
-
-    After you make this modification, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
+    After you make this modification to `getNodeAt()`, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
 
     ```
     > Adding 10000 elements: took 0 hops
@@ -110,13 +108,12 @@ The following file(s) have been provided for this homework.
     > Summing down: 49995000 took 49995001 hops
     ```
 
-    We've managed to make left-to-right accesses to the list much faster through location caching... but notice that summing down is still taking a lot of steps! That's because, to gradually access the list in reverse order, we still need to start from the head when identifying the next node. Let's fix that next.
+    We've managed to make left-to-right accesses to the list much faster through location caching... but notice that summing down is still taking a lot of steps! That's because, to gradually access the list in reverse order, we still need to start from the head when identifying the next node.
 
 
+#### Doubly-Linked
 
-#### Doubly Linked
-
-Even after all the enhancements we've made, there are still two major concerns with the singly linked list's performance. [1] a reverse (backward) traversal of the singly linked list would be a really costly operation (you saw that with `sumDown()` already), and [2] removing any element (including the tail) is still slow, because you always need to find the deleted `Node`'s previous `Node` in order to link up the remaining list. To illustrate problem [1], try running something like the following, and observe how many hops it takes:
+Even after all the enhancements we've made, there are still two major concerns with the singly linked list's performance. [1] a reverse (backward) traversal of the singly linked list would be a really costly operation (you saw that with `sumDown()` already), and [2] removing any element (including  `tail`) is still slow, because you always need to find the deleted `Node`'s previous `Node` in order to link up the remaining list. To illustrate problem [1], try running something like the following, and observe how many hops it takes:
 
 ```java
 SinglyLinkedList<String> list = new SinglyLinkedList<>();
@@ -153,13 +150,13 @@ System.out.println("Hops taken to remove given item: " + list.getHopCount());
 > Hops taken to remove given item: 6
 ```
 
-Notice that removing from the tail still requires hops! But why? We added a tail reference! Ah, the problem is that, in order to remove from the tail, it is calling removeAfter(node). This means it must first find the node preceding the tail node, requiring O(n) time, so having a tail reference doesn't help at all when removing the tail node (it only helps in adding to the tail).
+Notice that removing from the tail still requires hops! But why? We added a tail reference! Ah, the problem is that, in order to remove from the tail, it is calling `removeAfter()`. This means it must first find the node preceding the tail node, requiring O(n) time, so having a tail reference doesn't help at all when removing the tail node (it only helps in adding to the tail).
 
-**Double links:** The running time of reverse list traversal could be improved if we make a "simple" change: Instead of only storing a reference to the next node, what if each node also stored a reference to its previous node? Such a structure is called a doubly linked list.
+**Double links:** Instead of only storing a reference to the next node, what if each node also stored a reference to its previous node? Such a structure is called a doubly linked list (and is the true implementation of Java's `LinkedList` class).
 
 - Rename `SinglyLinkedList` to `DoublyLinkedList`. Add a pointer to the previous item in all `Nodes`, and add the necessary code to update that pointer to `addFirst`, `addAfter`, `removeFirst`, `removeAfter`.
 
-- Next, change the `getNodeAt(index)` helper method to traverse in the appropriate direction, depending on the value of the given index, and the current location of the iterator (location cache):
+- Next, change the `getNodeAt()` helper method to traverse in the appropriate direction, depending on the value of the given index, and the current location of the iterator (location cache):
 
     - If the given index is to the left of the iterator, but is closer to the head, then traverse right starting from the head. (This is currently what's being done)
 
