@@ -53,7 +53,7 @@ let days = {
         name: "Hwk 6",
         title: "Ranked Choice Voting (Paired)",
         url: "hwk6.rcv",
-        due: "11/3/2023",
+        due: "11/6/2023",
       },
       // {
       //   name: "Hwk 7",
