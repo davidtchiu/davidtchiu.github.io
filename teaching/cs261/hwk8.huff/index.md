@@ -15,6 +15,19 @@ As a side note, "lossy" compression algorithms are no less important and common:
 #### Teams
 You are required to work in teams on this assignment. I've used a sophisticated matching algorithm to produce the groups listed below. (Ok, it's just random, but I did write a program to do it!) Do not start writing any code until you've met with your team member(s) and discussed the assignment and possible approaches. For best results, I expect you to work physically together. I will assume that each member of the team has contributed equally to the project. If that assumption isn't true, please contact me privately.
 
+```
+[Brendan B, Maia C]
+[Paul M, Hannah E]
+[Gemma B, Miles M]
+[Amanda W, Pallas C]
+[Ashlyne C, Lily G]
+[Bonacic B, Kendall P]
+[Julien W, Gabriel E]
+[Ben H, Jacob W]
+[Noel L, Elizabeth B]
+[Alex W, Timothy T]
+```
+
 #### Required Files
 Please download the following starter pack:
 - [Hwk_Huffman.zip](Hwk_Huffman.zip)

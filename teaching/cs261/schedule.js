@@ -49,15 +49,15 @@ let days = {
         url: "hwk5.LL/",
         due: "10/24/2023",
       },
-      // {
-      //   name: "Hwk 6",
-      //   title: "Ranked Choice Voting (Paired)",
-      //   url: "hwk6.rcv",
-      //   due: "10/30/2023",
-      // },
+      {
+        name: "Hwk 6",
+        title: "Ranked Choice Voting (Paired)",
+        url: "hwk6.rcv",
+        due: "11/3/2023",
+      },
       // {
       //   name: "Hwk 7",
-      //   title: "Recursion (Paired?)",
+      //   title: "Recursion Exercises",
       //   url: "hwk7.rec",
       //   due: "11/13/2023",
       // },
