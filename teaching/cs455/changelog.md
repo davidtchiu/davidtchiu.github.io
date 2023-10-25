@@ -9,6 +9,7 @@
 - Still not doing a good enough job explaining what the 3rd property of 3NF does to include the Dep-preserving relations. Work out a proof using cover Fc
 
 # Change Log
+- Hwk 5 (Joins): now out of core. Only HJ and NLJ. Has schema.txt.
 - Split Hwk 2 into two relational algebra assignments (9/23)
 - Hwk 3: be clear that ENG=>ENGL is the only replacement? Or remove it. Be clear that no illegal insert statement shall be generated! (9/23)
 - Hwk 5: Don't give powerSet. (9/23)

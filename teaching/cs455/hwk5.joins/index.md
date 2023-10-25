@@ -154,9 +154,9 @@ You have the choice to write this program in either Python or Java. Just be sure
 
 1. When the program starts, you should immediately read in the `schema.txt` file to understand what tables you have, and what their attributes are. For grading, I will be using completely different files (with different file names). Your program can assume that all relevant files are placed in the `data/` directory in your project directory. You should test rigorously with your own toy-files to ensure that your program can accept arbitrary data sets. 
 
-		Avoid hardcoding absolute file paths in your code (for instance avoid hardcoding things like `/Users/Johnny/Desktop/CS455/Hwk5/data`). Points will be deducted if I can't easily run your program with database files on my machine. 
+	 Avoid hardcoding absolute file paths in your code (for instance avoid hardcoding things like `/Users/Johnny/Desktop/CS455/Hwk5/data`). Points will be deducted if I can't easily run your program with database files on my machine. 
 
-		**Do not attempt to open any other database files. These files are only to be opened when you run the join algorithm.**
+	 **Do not attempt to open any other database files. These files are only to be opened when you run the join algorithm.**
 
 2. Prompt the user to enter the names of the relations across which they'd like to perform the natural join. You should accept their inputs on a single line, separated by space. You may assume that at most two relations will be input. If a relation name they entered does not exist (case insensitive), your program should re-prompt. Otherwise, you should present the user with a menu, allowing the user to select which join algorithm to run. When the user is done making their choice, the join processing should then output the result; the time elapsed in milliseconds; and the number of rows produced by the natural join.
 
@@ -168,17 +168,17 @@ You have the choice to write this program in either Python or Java. Just be sure
 
 6. **Out of core execution**: We assume that the data files are huge and cannot be fit completely in memory (even though that is not the case with the files I provided to you.) Ensure that you are *not* reading all rows into a list for processing joins. To preserve memory, you should only read in a line from file when you actually to. The algorithms on the slides should be followed. 
 
-		- Besides the HashMap for the HashJoin algorithm, you are not allowed to use any auxiliary data structures for storing tuples.
+	 - Besides the HashMap for the HashJoin algorithm, you are not allowed to use any auxiliary data structures for storing tuples.
 
 7. Your program should continuously prompt after each join operation is completed. It should only exit if `.quit` was input as a relation name.
 
 8. Other items worth considering:
 
-		- Style and effective commenting is expected. Please include your name on top of every class file.
+	 - Style and effective commenting is expected. Please include your name on top of every class file.
 
-		- If your code does not compile/run without error, you will receive a zero for this assignment.
+	 - If your code does not compile/run without error, you will receive a zero for this assignment.
 
-		- Rest assured that my input files will all be well-formed to the above specifications, and I will not use files that do not conform just to trip your program up. Spend your time making sure your algorithms are correct.
+	 - Rest assured that my input files will all be well-formed to the above specifications, and I will not use files that do not conform just to trip your program up. Spend your time making sure your algorithms are correct.
 
 
 
@@ -311,15 +311,15 @@ Time = 1805.988437 ms
 ```
 This assignment will be graded out of 80 points.
 
-[10pt] The user interface is coded as prescribed above. The program exits on '.quit'
+[15pt] The user interface is coded as prescribed above. The program exits on '.quit'
 [10pt] The schema file is read and parsed on start.
 [10pt] Attribute order is preserved in the result.
-[30pt] Nested loop join is properly implemented. Algorithm is out of core.
-[30pt] Hash join is properly implemented. Algorithm is out of core.
+[30pt] Nested loop join is correctly implemented. Algorithm is out of core. Cartesian
+       product is produced when a common attribute doesn't exist.
+[30pt] Hash join is correctly implemented. Algorithm is out of core. Cartesian
+       product is produced when a common attribute doesn't exist.
 [5pt]  Your algorithms are proper timed, and elapsed time should be reported
-       in milliseconds (ms).
-[5pt]  Your algorithms are proper timed, and elapsed time should be reported
-       in milliseconds (ms).
+       in milliseconds (ms). Number of rows are output.
 ```
 
 #### Submitting Your Assignment

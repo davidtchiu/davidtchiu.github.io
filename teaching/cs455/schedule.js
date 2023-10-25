@@ -35,12 +35,12 @@ let days = {
         url: "hwk4.dml/",
         due: "10/20/2023",
       },
-      // {
-      //   name: "Hwk 5 (coding)",
-      //   title: "Joins",
-      //   url: "hwk5.joins/",
-      //   due: "10/27/2023",
-      // },
+      {
+        name: "Hwk 5 (coding)",
+        title: "Joins",
+        url: "hwk5.joins/",
+        due: "11/6/2023",
+      },
       // {
       //   name: "Hwk 5 (coding)",
       //   title: "Design Theory - Closure of FD Sets",
