@@ -15,7 +15,7 @@ For full credit, all methods must be static, and recursive. To be clear, this do
 Create a new project and create a class called `Recursion`. Put all of the following static methods in this class.
 
 
-1. Write a static method called `Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is the queue itself.
+1. (Easy) Write a static method called `Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is the queue itself. Hint: In the recursive case, remove the head, reverse remaining queue, then offer head to the tail of the queue.
 
 	 ```java
 	 Queue<Double> q0 = new LinkedList<>();
@@ -50,26 +50,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 > [100, 200, 300]
 	 ```
 
-2. Write a static method, `String dec2binary(int x)` that converts a decimal integer to its binary string (e.g., `5` converts to `101`). Here's the intuition. If `x` is `0` or `1` then simply return the string `"0"` or `"1"` respectively. Otherwise, test to see if `x` is an odd integer, then it must end with `1`. Otherwise, it ends with `0`. Then concatenate that bit to the right of the binary representation of `x/2`. 
-
-	 ```java
-	 System.out.println(Recursion.dec2binary(1));
-	 > 1
-
-   System.out.println(Recursion.dec2binary(0));
-	 > 0
-
-   System.out.println(Recursion.dec2binary(12));
-	 > 1100
-
-   System.out.println(Recursion.dec2binary(1023));
-	 > 1111111111
-
-	 System.out.println(Recursion.dec2binary(21845));
-	 > 101010101010101
-	 ```
-
-3. Write a static method, `void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. **Hint:** Any value of `x` that is less than 2 by definition does not have any prime factors. Otherwise, start by finding the smallest integer greater than 1 that divides evenly into `x` ...
+2. (Easy) Write a static method, `void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. **Hint:** Any value of `x` that is less than 2 by definition does not have any prime factors. Otherwise, start by finding the smallest integer greater than 1 that divides evenly into `x` and print it ... (what should happen to `x` now?)
 
 	 ```java
    System.out.println("Prime factors of 0");
@@ -119,7 +100,28 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 > 2
 	 ```
 
-4. If you've ever used a tool like Photoshop, you may be familiar with the **Flood Fill (Paint Can) utility**, which allows you to fill an entire segment of the image with a  color of  choice. For example, say you flood-filled the cell at `A[1][2]` with a replacement value of 8 (image below on the left). Since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So, not only does `A[1][2]` need to change from 3 to 8, but so might all of its four directional neighbors (to its north, east, south, and west), and their neighbors, and theirs, and so on. If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond the edges!
+3. (Medium) Write a static method, `String dec2binary(int x)` that converts a decimal integer to its binary string (e.g., `5` converts to `101`). Here's the intuition. If `x` is `0` or `1` then simply return the string `"0"` or `"1"` respectively. Otherwise, test to see if `x` is an odd integer. If it's odd, then `x` must end with `1`. Otherwise, it ends with `0`. Then concatenate that bit as a string to the right of the binary representation of `x/2`.
+
+	 ```java
+	 System.out.println(Recursion.dec2binary(1));
+	 > 1
+
+   System.out.println(Recursion.dec2binary(0));
+	 > 0
+
+   System.out.println(Recursion.dec2binary(12));
+	 > 1100
+
+   System.out.println(Recursion.dec2binary(1023));
+	 > 1111111111
+
+	 System.out.println(Recursion.dec2binary(21845));
+	 > 101010101010101
+	 ```
+
+
+
+4. (Medium) If you've ever used a tool like Photoshop, you may be familiar with the **Flood Fill (Paint Can) utility**, which allows you to fill an entire segment of the image with a  color of  choice. For example, say you flood-filled the cell at `A[1][2]` with a replacement value of 8 (image below on the left). Since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So, not only does `A[1][2]` need to change from 3 to 8, but so might all of its four directional neighbors (to its north, east, south, and west), and their neighbors, and theirs, and so on. If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond the edges!
 
 	 <img src="figures/flood_fill.png" width="450px" />
 
@@ -151,7 +153,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
    ```
 
 
-5. A permutation is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a set of permutations of the remaining substring. Then for each string in the returned set, insert the first character back into every position of the string and add each to a new set. Return the set when finished. Here's an example. Suppose  you're finding all permutations of `"abc"`.
+5. (Hard) A permutation is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a set of permutations of the remaining substring. Then for each string in the returned set, insert the first character back into every position of the string and add each to a new set. Return the set when finished. Here's an example. Suppose  you're finding all permutations of `"abc"`.
 
 	 - Split `"abc"` by chopping `"a"` off from the front, and recursively find the set of permutations of the remaining substring, `"bc"`.
 	 - Now for each permuted substring, insert `"a"` back in every possible position. For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`. For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`
