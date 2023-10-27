@@ -3,7 +3,7 @@
 <div style="display: grid; grid-template-columns: auto auto; column-gap: 15px;">
   <div>
   <p>
-  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>, where he also served a term as Department Chair from 2019-22. He is  the inaugural advisor to the <a href="https://www.pugetsound.edu/living-learning-communities/students-color-residential-community">Students of Color Living-and-Learning Community</a>.
+  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>, where he also on a 3-year rotation as Department Chair from 2019-22. He is  the inaugural advisor to the <a href="https://www.pugetsound.edu/living-learning-communities/students-color-residential-community">Students of Color Living-and-Learning Community</a>.
   </p>
   <p>
   David obtained a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was supervised by <a href="https://scholar.google.com/citations?user=kOUPR1sAAAAJ&hl=en">Gagan Agrawal</a> (now the founding Director of University of Georgia's School of Computing), and worked on problems in the dynamic composition, system modeling, and performance optimizations of scientific workflows over cloud computing environments. He also studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> at the Institute of Computational Mathematics at Kent State on the transmission of math education modules for his BS and MS degrees in Computer Science. He has published numerous papers in data management and cloud computing, and regularly serves on conference organization and program committees.
@@ -22,6 +22,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 
 ### Recent Activities
+- (10/2023) Our paper, "Workload-Aware Cache Management of Bitmap Indices" has been accepted for publication at BDCAT 2023. Congratulations to mystudent co-author Julia Kaeppel!
 - (8/2023) Appointed to serve on the Total Compensation and Benefits Project, University of Puget Sound.
 - (7/2023) Serving on the PC for [BDCAT 2023](https://bdcat-conference.org/).
 - (4/2023) Congrats to Julia Kaeppel on receiving a McCormick Student Research Award.
@@ -44,6 +45,6 @@ Here's a link to my [curriculum vitae](CV.pdf).
 - (3/2019) Serving on the PC for HiPC'19. Please consider submitting a paper.
 - (10/2018) Our paper on distributed bitmap indexing has been accepted for publication at BDCAT'18. It was nominated for the Best Paper award.
 
-### Student Feedback for Department
+### Quick Links
 
-Leave the CS department [some feedback](https://forms.gle/Ltassc7BQkNfnnXB7).
+- Leave the CS department [some feedback](https://forms.gle/Ltassc7BQkNfnnXB7).

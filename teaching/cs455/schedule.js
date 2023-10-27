@@ -137,14 +137,15 @@ let days = {
     // wk 8
     "<strong>Fall Break</strong>",
     "Disk and Files: access patterns",
-    "Tuple organization",
+    "Tuple format, file format",
     // wk 9
-    "Join processing",
+    "File organization and costs",
+    "Join processing on files",
     "Start Indexing: B+Tree",
-    "B+Tree performance",
     // wk 10
+    "B+Tree performance",
     "Dynamic hashing",
-    "Consistent hashing",
+    // "Consistent hashing",
     "Bitmap indexing",
     // "Disks and files; access patterns",
     // wk 11
