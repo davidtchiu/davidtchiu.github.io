@@ -228,7 +228,7 @@ Open up the `RecursionBugs` class in the project, which contains the following m
   ```
 
 #### Part III: Writing Recursive Methods
-In this last section of the lab, let's test your hand at implementing some recursive methods. These can be somewhat challenging for first-timers. It is not imperative that you get ALL of these written before end of lab. However, you should try to get at least the first two done (the rest would be good review problems for exams). For each of the tasks, I'll define the problem statement and give you a hint on how to think recursively. Open the `Recursion` class, and start writing these methods in there.
+I know this part can be challenging, since it'll be your first time writing recursive methods. Don't hesitate to ask for help, and hints are given for each one. It is not imperative that you get ALL of these written before end of lab. However, you should try to get at least the first couple done (the rest would be good review problems for exams). For each of the tasks, I'll define the problem statement and give you a hint on how to think recursively. Open the `Recursion` class, and start writing these methods in there.
 
 - **Count the Number of Digits in an Integer**
 	Write a recursive method `countDigits(...)` that returns the number of digits in an integer. For instance, `countDigits(40)` is 2, `countDigits(10000)` is 5, `countDigits(9)` is 1, and `countDigits(-928)` is 3.	You can determine the number of digits an integer `n` has by repeatedly dividing `n` by 10. Hint: When `n < 10`, it is just	one digit long, and every time you are able to divide `n` by 10, you have another digit to add to the count. Notice that
