@@ -112,12 +112,12 @@ let days = {
         url: "lab7.melody/",
         due: "10/25/2023",
       },
-      // {
-      //   name: "Lab 8",
-      //   title: "Recursion Lab",
-      //   url: "lab8.rec/",
-      //   due: "11/1/2023",
-      // },
+      {
+        name: "Lab 8",
+        title: "Recursion Lab",
+        url: "lab8.rec/",
+        due: "11/1/2023",
+      },
       // {
       //   name: "Lab 9",
       //   title: "Expression Trees (Recursive Structs)",
