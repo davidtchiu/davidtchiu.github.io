@@ -53,7 +53,7 @@ let days = {
         name: "Hwk 6",
         title: "Ranked Choice Voting (Paired)",
         url: "hwk6.rcv",
-        due: "11/6/2023",
+        due: "11/10/2023",
       },
       // {
       //   name: "Hwk 7",
@@ -116,7 +116,7 @@ let days = {
         name: "Lab 8",
         title: "Recursion Lab",
         url: "lab8.rec/",
-        due: "11/8/2023",
+        due: "11/1/2023",
       },
       // {
       //   name: "Lab 9",
