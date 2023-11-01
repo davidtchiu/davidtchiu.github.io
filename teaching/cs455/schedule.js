@@ -143,10 +143,11 @@ let days = {
     "Join processing on files",
     "Start Indexing: B+Tree",
     // wk 10
+    "B+Tree cont.",
     "B+Tree performance",
     "Dynamic hashing",
     // "Consistent hashing",
-    "Bitmap indexing",
+    // "Bitmap indexing",
     // "Disks and files; access patterns",
     // wk 11
     "Bitmap indexing",
