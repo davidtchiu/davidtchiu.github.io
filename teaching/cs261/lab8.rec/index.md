@@ -68,9 +68,9 @@ public int sum(int n) {
 The first section of the lab involves code reading, the second section asks you to fix some bugs in recursive methods. The third section asks you to write some recursive methods.
 
 #### Objectives
+- Think recursively to solve computational problems
 - Comprehend and debug recursive methods
 - Write recursive methods
-- Think recursively in order to solve computational problems
 
 #### Required Files
 The following file(s) have been provided for this lab.

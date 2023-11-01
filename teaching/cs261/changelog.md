@@ -2,9 +2,11 @@
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 
 # TODO
+- There's too many homework assignments. Go back to 7 and give everyone a break in between.
+- Provide more structure still. Students still having a hard time designing their own classes.
 - Get rid of reverse() in Hwk 5 (DLL)
 - Get rid of bin-search from Big-O, but add selection sort, replacing doTask algos.
-- How to shorten the first 3 weeks? (Can't get rid of exceptions.)
+- How to shorten the first 3 weeks? (Can't get rid of exceptions, can I.)
 - But do something about exceptions. It's just not clear when to throw/catch.
   - Maybe need a better lab?
 - Get assignment starter code on github
