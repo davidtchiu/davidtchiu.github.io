@@ -169,8 +169,10 @@ let days = {
     "Theory: Lossless join; dependency preservation",
     "Theory: Canonical cover; 3NF synthesis",
     // wk 15
-    "Start transactions: ACID, serializability",
-    "Transactions: serializability test, precedence graphs",
+    "Cancelled",
+    "Cancelled",
+    // "Start transactions: ACID, serializability",
+    // "Transactions: serializability test, precedence graphs",
     // "Transactions: Concurrency control",
     "<strong>Reading Period</strong>",
     // wk final
