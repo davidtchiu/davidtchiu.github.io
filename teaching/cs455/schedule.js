@@ -187,3 +187,4 @@ const schedule = new CourseCalendar("8/28/23", days, MWF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
+

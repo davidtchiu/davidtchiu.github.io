@@ -22,7 +22,7 @@ Start by opening up the database file in DB Browser or [Antares](https://antares
 
 Take a moment to study the schema, noting the foreign and primary keys. Browse the data in each relation to familiarize yourself with the database contents. Answer the following queries. Save the queries in a plain text file for submission. I've given you the expected results below each query.
 
-1. Return all customer names and their addresses if they are not represented by a sales rep. Order by customer name.
+1. Return all customer names and their addresses if they are not represented by a sales rep. Order by customer name. There should be 22 rows.
 
    ```
    customerName   addressLine1  addressLine2  city        state       postalCode
@@ -51,7 +51,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    Warburg Excha  Walserweg 21  NULL          Aachen      NULL        52066
    ```
 
-2. List the names of all customers that have a credit limit between 100,000 and 200,000 inclusively. Order by customer name.
+2. List the names of all customers that have a credit limit between 100,000 and 200,000 inclusively. Order by customer name. There should be 23 rows.
 
    ```
    customerName    creditLimit
@@ -90,7 +90,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    Mary        Patterson
    ```
 
-4. List all the products' names purchased by a company called "Mini Wheels Co." Order the list by product line.
+4. List all the products' names purchased by a company called "Mini Wheels Co." Order the list by product line. There should be 19 rows.
 
    ```
    productName
@@ -116,7 +116,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    1939 Cadillac Limousine
    ```
 
-5. List the customers whose contact person shares either a first name or a last name with *any* of the company's employees. Order by customer name.
+5. List the customers whose contact person shares either a first name or a last name with *any* of the company's employees. Order by customer name. There should be 17 rows.
 
    ```
    customerName
@@ -161,7 +161,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    6           San Franci
    ```
 
-8. For all Sales Reps, list their names and the names of the office they work out of, along with the number of clients they represent. Order by reverse order of number of clients
+8. For all Sales Reps, list their names and the names of the office they work out of, along with the number of clients they represent. Order by reverse order of number of clients. There are 15 rows in the result.
 
    ```
    firstName   lastName    city        numClients

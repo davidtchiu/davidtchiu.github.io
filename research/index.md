@@ -14,6 +14,8 @@ My research interests intersect topics in cloud computing and data management. I
 
 #### Bitmap Indexing for Data-Intensive Processing
 
+- J. Kaeppel, J. Sawin, and D. Chiu. [Workload-Aware Cache Management of Bitmap Indices](Papers/kaeppel-BDCAT2023.pdf).  10th IEEE/ACM  International Conference on Big Data Computing, Applications and Technologies (BDCAT'23). Taormina (Messina), Italy. 2023. ACM.
+
 - S. McClain, M. Mutschler-Aldine, C. Monaghan, D. Chiu, J. Sawin, and P. Jarvis. [Caching Support for Range Query Processing on Bitmap Indices](Papers/mcclain-ssdbm2021.pdf). 33rd International Conference on Scientific and Statistical Database Management (SSDBM'21). Tampa, FL. 2021. ACM.
 
 - B. Tran, B. Schaffner, J. Myre, J. Sawin, and D. Chiu. [Exploring Means to Enhance the Efficiency of GPU Bitmap Index Query Processing](https://link.springer.com/article/10.1007/s41019-020-00148-8). Data Science and Engineering 6(2): 209-228. 2021.
