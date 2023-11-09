@@ -1,6 +1,5 @@
 ### Research
 
-My research interests intersect topics in cloud computing and data management. I'm working with collaborators on several problems involving sustainable computing and data centers. Specifically, we're involved in understanding the data center's role in dynamic energy markets. We are also exploring the tradeoffs between energy, performance, and utilization costs for HPC and data-intensive processing. Finally, I'm passionate about CS education, and specifically, how we can help introductory students think critically about their algorithms before diving into implementation.
 
 ### Research Profiles
 
