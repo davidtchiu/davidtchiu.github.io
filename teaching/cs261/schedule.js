@@ -55,17 +55,17 @@ let days = {
         url: "hwk6.rcv",
         due: "11/10/2023",
       },
-      // {
-      //   name: "Hwk 7",
-      //   title: "Recursion Exercises",
-      //   url: "hwk7.rec",
-      //   due: "11/13/2023",
-      // },
+      {
+        name: "Hwk 7",
+        title: "Recursion Exercises",
+        url: "hwk7.rec",
+        due: "11/27/2023",
+      },
       // {
       //   name: "Hwk 8",
       //   title: "Data Compression (Paired)",
       //   url: "hwk8.huff",
-      //   due: "12/4/2023",
+      //   due: "12/6/2023",
       // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////

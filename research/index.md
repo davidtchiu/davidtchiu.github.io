@@ -1,7 +1,7 @@
 ### Research
 
 
-### Research Profiles
+### Profiles
 
 - [DBLP Computer Science Bibliography](https://dblp.org/pid/64/411.html)
 - [Google Scholar](https://scholar.google.com/citations?pli=1&authuser=1&user=HwaZjxcAAAAJ)

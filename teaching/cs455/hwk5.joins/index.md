@@ -314,9 +314,9 @@ This assignment will be graded out of 80 points.
 [15pt] The user interface is coded as prescribed above. The program exits on '.quit'
 [10pt] The schema file is read and parsed on start.
 [10pt] Attribute order is preserved in the result.
-[30pt] Nested loop join is correctly implemented. Algorithm is out of core. Cartesian
+[20pt] Nested loop join is correctly implemented. Algorithm is out of core. Cartesian
        product is produced when a common attribute doesn't exist.
-[30pt] Hash join is correctly implemented. Algorithm is out of core. Cartesian
+[20pt] Hash join is correctly implemented. Algorithm is out of core. Cartesian
        product is produced when a common attribute doesn't exist.
 [5pt]  Your algorithms are proper timed, and elapsed time should be reported
        in milliseconds (ms). Number of rows are output.
