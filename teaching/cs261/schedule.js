@@ -199,7 +199,7 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     "Recursion (cont.): Big-O of binary search, fibonacci",
-    "Recursive structures, start Trees",
+    "Recursive structures: Linked Lists revisited",
     // wk 12
     "Trees,  Binary Trees",
     "Lab 9: Expression Trees Lab",
