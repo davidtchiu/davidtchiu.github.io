@@ -18,8 +18,6 @@ The following file(s) have been provided for this lab.
 #### Expression
 The expressions we'll work with consist of the four binary operators (+, -, *, /), floating-point numeric literals (doubles).  We'll also allow parentheses for grouping terms. Here are some examples:
 
-<img src="figures/tree.png" width="240px" alt="expression tree" align="right" hspace=20>
-
 ```
 3
 ( 2.17 + 5.8 )
@@ -27,6 +25,8 @@ The expressions we'll work with consist of the four binary operators (+, -, *, /
 ( ( 3.14 - 1 ) * 2.0 )
 ( (-2 + 4) * ( (30 - 10 ) + 50) )
 ```
+
+<img src="figures/tree.png" width="240px" alt="expression tree" align="right" hspace=20>
 
 Expressions like these can be represented by expression trees, binary trees in which the internal nodes contain operators, and the operands are at the leaves. The last expression above can be represented by the expression tree to the right.
 
