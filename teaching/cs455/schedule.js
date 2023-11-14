@@ -5,7 +5,7 @@ let days = {
       url: "syllabus"
     },
     {
-      name: "Notes and Sample Code",
+      name: "Lecture Notes",
       url: "https://canvas.pugetsound.edu"
     },
   ],

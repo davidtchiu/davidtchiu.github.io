@@ -1,12 +1,14 @@
 ## CS 455 - Principles of Database Systems
 
 ### Hwk: Extendible Hashing
-In this assignment, you will build a program that simulates the search and insertion of search keys into an extendible hash indexing structure. You may use Java or Python, though I'd recommend an object-oriented solution.
+In this assignment, you will build a program that simulates the search and insertion of search keys into an extendible hash indexing structure. There are two things that would be different in a real database system: First,  the local buckets would be allocated as blocks on disk. The data stored in those blocks would actually be the tuples that hash into those blocks. Secondly, in a real extendible hash index, actual bits of the key's hash codes would be used (which require heavier usage of bitwise operators), instead of Strings of bits that represent the keys as we see in class. I choose to use strings here for simplicity, but you may implement this program using integers and bitwise operators if you'd prefer a challenge.
+
+You may use Java or Python for this assignment
 
 
 #### Student Outcomes
 
-- To gain an understanding of extendible hashing.
+- To understand the basics of extendible hashing.
 
 
 #### Program Requirements
@@ -48,9 +50,9 @@ In this assignment, you will build a program that simulates the search and inser
 
     <img src="figures/exthash.png" width="400px"/>
 
-5. If taking an object oriented approach, I would have at least 2 classes: a Global Directory, which stores an array of Buckets, and perhaps a class that simply runs the main method.
+5. If taking an object oriented approach, I would have at least 2 classes: a Global Directory, which stores an array of Buckets. In my implementation, I have a third class that simply runs the main method, providing the user interface.
 
-6. Notes: When testing, you should always insert/search for keys of the same bit-length, as in all my examples. 
+6. Notes: When testing, you should always insert/search for keys of the same bit-length, as in  my examples. 
 
 
 #### Example Output
@@ -125,6 +127,23 @@ p
 s 01011
 > 01011 FOUND
 
+i 10001
+> SUCCESS
+
+i 11100
+> SUCCESS
+
+p
+> Global(3)
+> 000: Local(3)[000] = [00011, null]
+> 001: Local(3)[001] = [00101, 00111]
+> 010: Local(2)[01] = [01001, 01011]
+> 011: Local(2)[01] = [01001, 01011]
+> 100: Local(1)[1] = [10001, null]
+> 101: Local(1)[1] = [null, null]
+> 110: Local(1)[1] = [null, null]
+> 111: Local(1)[1] = [11100, null]
+
 .quit
 ```
 
@@ -133,7 +152,7 @@ s 01011
 #### Grading
 
 ```
-This assignment will be graded out of 80 points.
+This assignment will be graded out of 90 points.
 
 [10pts] Implementation of the user interface to insert, search, print. Quits on .quit.
 
