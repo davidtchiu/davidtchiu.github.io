@@ -21,6 +21,7 @@ In this assignment, you will build a program that simulates the search and inser
     - `i <x>` Inserts the key `x` given as a binary string, such as `"i 11010"`, which prints `SUCCESS` or `FAILED`. An insert fails if `x` already exists in the hash index.
     - `s <x>` Searches the index for key `x`, given as a binary string. Prints `x FOUND` or `x NOT FOUND`.
     - `p` Prints out your extendible hash index (you must abide by the format given below.)
+    - `.quit` Exits the program.
 
 4. When printing out your hash index, it must follow the format below:
 
@@ -30,7 +31,7 @@ In this assignment, you will build a program that simulates the search and inser
     ...
     ```
 
-    In the format above, `<i>` is the integer bit-depth of the global directory. `<B>` is an bit string representation of a global address. `<j>` is the integer bit-depth of the local directory. `<b>` is the bit string representation of the local bucket's address. Finally, the binary keys that are stored in that bucket are listed in no particular order.
+    In the format above, `<i>` is the integer bit-depth of the global directory. `<B>` is a bit string representation of a global address. `<j>` is the integer bit-depth of the local directory. `<b>` is the bit string representation of the local bucket's address. Finally, the binary keys that are stored in that bucket are listed in no particular order.
 
     Here's an example below for a local bucket size of 2 tuples. The global bit-depth is 2, so there are four addresses (entries) in the global directory: `00`, `01`, `10`, and `11` (one listed on per row). The global address `00` points to a local bucket (also addressed `00`) which stores a single key, `0000`. Both global entries `10` and `11` point to the _same_ local bucket. We know they're the same because the local bit depth in those buckets is only `1` (well, and also because they store the same keys). If you work this out on paper, you should get this result from inserting `0000`, `1001`, `0110`, `1011`, and `0100`, in that order.
 
@@ -43,16 +44,16 @@ In this assignment, you will build a program that simulates the search and inser
     ```
 
     The corresponding drawing looks like:
-    <img src="figures/exthash.png" />
+    <img src="figures/exthash.png" width="400px"/>
 
-5. If taking an object oriented approach, I would have 3 classes: global directory, bucket, and a class that runs the main method.
+5. If taking an object oriented approach, I would have at least 2 classes: a Global Directory, which stores an array of Buckets, and perhaps a class that simply runs the main method.
 
 
 #### Example Output
 
 ```txt
 $ java ExtHash
-> Usage: java ExtHash <number of tuples per block>
+> Usage: java ExtHash <block size>
 
 $ java ExtHash 2
 i 00011
