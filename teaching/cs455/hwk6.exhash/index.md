@@ -22,7 +22,7 @@ You may use Java or Python for this assignment
     - `i <x>` Inserts the key `x` given as a binary string, such as `"i 11010"`, which prints `SUCCESS` or `FAILED`. An insert fails if `x` already exists in the hash index.
     - `s <x>` Searches the index for key `x`, given as a binary string. Prints `x FOUND` or `x NOT FOUND`.
     - `p` Prints out your extendible hash index (you must abide by the format given below.)
-    - `.quit` Exits the program.
+    - `q` Exits the program.
 
 4. As we learned in class, both insertion and searching work by examining the $$i$$ right-most bits of the key's binary string. 
 
@@ -56,95 +56,138 @@ You may use Java or Python for this assignment
 
 
 #### Example Output
+Bad input:
 
 ```txt
 $ java ExtHash
-> Usage: java ExtHash <block size>
+Usage: java ExtHash <block size>
+```
+
+
+```txt
+$ java ExtHash 0
+Error: block size must be at least 1
+```
+
+In this example, bucket/block size is set to 4, and therefore, the first four keys are inserted trivially. The fifth key `0101` causes a local split, which propagates to a global split. All keys beginning with `1` are transferred over to bucket `[1]`, before the insertion of `0101` can be performed.
+
+```
+$ java ExtHash 4
+
+> i 1011
+SUCCESS
+
+> i 1010
+SUCCESS
+
+> i 0110
+SUCCESS
+
+> i 0000
+SUCCESS
+
+> p
+Global(0)
+: Local(0)[] = [1011, 1010, 0110, 0000]
+
+> i 0101
+SUCCESS
+
+> p   
+Global(1)
+0: Local(1)[0] = [0101, null, 0110, 0000]
+1: Local(1)[1] = [1011, 1010, null, null]
+```
+
+
+In this example bucket/block size is set to 2, and `00011`, `00101` are inserted trivially. Then the insertion of `00111` causes two consecutive splits of the local and global directories (due to `00` being the leading bits in all three keys.) Therefore this global directory grows from 1 entry to 8 entries to accommodate the insertion of `00111`. A couple more keys, `01011` and `10001`, are inserted trivially before the final insertion of `11100` causes another local bucket split, but not a global directory split.
+
+```txt
 
 $ java ExtHash 2
-i 00011
-> SUCCESS
+> i 00011
+SUCCESS
 
-p
-> Global(0)
-> : Local(0)[] = [00011, null]
+> p
+Global(0)
+: Local(0)[] = [00011, null]
 
-i 00101
-> SUCCESS
+> i 00101
+SUCCESS
 
-p
-> Global(0)
-> : Local(0)[] = [00011, 00101]
+> p
+Global(0)
+: Local(0)[] = [00011, 00101]
 
-s 00011
-> 00111 FOUND
+> s 00011
+00111 FOUND
 
-i 00111
-> SUCCESS
+> i 00111
+SUCCESS
 
-i 00101
-> FAILED
+> i 00101
+FAILED
 
-p
-> Global(3)
-> 000: Local(3)[000] = [00011, null]
-> 001: Local(3)[001] = [00101, 00111]
-> 010: Local(2)[01] = [null, null]
-> 011: Local(2)[01] = [null, null]
-> 100: Local(1)[1] = [null, null]
-> 101: Local(1)[1] = [null, null]
-> 110: Local(1)[1] = [null, null]
-> 111: Local(1)[1] = [null, null]
+> p
+Global(3)
+000: Local(3)[000] = [00011, null]
+001: Local(3)[001] = [00101, 00111]
+010: Local(2)[01] = [null, null]
+011: Local(2)[01] = [null, null]
+100: Local(1)[1] = [null, null]
+101: Local(1)[1] = [null, null]
+110: Local(1)[1] = [null, null]
+111: Local(1)[1] = [null, null]
 
-i 01001
-> SUCCESS
+> i 01001
+SUCCESS
 
-p
-> Global(3)
-> 000: Local(3)[000] = [00011, null]
-> 001: Local(3)[001] = [00101, 00111]
-> 010: Local(2)[01] = [01001, null]
-> 011: Local(2)[01] = [01001, null]
-> 100: Local(1)[1] = [null, null]
-> 101: Local(1)[1] = [null, null]
-> 110: Local(1)[1] = [null, null]
-> 111: Local(1)[1] = [null, null]
+> p
+Global(3)
+000: Local(3)[000] = [00011, null]
+001: Local(3)[001] = [00101, 00111]
+010: Local(2)[01] = [01001, null]
+011: Local(2)[01] = [01001, null]
+100: Local(1)[1] = [null, null]
+101: Local(1)[1] = [null, null]
+110: Local(1)[1] = [null, null]
+111: Local(1)[1] = [null, null]
 
-i 01011
-> SUCCESS
+> i 01011
+SUCCESS
 
-p
-> Global(3)
-> 000: Local(3)[000] = [00011, null]
-> 001: Local(3)[001] = [00101, 00111]
-> 010: Local(2)[01] = [01001, 01011]
-> 011: Local(2)[01] = [01001, 01011]
-> 100: Local(1)[1] = [null, null]
-> 101: Local(1)[1] = [null, null]
-> 110: Local(1)[1] = [null, null]
-> 111: Local(1)[1] = [null, null]
+> p
+Global(3)
+000: Local(3)[000] = [00011, null]
+001: Local(3)[001] = [00101, 00111]
+010: Local(2)[01] = [01001, 01011]
+011: Local(2)[01] = [01001, 01011]
+100: Local(1)[1] = [null, null]
+101: Local(1)[1] = [null, null]
+110: Local(1)[1] = [null, null]
+111: Local(1)[1] = [null, null]
 
-s 01011
-> 01011 FOUND
+> s 01011
+01011 FOUND
 
-i 10001
-> SUCCESS
+> i 10001
+SUCCESS
 
-i 11100
-> SUCCESS
+> i 11100
+SUCCESS
 
-p
-> Global(3)
-> 000: Local(3)[000] = [00011, null]
-> 001: Local(3)[001] = [00101, 00111]
-> 010: Local(2)[01] = [01001, 01011]
-> 011: Local(2)[01] = [01001, 01011]
-> 100: Local(1)[1] = [10001, null]
-> 101: Local(1)[1] = [null, null]
-> 110: Local(1)[1] = [null, null]
-> 111: Local(1)[1] = [11100, null]
+> p
+Global(3)
+000: Local(3)[000] = [00011, null]
+001: Local(3)[001] = [00101, 00111]
+010: Local(2)[01] = [01001, 01011]
+011: Local(2)[01] = [01001, 01011]
+100: Local(1)[1] = [10001, null]
+101: Local(1)[1] = [null, null]
+110: Local(1)[1] = [null, null]
+111: Local(1)[1] = [11100, null]
 
-.quit
+> q
 ```
 
 
