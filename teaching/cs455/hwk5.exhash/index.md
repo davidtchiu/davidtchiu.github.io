@@ -13,7 +13,6 @@ In this assignment, you will build a program that simulates the search and inser
 
 1. Upon running your program, your main method must accept a single command-line argument:
     - Local bucket size (integer): This is the maximum number of tuples that can be stored per block.
-    <!-- - Maximum key value (integer), $$k$$: This means your bit strings would be a maximum of $$\lceil\log_2 k\rceil$$ bits. -->
 
 2. After receiving the above input, create a default extendible hash index, with global index ($$i$$) and local index ($$j$$) initialized to 0, which means you will have $$2^i = 1$$ entry in your global index that points to the sole local bucket, which is empty.
 
@@ -23,7 +22,9 @@ In this assignment, you will build a program that simulates the search and inser
     - `p` Prints out your extendible hash index (you must abide by the format given below.)
     - `.quit` Exits the program.
 
-4. When printing out your hash index, it must follow the format below:
+4. As we learned in class, both insertion and searching work by examining the $$i$$ right-most bits of the key's binary string. 
+
+5. When printing out your hash index, it must follow the format below:
 
     ```txt
     Global(<i>)
@@ -44,9 +45,12 @@ In this assignment, you will build a program that simulates the search and inser
     ```
 
     The corresponding drawing looks like:
+
     <img src="figures/exthash.png" width="400px"/>
 
 5. If taking an object oriented approach, I would have at least 2 classes: a Global Directory, which stores an array of Buckets, and perhaps a class that simply runs the main method.
+
+6. Notes: When testing, you should always insert/search for keys of the same bit-length, as in all my examples. 
 
 
 #### Example Output
@@ -120,6 +124,8 @@ p
 
 s 01011
 > 01011 FOUND
+
+.quit
 ```
 
 
@@ -129,24 +135,23 @@ s 01011
 ```
 This assignment will be graded out of 80 points.
 
-[20pts] Implementation of findSuperKeys() exhaustively generates all superkeys
-of a given relational schema and its FD set. You throw an exception if there is an 
-FD that refers to an unknown attribute in the given schema. Ensure that, when 
-the FD set is empty, then all attributes in the given schema serves as the only superkey.
+[10pts] Implementation of the user interface to insert, search, print. Quits on .quit.
 
-[10pts] Implementation of isBCNF(). It returns true if the left-hand side of all
-non-trivial FDs is a superkey.
+[10pts] The search method is properly implemented, and takes O(1) time.
 
-[40pts] Implementation of BCNFDeompose(). It returns a set of relational schemas that
-satisfy BCNF. At every split point, you output the schema being split, the violating FD,
-the superkeys for that schema. Also print the same information for the two schemas after
-the split. 
+[20pts] The print function prints the global directory and the buckets in the format
+given in this assignment.
 
-[5pts] Immutability and no-side effects: None of the methods should modify the content of 
-any input structure.
+[50pts] The insert function is properly implemented according to the algorithm given
+in lecture. This method only attempts to insert when the key is not already contained
+in the index. Splitting of the local directory requires the correct keys from the overflown
+bucket to be transferred to the new bucket based on those keys' most significant bits.
+Pointers in the global directory need to be updated to point to the new bucket, 
+regardless of whether the global directory needs to be doubled in size. 
 
-[Misc] Your program must be written in Java. Non-Java programs will be returned
-without a grade.
+This method should run in O(1) time if there's no splitting. On a split, this method runs
+in O(d) where d is the number of entries in the global directory, since you need to update
+pointers.
 ```
 
 #### Submitting Your Assignment
