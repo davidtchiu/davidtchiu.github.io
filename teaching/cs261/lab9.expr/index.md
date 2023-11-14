@@ -113,6 +113,10 @@ System.out.println(e.toString());
 
 System.out.println(e.evaluate());
 > 2.666666666666667
+
+e = new ExpressionTree("( ( 500 * ( 1 + 2.2 ) ) - 6 )");
+System.out.println(e.evaluate());
+> 1594.0
 ```
 
 

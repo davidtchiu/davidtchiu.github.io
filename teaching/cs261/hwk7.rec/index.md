@@ -15,7 +15,7 @@ For full credit, all methods must be static, and recursive. To be clear, this do
 Create a new project and create a class called `Recursion`. Put all of the following static methods in this class.
 
 
-1. (Easy) Write a static method called `Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is the queue itself. Hint: In the recursive case, remove the head, reverse remaining queue, then offer head to the tail of the queue.
+1. (Easy) Write a static method called `public static<E> Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is the queue itself. Hint: In the recursive case, remove the head, reverse remaining queue, then offer head to the tail of the queue.
 
 	 ```java
 	 Queue<Double> q0 = new LinkedList<>();
@@ -50,7 +50,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 > [100, 200, 300]
 	 ```
 
-2. (Easy) Write a static method, `void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. **Hint:** Any value of `x` that is less than 2 by definition does not have any prime factors. Otherwise, start by finding the smallest integer greater than 1 that divides evenly into `x` and print it ... (what should happen to `x` now?)
+2. (Easy) Write a static method, `public static void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. **Hint:** Any value of `x` that is less than 2 by definition does not have any prime factors. Otherwise, start by finding the smallest integer greater than 1 that divides evenly into `x` and print it ... (what should happen to `x` now?)
 
 	 ```java
    System.out.println("Prime factors of 0");
@@ -100,7 +100,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 > 2
 	 ```
 
-3. (Medium) Write a static method, `String dec2binary(int x)` that converts a decimal integer to its binary string (e.g., `5` converts to `101`). Here's the intuition. If `x` is `0` or `1` then simply return the string `"0"` or `"1"` respectively. Otherwise, test to see if `x` is an odd integer. If it's odd, then `x` must end with `1`. Otherwise, it ends with `0`. Then concatenate that bit as a string to the right of the binary representation of `x/2`.
+3. (Medium) Write a static method, `public static String dec2binary(int x)` that converts a decimal integer to its binary string (e.g., `5` converts to `101`). Here's the intuition. If `x` is `0` or `1` then simply return the string `"0"` or `"1"` respectively. Otherwise, test to see if `x` is an odd integer. If it's odd, then `x` must end with `1`. Otherwise, it ends with `0`. Then concatenate that bit as a string to the right of the binary representation of `x/2`.
 
 	 ```java
 	 System.out.println(Recursion.dec2binary(1));
@@ -125,7 +125,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 	 <img src="figures/flood_fill.png" width="450px" />
 
-   Write a method `void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value of `r`. In the outputs below, assume that `print2DArray()` is a static method that prints out 2D arrays.
+   Write a method `public static void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value of `r`. In the outputs below, assume that `print2DArray()` is a static method that prints out 2D arrays.
 
    ```java
 	 int[][] img1 = {
@@ -158,7 +158,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 - Split `"abc"` by chopping `"a"` off from the front, and recursively find the set of permutations of the remaining substring, `"bc"`.
 	 - Now for each permuted substring, insert `"a"` back in every possible position. For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`. For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`
 
-		Write a static method called `SortedSet<String> permute(String str)` that takes as input a string and recursively returns a `SortedSet` of all permutations of that string. It should be noted that the only permutation of an empty string is also an empty string. Similarly, the only permutation of a single-character string is that character. Also note that, if your string is of length $$n$$, then you have set of $$n!$$ permutations. **Hint:** Base case: If your string is shorter than two letters, then create a `TreeSet<String>`, add the string to it, and return the set.
+		Write a static method called `public static SortedSet<String> permute(String str)` that takes as input a string and recursively returns a `SortedSet` of all permutations of that string. It should be noted that the only permutation of an empty string is also an empty string. Similarly, the only permutation of a single-character string is that character. Also note that, if your string is of length $$n$$, then you have set of $$n!$$ permutations. **Hint:** Base case: If your string is shorter than two letters, then create a `TreeSet<String>`, add the string to it, and return the set.
 
 		```java
 		System.out.println(Recursion.permute("a"));
