@@ -55,7 +55,7 @@ The constructor for the ExpressionTree class must build a tree from an infix exp
 
 First, within the constructor, you can convert parenthesized infix expressions to postfix (or Reverse Polish) expression strings using the conversion code I already provided. This might not seem like a step in the right direction, but at least the parenthesized subexpressions will be processed away and, more importantly, the operators will now appear in the order in which they need to be applied.
 
-For example, the infix expression `( ( 5 ∗ ( 1 + 2 ) ) − 6 )`  would be transformed into the postfix expression `5 1 2 + * 6 -`. In the original expression, the parentheses tell us that the `+` should be performed first, precedence says that the `*` is next, followed by the `-`. Lo and behold, that's the order in which they appear in the postfix string! Luckily I have already provided the infix-to-postfix method in the `Infix2Postfix` class.
+For example, the infix expression `( ( 500 ∗ ( 1 + 2.2 ) ) − 6 )`  would be transformed into the postfix expression `500 1 2.2 + * 6 -`. In the original expression, the parentheses tell us that the `+` should be performed first, precedence says that the `*` is next, followed by the `-`. Lo and behold, that's the order in which they appear in the postfix string! Luckily I have already provided the infix-to-postfix method in the `Infix2Postfix` class.
 
 Now, move on to the `buildTree()` method that you'll need to implement. First, you'll need a stack. Have the stack hold references to the nodes: When you encounter a value, make a new tree node and push it onto the stack. When an operator is encountered, build a larger tree out of the operator and the two subtrees at the top of the stack, then push this new tree onto the stack. A reference to the full expression tree will be on the stack when we're done!
 
@@ -136,7 +136,7 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 #### Credits
 
-Based on a previous lab by Professor Henry Walker, Grinnell College.
+Based on a previous lab written by Professor Brad Richards.
 
 #### Lab Attendance Policies
 
