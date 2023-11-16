@@ -43,25 +43,39 @@ You are going to search through a file containing movie reviews from the Rotten 
 The following file(s) have been provided for this homework.
 
 - [movieReviews.txt](movieReviews.txt) - A dump of Rotten Tomatoes reviews.
-- [SentimentAnalysis.java](SentimentAnalysis.java) - An interface that your "bot" needs to implement.
+- [Analyzable.java](Analyzable.java) - An interface that your "bot" needs to implement.
 - [BadReviewFormatException.java](BadReviewFormatException.java) - A checked exception class.
 
-#### Data Set
-Start a new project in your preferred editor, then download a copy of movieReviews.txt. Put it in your project folder. Open the file so that you get a chance to understand its format. Each line contains a movie review, and the sentiment of that review is the first number.
 
-You might also notice some strange formatting, but that's by design. For instance, there's always a space before a punctuation. This is to make it easier on you when you come across a word that has a punctuation appended. You don't want your program to treat it as a different word.
 
 #### Object-Oriented Design
-In this assignment you'll be mostly responsible for coming up with your own class designs. First things first, though. Read this assignment in entirety to understand the problem you need to solve before even starting to think about what classes and methods you'll need. 
+- Download the given files, and examine the class diagram below.
+  <img src="figures/SentHomeworkClassDiag.png" width="400px">
+
+
+- There is an `Analyzable` interface that must be implemented by your `ReviewBot`. Your implementation must follow the documentation given in the interface, so open it up and read it thoroughly. 
+
+- It is important that your `Word` class stores a triplet of data: the word itself, the number of times that it occurred in the whole review file (`frequency`), and its total score, which is described later.
+
+- You are also responsible for writing the `UserInterface` -- This class simply contains the `main()` method, which I will run and expect kind of interaction shown in the beginning of this assignment. You should work this class into your UML diagram.
+
+
+<!-- #### Object-Oriented Design -->
+<!-- In this assignment you'll be mostly responsible for coming up with your own class designs. First things first, though. Read this assignment in entirety to understand the problem you need to solve before even starting to think about what classes and methods you'll need. 
 
 On a whiteboard or sheet of paper, design the UML class diagram. Note that I have given you an interface that must be implemented by your "core" movie review-bot class. What classes do you think you'll need? How do they relate to each other (What are the client classes? Are there opportunities for inheritance?) Do any of them need to implement comparable or any other interface? What methods will you provide in each class, and how are they used by client classes? Projects containing only one or two classes will probably be too hard to manage. Decompose large classes into manageable pieces when possible. It is a very bad idea to start coding before you have class diagram designed.  Feel free to come talk to me or your tutors about your initial design.
 
-You do need to implement following class, so I can grade your program:
+-->
 
-- `UserInterface` -- This class simply contains the `main()` method, which I will run and expect kind of interaction shown in the beginning of this assignment. You should work this class into your UML diagram.
+
 
 
 #### Instructions
+
+1. Start a new project in your preferred editor, then download a copy of movieReviews.txt. Put it in your project folder. Open the file so that you get a chance to understand its format. Each line contains a movie review, and the sentiment of that review is the first number.
+
+You might also notice some strange formatting, but that's by design. For instance, there's always a space before a punctuation. This is to make it easier on you when you come across a word that has a punctuation appended. You don't want your program to treat it as a different word.
+
 
 1. The model: You need to track every word that appears in the review, along with their score (explained below) and occurrences. For instance, let's say there are only two reviews in my movie file:
 
@@ -138,7 +152,7 @@ CS 261 Homework (Sentiment Analysis)
 
 > Demonstrates good use of inheritance and interfaces, if applicable.
 
-> Your program must fully implement the given SentimentAnalysis interface.
+> Your program must fully implement the given Analyzable interface.
 
 ----------------------------------------------------------
 [10pts] Exception handling

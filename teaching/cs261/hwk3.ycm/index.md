@@ -27,9 +27,11 @@ The following file(s) have been provided for this homework.
 - [wiktionary.txt](wiktionary.txt) - contains the 10,000 most common words in [Project Gutenberg](https://www.gutenberg.org/), with their frequencies.
 
 #### Object-Oriented Design
-We need to start removing the scaffolding that I provide with each assignment in prescribing you the overall structure of the classes.  In this assignment you'll be responsible for coming up with some of your own object oriented design. We'll start slow -- that is, I'll still give you hints on what classes you might need, but you'll need to fill in the rest. 
+We need to start removing the scaffolding that I provide with each assignment in prescribing you the overall structure of the classes.  We'll ease into this over the course of the semester, so we'll start slow --  I'll provide the class diagram below, but you'll need to fill in the rest. You should expect that future assignments might only provide the class diagram, and it's up to you to interpret it.
 
-I think you'll need at least three classes:
+- Examine the class diagram given below.
+  <img src="figures/AutoHomeworkClassDiag.png" width="400px">
+
 
 - `TermFrequency` -- This class encapsulates a term-frequency pair. This class is simple. You only need to provide getters and setters to input/retrieve the term or frequency. Objects of this class eventually need to be ordered by decreasing frequency. Therefore, this class needs to implement the `Comparable` interface.
 

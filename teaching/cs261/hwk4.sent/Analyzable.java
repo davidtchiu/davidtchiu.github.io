@@ -4,7 +4,7 @@
  * @author David
  * @version 9/25/2023
  */
-public interface SentimentAnalysis
+public interface Analyzable
 {
     /**
      * Trains the model by using data in the file indicated by the given filename
