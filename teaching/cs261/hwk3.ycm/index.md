@@ -30,7 +30,8 @@ The following file(s) have been provided for this homework.
 We need to start removing the scaffolding that I provide with each assignment in prescribing you the overall structure of the classes.  We'll ease into this over the course of the semester, so we'll start slow --  I'll provide the class diagram below, but you'll need to fill in the rest. You should expect that future assignments might only provide the class diagram, and it's up to you to interpret it.
 
 - Examine the class diagram given below.
-  <img src="figures/AutoHomeworkClassDiag.png" width="400px">
+
+  <img src="figures/AutoHomeworkClassDiag.png" width="300px">
 
 
 - `TermFrequency` -- This class encapsulates a term-frequency pair. This class is simple. You only need to provide getters and setters to input/retrieve the term or frequency. Objects of this class eventually need to be ordered by decreasing frequency. Therefore, this class needs to implement the `Comparable` interface.

@@ -50,6 +50,7 @@ The following file(s) have been provided for this homework.
 
 #### Object-Oriented Design
 - Download the given files, and examine the class diagram below.
+
   <img src="figures/SentHomeworkClassDiag.png" width="400px">
 
 
@@ -74,7 +75,7 @@ On a whiteboard or sheet of paper, design the UML class diagram. Note that I hav
 
 1. Start a new project in your preferred editor, then download a copy of movieReviews.txt. Put it in your project folder. Open the file so that you get a chance to understand its format. Each line contains a movie review, and the sentiment of that review is the first number.
 
-You might also notice some strange formatting, but that's by design. For instance, there's always a space before a punctuation. This is to make it easier on you when you come across a word that has a punctuation appended. You don't want your program to treat it as a different word.
+  You might also notice some strange formatting, but that's by design. For instance, there's always a space before a punctuation. This is to make it easier on you when you come across a word that has a punctuation appended. You don't want your program to treat it as a different word.
 
 
 1. The model: You need to track every word that appears in the review, along with their score (explained below) and occurrences. For instance, let's say there are only two reviews in my movie file:
