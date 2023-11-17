@@ -51,7 +51,7 @@ The following file(s) have been provided for this homework.
 #### Object-Oriented Design
 - Download the given files, and examine the class diagram below.
 
-  <img src="figures/SentHomeworkClassDiag.png" width="400px">
+  <img src="figures/SentHomeworkClassDiag.png" width="500px">
 
 
 - There is an `Analyzable` interface that must be implemented by your `ReviewBot`. Your implementation must follow the documentation given in the interface, so open it up and read it thoroughly. 

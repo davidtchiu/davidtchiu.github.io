@@ -31,7 +31,7 @@ We need to start removing the scaffolding that I provide with each assignment in
 
 - Examine the class diagram given below.
 
-  <img src="figures/AutoHomeworkClassDiag.png" width="300px">
+  <img src="figures/AutoHomeworkClassDiag.png" width="500px">
 
 
 - `TermFrequency` -- This class encapsulates a term-frequency pair. This class is simple. You only need to provide getters and setters to input/retrieve the term or frequency. Objects of this class eventually need to be ordered by decreasing frequency. Therefore, this class needs to implement the `Comparable` interface.
