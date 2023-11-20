@@ -63,8 +63,8 @@ let days = {
       },
       // {
       //   name: "Hwk 8",
-      //   title: "Data Compression (Paired)",
-      //   url: "hwk8.huff",
+      //   title: "Evil Hangman (Paired)",
+      //   url: "hwk8.ehm",
       //   due: "12/6/2023",
       // },
     ],
@@ -124,12 +124,12 @@ let days = {
         url: "lab9.expr/",
         due: "11/15/2023",
         },
-      //   {
-      //     name: "Lab 10",
-      //     title: "Binary Search Trees Lab",
-      //     url: "lab10.bst/",
-      //     due: "11/22/2023",
-      //   },
+        {
+          name: "Lab 10",
+          title: "Binary Search Trees Lab",
+          url: "lab10.bst/",
+          due: "11/22/2023",
+        },
       //   {
       //     name: "Lab 11",
       //     title: "Maps Lab",
