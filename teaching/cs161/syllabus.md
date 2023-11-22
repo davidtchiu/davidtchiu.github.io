@@ -70,7 +70,9 @@ Regular attendance and participation are required. Attendance, to be graded out 
 ##### Exams
 There will be two midterms and a final exam. They will cover topics discussed in the lectures, readings from the assigned textbook, and assignments. The exams are cumulative. Study guides are provided and selected problems are reviewed on the lecture preceding the day of the exam. You are allowed a page of notes (front and back) on all exams. 
 
-- Make-up: I expect you to be present on the day of exams. I do not offer make-up exams unless you can demonstrate documented extenuating circumstances. (These do not count: having a minor illness, family visiting, etc.)
+- Make-up: I expect you to be present on the day of exams. I do not offer make-up exams unless you can _document_ an extenuating circumstance. (These do not count as extenuating circumstances: experiencing a cold, overslept, mental health day, family visiting, traveling, etc.)
+
+- Final Exam: You must show up on the scheduled day of the final exam. These dates are set by the university and cannot be rescheduled. Please do not ask for exceptions.
 
 - Accommodations: It is *your* responsibility to inform me if you will be taking it at SAA well-ahead of time, so that I have time to get the exams over to their office.
 

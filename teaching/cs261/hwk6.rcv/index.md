@@ -10,9 +10,8 @@ The problem traces back to the fact that voters only get one choice, but how wou
 
 
 #### Student Objectives
-- To use priority queues.
-- To use recursion.
-- More practice designing and writing a program from scratch.
+- To understand the process of the Ranked Choice Election system.
+- To understand the application of priority queues.
 
 #### Teams
 You are required to work in teams on this assignment. I've used a sophisticated matching algorithm to produce the groups listed below. (Ok, it's just random, but I did write a program to do it!) Do not start writing any code until you've met with your team member(s) and discussed the assignment and possible approaches. For best results, I expect you to work physically together. I will assume that each member of the team has contributed equally to the project. If that isn't true, please contact me privately.
@@ -35,6 +34,9 @@ You are required to work in teams on this assignment. I've used a sophisticated 
 
 The following file(s) have been provided for this homework.
 
+- [Ballot.java](Ballot.java)
+- [Election.java](Election.java)
+- [ElectionRunner.csv](ElectionRunner.csv)
 - [RCVRaw.csv](RCVRaw.csv)
 
 
@@ -195,10 +197,8 @@ B_7: [#1 = Dexter]
 ```
 This "instant runoff" algorithm will <i>always</i> produce a winner, and it needs $$O(n)$$ rounds of elimination in the worst-case, where $$n$$ is the number of candidates in the election.
 
-#### Program Requirements
-An important election among Puget Sound faculty took place back in Fall 2019, and because there were multiple candidates from which to choose, a resolution was made to run an RCV election. I was a part of the committee that conducted and ultimately had to count the ballots. The file 
-containing the ballots cast for the election is provided to you: <a href="RCVRaw.csv">RCVRaw.csv</a>. The only thing I did was to replace the names of the candidates to protect the anonymity of our
-election. <b>Do not</b> open this file using Excel -- instead, open it with a simple
+#### The Raw Ballot File
+Here's some historical context: An important election among Puget Sound faculty took place back in Fall 2019, and because there were multiple candidates from which to choose, a resolution was made to run an RCV election. At the time I was a part of the committee that conducted the election, but it's not a simple count, so a program had to be written. The file containing the ballots that were cast for the election is provided to you: <a href="RCVRaw.csv">RCVRaw.csv</a>. The only thing I did was to replace the names of the candidates to protect the anonymity of our election. <b>Do not</b> open this file using Excel -- instead, open it with a simple
 text editor. The first few lines of this file are shown here:
 
 ```
@@ -211,55 +211,65 @@ No Rank,Ranked #2,No Rank,Ranked #3,Ranked #1,No Rank
 ```
 
 The first line in the file contains the names of candidates separated by comma.
-Your code must work for an arbitrary number of candidates.
 Each line thereafter represents an RCV ballot. Because this data is in 
 its "raw form," I cannot guarantee that all ballots are <i>valid</i>, according
 to the definition of validity given in the previous section.
 
-There is no codebase provided, so it is your job to determine the structure of this project. Just for your reference, my solution contains 4 classes, but that is by no means a yard-stick by which to measure your success. Apply what you know about modularity and abstraction. As always, you are strongly encouraged to start early on the design process (class diagrams), and present them to me as often as you need for feedback. I would not recommend you writing any code until the program structure is well-defined on paper.
+#### Program Requirements
+
+- Download the given files, and examine the class diagram below.
+
+  <img src="figures/RCVHomeworkClassDiag.png" width="500px">
+
+- Your program (class names and all) must adhere to those given in the class diagram. If everything is done correctly, you should be able to run `ElectionRunner` and obtain the results that I got below.
 
 
-#### Priority Queues
-In general, you should figure out and justify adopting certain data structures for various parts of this project. However, you are required to use `PriorityQueue<E>` to represent the contents of a ballot. Re-read the runoff elimination process, and see why priority queues are the most appropriate data structure to use here before moving on.
+- Your `Candidate` class must override the `equals(Object)` method, among other things. You should simply ensure that two candidates are equal if their names are the same. Your `Candidate` class must also implement the `Comparable` interface. I'll leave it up to you to figure out how to order candidates.
+
+- You are required to use a `PriorityQueue<E>` in your `RankedBallot` class for storing candidates. Re-read the runoff elimination process, and see why priority queues are the most appropriate data structure to use here before moving on. Understand how you will leverage the priority queue properties to simplify your election code. **A word on debugging:** You will be tempted to print out the contents of the priority queue to ensure that candidates are in the "right order." However, please note that Java's priority queue is not built on a sorted list. It only ensures that the smallest element it at the head, and it makes no other guarantees. Therefore, when you print out a priority queue, don't be caught off-guard if the elements seem to be in some weird order.
+
+- The list of candidates is always given on the first line of the file. Your code must work for an arbitrary number of candidates, but you can assume that there will always be at least two.
+
+
 
 #### Sample Output
 If you wrote the program correctly, your output should look exactly like mine when given `RCVRaw.csv` for input.
 
 ```
 ===============================
-Ranked-Choice Vote Ballot Counter
+Rank-Choice Vote Ballot Counter
 ===============================
-207 ballots received
+188 valid ballots received
 
 --------------------------------Round 1--------------------------------
-Zebra:	24 votes	(0.128)
-Bear:	47 votes	(0.251)
 Rhino:	8 votes	(0.043)
-Sloth:	52 votes	(0.278)
-Lion:	25 votes	(0.134)
-Tiger:	31 votes	(0.166)
-Total nonempty ballots: 187
+Zebra:	25 votes	(0.133)
+Lion:	25 votes	(0.133)
+Bear:	47 votes	(0.250)
+Sloth:	52 votes	(0.277)
+Tiger:	31 votes	(0.165)
+Total nonempty ballots: 188
 
 Rhino eliminated.
 
 
 --------------------------------Round 2--------------------------------
-Zebra:	24 votes	(0.128)
-Bear:	50 votes	(0.267)
-Sloth:	52 votes	(0.278)
+Zebra:	25 votes	(0.133)
 Lion:	27 votes	(0.144)
-Tiger:	34 votes	(0.182)
-Total nonempty ballots: 187
+Bear:	50 votes	(0.266)
+Sloth:	52 votes	(0.277)
+Tiger:	34 votes	(0.181)
+Total nonempty ballots: 188
 
 Zebra eliminated.
 
 
 --------------------------------Round 3--------------------------------
-Bear:	53 votes	(0.285)
-Sloth:	57 votes	(0.306)
-Lion:	30 votes	(0.161)
-Tiger:	46 votes	(0.247)
-Total nonempty ballots: 186
+Lion:	31 votes	(0.166)
+Bear:	53 votes	(0.283)
+Sloth:	57 votes	(0.305)
+Tiger:	46 votes	(0.246)
+Total nonempty ballots: 187
 
 Lion eliminated.
 
@@ -274,8 +284,8 @@ Tiger eliminated.
 
 
 --------------------------------Round 5--------------------------------
-Bear:	89 votes	(0.52)
-Sloth:	82 votes	(0.48)
+Bear:	89 votes	(0.520)
+Sloth:	82 votes	(0.480)
 Total nonempty ballots: 171
 
 Sloth eliminated.
@@ -284,15 +294,9 @@ Sloth eliminated.
 --------------------------------RESULTS--------------------------------
 WINNER BY MAJORITY: [Bear]
 -----------------------------------------------------------------------
-Bear:	149 votes	(1)
+Bear:	149 votes	(1.000)
 Total nonempty ballots: 149
 ```
-
-
-#### Recursion Requirement
-Certainly, you can write this program using only loops, but given that we've spent quite a bit of time covering recursion, I impose that at least one significant method must be written recursively. It wouldn't be a bad idea to complete this program using loops, and then converting a couple methods to be recursive. Here are a couple natural places I found that could make sense.
-
-A low-hanging fruit suggestion is to implement the printing of election results recursively.
 
 
 

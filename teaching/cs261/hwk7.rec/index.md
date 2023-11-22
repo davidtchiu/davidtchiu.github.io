@@ -121,11 +121,11 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 
 
-4. (Medium) If you've ever used a tool like Photoshop, you may be familiar with the **Flood Fill (Paint Can) utility**, which allows you to fill an entire segment of the image with a  color of  choice. For example, say you flood-filled the cell at `A[1][2]` with a replacement value of 8 (image below on the left). Since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So, not only does `A[1][2]` need to change from 3 to 8, but so might all of its four directional neighbors (to its north, east, south, and west), and their neighbors, and theirs, and so on. If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond the edges!
+4. (Medium) If you've ever used a tool like Photoshop, you may be familiar with the **Flood Fill (Paint Can) utility**, which allows you to fill an entire segment of the image with a  color of  choice. For example, say you flood-filled the cell at `A[1][2]` with a replacement value of 8 (image below on the left). Since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So, not only does `A[1][2]` need to change from 3 to 8, but so might all of its four directional neighbors (to its north, east, south, and west), and their neighbors, and theirs, and so on. If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond any of the four boundaries of the 2D array (in which you'd want to avoid coloring -- hey that sounds like a terminating base case!)
 
 	 <img src="figures/flood_fill.png" width="450px" />
 
-   Write a method `public static void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value of `r`. In the outputs below, assume that `print2DArray()` is a static method that prints out 2D arrays.
+   Write a method `public static void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value of `r`. In the outputs below, assume that `print2DArray()` is a static method that prints out 2D arrays. (You should probably define this method so that you can see the contents, but it's not part of the assignment.)
 
    ```java
 	 int[][] img1 = {
@@ -136,7 +136,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
    };
 
    System.out.println("Before filling:");
-   print2DArray(img1);
+   Recursion.print2DArray(img1);
    >	1       1       7       5
    >	1       3       3       3
    >	6       5       5       3
@@ -145,7 +145,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
    Recursion.floodFill(img1, 1, 2, 8);
 
    System.out.println("After filling:");
-   print2DArray(img1);
+   Recursion.print2DArray(img1);
    >	1       1       7       5
    >	1       8       8       8
    >	6       5       5       8
