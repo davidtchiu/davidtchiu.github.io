@@ -61,12 +61,12 @@ let days = {
         url: "hwk7.rec",
         due: "11/27/2023",
       },
-      // {
-      //   name: "Hwk 8",
-      //   title: "Evil Hangman (Paired)",
-      //   url: "hwk8.ehm",
-      //   due: "12/6/2023",
-      // },
+      {
+        name: "Hwk 8",
+        title: "Evil Hangman (Paired)",
+        url: "hwk8.ehm",
+        due: "12/13/2023",
+      },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
