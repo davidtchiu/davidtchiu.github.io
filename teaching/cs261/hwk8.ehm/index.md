@@ -19,15 +19,27 @@ While there are many viable strategies for building competitive computer game pl
 - To select appropriate algorithms and data structures for problem solving.
 
 
+#### Team Assignments
+For this project you'll be working in teams. Please ensure that you listed all of your team members in a Javadocs comment at the top of each `.java` file.
+
+```txt
+[Hannah E, Pallas C]
+[Amanda W, Gemma B]
+[Ashlyne C, Maia C, Kendall P]
+[Lily G, Miles M]
+[Timothy T, Noel L]
+[Bonacic, Alex W]
+[Ben H, Gabriel E]
+[Elizabeth B, Julien W]
+```
+
+
 #### Required Files
 
 The following file(s) have been provided for this homework.
 
 - [dictionary.txt](dictionary.txt)
 
-<!-- #### Team Assignments
-For this project you'll be working in teams. Please ensure that you listed all of your team members in a Javadocs comment at the top of each `.java` file.
- -->
 
 #### Overview of Evil Hangman
 

@@ -139,7 +139,6 @@ I've created a new project to get you started. Please download and open it. Firs
 - Implement the `public int height()` method which returns the height of the current tree. Recall that the *height of a tree* is the longest number of edges from the root to any leaf. Remember when I said in class that the reason you'd use recursion is to simplifying programming? This is one of those algorithms that's notoriously difficult to implement iteratively, but has a very simple recursive solution. Again, you only need to fill in the helper method. Start again by defining your base cases. When does the height become obvious? (There are two base cases.)
 
   ```java
-  Here's a sample output:
   BinarySearchTree<Integer> my_bst = new BinarySearchTree<>();
   my_bst.add(3);
   my_bst.add(4);
@@ -186,10 +185,9 @@ I've created a new project to get you started. Please download and open it. Firs
   ```
 
 
-- Implement the `public boolean isFull()` method which tests to see if the tree is full. Recall that a BST is full if every node has either 0 or 2 children. An empty tree (in which the `localRoot`` points to `null`) is not full. Here's what to do if a tree has a root node: It's a leaf, then the tree is full. If the root node has only one child, the tree is not full. Otherwise, the root node must have two children, and it's full if both of its subtrees are also full. You need to create the private helper method.
+- Implement the `public boolean isFull()` method which tests to see if the tree is full. Recall that a BST is full if every node has either 0 or 2 children. An empty tree (in which the `localRoot` points to `null`) is not full. Here's what to do if a tree has a root node: It's a leaf, then the tree is full. If the root node has only one child, the tree is not full. Otherwise, the root node must have two children, and it's full if both of its subtrees are also full. You need to create the private helper method.
 
   ```java
-  Here's a sample output:
   BinarySearchTree<Integer> my_bst = new BinarySearchTree<>();
   my_bst.add(3);
   my_bst.add(4);
