@@ -60,9 +60,25 @@ The following file(s) have been provided for this lab.
 
 - Implement the `V remove(K key)` method in the `OpenMap` class. It returns `null` if the key is not found, or it returns the removed value. Recall that, if the key is found, you cannot simply set the array entry to `null` because it breaks the linear probing algorithm you use for `get()` and `put()`. Instead, it seems counterintuitive, but you *must* keep the `Entry` in place, but set the key portion of the entry to `null`. 
 
-- After you've implemented and tested `remove(K key)`, you have to go back and update the `put()` method. It needs to check for the sentinel `key` value, and if found, it can place a new entry there.
+- After you've implemented and tested `remove(K key)`, you have to go back and update the `put()` method. It needs to check for the sentinel `key` value, and if found, it can place a new entry there. You also need to update the code for both `keySet()`, `values()`, and `toString()` so that entries with `null` keys are not included. You do not have to update the code for `get()` and you should understand why.
 
+  ```java
+  MapInt<String,Double> map = new OpenMap<>(6);
+  map.put("David", 4.0);
+  map.put("Aaron", 3.2);
+  map.put("Brad", 3.9);
+  map.put("Adam", 3.2);
+  map.put("Tony", 3.0);
+  map.put("Jan", 2.7);
 
+  map.remove("Brad");
+  System.out.println(map.toString());
+  > [Adam=3.2, Jan=2.7, Tony=3.0, Aaron=3.2, David=4.0]
+
+  map.put("Jack", 3.0);
+  System.out.println(map.toString());
+  > [Adam=3.2, Jan=2.7, Tony=3.0, Aaron=3.2, David=4.0, Jack=3.0]
+  ```
 
 #### Part II: Understanding Load Factor
 - Now let us talk about the `MapPerf` implementations. There's a `getLoadFactor()` method that is intended to return a value between 0 and 1, indicating the ratio between the number of stored entries and the capacity of the underlying array. A load factor of 0 means that the underlying `table[]` array is completely empty, and 1 means it's full. Modify the appropriate methods in `OpenMap` so that the load factor returned correctly by `getLoadFactor()`.
@@ -85,7 +101,7 @@ The following file(s) have been provided for this lab.
 
 - The `OpenMap` class also has methods that are supposed to track and report how many "probes" have been done. The `getProbes()` and `resetProbes()` methods are provided. We define a probe to be a loop iteration taken to search for the key. In the illustration given in the Overview section above, it takes one probe to lookup `"David."` It would take 4 probes to lookup `"Tony."`
 
-- Modify the `get()` and `put()` methods so that it counts the number of probes properly. 
+- You need to modify the `get()` and `put()` methods so that it counts the number of probes properly. 
 
   ```java
   // Just enough capacity to hold all entries..
