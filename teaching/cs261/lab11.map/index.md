@@ -142,7 +142,7 @@ $$T$$ (ignore the right-hand section of this table).
 
 ![](figures/KnuthTable.png)
 
-- Check out the definition of `fillAndTest()` in the `Experiment` class. It takes a `MapInt` object and a target load factor, adds random entries into the map until it reaches the desired load factor, then prints the average number of probes required to do a bunch of `get` calls (this is defaulted to 1000 calls). We'll use maps that map `Strings` to `Strings` to keep things simple. You can create random key-value pairs by calling my `randomString` method.
+- Check out the definition of `fillAndTest()` in the `Experiment` class. It takes a `MapInt` object and a target load factor, adds random entries into the map until it reaches the desired load factor, then prints the average number of probes required to do a bunch of `get` calls (this is defaulted to 1000 calls). Notice we're inputting maps that map `Strings` to `Strings` to keep things simple. 
 
 - Now check out `Experiment`'s main method, where I've left some code that creates an `OpenMap` and passes it to `fillAndTest()`. See how many probes are required for a load factor of 0.75. Are your probes a bit higher than the formula predicts? In all my few runs, my average probes were quite a bit higher than 2.5 (I'm getting values in the 10s). What could be going on? Could we have proven Professor Knuth wrong? Lol no. Read on.
 
