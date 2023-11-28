@@ -28,7 +28,7 @@ The following file(s) have been provided for this lab.
 
   - Next, check to see if that location is `null`. If it is, then create a new key-value `Entry` and put it there. If not, you need to perform Linear Probing: increment the array index until: (1) you come across a `null`, or (2) you find the given `key`. (You may have to "wrap around" to the beginning of the hash table as you search.) If (1), insert the `Entry`. If (2), replace the value, and return the old value. If the table is full, you should throw an `IllegalArgumentException` (just for now).
 
-- Now you can fill in the `size()` and `toString()` methods. The size is simply the number of stored entries. Note that `toString()` should return a string containing all the key-value entries stored in the map. Recall that maps do not guarantee a particular order on its entries, so don't be surprised if your output is in a different order than mine, below:
+- Now you can fill in the `values()` and `toString()` methods. Note that `toString()` should return a string containing all the key-value entries stored in the map. Recall that maps do not guarantee a particular order on its entries, so don't be surprised if your output is in a different order than mine, below:
 
   ```java
   MapInt<String,Double> map = new OpenMap<>(6);
