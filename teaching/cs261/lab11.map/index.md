@@ -144,22 +144,18 @@ $$T$$ (ignore the right-hand section of this table).
 
 - Check out the definition of `fillAndTest()` in the `Experiment` class. It takes a `MapInt` object and a target load factor, adds random entries into the map until it reaches the desired load factor, then prints the average number of probes required to do a bunch of `get` calls (this is defaulted to 1000 calls). Notice we're inputting maps that map `Strings` to `Strings` to keep things simple. 
 
-- Now check out `Experiment`'s main method, where I've left some code that creates an `OpenMap` and passes it to `fillAndTest()`. See how many probes are required for a load factor of 0.75. Are your probes a bit higher than the formula predicts? In all my few runs, my average probes were quite a bit higher than 2.5 (I'm getting values in the 10s). What could be going on? Could we have proven Professor Knuth wrong? Lol no. Read on.
+- Now check out `Experiment`'s main method, where I've left some code that creates an `OpenMap` and passes it to `fillAndTest()`. See how many probes are required for a load factor of 0.75. Are your probes a bit higher than the formula predicts? Knuth's formulas predicted that an open-addressing implementation would require 2.5 probes per access, on average, if the load factor was 0.75. After a few runs, mine is reporting 2.498 probes per operation. Knuth's formula is on point!
 
-- The experiment you performed in the previous step used random strings as keys when doing the lookups. But wait!! The behavior might be different if we looked for keys that were actually *in* the map. Go back and add some additional code to `fillAndTest()`: As you're adding random key-value pairs, keep track of the keys you use. (Store them in a List, for example, or a Set.) After you've populated your map, reset the number of probes. Now retrieve all the keys you stored in the List, and report the average probes once you're done.
-
-- Knuth's formulas predicted that an open-addressing implementation would require 2.5 probes per access, on average, if the load factor was 0.75. After a few runs, mine is reporting a much more expected 2.498. Knuth's formula is on point!
-
-- Run the experiment again with a load factor of, say, 0.9. My results show 5.368 when Knuth predicted 5.5. Wow! Almost spot on!
+- Run the experiment again with a load factor of, say, 0.9. My results show 5.368 when Knuth predicted 5.5. Wow! 
 
 #### Part IV: Importance of Rehashing
 The last experiment you ran showed that high load factors generally lead to worse performance. One question that remains is how we can keep our `HashMap` performing at a high level. If you guessed that we may need to occasionally increase the size of our underlying table, you guessed right!
 
 - Open up a new class, called `FastOpenMap`, which extends `OpenMap`, so we don't have to rewrite all the methods. This version of the open-addressing HashMap will always keep your load factor at or lower than 0.5. You'll start by providing the same two constructors for this class. They should just call OpenMap's corresponding constructors.
 
-- Write a private method called `rehash()`,  that doubles the capacity of the hash table (array), then it re-inserts all the keys into this new table. (Since you're calling `OpenMap`'s get method to re-insert the keys into the new hash table, make sure you reset the size first!).
+- Write a private method called `rehash()`,  that doubles the capacity of the hash table (array), then it re-puts all the keys into this new table. Since you're calling `OpenMap`'s put method (yes, call `super.put(..)`) to re-insert the entries into the new hash table, make sure you reset the size first!
 
-- Override the `put()` method so that every time after it inserts a new entry (ignore the case where it replaces an entry), it checks the current load factor, and if it's greater than `0.5`, it rehashes.
+- Override the `put()` method in the `FastOpenMap` so that every time after it inserts a new entry (ignore the case where it replaces an entry), it checks the current load factor, and if it's greater than `0.5`, it rehashes.
 
 - If you did everything properly, your output should match mine below!
   
