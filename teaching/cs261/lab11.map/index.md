@@ -22,11 +22,11 @@ The following file(s) have been provided for this lab.
 
 - Now read through the `get()` method, which implements the so-called Linear Probing algorithm, and make sure you understand it fully. We first calculate the index based on the hash code of the key and (possibly) perform a linear traversal of the array to search for the key. This method then returns the corresponding value when you find the key, or `null` if the key isn't found.
 
-- Understanding how `get()` works, now implement the `put()` method. Recall from lecture that you need to do a couple of things:
+- Now implement the `put()` method, which behaves a lot like `get()`. Recall from lecture that you need to do a couple of things:
 
   - The index into the array should be calculated the same way as in `get()`: Take the absolute value of the given `key`'s `hashCode()`, and `mod` it by the capacity of the hash table. This will tell you the location in the hash table where the key-value can be found or inserted.
 
-  - Next, check to see if that location is `null`. If it is, then create a new key-value `Entry` and put it there. If not, you need to perform Linear Probing: increment the array index until: (1) you come across a `null`, or (2) you find the given `key`. (You may have to "wrap around" to the beginning of the hash table as you search.) If (1), insert the `Entry`. If (2), replace the value, and return the old value. If the table is full, you should throw an `IllegalArgumentException` (just for now).
+  - Next, check to see if that location is `null`. If it is, then create a new key-value `Entry` and put it there. If not, you need to perform Linear Probing: increment the array index until: (1) you come across a `null`, or (2) you find the given `key`. (You may have to "wrap around" to the beginning of the hash table as you search.) If (1), insert the `Entry` and return `null`. If (2), replace the value, and return the old value. If the table is full, you should throw an `IllegalArgumentException` (just for now).
 
 - Now you can fill in the `values()` and `toString()` methods. Note that `toString()` should return a string containing all the key-value entries stored in the map. Recall that maps do not guarantee a particular order on its entries, so don't be surprised if your output is in a different order than mine, below:
 
