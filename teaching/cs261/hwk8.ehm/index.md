@@ -17,6 +17,7 @@ While there are many viable strategies for building competitive computer game pl
 - To practice with file handling and text processing.
 - To practice with object-oriented design.
 - To select appropriate algorithms and data structures for problem solving.
+- To use HashMaps
 
 
 #### Team Assignments
@@ -113,7 +114,15 @@ Your assignment is to write a computer program which plays a game of Hangman usi
 
     - If the player correctly guesses the word, congratulate them.
 
-- It's up to you to think about how you want to partition words into word families. Think about what data structures would be best for tracking word families and the master word list. LinkedList? How about a stack or queue? Thinking through the design before you start coding will save you a lot of time and headache. (Hint: You will have multiple data structures to support this program, and although we haven't studied their implementation in detail, let me suggest that you consider using a `HashMap`.)
+- Think about what data structures would be best for tracking word families and the master word list.
+
+    - Tracking the current set of word families makes perfect use of `HashMap`s. You could, for instance, use the word family string pattern (say `"_ _ R _ _"`) to be the key, and it hashes to a list (or set) of words that fall into that family (say, `LORDS`, `DARTS`, `FIRST`, and so on). Your map should store multiple such entries.
+
+    - The master word list also needs to be stored in a data structure for quick access. The dictionary file that's given to you is alphabetized, but is that the optimal ordering for what you're trying to accomplish? Would it make more sense to order the words in terms of their length? What if you alphabetized them *after* you first ordered them by length? Will there be duplicates that you'll need to consider?
+
+    - The list of guessed letters needs to be output in alphabetical order after each wrong guess. Again, you'll want to avoid using a data structure that would require you to re-sort the list after each guess.
+
+    - You are allowed to use the Java-provided classes that represent these data structures. In other words, you don't have to use the trees, lists, and maps that we wrote in lab/class.
 
 #### Advice
 Letter position matters just as much as letter frequency. When computing word families, it's not enough to count the number of times a particular letter appears in a word; you also have to consider their positions. For example, `BEER` and `HERE` are in two different families even though they both have two `E`'s in them. Consequently, representing word families as numbers representing the frequency of the letter in the word will get you into trouble.
