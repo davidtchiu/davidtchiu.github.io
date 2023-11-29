@@ -215,13 +215,13 @@ let days = {
     // wk 14
     "Start HashMaps: Open Addressing",
     "Lab 11: Open Addressing lab",
-    "HashMap (cont.): chaining",
+    // "HashMap (cont.): chaining",
     "Sorting: MergeSort",
+    "Sorting: QuickSort",
     // wk 15
     "Cancelled",
     "Homework Lab",
     "Cancelled",
-    // "Sorting: QuickSort",
     // "Sorting: QuickSort",
     "<strong>Reading Period</strong>",
     // wk final
