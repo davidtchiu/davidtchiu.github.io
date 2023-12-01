@@ -118,7 +118,7 @@ Your assignment is to write a computer program which plays a game of Hangman usi
 
     - Tracking the current set of word families makes perfect use of `HashMap`s. You could, for instance, use the word family string pattern (say `"_ _ R _ _"`) to be the key, and it hashes to a list (or set) of words that fall into that family (say, `LORDS`, `DARTS`, `FIRST`, and so on). Your map should store multiple such entries.
 
-    - The master word list also needs to be stored in a data structure for quick access. The dictionary file that's given to you is alphabetized, but is that the optimal ordering for what you're trying to accomplish? Would it make more sense to order the words in terms of their length? What if you alphabetized them *after* you first ordered them by length? Will there be duplicates that you'll need to consider?
+    - The master word list also needs to be stored in a data structure for quick access. The dictionary file that's given to you is alphabetized, but is that the optimal ordering for what you're trying to accomplish? Would it make more sense to order the words in terms of their length? What if you alphabetized them *after* you first ordered them by length?
 
     - The list of guessed letters needs to be output in alphabetical order after each wrong guess. Again, you'll want to avoid using a data structure that would require you to re-sort the list after each guess.
 
@@ -246,7 +246,7 @@ family is chosen.
 
 ======================================
 
-[20/20pts] At minimum, 2 substantive methods should be written recursively.
+[20/20pts] At minimum, two methods should be written recursively. They can be any method.
 
 ======================================
 

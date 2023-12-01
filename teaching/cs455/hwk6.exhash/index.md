@@ -3,7 +3,7 @@
 ### Hwk: Extendible Hashing
 In this assignment, you will build a program that simulates the search and insertion of search keys into an extendible hash indexing structure. There are two things that would be different in a real database system: First,  the local buckets would be allocated as blocks on disk. The data stored in those blocks would actually be the tuples that hash into those blocks. Secondly, in a real extendible hash index, actual bits of the key's hash codes would be used (which require heavier usage of bitwise operators), instead of Strings of bits that represent the keys as we see in class. I choose to use strings here for simplicity, but you may implement this program using integers and bitwise operators if you'd prefer a challenge.
 
-You may use Java or Python for this assignment
+You may use Java or Python for this assignment. 
 
 
 #### Student Outcomes
@@ -15,16 +15,17 @@ You may use Java or Python for this assignment
 
 1. Upon running your program, your main method must accept a single command-line argument:
     - Local bucket size (integer): This is the maximum number of tuples that can be stored per block.
+    - Key length (integer): This is the number of bits that constitute a key.
 
 2. After receiving the above input, create a default extendible hash index, with global index ($$i$$) and local index ($$j$$) initialized to 0, which means you will have $$2^i = 1$$ entry in your global index that points to the sole local bucket, which is empty.
 
 3. Your program should now wait for instructions of the following format:
-    - `i <x>` Inserts the key `x` given as a binary string, such as `"i 11010"`, which prints `SUCCESS` or `FAILED`. An insert fails if `x` already exists in the hash index.
-    - `s <x>` Searches the index for key `x`, given as a binary string. Prints `x FOUND` or `x NOT FOUND`.
+    - `i <x>` Inserts the key `x` given as a binary string, such as `"i 11010"`, which prints `SUCCESS` or `FAILED`. An insert fails if `x` already exists in the hash index. An error should be printed if the length of this bit-string exceeds the `key length` specified in the command prompt.
+    - `s <x>` Searches the index for key `x`, given as a binary string. Prints `x FOUND` or `x NOT FOUND`. An error should be printed if the length of this bit-string exceeds the `key length` specified in the command prompt.
     - `p` Prints out your extendible hash index (you must abide by the format given below.)
     - `q` Exits the program.
 
-4. As we learned in class, both insertion and searching work by examining the $$i$$ right-most bits of the key's binary string. 
+4. You may assume that all keys `x` are input as the given key-length. For instance, if the key length was input as 5, then all keys will be input as size three (e.g., `10` would be input as `00010`). As such, any key strings that exceed this length should be ignored (and an error should be printed.)
 
 5. When printing out your hash index, it must follow the format below:
 
@@ -36,7 +37,7 @@ You may use Java or Python for this assignment
 
     In the format above, `<i>` is the integer bit-depth of the global directory. `<B>` is a bit string representation of a global address. `<j>` is the integer bit-depth of the local directory. `<b>` is the bit string representation of the local bucket's address. Finally, the binary keys that are stored in that bucket are listed in no particular order.
 
-    Here's an example below for a local bucket size of 2 tuples. The global bit-depth is 2, so there are four addresses (entries) in the global directory: `00`, `01`, `10`, and `11` (one listed on per row). The global address `00` points to a local bucket (also addressed `00`) which stores a single key, `0000`. Both global entries `10` and `11` point to the _same_ local bucket. We know they're the same because the local bit depth in those buckets is only `1` (well, and also because they store the same keys). If you work this out on paper, you should get this result from inserting `0000`, `1001`, `0110`, `1011`, and `0100`, in that order.
+    Here's an example below for a local bucket size of 2 tuples. The global bit-depth is 2, so there are four addresses (entries) in the global directory: `00`, `01`, `10`, and `11` (one listed on per row). The global address `00` points to a local bucket (also addressed `00`) which stores a single key, `0000`. Both global entries `10` and `11` point to the _same_ local bucket. We know they're the same because the local bit-depth in those buckets is only 1 (and also because they store the same keys). If you work this out on paper, you should get this result from inserting `0000`, `1001`, `0110`, `1011`, and `0100`, in that order.
 
     ```
     Global(2)
@@ -50,9 +51,8 @@ You may use Java or Python for this assignment
 
     <img src="figures/exthash.png" width="400px"/>
 
-5. If taking an object oriented approach, I would have at least 2 classes: a Global Directory, which stores an array of Buckets. In my implementation, I have a third class that simply runs the main method, providing the user interface.
+6. If taking an object oriented approach, I would have at least 2 classes: a Global Directory, which stores an array of Buckets. In my implementation, I have a third class that simply runs the main method, providing the user interface.
 
-6. Notes: When testing, you should always insert/search for keys of the same bit-length, as in  my examples. 
 
 
 #### Example Output
@@ -60,19 +60,26 @@ Bad input:
 
 ```txt
 $ java ExtHash
-Usage: java ExtHash <block size>
+Usage: java ExtHash <block size> <key length>
 ```
 
+```txt
+$ java ExtHash 2 0
+Error: key length must be postive
+```
 
 ```txt
-$ java ExtHash 0
+$ java ExtHash 0 5
 Error: block size must be at least 1
 ```
 
 In this example, bucket/block size is set to 4, and therefore, the first four keys are inserted trivially. The fifth key `0101` causes a local split, which propagates to a global split. All keys beginning with `1` are transferred over to bucket `[1]`, before the insertion of `0101` can be performed.
 
 ```
-$ java ExtHash 4
+$ java ExtHash 4 4
+
+> i 1001010
+Error: key exceeds length 4
 
 > i 1011
 SUCCESS
@@ -97,6 +104,9 @@ SUCCESS
 Global(1)
 0: Local(1)[0] = [0101, null, 0110, 0000]
 1: Local(1)[1] = [1011, 1010, null, null]
+
+> s 101010101
+Error: key exceeds length 4
 ```
 
 
@@ -104,7 +114,10 @@ In this example bucket/block size is set to 2, and `00011`, `00101` are inserted
 
 ```txt
 
-$ java ExtHash 2
+$ java ExtHash 2 5
+> i 0000101010101
+> Error: key exceeds length 5
+
 > i 00011
 SUCCESS
 
