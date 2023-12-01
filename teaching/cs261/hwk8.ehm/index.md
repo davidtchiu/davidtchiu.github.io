@@ -210,7 +210,7 @@ CS 261 Homework (Evil Hangman)
 
 ======================================
 
-[5/5pts] Your file reader for inputing the dictionary.
+[10/10pts] Inputting the dictionary file.
 
 ======================================
 
@@ -229,7 +229,7 @@ remaining in the word list, and displays the list after each guess.
 
 ======================================
 
-[5/5pts] Your program stores the set of letters already guessed, and does not allow more guesses
+[10/10pts] Your program stores the set of letters already guessed, and does not allow more guesses
 on the same letter to be made. The determination of whether a letter is already guessed should be
 efficient.
 
@@ -240,17 +240,17 @@ has been reached, or congratulates the player if they successfully guessed the s
 
 ======================================
 
-[25/25pts] Word family partitioning: Your program identifies the word family and all
+[30/30pts] Word family partitioning: Your program identifies the word family and all
 words that match the word family, given the current guesses. After each guess, the largest word
 family is chosen.
 
 ======================================
 
-[20/20pts] At minimum, two methods should be written recursively. They can be any method.
+[10/10pts] Use of hashmaps for storing word families.
 
 ======================================
 
-[5/5pts] Use of hashmaps for efficiency where possible.
+[+5pts bonus] Two methods should be written recursively.
 
 ======================================
 
