@@ -17,65 +17,78 @@ let days = {
         name: "Hwk 0 (vscode)",
         title: "Setting up VS Code",
         url: "hwk0.vscode/",
-        due: "1/18/2023",
+        due: "1/19/2024",
       },
       {
-        name: "Hwk 1 (wordstat)",
-        title: "Getting Started with C",
-        url: "hwk1.ws/",
-        due: "1/23/2023",
-      },
-      {
-        name: "Hwk 2 (sorting)",
+        name: "Hwk 1 (sorting)",
         title: "Pointers, Arrays, Strings",
         url: "hwk2.ptrs/",
-        due: "1/30/2023",
+        due: "1/29/2024",
       },
       {
-        name: "Hwk 3 (ls2)",
+        name: "Hwk 2 (ls2)",
         title: "Dynamic Memory Allocation",
         url: "hwk3.malloc/",
-        due: "2/6/2023",
+        due: "2/9/2024",
       },
-      // {
-      //   name: "Hwk 4 (dsh)",
-      //   title: "David Shell",
-      //   url: "hwk4.dsh/",
-      //   due: "2/20/2023",
-      // },
-      // {
-      //   name: "Hwk 5 (mmm)",
-      //   title: "Matrix Multiplication",
-      //   url: "hwk5.mmm/",
-      //   due: "3/7/2023",
-      // },
-      // {
-      //   name: "Hwk 6 (ts_hashmap)",
-      //   title: "Thread-Safe Hashmap",
-      //   url: "hwk6.hashmap/",
-      //   due: "3/27/2023", // after break
-      // },
-      // {
-      //   name: "Hwk 7 (OneLaneBridge)",
-      //   title: "The One Lane Bridge ",
-      //   url: "hwk7.thebridge/",
-      //   due: "4/14/2023",
-      // },
-      // {
-      //   name: "Hwk 8 (bankers)",
-      //   title: "Banker's Algorithm",
-      //   url: "hwk8.bankers/",
-      //   due: "4/28/2023",
-      // },
-      // {
-      //   name: "Extra Credit",
-      //   title: "Bonus Tech Report",
-      //   url: "hwkB.report/",
-      //   due: "5/3/2023",
-      // },
+      {
+        name: "Hwk 3 (dsh)",
+        title: "David Shell",
+        url: "hwk4.dsh/",
+        due: "2/19/2024",
+      },
+      {
+        name: "Hwk 4 (mmm)",
+        title: "Matrix Multiplication",
+        url: "hwk5.mmm/",
+        due: "3/1/2024",
+      },
+      {
+        name: "Hwk 5 (ts_hashmap)",
+        title: "Thread-Safe Hashmap",
+        url: "hwk6.hashmap/",
+        due: "3/22/2024", // after break
+      },
+      {
+        name: "Hwk 6 (OneLaneBridge)",
+        title: "The One Lane Bridge ",
+        url: "hwk7.thebridge/",
+        due: "4/14/2024",
+      },
+      {
+        name: "Hwk 7 (bankers)",
+        title: "Banker's Algorithm",
+        url: "hwk8.bankers/",
+        due: "4/28/2024",
+      },
+      {
+        name: "Extra Credit",
+        title: "Bonus Tech Report",
+        url: "hwkB.report/",
+        due: "5/3/2024",
+      },
     ],
+    /////////////////////////////////// labs /////////////////////////////////////////
+    labs: [
+      {
+        name: "Lab 1",
+        title: "C Basics",
+        url: "lab1/",
+      },
+      {
+        name: "Lab 2",
+        title: "Pointers, Arrays, C Strings",
+        url: "lab2/",
+      },
+      {
+        name: "Lab 3",
+        title: "Memory Allocation",
+        url: "lab3/",
+      },
+    ],
+
     ////////////////////////////// PROJECTS ///////////////////////////////
-    projects: [
+    // projects: [
     //   {
     //     name: "Proj 1",
     //     title: "Ready Queue",
@@ -100,22 +113,21 @@ let days = {
     //     url: "proj4/",
     //     due: "5/13/2022",
     //   },
-    ],
+    // ],
   },
 
   lectures: [
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
-    "Intro: What is OS?",
-    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
+    "Intro: A brief history of computer systems",
     // wk 2
-    "Intro: History of computer systems",
-    "Intro: Job scheduling models",
-    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
+    "<font color='blue'>Lab 1 (Attendance required; Bring laptops)</font>",
+    "<font color='blue'>Lab 2 (Attendance required; Bring laptops)</font>",
+    "<font color='blue'>Lab 3 (Attendance required; Bring laptops)</font>",
     // wk 3
+    "Intro: Job scheduling models",
     "Invoking OS: Booting, interrupts",
     "Invoking OS: Traps and system calls",
-    "<font color='blue'>C Lab (Attendance required; Bring laptops)</font>",
     // wk 4
     "Processes: PCB, address space, program stack",
     "Processes: state transitions, fork()",

@@ -29,72 +29,72 @@ let days = {
         url: "hwk0.me/",
         due: "1/22/2024", // Mon
       },
-      {
-        name: "Hwk 1",
-        title: "A Better Circle",
-        url: "hwk1.circle/",
-        due: "1/31/2024", // Wed
-      },
-      {
-        name: "Hwk 2",
-        title: "Alarm Clock",
-        url: "hwk2.clock/",
-        due: "2/9/2024", // Fri
-      },
-      {
-        name: "Hwk 3",
-        title: "Orca Card",
-        url: "hwk3.orca/",
-        due: "2/19/2024", //Mon
-      },
-      {
-        name: "Hwk 4",
-        title: "Robots!",
-        url: "hwk4.robot/",
-        due: "2/28/2024", //Wed
-      },
-      {
-        name: "Hwk 5",
-        title: "Loops Practice I",
-        url: "hwk5.loops/",
-        due: "3/8/2024",  // Fri
-      },
-      {
-        name: "Hwk 6",
-        title: "Loops Practice II",
-        url: "hwk6.loops2/",
-        due: "3/22/2024", // Fri
-      },
-      {
-        name: "Hwk 7",
-        title: "Tweet Processor",
-        url: "hwk7.twitter/",
-        due: "4/5/2024", // Fri
-      },
+      // {
+      //   name: "Hwk 1",
+      //   title: "A Better Circle",
+      //   url: "hwk1.circle/",
+      //   due: "1/31/2024", // Wed
+      // },
+      // {
+      //   name: "Hwk 2",
+      //   title: "Alarm Clock",
+      //   url: "hwk2.clock/",
+      //   due: "2/9/2024", // Fri
+      // },
+      // {
+      //   name: "Hwk 3",
+      //   title: "Orca Card",
+      //   url: "hwk3.orca/",
+      //   due: "2/19/2024", //Mon
+      // },
+      // {
+      //   name: "Hwk 4",
+      //   title: "Robots!",
+      //   url: "hwk4.robot/",
+      //   due: "2/28/2024", //Wed
+      // },
+      // {
+      //   name: "Hwk 5",
+      //   title: "Loops Practice I",
+      //   url: "hwk5.loops/",
+      //   due: "3/8/2024",  // Fri
+      // },
+      // {
+      //   name: "Hwk 6",
+      //   title: "Loops Practice II",
+      //   url: "hwk6.loops2/",
+      //   due: "3/22/2024", // Fri
+      // },
       // {
       //   name: "Hwk 7",
-      //   title: "Pooled Testing",
-      //   url: "hwk7.pooled/",
-      //   due: "4/19/2024",  // Wed
+      //   title: "Tweet Processor",
+      //   url: "hwk7.twitter/",
+      //   due: "4/5/2024", // Fri
       // },
-      {
-        name: "Final Hwk Prop",
-        title: "Final Homework Proposal (Optional)",
-        url: "hwkF.prep/",
-        due: "4/12/2024",  // Fri
-      },
       // // {
-      // //   name: "Final Hwk (alternate)",
+      // //   name: "Hwk 7",
       // //   title: "Pooled Testing",
-      // //   url: "hwkF.pooled/",
-      // //   due: "5/4/2021",
+      // //   url: "hwk7.pooled/",
+      // //   due: "4/19/2024",  // Wed
       // // },
-      {
-        name: "Final Hwk",
-        title: "Black Jack",
-        url: "hwkF.blackjack.enums/",
-        due: "4/24/2024", // Mon (exam period)
-      },
+      // {
+      //   name: "Final Hwk Prop",
+      //   title: "Final Homework Proposal (Optional)",
+      //   url: "hwkF.prep/",
+      //   due: "4/12/2024",  // Fri
+      // },
+      // // // {
+      // // //   name: "Final Hwk (alternate)",
+      // // //   title: "Pooled Testing",
+      // // //   url: "hwkF.pooled/",
+      // // //   due: "5/4/2021",
+      // // // },
+      // {
+      //   name: "Final Hwk",
+      //   title: "Black Jack",
+      //   url: "hwkF.blackjack.enums/",
+      //   due: "4/24/2024", // Mon (exam period)
+      // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
@@ -104,78 +104,78 @@ let days = {
         url: "lab1.bluej/",
         due: "1/19/2024",
       },
-      {
-        name: "Lab 2",
-        title: "Triangle Class (Variables, Scope, and Lifetime)",
-        url: "lab2.vars/",
-        due: "1/26/2024",
-      },
-      {
-        name: "Lab 3",
-        title: "Stomach Class (Class Writing)",
-        url: "lab3.stomach/",
-        due: "2/2/2024",
-      },
-      {
-        name: "Lab 4",
-        title: "Guessing Game (If-Else)",
-        url: "lab4.guessing/",
-        due: "2/9/2024",
-      },
-      {
-        name: "Lab 5",
-        title: "Circle Drawer (Objects)",
-        url: "lab5.circleDrawer/",
-        due: "2/16/2024",
-      },
-      {
-        name: "Lab 6",
-        title: "Diamonds (Abstraction)",
-        url: "lab6.diamonds/",
-        due: "2/23/2024",
-      },
-      {
-        name: "Lab 7",
-        title: "Turtle (Loops)",
-        url: "lab7.turtle/",
-        due: "3/1/2024",
-      },
-      {
-        name: "Lab 8",
-        title: "CC Validator (Arrays)",
-        url: "lab8.cc/",
-        due: "3/22/2024",
-      },
-      {
-        name: "Lab 9",
-        title: "Super Circle Drawer (ArrayLists)",
-        url: "lab9.superCircleDrawer/",
-        due: "3/29/2024",
-      },
+      // {
+      //   name: "Lab 2",
+      //   title: "Triangle Class (Variables, Scope, and Lifetime)",
+      //   url: "lab2.vars/",
+      //   due: "1/26/2024",
+      // },
+      // {
+      //   name: "Lab 3",
+      //   title: "Stomach Class (Class Writing)",
+      //   url: "lab3.stomach/",
+      //   due: "2/2/2024",
+      // },
+      // {
+      //   name: "Lab 4",
+      //   title: "Guessing Game (If-Else)",
+      //   url: "lab4.guessing/",
+      //   due: "2/9/2024",
+      // },
+      // {
+      //   name: "Lab 5",
+      //   title: "Circle Drawer (Objects)",
+      //   url: "lab5.circleDrawer/",
+      //   due: "2/16/2024",
+      // },
+      // {
+      //   name: "Lab 6",
+      //   title: "Diamonds (Abstraction)",
+      //   url: "lab6.diamonds/",
+      //   due: "2/23/2024",
+      // },
+      // {
+      //   name: "Lab 7",
+      //   title: "Turtle (Loops)",
+      //   url: "lab7.turtle/",
+      //   due: "3/1/2024",
+      // },
+      // {
+      //   name: "Lab 8",
+      //   title: "CC Validator (Arrays)",
+      //   url: "lab8.cc/",
+      //   due: "3/22/2024",
+      // },
+      // {
+      //   name: "Lab 9",
+      //   title: "Super Circle Drawer (ArrayLists)",
+      //   url: "lab9.superCircleDrawer/",
+      //   due: "3/29/2024",
+      // },
+      // // {
+      // //   name: "Lab 10",
+      // //   title: "Election (Files and HashMaps)",
+      // //   url: "lab10.election/",
+      // //   due: "4/14/2024",
+      // // },
       // {
       //   name: "Lab 10",
-      //   title: "Election (Files and HashMaps)",
-      //   url: "lab10.election/",
-      //   due: "4/14/2024",
+      //   title: "TBD",
+      //   url: "lab10.TBD/",
+      //   due: "4/5/2024",
       // },
-      {
-        name: "Lab 10",
-        title: "TBD",
-        url: "lab10.TBD/",
-        due: "4/5/2024",
-      },
-      {
-        name: "Lab 11",
-        title: "Boulders (Files)",
-        url: "lab11.boulders/",
-        due: "4/12/2024",
-      },
-      {
-        name: "Lab 12",
-        title: "Playing Cards (Constants, Enum)",
-        url: "lab12.cards/",
-        due: "4/19/2024",
-      }
+      // {
+      //   name: "Lab 11",
+      //   title: "Boulders (Files)",
+      //   url: "lab11.boulders/",
+      //   due: "4/12/2024",
+      // },
+      // {
+      //   name: "Lab 12",
+      //   title: "Playing Cards (Constants, Enum)",
+      //   url: "lab12.cards/",
+      //   due: "4/19/2024",
+      // }
     ],
   },
   lectures: [
