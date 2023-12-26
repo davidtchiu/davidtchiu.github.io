@@ -92,6 +92,34 @@ let days = {
         url: "lab3/",
       },
     ],
+
+    ////////////////////////////// PROJECTS ///////////////////////////////
+    // projects: [
+    //   {
+    //     name: "Proj 1",
+    //     title: "Ready Queue",
+    //     url: "proj1/",
+    //     due: "3/7/2022",
+    //   },
+    //   {
+    //     name: "Proj 2",
+    //     title: "Priority Scheduling",
+    //     url: "proj2/",
+    //     due: "3/25/2022",
+    //   },
+    //   {
+    //     name: "Proj 3",
+    //     title: "Time-Sharing and Locks",
+    //     url: "proj3/",
+    //     due: "4/18/2022",
+    //   },
+    //   {
+    //     name: "Proj 4",
+    //     title: "Deadlock Detection",
+    //     url: "proj4/",
+    //     due: "5/13/2022",
+    //   },
+    // ],
   },
 
   lectures: [
@@ -137,23 +165,30 @@ let days = {
     "Sync: more semaphores",
     // wk 11
     "Sync: monitors and condition variables",
+    "Sync: synchronization in Java",
+    "Start deadlock conditions",
+    // wk 12
+    "DL: RAGs, detection and recovery",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    // wk 12
+    // wk 13
+    "DL: Banker's algorithm",
     "Memory Management: virtual addressing",
     "MM: memory partitioning",
-    "MM: segmentation",
-    // wk 13
-    "MM: paging",
-    "MM: translation caching",
-    "Start Virtual Memory",
     // wk 14
-    "VM: replacement policies",
-    "VM: clock",
-    "VM: memory allocation and working set",
+    "MM: segmentation",
+    "MM: paging",
+    // "MM: multi-level paging",
+    "MM: translation caching",
     // wk 15
-    "Start File System",
-    "File System",
+    "<strong><emph>Cancelled</emph></strong>",
+    "Start Virtual Memory",
+    "VM: Replacement policies: FIFO, LRU",
+    // wk 16
+    "VM: Clock",
+    "Memory allocation and working set",
+    // "Start File System",
+    // "File System",
     "<strong>Reading Period</strong>",
     // "VM: memory allocation (cont.)",
     // "VM: malloc(), free()",
