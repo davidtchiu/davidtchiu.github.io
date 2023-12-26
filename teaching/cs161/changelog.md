@@ -1,15 +1,14 @@
 #### TODO
 - I should do a small unit on debugging and hand out rubber ducks sooner. BlueJ debugger tool. Problems like reverse(), edge cases, removing items from a list, ...
   - I'd have to cut hashmap. Not a huge deal if I do.
-- Need one more nested loop array problem in Hwk 6. Not a super challenging one though.
 - Consider doing exams on Fridays instead of Thursdays to preserve Lab? What about TA hours?
-- Hwk 1 can be due 2 days earlier now.
-- Why have students create a new zip every time? Just submit the `.java` files.
 - Move static/enum/private/public up (or spread them out)
 - Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
 - Hwk 4 lot cooler if I introduced an Arm class or something…
 
 #### Change Log
+- **Spring 2024**: Added hollowSquare to More Loops Hwk.
+- **Spring 2024**: Why have students create a new zip every time? Just submit the `.java` files. Nevermind, terrible idea.
 - **Spring 2023**: Replaced combo with Luhn's in Lab 8.
 - **Spring 2023**: Added runningSum and collatz to Hwk 5. Removed strrepeat()
 - **Spring 2023**: Replaced Hwk 2 with Alarm Clock (more conditionals)

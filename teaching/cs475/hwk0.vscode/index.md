@@ -2,14 +2,14 @@
 
 ### Hwk 0: Remote C Development in VS Code
 
-In this ungraded tutorial, we will set you up to develop on a remote server. Here's why we must do this, instead of developing on your own machines. C is a very finicky language, and is highly dependent on the  environment on which it compiles and executes. This is everybody's worst nightmare: turning in an assignment you spent hours on, only to have it not compile or execute on your instructor's machine. Indeed, having a common compiling and runtime environment was what made Java (and the Java Virtual Machine  JVM) so successful when it was introduced in the mid-90s. Today, most languages have a common runtime environment, and C has certainly made significant efforts to being more portable across systems, but alas I find that it's still very system dependent.
+In this tutorial, we will set you up to develop on a remote server. Here's why we have to do this, instead of developing on your own machines. C is a very finicky language, and is highly dependent on the  environment on which it compiles and executes. This is everybody's worst nightmare: turning in an assignment you've spent hours on, only to have it not compile or execute on your professor's machine. Indeed, having a common compiling and runtime environment was what made Java (and the Java Virtual Machine  JVM) so successful when it was introduced in the mid-90s. Today, most languages have a common runtime environment, and C has certainly made significant efforts to being more portable across systems, but alas I find that it's still very system dependent.
 
 It's therefore important that we all code in a common environment, so I've prepared a remote server for everyone to log into, including myself. This means we're all coding and running on the same machine, which leads to more predictable and repeatable results!
 
 #### Student Outcomes
 - Setting up VS code for remote development on a Linux server
 - Compiling and running your first C program for this class
-- Understand Makefiles and the Make utility
+- Understand Makefiles and the `make` utility
 
 #### Installing C Development Tools
 
@@ -28,10 +28,10 @@ It's therefore important that we all code in a common environment, so I've prepa
   ```
   Server IP Address: 149.165.174.87
   Your Username: yourPugetSoundUsername
-  Your Password: yourPugetSoundID
+  Your Password: <given in class>
   ```
-  The IP address and your username will not change during this class, but  you *can* change your password later. Your initial password is your UPS ID (usually a long sequence of integers starting with 5.)
-
+  The IP address and your username will not change during this class, but  you *can* change your password later.
+  
 
 - Open up VS Code, then click on the `View` menu and select `Command Palette`. Then type: `Remote-SSH: Add New SSH Host...`. It should auto-complete after typing the first few letters. Choose to run this command. In the box that pops up, enter:
   ```
@@ -88,7 +88,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
   | Tip |  |
   | :--- | :--- |
-  | `[tab]` and `[tab-tab]`| Type the first few letters of a file or directory, and hit `[tab]` to auto-complete. When the result is ambiguous, hit `[tab]` twice in quick succession to reveal all the matches. |
+  | `[tab]` and `[tab tab]`| Type the first few letters of a file or directory, and hit `[tab]` to auto-complete. When the result is ambiguous, hit `[tab]` twice in  succession to reveal all the matches. |
   | `up` and `down` keys | Hitting the `up` key will display the most recently-run command. You can hit `up` continuously to scroll through your command history. |
   | `history` | Shows you a list of recently-run commands. |
   | `ctrl + c` | Will interrupt the currently-running command, and return the shell prompt. I suspect you'll be using this one a lot! You use it to terminate a process that you ran.|
@@ -112,7 +112,7 @@ It's therefore important that we all code in a common environment, so I've prepa
     $ touch hwk0.c
     ```
 
-    - The first command `cd ~` changes your working directory to your "home directory" (yes `~` is just a shortcut to your home directory... which is nice because you can't ever get lost if you remember that simple fact!)
+    - The first command `cd ~` changes your working directory to your "home directory" (`~` is just a shortcut to your home directory... which is nice because you can't ever get lost if you just remember that!)
 
     - The 2nd command `mkdir hwk0` creates a new directory (folder) within your home directory named `hwk0`.
 
@@ -168,7 +168,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
     This would output the binary as `helloworld`, and you can run it using `./helloworld` on the command-line.
 
-
+<!-- 
 #### Make Utility and Makefiles: Multi-File Compiling
 
 
@@ -235,11 +235,13 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 
 10. Here's the good and bad news. Good: I will provide you with a `Makefile` for every assignment, so that you can just type `make` to compile your program. The bad: You need to follow my file structure, or learn how to edit your `Makefile` to include your own files. This leads to less flexibility, and, not everyone agrees with my way of splitting the files apart. All in all, and I would say that it's good form to learn how to write `Makefile`s if you're a serious C programmer, but I'll leave it to be an external exercise.
-
+ -->
 
 #### Submission
-There is no submission for this tutorial.
-
+To prove that you have logged in successfully:
+- Change your password on the server using `passwd`
+- Then type `uname -a` into the terminal
+- Copy and paste its output into canvas
 
 #### Credits
 

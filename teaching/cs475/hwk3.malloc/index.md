@@ -4,9 +4,10 @@
 
 Pointers are still a bit mysterious, because we still haven't seen a real need for them yet. Sure, it was cool to know that they are intrinsically connected to arrays, but still, with exception to `swap()`, all the code examples shown in the previous tutorial can be done easily without pointers. In this section, we introduce the prevailing motivation for pointers: heap memory allocation.
 
-#### ZyBooks Reading
+#### Related Reading
 
-- Chap 10.5 - 10.12: pointers
+- [Dive into Systems Chapter 2.4-2.7](https://diveintosystems.org/book/C2-C_depth/dynamic_memory.html)
+
 
 #### Student Outcomes
 

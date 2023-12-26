@@ -4,12 +4,10 @@
 
 This is the first part of a multi-part primer on C, a lower-level language that is commonly used in systems programming. This tutorial is written for students who have prior experience in another language (say, Java), so you will often see me making comparisons to language features found in Java.
 
-#### ZyBooks Reading
+#### Related Reading
 
-- Chap 3: data types and variables
-- Chap 6: arrays
-- Chap 7: strings
-- Chap 8: functions
+- [Dive into Systems Chap 16.1-16.4](https://diveintosystems.org/book/Appendix1)
+
 
 #### Student Outcomes
 

@@ -1,14 +1,17 @@
 # TODO
 - I think I have to take the first week to teach C. Then give them just one or two significant C programs.
 - Move off of Deadlocks in favor of File Systems. Need a simpler MMU homework.
-- Let them pair up on a few homework assignments
+- Let them pair up on a few homework assignments.
 - Give them (much) more time for Hwk 3. Maybe make it due on Wednesday or Friday.
 - Hwk 3: Don't give them a stack. It's confusing them. Give them a list.
 - Hwk 3: Do I need to talk about creating arrays of strings this early? Maybe save for Hwk 4.
 - Hwk 3: More hand-holding. For instance, tell them their recursive method should return 1 or 0 depending on whether something was found. Then use that value to determine if the current directory should be printed.
-- Move off of zyBooks. Use diveintosystems instead for C.
 
 # Change Log
+
+## Spring'23
+- Move off of zyBooks. Use diveintosystems instead for C.
+
 
 ## Spring'22
 - Replaced Hwk 7 thebar (C) with OneLaneBridge (Java)
@@ -23,7 +26,7 @@
 - Testing out 3 lab-work days.
 - Transitioned off VirtualBox. Now using remote dev on Jetstream VM.
 
-## Spring'22
+## Spring'21
 - Old develop-end VM stopped working on macs (even intel). New VM is a disaster. Network not connecting regularly. Need to work off of it.
 - Added Bankers for Hwk 7
 - Proj 1: No longer making them do getFirst and getLast.

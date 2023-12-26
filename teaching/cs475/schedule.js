@@ -37,42 +37,42 @@ let days = {
         url: "hwk3.malloc/",
         due: "2/6/2023",
       },
-      {
-        name: "Hwk 4 (dsh)",
-        title: "David Shell",
-        url: "hwk4.dsh/",
-        due: "2/20/2023",
-      },
-      {
-        name: "Hwk 5 (mmm)",
-        title: "Matrix Multiplication",
-        url: "hwk5.mmm/",
-        due: "3/7/2023",
-      },
-      {
-        name: "Hwk 6 (ts_hashmap)",
-        title: "Thread-Safe Hashmap",
-        url: "hwk6.hashmap/",
-        due: "3/27/2023", // after break
-      },
-      {
-        name: "Hwk 7 (OneLaneBridge)",
-        title: "The One Lane Bridge ",
-        url: "hwk7.thebridge/",
-        due: "4/14/2023",
-      },
-      {
-        name: "Hwk 8 (bankers)",
-        title: "Banker's Algorithm",
-        url: "hwk8.bankers/",
-        due: "4/28/2023",
-      },
-      {
-        name: "Extra Credit",
-        title: "Bonus Tech Report",
-        url: "hwkB.report/",
-        due: "5/3/2023",
-      },
+      // {
+      //   name: "Hwk 4 (dsh)",
+      //   title: "David Shell",
+      //   url: "hwk4.dsh/",
+      //   due: "2/20/2023",
+      // },
+      // {
+      //   name: "Hwk 5 (mmm)",
+      //   title: "Matrix Multiplication",
+      //   url: "hwk5.mmm/",
+      //   due: "3/7/2023",
+      // },
+      // {
+      //   name: "Hwk 6 (ts_hashmap)",
+      //   title: "Thread-Safe Hashmap",
+      //   url: "hwk6.hashmap/",
+      //   due: "3/27/2023", // after break
+      // },
+      // {
+      //   name: "Hwk 7 (OneLaneBridge)",
+      //   title: "The One Lane Bridge ",
+      //   url: "hwk7.thebridge/",
+      //   due: "4/14/2023",
+      // },
+      // {
+      //   name: "Hwk 8 (bankers)",
+      //   title: "Banker's Algorithm",
+      //   url: "hwk8.bankers/",
+      //   due: "4/28/2023",
+      // },
+      // {
+      //   name: "Extra Credit",
+      //   title: "Bonus Tech Report",
+      //   url: "hwkB.report/",
+      //   due: "5/3/2023",
+      // },
     ],
     ////////////////////////////// PROJECTS ///////////////////////////////
     projects: [
@@ -181,7 +181,7 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("1/16/23", days, MWF);
+const schedule = new CourseCalendar("1/15/2024", days, MWF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();

@@ -65,7 +65,7 @@ Usage: java ExtHash <block size> <key length>
 
 ```txt
 $ java ExtHash 2 0
-Error: key length must be postive
+Error: key length must be positive
 ```
 
 ```txt
@@ -224,9 +224,9 @@ bucket to be transferred to the new bucket based on those keys' most significant
 Pointers in the global directory need to be updated to point to the new bucket, 
 regardless of whether the global directory needs to be doubled in size. 
 
-This method should run in O(1) time if there's no splitting. On a split, this method runs
-in O(d) where d is the number of entries in the global directory, since you need to update
-pointers.
+This method must run in amortized O(1) time. On a split, you may observe that this method runs
+in O(d) where d is the number of entries in the global directory. However, because each split allows
+for addressing 2 times more buckets, the insert operations between global splits averages out to O(1).
 ```
 
 #### Submitting Your Assignment

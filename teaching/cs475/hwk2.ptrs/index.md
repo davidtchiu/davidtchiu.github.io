@@ -4,10 +4,9 @@
 
 This is the second part of a multi-part primer on C. In this tutorial-assignment, you'll gain an appreciation for the way values and variables are stored in memory. You'll be introduced to pointers, as well as the connection between pointers and arrays.
 
-#### ZyBooks Reading
+#### Related Reading
 
-- Chap 9: structs
-- Chap 10.1 - 10.4: pointers
+- [Dive into Systems Chapter 2.1-2.3](https://diveintosystems.org/book/C2-C_depth/index.html)
 
 #### Student Outcomes
 

@@ -11,13 +11,8 @@ A grade of C- or higher in the following course(s) is required:
 #### Required Textbook
 
 - Silberschatz, Galvin, and Gagne. [Operating Systems Concepts](https://www.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/0470128720). 8th Ed. or greater. (Required)
-- Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. [Dive into Systems](https://diveintosystems.org/book/)
-- [Programming in C](https://learn.zybooks.com/zybook/PUGETSOUNDCSCI475ChiuSpring2023). ZyBooks. (Required)
-    ```
-     Sign in or create an account at: learn.zybooks.com
-     Enter zyBook code: PUGETSOUNDCSCI475ChiuSpring2023
-     Subscribe
-    ```
+- Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. [Dive into Systems](https://diveintosystems.org/book/) (Required for learning C)
+
   
 #### Student Course Outcomes
 Students taking this course will:
@@ -48,9 +43,8 @@ Your overall grade is broken down as as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Participation | 3% |
-| Lab Assignments | 10% |
-| Homework Assignments | 35% |
+| Participation | 5% |
+| Homework Assignments | 43% |
 | Midterm I | 15% |
 | Midterm II | 17% |
 | Final Exam | 20% |

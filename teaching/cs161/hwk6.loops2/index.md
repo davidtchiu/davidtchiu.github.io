@@ -11,16 +11,42 @@ In this assignment, you'll be working with arrays, loops, and nested loops. This
 
 #### Instructions
 
-Open BlueJ and create a new project. Create a new class and name it `AdvancedLoops`. This class will not have any fields or constructors.
+Open BlueJ and create a new project. Create a new class and name it `MoreLoops`. This class will not have any fields or constructors.
 
 
 ##### Part I: Nested Loops
-Let's try our hand at writing some (doubly) nested loops. Remember that there's a formula to writing doubly-nested loops. You should always be thinking 2-dimensionally. For the problems below, first figure out how many "rows" (height) you need (Outer Loop). Then figure out what you need to do each "row." (Inner Loop)
+Let's try our hand at writing some nested loops. Remember that there's a formula to writing doubly-nested loops. You should always be thinking 2-dimensionally. For the problems below, first figure out how many "rows" (height) you need (incurred in the Outer Loop). Then figure out what you need to do for each "row." (Inner Loop)
+
+0. **(Nested Loops)** Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. Hint: I would start by writing a method that prints a solid square of size `n` first, then modifying the inner loop so that you get the hollowed-out results.
+
+Here's what I would expect to see if your method is working properly. 
+
+    ```java
+    MoreLoops loopie = new MoreLoops();
+    loopie.hollowSquare(4);
+    > * * * * 
+    > *     * 
+    > *     * 
+    > * * * *
+
+    loopie.hollowSquare(1);
+    > *
+
+    loopie.hollowSquare(7);
+    > * * * * * * * 
+    > *           * 
+    > *           * 
+    > *           * 
+    > *           * 
+    > *           * 
+    > * * * * * * * 
+    ```
+
 
 1. **(Nested Loops)** Write a method `reveal()` which inputs an integer `n` and returns nothing. It gradually reveals each number 1, 2, 3, ..., up to `n`, on each line (see below). Ignore negative input. (Hint: For each row `r`, how many numbers do you need to print up to? How many dashes follow? Use the `printRightTriangle()` method we saw in class for inspiration.)
 
     ```java
-    AdvancedLoops loopie = new AdvancedLoops();
+    MoreLoops loopie = new MoreLoops();
     loopie.reveal(4);
     1---
     12--
@@ -41,7 +67,7 @@ Let's try our hand at writing some (doubly) nested loops. Remember that there's 
 2. **(Nested Loops)** The factorial of $$x$$, written $$x!$$ is defined $$x \times (x-1) \times (x-2) \times ... \times 2 \times 1$$. There's also a special case of $$0! = 1$$. Write a method `printFactorials()` which inputs an integer `n`. It prints out the factorial of all numbers between `0` and `n`. You may assume that `n` is nonnegative. (Hint: 0! should be printed out unconditionally. Then start into the loops!) Again, in designing this method, think about how many rows you need (starting from 1! -- and that's your outer loop), then decide what you need to do per row to compute the factorial at that row number and that's your inner loop.
 
     ```java
-    AdvancedLoops loopie = new AdvancedLoops();
+    MoreLoops loopie = new MoreLoops();
     loopie.printFactorials(5);
     0! == 1
     1! == 1
@@ -94,7 +120,7 @@ Let's work on a couple methods that input arrays. The problems in this section c
     ```java
     import java.util.Arrays;  // this is for printing arrays
 
-    AdvancedLoops loopie = new AdvancedLoops();
+    MoreLoops loopie = new MoreLoops();
     String[] list1 = {"A", "B", "C", "D", "E"};
     loopie.rotateRight(list1);
     System.out.println(Arrays.toString(list1));
@@ -120,7 +146,7 @@ Let's work on a couple methods that input arrays. The problems in this section c
     - Finally, beware as always of integer divide!
 
     ```java
-    AdvancedLoops loopie = new AdvancedLoops();
+    MoreLoops loopie = new MoreLoops();
     System.out.println(loopie.vowelRatio("Hello world"));
     > 0.2727272727
 
@@ -138,7 +164,7 @@ Let's write some algorithms that require nested loops to repeatedly iterate over
 5. **(Arrays + Nested Loops)** Write a method called `barGraph()` which inputs an integer array and prints a horizontal bar graph based on the contents of that array. Say the array `[3, 6, 4]` is input. Your method should print 3 asterisks on the first line, followed by 6 asterisks on the next line, followed by 4 asterisks on the last line. You may assume all values in the array are nonnegative. Here's an example:
 
     ```java
-    AdvancedLoops loopie = new AdvancedLoops();
+    MoreLoops loopie = new MoreLoops();
     int[] list1 = {6, 4, 3, 5, 6};
     loopie.barGraph(list1);
     * * * * * *
@@ -157,12 +183,12 @@ Let's write some algorithms that require nested loops to repeatedly iterate over
 ##### Challenges
 If you feel like you've got a good grasp on this stuff, and want a real challenge. Try these!
 
-- **(Arrays + Nested Loops)** Write a method called `median()` which inputs an integer array and returns the median. The median of an array is defined to be the value in the list that has an equal number of values larger and smaller than itself. For instance, the median of `[3, 5, 7, 3, 9, 8, 2]` is `5`, because there are three numbers less than 5, and three numbers greater than 5. For each value `x[i]` in the array `x`, you need to traverse the array again (skipping itserlf) and count up the values greater than and less than `x[i]` (keep two counters). If these counters are equal, then return `x[i]` to be the median.
+- **(Arrays + Nested Loops)** Write a method called `median()` which inputs an integer array and returns the median. The median of an array is defined to be the value in the list that has an equal number of values larger and smaller than itself. For instance, the median of `[3, 5, 7, 3, 9, 8, 2]` is `5`, because there are three numbers less than 5, and three numbers greater than 5. For each value `x[i]` in the array `x`, you need to traverse the array again (skipping itself) and count up the values greater than and less than `x[i]` (keep two counters). If these counters are equal, then return `x[i]` to be the median.
 
     - The algorithm described above only works for odd-length arrays, so make sure you use those for input while testing. (How would you modify your algorithm to work with even-length arrays?)
 
       ```java
-      AdvancedLoops loopie = new AdvancedLoops();
+      MoreLoops loopie = new MoreLoops();
       int[] list1 = {6, 3, 5, 6, 4};
       System.out.println(loopie.median(list1));
       > 4
@@ -175,7 +201,7 @@ If you feel like you've got a good grasp on this stuff, and want a real challeng
 - **(Arrays + Nested Loops)** Write a method called `vertBarGraph()` which  prints a vertical bar graph whose lengths are given in the array. This method can be somewhat challenging, because you have to print the bar chart top-down. Give it your best shot! Here's an example of what it does.
 
   ```java
-  AdvancedLoops loopie = new AdvancedLoops();
+  MoreLoops loopie = new MoreLoops();
   int[] list1 = {6, 3, 4, 5, 6};
   loopie.vertBarGraph(list1);
   *       *
@@ -198,7 +224,11 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 90pts.
+This assignment will be graded out of a total of 110pts.
+
+[15pts] hollowSquare() is implemented. It inputs a positive integer, n, and prints out
+a hollowed out square of dimension n. That is, only the "border" of the square should be
+printed.
 
 [15pts] reveal() is implemented. It inputs a positive integer, n, and prints n lines
 of output. Each line of output reveals one more digit.
@@ -206,13 +236,13 @@ of output. Each line of output reveals one more digit.
 [15pts] printFactorials() is implemented. It inputs a non-negative integer, n, and prints
 out 0!, 1!, 2!, ..., (n-1)!, n!, each on a separate line.
 
-[15pts] rotateRight() is properly implemented. Each element in the array is shifted 
+[20pts] rotateRight() is properly implemented. Each element in the array is shifted 
 by one place to the right. The last element is dropped in the front.
 
 [20pts] vowelRatio() is implemented. This method returns the fraction of letters that are
 vowels in the given string.
 
-[20pts] barGraph() is implememted. This method prints out a horizontal bar graph, with
+[20pts] barGraph() is implemented. This method prints out a horizontal bar graph, with
 each bar of asterisks representing the number in the corresponding array element.
 
 Misc.
