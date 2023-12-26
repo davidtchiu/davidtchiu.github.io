@@ -460,6 +460,7 @@ returnType funcName(param1, param2, ...) {
 
   - Write a function `void merge(int A[], int B[], int C[], int lengthA, int lengthB, int lengthC)` that inputs 2 sorted int arrays `A` and `B`, and an "output" array `C`. The function merges `A` and `B` into a sorted sequence in array `C`. Because the function doesn't know the arrays' lengths, you must also input those as params.
 
+<!-- 
 
 #### Assignment: Word Stats (Graded)
 
@@ -506,6 +507,7 @@ I have included a working solution of my program along with the starter code. Th
 Compiling a multi-file C program can be tricky, and requires multiple steps and careful sequencing. To simplify the compilation process, I have provided a _script_ for you to run. As long as the `Makefile` is found in your project directory, you can run the command `make`, and it will resolve the rules inside the `Makefile` and compile your project (hopefully). The name of the binary executable has been configured to be called `wordstat`, so if all goes well, you should be able to run `./wordstat` after compiling.
 
 - One related matter is the `make clean` command. This command will remove all intermediate files and binaries, but it will leave your source code alone. Use this command right before you submit the homework, for instance.
+
 
 ##### Program Requirements
 
@@ -634,13 +636,16 @@ This assignment will be graded out of 20 points:
 [1pt] Your program runs repeatedly until sentinel inputs are entered
 
 [1pt] Your program observes good style and commenting.
-```
+``` 
 
 #### Submitting Your Assignment
 
 1. Commit and push your code to your Github repo. Make sure your repo is public (or private and accessible by me).
 
 2. On canvas, simply submit the URL to your Github repo. No other form of submission is accepted.
+
+-->
+
 
 #### Credits
 

@@ -35,13 +35,13 @@ let days = {
         name: "Hwk 3 (dsh)",
         title: "David Shell",
         url: "hwk3.dsh/",
-        due: "2/19/2024",
+        due: "2/21/2024",
       },
       {
         name: "Hwk 4 (mmm)",
         title: "Matrix Multiplication",
         url: "hwk4.mmm/",
-        due: "3/1/2024",
+        due: "3/4/2024",
       },
       // {
       //   name: "Hwk 4 (BackItUp)",
@@ -65,7 +65,7 @@ let days = {
         name: "Hwk 7 (TBD)",
         title: "TBD",
         url: "hwk7.thebridge/",
-        due: "4/15/2024",
+        due: "4/19/2024",
       },
       // {
       //   name: "Hwk 8 (bankers)",
@@ -77,7 +77,7 @@ let days = {
         name: "Extra Credit",
         title: "Bonus Tech Report",
         url: "hwkB.report/",
-        due: "4/26/2024",
+        due: "4/29/2024",
       },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////

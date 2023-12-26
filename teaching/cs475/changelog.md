@@ -1,16 +1,16 @@
 # TODO
-- I think I have to take the first week to teach C. Then give them just one or two significant C programs.
-- Move off of Deadlocks in favor of File Systems. Need a simpler MMU homework.
+- Need a shorter memory mgmt Hwk Assignment
 - Let them pair up on a few homework assignments.
 - Give them (much) more time for Hwk 3. Maybe make it due on Wednesday or Friday.
 - Hwk 3: Don't give them a stack. It's confusing them. Give them a list.
-- Hwk 3: Do I need to talk about creating arrays of strings this early? Maybe save for Hwk 4.
 - Hwk 3: More hand-holding. For instance, tell them their recursive method should return 1 or 0 depending on whether something was found. Then use that value to determine if the current directory should be printed.
 
 # Change Log
 
 ## Spring'23
+- Use 2nd week to teach C (labs).
 - Move off of zyBooks. Use diveintosystems instead for C.
+- Shortened semester. Move off of Deadlocks.
 
 
 ## Spring'22
