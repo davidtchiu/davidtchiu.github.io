@@ -4,12 +4,8 @@
 
 A _shell_ is an interactive command-line environment in which users can issue commands to the OS. Even with modern OS's support of point-and-click GUIs, many still prefer to use the shell. Today, many shells exist and are supported by Unix-based systems, but the Bourne-Again Shell (bash) is probably the most widely used.
 
-Your goal for this assignment is to create your very own shell, David Shell (`dsh`), named after your favorite CS Professor.
+Your goal for this assignment is to create your very own shell, David Shell (`dsh`), which is named after your favorite OS Professor.
 
-#### ZyBooks References
-
-- String processing
-- Scanning for user inputs
 
 #### Student Outcomes
 
@@ -224,15 +220,16 @@ This assignment can be tricky to get started, because there are so many pieces t
 
 #### Example Output
 
+This example assumes there's a file named `feelGood.c` in the current working directory. (This file
+is given to you as part of this assignment.) The full path to the executable, `cat`, is given. This causes
+_Mode 1_ to run, meaning that the shell will not do a search of the PATH environment variable for `cat`. 
+Further, the argument `feelGood.c` is given in an array to `execv()`. Specifically the array should contain
+`["/bin/cat", "feelGood.c", NULL]`.  The `cat` executable will simply print the contents of the `feelGood.c` file onto
+the screen. As there is no trailing `&` (ampersand), `cat` is executed and the shell waits for it
+to finish before re-prompting. Therefore, you will see all the outputs of `cat` before the next `dsh>` prompt.
+
 ```
-dsh> ls -la
--rw-r--r--@ 1 dchiu  faculty  199  Feb  3 22:56 .dsh_motd
--rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
-
-dsh> NotARealCommand -o
-ERROR: NotARealCommand not found!
-
-dsh> cat feelGood.c
+dsh> /bin/cat feelGood.c
 #include <stdio.h>
 #include <unistd.h>
 int main() {
@@ -242,11 +239,37 @@ int main() {
   }
   return 0;
 }
+dsh>
+```
 
+Here, I enter `NotARealCommand`, which causes my shell to invoke _Mode 2_ and search for 
+`NotARealCommand` in all the known paths of my `PATH` environment variable. This file is
+not found in any of the paths, and therefore the error is printed and the shell re-prompts
+for the next input.
+
+```
+dsh> NotARealCommand -o
+ERROR: NotARealCommand not found!
+dsh>
+```
+
+In the snippet below, I enter `ls -l`, which causes my shell to invoke _Mode 2_ and search for the 
+`ls` binary in all the known paths of my `PATH` environment variable. The `ls` binary is of course 
+found (on my machine, inside  `/bin/`). Further, the `-l` is given in an array to `execv()`. Specifically the array should contain `["/bin/ls", "-l", NULL]`. As there is no trailing `&`, the `ls` is executed and the shell waits for it
+to finish before re-prompting. (Therefore, you will see all the outputs of `ls -l` before the next `dsh>` prompt.)
+```
+dsh> ls -l
+-rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
+dsh>
+```
+
+
+Assuming, once again that `feelGood.c` is in the current working directory. This sequence below will compile `feelGood.c` into
+the binary executable called `feelGood`. The next line runs it in the background (the trailing `&` is given.) This means that the shell will not wait for `feelGood` to finish (and it won't finish, as it's a infinite loop). I continue to run
+various methods, but `feelGood`'s output is interleaved with the shell's. In fact, even after I exit the shell, `feelGood` continues to run, as  an independent process! You should figure out how to terminate `feelGood`.
+```
 dsh> gcc -Wall feelGood.c -o feelGood
-
 dsh> ./feelGood &
-
 dsh> ls -l
 -rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood
 -rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
