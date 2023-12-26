@@ -237,10 +237,10 @@ let days = {
     "Scanner: file handling",
     "Wrapper classes",
     "Lab 12: Files",
-    "Lab review",
-    // wk 14
     "Information hiding; constants",
+    // wk 14
     "Static scope and enums",
+    "The main method",
     "Lab 13: enum",
     "Start complexity: Linear search",
     // wk 15

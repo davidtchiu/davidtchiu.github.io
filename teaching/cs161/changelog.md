@@ -1,12 +1,12 @@
 #### TODO
 - I should do a small unit on debugging and hand out rubber ducks sooner. BlueJ debugger tool. Problems like reverse(), edge cases, removing items from a list, ...
   - I'd have to cut hashmap. Not a huge deal if I do.
-- Consider doing exams on Fridays instead of Thursdays to preserve Lab? What about TA hours?
-- Move static/enum/private/public up (or spread them out)
 - Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
+- Move static/enum/private/public up (or spread them out)
 - Hwk 4 lot cooler if I introduced an Arm class or something…
 
 #### Change Log
+- **Spring 2024**: Exams now on Fridays to preserve Lab.
 - **Spring 2024**: Added hollowSquare to More Loops Hwk.
 - **Spring 2024**: Why have students create a new zip every time? Just submit the `.java` files. Nevermind, terrible idea.
 - **Spring 2023**: Replaced combo with Luhn's in Lab 8.

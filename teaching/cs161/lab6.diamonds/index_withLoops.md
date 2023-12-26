@@ -1,7 +1,9 @@
 ## CS 161 - Intro to Computer Science
 
 ### Lab: Diamonds (Abstraction)
-David is a Rihanna super fan. While jamming to "Diamonds," he realized diamonds aren't a part of the _shapes_ toolkit he provides his CS 161 students, and he felt sad. Instead of creating diamonds from scratch (and saving ourselves from copying and pasting other shape classes), we'll make a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles needs to be flipped upside down and placed right below the other, as shown below. Given that we already have a `Triangle` class in our toolkit, it will vastly simplify our work in constructing `Diamond`s.
+David is a Rihanna super fan. While jamming to his favorite tune ``Diamonds,'' he realized diamonds aren't  a part of the _shapes_ toolkit he gives to his CS 161 students. He wants you to fix that in this lab.
+
+Instead of creating diamonds from scratch (and saving ourselves from copying and pasting other shape classes), we'll make a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles needs to be flipped upside down and placed right below the other, as shown below. Given that we already have a `Triangle` class in our toolkit, it will vastly simplify our work in constructing `Diamond`s.
 
   <img src="figures/lab6_diamond.png" width="100px" />
 
@@ -10,6 +12,7 @@ This lab is all about abstraction and object interaction.
 #### Student Outcomes
 
 - Practice abstract thinking
+- Practice with basic loops
 
 <!-- 
 #### Working with Partners (Please Read)
@@ -38,7 +41,7 @@ The following file(s) have been provided for this homework.
 
 #### Preliminary: An Improved Triangle Class
 
-You'll find that there's a slightly improved `Triangle` class. This `Triangle` sports a new method called `flip()`. Play around with it to see it in action. As you flip the triangle, notice that it is flipped "in place." That is, it doesn't just turn over downwards.
+You'll find that there's a slightly improved `Triangle` class. This `Triangle` sports a new method called `flip()`. Play around with it to see it in action. As you flip the triangle, notice that it is flipped "in place." That is, it doesn't just turn over downwards. This behavior is important to know because you'll have to move it to the right place.
 
 #### Part I: Diamonds
 
@@ -65,13 +68,24 @@ Our objective is to create a new class that can create  `Diamond`s with the same
 
     - In each of these methods, you should not be writing more than two lines of code to get the job done.
 
-4. Now write in `moveVertical(int distance)` and `moveHorizontal(int distance)`. Again, the work we have to do should be minimal.
+4. Now write in `moveVertical(int distance)` and `moveHorizontal(int distance)`. Again, the work we have to do is minimal.
 
-5. Let's move on to something a little more challenging: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
+#### Part II: Challenges
+Before moving on to the next method, you have to familiarize yourself with how the triangle's `changeSize()` method works. Create a triangle and make it visible. Then change its size (it doesn't matter if you make it bigger or smaller.) Notice that the top vertex remains in the same place. Now flip the triangle upside down. Change the size again. Notice the top still remains in place, and it's the bottom vertex that moved up or down. Knowing that whatever is on "top" remains constant will help you write the next method.
+
+1. Let's move on to something a little more challenging: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
 
     - However, this will introduce a new problem. The triangles, upon changing their size, may  overlap each other or they could be spread farther apart!
 
     - This can be a bit tricky. You'll need to move the bottom triangle up or down to adjust for this gap. But how much do you move it by...? **(Hint: it's a good thing we know the old height of the diamond...)** Recall that when you resize a triangle, the top never changes along the vertical axis -- it's the bottom of the triangle that moves. Draw on a piece of paper to gain insight into when you'd need to move the bottom one up and when you'd need to move the bottom one down (and by how much).
+
+2. Nice work!! The last piece we're missing are the "slow move" methods. Go ahead and start writing the `slowMoveHorizontal(int distance)` method. Again, this is trickier than expected. You can't just tell the top and bottom triangles to `slowMoveHorizontal` themselves, because the diamond would be split apart as each triangle moves in sequence, instead of the whole diamond moving along as one.
+
+    - Here's a hint: the `moveHorizontal(int distance)` method you wrote previously *does* move the whole diamond instantaneously by the given distance. What if you called this method repeatedly on a distance of 1? (Write a loop!)
+
+    - Don't forget that you need to ensure that a negative distance input should slow move the diamond to the left!
+
+3. Finally, write the `slowMoveVertical(int distance)` method, which should be similar to the previous method.
 
 #### Reflections: Problem Decomposition and Thinking Abstractly
 Hopefully, through this lab, you can see how useful it is to think abstractly. We broke down a bigger problem ("How to build a diamond") and made the key insight that diamonds are nothing more than just 2 triangles, whose code we already have. Then the rest is just a matter of bossing around the triangles so that together, they look and act like a diamond! Knowing this, it's easy to see how we might create new shapes and add them to our toolkit.
