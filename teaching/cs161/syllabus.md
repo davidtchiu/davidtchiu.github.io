@@ -67,21 +67,6 @@ There will be two midterms and a final exam. They will cover topics discussed in
 ##### Attendance and Participation
 Regular attendance and participation are required. Attendance, to be graded out of 10 points, applies towards your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
 
-##### Exams
-There will be two midterms and a final exam. They will cover topics discussed in the lectures, readings from the assigned textbook, and assignments. The exams are cumulative. Study guides are provided and selected problems are reviewed on the lecture preceding the day of the exam. You are allowed a page of notes (front and back) on all exams. 
-
-- Make-up: I expect you to be present on the day of exams. I do not offer make-up exams unless you can _document_ an extenuating circumstance. (These do not count as extenuating circumstances: experiencing a cold, overslept, mental health day, family visiting, traveling, etc.)
-
-- Final Exam: You must show up on the scheduled day of the final exam. These dates are set by the university and cannot be rescheduled. Please do not ask for exceptions.
-
-- Accommodations: It is *your* responsibility to inform me if you will be taking it at SAA well-ahead of time, so that I have time to get the exams over to their office.
-
-- The following items are prohibited: Phones, headphones, and other mobile devices.
-
-
-##### Attendance and Participation
-Regular attendance and participation are required. Attendance, to be graded out of 10 points, applies towards your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
-
 
 ##### Final Letter Grades
 These are the cutoffs when assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+). The cutoffs below might come down, but will not be set higher.

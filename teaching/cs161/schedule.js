@@ -132,13 +132,13 @@ let days = {
         name: "Lab 6",
         title: "Diamonds (Abstraction)",
         url: "lab6.diamonds/",
-        due: "3/1/2024",
+        due: "2/23/2024",
       },
       {
         name: "Lab 7",
         title: "Turtle (Loops)",
         url: "lab7.turtle/",
-        due: "3/8/2024",
+        due: "3/1/2024",
       },
       {
         name: "Lab 8",
@@ -160,14 +160,20 @@ let days = {
       // },
       {
         name: "Lab 10",
-        title: "Boulders (Files)",
-        url: "lab10.boulders/",
-        due: "4/12/2024",
+        title: "TBD",
+        url: "lab10.TBD/",
+        due: "4/5/2024",
       },
       {
         name: "Lab 11",
+        title: "Boulders (Files)",
+        url: "lab11.boulders/",
+        due: "4/12/2024",
+      },
+      {
+        name: "Lab 12",
         title: "Playing Cards (Constants, Enum)",
-        url: "lab11.cards/",
+        url: "lab12.cards/",
         due: "4/19/2024",
       }
     ],
