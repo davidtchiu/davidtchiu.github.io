@@ -27,49 +27,49 @@ let days = {
         name: "Hwk 0",
         title: "All About Me",
         url: "hwk0.me/",
-        due: "1/23/2024", // Mon
+        due: "1/22/2024", // Mon
       },
       {
         name: "Hwk 1",
         title: "A Better Circle",
         url: "hwk1.circle/",
-        due: "2/1/2024", // Wed
+        due: "1/31/2024", // Wed
       },
       {
         name: "Hwk 2",
         title: "Alarm Clock",
         url: "hwk2.clock/",
-        due: "2/10/2024", // Fri
+        due: "2/9/2024", // Fri
       },
       {
         name: "Hwk 3",
         title: "Orca Card",
         url: "hwk3.orca/",
-        due: "2/20/2024", //Mon
+        due: "2/19/2024", //Mon
       },
       {
         name: "Hwk 4",
         title: "Robots!",
         url: "hwk4.robot/",
-        due: "3/1/2024", //Wed
+        due: "2/28/2024", //Wed
       },
       {
         name: "Hwk 5",
         title: "Loops Practice I",
         url: "hwk5.loops/",
-        due: "3/10/2024",  // Fri
+        due: "3/8/2024",  // Fri
       },
       {
         name: "Hwk 6",
         title: "Loops Practice II",
         url: "hwk6.loops2/",
-        due: "3/24/2024", // Fri
+        due: "3/22/2024", // Fri
       },
       {
         name: "Hwk 7",
         title: "Tweet Processor",
         url: "hwk7.twitter/",
-        due: "4/7/2024", // Fri
+        due: "4/5/2024", // Fri
       },
       // {
       //   name: "Hwk 7",
@@ -81,7 +81,7 @@ let days = {
         name: "Final Hwk Prop",
         title: "Final Homework Proposal (Optional)",
         url: "hwkF.prep/",
-        due: "4/14/2024",  // Fri
+        due: "4/12/2024",  // Fri
       },
       // // {
       // //   name: "Final Hwk (alternate)",
@@ -93,7 +93,7 @@ let days = {
         name: "Final Hwk",
         title: "Black Jack",
         url: "hwkF.blackjack.enums/",
-        due: "5/3/2024", // Mon (exam period)
+        due: "4/24/2024", // Mon (exam period)
       },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
@@ -102,55 +102,55 @@ let days = {
         name: "Lab 1",
         title: "Draw My Picture (BlueJ)",
         url: "lab1.bluej/",
-        due: "1/20/2024",
+        due: "1/19/2024",
       },
       {
         name: "Lab 2",
         title: "Triangle Class (Variables, Scope, and Lifetime)",
         url: "lab2.vars/",
-        due: "1/27/2024",
+        due: "1/26/2024",
       },
       {
         name: "Lab 3",
         title: "Stomach Class (Class Writing)",
         url: "lab3.stomach/",
-        due: "2/3/2024",
+        due: "2/2/2024",
       },
       {
         name: "Lab 4",
         title: "Guessing Game (If-Else)",
         url: "lab4.guessing/",
-        due: "2/10/2024",
+        due: "2/9/2024",
       },
       {
         name: "Lab 5",
         title: "Circle Drawer (Objects)",
         url: "lab5.circleDrawer/",
-        due: "2/17/2024",
+        due: "2/16/2024",
       },
       {
         name: "Lab 6",
         title: "Diamonds (Abstraction)",
         url: "lab6.diamonds/",
-        due: "3/3/2024",
+        due: "3/1/2024",
       },
       {
         name: "Lab 7",
         title: "Turtle (Loops)",
         url: "lab7.turtle/",
-        due: "3/10/2024",
+        due: "3/8/2024",
       },
       {
         name: "Lab 8",
         title: "CC Validator (Arrays)",
         url: "lab8.cc/",
-        due: "3/24/2024",
+        due: "3/22/2024",
       },
       {
         name: "Lab 9",
         title: "Super Circle Drawer (ArrayLists)",
         url: "lab9.superCircleDrawer/",
-        due: "3/31/2024",
+        due: "3/29/2024",
       },
       // {
       //   name: "Lab 10",
@@ -162,20 +162,14 @@ let days = {
         name: "Lab 10",
         title: "Boulders (Files)",
         url: "lab10.boulders/",
-        due: "4/14/2024",
+        due: "4/12/2024",
       },
       {
         name: "Lab 11",
         title: "Playing Cards (Constants, Enum)",
         url: "lab11.cards/",
-        due: "4/21/2024",
-      },
-      // // {
-      // //   name: "Lab 11",
-      // //   title: "Elementary Complexity Analysis",
-      // //   url: "lab11.perf/",
-      // //   due: "4/11/2024",
-      // // },
+        due: "4/19/2024",
+      }
     ],
   },
   lectures: [
