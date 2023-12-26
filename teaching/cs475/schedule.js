@@ -119,6 +119,7 @@ let days = {
   lectures: [
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
+    "Intro: What's an OS?",
     "Intro: A brief history of computer systems",
     // wk 2
     "<font color='blue'>Lab 1 (Attendance required; Bring laptops)</font>",
@@ -126,15 +127,15 @@ let days = {
     "<font color='blue'>Lab 3 (Attendance required; Bring laptops)</font>",
     // wk 3
     "Intro: Job scheduling models",
-    "Invoking OS: Booting, interrupts",
-    "Invoking OS: Traps and system calls",
+    "Bootstrapping, interrupts",
+    "Invoking the OS: Interrupts, traps and system calls",
     // wk 4
     "Processes: PCB, address space, program stack",
     "Processes: state transitions, fork()",
     "Processes: wait(); zombies and orphans",
     // wk 5
     "Processes: exec() system call",
-    "Start Threads; User vs. kernel threads",
+    "Threads; User vs. kernel threads",
     "Threads: pthread library",
     // wk 6
     "Threads: Performance and data sharing; Amdahl's Law",
