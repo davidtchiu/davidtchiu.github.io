@@ -41,7 +41,7 @@ let days = {
         name: "Hwk 4 (mmm)",
         title: "Matrix Multiplication",
         url: "hwk4.mmm/",
-        due: "2/28/2024",
+        due: "3/1/2024",
       },
       // {
       //   name: "Hwk 4 (BackItUp)",
@@ -50,28 +50,34 @@ let days = {
       //   due: "2/28/2024",
       // },
       {
-        name: "Hwk 6 (ts_hashmap)",
+        name: "Hwk 5 (ts_hashmap)",
         title: "Thread-Safe Hashmap",
-        url: "hwk6.hashmap/",
-        due: "3/27/2024", // after break
+        url: "hwk5.hashmap/",
+        due: "3/22/2024", // after break
       },
       {
-        name: "Hwk 7 (OneLaneBridge)",
+        name: "Hwk 6 (OneLaneBridge)",
         title: "One Lane Bridge ",
-        url: "hwk7.thebridge/",
-        due: "4/8/2024",
+        url: "hwk6.thebridge/",
+        due: "4/3/2024",
       },
       {
-        name: "Hwk 8 (bankers)",
-        title: "Banker's Algorithm",
-        url: "hwk8.bankers/",
-        due: "4/22/2024",
+        name: "Hwk 7 (TBD)",
+        title: "TBD",
+        url: "hwk7.thebridge/",
+        due: "4/15/2024",
       },
+      // {
+      //   name: "Hwk 8 (bankers)",
+      //   title: "Banker's Algorithm",
+      //   url: "hwk8.bankers/",
+      //   due: "4/26/2024",
+      // },
       {
         name: "Extra Credit",
         title: "Bonus Tech Report",
         url: "hwkB.report/",
-        due: "5/3/2024",
+        due: "4/26/2024",
       },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
@@ -137,15 +143,15 @@ let days = {
     "Sync: more semaphores",
     // wk 11
     "Sync: monitors and condition variables",
+    "Memory Management: virtual addressing",
+    "Mem: partitioning",
+    // wk 12
+    "Mem: segmentation",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    // wk 12
-    "Memory Management: virtual addressing",
-    "MM: memory partitioning",
-    "MM: segmentation",
     // wk 13
-    "MM: paging",
-    "MM: translation caching",
+    "Mem: paging",
+    "Mem: translation caching",
     "Start Virtual Memory",
     // wk 14
     "VM: replacement policies",
