@@ -22,44 +22,50 @@ let days = {
       {
         name: "Hwk 1 (sorting)",
         title: "Pointers, Arrays, Strings",
-        url: "hwk2.ptrs/",
+        url: "hwk1.sorting/",
         due: "1/29/2024",
       },
       {
         name: "Hwk 2 (ls2)",
         title: "Dynamic Memory Allocation",
-        url: "hwk3.malloc/",
-        due: "2/9/2024",
+        url: "hwk2.ls/",
+        due: "2/7/2024",
       },
       {
         name: "Hwk 3 (dsh)",
         title: "David Shell",
-        url: "hwk4.dsh/",
-        due: "2/19/2024",
+        url: "hwk3.dsh/",
+        due: "2/16/2024",
       },
       {
-        name: "Hwk 4 (mmm)",
+        name: "Hwk 4 (BackItUp)",
+        title: "Back It Up",
+        url: "hwk4.biu/",
+        due: "2/28/2024",
+      },
+      {
+        name: "Hwk 5 (mmm)",
         title: "Matrix Multiplication",
         url: "hwk5.mmm/",
-        due: "3/1/2024",
+        due: "3/8/2024",
       },
       {
-        name: "Hwk 5 (ts_hashmap)",
+        name: "Hwk 6 (ts_hashmap)",
         title: "Thread-Safe Hashmap",
         url: "hwk6.hashmap/",
-        due: "3/22/2024", // after break
+        due: "3/25/2024", // after break
       },
       {
-        name: "Hwk 6 (OneLaneBridge)",
+        name: "Hwk 7 (OneLaneBridge)",
         title: "The One Lane Bridge ",
         url: "hwk7.thebridge/",
-        due: "4/14/2024",
+        due: "4/8/2024",
       },
       {
         name: "Hwk 7 (bankers)",
         title: "Banker's Algorithm",
         url: "hwk8.bankers/",
-        due: "4/28/2024",
+        due: "4/22/2024",
       },
       {
         name: "Extra Credit",
