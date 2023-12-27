@@ -22,13 +22,13 @@ let days = {
       {
         name: "Hwk 2 (sorting)",
         title: "Pointers, Arrays, Strings",
-        url: "hwk1.sorting/",
+        url: "hwk2.sorting/",
         due: "1/29/2024",
       },
       {
         name: "Hwk 3 (ls2)",
         title: "Dynamic Memory Allocation",
-        url: "hwk3.ls/",
+        url: "hwk3.ls2/",
         due: "2/9/2024",
       },
       {

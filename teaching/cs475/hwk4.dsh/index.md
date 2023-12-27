@@ -317,7 +317,7 @@ This assignment will be graded out of 80 points:
 ```
 
 #### Submitting Your Assignment
-1. Commit and push your code to your Github repo. Make sure your repo is public (or private and accessible by me).
+1. Commit and push your code to your Github repo. Make sure your repo is public.
 
 2. On canvas, simply submit the URL to your Github repo. No other form of submission is accepted.
 

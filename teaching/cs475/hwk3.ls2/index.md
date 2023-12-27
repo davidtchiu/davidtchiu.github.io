@@ -38,17 +38,17 @@ I have included a working solution of my program along with the starter code. Th
 
 ###### Detailed Instructions
 
-1. Your program should accept up to 2 arguments on the command line:
+1. Your program should accept up to two command-line arguments:
     ```bash
-    $ ./ls2 <path> [optional-file]
+    $ ./ls2 <path> [exact-match-pattern]
     ```
    Only the `<path>` argument is required, and your program should re-prompt the command if no arguments are given, or if more than 2 are given. Here's an example:
     ```bash
     $ ./ls2 
-    Usage: ./ls2 <path> [optional-file]
+    Usage: ./ls2 <path> [exact-match-pattern]
 
     $ ./ls2 . hello.c hello.o
-    Usage: ./ls2 <path> [optional-file]
+    Usage: ./ls2 <path> [exact-match-pattern]
     ```
 
    You need to look into how to handle command-line arguments in `main(int argc, char *argv[])`.
@@ -145,7 +145,7 @@ I have included a working solution of my program along with the starter code. Th
       README.md (34 bytes)
       ```
     
-    - **Mode 2:** The second mode runs when the user passes both `path` and the `optional-file` arguments. When this is the case, your program should only show files with names exactly matching the given `optional-file`. It should only include all the directories (and subdirectories) that contain files with names matching the given argument and ignore all the others in the print-out. The program should avoid showing the directory chain if the file is not found in its subdirectory.
+    - **Mode 2:** The second mode runs when the user passes both `path` and the `exact-match-pattern` arguments. When this is the case, your program should only show files with names exactly matching the given `exact-match-pattern`. It should only include all the directories (and subdirectories) that contain files with names matching the given argument and ignore all the others in the print-out. The program should avoid showing the directory chain if the given pattern is not found in its subdirectory. Here's an example of me looking for any files or directories matching `main`.
 
       ```bash
       $ ./ls2 . main
@@ -165,7 +165,7 @@ I have included a working solution of my program along with the starter code. Th
                       main (41 bytes)     
       ```
 
-      In this run, I only want to find the file `main` inside the `.git/refs` directory:
+      In this run, I only want to search for the directories/files named `main` from within the `.git/refs` directory:
       ```bash
       ./ls2 .git/refs main
       heads/ (directory)
@@ -175,9 +175,9 @@ I have included a working solution of my program along with the starter code. Th
               main (41 bytes)
       ```
 
-3. **What's the stack library for?** You'll notice that I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. You should study `stack.c` to see how I use `malloc()` in various spots and `free()` up the resources too.
-    - When designing this program, you'll notice that your algorithm can't simply print every file or directory as soon as you encounter them. You might get away with it in Mode 1, but Mode 2 requires that you keep a collection of directories and files you actually want to print at the end.
-    - You can use the stack to store a list of files/directories that you wish to print.
+3. **What's the stack library for?** You'll notice that I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. You should study `stack.c` to see how I use `malloc()` in various spots and later `free()` up the allocated memory.
+    - When designing this program, you'll notice that you can't simply print every file or directory as soon as you encounter them. You can get away with this approach in Mode 1, but Mode 2 requires that you keep a collection of directories and files you actually want to print at the end.
+    - You can use the given stack to store the set of files/directories that you wish to print.
 
 4. **UNIX system calls**
 
@@ -204,10 +204,10 @@ I have included a working solution of my program along with the starter code. Th
 #### Grading
 
 ```
-This assignment will be graded out of 25 points:
-[2pt] Your program recursively descends all subdirectories.
-[3pt] Implementation of Mode 1.
-[10pt] Implementation of Mode 2.
+This assignment will be graded out of 50 points:
+[5pt] Your program recursively descends down all subdirectories.
+[10pt] Implementation of Mode 1.
+[25pt] Implementation of Mode 2.
 [3pt] Your output of files and directories conforms to the specified format.
 [2pt] Your program properly resolves command line arguments.
 [5pt] Your program is free of memory leaks and dangling pointers.
@@ -215,7 +215,7 @@ This assignment will be graded out of 25 points:
 
 #### Submitting Your Assignment
 
-1. Commit and push your code to your Github repo. Make sure your repo is public (or private and accessible by me).
+1. Commit and push your code to your Github repo. Make sure your repo is public.
 
 2. On canvas, simply submit the URL to your Github repo. No other form of submission is accepted.
 

@@ -138,13 +138,15 @@ The following file(s) have been provided for this assignment.
     - Remember to do this for all remaining homework and labs.
 
 14. **Submission:** Exit out from BlueJ. Then from your operating system's file finder, navigate to the folder that you extracted. It should contain files like these:
-   - `AboutMe.class`
-   - `AboutMe.java`
-   - `package.bluej`
-   - `README.txt`
-For this assignment, you only need to locate the file(s) ending in `.java`. This is called your *source code*, and it contains all the code you just wrote! Now go to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
-   - Upload all the file(s) ending in `.java` from your project folder.
-   - Click "Submit Assignment" again to upload it.
+    - `AboutMe.class`
+    - `AboutMe.java`
+    - `package.bluej`
+    - `README.txt`
+
+   For this assignment, you only need to locate the file(s) ending in `.java`. This is called your *source code*, and it contains all the code you just wrote! Now go to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
+   
+    - Upload all the file(s) ending in `.java` from your project folder.
+    - Click "Submit Assignment" again to upload it.
 
 #### Grading
 

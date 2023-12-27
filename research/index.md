@@ -13,7 +13,7 @@
 
 #### Bitmap Indexing for Data-Intensive Processing
 
-- J. Kaeppel, J. Sawin, and D. Chiu. [Workload-Aware Cache Management of Bitmap Indices](Papers/kaeppel-BDCAT2023.pdf).  10th IEEE/ACM  International Conference on Big Data Computing, Applications and Technologies (BDCAT'23). Taormina (Messina), Italy. 2023. ACM.
+- J. Kaeppel, J. Sawin, and D. Chiu. [Workload-Aware Cache Management of Bitmap Indices](Papers/kaeppel-BDCAT2023.pdf).  10th IEEE/ACM  International Conference on Big Data Computing, Applications and Technologies (BDCAT'23). Taormina (Messina), Italy. 2023. ACM. **(Best Paper Award)**
 
 - S. McClain, M. Mutschler-Aldine, C. Monaghan, D. Chiu, J. Sawin, and P. Jarvis. [Caching Support for Range Query Processing on Bitmap Indices](Papers/mcclain-ssdbm2021.pdf). 33rd International Conference on Scientific and Statistical Database Management (SSDBM'21). Tampa, FL. 2021. ACM.
 
@@ -141,6 +141,7 @@
 
 ### Research Awards
 
+- Best Paper Award, IEEE/ACM BDCAT 2023
 - Elevation to IEEE Senior Member, 2020
 - Best Paper Finalist, IEEE/ACM BDCAT 2019
 - Agricola Faculty Research Award, University of Puget Sound, 2019

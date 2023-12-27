@@ -22,6 +22,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 
 ### Recent Activities
+- (12/2023) We have received the Best Paper Award at IEEE/ACM BDCAT 2023 conference for "Workload-Aware Cache Management of Bitmap Indices"!
 - (10/2023) Our paper, "Workload-Aware Cache Management of Bitmap Indices" has been accepted for publication at BDCAT 2023. Congratulations to my student co-author Julia Kaeppel!
 - (8/2023) Appointed to serve on the Total Compensation and Benefits Project, University of Puget Sound.
 - (7/2023) Serving on the PC for [BDCAT 2023](https://bdcat-conference.org/).
