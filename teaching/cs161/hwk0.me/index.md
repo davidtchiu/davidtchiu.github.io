@@ -21,7 +21,7 @@ The following file(s) have been provided for this assignment.
 
 0. Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk0_AboutMe.zip`. 
    - **Windows users:** remember from Lab that you cannot simply double-click on the zip file to extract it! You must right-click on the file, and choose `Extract...`. Remember where you choose to extract its content.
-   - **Mac users:** you can simply double-click on the zip file to extract it!) Commit this to memory!
+   - **Mac users:** you can simply double-click on the zip file to extract it!
 
 1. You should move the newly extracted folder with all its file contents to a location that you'll remember. I highly recommend that you follow this organization (below) for this and all future projects:
 
@@ -45,17 +45,17 @@ The following file(s) have been provided for this assignment.
 
    ```java
    public void printMyName() {
-     // TODO: Your instruction(s) goes below (remove this comment later)
+     // TODO: Your code goes here (remove this "line comment" later)
    }
    ```
 
-   This block is called a **method** in Java. Let's dissect it a bit:
+   This code block is called a **method** in Java. Let's dissect it a bit:
 
-   - The method is basically our way of expressing an _algorithm_ in Java. For now, ignore the `public` and `void` keywords. We'll talk about them later in class.
-   - **Method Name:** The name of this method is `printMyName`
-   - **Parameter List:** The pair of parentheses `()` immediately following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data because the parameter list is empty.
-   - **Body:** Following the parameter list, we now see a pair of "curly" braces `{` and `}` found on different lines. All the instructions of your algorithm must go in between the pair of curly braces. Each instruction should be placed on a separate line.
-   - **Line Comment:** I put a _comment_ inside the body. In Java, anything that follows the `//` pattern is ignored. That makes it easy for programmers to make notes about their code! Clear and effective commenting is imperative in programming, and will be emphasized in this course. I've used a line comment here to direct your attention to where you need to start writing your code. You can remove my comment later.
+      - The method is our way of expressing an _algorithm_ in Java. For now, ignore the `public` and `void` keywords. We'll talk about them later in class.
+      - **Method Name:** The name of this method is `printMyName`
+      - **Parameter List:** The pair of parentheses `()` immediately following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data because the parameter list is empty.
+      - **Body:** Following the parameter list, we now see a pair of "curly" braces `{` and `}` found on different lines. All the instructions of your algorithm must go in between the pair of curly braces. Each instruction should be placed on a separate line.
+      - **Line Comment:** I put a _comment_ inside the body. In Java, anything that follows the `//` pattern is ignored. That makes it easy for programmers to make notes about their code! Clear and effective commenting is imperative in programming, and will be emphasized in this course. I've used a line comment here to direct your attention to where you need to start writing your code. You can remove my comment later.
 
 5. Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax to print a something to the screen is:
 
@@ -149,13 +149,13 @@ For this assignment, you only need to locate the file(s) ending in `.java`. This
 ```
 This assignment will be graded out of a total of 25pts.
 
-[3pts] Correct implementation of the printMyName() method and printBday() method.
+[3pts] Implementation of the printMyName() method and printBday() method.
 
-[3pts] Correct implementation of the printInitials() method.
+[3pts] Implementation of the printInitials() method.
 
-[3pts] Correct implementation of printBio().
+[3pts] Implementation of printBio().
 
-[3pts] Correct implementation of printMyInfo(). This method should
+[3pts] Implementation of printMyInfo(). This method should
        not duplicate any code that you had previously written
        (i.e., the print statements). This method should simply call
        the existing methods that you'd written.
@@ -164,6 +164,6 @@ This assignment will be graded out of a total of 25pts.
        casing (upper case, lower case) of each individual character.
        Check and fix any typos and inconsistent casing before submission.
 
-[10pts] Correctly submitted your assignment as per the instructions.
-       Check with me or with tutors if you're not sure!
+[10pts] Installed Google Drive and submitted your assignment as 
+        per the instructions. Check with me or with tutors if you're not sure!
 ```
