@@ -14,33 +14,33 @@ let days = {
   assignments: {
     homework: [
       {
-        name: "Hwk 0 (vscode)",
+        name: "Hwk 1 (vscode)",
         title: "Setting up VS Code",
-        url: "hwk0.vscode/",
+        url: "hwk1.vscode/",
         due: "1/19/2024",
       },
       {
-        name: "Hwk 1 (sorting)",
+        name: "Hwk 2 (sorting)",
         title: "Pointers, Arrays, Strings",
         url: "hwk1.sorting/",
         due: "1/29/2024",
       },
       {
-        name: "Hwk 2 (ls2)",
+        name: "Hwk 3 (ls2)",
         title: "Dynamic Memory Allocation",
-        url: "hwk2.ls/",
+        url: "hwk3.ls/",
         due: "2/9/2024",
       },
       {
-        name: "Hwk 3 (dsh)",
+        name: "Hwk 4 (dsh)",
         title: "David Shell",
-        url: "hwk3.dsh/",
+        url: "hwk4.dsh/",
         due: "2/21/2024",
       },
       {
-        name: "Hwk 4 (mmm)",
+        name: "Hwk 5 (mmm)",
         title: "Matrix Multiplication",
-        url: "hwk4.mmm/",
+        url: "hwk5.mmm/",
         due: "3/4/2024",
       },
       // {
@@ -50,21 +50,21 @@ let days = {
       //   due: "2/28/2024",
       // },
       {
-        name: "Hwk 5 (ts_hashmap)",
+        name: "Hwk 6 (ts_hashmap)",
         title: "Thread-Safe Hashmap",
-        url: "hwk5.hashmap/",
+        url: "hwk6.hashmap/",
         due: "3/22/2024", // after break
       },
       {
-        name: "Hwk 6 (OneLaneBridge)",
+        name: "Hwk 7 (OneLaneBridge)",
         title: "One Lane Bridge ",
-        url: "hwk6.thebridge/",
+        url: "hwk7.thebridge/",
         due: "4/3/2024",
       },
       {
-        name: "Hwk 7 (TBD)",
+        name: "Hwk 8 (TBD)",
         title: "TBD",
-        url: "hwk7.thebridge/",
+        url: "hwk8.thebridge/",
         due: "4/19/2024",
       },
       // {

@@ -224,12 +224,12 @@ This example assumes there's a file named `feelGood.c` in the current working di
 is given to you as part of this assignment.) The full path to the executable, `cat`, is given. This causes
 _Mode 1_ to run, meaning that the shell will not do a search of the PATH environment variable for `cat`. 
 Further, the argument `feelGood.c` is given in an array to `execv()`. Specifically the array should contain
-`["/bin/cat", "feelGood.c", NULL]`.  The `cat` executable will simply print the contents of the `feelGood.c` file onto
+`["/usr/bin/cat", "feelGood.c", NULL]`.  The `cat` executable will simply print the contents of the `feelGood.c` file onto
 the screen. As there is no trailing `&` (ampersand), `cat` is executed and the shell waits for it
 to finish before re-prompting. Therefore, you will see all the outputs of `cat` before the next `dsh>` prompt.
 
 ```
-dsh> /bin/cat feelGood.c
+dsh> /usr/bin/cat feelGood.c
 #include <stdio.h>
 #include <unistd.h>
 int main() {
@@ -255,11 +255,18 @@ dsh>
 
 In the snippet below, I enter `ls -l`, which causes my shell to invoke _Mode 2_ and search for the 
 `ls` binary in all the known paths of my `PATH` environment variable. The `ls` binary is of course 
-found (on my machine, inside  `/bin/`). Further, the `-l` is given in an array to `execv()`. Specifically the array should contain `["/bin/ls", "-l", NULL]`. As there is no trailing `&`, the `ls` is executed and the shell waits for it
+found (on my machine, inside  `/usr/bin/`). Further, the `-l` is given in an array to `execv()`. Specifically the array should contain `["/usr/bin/ls", "-l", NULL]`. As there is no trailing `&`, the `ls` is executed and the shell waits for it
 to finish before re-prompting. (Therefore, you will see all the outputs of `ls -l` before the next `dsh>` prompt.)
 ```
 dsh> ls -l
--rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
+total 56
+-rw-rw-r-- 1 dchiu dchiu   112 Feb 15  2023 Makefile
+-rw-rw-r-- 1 dchiu dchiu    17 Jan 13  2023 README.md
+-rw-rw-r-- 1 dchiu dchiu   323 Feb 15  2023 dsh.c
+-rw-rw-r-- 1 dchiu dchiu   128 Feb 15  2023 dsh.h
+-rwxrwxr-x 1 dchiu dchiu 30656 Feb 15  2023 dshSol
+-rw-rw-r-- 1 dchiu dchiu   149 Feb 15  2023 feelGood.c
+-rw-rw-r-- 1 dchiu dchiu   301 Jan 13  2023 main.c
 dsh>
 ```
 
@@ -271,9 +278,16 @@ various methods, but `feelGood`'s output is interleaved with the shell's. In fac
 dsh> gcc -Wall feelGood.c -o feelGood
 dsh> ./feelGood &
 dsh> ls -l
--rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood
--rw-r--r--@ 1 dchiu  faculty  1554 Feb  3 22:56 feelGood.c
+total 56
+-rw-rw-r-- 1 dchiu dchiu   112 Feb 15  2023 Makefile
+-rw-rw-r-- 1 dchiu dchiu    17 Jan 13  2023 README.md
+-rw-rw-r-- 1 dchiu dchiu   323 Feb 15  2023 dsh.c
+-rw-rw-r-- 1 dchiu dchiu   128 Feb 15  2023 dsh.h
+-rwxrwxr-x 1 dchiu dchiu 30656 Feb 15  2023 dshSol
+-rwxrwxr-x 1 dchiu dchiu   149 Feb 15  2023 feelGood
 Students think you're inspiring!
+-rw-rw-r-- 1 dchiu dchiu   149 Feb 15  2023 feelGood.c
+-rw-rw-r-- 1 dchiu dchiu   301 Jan 13  2023 main.c
 
 dsh> exit
 $
