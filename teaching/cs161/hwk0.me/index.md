@@ -6,6 +6,8 @@ The purpose of this first assignment is to get you even more familiarized with B
 
 #### Student Outcomes
 
+- To download and use Google Drive for storing and backing up your code.
+- To set up your programming environment.
 - To practice writing print statements.
 - To practice homework submission.
 
@@ -17,19 +19,29 @@ The following file(s) have been provided for this assignment.
 
 #### Instructions
 
-Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk0_AboutMe.zip`. **Windows users:** remember from Lab that you cannot simply double-click on the zip file to extract it! You must right-click on the file, and choose `Extract...`. (Mac users: you _can_ simply double-click on the zip file to extract it!) Commit this to memory!
+0. Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk0_AboutMe.zip`. 
+   - **Windows users:** remember from Lab that you cannot simply double-click on the zip file to extract it! You must right-click on the file, and choose `Extract...`. Remember where you choose to extract its content.
+   - **Mac users:** you can simply double-click on the zip file to extract it!) Commit this to memory!
 
-1. Open the project in BlueJ, and you should see a single class called `AboutMe` (orange box icon).
+1. You should move the newly extracted folder with all its file contents to a location that you'll remember. I highly recommend that you follow this organization (below) for this and all future projects:
 
-2. Before you do anything else, let's customize your BlueJ environment:
+   - Download the [https://drive.google.com/](Google Drive App), if you haven't already. Install it and set up a dedicated drive folder on your operating system. This will create a special folder, and anything you drop inside will be automatically backed up!
+
+   - Navigate into your Google Drive, and create a new a new folder to store all of your code for this class (there will be many!) 
+
+   - Drag and drop your new `Hwk0_AboutMe` folder there.
+
+2. After you've given your `Hwk0_AboutMe` folder a good place to live. Navigate into it, and double-click the file called `package.bluej` (It should look like a small blue jay icon.) This should open the project inside the BlueJ code editor, and you should see a single icon called `AboutMe` (looks like an orange box).
+
+3. Before you do anything else, let's customize your BlueJ environment:
 
    - From the `BlueJ` menu on the top, select `Preferences`. The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
    - Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
    - Okay, that should be it for now.
 
-3. You should be back to the project overview window that shows the `AboutMe` icon. Double-click on the `AboutMe` icon to open the source code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
+4. You should be back to the project overview window that shows the `AboutMe` icon. Double-click on the `AboutMe` icon to open the source code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
 
-4. Once you have the editor open, you should see a code block that looks like the following:
+5. Once you have the editor open, you should see a code block that looks like the following:
 
    ```java
    public void printMyName() {
@@ -57,9 +69,9 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
 
 7. After you're done with `printMyName()`, it's time to test it out. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right-click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
 
-8. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on Feb 26, 1980 would print `02/26/1980`. To create a new method, you can just copy the `printMyName()` code. The new method block can go before or after the `printMyName()` method. I would copy the code "by hand," instead of using copy-and-paste. Compile and test it out.
+8. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on February 26, 2000 would print `02/26/00`. To create a new method, you can just copy the `printMyName()` code. The new method code block can go before or after the `printMyName()` method block. I would type out the code for this method "by hand," instead of using copy-and-paste. Compile and test it out.
 
-   - Uh oh. Did the print-out from the previous interactions get reset when you called `printBday()`? Don't worry, there's an easy way to fix that. Click anywhere on the output screen, and from the menu up top, click `Options` then uncheck `Clear screen at method call`. This should save all the outputs on the screen from before.
+   - Did the print-out from the previous interactions get reset when you called `printBday()`? Don't worry, there's an easy way to change that behavior. Click anywhere on the output screen, and from the menu up top, click `Options` then uncheck `Clear screen at method call`. This should save all the outputs on the screen from before.
 
    - Saving old outputs on the screen *will* get annoying though, when your programs get more complicated. So just remember that you can always re-enable this option.
 
@@ -93,11 +105,11 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
     Here's an example of what someone's output might like after calling `printMyInfo()`:
 
     ```
-     GGGGGGG    HHH   HHH
-    GG     GG   HHH   HHH
+     GGGGGGGG   HHH   HHH
+    GG      GG  HHH   HHH
     GG          HHHHHHHHH
     GG   GGGGG  HHH   HHH
-     GGGGGGG    HHH   HHH
+     GGGGGGG G  HHH   HHH
 
     Grace Hopper
     12/09/1906
@@ -123,12 +135,21 @@ Start by downloading a fresh copy of the starter file from the above link. Extra
     - Go back to make sure your methods adhere to my given specification.
     - Remember to do this for all remaining homework and labs.
 
+14. **Submission:** Exit out from BlueJ. Then from your operating system's file finder, navigate to the folder that you extracted. It should contain files like these:
+   - `AboutMe.class`
+   - `AboutMe.java`
+   - `package.bluej`
+   - `README.txt`
+For this assignment, you only need to locate the file(s) ending in `.java`. This is called your *source code*, and it contains all the code you just wrote! Now go to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
+   - Upload all the file(s) ending in `.java` from your project folder.
+   - Click "Submit Assignment" again to upload it.
+
 #### Grading
 
 ```
 This assignment will be graded out of a total of 25pts.
 
-[3pts] Correct implementation of the printMyName() method and printBday method.
+[3pts] Correct implementation of the printMyName() method and printBday() method.
 
 [3pts] Correct implementation of the printInitials() method.
 
@@ -143,15 +164,6 @@ This assignment will be graded out of a total of 25pts.
        casing (upper case, lower case) of each individual character.
        Check and fix any typos and inconsistent casing before submission.
 
-[10pts] Correctly zipped and submitted your assignment (see below).
+[10pts] Correctly submitted your assignment as per the instructions.
        Check with me or with tutors if you're not sure!
 ```
-
-#### Submitting Your Assignment
-Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
-
-- Navigate to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
-
-- Upload all the files ending in `.java` from your project folder.
-
-- Click "Submit Assignment" again to upload it.
