@@ -31,6 +31,8 @@ The following file(s) have been provided for this assignment.
 
    - Drag and drop your new `Hwk0_AboutMe` folder there.
 
+   - You will be graded on this step. As proof, I'll ask to see your Drive during our next lab.
+
 2. After you've given your `Hwk0_AboutMe` folder a good place to live. Navigate into it, and double-click the file called `package.bluej` (It should look like a small blue jay icon.) This should open the project inside the BlueJ code editor, and you should see a single icon called `AboutMe` (looks like an orange box).
 
 3. Before you do anything else, let's customize your BlueJ environment:
