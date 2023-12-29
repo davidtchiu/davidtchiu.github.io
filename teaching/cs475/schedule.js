@@ -18,8 +18,6 @@ let days = {
       name: "Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. Dive into Systems (Required for learning C)",
       url: "https://diveintosystems.org/book/"
     }
-"
-    }
   ],
   assignments: {
     homework: [
