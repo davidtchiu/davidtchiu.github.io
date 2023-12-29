@@ -80,14 +80,12 @@ C is not an object-oriented language, but it does support object-like elements c
 
 - **Important**
 
-  - All of a `struct`'s fields (called *data members* in C) are `public`. There is no such thing as `private` or `protected` in C. 
-  - Like Java, data members are accessed using dot-notation (`var.field`). You'll see a very different notation once we start talking about pointers though.
-  - Think of structs, then, as very primitive objects that only serve as a vessel for encapsulating multiple variables.
-    - There are *no* constructors, functions/methods that can be defined within a C `struct`.
+  - A `struct`'s fields (called *data members* in C) are assumed `public`. There is no such thing as `private` or `protected` in C. 
+  - Like Java, data members are accessed using dot-notation (`var.field`). You'll see a very different notation once we start talking about pointers to structs though.
 
 ##### Important Aside: Aliasing Type Names with `typedef`
 
-While it isn't possible in Java (and many other languages), C allows us to give different names to data types. For instance, I could create an type alias `employee_t` to stand for `unsigned short int`, and use `employee_t` everywhere in my code, to improve code understanding. This process is called `typedef`.
+C allows us to give different names to data types. For instance, I could create an type alias `employee_t` to stand for `unsigned short int`, and use `employee_t` everywhere in my code, to improve code understanding. We do this using the following syntax:
 
 ```c
 typedef <data type> <alias>;
@@ -98,12 +96,12 @@ typedef <data type> <alias>;
   ```c
   #include <stdio.h>
 
-  typedef unsigned short int emp_t;   //alias emp_t to unsigned short int
+  typedef unsigned short int employee_t;   //alias employee_t to unsigned short int
 
   /**
   * Returns a pointer to a string containing an employee's name
   */
-  int getSalary(emp_t id) {
+  int getSalary(employee_t id) {
       //(code omitted)
   }
 
@@ -111,7 +109,7 @@ typedef <data type> <alias>;
   * Main function
   */
   int main(int argc, char *argv[]) {
-      emp_t employeeID;
+      employee_t employeeID;
       printf("Enter an employee id: ");
       scanf("%u", &employeeID);   // read input as unsigned int (%u) into employeeID.
 
@@ -123,7 +121,7 @@ typedef <data type> <alias>;
   }
   ```
 
-- **Important** Typedefs are often used in conjunction with defining `structs`. For example, it's mildly annoying that we have to declare a `Point` named `p` using `struct Point p;` syntax. Using `typedef` totally optional here, but it *would* make the syntax a little more familiar to what we're used to seeing in Java:
+- **Important** Typedefs are often used in conjunction with `structs`. For example, it's mildly annoying that we have to declare a `Point` variable named `p` using `struct Point p;` syntax. Using `typedef` totally optional here, but it *would* make the syntax a little more familiar to what we're used to seeing in Java, and certainly easier on the eyes:
 
   ```c
   typedef struct <structName> {
@@ -154,15 +152,14 @@ double amt = 90000.75;
 ```
 
 Although high-level languages like C, Java, etc., hide it from us, the three variables have to exist *somewhere* in your computer's memory. Let's take a look at a make-believe snapshot of my computer's memory as it runs the code shown above.
+You might recall from your architecture class that a **CPU word** is a unit of data transfer between memory and CPU. In these tutorials, we'll assume that a word is a block of four contiguous bytes (i.e., 32-bits).
 
-You might recall from your architecture class that a **CPU word** is the fundamental unit of data transfer between memory and CPU. In these tutorials, we'll assume that a word is a block of four contiguous bytes (i.e., 32-bits), though it is worth mentioning that many CPUs now fully support 8-byte words (i.e., 64-bits).
-
-In the figure below, only each word's start address is shown, but know that each byte within the word addressable too. When a CPU requests the byte located at a certain address, say `1117`,  the *full* word ranging from address `1116` to `1119` is automatically retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte from the word, if necessary.\
+In the figure below, only a word's start address is shown, but know that each byte within the word is addressable too. When a CPU requests the byte located at a certain address, say `1117`,  the *full* word ranging from address `1116` to `1119` is retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte at `1117`. All of this is done behind the scenes hidden from the programmer.\
 
  <img border="1" width="450px" src="figures/proj2-ex1.png"/>
 
-**Important Operator: `sizeof()`**
-Notice from the figure above that that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each  type actually vary across architectures. **So how did I know these storage requirements apply to my machine?** C provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies in memory. Let's see what it does.
+**Important C Operator: `sizeof()`**
+Notice from the figure above that that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures, so how did I know these storage requirements apply to my machine? C provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies in memory. Let's see what it does.
 
 ```c
 #include <stdio.h>
@@ -270,25 +267,21 @@ size of 0.5 * 400 / 2: 8 bytes
      > 8
      ```
 
-2. Remember the `sizeof()` operator for later and for the future tutorial. `sizeof()` is one of the most important built-in operators in C. 
+2. Remember the `sizeof()` operator for later and for the future lab tutorial. `sizeof()` is one of the important built-in operators in C.
 
 3. One of the benefits of a typed language like C and Java should be somewhat apparent now. When a programmer declares a variable's type, the executable files knows *exactly* how many contiguous bytes to read and write memory.
-
-  This is in contrast to un-typed languages like Python and JavaScript, where the type of a variable is allowed to change during runtime, and requires a bit of overhead to interpret, or *juggle* their storage requirements. This *type-juggling* overhead accounts for much of the reason why compiled programs usually run faster than interpreted programs. It also adds a lot of confusion when reading code. (This is why I've always preferred strongly-typed languages like C and Java.)
 
 - **Practice Questions (not graded):**
 
   - Although a `char` requires just one byte of storage, most CPUs will insist on wasting, or "padding" the remaining 3 bytes (see figure above). Why do you think CPUs prefer this, instead of, say, having `amt` start from address `1117` to save you space? *(Ans: It's all about word-alignment. Recall that a unit of transfer between memory and CPU is a word. If we didn't pad the remaining unused bits of the word, then the start of the next data will begin in the same word, and must span across two words.)*
 
-  - What is an `unsigned` integer? What is the point of an `unsigned integer`, and when would it be appropriate to declare an unsigned variable? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: Recall from architecture that the most-significant bit, called the sign-bit, determines the +/- sign of that number. But the sign-bit wastes a bit! So a regular `int` can cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[2^{32}-1]$$. If you know that a value cannot be negative (such as salary or phone numbers), it is appropriate to use unsigned ints.*
+  - What is the point of an `unsigned integer`, and when would it be appropriate to declare an unsigned variable? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: Recall from architecture that the most-significant bit, called the sign-bit, determines the +/- sign of that number. But the sign-bit wastes a bit! So a regular `int` can cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[2^{32}-1]$$. If you know that a value cannot be negative (such as salary or phone numbers), it is appropriate to use unsigned ints.*
 
-  - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but will actually take up 812 bytes for preserving word alignment)*
+  - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)*
 
 ##### Part 2: Understanding Variables - Addressing
 
-Every piece of data in your program, including variables and literals (e.g., 2, 3.14, etc.), is stored in your computer using two pieces: (1) its content, and (2) its location address in memory. We generally only have control over its content. It's up to your OS to find a location in memory to store it. It is possible, however, for programmers to ask the system for the addresses of your data. 
-
-This section focuses on the support for working with a variable's location in C. In particular, we will focus on three new syntax: the address-of operator (`&var`), the pointer-declaration operator (`type *var`), and the de-reference operator (`*var` and `var->field`).
+Every piece of data in your program, including variables and literals (e.g., 2, 3.14, etc.), is stored in two pieces: (1) its content, and (2) its address. We generally only have control over its content. It's up to your OS to find a location in memory for it. It is possible, however, for programmers to ask the system for the addresses of your data. This section focuses on the support for working with a variable's location in C. In particular, we will focus on three new syntax: the address-of operator (`&var`), the pointer-declaration operator (`type *var`), and the de-reference operator (`*var` and `var->field`).
 
 1. Let's now consider the code below. Read through it before moving on.
 
@@ -374,17 +367,17 @@ This section focuses on the support for working with a variable's location in C.
 
 - **Practice Problems (not graded)**
 
-  - We know that a pointer to an int (`int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? Try it out. (Hint: Does the maximum size of an address ever change?)
+  - We know that a pointer to an int (`int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? 
 
   - You can also create a pointer to a `void` data type, which seems odd at first. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. (Hint: Think generics in Java).
 
 ##### Part 3: Pointer Basics
 
-Now that we have a good handle on data types and addressing, let's put everything together. There are three basic pointer concepts you have to master to succeed in this class:
+Let's put everything together. There are three basic pointer concepts you have to master to succeed in this class:
 
 1. Address-of Operator: Given a variable var, `&var` returns the address of var's location in memory.
 
-2. A pointer variable stores the address of some data. This data can be a variable, an array, another pointer... To declare a pointer, you use the following syntax:
+2. A pointer variable stores the address of some data. This data can be a variable, an array, or even another pointer... To declare a pointer, you use the following syntax:
 
    ```c
    dataType *ptr;          //pointer to a dataType
@@ -394,44 +387,41 @@ Now that we have a good handle on data types and addressing, let's put everythin
    When assigning a pointer `q` to another pointer `p`, it causes them both to point to the same data.
 
    ```c
-   double *a = NULL, *b = NULL, c = 10;
-   b = &c; //point b at c
-   a = b;  //point a at c
+   double *a = NULL, *b = NULL;
+   double c = 10;
+   b = &c; // point b at c
+   a = b;  // point a at c
    ```
 
    - Memory contents after the declaration:\
      <img border="1" width="250px" src="figures/proj2-ptrAssign1.png" />
 
-   - Memory contents after the assignment statements on Line 2 and 3.\
+   - Memory contents after the assignment statements on Lines 3, 4:\
      <img border="1" width="250px" src="figures/proj2-ptrAssign2.png" />
 
    - You must first `#include <stdlib.h>` to get access to the `NULL` constant.
 
 3. Dereferencing Operator: Given an already-declared pointer `ptr`, we use `*ptr` to access the value at the location referenced by `ptr`. As I lamented earlier, I wish we chose a different syntax for dereferencing, because `*ptr` already has a different meaning!
    ```c
-   double *a = NULL, *b = NULL, c = 10;
-   b = &c; //point b at c
-   a = b;  //point a at c
    *b = 15; // dereference b! c is now 15
    *a += 5; // dereference a! c is now 20
    ```
 
-- Memory contents after Line 4's assignment statement `*b = 15`.\
+- Memory contents after  `*b = 15`.\
   <img border="1" width="250px" src="figures/proj2-ptrAssign3.png" />
 
-- Memory contents after Line 5.\
+- Memory contents after `*a += 5`.\
   <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
 
 - **Practice Questions (not graded):**
 
-  - What value does the `NULL` constant hold? Try printing out. 
+  - What value does the `NULL` constant hold? Try printing out.
   
-  - What happens to your program when you try to dereference a pointer to `NULL`? *(Ans:  In Java, you'd expect the dreaded NULLPointerException to be thrown, but there are no such things as Exceptions in C... This really is something you should try out in C. It will prove challenging as you write/debug your programs.)*
+  - What happens to your program when you try to dereference a pointer to `NULL`? *(Ans:  In Java, you'd get the NullPointerException thrown, but there are no such things as Exceptions in C... This really is something you should try out in C.)*
 
   - **Do this. For real.** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? (If you need help figuring this out, read on to the next section and try again.)
 
-##### Part 4: "Output" Parameters
-Haven't you ever wished that a function/method could return more than one thing? To do this Java, you always had to create a new class that stored multiple values, or returned an array or other data structure. You can also do any of the above in C, but pointers give us another way to "return" multiple values.
+##### Part 3: Pointers as Input Parameters
 
 1. Consider the following function used to swap the values of two integer variables:
 
@@ -452,9 +442,7 @@ Haven't you ever wished that a function/method could return more than one thing?
 
    How would you call this function? The method inputs two pointer parameters. Therefore, you have to pass the addresses of (using `&`) the variables you want to swap. Trace execution of calling `swap()` by drawing out the memory contents like you saw me do in earlier examples.
    
-   It is not possible to write a function for swap two primitive data types like this in Java. Cool right? You *can* swap two objects, but that's only because object variables in Java are just pointers!
-
-2. Consider this version of swap that accepts two variables (not pointers) as input:
+2. This version of swap doesn't work.  Can you see why?
 
    ```c
    void swap2(int *x, int *y) {
@@ -469,9 +457,7 @@ Haven't you ever wished that a function/method could return more than one thing?
    swap2(&a, &b); //swap?
    ```
 
-   Will this method work? Trace its execution.
-
-3. Consider a final version of swap that accepts two variables (not pointers) as input:
+3. Consider a final version of swap that accepts two variables (not pointers) as input. Will this method work? Trace its execution.
 
    ```c
    void swap3(int x, int y) {
@@ -488,13 +474,14 @@ Haven't you ever wished that a function/method could return more than one thing?
    swap3(a,b); //swap?
    ```
 
-   Will this method work? Trace its execution.
+##### Part 4: Function "Output" Parameters
+Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to create a new class that stored multiple values, or returned an array. You can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values (without actually calling `return` to do it).
 
-4. **"Output Parameters"**: Try using the first `swap()` method in Java. You'll see that the contents of the variables aren't swapped at all after calling it, but it works in C! It is quite common in C for functions to have so-called "output parameters". An output parameter refers to a pointer that is input into a function, and the function modifies its contents. After the function call, one just needs to deference the pointer to obtain the updated value(s). It's convenient for functions like `swap()`, where there's not really a return value that makes any sense, but we expect some side-effects to occur.
+ **"Output Parameters"**: An output parameter refers to a pointer that is input into a function, and the function modifies its contents before exiting. After the function call, one just needs to dereference the pointer to obtain the updated value(s).
 
    - You've also seen this in action already when you used `scanf()` to accept user input. For example, when `scanf("%d", &var)` is used, we input the address of `var` (i.e., a pointer), and we expect the contents of `var` to have changed afterwards.
 
-   - I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance (it's not pretty):
+   - I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance:
 
      ```c
      void sum(int inX, int inY, int* outSum) {
@@ -502,7 +489,7 @@ Haven't you ever wished that a function/method could return more than one thing?
      }
      ```
 
-   - In practice you might even see functions written like this:
+   - In practice you often see the above function written out like this:
 
      ```c
      void sum(
@@ -588,7 +575,7 @@ In this section, we'll explore the relationship between pointers and arrays (and
     }
     ```
 
-2.  Arrays represent a list of data in contiguous sequence in memory, and that is also how they're laid out in memory: one element after another. It is therefore not all that surprising to find `arr` being represented as in the figure below, with each `int` element occupying 4 bytes. When compiled and executed, this program outputs something akin to the following:
+2.  Arrays represent a contiguous sequence of elements in memory. It is therefore not surprising to find `arr` being represented as in the figure below, with each `int` element occupying 4 bytes. When compiled and executed, this program outputs something akin to the following:
 
     <img border="1" width="250px" src="figures/proj2-ex3.png" />
 
@@ -608,22 +595,22 @@ In this section, we'll explore the relationship between pointers and arrays (and
 
 3.  Looking at the source code,
 
-    - **Lines 11 and 14**: Suppose we want to find the location of the 0th
-      element in `arr`. The syntax shown on **Line 11**
+    - **Lines 11 and 14**: Suppose we want to find the address of the 0th
+      element in `arr`. We can simply apply the `&` operator on element `arr[0]` to get its address:
 
       ```c
       printf("arr[0] location: %p\n", &arr[0]);
       ```
 
-      should not be all that surprising; we can simply apply the `&` operator on element `arr[0]` to get its address. The code on **Line 14**, however, may be slightly unexpected.
+      The code on **Line 14**, however, may be slightly unexpected, and it's equivalent! There's no address-of operator (that's not a typo!)
 
       ```c
       printf("arr location: %p\n", arr);
       ```
 
-      It would appear that an array's variable name is **actually** a pointer to the location of its 0th element! By the way, `0x4318` is hexadecimal for `17176` (for the figure below).
+      It would appear that an array's variable name is **already** a pointer to the location of its 0th element! By the way, `0x4318` is hexadecimal for `17176` (for the figure below).
 
-    - **Line 16-18**: Knowing this, let's try something else. Because we know `arr` is just a pointer, can we also dereference it to access the array elements?
+    - **Line 16-18**: Knowing this, let's try something else. Because  `arr` is just a pointer, can we also dereference it to access the array elements? Yes!!
 
       - `*(arr+0)`, or simply, `*arr` returns 9!
 
@@ -633,11 +620,11 @@ In this section, we'll explore the relationship between pointers and arrays (and
       - `*(arr+2)` returns 7
       - `*(arr+3)` returns 6
 
-    - **Line 20-22 (Important!)** Finally, the array indexing syntax we're all familiar with, `arr[i]`, is simply a convenience to programmers: Indeed, `arr[i]` is _actually_ just a shorthand for `*(arr+i)`
+    - **Line 20-22 (Important!)** Finally, the array indexing syntax `[i]` we're all familiar with, is merely a convenience for programmers: Indeed, `arr[i]` is _actually_ just a shorthand for `*(arr+i)`
 
-      - (Full circle now -- Zero-based Addressing): This may have only come up briefly in a previous course, but now we can appreciate why array indices are **0-based** in every language (i.e., first item stored in `[0]`, second item stored in `[1]`). This is due to  pointer arithmetic. If we store the first item in location `[1]`, then the C compiler would always need to subtract 1 when performing each array index lookup. That's just an unnecessary overhead!
+      - (Full circle now -- Zero-based Addressing): This may have only come up briefly in a previous course, but now we can appreciate why array indices are **0-based** in just about every language, and it's due to pointer arithmetic! If we store the first item in location `[1]`, then the C compiler would need to subtract 1 when performing each array index lookup. That's just an unnecessary overhead!
 
-4.  **Arrays are passed by reference:** Now that we know an array is essentially the address of its 0th element, take a look at the following functions that manipulate the array. Each of the following functions have the same effect (initializes all elements to -1)! Make sure you read through each and understand why.
+4.  **Arrays are passed into functions by reference:** Now that we know an array variable is just the address of its 0th element, take a look at the following functions that manipulate the array. Each of the following functions have the same effect (initializes all elements to -1)! Make sure you read through each and understand why.
 
     ```c
     void initArray(int A[], const int SIZE) {
@@ -653,18 +640,11 @@ In this section, we'll explore the relationship between pointers and arrays (and
           A[i] = -1;
       }
     }
-
-    void initArray3(int A[], const int SIZE) {
-      int i;
-      for (i = 0; i < SIZE; i++) {
-          *A++ = -1;  // wonky! Dereference *A, set its contents to -1, then increment A to next position
-      }
-    }
     ```
 
     **Important side note:** Because arrays are passed as pointers, you can now appreciate why modifications to arrays persist after the function terminates (this is also true in Java!).
 
-5.  Here's another example with char arrays (strings). Take a look at the code below, where we define a function `strToUpper(char *s)`:
+<!-- 5.  Here's another example with char arrays (strings). Take a look at the code below, where we define a function `strToUpper(char *s)`:
 
     ```c
     #include <stdio.h>
@@ -708,8 +688,9 @@ In this section, we'll explore the relationship between pointers and arrays (and
       <img border="1" width="350px" src="figures/proj2-str2upper1.png" />\
       Right before `strToUpper()` returns, the memory contents are shown below:\
       <img border="1" width="350px" src="figures/proj2-str2upper2.png" />\
-      Every time `s++` is called (Line 13), it increments the pointer to the next character in `univ`. Eventually, `s` points to `univ[11]`, allowing it to break out of the loop.
+      Every time `s++` is called (Line 13), it increments the pointer to the next character in `univ`. Eventually, `s` points to `univ[11]`, allowing it to break out of the loop. -->
 
+<!-- 
 ###### Do these exercises (not graded):
 
 - The following is a well-known function. What does it do?
@@ -720,7 +701,7 @@ In this section, we'll explore the relationship between pointers and arrays (and
      }
   }
   ```
-- Using pointer arithmetics, implement the string function `strcat(char *s, char *t)`, which concatenates the string referred to by `t` to the end of the string referred to by `s`.
+- Using pointer arithmetics, implement the string function `strcat(char *s, char *t)`, which concatenates the string referred to by `t` to the end of the string referred to by `s`. -->
 
 #### Credits
 
