@@ -11,11 +11,11 @@ let days = {
       url: "https://canvas.pugetsound.edu"
     },
     {
-      name: "Silberschatz, Galvin, and Gagne. Operating Systems Concepts 8th Ed. or greater. (Required)",
+      name: "Required Textbook: Silberschatz, Galvin, and Gagne. Operating Systems Concepts 8th Ed. or greater.",
       url: "https://www.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/0470128720"
     },
     {
-      name: "Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. Dive into Systems (Required for learning C)",
+      name: "Required Textbook: Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. Dive into Systems",
       url: "https://diveintosystems.org/book/"
     }
   ],
