@@ -20,12 +20,6 @@ $$
 
 For simplicity, you may assume that you'll only be multiplying square matrices in this assignment.
 
-
-#### ZyBooks References
-
-- 2D arrays
-- Memory allocation of 2D arrays
-
 #### Student Outcomes
 
 - To write a multi-threaded program using the `pthread` library.

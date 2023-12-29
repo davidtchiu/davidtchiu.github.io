@@ -4,7 +4,7 @@
 
 In low-traffic areas, some bridges might only support one lane of thru traffic. This means that two-lane roads must merge down to just one lane before cars on either side can use the bridge. This is potentially dangerous if cars don't coordinate with each other on both sides. Thinking this through, a line of cars on one end of the bridge must determine which direction the bridge traffic is currently flowing. If cars from the other side are moving across, then all cars in the opposing direction must wait until the other side empties out. What's more, these one-lane bridges are usually pretty old and decrepit, so there may be load restrictions that need to be followed (no more than, say, five vehicles at a time). 
 
-Your task is to write a Java program to solve the One Lane Bridge Problem, coordinating car threads so that there are no risk of accidents or bridge collapse.
+Your task is to write a Java program to solve the One Lane Bridge Problem, coordinating car threads so that there are no risk of accidents or bridge collapsing.
 
 #### Student Outcomes
 
