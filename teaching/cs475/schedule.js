@@ -1,6 +1,14 @@
   
 
 let days = {
+  books: [
+    {
+      title: 'Silberschatz, Galvin, and Gagne. <a href="https://www.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/0470128720">Operating Systems Concepts 8th Ed. or greater. (Required)',
+    },
+    {
+      title: 'Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. <a href="https://diveintosystems.org/book/">Dive into Systems</a> (Required for learning C)'
+    }
+  ],
   resources: [
     {
       name: "Course Syllabus",
