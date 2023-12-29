@@ -1,9 +1,5 @@
 # TODO
-- Need a shorter memory mgmt Hwk Assignment
 - Let them pair up on a few homework assignments.
-- Give them (much) more time for Hwk 3. Maybe make it due on Wednesday or Friday.
-- Hwk 3: Don't give them a stack. It's confusing them. Give them a list.
-- Hwk 3: More hand-holding. For instance, tell them their recursive method should return 1 or 0 depending on whether something was found. Then use that value to determine if the current directory should be printed.
 
 # Change Log
 

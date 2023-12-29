@@ -17,9 +17,9 @@ The following file(s) have been provided for this lab.
 
 - [Lab1_Shapes.zip](Lab1_Shapes.zip)
 
-#### Preliminary: Watch This Video
+<!-- #### Preliminary: Watch This Video
 
-If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) to learn how to save and open BlueJ files for this course.
+If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) to learn how to save and open BlueJ files for this course. -->
 
 #### Part 1: Getting Started
 

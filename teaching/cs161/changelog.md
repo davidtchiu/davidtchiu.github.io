@@ -3,20 +3,24 @@
   - I'd have to cut hashmap. Not a huge deal if I do.
 - Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
 - Move static/enum/private/public up (or spread them out)
-- Hwk 4 lot cooler if I introduced an Arm class or something…
+
 
 #### Change Log
-- **Spring 2024**: Exams now on Fridays to preserve Lab.
-- **Spring 2024**: Added hollowSquare to More Loops Hwk.
-- **Spring 2024**: Why have students create a new zip every time? Just submit the `.java` files. Nevermind, terrible idea.
-- **Spring 2023**: Replaced combo with Luhn's in Lab 8.
-- **Spring 2023**: Added runningSum and collatz to Hwk 5. Removed strrepeat()
-- **Spring 2023**: Replaced Hwk 2 with Alarm Clock (more conditionals)
-- **Spring 2023**: Added new Lab 6: Diamonds (abstraction)
-- **Spring 2023**: Added new Lab 2: Triangles (variables)
-- **Spring 2023**: Call them instance variables instead of fields
-- **Spring 2023**: Use Lab 1 to cover lecture 1 up to def'n of algorithms.
-- **Spring 2023**: Change books - Mapping to Horstmann early objects
+
+##### Spring 2024
+- Exams now on Fridays to preserve Lab.
+- Added hollowSquare to More Loops Hwk.
+- Just have students submit the `.java` files. 
+
+##### Spring 2023
+-  Replaced combo with Luhn's in Lab 8.
+-  Added runningSum and collatz to Hwk 5. Removed strrepeat()
+-  Replaced Hwk 2 with Alarm Clock (more conditionals)
+-  Added new Lab 6: Diamonds (abstraction)
+-  Added new Lab 2: Triangles (variables)
+-  Call them instance variables instead of fields
+-  Use Lab 1 to cover lecture 1 up to def'n of algorithms.
+-  Change books - Mapping to Horstmann early objects
   - Lec 1: Chap 1 (all)
   - Lec 2a (Circle): Chap 2.1-2.2
   - Lec 2b (Circle,TicketMachine): Chap 3.1-3.7
@@ -30,5 +34,7 @@
   - Lec 8 (Design): Chap 8.1-8.4
   - Lec 9 (Searching and Sorting): Chap 14 (web)
   - Lec 10 (Recursion): Chap 13 (web)
-- **Fall 2022** Switch back to non-`this`.
-- **Fall 2022** Added Hwk 0 to remove Hwk gap.
+
+##### Fall 2022
+- Switch back to non-`this`. (Tutors and others aren't doing it so...)
+- Added Hwk 0 to remove Hwk gap.

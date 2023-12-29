@@ -1,4 +1,4 @@
-## CS 475 Syllabus
+## CS 475 Operating Systems Syllabus
 
 
 #### Course Description
@@ -18,7 +18,7 @@ A grade of C- or higher in the following course(s) is required:
 Students taking this course will:
 - Be proficient in C.
 - Be proficient in the use of the Linux environment for coding, compilation, debugging, and testing.
-- Design and implement concurrent programs using proper synchronization techniques.
+- Design and implement concurrent programs using proper synchronization techniques in C and Java.
 - Evaluate the merits and downfalls of various OS policies.
 <!-- - Gain experience with key components in an OS kernel. -->
 
@@ -31,7 +31,7 @@ Students taking this course will:
 - CPU scheduling
 - Synchronization of concurrent programs
 - Memory management and virtual memory
-- File system
+- File systems
 
 #### CS Community Statement
 Students taking this course range from those with no prior background in programming to those with substantial experience and prior coursework. Because this course is an introduction to computer science, I do not expect students to have had any prior experience in programming. The course will work best if we respect and welcome each other no matter what level of "readiness" we are at, and we all support one another in learning. I will not tolerate behaviors that could negatively affect another student’s classroom experience. Such behaviors might include: making rude or condescending comments, snickering at others’ questions or comments, talking over other individuals, and so on. I reserve the right to withdraw a student from this class who is repeatedly exhibiting such behavior.
