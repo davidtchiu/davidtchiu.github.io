@@ -1,4 +1,4 @@
-## CS 161 - Intro to Computer Science
+## CS 475 - Operating Systems
 
 ### Lab 1: The Basics of C
 
@@ -23,7 +23,7 @@ Open your VS Code and get connected to your Remote Development environment. If y
 
 ##### Part I: The Basics
 
-- From your shell, create a directory to store your first program. Let's call this directory `learningTypes/`.
+- From your shell terminal, create a directory to store your first program. Let's call this directory `learningTypes`, like this:
 
   ```bash
   $ mkdir learningTypes
@@ -34,7 +34,7 @@ Open your VS Code and get connected to your Remote Development environment. If y
   ```bash
   $ cd learningTypes
   ```
-- Now let's create a new file using the VSCode editor.
+- Create a new file using the VSCode editor.
 
   ```bash
   $ code types.c
@@ -46,7 +46,7 @@ Open your VS Code and get connected to your Remote Development environment. If y
   /**
    * A simple C program
    *
-   * @author David
+   * @author <YOUR NAME>
    */
 
   #include <stdio.h>

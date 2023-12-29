@@ -6,7 +6,7 @@ One the most complex software systems ever assembled, the modern operating syste
 
 #### Prerequisites
 A grade of C- or higher in the following course(s) is required:
- - CSCI 281 - Assembly Language and Computer Architecture
+ - CSCI 281: Assembly Language and Computer Architecture
 
 #### Required Textbook
 
@@ -16,17 +16,17 @@ A grade of C- or higher in the following course(s) is required:
   
 #### Student Course Outcomes
 Students taking this course will:
-- Be proficient in the C programming language.
+- Be proficient in C.
 - Be proficient in the use of the Linux environment for coding, compilation, debugging, and testing.
 - Design and implement concurrent programs using proper synchronization techniques.
-- Evaluate the merits and downfalls of various CPU scheduling, memory management, and deadlock handling policies.
-- Gain experience with key components in an OS kernel.
+- Evaluate the merits and downfalls of various OS policies.
+<!-- - Gain experience with key components in an OS kernel. -->
 
 
 #### Course Topics
 - The history and current state of computer systems
 - Process management
-- Threads
+- Threads (pthread) and parallel programming
 - Interrupts and system calls
 - CPU scheduling
 - Synchronization of concurrent programs

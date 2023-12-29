@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Bonus Hwk: Extra-Credit Report
+### Bonus Hwk: Extra Credit Report
 Here's an opportunity to earn some bonus points, applied directly to your homework scores.
 
 This course teaches broadly the various technologies that show up in common operating systems, but to its influence, we've also put a lot of things in the context of UNIX-based operating systems (e.g., Linux). In this bonus assignment you are asked to report on an OS of your own choosing.
