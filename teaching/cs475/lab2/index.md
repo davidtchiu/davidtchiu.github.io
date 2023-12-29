@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: Structs, Addressing, and Pointers
+### Lab 2: Structs, Arrays, and Pointers
 
 This is the second part of a multi-part primer on C. In this tutorial-assignment, you'll gain an appreciation for the way values and variables are stored in memory. You'll be introduced to pointers, as well as the connection between pointers and arrays.
 

@@ -36,6 +36,69 @@ Starter code for this assignment is provided on the github repo. You are not req
 I have included a working solution of my program along with the starter code. The binary executable file is called `ls2Sol`. 
 
 
+##### Before You Get Started: Debugging with valgrind
+Valgrind is a tool to help you debug access errors for memory that you allocated on the heap using `malloc()`. Believe me, it will save you a bunch of time and tears. To use valgrind, you just have to first compile your C code using the `-g` (as you'd been instructed to do all along). Then run your program like this:
+
+```bash
+$ valgrind --leak-check=full <your executable file>
+```
+
+Valgrind will print out a full summary after your program terminates, reporting any memory access errors or memory leaks. Let's see an example here:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, char *argv[]) {
+  int *buf1 = (int*) malloc(sizeof(int) * 20);
+
+  for (int i = 0; i < 20; i++) {
+    buf1[i] = 0;
+  }
+  buf1[20] = 0;
+
+  return 0;
+}
+```
+
+When I compile this code and run the program through valgrind, it will generate some output. I'm using the `--leak-check=full` flag to instruct valgrind to report detailed memory leak information.
+```bash
+$ gcc -Wall -g memtest.c -o memtest
+$ valgrind --leak-check=full ./memtest 
+```
+
+Here's a breakdown of what it says:
+```
+==359874== Invalid write of size 4
+==359874==    at 0x10919F: main (memtest.c:11)
+==359874==  Address 0x523e094 is 4 bytes after a block of size 80 alloc'd
+==359874==    at 0x4E050C5: malloc (vg_replace_malloc.c:393)
+==359874==    by 0x109165: main (memtest.c:6)
+```
+This error is an "invalid write" on **line 11**, `buf1[20] = 0;` Valgrind is warning that you had malloc'd only 20 ints, but you're attempting to write to the 21st spot. Therefore, it spotted a 1-off error, and at this point you should go back to fix the error.
+
+Further down the report, you'll see another segment:
+```
+==359874== HEAP SUMMARY:
+==359874==     in use at exit: 80 bytes in 1 blocks
+==359874==   total heap usage: 1 allocs, 0 frees, 80 bytes allocated
+==359874== 
+==359874== 80 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==359874==    at 0x4E050C5: malloc (vg_replace_malloc.c:393)
+==359874==    by 0x109165: main (memtest.c:6)
+==359874== 
+==359874== LEAK SUMMARY:
+==359874==    definitely lost: 80 bytes in 1 blocks
+==359874==    indirectly lost: 0 bytes in 0 blocks
+==359874==      possibly lost: 0 bytes in 0 blocks
+==359874==    still reachable: 0 bytes in 0 blocks
+==359874==         suppressed: 0 bytes in 0 blocks
+```
+Here valgrind *suspects* that it has detected a memory leak. Reading the report can be a bit misleading though. It appears the problem occurred inside the `malloc()` function on line 393 of `vg_replace_malloc.c`, but that's highly doubtful. So you'll have to look to the next line, indicating that leak originates on the call to `malloc()` on Line 6 of *our* program. It says that 80 bytes (indeed `sizeof(int) * 20` == 80) were malloc'd, but never freed before the program terminated. Adding a call to `free(buf1)` before the program exits would have solved this leak.
+
+**Important** For all programs (starting from this assignment) that you write from now on, valgrind should absolutely be a part of your debugging workflow to save you hours of time.
+
 ###### Detailed Instructions
 
 1. Your program should accept up to two command-line arguments:
@@ -210,7 +273,7 @@ This assignment will be graded out of 50 points:
 [25pt] Implementation of Mode 2.
 [3pt] Your output of files and directories conforms to the specified format.
 [2pt] Your program properly resolves command line arguments.
-[5pt] Your program is free of memory leaks and dangling pointers.
+[5pt] Your program is free of memory leaks and dangling pointers. (Use valgrind!)
 ```
 
 #### Submitting Your Assignment

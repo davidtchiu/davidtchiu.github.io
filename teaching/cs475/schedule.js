@@ -84,17 +84,17 @@ let days = {
     labs: [
       {
         name: "Lab 1",
-        title: "C Basics",
+        title: "The Basics of C",
         url: "lab1/",
       },
       {
         name: "Lab 2",
-        title: "Pointers, Arrays, C Strings",
+        title: "Arrays, Structs, and Pointers",
         url: "lab2/",
       },
       {
         name: "Lab 3",
-        title: "Memory Allocation",
+        title: "Dynamic Memory Allocation",
         url: "lab3/",
       },
     ],

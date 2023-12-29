@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Hwk: Getting Started on C
+### Lab 1: The Basics of C
 
 This is the first part of a multi-part primer on C, a lower-level language that is commonly used in systems programming. This tutorial is written for students who have prior experience in another language (say, Java), so you will often see me making comparisons to language features found in Java.
 
