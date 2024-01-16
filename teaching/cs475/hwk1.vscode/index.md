@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk 0: Remote C Development in VS Code
+### Hwk: Remote C Development in VS Code
 
 In this tutorial, we will set you up to develop on a remote server. Here's why we have to do this, instead of developing on your own machines. C is a very finicky language, and is highly dependent on the  environment on which it compiles and executes. This is everybody's worst nightmare: turning in an assignment you've spent hours on, only to have it not compile or execute on your professor's machine. Indeed, having a common compiling and runtime environment was what made Java (and the Java Virtual Machine  JVM) so successful when it was introduced in the mid-90s. Today, most languages have a common runtime environment, and C has certainly made significant efforts to being more portable across systems, but alas I find that it's still very system dependent.
 
@@ -44,16 +44,15 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - Next, VS Code may ask you to choose an SSH configuration file. If it asks, just select the one that's already selected. 
 
-- Now click on the "Remote Explorer" button the left-hand panel, shown below. Near the top left, select the `Remote` (or `SSH Target` on older versions) option from the pull-down menu that may have "Container" selected currently. Now you should see the `149.165.174.87` and your username below it. Click on the arrow next to your username to connect.
+- Now click on the "Remote Explorer" button the left-hand panel, shown below. Near the top left, select the `Remote` (or `SSH Target` on older versions) option from the pull-down menu that may have "Containers" selected currently. Now you should see the `149.165.174.87` and your username below it. Click on the arrow next to your username to connect.
 
   <img src="figures/Visual_Studio_Code_and_schedule_js_—_davidtchiu_github_io.png" width="300px" />
 
-- You'll be prompted for your password in a box at the top. Enter the one that I assigned you. (Your Puget Sound ID starting with 5)
+- You'll be prompted for your password in a box at the top. Enter the one that I assigned you.
 
-- VS Code might then ask you what platform the remote server is using. If it asks, select `Linux` in the option menu. Then it's going to take a bit of time to install the necessary files to get you set up.
+- VS Code might then ask you what platform the remote server is using. Select `Linux` from the option menu, if asked. Then it's going to take a bit of time to install the necessary files to get you set up. Wait for it to finish completely. Once everything is set up, you should see a front page with some information and options on it. Go ahead and exit out of this page to show an empty VS Code editor. 
 
-- Once everything is set up, you should see a front page with some information and options on it. Go ahead and exit out of this page to show an empty VS Code editor. 
-  - From the left-side panel, click on the top button called "Explorer" that looks like like two sheets of paper. Then click on the button called `Open Folder`. Choose `/home/yourUsername` (which should be the default option). Important: This "path" `/home/yourUsername` is known as your **home directory** on the server. Only you (and I) have access to it, so don't worry about the privacy of your code. Think of it as your private, personal folder on the server. This is where all your code will go for this class.
+  - From the left-side panel, click on the top button called "Explorer" that looks like like two sheets of paper. Then click on the button called `Open Folder`. Choose `/home/yourUsername` (which should be the default option). Important: This "path" `/home/yourUsername` is called the **home directory** on the server. Only you (and I) have access to it, so don't worry about the privacy of your code.  This is where all your code will go for this class.
 
 -  You may be prompted for your password again, followed by a prompt to trust and accept the secure certificate. Click the checkbox then select `yes` on this dialog box.
 
@@ -61,10 +60,10 @@ It's therefore important that we all code in a common environment, so I've prepa
 
   <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_.png" width="250px" />
 
-  If you see this, congrats, you're all set up! If not, let me know.
+  If you see this, congrats, you're all set up! If not, let me know and we'll get you fixed up.
 
 #### Using the Terminal (Shell) and VS Code Editor
-- You only have to do the steps listed in the previous section that one time. Let's get a feel for how to start up the coding environment from this point forward. So go ahead and quit VS Code. 
+- You only have to do the steps listed in the previous section the first time. Let's get a feel for how to start up the coding environment from this point forward, so go ahead and quit VS Code. 
 
 - Before getting started again, keep in mind that, because we're coding on a remote server, a stable internet connection is essential. This means it will not be possible to develop while you're offline or only have an intermittent Wifi connection (e.g., on a plane), so plan wisely throughout the semester.
 
@@ -72,13 +71,13 @@ It's therefore important that we all code in a common environment, so I've prepa
 
   - I installed the `git` command-line utility on this server, so you should also take advantage of that and backup your code using git (and github).
 
-- Okay let's get started back in. Open VS Code back up. If you don't see a new, blank window, then choose `File` menu and select `New Window`. In the blank editor window, look to the on the left-hand panel with the vertical bar of icons. There's an icon called **Remote Explorer**. Click on it, then choose the profile you want to connect. It should simply be called `/home/yourUserName`.
+- Open VS Code back up. If you don't see a new, blank window, then choose the `File` menu and select `New Window`. In the blank editor window, look on the left-hand panel with the vertical bar of icons. There's an icon called **Remote Explorer**. Click on it, then choose the profile you want to connect. It should simply be called `/home/yourUserName`.
 
   <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_2.png" width="250px" />
 
-- You will be prompted for your password (can be hard to miss) near the top of the editor, and afterwards, you should see the contents of your home directory once again. If you do, then you're connected back to the server! Happy programming!
+- You will be prompted for your password (this can be hard to miss) at the top of the VS Code editor, and afterwards, you should see the contents of your home directory once again. If you do, then you're connected back to the server! Happy programming!
 
-- **Accessing the Terminal** The command-line terminal (also called a _shell_) should show up on the bottom of your VS Code editor. If it's not there, go up to the `Terminal` menu and select `New Terminal`. Here's what mine looks like:
+- **Accessing the Terminal** The command-line terminal (also called a _shell_) should show up on the bottom of your VS Code editor. If it's not there, go to the `Terminal` menu on the very top of your screen and select `New Terminal`. Here's what mine looks like:
 
   <img src="figures/dchiu__SSH__149_165_174_87_.png" width="500px" />
 
@@ -88,8 +87,8 @@ It's therefore important that we all code in a common environment, so I've prepa
 
   | Tip |  |
   | :--- | :--- |
-  | `[tab]` and `[tab tab]`| Type the first few letters of a file or directory, and hit `[tab]` to auto-complete. When the result is ambiguous, hit `[tab]` twice in  succession to reveal all the matches. |
-  | `up` and `down` keys | Hitting the `up` key will display the most recently-run command. You can hit `up` continuously to scroll through your command history. |
+  | `[tab]` | Type the first few letters of a file or directory, and hit `[tab]` to auto-complete. When the there are multiple matches, hitting `[tab]` will do nothing. However, hit `[tab]` twice in succession will reveal all the matches. |
+  | `up` and `down` keys | Hitting the `up` key will display the most recently issued command. You can hit `up` continuously to scroll through your command history. |
   | `history` | Shows you a list of recently-run commands. |
   | `ctrl + c` | Will interrupt the currently-running command, and return the shell prompt. I suspect you'll be using this one a lot! You use it to terminate a process that you ran.|
   | `ctrl + u` | Will reset your cursor (deletes everything you've typed on the same line.) |
