@@ -4,7 +4,7 @@ Here's is a list of my former research advisees and a half-hearted effort of tra
 
 ##### Undergraduate Research Alumni
 
-- Julia Kaeppel (BS'23 expected, Puget Sound)
+- Julia Kaeppel (BS'24 expected, Puget Sound)
 - Colin Monaghan (BS'22, Puget Sound) → Flock Freight
 - Manya Meutschler-Aldine (BS'21, Puget Sound) → Marigold
 - Sarah Walling-Bell (BS'20, Puget Sound) → University of Washington → Allen Institute for Brain Science
