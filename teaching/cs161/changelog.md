@@ -1,4 +1,11 @@
 #### TODO
+- In last week, where do we go after this course?
+  - Want to minor or major? CS 261, Math 210
+  - PHIL - Ethics in AI
+  - CONN 350: Modeling Earth's Climate
+  - Asian Language & Culture - Take a course or two in Chinese, Japanese, or ALC
+  - Courses in STHS
+  - Apply for a position in Tech Services
 - I should do a small unit on debugging and hand out rubber ducks sooner. BlueJ debugger tool. Problems like reverse(), edge cases, removing items from a list, ...
   - I'd have to cut hashmap. Not a huge deal if I do.
 - Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
