@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: Suped-up `ls`
+### Hwk: A Suped-Up `ls`
 
 
 #### Related Reading

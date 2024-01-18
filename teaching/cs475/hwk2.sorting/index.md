@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk 1: Sorting
+### Hwk: Sorting
 
 
 #### Related Reading
