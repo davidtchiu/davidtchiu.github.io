@@ -46,13 +46,13 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
 - Now that you have the project open and compiled, you can start creating and manipulating objects.
 
-- You can instantiate (create) objects by right-clicking (**If you're using a Mac**, you should use a two-finger click or hold down control and click.) on the appropriate shape class and selecting the `new ...()` menu item. For example, if you right-click on the `Circle` class, you should be able to select the `new Circle()` method:
+- You can instantiate (create) objects by right-clicking (**If you're using a Mac**, you should use a two-finger click or hold down control and click.) on the appropriate shape class and selecting the `new ...` menu item. For example, if you right-click on the `Circle` class, you should be able to select the `new Circle()` method to create a circle.
 
-  You will be prompted to provide a name for your object in order to keep track of it. To continue with the default name shown in the text box (e.g., `circle1`), click the `OK` button to create the object. You should now see a red box labeled with the object's name and class in the **workbench** (the lower left corner of the BlueJ window). The red object represents and gives you access to the object you just created.
+  You will be immediately prompted to provide a name for your object in order to keep track of it. To continue with the default name shown in the text box (e.g., `circle1`), click the `OK` button to create the object. You should now see a red box labeled with the object's name and class in the **workbench** (the lower left corner of the BlueJ window). The red object represents and gives you access to the object you just created.
 
   <img src="figures/workbench.png" width="300px"/>
 
-- You can now begin calling methods on the circle and changing its state. Right-click on the object to see a list of **methods** that you can call on it. Select the `makeVisible()` method, and you should now get a window with a single blue circle drawn.
+- You can now begin calling methods on the circle and changing its state. Right-click on the object (those red boxes on the bottom) to see a list of **methods** that you can call on it. Select the `makeVisible()` method, and you should now get a window with a single blue circle drawn.
 
   - If you accidentally close this window with the drawing, you can select the `makeVisible()` method class to make it appear again.
 
@@ -107,17 +107,17 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
   - To remove Pac-Man, you can click on the reset arrow &#8617; found at the _bottom right corner_ of BlueJ. This will reset the entire process.
 
-  - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (just 4-5 shapes should suffice) because your partner will have to reproduce your drawing before the lab period is over! Before you design anything, keep in mind the following limitations in our simple tool (though these would all be great functionalities to add in a future assignment!):
+  - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (just 4-5 shapes should do) because your partner will have to reproduce your drawing before the period is over! Before you design anything, keep in mind the following limitations:
 
     - You **can't** stretch or shrink a circle into an oval.
     - You **can't** stretch or shrink a square into a rectangle (but you *can* line two squares up next to each other)
     - You **can't** rotate any shapes.
     - You **can't** flip any shapes.
-    - You **can**, however overlap shapes, and the shape that you move last will appear on top.
+    - You **can**, however overlap shapes, and the shape that you touch last will always appear on top.
 
   - Now take your design from paper to screen. **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** There is no "record" function in BlueJ -- open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window and type in the steps. (You can record your steps under **Part III, question 5**). This recording becomes the algorithm for anyone (or anything -- any computer) to create your drawing.
 
-  - When you're done, erase your drawing by clicking on the reset arrow &#8617;, and wait until "time" is called.
+  - When you're done, erase your drawing by clicking on the reset arrow &#8617; and let us know that you're ready.
 
   - You will need to find another student and exchange algorithms (you can email them your algorithm, or take a picture of it with your phone, for example). By following their algorithm exactly as written (even if you think you found an error), you should be able to reproduce each other's drawings!
 
@@ -125,8 +125,7 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
 #### Part 4: Answering Questions in the README file
 
-Back in BlueJ's project window, open up the README.txt file by double-clicking on the white paper icon ![](figures/readme-icon.png).
-In general, the README file never contains any programming elements, and is used to let you describe your program.
+Back in BlueJ's project window, open up the README.txt file by double-clicking on the white paper icon ![](figures/readme-icon.png). The README file never contains any programming elements, and is used to give an overview describing your program.
 
 - First, add your name to the Authors list.
 
