@@ -17,7 +17,7 @@ This is the first part of a multi-part primer on C, a lower-level language that 
 
 #### Instructions
 
-Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 0](../hwk0.vscode).
+Open your VS Code and get connected to your Remote Development environment.
 
   - Once you're logged in, you can open a terminal from the `Terminal` menu.
 
