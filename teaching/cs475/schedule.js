@@ -27,12 +27,12 @@ let days = {
         url: "hwk1.vscode/",
         due: "1/19/2024",
       },
-      // {
-      //   name: "Hwk 2 (sorting)",
-      //   title: "Pointers, Arrays, Strings",
-      //   url: "hwk2.sorting/",
-      //   due: "1/29/2024",
-      // },
+      {
+        name: "Hwk 2 (Sorting)",
+        title: "Pointers, Arrays, Strings",
+        url: "hwk2.sorting/",
+        due: "1/29/2024",
+      },
       // {
       //   name: "Hwk 3 (ls2)",
       //   title: "Dynamic Memory Allocation",
