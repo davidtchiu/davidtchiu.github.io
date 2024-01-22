@@ -96,14 +96,14 @@ Open your VS Code and get connected to your Remote Development environment. If y
 - Save this file, and return to the Terminal to compile it:
 
   ```bash
-  $ gcc -Wall -g -o hello hello.c
+  $ gcc -Wall -g -o hello types.c
   ```
 
   The `gcc` command runs the C compiler. Let's unpack all the flags:
     - `-Wall` means to report all warnings to the output
     - `-g` generates debugging information for tools that we'll use later
     - `-o hello` gives the name of the executable file to output
-    - `hello.c` is the name of the source file
+    - `types.c` is the name of the source file
 
   Now run it, which prints this to the screen:
 
