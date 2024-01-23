@@ -141,19 +141,19 @@ Open your VS Code and get connected to your Remote Development environment.
     - `%d` - a signed integer
     - `%u` - an unsigned integer
     - `%f` - a floating point number
-    - `%s` - a string
+    - `%s` - a string (or rather, a char array)
   
   - **Lines 32-35**: shows that you can further format the above specifiers by prefixing it with `width.precision` modifier. For example, if left without a modifier (Line 32) `printf()` rounds up to six places after the floating point. Line 33 tells `printf()` to display 0 left-margin and display no values after the decimal, causing it to round 0.666667 up to 1. Line 34 specifies a `width`, which left-justifies the output to begin on the 25th place, rounded up to the third decimal place. Finally, Line 35 tries to output to the ninth decimal place, but here, you can see that floats can only be trusted up to six decimal places.
   
   - **Lines 38-41**: shows how we might obtain user-input with `scanf()`, which inputs a format string, and a reference to the address of the variable where the input should be stored. Let's study Line 39 in particular. The first argument, `%c` tells `scanf()` to read in the next `char` from the input stream. It will ignore white-spaces until it reaches a character, then reads until the next white-space is encountered. The data is then stored in the variable `a`.
   
-    - Important: In C the `&` operator is known as the address-of operator when it prefixes a variable var. It give the variable's location in memory (what data type do you think `&var` gives?)
+    - Important: In C the `&` operator is known as the address-of operator when it prefixes a variable var. It give the variable's location in memory. ( What data type do you think `&var` returns? Answer: An int!)
 
   - **Line 44**: returns `0` before exiting the program. This value is not arbitrary -- the `0` signifies a normal exit, while a non-zero value indicates an error.
 
 - **Do these exercises (not graded):**
 
-  - Edit the `types.c` program so that you input a string from the user, and read it into str using `scanf()`. What happens when there's a white-space in your input? What happens when you try to read a string whose length is longer than 12? (Hint: The original string is length 12).
+  - Edit the `types.c` program so that you input a string from the user, and read it into `str` using `scanf()`. What happens when there's a whitespace in your input? I'll guess that the compiler is going to yell at you about your `scanf()` syntax to read a string into `&str`. Try reading it into `str` instead of `&str`, and it should work. But you should ask yourself, "What is different about strings that it doesn't require the address-of operator?" What happens when you try to read a string whose length is longer than 12? (Hint: The original string was length 12).
 
   - Write a program `temperature.c` that prompts the user for a temperature in Fahrenheit, and converts it to Celsius. Round temperatures off to the nearest hundredth degree.
 

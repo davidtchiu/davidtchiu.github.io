@@ -367,7 +367,7 @@ Every piece of data in your program, including variables and literals (e.g., 2, 
 
 - **Practice Problems (not graded)**
 
-  - We know that a pointer to an int (`int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? 
+  - Suppose we know that a pointer to an int (`int*`) occupies 8 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? Why?
 
   - You can also create a pointer to a `void` data type, which seems odd at first. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. (Hint: Think generics in Java).
 
