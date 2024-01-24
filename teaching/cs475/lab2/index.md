@@ -380,7 +380,6 @@ Let's put everything together. There are three basic pointer concepts you have t
 
    ```c
    dataType *ptr;          //pointer to a dataType
-   dataType *ptr1, *ptr2, *ptr3;   //multiple pointers
    ```
 
    When assigning a pointer `q` to another pointer `p`, it causes them both to point to the same data.

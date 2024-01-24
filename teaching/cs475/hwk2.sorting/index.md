@@ -84,7 +84,7 @@ I have included a working solution of my program along with the starter code. Th
 
    - `void swap (Employee *e1, Employee *e2)`: Inputs pointers to two Employees, and swaps them.
 
-   - `void printHeap(Employee *A, int n)`: Prints all values in the array referenced by pointer `A`.
+   - `void printList(Employee *A, int n)`: Prints all values in the array referenced by pointer `A`.
 
    - `void heapsort(Employee *A, int i, int n)`: This function inputs a pointer to an unsorted array of Employees and the size of that array and sorts it in descending order of their salary. Here's the sketch:
      ```
