@@ -104,12 +104,12 @@ let days = {
         url: "lab1.bluej/",
         due: "1/19/2024",
       },
-      // {
-      //   name: "Lab 2",
-      //   title: "Triangle Class (Variables, Scope, and Lifetime)",
-      //   url: "lab2.vars/",
-      //   due: "1/26/2024",
-      // },
+      {
+        name: "Lab 2",
+        title: "Triangle Class (Variables, Scope, and Lifetime)",
+        url: "lab2.vars/",
+        due: "1/26/2024",
+      },
       // {
       //   name: "Lab 3",
       //   title: "Stomach Class (Class Writing)",
