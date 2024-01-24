@@ -157,15 +157,15 @@ Open your VS Code and get connected to your Remote Development environment.
 
   - Write a program `temperature.c` that prompts the user for a temperature in Fahrenheit, and converts it to Celsius. Round temperatures off to the nearest hundredth degree.
 
-  - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters `'y'` then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, prompt again. (Hint: C's while-loop syntax is exactly the same as Java's).
+  - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters `'y'` then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, prompt again. (Hint: C's while-loop syntax is exactly the same as Java's). 
 
 ##### More about `char`
 
-It is worth giving special attention to the char data type. A `char` is essentially an 8-bit integer. That means chars can represent $$2^8 = 256$$ numbers, and each map to a unique character under the ASCII standard. Below I list a few notable mappings, but click here to see the [full list of ASCII codes](https://www.asciitable.com/).
+It is worth giving special attention to the `char` type. A `char` is essentially an 8-bit integer. That means chars can represent $$2^8 = 256$$ numbers, and each map to a unique character under the ASCII standard. Below I list a few notable mappings, but click here to see the [full list of ASCII codes](https://www.asciitable.com/).
 
-- Do not confuse the character, `'0'` (which has an ASCII integer value of `48`), with `'\0'` (which has an ASCII integer value of 0). The character `\0` is called the "NULL character" and it plays a big role with C strings.
+- Do not confuse the character, `'0'` (which has an ASCII integer value of `48`), with `'\0'` (which has an ASCII integer value of 0). The character `\0` is called the "null character" and it plays a huge role, once we get to covering C strings.
 
-- To see that `char`s are really stored numerically, you can print them out using the `%d` formatter to view their ASCII values. You can even type-cast `int`s into `char`s, and vice versa.
+- To see that `char`s are stored numerically, you can print them out using the `%d` formatter to view their ASCII values. You can even type-cast `int`s into `char`s, and vice versa.
 
   ```c
   printf("%c = %d\n", 'A', 'A');  //prints A = 65
@@ -182,7 +182,7 @@ It is worth giving special attention to the char data type. A `char` is essentia
   printf("%d\n", x);  //prints 35, the ASCII value of '#'
   ```
 
-- Therefore, it is possible to do some arithmetics directly on chars, which may look a bit wonky at first, but can be useful. For instance, we could  convert any letter to upper case by subtracting an offset of `32`:
+- Therefore, it is possible to do arithmetic directly on chars, which may look a bit wonky at first, but can be extremely useful. For instance, we could use the following code to convert any letter to upper case by subtracting an offset of `32`:
 
   ```c
   if (c >= 'a' && c <= 'z') {
