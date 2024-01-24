@@ -187,7 +187,7 @@ let days = {
     // wk 2
     "Reading Java code: comments, fields, data types",
     "Constructors; input parameters, assignment statements",
-    "Lab 2: Triangle",
+    "Methods. Plus, Lab 2: Triangle",
     "Variable types: instance, local, input; lifetime and scope",
     // wk 3
     "Methods and returning; Finish Circle, start TicketMachine",

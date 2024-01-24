@@ -34,7 +34,7 @@ You might've already done this, but just in case, let's take some time to custom
 
 In Java (and other programming languages), a variable refers to some unit of storage with a name. Before you can use a variable, the programmer must first declare what kind of data a particular variable can store (**data type**) and then the programmer should give it a good name to avoid confusion later. You have already seen several common data types: `int`, `double`, `String`, `char`, and `boolean`.
 
-The particular kind of variable that we have been using thus far in lectures is used to store an object's state. We call these **fields** (or **instance variables**). Later in lab, we'll introduce you to a couple other types of variables, each with different usages. Recall the basic class syntax, shown below.
+The particular kind of variable that we have been using thus far in lectures is used to store an object's state. We call these **instance variables** or **fields**. Later in lab, we'll introduce you to a couple other types of variables, each with different usages. Recall the basic class syntax, shown below.
 
 ```java
 /**
@@ -61,7 +61,7 @@ private dataType variableName;
 
 2. Back in the BlueJ project window, create a new `Triangle` instance and inspect its state by double-clicking it. You should see the two new instance variables you just declared, but alas, they are showing up as zeroes.
 
-    - It's important to use this moment to reflect. Even though you gave these fields names that indicate exactly what they are, they don't just magically get values. (Computers have no insight, remember?)
+    - It's important to use this moment to reflect. Even though you gave these instance variables good names that indicate what they are, they don't just magically get values. (Computers have no insight!)
 
     - It's up to *you* to assign values to these instance variables, and to keep track of them. Let's do so now.
 
@@ -85,7 +85,7 @@ private dataType variableName;
 
       - You'll need know this for calculating the perimeter. If you need to take the square root of a value `x`, you can use the built-in Java function `Math.sqrt(x)`. Also, to take `x` to the `y`th power ($$x^y$$), you can use `Math.pow(x,y)`
 
-4. Create a new `Triangle` to see if your `area` and `perimeter` fields are now populating. If you did everything above correctly, you should've gotten 600.0 for area and roughly 112.11 for perimeter.
+4. Create a new `Triangle` to see if your `area` and `perimeter` instance variables are now populating. If you did everything above correctly, you should've gotten `600.0` for area and roughly `112.11` for perimeter.
 
 5. But is this the only place where a triangle's `area` and `perimeter` need to be updated? Scroll further down the source code and see if there are any methods that might require the `area` and `perimeter` to be updated. Put in the assignment statements in those method(s) as well. Test again to make sure everything's working.
 

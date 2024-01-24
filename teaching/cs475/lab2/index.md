@@ -19,14 +19,14 @@ This is the second part of a multi-part primer on C. In this tutorial-assignment
 
 #### Instructions
 
-Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 0](../hwk0.vscode).
+Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 1](../1.vscode).
 
   - Once you're logged in, you can open a terminal from the `Terminal` menu.
 
 
 ##### Part 0: Structs and Typedef
 
-C is not an object-oriented language, but it does support object-like elements called `struct`. I like to think of `struct`s as classes in Java with only public fields and no methods. Let's see how it's used.
+C is not an object-oriented language, but it does support object-like elements called `struct`. I like to think of `struct`s as classes in Java with only public fields and no methods. It's used solely to combine multiple pieces of data. Let's see how it's used.
 
 - To create a struct in C, you can use the following syntax:
 
@@ -39,7 +39,7 @@ C is not an object-oriented language, but it does support object-like elements c
   };
   ```
 
-  Usually, the declaration of structs is done in a `.h` file that can be included anywhere the struct is referenced. Once a `struct` has been declared you can use it as a "cookie-cutter" to create "instances" of that type. For example, the following code uses a `struct` to store a point:
+  Usually, the declaration of structs is done inside a `.h` file that can be `#include`d anywhere the `struct` is referenced. Once a `struct` has been declared you can use it as a data type. For example, the following code uses a `struct` to store a point, which has an x and y coordinate:
 
   ```c
   #include <stdio.h>
@@ -80,18 +80,18 @@ C is not an object-oriented language, but it does support object-like elements c
 
 - **Important**
 
-  - A `struct`'s fields (called *data members* in C) are assumed `public`. There is no such thing as `private` or `protected` in C. 
-  - Like Java, data members are accessed using dot-notation (`var.field`). You'll see a very different notation once we start talking about pointers to structs though.
+  - A `struct`'s fields (called *data members* in C) are assumed to be `public`. (There is no such thing as `private` or `protected` scope in C.)
+  - Like Java, data members are accessed using dot-notation (`structName.fieldName`). You'll see a very different notation once we start talking about pointers to structs though. For now, the dot-notation will do.
 
 ##### Important Aside: Aliasing Type Names with `typedef`
 
-C allows us to give different names to data types. For instance, I could create an type alias `employee_t` to stand for `unsigned short int`, and use `employee_t` everywhere in my code, to improve code understanding. We do this using the following syntax:
+C allows us to give new names (aliasing) to established data types. For instance, I could create an type alias `employee_t` to stand for `unsigned short int`, and use `employee_t` everywhere in my code, to improve code understanding. We do this using the following syntax:
 
 ```c
 typedef <data type> <alias>;
 ```
 
-- Let's alias `employee_t` to represent an `unsigned short int`. This makes for much more readable and manageable code:
+- Let's alias `employee_t` to represent an `unsigned short int`. This makes for much more readable  code:
 
   ```c
   #include <stdio.h>
@@ -121,7 +121,7 @@ typedef <data type> <alias>;
   }
   ```
 
-- **Important** Typedefs are often used in conjunction with `structs`. For example, it's mildly annoying that we have to declare a `Point` variable named `p` using `struct Point p;` syntax. Using `typedef` totally optional here, but it *would* make the syntax a little more familiar to what we're used to seeing in Java, and certainly easier on the eyes:
+- Typedefs are often used in conjunction with `structs`. For example, it's mildly annoying that we have to use `struct Point p;` syntax just to declare a `struct Point` variabl `p`. Using `typedef` totally optional here, but it *would* make the syntax a little easier on the eyes:
 
   ```c
   typedef struct <structName> {
@@ -138,12 +138,12 @@ typedef <data type> <alias>;
   } Point;
   ```
 
-  and now we can declare using `Point p;` and access its elements just like before: `p.xCoord` and `p.yCoord`.
+  and now we can declare new points simply using `Point p;` rather than `struct Point p;`
 
 
 ##### Part 1: Understanding Variables - Data Types
 
-A variable is a symbol that is associated with: (a) its data type and (b) its location in memory. To understand pointers, we need to have a grasp on both. We'll start discussion with the former. Consider the following code snippet:
+Okay, now for  a change of pace. A variable is a symbol that is associated with: (a) a data type and (b) its address in memory. To understand pointers, we need to have a grasp on both. We'll start discussion with the former. Consider the following code snippet:
 
 ```c
 char letter = 'p';
@@ -151,10 +151,9 @@ int days = 365;
 double amt = 90000.75;
 ```
 
-Although high-level languages like C, Java, etc., hide it from us, the three variables have to exist *somewhere* in your computer's memory. Let's take a look at a make-believe snapshot of my computer's memory as it runs the code shown above.
-You might recall from your architecture class that a **CPU word** is a unit of data transfer between memory and CPU. In these tutorials, we'll assume that a word is a block of four contiguous bytes (i.e., 32-bits).
+The three variables have to exist *somewhere* in memory. Let's take a look at a make-believe snapshot of my computer's memory as it runs the code shown above. You might recall from your architecture class that a **CPU word** is a unit of data transfer between memory and CPU. For simplicity, in these tutorials, we'll assume that a word is a block of four contiguous bytes (i.e., 32-bits),  though it should be stated that a word is usually 8 bytes (64-bits) in modern machines.
 
-In the figure below, only a word's start address is shown, but know that each byte within the word is addressable too. When a CPU requests the byte located at a certain address, say `1117`,  the *full* word ranging from address `1116` to `1119` is retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte at `1117`. All of this is done behind the scenes hidden from the programmer.\
+In the figure below, only a word's start address is shown, but know that each byte within the word is addressible too. When a CPU requests the byte located at a certain address, say `1117`,  the *full* word ranging from address `1116` to `1119` is retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte at `1117`. All of this is done behind the scenes, hidden from the programmer.\
 
  <img border="1" width="450px" src="figures/proj2-ex1.png"/>
 
@@ -273,15 +272,15 @@ size of 0.5 * 400 / 2: 8 bytes
 
 - **Practice Questions (not graded):**
 
-  - Although a `char` requires just one byte of storage, most CPUs will insist on wasting, or "padding" the remaining 3 bytes (see figure above). Why do you think CPUs prefer this, instead of, say, having `amt` start from address `1117` to save you space? *(Ans: It's all about word-alignment. Recall that a unit of transfer between memory and CPU is a word. If we didn't pad the remaining unused bits of the word, then the start of the next data will begin in the same word, and must span across two words.)*
+  - Although a  single`char` requires just one byte of storage, most CPUs will insist on wasting, or "padding" the remaining 3 bytes (see figure above). Why do you think CPUs prefer this, instead of, say, having `amt` start from address `1117` to save you space? *(Ans: It's all about word-alignment. Recall that a unit of transfer between memory and CPU is a word. If we didn't pad the remaining unused bits of the word, then the start of the next data will begin in the same word, and must span across two words.)*
 
-  - What is the point of an `unsigned integer`, and when would it be appropriate to declare an unsigned variable? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: Recall from architecture that the most-significant bit, called the sign-bit, determines the +/- sign of that number. But the sign-bit wastes a bit! So a regular `int` can cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[2^{32}-1]$$. If you know that a value cannot be negative (such as salary or phone numbers), it is appropriate to use unsigned ints.*
+  - What is the point of an `unsigned integer`, and when would it be appropriate to declare an unsigned variable? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: Recall from your Architecture course that the most-significant bit, called the sign-bit, determines the +/- sign of that number. But the sign-bit wastes a bit! So a regular `int` can only cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[0, 2^{32}-1]$$, recalling that an `int` is 32 bits. If you know that a value cannot be negative (such as salary), it is appropriate to use unsigned ints. Java does not support unsigned ints.*
 
   - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)*
 
-##### Part 2: Understanding Variables - Addressing
+##### Part 2: Understanding Addressing
 
-Every piece of data in your program, including variables and literals (e.g., 2, 3.14, etc.), is stored in two pieces: (1) its content, and (2) its address. We generally only have control over its content. It's up to your OS to find a location in memory for it. It is possible, however, for programmers to ask the system for the addresses of your data. This section focuses on the support for working with a variable's location in C. In particular, we will focus on three new syntax: the address-of operator (`&var`), the pointer-declaration operator (`type *var`), and the de-reference operator (`*var` and `var->field`).
+Every piece of data in your program, whether it's a  variable or a literal (like "hi" and 3.14), is stored in two pieces: its content and its address. We only have control over its content, and it's up to your OS to find a suitable location in memory to place it. It is possible, however, for programmers to ask the system for the addresses of your data. This section focuses on the support for working with a variable's location in C. In particular, we will focus on three syntax items: the address-of operator (`&var`), the pointer-declaration operator (`type *var`), and the de-reference operators (`*var` and `var->field`).
 
 1. Let's now consider the code below. Read through it before moving on.
 
@@ -351,23 +350,23 @@ Every piece of data in your program, including variables and literals (e.g., 2, 
      (*ptr)--;   //decrement the content of 'days' by 1
      ```
 
-     Okay this is a strange one. `ptr` is first dereferenced to get the content `365`. It is then decremented to `364` and written back. *(What's the order of precedence? What would `*ptr--` do? What about `*(p--)`?)*
+     Okay this is a strange one. `ptr` is first de-referenced to return the content `365`. The de-referenced content is then decremented to `364`.
 
    - On **Lines 15-17**: shows that we can use the output specifier, `%p` to print an address (in hexadecimal).
 
      ```c
-     printf("Location of days: %p\n", &days);
-     printf("Location of ptr: %p\n", &ptr);
-     printf("Value of ptr: %p\n", ptr);
+     printf("Location of days: %p\n", &days);   // 0x458
+     printf("Location of ptr: %p\n", &ptr);     // 0x8A2C
+     printf("Value of ptr: %p\n", ptr);         // 0x458
      ```
 
      The addresses of `days` (0x458 == 1112) and `ptr` (0x8A2C == 35372) are first printed. This is followed by printing the contents of `ptr`, which unsurprisingly, stores the address of `days`.
 
-- *Important:* In the examples above, we showed that the `&` operator returns only the address of the *first byte* of `days`, even though `days`  occupies the following three bytes as well. When we dereference `*ptr` on **Line 8** and **Line 12**, the system was *smart* enough to know that the next three bytes are part of `days` value. Had the program read anymore than three additional bytes, we would've gotten a much larger number, and had it read fewer than three bytes, it would've truncated our number. How the heck does the system know **exactly three** more bytes (and not zero, or one, or seven, or 1000) trailed first byte? (Ans: This is why we declare data types in the first place! When we told C that `days` is an `int`, the C compiler translates `int` to something equivalent to a 32-bit `DWORD` in the underlying assembly language. The compiler would also translate `double` to a 64-bit `QUAD WORD`, and so on.)
+- *Important:* In the examples above, we demonstrated that the `&` operator returns only the address of the *first byte* of the associated variable, even if the variable might occupy more than one byte. For instance, `&days` returns simply `0x458`, even though `days` occupies the next three bytes as well. When we de-reference `*ptr` on **Line 8** and **Line 12**, the system was *smart* enough to know that the next three bytes are part of `days`'s value.  How  does the system know **exactly three** more bytes (and not zero, or one, or seven, or 1000) trailed first byte of `days`? **(Ans: This is why we declare data types in the first place! When we told C that `days` is an `int`, the C compiler translates `int` to something equivalent to a 32-bit `DWORD` in the underlying assembly language.)**
 
 - **Practice Problems (not graded)**
 
-  - Suppose we know that a pointer to an int (`int*`) occupies 8 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? Why?
+  - Suppose we know that a pointer to an int (`int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? **(Ans: 4 bytes. Pointers are nothing more than addresses, no matter what kind of data you're pointing to. Addresses are fixed length.)**
 
   - You can also create a pointer to a `void` data type, which seems odd at first. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. (Hint: Think generics in Java).
 
@@ -401,10 +400,10 @@ Let's put everything together. There are three basic pointer concepts you have t
 
    - You must first `#include <stdlib.h>` to get access to the `NULL` constant.
 
-3. Dereferencing Operator: Given an already-declared pointer `ptr`, we use `*ptr` to access the value at the location referenced by `ptr`. As I lamented earlier, I wish we chose a different syntax for dereferencing, because `*ptr` already has a different meaning!
+3. The De-reference Operator: Given an already-declared pointer `ptr`, we use `*ptr` to access the value at the location referenced by `ptr`. As I lamented earlier, I wish we chose a different syntax for dereferencing, because `*ptr` already has a different meaning!
    ```c
-   *b = 15; // dereference b! c is now 15
-   *a += 5; // dereference a! c is now 20
+   *b = 15; // de-reference b to get to c's content! c is now 15
+   *a += 5; // de-reference a to get to c's content! c is now 20
    ```
 
 - Memory contents after  `*b = 15`.\
@@ -414,12 +413,10 @@ Let's put everything together. There are three basic pointer concepts you have t
   <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
 
 - **Practice Questions (not graded):**
-
-  - What value does the `NULL` constant hold? Try printing out.
   
-  - What happens to your program when you try to dereference a pointer to `NULL`? *(Ans:  In Java, you'd get the NullPointerException thrown, but there are no such things as Exceptions in C... This really is something you should try out in C.)*
+  - What happens to your program when you try to de-reference a pointer to `NULL`? *(Ans:  In Java, you'd get the NullPointerException, but there are no such things as Exceptions in C... This really is something you should try out.)*
 
-  - **Do this. For real.** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? (If you need help figuring this out, read on to the next section and try again.)
+  - **Do this. For real.** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? (If you need help figuring this out, read on to `Part 4 - Output Parameters`)
 
 ##### Part 3: Pointers as Input Parameters
 
@@ -474,7 +471,7 @@ Let's put everything together. There are three basic pointer concepts you have t
    swap3(a,b); //swap?
    ```
 
-##### Part 4: Function "Output" Parameters
+##### Part 4:  "Output" Parameters
 Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to create a new class that stored multiple values, or returned an array. You can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values (without actually calling `return` to do it).
 
  **"Output Parameters"**: An output parameter refers to a pointer that is input into a function, and the function modifies its contents before exiting. After the function call, one just needs to dereference the pointer to obtain the updated value(s).
