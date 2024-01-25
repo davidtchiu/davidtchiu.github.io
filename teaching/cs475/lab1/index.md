@@ -460,6 +460,124 @@ returnType funcName(param1, param2, ...) {
 
   - Write a function `void merge(int A[], int B[], int C[], int lengthA, int lengthB, int lengthC)` that inputs 2 sorted int arrays `A` and `B`, and an "output" array `C`. The function merges `A` and `B` into a sorted sequence in array `C`. Because the function doesn't know the arrays' lengths, you must also input those as params.
 
+
+
+##### Part 0: Structs and Typedef
+
+C is not an object-oriented language, but it does support object-like elements called `struct`. I like to think of `struct`s as classes in Java with only public fields and no methods. It's used solely to combine multiple pieces of data. Let's see how it's used.
+
+- To create a struct in C, you can use the following syntax:
+
+  ```c
+  struct structName {
+      type0 field0;
+      type1 field1;
+      // ... other fields
+      typeN fieldN;
+  };
+  ```
+
+  Usually, the declaration of structs is done inside a `.h` file that can be `#include`d anywhere the `struct` is referenced. Once a `struct` has been declared you can use it as a data type. For example, the following code uses a `struct` to store a point, which has an x and y coordinate:
+
+  ```c
+  #include <stdio.h>
+  #include <math.h>
+
+  /**
+   * Define a Point struct
+   */
+  struct Point {
+      double xCoord;
+      double yCoord;
+  };
+
+  /**
+  * Finds distance between two points
+  * @param u one point
+  * @param v another point
+  * @return distance between points u and v
+  */
+  double getDistance(struct Point u, struct Point v) {
+      return sqrt(pow(u.xCoord - v.xCoord, 2) + pow(u.yCoord - v.yCoord, 2));
+  }
+
+
+  int main(int argc, char *argv[]) {
+      struct Point p, q;  //declare two Points (yes the struct keyword is required -- for now)
+
+      //set Points' location
+      p.xCoord = 0;
+      p.yCoord = 0;
+      q.xCoord = 5.1;
+      q.yCoord = 10.75;
+
+      printf("The distance from p to q is: %.3f\n", getDistance(p,q));
+      return 0;
+  }
+  ```
+
+- **Important**
+
+  - A `struct`'s fields (called *data members* in C) are assumed to be `public`. (There is no such thing as `private` or `protected` scope in C.)
+  - Like Java, data members are accessed using dot-notation (`structName.fieldName`). You'll see a very different notation once we start talking about pointers to structs though. For now, the dot-notation will do.
+
+##### Important Aside: Aliasing Type Names with `typedef`
+
+C allows us to give new names (aliasing) to established data types. For instance, I could create an type alias `employee_t` to stand for `unsigned short int`, and use `employee_t` everywhere in my code, to improve code understanding. We do this using the following syntax:
+
+```c
+typedef <data type> <alias>;
+```
+
+- Let's alias `employee_t` to represent an `unsigned short int`. This makes for much more readable  code:
+
+  ```c
+  #include <stdio.h>
+
+  typedef unsigned short int employee_t;   //alias employee_t to unsigned short int
+
+  /**
+  * Returns a pointer to a string containing an employee's name
+  */
+  int getSalary(employee_t id) {
+      //(code omitted)
+  }
+
+  /**
+  * Main function
+  */
+  int main(int argc, char *argv[]) {
+      employee_t employeeID;
+      printf("Enter an employee id: ");
+      scanf("%u", &employeeID);   // read input as unsigned int (%u) into employeeID.
+
+      int salary = getSalary(employeeID);
+
+      // (code omitted)
+
+      return 0;
+  }
+  ```
+
+- Typedefs are often used in conjunction with `structs`. For example, it's mildly annoying that we have to use `struct Point p;` syntax just to declare a `struct Point` variabl `p`. Using `typedef` totally optional here, but it *would* make the syntax a little easier on the eyes:
+
+  ```c
+  typedef struct <structName> {
+      //members
+  } <structName>;
+  ```
+
+  We can now declare the `Point` struct as follows,
+
+  ```c
+  typedef struct Point {
+      double xCoord;
+      double yCoord;
+  } Point;
+  ```
+
+  and now we can declare new points simply using `Point p;` rather than `struct Point p;`
+
 <!-- 
 
 #### Assignment: Word Stats (Graded)

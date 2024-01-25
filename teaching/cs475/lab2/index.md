@@ -11,8 +11,6 @@ This is the second part of a multi-part primer on C. In this tutorial-assignment
 #### Student Outcomes
 
 - To understand how values and variables are stored in memory.
-- To be familiar with the usage of `struct`s.
-- To be familiar with type aliasing (`typedef`)
 - To be familiar with pointers and references.
 - To understand the connection between pointers and arrays.
 
@@ -22,123 +20,6 @@ This is the second part of a multi-part primer on C. In this tutorial-assignment
 Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 1](../1.vscode).
 
   - Once you're logged in, you can open a terminal from the `Terminal` menu.
-
-
-##### Part 0: Structs and Typedef
-
-C is not an object-oriented language, but it does support object-like elements called `struct`. I like to think of `struct`s as classes in Java with only public fields and no methods. It's used solely to combine multiple pieces of data. Let's see how it's used.
-
-- To create a struct in C, you can use the following syntax:
-
-  ```c
-  struct structName {
-      type0 field0;
-      type1 field1;
-      // ... other fields
-      typeN fieldN;
-  };
-  ```
-
-  Usually, the declaration of structs is done inside a `.h` file that can be `#include`d anywhere the `struct` is referenced. Once a `struct` has been declared you can use it as a data type. For example, the following code uses a `struct` to store a point, which has an x and y coordinate:
-
-  ```c
-  #include <stdio.h>
-  #include <math.h>
-
-  /**
-   * Define a Point struct
-   */
-  struct Point {
-      double xCoord;
-      double yCoord;
-  };
-
-  /**
-  * Finds distance between two points
-  * @param u one point
-  * @param v another point
-  * @return distance between points u and v
-  */
-  double getDistance(struct Point u, struct Point v) {
-      return sqrt(pow(u.xCoord - v.xCoord, 2) + pow(u.yCoord - v.yCoord, 2));
-  }
-
-
-  int main(int argc, char *argv[]) {
-      struct Point p, q;  //declare two Points (yes the struct keyword is required -- for now)
-
-      //set Points' location
-      p.xCoord = 0;
-      p.yCoord = 0;
-      q.xCoord = 5.1;
-      q.yCoord = 10.75;
-
-      printf("The distance from p to q is: %.3f\n", getDistance(p,q));
-      return 0;
-  }
-  ```
-
-- **Important**
-
-  - A `struct`'s fields (called *data members* in C) are assumed to be `public`. (There is no such thing as `private` or `protected` scope in C.)
-  - Like Java, data members are accessed using dot-notation (`structName.fieldName`). You'll see a very different notation once we start talking about pointers to structs though. For now, the dot-notation will do.
-
-##### Important Aside: Aliasing Type Names with `typedef`
-
-C allows us to give new names (aliasing) to established data types. For instance, I could create an type alias `employee_t` to stand for `unsigned short int`, and use `employee_t` everywhere in my code, to improve code understanding. We do this using the following syntax:
-
-```c
-typedef <data type> <alias>;
-```
-
-- Let's alias `employee_t` to represent an `unsigned short int`. This makes for much more readable  code:
-
-  ```c
-  #include <stdio.h>
-
-  typedef unsigned short int employee_t;   //alias employee_t to unsigned short int
-
-  /**
-  * Returns a pointer to a string containing an employee's name
-  */
-  int getSalary(employee_t id) {
-      //(code omitted)
-  }
-
-  /**
-  * Main function
-  */
-  int main(int argc, char *argv[]) {
-      employee_t employeeID;
-      printf("Enter an employee id: ");
-      scanf("%u", &employeeID);   // read input as unsigned int (%u) into employeeID.
-
-      int salary = getSalary(employeeID);
-
-      // (code omitted)
-
-      return 0;
-  }
-  ```
-
-- Typedefs are often used in conjunction with `structs`. For example, it's mildly annoying that we have to use `struct Point p;` syntax just to declare a `struct Point` variabl `p`. Using `typedef` totally optional here, but it *would* make the syntax a little easier on the eyes:
-
-  ```c
-  typedef struct <structName> {
-      //members
-  } <structName>;
-  ```
-
-  We can now declare the `Point` struct as follows,
-
-  ```c
-  typedef struct Point {
-      double xCoord;
-      double yCoord;
-  } Point;
-  ```
-
-  and now we can declare new points simply using `Point p;` rather than `struct Point p;`
 
 
 ##### Part 1: Understanding Variables - Data Types
@@ -374,9 +255,9 @@ Every piece of data in your program, whether it's a  variable or a literal (like
 
 Let's put everything together. There are three basic pointer concepts you have to master to succeed in this class:
 
-1. Address-of Operator: Given a variable var, `&var` returns the address of var's location in memory.
+1. Address-Of Operator: Given a variable var, `&var` returns the address of var's location in memory.
 
-2. A pointer variable stores the address of some data. This data can be a variable, an array, or even another pointer... To declare a pointer, you use the following syntax:
+2. A pointer variable stores the address of some data. This data can be a variable, an array, or even another pointer. To declare a pointer, you use the following syntax:
 
    ```c
    dataType *ptr;          //pointer to a dataType
@@ -424,7 +305,10 @@ Let's put everything together. There are three basic pointer concepts you have t
     printf("%d\n", min);  // 10
     ```
 
-##### Part 3: Pointers as Input Parameters
+
+
+
+##### Part 4: Pointers as Input Parameters
 
 1. Consider the following function used to swap the values of two integer variables:
 
@@ -477,7 +361,7 @@ Let's put everything together. There are three basic pointer concepts you have t
    swap3(a,b); //swap?
    ```
 
-##### Part 4:  "Output" Parameters
+##### Part 5:  "Output" Parameters
 Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to create a new class that stored multiple values, or returned an array. You can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values (without actually calling `return` to do it).
 
  **"Output Parameters"**: An output parameter refers to a pointer that is input into a function, and the function modifies its contents before exiting. After the function call, one just needs to dereference the pointer to obtain the updated value(s).
@@ -545,7 +429,8 @@ Have you ever wished that a function/method could return more than one thing? To
      Name: David, GPA: 0.00
      ```
 
-##### Part 5: Connection to Arrays (Pointer Arithmetic)
+
+##### Part 6: Connection to Arrays and Strings (Pointer Arithmetic)
 In this section, we'll explore the relationship between pointers and arrays (and strings).
     
 1.  Study the following source file, then compile and run it.
@@ -615,7 +500,7 @@ In this section, we'll explore the relationship between pointers and arrays (and
 
     - **Line 16-18**: Knowing this, let's try something else. Because  `arr` is just a pointer, can we also dereference it to access the array elements? Yes!!
 
-      - `*(arr+0)`, or simply, `*arr` returns 9!
+      - `*(arr+0)`, or simply, `*arr` returns 9
 
       **Pointer Arithmetic** Exciting! How would we access the array element at index 1? The runtime is smart enough to know that the next element is 4 bytes away because the array was declared to store `int`s. So adding 1 to the pointer will automatically skip the next 3 bytes and move the pointer to the next item in the array!
 
@@ -627,17 +512,20 @@ In this section, we'll explore the relationship between pointers and arrays (and
 
       - (Full circle now -- Zero-based Addressing): This may have only come up briefly in a previous course, but now we can appreciate why array indices are **0-based** in just about every language, and it's due to pointer arithmetic! If we store the first item in location `[1]`, then the C compiler would need to subtract 1 when performing each array index lookup. That's just an unnecessary overhead!
 
-4.  **Arrays are passed into functions by reference:** Now that we know an array variable is just the address of its 0th element, take a look at the following functions that manipulate the array. Each of the following functions have the same effect (initializes all elements to -1)! Make sure you read through each and understand why.
+4.  **Arrays are "passed by reference":** Now that we know an array variable is just the address of its 0th element, take a look at the following functions that manipulate the array. Each of the following functions have the same effect (initializes all elements to -1)! Make sure you read through each and understand why.
 
     ```c
-    void initArray(int A[], const int SIZE) {
+    void initArray(int *A, const int SIZE) {
       int i;
       for (i = 0; i < SIZE; i++) {
           A[i] = -1;
       }
     }
+    ```
 
-    void initArray2(int *A, const int SIZE) {
+    By the way, the following code also works:
+    ```c
+    void initArray(int A[], const int SIZE) {
       int i;
       for (i = 0; i < SIZE; i++) {
           A[i] = -1;
@@ -646,6 +534,17 @@ In this section, we'll explore the relationship between pointers and arrays (and
     ```
 
     **Important side note:** Because arrays are passed as pointers, you can now appreciate why modifications to arrays persist after the function terminates (this is also true in Java!).
+
+
+##### Important Summary: Why Do We Need Pointers?
+Let's pause here and ask why pointers are needed at all?  There are several reasons to use pointers:
+
+- **For passing arguments into functions (Pass by Reference)**. Suppose you want a function to make changes to a `struct`, array, or any other variable that's input as an argument. Without pointers, the input would be "passed by value," so the function gets a local copy of the input (which can be huge!), and any changes you make to the local copy are lost when the function exits! One way to preserve the changes you made is to return the local copy. *But that's a lot of data transfer and space usage!* (Imagine wanting to sort a large array and your functions have to copy and return all elements in the array each time it's called!) Instead, it's far more efficient to pass the input "by reference" and have the changes be made directly.
+
+- **For returning structures from functions.** For the same reasons outlined above, consider a function that creates and returns a complex structure or array. It is far more efficient to return a pointer to the structure rather than the entire structure itself!
+
+- **For memory management at runtime.** Last, but not least, pointers are  necessary when you need to ask the OS for an arbitrary chunk of memory during runtime. Say you want to create a new node in a linked list. Each node that's created at runtime requires that you request space to store the data for that node. The OS, for reasons just mentioned, returns a pointer to the memory storing the node, rather than returning the entire chunk of data pertaining to the node itself. We tackle this point (dynamic memory allocation) in the next Lab.
+
 
 <!-- 5.  Here's another example with char arrays (strings). Take a look at the code below, where we define a function `strToUpper(char *s)`:
 
