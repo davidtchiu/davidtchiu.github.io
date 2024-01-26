@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-If the number is big enough, this code will crash the C program when it's run! It's really important to understand why (Stack Smashing), so we need to have a handle on how the OS manages a process' memory during execution.
+If the number is big enough, this code will crash the C program when it's run! It's really important to understand why (Stack Overflow), so we need to have a handle on how the OS manages a process' memory during execution.
 
 ##### Part 2:  Process Address Spaces
 
@@ -132,7 +132,7 @@ When a process starts running, the OS allocates `RLIMIT_STACK` bytes for that pr
   Segmentation fault
   ```
 
-- The dreaded **segmentation fault**, a  term that means your program tried to access an invalid address. In this particular example, each recursive call to `f(..)` involves pushing the return address followed by pushing a new value for `int depth` onto  the stack. The stack breaches the `RLIMIT_STACK` limit on the *393036th* recursive call to `f(..)`. When the program tries to push a frame beyond that threshold, the memory-management unit of the OS detects this violation and throws a segmentation fault, which terminates the offending process.
+- When your program's execution results in a **segmentation fault**, it means that the OS detected that it tried to to access an invalid address. In this particular example, each recursive call to `f(..)` involves pushing the return address followed by pushing a new value for `int depth` onto  the stack. The stack breaches the `RLIMIT_STACK` limit on the *393036th* recursive call to `f(..)`. When the program tries to push a frame beyond that threshold, the memory-management unit of the OS detects this violation and throws a segmentation fault, and terminates the offending process.
 
 
 <!-- 
