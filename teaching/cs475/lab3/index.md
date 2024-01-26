@@ -286,16 +286,6 @@ Now that we understand how the program stack works, we return to our problematic
 
 ##### Part 5: Dynamic Memory Allocation Examples
 So we've seen how to create an array on the heap, but `malloc()` is more general than that. It can be used to allocate _any_ amount of memory on the heap, even a single `int`, `double`, or just a `struct`. It is often the case that we'll need to malloc to create new structs and strings of varying size. Here are a couple oft-used examples.
-<!-- 
-
-In the code below, we use `malloc()` to create just a single integer on the heap. `malloc()`, as always, will return the address of the first byte. We then tell C to interpret the 4 bytes as an `int` by simply casting the address into an `int*` pointer, which is then stored in `p`.
-
-  ```c
-  int *p = (int*) malloc(sizeof(int));
-  *p = 0; // initialize the content referred by p to 0
-  ```
-
-You should understand that pointer `p` exists on the stack (in main's frame), and it's pointing at value 0, which is on the heap. -->
 
 ###### Part 5a: Creating Strings (Know this!)
 Pay attention here, because you'll be doing this a lot! We can now use `malloc()` to create *just enough* space to hold  strings. For instance, suppose I wanted to write a function `createEmail()` that accepts two strings `user` and `domain`, and returns the string `user@domain`.
@@ -363,6 +353,10 @@ Notice the new operator `->` that can be used to access pointers to `struct`s. I
 
 But the arrow operator `->` just provides a much cleaner syntax to de-reference a pointer to a struct's data member!
 
+###### Food for Thought
+These will come back to us in future assignments, but it won't hurt to think about these problems early.
+- How would you allocate a 2D (or 3D, 4D, ...)  array on the heap?
+- How would you allocate an array of strings on the heap?
 
 
 #### Credits
