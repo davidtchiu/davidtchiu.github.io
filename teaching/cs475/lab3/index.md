@@ -69,21 +69,20 @@ int getNumEmployees() {
     do {
         printf("Number of employees you need to store: ");
         scanf("%d", &num);
-    } while (num <= 0);
+    } while (num < 0);
     return num;
 }
 
 
 int main(int argc, char *argv[]) {
-    // Just ask for the array size first
-    int num_employees = getNumEmployees();
-    Employee my_employees[num_employees]; // just create an array that holds num_employees
+    int num_employees = getNumEmployees();  // ask for the array size first
+    Employee my_employees[num_employees];   // <--- this could crash the program!!!
 
     // (code omitted)
 }
 ```
 
-If the number is big enough, this code will crash the C program when it's run! It's really important to understand why (stack overflow), so we need to have a handle on how the OS manages a process' memory during execution.
+If the number is big enough, this code will crash the C program when it's run! It's really important to understand why (Stack Smashing), so we need to have a handle on how the OS manages a process' memory during execution.
 
 ##### Part 2:  Process Address Spaces
 
