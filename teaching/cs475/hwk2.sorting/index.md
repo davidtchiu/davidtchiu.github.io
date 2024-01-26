@@ -102,7 +102,9 @@ I have included a working solution of my program along with the starter code. Th
 
    - `int main()`: The driver function should create an array of `MAX_EMPLOYEES` elements, and fill it with values from the user. Below, a sample interaction for `MAX_EMPLOYEES` of 5.
 
-4. Here's a sample output:
+4. For ease of compiling, I've provided you with the `Makefile`. Simply run `make` on the command line to compile.
+
+5. Here's a sample output:
 
    ```
    Name: David
