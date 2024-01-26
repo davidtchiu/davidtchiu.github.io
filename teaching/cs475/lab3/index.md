@@ -24,7 +24,7 @@ Open your VS Code and get connected to your Remote Development environment.
 
 ##### Part 1: Motivation
 
-In most of the programs we write, the exact space requirements may not be known until runtime. Suppose we are writing a program that  defines the max number of employees `MAX` as a constant, and then we ask the user for the number of employees they expect to have in this particular run:
+<!-- In most of the programs we write, the exact space requirements may not be known until runtime. Suppose we are writing a program that  defines the max number of employees `MAX` as a constant, and then we ask the user for the number of employees they expect to have in this particular run:
 
 ```c
 #include <stdio.h>
@@ -56,7 +56,9 @@ int main(int argc, char *argv[]) {
 **The code above is undesirable for several reasons.** First, `MAX` is entirely arbitrary and defined at the programmer's discretion. Secondly, for the runs that do not require anywhere close to
 `MAX` employees, this program ends up wasting quite a bit of space.
 
-Okay. You might think the above example is contrived. After all, why didn't we ask the user for the number of employees first, and then create the array using that size. Consider the following code that *would* work in Java **but not C!**:
+Okay. You might think the above example is contrived. After all, why didn't we ask the user for the number of employees first, and then create the array using that size.  -->
+
+In most of the programs we write, the exact space requirements may not be known until runtime. Consider the following code that asks the user how many employees they need to store, and then creates an array to store that many employees. This approach works in Java **but not C!**:
 
 ```c
 #include <stdio.h>
@@ -81,11 +83,11 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-While it's true that this code works in Java, **this code is even less desirable than the one before it!** It may crash the C program at unexpected times! It's really important to understand why (stack overflow), so we need to have a handle on how the OS manages a process' memory during execution.
+If the number is big enough, this code will crash the C program when it's run! It's really important to understand why (stack overflow), so we need to have a handle on how the OS manages a process' memory during execution.
 
-##### Part 2: The Process Address Spaces
+##### Part 2:  Process Address Spaces
 
-When your program is in execution (it's called a **process** at this point), the OS gives it an address space. Think of this space as the process' very own sandbox. It's where all its resources (variables, open files, etc.) will live, and you can rest assured that it's private and protected from other processes. The OS organizes each process' address space in the following **segments**:
+When your program is in execution (it's called a **process** at that point), the OS assigns it an **address space**. Think of this space as the process' very own sandbox. It's where all its resources (variables, open files, etc.) will live, and you can rest assured that it's private and protected from other processes. The OS organizes each process' address space in the following **segments**:
 
 <img src="figures/proj3-memlayout.png" width="400px">
 
