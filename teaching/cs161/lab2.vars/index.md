@@ -77,13 +77,18 @@ private dataType variableName;
 
     - Update the constructor to assign values to `area` and `perimeter`.
 
-      - Recall that the syntax to assign a value to a variable is: `variableName = expr;`, where `expr` is any algebraic expression. For instance, if I were inputing the area of a *square*, the expression would be `area = width * length;` (assuming `width` and `length` are the instance variable's names.)
+      - Recall that the syntax to assign a value to a variable is:
+        ```java
+        variableName = expr;
+        ```
+        where `expr` is some Java expression. For instance, if I were inputing the area of a *square*, the expression would be `area = width * length;` (assuming `width` and `length` are the instance variable's names.)
 
       - You may want to lookup (on Google) how to find the area and perimeter of an *isosceles triangle*, given its height and width. Here's a hint for perimeter though. In the figure below, you know the width and height of the Triangle. You just need to figure out the length of the sides, which you can determine using Pythagorean Theorem.
 
+          - If you need to take the square root of an expression `x`, you can use the Java method `Math.sqrt(x)`. Also, to take `a` to the `b`th power ($$a^b$$), you can use `Math.pow(a, b)`.
+
         <img src="figures/lab2_fig1.png"/>
 
-      - You'll need know this for calculating the perimeter. If you need to take the square root of a value `x`, you can use the built-in Java function `Math.sqrt(x)`. Also, to take `x` to the `y`th power ($$x^y$$), you can use `Math.pow(x,y)`
 
 4. Create a new `Triangle` to see if your `area` and `perimeter` instance variables are now populating. If you did everything above correctly, you should've gotten `600.0` for area and roughly `112.11` for perimeter.
 

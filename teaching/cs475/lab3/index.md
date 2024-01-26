@@ -24,7 +24,7 @@ Open your VS Code and get connected to your Remote Development environment.
 
 ##### Part 1: Motivation
 
-Using the last homework as a motivating example, recall that we stored an array of Employees, whose information was entered by the user. But in general, the number of employees we need to store is *not known* until runtime. To deal with this issue, we define the max number of employees `MAX` as a constant, and then we ask the user for the number of employees they expect to have in this particular run:
+In most of the programs we write, the exact space requirements may not be known until runtime. Suppose we are writing a program that  defines the max number of employees `MAX` as a constant, and then we ask the user for the number of employees they expect to have in this particular run:
 
 ```c
 #include <stdio.h>
@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
 **The code above is undesirable for several reasons.** First, `MAX` is entirely arbitrary and defined at the programmer's discretion. Secondly, for the runs that do not require anywhere close to
 `MAX` employees, this program ends up wasting quite a bit of space.
 
-Okay. You might think the above example seems contrived. After all, why didn't we ask the user for the number of employees first, and then create the array using that size. Consider the following code that *would* work in Java (but not C!):
+Okay. You might think the above example is contrived. After all, why didn't we ask the user for the number of employees first, and then create the array using that size. Consider the following code that *would* work in Java **but not C!**:
 
 ```c
 #include <stdio.h>
@@ -83,25 +83,25 @@ int main(int argc, char *argv[]) {
 
 While it's true that this code works in Java, **this code is even less desirable than the one before it!** It may crash the C program at unexpected times! It's really important to understand why (stack overflow), so we need to have a handle on how the OS manages a process' memory during execution.
 
-##### Part 2: Address Spaces
+##### Part 2: The Process Address Spaces
 
-When your program is in execution (known as a **process**), the OS gives it a virtual address space. Think of this space as the process' very own sandbox. It's where all its resources (variables, open files, etc.) will live. We'll assume that the OS organizes each process' address space in the following **segments**:
+When your program is in execution (it's called a **process** at this point), the OS gives it an address space. Think of this space as the process' very own sandbox. It's where all its resources (variables, open files, etc.) will live, and you can rest assured that it's private and protected from other processes. The OS organizes each process' address space in the following **segments**:
 
 <img src="figures/proj3-memlayout.png" width="400px">
 
-- **Code (Text) Segment** stores the binary (executable file) currently running. It is placed near the lowest address.
+- **Code (Text) Segment** stores the binary (executable) file that's currently running. It is placed near the lowest address.
 
 - **Data Segment** stores global and static variables that have been initialized with a non-zero or non-NULL value. The related BSS segment stores uninitialized global and static variables.
 
-- **Heap** stores data allocated by the process during runtime. When arbitrary amounts of memory are allocated during runtime, we all this process *dynamic memory allocation*. You'll learn how to do this in a bit!
+- **Heap** stores arbitrary amounts of data that is requested by the process during runtime. 
 
-- **Program Stack** stores data (e.g., local variables, function parameters, return addresses) needed to keep track of program execution and scope of function calls. As your program makes a function call, your stack *grows* by pushing input parameters, local variables declared within that function, and a return address. Collectively, the set of these values make up the function's **frame**. As the function returns, all values in its frame are popped off the stack, causing the stack to *shrink*, and returning the stack's frame to the caller function's scope.
+- **Program Stack** stores data (e.g., local variables, function parameters, return addresses) needed to keep track of program execution and scope of function calls. When your program makes a function call, your program stack *grows* by pushing input parameters, local variables declared within that function, and a return address onto it. Collectively, the set of these values make up the function's **frame**. As the function returns, all elememts in its frame are popped off the stack, causing the stack to now *shrink*.
 
 ###### How the Program Stack Works (And What Is a Stack Overflow?)
 
-When a process starts running, the OS allocates `RLIMIT_STACK` bytes for that process' stack. A user cannot increase this stack size, but can decrease it. Here's how the stack is used:
+When a process starts running, the OS allocates `RLIMIT_STACK` bytes for that process' stack. A user cannot increase this stack size without changing the OS's configuration. Here's how the stack is used:
 
-- From `main(int argc, char *argv[])`, where the program starts running, its command-line arguments `argc` and `argc[]` and any local variables are pushed onto the stack, which grows  towards  address `MAX - RLIMIT_STACK`. When `main()` calls another function, a new stack frame is for the function is created by pushing any return address, arguments, and local variables onto the stack. When a function returns, all the values in its frame are popped off, and control jumps back to the return address that was also pushed on, thus restoring the caller function's **scope**.
+- From the `main(int argc, char *argv[])` function, where the program starts running, its command-line arguments `argc` and `argv` and any local variables declared in `main` are pushed onto the stack, which grows  towards  address `MAX - RLIMIT_STACK`. When `main()` calls another function, a new stack frame is for *that* function is created by pushing any return address, arguments, and local variables onto the stack. When that function returns, all the values in its frame are popped off, and control jumps back to the return address that was also pushed on, thus restoring the caller function's **scope**.
 
 - **Stack Overflow**: The stack is allowed to grow and shrink so as long as it stays within the bounds imposed by `RLIMIT_STACK`. Unfortunately, violating this threshold is easy. Take a look at the following example, which contains an infinite recursion:
 
@@ -131,9 +131,9 @@ When a process starts running, the OS allocates `RLIMIT_STACK` bytes for that pr
   Segmentation fault
   ```
 
-- The dreaded **segmentation fault**, a historical umbrella term that means your program tried to access an invalid memory location in its address space. In this particular example, each recursive call to `f(..)` involves pushing the return address followed by pushing a new value for `int depth` onto  the stack. The stack breaches the `RLIMIT_STACK` limit on the *393036th* recursive call to `f(..)`. When the program tries to push a frame beyond that threshold, the memory-management unit of the OS detects this violation and throws a segmentation fault and terminates the offending process.
+- The dreaded **segmentation fault**, a  term that means your program tried to access an invalid address. In this particular example, each recursive call to `f(..)` involves pushing the return address followed by pushing a new value for `int depth` onto  the stack. The stack breaches the `RLIMIT_STACK` limit on the *393036th* recursive call to `f(..)`. When the program tries to push a frame beyond that threshold, the memory-management unit of the OS detects this violation and throws a segmentation fault, which terminates the offending process.
 
-  - Indeed, an infinite recursion always crashes the program because the program continues to gobble up space on the stack. Because each of the recursive calls is still waiting for the next one to return, no frames are ever popped off. In contrast, you've probably rarely seen an infinite loop be terminated by the OS, and now the reason is clear. 
+
 <!-- 
 - What's my machine's `RLIMIT_STACK` you ask? This value varies across systems. To find out what this value is on your machine, you can use the shell command `ulimit`. The `-a` option shows all resource limits defined by your OS. If you're only interested in the stack size, you can specify the `-s` flag.
 
@@ -144,17 +144,17 @@ When a process starts running, the OS allocates `RLIMIT_STACK` bytes for that pr
 
 - The number reported by `ulimit` is in KB ($$2^{10}$$ bytes), so my machine gives each running process a 10 MB stack. -->
 
-##### Part 3: Revisiting the Problem of Unknown Array Sizes at Runtime
+##### Part 3: Revisiting the Problem of Unknown Space Requirements at Runtime
 
-Now that we understand how the program stack works, we return to the original problem of dealing with array sizes that are unknown until runtime. Here's the problematic code we saw earlier:
+Now that we understand how the program stack works, we return to our problematic code:
 
-- The problem is on **Line 19**:
+- The problem is on this line:
 
     ```c
     Employee my_employees[num_employees];
     ```
 
-  If the user entered a large enough number for `num_employees`, a segmentation fault can occur when the runtime tries to push an `Employee` array of that size onto the stack.
+  If the user entered a large enough number for `num_employees`, a segmentation fault can occur when at runtime it tries to push too large of an `Employee` array onto the stack.
 
 - Check out the output for the following two runs:
 
@@ -170,7 +170,7 @@ Now that we understand how the program stack works, we return to the original pr
   [name=Michelle, sal=40000], [name=David, sal=30000]
   ```
 
-  Okay that succeeded because only needed to store 2 employees on the stack. But what about... 2000000?
+  That run succeeded because only needed to store 2 employees on the stack. But what about... 2000000?
 
   ```
   $ ./employees
