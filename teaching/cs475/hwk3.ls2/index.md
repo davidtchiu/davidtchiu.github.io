@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: A Suped-Up `ls`
+### Hwk: ls2 -  a Suped Up `ls`
 
 
 #### Related Reading
@@ -17,7 +17,7 @@
 
 
 #### Assignment
-As you know,  the `ls` UNIX command lists all files and directories in a given directory. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. On top of the recursive descent into subdirectories, your version of `ls` can also perform a search.
+As you may already know,  the `ls` UNIX command lists all files and directories in a given directory. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. On top of the recursive descent into subdirectories, your version of `ls` must also also be able to perform a filename search.
 
 ###### Starter Code
 
@@ -36,7 +36,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 I have included a working solution of my program along with the starter code. The binary executable file is called `ls2Sol`. 
 
 
-##### Before You Get Started: Debugging with valgrind
+##### Before You Get Started: Debugging with valgrind (Read This!)
 Valgrind is a tool to help you debug access errors for memory that you allocated on the heap using `malloc()`. Believe me, it will save you a bunch of time and tears. To use valgrind, you just have to first compile your C code using the `-g` (as you'd been instructed to do all along). Then run your program like this:
 
 ```bash
@@ -101,11 +101,14 @@ Here valgrind *suspects* that it has detected a memory leak. Reading the report 
 
 ###### Detailed Instructions
 
+0. For ease of compiling, I've provided you with the `Makefile`. Simply run `make` on the command line to compile your code.
+
+
 1. Your program should accept up to two command-line arguments:
     ```bash
     $ ./ls2 <path> [exact-match-pattern]
     ```
-   Only the `<path>` argument is required, and your program should re-prompt the command if no arguments are given, or if more than 2 are given. Here's an example:
+   Only the `<path>` argument is required to be given, and your program should re-prompt the command if no arguments are given, or if more than two are given. Here's an example:
     ```bash
     $ ./ls2 
     Usage: ./ls2 <path> [exact-match-pattern]
@@ -115,10 +118,10 @@ Here valgrind *suspects* that it has detected a memory leak. Reading the report 
     ```
 
    You need to look into how to handle command-line arguments in `main(int argc, char *argv[])`.
-    - `int argc` gives a count of the number of terms given on the command line (including `./ls2` as a term)
+    - `int argc` gives a count of the number of terms given on the command line (including `"./ls2"` as `argv[0]`)
     - `char *argv[]` is an array of strings, with `argv[i]` being the ith term given on the command line
 
-2. Your program will run in one of *two modes*:
+2. Your program will then run in one of *two modes*:
 
     - **Mode 1:** The first mode runs when the user only passes the `path`. Your program should attempt to open the directory given by `path` and recursively show all files' name and size (in bytes). You do not need to worry about displaying anything other than regular files and directories (ignore anything that isn't a directory or a regular file).
 
@@ -208,7 +211,7 @@ Here valgrind *suspects* that it has detected a memory leak. Reading the report 
       README.md (34 bytes)
       ```
     
-    - **Mode 2:** The second mode runs when the user passes both `path` and the `exact-match-pattern` arguments. When this is the case, your program should only show files with names exactly matching the given `exact-match-pattern`. It should only include all the directories (and subdirectories) that contain files with names matching the given argument and ignore all the others in the print-out. The program should avoid showing the directory chain if the given pattern is not found in its subdirectory. Here's an example of me looking for any files or directories matching `main`.
+    - **Mode 2:** This mode runs when the user passes both `path` and the `exact-match-pattern` arguments. When this is the case, your program should only show files with names exactly matching the given `exact-match-pattern`. It should only include all the directories (and subdirectories) that contain files with names matching the given argument and ignore all the others in the print-out. The program should avoid showing the directory chain if the given pattern is not found in its subdirectory. Here's an example of me looking for any files or directories matching `main`.
 
       ```bash
       $ ./ls2 . main
@@ -228,7 +231,7 @@ Here valgrind *suspects* that it has detected a memory leak. Reading the report 
                       main (41 bytes)     
       ```
 
-      In this run, I only want to search for the directories/files named `main` from within the `.git/refs` directory:
+      In this run, I  want to search for any directories or files called `main` from within the `.git/refs` directory:
       ```bash
       ./ls2 .git/refs main
       heads/ (directory)
@@ -238,26 +241,27 @@ Here valgrind *suspects* that it has detected a memory leak. Reading the report 
               main (41 bytes)
       ```
 
-3. **What's the stack library for?** You'll notice that I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. You should study `stack.c` to see how I use `malloc()` in various spots and later `free()` up the allocated memory.
-    - When designing this program, you'll notice that you can't simply print every file or directory as soon as you encounter them. You can get away with this approach in Mode 1, but Mode 2 requires that you keep a collection of directories and files you actually want to print at the end.
-    - You can use the given stack to store the set of files/directories that you wish to print.
+3. **What's the stack library for?** You'll notice that I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. (For when writing your future programs, you should study `stack.c` to see how I use `malloc()` in various spots and later `free()` up the allocated memory.)
+    - When writing Mode 2, you'll notice that you can't simply print every file or directory as soon as you encounter them. Mode 2 requires that you keep a set of directories and files you actually want to print at the end.
+    - You can use the given stack to store this set of files/directories that you wish to print at the end.
 
-4. **UNIX system calls**
+4. **Making System Calls**
 
     - To open up directories and check what's inside, you will want to check out the following system calls through `#include <unistd.h>`:`opendir()`, `readdir()`, `closedir()`.
-      - When you read the contents of a directory, ignore any references to `.` and `..`
-      - Why? Remember that `.` means the current directory, and `..` means the parent directory. These references exist in *every* directory you open. So if you recursively open those up, then you'll just end up in an infinite recursion/loop!
+    - When you read the contents of a directory, ignore any references to `.` and `..`.
+      - Why? In most file systems, `.` refers to the current directory, and `..` means the parent directory. These exist in *every* directory you open. So if you recursively open those up, then you'll just end up in an infinite recursion!
 
-    - You should be able to traverse the contents of a directory using `readdir()`. Once you have a name of a file or directory, you need to to test if it's actually a regular file? A link? A directory? To get information on the file (how big is it?) you'll want to look into using the important `lstat(..)` system call provided in `#include <sys/stat.h>` 
+    
+    - Once you have a name of a particular file or directory, you need to to test if it's actually a regular old file (or is it a shortcut? Is it a directory?) To get information on the file (how big is it?) you'll want to look into using the important `lstat(..)` system call provided in `#include <sys/stat.h>` 
       - [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
-      - Note that the second parameter of `lstat(..)` accepts an *output parameter* (remember what those are from the previous assignment?), where it will store a `struct` with the file/directory's information.
-      - One of the fields in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `lstat(..)`ed is a *regular file* or a *directory* using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. As mentioned earlier, you should ignore all other types of files.
+      - Note that the second parameter of `lstat(..)` accepts an *output parameter* (remember what those are from the previous assignment?), where it will update a `struct` with the file/directory's information.
+      - One of the data members in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `lstat(..)`ed is a *regular file* or a *directory* using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. As mentioned earlier, you should ignore all other types of files.
 
 5. Other header files you may want to look into before getting started on this assignment:
     - [dirent.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/dirent.h.html) for `DIR` type for representing a directory stream. This is to be used in conjunction with `opendir()` system call.
     - [sys/types.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/types.h.html) for `mode_t`.
 
-6.  **Output formatting:** The names of *directories* must be followed with the suffix `"/ (directory)"`. Names of *regular files* must be followed by the suffix `"(nnn bytes)"` where `nnn` is the number of bytes occupied by that file. If a file or directory is found within a subdirectory, its name must be indented by four spaces to signify that it is enclosed within the above directory.
+6.  **Print Formatting:** When printing, the names of *directories* must be followed with the suffix `"/ (directory)"`. Names of *regular files* must be followed by the suffix `"(nnn bytes)"` where `nnn` is the number of bytes occupied by that file. If a file or directory is found within a subdirectory, its name must be indented by four spaces to signify that it is enclosed within the above directory.
     - Luckily, the listing does not needed to sorted in any particular order.
 
 7. Although the `.git/` directory exists (as it did in my sample output), it still may be wise to create your own "test-dummy" directory structure so that you test your program. 
@@ -271,9 +275,9 @@ This assignment will be graded out of 50 points:
 [5pt] Your program recursively descends down all subdirectories.
 [10pt] Implementation of Mode 1.
 [25pt] Implementation of Mode 2.
-[3pt] Your output of files and directories conforms to the specified format.
-[2pt] Your program properly resolves command line arguments.
-[5pt] Your program is free of memory leaks and dangling pointers. (Use valgrind!)
+[5pt] Your output of files and directories conforms to the specified format.
+[1pt] Your program properly resolves command line arguments.
+[4pt] Your program is free of memory leaks and dangling pointers. (Use valgrind!)
 ```
 
 #### Submitting Your Assignment

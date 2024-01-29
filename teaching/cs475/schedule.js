@@ -33,12 +33,12 @@ let days = {
         url: "hwk2.sorting/",
         due: "1/29/2024",
       },
-      // {
-      //   name: "Hwk 3 (ls2)",
-      //   title: "Dynamic Memory Allocation",
-      //   url: "hwk3.ls2/",
-      //   due: "2/9/2024",
-      // },
+      {
+        name: "Hwk 3 (ls2)",
+        title: "Making System Calls",
+        url: "hwk3.ls2/",
+        due: "2/9/2024",
+      },
       // {
       //   name: "Hwk 4 (dsh)",
       //   title: "David Shell",
