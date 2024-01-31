@@ -118,8 +118,8 @@ let days = {
     "<font color='blue'>Lab 2 (Attendance required; Bring laptops)</font>",
     "<font color='blue'>Lab 3 (Attendance required; Bring laptops)</font>",
     // wk 3
-    "Intro: Job scheduling models",
-    "Bootstrapping, interrupts",
+    "Intro: batch processing, multiprogramming, timesharing",
+    "Invoking the OS: Bootstrapping, interrupts",
     "Invoking the OS: Interrupts, traps and system calls",
     // wk 4
     "Processes: PCB, address space, program stack",
