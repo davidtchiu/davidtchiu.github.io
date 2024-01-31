@@ -35,12 +35,12 @@ let days = {
         url: "hwk1.circle/",
         due: "1/31/2024", // Wed
       },
-      // {
-      //   name: "Hwk 2",
-      //   title: "Alarm Clock",
-      //   url: "hwk2.clock/",
-      //   due: "2/9/2024", // Fri
-      // },
+      {
+        name: "Hwk 2",
+        title: "Alarm Clock",
+        url: "hwk2.clock/",
+        due: "2/9/2024", // Fri
+      },
       // {
       //   name: "Hwk 3",
       //   title: "Orca Card",
