@@ -110,12 +110,12 @@ let days = {
         url: "lab2.vars/",
         due: "1/26/2024",
       },
-      // {
-      //   name: "Lab 3",
-      //   title: "Stomach Class (Class Writing)",
-      //   url: "lab3.stomach/",
-      //   due: "2/2/2024",
-      // },
+      {
+        name: "Lab 3",
+        title: "Stomach Class (Class Writing)",
+        url: "lab3.stomach/",
+        due: "2/2/2024",
+      },
       // {
       //   name: "Lab 4",
       //   title: "Guessing Game (If-Else)",
@@ -191,7 +191,7 @@ let days = {
     "Variable types: instance, local, input; lifetime and scope",
     // wk 3
     "Methods and returning; Finish Circle, start TicketMachine",
-    "Printing, String concatenation; conditionals",
+    "Accumulators, concatenation; Start conditionals",
     "Code Pad; Classes as Types; Lab 3",
     "Lab 3 review; Defensive Programming",
     // wk 4
