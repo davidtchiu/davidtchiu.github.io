@@ -91,9 +91,9 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- Login to github, and go here: [https://github.com/davidtchiu/os-ls2](https://github.com/davidtchiu/os-ls2). 
+- Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk3-ls2](https://github.com/davidtchiu/cs475-hwk3-ls2). 
 
-- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository some random name (the "suggestion" they give is fine.)
+- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
 
 - This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
 
