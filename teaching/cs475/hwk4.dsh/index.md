@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: David Shell (dsh)
+### Hwk 4: David Shell (dsh)
 
 A _shell_ is an interactive command-line environment in which users can issue commands to the OS. Even with modern OS's support of point-and-click GUIs, many still prefer to use the shell. Today, many shells exist and are supported by Unix-based systems, but the Bourne-Again Shell (bash) is probably the most widely used.
 
@@ -18,11 +18,18 @@ Your goal for this assignment is to create your very own shell, David Shell (`ds
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk4-dsh](https://github.com/davidtchiu/cs475-hwk4-dsh). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- Login to github, and go here: [https://github.com/davidtchiu/os-dsh](https://github.com/davidtchiu/os-dsh). 
+
+- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository some random name (the "suggestion" they give is fine.)
+
+- This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
+
+- Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
 
   ```
   git clone <your-github-url-for-this-project>
   ```
+
 
 #### Working Solution
 

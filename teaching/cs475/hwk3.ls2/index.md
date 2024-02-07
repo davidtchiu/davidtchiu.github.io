@@ -87,18 +87,28 @@ As you may already know,  the `ls` UNIX command lists all files and directories 
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk3-ls2](https://github.com/davidtchiu/cs475-hwk3-ls2). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From your VS Code remote development environment, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+#### Starter Code
+
+Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
+
+- Login to github, and go here: [https://github.com/davidtchiu/os-ls2](https://github.com/davidtchiu/os-ls2). 
+
+- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository some random name (the "suggestion" they give is fine.)
+
+- This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
+
+- Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
 
   ```
   git clone <your-github-url-for-this-project>
   ```
 
-- This should download the starter code in a directory called `cs475-hwk3-ls2`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
+
+- This should download the starter code in a directory named after your Github repository. After you've done this, you can work freely from VS Code or any other editor.
 
 ###### Working Solution
 
 I have included a working solution of my program along with the starter code. The binary executable file is called `ls2Sol`. 
-
 
 
 ###### Detailed Instructions
