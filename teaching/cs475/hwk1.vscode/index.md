@@ -102,26 +102,26 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 #### Our First C Program
 
-1. From your home directory, create a new directory called `hwk0`, navigate into it, and create a new file called `hwk0.c`.
+1. From your home directory, create a new directory called `hwk1`, navigate into it, and create a new file called `hwk1.c`.
 
     ```bash
     $ cd ~
-    $ mkdir hwk0
-    $ cd hwk0
-    $ touch hwk0.c
+    $ mkdir hwk1
+    $ cd hwk1
+    $ touch hwk1.c
     ```
 
     - The first command `cd ~` changes your working directory to your "home directory" (`~` is just a shortcut to your home directory... which is nice because you can't ever get lost if you just remember that!)
 
-    - The 2nd command `mkdir hwk0` creates a new directory (folder) within your home directory named `hwk0`.
+    - The 2nd command `mkdir hwk1` creates a new directory (folder) within your home directory named `hwk1`.
 
-    - The 3rd command `cd hwk0` now changes your working directory to within the `hwk0` directory you just created.
+    - The 3rd command `cd hwk1` now changes your working directory to within the `hwk1` directory you just created.
 
-    - Finally, `touch hwk0.c` creates a new file called `hwk0.c` within the current working directory. 
+    - Finally, `touch hwk1.c` creates a new file called `hwk1.c` within the current working directory. 
 
     - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but what's the fun in that? Plus, this puts your navigates your Terminal to the same directory as your new project folder.
 
-2. You should see the `hwk0.c` file show up on the left-hand panel of VS Code. Clicking on it will open it up in the editor. Type in the following "hello world program."
+2. You should see the `hwk1.c` file show up on the left-hand panel of VS Code. Clicking on it will open it up in the editor. Type in the following "hello world program."
 
     ```c
     #include <stdio.h>
@@ -139,7 +139,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 3. Save it and go back down to the terminal window to compile and run it:
 
     ```bash
-    $ gcc -Wall -g hwk0.c
+    $ gcc -Wall -g hwk1.c
     ```
     Here, `gcc` is the name of the C compiler (gnu c compiler). The `-Wall` flag instructs the compiler to display warnings (even if the code compiles.) The `-g` flag generates debugging information for debuggers that we'll use later on.
 
@@ -162,7 +162,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 4. It seems a bit odd that your executable file would be named `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <name>` flag. 
 
     ```bash
-    $ gcc -Wall -g -o helloworld hwk0.c
+    $ gcc -Wall -g -o helloworld hwk1.c
     ```
 
     This would output the binary as `helloworld`, and you can run it using `./helloworld` on the command-line.
