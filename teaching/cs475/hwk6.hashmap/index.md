@@ -76,11 +76,21 @@ In this assignment, you are to provide a thread-safe hashmap library for C.
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk6-ts_hashmap](https://github.com/davidtchiu/cs475-hwk6-ts_hashmap). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- Login to github, and go here: [https://github.com/davidtchiu/os-hashmap](https://github.com/davidtchiu/os-hashmap). 
 
-   ```
-   git clone <your-github-url-for-this-project>
-   ```
+- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+
+- This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
+
+- Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
+
+  ```
+  git clone <your-github-url-for-this-project>
+  ```
+
+
+- This should download the starter code in a directory named after your Github repository. 
+
 
 #### Working Solution
 

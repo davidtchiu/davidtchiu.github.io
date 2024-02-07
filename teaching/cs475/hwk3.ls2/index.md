@@ -104,7 +104,7 @@ Starter code for this assignment is provided on the github repo. You are not req
   ```
 
 
-- This should download the starter code in a directory named after your Github repository. After you've done this, you can work freely from VS Code or any other editor.
+- This should download the starter code in a directory named after your Github repository. 
 
 ###### Working Solution
 
