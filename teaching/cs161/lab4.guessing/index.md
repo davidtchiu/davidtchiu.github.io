@@ -65,9 +65,9 @@ Here are your assigned partners for today's lab.
 
 - Remember our systematic way of defining classes? The `GuessingGame` class has a secret number, as well as the number of times the user has tried to guess that number. Go ahead and get started putting those in place.
 
-- Your class should have two constructors:
+- Your class should have one constructor:
 
-  - A default constructor that picks a random number between 1 and 50, and remembers it as its secret number.
+  - Write a default constructor that picks a random number between 1 and 50, and remembers it as its secret number.
 
     - Recall that you must `import java.util.Random;` at the top of your class.
     - Inside the constructor, create a `Random` object called `rng`:
