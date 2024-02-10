@@ -21,7 +21,7 @@
 Valgrind is a tool to help you debug access errors for memory that you allocated on the heap using `malloc()`. Believe me, it will save you a bunch of time and tears. To use valgrind, you just have to first compile your C code using the `-g` (as you'd been instructed to do all along). Then run your program like this:
 
 ```bash
-$ valgrind --leak-check=full <your executable file>
+$ valgrind --leak-check=full -s <your executable file>
 ```
 
 Valgrind will print out a full summary after your program terminates, reporting any memory access errors or memory leaks. Let's see an example here:
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
 When I compile this code and run the program through valgrind, it will generate some output. I'm using the `--leak-check=full` flag to instruct valgrind to report detailed memory leak information.
 ```bash
 $ gcc -Wall -g memtest.c -o memtest
-$ valgrind --leak-check=full ./memtest 
+$ valgrind --leak-check=full -s ./memtest 
 ```
 
 Here's a breakdown of what it says:

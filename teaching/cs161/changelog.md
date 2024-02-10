@@ -1,4 +1,5 @@
 #### TODO
+- Consider getting rid of the book altogether now.
 - In last week, where do we go after this course?
   - Want to minor or major? CS 261, Math 210
   - PHIL - Ethics in AI

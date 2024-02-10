@@ -74,9 +74,9 @@ Here are your assigned partners for today's lab.
       ```java
       Random rng = new Random();
       ```
-    - Then you can use `rng.nextInt(50)` to generate a random number between 0 and 49. Capture the value that it returns into your secret number field.
+    - Then you can use `rng.nextInt(50)` to generate a random number between 0 and 49. Now you need to capture the value that it returns into your secret number field.
 
-    - Now add 1 to the secret number to convert it into a random number between 1 and 50.
+    - Add 1 to the secret number to convert it into a random number between 1 and 50.
 
   <!-- - An overloaded constructor that inputs the upper-bound for the secret number. It then picks a random number between 1 and that upper-bound (inclusive). So if the user starts a game with 200 input as the upper-bound, the game would randomly choose a secret number between 1 and 200. -->
 
