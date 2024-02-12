@@ -266,10 +266,10 @@ I have included a working solution of my program along with the starter code. Th
       - Why? In most file systems, `.` refers to the current directory, and `..` means the parent directory. These exist in *every* directory you open. So if you recursively open those up, then you'll just end up in an infinite recursion!
 
     
-    - Once you have a name of a particular file or directory, you need to to test if it's actually a regular old file (or is it a shortcut? Is it a directory?) To get information on the file (how big is it?) you'll want to look into using the important `lstat(..)` system call provided in `#include <sys/stat.h>` 
+    - Once you have a name of a particular file or directory, you need to to test if it's actually a regular old file (or is it a shortcut? Is it a directory?) To get information on the file (how big is it?) you'll want to look into using the important `stat(..)` system call provided in `#include <sys/stat.h>` 
       - [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
-      - Note that the second parameter of `lstat(..)` accepts an *output parameter* (remember what those are from the previous assignment?), where it will update a `struct` with the file/directory's information.
-      - One of the data members in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `lstat(..)`ed is a *regular file* or a *directory* using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. As mentioned earlier, you should ignore all other types of files.
+      - Note that the second parameter of `stat(..)` accepts an *output parameter* (remember what those are from the previous assignment?), where it will update a `struct` with the file/directory's information.
+      - One of the data members in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `stat(..)`ed is a *regular file* or a *directory* using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. As mentioned earlier, you should ignore all other types of files.
 
 5. Other header files you may want to look into before getting started on this assignment:
     - [dirent.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/dirent.h.html) for `DIR` type for representing a directory stream. This is to be used in conjunction with `opendir()` system call.
@@ -279,6 +279,13 @@ I have included a working solution of my program along with the starter code. Th
     - Luckily, the listing does not needed to sorted in any particular order.
 
 7. Although the `.git/` directory exists (as it did in my sample output), it still may be wise to create your own "test-dummy" directory structure so that you test your program. 
+
+#### Hints and Tips
+1. Start as early as possible. This assignment (esp. Mode 2) is trickier than what meets the eye. 
+
+2. For both modes, you will need to create a string that stores the current path to a file. For instance, you would need a string to input into `stat()` and you may need to store that path string onto your stack for the printing of mode-2 results. You *must* create these strings on the heap using `malloc()` because any string you create on the program stack will likely be reaped by the time you print off *your* stack. When that's the case, your stack would store stores pointers to garbage.
+
+3. Related to the first tip, there will be times where you'll need to build up strings. Sure, you can have a bunch of `strcpy()` and `strcat()` statements for this purpose. Or you might find [`snprintf()`](https://www.geeksforgeeks.org/snprintf-c-library/) to be useful. 
 
 
 

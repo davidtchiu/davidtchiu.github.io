@@ -20,7 +20,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 - Login to github, and go here: [https://github.com/davidtchiu/os-dsh](https://github.com/davidtchiu/os-dsh). 
 
-- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+- Click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
 
 - This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
 
@@ -159,7 +159,7 @@ Phew! That's a lot to take in. The figure below shows the abstract flowchart for
 
 <img src="figures/flowchart.png" width="500px" />
 
-##### Hints
+##### Hints and Tips
 
 This assignment can be tricky to get started, because there are so many pieces that need to come together. **You are warned to start early.** If I were doing this assignment, I'd probably work on things in this order:
 
