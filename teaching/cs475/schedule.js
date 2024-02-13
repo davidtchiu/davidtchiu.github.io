@@ -43,13 +43,13 @@ let days = {
         name: "Hwk 4 (dsh)",
         title: "David Shell",
         url: "hwk4.dsh/",
-        due: "2/23/2024",
+        due: "2/26/2024",
       },
       // {
       //   name: "Hwk 5 (mmm)",
       //   title: "Matrix Multiplication",
       //   url: "hwk5.mmm/",
-      //   due: "3/4/2024",
+      //   due: "3/6/2024",
       // },
       // // {
       // //   name: "Hwk 4 (BackItUp)",

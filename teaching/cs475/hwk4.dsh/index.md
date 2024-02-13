@@ -76,17 +76,23 @@ There are certain environment variables that are pretty standardized, including 
     )
     ```
 
-    This function will read `num` characters from the `stream`, and place it in a pre-allocated string buffer `str`. The `stream`, in our case, is simply input as `stdin` (the standard input device). The method will return a pointer to `str`. In your program, if the user's input is longer than 256 characters, you should ignore it and and simply output an error.
+    This function will read `num` characters from the `stream`, and place it in a pre-allocated string buffer `str`. The `stream`, in our case, is simply input as `stdin` (the standard input device). The method will return a pointer to `str`. In your program, if the user's input is longer than 256 characters, you should ignore it and output an error (command too long). 
+
     Example:
     ```c
     char *line = (char*) malloc(256); // create an empty buffer to store the input
-    fgets(line, 256, stdin);  // reads up to 256 characters into the buffer
+    
+    // reads up to 256 characters into the buffer
+    if (fgets(line, 256, stdin) == NULL) {
+      exit(0);  // exit the program if EOF is input
+    }
     ```
     
       - You too may assume that user input will occupy no more than 256 characters.
       - Keep in mind that `fgets(..)` will gobble up everything you enter, including the trailing newline character from hitting the `enter` key!
+      - `fgets()` will also return `NULL` if you give it an end-of-file (EOF) signal on input. This can be done using `control+d`. When we detect this, we simply `exit(0)`.
 
-3. Once you have the input line, you should *trim* it (that is, remove all preceding and trailing white space). If the trimmed input is an empty string (or rather, just a string that contains just a `newline` character), you should simply re-prompt the user.
+3. Once you have the input line, you should *trim* it (that is, remove all preceding and trailing white space). If the trimmed input is an empty string, you should simply re-prompt the user. To this end, I would write a function to trim the input string, and test its length.
 
 ##### Understanding Program Execution and Full-Path Resolution
 
