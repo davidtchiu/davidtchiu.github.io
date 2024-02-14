@@ -123,14 +123,15 @@ let days = {
     "Invoking the OS: Interrupts, traps and system calls",
     // wk 4
     "Processes: PCB, address space, program stack",
-    "Processes: state transitions, fork()",
-    "Processes: wait(); zombies and orphans",
+    "Processes: state transitions",
+    "Processes: fork() system call",
     // wk 5
-    "Processes: exec() system call",
+    "Processes: exec()",
+    "Processes: wait(); zombies and orphans",
     "Threads; User vs. kernel threads",
-    "Threads: pthread library",
     // wk 6
-    "Threads: Performance and data sharing; Amdahl's Law",
+    "Threads: pthread library",
+    // "Threads: Performance and data sharing; Amdahl's Law",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
