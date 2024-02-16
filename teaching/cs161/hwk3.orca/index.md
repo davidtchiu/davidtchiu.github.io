@@ -2,7 +2,7 @@
 
 ### Homework: Orca Card
 
-This week you'll build a class that simulates an ORCA Card, which is used to pay for
+For this assignment you'll build a class that simulates an ORCA Card, which is used to pay for
 bus, train, and ferry trips in Pierce and King counties. When using the real card,
 you add funds to it and can then swipe the card to charge rides on the various
 services. In addition to keeping track of the balance and paying for rides, "our"
