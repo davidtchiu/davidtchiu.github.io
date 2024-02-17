@@ -1,5 +1,6 @@
 #### TODO
 - Consider getting rid of the book altogether now.
+- Hwk 3 needs to be due sooner (2 days -- to Monday of week 6)
 - In last week, where do we go after this course?
   - Want to minor or major? CS 261, Math 210
   - PHIL - Ethics in AI

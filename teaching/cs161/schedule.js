@@ -45,7 +45,7 @@ let days = {
         name: "Hwk 3",
         title: "Orca Card",
         url: "hwk3.orca/",
-        due: "2/21/2024", //Wed
+        due: "2/21/2024", //nope, too much time on this one. Due 19 next time
       },
       // {
       //   name: "Hwk 4",
@@ -124,13 +124,13 @@ let days = {
       },
       {
         name: "Lab 5",
-        title: "Circle Drawer (Objects)",
+        title: "Circle Drawer (Object Interaction)",
         url: "lab5.circleDrawer/",
         due: "2/16/2024",
       },
       // {
       //   name: "Lab 6",
-      //   title: "Diamonds (Abstraction)",
+      //   title: "Diamonds (Abstraction and Modularity)",
       //   url: "lab6.diamonds/",
       //   due: "2/23/2024",
       // },

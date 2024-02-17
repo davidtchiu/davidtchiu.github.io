@@ -36,24 +36,6 @@ We need to provide some methods to our `Fraction`s. Let's start with writing som
 
 - Write methods `getNumerator()` and `getDenominator()` that returns the numerator and denominator respectively. That's all they do -- they don't print or do anything else.
 
-- A fraction should always be in *reduced form*. For instance 6/8 reduces to 3/4. To do a reduction, you need to divide the numerator and the denominator by their greatest common divisor (GCD). Luckily, I have given you a `gcd()` method for you to call. For instance, `gcd(6,8)` produces `2` (because `2` is the largest integer that evenly divides both 6 and 8), and if you simply divide both numerator and denominator by the GCD, you'll get 3/4! Write a method called `reduce()` that does not input anything and it does not return a value. It simply reduces the current fraction based on the description here.
-
-  ```java
-  Fraction f1 = new Fraction(4,8);
-  f1.reduce();
-  System.out.println(f1.toString()); // this should print 1/2
-
-  Fraction f2 = new Fraction(27,9);
-  f2.reduce();
-  System.out.println(f2.toString()); // this should print 3/1
-  ```
-
-- Now, it's a bit unsettling that your constructor even allows an un-reduced `Fraction`. Simple, add a call to `reduce()` in the last line of the constructor. Now any fraction you construct should automatically be in reduced form! Let's try testing again!
-
-  ```java
-  Fraction f1 = new Fraction(4,8);
-  System.out.println(f1.toString()); // this should print 1/2 without having to call reduce()!
-  ```
 
 
 - The next method you'll write is called `toString()`. This method accepts no inputs, and it returns a string that represents the current `Fraction` object. Here are some rules you must follow:
@@ -147,109 +129,27 @@ Okay, let's get to writing the last four methods!
 
 - Finally, to do divide two `Fraction`s you need to first invert the *other* one. Then multiply them together. (There's a reason I had to implement `multiply()` first!)
 
+#### Reduced Form (Need to Loop)
 
-#### Sample Output
-You can test out your class in BlueJ's code pad. Your output should match mine exactly for full credit. Outputs on the terminal are shown directly below.
+A fraction should always be in *reduced form*. For instance 6/8 reduces to 3/4 and 16/18 reduces to 25/1000 reduces to 1/40. An important step towards finding the reduced form is to determine the greatest common divisor (GCD) between two integers, that is, we need to find the largest positive integer that divides evenly into two integers. 
 
-  Create an Orca Card with a balance of $20.50, and print its summary.
-  ```java
-  OrcaCard myCard = new OrcaCard();
-  myCard.topUp(20.5);
-  myCard.printSummary();
-  ```
+- Write a method called `gcd()` that inputs two integers `a` and `b`. We'll use the famous Euclidean Algorithm. You need to write the following loop: as long as `a` is not `b`, test if `a` is larger than `b`. If so, subtract `b` from `a`. However, if `a` was not larger than `b`, then subtract `a` from `b`. This loop is guaranteed to terminate. Once it does, return `a`. Test it out. The GCD between 6 and 8 is 2 and the GCD between 25 and 1000 is 25. Test more cases.
 
-  ```
-  $20.5 left after 0 trip(s)
-  Your balance is high!
-  Your costliest trip so far: $0.0
-  ```
-
-  Let's purchase a $10 trip. But remember, your balance needs to reflect the cost of the trip and the tax.
-  ```java
-  myCard.buyTrip(10.00);
-  ```
-
-  ```
-  Success: Ticket purchased.  $9.85 remaining.
-  ```
-
-  Given a tax rate of 6.5%, the card should have collected $0.65 of taxes for the $10 trip.
-  ```java
-  System.out.println(myCard.getTax());
-  ```
-
-  ```
-  0.65
-  ```
-
-  Now buy a $5 trip.
-  ```java
-  myCard.buyTrip(5);
-  ```
-
-  ```
-  Success: Ticket purchased.  $4.5249999999999995 remaining
-  ```
-
-  We've bought 2 trips for $15 total (not including tax), so the average trip should be $7.50.
-  ```java
-  System.out.println(myCard.getAverageTripCost());
-  ```
-
-  ```
-  7.5
-  ```
-
-  The amount of taxes collected should now be:
-  ```java
-  System.out.println(myCard.getTax());
-  ```
-
-  ```
-  0.9750000000000001
-  ```
+- Now we're ready to write `reduce()`. It does not input anything and it does not return a value. To perform a reduction of a fraction, you simply need to divide both the numerator and the denominator by their GCD. 
 
   ```java
-  myCard.printSummary();
+  Fraction f1 = new Fraction(4,8);
+  f1.reduce();
+  System.out.println(f1.toString()); // this should print 1/2, since gcd(4,8) == 4.
+
+  Fraction f2 = new Fraction(27,9);
+  f2.reduce();
+  System.out.println(f2.toString()); // this should print 3/1, since gcd(27, 9) == 9.
   ```
 
-  ```
-  $4.5249999999999995 left after 2 trip(s)
-  Your balance is low!
-  Your costliest trip so far: $10.0
-  ```
+- Because `gcd()` should only be called in another method of this class, we should make it `private` instead of `public`. 
 
-  
-  ```java
-  myCard.buyTrip(4.50);
-  ```
 
-  ```
-  Fail: You cannot afford this trip.
-  ```
-
-  ```java
-  myCard.topUp(1.00);
-  myCard.buyTrip(4.50);
-  ```
-
-  ```
-  Success: Ticket purchased.  $0.732499999999999 remaining
-  ```
-
-  ```java
-  myCard.printSummary();
-  ```
-
-  ```
-  $0.732499999999999 left after 3 trip(s)
-  Your balance is low!
-  Your costliest trip so far: $10.0
-  ```
-
-#### Extending the Homework
-
-Looking for additional challenges? Add code to the `buyTrip()` method so that it also prints out a simulated ticket, showing the cost, the amount paid in tax, and the remaining balance on the card. You could add a `cheatIRS()` method that moves the amount you've collected as tax over to the balance of the card. Look into ways to tidy up the dollar amounts so that they always have two digits after the decimal point. In my output, I printed trip(s) so that it sounded ok whether there had been one trip or more. It would look even better if you added some code that looked at the number of trips and either used trip or trips as appropriate.
 
 #### Program Defensively
 
