@@ -139,6 +139,8 @@ A fraction can be put in *reduced form*. For instance 6/8 reduces to 3/4 and  25
 - Because `gcd()` should only be called in another method of this class, we should make it `private` instead of `public`. 
 
 
+
+
 #### Commenting
 
 Each and every method should have a "javadoc-style" comment above it (the ones that use `/* ... */`). For full credit, you should use the @param and @return tags as appropriate in these method comments. Each instance variable (field) should have a brief comment as well. Don't forget the main comment at the top of the class either - I'm looking for more than just a sentence or two.
