@@ -45,14 +45,14 @@ let days = {
         name: "Hwk 3",
         title: "Orca Card",
         url: "hwk3.orca/",
-        due: "2/21/2024", //nope, too much time on this one. Due 19 next time
+        due: "2/21/2024", //nope, too much time on this one. Due 19 next time (Mon)
       },
-      // {
-      //   name: "Hwk 4",
-      //   title: "Fractions",
-      //   url: "hwk4.fraction/",
-      //   due: "3/1/2024", //Wed (this should be due on Wedn, not Friday!)
-      // },
+      {
+        name: "Hwk 4",
+        title: "Fractions",
+        url: "hwk4.fraction/",
+        due: "3/1/2024", //Wed (this *should* be due on Wed, not Friday!)
+      },
       // {
       //   name: "Hwk 5",
       //   title: "Loops Practice I",

@@ -28,37 +28,51 @@ For full credit, your class should contain all of the methods described below. T
 
 #### Constructor and Instance Variables
 
-- Start by creating a new BlueJ project, called `Fraction`. Inside, create a new class called `Fraction`. `Fractions` are simple to model: You just need two instance variables, the numerator and the denominator. They are both integers.
+- Start by creating a new BlueJ project, called `Fraction`. Inside, create a new class called `Fraction`. `Fractions` are simple to model: You just need two instance variables, the numerator and the denominator (both integers). Do not add any other instance variables.
 
-- You need to implement a single constructor, which accepts two integer arguments (its starting numerator and denominator). Store these values into your instance variables. However, the denominator is never allowed to be negative (only the numerator is). If you receive a negative denominator, you *must* turn it positive, but you must also negate the numerator. Once you think you've implemented it properly, you should test it. Try creating a fraction `3/-4`. Does it turn to `-3/4`? What if you tried `-3/-4`? Does the turn the fraction `3/4`?
+- You need to implement a constructor, which accepts two whole-number arguments (a fraction's numerator and denominator). Store these values in your instance variables. After you've done that, you need to obey this rule: the denominator is never allowed to be negative (only the numerator is). If you receive a negative denominator, you *must* turn it positive, but you must also negate the numerator. Once you think you've implemented it properly, you should test it many times. Try creating a fraction `3/-4`. Does it turn it into `-3/4` (it should!) What if you tried `-3/-4`? Does the turn the fraction `3/4` (it should!)
 
 #### Basic Methods and Testing
-We need to provide some methods to our `Fraction`s. Let's start with writing some easier ones.
+We need to provide some methods to our `Fraction` class. Let's start with writing some easier ones.
 
-- Write methods `getNumerator()` and `getDenominator()` that returns the numerator and denominator respectively. That's all they do -- they don't print or do anything else.
+- Write methods `getNumerator()` and `getDenominator()` that simply return the numerator and denominator, respectively. That's all they do -- they don't print or do anything else. These are one-liners.
 
-
+- We also know that a `Fraction` is *undefined* if its denominator is `0`. Write a method called `isDefined()` that returns `true` or `false` based on whether this fraction is defined.
 
 - The next method you'll write is called `toString()`. This method accepts no inputs, and it returns a string that represents the current `Fraction` object. Here are some rules you must follow:
   - If the denominator is `1`, then you should just return a string containing the numerator.
   - If the denominator is instead `0`, you need to simply return the string `"undefined"`.
-  - If neither of the above cases apply, then you should just return a string `"N/D"` where `N` is the current Fraction's numerator, and `D` is the denominator. For instance, `"-4/11"` would be returned for  the fraction $$\frac{-4}{11}$$.
+  - If neither of the above cases apply, then you should just return a string `"NUM/DENOM"` where `NUM` is the current Fraction's integer numerator, and `DENOM` is the current integer denominator. For instance, the string`"-4/11"` would be returned for the fraction $$\frac{-4}{11}$$.
 
 
-  You should test this method vigorously before moving on. Sure, you can do things the old way using point-and-click, but it's also about time that we show you how to test in BlueJ's *code pad*. From BlueJ,
+  You should test this method before moving on. Sure, you can do things the old way using point-and-click, but it's also about time that we show you how to test in BlueJ's *code pad*. From BlueJ,
   click on the `View` menu and make sure `Show CodePad` is selected. A window pops up on the bottom right corner
   of BlueJ to accept inputs. Type these in line by line. You do not have to include my comments. They are there
   for instruction.
 
   ```java
-  Fraction f = new Fraction(1,8); // create a new fraction object
+  Fraction f = new Fraction(1,8); // create a fraction object
   System.out.println(f.toString()); // this should print 1/8
   ```
 
-- Here's another simple one. Write a method called `negate()` that negates the numerator. If it's positive, turn it negative. If it's negative, turn it positive. The denominator is untouched. Here's some code to test it in the codepad:
+- Returning the string representation is one way to communicate the Fraction. But sometimes, we're just interested to know what a fraction's decimal (floating-point) representation is. Create a method called `toDouble()` that accepts no inputs and returns the fraction as a `double` value. Now here's the catch -- what's the value if the fraction is undefined? When that is the case, you need to return `Double.NaN` (which stands for Not-a-Number). Beware of integer divide... you will need to *type cast* for this method. For instance:
 
   ```java
-  Fraction f = new Fraction(1,3); // create 1/3
+  Fraction f1 = new Fraction(1,4);
+  Fraction f2 = new Fraction(1,2);
+  System.out.println(f1.toDouble());  // this should print 0.25
+  System.out.println(f2.toDouble());  // this should print 0.5
+
+  // since the method returns doubles, we can add them up
+  double sum = f1.toDouble() + f2.toDouble();
+  System.out.println(sum);  // this should print 0.75
+  ```
+
+
+- Here's another simple one. Write a method called `negate()` that negates the numerator. If it's positive, turn it negative. If it's negative, turn it positive. The denominator is untouched. Here's some code to test it out in the codepad:
+
+  ```java
+  Fraction f = new Fraction(1,3);   // create 1/3
   System.out.println(f.toString()); // this should print 1/3
   f.negate();
   System.out.println(f.toString()); // this should print -1/3
@@ -72,28 +86,6 @@ We need to provide some methods to our `Fraction`s. Let's start with writing som
   Fraction f = new Fraction(20,95);
   f.invert();
   System.out.println(f.toString()); // this should now print 95/20
-  ```
-
-- We also know that a `Fraction` is *undefined* if its denominator is `0`. Write a method called `isDefined()` that returns `true` or `false` based on whether this fraction is defined.
-
-  ```java
-  Fraction f = new Fraction(9,0); // create 9/0
-  System.out.println(f.isDefined()); // this should print false
-  f.invert();
-  System.out.println(f.isDefined()); // this should now print true
-  ```
-
-- Sometimes, we're just interested to know what a fraction's decimal (floating-point) representation is. Create a method called `toDouble()` that accepts no inputs and returns the fraction as a `double` value. Now here's the catch -- what's the value if the fraction is undefined? When that is the case, you need to return `Double.NaN` (which stands for Not-a-Number). Beware of integer divide... you will need to *type cast* for this method. For instance:
-
-  ```java
-  Fraction f1 = new Fraction(1,4);
-  Fraction f2 = new Fraction(1,2);
-  System.out.println(f1.toDouble());  // this should print 0.25
-  System.out.println(f2.toDouble());  // this should print 0.5
-
-  // since the method returns doubles, we can add them up
-  double sum = f1.toDouble() + f2.toDouble();
-  System.out.println(sum);  // this should print 0.75
   ```
 
 - Remember our discussion on content (deep) equality? Write a method called `equals()` that accepts *another* `Fraction` object to compare with. This method needs to return true if the two fractions are equal, and false otherwise. Follow these rules. If either `Fraction` is undefined (say, you just wrote that method earlier, and it can be called!) then they can't be equal. If both `Fraction`s are defined, then they are equal when their numerators and denominators agree. To test if they agree, you are going to want to *ask* the `Fraction` you input for its numerator and denominator. Good thing we wrote those "getters" earlier too!
@@ -113,12 +105,8 @@ We need to provide some methods to our `Fraction`s. Let's start with writing som
   System.out.println(f3.equals(f4));  // this should print false!
   ```
 
-#### Arithmetic Operations
-Now we can finally implement add, subtract, multiply, and divide! Before diving in, you must ensure two things:
-
-1. Only the current fraction changes value from calling one of these functions. The *other* fraction that you're adding, subtracting, etc., must remain unchanged.
-
-2. After an operation has been successfully applied, the current fraction should be reduced!
+#### Arithmetic Operations (Inputting Other Fractions!)
+Now that we have the basics down, we can finally implement add, subtract, multiply, and divide! Before diving in, you must ensure that only the current fraction can change from calling one of these functions. The *other* fraction that you're inputting to add, subtract, etc., must remain unchanged.
 
 Okay, let's get to writing the last four methods!
 
