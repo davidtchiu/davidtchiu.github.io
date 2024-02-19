@@ -88,7 +88,7 @@ We need to provide some methods to our `Fraction` class. Let's start with writin
   System.out.println(f.toString()); // this should now print 95/20
   ```
 
-- Remember our discussion on content (deep) equality? Write a method called `equals()` that accepts *another* `Fraction` object to compare with. This method needs to return true if the two fractions are equal, and false otherwise. Follow these rules. If either `Fraction` is undefined (say, you just wrote that method earlier, and it can be called!) then they can't be equal. If both `Fraction`s are defined, then they are equal when their numerators and denominators agree. To test if they agree, you are going to want to *ask* the `Fraction` you input for its numerator and denominator. Good thing we wrote those "getters" earlier too!
+- Write a method called `equals()` that accepts *another* `Fraction` object to compare with. This method needs to return true if the two fractions are equal, and false otherwise. Follow these rules. If either `Fraction` is undefined (say, you just wrote that method earlier, and it can be called!) then they can't be equal. If both `Fraction`s are defined, then they are equal when both their numerators and denominators agree. To test if they agree, you are going to want to *ask* the `Fraction` you input for its numerator and denominator. Good thing we wrote those "getters" earlier too!
 
   ```java
   Fraction f1 = new Fraction(2,5);
@@ -166,8 +166,9 @@ a string that represents the current fraction object.
 [10pts] The toDouble() method returns the floating-point representation of
 the current fraction if it's defined. Otherwise, it returns Double.NaN.
 
-[10pts] The equals() method returns true if the other fraction is defined
-and the numerator and denominators are equal.
+[10pts] The equals() method returns true if both fractions are defined, and that
+the numerators and denominators are equal. Your equals method does not need to
+check to see if their reduced forms are equal.
 
 [15pts] The add() method adds another (input) fraction to the current one. 
 The current fraction could change, but the other fraction should remain unchanged.
