@@ -2,9 +2,10 @@
 
 ### Homework: Fractions
 
-The key to object oriented programming is to write classes to create objects, then to boss them
-around to accomplish a greater goal. In this assignment, you'll get first hand
-experience with object interaction, e.g., storing objects and calling methods on them. 
+The key to object oriented programming is to write classes to create objects, then to interact
+with those objects to accomplish a greater goal. In this assignment, you'll get first-hand
+experience with object interaction, e.g., storing references (pointers) to objects and 
+calling methods on them. 
 
 For this assignment, you'll build a class that deals with fractions. Here's an example of object
 interaction. For one fraction $$a/b$$ to divide another fraction, you need to first input
@@ -131,9 +132,9 @@ Okay, let's get to writing the last four methods!
 
 #### Reduced Form (Need to Loop)
 
-A fraction should always be in *reduced form*. For instance 6/8 reduces to 3/4 and 16/18 reduces to 25/1000 reduces to 1/40. An important step towards finding the reduced form is to determine the greatest common divisor (GCD) between two integers, that is, we need to find the largest positive integer that divides evenly into two integers. 
+A fraction can be put in *reduced form*. For instance 6/8 reduces to 3/4 and  25/1000 reduces to 1/40. An important step towards finding the reduced form is to first determine the greatest common divisor (GCD) between two integers, that is, the GCD is the largest positive integer that divides evenly into two integers. 
 
-- Write a method called `gcd()` that inputs two integers `a` and `b`. We'll use the famous Euclidean Algorithm. You need to write the following loop: as long as `a` is not `b`, test if `a` is larger than `b`. If so, subtract `b` from `a`. However, if `a` was not larger than `b`, then subtract `a` from `b`. This loop is guaranteed to terminate. Once it does, return `a`. Test it out. The GCD between 6 and 8 is 2 and the GCD between 25 and 1000 is 25. Test more cases.
+- Write a method called `gcd()` that inputs two integers `a` and `b`. We'll use the famous [Euclidean Algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm). You need to write the following loop: as long as `a` and `b` aren't equal, test to see if `a` is larger than `b`. If so, subtract `b` from `a`. otherwise, subtract `a` from `b`. This loop is guaranteed to terminate. Once you're out, simply return `a`. Test it out. The GCD between 6 and 8 is 2 and the GCD between 25 and 1000 is 25. Test more cases to convince yourself that you've implemented it properly.
 
 - Now we're ready to write `reduce()`. It does not input anything and it does not return a value. To perform a reduction of a fraction, you simply need to divide both the numerator and the denominator by their GCD. 
 
@@ -150,11 +151,6 @@ A fraction should always be in *reduced form*. For instance 6/8 reduces to 3/4 a
 - Because `gcd()` should only be called in another method of this class, we should make it `private` instead of `public`. 
 
 
-
-#### Program Defensively
-
-You can't control how another user or program chooses to use your methods. For each method, think critically about all the things that could go wrong and cause an unintended result (e.g., a runtime error, infinite loop/recursion, etc.). Chances are, I'll be trying all kinds of inputs (negative values, zeroes, nulls, empty-strings, etc.) when I grade your program. The mark of a good programmer is one that can anticipate such scenarios ahead of time and ensure that their program handles all sorts of errors gracefully.
-
 #### Commenting
 
 Each and every method should have a "javadoc-style" comment above it (the ones that use `/* ... */`). For full credit, you should use the @param and @return tags as appropriate in these method comments. Each instance variable (field) should have a brief comment as well. Don't forget the main comment at the top of the class either - I'm looking for more than just a sentence or two.
@@ -162,37 +158,48 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 75pts.
+This assignment will be graded out of a total of 120pts.
 
-[5pts] Proper fields have been defined. No more -- no less than what is needed
-       by the OrcaCard class.
+[10pts] The constructor creates a fraction object with the given numerator 
+and denominator. Only the numerator can be negative. If the denominator is
+given as a negative, then negate the numerator and the denominator.
 
-[5pts] Default constructor generates a default card with a 6.5% sales tax.
+[4pts] The getNumerator() and getDenominator() methods are implemented.
 
-[5pts] The overloaded constructor that verifies the input value for the sales tax.
+[2pts] The invert() method exchanges the numerator and denominator.
 
-[5pts] The topUp() method must verify that the given amount is non-negative.
+[2pts] The negate() method simply negates the the numerator.
 
-[10pts] The buyTrip() method adjusts your balance after purchasing a trip of
-        the specified amount. Don't forget to add the tax. It must also verify
-        that the trip of the given amount can be purchased, and if not, it should
-        output an error message.
+[2pts] The isDefined() method determines if the current fraction is (un)defined.
 
-[5pts] The getTax() method is properly implemented.
+[10pts] The toString() method is working as specified to return (not print!)
+a string that represents the current fraction object.
 
-[5pts] The getAverageTripCost() method is properly implemented.
+[10pts] The toDouble() method returns the floating-point representation of
+the current fraction if it's defined. Otherwise, it returns Double.NaN.
 
-[10pts] The getCostliestTrip() method is properly implemented.
+[10pts] The equals() method returns true if the other fraction is defined
+and the numerator and denominators are equal.
 
-[10pts] The balanceLevel() method returns a single, appropriate message based on
-       your card's balance.
+[15pts] The add() method adds another (input) fraction to the current one. 
+The current fraction could change, but the other fraction should remain unchanged.
+This method only runs if both fractions are defined.
 
-[5pts] The printSummary() method is properly implemented.
+[15pts] The subtract() method subtracts another (input) fraction from the current one. 
+The current fraction could change, but the other fraction should remain unchanged.
+This method only runs if both fractions are defined.
 
-[5pts] You re-use code whenever possible.
+[15pts] The multiply() method multiplies another (input) fraction to the current one. 
+The current fraction could change, but the other fraction should remain unchanged.
+This method only runs if both fractions are defined.
 
-[5pts] You provide Javadocs style comments for any new methods implemented, and
-       sufficient inline comments to explain the logic of your methods.
+[15pts] The divide() method divides the current fraction by another (input) one. 
+The current fraction could change, but the other fraction should remain unchanged.
+This method only runs if both fractions are defined.
+
+[5pts] The reduce() method, which calls gcd(), puts the current fraction in "reduced form"
+
+[10pts] The private gcd() method returns the greatest common divisor between two integers.
 ```
 
 
