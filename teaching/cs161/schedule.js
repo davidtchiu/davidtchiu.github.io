@@ -128,12 +128,12 @@ let days = {
         url: "lab5.circleDrawer/",
         due: "2/16/2024",
       },
-      // {
-      //   name: "Lab 6",
-      //   title: "Diamonds (Abstraction and Modularity)",
-      //   url: "lab6.diamonds/",
-      //   due: "2/23/2024",
-      // },
+      {
+        name: "Lab 6",
+        title: "Diamonds (Abstraction and Modularity)",
+        url: "lab6.diamonds/",
+        due: "2/23/2024",
+      },
       // {
       //   name: "Lab 7",
       //   title: "Turtle (Loops)",

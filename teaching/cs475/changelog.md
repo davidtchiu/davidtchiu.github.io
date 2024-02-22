@@ -1,5 +1,5 @@
 # TODO
-- Let them pair up on a few homework assignments.
+- Let them pair up on a few homework assignments?
 - BEFORE removing/redoing the hwk3 (ls2 repo), I have to give them with a dummy directory structure and redo the assignment example!
 
 

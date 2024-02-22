@@ -176,7 +176,7 @@ check to see if their reduced forms are equal.
 The current fraction could change, but the other fraction should remain unchanged.
 This method only runs if both fractions are defined.
 
-[15pts] The subtract() method subtracts another (input) fraction from the current one. 
+[15pts] The minus() method subtracts another (input) fraction from the current one. 
 The current fraction could change, but the other fraction should remain unchanged.
 This method only runs if both fractions are defined.
 
