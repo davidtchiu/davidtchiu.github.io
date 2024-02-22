@@ -67,7 +67,9 @@ Our objective is to create a new class that can create  `Diamond`s with the same
 
 4. Now write in `moveVertical(int distance)` and `moveHorizontal(int distance)`. Again, the work we have to do should be minimal.
 
-5. Let's move on to something a little more challenging: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
+#### Part II: Change Size
+
+Let's move on to something a little more challenging: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
 
     - However, this will introduce a new problem. The triangles, upon changing their size, may  overlap each other or they could be spread farther apart!
 
