@@ -230,6 +230,16 @@ This assignment can be tricky to get started, because there are so many pieces t
 
 6.  Finally, work on execution when given just the name of an executable. (Mode 2: path resolution)
 
+##### Simplifying Assumptions
+To make your lives easier, you may make the following assumptions.
+
+1. A line of input, which includes the newline and termination character shall be no more than `MAXBUF` length. `MAXBUF` is given inside `dsh.h` to be 256.
+
+2. You may assume that, if the trailing `&` is given, it always follows a whitespace. That is, it shall not be attached to a command or argument.
+
+3. In most shells, multiple commands can be given on the same line, separated by semi-colon. For instance, `cd /home; ls`. Your shell does not have to deal with multiple inline commands.
+
+4. In most shells, the `~` character is replaced with your home directory. For instance, `ls ~/os-shell` would really be `ls /home/david/os-shell`. You do not need to handle the `~` character.
 
 #### Example Output
 
@@ -241,16 +251,8 @@ the terminal. As there is no trailing `&` (ampersand), `/usr/bin/cat` is execute
 to finish before re-prompting. Therefore, you will see all the outputs of `cat` before the next `dsh>` prompt.
 
 ```
-dsh> /usr/bin/cat feelGood.c
-#include <stdio.h>
-#include <unistd.h>
-int main() {
-  while (1) {
-    printf("Students think you're inspiring!\n");
-    sleep(4);
-  }
-  return 0;
-}
+dsh> /usr/bin/cat README.md
+#os-shell
 dsh>
 ```
 
@@ -280,7 +282,30 @@ total 56
 dsh>
 ```
 
-Assuming, once again that `feelGood.c` is in the current working directory. This sequence below will first compile `feelGood.c` into a binary executable called `feelGood`. The next line runs `feelGood` in the background (the trailing `&` is given). This means that the shell will not wait for `feelGood` to finish (and it won't finish, as `feelGood` runs an infinite loop). Note that I am given the prompt back immediately, but `feelGood`'s output is interleaved with the shell's. In fact, even *after* I exit David Shell, `feelGood` continues to run as  an independent process!! You should figure out how to terminate `feelGood` :)
+Assuming that the given `feelGood` binary is in the current working directory. This sequence below runs `feelGood` in the background (notice that the trailing `&` is given), so David Shell will not wait for `feelGood` to finish (and it won't finish, as `feelGood` runs an infinite loop that prints a message that makes me feel good about myself every second... heh heh heh...) Note that I am given the `dsh>` prompt immediately, but `feelGood` continues to output independently of what I'm doing in David Shell. In fact, even *after* I exit the shell, `feelGood` continues to run as  an independent process!! You should figure out how to terminate `feelGood`  >:)
+```
+dsh> ./feelGood &
+dsh> ls -l
+total 56
+-rw-rw-r-- 1 dchiu dchiu   112 Feb 15  2023 Makefile
+-rw-rw-r-- 1 dchiu dchiu    17 Jan 13  2023 README.md
+-rw-rw-r-- 1 dchiu dchiu   323 Feb 15  2023 dsh.c
+-rw-rw-r-- 1 dchiu dchiu   128 Feb 15  2023 dsh.h
+-rwxrwxr-x 1 dchiu dchiu 30656 Feb 15  2023 dshSol
+-rwxrwxr-x 1 dchiu dchiu   149 Feb 15  2023 feelGood
+-rw-rw-r-- 1 dchiu dchiu   149 Feb 15  2023 feelGood.c
+-rw-rw-r-- 1 dchiu dchiu   301 Jan 13  2023 main.c
+Students think you're inspiring!
+Students think you're inspiring!
+dsh> exit
+$
+Students think you're inspiring!
+Students think you're inspiring!
+Students think you're inspiring!
+Students think you're inspiring!
+```
+
+<!-- Assuming, once again that `feelGood.c` is in the current working directory. This sequence below will first compile `feelGood.c` into a binary executable called `feelGood`. The next line runs `feelGood` in the background (the trailing `&` is given). This means that the shell will not wait for `feelGood` to finish (and it won't finish, as `feelGood` runs an infinite loop). Note that I am given the prompt back immediately, but `feelGood`'s output is interleaved with the shell's. In fact, even *after* I exit David Shell, `feelGood` continues to run as  an independent process!! You should figure out how to terminate `feelGood` :)
 ```
 dsh> gcc -Wall feelGood.c -o feelGood
 dsh> ./feelGood &
@@ -302,7 +327,7 @@ Students think you're inspiring!
 Students think you're inspiring!
 Students think you're inspiring!
 Students think you're inspiring!
-```
+``` -->
 
 #### Grading
 

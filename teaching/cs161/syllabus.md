@@ -44,7 +44,7 @@ For full credit, you must attend weekly labs and submit your lab assignments by 
 - Late attendance or minimal effort: 1 point
 - No-show or no submission: 0 points
 
-Because labs are always due the next day and are graded on attendance and effort, there is no extension for labs.
+Because labs are always due the next day and are graded on attendance and effort, there is no extension for labs. Missing lab is unacceptable. Unless you have excused absences (e.g., athletics, bereavement, medical, etc.), missing over half the lab sessions, will result in an automatic withdrawal or an F for the course.
 
 ##### Homework Assignments
 Homework assignments are assigned every 1.5 - 2 weeks. Unless otherwise noted, you are to work on homework assignments alone. You are welcome to brainstorm with others (including tutors) for ideas, but any code you submit should be yours.
