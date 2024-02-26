@@ -49,7 +49,7 @@ let days = {
       //   name: "Hwk 5 (mmm)",
       //   title: "Matrix Multiplication",
       //   url: "hwk5.mmm/",
-      //   due: "3/6/2024",
+      //   due: "3/8/2024",
       // },
       // // {
       // //   name: "Hwk 4 (BackItUp)",
@@ -135,6 +135,7 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
+    "Threads: Amdahl's Law; Coding Example",
     "Scheduling: goals and metrics; FCFS",
     "Sched: RR, SJF, SRTF",
     "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",

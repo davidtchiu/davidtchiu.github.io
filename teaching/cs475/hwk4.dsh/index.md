@@ -233,13 +233,15 @@ This assignment can be tricky to get started, because there are so many pieces t
 ##### Simplifying Assumptions
 To make your lives easier, you may make the following assumptions.
 
-1. A line of input, which includes the newline and termination character shall be no more than `MAXBUF` length. `MAXBUF` is given inside `dsh.h` to be 256.
+1. A line of input, which includes the newline and termination character, shall be no more than `MAXBUF` length. `MAXBUF` is given inside `dsh.h` to be 256. You may assume that no tests greater than that length will be made when grading.
 
 2. You may assume that, if the trailing `&` is given, it always follows a whitespace. That is, it shall not be attached to a command or argument.
 
 3. In most shells, multiple commands can be given on the same line, separated by semi-colon. For instance, `cd /home; ls`. Your shell does not have to deal with multiple inline commands.
 
-4. In most shells, the `~` character is replaced with your home directory. For instance, `ls ~/os-shell` would really be `ls /home/david/os-shell`. You do not need to handle the `~` character.
+4. In most shells, the `~` character is replaced with your home directory. For instance, `ls ~/os-shell` would really be `ls /home/david/os-shell`, and `cd ~` would always take you to your home directory. You do not need to handle the special `~` character.
+
+
 
 #### Example Output
 
