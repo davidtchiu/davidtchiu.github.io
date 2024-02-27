@@ -78,7 +78,7 @@ Starter code for this assignment is provided on the github repo. You are not req
 
 - Login to github, and go here: [https://github.com/davidtchiu/os-hashmap](https://github.com/davidtchiu/os-hashmap). 
 
-- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+- **Please do not fork from my repository!** Instead, click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
 
 - This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
 
