@@ -30,9 +30,9 @@ For simplicity, you may assume that you'll only be multiplying square matrices i
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- Login to github, and go here: [https://github.com/davidtchiu/os-mmm](https://github.com/davidtchiu/os-mmm). 
+- Login to github, and go here: [https://github.com/davidtchiu/os-matmult](https://github.com/davidtchiu/os-matmult). 
 
-- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+- **Please do not fork from my repository!** Instead, click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
 
 - This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
 
