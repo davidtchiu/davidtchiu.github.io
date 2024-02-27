@@ -45,12 +45,12 @@ let days = {
         url: "hwk4.dsh/",
         due: "2/26/2024",
       },
-      // {
-      //   name: "Hwk 5 (mmm)",
-      //   title: "Matrix Multiplication",
-      //   url: "hwk5.mmm/",
-      //   due: "3/8/2024",
-      // },
+      {
+        name: "Hwk 5 (mmm)",
+        title: "Matrix Multiplication",
+        url: "hwk5.mmm/",
+        due: "3/8/2024",
+      },
       // // {
       // //   name: "Hwk 4 (BackItUp)",
       // //   title: "Back It Up",
