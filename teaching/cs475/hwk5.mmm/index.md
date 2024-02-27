@@ -101,30 +101,30 @@ This helps to simplify our parallelization work, because we don't need to synchr
      $ ./mmm P 1000
      ```
 
-3. Your `main(int argc, char *argv[])`. Command-line arguments can be access through `argc` and `argv`. Specifically, `argc` refers to the number of arguments given on the command line, including the command to run the executable itself. `argv` is a string array containing the arguments (much like `String[] args` in Java).
+3. Your `main(int argc, char *argv[])`. Command-line arguments can be access through `argc` and `argv`. Specifically, `argc` refers to the number of arguments given on the command line, including the command to run the executable itself. `argv` is a string array containing the arguments (much like `String[] args` in Java). Once you parse out the command line arguments, store the mode (sequential vs. parallel) as an integer in the `mode` global, and store the dimension of your matrices in the `size` global.
 
 4. Dynamically allocating 2D arrays: Because the number of threads and the `size` of the matrices are given at runtime, you *must*  allocate memory on the heap. How convenient -- those matrices on the heap would be shared across threads! Remember to free-up memory and clean up any dangling pointers when you're done using them. I would declare pointers to the input matrices and the result matrix in global scope. A pointer to a 2D array of `doubles` would look like this: `double **matrix;` Then inside `mmm_init()`, you'll need to first allocate `size` number of pointers to `doubles` (that's the first dimension in the matrix), then iterate through that array and again allocate `size` number of `doubles` (that's the second dimension of the matrix).
 
-      To accomplish this takes two steps (one in each "dimension" of the array.) Here's an example to create an N by M array of `ints`.
+      To accomplish this takes two steps (one in each "dimension" of the array.) Here's an example to create an N by M matrix of `ints`.
 
       ```c
-      // declare this somewhere in global scope (for thread sharing)
-      int **array;
+      // declare this somewhere in global scope (for thread access)
+      int **matrix;
       ```
 
-      - The `**` syntax may at first seem confusing. However, recall that an array is just a pointer. So, an array of pointers can be interpreted to be a pointer to pointers. Therefore, `array` has been declared as `**array`. (If you ever needed a 3 dimensional array, then you would use `***array`, and so on.)
+      - The `**` syntax may at first seem confusing. However, recall that an array is just a pointer. So, an array of pointers can be interpreted to be a pointer to pointers. Therefore, `array` has been declared as `**matrix`. (If you ever needed a 3 dimensional array, then you would use `***`, and so on.)
 
          Elsewhere in your code, say `mmm_init()`, you'll allocate space:
       
          ```c
          // malloc a size N array of pointers to ints
-         array = (int**) malloc(sizeof(int*) * N);
+         matrix = (int**) malloc(sizeof(int*) * N);
 
          // iterate through each row and malloc a size N array of ints
          for (int i = 0; i < N; i++) {
-            array[i] = (int*) malloc(sizeof(int) * M;)
+            matrix[i] = (int*) malloc(sizeof(int) * M;)
          }
-         // can now have access to array[i][j]
+         // can now have access to matrix[i][j]
          ```
 
       - Don't forget, you will need to free the 2D array later on. Do so by individually freeing every row, then free the original pointer.
@@ -132,15 +132,15 @@ This helps to simplify our parallelization work, because we don't need to synchr
          ```c
          // free each row
          for (int i = 0; i < N; i++) {
-            free(array[i]);
-            array[i] = NULL;  // remove dangling pointer
+            free(matrix[i]);
+            matrix[i] = NULL;  // dangling pointer
          }
          // free original array
-         free(array);
-         array = NULL;  //remove dangling pointer
+         free(matrix);
+         matrix = NULL;  // dangling pointer
          ```
 
-5. Once you successfully allocate the input matrices, you should initialize them with random `double` values between 0 and 99. Look into the [rand()](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm) function.
+5. Once you successfully allocate the input matrices, you should initialize them with random `double`s between 0 and 99. 
 
 6. **Data Parallelism:** If the parallel mode (`P`) is selected, your `main()` function must split the work evenly among the threads. There are many ways to do this, and I'll leave this decision up to you. You're welcome to experiment with different approaches!
 
