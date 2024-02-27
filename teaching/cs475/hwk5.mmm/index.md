@@ -17,7 +17,7 @@ $$
 $$
 
 For simplicity, you may assume that you'll only be multiplying square matrices in this assignment. 
-In this assignment, you will be implementing the parallel, multithreaded implementation of mmm.
+You will be implementing a parallel, multithreaded version of mmm.
 
 #### Student Outcomes
 
