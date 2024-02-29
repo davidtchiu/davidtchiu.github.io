@@ -134,12 +134,12 @@ let days = {
         url: "lab6.diamonds/",
         due: "2/23/2024",
       },
-      // {
-      //   name: "Lab 7",
-      //   title: "Turtle (Loops)",
-      //   url: "lab7.turtle/",
-      //   due: "3/1/2024",
-      // },
+      {
+        name: "Lab 7",
+        title: "Turtle (Loops)",
+        url: "lab7.turtle/",
+        due: "3/1/2024",
+      },
       // {
       //   name: "Lab 8",
       //   title: "CC Validator (Arrays)",
