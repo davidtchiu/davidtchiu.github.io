@@ -136,9 +136,9 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
     "Threads: Amdahl's Law; Coding Example",
-    "Scheduling: goals and metrics; FCFS",
-    "Sched: RR, SJF, SRTF",
-    "Sched: Priority, MLFQ; Examples: Linux O(1) and CFS",
+    "Scheduling: goals and metrics; FCFS, SJF",
+    "Sched: RR, SRTF, MLFQ",
+    // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
     "Sched: hyperthreading, multicore considerations",
     "Synchronization: critical section",

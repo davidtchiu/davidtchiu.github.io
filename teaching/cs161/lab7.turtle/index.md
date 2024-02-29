@@ -130,7 +130,7 @@ Our `TurtleDrawer` class should be made to be more generalized. If we needed to 
 
 #### Part 3: Zigzags
 
-- Make a new method, called `drawZigzag`, that takes as input two double arguments. The first argument is length, which specifies the length of the zigzag line to be drawn. The second argument width, which serves as both the width and the zigzagging interval (see below for illustration). In addition, it should take as input two String arguments: `zigColor` and `zagColor`.
+- Make a new method, called `drawZigzag` that takes as input two `double`s and two `Strings`. The first argument is `length`, which specifies the length of the zigzag line to be drawn. The second argument `width` (see below for illustration). In addition, it should take as input two String arguments: `zigColor` and `zagColor`.
 
   <center>
   <code>drawZigzag(400, 50, "green", "blue");</code><br/>
@@ -139,7 +139,7 @@ Our `TurtleDrawer` class should be made to be more generalized. If we needed to 
 
 - Things worth considering:
 
-  - For convenience, let's call the lines that move vertically along the width a zig line, and the longer lines that sweep back across a zag line
+  - For convenience, let's call the lines that move vertically along the width a zig line, and the longer lines that sweep back across a zag line.
 
   - In the picture above, the turtle was initially facing east. Therefore, when I call this method, I expect that the zigzag will be drawn horizontally, and to the east. But notice how the first zig-line is actually vertical.
 
@@ -154,7 +154,7 @@ Our `TurtleDrawer` class should be made to be more generalized. If we needed to 
   - **You do not need a nested loop (loop inside another) to complete this method.**
 
 
-<!-- #### Part 4: Grids (Nested Loops)
+#### Part 4: Grids (Nested Loops)
 
 - You can use the method you just implemented to draw a grid. Think of an `H * W` grid as having `W` cells across (number of columns) by
   `H` cells vertically (number of rows).
@@ -172,19 +172,17 @@ Our `TurtleDrawer` class should be made to be more generalized. If we needed to 
     <video width="620" controls loop>
       <source src="figures/drawGrid.mp4" type="video/mp4">
       Your browser does not support the video tag.
-    </video> -->
+    </video>
 
-#### Part 4: Create Your Own Drawings
+#### Part 5: Create Your Own Drawings
 
 It's amazing how many cool patterns we can now draw with just these method implemented. Your task is to create your very own pattern by combining loops and those previous methods you wrote. Create a method called `drawMyPattern` and try looping while calling the methods that we already wrote to see if you end up with some neat patterns.
 
 Whatever you do, be creative! Use a nested loop (or a triply nested loop)! But here are some ideas you can try.
 
-  - Try drawing a zigzag or a spiral.
-
   - Try drawing a honeycomb pattern, or try drawing a brick pattern (in which the bricks on the next row up overlap with two bricks on the row below it.)
 
-  - Try making an abyss: This will get you close: Write a method to draw a 10-sided shape. After one is drawn, increase the length of each side, and draw another. Repeat until something of a blackhole emerges. 
+  - Try making some sort of an abyss: This will get you close: Write a method to draw a 10-sided shape. After one is drawn, increase the length of each side, and draw another. Repeat until something of a blackhole emerges. 
 
 
 #### Grading
