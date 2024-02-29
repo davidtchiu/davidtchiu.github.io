@@ -47,7 +47,7 @@ Download the BlueJ project from the above link. After you unzip it into your wor
 
   - It has one field: a `Turtle` object named `pen`.
   - It has a default constructor that first instantiates `pen`, then sets the `pen`'s color to black, and lowers the `pen` for drawing.
-  - Let's write a quick-and-dirty method to test out the Turtle. Let's name it `drawTriangle`. It returns nothing, but takes a `double sideLength` as input. Your code should navigate the pen to draw an equilateral triangle, i.e., same length on all sides (see below)
+  - Let's write a quick-and-dirty method to test out the Turtle. Let's name it `drawTriangle`. It returns nothing, but takes a `double edgeLength` as input. Your code should navigate the pen to draw an equilateral triangle, i.e., same length on all sides (see below)
 
     <center><img src="figures/triangle.png" width="150px" /></center>
 
@@ -62,20 +62,20 @@ Download the BlueJ project from the above link. After you unzip it into your wor
     - Because a triangle is easy to draw, it may be tempting to write this method without loops, like the code that's given below. Read through it, and make sure you understand the code!
 
       ```java
-      public void drawTriangle(double sideLength) {
+      public void drawTriangle(double edgeLength) {
         pen.penDown();
         double degreesTurn = <<FILL ME IN>>;   // angle by which to turn after drawing an edge
 
         //first edge
-        pen.forward(sideLength);
+        pen.forward(edgeLength);
         pen.left(degreesTurn);
 
         //second edge
-        pen.forward(sideLength);
+        pen.forward(edgeLength);
         pen.left(degreesTurn);
 
        //third edge
-        pen.forward(sideLength);
+        pen.forward(edgeLength);
         pen.left(degreesTurn);
       }
       ```
@@ -85,7 +85,7 @@ Download the BlueJ project from the above link. After you unzip it into your wor
 - *Your task* is to rewrite this method using a loop to replace the above redundant code segment above. You can use a loop to get the job done. The following code fragment, for example, repeats some segment of code `n` times.
 
   ```java
-  for (int i = 0; i < n; i++) {
+  while (loop condition) {
 
     /* statements to repeat in here */
 
@@ -95,9 +95,9 @@ Download the BlueJ project from the above link. After you unzip it into your wor
 
 #### Part 2: Polygons
 
-Okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be made to be more generalized. If we needed to write new methods just to draw a square (4 sides), a pentagon (5 sides), hexagon (6 sides), etc., then when would we ever stop writing methods? A better alternative would be to write a single method that inputs, along with the `sideLength`, the number of sides, `numSides`, and a `pen` color color for the polygon you wish to draw.
+Our `TurtleDrawer` class should be made to be more generalized. If we needed to write new methods just to draw a square (4 sides), a pentagon (5 sides), hexagon (6 sides), etc., then when would we ever stop writing methods? A better alternative would be to write a single method that inputs, along with the `edgeLength`, the number of sides, `numSides`, and a `pen` color color for the polygon you wish to draw.
 
-- Name this new method `drawPolygon`. If `numSides` is entered as less than 3, then this method should do nothing.
+- Name this new method `drawPolygon()`. If `numSides` is entered to be less than 3, then this method should do nothing.
 
 - If you didn't answer the question on the previous section about how many degrees by which to turn the `Turtle` after each edge is drawn, you need to do so now. To help you through this process, draw several polygons on a piece of paper. Start with triangle (3-sides) again, then try a square (4-sides), pentagon (5-sides), and so on, until it becomes obvious what the relationship between the number of sides vs. how much to turn by.
 
@@ -121,14 +121,40 @@ Okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be made 
   </table>
 
 - **Important (read this)!** When programmers re-write code to improve the design and functionality of their code for future extension, it is called **_refactoring_**.
-  The implementation of `drawPolygon` renders `drawTriangle` a bit useless, doesn't it? Indeed, you could replace the entire body of the `drawTriangle` method with just a call to the new method: `drawPolygon(sideLength, 3, "black")` and you should do so now. Make sure you understand why this works.
+  The implementation of `drawPolygon` renders `drawTriangle` a bit useless, doesn't it? Indeed, you could replace the entire body of the `drawTriangle` method with just a call to the new method: `drawPolygon(edgeLength, 3, "black")` and you should do so now. Make sure you understand why this works.
 
   You might wonder why we should even keep `drawTriangle` around, instead of removing it altogether. Consider this real-world scenario: Suppose thousands of users are currently using the old version of your `TurtleDrawer` class. Today, we decide to refactor the code and push a new and improved version to the public. If we removed `drawTriangle` completely, and insisted that everyone switch to using `drawPolygon`, then everyone's code which made calls to `drawTriangle` is now broken. That would not be a wise decision, and you would lose the trust of many customers.
 
   So, by keeping `drawTriangle` around, we can ensure that our new upgrade is backward-compatible. However, we might warn the user the `drawTriangle` is now "deprecated," and it could be removed in future versions of our code. This makes for a much smoother transition.
 
 
-#### Part 3: Grids (Nested Loops)
+#### Part 3: Zigzags
+
+- Make a new method, called `drawZigzag`, that takes as input two double arguments. The first argument is length, which specifies the length of the zigzag line to be drawn. The second argument width, which serves as both the width and the zigzagging interval (see below for illustration). In addition, it should take as input two String arguments: `zigColor` and `zagColor`.
+
+  <center>
+  <code>drawZigzag(400, 50, "green", "blue");</code><br/>
+  <img src="figures/lab6_turtle_zigzag.png" width="350px" border="1" style="background-color: white;" />
+  </center>
+
+- Things worth considering:
+
+  - For convenience, let's call the lines that move vertically along the width a zig line, and the longer lines that sweep back across a zag line
+
+  - In the picture above, the turtle was initially facing east. Therefore, when I call this method, I expect that the zigzag will be drawn horizontally, and to the east. But notice how the first zig-line is actually vertical.
+
+  - Next, you need to determine the length of the zag-lines, as well as the angle of your turns. (Hint: These sawtooth shapes sure remind me of [right triangles](https://mathworld.wolfram.com/PythagoreanTheorem.html))
+
+  - Think about the loop condition, which is related to how much you should draw per iteration. A single zig-line plus zag-line combination (looks like a tooth) appears to be the minimally repeated pattern.
+
+  - Make sure your zig-lines and zag-lines are alternating colors.
+
+  - Finally, if the width is longer than the length, you should draw nothing.
+
+  - **You do not need a nested loop (loop inside another) to complete this method.**
+
+
+<!-- #### Part 4: Grids (Nested Loops)
 
 - You can use the method you just implemented to draw a grid. Think of an `H * W` grid as having `W` cells across (number of columns) by
   `H` cells vertically (number of rows).
@@ -146,7 +172,7 @@ Okay, `Triangles` are cool and all, but our `TurtleDrawer` class should be made 
     <video width="620" controls loop>
       <source src="figures/drawGrid.mp4" type="video/mp4">
       Your browser does not support the video tag.
-    </video>
+    </video> -->
 
 #### Part 4: Create Your Own Drawings
 
