@@ -53,12 +53,12 @@ let days = {
         url: "hwk4.fraction/",
         due: "3/1/2024", //Wed (this *should* be due on Wed, not Friday!)
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Loops Practice I",
-      //   url: "hwk5.loops/",
-      //   due: "3/8/2024",  // Fri
-      // },
+      {
+        name: "Hwk 5",
+        title: "Loops Practice I",
+        url: "hwk5.loops/",
+        due: "3/8/2024",  // Fri
+      },
       // {
       //   name: "Hwk 6",
       //   title: "Loops Practice II",
