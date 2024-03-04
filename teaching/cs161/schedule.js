@@ -57,7 +57,7 @@ let days = {
         name: "Hwk 5",
         title: "Loops Practice I",
         url: "hwk5.loops/",
-        due: "3/8/2024",  // Fri
+        due: "3/18/2024",  // Fri
       },
       // {
       //   name: "Hwk 6",

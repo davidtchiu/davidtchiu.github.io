@@ -19,7 +19,7 @@ Let's try our hand at writing some nested loops. Remember that there's a formula
 
 0. **(Nested Loops)** Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. Hint: I would start by writing a method that prints a solid square of size `n` first, then modifying the inner loop so that you get the hollowed-out results.
 
-Here's what I would expect to see if your method is working properly. 
+    Here's what I would expect to see if your method is working properly. 
 
     ```java
     MoreLoops loopie = new MoreLoops();
