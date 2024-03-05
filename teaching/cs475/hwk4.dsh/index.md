@@ -152,11 +152,11 @@ Some commands are not meant to invoke another program. Instead, they are to be h
 
 Here is a list of built-in commands that David shell needs to support.
 
-- `exit` should exit David Shell.
+- `exit` should exit David Shell. Don't forget to clean up any allocated memory!
 
 - `pwd` should print the current working directory. Look into `getcwd()`, defined in `unistd.h`.
 
-- `cd [path]` should change the current working directory to the optionally given path. If path is not given, then David Shell should change the working directory to the user's home directory, stored in the environment variable `HOME`. Look into the `chdir()` function, defined in `unistd.h`.
+- `cd [path]` should change the current working directory to the optionally given path. If path is not given, then David Shell should change the working directory to the user's home directory, stored in the environment variable `HOME`. Look into the `chdir()` function, defined in `unistd.h`. If the given path does not exist, you should output an error, `"<directory> not found".`
 
 
 ##### Flowchart of Activities
