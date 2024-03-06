@@ -42,11 +42,10 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 #### Problems
 
-1. We'll start with an easy one, and I'll guide you through it. The famous **Collatz conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` reaches 1. (Fun fact: The numbers that appear in a sequence are also called "Hailstone Numbers.")
+1. We'll start with an easy one, and I'll guide you through it. The famous **Collatz conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` ends at 1. (Fun fact: The numbers that appear in a sequence are also called "Hailstone Numbers.")
 
     Clues:
     - This is an event-controlled loop. The event we're hoping eventually occurs is `n == 1`.
-    - Being an event-controlled loop, there is no need for a separate counter.
     - The looping condition is the **negation** of the event.
 
     Output:
@@ -97,7 +96,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
     > -489325
     ```
 
-3. Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the **String API** handy to help you out. Particularly, you will need a way to extract an individual character out of both strings and compare them. You will also need to a way to determine the length of a string to see if you even need to proceed with count. 
+3. Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the [String API](StringAPI.pdf) handy to help you out. Particularly, you will need a way to extract an individual character out of both strings and compare them. You will also need to a way to determine the length of a string to see if you even need to proceed with count. 
 
     ```java
     Loops loopie = new Loops();

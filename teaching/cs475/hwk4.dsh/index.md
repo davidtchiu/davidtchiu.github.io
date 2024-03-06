@@ -156,7 +156,7 @@ Here is a list of built-in commands that David shell needs to support.
 
 - `pwd` should print the current working directory. Look into `getcwd()`, defined in `unistd.h`.
 
-- `cd [path]` should change the current working directory to the optionally given path. If path is not given, then David Shell should change the working directory to the user's home directory, stored in the environment variable `HOME`. Look into the `chdir()` function, defined in `unistd.h`. If the given path does not exist, you should output an error, `"<directory> not found".`
+- `cd [path]` should change the current working directory to the optionally given path. If path is not given, then David Shell should change the working directory to the user's home directory, stored in the environment variable `HOME`. Look into the `chdir()` function, defined in `unistd.h`. If the given path does not exist, you should output an error, `"<directory>: no such file or directory".`
 
 
 ##### Flowchart of Activities
