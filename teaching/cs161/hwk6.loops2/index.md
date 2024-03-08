@@ -107,11 +107,29 @@ Let's try our hand at writing some nested loops. Remember that there's a formula
     20! == 2432902008176640000
     ```
 
-##### Part II: Arrays/Strings and Loops
+3. **(Strings + Single Loop)**  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters that are vowels in the string. Assume that `y` is not a vowel. You'll need the [String API](StringAPI.pdf). 
+    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char` data type) is a vowel. Beware of upper vs. lower case. (Yes this method should work for both cases.) Assume that `y` is not a vowel. 
+    - Finally, beware of integer divide!
+
+    ```java
+    MoreLoops loopie = new MoreLoops();
+    System.out.println(loopie.vowelRatio("Hello world"));
+    > 0.2727272727
+
+    System.out.println(loopie.vowelRatio("eieieieieieieaaaaa"));
+    > 1.0
+
+    System.out.println(loopie.vowelRatio("abba"));
+    > 0.5
+    ```
+
+##### Part II: Arrays and Loops
 
 Let's work on a couple methods that input arrays. The problems in this section can be solved *without* using nested loops.
 
-3. **(Arrays + Non-Nested Loop)** Write a method called `rotateRight()` that inputs an array of Strings and shifts every element in the array one position to the right. The right-most item would then jump to the first position. Here are some things that can help.
+
+
+4. **(Arrays + Single Loop)** Write a method called `rotateRight()` that inputs an array of Strings and shifts every element in the array one position to the right. The right-most item would then jump to the first position. Here are some things that can help.
 
     - An array of integers is declared using: `int[] arrayName`
     - You can always find the length of the array using: `arrayName.length`
@@ -137,29 +155,7 @@ Let's work on a couple methods that input arrays. The problems in this section c
     ```
 
 
-4. **(Strings + Non-Nested Loop)**  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters that are vowels in the string. Assume that `y` is not a vowel. Here are some things to remember about Strings that can help.
 
-    - You can always find the length of the string using: `stringName.length()`
-    - To access a certain character of the string, use `stringName.charAt(pos)` where `pos` is the integer address of the character you seek.
-    - A single character `c`, which is of `char` type, can be compared to another character using something like, `if (c == 'A')`
-    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char` data type) is a vowel. Beware of upper vs. lower case. (Yes this method should work for both cases.) Assume that `y` is not a vowel. 
-    - Finally, beware as always of integer divide!
-
-    ```java
-    MoreLoops loopie = new MoreLoops();
-    System.out.println(loopie.vowelRatio("Hello world"));
-    > 0.2727272727
-
-    System.out.println(loopie.vowelRatio("eieieieieieieaaaaa"));
-    > 1.0
-
-    System.out.println(loopie.vowelRatio("abba"));
-    > 0.5
-    ```
-
-
-##### Part III: Arrays + Nested Loops
-Let's write some algorithms that require nested loops to repeatedly iterate over arrays.
 
 5. **(Arrays + Nested Loops)** Write a method called `barGraph()` which inputs an integer array and prints a horizontal bar graph based on the contents of that array. Say the array `[3, 6, 4]` is input. Your method should print 3 asterisks on the first line, followed by 6 asterisks on the next line, followed by 4 asterisks on the last line. You may assume all values in the array are nonnegative. Here's an example:
 
@@ -180,7 +176,7 @@ Let's write some algorithms that require nested loops to repeatedly iterate over
 
 
 
-##### Challenges
+##### Challenge
 If you feel like you've got a good grasp on this stuff, and want a real challenge. Try these!
 
 - **(Arrays + Nested Loops)** Write a method called `median()` which inputs an integer array and returns the median. The median of an array is defined to be the value in the list that has an equal number of values larger and smaller than itself. For instance, the median of `[3, 5, 7, 3, 9, 8, 2]` is `5`, because there are three numbers less than 5, and three numbers greater than 5. For each value `x[i]` in the array `x`, you need to traverse the array again (skipping itself) and count up the values greater than and less than `x[i]` (keep two counters). If these counters are equal, then return `x[i]` to be the median.
