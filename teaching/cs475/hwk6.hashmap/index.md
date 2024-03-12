@@ -272,12 +272,14 @@ $ ./hashtest 500 53
 ```
 This assignment will be graded out of 90 points:
 
-[10pt] initmap() dynamically allocates a new thread-safe map on the heap. All 
+[5pt] Handling of user input.
+
+[10pt] initmap() dynamically allocates a new hashmap. All 
 fields are initialized.
 
 [15pt] A thread-safe version of get() is implemented. 
 
-[20pt] A thread-safe version of put() is implemented. 
+[15pt] A thread-safe version of put() is implemented. 
 
 [25pt] A thread-safe version of del() is implemented. 
 
