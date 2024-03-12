@@ -76,7 +76,7 @@ In this assignment, you are to provide a thread-safe hashmap library for C.
 
 Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- Login to github, and go here: [https://github.com/davidtchiu/os-hashmap](https://github.com/davidtchiu/os-hashmap). 
+- Login to github, and go here: [https://github.com/davidtchiu/os-hash](https://github.com/davidtchiu/os-hash). 
 
 - **Please do not fork from my repository!** Instead, click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
 
@@ -157,59 +157,120 @@ Here are some properties you should keep in mind while programming:
    - `int del(ts_hashmap_t *map, int key)`: deletes an entry that contains the given `key` and return the previously associated value. If the `key` did not exist, return the constant `INT_MAX`. 
 
 
-3. **Thread-Safety Considerations** I would start by writing the above functions without considering thread safety at all. Just get them to work first, before you worry about threads and mutual exclusion. Next, I would play around with locks  in C  just to get used to them. To explore locks, you'll need to `#include <pthread.h>`. A lock is of the type `pthread_mutex_t`, and you can use the constructor `pthread_mutex_init(..)` to initialize it. Once initialized, you can use `pthread_mutex_lock(..)` and `pthread_mutex_unlock(..)`. 
+3. **Thread Synchronization Considerations** I would start by playing around with the locking mechanism just to get used to them. To explore locks, you'll need to `#include <pthread.h>`. A (self blocking) lock is of the type `pthread_mutex_t`, and you can use the constructor `pthread_mutex_init(..)` to initialize it. Once initialized, you can use `pthread_mutex_lock(..)` and `pthread_mutex_unlock(..)`. 
 
-   Once you feel pretty good about how to create and use locks, you'll want  determine how you'll enforce mutual exclusion in the hashmap functions. Should you introduce one lock for each map? Multiple locks? How would this decision affect the parallel performance of your hashmap? Where do you declare the lock(s) to ensure that all threads can access them?   Once you have your locks declared in initialized in the right place, you'll just have to go back into the hashmap functions and add in the lock/unlock calls to enforce mutual exclusion. 
+   Once you feel pretty good about how to create and use locks, you'll want  determine how you'll enforce mutual exclusion in the hashmap functions. Should you introduce one lock for each hashmap? Multiple locks per hashmap? How would this decision affect the parallel performance of your hashmap? Where do you declare the lock(s) to ensure that all threads can access them? Once you have your locks declared in initialized in the right place, you'll just have to go back into the hashmap functions and add in the lock/unlock calls to enforce mutual exclusion. 
 
-   **Important** Users of your library must not be burdened with the creation and management of any locks. That is, they should be oblivious to the fact that locks even exist. Therefore, all of the management of your locks should all be done in above functions, hidden  from users.
+   **Important** Users of your hashmap library must not be burdened with the creation and management of any locks on their own. That is, users should be totally oblivious to the fact that locks even exist. Therefore, all of the management of your locks should all be done in above functions, hidden  from users.
 
+4. The `main.c` file is provided to you, and you should not modify it (unless while debugging). This program stress tests your implementation. Each thread runs `NUM_OPS_PER_THREAD` operations on your hashmap. These operations have 50% to be a `put()` and 25% each to be a `get()` or `del()`. Each hash-key is randomly generated and limited to a maximum value of 100 so as to induce sufficient amounts of hash conflicts.
 
-4. **Writing a Good Tester (main)** Testing the correctness of your implementation takes a bit of effort. I would write a main function to create any number of threads, and each thread continuously puts/gets/dels 1000s of keys into the same shared hashmap. Use the `printmap()` function that I provided to print out the contents of the map after the threads join back up.
+#### Hints
+- You should begin by implementing and testing the single-threaded version without synchronization. You can do this by just spawning a thread count of 1 in the command-line prompt.
 
-   - You may want to figure out how to "control" the randomness your tests so that you can repeat the same test on a single-threaded version vs. a multi-threaded version and produce the same output. Hint: Look into what it means to "seed" a random number generator, and play with `srand()` and `rand()`.
+- Pay particular attention to memory management. Nodes are possibly created in `put()` and freed in `del()`. Be careful of ordering -- don't try to free a node before it's been completely unlinked from the map. In case of `del()`, you also need to return the old value, so make sure you save that value in a temporary variable before freeing the node and returning!
 
-   - You won't be graded on this, because I'll use my own tester. So, I'll leave it up to you on how to systematically test the correctness of your hashmap, but it should be rigorous and revealing.
+- Speaking of memory management, you'll need to free up the memory allocated to your `pthread_lock_t` object(s) when you're done. To do this, use `pthread_mutex_destroy()`. It frees the resources for you, so you will not need to `free()` them explicitly after calling this function.
 
 
 #### Example Output
-In the output below, my tester spawns the given number of threads from the command line. Each thread has a 33% chance of doing either a `del`, `get`, or `put`. Then a random key between 0 and 99 is generated for that chosen operation. Each thread runs this in a loop 100 times. Obviously, due to the randomness of the tests I'm running, the outputs below are mine alone. If race conditions were present, however, you would likely expect a segmentation fault and/or duplicated keys during the test. 
+In the output below, my tester spawns the given number of threads from the command line. Each thread has a 33% chance of doing either a `del`, `get`, or `put`. Then a random key between 0 and 99 is generated for that chosen operation. Each thread runs this in a loop 100 times. Obviously, due to the randomness of the tests I'm running, the outputs below are mine alone. 
 
-Here's a run with 2 threads on a capacity of 1
+If race conditions were present, however, you would likely expect a segmentation fault and/or duplicated keys during the test. You may also get invalid read/write memory errors from valgrind in the multithreaded version (but not in the single threaded version) if races exist.
+
+Here's a run with 1 thread on a capacity of 1
 ```
-$ ./hashtest 2 1
-[0] -> (9,9) -> (10,10) -> (13,13) -> (14,14) -> (18,18) -> (21,21) -> (22,22) -> (24,24) -> (29,29) -> (31,31) -> (35,35) -> (39,39) -> (41,41) -> (46,46) -> (50,50) -> (51,51) -> (58,58) -> (67,67) -> (68,68) -> (74,74) -> (78,78) -> (76,76) -> (77,77) -> (84,84) -> (90,90) -> (85,85) -> (86,86) -> (87,87) -> (88,88) -> (97,97)
+$ ./hashtest 1 1
+[0] -> (60,60) -> (20,20) -> (64,64) -> (93,93) -> (83,83) -> (2,2) -> (7,7) -> (62,62) -> (85,85) -> (4,4) -> (84,84) -> (8,8) -> (47,47) -> (37,37) -> (100,100) -> (5,5) -> (41,41) -> (50,50) -> (23,23) -> (1,1) -> (95,95) -> (6,6) -> (32,32) -> (45,45) -> (74,74) -> (3,3) -> (11,11) -> (54,54) -> (99,99) -> (40,40) -> (75,75) -> (73,73) -> (92,92) -> (53,53) -> (57,57) -> (89,89) -> (76,76) -> (17,17) -> (59,59) -> (61,61) -> (68,68) -> (81,81) -> (19,19) -> (33,33) -> (91,91) -> (21,21) -> (34,34) -> (63,63) -> (65,65) -> (49,49) -> (31,31) -> (16,16) -> (24,24) -> (90,90) -> (96,96) -> (67,67) -> (29,29) -> (86,86) -> (12,12) -> (79,79) -> (72,72) -> (80,80) -> (69,69) -> (87,87) -> (56,56) -> (43,43)
 ```
+
 
 Here's a run with 40 threads on a capacity of 1
 ```
 $ ./hashtest 40 1
-[0] -> (63,63) -> (36,36) -> (37,37) -> (38,38) -> (45,45) -> (49,49) -> (4,4) -> (6,6) -> (8,8) -> (56,56) -> (57,57) -> (66,66) -> (50,50) -> (76,76) -> (84,84) -> (17,17) -> (29,29) -> (9,9) -> (30,30) -> (33,33) -> (34,34) -> (41,41) -> (74,74) -> (77,77) -> (48,48) -> (52,52) -> (53,53) -> (78,78) -> (82,82) -> (83,83) -> (85,85) -> (89,89) -> (92,92) -> (93,93) -> (97,97)
+[0] -> (15,15) -> (96,96) -> (90,90) -> (53,53) -> (74,74) -> (97,97) -> (95,95) -> (13,13) -> (42,42) -> (18,18) -> (20,20) -> (84,84) -> (43,43) -> (80,80) -> (6,6) -> (85,85) -> (57,57) -> (89,89) -> (76,76) -> (58,58) -> (77,77) -> (100,100) -> (55,55) -> (37,37) -> (44,44) -> (86,86) -> (21,21) -> (93,93) -> (52,52) -> (19,19) -> (70,70) -> (39,39) -> (41,41) -> (40,40) -> (61,61) -> (5,5) -> (75,75) -> (99,99) -> (51,51) -> (56,56) -> (67,67) -> (22,22) -> (65,65) -> (46,46) -> (59,59) -> (78,78) -> (10,10) -> (69,69) -> (3,3) -> (28,28) -> (87,87) -> (12,12) -> (16,16) -> (83,83) -> (82,82) -> (25,25) -> (48,48) -> (38,38) -> (35,35) -> (0,0) -> (14,14) -> (26,26) -> (30,30) -> (7,7) -> (9,9) -> (98,98)
 ```
 
 Here's a run with 400 threads on a capacity of 13.
 ```
 $ ./hashtest 400 13
-[0] -> (13,13) -> (39,39) -> (78,78) -> (65,65)
-[1] -> (27,27) -> (53,53) -> (79,79) -> (92,92)
-[2] -> (28,28) -> (54,54) -> (15,15) -> (41,41)
-[3] -> (16,16) -> (94,94) -> (29,29) -> (81,81)
-[4] -> (69,69) -> (17,17) -> (30,30) -> (43,43)
-[5] -> (5,5) -> (18,18) -> (83,83) -> (96,96)
-[6] -> (58,58) -> (71,71) -> (84,84)
-[7] -> (98,98)
-[8] -> (34,34)
-[9] -> (61,61) -> (87,87)
-[10] -> 
-[11] -> (50,50) -> (24,24)
-[12] -> (64,64) -> (77,77)
+[0] -> (39,39) -> (52,52) -> (91,91)
+[1] -> (14,14) -> (1,1) -> (66,66) -> (79,79) -> (40,40) -> (27,27) -> (53,53)
+[2] -> (67,67) -> (54,54)
+[3] -> (94,94) -> (29,29)
+[4] -> (56,56) -> (4,4) -> (69,69) -> (43,43) -> (95,95) -> (17,17) -> (82,82) -> (30,30)
+[5] -> (44,44) -> (18,18) -> (57,57) -> (31,31) -> (70,70) -> (96,96) -> (5,5)
+[6] -> (6,6) -> (19,19) -> (71,71) -> (58,58) -> (45,45) -> (84,84)
+[7] -> (85,85) -> (33,33) -> (46,46) -> (59,59) -> (98,98) -> (72,72)
+[8] -> (34,34) -> (21,21) -> (99,99) -> (73,73) -> (60,60)
+[9] -> (61,61) -> (87,87) -> (100,100) -> (48,48) -> (35,35)
+[10] -> (23,23) -> (88,88) -> (62,62) -> (10,10)
+[11] -> (11,11) -> (50,50) -> (24,24) -> (76,76) -> (89,89) -> (37,37) -> (63,63)
+[12] -> (51,51) -> (64,64) -> (12,12) -> (90,90) -> (77,77)
+```
+
+Here's a run with 500 threads on a capacity of 53.
+```
+$ ./hashtest 500 53
+[0] -> (53,53) -> (0,0)
+[1] -> (54,54) -> (1,1)
+[2] -> (2,2)
+[3] -> (56,56) -> (3,3)
+[4] -> (57,57) -> (4,4)
+[5] -> (5,5)
+[6] -> (6,6)
+[7] -> (7,7) -> (60,60)
+[8] -> (8,8) -> (61,61)
+[9] -> (9,9) -> (62,62)
+[10] -> (63,63) -> (10,10)
+[11] -> (64,64)
+[12] -> (65,65) -> (12,12)
+[13] -> (66,66) -> (13,13)
+[14] -> 
+[15] -> (15,15)
+[16] -> (16,16) -> (69,69)
+[17] -> (70,70)
+[18] -> (18,18)
+[19] -> (72,72)
+[20] -> (20,20)
+[21] -> (21,21)
+[22] -> (22,22)
+[23] -> (76,76) -> (23,23)
+[24] -> (24,24)
+[25] -> (78,78)
+[26] -> (79,79)
+[27] -> (27,27) -> (80,80)
+[28] -> (28,28) -> (81,81)
+[29] -> (82,82) -> (29,29)
+[30] -> (83,83) -> (30,30)
+[31] -> (84,84)
+[32] -> (85,85) -> (32,32)
+[33] -> (86,86) -> (33,33)
+[34] -> (87,87) -> (34,34)
+[35] -> (88,88) -> (35,35)
+[36] -> 
+[37] -> (90,90) -> (37,37)
+[38] -> (91,91) -> (38,38)
+[39] -> (39,39) -> (92,92)
+[40] -> (40,40) -> (93,93)
+[41] -> (41,41) -> (94,94)
+[42] -> (95,95)
+[43] -> (43,43) -> (96,96)
+[44] -> (97,97) -> (44,44)
+[45] -> 
+[46] -> (99,99)
+[47] -> (100,100) -> (47,47)
+[48] -> (48,48)
+[49] -> (49,49)
+[50] -> (50,50)
+[51] -> (51,51)
+[52] -> (52,52)
 ```
 
 #### Grading
 
 ```
-This assignment will be graded out of 85 points:
-
-[5pt] User input is properly handled, and invalid commands generates an error.
+This assignment will be graded out of 90 points:
 
 [10pt] initmap() dynamically allocates a new thread-safe map on the heap. All 
 fields are initialized.
@@ -218,13 +279,11 @@ fields are initialized.
 
 [20pt] A thread-safe version of put() is implemented. 
 
-[20pt] A thread-safe version of del() is implemented. 
+[25pt] A thread-safe version of del() is implemented. 
 
-[5pt] The creation and management of locks should be hidden from users.
+[5pt] All locking mechanisms should be hidden from users.
 
-[5pt] All locks should be hidden from users.
-
-[5pt] Your program is free of memory leaks and dangling pointers.
+[15pt] Your program is free of memory leaks and dangling pointers.
 ```
 
 #### Submitting Your Assignment
