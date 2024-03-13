@@ -57,12 +57,12 @@ let days = {
       // //   url: "hwk4.biu/",
       // //   due: "2/28/2024",
       // // },
-      // {
-      //   name: "Hwk 6 (ts_hashmap)",
-      //   title: "Thread-Safe Hashmap",
-      //   url: "hwk6.hashmap/",
-      //   due: "3/22/2024", // after break
-      // },
+      {
+        name: "Hwk 6 (ts_hashmap)",
+        title: "Thread-Safe Hashmap",
+        url: "hwk6.hashmap/",
+        due: "3/22/2024", // after break
+      },
       // {
       //   name: "Hwk 7 (OneLaneBridge)",
       //   title: "One Lane Bridge ",
