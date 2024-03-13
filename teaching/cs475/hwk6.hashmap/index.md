@@ -125,11 +125,10 @@ Here are some properties you should keep in mind while programming:
          ts_entry_t **table;  // pointer to an array of entry pointers
          int capacity;  // size of the table (table[] array length)
          int size;      // number of entries currently stored
+         int numOps;    // the number of operations (put, get, del) performed
       } ts_hashmap_t;
       ```
 
-
-   
       - While a true hashmap allows for any type of data to serve as both key and value, to simplify our implementation, we will assume that all keys and values are `int`s.
 
       - If you have time, you should look into how to support arbitrary key and value types.
@@ -139,14 +138,19 @@ Here are some properties you should keep in mind while programming:
 
 #### Program Requirements
 
-1. Your program should accept exactly 2 arguments on the command line:
+1. Take a look over `main.c`, which is not to be modified unless when debugging. This program stress tests your hashmap. Each thread runs `NUM_OPS_PER_THREAD` operations on your hashmap. These operations have a 50% chance to be a `put()` and 25% chance each to be a `get()` or `del()`. Each hash-key is randomly generated and limited to the given maximum value (see below) so as to induce sufficient amounts of hash conflicts. The program accepts  3 arguments on the command line:
     ```bash
-    $ ./hashtest <num threads> <hashmap capacity>
+    $ ./hashtest <num threads> <hashmap capacity> <max key>
     ```
    - The `num threads` argument tells your program how many threads it must create to randomly get/put/del keys.
    - The `hashmap capacity` argument is the size of the table array that your hashmap should initialize.
+   - The `max key` argument is the maximum value that the hashtest simulator will generate. All keys are in the range `[0, max key]`.
 
-2. You must provide the following thread-safe functions:
+   The relationship of `max key` to this simulator is an important one. If you recall that hashmaps do not allow duplicate keys, `max key` is also the maximum number of elements that can be stored in the map. Therefore, you don't want your `max key` to be too low. I've been testing with values ranging between 500 to 1000.
+
+2. Most of your work will go in `ts_hashmap.h` and `ts_hashmap.c`. In `ts_hashmap.h`, you'll need to make any changes you see as necessary to the defined structs in order to support synchronization.
+
+3. In `ts_hashmap.c` you must provide the implementations for following thread-safe functions:
 
    - `ts_hashmap_t *initmap(capacity)`: returns a pointer to a new thread-safe hashmap. The initial  size of the array should be allocated to `capacity`. This function **does not** need to be thread-safe.
 
@@ -159,11 +163,16 @@ Here are some properties you should keep in mind while programming:
 
 3. **Thread Synchronization Considerations** I would start by playing around with the locking mechanism just to get used to them. To explore locks, you'll need to `#include <pthread.h>`. A (self blocking) lock is of the type `pthread_mutex_t`, and you can use the constructor `pthread_mutex_init(..)` to initialize it. Once initialized, you can use `pthread_mutex_lock(..)` and `pthread_mutex_unlock(..)`. 
 
-   Once you feel pretty good about how to create and use locks, you'll want  determine how you'll enforce mutual exclusion in the hashmap functions. Should you introduce one lock for each hashmap? Multiple locks per hashmap? How would this decision affect the parallel performance of your hashmap? Where do you declare the lock(s) to ensure that all threads can access them? Once you have your locks declared in initialized in the right place, you'll just have to go back into the hashmap functions and add in the lock/unlock calls to enforce mutual exclusion. 
+   Once you feel pretty good about how to use locks, you'll want determine how you'll enforce mutual exclusion in the hashmap functions. Should you introduce one lock for each hashmap (would that make the lock too contentious?) Multiple locks per hashmap? How would this decision affect the parallel performance of your hashmap? Where do you declare the lock(s) to ensure that all threads can access them? Once you have your locks declared in initialized in the right place, you'll just have to go back into the hashmap functions and add in the lock/unlock calls to enforce mutual exclusion. 
 
-   **Important** Users of your hashmap library must not be burdened with the creation and management of any locks on their own. That is, users should be totally oblivious to the fact that locks even exist. Therefore, all of the management of your locks should all be done in above functions, hidden  from users.
+   **Important** Users of your hashmap library must not be burdened with the creation and management of any locks on their own. That is, users should be totally oblivious to the fact that locks even exist in your library (just like when we use a `HashTable<K,V>` in Java, we don't realize it's thread safe -- the API stays the same!). Therefore, all of the management of your locks should all be encapsulated in the above functions, hidden  from users.
 
-4. The `main.c` file is provided to you, and you should not modify it (unless while debugging). This program stress tests your implementation. Each thread runs `NUM_OPS_PER_THREAD` operations on your hashmap. These operations have 50% to be a `put()` and 25% each to be a `get()` or `del()`. Each hash-key is randomly generated and limited to a maximum value of 100 so as to induce sufficient amounts of hash conflicts.
+
+5. The goal of this assignment is to implement the locking system offering the highest performance to handling massive numbers of threads (possibly 1000s). Your implementation must of course be impervious to race conditions and memory errors.
+
+6. Finally, you'll want to make sure that the number of operations done on the map (stored in the `numOps` field) is equal to `number of threads * NUM_OPS_PER_THREAD` after the run. Each of the put, get, and del functions must increment this field (beware of races).
+
+7. You are welcome to add any number of functions to your implementation.
 
 #### Hints
 - You should begin by implementing and testing the single-threaded version without synchronization. You can do this by just spawning a thread count of 1 in the command-line prompt.
@@ -172,110 +181,93 @@ Here are some properties you should keep in mind while programming:
 
 - Speaking of memory management, you'll need to free up the memory allocated to your `pthread_lock_t` object(s) when you're done. To do this, use `pthread_mutex_destroy()`. It frees the resources for you, so you will not need to `free()` them explicitly after calling this function.
 
+- You might also experiment with [spin locks](https://docs.oracle.com/cd/E26502_01/html/E35303/ggecq.html),  `pthread_spinlock_t`, which may have better performance when the critical section is short.
+
 
 #### Example Output
-In the output below, my tester spawns the given number of threads from the command line. Each thread has a 33% chance of doing either a `del`, `get`, or `put`. Then a random key between 0 and 99 is generated for that chosen operation. Each thread runs this in a loop 100 times. Obviously, due to the randomness of the tests I'm running, the outputs below are mine alone. 
+In the output below, my tester spawns the given number of threads from the command line. Each thread has a 33% chance of doing either a `del`, `get`, or `put`. Then a random key between 0 and 99 is generated for that chosen operation. Each thread runs this in a loop 100 times. Obviously, due to the randomness of the tests I'm running, the outputs below are mine alone. Because I'm not running the experiments multiple times and taking the average elapsed time, your mileage may vary per run, and you may have to repeat your runs to get numbers closer to mine.
 
-If race conditions were present, however, you would likely expect a segmentation fault and/or duplicated keys during the test. You may also get invalid read/write memory errors from valgrind in the multithreaded version (but not in the single threaded version) if races exist.
+If race conditions were present, you would likely get a segmentation fault and/or duplicated keys during the test. The number of operations, which is one of the map's fields, may also be lower than you expected if there is a race. Finally, via valgrind, you may also get invalid read/write memory errors from valgrind in the multithreaded version (but not in the single threaded version) if races exist.
 
-Here's a run with 1 thread on a capacity of 1
+##### Single Threaded Experiments (No Lock Contention, Baseline)
+Run config: threads=1, capacity=1, maxkey=500.
 ```
-$ ./hashtest 1 1
-[0] -> (60,60) -> (20,20) -> (64,64) -> (93,93) -> (83,83) -> (2,2) -> (7,7) -> (62,62) -> (85,85) -> (4,4) -> (84,84) -> (8,8) -> (47,47) -> (37,37) -> (100,100) -> (5,5) -> (41,41) -> (50,50) -> (23,23) -> (1,1) -> (95,95) -> (6,6) -> (32,32) -> (45,45) -> (74,74) -> (3,3) -> (11,11) -> (54,54) -> (99,99) -> (40,40) -> (75,75) -> (73,73) -> (92,92) -> (53,53) -> (57,57) -> (89,89) -> (76,76) -> (17,17) -> (59,59) -> (61,61) -> (68,68) -> (81,81) -> (19,19) -> (33,33) -> (91,91) -> (21,21) -> (34,34) -> (63,63) -> (65,65) -> (49,49) -> (31,31) -> (16,16) -> (24,24) -> (90,90) -> (96,96) -> (67,67) -> (29,29) -> (86,86) -> (12,12) -> (79,79) -> (72,72) -> (80,80) -> (69,69) -> (87,87) -> (56,56) -> (43,43)
+$ ./hashtest 1 1 500
+Number of ops = 10000, time elapsed = 0.005587 sec
+Time per op   = 0.000559 ms
 ```
-
-
-Here's a run with 40 threads on a capacity of 1
+Run config: threads=1, capacity=100, maxkey=500.
+Should be much faster due to increased capacity of the hash map (and no lock contention).
 ```
-$ ./hashtest 40 1
-[0] -> (15,15) -> (96,96) -> (90,90) -> (53,53) -> (74,74) -> (97,97) -> (95,95) -> (13,13) -> (42,42) -> (18,18) -> (20,20) -> (84,84) -> (43,43) -> (80,80) -> (6,6) -> (85,85) -> (57,57) -> (89,89) -> (76,76) -> (58,58) -> (77,77) -> (100,100) -> (55,55) -> (37,37) -> (44,44) -> (86,86) -> (21,21) -> (93,93) -> (52,52) -> (19,19) -> (70,70) -> (39,39) -> (41,41) -> (40,40) -> (61,61) -> (5,5) -> (75,75) -> (99,99) -> (51,51) -> (56,56) -> (67,67) -> (22,22) -> (65,65) -> (46,46) -> (59,59) -> (78,78) -> (10,10) -> (69,69) -> (3,3) -> (28,28) -> (87,87) -> (12,12) -> (16,16) -> (83,83) -> (82,82) -> (25,25) -> (48,48) -> (38,38) -> (35,35) -> (0,0) -> (14,14) -> (26,26) -> (30,30) -> (7,7) -> (9,9) -> (98,98)
-```
-
-Here's a run with 400 threads on a capacity of 13.
-```
-$ ./hashtest 400 13
-[0] -> (39,39) -> (52,52) -> (91,91)
-[1] -> (14,14) -> (1,1) -> (66,66) -> (79,79) -> (40,40) -> (27,27) -> (53,53)
-[2] -> (67,67) -> (54,54)
-[3] -> (94,94) -> (29,29)
-[4] -> (56,56) -> (4,4) -> (69,69) -> (43,43) -> (95,95) -> (17,17) -> (82,82) -> (30,30)
-[5] -> (44,44) -> (18,18) -> (57,57) -> (31,31) -> (70,70) -> (96,96) -> (5,5)
-[6] -> (6,6) -> (19,19) -> (71,71) -> (58,58) -> (45,45) -> (84,84)
-[7] -> (85,85) -> (33,33) -> (46,46) -> (59,59) -> (98,98) -> (72,72)
-[8] -> (34,34) -> (21,21) -> (99,99) -> (73,73) -> (60,60)
-[9] -> (61,61) -> (87,87) -> (100,100) -> (48,48) -> (35,35)
-[10] -> (23,23) -> (88,88) -> (62,62) -> (10,10)
-[11] -> (11,11) -> (50,50) -> (24,24) -> (76,76) -> (89,89) -> (37,37) -> (63,63)
-[12] -> (51,51) -> (64,64) -> (12,12) -> (90,90) -> (77,77)
+$ ./hashtest 1 100 500
+Number of ops = 10000, time elapsed = 0.001189 sec
+Time per op   = 0.000119 ms
 ```
 
-Here's a run with 500 threads on a capacity of 53.
+Run config: threads=1, capacity=500, maxkey=500
+Should be much faster still, but just slightly.
 ```
-$ ./hashtest 500 53
-[0] -> (53,53) -> (0,0)
-[1] -> (54,54) -> (1,1)
-[2] -> (2,2)
-[3] -> (56,56) -> (3,3)
-[4] -> (57,57) -> (4,4)
-[5] -> (5,5)
-[6] -> (6,6)
-[7] -> (7,7) -> (60,60)
-[8] -> (8,8) -> (61,61)
-[9] -> (9,9) -> (62,62)
-[10] -> (63,63) -> (10,10)
-[11] -> (64,64)
-[12] -> (65,65) -> (12,12)
-[13] -> (66,66) -> (13,13)
-[14] -> 
-[15] -> (15,15)
-[16] -> (16,16) -> (69,69)
-[17] -> (70,70)
-[18] -> (18,18)
-[19] -> (72,72)
-[20] -> (20,20)
-[21] -> (21,21)
-[22] -> (22,22)
-[23] -> (76,76) -> (23,23)
-[24] -> (24,24)
-[25] -> (78,78)
-[26] -> (79,79)
-[27] -> (27,27) -> (80,80)
-[28] -> (28,28) -> (81,81)
-[29] -> (82,82) -> (29,29)
-[30] -> (83,83) -> (30,30)
-[31] -> (84,84)
-[32] -> (85,85) -> (32,32)
-[33] -> (86,86) -> (33,33)
-[34] -> (87,87) -> (34,34)
-[35] -> (88,88) -> (35,35)
-[36] -> 
-[37] -> (90,90) -> (37,37)
-[38] -> (91,91) -> (38,38)
-[39] -> (39,39) -> (92,92)
-[40] -> (40,40) -> (93,93)
-[41] -> (41,41) -> (94,94)
-[42] -> (95,95)
-[43] -> (43,43) -> (96,96)
-[44] -> (97,97) -> (44,44)
-[45] -> 
-[46] -> (99,99)
-[47] -> (100,100) -> (47,47)
-[48] -> (48,48)
-[49] -> (49,49)
-[50] -> (50,50)
-[51] -> (51,51)
-[52] -> (52,52)
+$ ./hashtest 1 500 500
+Number of ops = 10000, time elapsed = 0.000858 sec
+Time per op   = 0.000086 ms
+```
+
+##### 250 Threaded Experiments (Moderate Lock Contention)
+
+Run config: threads=250, capacity=1, maxkey=500
+```
+$ ./hashtest 250 1 500
+Number of ops = 2500000, time elapsed = 4.630336 sec
+Time per op   = 0.001852 ms
+```
+
+Run config: threads=250, capacity=100, maxkey=500
+```
+$ ./hashtest 250 100 500
+Number of ops = 2500000, time elapsed = 3.679241 sec
+Time per op   = 0.001472 ms
+```
+
+Run config: threads=250, capacity=500, maxkey=500
+```
+$ ./hashtest 250 500 500
+Number of ops = 2500000, time elapsed = 2.743910 sec
+Time per op   = 0.001098 ms
+```
+
+##### 1000 Threaded Experiments (High Lock Contention)
+Run config: threads=1000, capacity=1, maxkey=500
+```
+$ ./hashtest 1000 1 500
+Number of ops = 10000000, time elapsed = 20.098363 sec
+Time per op   = 0.002010 ms
+```
+
+Run config: threads=1000, capacity=100, maxkey=500
+```
+$ ./hashtest 1000 100 500
+Number of ops = 10000000, time elapsed = 17.404755 sec
+Time per op   = 0.001740 ms
+```
+
+Run config: threads=1000, capacity=500, maxkey=500
+```
+$ ./hashtest 1000 500 500
+Number of ops = 10000000, time elapsed = 12.842592 sec
+Time per op   = 0.001284 ms
 ```
 
 #### Grading
 
 ```
-This assignment will be graded out of 90 points:
+This assignment will be graded out of 100 points:
 
 [5pt] Handling of user input.
 
 [10pt] initmap() dynamically allocates a new hashmap. All 
 fields are initialized.
+
+[10pt] The numOps count is correct at the end of the run.
 
 [15pt] A thread-safe version of get() is implemented. 
 
