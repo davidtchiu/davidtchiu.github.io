@@ -256,6 +256,12 @@ $ ./hashtest 1000 500 500
 Number of ops = 10000000, time elapsed = 12.842592 sec
 Time per op   = 0.001284 ms
 ```
+<!-- 
+#### Bonus Opportunity!
+A moderate amount of extra credit will be extended for completion of each of the following:
+- Storage of generics. Currently the map only stores ints for keys and values. Can you figure out how to store any data type? A `void*` pointer will be your friend.
+- Write a `rehash()` function.  This function must double the hash table capacity and "re-hash" all the existing elements into the new table. This function should be called after each time `put()` adds a new element to the map.This function keeps track of the map's current load factor $$L = elements / capacity$$ (that is, the average list size.) You should rehash when $$L \ge 0.75$$.  -->
+
 
 #### Grading
 
