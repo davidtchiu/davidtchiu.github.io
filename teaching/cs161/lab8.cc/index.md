@@ -29,9 +29,9 @@ Let's take a sec to understand that a 16-digit credit number actually represents
 
 - Write a default constructor that instantiates your `payload` array (recall that the payload of a credit card number is the first 15 digits). Go ahead and set the `checksum` to 0.
 
-- Write a method called `loadSequence()` that takes as input a `String` credit card number. This method should first check to see if the number is 16 digits. If not, then return `false` immediately. You will want to refer to your **String API** to get the length of a string. Otherwise, you'll need to do the following:
+- Write a method called `loadSequence()` that takes as input a `String` credit card number. This method should first check to see if the number is 16 digits. If not, then return `false` immediately. You will want to refer to your [String API](StringAPI.pdf) to get the length of a string. Otherwise, you'll need to do the following:
 
-  - Use the `charAt()` method in the **String API** to extract and store the final digit in the credit card number in your `checksum` field. But there's a small problem. `charAt()` returns a `char` and not an `int`, so you'll also need to a conversion by calling `Character.getNumericValue()` on the last digit before storing it in `checksum`.
+  - Use the `char charAt(int position)` method in the [String API](StringAPI.pdf)  to extract and store the final digit in the credit card number in your `checksum` field. But there's a small problem. `charAt()` returns a `char` and not an `int`, so you'll also need to a conversion by calling `Character.getNumericValue(char c)` on the final digit before storing it in `checksum`.
 
   - Next, iterate through the input string and extract every digit (just as you did previously) into its corresponding position in `payload`. After all that is done, return `true`.
 
