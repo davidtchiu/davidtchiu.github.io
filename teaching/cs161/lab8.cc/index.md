@@ -21,11 +21,11 @@ The following file(s) have been provided for this homework.
 
 #### Validating Credit Cards (Luhn's Algorithm)
 
-Let's take a sec to understand that a 16-digit credit number actually represents two pieces of information. The first 15 digits are the "real" credit number, called the *payload*. The final digit of the credit card number is called the *checksum*. To determine whether a given credit card number is valid, there's a slick algorithm that does some transformations on the payload to render it down to a single number, and then it checks it against the checksum. If the credit card number is valid, then the payload and checksum "matches" in pre-defined way.
+Let's take a sec to understand that a 16-digit credit number actually represents two pieces of information. The first 15 digits are the "real" credit number, called the *payload*. The final digit of the credit card number is called the *checksum*. To determine whether a given credit card number is valid, there's a slick algorithm that does some transformations on the payload to render it down to a single number, and then it checks it against the checksum. If the credit card number is valid, then the payload and checksum "matches" in a pre-defined way.
 
-- Download the lab file, extract it, and open it up. For this project, you don't need to make any changes to the `Main` or the `GUI` class. I expect that `GUI` will not compile because you haven't provided a couple of methods in `CCValidator`.
+- Download the lab file, extract it, and open it up. For this project, you don't need to make any changes to the `Main` or the `GUI` class. I expect that `GUI` **will not** compile at first because you haven't provided a couple of methods in `CCValidator`.
 
-- Open the `CCValidator` class. You just need the two instance variables. We'll need to store the payload as an int array, and separately, the checksum as just an integer variable.
+- Open the `CCValidator` class. You just need the two instance variables. We'll need to store each digit in the payload in an `int` array, and separately, the checksum as just an `int` instance variable.
 
 - Write a default constructor that instantiates your `payload` array (recall that the payload of a credit card number is the first 15 digits). Go ahead and set the `checksum` to 0.
 
@@ -33,7 +33,7 @@ Let's take a sec to understand that a 16-digit credit number actually represents
 
   - Use the `char charAt(int position)` method in the [String API](StringAPI.pdf)  to extract and store the final digit in the credit card number in your `checksum` field. But there's a small problem. `charAt()` returns a `char` and not an `int`, so you'll also need to a conversion by calling `Character.getNumericValue(char c)` on the final digit before storing it in `checksum`.
 
-  - Next, iterate through the input string and extract every digit (just as you did previously) into its corresponding position in `payload`. After all that is done, return `true`.
+  - Next, iterate through the input string and extract every digit  into its corresponding position in `payload`. After all that is done, return `true`.
 
   - Test it out using some 16-digit strings, like `"3979250428219432"`. Inspect your `CCValidator` object to ensure that the payload and checksum are properly assigned.
 
