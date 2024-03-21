@@ -49,9 +49,7 @@ Let's take a sec to understand that a 16-digit credit number actually represents
     
 - Next, you'll want to start writing another method called `validate()` that returns a `boolean` and inputs nothing. The algorithm you're about to write is known as [Luhn's Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) and it's implemented in just about every credit-card reading device in the world! **It gets complicated, so you should read through this whole section before starting to code.**
 
-  - **Step 1:** I would start by creating a copy of `payload` array, because you'll be modifying the numbers. Then working off the copy, starting with the right-most digit, double that digit and moving left, double every other digit that you encounter. 
-
-  - For instance, let's say that I entered my 16-digit credit card info manually into an online form: `3979250428219432`. The payload is `397925042821943` and the checksum is `2`. Starting with the right-most digit of the payload, we'll double every other digit (including `3`) to obtain the results for "Step 1" below:
+  - **Step 1:** Starting with the right-most digit, double that digit and moving left, double every other digit that you encounter. For instance, let's say that I entered my 16-digit credit card info manually into an online form: `3979250428219432`. The payload is `397925042821943` and the checksum is `2`. Starting with the right-most digit of the payload, we'll double every other digit (including `3`) to obtain the results for "Step 1" below:
 
     <table border="1">
       <tr>
@@ -129,9 +127,9 @@ Let's take a sec to understand that a 16-digit credit number actually represents
       > 7
       ```
 
-  - After you've implemented and tested `twoDigitSum()` we can finally finish off **Step 2**. Back inside the `validate()` method, place all the sums in another array of size 15 (because we don't want to overwrite the original `payload`.) To do this, you can just instantiate a local array variable inside the method. Fill this local array with the numbers you obtained. Obviously, you'll need to call your `twoDigitSum()` helper method inside `validate()`.
+  - After you've implemented and tested `twoDigitSum()` we can finish off **Step 2**. Back inside the `validate()` method, place all the sums in another array of size 15 (because we don't want to overwrite the original `payload`.) To do this, you can just instantiate a local array variable inside the method. Fill this local array with the numbers you obtained. Obviously, you'll need to call your `twoDigitSum()` helper method inside `validate()`.
 
-  - **Step 3:** Finally, you'll need to add up all the values in order to obtain: 6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78. Then add in the checksum to obtain 78 + 2 == 80, and calculate 80 % 10. Because this result is zero, this credit card number validates!
+  - **Step 3:** Finally, you'll need to add up all the values in order to obtain: 6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78. Next, add in the `checksum` to obtain 78 + 2 == 80, and calculate 80 % 10. Because this result is zero, this credit card number validates!
 
 - To test, go back and run the `static void main(String[] args)` method of the `Main` class. You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a> lets you generate valid credit card numbers! 
 
