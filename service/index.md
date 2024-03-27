@@ -33,7 +33,8 @@
 
 ### Service to the University
 
-- SCRC Faculty Advisor, University of Puget Sound (2023 - )
+- Director and Advisor, Students of Color Residential Community, University of Puget Sound (2023 - )
+- Total Compensation and Benefits Project, University of Puget Sound (2023 - )
 - Student Life Committee, University of Puget Sound (2021 - )
 - Chair of Computer Science, University of Puget Sound (2019 - 2022)
 - Lantz Sabbatical Award Committee, University of Puget Sound (2021)

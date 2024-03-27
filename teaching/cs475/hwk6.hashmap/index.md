@@ -6,10 +6,10 @@ HashMaps (also called Hash Tables or Dictionaries) are one of the most versatile
 
 But have you ever wondered why Java offers both a `Hashtable<K,V>` class and a `HashMap<K,V>` class? If you compare their interfaces and behaviors, they have the same functionality. When would you prefer one over another? This choice, it turns out, has everything to do with synchronization and multithreading. A `HashMap<K,V>` cannot be *safely*  accessed by multiple threads. It has  no built-in synchronization mechanisms that avoid race conditions when many threads are concurrently calling `put`, `get`, and `delete` on it. If you're ever writing a multithreaded program, you must use its thread-safe counterpart, `Hashtable<K,V>`.
 
-When programming, you should always check the documentation to ensure that the data structure is thread safe. (For instance, another thread-safe approach includes using `Vector<E>` instead of `ArrayList<E>`.) On the other hand, if you know that your program will always be single-threaded, then a `HashMap<K,V>` would not only suffice, but it would even be faster to use, because it has been implemented without any synchronization considerations. Same goes for `ArrayLists`.
+When programming, you should always check the documentation to ensure that the data structure is thread safe. (For instance, another thread-safe approach includes using `Vector<E>` instead of `ArrayList<E>`.) On the other hand, if you know that your program will always be single-threaded, then a `HashMap<K,V>` would not only suffice, but it would  be preferable, because it has been implemented without any synchronization considerations. Same goes for `ArrayLists`.
 
 #### Thread Safety 
-A data structure is called *thread-safe* if it can be accessed by multiple threads concurrently without risking losing data. Take an unsafe linked list, for instance. Assume that a node in a linked list has a `data` and `next` fields. The `LinkedList` structure itself only stores a pointer to the head node. The code to remove the head element may look something like the following:
+A data structure is called *thread-safe* if it can be accessed by multiple threads concurrently without leaving the structure in an unstable (incorrect) state. Take an unsafe linked list, for instance. Assume that a node in a linked list has a `data` and a `next` field, as usual. The `LinkedList` structure itself only stores a pointer to the head node. The (unsynchronized) code to remove the head node may look something like the following:
 
    ```c
    void* removeHead(LinkedList *list) {
@@ -24,7 +24,7 @@ A data structure is called *thread-safe* if it can be accessed by multiple threa
    }
    ```
 
-If no provision has been made to make access to the list thread safe, when two (or more) threads seek to remove the head element simultaneously, they may end up in a race condition. Suppose the linked list currently stores `[A,B,C,D,E]`, then two calls to `removeHead()` should yield `A` and `B` respectively (we don't care whether `A` and `B` ends up in T1's hands or T2's), but it should leave `[C,D,E]` remaining in the list. However, consider the following scenario:
+Suppose a linked list currently stores `[A,B,C,D,E]`, then two calls to `removeHead()` should yield `A` and `B` respectively. We don't care whether `A` and `B` ends up in T1's hands or T2's, but these calls should leave `[C,D,E]` remaining in the list. But consider the following scenario:
 
    ```
    Thread T1 and T2 concurrently call removeHead(list)
@@ -33,35 +33,16 @@ If no provision has been made to make access to the list thread safe, when two (
    T1 saves A for later return
    T2 sees that there's a head element, with data A (!! Race Here !!)
    T2 saves an oldHead pointer to the current head (oldHead still gets A.)
-   T2 saves A for later return (Nope. Should've gotten B.)
+   T2 saves A for later return (!! Nope. Should've gotten B !!)
    T1 updates the head element to B
-   T2 updates the head element to B (Nope.)
+   T2 updates the head element to B (!! Wrong !!)
    T1 frees oldHead
    T1 returns A
-   T2 frees oldHead (Double-free Error.)
+   T2 frees oldHead (!! Double-free Error !!)
    T2 returns A
    ``` 
 
-In this scenario, `A` is incorrectly returned by both threads, and the list is still `[B,C,D,E]`. And that's just *one* way (among many) that things could go wrong. (Honestly, most incorrect runs would probably seg-fault.) To make this linked list thread-safe, each thread *should have* locked out access to the list so that another thread can't enter and make progress in the critical section. In other words, something to this effect:
-
-   ```c
-   void* removeHead(LinkedList *list) {
-      lock();
-
-      // <<entering critial section>>
-      if (list->head == NULL) {
-         return NULL;   // do nothing!
-      }
-      Node *oldHead = list->head;
-      void* retval = oldHead->data; // save for return
-      list->head = oldHead->next;   // update the head
-      free(oldHead);  // deallocate old head node
-      // <<leaving critial section>>
-
-      release();
-      return retval;
-   }
-   ```
+In this scenario, `A` is incorrectly returned by both threads, and the list is still `[B,C,D,E]`. And that's just *one* way (among many) that things could go wrong. (TBH most races would probably end in a seg-fault.) To make this linked list thread-safe, each thread *should have* locked out access to the list so that another thread can't enter and run  the critical section. 
 
 In this assignment, you are to provide a thread-safe hashmap library for C.
 
@@ -138,11 +119,12 @@ Here are some properties you should keep in mind while programming:
 
 #### Program Requirements
 
-1. Take a look over `main.c`, which is not to be modified unless when debugging. This program stress tests your hashmap. Each thread runs `NUM_OPS_PER_THREAD` operations on your hashmap. These operations have a 50% chance to be a `put()` and 25% chance each to be a `get()` or `del()`. Each hash-key is randomly generated and limited to the given maximum value (see below) so as to induce sufficient amounts of hash conflicts. The program accepts  3 arguments on the command line:
+1. Take a look over `main.c`, which is not to be modified unless when debugging. This program stress tests your hashmap. Each thread runs the same number of operations against your hashmap. These operations have a 50% chance to be a `put()` and 25% chance each to be a `get()` or `del()`. Each hash-key is randomly generated and limited to the given maximum value (see below) so as to induce sufficient amounts of hash conflicts. The program accepts  3 arguments on the command line:
     ```bash
-    $ ./hashtest <num threads> <hashmap capacity> <max key>
+    $ ./hashtest <threads> <ops per thread> <hashmap capacity> <max key>
     ```
-   - The `num threads` argument tells your program how many threads it must create to randomly get/put/del keys.
+   - The `threads` argument tells your program how many threads it must create to randomly get/put/del keys.
+   - The `ops per thread` argument is how many hashmap operations each thread will run.
    - The `hashmap capacity` argument is the size of the table array that your hashmap should initialize.
    - The `max key` argument is the maximum value that the hashtest simulator will generate. All keys are in the range `[0, max key]`.
 
@@ -170,7 +152,7 @@ Here are some properties you should keep in mind while programming:
 
 5. The goal of this assignment is to implement the locking system offering the highest performance to handling massive numbers of threads (possibly 1000s). Your implementation must of course be impervious to race conditions and memory errors.
 
-6. Finally, you'll want to make sure that the number of operations done on the map (stored in the `numOps` field) is equal to `number of threads * NUM_OPS_PER_THREAD` after the run. Each of the put, get, and del functions must increment this field (beware of races).
+6. Finally, you'll want to make sure that the number of operations done on the map (stored in the `numOps` field) is equal to `threads * ops per thread` after the run. Each of the put, get, and del functions must increment this field (beware of races).
 
 7. You are welcome to add any number of functions to your implementation.
 
@@ -181,7 +163,7 @@ Here are some properties you should keep in mind while programming:
 
 - Speaking of memory management, you'll need to free up the memory allocated to your `pthread_lock_t` object(s) when you're done. To do this, use `pthread_mutex_destroy()`. It frees the resources for you, so you will not need to `free()` them explicitly after calling this function.
 
-- You might also experiment with [spin locks](https://docs.oracle.com/cd/E26502_01/html/E35303/ggecq.html),  `pthread_spinlock_t`, which may have better performance when the critical section is short.
+- You might also experiment with [spin locks](https://docs.oracle.com/cd/E26502_01/html/E35303/ggecq.html),  `pthread_spinlock_t`. Warning: The VS Code editor's C plugin doesn't recognize `pthread_spinlock_t`, so it thinks there's an error as you code along, but your code will compile.
 
 
 #### Example Output

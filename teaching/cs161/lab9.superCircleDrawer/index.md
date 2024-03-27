@@ -37,13 +37,15 @@ I've created a new project to get you started. Please download and modify `Super
 
 - An `addCircle(..)` method that inputs a single `Circle` object, adds the given circle to the collection, and draws it on the canvas. You do not need to _create_ any Circles in this method. Simply assume that a Circle object has already been created, and is being passed to this method. To test this method, create a circle object on the BlueJ workbench, take note of its variable name, make it red, and make it invisible. Then call `addCircle()` and give it the name of this new circle. It should show up on the canvas. Inspect your `SuperCircleDrawer` object to ensure that the last arrow points to this new circle.
 
-- An `eraseCircles()` method that takes no arguments, and erases all of the circles in the collection from the canvas. These circles should not be removed from the list.
+- An `eraseCircles()` method that takes no arguments, and erases all of the circles in the collection from the canvas. These circles should not be removed from the list, simply made invisible.
 
-- Write a second `eraseCircles(..)` method that inputs a diameter. This method should erase all circles from the canvas that are smaller in size than the given diameter.
+- A second `eraseCircles()` method that inputs a diameter. This method should erase all circles from the canvas that are smaller in size than the given diameter.
 
 - It's be nice to make the circles re-appear after you erased them. Write a `drawCircles()` method that takes no arguments, and causes all of the circles in the ArrayList collection to be drawn on the canvas.
 
-- A method called `removeSmallest()` that takes no inputs. This method identifies the smallest circle in the collection and removes it from the list (don't forget to erase it from the canvas first!). In the case of a tie, just remove either of them.
+- A method called `grabCircles()` that inputs a diameter, and returns a new `ArrayList` of circles matching the given diameter. 
+
+- A method called `removeSmallest()` that takes no inputs. This method identifies the smallest (by diameter) circle in the collection and removes it from the list. Don't forget to erase it from the canvas first! In the case of a tie, just remove either one of them.
 
 - A method called `replace(..)` that takes two Circle inputs, `c1` and `c2`. This method should search for `c1` in the existing collection, and replace it with the circle `c2` in its place. Don't forget to erase `c1` off the canvas before replacing it! `c2` should be made visible. If `c1` doesn't exist, then no action shall be taken.
 
