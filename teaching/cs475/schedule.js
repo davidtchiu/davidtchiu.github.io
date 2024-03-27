@@ -153,7 +153,7 @@ let days = {
     "Sync: more semaphores",
     // wk 11
     "Sync: monitors and condition variables",
-    "Sync: synchronization in Java",
+    "Snchronization in Java",
     "Memory Management: virtual addressing",
     // wk 12
     "Mem: partitioning and segmentation",
