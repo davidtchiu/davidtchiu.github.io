@@ -146,12 +146,12 @@ let days = {
         url: "lab8.cc/",
         due: "3/22/2024",
       },
-      // {
-      //   name: "Lab 9",
-      //   title: "Super Circle Drawer (ArrayLists)",
-      //   url: "lab9.superCircleDrawer/",
-      //   due: "3/29/2024",
-      // },
+      {
+        name: "Lab 9",
+        title: "Super Circle Drawer (ArrayLists)",
+        url: "lab9.superCircleDrawer/",
+        due: "3/29/2024",
+      },
       // // {
       // //   name: "Lab 10",
       // //   title: "Election (Files and HashMaps)",
