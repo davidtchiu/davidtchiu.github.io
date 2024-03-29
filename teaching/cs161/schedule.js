@@ -65,12 +65,12 @@ let days = {
         url: "hwk6.loops2/",
         due: "3/27/2024", // Wed
       },
-      // {
-      //   name: "Hwk 7",
-      //   title: "Tweet Processor",
-      //   url: "hwk7.twitter/",
-      //   due: "4/10/2024", // Fri
-      // },
+      {
+        name: "Hwk 7",
+        title: "Tweet Processor",
+        url: "hwk7.twitter/",
+        due: "4/10/2024", // Fri
+      },
       // // {
       // //   name: "Hwk 7",
       // //   title: "Pooled Testing",
