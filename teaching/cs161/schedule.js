@@ -69,7 +69,7 @@ let days = {
       //   name: "Hwk 7",
       //   title: "Tweet Processor",
       //   url: "hwk7.twitter/",
-      //   due: "4/5/2024", // Fri
+      //   due: "4/10/2024", // Fri
       // },
       // // {
       // //   name: "Hwk 7",
@@ -77,12 +77,12 @@ let days = {
       // //   url: "hwk7.pooled/",
       // //   due: "4/19/2024",  // Wed
       // // },
-      // {
-      //   name: "Final Hwk Prop",
-      //   title: "Final Homework Proposal (Optional)",
-      //   url: "hwkF.prep/",
-      //   due: "4/12/2024",  // Fri
-      // },
+      {
+        name: "Final Hwk Prop",
+        title: "Final Homework Proposal (Optional)",
+        url: "hwkF.prep/",
+        due: "4/12/2024",  // Fri
+      },
       // // // {
       // // //   name: "Final Hwk (alternate)",
       // // //   title: "Pooled Testing",
