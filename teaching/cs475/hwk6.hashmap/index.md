@@ -172,78 +172,169 @@ In the output below, my tester spawns the given number of threads from the comma
 If race conditions were present, you would likely get a segmentation fault and/or duplicated keys during the test. The number of operations, which is one of the map's fields, may also be lower than you expected if there is a race. Finally, via valgrind, you may also get invalid read/write memory errors from valgrind in the multithreaded version (but not in the single threaded version) if races exist.
 
 ##### Single Threaded Experiments (No Lock Contention, Baseline)
-Run config: threads=1, capacity=1, maxkey=500.
+Run config: threads=1, ops per thread=10000, capacity=1, maxkey=500.
 ```
-$ ./hashtest 1 1 500
-Number of ops = 10000, time elapsed = 0.005587 sec
-Time per op   = 0.000559 ms
+./hashtest 1 10000 1 500
+-----------------------------------------------
+Profiling Run:
+  gets      = 3017 (30%)
+  put adds  = 1675 (17%)
+  put reps  = 3357 (34%)
+  del succ  = 1313 (13%)
+  del fail  = 638 (6%)
+  total ops = 10000 (expected = 10000)
+  map size  = 362 (expected = 362)
+----------------------------------------------
+time elapsed = 4.958868 ms
+time per op  = 0.000496 ms
 ```
-Run config: threads=1, capacity=100, maxkey=500.
+Run config: threads=1, ops per thread=10000, **capacity=100**, maxkey=500.
 Should be much faster due to increased capacity of the hash map (and no lock contention).
 ```
-$ ./hashtest 1 100 500
-Number of ops = 10000, time elapsed = 0.001189 sec
-Time per op   = 0.000119 ms
+$ ./hashtest 1 10000 100 500
+-----------------------------------------------
+Profiling Run:
+  gets      = 3017 (30%)
+  put adds  = 1675 (17%)
+  put reps  = 3357 (34%)
+  del succ  = 1313 (13%)
+  del fail  = 638 (6%)
+  total ops = 10000 (expected = 10000)
+  map size  = 362 (expected = 362)
+----------------------------------------------
+time elapsed = 1.072884 ms
+time per op  = 0.000107 ms
 ```
 
-Run config: threads=1, capacity=500, maxkey=500
+Run config: threads=1, ops per thread=10000,  **capacity=500**, maxkey=500
 Should be much faster still, but just slightly.
 ```
-$ ./hashtest 1 500 500
-Number of ops = 10000, time elapsed = 0.000858 sec
-Time per op   = 0.000086 ms
+$ ./hashtest 1 10000 500 500
+-----------------------------------------------
+Profiling Run:
+  gets      = 3017 (30%)
+  put adds  = 1675 (17%)
+  put reps  = 3357 (34%)
+  del succ  = 1313 (13%)
+  del fail  = 638 (6%)
+  total ops = 10000 (expected = 10000)
+  map size  = 362 (expected = 362)
+----------------------------------------------
+time elapsed = 0.685930 ms
+time per op  = 0.000069 ms
 ```
 
 ##### 250 Threaded Experiments (Moderate Lock Contention)
 
-Run config: threads=250, capacity=1, maxkey=500
+Run config: threads=250, ops per thread=10000, capacity=1, maxkey=500
 ```
-$ ./hashtest 250 1 500
-Number of ops = 2500000, time elapsed = 4.630336 sec
-Time per op   = 0.001852 ms
+$ ./hashtest 250 10000 1 500
+-----------------------------------------------
+Profiling Run:
+  gets      = 749951 (30%)
+  put adds  = 357777 (14%)
+  put reps  = 891281 (36%)
+  del succ  = 357423 (14%)
+  del fail  = 143568 (6%)
+  total ops = 2500000 (expected = 2500000)
+  map size  = 354 (expected = 354)
+----------------------------------------------
+time elapsed = 4200.046062 ms
+time per op  = 0.001680 ms
 ```
 
-Run config: threads=250, capacity=100, maxkey=500
+Run config: threads=250, ops per thread=10000, **capacity=100**, maxkey=500
 ```
-$ ./hashtest 250 100 500
-Number of ops = 2500000, time elapsed = 3.679241 sec
-Time per op   = 0.001472 ms
+$ ./hashtest 250 10000 100 500
+-----------------------------------------------
+Profiling Run:
+  gets      = 749493 (30%)
+  put adds  = 357862 (14%)
+  put reps  = 891599 (36%)
+  del succ  = 357509 (14%)
+  del fail  = 143537 (6%)
+  total ops = 2500000 (expected = 2500000)
+  map size  = 353 (expected = 353)
+----------------------------------------------
+time elapsed = 2740.302801 ms
+time per op  = 0.001096 ms
 ```
 
-Run config: threads=250, capacity=500, maxkey=500
+Run config: threads=250, ops per thread=10000, **capacity=500**, maxkey=500
 ```
-$ ./hashtest 250 500 500
-Number of ops = 2500000, time elapsed = 2.743910 sec
-Time per op   = 0.001098 ms
+$ ./hashtest 250 10000 500 500
+-----------------------------------------------
+Profiling Run:
+  gets      = 750742 (30%)
+  put adds  = 357652 (14%)
+  put reps  = 891437 (36%)
+  del succ  = 357295 (14%)
+  del fail  = 142874 (6%)
+  total ops = 2500000 (expected = 2500000)
+  map size  = 357 (expected = 357)
+----------------------------------------------
+time elapsed = 2515.760899 ms
+time per op  = 0.001006 ms
 ```
 
 ##### 1000 Threaded Experiments (High Lock Contention)
-Run config: threads=1000, capacity=1, maxkey=500
+Run config: threads=1000, ops per thread = 10000, capacity=1, maxkey=500
 ```
-$ ./hashtest 1000 1 500
-Number of ops = 10000000, time elapsed = 20.098363 sec
-Time per op   = 0.002010 ms
+$ ./hashtest 1000 10000 1 500
+-----------------------------------------------
+Profiling Run:
+  gets      = 3001437 (30%)
+  put adds  = 1428471 (14%)
+  put reps  = 3569624 (36%)
+  del succ  = 1428110 (14%)
+  del fail  = 572358 (6%)
+  total ops = 10000000 (expected = 10000000)
+  map size  = 361 (expected = 361)
+----------------------------------------------
+time elapsed = 17850.777149 ms
+time per op  = 0.001785 ms
 ```
 
-Run config: threads=1000, capacity=100, maxkey=500
+Run config: threads=1000, ops per thread = 10000, **capacity=100**, maxkey=500
 ```
-$ ./hashtest 1000 100 500
-Number of ops = 10000000, time elapsed = 17.404755 sec
-Time per op   = 0.001740 ms
+$ ./hashtest 1000 10000 100 500
+-----------------------------------------------
+Profiling Run:
+  gets      = 3000261 (30%)
+  put adds  = 1428957 (14%)
+  put reps  = 3570287 (36%)
+  del succ  = 1428604 (14%)
+  del fail  = 571891 (6%)
+  total ops = 10000000 (expected = 10000000)
+  map size  = 353 (expected = 353)
+----------------------------------------------
+time elapsed = 22595.696926 ms
+time per op  = 0.002260 ms
 ```
 
-Run config: threads=1000, capacity=500, maxkey=500
+Run config: threads=1000, ops per thread = 10000, **capacity=500**, maxkey=500
 ```
-$ ./hashtest 1000 500 500
-Number of ops = 10000000, time elapsed = 12.842592 sec
-Time per op   = 0.001284 ms
+$ ./hashtest 1000 10000 500 500
+-----------------------------------------------
+Profiling Run:
+  gets      = 2998904 (30%)
+  put adds  = 1430204 (14%)
+  put reps  = 3569200 (36%)
+  del succ  = 1429845 (14%)
+  del fail  = 571847 (6%)
+  total ops = 10000000 (expected = 10000000)
+  map size  = 359 (expected = 359)
+----------------------------------------------
+time elapsed = 13976.146936 ms
+time per op  = 0.001398 ms
 ```
 
 #### Mystery Bonus Opportunity!
-A mysterious amount of extra credit will be extended for completion of each of the following:
-- Storage of generics. Currently the map only stores ints for keys and values. Can you figure out how to store any data type? A `void*` pointer will be your friend.
-- Write a `rehash()` function.  This function must double the hash table capacity and "re-hash" all the existing elements into the new table. This function should be called after each time `put()` adds a new element to the map.This function keeps track of the map's current load factor $$L = elements / capacity$$ (that is, the average list size.) You should rehash when $$L \ge 0.75$$.
-- Do the two items (without race conditions) and find out how many mystery bonus points I'll award you!
+A mysterious amount of extra credit will be extended to you for completion of each of the following:
+- **Difficulty = Mild:** Storage of generics. Currently the map only stores ints for keys and values. Can you figure out how to store any data type? A `void*` pointer will be your friend.
+- **Difficulty = Spicy:** Write a `rehash()` function.  This function must double the hash table capacity and "re-hash" all the existing elements into the new table. This function should be called after each time `put()` adds a new element to the map.This function keeps track of the map's current load factor $$L = elements / capacity$$ (that is, the average list size.) You should rehash when $$L \ge 0.75$$.
+- Do one or two of the items (without race conditions) and find out how many mystery bonus points I'll award you!
+- Please indicate somewhere in your submission if you have completed either of these bonus opportunities, and tell us how to test.
 
 
 #### Grading
@@ -267,6 +358,10 @@ fields are initialized.
 [5pt] All locking mechanisms should be hidden from users.
 
 [15pt] Your program is free of memory leaks and dangling pointers.
+
+[+??pt] Support of generics. (Mild Bonus)
+
+[+??pt] Support of rehash(). (Spicy Bonus)
 ```
 
 #### Submitting Your Assignment
