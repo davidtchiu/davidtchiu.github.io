@@ -332,7 +332,10 @@ time per op  = 0.001398 ms
 #### Mystery Bonus Opportunity!
 A mysterious amount of extra credit will be extended to you for completion of each of the following:
 - **Difficulty = Mild:** Storage of generics. Currently the map only stores ints for keys and values. Can you figure out how to store any data type? A `void*` pointer will be your friend.
-- **Difficulty = Spicy:** Write a `rehash()` function.  This function must double the hash table capacity and "re-hash" all the existing elements into the new table. This function should be called after each time `put()` adds a new element to the map.This function keeps track of the map's current load factor $$L = elements / capacity$$ (that is, the average list size.) You should rehash when $$L \ge 0.75$$.
+- **Difficulty = Spicy:** Write a `rehash()` function.  This function must double the hashtable capacity and "re-hash" all the existing elements into the new table. This function should be called after each time `put()` adds a new element to the map. This function is called in `put()` only if a new element is added. You must keep track of the map's current load factor $$L = elements / capacity$$ (that is, the average list size.) You should rehash when $$L \ge 0.75$$. The difficult of this one lies in the fact that you have to lock out access to all buckets of the map during rehashing.
+
+<!-- they have to either use a global lock and all get/del/put needs to lock(glob);unlock(glob); before doing anything. Or, they need to trylock(lock[i]) to obtain all lots sequentially. If not possible, give up all locks.>
+
 - Do one or two of the items (without race conditions) and find out how many mystery bonus points I'll award you!
 - Please indicate somewhere in your submission if you have completed either of these bonus opportunities, and tell us how to test.
 
