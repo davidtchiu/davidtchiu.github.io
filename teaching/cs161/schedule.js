@@ -240,8 +240,8 @@ let days = {
     "<strong><emph>Review</emph></strong>, plus Lab 10: String Parsing",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
-    "Scanner: file handling",
-    "Wrapper classes",
+    "HashMaps",
+    "File handling",
     "Lab 11: Files",
     "Information hiding; constants",
     // wk 14
