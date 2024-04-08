@@ -69,24 +69,18 @@ let days = {
         url: "hwk7.thebridge/",
         due: "4/10/2024",
       },
-      // {
-      //   name: "Hwk 8 (TBD)",
-      //   title: "TBD",
-      //   url: "hwk8.thebridge/",
-      //   due: "4/19/2024",
-      // },
       // // {
       // //   name: "Hwk 8 (bankers)",
       // //   title: "Banker's Algorithm",
       // //   url: "hwk8.bankers/",
       // //   due: "4/26/2024",
       // // },
-      // {
-      //   name: "Extra Credit",
-      //   title: "Bonus Tech Report",
-      //   url: "hwkB.report/",
-      //   due: "4/29/2024",
-      // },
+      {
+        name: "Hwk 8",
+        title: "Tech Report",
+        url: "hwk8.report/",
+        due: "4/29/2024",
+      },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
