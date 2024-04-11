@@ -27,19 +27,17 @@ The API handouts that you'll want to have in front of you:
 
 #### Part I: Boulders
 
-I've created a new project to get you started.  There's a `Canvas` class that helps display our objects, a Boulder class (that's smart enough to wrap instances around at the edges of the screen), and a `BoulderSim` class that's mostly empty at this point. First you'll make a few small improvements to the Boulder class, then define methods in the `BoulderSim` class.
+I've created a new project to get you started.  There's a `Canvas` class that helps display our objects, a Boulder class (that's smart enough to wrap instances around at the edges of the screen), and a `BoulderSim` class that's mostly empty at this point. First you'll make a few small improvements to the `Boulder` class, then define methods in the `BoulderSim` class.
 
-- Open the `Boulder` class. Try to understand this class by reading its fields and available methods. You'll see quite a bit of similarities with the `Circle` class, except that `Boulders` keep track of velocities. Note that it has a constructor, and the constructor expects the user to pass in most of the information about the new boulder they want (including its initial position, velocities, and size).
+- Open the `Boulder` class and try to understand it by reading its instance variables and  methods. You'll see quite a bit of similarities with the old Circle class, except that Boulders also keep track of their velocities. Note that its constructor expects the user to pass in most of the information about the new boulder  (including its initial position, velocities, and size). Create a couple `Boulders` and test them out. Check their state after running `updatePosition()` to see what that does.
 
-- Create a couple `Boulders` and test them out. Check their state after running `updatePosition()` to see what that does.
+- Write the `public String toString()` method. It returns a string describing the boulder's state. It should include the size, position, and speed (see below on how it's supposed to be formatted).
 
-- Create the `toString()`. It returns a String describing the boulder's state. It should include the size, position, and speed (see below on how it's supposed to be formatted).
-
-- The sample interactions on code pad below illustrate the creation a `Boulder` object, and its output from `toString`:
+- The sample interactions on code pad below illustrate the creation a `Boulder` object, and its output:
   ```java
   Boulder b = new Boulder(52, 656.063, 240.661, -13.301, 4.454);
   System.out.println(b.toString());
-  > Boulder of size 52 is at 656.063, 240.661 with velocity -13.301, 4.454
+  > "Boulder of size 52 is at 656.063, 240.661 with velocity -13.301, 4.454"
   ```
 
 #### Part II: BoulderSim and File Handling
@@ -60,12 +58,11 @@ Here is the content of `boulders_data.txt`, which is given to you in the project
 
   Each line contains data for the state of a Boulder. The values are separated by a comma as follows: `diameter`, `xPosition`, `yPosition`, `xVelocity`, and `yVelocity`.
 
-- The next objective is to write a class that manages an ArrayList of `Boulders`. This class will read from the `boulders_data.txt` and construct `Boulders` based on the properties given in the file. Then it will allow us to simulate the motions of all these boulders over time.
-
+- The next objective is to write the `BoulderSim` class, which manages an ArrayList of Boulders. 
 
 - Implement the `BoulderSim` constructor, which inputs the name of the file containing the boulder data. Your constructor should read this file and create the required number of boulders (using the `Boulder(..)` constructor) and add them to the `ArrayList`. While you're at it, make sure you call `makeVisible` on each boulder so they all start out visible. As you read in your file, you are reminded that a `String` can be tokenized using the `split(..)` method. You can also convert strings to `doubles` and `ints` using the `Double.parseDouble(..)` and `Integer.parseInt(..)` methods, respectively.
 
-  - Remember that, since the constructor is opening a file, you must specify that it `throws FileNotFoundException`.
+  - Since the constructor is opening a file, you must specify that it `throws FileNotFoundException`.
   - Remember to `close()` out the Scanner after you're finished reading the file.
 
 - Once you're done writing the constructor, you can test it by creating a new `BoulderSim` object, and passing it the `boulders_data.txt` file. If everything works, you should get no runtime exceptions and see six Boulders on the canvas.
