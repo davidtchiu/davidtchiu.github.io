@@ -164,12 +164,12 @@ let days = {
       //   url: "lab10.TBD/",
       //   due: "4/5/2024",
       // },
-      // {
-      //   name: "Lab 11",
-      //   title: "Boulders (Files)",
-      //   url: "lab11.boulders/",
-      //   due: "4/12/2024",
-      // },
+      {
+        name: "Lab 10",
+        title: "Boulders (Files)",
+        url: "lab10.boulders/",
+        due: "4/12/2024",
+      },
       // {
       //   name: "Lab 12",
       //   title: "Playing Cards (Constants, Enum)",

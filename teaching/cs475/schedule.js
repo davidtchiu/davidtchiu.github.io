@@ -77,7 +77,7 @@ let days = {
       // // },
       {
         name: "Hwk 8",
-        title: "Tech Report",
+        title: "Technical Report",
         url: "hwk8.report/",
         due: "5/3/2024",
       },
