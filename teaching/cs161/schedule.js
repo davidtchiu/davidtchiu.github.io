@@ -89,12 +89,12 @@ let days = {
       // // //   url: "hwkF.pooled/",
       // // //   due: "5/4/2021",
       // // // },
-      // {
-      //   name: "Final Hwk",
-      //   title: "Black Jack",
-      //   url: "hwkF.blackjack.enums/",
-      //   due: "4/24/2024", // Mon (exam period)
-      // },
+      {
+        name: "Final Hwk (Default)",
+        title: "Black Jack",
+        url: "hwkF.blackjack.enums/",
+        due: "5/3/2024", // Mon (exam period)
+      },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
