@@ -1,6 +1,6 @@
 #### TODO
-- Consider getting rid of the book altogether now.
-- Remove turtle lab and go with 2 weeks of loop homework labs
+- Consider getting rid of the book altogether now, but some students actually say they read it.
+- Do I need an encyclopedia of syntax?
 - Hwk 3 needs to be due sooner (2 days -- to Monday of week 6)
 - In last week, where do we go after this course?
   - Want to minor or major? CS 261, Math 210

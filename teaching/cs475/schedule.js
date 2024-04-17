@@ -154,14 +154,16 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
+    "Mem: segmentation",
     "Mem: paging",
-    "Mem: translation caching",
-    "Start Virtual Memory",
+    "Cancelled",
     // wk 14
+    "Mem: TLB and page faults",
+    "Start Virtual Memory",
     "VM: replacement policies",
-    "VM: clock",
-    "VM: memory allocation and working set",
+    // "VM: clock",
     // wk 15
+    // "VM: memory allocation and working set",
     "Start File System",
     "File System",
     "<strong>Reading Period</strong>",
