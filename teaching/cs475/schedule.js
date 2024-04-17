@@ -163,8 +163,7 @@ let days = {
     "VM: replacement policies",
     // "VM: clock",
     // wk 15
-    // "VM: memory allocation and working set",
-    "Start File System",
+    "VM: memory allocation and working set",
     "File System",
     "<strong>Reading Period</strong>",
     // "VM: memory allocation (cont.)",
