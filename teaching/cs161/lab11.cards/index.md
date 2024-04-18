@@ -63,14 +63,14 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 -->
 
 #### Preliminary: The main() Method
-Create a new class called `Main`. Inside the class, you should provide a single main method. Feel free to copy and paste the segment below:
+Create a new class called `CardTester`. Inside the class, you should provide a single main method. Feel free to copy and paste the segment below:
 
 ```java
 public static void main(String[] args) {
   System.out.println("Test");
 }
 ```
-Within the main method, print out some dummy message within main. Save it, and to run the main method, simply right-click on the `Main` class, and call the `main()` method. Hit enter on the dialog box that pops up.
+Within the main method, print out some dummy message within main. Save it, and to run the main method, simply right-click on the `CardTester` class, and call the `main()` method. Hit enter on the dialog box that pops up.
 
 #### Part 1: Card Class and Suit Enum Class
 
@@ -81,10 +81,7 @@ Within the main method, print out some dummy message within main. Save it, and t
 
 - Before going any further, create a new `enum` class called `Suit`, which defines `CLUB`, `SPADE`, `HEART`, `DIAMOND`. Now ensure that your `Card`'s `suit` field is of a `Suit` data type.
 
-- Back in `Card`, 
-
-
-- you need to implement two constructors:
+- Back in the `Card` class,  you need to implement two constructors:
 
   - A default constructor that randomly generates a suit and face value. For the face value, you simply need to generate an integer between 1 and 13 (both inclusive). What do you do to generate a random suit?
 
@@ -93,7 +90,7 @@ Within the main method, print out some dummy message within main. Save it, and t
 
   - A second constructor that takes as input a given suit and face value. If the given face value or suit is not legal. For instance, the face value was given as a negative number, or a number greater than 13, then you should print out an error message, and instead create a random legal Card.
 
-- Implement and document the following methods. Remember to write-and-test, write-and-test! That means you need to go back and forth between this class and the `main()` method.
+- Implement and document the following methods. Remember to write-and-test, write-and-test! That means you need to go back and forth between this class and the `static main()` method.
 
   - `int getFaceValue()`: Getter for this card's face value.
 
