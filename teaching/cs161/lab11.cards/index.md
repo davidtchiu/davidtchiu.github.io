@@ -70,27 +70,24 @@ public static void main(String[] args) {
   System.out.println("Test");
 }
 ```
-Within the main method, print out some dummy message within main. Save it, and to run the main method, simply right-click on the `CardTester` class, and call the `main()` method. Hit enter on the dialog box that pops up.
+Within the main method, print out some dummy message within main. Save it, and to run the main method, simply right-click on the `CardTester` class, and call the `main()` method. Hit enter on the dialog box that pops up. Cool, so it looks like static methods can be called directly on the class. Convenient! Let's remember that...
 
 #### Part 1: Card Class and Suit Enum Class
 
-- Start writing the `Card` class. Each `Card` has a face-value and a suit.
+- Create a new `enum` class called `Suit`, which defines `CLUB`, `SPADE`, `HEART`, `DIAMOND`. That's all you need in that class!
 
-  - The `faceValue` is an integer from 1, 2, 3, 4, ..., 12, and 13.
-  - The `suit` is a constant with the following options: `CLUB`, `SPADE`, `HEART`, `DIAMOND`.
+- Now let's focus on writing the `Card` class. Each `Card` has a face-value and a suit.
 
-- Before going any further, create a new `enum` class called `Suit`, which defines `CLUB`, `SPADE`, `HEART`, `DIAMOND`. Now ensure that your `Card`'s `suit` field is of a `Suit` data type.
+  - The `faceValue` instance variable is an integer ranging from 1, 2, 3, 4, ..., 12, and 13.
+  - The `faceSuit` is of type `Suit`.
 
 - Back in the `Card` class,  you need to implement two constructors:
 
-  - A default constructor that randomly generates a suit and face value. For the face value, you simply need to generate an integer between 1 and 13 (both inclusive). What do you do to generate a random suit?
+  - A default constructor that randomly generates a suit and face value. For the face value, you simply need to generate an integer between 1 and 13 (both inclusive). What do you do to generate a random suit? Here's a hint. The `Suit.values()` method returns an *array* of all the constants you just listed in the `Suit` enum class.
 
-    How do you create a random suit? Here's a hint. The `Suit.values()` method returns an *array* of all the constants you listed in the `Suit` enum class.
+  - A second constructor that takes as input a given suit and face value. If the given face value is not legal, for instance, the face value was given as a negative number, or a number greater than 13, then you should print out an error message, and instead assign it a random legal face value. (Why don't you need to check to see whether the given suit is legal?)
 
-
-  - A second constructor that takes as input a given suit and face value. If the given face value or suit is not legal. For instance, the face value was given as a negative number, or a number greater than 13, then you should print out an error message, and instead create a random legal Card.
-
-- Implement and document the following methods. Remember to write-and-test, write-and-test! That means you need to go back and forth between this class and the `static main()` method.
+- Implement the following methods. Remember to write-and-test, write-and-test! That means you need to go back and forth between this class and the `static main()` method.
 
   - `int getFaceValue()`: Getter for this card's face value.
 
@@ -114,7 +111,7 @@ Within the main method, print out some dummy message within main. Save it, and t
 
   ```java
   public static void main(String[] args) {
-      Card card1 = new Card(Suit.CLUB, 15);
+      Card card1 = new Card(Suit.CLUB, 15);   // illegal card
       System.out.println(card1.getFaceValue());
       System.out.println(card1.getSuit());
   }
@@ -167,7 +164,7 @@ Within the main method, print out some dummy message within main. Save it, and t
 
   Your output might look bit different, but in general, it appears to be garbage. What could be going on? Well, we're telling Java to print out an object that isn't a String. When this happens, Java will try to find and call the `toString()` method on your object, but we haven't implemented a `toString()` method for Card.
 
-- Write a new method called `toString()`, which takes no inputs and returns a String. It should be noted that all toString methods have this signature. This method should return the a String `<S,V>` where `S` and `V` are the suit and face value, respectively. The face value `V` must replace 1 with "A", 11 with "J", 12 with "Q", and 13 with "K". If you implemented this method correctly, you should get the following output instead of the cryptic one above:
+- Write a new method called `toString()`, which takes no inputs and returns a String. It should be noted that all toString methods have this signature. This method should return the card as a String containing the suit and face value. The face value must replace a 1 with "A", 11 with "J", 12 with "Q", and 13 with "K". If you implemented this method correctly, you should get the following output instead of the cryptic one above:
 
   ```
   > ------------ HERE IS THE OUTPUT -------------
@@ -354,7 +351,7 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
   <HEART,A>
   ```
 
-- We can also give users a quick and dirty way of obtaining a deck using a `static` method. Write a `public static` method called `createShuffledDeck()` that returns a shuffled deck of cards. You can use it like this:
+- We can also give users a quick way of obtaining a shuffled deck using a `static` method. Write a `public static` method called `createShuffledDeck()` that returns a shuffled deck of cards. You can use it like this:
 
   ```java
   public class Main {
