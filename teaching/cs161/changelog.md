@@ -1,4 +1,6 @@
 #### TODO
+- Go back to Robots homework instead of Fractions. I do like Fractions though ... maybe replace OrcaCard?
+- I need to work complexity back in.... but when?
 - Consider getting rid of the book altogether now, but some students actually say they read it.
 - Do I need an encyclopedia of syntax?
 - Hwk 3 needs to be due sooner (2 days -- to Monday of week 6)

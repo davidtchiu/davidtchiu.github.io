@@ -1,13 +1,15 @@
 ## CS 475 - Operating Systems
 
 ### Tech Report
-This course teaches broadly the various concepts that show up in modern operating systems, but due to its influence, we've also put a lot of emphasis on UNIX-based operating systems (e.g., Linux). In this assignment you are asked to research and produce report on an OS of your own choosing.
+This course teaches broadly the various concepts that show up in modern operating systems, but due to its influence, we've also put a lot of emphasis on UNIX-based operating systems (e.g., Linux). In this assignment you are asked to research and produce report on an OS (or an OS breakthrough) of your own choosing.
 
 #### Student Outcomes
-- To explore the structures of a new operating system.
+- To explore the structures of a new (or classical) operating system.
 
-#### Requirements
-Prepare a technical report on an OS of choice. The OS does not have to be current, that is, an exploration of historical operating systems are totally welcome. Among other things, your report must include clear descriptions (e.g., using illustrations when necessary) of the following elements:
+#### Topics
+For this assignment, you have an option of: (1) delving into an OS of your choice, or (2) to explore the depths into a classic OS paper. 
+
+If you're working on option #1, the OS does not have to be current, that is, an exploration of historical operating systems are totally welcome. Among other things, your report must include clear descriptions (e.g., using illustrations when necessary) of the following elements:
 
   - Describe its process and thread management support. What are the various process/thread states that your OS supports? How does this OS's treatment of processes/threads differ from what you learned in class?
   
@@ -17,6 +19,23 @@ Prepare a technical report on an OS of choice. The OS does not have to be curren
 
   - Pick another topic that is outside the previous three to focus some attention on. This could be I/O devices, file system, and so on.
 
+
+  <!-- - Describe a filesystem that the OS supports by default. Describe certain structures, such as files' metadata (what and where they're stored), and any policies relating to how related blocks for a file are placed on disk. -->
+
+<!-- If your OS does not support a filesystem, describe any one of your choosing (e.g., FAT32, NTFS, ext3, ext4, HFS, ...). Again, you are welcome to research one that is no longer used but has historical value (like FAT16 or Macintosh Filesystem). For the truly curious, you may also describe a distributed filesystem, such as lustre, NFS, HDFS, ... -->
+
+If you're working on option #2, it could be a paper covering any topic we've talked about in class, or something new! The requirements are that the paper you choose is published by a recoginized organization (such as ACM, IEEE, USENIX), and considered to be a classic. Here are some ideas:
+
+  - [Belady's anomaly](https://dl.acm.org/doi/10.1145/363011.363155)
+  - [UNIX paper](https://dsf.berkeley.edu/cs262/unix.pdf)
+  - Choose from a plethora of [Multics papers](https://multicians.org/papers.html)
+  - Here's another cache of [classic systems papers ](https://pdos.csail.mit.edu/~ganger/classic.html)
+  - You might also choose a newer systems paper, like on Cloud Computing,  MapReduce, HDFS, etc.
+
+If choosing this route, your goal would be to write an "expository paper" aiming to inform, explain, describe, or clarify ideas and concepts to a more general CS audience (perhaps aiming toward informing someone who has a CS background, but has not taken OS). Its primary purpose is to present information in a clear and logical manner, allowing the reader to understand and learn about a specific topic without your personal opinions influencing the content.
+
+
+# Requirements
   - There is a 5 page single-spaced minimum, including all figures and citations. 
 
   - Your paper should be well-formed, free from grammar and spelling errors. You should not address each of the above points in a list but rather in well constructed paragraphs. Your paper should have an introduction, conclusion and bibliography. You should cite where you discovered the information that you include.
@@ -25,9 +44,6 @@ Prepare a technical report on an OS of choice. The OS does not have to be curren
 
   - Your report should be submitted as a PDF document that you push to a Github repo.
 
-  <!-- - Describe a filesystem that the OS supports by default. Describe certain structures, such as files' metadata (what and where they're stored), and any policies relating to how related blocks for a file are placed on disk. -->
-
-<!-- If your OS does not support a filesystem, describe any one of your choosing (e.g., FAT32, NTFS, ext3, ext4, HFS, ...). Again, you are welcome to research one that is no longer used but has historical value (like FAT16 or Macintosh Filesystem). For the truly curious, you may also describe a distributed filesystem, such as lustre, NFS, HDFS, ... -->
 
 
 #### Submitting Your Report
