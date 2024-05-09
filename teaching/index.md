@@ -75,6 +75,9 @@ Intro to Computer Science -->
 
 ### Teaching Awards
 
+- **Influential Faculty of Color Award**\
+  University of Puget Sound, 2024
+
 - **President's Award for Excellence in Teaching**\
   University of Puget Sound, 2022
 

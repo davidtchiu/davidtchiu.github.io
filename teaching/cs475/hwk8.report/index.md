@@ -7,9 +7,9 @@ This course teaches broadly the various concepts that show up in modern operatin
 - To explore the structures of a new (or classical) operating system.
 
 #### Topics
-For this assignment, you have an option of: (1) delving into an OS of your choice, or (2) to explore the depths into a classic OS paper. 
+For this assignment, you have an option of: (1) exploring an OS of your choice, or (2) to explain a classic OS paper. 
 
-If you're working on option #1, the OS does not have to be current, that is, an exploration of historical operating systems are totally welcome. Among other things, your report must include clear descriptions (e.g., using illustrations when necessary) of the following elements:
+If you're working on option #1, the OS does not have to be current, that is, explaining an historical operating systems are totally welcome. Among other things, your report must include clear descriptions (e.g., using illustrations when necessary) of the following elements:
 
   - Describe its process and thread management support. What are the various process/thread states that your OS supports? How does this OS's treatment of processes/threads differ from what you learned in class?
   
@@ -17,8 +17,11 @@ If you're working on option #1, the OS does not have to be current, that is, an 
 
   - Describe its memory management in detail. What were some major design decisions (e.g., segmentation vs. paging vs. hybrid, etc.) they made, and why? How does the OS enforce protection among multiple processes? How is virtual memory implemented, and what are the policies involved?
 
-  - Pick another topic that is outside the previous three to focus some attention on. This could be I/O devices, file system, and so on.
+  - Pick another topic that is outside the previous three to focus some attention on. This could be I/O devices, file system, etc.
 
+  - An incomplete list of OS's explored by former students include:
+    - FreeRTOS, iOS, Linux and UNIX variants, Osker, WebOS, Windows 95, Windows 11, Xinu
+    - I've seen enough of these: Red Star OS, Temple OS
 
   <!-- - Describe a filesystem that the OS supports by default. Describe certain structures, such as files' metadata (what and where they're stored), and any policies relating to how related blocks for a file are placed on disk. -->
 
@@ -28,7 +31,7 @@ If you're working on option #2, it could be a paper covering any topic we've tal
 
   - [Belady's anomaly](https://dl.acm.org/doi/10.1145/363011.363155)
   - [UNIX paper](https://dsf.berkeley.edu/cs262/unix.pdf)
-  - Choose from a plethora of [Multics papers](https://multicians.org/papers.html)
+  - Choose a topic from a plethora of [Multics papers](https://multicians.org/papers.html)
   - Here's another cache of [classic systems papers ](https://pdos.csail.mit.edu/~ganger/classic.html)
   - You might also choose a newer systems paper, like on Cloud Computing,  MapReduce, HDFS, etc.
 
@@ -36,7 +39,7 @@ If choosing this route, your goal would be to write an "expository paper" aiming
 
 
 # Requirements
-  - There is a 5 page single-spaced minimum, including all figures and citations. 
+  - There is a 4 page single-spaced minimum, including all figures and citations. 
 
   - Your paper should be well-formed, free from grammar and spelling errors. You should not address each of the above points in a list but rather in well constructed paragraphs. Your paper should have an introduction, conclusion and bibliography. You should cite where you discovered the information that you include.
 

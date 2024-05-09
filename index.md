@@ -9,8 +9,8 @@
   David received a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> in 2010 as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was advised by <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now founding Director of University of Georgia's School of Computing), and worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows in distributed cloud systems. Prior to Ohio State, he studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a>  on the web transmission of math education modules. Between 2010 to 2014, he was an Assistant Professor and the Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with the University of Puget Sound as an Assistant, Associate, and now Full Professor. He also served a rotation as department chair from 2019 to 2022. 
   </p>
   <p>
-  David has over 20 years of college teaching experience and is heavily engaged in mentoring and research with undergraduate students. He has supervised over 25 research students on topics spanning data management, distributed cloud computing, and green computing. He has published numerous papers in these  areas, and he regularly serves on the organizational and technical program committees of international conferences.
-  David is the recipient of multiple teaching and research awards, including the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), the Bartanen Research Award (2017) both from the University of Puget Sound, and the Eleanor Quinlan Award for Excellence in Teaching from The Ohio State University. He has (co)authored several publications earning Best Paper Award honors at internationally recognized conferences. 
+  David has over 20 years of college teaching experience and is heavily engaged in mentoring and research with undergraduate students. He has supervised over 25 research students working on topics spanning data management and cloud computing. He has published numerous papers in these  areas, and he regularly serves on the organizational and  program committees of international conferences.
+  David is the recipient of multiple teaching and research awards, including the Influential Faculty of Color Award (2024), <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), the Bartanen Research Award (2017) all from the University of Puget Sound, and the Eleanor Quinlan Award for Excellence in Teaching from The Ohio State University. He has (co)authored several publications earning Best Paper Award honors at internationally recognized conferences. 
   </p>
   </div>
   <div style="vertical-align: top;">
@@ -23,6 +23,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 
 ### Recent Activities
+- (05/2024) Serving on the PC for [HiPC 2024](https://hipc.org/).
 - (12/2023) We have received the Best Paper Award at IEEE/ACM BDCAT 2023 conference for "Workload-Aware Cache Management of Bitmap Indices"!
 - (10/2023) Our paper, "Workload-Aware Cache Management of Bitmap Indices" has been accepted for publication at BDCAT 2023. Congratulations to my student co-author Julia Kaeppel!
 - (8/2023) Appointed to serve on the Total Compensation and Benefits Project, University of Puget Sound.

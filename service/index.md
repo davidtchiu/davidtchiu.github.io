@@ -1,5 +1,6 @@
 ### Conference Organization
 
+- PC Member, HiPC'24, IDEAS'24, BDCAT'24
 - PC Member, IDEAS'23, BDCAT'23
 - Poster Chair, BDCAT'22, UCC'22
 - Student Awards Chair, BDCAT'22, UCC'22
