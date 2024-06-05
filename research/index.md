@@ -1,11 +1,8 @@
 ### Research
 
-
-### Profiles
-
 - [DBLP Computer Science Bibliography](https://dblp.org/pid/64/411.html)
 - [Google Scholar](https://scholar.google.com/citations?pli=1&authuser=1&user=HwaZjxcAAAAJ)
-- [ORCID: 0000-0002-1210-8268](https://orcid.org/0000-0002-1210-8268)
+- [ORCID 0000-0002-1210-8268](https://orcid.org/0000-0002-1210-8268)
 
 ### Current Projects
 
