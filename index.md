@@ -6,7 +6,7 @@
   David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/mathematics-computer-science-current-students">University of Puget Sound</a>. He is the inaugural director of Puget Sound's <a href="https://www.pugetsound.edu/living-learning-communities/students-color-residential-community">Students of Color Living-and-Learning Community</a>.
   </p>
   <p>
-  David received a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> in 2010 as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was advised by <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now founding Director of University of Georgia's School of Computing), and worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows in distributed cloud systems. Prior to Ohio State, he studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a>  on the web transmission of math education modules. Between 2010 to 2014, he was an Assistant Professor and the Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with the University of Puget Sound as an Assistant, Associate, and now Full Professor. He also served a rotation as department chair from 2019 to 2022. 
+  David received a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> in 2010 as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was advised by <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now founding Director of University of Georgia's School of Computing), and worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows in distributed cloud systems. Prior to Ohio State, he studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a>  on the web transmission of math education modules. Between 2010 to 2014, he was an Assistant Professor and the Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with the University of Puget Sound as an Assistant, Associate, and Full Professor. He has also served a rotation as department chair from 2019 to 2022. 
   </p>
   <p>
   David has over 20 years of college teaching experience and is heavily engaged in mentoring and research with undergraduate students. He has supervised over 25 research students working on topics spanning data management and cloud computing. He has published numerous papers in these  areas, and he regularly serves on the organizational and  program committees of international conferences.
@@ -24,10 +24,11 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
 - (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: Bitmap Indexing for Database Systems.
-- (05/2024) Received the 2024 Influential Faculty of Color Award.
-- (05/2024) Serving on the PC for [HiPC 2024](https://hipc.org/).
-- (12/2023) We have received the Best Paper Award at IEEE/ACM BDCAT 2023 conference for "Workload-Aware Cache Management of Bitmap Indices"!
-- (10/2023) Our paper, "Workload-Aware Cache Management of Bitmap Indices" has been accepted for publication at BDCAT 2023. Congratulations to my student co-author Julia Kaeppel!
+- (05/2024) I will be serving on the program committee for [HiPC 2024](https://hipc.org/).
+- (05/2024) I'm honored to receive the 2024 Influential Faculty of Color Award.
+- (05/2024) My student, Julia Kaeppel, has been named the Goman Outstanding Senior Award in Computer Science.
+- (12/2023) We have received the Best Paper Award at IEEE/ACM BDCAT 2023 conference for "Workload-Aware Cache Management of Bitmap Indices"! Here's a [featured story](https://www.pugetsound.edu/stories/computer-science-student-and-professor-university-puget-sound-win-best-paper-big-data) in The Hatchet.
+- (10/2023) Our paper, "Workload-Aware Cache Management of Bitmap Indices" has been accepted for publication at BDCAT 2023. Congratulations to my student, Julia Kaeppel!
 - (8/2023) Appointed to serve on the Total Compensation and Benefits Project, University of Puget Sound.
 - (7/2023) Serving on the PC for [BDCAT 2023](https://bdcat-conference.org/).
 - (4/2023) Congrats to Julia Kaeppel on receiving a McCormick Student Research Award.
@@ -36,10 +37,11 @@ Here's a link to my [curriculum vitae](CV.pdf).
 - (8/2022) Received an NSF grant to provide travel scholarships to students attending IEEE/ACM UCC 2022 and BDCAT 2022 conferences. I am also chairing the student travel awards committee.
 - (8/2022) Received the 2022 President's Award for Excellence in Teaching.
 - (5/2022) Co-chairing the Poster Program at IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), both to be held in Portland, Oregon in December.
-- (4/2022) Promoted to Full Professor, effective July 2022.
-- (4/2022) Serving as a PC member for IDEAS 2022.
+- (4/2022) Promoted to Full Professor.
 
-<!-- - (8/2021) Faculty Panelist (with Monica DeHart and Melvin Rouse) for the "I Am Puget Sound" student orientation program.
+<!-- 
+- (4/2022) Serving as a PC member for IDEAS 2022.
+- (8/2021) Faculty Panelist (with Monica DeHart and Melvin Rouse) for the "I Am Puget Sound" student orientation program.
 - (7/2021) Chairing the Demo/Short Paper Session at SSDBM 2021, and I'm also giving a talk, "Caching Support for Range Query Processing on Bitmap Indices."
 - (5/2021) Our paper on bitmap caching has been accepted to SSDBM 2021 as a long paper. Congrats to Sarah McClain (BS'20), Manya Mutschler-Aldine (BS'21), and Colin Monaghan (BS'22).
 - (6/2020) Elevation to IEEE Senior Member grade.
