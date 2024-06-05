@@ -10,7 +10,7 @@
   </p>
   <p>
   David has over 20 years of college teaching experience and is heavily engaged in mentoring and research with undergraduate students. He has supervised over 25 research students working on topics spanning data management and cloud computing. He has published numerous papers in these  areas, and he regularly serves on the organizational and  program committees of international conferences.
-  David is the recipient of multiple teaching and research awards, including the Influential Faculty of Color Award (2024), <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), the Bartanen Research Award (2017) all from the University of Puget Sound, and the Eleanor Quinlan Award for Excellence in Teaching from The Ohio State University. He has (co)authored several publications earning Best Paper Award honors at internationally recognized conferences. 
+  David has received multiple honors, including the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), the Bartanen Research Award (2017) from the University of Puget Sound, as well as the Eleanor Quinlan Memorial Award for Excellence in Teaching (2009) from The Ohio State University.
   </p>
   </div>
   <div style="vertical-align: top;">
@@ -23,6 +23,8 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 
 ### Recent Activities
+- (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: Bitmap Indexing for Database Systems.
+- (05/2024) Received the 2024 Influential Faculty of Color Award.
 - (05/2024) Serving on the PC for [HiPC 2024](https://hipc.org/).
 - (12/2023) We have received the Best Paper Award at IEEE/ACM BDCAT 2023 conference for "Workload-Aware Cache Management of Bitmap Indices"!
 - (10/2023) Our paper, "Workload-Aware Cache Management of Bitmap Indices" has been accepted for publication at BDCAT 2023. Congratulations to my student co-author Julia Kaeppel!
@@ -32,11 +34,12 @@ Here's a link to my [curriculum vitae](CV.pdf).
 - (2/2023) Appointed to serve as the inaugural Advisor to Student of Color Residential Community (SCRC), University of Puget Sound.
 - (1/2023) Featured in the ["Five Questions Series"](https://www.pugetsound.edu/stories/five-questions-university-puget-sound-professor-computer-science-david-chiu) in [Arches](https://www.pugetsound.edu/arches-magazine) magazine.
 - (8/2022) Received an NSF grant to provide travel scholarships to students attending IEEE/ACM UCC 2022 and BDCAT 2022 conferences. I am also chairing the student travel awards committee.
-- (8/2022) Received the President's Award for Excellence in Teaching.
+- (8/2022) Received the 2022 President's Award for Excellence in Teaching.
 - (5/2022) Co-chairing the Poster Program at IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), both to be held in Portland, Oregon in December.
 - (4/2022) Promoted to Full Professor, effective July 2022.
 - (4/2022) Serving as a PC member for IDEAS 2022.
-- (8/2021) Faculty Panelist (with Monica DeHart and Melvin Rouse) for the "I Am Puget Sound" student orientation program.
+
+<!-- - (8/2021) Faculty Panelist (with Monica DeHart and Melvin Rouse) for the "I Am Puget Sound" student orientation program.
 - (7/2021) Chairing the Demo/Short Paper Session at SSDBM 2021, and I'm also giving a talk, "Caching Support for Range Query Processing on Bitmap Indices."
 - (5/2021) Our paper on bitmap caching has been accepted to SSDBM 2021 as a long paper. Congrats to Sarah McClain (BS'20), Manya Mutschler-Aldine (BS'21), and Colin Monaghan (BS'22).
 - (6/2020) Elevation to IEEE Senior Member grade.
@@ -46,7 +49,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 - (4/2019) Our paper on geo-diversification has been accepted for publication at IEEE CLOUD 2019 in Milan, Italy. Congrats to Jared Polonitza on his first publication.
 - (4/2019) Congrats to Sarah McClain on receiving a summer research grant to work on semantic caching of bitmap indices.
 - (3/2019) Serving on the PC for HiPC'19. Please consider submitting a paper.
-- (10/2018) Our paper on distributed bitmap indexing has been accepted for publication at BDCAT'18. It was nominated for the Best Paper award.
+- (10/2018) Our paper on distributed bitmap indexing has been accepted for publication at BDCAT'18. It was nominated for the Best Paper award. -->
 
 ### Quick Links
 
