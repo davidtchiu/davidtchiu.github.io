@@ -18,8 +18,19 @@ A grade of C- or higher in the following course(s) is required:
 Students taking this course will:
 - Be proficient in C.
 - Be proficient in the use of the Linux environment for coding, compilation, debugging, and testing.
-- Design and implement concurrent programs using proper synchronization techniques in C and Java.
-- Evaluate the merits and downfalls of various OS policies.
+- Understand the objectives and functions of modern operating systems.
+- Understand reasons for using interrupts, dispatching, and context switching to support concurrency.
+- Compare and contrast the common algorithms used for both preemptive and non-preemptive
+scheduling of tasks in operating systems.
+- Understand concurrency issues in multiprocessor systems.
+- Understand techniques for achieving synchronization in an operating system.
+- Accurately analyze code to identify race conditions and appropriate solutions for addressing race
+conditions. 
+- Design and implement concurrent programs using proper synchronization techniques.
+- Summarize the principles of virtual memory as applied to caching and paging.
+<!-- - Code/Develop efficient programs that consider the effects of page replacement and frame allocation
+on the performance of a process and the system in which it executes. -->
+<!-- - Evaluate the merits and downfalls of various OS policies. -->
 <!-- - Gain experience with key components in an OS kernel. -->
 
 

@@ -22,7 +22,16 @@ Three years of high-school mathematics, MATH 110 Pre-Calculus, or equivalent. St
 - Input/output: file and user interaction
 - Elementary complexity analysis
 
+#### Student Learning Objectives
+After the successful completion of this course, students should be able to:
 
+-  Develop programs that use the fundamental programming constructs: assignment and expressions, basic I/O, conditional and iterative statements.
+- Develop programs using functions (methods) with parameter passing.
+- Develop programs that create simple classes and instantiate objects of those classes.
+- Develop programs that effectively use the different structured data types provided in Java like arrays/lists and maps.
+- Develop programs that use file I/O to provide data persistence across multiple executions.
+- Develop programs that use language-provided libraries and frameworks (where applicable).
+- Write effective comments for a program specifying what it does.
 
 #### Grades
 Your overall grade is broken down as as follows:

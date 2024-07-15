@@ -27,11 +27,16 @@ Students with transfer credit for CSCI 261 may not take this course.
 
 
 #### Student Learning Outcomes
-Upon completion of this course, students will be able to:
-- Design and implement reasonably sized Java programs from scratch, maximizing code reuse.
-- Gracefully handle error-reporting in Java programs.
-- Analyze an algorithm using "Big-O" notation.
-- Make informed decisions on choosing an appropriate data structure for a given task by understanding their tradeoffs and considering their performance in the common case.
+After the successful completion of this course, students should be able to:
+- Write programs that use key abstract data types provided in the language (e.g., arrays, lists, stacks, queues, and associative data types like sets, dictionaries/maps).
+- Select the appropriate data structure for a given problem.
+- Explain how the performance of a program may change when using different data structures or
+operations.
+- Explain the concept of recursion and identify when and how to use it effectively.
+- Develop recursive methods.
+- Analyze an algorithm, including recursive algorithms, using "Big-O" notation.
+- Develop programs that can handle runtime errors.
+
 
 #### Grades
 Your overall grade is broken down as as follows:

@@ -31,7 +31,10 @@ A grade of C- or higher in the following course is required, or with permission 
 
 #### Student Learning Outcomes
 Upon completion of this course, students will be able to:
+- Describe the defining characteristics behind the relational data model.
 - Analyze user requirements to prepare an appropriate relational database schema.
+- Compose SQL queries that incorporate select, project, join, union, intersection, set difference, and
+set division.
 - Use normal forms and perform normalization in the design of a relational database.
 - Analyze and solve problems related to external memory data structures and algorithms using suitable mathematics.
 - Evaluate the merits among various file organization and indexing designs, with respect to space and time complexity.
