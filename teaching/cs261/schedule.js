@@ -182,12 +182,12 @@ let days = {
     "Lab 6: ArrayList and Generics lab",
     "Start Linked Lists",
     // wk 7
-    "<strong>Fall Break</strong>",
     "LL: indexOf(), add()",
-    "Lab 7: Homework Lab?",
     "LL optimizations (tail, iterator)",
-    // wk 8
+    "Lab 7: Homework Lab?",
     "Stack<E>, infix algorithm",
+    // wk 8
+    "<strong>Fall Break</strong>",
     "Queue<E>, PriorityQueues<E>",
     "Lab 8: Stacks and Queues",
     "PriorityQueue: Dijkstra's shortest path",
