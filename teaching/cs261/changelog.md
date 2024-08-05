@@ -3,14 +3,13 @@
 
 # TODO
 - Get rid of bin-search from Big-O, but add selection sort, replacing doTask algos.
-- How to shorten the first 3 weeks? (Can't get rid of exceptions, can I.)
-- But do something about exceptions. It's just not clear when to throw/catch.
-  - Maybe need a better lab?
 - Get assignment starter code on github
 
 
 # Change Log
-- There's too many homework assignments. Go back to 7 hwk and give everyone a break in between.
+- Moved exceptions to late semester (Fall 24)
+- Moved sorting algs to recursion module (Fall 24)
+- There's too many homework assignments. Go back to 7 hwks and give everyone a break in between. (Fall 24)
 - Get rid of reverse() in Hwk 5 (Fall 23)
 - Provide more structure still. Students still having a hard time designing their own classes. Giving students the UML (Fall 23)
 - Hwk 4 sentiment -- make it have interfaces they need to implement (Fall 23)

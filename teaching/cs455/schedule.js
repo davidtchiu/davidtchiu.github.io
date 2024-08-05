@@ -113,45 +113,45 @@ let days = {
 
   lectures: [
     // wk 1
-    "<strong>Labor Day<br/>(no class)</strong>",
+    "",
     "Why DBMS? Data independence (on Zoom)",
     "Data independence",
     // wk 2
+    "<strong>Labor Day<br/>(no class)</strong>",
     "Relational model: Connection to sets",
     "Relational model: keys",
-    "Relational model: designing schema",
     // wk 3
+    "Relational model: designing schema",
     "Relational algebra: selection, projection, and query plans",
     "RA: natural join",
-    "RA: outer joins, rename, NULL",
     // wk 4
+    "RA: outer joins, rename, NULL",
     "RA: aggregation and grouping",
     "SQL: schema definition; integrity constraints",
-    "SQL: foreign keys; insert, delete, update operations",
     // wk 5
+    "SQL: foreign keys; insert, delete, update operations",
     "SQL: selection, joins, set ops",
     "SQL: outer joins, renaming, WITH",
-    "SQL Work Day",
     // wk 6
+    "SQL Work Day",
+    "<strong><emph>Review</emph></strong>",
+    "<strong><emph>Exam 1</emph></strong>",
+    // wk 7
     "SQL: subqueries",
     "SQL: grouping and aggregation",
     "SQL Work Day",
-    // wk 7
-    "<strong><emph>Review</emph></strong>",
-    "<strong><emph>Exam 1</emph></strong>",
-    "Disk and Files: access patterns",
     // wk 8
     "<strong>Fall Break</strong>",
+    "Disk and Files: access patterns",
     "Tuple format, file format",
-    "File organization and costs",
     // wk 9
+    "File organization and costs",
     "Join processing on files",
     "Start Indexing: B+Trees",
-    "B+Tree operations",
     // wk 10
+    "B+Tree operations",
     "B+Tree performance",
     "Dynamic hashing",
-    "Bitmap indexing",
     // "Consistent hashing",
     // "Disks and files; access patterns",
     // wk 11
@@ -166,7 +166,7 @@ let days = {
     "Theory: functional dependencies, Attribute set closure",
     "Theory: Review of attribute-set closure; superkeys algorithm",
     // wk 13
-    "Theory: FD-set closure; Armstrong's Axioms, proof of inference rules",
+    "Theory: FD set closure; Armstrong's Axioms, proof of inference rules",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14

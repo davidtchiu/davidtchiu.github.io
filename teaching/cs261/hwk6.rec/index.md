@@ -15,7 +15,7 @@ For full credit, all methods must be static, and recursive. To be clear, this do
 Create a new project and create a class called `Recursion`. Put all of the following static methods in this class.
 
 
-1. (Easy) Write a static method called `public static<E> Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is the queue itself. Hint: In the recursive case, remove the head, reverse remaining queue, then offer head to the tail of the queue.
+1. (Mild) Write a static method called `public static<E> Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is the queue itself. Hint: In the recursive case, remove the head, reverse remaining queue, then offer head to the tail of the queue.
 
 	 ```java
 	 Queue<Double> q0 = new LinkedList<>();
@@ -50,7 +50,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 > [100, 200, 300]
 	 ```
 
-2. (Easy) Write a static method, `public static void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. **Hint:** Any value of `x` that is less than 2 by definition does not have any prime factors. Otherwise, start by finding the smallest integer greater than 1 that divides evenly into `x` and print it ... (what should happen to `x` now?)
+2. (Mild) Write a static method, `public static void printPrimeFactors(int x)` that prints all prime factors of the given integer. If your code is working, it should list all prime integers such that their product is equal to `x`. **Hint:** Any value of `x` that is less than 2 by definition does not have any prime factors. Otherwise, start by finding the smallest integer greater than 1 that divides evenly into `x` and print it ... (what should happen to `x` now?)
 
 	 ```java
    System.out.println("Prime factors of 0");
@@ -153,7 +153,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
    ```
 
 
-5. (Hard) A permutation is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a set of permutations of the remaining substring. Then for each string in the returned set, insert the first character back into every position of the string and add each to a new set. Return the set when finished. Here's an example. Suppose  you're finding all permutations of `"abc"`.
+5. (Spicy) A permutation is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a set of permutations of the remaining substring. Then for each string in the returned set, insert the first character back into every position of the string and add each to a new set. Return the set when finished. Here's an example. Suppose  you're finding all permutations of `"abc"`.
 
 	 - Split `"abc"` by chopping `"a"` off from the front, and recursively find the set of permutations of the remaining substring, `"bc"`.
 	 - Now for each permuted substring, insert `"a"` back in every possible position. For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`. For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`
