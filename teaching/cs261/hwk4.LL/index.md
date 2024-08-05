@@ -16,7 +16,7 @@ Fair warning: This assignment is tougher than it looks. Start early!
 
 The following file(s) have been provided for this homework.
 
-- [Hwk5_SinglyLinkedList.zip](Hwk5_SinglyLinkedList.zip)
+- [Hwk_SinglyLinkedList.zip](Hwk_SinglyLinkedList.zip)
 
 
 #### Preamble
@@ -39,7 +39,6 @@ System.out.println(list.toString());
 System.out.println("Hops taken " + list.getHopCount());
 > Hops taken 11
 ```
-#### Instructions
 
 1. Take some time to look over the code that's in the class and understand how it works. Check out the "`LinkTester`" class, which contains a main method for testing your code. It creates a singly linked list of 10,000 elements, then sums all those elements traversing the list in forward and in reverse direction. Then it prints out the number of "hops" that it required. If you ran the main method, you should get the following output:
 
@@ -124,6 +123,7 @@ System.out.println("Hops taken " + list.getHopCount());
 <!-- 4. Next, write a method called `public void reverse()` that reverses the contents of your linked list. You should manipulate the `Node` objects directly: Identify the tail element, unlink it, and move it to the head. Then grab the new tail node and move it behind the new head, and so on. -->
 
 
+#### Instructions
 
 3. **Optimizing tail accesses:** As we know, the 1-argument `add()` method inserts a new item to the tail of the list. In practice, it is one of the most common operations on lists, so this has to be fast. In the current implementation, adding to the tail would be an $$O(n)$$ operation. 
 
@@ -143,7 +143,7 @@ System.out.println("Hops taken " + list.getHopCount());
 
     We've managed to make left-to-right accesses to the list much faster through location caching... but notice that summing down is still taking a lot of steps! That's because, to gradually access the list in reverse order, we still need to start from the head when identifying the next node.
 
-5. Even after all the enhancements we've made, there are still two major concerns with the singly linked list's performance. [1] a reverse (backward) traversal of the singly linked list would be a really costly operation (you saw that with `sumDown()` already), and [2] removing any element (including  `tail`) is still slow, because you always need to find the deleted `Node`'s previous `Node` in order to link up the remaining list. To illustrate problem [1], try running something like the following, and observe how many hops it takes:
+5. **Understanding the Need for Double Links:** Even after all the enhancements we've made, there are still two major concerns with the singly linked list's performance. [1] a reverse (backward) traversal of the singly linked list would be a really costly operation (you saw that with `sumDown()` already), and [2] removing any element (including  `tail`) is still slow, because you always need to find the deleted `Node`'s previous `Node` in order to link up the remaining list. To illustrate problem [1], try running something like the following, and observe how many hops it takes:
 
     ```java
     SinglyLinkedList<String> list = new SinglyLinkedList<>();
@@ -182,7 +182,7 @@ System.out.println("Hops taken " + list.getHopCount());
 
     Notice that removing from the tail still requires hops! But why? We added a tail reference! Ah, the problem is that, in order to remove from the tail, it is calling `removeAfter()`. This means it must first find the node preceding the tail node, requiring O(n) time, so having a tail reference doesn't help at all when removing the tail node (it only helps in adding to the tail).
 
-6. **Double links:** Instead of only storing a reference to the next node, what if each node also stored a reference to its previous node? Such a structure is called a doubly linked list (and is the true implementation of Java's `LinkedList` class).
+6. **Implementing Double links:** Instead of only storing a reference to the next node, what if each node also stored a reference to its previous node? Such a structure is called a doubly linked list (and is the true implementation of Java's `LinkedList` class).
 
     - Rename `SinglyLinkedList` to `DoublyLinkedList`. Add a pointer to the previous item in all `Nodes`, and add the necessary code to update that pointer to `addFirst`, `addAfter`, `removeFirst`, `removeAfter`.
 
