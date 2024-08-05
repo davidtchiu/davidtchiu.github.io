@@ -113,15 +113,15 @@ let days = {
 
   lectures: [
     // wk 1
-    "<strong>Labor Day<br/>(no class)</strong>",
-    "Why DBMS? Data independence (on Zoom)",
+    "Why DBMS? Data independence",
     "Data independence",
+    "Relational Model: Connection to sets",
     // wk 2
-    "Relational model: Connection to sets",
-    "Relational model: keys",
-    "Relational model: designing schema",
+    "<strong>Labor Day<br/>(no class)</strong>",
+    "Relational Model: keys",
+    "Relational Model: designing schema",
     // wk 3
-    "Relational algebra: selection, projection, and query plans",
+    "Relational Algebra: selection, projection, and query plans",
     "RA: natural join",
     "RA: outer joins, rename, NULL",
     // wk 4
@@ -131,28 +131,29 @@ let days = {
     // wk 5
     "SQL: selection, joins, set ops",
     "SQL: outer joins, renaming, WITH",
-    "SQL Work Day",
+    "<strong><emph>Class Cancelled</emph></strong>",
     // wk 6
+    "SQL Work Day",
     "SQL: subqueries",
     "SQL: grouping and aggregation",
-    "SQL Work Day",
     // wk 7
+    "SQL Work Day",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    "Disk and Files: access patterns",
     // wk 8
     "<strong>Fall Break</strong>",
+    "Disk and Files: access patterns",
     "Tuple format, file format",
-    "File organization and costs",
     // wk 9
+    "File organization and costs",
     "Join processing on files",
-    "Start Indexing: B+Trees",
-    "B+Tree operations",
+    "Start Indexing: B+Tree",
     // wk 10
+    "B+Tree cont.",
     "B+Tree performance",
     "Dynamic hashing",
-    "Bitmap indexing",
     // "Consistent hashing",
+    // "Bitmap indexing",
     // "Disks and files; access patterns",
     // wk 11
     "Bitmap indexing",
@@ -174,21 +175,21 @@ let days = {
     "Theory: Lossless join; dependency preservation",
     "Theory: Canonical cover; 3NF synthesis",
     // wk 15
-    "<strong><emph>Final Presentation</emph></strong>",
-    "<strong><emph>Final Presentation</emph></strong>",
-    "<strong>Reading Period</strong>",
+    "Cancelled",
+    "Cancelled",
     // "Start transactions: ACID, serializability",
     // "Transactions: serializability test, precedence graphs",
     // "Transactions: Concurrency control",
+    "<strong>Reading Period</strong>",
     // wk final
     "",
-    "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
+    "<strong><emph>Final Presentation<br/>4:00-6:00</emph></strong>",
     "",
   ],
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("9/2/24", days, MWF);
+const schedule = new CourseCalendar("8/28/23", days, MWF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
