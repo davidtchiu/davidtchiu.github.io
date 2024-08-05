@@ -19,7 +19,7 @@ The following file(s) have been provided for this homework.
 - [Hwk5_SinglyLinkedList.zip](Hwk5_SinglyLinkedList.zip)
 
 
-#### Instructions
+#### Preamble
 
 This assignment is all about how to optimize our singly linked list. In order to understand the running time of its methods, I've added a couple of modifications to the `SinglyLinkedList` to count and report hops. A "hop" refers to each "link" that must be crossed to access a certain Node in the list. For instance,
 
@@ -39,6 +39,7 @@ System.out.println(list.toString());
 System.out.println("Hops taken " + list.getHopCount());
 > Hops taken 11
 ```
+#### Instructions
 
 1. Take some time to look over the code that's in the class and understand how it works. Check out the "`LinkTester`" class, which contains a main method for testing your code. It creates a singly linked list of 10,000 elements, then sums all those elements traversing the list in forward and in reverse direction. Then it prints out the number of "hops" that it required. If you ran the main method, you should get the following output:
 
