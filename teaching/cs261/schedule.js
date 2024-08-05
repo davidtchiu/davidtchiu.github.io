@@ -23,13 +23,13 @@ let days = {
         name: "Hwk 1",
         title: "Letter Counter",
         url: "hwk1.lc/",
-        due: "9/11/2024",
+        due: "9/13/2024",
       },
       {
         name: "Hwk 2",
         title: "TicTacToe Player",
         url: "hwk2.ttt/",
-        due: "9/20/2024",
+        due: "9/23/2024",
       },
       {
         name: "Hwk 3",
@@ -46,27 +46,33 @@ let days = {
       {
         name: "Hwk 4",
         title: "Doubly Linked List",
-        url: "hwk5.LL/",
+        url: "hwk4.LL/",
         due: "10/21/2024",
       },
       {
         name: "Hwk 5",
         title: "Ranked Choice Voting (Paired)",
-        url: "hwk6.rcv",
-        due: "11/10/2024",
+        url: "hwk5.rcv",
+        due: "11/4/2024",
+      },
+      {
+        name: "Hwk 6",
+        title: "Recursion Exercises",
+        url: "hwk6.rec",
+        due: "11/18/2024",
       },
       {
         name: "Hwk 7",
-        title: "Recursion Exercises",
-        url: "hwk7.rec",
-        due: "11/27/2024",
+        title: "Huffman Encoding",
+        url: "hwk7.huff",
+        due: "12/18/2024",
       },
-      {
-        name: "Hwk 8",
-        title: "Evil Hangman (Paired)",
-        url: "hwk8.ehm",
-        due: "12/13/2024",
-      },
+      // {
+      //   name: "Hwk 8",
+      //   title: "Evil Hangman (Paired)",
+      //   url: "hwk8.ehm",
+      //   due: "12/13/2024",
+      // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
@@ -213,7 +219,7 @@ let days = {
     // wk 14
     "HashMaps approach 1: Open addressing",
     "HashMaps approach 2: Chaining",
-    "Lab 11: Hashing Lab",
+    "Lab 13: Hashing Lab",
     "Start Exceptions",
     // wk 15
     "Exception handling",
