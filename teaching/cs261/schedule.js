@@ -175,10 +175,10 @@ let days = {
     "Start Big-O",
     "More Big-O examples",
     "Lab 5: Big-O lab?",
-    "<strong><emph>Review for Exam 1</emph></strong>",
-    // wk 6
-    "<strong><emph>Exam 1</emph></strong>",
     "List interface, ArrayList: add(), rellocation",
+    // wk 6
+    "<strong><emph>Review for Exam 1</emph></strong>",
+    "<strong><emph>Exam 1</emph></strong>",
     "Lab 6: ArrayList and Generics lab",
     "Start Linked Lists",
     // wk 7
