@@ -181,36 +181,36 @@ System.out.println("Hops taken " + list.getHopCount());
 
     Notice that removing from the tail still requires hops! But why? We added a tail reference! Ah, the problem is that, in order to remove from the tail, it is calling `removeAfter()`. This means it must first find the node preceding the tail node, requiring O(n) time, so having a tail reference doesn't help at all when removing the tail node (it only helps in adding to the tail).
 
-    **Double links:** Instead of only storing a reference to the next node, what if each node also stored a reference to its previous node? Such a structure is called a doubly linked list (and is the true implementation of Java's `LinkedList` class).
+6. **Double links:** Instead of only storing a reference to the next node, what if each node also stored a reference to its previous node? Such a structure is called a doubly linked list (and is the true implementation of Java's `LinkedList` class).
 
-        - Rename `SinglyLinkedList` to `DoublyLinkedList`. Add a pointer to the previous item in all `Nodes`, and add the necessary code to update that pointer to `addFirst`, `addAfter`, `removeFirst`, `removeAfter`.
+    - Rename `SinglyLinkedList` to `DoublyLinkedList`. Add a pointer to the previous item in all `Nodes`, and add the necessary code to update that pointer to `addFirst`, `addAfter`, `removeFirst`, `removeAfter`.
 
-        - Next, change the `getNodeAt()` helper method to traverse in the appropriate direction, depending on the value of the given index, and the current location of the iterator (location cache):
+    - Next, change the `getNodeAt()` helper method to traverse in the appropriate direction, depending on the value of the given index, and the current location of the iterator (location cache):
 
-            - If the given index is to the left of the iterator, but is closer to the head, then traverse right starting from the head. (This is currently what's being done)
+        - If the given index is to the left of the iterator, but is closer to the head, then traverse right starting from the head. (This is currently what's being done)
 
-            - If the given index is to the right of the iterator, and is closer to the iterator than it is to the tail, then traverse right starting from the iterator. (This is currently what's being done)
+        - If the given index is to the right of the iterator, and is closer to the iterator than it is to the tail, then traverse right starting from the iterator. (This is currently what's being done)
 
-            - If the given index is to the right of the iterator, but is closer to the tail, then traverse left (using the previous links) from the tail.
+        - If the given index is to the right of the iterator, but is closer to the tail, then traverse left (using the previous links) from the tail.
 
-            - If the given index is to the left of the iterator, and is closer to the iterator than the head, then traverse left (using the previous links) from the iterator.
+        - If the given index is to the left of the iterator, and is closer to the iterator than the head, then traverse left (using the previous links) from the iterator.
 
-            - Don't forget to update the "hop counts" when traversing left too!
+        - Don't forget to update the "hop counts" when traversing left too!
 
-        - After you make this modification, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
+    - After you make this modification, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
 
-            ```
-            Adding 10000 elements:  took 0 hops
-            Summing up: 49995000 took 9998 hops
-            Summing down: 49995000 took 9998 hops
-            ```
+        ```
+        Adding 10000 elements:  took 0 hops
+        Summing up: 49995000 took 9998 hops
+        Summing down: 49995000 took 9998 hops
+        ```
 
-        - Here's another test. I wrote a loop to remove the last element from the list 10000 times. Here's the before and after:
+    - Here's another test. I wrote a loop to remove the last element from the list 10000 times. Here's the before and after:
 
-            ```
-            Still singly linked. Remove-last 10000 times: took 49985001 hops
-            After doubly linked. Remove-last 10000 times: took 9999 hops
-            ```
+        ```
+        Still singly linked. Remove-last 10000 times: took 49985001 hops
+        After doubly linked. Remove-last 10000 times: took 9999 hops
+        ```
 
 #### Grading
 ```
