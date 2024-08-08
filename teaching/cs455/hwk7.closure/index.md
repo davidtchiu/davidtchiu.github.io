@@ -9,17 +9,26 @@ In this assignment you will implement algorithms that we've been learning in the
 - To gain insight into the fundamentals and algorithms of relational design theory
 
 
-#### Starter Code
 
-Starter code for this assignment is provided on the github repo. You are not required to submit your code to me via Github.
+###### Starter Code
 
-- The starter code is provided here [https://github.com/davidtchiu/cs455-hwk-fdclosure](https://github.com/davidtchiu/cs455-hwk-fdclosure). Choose to **fork** this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project.
+Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
--  Clone **your** forked Github repo down to your local working directory using:
+- The starter code is provided here [https://github.com/davidtchiu/cs455-hwk-fdclosure](https://github.com/davidtchiu/cs455-hwk-fdclosure).
+
+- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+
+- This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
+
+- Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
 
   ```
   git clone <your-github-url-for-this-project>
   ```
+
+
+- This should download the starter code in a directory called `cs455-hwk-fdclosure`. After you've done this, you can work freely from VS Code or any other editor. 
+
 
 #### Preliminary
 You will need to be familiar with [Java's Set interface](https://docs.oracle.com/javase/7/docs/api/java/util/Set.html). Know how to take a set union, intersection, difference, and how to iterate through Sets. **You must write this program in Java.** I've provided skeleton code for you to implement. 
