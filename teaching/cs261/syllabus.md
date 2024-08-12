@@ -14,15 +14,14 @@ A grade of C- or higher in the following course is required, or with permission 
 Students with transfer credit for CSCI 261 may not take this course.
 
 #### Required Textbook
-[Koffman and Wolfgang. Data Structures: Abstraction and Design Using Java. 3rd edition or higher.](https://www.amazon.com/Data-Structures-Abstraction-Design-Using/dp/1119703611/)
+[Koffman and Wolfgang. Data Structures: Abstraction and Design Using Java. 3rd edition or higher.](https://www.amazon.com/Data-Structures-Abstraction-Design-Using/dp/1119703611)
 
 
 #### Course Topics
-- Inheritance and polymorphism
-- Exception handling
+- Object inheritance and polymorphism
 - Basic principles of complexity analysis and the "Big-O" notation
 - Data structures and associated operations (including lists, queues, stack, trees, and maps)
-- Recursion and recursive data structures
+- Recursion, recursive data structures
 - Sorting algorithms
 
 
@@ -65,6 +64,7 @@ Homework assignments are assigned every 1.5 - 2 weeks. Unless otherwise noted, y
 
 **Do not copy code you find on the web and/or ChatGPT.** This is considered plagiarism. Please see the "Academic Integrity" section below.
 
+{% include syllabus-community.md %}
 
 {% include syllabus-my-boilerplate.md %}
 

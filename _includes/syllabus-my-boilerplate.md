@@ -1,5 +1,5 @@
 
-#### Class Policies
+#### Clasroom Policies
 
 
 ##### Attendance and Participation
@@ -29,21 +29,21 @@ These are the cutoffs when assigning your final letter grades. Please note that 
 Laptop computers and other handheld devices are a common distraction during lectures. Except on lab days and for those who can provide documentation of need from the office of student accommodations, please don't bring your laptops to lectures. Please turn your phones off, or at least put your phones on silent during lecture.
 
 
-#### Late Policy, Makeup, and Extensions
+#### Late Policy, Extensions, and Makeup
 
 ##### Late Deduction
-Ample time is provided to complete each assignment, and I do not assign work that has not already been covered in lectures. 
+For each day that a homework assignment is late beyond the due date (or the adjusted date according to your accommodations), I assess a $$3^d\%$$ deduction, where $$d$$ is the number of days late including weekends. 
 
-- Unless you are experiencing  unique circumstances or if you have documented accommodations,  **no extensions** be will given for homework assignments. For each day that a homework assignment is late beyond the due date (or the adjusted date according to your accommodations), I assess a $$3^d\%$$ deduction, where $$d$$ is the number of days late including weekends. 
+##### Deadline Extensions
+Ample time is provided to complete each assignment, and I do not assign work that has not already been covered in lectures. Generally, no extensions be will given for assignments. The exception is when you can provide documentation for unique circumstances, or if you have student accommodations. As a general rule of thumb, come talk to me and explain what might be going on.
 
-##### Exam Makeup
+##### Exam Policies
 
 - Makeup: I expect you to be present on the day of exams. I do not offer makeups unless you can _document_ an extenuating circumstance. The following do not count as extenuating circumstances: experiencing a cold, overslept, mental-health day, family visiting, traveling, etc. Exam days are listed on my course calendar and _will not_ change. Plan accordingly!
 
 - Final Exam: You must show up on the scheduled day of the final exam. These dates are set by the university and cannot be rescheduled. Please do not ask for exceptions.
 
-- Student Accommodations: It is *your* responsibility to inform me if you will be taking exams at the accommodations office well-ahead of time, so that I have time to provide exam copies to their office.
-
 - The following items are prohibited to use on the day of exams: Phones (even with Wifi disabled), headphones, and other mobile devices.
 
+- Student Accommodations: It is *your* responsibility to inform me if you will be taking exams at the accommodations office well-ahead of time, so that I have time to provide exam copies to their office.
 
