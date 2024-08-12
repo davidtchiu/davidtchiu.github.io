@@ -61,4 +61,5 @@ Homework assignments are assigned every 1.5 - 2 weeks. Unless otherwise noted, y
 **Do not copy code you find on the web and/or ChatGPT.** This is considered plagiarism. Please see the "Academic Integrity" section below.
 
 {% include syllabus-my-boilerplate.md %}
+
 {% include syllabus-univ-boilerplate.md %}

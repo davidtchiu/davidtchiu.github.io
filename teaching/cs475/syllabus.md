@@ -56,4 +56,5 @@ Your overall grade is broken down as as follows:
 | Final Exam | 20% |
 
 {% include syllabus-my-boilerplate.md %}
+
 {% include syllabus-univ-boilerplate.md %}

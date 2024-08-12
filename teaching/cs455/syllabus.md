@@ -64,4 +64,5 @@ There will be an open-ended group project assigned about mid-way through the cou
 
 
 {% include syllabus-my-boilerplate.md %}
+
 {% include syllabus-univ-boilerplate.md %}

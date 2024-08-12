@@ -67,4 +67,5 @@ Homework assignments are assigned every 1.5 - 2 weeks. Unless otherwise noted, y
 
 
 {% include syllabus-my-boilerplate.md %}
+
 {% include syllabus-univ-boilerplate.md %}
