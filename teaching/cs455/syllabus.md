@@ -117,3 +117,5 @@ There are many university policies and resources that offer guidance on how to b
 - If you have a physical, psychological, medical or learning disability that may impact you as a student at Puget Sound, please contact Student Accessibility and Accommodation, Howarth 105, 253.879.3399, website: [pugetsound.edu/saa](https://pugetsound.edu/saa), email: [saa@pugetsound.edu](mailto:saa@pugetsound.edu). They will determine with you what accommodations are necessary and appropriate.
 
 - You must uphold the school's Academic Integrity Code found here: [https://www.pugetsound.edu/academic-integrity](https://www.pugetsound.edu/academic-integrity). Any suspected cheating (plagiarizing code, copying homework solutions, etc.) will be reported to the Registrar, which may result in possible suspension/expulsion and loss of financial aid. 
+
+{% include syllabus-boilerplate.md %}
