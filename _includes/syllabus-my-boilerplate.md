@@ -1,5 +1,5 @@
 
-#### Clasroom Policies
+### Clasroom Policies
 
 
 ##### Attendance and Participation
@@ -28,7 +28,8 @@ These are the cutoffs when assigning your final letter grades. Please note that 
 ##### During Class: No Laptops and No Phones
 Laptop computers and other handheld devices are a common distraction during lectures. Except on lab days and for those who can provide documentation of need from the office of student accommodations, please don't bring your laptops to lectures. Please turn your phones off, or at least put your phones on silent during lecture.
 
-#### Academic Integrity
+
+### Academic Integrity
 
 I adhere to the university's [https://www.pugetsound.edu/academic-integrity](academic integrity policy). If a student is caught misrepresenting their work, then  at minimum, they will receive an automatic zero for the assignment and the case will be reported upstream, which may affect the student's athletic and scholarship eligibilities. To avoid such problems, use common sense and when in doubt, ask me for advice. Examples of academic dishonesty include, but are not limited to, the following:
 
@@ -49,7 +50,7 @@ When used _properly_, ChatGPT, Gemini, and other generative AI are powerful tool
 
 
 
-#### Late Policy, Extensions, and Makeup
+### Late Policy, Extensions, and Makeup
 
 ##### Late Deduction
 For each day that a homework assignment is late beyond the due date (or the adjusted date according to your accommodations), I assess a $$3^d\%$$ deduction, where $$d$$ is the number of days late including weekends. 
