@@ -31,7 +31,7 @@ Laptop computers and other handheld devices are a common distraction during lect
 
 ### Academic Integrity
 
-I adhere to the university's [https://www.pugetsound.edu/academic-integrity](academic integrity policy). If a student is caught misrepresenting their work, then  at minimum, they will receive an automatic zero for the assignment and the case will be reported upstream, which may affect the student's athletic and scholarship eligibilities. To avoid such problems, use common sense and when in doubt, ask me for advice. Examples of academic dishonesty include, but are not limited to, the following:
+I adhere to the university's [academic integrity policy](https://www.pugetsound.edu/academic-integrity). If a student is caught misrepresenting their work, then  at minimum, they will receive an automatic zero for the assignment and the case will be reported upstream, which may affect the student's athletic and scholarship eligibilities. To avoid such problems, use common sense and when in doubt, ask me for advice. Examples of academic dishonesty include, but are not limited to, the following:
 
 - Copying the work of another student or former student.
 - Copying work found online or on generative AI platforms (see section below for expanded discussion into AI assistance).
