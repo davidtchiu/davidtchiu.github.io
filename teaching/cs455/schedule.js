@@ -17,42 +17,42 @@ let days = {
         url: "hwk1.rel/",
         due: "9/18/2024",
       },
-      {
-        name: "Hwk 2 (written)",
-        title: "Relational Algebra",
-        url: "hwk2.ra/",
-        due: "10/4/2024",
-      },
-      {
-        name: "Hwk 3 (coding)",
-        title: "Data Preparation",
-        url: "hwk3.ddl/",
-        due: "10/7/2024",
-      },
-      {
-        name: "Hwk 4 (coding)",
-        title: "Writing SQL Queries",
-        url: "hwk4.dml/",
-        due: "10/25/2024",
-      },
-      {
-        name: "Hwk 5 (coding)",
-        title: "Joins",
-        url: "hwk5.joins/",
-        due: "11/8/2024",
-      },
-      {
-        name: "Hwk 6 (coding)",
-        title: "Extendible Hashing",
-        url: "hwk6.exhash/",
-        due: "11/25/2024",
-      },
-      {
-        name: "Hwk 7 (coding)",
-        title: "Design Theory - Closure of FD Sets",
-        url: "hwk7.closure/",
-        due: "12/4/2024",
-      },
+      // {
+      //   name: "Hwk 2 (written)",
+      //   title: "Relational Algebra",
+      //   url: "hwk2.ra/",
+      //   due: "10/4/2024",
+      // },
+      // {
+      //   name: "Hwk 3 (coding)",
+      //   title: "Data Preparation",
+      //   url: "hwk3.ddl/",
+      //   due: "10/7/2024",
+      // },
+      // {
+      //   name: "Hwk 4 (coding)",
+      //   title: "Writing SQL Queries",
+      //   url: "hwk4.dml/",
+      //   due: "10/25/2024",
+      // },
+      // {
+      //   name: "Hwk 5 (coding)",
+      //   title: "Joins",
+      //   url: "hwk5.joins/",
+      //   due: "11/8/2024",
+      // },
+      // {
+      //   name: "Hwk 6 (coding)",
+      //   title: "Extendible Hashing",
+      //   url: "hwk6.exhash/",
+      //   due: "11/25/2024",
+      // },
+      // {
+      //   name: "Hwk 7 (coding)",
+      //   title: "Design Theory - Closure of FD Sets",
+      //   url: "hwk7.closure/",
+      //   due: "12/4/2024",
+      // },
       // {
       //   name: "Hwk 6 (coding)",
       //   title: "Design Theory - BCNF Normalization",
@@ -74,41 +74,41 @@ let days = {
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
-    projects: [
-      {
-        name: "Project Teams",
-        title: "Team Preferences",
-        url: "proj/",
-        due: "10/20/2023",
-      },
-      {
-        name: "Project Prop",
-        title: "Project Proposal",
-        url: "proj/",
-        due: "11/3/2023",
-      },
-      {
-        name: "Project Demo",
-        title: "Project Demo",
-        url: "proj/",
-        due: "12/13/2023",
-      },
-      {
-        name: "Project-Code",
-        title: "Project Code",
-        url: "proj/",
-        due: "12/15/2023",
-      },
-    ],
+    // projects: [
+    //   {
+    //     name: "Project Teams",
+    //     title: "Team Preferences",
+    //     url: "proj/",
+    //     due: "10/20/2023",
+    //   },
+    //   {
+    //     name: "Project Prop",
+    //     title: "Project Proposal",
+    //     url: "proj/",
+    //     due: "11/3/2023",
+    //   },
+    //   {
+    //     name: "Project Demo",
+    //     title: "Project Demo",
+    //     url: "proj/",
+    //     due: "12/13/2023",
+    //   },
+    //   {
+    //     name: "Project-Code",
+    //     title: "Project Code",
+    //     url: "proj/",
+    //     due: "12/15/2023",
+    //   },
+    // ],
 
     ////////////////////////////////// LABS ////////////////////////////////
-    labs: [
-      {
-        name: "Lab",
-        title: "SQL Lab!",
-        url: "lab.pplsoft/",
-      },
-    ],
+    // labs: [
+    //   {
+    //     name: "Lab",
+    //     title: "SQL Lab!",
+    //     url: "lab.pplsoft/",
+    //   },
+    // ],
   },
 
   lectures: [
