@@ -1,19 +1,20 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: The Relational Model
+### Hwk: Relational Algebra
 
-This assignment focuses on the ins and outs of the relational model.
+This assignment asks you to formulate proper relational algebra expressions to answer arbitrary queries about the data. You are allowed to do these by hand (then scanned into a PDF document).
 
 #### Student Outcomes
 
-- To understand the basic concepts of the relational data model.
-- To become familiar with basic schema design.
+- To practice relational algebra operations.
+- To compose relational algebra expressions to answer complex queries.
+- To understand the connection of the relational model and its algebra to set theory.
 
 #### Required Files
 
 The following file(s) have been provided for this assignment.
 
-- [Print This Out](DB_Hwk1.pdf)
+- [Print This Out](DB_Hwk3.pdf)
 
 #### Instructions
 
@@ -22,15 +23,9 @@ Print this assignment with single-side pages. Fill in your name above, and write
 #### Grading
 
 ```
-This assignment is graded out of 32 pts:
+This assignment will be graded out of 60 points.
 
-[3pt] Completion of problem 1.
-[3pt] Completion of problem 2.
-[5pt] Completion of problem 3.
-[5pt] Completion of problem 4.
-[8pt] Completion of problem 5.
-[8pt] Completion of problem 6.
-
+Individual point values given on the assignment.
 ```
 
 #### Submitting Your Assignment
@@ -41,4 +36,4 @@ After you've filled in the answers, scan all pages into a PDF, and submit to can
 
 #### Credits
 
-Written by David Chiu. Some problems lifted from Silberschatz et al., Ramakrishnan/Gerhke, and Elmasri/Navathe. 2016.
+Written by David Chiu.

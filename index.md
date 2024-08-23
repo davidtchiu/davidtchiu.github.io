@@ -6,7 +6,7 @@
   David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/mathematics-computer-science-current-students">University of Puget Sound</a>. He is the inaugural director of Puget Sound's <a href="https://www.pugetsound.edu/living-learning-communities/students-color-residential-community">Students of Color Living-and-Learning Community</a>.
   </p>
   <p>
-  David received a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> in 2010 as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was advised by <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now founding Director of University of Georgia's School of Computing), and worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows in distributed cloud systems. Prior to Ohio State, he studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a>  on the web transmission of math education modules. Between 2010 to 2014, he was an Assistant Professor and the Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with the University of Puget Sound as an Assistant, Associate, and Full Professor. He has also served a rotation as department chair at Puget Sound from 2019 to 2022. 
+  David received a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> in 2010 as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was advised by <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now founding Director of University of Georgia's School of Computing), and worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows in distributed cloud systems. Prior to Ohio State, he studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a>  on the web transmission of math education modules. Between 2010 to 2014, he was an Assistant Professor and the Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with the University of Puget Sound as an Assistant, Associate, and Full Professor. He also served a rotation as Department Chair from 2019 to 2022. 
   </p>
   <p>
   David has over 20 years of college teaching experience and is heavily engaged in mentoring and research with undergraduate students. He has supervised over 25 research students working on topics spanning data management and cloud computing. He has published numerous papers in these  areas, and he regularly serves on the organizational and  program committees of international conferences.
@@ -23,6 +23,8 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 
 ### Recent Activities
+- (08/2024) I'm excited to be teaching in the [Tunghai University International College Mini-Semester](https://ic.thu.edu.tw/DM/MiniSemester.html) in 2025
+- (08/2024) I'm leading a panel discussion on supporting underrepresented students, University of Puget Sound.
 - (07/2024) I will be serving as a New Faculty Mentor 2024-25 for the University of Puget Sound.
 - (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: Bitmap Indexing for Database Systems.
 - (05/2024) I will be serving on the program committee for [HiPC 2024](https://hipc.org/).
