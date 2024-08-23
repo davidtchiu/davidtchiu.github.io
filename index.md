@@ -24,9 +24,8 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
 - (08/2024) I'm excited to be teaching in the [Tunghai University International College Mini-Semester](https://ic.thu.edu.tw/DM/MiniSemester.html) in 2025
-- (08/2024) I'm leading a panel discussion on supporting underrepresented students, University of Puget Sound.
-- (07/2024) I will be serving as a New Faculty Mentor 2024-25 for the University of Puget Sound.
-- (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: Bitmap Indexing for Database Systems.
+- (08/2024) I'm leading a panel discussion on supporting underrepresented students for Peer Advisor Training, University of Puget Sound.
+- (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: "Bitmap Indexing for Database Systems"
 - (05/2024) I will be serving on the program committee for [HiPC 2024](https://hipc.org/).
 - (05/2024) I'm honored to receive the 2024 Influential Faculty of Color Award.
 - (05/2024) My student, Julia Kaeppel, has been named the Goman Outstanding Senior Award in Computer Science.
