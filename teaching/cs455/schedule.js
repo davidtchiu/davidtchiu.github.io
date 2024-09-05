@@ -108,19 +108,19 @@ let days = {
 
   lectures: [
     // wk 1
-    "",
-    "Why DBMS? Data independence (on Zoom)",
-    "Data independence",
-    // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
+    "Why DBMS? Data independence (on Zoom)",
     "Relational model: Connection to sets",
+    // wk 2
     "Relational model: keys",
-    // wk 3
-    "Relational model: designing schema",
+    "Relational model: schema",
     "Relational algebra: selection, projection, and query plans",
+    // wk 3
+    "RA: query composition",
     "RA: natural join",
-    // wk 4
     "RA: outer joins, rename, NULL",
+    // wk 4
+    "RA: aggregation and grouping",
     "RA: aggregation and grouping",
     "SQL: schema definition; integrity constraints",
     // wk 5
