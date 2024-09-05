@@ -23,7 +23,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 
 ### Recent Activities
-- (08/2024) I'm excited to be teaching in the [Tunghai University International College Mini-Semester](https://ic.thu.edu.tw/DM/MiniSemester.html) in 2025
+- (08/2024) I'm excited to be teaching at the [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html) in 2025.
 - (08/2024) I'm leading a panel discussion on supporting underrepresented students for Peer Advisor Training, University of Puget Sound.
 - (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: "Bitmap Indexing for Database Systems"
 - (05/2024) I will be serving on the program committee for [HiPC 2024](https://hipc.org/).

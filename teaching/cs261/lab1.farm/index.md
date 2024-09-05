@@ -2,7 +2,7 @@
 
 ### Warmup Lab: Around the Farm
 
-This lab serves a dual purpose: as a review, and as motivation for introducing higher abstraction concepts in Java. Backstory: David grew up in the midwest (Ohio) and has spent a considerable amount of time hanging around farms and state fairs. Here's a picture below to prove it. Anyway, he is interested in writing a program that simulates life on the farm.
+This lab serves a dual purpose: as a review, and as motivation for introducing higher abstraction concepts in Java. Backstory: David hails from the midwest, and thus has spent a considerable amount of time hanging around quintessential midwesterner things like flea markets, state fairs, corn fields, farms, and oh yeah, more farms. He is pictured below with a piglet at an Ohio county fair (yes, wearing a pig shirt). Anyway, David is interested in writing a program that simulates what animal life might be on the farm... so let's get to it.
 
 <img width="300px" src="figures/pig.jpg" />
 
@@ -21,18 +21,16 @@ If you are using your laptop, you must first download and install BlueJ or any o
 #### Part I: Cows Go "Moo"
 - There is no starter file for this lab. Open your Java editor and create a new project.
 
-- Once the project is created, go ahead and create a new class called `Cow`.
-
-- Recall the generic template for writing classes looks like this:
+- Once the project is created, go ahead and create a new class called `Cow`. Recall the generic template for writing classes looks like this code block below. 
   ```java
   /* import statements (if needed) go here */
 
   /**
-  * This is a block-comment describing the class.
+  * This is a block-comment describing the Cow class.
   * @author David
   * @version 9/1/2020
   */
-  public class ClassName {
+  public class Cow {
       // instance variables (fields) go here
 
       // constructors go here
@@ -41,57 +39,72 @@ If you are using your laptop, you must first download and install BlueJ or any o
   }
   ```
 
-- We'll add our instance variables first. A `Cow` has a `name` (String), a `quote` that it utters (no, not "udders" lol!) when it's excited (String), and the `gallons` of milk it has produced (double). Every cow needs to remember this information, so these should all be declared as instance variables. You should recall that instance variables are generally declared to be `private`. For instance, the name of the `Cow` should be declared as:
+- Every cow needs to remember these three pieces of data, so these should all be declared as **instance variables**.  A `Cow` class has a `name` (String), another string `quote` that it *utters* (no, not *"udders"* LOL!) when it's excited (String), and the `gallons` of milk it has produced (let's make that a `double`). You should recall that instance variables are generally declared to be `private`. For example, the name of the `Cow` should be declared as:
 
   ```java
-  private String name;
+  private String name;  // stores a cow's name
   ```
 
-- Write two constructors for the Cow class. The *default* (no-input-argument) constructor creates a "garden-variety" Cow, named `"Bessie"` and it utters, `"Moo."` A second constructor takes two inputs, allowing the caller to provide a Cow's name and a customized quote. Both constructors should initialize the gallons milked to `0.0`. The default `Cow` constructor's syntax looks like the following:
+
+- Write two **constructors** for the Cow class. Remember that the constructor's task is to set up (initialize) a new Cow object's state. In our case, we just need to give initial values to the three instance variables we previously declared. The *default* (no-input-argument) constructor creates a garden variety Cow, named `"Bessie"` and it utters, `"Moo."` 
 
   ```java
   /**
-   * This constructs a default cow named Bessie who says "moo"
+   * This constructs a default Cow named Bessie that says "Moo"
    */
   public Cow() {
     // code to initialize values of instance variables
   }
   ```
 
-
-- Next, write the following methods (your method signatures must match those below). As you write your methods, don't forget to test intermittently. In order to succeed in this course, you have to develop the good coding habit of "write-a-little, test-a-little."
-
-  - `public String getName()`: returns the cow's name.
-  - `public void moo()`: prints the cow's name followed by its quote on the screen.
-  - `public void milk()`: causes the cow to moo() and produces a half gallon of milk.
-  - `public void display()`: prints the cow's name, followed by quote, followed by amount of milk produced all on a different line (see below).
-
-- Now it's time to test your code. Create a separate `Tester` class that contains a single static method, `public static void main(String[] args)`.
-
+- Now write a second constructor taking two input arguments, allowing the caller to provide a Cow's name and a customized quote. Both constructors should also initialize the gallons milked to `0.0`. This `Cow` constructor's syntax looks like the following:
   ```java
   /**
-  * My testing method
-  */
-  public static void main(String[] args) {
-      Cow my_cow = new Cow("Tuffy", "Mewwww");
-      my_cow.moo();
-      my_cow.display();
-      my_cow.milk();
-      my_cow.display();
+   * This constructs a named cow with the specified utterance
+   */
+  public Cow(String cowName, String utterance) {
+    // code to initialize values of instance variables
   }
   ```
 
-  Here's the output you should expect from running the main method.
-  ```
-  > Tuffy: Mewwww
+- Next, write the following methods (your method signatures must match those below). As you write your methods, don't forget to test intermittently. In order to succeed in this course, you have to develop the good coding habit of "write-a-little, test-a-little."
 
-  > Name: Tuffy
+  - `public String getName()`: simply `return`s the cow's name.
+  - `public void moo()`: prints the cow's name followed by its quote on the screen.
+  - `public void milk()`: causes the cow to `moo()` and it *accumulates* a half gallon of milk.
+  - `public void display()`: prints the cow's name, followed by quote, followed by amount of milk produced all on a different line (see below).
+
+- **Tester class and the main method** Now it's time to test your code. Create a new classed named `Tester` that contains a single *static* method `public static void main(String[] args)`.
+
+  ```java
+  public class Tester {
+    /**
+     * My testing method
+     */
+    public static void main(String[] args) {
+        Cow myCow = new Cow("Tuffy", "Mewwww");
+        myCow.moo();
+        myCow.display();
+        myCow.milk();
+        myCow.milk();
+        myCow.display();
+    }
+  }
+  ```
+
+  Now *run* this main method. Here's the output you should expect minus the line spacing that I threw in here for readability.
+  ```
+  > Tuffy: Mewwww       <---- From calling myCow.moo()
+
+  > Name: Tuffy         <---- From calling myCow.display()
   > Quote: Mewwww
   > Milk produced: 0.0 gallons
 
-  > Tuffy: Mewwww
+  > Tuffy: Mewwww       <---- From calling myCow.milk()
 
-  > Name: Tuffy
+  > Tuffy: Mewwww       <---- From calling myCow.milk() a second time
+
+  > Name: Tuffy         <---- From calling myCow.display()
   > Quote: Mewwww
   > Milk produced: 0.5 gallons
   ```
@@ -100,33 +113,43 @@ If you are using your laptop, you must first download and install BlueJ or any o
 
 - Once you're sure the `Cow` class is in working order, let's now create a `Farm` class to hold all them cows. Any number of cows can roam on this farm. We will use an `ArrayList` to hold `Cows`. Recall that you have to first `import java.util.ArrayList;` at the very top of the new class file. Do you remember how the ArrayList works? Here's a [short tutorial](https://www.w3schools.com/java/java_arraylist.asp).
 
-- Write the default constructor for `Farm`, which simply instantiates an empty `ArrayList` of cows.
+- Create a single instance variable, an `ArrayList` of cows:
+```java
+private ArrayList<Cow> allCows;
+```
+
+
+- Write the default (no input arguments!) constructor for `Farm`, which simply instantiates an empty `ArrayList` of cows. You might recall (it's okay if you don't!) that, to instantiate (or create) an new ArrayList, you need to use the following syntax. That's the only line of code you need here!
+
+```java
+allCows = new ArrayList<Cow>();
+```
 
 - Next, write the following methods:
 
-  - `public void addCow(Cow aCow)`: adds the given cow to the farm. In other words, add the cow to your list. Order does not matter.
+  - `public void addCow(Cow someCow)`: adds the given cow to the farm. In other words, add the cow to your list. Order does not matter.
   - `public void exciteAll()`: causes all cows to moo.
   - `public void summary()`: prints out the list of cows' information. (see below)
 
 - Now modify your Tester's `main()` method to test the `Farm` class. Here's one example of how I tested it:
 
   ```java
-  Farm cowFarm = new Farm();
-  cowFarm.addCow(new Cow());
-  cowFarm.addCow(new Cow("Tuffy", "Mewww"));
-  cowFarm.addCow(new Cow("Fred", "Meh"));
-  cowFarm.exciteAll();
-  cowFarm.summary();
+  Farm myFarm = new Farm();
+  myFarm.addCow(new Cow());  // construct a "default cow" and pass it into addCow()
+  myFarm.addCow(new Cow("Tuffy", "Mewww"));
+  myFarm.addCow(new Cow("Fred", "Meh"));
+  myFarm.exciteAll();
+  myFarm.summary();
   ```
 
 - And your output should match mine:
 
   ```
-  > Bessie: Moo
+  > Bessie: Moo      <---- From calling myFarm.exciteAll()
   > Tuffy: Mewww
   > Fred: Meh
-  >
-  > -------------
+  
+  > -------------      <---- From calling myFarm.summary()
   > Farm Summary
   > -------------
   > # 1
@@ -165,7 +188,7 @@ So, I'm not sure you know this, but it turns out that birds like to hang out on 
 
 - Now that Birds are allowed on the farm, we need to make some changes to our `Farm` class to account for them too. In addition to the list of `Cows`, the `Farm`  now needs a second ArrayList to hold all the `Birds`. Go ahead and add this in now.
 
-- Add a `public void addBird(Bird aBird)` method that adds the given bird to the farm.
+- Add a `public void addBird(Bird someBird)` method that adds the given bird to the farm.
 
 - Modify the `exciteAll()` method to also make the birds squawk. Similarly, `summary()` should also print all the birds' info.
 
