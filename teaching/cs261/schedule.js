@@ -152,19 +152,19 @@ let days = {
   },
   lectures: [
     // wk 1
-    "",
+    "<strong><emph>Labor Day<br/>(No Class)</emph></strong>",
     "Who are we? Syllabus (Recording)",
     "Lab 1: CS1 Review",
     "Inheritance: motivation, abstraction",
     // wk 2
-    "<strong><emph>Labor Day<br/>(No Class)</emph></strong>",
     "Inheritance: this(), super(), constructor chaining",
-    "Lab 2: Inheritance Lab",
     "Polymorphism, object substitution, down-casting",
-    // wk 3
+    "Lab 2: Inheritance Lab",
     "Object class, @Override, dynamic dispatch",
+    // wk 3
+    "Dynamic dispatch",
     "Abstract classes",
-    "Lab 3: Polymorphism Lab",
+    "Lab 3: Abstract classes Lab",
     "Lab review",
     // wk 4
     "Start Interfaces",
