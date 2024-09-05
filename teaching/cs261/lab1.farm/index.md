@@ -106,7 +106,7 @@ If you are using your laptop, you must first download and install BlueJ or any o
 
   > Name: Tuffy         <---- From calling myCow.display()
   > Quote: Mewwww
-  > Milk produced: 0.5 gallons
+  > Milk produced: 1.0 gallon
   ```
 
 #### Part II: A Cow Farm

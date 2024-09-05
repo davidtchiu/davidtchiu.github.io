@@ -154,7 +154,7 @@ let days = {
     // wk 1
     "<strong><emph>Labor Day<br/>(No Class)</emph></strong>",
     "Who are we? Syllabus (Recording)",
-    "Lab 1: CS1 Review",
+    "Lab 1: Warmup Lab",
     "Inheritance: motivation, abstraction",
     // wk 2
     "Inheritance: this(), super(), constructor chaining",
@@ -169,7 +169,7 @@ let days = {
     // wk 4
     "Start Interfaces",
     "Multiple implementation, Comparable<T>",
-    "Lab 4: Interfaces",
+    "Lab 4: Checksum Lab",
     "Lab review",
     // wk 5
     "Start Big-O",
@@ -179,7 +179,7 @@ let days = {
     // wk 6
     "<strong><emph>Review for Exam 1</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    "Lab 6: ArrayList and Generics lab",
+    "Lab 6: ArrayList Implementation lab",
     "Start Linked Lists",
     // wk 7
     "LL: indexOf(), add()",
