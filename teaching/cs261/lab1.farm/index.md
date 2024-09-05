@@ -114,16 +114,16 @@ If you are using your laptop, you must first download and install BlueJ or any o
 - Once you're sure the `Cow` class is in working order, let's now create a `Farm` class to hold all them cows. Any number of cows can roam on this farm. We will use an `ArrayList` to hold `Cows`. Recall that you have to first `import java.util.ArrayList;` at the very top of the new class file. Do you remember how the ArrayList works? Here's a [short tutorial](https://www.w3schools.com/java/java_arraylist.asp).
 
 - Create a single instance variable, an `ArrayList` of cows:
-```java
-private ArrayList<Cow> allCows;
-```
+  ```java
+  private ArrayList<Cow> allCows;
+  ```
 
 
 - Write the default (no input arguments!) constructor for `Farm`, which simply instantiates an empty `ArrayList` of cows. You might recall (it's okay if you don't!) that, to instantiate (or create) an new ArrayList, you need to use the following syntax. That's the only line of code you need here!
 
-```java
-allCows = new ArrayList<Cow>();
-```
+  ```java
+  allCows = new ArrayList<Cow>();
+  ```
 
 - Next, write the following methods:
 
@@ -229,9 +229,7 @@ So, I'm not sure you know this, but it turns out that birds like to hang out on 
   ```
 
 #### Food for Thought
-Before you submit the lab, take time to reflect on the following issues you likely encountered:
-
-Some of the code in Bird were very similar to those in cows. Were there code that were exact duplications? More importantly: Reflect on the amount of code you need to update (and often duplicate) every time a new animal is introduced to the farm.
+... And that's it! Before you submit the lab, though, you probably already see where this is going. Take a little bit of time to reflect on the following issues you likely encountered. Much of the code in `Bird` were very similar to those in `Cow`. Were there code that were exact duplications? Seems like there should be a way for two classes to share the same code? Also reflect on the amount of code you needed to update (and often duplicate) in the `Farm` class every time a new animal is introduced to the farm. Tomorrow, we'll learn techniques to address these issues: *Object Inheritance!*
 
 
 #### Grading
