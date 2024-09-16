@@ -128,7 +128,7 @@ Before you start this part, make sure your code compiles and works normally agai
 
 - Try some more combinations of variable and object types until a pattern emerges. How would you describe the pattern in a sentence or two?
 
-#### Part IV: Inheritance and Parameters
+#### Part IV: More Polymorphism
 
 - Open the `DieRoller` class and take a look at the `rollRepeatedly()` method. It takes a `BasicDie` as its input, rolls it the specified number of times, and returns the sum of the outputs. Test it out on a `BasicDie` instance first, then see what happens if you pass other kinds of dice to the method:
 
@@ -150,7 +150,11 @@ Before you start this part, make sure your code compiles and works normally agai
 
 - Add the line `die.printHistory();` to the `rollRepeatedly()` method, just before the return statement. The code will only compile now if the method's first parameter is of certain types. For which parameter types (`BasicDie`, `HistoryDie`, `CrookedDie`) will the code compile? Why?
 
+  - But that seems silly! If you pass in a `HistoryDie` or `CrookedDie` object, they do have the `printHistory()` method that we can call. There must be a way to first test if an object is a `HistoryDie`, and if it is, to call its `printHistory()` method. 
 
+    - We do the check through the `instanceof` operator.
+    - Then we downcast it in order to have access to `printHistory()`
+    - You don't need to do anything, as we'll learn more about this tomorrow!
 
 #### Grading
 

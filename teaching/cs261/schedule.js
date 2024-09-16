@@ -25,12 +25,12 @@ let days = {
         url: "hwk1.lc/",
         due: "9/13/2024",
       },
-      // {
-      //   name: "Hwk 2",
-      //   title: "TicTacToe Player",
-      //   url: "hwk2.ttt/",
-      //   due: "9/23/2024",
-      // },
+      {
+        name: "Hwk 2",
+        title: "TicTacToe Player",
+        url: "hwk2.ttt/",
+        due: "9/23/2024",
+      },
       // {
       //   name: "Hwk 3",
       //   title: "You Complete Me",
