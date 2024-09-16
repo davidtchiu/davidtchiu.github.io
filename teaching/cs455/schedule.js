@@ -17,12 +17,12 @@ let days = {
         url: "hwk1.rel/",
         due: "9/16/2024",
       },
-      // {
-      //   name: "Hwk 2 (written)",
-      //   title: "Relational Algebra I",
-      //   url: "hwk2.ra/",
-      //   due: "9/25/2024",
-      // },
+      {
+        name: "Hwk 2 (written)",
+        title: "Relational Algebra I",
+        url: "hwk2.ra/",
+        due: "9/25/2024",
+      },
       // {
       //   name: "Hwk 3 (written)",
       //   title: "Relational Algebra II",
@@ -116,16 +116,16 @@ let days = {
     "Relational model: schema",
     "Relational algebra: selection, projection, and query plans",
     // wk 3
-    "RA: query composition",
-    "RA: natural join",
+    "RA: cartesian product and natural join",
     "RA: outer joins, rename, NULL",
+    "RA: aggregation and grouping",
     // wk 4
     "RA: aggregation and grouping",
-    "RA: aggregation and grouping",
     "SQL: schema definition; integrity constraints",
-    // wk 5
     "SQL: foreign keys; insert, delete, update operations",
+    // wk 5
     "SQL: selection, joins, set ops",
+    "SQL: More SQL",
     "SQL: outer joins, renaming, WITH",
     // wk 6
     "SQL Work Day",
