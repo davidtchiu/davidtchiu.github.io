@@ -26,7 +26,7 @@ Below are detailed instructions for completing this lab. There are a lot of deta
 
 
 #### Part I: Finishing the Book Class
-- Download the lab file, extract it, and open it up in your preferred editor. Included in the project, here is just a `Book` class, which is nearly complete. Compare the code to the class diagram, and you'll find that the only method not implemented is `toString()`. Don't implement it yet.
+- Download the lab file, extract it, and open it up in your preferred editor. Included in the project, here is just a `Book` class, which is nearly complete. Compare the code to the class diagram, and you'll find that the only method not implemented is `toString()`. Don't implement it yet -- we'll get to that soon.
 
 - You can use the following code directly in BlueJ's codepad to create a new Book object, and print out a "pretty" String representing its contents.
 
@@ -35,9 +35,9 @@ Below are detailed instructions for completing this lab. There are a lot of deta
   System.out.println(b.toString());
   ```
 
-  It doesn't print out a "pretty" String at all, does it? It prints out something cryptic string instead that reads something like this: `Book@60269693`.
+  It doesn't print out a "pretty" String at all. Instead, you get a cryptic string that reads something like this: `Book@60269693`.
 
-- The reason you see this is because Book actually inherits from the `Object` class (yes that "root" umbrella class from which every other class inherits!), which provides a `toString()` method. Because the returned String is somewhat meaningless, let's go ahead and override it in the `Book` class so that it returns a more meaningful and "prettier" String. Here's what mine might return when run again:
+- The reason you see this is because `Book` implicitly inherits from the `Object` class (as all classes do), and the `Object` class provides a `toString()` method. Because the `Object` class is so vague, it also returns a super vague `String` representation by default. Let's go ahead and override `toString()` in the `Book` class so that it returns a more meaningful and "prettier" String. Here's what mine might return when run again:
 
   ```java
   Book b = new Book("Anthony Burgess", "A Clockwork Orange", "978-0393312836");
@@ -48,6 +48,16 @@ Below are detailed instructions for completing this lab. There are a lot of deta
   ```
 
   Don't forget to use the `@Override` annotation when overriding a method!
+
+- **A neat trick:** Now try printing out your book again *without* calling the `toString()` method. Hey that works too! The `toString()` method is one of those special methods. It gets called implicitly by Java when you try to print the object  out. 
+
+  ```java
+  Book b = new Book("Anthony Burgess", "A Clockwork Orange", "978-0393312836");
+  System.out.println(b);
+  > Title:  A Clockwork Orange
+  > Author: Anthony Burgess
+  > ISBN: 978-0393312836
+  ```
 
 
 
