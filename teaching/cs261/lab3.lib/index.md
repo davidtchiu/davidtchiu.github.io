@@ -60,9 +60,11 @@ In addition to author, title, and ISBN, books that appear in a library have call
 
 - Fill in the code in the `LibraryBook` constructor that takes four parameters for input: author, title, ISBN number, and call number.
 
-- Override the `toString()` method, which should now return the "pretty" String from `Book` (that is, you should *call* Book's `toString()` method) and concatenate the call number to the end of it.
+- Override the `toString()` method, which should now return the "pretty" String from `Book` (that is, you should *call* Book's `toString()` method) and concatenate the call number to the end of it. Are you able to test  `toString()` in this class? Why or why not?
 
-- Override the `boolean equals(Object other)` method (also inherited from the root `Object` class). This method returns true if the current library book's call number matches the call number of the other library book. You must down-cast other to a `LibraryBook` type before you can access its call number. Keep in mind, for later, that only the call numbers need to match for two books to be equal.
+- Override the `boolean equals(Object other)` method. Like `toString()`,  this method is also inherited from the root `Object` class. However, the one defined there is too vague... we need to override it so that we can define what it means for two library books to be equal. This method should return `true` if the current library book's call number matches the call number of the other library book. You must first down-cast the input parameter `other` to a `LibraryBook` type before you can access its call number.
+
+  - (Keep in mind, for later, that only the call numbers need to match for two library  books to be "equal.")
 
 - Now notice that there are three abstract methods without implementations. They are described, as follows:
 
@@ -75,7 +77,7 @@ In addition to author, title, and ISBN, books that appear in a library have call
 - **Note:** You might be anxious to test out all the methods that you wrote for this class, but as you might remember from lecture, you can't instantiate an abstract class! This means you must wait until you've implemented its concrete subclasses...
 
 
-#### Part III: Reference Books
+#### Part III: Reference Books Concrete Subclass
 There are actually two types of library books: `ReferenceBook` and `CirculatingBook`. I'll describe reference books first.
 
 - Create a ReferenceBook class that extends from LibraryBook. It has the following new field:
@@ -115,7 +117,7 @@ There are actually two types of library books: `ReferenceBook` and `CirculatingB
   > Collection: Iowa Room
   ```
 
-#### Part IV: Circulating Books
+#### Part IV: There Are Circulating Books Too!
 Unlike reference books, circulating books refer to those that patrons can borrow and return. Therefore, its implementation for the abstract methods are going to be different from those in reference books.
 
 - Create a `CirculatingBook` class that also `extends` from `LibraryBook`. It has the following fields:
@@ -160,7 +162,7 @@ Unlike reference books, circulating books refer to those that patrons can borrow
   > book available on shelves
   ```
 
-#### Part V: The Library Class
+#### Part V: The Library Class (This is the "Client Class")
 
 - Create a new class called Library. This class has a single field, which is an `ArrayList` of library books.
 
