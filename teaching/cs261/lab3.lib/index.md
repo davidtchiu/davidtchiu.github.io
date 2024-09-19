@@ -37,11 +37,11 @@ Below are detailed instructions for completing this lab. There are a lot of deta
 
   It doesn't print out a "pretty" String at all. Instead, you get a cryptic string that reads something like this: `Book@60269693`.
 
-- The reason you see this is because `Book` implicitly inherits from the `Object` class (as all classes do), and the `Object` class provides a `toString()` method. Because the `Object` class is so vague, it also returns a super vague `String` representation by default. Let's go ahead and override `toString()` in the `Book` class so that it returns a more meaningful and "prettier" String. Here's what mine might return when run again:
+- The reason you see this weird string is because `Book` implicitly inherits from the `Object` class (as all classes do), and the `Object` class provides a super generic `toString()` method. Because the `Object` class is so broad, it knows very little about the particular object... so it's just returning what it knows: the class the object belongs to, and its location in memory in hexadecimal (base 16) representation. It's not important that you know how to decipher this string because it's usually overridden to return something more meaningful. Then let's go ahead and override `toString()` in the `Book` class so that it returns a more informative and "prettier" `String`. Here's what mine returns when run again:
 
   ```java
-  Book b = new Book("Anthony Burgess", "A Clockwork Orange", "978-0393312836");
-  System.out.println(b.toString());
+  Book myBook = new Book("Anthony Burgess", "A Clockwork Orange", "978-0393312836");
+  System.out.println(myBook.toString());
   > Title:  A Clockwork Orange
   > Author: Anthony Burgess
   > ISBN: 978-0393312836
@@ -52,8 +52,8 @@ Below are detailed instructions for completing this lab. There are a lot of deta
 - **A neat trick:** Now try printing out your book again *without* calling the `toString()` method. Hey that works too! The `toString()` method is one of those special methods. It gets called implicitly by Java when you try to print the object  out. 
 
   ```java
-  Book b = new Book("Anthony Burgess", "A Clockwork Orange", "978-0393312836");
-  System.out.println(b);
+  Book myBook = new Book("Anthony Burgess", "A Clockwork Orange", "978-0393312836");
+  System.out.println(myBook);
   > Title:  A Clockwork Orange
   > Author: Anthony Burgess
   > ISBN: 978-0393312836
