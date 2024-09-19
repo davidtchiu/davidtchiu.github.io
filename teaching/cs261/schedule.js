@@ -88,12 +88,12 @@ let days = {
         url: "lab2.dice/",
         due: "9/13/2024",
       },
-      // {
-      //   name: "Lab 3",
-      //   title: "Abstract Classes Lab",
-      //   url: "lab3.lib/",
-      //   due: "9/13/2024",
-      // },
+      {
+        name: "Lab 3",
+        title: "Abstract Classes Lab",
+        url: "lab3.lib/",
+        due: "9/20/2024",
+      },
       // {
       //   name: "Lab 4",
       //   title: "Interface Lab ",
@@ -165,14 +165,15 @@ let days = {
     "Dynamic dispatch",
     "Abstract classes",
     "Lab 3: Abstract classes Lab",
-    "Lab review",
-    // wk 4
     "Start Interfaces",
+    // wk 4
     "Multiple implementation, Comparable<T>",
+    "Start Big-O",
     "Lab 4: Checksum Lab",
     "Lab review",
     // wk 5
-    "Start Big-O",
+    // "Start Big-O",
+    "More Big-O examples",
     "More Big-O examples",
     "Lab 5: Big-O lab?",
     "List interface, ArrayList: add(), rellocation",
