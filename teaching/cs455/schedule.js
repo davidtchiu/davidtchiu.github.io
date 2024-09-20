@@ -116,9 +116,9 @@ let days = {
     "Relational model: schema",
     "Relational algebra: selection, projection, and query plans",
     // wk 3
+    "RA: query composition, set ops and compatibility",
     "RA: cartesian product and natural join",
     "RA: outer joins, rename, NULL",
-    "RA: aggregation and grouping",
     // wk 4
     "RA: aggregation and grouping",
     "SQL: schema definition; integrity constraints",

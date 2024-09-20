@@ -1,7 +1,14 @@
 # Notes to Future Self
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 
+
+
 # TODO
+- Hwk 2: TTT - Insist that they keep a list of known open coordinates
+    - In Player? In RandomPlayer?
+    - What about Cooords?
+
+- Students say they prefer Monday due dates???
 - Get rid of bin-search from Big-O, but add selection sort, replacing doTask algos.
 - Get assignment starter code on github
 

@@ -35,7 +35,7 @@ let days = {
       //   name: "Hwk 3",
       //   title: "You Complete Me",
       //   url: "hwk3.ycm/",
-      //   due: "10/4/2024",
+      //   due: "10/7/2024",
       // }, 
       // {
       //   name: "Hwk 4",
@@ -65,7 +65,7 @@ let days = {
       //   name: "Hwk 7",
       //   title: "Huffman Encoding",
       //   url: "hwk7.huff",
-      //   due: "12/18/2024",
+      //   due: "12/9/2024",
       // },
       // {
       //   name: "Hwk 8",
