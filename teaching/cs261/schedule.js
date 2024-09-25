@@ -169,7 +169,7 @@ let days = {
     // wk 4
     "Multiple implementation, Comparable<T>",
     "Start Big-O",
-    "Lab 4: Checksum Lab",
+    "Lab 4: Interfaces Lab",
     "Lab review",
     // wk 5
     // "Start Big-O",
