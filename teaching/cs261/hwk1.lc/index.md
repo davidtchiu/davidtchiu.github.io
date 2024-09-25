@@ -19,9 +19,15 @@ Your class should be named `LetterCounter`, and count the number of times each l
 
 You will be dealing with the `String` class and the `char` primitive data type (and its wrapper class, `Character`). Make sure you spend some time investigating chars in general, and refer often to the [String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) and [Character](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html) APIs.
 
-Your class should implement the following methods. However you may add as many "helper" methods as you may need.
+Your class should implement the following methods. However you may add as many private "helper" methods as you may need.
 
-1. A method called `countLetters()` that takes a string as its argument. It traverses the string, updating the individual letter counts as appropriate. It should be possible to call this method multiple times, on different strings, and have the counts accumulate across calls. Methods you'll find useful include: String's charAt(..), and one of Character class' static methods...
+0. First, you must use an array of ints to store your letters' frequency counts.
+
+1. A method called `countLetters()` that takes a string as its argument. It traverses the string, updating the individual letter counts as appropriate. It should be possible to call this method multiple times, on different strings, and have the counts accumulate across calls. Methods you'll find useful include: String's `charAt(..)`, and one of `Character` class' static methods...
+
+    - Avoid code duplication. Because you're asked to use an array to store your letter frequencies, you should find simple ways to index into it. Any code that may require multiple (26) if-then-else clauses are prohibited.
+
+    - Hint: Did you know that every character (`char`) has a corresponding integer value? 'a' is 97, 'b' is 98, and so on. How does this fact help you index into your array?
 
 2. A `getTotalCount()` method that returns the total number of valid letters encountered across all text samples (strings). (The characters that aren't punctuation, digits, accented, etc.)
 
@@ -328,10 +334,15 @@ CS 261 Homework 1 (LetterCounter)
 ----------------------------------------------------------
 [5pts] Appropriate instance variables (i.e., fields) have
 been determined. Excessive fields result in deductions. You
-should only have a single structure (array, map, etc.) for
+should only have a single structure (an array) for
 storing each letter's count, and you may also store a total
 count of letters.
 
+----------------------------------------------------------
+[20pts] Avoid code duplication. Using an array to store your 
+letter counts, you should find simple ways to index into it.
+Any code that may require multiple (26) if-then-else clauses
+are prohibited.
 
 ----------------------------------------------------------
 [5pts] Completion of the int getTotalCount() method.
@@ -346,7 +357,7 @@ count of letters.
 
 
 ----------------------------------------------------------
-[40/40pts] Completion of the toString() method. Each bar
+[20pts] Completion of the toString() method. Each bar
 should be scaled to a maximum bar-length of 60 (representing
 100%). All percentages should be rounded up to the neareth
 hundreths place.
