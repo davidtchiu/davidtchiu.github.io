@@ -168,7 +168,7 @@ let days = {
     "Lab review, start interfaces",
     // wk 4
     "Java Interfaces",
-    "Comparable<T>, comparable Animals",
+    "Comparable interface: sorting farm animals",
     "Lab 4: Interfaces Lab",
     "Start: Big-O notation",
     // wk 5
