@@ -165,12 +165,12 @@ let days = {
     "Dynamic dispatch",
     "Abstract classes",
     "Lab 3: Abstract classes Lab",
-    "Start Interfaces",
+    "Lab review, start interfaces",
     // wk 4
-    "Multiple implementation, Comparable<T>",
-    "Start Big-O",
+    "Java Interfaces",
+    "Comparable<T>, comparable Animals",
     "Lab 4: Interfaces Lab",
-    "Lab review",
+    "Start: Big-O notation",
     // wk 5
     // "Start Big-O",
     "More Big-O examples",
