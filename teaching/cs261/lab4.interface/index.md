@@ -63,7 +63,7 @@ Let's go ahead support these longer codes as well. The algorithms are very simil
 
 - Override the `loadSequence()` method first. It needs to set the `LENGTH` instance variable in the superclass to 13 (because it's only `protected` access, you have direct access to change it from this class). Next, simply call the superclass' `loadSequence()` method, because the `payload` and `checksum` extraction algorithms are exactly the same as before. How convenient! We don't have to reinvent the wheel here.
 
-- Next, override the `verify()` method. It does the same thing as in `UPCValidator`, except that it multiplies the sum of the odd-positioned digits (instead of the sum of the even positions) by 3. Everything else in the algorithm is the same.
+- Next, override the `validate()` method. It does the same thing as in `UPCValidator`, except that it multiplies the sum of the odd-positioned digits (instead of the sum of the even positions) by 3. Everything else in the algorithm is the same.
 
 - Update the `Main` class and see if you can control a `UPC13Validator`. Just input a new instance of `UPC13Validator` in the GUI construction call. It should work seamlessly, because `UPC31Validator` is just a specialized `UPCValidator`, and the `GUI` class currently supports `UPCValidator`s.
 
