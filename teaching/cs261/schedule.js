@@ -94,12 +94,12 @@ let days = {
         url: "lab3.lib/",
         due: "9/20/2024",
       },
-      // {
-      //   name: "Lab 4",
-      //   title: "Interface Lab ",
-      //   url: "lab4.interface/",
-      //   due: "9/20/2024",
-      // },
+      {
+        name: "Lab 4",
+        title: "Interface Lab ",
+        url: "lab4.interface/",
+        due: "9/27/2024",
+      },
       // {
       //   name: "Lab 5",
       //   title: "Exceptions Lab",
