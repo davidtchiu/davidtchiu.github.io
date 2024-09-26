@@ -106,7 +106,7 @@ We need to do some work so that a `GUI` can work with any validating class. **Le
 
 - Modify the `UPCValidator` and `ISBNValidator` classes  so that they implement the new interface. Use the `@Override` tag on top of every method implementation. Understand that you do not need to specify that `UPC13Validator` also implements `Validatable`, because it is a subclass of `UPCValidator`. (It wouldn't be wrong if you did, just redundant.)
 
-- Now go back and edit the GUI class to use the interface. Just so we're on the same page, here's the resulting class diagram.
+- Now go back and edit the GUI class to use the interface. Just so we're on the same page, here's the resulting class diagram. The diagram below shows that you could add any number of validators (like a credit card validator) to work with your GUI window, as long as it implements our new contract!
 
   <img src="figures/bluej_validator.png" width="500px"/>
 
