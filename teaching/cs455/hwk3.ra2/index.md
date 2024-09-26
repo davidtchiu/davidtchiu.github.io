@@ -23,9 +23,9 @@ Print this assignment with single-side pages. Fill in your name above, and write
 #### Grading
 
 ```
-This assignment will be graded out of 60 points.
+This assignment will be graded out of 80 points.
+Each problem is worth 10 points.
 
-Individual point values given on the assignment.
 ```
 
 #### Submitting Your Assignment
