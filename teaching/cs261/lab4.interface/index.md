@@ -2,20 +2,20 @@
 
 ### Lab 4: Interfaces
 
-Many things across the world are associated with unique identifiers. For instance, just about every item for sale has a 12 or 13-digit universal product code (UPC barcode) that can be scanned to identify the product being sold. Every car has a unique 17-character vehicle identification number (VIN), and most credit cards have a unique 16-digit number. With the average code length being quite long, it is expected that people might make mistakes when typing them out. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) What's worse, even if you typed the code out correctly, it can be corrupted when it's sent over a network and while it's being stored on disk. That's a big problem! How would we efficiently ensure that a given code is correct?
+Many things across the world are associated with unique identifiers. For instance, just about every item for sale has a 12 or 13-digit universal product code (UPC barcode) that can be scanned to identify the product being sold. Everytime you scan an item at the grocery store, it's this UPC number that's being read by the machine so the cashier knows what you bought! Every car has a unique 17-character vehicle identification number (VIN), and most credit cards have a unique 16-digit number. With the average "code" length being quite long, it is expected that people will make mistakes when typing them out. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) What's worse, even if you typed the code out correctly, it can be corrupted when it's sent over a network or while it's stored on your computer's hard disk. That's a big problem! How would we efficiently ensure that a given code is valid?
 
 <img src="figures/Barcode-anatomy.jpg" width="400px"/>
 
-The *data integrity problem* has been around for quite some time, when line-noise would inadvertently flip a few bits that were being transmitted over the network, leading to incomprehensible data on the receiving end. Cleverly, engineers have tackled this problem using what's called a checksum. Here's a basic example of how it might work. Let's say that every Puget Sound professor can be identified with a 4-digit code. Let's assume that my code is `2158`. A naive way to compute a checksum would be to add up all the digits: 
+The *data integrity problem* has been around for quite some time, when line-noise would inadvertently flip a few bits that were being transmitted over the network, leading to incomprehensible data on the receiving end. Cleverly, engineers have tackled this problem using what's called a **checksum**. Here's a basic example of how a checksum might work. Let's say that every Puget Sound professor can be identified with a 4-digit code. Let's assume that my faculty code is `2158`. A naive way to compute a checksum would be to add up all the digits: 
 `2 + 1 + 5 + 8 == 16` and then take the modulo-10 of this sum to obtain a single digit, 6 (i.e., 
-`16 % 10 == 6`). This "checksum" (or more specifically, check digit) is usually appended to the end of the existing code, thus making my faculty ID `21586`.
+`16 % 10 == 6`). This "checksum" (or more specifically, check digit in this case) can be appended to the end of the existing code, thus making my faculty ID `21586`.
 
 Now let's say a student is trying to find me on the faculty directory. However, the student mis-typed my code as `27586` (in haste, they misread the '1' to be a '7'), but this error can be caught immediately without even having to check against a personnel database. Recalling the way to produce the checksum, we simply add up the first four digits (called the payload): 
 `2 + 7 + 5 + 8 == 22` and take modulo-10 to produce 2. But when we compare 2 against the check-digit (6), they clearly don't match, and therefore an error has been detected, prompting the student to double-check their input.
 
-Even though this basic method can be quite effective, it is of course, not at all full-proof. For instance, if a student merely flipped a couple digits of my ID, say from `21586` to `25186`, it would not affect the sum due to the commutativity of addition, leading our algorithm to think that the code is valid. Therefore, different checksum algorithms of varying degrees of complexity exist... which leads us into the assignment.
+Even though this basic method can be quite effective, it is  not at all full-proof. For instance, if a student merely flipped a couple digits of my ID, say from `21586` to `25186`, it would not affect the sum due to the commutativity of addition, leading our algorithm to think that the code is valid. Therefore, different checksum algorithms of varying degrees of complexity exist... which leads us into the assignment.
 
-This week you'll explore these algorithms, and get hands-on experience with interfaces.
+This week you'll explore these checksum algorithms, and get hands-on experience with interfaces.
 
 #### Objectives
 - Practice with interfaces as contracts
@@ -25,8 +25,6 @@ This week you'll explore these algorithms, and get hands-on experience with inte
 The following file(s) have been provided for this lab.
 - [Lab_Validator.zip](Lab_Validator.zip)
 
-#### Part 0: The Validatable Interface
-I've created a GUI (graphical user interface) class that can be used to 
 
 #### Part I: Validating UPC's
 Take a moment to familiarize yourself with the  classes in the project. There's a `GUI` class which will be used to create a popup window. There's another class `UPCValidator` which still needs to be completed. Finally, there's a Main with a main method that starts up the program. Run the main method to start it up now.
