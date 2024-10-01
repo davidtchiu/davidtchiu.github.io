@@ -14,8 +14,13 @@ In this lab, you'll form hypotheses about the time complexity (running time) of 
 The following file(s) have been provided for this homework.
 
 - [Lab5_BigO.zip](Lab5_BigO.zip)
+- [Lab Report](https://docs.google.com/document/d/1nR3yeKhvTVWIVOP3bZs_pC2QXigoSXrf/edit?usp=sharing&ouid=104002057416473788934&rtpof=true&sd=true)
+
+
 
 #### Preliminary
+
+Open the Lab Report and create your own copy of it. Go to `File` and `Make a copy`, then put it somewhere in your drive where you won't forget.
 
 Download the project from the link given above. After you unzip it into your working directory, navigate into the folder. Inside, you'll find a Word document called `Lab_Report.docx`. Open up the package and you'll see the following classes: `RuntimeTester` and `PerformanceTester`.
 
@@ -94,6 +99,8 @@ In this lab, we assume that the time complexity of an algorithm is the number of
    > 1
    ```
 
+
+
 #### Review: Binary Search
 
 1. Now find the `binarySearch()` method. Read through it to get a basic understanding of what it does. Recall the caveat that binary search only works if the list is already sorted in ascending order! This method takes an integer `key` as input. It then compares the middle element in the list to the key. If the middle element is larger, then it "throws away" the latter half of the list from further consideration, and vice-versa if the element was instead smaller. These steps continue until the key is found, or if there is no more elements to throw away, in which case, the key is not found.
@@ -141,18 +148,18 @@ In this lab, we assume that the time complexity of an algorithm is the number of
 
 Now that your search methods can count comparisons, let's test to see if our hypotheses on their time complexity are sound. The `PerformanceTester` class has a constant defined called `NUM_RUNS = 1` (that you will change later), and a few `static` methods (already implemented - you do not need to edit these):
 
-      - `testLinearSearch(int N, boolean orderedList)`: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It runs linear search over the same list `NUM_RUNS`  times, searching for a random key during each run.
+      - *testLinearSearch(int N, boolean orderedList):* This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It runs linear search over the same list `NUM_RUNS`  times, searching for a random key during each run.
 
-      - `testBinarySearch(int N)`: This method creates an ordered list of size N, and it will run `binarySearch()` over the same list `NUM_RUNS` times, searching for a random key during each run.
+      - *testBinarySearch(int N)*: This method creates an ordered list of size N, and it will run `binarySearch()` over the same list `NUM_RUNS` times, searching for a random key during each run.
 
-      - `testNoDupes(int N, boolean orderedList)`: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `NUM_RUNS` times.
+      - *testNoDupes(int N, boolean orderedList)*: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `NUM_RUNS` times.
 
-      - `testMedian(int N, boolean orderedList)`: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `NUM_RUNS` times.
+      - *testMedian(int N, boolean orderedList)*: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `NUM_RUNS` times.
 
-      - `testStdDev(int N)`: This method inputs the list size N. It finds the standard deviation over the same list `NUM_RUNS` times. The list order does not affect standard deviation.
+      - *testStdDev(int N)*: This method inputs the list size N. It finds the standard deviation over the same list `NUM_RUNS` times. The list order does not affect standard deviation.
 
 
-_Important:_ A static method means that it belongs to the class, not to its instances (objects). That is, you don't need to instantiate any objects to call them. When you right-click on the PerformanceTester class, you'll find that the static methods are available under this menu. If you prefer to call them from the Code pad, you could use something like: `PerformanceTester.testBinarySearch(1000);` to run binary search over a list of N=1000 elements.
+_Important:_ A static method means that it belongs to the class, not to its instances (objects). That is, you don't need to instantiate any objects to call them. When you right-click on the PerformanceTester class, you'll find that the static methods are available under this menu. If you prefer to call them from the Code pad, you could use something like `PerformanceTester.testBinarySearch(1000);` to run binary search over a list of N=1000 elements directly.
 
 ##### Linear Search Analysis
 
@@ -174,19 +181,19 @@ In the print-out, the best, worst, and average number of comparisons are all the
 
    ```java
    PerformanceTester.testLinearSearch(1000, true);
-   LINSEARCH
+   > LINSEARCH
    > n=1000, best=176 (expected 1), worst=897 (expected 1000), avg=564 (expected 500)
    ```
 
    Well, this time the results look a bit closer to what we were expecting, but it's still not quite there.
 
-4. We wonder what would happen if you ran more than 10 tests (runs)? Closer still, to our expectations? 100 runs? Hmm.. what if the size of the list was also increased? Might a longer list require more experimental trials for you to obtain a good, representative results? Don't be afraid to try running 1000+ times!
+4. We wonder what would happen if you ran more than 10 tests (runs)? Closer still, to our expectations? 100 runs? Hmm.. what if the size of the list was also increased? Might a longer list require more experimental trials for you to obtain a good, representative results? Don't be afraid to try running 1000 or more times!
 
 ##### Generating Plots
 
 We'd like to generate some charts to better visualize our results.
 
-1. Run the `testLinearSearch()` experiments for N = 1000, then 2000, then 3000, ..., 10000. Remember to use the value that worked best for you as `NUM_RUNS` (it should be pretty large... a number likely in the thousands), and to use an unordered list. We recorded the following results from all these runs:
+1. Run the `testLinearSearch()` experiments for N = 1000, then 2000, then 3000, ..., to 5000 (feel free to do more though). Remember to use the value that worked best for you as `NUM_RUNS` (it should be pretty large... a number likely in the thousands), and to use an unordered list. We recorded the following results from all these runs:
 
    ```
    LINSEARCH
@@ -195,11 +202,6 @@ We'd like to generate some charts to better visualize our results.
    N=3000, best=1 (expected 1), worst=3000 (expected 3000), avg=1507 (expected 1500)
    N=4000, best=1 (expected 1), worst=4000 (expected 4000), avg=2007 (expected 2000)
    N=5000, best=2 (expected 1), worst=5000 (expected 5000), avg=2509 (expected 2500)
-   N=6000, best=2 (expected 1), worst=6000 (expected 6000), avg=2957 (expected 3000)
-   N=7000, best=2 (expected 1), worst=6999 (expected 7000), avg=3550 (expected 3500)
-   N=8000, best=1 (expected 1), worst=7997 (expected 8000), avg=4004 (expected 4000)
-   N=9000, best=2 (expected 1), worst=9000 (expected 9000), avg=4510 (expected 4500)
-   N=10000, best=6 (expected 1), worst=10000 (expected 10000), avg=5037 (expected 5000)
    ```
 
 2. It sure would be nice to summarize this data in a plot. Open up your favorite spreadsheet tool. The following example shows how to generate charts using *Sheets* on Google Docs.
@@ -229,22 +231,60 @@ We'd like to generate some charts to better visualize our results.
 
 3. Now run the experiment and plot the results again for ordered lists and paste it into the lab report. Then answer Q1 in the lab report.
 
+
+
+##### Review: Big-O Notation
+On the lab report, you'll also see that I'll ask you to put the running times of the best, worst, and average cases into their Big-O classifiers. For each "case", you may have a different $$T(n)$$. Fill in the empty spots in the tables in the report. Then, use the simple technique you learned in class to turn $$T(n)$$ into its corresponding Big-O notation.
+
+
 ##### Binary Search Analysis
 
 1. Now try experimenting with testBinarySearch(). This method has no boolean flag to indicate whether it should generate an ordered or unordered list. It always generates an ordered list, because binary search relies on this ordering to work!
 
-2. Try running this test with the same number of trials you found that worked best from the linear search experiments. Again, vary
-   N=1000,2000,3000,...,10000.
+2. Try running this test with the same number of trials you found that worked best from the linear search experiments. Again, vary N=1000,2000,3000,...,5000.
 
 3. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case as the series. Again, drop it into the proper place in your **Lab Report**. Juxtapose the two Charts (between Linear Search and Binary Search) and you can see the power of Binary Search. Also, what can you glean about the average-case time complexity of binary search? Is it more like the best-case, or the worst-case?
 
-##### Find Median Analysis
 
-1. Open up the `RuntimeTester` class, and look for the `findMedian()` method. Again, study the code carefully and hypothesize what the best, worst, and average cases would be.
+##### Standard Dev Analysis
+There's a method that you still need to implement in the `RuntimeTester` called `standardDeviation()`. The standard deviation, which can be denoted using $$\sigma$$, measures the average distance an element in your list is from the average (mean). Standard deviation is calculated as follows:
+
+$$\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{n-1} (x_i - \mu)^2} = \sqrt{\frac{1}{N} (x_0 - \mu)^2 + (x_1 - \mu)^2 + ... + (x_{n-1} - \mu)^2}$$
+where $$\mu$$ is the mean value of the list and $$x_i$$ refer to each individual value in the list. To find the standard deviation of the values in the list, here are the steps you need to follow.
+
+1. First, you need to find the average, $$\mu$$.
+
+2. Next, find the sum of the squared differences. Loop through each element, subtract $$\mu$$, and square it. Accumulate this sum for all elements in the list. You can square a value using `Math.pow(val, 2)`.
+
+3. Finally, multiply with $$1/n$$ and take the square root using `Math.sqrt()`.
+
+4. Don't forget to increment `this.numStatements` whevever you a simple statement is run. (Importantly, look inside your loops.)
+
+5. Test it to see if it works. Here are my tests, and yours should match mine:
+
+   ```java
+   RuntimeTester runner = new RuntimeTester(100);
+   runner.generateData(false);
+   System.out.println(runner.stdDev());
+   > 28.86607004
+
+
+   RuntimeTester runner = new RuntimeTester(28443);
+   runner.generateData(false);
+   System.out.println(runner.stdDev());
+   > 2736.928935
+   ```
+
+6. Once you're satisfied with your code, try running `PerformanceTester.testStdDev()` vary N=1000,2000,3000,...,5000. Make a plot and place it the plot in the lab report, and answer the questions.
+
+
+##### Median Analysis
+
+1. Finally, Open up the `RuntimeTester` class, and look for the `median()` method. Try to appreciate how exactly it's being used to calculate the median element. You're reminded that the median is the element with an equal number of elements less than, and greater than it. Carefully and hypothesize what the best, worst, and average cases would be for ordered and unordered lists.
 
 2. Open your Lab Report back up. For each best/worst/average case, write down (1) the scenario under which the case would be observed, and (2) the equation, in terms of N, expressing its complexity.
 
-3. Run some experiments by varying N = 1000, 2000, ..., 10000. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case. Insert the plot in your Lab Report, and answer the final questions.
+3. Run some experiments by varying N = 1000, 2000, ..., 5000. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case. Insert the plot in your Lab Report, and answer the final questions.
 
 4. Finally hypothesize whether ordering affects the complexities of this method. Run a final set of experiments to confirm/reject your hypothesis.
 
