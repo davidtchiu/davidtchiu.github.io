@@ -76,9 +76,7 @@ Let's go ahead support these longer codes as well. The algorithms are very simil
 #### Part III: Validating Book ISBN's
 Cool. Another set of items that have unique IDs are books, called ISBNs. You're probably already familiar with these codes, because you may have had to look up the ISBNs just to ensure that you're buying the right book for your courses. (You can, for instance, search by ISBN on eBay, Amazon, or our bookstore).
 
-- ISBN's are checked quite differently than UPCs, so we'll need a completely new class. ISBN's don't have a `checksum` so you don't even need that instance variable.
-
-- Create a new class called `ISBNValidator` and you'll want to include the same three instance variables from before and the same two methods: `loadSequence()` and `validate()`.
+- ISBN's are checked quite differently than UPCs, so we'll need a completely new class. Create a new class called `ISBNValidator`. ISBN's don't need a `checksum` so you can remove that instance variable in this class, but you'll still want the `LENGTH` and `payload`, and the same two methods: `loadSequence()` and `validate()`.
 
 - Let's get to the specifics so you can start implementing these methods. ISBNs are 10 digits long (there's also a 13-digit version but we'll ignore that for now). Unlike UPCs, ISBN's payload includes all 10 numbers. Occasionally, the final digit is given as the character `'X'`. When this is the case, then the last number in the payload should be set to 10. To validate, you will want to add up each number in the payload multiplied by its position in reverse order, starting with 10, 9, 8, ... down to 1. For instance, the last digit in the payload should be multiplied by 1, then the second-to-last digit should be multiplied by 2, etc. Take the modulo-11 of this sum, and compare it to 0.
 
