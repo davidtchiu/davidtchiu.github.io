@@ -9,7 +9,6 @@ In this lab, you'll form hypotheses about the time complexity (running time) of 
 - To apply critical and scientific thinking to the analysis of algorithms
 - Experience putting together a CS lab report
 
-
 #### Required Files
 
 The following file(s) have been provided for this homework.
@@ -24,106 +23,74 @@ Download the project from the link given above. After you unzip it into your wor
 
 #### Part 1: Generating Test Data
 
-To investigate the performance of our algorithms, we need to first generate some test data. Open the `RuntimeTester` class. You should see that there is only a single field -- an array of ints. You need to provide the following elements:
+To investigate the performance of our algorithms, we need to first generate some test data. Open the `RuntimeTester` class. You should see that there is only a single field -- an array of ints. Let's play around with it so you know what it provides. 
 
-1.  Constructor: Your constructor should input an integer `size`, denoting the length of your list. It will instantiate a new integer array of the prescribed `size` and assign it to your field. If `size` is input as zero or negative, your constructor should instead create an integer array of size ten. An example in Codepad is shown below:
+1. In BlueJ's codepad (or, if you're using Eclipse/IntelliJ, put this inside main()). An example in Codepad is shown below. The constructor creates an internal array of integers of the given length. For now, it just populates the array with zeroes.
 
     ```java
-    RuntimeTester runner = new RuntimeTester(0);
-    System.out.println(runner.toString());
+    RuntimeTester runner = new RuntimeTester(10);
+    System.out.println(runner);
     > [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     runner = new RuntimeTester(5);
-    System.out.println(runner.toString());
+    System.out.println(runner);
     > [0, 0, 0, 0, 0]
     ```
 
-2.  Write a method, `void generateOrderedData()` that takes no inputs and returns no values. This method will fill your list with integers from 0 to `list.length-1` in that order.
+2. There are two ways to populate that array, and both are through the call to `generateData(boolean orderedList)`. If you input `true`, then the array will be filled with values 0, 1, 2, ..., n-1 (i.e., in sequential order). If you entered `false`, then those integers will be mixed up instead.
 
     ```java
     RuntimeTester runner = new RuntimeTester(10);
-    runner.generateOrderedData();
-    System.out.println(runner.toString())
-    > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    ```
-
-3.  Write a method, `void shuffle()`. This method will randomly shuffle the values around in the int array stored as your instance variable. To implement this method, you should loop through every element in the array and swap its value with a randomly chosen element from the remaining array.
-
-When properly implemented, it will have this type of effect on your list:
-
-    ```java
-    RuntimeTester runner = new RuntimeTester(10);
-    System.out.println(runner.toString());
+    System.out.println(runner);
     > [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-    myRuntimeTester.generateOrderedData();
-    System.out.println(runner.toString());
+    myRuntimeTester.generateData(true);
+    System.out.println(runner);
     > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-    myRuntimeTester.shuffle();
-    System.out.println(runner.toString());
+    myRuntimeTester.generateData(false);
+    System.out.println(runner);
     > [5, 9, 2, 6, 0, 3, 1, 8, 4, 7]
-
-    myRuntimeTester.shuffle();
-    System.out.println(runner.toString());
-    > [3, 8, 9, 1, 4, 7, 5, 2, 6, 0]
     ```
 
-4. Write a method, `generateUnorderedData()` that takes no inputs and returns no values. This method will fill your list with integers from 0 to `list.length-1`. Each number from this range should appear exactly once, but should be in _random_ order. This array will then be assigned to your field. Hint: This method is only a couple of lines (literally) if you remember to reuse the code you've just written...
+#### Part 2: Counting Simple Statements
 
-   ```java
-   RuntimeTester runner = new RuntimeTester(10);
-   runner.generateUnorderedData();
-   System.out.println(runner.toString());
-   > [6, 3, 4, 8, 7, 9, 1, 0, 2, 5]
-   ```
-
-   The order of _your_ list will probably be quite different from the one above, but the numbers should be the same.
-
-#### Part 2: Counting Comparisons
-
-In class, we learned that searching over collections of data is one of the most commonly-used operations in computing. Here, we will explore the complexity of linear search and binary search algorithms. In this lab, we assume that the time complexity of an algorithm is the number of comparisons it has to make, as a function of the problem size (i.e., list size in most of our examples).
+In this lab, we assume that the time complexity of an algorithm is the number of simple statements it has to run, as a function of the problem size (i.e., list size in most of our examples).
 
 ##### Review: Linear Search
 
-1. Still inside the `RuntimeTester` class, find the `linearSearch()` method. You should already be familiar with this algorithm, but read through the code again to remind yourself. This method takes an integer `key` as input, then scans your list element-by-element (that is, linearly) to see if there is a match with the key. If so, it returns the index of that element. If is not found, it returns -1.
+1. Still inside the `RuntimeTester` class, find the `linearSearch()` method. You should already be familiar with this algorithm, but read through the code again to remind yourself. 
 
-2. In class, we learned that the time complexity of this method varies based on the elements inside the list, as well as the key you're searching for. Specifically, if $$n$$ is the size of your list, we estimated that it would take $$1$$, $$n$$, and
+2. You do not need to make changes to this algorithm, but as you read through it, notice that I added a line of code to help us count the number of simple statements executed. 
+
+3. In class, we learned that the time complexity of this method varies based on the elements inside the list, as well as the key you're searching for. Specifically, if $$n$$ is defined to be the size of your list, we estimated that it would take $$1$$, $$n$$, and
    $$\dfrac{n+1}{2}$$ comparisons for the best-case, worst-case, and average case, respectively. Also recall the scenarios under which these cases are exhibited:
 
-   - Best Case: triggered when the key is found in the first element of the list.
-   - Worst Case: triggered when the key is not found.
-   - Average Case: Assuming the key is in the list somewhere, over many runs, the key's location is generally toward the middle of the list.
+   - Worst Case: triggered when the key is not found. This is what we typically pay attention to in class.
+   - Best Case: triggered when the key is found in the first element of the list. Rare.
+   - Average Case: Assuming the key is in fact inside the list somewhere, then over many runs, the key's location is generally near the middle of the list.
 
-<!-- 3. Though we wouldn't lie to you, it still would be cool to verify these cases, but to do that, we need to have this class store the number of comparisons made in each method's execution:
-
-   - Add a new field `numComparisons`
-   - Add a getter for this field called `getComparisons()`, and
-   - Add a setter method called `resetComparisons()` that inputs nothing, and simply clears this field to 0 -->
-
-<!-- 4. Next, Modify the `linearSearch` method so that it counts the comparisons to perform a search.  -->
-
-3. Though we wouldn't lie to you, it still would be cool to verify these cases. If you type out the following in code pad, your outputs should look _exactly_ like the mine:
+4. Though we wouldn't lie to you, it still would be cool to verify these cases. If you type out the following in code pad, your outputs should look _exactly_ like the mine:
 
    ```java
    RuntimeTester runner = new RuntimeTester(10);
-   runner.generateOrderedData();
-   System.out.println(runner.toString());
+   runner.generateData(true);
+   System.out.println(runner);
    > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-   runner.resetComparisons();
+   runner.resetStatements();
    runner.linearSearch(7);
-   System.out.println(runner.getComparisons());
+   System.out.println(runner.getStatements());
    > 8
 
-   runner.resetComparisons();
+   runner.resetStatements();
    runner.linearSearch(56);
-   System.out.println(runner.getComparisons());
+   System.out.println(runner.getStatements());
    > 10
 
-   runner.resetComparisons();
+   runner.resetStatements();
    runner.linearSearch(0);
-   System.out.println(runner.getComparisons());
+   System.out.println(runner.getStatements());
    > 1
    ```
 
@@ -133,92 +100,96 @@ In class, we learned that searching over collections of data is one of the most 
 
 2. We saw that the time complexity of this method varies based on the elements inside the list, as well as the key you're searching for. Specifically, if $$n$$ is the size of your list, we calculated that it would take 1 and $$\log_2{n}$$ comparisons for the best-case and worst-case, respectively. Also recall the scenarios under which these cases are exhibited:
 
-   - Best Case: triggered when the key is found in the middle of the original list.
-   - Worst Case: triggered when the key is not found.
-   - Average Case: ?
-
-<!-- 3. Now modify the `binarySearch()` method so that it counts the number of comparisons. If you did it correctly, you should be able to reproduce this. -->
+   - Best Case: triggered when the key is found in the middle of the original list. Super rare.
+   - Worst Case: triggered when the key is not found in the list.
+   - Average Case: ?? it's unclear how this algorithm behaves on the average. We'll find  find out in the next section. 
 
 3. If you type out the following in code pad, your outputs should look _exactly_ like the mine:
 
    ```java
    RuntimeTester runner = new RuntimeTester(8);
-   runner.generateOrderedData();
+   runner.generateData(true);
    System.out.println(runner.toString());
    "[0, 1, 2, 3, 4, 5, 6, 7]"   (String)
 
    runner.binarySearch(0);
-   System.out.println(runner.getComparisons());
+   System.out.println(runner.getStatements());
    > 3
 
-   runner.resetComparisons();
+   runner.resetStatements();
    runner.binarySearch(1);
-   System.out.println(runner.getComparisons());
+   System.out.println(runner.getStatements());
    > 2
 
-   runner.resetComparisons();
+   runner.resetStatements();
    runner.binarySearch(2);
-   System.out.println(runner.getComparisons());
+   System.out.println(runner.getStatements());
    > 3
 
-   runner.resetComparisons()
+   runner.resetStatements();
    runner.binarySearch(3);
-   System.out.println(runner.getComparisons());
+   System.out.println(runner.getStatements());
    > 1
 
-   runner.resetComparisons()
+   runner.resetStatements();
    runner.binarySearch(68);
-   System.out.println(runner.getComparisons());
+   System.out.println(runner.getStatements());
    > 4
    ```
 
 #### Part 3: Experimentation and Analysis
 
-Now that your search methods can count comparisons, let's test to see if our hypotheses on their time complexity are sound. The `PerformanceTester` class has three `static` methods (already implemented):
+Now that your search methods can count comparisons, let's test to see if our hypotheses on their time complexity are sound. The `PerformanceTester` class has a constant defined called `NUM_RUNS = 1` (that you will change later), and a few `static` methods (already implemented - you do not need to edit these):
 
-      - testLinearSearch(int N, int numRuns, boolean unordered): This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It runs linear search over the same list `numRuns` times, searching for a random key during each run.
+      - `testLinearSearch(int N, boolean orderedList)`: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It runs linear search over the same list `NUM_RUNS`  times, searching for a random key during each run.
 
-      - testBinarySearch(int N, int numRuns): This method creates an ordered list of size N, and it will run `binarySearch()` over the same list `numRuns` times, searching for a random key during each run.
+      - `testBinarySearch(int N)`: This method creates an ordered list of size N, and it will run `binarySearch()` over the same list `NUM_RUNS` times, searching for a random key during each run.
 
-      - testMedian(int N, int numRuns, boolean unordered): This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `numRuns` times.
+      - `testNoDupes(int N, boolean orderedList)`: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `NUM_RUNS` times.
 
-_Important:_ A static method means that it belongs to the class, not to its instances (objects). That is, you don't need to instantiate any objects to call them. When you right-click on the PerformanceTester class, you'll find that the static methods are available under this menu. If you prefer to call them from the Code pad, you could use something like: `PerformanceTester.testBinarySearch(1000,5);` to run binary search over a list of N=1000 elements, and the experiment will be repeated five times.
+      - `testMedian(int N, boolean orderedList)`: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `NUM_RUNS` times.
+
+      - `testStdDev(int N)`: This method inputs the list size N. It finds the standard deviation over the same list `NUM_RUNS` times. The list order does not affect standard deviation.
+
+
+_Important:_ A static method means that it belongs to the class, not to its instances (objects). That is, you don't need to instantiate any objects to call them. When you right-click on the PerformanceTester class, you'll find that the static methods are available under this menu. If you prefer to call them from the Code pad, you could use something like: `PerformanceTester.testBinarySearch(1000);` to run binary search over a list of N=1000 elements.
 
 ##### Linear Search Analysis
 
-1. Try running testLinearSearch(1000, 1, true). This call will generate an unordered list of
-   N = 1000 numbers, and run `linearSearch` on a random key over this list just once. If you implemented everything properly in the previous section, you should get an output similar to the following:
+1. Try running testLinearSearch(1000, true). This call will generate an unordered list of
+   N = 1000 numbers, and run `linearSearch` on random keys over this list. If you implemented everything properly in the previous section, you should get an output similar to the following:
 
    ```java
-   PerformanceTester.testLinearSearch(1000, 1, true);
-   > N=1000, best=672 (expected 1), worst=672 (expected 1000), avg=672 (expected 500)
-   ```
+   PerformanceTester.testLinearSearch(1000, true);
+   > LINSEARCH
+   > n=1000, best=376 (expected 1), worst=376 (expected 1000), avg=376 (expected 500)
+   ```   
+   Your results will be different from mine.
 
-   Your results will probably vary (wildly) from these.
+2. Let's actually spend a little bit of time understanding the report we just generated above. Recall our hypothesis that the best case, worst case, and average case comparisons for linear search is $$1$$, $$n$$, and $$n/2$$, respectively.
 
-2. Let's actually spend a little bit of time understanding the report we just generated above. Recall our hypothesis that the best case, worst case, and average case comparisons for linear search is $$1$$, $$n$$, and $$(n + 1)/2$$, respectively.
+In the print-out, the best, worst, and average number of comparisons are all the same because `linearSearch()` was only run once. As a result, the quality of these results are very low, and as computer scientists, we know that results from a single experiment cannot be taken at face value. A good scientist would repeat the experiment multiple times to obtain a larger sample from which to draw conclusions.
 
-In the report, the best, worst, and average number of comparisons are all the same because `linearSearch()` was only run once. As a result, the quality of these results are very low, and as computer scientists, we know that results from a single experiment cannot be taken at face value. A good scientist would repeat the experiment multiple times to obtain a larger sample from which to draw conclusions.
-
-3. Okay, lesson-learned. Let's get the simulator to run `linearSearch()` multiple times over randomly generated keys. Repeating the experiment 10 times seems reasonable...
+3. Okay, lesson-learned. Let's get the simulator to run `linearSearch()` multiple times over randomly generated keys. Repeating the experiment 10 times seems reasonable, so go inside `PerformanceTester` and change `NUM_RUNS` to 10.
 
    ```java
-   PerformanceTester.testLinearSearch(1000, 10, true);
-   > N=1000, best=40 (expected 1), worst=831 (expected 1000), avg=485 (expected 500)
+   PerformanceTester.testLinearSearch(1000, true);
+   LINSEARCH
+   > n=1000, best=176 (expected 1), worst=897 (expected 1000), avg=564 (expected 500)
    ```
 
-   Well, this time the results look closer to what we were expecting, but it's still not quite there.
-   We wonder what would happen if you ran more than 10 tests (runs)? Closer still, to our expectations? 100 runs? Hmm.. what if the size of the list was also increased? Might a longer list require more experimental trials for you to obtain a good, representative results?
+   Well, this time the results look a bit closer to what we were expecting, but it's still not quite there.
 
-4. We wonder what would happen if you ran more than 10 tests (runs)? Closer still, to our expectations? 100 runs? Hmm.. what if the size of the list was also increased? Might a longer list require more experimental trials for you to obtain a good, representative results?
+4. We wonder what would happen if you ran more than 10 tests (runs)? Closer still, to our expectations? 100 runs? Hmm.. what if the size of the list was also increased? Might a longer list require more experimental trials for you to obtain a good, representative results? Don't be afraid to try running 1000+ times!
 
 ##### Generating Plots
 
 We'd like to generate some charts to better visualize our results.
 
-1. Run the `testLinearSearch()` experiments for N = 1000, then 2000, then 3000, ..., 10000. Remember to use the value that worked best for you as `numRuns` (it should be pretty large.. like at least 1000 runs), and to use an unsorted list. We recorded the following results from all these runs:
+1. Run the `testLinearSearch()` experiments for N = 1000, then 2000, then 3000, ..., 10000. Remember to use the value that worked best for you as `NUM_RUNS` (it should be pretty large... a number likely in the thousands), and to use an unordered list. We recorded the following results from all these runs:
 
    ```
+   LINSEARCH
    N=1000, best=1 (expected 1), worst=1000 (expected 1000), avg=502 (expected 500)
    N=2000, best=1 (expected 1), worst=2000 (expected 2000), avg=1011 (expected 1000)
    N=3000, best=1 (expected 1), worst=3000 (expected 3000), avg=1507 (expected 1500)
@@ -231,7 +202,7 @@ We'd like to generate some charts to better visualize our results.
    N=10000, best=6 (expected 1), worst=10000 (expected 10000), avg=5037 (expected 5000)
    ```
 
-2. It sure would be nice to summarize this data in a plot. Open up your favorite spreadsheet tool, like Sheets on Google Docs or Excel. The following example shows how to generate charts using Sheets on Google Docs.
+2. It sure would be nice to summarize this data in a plot. Open up your favorite spreadsheet tool. The following example shows how to generate charts using *Sheets* on Google Docs.
 
    - Head over to [Google Docs](https://docs.google.com). You'll need to sign in using your UPS ID. Once in, click on the striped-lines button on the top-left corner, and select `Sheets`. Next, click on the `+` button on the bottom-right corner and it should generate a new blank spreadsheet. Let us know if you have troubles getting this far. After you've got a blank sheet in front of you, start plugging the numbers for N, Best Case, Worst Case, and Average Case as follows.
 
