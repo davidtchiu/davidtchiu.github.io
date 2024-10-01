@@ -229,9 +229,13 @@ We'd like to generate some charts to better visualize our results.
 
    - Click on the chart, and on the top-right hand corner you should see a triangle button. Click on this button, and click Save Image. This will download the chart as a PNG file. Finally, open it and copy-and-paste this Chart into the appropriate place in your Lab Report under Linear Search Time Complexity Plot (Unordered Lists).
 
-3. Now run the experiment and plot the results again for ordered lists and paste it into the lab report. Then answer Q1 in the lab report.
 
 
+3. Now run the experiment and plot the results again for ordered lists and paste it into the lab report. 
+
+4. **Important** After you generate the plots, take some time to appreciate what it shows. Look at the gap between the "best-case" line and the other two. As the list increases in size, the gap gets larger and larger. What about the gap between the average case and the worst case? If you were able to "zoom out" further and further back, will that gap disappear? What about the gap between the average/worst lines and the best-case line?
+
+5. As you think about these questions, answer Q1 in the lab report.
 
 ##### Review: Big-O Notation
 On the lab report, you'll also see that I'll ask you to put the running times of the best, worst, and average cases into their Big-O classifiers. For each "case", you may have a different $$T(n)$$. Fill in the empty spots in the tables in the report. Then, use the simple technique you learned in class to turn $$T(n)$$ into its corresponding Big-O notation.
