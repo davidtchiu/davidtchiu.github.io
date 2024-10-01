@@ -148,15 +148,13 @@ In this lab, we assume that the time complexity of an algorithm is the number of
 
 Now that your search methods can count comparisons, let's test to see if our hypotheses on their time complexity are sound. The `PerformanceTester` class has a constant defined called `NUM_RUNS = 1` (that you will change later), and a few `static` methods (already implemented - you do not need to edit these):
 
-      - *testLinearSearch(int N, boolean orderedList):* This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It runs linear search over the same list `NUM_RUNS`  times, searching for a random key during each run.
+   - `testLinearSearch(int N, boolean orderedList)`: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It runs linear search over the same list `NUM_RUNS`  times, searching for a random key during each run.
 
-      - *testBinarySearch(int N)*: This method creates an ordered list of size N, and it will run `binarySearch()` over the same list `NUM_RUNS` times, searching for a random key during each run.
+   - `testBinarySearch(int N)`: This method creates an ordered list of size N, and it will run `binarySearch()` over the same list `NUM_RUNS` times, searching for a random key during each run.
 
-      - *testNoDupes(int N, boolean orderedList)*: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `NUM_RUNS` times.
+   - `testMedian(int N, boolean orderedList)`: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `NUM_RUNS` times.
 
-      - *testMedian(int N, boolean orderedList)*: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It finds the median over the same list `NUM_RUNS` times.
-
-      - *testStdDev(int N)*: This method inputs the list size N. It finds the standard deviation over the same list `NUM_RUNS` times. The list order does not affect standard deviation.
+   - `testStdDev(int N)`: This method inputs the list size N. It finds the standard deviation over the same list `NUM_RUNS` times. The list order does not affect standard deviation.
 
 
 _Important:_ A static method means that it belongs to the class, not to its instances (objects). That is, you don't need to instantiate any objects to call them. When you right-click on the PerformanceTester class, you'll find that the static methods are available under this menu. If you prefer to call them from the Code pad, you could use something like `PerformanceTester.testBinarySearch(1000);` to run binary search over a list of N=1000 elements directly.
