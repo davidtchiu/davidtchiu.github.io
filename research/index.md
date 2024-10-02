@@ -134,7 +134,7 @@
 
 ### PhD Dissertation
 
-- D. Chiu. [AUSPICE: Automatic Service Planning in Cloud/Grid Environments](Papers/chiu-dissertation10.pdf). Doctoral Dissertation. The Ohio State University, 2010. 196 Pages. Committee: Gagan Agrawal (Advisor), Christopher Stewart, Feng Qin, and Hakan Ferhatosmanoglu.
+- D. Chiu. AUSPICE: Automatic Service Planning in Cloud/Grid Environments. Doctoral Dissertation. The Ohio State University, 2010. Pages 1 - 196. Dissertation Committee: Gagan Agrawal (Advisor), Christopher Stewart, Feng Qin, and Hakan Ferhatosmanoglu.
 
 ### Research Awards
 
