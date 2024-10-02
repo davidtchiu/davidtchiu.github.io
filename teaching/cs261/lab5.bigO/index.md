@@ -272,7 +272,7 @@ First, you need to find the average, $$\mu$$. Next, find the sum of the squared 
    RuntimeTester runner = new RuntimeTester(28443);
    runner.generateData(false);
    System.out.println(runner.stdDev());
-   > 2736.928935
+   > 8210.786848
    ```
 
 2. Once you're satisfied with your code, try running `PerformanceTester.testStdDev()` vary N=1000,2000,3000,...,5000. Make a plot and place it the plot in the lab report, and answer the questions in the document.
