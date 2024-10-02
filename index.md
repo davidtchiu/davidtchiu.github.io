@@ -23,11 +23,14 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 
 ### Recent Activities
-- (08/2024) I'm excited to be teaching at the [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html) in 2025.
-- (08/2024) I'm leading a panel discussion on supporting underrepresented students for Peer Advisor Training, University of Puget Sound.
+
+- (09/2023) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
+- (09/2024) Serving as a New Faculty Mentor for 2024.
+- (08/2024) I'm excited to be teaching at the [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html), Taiwan, in 2025.
+- (08/2024) Led a panel discussion on supporting underrepresented students for Peer Advisor Training, University of Puget Sound.
 - (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: "Bitmap Indexing for Database Systems"
 - (05/2024) I will be serving on the program committee for [HiPC 2024](https://hipc.org/).
-- (05/2024) I'm honored to receive the 2024 Influential Faculty of Color Award.
+- (05/2024) I'm honored to receive the 2024 Influential Faculty of Color Award, University of Puget Sound.
 - (05/2024) My student, Julia Kaeppel, has been named the Goman Outstanding Senior Award in Computer Science.
 - (12/2023) We have received the Best Paper Award at IEEE/ACM BDCAT 2023 conference for "Workload-Aware Cache Management of Bitmap Indices"! Here's a [featured story](https://www.pugetsound.edu/stories/computer-science-student-and-professor-university-puget-sound-win-best-paper-big-data) in The Hatchet.
 - (10/2023) Our paper, "Workload-Aware Cache Management of Bitmap Indices" has been accepted for publication at BDCAT 2023. Congratulations to my student, Julia Kaeppel!

@@ -35,9 +35,12 @@
 ### Service to the University
 
 - Director, Students of Color Residential Community, University of Puget Sound (2023 - )
+- Co-Chair, International Education Committee, University of Puget Sound (2024 - )
 - Total Compensation and Benefits Project, University of Puget Sound (2023 - )
-- Student Life Committee, University of Puget Sound (2021 - )
-- Chair of Computer Science, University of Puget Sound (2019 - 2022)
+- External Member of Search Committee, Department of Communication, University of Puget Sound (2024)
+- New Faculty Mentor, University of Puget Sound (2024)
+- Student Life Committee, University of Puget Sound (2021 - 2024)
+- Department Chair, University of Puget Sound (2019 - 2022)
 - Lantz Sabbatical Award Committee, University of Puget Sound (2021)
 - Chair, Data Science Program Committee, University of Puget Sound (2020 - 2021)
 - Chair, Data Science Search Committee, University of Puget Sound (2020)

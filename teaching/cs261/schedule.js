@@ -102,9 +102,9 @@ let days = {
       },
       // {
       //   name: "Lab 5",
-      //   title: "Exceptions Lab",
-      //   url: "lab5.exc/",
-      //   due: "9/27/2024",
+      //   title: "Complexity Lab",
+      //   url: "lab5.bigO/",
+      //   due: "10/4/2024",
       // },
       // {
       //   name: "Lab 6",

@@ -16,7 +16,7 @@ In the lab, all algorithms that you need to analyze are list-based, but clearly,
 The following file(s) have been provided for this homework.
 
 - [Lab5_BigO.zip](Lab5_BigO.zip)
-- [Lab Report](https://docs.google.com/document/d/1nR3yeKhvTVWIVOP3bZs_pC2QXigoSXrf/edit?usp=sharing&ouid=104002057416473788934&rtpof=true&sd=true)
+- [Lab Report](https://docs.google.com/document/d/1Wyc7Se_UGlwKwYhME2n8XBjPaPT7Q44EmC7mB8fBwi4/edit?usp=sharing)
 
 
 
