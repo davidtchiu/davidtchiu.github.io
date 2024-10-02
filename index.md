@@ -24,7 +24,7 @@ Here's a link to my [curriculum vitae](CV.pdf).
 
 ### Recent Activities
 
-- (09/2023) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
+- (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
 - (09/2024) Serving as a New Faculty Mentor for 2024.
 - (08/2024) I'm excited to be teaching at the [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html), Taiwan, in 2025.
 - (08/2024) Led a panel discussion on supporting underrepresented students for Peer Advisor Training, University of Puget Sound.

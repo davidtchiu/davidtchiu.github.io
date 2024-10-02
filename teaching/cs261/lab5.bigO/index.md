@@ -259,9 +259,9 @@ $$\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{n-1} (x_i - \mu)^2} = \sqrt{\frac{1}{N}
 
 where $$\mu$$ is the mean value of the list and $$x_i$$ refer to each individual value in the list. To find the standard deviation of the values in the list, here are the steps you need to follow.
 
-First, you need to find the average, $$\mu$$. Next, find the sum of the squared differences. Loop through each element, subtract $$\mu$$, and square it. Accumulate this sum for all elements in the list. You can square a value using `Math.pow(val, 2)`. Finally, multiply with $$1/n$$ and take the square root using `Math.sqrt()`. Don't forget to increment `this.numStatements` whevever a simple statement is run. (Importantly, look inside your loops.)
+First, you need to find the average, $$\mu$$. Next, find the sum of the squared differences between $$\mu$$ and all the elements in the list. You can square a value using `Math.pow(val, 2)`. Finally, multiply with $$1/n$$ and take the square root using `Math.sqrt()`. Don't forget to increment `this.numStatements` whevever a simple statement is run. (Importantly, look inside your loops.) For this task, you may assume that `Math.pow()` and `Math.sqrt()` cost 1 simple-statement each.
 
-5. Test it to see if it works. Here are my tests, and yours should match mine:
+1. If you feel confident about your code, test it to see if it works. Here are my tests, and yours should match mine:
 
    ```java
    RuntimeTester runner = new RuntimeTester(100);
@@ -275,13 +275,13 @@ First, you need to find the average, $$\mu$$. Next, find the sum of the squared 
    > 2736.928935
    ```
 
-6. Once you're satisfied with your code, try running `PerformanceTester.testStdDev()` vary N=1000,2000,3000,...,5000. Make a plot and place it the plot in the lab report, and answer the questions.
+2. Once you're satisfied with your code, try running `PerformanceTester.testStdDev()` vary N=1000,2000,3000,...,5000. Make a plot and place it the plot in the lab report, and answer the questions in the document.
 
 
-As you progress in this course (let alone the major/minor), you'll need to become more and more attuned to the running times of the algorithms you write. The process you saw in this section demonstrates how computer scientists have to think!
+As you progress in this course (and in the major/minor), you'll need to be more and more attuned to the running times of the algorithms you write. The process you saw in this section demonstrates how computer scientists have to think!
 
 
-#### Part 5. Median Analysis
+#### Part 5. Last Problem!
 Finally, let's try analyzing a tougher one. Open up the `RuntimeTester` class, and look for the `median()` method. Try to appreciate how it calculates the median element in a list. (The median is the element with an equal number of elements less than, and greater than it.) Hypothesize what the best, worst, and average cases of this algorithm would be for both ordered and unordered lists.
 
 1. Now open your Lab Report back up. For each best/worst/average case, write down: (A) the scenario under which that case would be observed, and (B) the corresponding running time function, $$T(n)$$.
