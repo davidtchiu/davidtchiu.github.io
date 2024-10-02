@@ -49,11 +49,11 @@ To investigate the performance of our algorithms, we need to first generate some
     System.out.println(runner);
     > [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-    myRuntimeTester.generateData(true);
+    runner.generateData(true);
     System.out.println(runner);
     > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-    myRuntimeTester.generateData(false);
+    runner.generateData(false);
     System.out.println(runner);
     > [5, 9, 2, 6, 0, 3, 1, 8, 4, 7]
     ```
@@ -146,7 +146,7 @@ In this lab, we assume that the time complexity of an algorithm is the number of
 
 #### Part 3: Experimentation and Analysis
 
-Now that your search methods can count comparisons, let's test to see if our hypotheses on their time complexity are sound. The `PerformanceTester` class has a constant defined called `NUM_RUNS = 1` (that you will change later), and a few `static` methods (already implemented - you do not need to edit these):
+Now that your search methods can count comparisons, let's test to see if our hypotheses on their time complexity are sound. The `PerformanceTester` class has a constant defined called `NUM_RUNS = 1` (that you will change later), and a few `static` methods (already implemented - you do not need to edit these). Each of them is really just a "shell" method that calls another private method to do all the work. You do not need to worry about the implementation details of any of these methods, but you should know what each of them does, explained below:
 
    - `testLinearSearch(int N, boolean orderedList)`: This method inputs the list size N, and a boolean on whether it should run over an ordered list or unordered list. It runs linear search over the same list `NUM_RUNS`  times, searching for a random key during each run.
 
@@ -204,7 +204,7 @@ We'd like to generate some charts to better visualize our results.
 
 2. It sure would be nice to summarize this data in a plot. Open up your favorite spreadsheet tool. The following example shows how to generate charts using *Sheets* on Google Docs.
 
-   - Head over to [Google Docs](https://docs.google.com). You'll need to sign in using your UPS ID. Once in, click on the striped-lines button on the top-left corner, and select `Sheets`. Next, click on the `+` button on the bottom-right corner and it should generate a new blank spreadsheet. Let us know if you have troubles getting this far. After you've got a blank sheet in front of you, start plugging the numbers for N, Best Case, Worst Case, and Average Case as follows.
+   - Head over to [Google Docs](https://docs.google.com). You'll need to sign in using your UPS ID. Once in, click on the striped-lines button on the top-left corner, and select `Sheets`. Next, click on the `+` button on the bottom-right corner and it should generate a new blank spreadsheet. Let us know if you have troubles getting this far. 
 
    - After you've got a blank sheet in front of you, start plugging the numbers for N, Best Case, Worst Case, and Average Case as follows
       <center><img src="figures/lab9_fig1.png" border="1px" width="400px"/></center><br/>
@@ -248,10 +248,13 @@ On the lab report, you'll also see that I'll ask you to put the running times of
 3. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case as the series. Again, drop it into the proper place in your **Lab Report**. Juxtapose the two Charts (between Linear Search and Binary Search) and you can see the power of Binary Search. Also, what can you glean about the average-case time complexity of binary search? Is it more like the best-case, or the worst-case?
 
 
-##### Standard Dev Analysis
-There's a method that you still need to implement in the `RuntimeTester` called `standardDeviation()`. The standard deviation, which can be denoted using $$\sigma$$, measures the average distance an element in your list is from the average (mean). Standard deviation is calculated as follows:
+#### Part 4. Writing and Analyzing Algorithms
+Let's try something different. I'd like you to get into the habit of writing your own algorithms, and then analyzing its running time. Here's a method that's often used in statistics and requires a couple passes over your data.
+
+There's a method that you need to implement in the `RuntimeTester` called `standardDeviation()`. The standard deviation, which can be denoted using $$\sigma$$, measures the average distance an element in your list is from the average (mean). Standard deviation is calculated as follows:
 
 $$\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{n-1} (x_i - \mu)^2} = \sqrt{\frac{1}{N} (x_0 - \mu)^2 + (x_1 - \mu)^2 + ... + (x_{n-1} - \mu)^2}$$
+
 where $$\mu$$ is the mean value of the list and $$x_i$$ refer to each individual value in the list. To find the standard deviation of the values in the list, here are the steps you need to follow.
 
 1. First, you need to find the average, $$\mu$$.
@@ -270,7 +273,6 @@ where $$\mu$$ is the mean value of the list and $$x_i$$ refer to each individual
    System.out.println(runner.stdDev());
    > 28.86607004
 
-
    RuntimeTester runner = new RuntimeTester(28443);
    runner.generateData(false);
    System.out.println(runner.stdDev());
@@ -280,15 +282,17 @@ where $$\mu$$ is the mean value of the list and $$x_i$$ refer to each individual
 6. Once you're satisfied with your code, try running `PerformanceTester.testStdDev()` vary N=1000,2000,3000,...,5000. Make a plot and place it the plot in the lab report, and answer the questions.
 
 
-##### Median Analysis
+As you progress in this course (let alone the major/minor), you'll need to become more and more attuned to the running times of the algorithms you write. The process you saw in this section demonstrates how computer scientists have to think!
 
-1. Finally, Open up the `RuntimeTester` class, and look for the `median()` method. Try to appreciate how exactly it's being used to calculate the median element. You're reminded that the median is the element with an equal number of elements less than, and greater than it. Carefully and hypothesize what the best, worst, and average cases would be for ordered and unordered lists.
 
-2. Open your Lab Report back up. For each best/worst/average case, write down (1) the scenario under which the case would be observed, and (2) the equation, in terms of N, expressing its complexity.
+#### Part 5. Median Analysis
+Finally, let's try analyzing a tougher one. Open up the `RuntimeTester` class, and look for the `median()` method. Try to appreciate how it calculates the median element in a list. (The median is the element with an equal number of elements less than, and greater than it.) Hypothesize what the best, worst, and average cases of this algorithm would be for both ordered and unordered lists.
 
-3. Run some experiments by varying N = 1000, 2000, ..., 5000. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case. Insert the plot in your Lab Report, and answer the final questions.
+1. Now open your Lab Report back up. For each best/worst/average case, write down: (A) the scenario under which that case would be observed, and (B) the corresponding running time function, $$T(n)$$.
 
-4. Finally hypothesize whether ordering affects the complexities of this method. Run a final set of experiments to confirm/reject your hypothesis.
+3. Run some experiments by once again increasing N = 1000, 2000, ..., 5000 for both unordered and ordered lists. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case. Insert the plot in your Lab Report, and answer the final questions.
+
+4. Finally hypothesize whether the list ordering affects the complexities of this method. Run a final set of experiments to confirm/reject your hypothesis. (It's okay to be wrong!)
 
 #### Grading
 
