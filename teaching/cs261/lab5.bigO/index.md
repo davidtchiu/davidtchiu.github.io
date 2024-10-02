@@ -4,6 +4,8 @@
 
 In this lab, you'll form hypotheses about the time complexity (running time) of various algorithms, and validate/reject those hypotheses through experimentation, analysis of its results, and drawing conclusions. You will be generating plots and be providing a Lab Report.
 
+In the lab, all algorithms that you need to analyze are list-based, but clearly, the analysis of algorithms extend beyond lists. I chose list processing as a vehicle, because they're easier to visualize.
+
 #### Student Outcomes
 
 - To apply critical and scientific thinking to the analysis of algorithms
@@ -249,11 +251,11 @@ On the lab report, you'll also see that I'll ask you to put the running times of
 
 
 #### Part 4. Writing and Analyzing Algorithms
-Let's try something different. I'd like you to get into the habit of writing your own algorithms, and then analyzing its running time. Here's a method that's often used in statistics and requires a couple passes over your data.
+Let's try something different. One of the objects of this class is to get you into the habit of writing your own algorithms, and then analyzing its running time, which may in turn cause you to improve upon it. Here's a method that's often used in statistics and requires a couple passes over your data, and shouldn't be super difficult to code up. 
 
-There's a method that you need to implement in the `RuntimeTester` called `standardDeviation()`. The standard deviation, which can be denoted using $$\sigma$$, measures the average distance an element in your list is from the average (mean). Standard deviation is calculated as follows:
+You might've already noticed that there's a method in `RuntimeTester` that you need to implement called `standardDeviation()`. The standard deviation, which can be denoted using $$\sigma$$, measures the average distance an element in your list is from the average (mean). Standard deviation is calculated as follows:
 
-$$\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{n-1} (x_i - \mu)^2} = \sqrt{\frac{1}{N} (x_0 - \mu)^2 + (x_1 - \mu)^2 + ... + (x_{n-1} - \mu)^2}$$
+$$\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{n-1} (x_i - \mu)^2} = \sqrt{\frac{1}{N} ((x_0 - \mu)^2 + (x_1 - \mu)^2 + ... + (x_{n-1} - \mu)^2)}$$
 
 where $$\mu$$ is the mean value of the list and $$x_i$$ refer to each individual value in the list. To find the standard deviation of the values in the list, here are the steps you need to follow.
 
