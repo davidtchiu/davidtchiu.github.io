@@ -170,6 +170,8 @@ System.out.println(b.toString());
 
 6. Finally, create a new `Tournament` class. In it, define a `playGame` method that takes two player instances and plays a single round of Tic-Tac-Toe between them. You should treat the first argument to `playGame` as the player using `X` and the second as `O`. (You'll want to use the `setSymbol` method to ensure that the players are using the proper symbols too.) Your method should print the output from the winner's celebrate method and the loser's mourn method, then return a reference to the winning player or `null` if the game ends in a draw.
 
+7. Before you turn anything into me, please remove all print statements that you put in your code while debugging!
+
 
 #### Grading
 
