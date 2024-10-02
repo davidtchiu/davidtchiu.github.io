@@ -304,6 +304,8 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 - Navigate to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
 
+- Upload your lab report.
+
 - Upload all files ending in `.java` from your project folder.
 
 - Click "Submit Assignment" again to upload it.
