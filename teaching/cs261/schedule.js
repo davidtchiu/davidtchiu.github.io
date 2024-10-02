@@ -100,12 +100,12 @@ let days = {
         url: "lab4.interface/",
         due: "9/27/2024",
       },
-      // {
-      //   name: "Lab 5",
-      //   title: "Complexity Lab",
-      //   url: "lab5.bigO/",
-      //   due: "10/4/2024",
-      // },
+      {
+        name: "Lab 5",
+        title: "Complexity Lab",
+        url: "lab5.bigO/",
+        due: "10/4/2024",
+      },
       // {
       //   name: "Lab 6",
       //   title: "ArrayLists Lab",
@@ -175,8 +175,8 @@ let days = {
     // "Start Big-O",
     "More Big-O examples",
     "More Big-O examples",
-    "Lab 5: Big-O lab?",
-    "List interface, ArrayList: add(), rellocation",
+    "Lab 5: Big-O lab",
+    "List interface, ArrayList: add(), reallocate()",
     // wk 6
     "<strong><emph>Review for Exam 1</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
