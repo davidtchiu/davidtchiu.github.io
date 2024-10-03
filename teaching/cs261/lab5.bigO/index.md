@@ -202,11 +202,13 @@ We'd like to generate some charts to better visualize our results.
    N=5000, best=2 (expected 1), worst=5000 (expected 5000), avg=2509 (expected 2500)
    ```
 
+2. For your reference, I put what we should theoretically expect in parentheses. Your results should get close to matching the expected results if your `NUM_RUNS` is sufficiently large.
+
 2. It sure would be nice to summarize this data in a plot. Open up your favorite spreadsheet tool. The following example shows how to generate charts using *Sheets* on Google Docs.
 
    - Head over to [Google Docs](https://docs.google.com). You'll need to sign in using your UPS ID. Once in, click on the striped-lines button on the top-left corner, and select `Sheets`. Next, click on the `+` button on the bottom-right corner and it should generate a new blank spreadsheet. Let us know if you have troubles getting this far. 
 
-   - After you've got a blank sheet in front of you, start plugging the numbers for N, Best Case, Worst Case, and Average Case as follows
+   - After you've got a blank sheet in front of you, start plugging your numbers (not my expected results) for N, Best Case, Worst Case, and Average Case as follows:
       <center><img src="figures/lab9_fig1.png" border="1px" width="400px"/></center><br/>
 
    - Double-check that all of your data is entered correctly. Then select your data (including the first row containing labels). Then from the menu bar, click `Insert` > `Chart`... This will bring up a new dialog box that looks like the following. Make sure you place checkmarks in Use `Row 1` as Headers and Use `Column A` as Labels
