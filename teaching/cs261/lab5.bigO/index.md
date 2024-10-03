@@ -289,7 +289,7 @@ Finally, let's try analyzing a tougher one. Open up the `RuntimeTester` class, a
 
 1. Hypothesize what the best, worst, and average cases of this algorithm would be for both ordered and unordered lists.  Now open your Lab Report back up. For each best/worst/average case, write down: (A) the scenario under which that case would be observed, and (B) the corresponding running time function, $$T(n)$$.
 
-2. Run some experiments by once again increasing N = 1000, 2000, ..., 5000 for both unordered and ordered lists. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case. Insert the plot in your Lab Report, and answer the final questions.
+2. Run some experiments by once again increasing N = 1000, 2000, ..., 5000 for both unordered and ordered lists. A word of warning -- this will take some time, especially once you're up in the N= 4000 to 5000 mark (which could take several minutes on my machine)! Open your spreadsheet program, and generate another plot, with the best, worst, and average-case. Insert the plot in your Lab Report, and answer the final questions.
 
 3. Finally hypothesize whether the list ordering affects the complexities of this method. Run a final set of experiments to confirm/reject your hypothesis. (It's okay to be wrong!)
 
