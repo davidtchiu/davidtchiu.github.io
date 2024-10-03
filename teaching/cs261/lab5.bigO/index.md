@@ -259,7 +259,9 @@ $$\sigma = \sqrt{\frac{1}{N} \sum_{i=0}^{n-1} (x_i - \mu)^2} = \sqrt{\frac{1}{N}
 
 where $$\mu$$ is the mean value of the list and $$x_i$$ refer to each individual value in the list. To find the standard deviation of the values in the list, here are the steps you need to follow.
 
-First, you need to find the average, $$\mu$$. Next, find the sum of the squared differences between $$\mu$$ and all the elements in the list. You can square a value using `Math.pow(val, 2)`. Finally, multiply with $$1/n$$ and take the square root using `Math.sqrt()`. Don't forget to increment `this.numStatements` whevever a simple statement is run. (Importantly, look inside your loops.) For this task, you may assume that `Math.pow()` and `Math.sqrt()` cost 1 simple-statement each.
+- First, you need to find the average, $$\mu$$. You should write a private method, `private double average()` that returns the average of the elements in the list. You can now use this method for helping write `standardDeviation()`.
+
+- Next, start writing the `standardDeviation()`. Find the sum of the squared differences between $$\mu$$ and all the elements in the list. You can square a value using `Math.pow(val, 2)`. Finally, multiply with $$1/n$$ and take the square root using `Math.sqrt()`. Don't forget to increment `this.numStatements` whevever a simple statement is run. (Importantly, look inside your loops.) For this task, you may assume that `Math.pow()` and `Math.sqrt()` cost 1 simple-statement each.
 
 1. If you feel confident about your code, test it to see if it works. Here are my tests, and yours should match mine:
 
