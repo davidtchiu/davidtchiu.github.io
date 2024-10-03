@@ -208,7 +208,7 @@ We'd like to generate some charts to better visualize our results.
 
    - Head over to [Google Sheets](https://sheets.google.com). You'll need to sign in using your UPS ID. Once in, click on the striped-lines button on the top-left corner, and select `Sheets`. Next, click on the `+` button on the bottom-right corner and it should generate a new blank spreadsheet. Let us know if you have troubles getting this far. 
 
-   - After you've got a blank sheet in front of you, start plugging your numbers (not my expected results) for N, Best Case, Worst Case, and Average Case as follows:
+   - After you've got a blank sheet in front of you, start plugging your numbers (not my expected results) for N, Best Case, Worst Case, and Average Case as follows (again, you don't have to go all the way up to N = 10,000 like in the figure below):
       <center><img src="figures/lab9_fig1.png" border="1px" width="400px"/></center><br/>
 
    - Double-check that all of your data is entered correctly. Then select your data (including the first row containing labels). Then from the menu bar, click `Insert` > `Chart`... This will bring up a new dialog box that looks like the following. Make sure you place checkmarks in Use `Row 1` as Headers and Use `Column A` as Labels
