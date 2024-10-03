@@ -162,7 +162,7 @@ _Important:_ A static method means that it belongs to the class, not to its inst
 ##### Linear Search Analysis
 
 1. Try running testLinearSearch(1000, true). This call will generate an unordered list of
-   N = 1000 numbers, and run `linearSearch` on random keys over this list. If you implemented everything properly in the previous section, you should get an output similar to the following:
+   N = 1000 numbers, and run `linearSearch` on random keys over this list. You should get an output similar to the following:
 
    ```java
    PerformanceTester.testLinearSearch(1000, true);
