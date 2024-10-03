@@ -24,9 +24,7 @@ The following file(s) have been provided for this homework.
 
 Open the Lab Report and create your own copy of it. Go to `File` and `Make a copy`, then put it somewhere in your drive where you won't forget.
 
-Download the project from the link given above. After you unzip it into your working directory, navigate into the folder. Inside, you'll find a Word document called `Lab_Report.docx`. Open up the package and you'll see the following classes: `RuntimeTester` and `PerformanceTester`.
-
-<center><img src="figures/lab9_fig0.png" width="500px" /></center>
+Download the project from the link given above. After you unzip it into your working directory, navigate into the folder. Inside, you'll find a Word document called `Lab_Report.docx`. Open up the package and you'll see the following classes: `AbstractRuntimeTester`, `RuntimeTester` and `PerformanceTester`.
 
 #### Part 1: Generating Test Data
 
