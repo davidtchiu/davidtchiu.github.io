@@ -206,7 +206,7 @@ We'd like to generate some charts to better visualize our results.
 
 2. It sure would be nice to summarize this data in a plot. Open up your favorite spreadsheet tool. The following example shows how to generate charts using *Sheets* on Google Docs.
 
-   - Head over to [Google Docs](https://docs.google.com). You'll need to sign in using your UPS ID. Once in, click on the striped-lines button on the top-left corner, and select `Sheets`. Next, click on the `+` button on the bottom-right corner and it should generate a new blank spreadsheet. Let us know if you have troubles getting this far. 
+   - Head over to [Google Sheets](https://sheets.google.com). You'll need to sign in using your UPS ID. Once in, click on the striped-lines button on the top-left corner, and select `Sheets`. Next, click on the `+` button on the bottom-right corner and it should generate a new blank spreadsheet. Let us know if you have troubles getting this far. 
 
    - After you've got a blank sheet in front of you, start plugging your numbers (not my expected results) for N, Best Case, Worst Case, and Average Case as follows:
       <center><img src="figures/lab9_fig1.png" border="1px" width="400px"/></center><br/>
