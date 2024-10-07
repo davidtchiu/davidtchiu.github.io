@@ -76,7 +76,7 @@ For each of the following problems, write an SQL query to return the expected re
    520	ENGL	Shakespeare Was Da Bomb	HH 20	TR	13:00	Department of English	Wyatt Hall
    ```
 
-6. Haley's advisor wants to know what courses she's taking in her major. Assume you don't know what her major off hand when writing this query, so your query needs to look in the Major table.
+6. Haley's advisor wants to know what courses she's taking in her major. Assume you don't know what her major off hand when writing this query, so your query needs to look in the Major table. Although it's not the case for Haley, keep in mind that students may have more than one major!
  
    ```
    deptID   courseNum
