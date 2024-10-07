@@ -34,7 +34,7 @@ We need to start removing the scaffolding that I provide with each assignment in
   <img src="figures/AutoHomeworkClassDiag.png" width="500px">
 
 
-- `Term` -- This class encapsulates a term-frequency pair (given as each row in the input file). This class is simple. You only need to provide getters and setters to input/retrieve the term or frequency itself. Objects of this class eventually need to be ordered by decreasing frequency. Therefore, this class needs to implement the `Comparable` interface.
+- `Term` -- This class encapsulates a term-frequency pair (given as each row in the input file). This class is simple. You only need to provide getters and setters to input/retrieve the term or frequency itself. Objects of this class eventually need to be ordered by decreasing frequency. Therefore, this class needs to implement the `Comparable` interface. (Alternatively, you could implement the `Comparator` interface for this purpose.)
 
 - `Autocomplete` -- This is the heart of your project. Among other things, this class stores a list of term-frequency objects and provides functionalities for searching through the list for terms that match the user's "query." Objects of this class must open a given training file and read the file's contents into its list. Because searching through terms ought to be fast, you should add items to its term-frequency  in alphabetical order.
 
