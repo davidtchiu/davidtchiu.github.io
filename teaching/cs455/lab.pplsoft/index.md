@@ -56,7 +56,7 @@ For each of the following problems, write an SQL query to return the expected re
    460         MATH        Calculus 3  WEY 102     TR          12:30
    ```
 
-4. Return David's, course schedule. Assume you don't know David's student ID off hand, so you'll need to look him up by his name. (Yes you may assume he's the only one with that name in this database). Only `Course`'s attributes should be projected. Order by `DeptID` then by `Course Number`.
+4. Return David's, course schedule. Assume you don't know David's student ID off hand, so you have to search by his name. (Yes you may assume he's the only one with that name in this database). Only `Course`'s attributes should be projected. Order by `DeptID` then by `Course Number`.
 
    ```
    deptID      CourseNum   CourseName        Location    meetDay     meetTime
@@ -66,18 +66,18 @@ For each of the following problems, write an SQL query to return the expected re
    MATH        230         Linear Algebra    HH 308      TR          15:00
    ```
 
-5. Return a list of courses taught in Wyatt Hall.
+5. Return a list of courses taught by departments housed in Wyatt Hall. This is not the same as asking for a "list of courses taught in Wyatt Hall." For instance, note that ENGL 520 is listed, because it's taught out of Department of English, despite being held in `HH`.
 
    ```
-   101	SOAN	Sociology 1	WY 105	MWF	08:00	Department of Anthropology	Wyatt Hall
-   102	SOAN	Sociology 2	WY 205	MTWRF	09:00	Department of Anthropology	Wyatt Hall
-   101	ENGL	How to Read	WY 100	MWF	13:00	Department of English	Wyatt Hall
-   102	ENGL	How to Write	WY 100	MWF	14:00	Department of English	Wyatt Hall
+   101	SOAN	Sociology 1    WY 105	MWF	08:00	Department of Anthropology	Wyatt Hall
+   102	SOAN	Sociology 2    WY 205	MTWRF	09:00	Department of Anthropology	Wyatt Hall
+   101	ENGL	How to Read    WY 100	MWF	13:00	Department of English	Wyatt Hall
+   102	ENGL	How to Write	   WY 100	MWF	14:00	Department of English	Wyatt Hall
    520	ENGL	Shakespeare Was Da Bomb	HH 20	TR	13:00	Department of English	Wyatt Hall
    ```
 
-6. Haley's advisor wants to know what courses she's taking in her major. Assume you don't know what her major off hand when writing this query, so your query needs to look in the Major table. Although it's not the case for Haley, keep in mind that students may have more than one major!
- 
+6. Haley's advisor wants to know what courses she's taking in her major(s). Assume you don't know what her major off hand, so your query needs to involve the `Major` table. Perhaps you should start by joining together the student and the majors table to see what her majors are... but beware, you can't just use a natural join here (why?) Keep in mind that students like Haley may have more than one major!
+
    ```
    deptID   courseNum
    ------   ---------
