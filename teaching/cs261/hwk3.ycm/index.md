@@ -69,13 +69,6 @@ We need to start removing the scaffolding that I provide with each assignment in
 #### Sample Output
 
 ```
-Please select your training file:
-> wonktionary.txt
-
-Sorry, wooktionary.txt was not found!
-Please select your training file:
-> wonktionary.txt
-
 Instructions: Type in the first few letters of your query, and I'll
 try to guess what it is! Type .quit to exit the program.
 
