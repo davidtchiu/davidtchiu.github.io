@@ -143,14 +143,7 @@ try to guess what it is! Type .quit to exit the program.
 CS 261 Homework  (You Complete Me)
 
 ----------------------------------------------------------
-[5pts] Exception handling
-
-> Your program gracefully handles FileNotFoundException by
-try-catch and reprompting the user for the file name.
-
-
-----------------------------------------------------------
-[40pts] Implementation
+[45pts] Implementation
 
 > Your program opens and reads term-frequency
 data from a text file.
