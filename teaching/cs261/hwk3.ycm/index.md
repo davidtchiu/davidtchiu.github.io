@@ -2,7 +2,7 @@
 
 ### You Complete Me
 
-Autocompletion is pervasive in modern applications. As the user types, the program predicts the complete query (typically a word or phrase) that the user intends to type. Autocomplete is most effective when there are a limited number of likely queries. For example, the Internet Movie Database uses it to display the names of movies as the user types; search engines use it to display suggestions as the user enters web search queries; cell phones use it to speed up text input.
+Autocompletion is pervasive in modern applications. As the user types, the program predicts the complete query (typically a word or phrase) that the user intends to type. Autocomplete is most effective when there are a limited number of likely queries. For example, the Internet Movie Database uses it to display the names of movies as the user types; search engines use it to display suggestions as the user enters web search queries; cell phones use it to speed up text input. (The `Comparable` and `Comparator` interfaces are built-in, and won't actually show up in your UML diagram.)
 
 <center>
 <IMG SRC="figures/autocomplete-imdb.png"      width = "250" alt = "IMDB search" title = "IMDB search" style="border: 10px solid #d6d6d6" />

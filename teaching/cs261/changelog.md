@@ -7,13 +7,13 @@
 - Hwk 2: TTT - Insist that they keep a list of known open coordinates
     - In Player? In RandomPlayer?
     - What about Cooords?
-
+- Replace RG1 and RG1 sol (no more exceptions)
 - Students say they prefer Monday due dates???
-- Get rid of bin-search from Big-O, but add selection sort, replacing doTask algos.
 - Get assignment starter code on github
 
 
 # Change Log
+- Get rid of bin-search from Big-O, but add selection sort, replacing doTask algos.
 - Moved exceptions to late semester (Fall 24)
 - Moved sorting algs to recursion module (Fall 24)
 - There's too many homework assignments. Go back to 7 hwks and give everyone a break in between. (Fall 24)
