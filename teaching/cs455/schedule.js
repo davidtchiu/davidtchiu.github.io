@@ -29,7 +29,12 @@ let days = {
         url: "hwk3.ra2/",
         due: "10/4/2024",
       },
-
+      {
+        name: "Hwk 4 (sql)",
+        title: "SQL Data Ingestion",
+        url: "hwk4.sqlddl/",
+        due: "10/16/2024",
+      },
       // {
       //   name: "Hwk 4 (coding)",
       //   title: "Writing SQL Queries",
@@ -97,13 +102,13 @@ let days = {
     // ],
 
     ////////////////////////////////// LABS ////////////////////////////////
-    // labs: [
-    //   {
-    //     name: "Lab",
-    //     title: "SQL Lab!",
-    //     url: "lab.pplsoft/",
-    //   },
-    // ],
+    labs: [
+      {
+        name: "Lab",
+        title: "SQL Lab!",
+        url: "lab.pplsoft/",
+      },
+    ],
   },
 
   lectures: [

@@ -1,10 +1,8 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: Data Cleansing
+### Hwk: Data Ingestion
 
-A local college uses a popular software to manage its data. The software has been collecting years' worth of data on their students and course enrollment in a single spreadsheet, and over time, the size of this file has gotten out of hand. College administrators can no longer "eyeball" the spreadsheet to do simple analysis, and require the help of someone with database expertise...
-
-Get started by downloading [SQLite](https://www.sqlite.org/download.html). If you're using Windows, choose the "bundled" version. If you prefer to not use the sqlite command-line, there are several free SQLite GUIs you can find on Google. I am a fan of [DB Browser for SQLite](https://sqlitebrowser.org/). It's actively maintained and free.
+There's a lot of text-based ("raw") data in the real world that we have to load into a relational database to reap all the benefits of SQL. This process is called **Data Ingestion**. Suppose a local college uses a comma-delimited spreadsheet (csv file) to manage all of its data. Their software has been collecting years' worth of data on their students and course enrollment in a single spreadsheet, and over time, the size of this file has gotten out of hand. College administrators can no longer "eyeball" the spreadsheet to do simple analysis, and require the help of someone with relational database expertise... that's where you step in.
 
 #### Student Outcomes
 
@@ -19,7 +17,7 @@ The following file(s) have been provided for this assignment.
 
 #### Raw Enrollment Data
 
-To best serve you, the university provided a dump of its enrollment data into a comma-delimited file. A snippet of this file, shown below,  represents just 0.01% of the actual size of data to see if you can build a database around it for querying and more manageable analysis. They say that the remaining 99.99% of the data set follow the same format. **You are not allowed to make changes to the file given to you.**
+To best serve you, the university provided a dump of its enrollment data into a comma-delimited file. A snippet of this file, shown below, represents just 0.01% of the actual size of data to see if you can build a database around it for querying and more manageable analysis. They say that the remaining 99.99% of the data set follow the same format. **You are not allowed to make changes to the file given to you.**
 
 ```
 studentID,studentName,class,gpa,major,CourseNum,deptID,CourseName,Location,meetDay,meetTime,deptName,building
@@ -80,18 +78,18 @@ studentID,studentName,class,gpa,major,CourseNum,deptID,CourseName,Location,meetD
 
 Each line in this file represents a student enrollment. For instance, take a look at Kyle's (`1934`) info at the tail end of this file. Kyle is a `BUS` and `ENGL` double-major who is enrolled in CSCI 351, ENGL 520, and CSCI 453 (the latter enrollment a bit harder to find). At the end of each row, the last two tokens (department name and building) refer to the department in which the course is offered (and not the student's major). Take note of all the problems this file suffers from:
 
-1. **Redundancies**: It is easy to see that a student's information is duplicated for each course they are enrolled in.
-2. **Multi-valued attributes:** One of the attributes can have multiple values. A student can have 0-2 majors, and each of them is separated by a colon.
-3. **Incomplete data:** When a student is not enrolled in any course, the course-enrollment fields are delimited with commas, but there's no data. Look at Lia's (first row) information. She does not have a major and is not enrolled in any courses. Now take a look at the courses without the student info, like MATH 330 (Trigonometry). These are courses that exist on the books that no one is enrolled in. There are also departments without student or course info. This is the case for the History Department (4th row). This happens when an existing department has not yet added any courses to the schedule.
-4. **Inconsistencies:** The redundancies led to bad or stale data over time. School administrators alert you that sometimes "ENGL" is mislabeled as simply "ENG" (they say you can assume that's the only major people screw keep up) and that some people tend to abbreviate "Junior" as "JR" and "Senior" as "SR" under a student's class rank. (The abbreviated versions need to be corrected to the full spelling).
+1. **Redundancies**: It is easy to see that a student's information is duplicated on a separate row for each course they are enrolled in. (For instance, check out the last two rows for a student, Kyle.)
+2. **Multi-valued attributes:** One of the attributes can have multiple values: A student can have 0-2 majors, and each of them is separated by a colon. (Multi-valued attributes like this is prohibited by the relational model.)
+3. **Incomplete data:** When a student is not enrolled in any course, their course-enrollment fields are simply delimited with commas, but there's no data in between. Look at Lia's (first row) information. She does not have a major and is not enrolled in any courses. Now take a look at the courses without the student info, like MATH 330 (Trigonometry). These are courses that exist on the books that no one is enrolled in. Sometimes, we just need to show that a department exists, so here are also departments without student or course info. This is the case for the History Department (4th row), which can happen when an existing department has not yet added any courses to the schedule.
+4. **Inconsistencies:** These redundancies led to bad and/or stale data over time. School administrators alert you that sometimes "ENGL" is mislabeled as simply "ENG" (they say you can assume that's the only major people screw keep up) and that some people tend to abbreviate "Junior" as "JR" and "Senior" as "SR" under a student's class rank. (The abbreviated versions need to be corrected to the full spelling of the class rank). They assure you that these are the only inconsistencies in the file.
 
 #### Task 1: Schema Definition
 
 Your task is two-part: (1) You must first define a database schema in SQL. I will explain the schema's requirements below. (2) After your schema has been defined, you must write a script that will take the data from its raw format and insert it into your database.
 
-We'll focus first on Task 1. You can assume there will be no other relations needed. Create a plain-text file called **YourLastname_HW3_DDL.sql** that will store the schema definition in SQL. (Disclaimer: Yes this file must be in plain-text. Do not write these in Word (.doc), Wordpad (.rtf), etc., that adds special formatting. Use an editor like Sublime Text or Atom). Submissions in non-plaintext will be returned without a grade.
+We'll focus first on Task 1. You can assume there will be no other relations needed. Create a plain-text file called **YourLastname.txt** that will store the schema definition in SQL. (Disclaimer: Yes this file must be in plain-text. Do not write these statements in Word (.doc), Wordpad (.rtf), etc., that adds special formatting. Use an editor like VS Code or Atom). Submissions in non-plaintext will be returned without a grade.
 
-Give the SQL commands to create the relations described below. Where appropriate, all foreign-key constraints must cascade on update and delete operations, unless otherwise stated below. To make your lives easier, I've gotten a start on it for you. Place the following SQLite3 block in the top of your file:
+Give the SQL commands to create the relations described below. Where appropriate, all foreign-key constraints must cascade on update and delete operations, unless otherwise stated. To make your lives easier, I've gotten a start on it for you. Place the following code block in the top of your plaintext file:
 
 ```sql
 -- Turn on foreign keys
@@ -105,12 +103,12 @@ drop table if exists Dept;
 drop table if exists Student;
 
 -- Create the schema for your tables below
-CREATE TABLE ...
+CREATE TABLE ... -- okay now you finish the rest
 ```
 
 ##### Defining Relations
 
-Here is the schema you need to define in SQL. As you define these relations, keep in mind that the order of each table in your file matters. Like referencing variables in any language, SQLite will throw an error informing you that relations do not yet exist if you refer to them too early in the file! Each table must have a primary key defined, and each attribute must have an appropriate data type (TEXT, REAL, INTEGER).
+Here is the DB schema you need to define in SQL. As you define these relations, keep in mind that the order of each table in your file matters. Like referencing variables in any language, SQLite will throw an error informing you that relations do not yet exist if you refer to them too early in the file! Each table must have a primary key defined, and each attribute must have an appropriate data type (`TEXT`, `REAL`, or `INTEGER`).
 
 <ul>
 <li>
@@ -176,17 +174,17 @@ Here is the schema you need to define in SQL. As you define these relations, kee
 </li>
 </ul>
 
-##### Task 2: Data Cleansing and Preparation
+##### Task 2: Data Ingestion
 
-The next step is to get the raw data into your database.
+The next step is to import the raw data into your database.
 
-1. Write a script that inputs the raw data file and prints out a sequence of `INSERT OR IGNORE INTO ...` statements that you can later copy-and-paste into SQLite to fully populate the tables in your database. You may use either Java or Python to write this script. It is recommended that you use Python for this type of work, as is mostly the case in industry.
+1. Write a script that inputs the raw data file and prints out a sequence of `INSERT OR IGNORE INTO ...` statements that you can later copy-and-paste into SQLite to fully populate the tables in your database.  It is recommended that you use Python for this type of work, as is mostly the case in industry, but I don't really have a preference. You may use either Python or Java.
 
-	 The optional `OR IGNORE`  statement will ignore the insert statement if the tuple already exists in the table.
+	 The optional `OR IGNORE` statement will ignore the insert statement if the tuple already exists in the table. We didn't talk about this option in class, but it cuts down on the number of warnings.
 
-2. Along the way, your script will need to resolve all those anomalies I listed before (inconsistencies, redundancies, etc.). This step is called Data Cleansing in the real world. In some cases, you can rely on the database to resolve some anomalies. For instance, if you set a deptID to be the primary key of Department like you were supposed to, then multiple insertions of the same department would be automatically rejected by SQLite. (You will see the warnings pop up in SQLite when you go to execute.)
+2. Your script will need to resolve all those anomalies I listed before (inconsistencies, redundancies, etc.). This step is called *Data Cleansing* out in the real world. In some cases, you can rely on the database to resolve some anomalies. For instance, if you set a deptID to be the primary key of Department like you were supposed to, then multiple insertions of the same department would be automatically rejected by SQLite. (You will see the warnings pop up in SQLite when you go to execute.)
 
-3. Here are the first few lines generated by my script when given the raw data. Duplicate insert statements in your output are allowed by me. Don't worry, because you set your primary keys correctly, duplicate tuples will not be inserted.
+3. Here are the first few lines generated by my script when given the raw data. Duplicate insert statements in your output are allowed by me. Notice how my script took every row from the raw file, and generates several insert statements. Don't worry about duplicate insert statements in your output, as they will be ignored by the "OR IGNORE" clause. 
 
    ```sql
    INSERT OR IGNORE INTO Student VALUES (1001,'Lia','Junior','3.6');
@@ -203,9 +201,9 @@ The next step is to get the raw data into your database.
    INSERT OR IGNORE INTO Dept VALUES ('HIST','Department of History','Wyatt Hall');
    ```
 
-4. One thing you'll figure out very shortly is that your foreign key constraints will reject insertions where primary keys don't exist. For instance, when you insert into the Major table `(1001,'ENGL')`, but let's say `ENGL` does not yet exist in the Dept table, then SQLite will reject the insertion. This means you need to organize your insertions so that you do them in order in groups: all Students first, then Depts, then Courses, Major, and Enroll.
+4. One thing you'll figure out very shortly is that your foreign key constraints will reject insertions where primary keys don't exist. For instance, when you insert into the Major table `(1001,'ENGL')`, but let's say `ENGL` does not yet exist in the Dept table, then SQLite will reject the insertion. This means you need to organize your insertions so that you do them in order: all Students first, then Departments, then Courses, Major, and finally Enroll.
 
-5. **Important:** Save your script for submission. I don't need your script's output. I will run your script, and copy-and-paste its output directly into SQLite to grade it.
+5. **Submission:** I just need two things: First, I need a file containing your SQL statements for creating the database schema. The second file is your Python or Java script. I don't need a file containing your script's output. I will run your script against my test data, and copy-and-paste its output directly into SQLite to grade it.
 
 #### Expected Output
 
@@ -374,7 +372,7 @@ CourseNum   deptID      StudentID
 [25pt] Correctness of the schema definition, including data types, primary and foreign
     keys. (5 points per table)
 
-[35pt] Correctness of the insertion script, broken down as follows:
+[35pt] Correctness of the data ingestion script, broken down as follows:
 
     [25pt] Your script prints a sequence of valid INSERT statements that
         properly populates all tables. Duplicate INSERT statements
@@ -387,7 +385,6 @@ CourseNum   deptID      StudentID
     [5pt] Your script resolves inconsistent class-rank and department labels.
 
 [misc] Files not submitted in plain-text format will be returned without a grade.
-
 
 Total: 65pts
 ```
