@@ -69,7 +69,7 @@ We need to start removing the scaffolding that I provide with each assignment in
 #### Sample Output
 
 ```
-Instructions: Type in the first few letters of your query, and I'll
+Instructions: Type in the first few letters of your query, hit "enter", and I'll
 try to guess what it is! Type .quit to exit the program.
 
 > h
