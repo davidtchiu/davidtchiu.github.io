@@ -2,7 +2,7 @@
 
 ### You Complete Me
 
-Autocompletion is pervasive in modern applications. As the user types, the program predicts the complete query (typically a word or phrase) that the user intends to type. Autocomplete is most effective when there are a limited number of likely queries. For example, the Internet Movie Database uses it to display the names of movies as the user types; search engines use it to display suggestions as the user enters web search queries; cell phones use it to speed up text input. (The `Comparable` and `Comparator` interfaces are built-in, and won't actually show up in your UML diagram.)
+Autocompletion is pervasive in modern applications. As the user types, the program predicts the complete query (typically a word or phrase) that the user intends to type. Autocomplete is most effective when there are a limited number of likely queries. For example, the Internet Movie Database uses it to display the names of movies as the user types; search engines use it to display suggestions as the user enters web search queries; cell phones use it to speed up text input. 
 
 <center>
 <IMG SRC="figures/autocomplete-imdb.png"      width = "250" alt = "IMDB search" title = "IMDB search" style="border: 10px solid #d6d6d6" />
@@ -27,14 +27,14 @@ The following file(s) have been provided for this homework.
 - [wiktionary.txt](wiktionary.txt) - contains the 10,000 most common words in [Project Gutenberg](https://www.gutenberg.org/), with their frequencies.
 
 #### Object-Oriented Design
-We need to start removing the scaffolding that I provide with each assignment in prescribing you the overall structure of the classes.  We'll ease into this over the course of the semester, so we'll start slow --  I'll provide the class diagram below, but you'll need to fill in the rest. You should expect that future assignments might only provide the class diagram, and it's up to you to interpret it.
+We need to start removing the scaffolding that I provide with each assignment in prescribing you the overall structure of the classes.  We'll ease into this over the course of the semester, so we'll start slow --  I'll provide the class diagram below, but you'll need to fill in the rest. You should expect that future assignments might only provide the class diagram, and it's up to you to interpret it. 
 
-- Examine the class diagram given below.
+- Examine the class diagram given below. (Note the `Comparable`  interface is built into Java, and won't actually show up in your UML diagram.)
 
   <img src="figures/AutoHomeworkClassDiag.png" width="500px">
 
 
-- `TermFrequency` -- This class encapsulates a term-frequency pair. This class is simple. You only need to provide getters and setters to input/retrieve the term or frequency. Objects of this class eventually need to be ordered by decreasing frequency. Therefore, this class needs to implement the `Comparable` interface.
+- `Term` -- This class encapsulates a term-frequency pair (given as each row in the input file). This class is simple. You only need to provide getters and setters to input/retrieve the term or frequency itself. Objects of this class eventually need to be ordered by decreasing frequency. Therefore, this class needs to implement the `Comparable` interface.
 
 - `Autocomplete` -- This is the heart of your project. Among other things, this class stores a list of term-frequency objects and provides functionalities for searching through the list for terms that match the user's "query." Objects of this class must open a given training file and read the file's contents into its list. Because searching through terms ought to be fast, you should add items to its term-frequency  in alphabetical order.
 
@@ -47,19 +47,19 @@ We need to start removing the scaffolding that I provide with each assignment in
 
 2. When the user types in a query, which may be only the prefix of a word of interest, you must search through your list of terms and return a list of all terms whose prefixes match the given prefix. For instance, if the query was How then your List might contain: how, howdy, howl, howling, howitzer, and so on.
 
-3. The list of autocompleted terms must then be sorted in descending order of the terms' frequencies. Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. You may call `Collections.sort(...)` static method for this step, but how do you sort the list of terms by their frequency? (Oh weird! There's an alternate 2-argument `Collections.sort(...)` method that inputs a `Comparator` object.)
+3. Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. To have that same effect, your list of auto-completed terms must be sorted in descending order of the their frequencies. To do this, you should call the `Collections.sort(...)` method prior to printing out the list of matched terms, and if you implemented the `Comparable` interface correctly, your results should be sorted in descending frequency after calling `Collections.sort(...)`.
 
-4. You must provide a `UserInterface` class, that contains a single method, `public static void main(String[] args)`. If there are other static methods in this class, they must be made private so that they're hidden from the user. The main method should simply instantiate and start your program.
+4. You must provide a `UserInterface` class, that contains a single static method, `public static void main(String[] args)`. If there are other static methods in this class, they must be made private so that they're hidden from the user. The main method should simply instantiate and start your program.
 
 5. When your program starts,  it should prompt the user for the name of the "training file," (i.e., `wiktionary.txt`). Note that any method that attempts to open a file can't compile until you've thrown or caught a *file not found exception*. The easiest way to do this is to add the following `throws` suffix to your method:
 
-  ```java
-  public void aMethodThatOpensFile() throws FileNotFoundException {
-    // code to open and read a file
-  }
-  ```
+    ```java
+    public void aMethodThatOpensFile() throws FileNotFoundException {
+      // code to open and read a file
+    }
+    ```
 
-After reading the training file contents into your list, your then enters an infinite loop, requesting for a *query* until the user enters `.quit`. After the user types in a query, you extract the last word in the query and use it to do your autocompletion routine. Print out the first 10 matches, if there are that many.
+  After reading the training file contents into your list, your then enters an infinite loop, requesting for a  *query* until the user enters `.quit`. After the user types in a query, you extract the last word in the query and use it to do your autocompletion routine. Print out the first 10 matches, if there are that many.
 
 <!--
 5. When your program starts,  it should prompt the user for the name of the "training file," (i.e., `wiktionary.txt`). Your program should then attempt to open this file and read in its contents, but you must use a try-catch clause to handle checked exception `FileNotFoundException` that is thrown. As long as the file cannot be opened, re-prompt the user for the name of the file. Your program should not move on until this is resolved. After reading the training file contents into your list, your then enters an infinite loop, requesting for a *query* until the user enters `.quit`. After the user types in a query, you extract the last word in the query and use it to do your autocompletion routine. Print out the first 10 matches, if there are that many.
