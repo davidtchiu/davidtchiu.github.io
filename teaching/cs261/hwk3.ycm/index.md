@@ -47,13 +47,24 @@ We need to start removing the scaffolding that I provide with each assignment in
 
 2. When the user types in a query, which may be only the prefix of a word of interest, you must search through your list of terms and return a list of all terms whose prefixes match the given prefix. For instance, if the query was How then your List might contain: how, howdy, howl, howling, howitzer, and so on.
 
-3. The list of autocompleted terms must then be sorted in descending order of the terms' frequencies. Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. You may call `Collections.sort()` static method for this step, but how do you sort the list of terms by their frequency? 
+3. The list of autocompleted terms must then be sorted in descending order of the terms' frequencies. Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. You may call `Collections.sort(...)` static method for this step, but how do you sort the list of terms by their frequency? (Oh weird! There's an alternate 2-argument `Collections.sort(...)` method that inputs a `Comparator` object.)
 
 4. You must provide a `UserInterface` class, that contains a single method, `public static void main(String[] args)`. If there are other static methods in this class, they must be made private so that they're hidden from the user. The main method should simply instantiate and start your program.
 
+5. When your program starts,  it should prompt the user for the name of the "training file," (i.e., `wiktionary.txt`). Note that any method that attempts to open a file can't compile until you've thrown or caught a *file not found exception*. The easiest way to do this is to add the following `throws` suffix to your method:
+
+  ```java
+  public void aMethodThatOpensFile() throws FileNotFoundException {
+    // code to open and read a file
+  }
+  ```
+
+After reading the training file contents into your list, your then enters an infinite loop, requesting for a *query* until the user enters `.quit`. After the user types in a query, you extract the last word in the query and use it to do your autocompletion routine. Print out the first 10 matches, if there are that many.
+
+<!--
 5. When your program starts,  it should prompt the user for the name of the "training file," (i.e., `wiktionary.txt`). Your program should then attempt to open this file and read in its contents, but you must use a try-catch clause to handle checked exception `FileNotFoundException` that is thrown. As long as the file cannot be opened, re-prompt the user for the name of the file. Your program should not move on until this is resolved. After reading the training file contents into your list, your then enters an infinite loop, requesting for a *query* until the user enters `.quit`. After the user types in a query, you extract the last word in the query and use it to do your autocompletion routine. Print out the first 10 matches, if there are that many.
 
-
+-->
 
 #### Sample Output
 
