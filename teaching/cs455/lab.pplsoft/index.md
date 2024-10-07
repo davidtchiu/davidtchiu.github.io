@@ -56,7 +56,7 @@ For each of the following problems, write an SQL query to return the expected re
    460         MATH        Calculus 3  WEY 102     TR          12:30
    ```
 
-4. Return David's, course schedule. Assume you don't have David's student ID, and that they're the only one with that name (not likely in practice, but roll with it). Only `Course`'s attributes should be projected. Order by `DeptID` then by `Course Number`.
+4. Return David's, course schedule. Assume you don't know David's student ID off hand, so you'll need to look him up by his name. (Yes you may assume he's the only one with that name in this database). Only `Course`'s attributes should be projected. Order by `DeptID` then by `Course Number`.
 
    ```
    deptID      CourseNum   CourseName        Location    meetDay     meetTime
@@ -76,7 +76,7 @@ For each of the following problems, write an SQL query to return the expected re
    520	ENGL	Shakespeare Was Da Bomb	HH 20	TR	13:00	Department of English	Wyatt Hall
    ```
 
-6. Haley's advisor wants to know what courses she's taking in her major. Assume you don't know what her major is when writing this query.
+6. Haley's advisor wants to know what courses she's taking in her major. Assume you don't know what her major off hand when writing this query, so your query needs to look in the Major table.
  
    ```
    deptID   courseNum
