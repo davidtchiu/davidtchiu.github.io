@@ -39,12 +39,14 @@ let days = {
       }, 
       // {
       //   name: "Hwk 4",
-      //   title: "Sentiment Analysis",
-      //   url: "hwk4.sent/",
-      //   due: "10/9/2024",
+      //   title: "A Generic ArrayList",
+      //   url: "hwk4.AL/",
+      //   due: "10/21/2024",
       // },
+
+
       // {
-      //   name: "Hwk 4",
+      //   name: "Hwk 5",
       //   title: "Doubly Linked List",
       //   url: "hwk4.LL/",
       //   due: "10/21/2024",

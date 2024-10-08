@@ -399,16 +399,41 @@ Now our `MyArrayList` now stores unlimited `doubles`, but they are supposed to b
 #### Grading
 
 ```
-This assignment will be graded out of 100 points, provided that:
+This assignment will be graded out of 65 points:
 
-[5pts] Completion of lastIndexOf()
-[10pts] Completion of subList()
-[10pts] Completion of removeRange()
-[15pts] Copmletion of retainAll()
-[15pts] Completion of 2 argument addAll()
-[10pts] Completion of 1 argument addAll()
-[15pts] Completion of removeAll()
-[20pts] Your MyArrayList supports generic types.
+[5pts] Completion of lastIndexOf(E item). It searches for a given item and
+       returns the highest index at which it was found. If not found,
+       it returns -1. Be careful not to use == when comparing two objects
+       of type E.
+
+[5pts] Completion of subList(int fromIndex, int toIndex). It instantiates 
+       and returns another MyArrayList<E> of the elements within the given 
+       range of indices, including the element at fromIndex, but excluding
+       the element at toIndex. The original list is left unchanged.
+
+[5pts] Completion of removeRange(int fromIndex, int toIndex). It removes 
+       all elements from the current list that are within the specified 
+       range of indices, including the element at fromIndex, but excluding
+       the element at toIndex.
+       
+[10pts] Completion of retainAll(MyList<E> other). It retains only the 
+        elements in the current list that are found in a second list.
+        The contents of the other given list must remain unchanged.
+
+[10pts] Completion of 2 argument addAll(int index, MyList<E> other). It 
+        adds all elements from the given list in sequence following 
+        the specified index.
+        The contents of the other given list must remain unchanged.
+
+[5pts] Completion of 1 argument addAll(MyList<E> other). It adds all 
+       elements from the given list to the tail of the current list.
+       The contents of the other given list must remain unchanged.
+
+[10pts] Completion of removeAll(MyList<E> other). It removes from the 
+        current list all elements found in the other given list.
+        The contents of the other given list must remain unchanged.
+
+[15pts] Your MyArrayList<E> supports generic types and implements MyList<E>.
 ```
 
 #### Submitting Your Assignment
