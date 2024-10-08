@@ -59,7 +59,7 @@ The following file(s) have been provided for this lab.
 #### Part 3: Generic Typing
 Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are supposed to be able to store any type of object. In this section we refactor our `MyArrayList` to accept generic types.
 
-- First Copy and paste the following code directly into your `MyList` interface file, replacing what used to be there. All references to `double` have been replaced with `E`.
+- First Copy and paste the following code directly into your `MyList` interface file, replacing what used to be there. All references to `double` have been replaced with `E`. Also note that `<E>` has been appended to the name of the `MyList` interface.
 
   ```java
    /**
@@ -146,19 +146,13 @@ Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are 
 - Back in your `MyArrayList` class, you need to update the class header so that it accepts a generic type. We will name this type `E`. If you need a reminder on this syntax, click on the button below.
 
   ```java
-  public class MyArrayList<E> implements MyList<E> {
-    // ...
-  }
+  public class MyArrayList<E> implements MyList<E> 
   ```
 
 - Refactoring the Instance Variables: Anywhere you make a reference to the old type of the stored data (it was an array of doubles), you must now replace its declaration with `E`. You see, once the user fills in `E` with a concrete type (like `String`, `Double`, `Integer`, `BasicDie`, etc.), Java plugs that into where ever `E` appears. If you need a reminder, click on the button.
 
   ```java
-  public class MyArrayList<E> implements MyList<E> {
-    private E[] the_data;  // an array of generic objects
-
-    /** other code omitted */
-  }
+    private E[] data;  // an array of generic objects
   ```
 
 - Refactoring the Constructor: The constructor gives initial values to instance variables. In our case the generic array needs to be instantiated as an array of `Objects`. But as we know, the array of `Object`s is hardly an array of type `E`, and therefore we must type cast. Notice that there is no diamond notation in the signature of the constructor.
@@ -166,7 +160,7 @@ Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are 
   ```java
   public MyArrayList(int init_cap) {
     this.capacity = init_cap;
-    this.the_data = (E[]) new Object[init_cap]; //initiates the array of Objects
+    this.data = (E[]) new Object[init_cap]; //initiates the array of Objects
                                            //the cast to E[] is required
   }
   ```
