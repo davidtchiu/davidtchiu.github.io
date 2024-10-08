@@ -35,12 +35,13 @@ The following file(s) have been provided for this lab.
   - In both methods, you need to be sure that the given index is valid before you can do anything! Regardless of `capacity`, if the `size` of the list is $$n$$, but you want to access position $$n$$ or greater, you have to disallow that! The same goes for indices that are given to be lower than 0.
   - So, what should you do in those cases? It's customary to "raise" or "throw" an exception, which is just another name for "error." In our case, we'll throw  an `ArrayIndexOutOfBoundsException`.
 
-      ```java
-      // The given index is illegal! Throw an exception to alert the user!
-      if (index < 0 || index >= size) {
-        throw new ArrayIndexOutOfBoundsException(index);
-      }
-      ```
+    ```java
+    // The given index is illegal! Throw an exception to alert the user!
+    if (index < 0 || index >= size) {
+      throw new ArrayIndexOutOfBoundsException(index);
+    }
+    ```
+
   - We don't have to know what that block means yet, but anytime in your code, if a given index is invalid, use this code to alert users!
 
 #### Code Along Part 2: Reallocation and the Add Methods
