@@ -11,7 +11,7 @@ In this assignment, you will finish the `MyArrayList` implementation we started 
 
 #### Required Files
 The following file(s) have been provided to you.
-- [Lab_MyArrayList.zip](Lab_MyArrayList.zip)
+- [Hwk4_MyArrayList.zip](Hwk4_MyArrayList.zip)
 
 
 #### Part I: Completing the MyArrayList Implementation
@@ -150,11 +150,79 @@ Download the project file and extract it into somewhere convenient. Open the pro
   > [2.0, 2.0, 3.0]
   ```
 
-- Write the method, `void addAll(int index, MyList other)` that adds all elements in the input list to the specified position.
+- Write the method, `void addAll(int index, MyList other)` that adds all elements in the input list to the specified position. You should be using the 2-argument add method that you wrote during lab!
+
+  ```java
+  MyList list_A = new MyArrayList();
+  list_A.add(1);
+  list_A.add(2);
+  list_A.add(3);
+  System.out.println(list_A);
+  > [1.0, 2.0, 3.0]
+
+  MyList list_B = new MyArrayList();
+  list_B.add(4);
+  list_B.add(5);
+  System.out.println(list_B);
+  > [4.0, 5.0]
+  
+  // insert list B starting from the third position (2)
+  list_A.addAll(2, list_B);
+  System.out.println(list_A);
+  > [1.0, 2.0, 4.0, 5.0, 3.0]]
+  ```
 
 - Now you should be able to write the 1-argument version, `void addAll(MyList other)` quite easily. This simply adds all elements in the input list to the end of the current list. 
 
-- Write the method `void removeAll(MyList list)` that removes all elements found in the input list from the current list. 
+  ```java
+  MyList list_A = new MyArrayList();
+  list_A.add(1);
+  list_A.add(2);
+  list_A.add(2);
+  list_A.add(1);
+  list_A.add(3);
+  list_A.add(1);
+  System.out.println(list_A);
+  > [1.0, 2.0, 2.0, 1.0, 3.0, 1.0]
+
+  MyList list_B = new MyArrayList();
+  list_B.add(2);
+  list_B.add(3);
+  System.out.println(list_B);
+  > [2.0, 3.0]
+  
+  // add list A to the tail of list B
+  list_B.addAll(list_A);
+  System.out.println(list_B);
+  > [2.0, 3.0, 1.0, 2.0, 2.0, 1.0, 3.0, 1.0]
+  ```
+
+
+- Write the method `void removeAll(MyList list)` that removes all elements found in the input list from the current list. This one can be slightly tricky because you have to remove all instances. For example, if a list has `[4,5,6,6,1,2,6,8]` and the second list has `[6,8]` then after calling this method, you should be left with `[4,5,1,2]`
+
+  ```java
+  MyList list_A = new MyArrayList();
+  list_A.add(4);
+  list_A.add(5);
+  list_A.add(6);
+  list_A.add(6);
+  list_A.add(1);
+  list_A.add(2);
+  list_A.add(6);
+  list_A.add(8);
+  System.out.println(list_A);
+  > [4.0, 5.0, 6.0, 6.0, 1.0, 2.0, 6.0, 8.0]
+
+  MyList list_B = new MyArrayList();
+  list_B.add(6);
+  list_B.add(8);
+  System.out.println(list_B);
+  > [6.0, 8.0]
+  
+  list_A.removeAll(list_B);
+  System.out.println(list_A);
+  > [4.0, 5.0, 1.0, 2.0]
+  ```
 
 - As always, test your code using various edge cases to ensure that everything works as expected!
 
@@ -331,15 +399,15 @@ Now our `MyArrayList` now stores unlimited `doubles`, but they are supposed to b
 #### Grading
 
 ```
-This assignment will be graded out of 2 points, provided that:
+This assignment will be graded out of 100 points, provided that:
 
-[10pts] Completion of lastIndexOf()
+[5pts] Completion of lastIndexOf()
 [10pts] Completion of subList()
 [10pts] Completion of removeRange()
 [15pts] Copmletion of retainAll()
 [15pts] Completion of 2 argument addAll()
 [10pts] Completion of 1 argument addAll()
-[10pts] Completion of removeAll()
+[15pts] Completion of removeAll()
 [20pts] Your MyArrayList supports generic types.
 ```
 
