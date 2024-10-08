@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Lab 6: Code-Along Lab (ArrayList)
+### Lab 6: Code-Along (MyArrayList)
 
 In this lab, you will begin implementing the `MyArrayList` class, which is an analog to the *real* `ArrayList` class provided by Java. As I mentioned, the real `ArrayList` must implement Java's `List` interface, which is massive. We'll implement the `MyList` interface, which is just a subset `List` methods. You'll also learn how to deal with generic typing (i.e., "diamond notation"). 
 
