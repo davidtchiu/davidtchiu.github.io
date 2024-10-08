@@ -56,16 +56,151 @@ The following file(s) have been provided for this lab.
 
 5. Finally, add the 1-argument add method. Because the 1-argument add method simply adds the given element to a specific index, we can just call the 2-argument method (that's why we wrote it first!). This should just require one line.
 
+#### Part 3: Generic Typing
+Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are supposed to be able to store any type of object. In this section we refactor our `MyArrayList` to accept generic types.
 
-#### Part 3: On Your Own 
+- First Copy and paste the following code directly into your `MyList` interface file, replacing what used to be there. All references to `double` have been replaced with `E`.
+
+  ```java
+   /**
+    * An abbreviated List<E> interface
+    *
+    * @author David
+    * @version 10/6/19
+    */
+    public interface MyList<E> {
+        /**
+        * Adds an item to the tail of the list
+        * 
+        * @param item the item to add
+        * @return always return true
+        */
+        boolean add(E item);
+
+        /**
+        * Adds item to specified location in the list
+        * 
+        * @param index the position in which to add the item
+        * @param item a new item to add
+        * @return always return true
+        * @throws ArrayIndexOutOfBoundsException if the given index is illegal
+        */
+        boolean add(int index, E item);
+
+        /**
+        * Gets the item at the specified index
+        * 
+        * @param index the item's position
+        * @return the item
+        * @throws ArrayIndexOutOfBoundsException if the given index is illegal
+        */
+        E get(int index);
+
+        /**
+        * Sets the position at the specified index to a new item
+        * 
+        * @param index the item's position
+        * @param new_item the new item
+        * @return a reference to the displaced item
+        * @throws ArrayIndexOutOfBoundsException if the given index is illegal
+        */
+        E set(int index, E new_item);
+
+        /**
+        * Removes an item at the given position
+        * 
+        * @param index the index to the item to remove
+        * @return a reference to the item that was removed
+        * @throws ArrayIndexOutOfBoundsException if the given index is illegal
+        */
+        E remove(int index);
+
+        /**
+        * Removes an item from the list.
+        * 
+        * @param item a reference to the item to remove
+        * @return true if successful, and false otherwise
+        */
+        boolean remove(E item);
+
+        /**
+        * @return current size of the list
+        */
+        int size();
+
+        /**
+        * Searches the list for the specified item
+        * @param item the item to look for
+        * @return the index of the first occurrence if found, -1 otherwise
+        */
+        int indexOf(E item);
+
+        /**
+        * @return string representation of the array list
+        */
+        @Override
+        String toString();
+    }
+  ```
+
+- Back in your `MyArrayList` class, you need to update the class header so that it accepts a generic type. We will name this type `E`. If you need a reminder on this syntax, click on the button below.
+
+  ```java
+  public class MyArrayList<E> implements MyList<E> {
+    // ...
+  }
+  ```
+
+- Refactoring the Instance Variables: Anywhere you make a reference to the old type of the stored data (it was an array of doubles), you must now replace its declaration with `E`. You see, once the user fills in `E` with a concrete type (like `String`, `Double`, `Integer`, `BasicDie`, etc.), Java plugs that into where ever `E` appears. If you need a reminder, click on the button.
+
+  ```java
+  public class MyArrayList<E> implements MyList<E> {
+    private E[] the_data;  // an array of generic objects
+
+    /** other code omitted */
+  }
+  ```
+
+- Refactoring the Constructor: The constructor gives initial values to instance variables. In our case the generic array needs to be instantiated as an array of `Objects`. But as we know, the array of `Object`s is hardly an array of type `E`, and therefore we must type cast. Notice that there is no diamond notation in the signature of the constructor.
+
+  ```java
+  public MyArrayList(int init_cap) {
+    this.capacity = init_cap;
+    this.the_data = (E[]) new Object[init_cap]; //initiates the array of Objects
+                                           //the cast to E[] is required
+  }
+  ```
+
+- Refactoring the Remaining Code: Go through the remaining methods and replace any reference to the old data type to the generic type, `E`. This includes all return types, local variables, and input parameters. Important: One thing you need to pay attention to is anywhere you're testing for equivalence using `==` or `!=`. You had to use these operators when comparing `doubles`, but now you're comparing objects, and `==` and `!=` are no longer useful. Use the `equals()` method instead.
+
+- Important! Testing: After you're done making all the changes, let's make sure things are working as we'd expect. Here's an example showing my list holding Doubles and Strings.
+
+  ```java
+  MyArrayList<Double> list_of_nums = new MyArrayList<>();
+  list_of_nums.add(3.14);
+  list_of_nums.add(2.718);
+  System.out.println(list_of_nums.toString());
+  > [3.14, 2.718]
+
+  MyArrayList<String> list_of_names = new MyArrayList<>();
+  list_of_names.add("Julie");
+  list_of_names.add("Jill");
+  list_of_names.add("Janice");
+  System.out.println(list_of_names.indexOf("Jill"));
+  > 1
+  ```
+
+#### Part 4: On Your Own 
 
 There are still three methods remaining that you need to implement on your own.
 
-1. Start with the easy one, `indexOf(double item)`. It searches your underlying `data` array for the given element. If it's found, it returns the index at which it was first encountered. If not found, it returns -1. This is just linear search.
+1. Start with the easy one, `indexOf(E item)`. It searches your underlying `data` array for the given element. If it's found, it returns the index at which it was first encountered. If not found, it returns -1. This is just linear search. Beware, the input `item` is an object of type E. Do not use `==` to compare two objects. Use its `.equals()` method instead.
 
-2. Move on to the `double remove(int index)` method. This method needs to first check to see if the index is legal (throw that exception if it's not). You need to save the current element at the given index, because you have to return it later. After you've saved it, you need to shift every element over to the left of index by one spot. Don't forget to decrement `this.size`.
+2. Move on to the `E remove(int index)` method. This method needs to first check to see if the index is legal (throw that exception if it's not). You need to save the current element at the given index, because you have to return it later. After you've saved it, you need to shift every element over to the left of index by one spot. Don't forget to decrement `this.size`.
 
-3. Finally, write the `boolean remove(double item)` method. This method searches for the given `item`, and if found, it removes it from the list. Hmm, you just wrote a method to search and a method to remove. I wonder if this can be done in a couple of lines? Return a true if found and removed, or false if not found.
+3. Finally, write the `boolean remove(E item)` method. This method searches for the given `item`, and if found, it removes it from the list. Hmm, you just wrote a method to search and a method to remove. I wonder if this can be done in a couple of lines? Return a true if found and removed, or false if not found.
+
+
 
 #### Grading
 
