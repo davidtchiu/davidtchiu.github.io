@@ -2,7 +2,7 @@
 
 ### SQL Lab: Writing SQL Queries for the University Database!
 
-You're finally ready to conduct the analysis that the college wants. The data, though synthetic, is an analog to the real data in our university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually run when generating our year-end reports!
+We're finally to ready to get some hands on experience with a SQL database! The data set, although synthetic, is an analog to the real data found in any university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually have to run when generating year-end reports!
 
 
 #### Student Outcomes
