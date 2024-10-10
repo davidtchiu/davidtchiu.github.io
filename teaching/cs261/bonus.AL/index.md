@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Hwk 4: Finish Implementing MyArrayList
+### Bonus: Additional MyArrayList Methods!
 
 In this assignment, you will finish the `MyArrayList` implementation we started in class/lab, and add a few more methods that aren't really part of the `List` interface. You'll also learn how to deal with generic typing (i.e., "diamond notation"). 
 
@@ -397,8 +397,11 @@ Now our `MyArrayList` now stores unlimited `doubles`, but they are supposed to b
   ```
 
 #### Grading
-
 ```
+Completion of *all* methods fetches +5 pts added to Exam 1.
+```
+
+<!-- ```
 This assignment will be graded out of 65 points:
 
 [5pts] Completion of lastIndexOf(E item). It searches for a given item and
@@ -434,7 +437,7 @@ This assignment will be graded out of 65 points:
         The contents of the other given list must remain unchanged.
 
 [15pts] Your MyArrayList<E> supports generic types and implements MyList<E>.
-```
+``` -->
 
 #### Submitting Your Assignment
 Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.

@@ -39,7 +39,7 @@ let days = {
       }, 
       {
         name: "Bonus Hwk",
-        title: "A Generic ArrayList",
+        title: "Additional ArrayList Methods",
         url: "bonus.AL/",
         due: "12/18/2024",
       },
