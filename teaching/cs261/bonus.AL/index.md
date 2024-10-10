@@ -399,6 +399,7 @@ Now our `MyArrayList` now stores unlimited `doubles`, but they are supposed to b
 #### Grading
 ```
 Completion of *all* methods fetches +5 pts added to Exam 1.
+Your array list must support generic objects.
 ```
 
 <!-- ```
