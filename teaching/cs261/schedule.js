@@ -41,7 +41,7 @@ let days = {
         name: "Bonus Hwk",
         title: "A Generic ArrayList",
         url: "bonus.AL/",
-        due: "10/21/2024",
+        due: "12/18/2024",
       },
 
 
@@ -108,12 +108,12 @@ let days = {
         url: "lab5.bigO/",
         due: "10/4/2024",
       },
-      // {
-      //   name: "Lab 6",
-      //   title: "ArrayLists Lab",
-      //   url: "lab6.AL/",
-      //   due: "10/11/2024",
-      // },
+      {
+        name: "Lab 6",
+        title: "ArrayLists Lab",
+        url: "lab6.AL/",
+        due: "10/11/2024",
+      },
       // {
       //   name: "Lab 7",
       //   title: "Stacks and Queues Lab",
