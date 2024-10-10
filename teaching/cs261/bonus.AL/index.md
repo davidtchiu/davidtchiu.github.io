@@ -7,6 +7,7 @@ In this assignment, you will finish the `MyArrayList` implementation we started 
 
 #### Objectives
 - To understand the internal implementation of the `ArrayList` class.
+- To practice writing loops.
 - To practice declaring generic types.
 
 #### Required Files
