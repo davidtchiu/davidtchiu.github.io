@@ -37,12 +37,12 @@ let days = {
         url: "hwk3.ycm/",
         due: "10/7/2024",
       }, 
-      // {
-      //   name: "Hwk 4",
-      //   title: "A Generic ArrayList",
-      //   url: "hwk4.AL/",
-      //   due: "10/21/2024",
-      // },
+      {
+        name: "Bonus Hwk",
+        title: "A Generic ArrayList",
+        url: "bonus.AL/",
+        due: "10/21/2024",
+      },
 
 
       // {
@@ -174,14 +174,13 @@ let days = {
     "Lab 4: Interfaces Lab",
     "Start: Big-O notation",
     // wk 5
-    // "Start Big-O",
     "More Big-O examples",
     "More Big-O examples",
     "Lab 5: Big-O lab",
     "List interface, ArrayList: add(), reallocate()",
     // wk 6
     "<strong><emph>Review for Exam 1</emph></strong>",
-    "<strong><emph>Exam 1</emph></strong>",
+    "<strong><emph>Exam 1</emph></strong>",   // NO, DON'T DO EXAMS ON WED. THERE'SLAB NEXT DAY
     "Lab 6: ArrayList Implementation lab",
     "Start Linked Lists",
     // wk 7
