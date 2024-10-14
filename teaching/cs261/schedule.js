@@ -183,17 +183,18 @@ let days = {
     "<strong><emph>Review for Exam 1</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",   // NO, DON'T DO EXAMS ON WED. THERE'SLAB NEXT DAY
     "Lab 6: ArrayList Implementation lab",
-    "Start Linked Lists",
+    "Start Linked Lists: The Node inner class",
     // wk 7
-    "LL: indexOf(), add()",
-    "LL optimizations (tail, iterator)",
-    "Lab 7: Homework Lab?",
-    "Stack<E>, infix algorithm",
+    "LL: indexOf(), getNodeAt(), get(), set()",
+    "LL: addFirst(), addAfter(), add()",
+    "Lab 7: LL Homework Lab",
+    "LL: optimizations (tail, iterator)",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Queue<E>, PriorityQueues<E>",
+    "Stack<E>, infix algorithm",
     "Lab 8: Stacks and Queues",
-    "PriorityQueue: Dijkstra's shortest path",
+    "Queue<E>, PriorityQueues<E>",
+//      "PriorityQueue: Dijkstra's shortest path",
     // wk 9:
     "Start recursion: setup and tracing",
     "Recursion: code reading, common pitfalls",
