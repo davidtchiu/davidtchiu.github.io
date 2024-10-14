@@ -38,6 +38,12 @@ let days = {
         due: "10/7/2024",
       }, 
       {
+        name: "Hwk 5",
+        title: "Doubly Linked List",
+        url: "hwk5.LL/",
+        due: "10/23/2024",
+      },
+      {
         name: "Bonus Hwk",
         title: "Additional ArrayList Methods",
         url: "bonus.AL/",
@@ -45,12 +51,7 @@ let days = {
       },
 
 
-      // {
-      //   name: "Hwk 5",
-      //   title: "Doubly Linked List",
-      //   url: "hwk4.LL/",
-      //   due: "10/21/2024",
-      // },
+
       // {
       //   name: "Hwk 5",
       //   title: "Ranked Choice Voting (Paired)",
