@@ -21,7 +21,7 @@ The following file(s) have been provided for this homework.
 
 #### Preamble: The Remove Operations
 
-This assignment is all about how to optimize our singly linked list. In order to understand the running time of its methods, I've added a couple of modifications to the `SinglyLinkedList` to count and report hops. A "hop" refers to each "link" that must be crossed to access a certain Node in the list. For instance,
+This assignment is all about how to optimize our singly linked list. In order to understand the running time of its methods, I've added a couple of modifications to the `SinglyLinkedList` to count and report hops. A "hop" refers to each "link" that must be crossed to access a certain `Node` in the list. For instance,
 
 ```java
 SinglyLinkedList<String> list = new SinglyLinkedList<>();
@@ -30,17 +30,38 @@ list.add("doc");
 list.add("donkey");
 list.add("doughy");
 list.add("dorky");
+System.out.println(list);
 System.out.println("Hops taken " + list.getHopCount());
-> Hops taken 6
 
-System.out.println(list.toString());
 > [dopey, doc, donkey, doughy, dorky]
-
-System.out.println("Hops taken " + list.getHopCount());
-> Hops taken 11
+> Hops taken 6
 ```
 
-1. Take some time to look over the code that's in the class and understand how it works. Check out the "`LinkTester`" class, which contains a main method for testing your code. It creates a singly linked list of 10,000 elements, then sums all those elements traversing the list in forward and in reverse direction. Then it prints out the number of "hops" that it required. If you ran the main method, you should get the following output:
+Let's take a moment to analyze why the code shown above required 6 hops. The 1-argument add meethod links the new item behind the current tail of the list. But recall that a `SinglyLinkedList` only knows about the `head` element, so in order to find the current tail, you need to traverse the list from the head each time! Let's count together:
+- To add dopey, **it took 0 hops**, since the list was empty. The head simply points to `null` and we don't need to traverse any links to set head to `dopey`.
+    ```
+    null (link dopey here)
+    ```
+- To add doc, **it also took 0 hops**, since `dopey` is both the head and the tail, it did not require traversing any links. We just had to access the head once again to link up `doc`.
+    ```
+    dopey (link doc here)
+    ```
+- To add `donkey`, it took 1 hop to get to `doc`.
+    ```
+    dopey --1--> doc (link donkey here)
+    ```
+- To add `doughy`, it took 2 hops to get to `donkey`.
+    ```
+    dopey --1--> doc --2--> donkey (link doughy here)
+    ```
+- To add `dorky`, it took 3 hops to get to `doughy`.
+    ```
+    dopey --1--> doc --2--> donkey --3--> doughy (link dorky here)
+    ```
+
+Altogether, it required a total of 6 hops to add all these elements. How do you expect the number of hops to grow as the number of elements grow?
+
+1. Check out the "`LinkTester`" class, which contains a main method for testing your code. It creates a singly linked list of 10,000 elements, then sums up all those elements traversing the list in forward and in reverse-order traversal. Then it prints out the number of "hops" that it required. If you ran the main method, you should get the following output:
 
     ```
     Singly: 
