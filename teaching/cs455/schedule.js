@@ -137,9 +137,9 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
-    "SQL: subqueries",
     "SQL: grouping and aggregation",
     "SQL Work Day",
+    "Disk and Files: access patterns",
     // wk 8
     "<strong>Fall Break</strong>",
     "Disk and Files: access patterns",
