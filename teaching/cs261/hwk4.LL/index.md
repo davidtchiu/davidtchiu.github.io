@@ -19,7 +19,7 @@ The following file(s) have been provided for this homework.
 - [Hwk_SinglyLinkedList.zip](Hwk_SinglyLinkedList.zip)
 
 
-#### Preamble
+#### Preamble: The Remove Operations
 
 This assignment is all about how to optimize our singly linked list. In order to understand the running time of its methods, I've added a couple of modifications to the `SinglyLinkedList` to count and report hops. A "hop" refers to each "link" that must be crossed to access a certain Node in the list. For instance,
 
