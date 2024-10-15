@@ -123,7 +123,7 @@ System.out.println("Hops taken " + list.getHopCount());
 <!-- 4. Next, write a method called `public void reverse()` that reverses the contents of your linked list. You should manipulate the `Node` objects directly: Identify the tail element, unlink it, and move it to the head. Then grab the new tail node and move it behind the new head, and so on. -->
 
 
-#### Instructions
+#### Optimizations
 
 3. **Optimizing tail accesses:** As we know, the 1-argument `add()` method inserts a new item to the tail of the list. In practice, it is one of the most common operations on lists, so this has to be fast. In the current implementation, adding to the tail would be an $$O(n)$$ operation. 
 
