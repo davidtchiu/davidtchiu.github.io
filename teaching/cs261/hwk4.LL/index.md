@@ -210,15 +210,15 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
 
     - Next, change the `getNodeAt()` helper method to traverse in the appropriate direction, depending on the value of the given index, and the current location of the iterator (location cache):
 
-        - If the given index is to the left of the iterator, but is closer to the head, then traverse right starting from the head. (This is currently what's being done)
+        - If the given index is to the left of the iterator, but is closer to the head, then traverse to the East direction starting from the head. (This is currently what's being done)
 
-        - If the given index is to the right of the iterator, and is closer to the iterator than it is to the tail, then traverse right starting from the iterator. (This is currently what's being done)
+        - If the given index is to the right of the iterator, and is closer to the iterator than it is to the tail, then traverse East starting from the iterator. (This is currently what's being done)
 
-        - If the given index is to the right of the iterator, but is closer to the tail, then traverse left (using the previous links) from the tail.
+        - If the given index is to the right of the iterator, but is closer to the tail, then traverse west (using the previous links) from the tail.
 
-        - If the given index is to the left of the iterator, and is closer to the iterator than the head, then traverse left (using the previous links) from the iterator.
+        - If the given index is to the left of the iterator, and is closer to the iterator than the head, then traverse west (using the previous links) from the iterator.
 
-        - Don't forget to update the "hop counts" when traversing left too!
+        - Don't forget to update the "hop counts" when traversing west too!
 
     - After you make this modification, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
 
@@ -234,6 +234,8 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
         Still singly linked. Remove-last 10000 times: took 49985001 hops
         After doubly linked. Remove-last 10000 times: took 9999 hops
         ```
+
+Congratulations!! After all these optimizations are put in, you have mostly implemented Java's `LinkedList<E>` class!
 
 #### Grading
 ```
@@ -295,8 +297,8 @@ the previous nodes are linked up as well.
     depending on what the given index is closer to.
 
   * The "direction" that you need to move the iterator need to be considered:
-    1) Go right (using the "next" pointers) if index > starting position.
-    2) Go left (using the "previous" pointers) if index < starting position.
+    1) Go east (using the "next" pointers) if index > starting position.
+    2) Go west (using the "previous" pointers) if index < starting position.
 
 > Ensure that iterating through the list in reverse order is O(n).
 
