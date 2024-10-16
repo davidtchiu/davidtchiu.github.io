@@ -38,25 +38,25 @@ System.out.println("Hops taken " + list.getHopCount());
 ```
 
 Let's take a moment to analyze why the code shown above required 6 hops. The 1-argument add meethod links the new item behind the current tail of the list. But recall that a `SinglyLinkedList` only knows about the `head` element, so in order to find the current tail, you need to traverse the list from the head each time! Let's count together:
-- To add dopey, **it took 0 hops**, since the list was empty. The head simply points to `null` and we don't need to traverse any links to set head to `dopey`.
+- To add dopey, **it took 0 hops**, since the list was empty. The head simply pointed to `null` and just need to point it at dopey. In other words we didn't need to traverse any links to set head to `dopey`.
     ```
     null (link dopey here)
     ```
-- To add doc, **it also took 0 hops**, since `dopey` is both the head and the tail, it did not require traversing any links. We just had to access the head once again to link up `doc`.
+- To add doc, **it _also_ took 0 hops**! Since `dopey` is both the head and the tail node, it did not require traversing any links. We just had to access the head once again to link up `doc`.
     ```
-    dopey (link doc here)
+    dopey ----> (link doc here)
     ```
 - To add `donkey`, **it took 1 hop** to get to `doc`.
     ```
-    dopey --1--> doc (link donkey here)
+    dopey --1--> doc ----> (link donkey here)
     ```
 - To add `doughy`, **it took 2 hops** to get to `donkey`.
     ```
-    dopey --1--> doc --2--> donkey (link doughy here)
+    dopey --1--> doc --2--> donkey ----> (link doughy here)
     ```
 - To add `dorky`, **it took 3 hops** to get to `doughy`.
     ```
-    dopey --1--> doc --2--> donkey --3--> doughy (link dorky here)
+    dopey --1--> doc --2--> donkey --3--> doughy ----> (link dorky here)
     ```
 
 Altogether, it required a total of 6 hops to add all these elements. How do you expect the number of hops to grow as the number of elements grow?
