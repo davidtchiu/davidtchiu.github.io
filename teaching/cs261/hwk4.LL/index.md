@@ -19,7 +19,7 @@ The following file(s) have been provided for this homework.
 - [Hwk_SinglyLinkedList.zip](Hwk_SinglyLinkedList.zip)
 
 
-#### Preamble: The Remove Operations
+#### Preamble: Counting Hops
 
 This assignment is all about how to optimize our singly linked list. In order to understand the running time of its methods, I've added a couple of modifications to the `SinglyLinkedList` to count and report hops. A "hop" refers to each "link" that must be crossed to access a certain `Node` in the list. For instance,
 
@@ -70,9 +70,9 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
     Summing down: 49995000 took 49995000 hops
     Removing all elements: took 0 hops
     ```
-    Try to understand why it requires this many hops to do these operations on only 10,000 elements. (The "removing list" took 0 hops, but that's not real. It's only because the `remove()` methods haven't been implemented yet!)
+    Try to understand why it requires this many hops to do these operations on only 10,000 elements. (The "removing list" took 0 hops, but that's not real. It's only because the `remove()` methods haven't been implemented yet!) Let's take care of that next.
 
-
+#### Code Along with David: The Remove Operations
 2. Our book writes most of the methods in `SinglyLinkedList` when discussing linked structures, but there are two left for you to do: The 1-argument `remove(int index)` method takes an `index` and removes the item located at that position from the list (while returning the data sotred inside that node). The other 1-argument `remove(E item)` method takes a stored object, searches for it, and then removes the first occurrence of that item from the list if it's found (return a `boolean`). Implement these two methods and test them before proceeding. 
 
     Before working on those, you must first complete the helper methods, `removeFirst()` and `removeAfter(Node<E> target)`. Their "skeleton code" is given near the bottom the source code. Like I did in class for `addFirst()` and `addAfter()`, you should start by drawing out on a sheet of paper what needs to happen to your "links" in order to delete the `Node` object. **You do not need to traverse any nodes to complete these two helper methods.** After you have completed these helper methods, then work on the `remove(..)` methods. Test them to ensure they're working. Try all sorts of edge cases until you are convinced they're in good working order. Here are a couple examples of how they should work.
