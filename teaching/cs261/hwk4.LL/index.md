@@ -46,15 +46,15 @@ Let's take a moment to analyze why the code shown above required 6 hops. The 1-a
     ```
     dopey (link doc here)
     ```
-- To add `donkey`, it took 1 hop to get to `doc`.
+- To add `donkey`, **it took 1 hop** to get to `doc`.
     ```
     dopey --1--> doc (link donkey here)
     ```
-- To add `doughy`, it took 2 hops to get to `donkey`.
+- To add `doughy`, **it took 2 hops** to get to `donkey`.
     ```
     dopey --1--> doc --2--> donkey (link doughy here)
     ```
-- To add `dorky`, it took 3 hops to get to `doughy`.
+- To add `dorky`, **it took 3 hops** to get to `doughy`.
     ```
     dopey --1--> doc --2--> donkey --3--> doughy (link dorky here)
     ```
