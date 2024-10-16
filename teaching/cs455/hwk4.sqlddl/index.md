@@ -243,16 +243,16 @@ studentID   studentName  class       gpa
 1381        Tiffany      Junior      4.0
 1468        Kris         Sophomore   1.0
 1487        Erin         Sophomore   3.9
-1501        Jessica      Freshman    4.0
+1501        Jessica      Freshman    3.3
 1510        Jordan       Freshman    3.0
 1629        Brad         Senior      1.6
 1640        Adam         Senior      3.6
 1641        Brittany     Senior      2.7
-1661        Logan        Freshman    1.5
+1661        Logan        Freshman    0.5
 1689        Gabriel      Senior      2.4
 1709        Cassandra    Junior      2.8
 1782        Andrew       Sophomore   3.7
-1911        David        Senior      4.0
+1911        David        Senior      3.2
 1934        Kyle         Junior      2.1
 ```
 
