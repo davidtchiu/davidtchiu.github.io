@@ -239,7 +239,7 @@ studentID   studentName  class       gpa
 1247        Alexis       Senior      3.9
 1282        Kelly        Freshman    2.5
 1304        Jordan       Senior      2.9
-1316        Austin       Sophomore   3.1
+1316        Austin       Sophomore   2.1
 1381        Tiffany      Junior      4.0
 1468        Kris         Sophomore   1.0
 1487        Erin         Sophomore   3.9
