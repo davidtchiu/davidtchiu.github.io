@@ -64,18 +64,18 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
 1. Check out the "`LinkTester`" class, which contains a main method for testing your code. It creates a singly linked list of 10,000 elements, then sums up all those elements traversing the list in forward and in reverse-order traversal. Then it prints out the number of "hops" that it required. If you ran the main method, you should get the following output:
 
     ```
-    Singly: 
+    Singly Linked: 
     Adding 10000 elements:  took 49985001 hops
     Summing up: 49995000 took 49995000 hops
     Summing down: 49995000 took 49995000 hops
-    Singly removing list: took 0 hops
+    Removing all elements: took 0 hops
     ```
-    Try to understand why it requires this many hops to do these operations on only 10,000 elements. (The "removing list" took 0 hops only because the `remove()` methods haven't been implemented yet!)
+    Try to understand why it requires this many hops to do these operations on only 10,000 elements. (The "removing list" took 0 hops, but that's not real. It's only because the `remove()` methods haven't been implemented yet!)
 
 
-2. Our book writes most of the methods in `SinglyLinkedList` when discussing linked structures, but there are two left for you to do: The 1-argument `remove()` method that takes an index and removes the item at that position from the list (while returning the data in that node), and the other 1-argument `remove()` method that takes an item and removes the first occurrence of that item from the list if it's found (return a `boolean`). Implement these two methods and test them before proceeding. 
+2. Our book writes most of the methods in `SinglyLinkedList` when discussing linked structures, but there are two left for you to do: The 1-argument `remove(int index)` method takes an `index` and removes the item located at that position from the list (while returning the data sotred inside that node). The other 1-argument `remove(E item)` method takes a stored object, searches for it, and then removes the first occurrence of that item from the list if it's found (return a `boolean`). Implement these two methods and test them before proceeding. 
 
-    You should first complete the helper methods, `removeFirst()` and `removeAfter()`. Their "stubs" are given in the file. Like I did in class for addFirst and addAfter, you should start by drawing out what you need to happen to your "links" in order to delete the Node object. You do not need to traverse any nodes to complete these two helper methods. After you have completed these helper methods, then work on the `remove(..)` methods. Test them to ensure they're working. Try all sorts of edge cases until you are convinced. Here are a couple examples of how they should work.
+    Before working on those, you must first complete the helper methods, `removeFirst()` and `removeAfter(Node<E> target)`. Their "skeleton code" is given near the bottom the source code. Like I did in class for `addFirst()` and `addAfter()`, you should start by drawing out on a sheet of paper what needs to happen to your "links" in order to delete the `Node` object. **You do not need to traverse any nodes to complete these two helper methods.** After you have completed these helper methods, then work on the `remove(..)` methods. Test them to ensure they're working. Try all sorts of edge cases until you are convinced they're in good working order. Here are a couple examples of how they should work.
 
     ```java
     SinglyLinkedList<String> list = new SinglyLinkedList<>();
@@ -103,6 +103,8 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
     System.out.println(list.toString());
     > [dopey, doughy, dorky]
     ```
+
+3. Now run the Tester code again. How many hops are you getting for the last line? It should be the same as adding all those elements to the tail. 
 
 <!-- 
 
@@ -144,13 +146,13 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
 <!-- 4. Next, write a method called `public void reverse()` that reverses the contents of your linked list. You should manipulate the `Node` objects directly: Identify the tail element, unlink it, and move it to the head. Then grab the new tail node and move it behind the new head, and so on. -->
 
 
-#### Optimizations
+#### Optimizations to the Linked List
 
-3. **Optimizing tail accesses:** As we know, the 1-argument `add()` method inserts a new item to the tail of the list. In practice, it is one of the most common operations on lists, so this has to be fast. In the current implementation, adding to the tail would be an $$O(n)$$ operation. 
+3. **Optimizing tail accesses:** As we saw, the 1-argument `add()` method inserts a new item to the tail of the list. In practice, it is one of the most common operations on lists, so this has to be faster than what it is now! In the current implementation, adding to the tail would be an $$O(n)$$ operation. 
 
-    Modify your class so that it additionally stores a reference to the tail node. When adding an item to the end of the list, you'd just have to link it after tail node, and update the tail reference to refer to the new node. You just need to make the changes inside `addFirst()` and `addAfter()`. Similarly, you must also ensure that the "remove" methods update the tail too. Make any changes you need to `removeFirst()` and `removeLast()`.
+    Modify your class so that it additionally stores a reference to the `tail` node. When adding an item to the end of the list, you'd just have to link it after the current tail node, and update the tail reference to refer to that new node. You need to make the changes inside `addFirst()` and `addAfter()`. Similarly, you must also ensure that the "remove" methods update the tail too. Make any changes you need to `removeFirst()` and `removeLast()` so that if they remove the last node, the `tail` reference is updated to the penultimate node!
 
-4. **Location Caching (Iterator):** When calling `sumUp()`, it's really annoying that for each item in the list we have to start all over at the head again to find it. To get the $$ith$$ node, you'd currently have to make $$i−1$$ hops! (When adding the item at index 99 to the total, we have to start at the front of the list again and find index 99 even though we were just at index 98 on the previous iteration of the loop!) One improvement would be to add some internal state to our linked list class so that it "remembers" (or caches) the most recently-accessed position in the list.
+4. **Location Caching (Iterator):** When calling `sumUp()`, it's really annoying that for each item in the list we have to start all over at the head again to find it. To get the $$ith$$ node, you'd currently have to make around $$i−1$$ hops!  One improvement would be to add some internal state to our linked list class so that it "remembers" (or caches) the most recently accessed position in the list.
 
     Add **two** new instance variables to `SinglyLinkedList`: An integer to record the most recently accessed position (index) in the list, and a `Node` reference that points to the corresponding list node. Modify your `getNodeAt()` method to take advantage of the new information when possible. For example, if we do a `get(107)` and the previous access to the list was at index `98`, the list traversal should start at `98` and work its way to `107` rather than starting at `0`. 
 
