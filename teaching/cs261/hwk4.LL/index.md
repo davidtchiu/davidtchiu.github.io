@@ -84,11 +84,11 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
     list.add("doughy");
     list.add("dorky");
 
-    System.out.println(list.toString());
+    System.out.println(list);
     > [dopey, doc, doughy, dorky]
 
     list.remove(2);
-    System.out.println(list.toString());
+    System.out.println(list);
     > [dopey, doc, dorky]
     ```
 
@@ -98,13 +98,12 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
     list.add("doc");
     list.add("doughy");
     list.add("dorky");
-
     list.remove("doc");
-    System.out.println(list.toString());
+    System.out.println(list);
     > [dopey, doughy, dorky]
     ```
 
-3. Now run the Tester code again. How many hops are you getting for the last line? It should be the same as adding all those elements to the tail. 
+3. Once you've convinced yourself that your remove methods are working, try running the `Tester` code again. How many hops are you getting for the last line (removing the list from the tail)? Is it what you expect?
 
 <!-- 
 
