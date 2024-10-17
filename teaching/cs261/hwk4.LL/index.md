@@ -156,14 +156,14 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
 
 4. After making these changes, test out all the methods to make sure the tail is updated properly. Add and remove things to/from the tail. Check your edge cases. Does the tail look right when removing that last element from the list? Does the tail look right after adding the first element to the list?
 
-5. Now run the Tester code again and enjoy the newly optimized add. Adding 10000 should require 0 steps now. We have successfully made add-to-tail an $$O(1)$$ operation, down from $$O(n)$$. That's a huge result!
+5. Now run the Tester code again and enjoy the newly optimized add. Adding 10000 should require 0 hops now. We have successfully upgraded the 1-argument add-to-tail method to an $$O(1)$$ operation, down from $$O(n)$$. That's a huge result! We also saved some hops on the summing up/down and removal operations, but not very significantly.
 
     ```
     Singly Linked: 
     Adding 10000 elements:  took 0 hops
-    Summing up: 49995000 took 49995000 hops
-    Summing down: 49995000 took 49995000 hops
-    Removing all elements: took 49985001 hops
+    Summing up: 49995000 took 49985001 hops
+    Summing down: 49995000 took 49985001 hops
+    Removing all elements from tail: took 49985001 hops
     ```
 
 
