@@ -147,9 +147,11 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
 
 #### Optimizations to the Linked List
 
-3. **Optimizing tail accesses:** As we saw, the 1-argument `add()` method inserts a new item to the tail of the list. In practice, it is one of the most common operations on lists, so this has to be faster than what it is now! In the current implementation, adding to the tail would be an $$O(n)$$ operation. 
+3. **Optimizing tail accesses:** As we saw, the 1-argument `add()` method inserts a new item to the tail of the list. In practice, it is one of the most common operations on lists, so this has to be faster than what it is now! In the current implementation, adding to the tail would be an $$O(n)$$ operation.
 
-    Modify your class so that it additionally stores a reference to the `tail` node. When adding an item to the end of the list, you'd just have to link it after the current tail node, and update the tail reference to refer to that new node. You need to make the changes inside `addFirst()` and `addAfter()`. Similarly, you must also ensure that the "remove" methods update the tail too. Make any changes you need to `removeFirst()` and `removeLast()` so that if they remove the last node, the `tail` reference is updated to the penultimate node!
+    Modify your class so that it additionally stores a reference to the tail node. Next, modify `getNodeAt()` so that you simply return `this.tail` (instead of traversing the list!) if the given index refers to the last element.
+        
+    Now we have to manage that `tail` reference. When adding an item to the end of the list, you'd just have to link it after the *current* tail node (that should be one access), but don't forget to update the `this.tail` reference to refer to that newly added node. You need to make the changes inside `addFirst()` and `addAfter()`to ensure that's happening. Conversely, you must also ensure that the "remove" methods update the `this.tail` reference too. Make any changes you need to `removeFirst()` and `removeLast()` so that if they remove the last node, the `this.tail` reference is updated to the penultimate node!
 
 4. **Location Caching (Iterator):** When calling `sumUp()`, it's really annoying that for each item in the list we have to start all over at the head again to find it. To get the $$ith$$ node, you'd currently have to make around $$i−1$$ hops!  One improvement would be to add some internal state to our linked list class so that it "remembers" (or caches) the most recently accessed position in the list.
 
