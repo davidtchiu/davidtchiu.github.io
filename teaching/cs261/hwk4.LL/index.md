@@ -154,6 +154,19 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
     Now we have to manage that `tail` reference. For this part, **you only need to update the addFirst, addAfter, removeFirst, and removeAfter methods**. Do not add more methods, and do not touch the public add/remove methods! The work you need to do in all these methods is simply determining whether the `this.tail` reference needs updated, and when. For example, when would you need to update `this.tail` in `addFirst()`? If the list was initially empty, then wouldn't this new node be both the head and the tail? For each of the four private helper methods, ask the same question: when does the tail change (and need updated?)
     
 
+4. After making these changes, test out all the methods to make sure the tail is updated properly. Add and remove things to/from the tail. Check your edge cases. Does the tail look right when removing that last element from the list? Does the tail look right after adding the first element to the list?
+
+5. Now run the Tester code again and enjoy the newly optimized add. Adding 10000 should require 0 steps now. We have successfully made add-to-tail an $$O(1)$$ operation, down from $$O(n)$$. That's a huge result!
+
+    ```
+    Singly Linked: 
+    Adding 10000 elements:  took 0 hops
+    Summing up: 49995000 took 49995000 hops
+    Summing down: 49995000 took 49995000 hops
+    Removing all elements: took 49985001 hops
+    ```
+
+
 4. **Location Caching (Iterator):** When calling `sumUp()`, it's really annoying that for each item in the list we have to start all over at the head again to find it. To get the $$ith$$ node, you'd currently have to make around $$i−1$$ hops!  One improvement would be to add some internal state to our linked list class so that it "remembers" (or caches) the most recently accessed position in the list.
 
     Add **two** new instance variables to `SinglyLinkedList`: An integer to record the most recently accessed position (index) in the list, and a `Node` reference that points to the corresponding list node. Modify your `getNodeAt()` method to take advantage of the new information when possible. For example, if we do a `get(107)` and the previous access to the list was at index `98`, the list traversal should start at `98` and work its way to `107` rather than starting at `0`. 
@@ -161,9 +174,9 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
     After you make this modification to `getNodeAt()`, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
 
     ```
-    > Adding 10000 elements: took 0 hops
-    > Summing up: 49995000 took 9998 hops
-    > Summing down: 49995000 took 49995001 hops
+    Adding 10000 elements: took 0 hops
+    Summing up: 49995000 took 9998 hops
+    Summing down: 49995000 took 49995001 hops
     ```
 
     We've managed to make left-to-right accesses to the list much faster through location caching... but notice that summing down is still taking a lot of steps! That's because, to gradually access the list in reverse order, we still need to start from the head when identifying the next node.
