@@ -1,9 +1,8 @@
 # Notes to Future Self
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 
-
-
 # TODO
+- Need more code along labs! Maybe start all labs as code alongs.
 - Hwk 2: TTT - Insist that they keep a list of known open coordinates
     - In Player? In RandomPlayer?
     - What about Cooords?
@@ -13,7 +12,9 @@
 
 
 # Change Log
-- Get rid of bin-search from Big-O, but add selection sort, replacing doTask algos.
+- MyArrayList and LinkedList Lab are now "code along" labs
+- Some of MyArrayList is now a bonus assignment.
+- Get rid of selection sort from Big-O.
 - Moved exceptions to late semester (Fall 24)
 - Moved sorting algs to recursion module (Fall 24)
 - There's too many homework assignments. Go back to 7 hwks and give everyone a break in between. (Fall 24)

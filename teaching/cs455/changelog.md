@@ -1,4 +1,6 @@
 # TODO
+- Make the SQL Labs time for them to work on their SQL homework. In other words, no more separate SQL homework. Just assign it and use the lab time to finish it. (No more University SQL lab). Keep data ingestion hhomework.
+
 - Stress in the beginning that relational model is successful due to it being "non-navigational" The two competing
 models were network and hierarchical. Tables were around, but only as a way of presenting data. Spreadsheets
 as we know it (Excel, etc.) only became popular while Codd was working on the relational model. The relational model provided a systematic, mathematical framework to manage data relationships, scaling up beyond the capabilities of simple tabular systems or spreadsheets, which were designed for smaller and less complex tasks. Thus, while the idea of tables was present, Codd’s contribution with the relational model was far more sophisticated, providing a foundation for managing complex datasets and relationships at scale in a way that previous data models or early tabular systems couldn’t achieve.

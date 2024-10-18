@@ -35,12 +35,12 @@ let days = {
         url: "hwk4.sqlddl/",
         due: "10/16/2024",
       },
-      // {
-      //   name: "Hwk 4 (coding)",
-      //   title: "Writing SQL Queries",
-      //   url: "hwk4.dml/",
-      //   due: "10/23/2024",
-      // },
+      {
+        name: "Hwk 5 (sql)",
+        title: "Writing SQL Queries",
+        url: "hwk5.sqldml/",
+        due: "10/30/2024",
+      },
       // {
       //   name: "Hwk 5 (coding)",
       //   title: "Joins",
