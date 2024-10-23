@@ -224,7 +224,7 @@ let days = {
     "HashMaps approach 1: Open addressing",
     "HashMaps approach 2: Chaining",
     "Lab 13: Hashing Lab",
-    "Start Exceptions",
+    "Cancelled",
     // wk 15
     "Exception handling",
     "Exception hierarchy",

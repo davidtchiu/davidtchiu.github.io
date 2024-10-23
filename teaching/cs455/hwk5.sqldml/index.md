@@ -12,7 +12,7 @@ To write SQL queries for the retrieval and manipulation of data.
 
 Download the database file below.
 
-- [hwk4_models.db](files/hwk4_models.db)
+- [models.db](files/models.db)
 
 #### Instructions
 
