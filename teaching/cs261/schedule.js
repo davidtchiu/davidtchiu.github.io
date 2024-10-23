@@ -115,12 +115,18 @@ let days = {
         url: "lab6.AL/",
         due: "10/11/2024",
       },
-      // {
-      //   name: "Lab 7",
-      //   title: "Stacks and Queues Lab",
-      //   url: "lab7.melody/",
-      //   due: "10/25/2024",
-      // },
+      {
+        name: "Lab 7",
+        title: "LinkedList Homework Lab",
+        url: "hwk4.LL/",
+        due: "10/18/2024",
+      },
+      {
+        name: "Lab 8",
+        title: "Stacks and Queues Lab",
+        url: "lab8.melody/",
+        due: "10/25/2024",
+      },
       // {
       //   name: "Lab 8",
       //   title: "Recursion Lab",
