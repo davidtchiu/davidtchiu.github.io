@@ -120,7 +120,7 @@ We suggest the following development strategy for solving this program:
   1.2 A 4 NATURAL false
   ```
 
-- Write an initial version of `play()` that assumes there are no repeating sections. (We'll put in the code for repeated sections later). Test it out, and make sure the songs are now playing on your machine.
+- Write an initial version of `play()` that assumes there are no repeating sections. (We'll put in the code for repeated sections later). This method accepts a `Queue` of `Notes`. Loop through each note, and call `play()` on that note. Because you need to `poll()` each note out of the queue before you play it, you might effectively empty out the song after it's played! Make sure the song is preserved (in other words, you need to stick that Note back into the queue after playing it!). Test it out, and make sure the songs are now playing on your machine. Then play it again, to ensure that the song wasn't "emptied out."
 
 - Implement the `changeTempo()` method. You can check the results of the `changeTempo()` method by reading in one of the sample files, calling `changeTempo()` and then calling the `toString()` method and checking your output matches what you expected. If successful, you should be able to see the following:
 
