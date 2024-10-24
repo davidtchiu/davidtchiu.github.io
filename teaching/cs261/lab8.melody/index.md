@@ -17,15 +17,13 @@ The following file(s) have been provided for this lab.
 - [Lab_Melody.zip](Lab_Melody.zip)
 
 Extract the zip file, and check out the contents. Besides the files ending in `.java`, you should also see the song files ending in `.txt`. You should have:
+- Sparks Fly - by Taylor Swift (thanks to Lily Gustafson Fall'23)
 - Epona's Song - from the Legend of Zelda
-- Happy Birthday
-- Hot Crossed Buns
+- Kernkraft 400 - by Zombie Nation (the Seattle Mariners' hype song)
 - Levels - by Avicii
 - Mystery - (reverse it to see what it is)
 - Pop Goes the Weasel
 - Tetris
-- Twinkle Twinkle Little Star
-- Zombie Nation - the Mariners' hype song
 
 #### Background Information about Music
 Music consists of notes which have lengths and pitches. The pitch of a note is described with a letter ranging from A to G. As 7 notes would not be enough to play very interesting music, there are multiple octaves; after we reach note G we start over at A. Each set of 7 notes is considered an octave. Notes may also be accidentals. This means that they are not in the same key as the music is written in. We normally notate this by calling them sharp, flat or natural. Music also has silences which are called rests.
@@ -34,9 +32,8 @@ For this assignment we will be representing notes using scientific pitch notatio
 
 
 #### What You Will Do
-You will write a class that to represent a song. A song is comprised of a series of notes. It may have repeated sections. As we don't like to have any redundancy, we will only store one copy of a repeated chunk of notes.
-
-Music is usually printed like the example on the right. The notes are a series of dots. Their position in relation to the lines determines their pitch and their tops and color, among other things, determine their length. Since it would be difficult for us to read input in this style, we will instead read input from a text file.
+You will write a class  to represent a song. A song is comprised of a series of notes. It may have repeated sections. As we don't like to have any redundancy, we will only store one copy of a repeated chunk of notes.
+We will represent music as a series of notes in a file, and our project already has some code to read input from a text file.
 
 An example input file is shown below.
 
@@ -53,7 +50,7 @@ An example input file is shown below.
 ...
 ```
 
-Important: Each line in it represents a single note. The first number describes the length of the note in seconds. The letter that follows describes the pitch of the note, using the standard set of letters (A – G) or R if the note is a rest. For notes other than rests, the third item on the line is the octave that the note is in and the following is the note's accidental value. The final piece of information for all notes is true if the note is the start or stop of a repeated section and false otherwise.
+**Important:** Each row in the text files represents a single note. The first number describes the length of the note in seconds. The letter that follows describes the pitch of the note, using the standard set of letters (A – G) or R if the note is a "rest" (i.e., silence). For notes other than rests, the third item on the line is the octave that the note is in and the following is the note's accidental (sharp, or flat, or natural) value. The final piece of information for all notes is true if the note is the start or stop of a repeated section and false otherwise.
 
 You will implement several methods in the `Melody` class which will allow you to use `MelodyPlayer`'s main method to play your song on your computer. Your melody will be able to play as well as append another melody to itself, reverse and have its tempo changed.
 
@@ -79,14 +76,14 @@ The most challenging part of this assignment is getting melodies to play with re
 #### Part I: Familiarizing with the Codebase
 Spend a good amount of time to take a look at the given Note class. Make note of all the fields and methods it contains (a good idea is to make your own "API handout" for the Note class, as you will be using it quite a bit in this lab).
 
-A couple things you will notice is that the `Note` class refers to `Accidental` and `Pitch`. Open those up to take a look inside. They are not classes. They're something called `Enums` (pronounced "ee-nums"). They're a useful way of declaring some constants that you'll use throughout your program. You won't have to deal with them directly in this assignment, but for future reference, to refer to them, you can use `Pitch.E` or `Accidental.NATURAL` for example.
+A couple things you will notice is that the `Note` class refers to `Accidental` and `Pitch`. Open those up to take a look inside. They are not classes. They're something called `Enums` (pronounced "e-nums", short for "enumeration"). They're a useful way of declaring constants that you'll use throughout your program. You won't have to deal with them directly in this assignment, but for future reference, to refer to them, you can use `Pitch.E` or `Accidental.NATURAL` for example.
 
 Now look in the `MelodyPlayer` class. You don't need to make changes to this class, but you should have some understanding of what it's doing. Note that it contains the main method.
 
 Now look in the `Melodic` interface, which you will implement.
 
 #### Part II: Implementation Details
-You will write one class: `Melody`, which implements the `Melodic` interface. You must use Java's `Stack` and `Queue` imported from `java.util`. Furthermore, you must *only* use them as stacks and queues; i.e., you may **NOT** use any index-based methods (like get and set and 2-argument `add`), `iterators`, or `for-each` loops (for-loops are okay). It must be possible to call the methods multiple times in any order and get the correct results each time. Your `Melody` class will use a queue to store the notes in the song. But unless otherwise specified, you may not create any other temporary data structures (such as arrays, lists, stacks, queues) inside methods to help you solve any method you're asked to implement.
+You will write one class: `Melody`, which implements the `Melodic` interface. You must use Java's `Stack` and `Queue` imported from `java.util` library. Furthermore, you must *only* use them as stacks and queues; i.e., you may **NOT** use any index-based methods (like get() and set() and 2-argument `add`), or `for-each` loops (for-loops are okay). It must be possible to call the methods multiple times in any order and get the correct results each time. Your `Melody` class will use a queue to store the notes in the song. But unless otherwise specified, you may not create any other temporary data structures (such as arrays, lists, stacks, queues) inside methods to help you solve any method you're asked to implement.
 
 #### Part III: Strategy
 We suggest the following development strategy for solving this program:
@@ -95,7 +92,7 @@ We suggest the following development strategy for solving this program:
 
 - The `Melody` class is where all your code should go. It implements the `Melodic` interface. The fields, constructor, and `toString()` method are given.
 
-- Test out the system first. you should be able to see the following when you run the main method:
+- Test out the program first. you should be able to see the following when you run the main method:
 
   ```
   You are totally rocking MelodyPlayer!!! Type the word in the left column to do the action on the right
@@ -299,7 +296,7 @@ We suggest the following development strategy for solving this program:
   ```
 
 #### Part IV: Create your own song
-Create a new file using a plain text editor (like Atom, or Notepad, or Sublime --- just not Word). Put it in the same folder as all your other songs. For full credit, the file should be in the format described above and contain at least 10 notes. It should also be your own work (you may not just turn in one of our sample songs) but you do not have to compose a song yourself. You are welcome to make it be a song written by somebody else, such as a lullaby or nursery rhyme or song by your favorite band.
+Create a new file using a plain text editor (like [Google Doc](https://docs.google.com)). Put it in the same folder as all your other songs. For full credit, the file should be in the format described above and contain at least 10 notes. It should also be your own work (you may not just turn in one of our sample songs) but you do not have to compose a song yourself. You are welcome to make it be a song written by somebody else, such as a lullaby or nursery rhyme or song by your favorite artist.
 
 
 #### Grading
