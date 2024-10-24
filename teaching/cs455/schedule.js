@@ -172,7 +172,8 @@ let days = {
     // wk 14
     "Theory: Normal Forms: 1NF, 2NF, BCNF",
     "Theory: Lossless join; dependency preservation",
-    "Theory: Canonical cover; 3NF synthesis",
+    "Cancelled",
+    // "Theory: Canonical cover; 3NF synthesis",
     // wk 15
     "<strong><emph>Final Presentation</emph></strong>",
     "<strong><emph>Final Presentation</emph></strong>",
