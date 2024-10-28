@@ -44,6 +44,12 @@ let days = {
         due: "10/25/2024",
       },
       {
+        name: "Hwk 5",
+        title: "Recursion Exercises",
+        url: "hwk5.rec",
+        due: "11/8/2024",
+      },
+      {
         name: "Bonus Hwk",
         title: "Additional ArrayList Methods",
         url: "bonus.AL/",
@@ -57,12 +63,6 @@ let days = {
       //   title: "Ranked Choice Voting (Paired)",
       //   url: "hwk5.rcv",
       //   due: "11/4/2024",
-      // },
-      // {
-      //   name: "Hwk 6",
-      //   title: "Recursion Exercises",
-      //   url: "hwk6.rec",
-      //   due: "11/18/2024",
       // },
       // {
       //   name: "Hwk 7",
@@ -127,12 +127,12 @@ let days = {
         url: "lab8.melody/",
         due: "10/25/2024",
       },
-      // {
-      //   name: "Lab 8",
-      //   title: "Recursion Lab",
-      //   url: "lab8.rec/",
-      //   due: "11/1/2024",
-      // },
+      {
+        name: "Lab 9",
+        title: "Recursion Lab",
+        url: "lab9.rec/",
+        due: "11/1/2024",
+      },
       // {
       //   name: "Lab 9",
       //   title: "Expression Trees (Binary Trees)",
@@ -197,19 +197,18 @@ let days = {
     "LL: optimizations (tail, iterator, double links)",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Stack<E>, infix algorithm",
+    "Stack<E> usage",
     "Lab 8: Stacks and Queues",
-    "Queue<E>, PriorityQueues<E>",
-//      "PriorityQueue: Dijkstra's shortest path",
+    "Lab review; infix algorithm",
     // wk 9:
-    "Start recursion: setup and tracing",
+    "PriorityQueues<E>; Start recursion",
     "Recursion: code reading, common pitfalls",
     "Lab 9: Recursion Lab",
     "Recursive Big-O (telescoping method)",
     // wk 10
     "Merge Sort",
     "Quick Sort",
-    "Lab 10: Recursive Sorting Lab",
+    "Lab 10: Recursion Homework Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",

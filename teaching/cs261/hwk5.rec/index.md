@@ -120,6 +120,13 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	 ```
 
 
+4. **List reversal:** Given a `List<E>`, reverse its contents recursively. Your solution must work for both even and odd sized arrays. Hint: List reversal has no effect on arrays containing zero or one element.
+
+5. **Prime number testing:** Given a positive integer `n`, `n` is prime if and only if it is only divisible evenly by 1 and itself. Hint: create a helper method that inputs `n` and a counter 
+`k` that is initially input as 2. There are two base cases: (1) when `k` reaches 
+`n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n`
+ is not prime. Figure out what to return in each of these cases. The recursive case simply calls itself on `k+1`, moving the counter closer to `n`.
+
 
 4. (Medium) If you've ever used a tool like Photoshop, you may be familiar with the **Flood Fill (Paint Can) utility**, which allows you to fill an entire segment of the image with a  color of  choice. For example, say you flood-filled the cell at `A[1][2]` with a replacement value of 8 (image below on the left). Since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So, not only does `A[1][2]` need to change from 3 to 8, but so might all of its four directional neighbors (to its north, east, south, and west), and their neighbors, and theirs, and so on. If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond any of the four boundaries of the 2D array (in which you'd want to avoid coloring -- hey that sounds like a terminating base case!)
 

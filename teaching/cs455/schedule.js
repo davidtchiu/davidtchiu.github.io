@@ -74,32 +74,32 @@ let days = {
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
-    // projects: [
-    //   {
-    //     name: "Project Teams",
-    //     title: "Team Preferences",
-    //     url: "proj/",
-    //     due: "10/20/2023",
-    //   },
-    //   {
-    //     name: "Project Prop",
-    //     title: "Project Proposal",
-    //     url: "proj/",
-    //     due: "11/3/2023",
-    //   },
-    //   {
-    //     name: "Project Demo",
-    //     title: "Project Demo",
-    //     url: "proj/",
-    //     due: "12/13/2023",
-    //   },
-    //   {
-    //     name: "Project-Code",
-    //     title: "Project Code",
-    //     url: "proj/",
-    //     due: "12/15/2023",
-    //   },
-    // ],
+    projects: [
+      {
+        name: "Project Teams",
+        title: "Team Preferences",
+        url: "proj/",
+        due: "10/30/2024",
+      },
+      {
+        name: "Project Prop",
+        title: "Project Proposal",
+        url: "proj/",
+        due: "11/8/2024",
+      },
+      {
+        name: "Project Demo",
+        title: "Project Demo",
+        url: "proj/",
+        due: "12/9/2023",
+      },
+      {
+        name: "Project-Code",
+        title: "Project Code",
+        url: "proj/",
+        due: "12/9/2023",
+      },
+    ],
 
     ////////////////////////////////// LABS ////////////////////////////////
     labs: [

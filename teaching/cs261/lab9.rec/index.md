@@ -249,12 +249,6 @@ I know this part can be challenging, since it'll be your first time writing recu
   - You are allowed the destroy the list.
   - You may assume the list is not passed as `null`.
 
-- **List reversal:** Given a `List<E>`, reverse its contents recursively. Your solution must work for both even and odd sized arrays. Hint: List reversal has no effect on arrays containing zero or one element.
-
-- **Prime number testing:** Given a positive integer `n`, `n` is prime if and only if it is only divisible evenly by 1 and itself. Hint: create a helper method that inputs `n` and a counter 
-`k` that is initially input as 2. There are two base cases: (1) when `k` reaches 
-`n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n`
- is not prime. Figure out what to return in each of these cases. The recursive case simply calls itself on `k+1`, moving the counter closer to `n`.
 
 #### Grading
 
