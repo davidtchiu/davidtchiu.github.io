@@ -173,9 +173,9 @@ let days = {
     "Theory: Normal Forms: 1NF, 2NF, BCNF",
     "Theory: Lossless join; dependency preservation",
     "Cancelled",
-    // "Theory: Canonical cover; 3NF synthesis",
     // wk 15
-    "<strong><emph>Final Presentation</emph></strong>",
+    "Theory: Canonical cover; 3NF synthesis",
+    // "<strong><emph>Final Presentation</emph></strong>",
     "<strong><emph>Final Presentation</emph></strong>",
     "<strong>Reading Period</strong>",
     // "Start transactions: ACID, serializability",
