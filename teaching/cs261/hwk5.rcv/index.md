@@ -17,16 +17,7 @@ The problem traces back to the fact that voters only get one choice, but how wou
 You are required to work in teams on this assignment. I've used a sophisticated matching algorithm to produce the groups listed below. (Ok, it's just random, but I did write a program to do it!) Do not start writing any code until you've met with your team member(s) and discussed the assignment and possible approaches. For best results, I expect you to work physically together. I will assume that each member of the team has contributed equally to the project. If that isn't true, please contact me privately.
 
 ```txt
-[Ashlyne C, Hannah E]
-[Noel L, Amanda W]
-[Elizabeth B, Bonacic B]
-[Ben H, Gemma B]
-[Jacob W, Julien W]
-[Lily G, Paul M]
-[Brendan B, Miles M]
-[Kendall P, Gabriel E]
-[Maia C, Pallas C]
-[Timothy T, Alex W]
+
 ```
 
 
@@ -36,7 +27,7 @@ The following file(s) have been provided for this homework.
 
 - [Ballot.java](Ballot.java)
 - [Election.java](Election.java)
-- [ElectionRunner.csv](ElectionRunner.csv)
+- [ElectionRunner.java](ElectionRunner.java)
 - [RCVRaw.csv](RCVRaw.csv)
 
 

@@ -187,7 +187,9 @@ We suggest the following development strategy for solving this program:
   2.4 A 4 NATURAL false
   ```
 
-- Write the `append()` method. Then use a stack to implement the `reverse()` method!
+- Write the `append()` method. Hmm, in order to append another `Melodic`, you'll need to access its queue (so you can check its size and poll from it). But `Melodic other` is just an interface, and interfaces don't have instance variables. (Yep down-cast it before you can run `poll()` and `size()`).
+
+- Now implement the `reverse()` method! This should be pretty simple to do with a Stack, if you remember that the order in which you pop everything off is the reverse order of how you pushed them on!
 
   ```
   You are totally rocking MelodyPlayer!!! Type the word in the left column to do the action on the right

@@ -1,5 +1,7 @@
 /**
- * Runs the election
+ * Runs the election.
+ * You should not have to make changes to this file.
+ * 
  * @author David
  */
 public class ElectionRunner {
@@ -16,7 +18,7 @@ public class ElectionRunner {
         System.out.println("===============================");
         System.out.println(count + " valid ballots received\n");
 
-        // let's go!
+        // Run the election
         election.runElection();
     }
 }
