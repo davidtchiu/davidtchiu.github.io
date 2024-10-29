@@ -119,7 +119,7 @@ Please have someone record everyone's responses to these questions. I will check
 Be prepared to give a ~15 minute presentation to the class, allowing a ~3 minutes for question and answer. The demo should showcase your application, and every team member must have equal participation in the demo (you will be graded on balance). At minimum, your presentation should show:
 
   - A quick introduction to your project.
-  - If applicable, include the DB schema which should be normalized to at least 3NF.
+  - If applicable, include the DB schema.
   - List technical (and other) challenges that you had to overcome.
   - List lessons-learned and reflections.
 

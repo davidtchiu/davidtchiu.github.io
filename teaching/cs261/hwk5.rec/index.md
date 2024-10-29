@@ -102,30 +102,22 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 3. (Medium) Write a static method, `public static String dec2binary(int x)` that converts a decimal integer to its binary string (e.g., `5` converts to `101`). Here's the intuition. If `x` is `0` or `1` then simply return the string `"0"` or `"1"` respectively. Otherwise, test to see if `x` is an odd integer. If it's odd, then `x` must end with `1`. Otherwise, it ends with `0`. Then concatenate that bit as a string to the right of the binary representation of `x/2`.
 
-	 ```java
-	 System.out.println(Recursion.dec2binary(1));
+	```java
+	System.out.println(Recursion.dec2binary(1));
 	 > 1
 
-   System.out.println(Recursion.dec2binary(0));
+   	System.out.println(Recursion.dec2binary(0));
 	 > 0
 
-   System.out.println(Recursion.dec2binary(12));
+   	System.out.println(Recursion.dec2binary(12));
 	 > 1100
 
-   System.out.println(Recursion.dec2binary(1023));
-	 > 1111111111
+   	System.out.println(Recursion.dec2binary(1023));
+	> 1111111111
 
 	 System.out.println(Recursion.dec2binary(21845));
 	 > 101010101010101
 	 ```
-
-
-4. **List reversal:** Given a `List<E>`, reverse its contents recursively. Your solution must work for both even and odd sized arrays. Hint: List reversal has no effect on arrays containing zero or one element.
-
-5. **Prime number testing:** Given a positive integer `n`, `n` is prime if and only if it is only divisible evenly by 1 and itself. Hint: create a helper method that inputs `n` and a counter 
-`k` that is initially input as 2. There are two base cases: (1) when `k` reaches 
-`n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n`
- is not prime. Figure out what to return in each of these cases. The recursive case simply calls itself on `k+1`, moving the counter closer to `n`.
 
 
 4. (Medium) If you've ever used a tool like Photoshop, you may be familiar with the **Flood Fill (Paint Can) utility**, which allows you to fill an entire segment of the image with a  color of  choice. For example, say you flood-filled the cell at `A[1][2]` with a replacement value of 8 (image below on the left). Since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So, not only does `A[1][2]` need to change from 3 to 8, but so might all of its four directional neighbors (to its north, east, south, and west), and their neighbors, and theirs, and so on. If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond any of the four boundaries of the 2D array (in which you'd want to avoid coloring -- hey that sounds like a terminating base case!)
@@ -159,8 +151,26 @@ Create a new project and create a class called `Recursion`. Put all of the follo
    >	2       2       8       8
    ```
 
+5. (Medium) Given a positive integer `n`, `n` is prime if and only if it is only divisible evenly by 1 and itself. Write a static method, `public static boolean isPrime(int n)` that tests if `n` is prime. Hint: I would first create a helper method that inputs `n` and a counter `k` that is initially input as 2. There are two base cases: (1) when `k` reaches `n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n` is not prime. Figure out what to return in each of these cases. The recursive case simply calls itself on `k+1`, moving the counter closer to `n`.
 
-5. (Spicy) A permutation is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a set of permutations of the remaining substring. Then for each string in the returned set, insert the first character back into every position of the string and add each to a new set. Return the set when finished. Here's an example. Suppose  you're finding all permutations of `"abc"`.
+	```java
+	System.out.println(Recursion.isPrime(13));
+	> true
+
+	System.out.println(Recursion.isPrime(66));
+	> false
+
+	System.out.println(Recursion.isPrime(2));
+	> true
+
+	System.out.println(Recursion.isPrime(1));
+	> false
+
+	System.out.println(Recursion.isPrime(2));
+	> true
+	```
+
+6. (Spicy) A permutation is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a set of permutations of the remaining substring. Then for each string in the returned set, insert the first character back into every position of the string and add each to a new set. Return the set when finished. Here's an example. Suppose  you're finding all permutations of `"abc"`.
 
 	 - Split `"abc"` by chopping `"a"` off from the front, and recursively find the set of permutations of the remaining substring, `"bc"`.
 	 - Now for each permuted substring, insert `"a"` back in every possible position. For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`. For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`
@@ -191,9 +201,9 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 80pts.
+This assignment will be graded out of a total of 95pts.
 
-[75pts] Each problem is worth 15 pts regardless of difficulty.
+[90pts] Each problem is worth 15 pts regardless of "spiciness" level.
 
 [5pts] You provide Javadocs style comments for any new methods implemented. You include
 sufficient inline comments to explain the logic of your methods.
