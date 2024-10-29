@@ -151,7 +151,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
    >	2       2       8       8
    ```
 
-5. (Medium) Given a positive integer `n`, `n` is prime if and only if it is only divisible evenly by 1 and itself. Write a static method, `public static boolean isPrime(int n)` that tests if `n` is prime. Hint: I would first create a helper method that inputs `n` and a counter `k` that is initially input as 2. There are two base cases: (1) when `k` reaches `n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n` is not prime. Figure out what to return in each of these cases. The recursive case simply calls itself on `k+1`, moving the counter closer to `n`.
+5. (Medium) Given a positive integer `n`, `n` is prime if and only if it is only divisible evenly by 1 and itself. Write a static method, `public static boolean isPrime(int n)` that tests if `n` is prime. Hint: I would first create a private helper method that inputs `n` and a counter `k` that is initially input as 2 by the public-facing `isPrime()` method. There are two base cases in this helper method: (1) when counter `k` reaches `n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n` is not prime. The recursive case of the helper method simply calls itself on `k+1`, moving the counter a step closer to `n`.
 
 	```java
 	System.out.println(Recursion.isPrime(13));
@@ -165,9 +165,6 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 	System.out.println(Recursion.isPrime(1));
 	> false
-
-	System.out.println(Recursion.isPrime(2));
-	> true
 	```
 
 6. (Spicy) A permutation is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a set of permutations of the remaining substring. Then for each string in the returned set, insert the first character back into every position of the string and add each to a new set. Return the set when finished. Here's an example. Suppose  you're finding all permutations of `"abc"`.
