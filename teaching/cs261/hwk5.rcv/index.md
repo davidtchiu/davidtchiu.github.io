@@ -314,13 +314,11 @@ particularly, FileNotFoundException.
 
 
 ----------------------------------------------------------
-[60/60pts] Implementation and Efficiency
+[60/60pts] Implementation
 
-> The choice of data structures to use for representing
-  ballots should be justified based on efficiency.
-
-> Runtime efficiency consideration is highly emphasized
-for this assignment.
+> You use a PriorityQueue inside ballots to rank the candidates.
+This means Candidates must implement the Comparable<Candidate> 
+interface to establish order.
 
 > Your program discards "invalid" ballots given in the file.
 
@@ -333,10 +331,10 @@ round, you should randomly eliminate a candidate.
 
 > Ensure all percentages are calculated correctly in every round.
 
-> Edge: Ensure that program works for any number of candidates (and
+> Edge case: Ensure that program works for any number of candidates (and
 thus, rankings) including 1.
 
-> Edge: Ensure that your program works for any number of valid ballots,
+> Edge case: Ensure that your program works for any number of valid ballots,
 including 0.
 
 
