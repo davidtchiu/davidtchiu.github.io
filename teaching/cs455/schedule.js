@@ -146,8 +146,9 @@ let days = {
     "Tuple format, file format",
     // wk 9
     "File organization and costs",
-    "Join processing on files",
-    "Start Indexing: B+Trees",
+    "Start Indexing; Halloween Party",
+    // "Join processing on files",
+    "Multilevel indexing: B+Trees",
     // wk 10
     "B+Tree operations",
     "B+Tree performance",
