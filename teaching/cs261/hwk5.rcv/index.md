@@ -17,7 +17,9 @@ The problem traces back to the fact that voters only get one choice, but how wou
 You are required to work in teams on this assignment. I've used a sophisticated matching algorithm to produce the groups listed below. (Ok, it's just random, but I did write a program to do it!) Do not start writing any code until you've met with your team member(s) and discussed the assignment and possible approaches. For best results, I expect you to work physically together. I will assume that each member of the team has contributed equally to the project. If that isn't true, please contact me privately.
 
 ```txt
-
+[Max, April, Elizabeth]
+[Skyler, Aethan]
+[Conner, Devon]
 ```
 
 

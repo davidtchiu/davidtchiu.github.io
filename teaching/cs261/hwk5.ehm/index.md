@@ -2,8 +2,6 @@
 
 ### Evil Hangman
 
-Read: Not that I need to worry, but before we get started, a word of caution. This is a popular CS 2 assignment, and I'm totally aware there are lots of implementations out there, and yes, copying/pasting any segment of code from the internet is considered plagiarism.
-
 It's hard to write computer programs to play games. When we as humans sit down to play a game, we can draw on past experience, adapt to our opponents' strategies, and learn from our mistakes. Computers, on the other hand, blindly follow a preset algorithm that (hopefully) causes it to act somewhat intelligently. Though computers have bested their human masters in some games, most notably checkers and chess, the programs that do so often draw on hundreds of years of human game experience and use extraordinarily complex algorithms and optimizations to out-calculate their opponents...
 
 ![evil-hangman.png](figures/evil-hangman.png)
@@ -17,21 +15,15 @@ While there are many viable strategies for building competitive computer game pl
 - To practice with file handling and text processing.
 - To practice with object-oriented design.
 - To select appropriate algorithms and data structures for problem solving.
-- To use HashMaps
 
 
 #### Team Assignments
 For this project you'll be working in teams. Please ensure that you listed all of your team members in a Javadocs comment at the top of each `.java` file.
 
 ```txt
-[Hannah E, Pallas C]
-[Amanda W, Gemma B]
-[Ashlyne C, Maia C, Kendall P]
-[Lily G, Miles M]
-[Timothy T, Noel L]
-[Bonacic, Alex W]
-[Ben H, Gabriel E]
-[Elizabeth B, Julien W]
+[Max, April, Elizabeth]
+[Skyler, Aethan]
+[Conner, Devon]
 ```
 
 
@@ -94,9 +86,11 @@ Your assignment is to write a computer program which plays a game of Hangman usi
 
 - Read the file `dictionary.txt`, which contains the full contents of the Official Scrabble Player's Dictionary, Second Edition. This word list has over 120,000 words, which should be more than enough for our purposes.
 
-- Prompt the user for a word length, reprompting as necessary until she enters a number such that there's at least one word that's exactly that long. That is, if the user wants to play with words of length -42 or 137, since no English words are that long, you should reprompt her.
+- Prompt the user for a word length, re-prompting as necessary until she enters a number such that there's at least one word that's exactly that long. That is, if the user wants to play with words of length -42 or 137, since no English words are that long, you should reprompt her.
 
-- Prompt the user for a number of guesses, which must be an integer greater than zero. Don't worry about unusually large numbers of guesses – after all, having more than 26 guesses is clearly not going to help your opponent! Again, reprompt if necessary.
+    - Think about how you would do this efficiently. It would be too slow to traverse your entire word list just to grab all the words of a certain length. Would a HashMap be helpful here for storing all your words read from the file?
+
+- Prompt the user for a number of guesses, which must be an integer greater than zero. Don't worry about unusually large numbers of guesses – after all, having more than 26 guesses is clearly not going to help your opponent! 
 
 - Prompt the user for whether she wants to have a running total of the number of words remaining in the word list. This completely ruins the illusion of a fair game that you'll be cultivating, but it's quite useful for testing (and grading!)
 
@@ -104,19 +98,19 @@ Your assignment is to write a computer program which plays a game of Hangman usi
 
     - Print out how many guesses the user has remaining, along with any letters the player has guessed and the current blanked-out version of the word. If the user chose earlier to see the number of words remaining, print that out too.
 
-    - Prompt the user for a single letter guess, reprompting until the user enters a letter that she hasn't guessed yet. Make sure that the input is exactly one character long and that it's a letter of the alphabet.
+    - Prompt the user for a single letter guess, re-prompting until the user enters a letter that she hasn't already guessed. Make sure that the input is exactly one character long and that it's a letter of the English alphabet.
 
-    - Partition the words in the dictionary into groups by word family, described above.
+    - Partition the words in the dictionary into groups by "word family," described above.
 
-    - Find the most common “word family” in the remaining words, remove all words from the word list that aren't in that family, and report the position of the letters (if any) to the user. If the word family doesn't contain any copies of the letter, subtract a remaining guess from the user.
+    - Find the most common "word family" in the remaining words, remove all words from the word list that aren't in that family, and report the position of the letters (if any) to the user. If the word family doesn't contain any copies of the letter, subtract a remaining guess from the user.
 
-    - If the player has run out of guesses, pick a random word from the word list and display it as the word that the computer initially “chose.”
+    - If the player has run out of guesses, then they have lost. Pick a random word from the word list and display it as the word that the computer initially “chose.”
 
     - If the player correctly guesses the word, congratulate them.
 
 - Think about what data structures would be best for tracking word families and the master word list.
 
-    - Tracking the current set of word families makes perfect use of `HashMap`s. You could, for instance, use the word family string pattern (say `"_ _ R _ _"`) to be the key, and it hashes to a list (or set) of words that fall into that family (say, `LORDS`, `DARTS`, `FIRST`, and so on). Your map should store multiple such entries.
+    - Tracking the current set of word families makes perfect use of `HashMap`s. You could, for instance, use the word family string pattern (say `"_ _ R _ _"`) to be the key, and it hashes to a list of words that fall into that family (say, `LORDS`, `DARTS`, `FIRST`, and so on). Your `HashMap` should store multiple such entries (one entry per word family).
 
     - The master word list also needs to be stored in a data structure for quick access. The dictionary file that's given to you is alphabetized, but is that the optimal ordering for what you're trying to accomplish? Would it make more sense to order the words in terms of their length? What if you alphabetized them *after* you first ordered them by length?
 

@@ -45,10 +45,16 @@ let days = {
       },
       {
         name: "Hwk 5",
-        title: "Recursion Exercises",
-        url: "hwk5.rec",
+        title: "Ranked Choice Voting (Paired)",
+        url: "hwk5.rcv",
         due: "11/8/2024",
       },
+      // {
+      //   name: "Hwk 5",
+      //   title: "Recursion Exercises",
+      //   url: "hwk5.rec",
+      //   due: "11/8/2024",
+      // },
       {
         name: "Bonus Hwk",
         title: "Additional ArrayList Methods",
@@ -58,12 +64,6 @@ let days = {
 
 
 
-      // {
-      //   name: "Hwk 5",
-      //   title: "Ranked Choice Voting (Paired)",
-      //   url: "hwk5.rcv",
-      //   due: "11/4/2024",
-      // },
       // {
       //   name: "Hwk 7",
       //   title: "Huffman Encoding",
