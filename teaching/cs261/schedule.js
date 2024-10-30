@@ -194,27 +194,27 @@ let days = {
     // wk 6
     "<strong><emph>Review for Exam 1</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",   // NO, DON'T DO EXAMS ON WED. THERE'SLAB NEXT DAY
-    "Lab 6: ArrayList Code Along",
+    "Lab 6: ArrayList Code-Along Lab",
     "Start Linked Lists: The Node inner class",
     // wk 7
     "LL: indexOf(), getNodeAt(), get(), set()",
     "LL: addFirst(), addAfter(), add()",
-    "Lab 7: LL Code Along Lab",
+    "Lab 7: LL Homework Code-Along Lab",
     "LL: optimizations (tail, iterator, double links)",
     // wk 8
     "<strong>Fall Break</strong>",
     "Stack<E> usage",
-    "Lab 8: Stacks and Queues",
+    "Lab 8: Stacks and Queues (MelodyPlayer)",
     "Lab review; infix algorithm",
     // wk 9:
     "PriorityQueues<E>; Start recursion",
     "Recursion: code reading, common pitfalls",
-    "Lab 9: Recursion Lab",
+    "Lab 9: RCV Homework Code-Along Lab",
     "Recursive Big-O (telescoping method)",
     // wk 10
     "Merge Sort",
     "Quick Sort",
-    "Lab 10: Recursion Homework Lab",
+    "Lab 10: Recursion Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
