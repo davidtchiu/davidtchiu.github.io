@@ -111,13 +111,13 @@ let days = {
       },
       {
         name: "Lab 6",
-        title: "ArrayLists Lab",
+        title: "ArrayLists Code-along Lab",
         url: "lab6.AL/",
         due: "10/11/2024",
       },
       {
         name: "Lab 7",
-        title: "LinkedList Homework Lab",
+        title: "LinkedList Homework/Code-along Lab",
         url: "hwk4.LL/",
         //due: "10/18/2024",
       },
@@ -129,7 +129,7 @@ let days = {
       },
       {
         name: "Lab 9",
-        title: "RCV Homework Lab",
+        title: "PriorityQueue Homework/Code-along Lab",
         url: "hwk5.rcv/",
         //due: "11/1/2024",
       },
