@@ -119,7 +119,7 @@ let days = {
         name: "Lab 7",
         title: "LinkedList Homework Lab",
         url: "hwk4.LL/",
-        due: "10/18/2024",
+        //due: "10/18/2024",
       },
       {
         name: "Lab 8",
@@ -129,10 +129,16 @@ let days = {
       },
       {
         name: "Lab 9",
-        title: "Recursion Lab",
-        url: "lab9.rec/",
-        due: "11/1/2024",
+        title: "RCV Homework Lab",
+        url: "hwk5.rcv/",
+        //due: "11/1/2024",
       },
+      // {
+      //   name: "Lab 9",
+      //   title: "Recursion Lab",
+      //   url: "lab9.rec/",
+      //   due: "11/1/2024",
+      // },
       // {
       //   name: "Lab 9",
       //   title: "Expression Trees (Binary Trees)",
