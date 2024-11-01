@@ -210,10 +210,10 @@ let days = {
     "PriorityQueues<E>; Start recursion",
     "Recursion: code reading, common pitfalls",
     "Lab 9: RCV Homework Code-Along Lab",
-    "Recursive Big-O (telescoping method)",
+    "Recursion: code tracing",
     // wk 10
-    "Merge Sort",
-    "Quick Sort",
+    "Recursive Big-O (telescoping method)",
+    "Recursive code writing",
     "Lab 10: Recursion Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     // wk 11
@@ -237,8 +237,8 @@ let days = {
     "Lab 13: Hashing Lab",
     "Cancelled",
     // wk 15
-    "Exception handling",
-    "Exception hierarchy",
+    "Merge Sort",
+    "Quick Sort",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
