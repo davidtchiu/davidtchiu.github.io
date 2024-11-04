@@ -212,8 +212,8 @@ let days = {
     "Lab 9: RCV Homework Code-Along Lab",
     "Recursion: code tracing",
     // wk 10
+    "Recursive code writing and pitfalls",
     "Recursive Big-O (telescoping method)",
-    "Recursive code writing",
     "Lab 10: Recursion Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     // wk 11
