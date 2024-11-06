@@ -47,7 +47,7 @@ let days = {
         name: "Hwk 5",
         title: "Ranked Choice Voting (Paired)",
         url: "hwk5.rcv",
-        due: "11/8/2024",
+        due: "11/13/2024",
       },
       // {
       //   name: "Hwk 5",
@@ -133,12 +133,12 @@ let days = {
         url: "hwk5.rcv/",
         //due: "11/1/2024",
       },
-      // {
-      //   name: "Lab 9",
-      //   title: "Recursion Lab",
-      //   url: "lab9.rec/",
-      //   due: "11/1/2024",
-      // },
+      {
+        name: "Lab 10",
+        title: "Recursion Lab",
+        url: "lab10.rec/",
+        due: "11/8/2024",
+      },
       // {
       //   name: "Lab 9",
       //   title: "Expression Trees (Binary Trees)",
