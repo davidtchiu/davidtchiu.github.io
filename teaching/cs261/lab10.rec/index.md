@@ -191,11 +191,7 @@ Open up the `RecursionBugs` class in the project, which contains the following m
 - This method is supposed to perform linear search recursively. It takes as input a list of integers, a search key, and the head position of the unexplored sublist (`head` must be input as 0 initially). If found, it returns the position of the `key`. If not found, it returns `-1`.
 
   ```java
-  public static int linearSearch(int[] list, int key) {
-      return linearSearch(list, key, 0);
-  }
-
-  private static int linearSearch(int[] list, int key, int head) {
+  public static int linearSearch(int[] list, int key, int head) {
       if (key == list[head]) {
           return head;
       }
