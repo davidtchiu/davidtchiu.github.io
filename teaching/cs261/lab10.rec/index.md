@@ -220,20 +220,21 @@ Open up the `RecursionBugs` class in the project, which contains the following m
   }
   ```
 
-It's hard to test this method using point-and-click. To test this your method, you'll want to use your Code Pad to create an ArrayList (or LinkedList) before inputting it into this method. Something like this:
+  It's hard to test this method using point-and-click. To test this your method, you'll want to use your Code Pad to create an ArrayList (or LinkedList) before inputting it into this method. Something like this:
 
-  ```java
-  import java.util.*;
-  List<Integer> list = new ArrayList<>();
-  list.add(1);
-  list.add(2);
-  list.add(4);
-  list.add(8);
-  list.add(3);
+    ```java
+    import java.util.*;
+    List<Integer> list = new ArrayList<>();
+    list.add(1);
+    list.add(2);
+    list.add(4);
+    list.add(8);
+    list.add(3);
 
-  List<Integer> list2 = RecursionBugs.evens(list);
-  System.out.println(list2);
-  ```
+    List<Integer> list2 = RecursionBugs.evens(list);
+    System.out.println(list2);
+    > [2,4,8]
+    ```
 
 #### Part III: Writing Recursive Methods
 I know this part can be challenging, since it'll be your first time writing recursive methods. Don't hesitate to ask for help, and hints are given for each one. It is not imperative that you get ALL of these written before end of lab. However, you should try to get at least the first couple done (the rest would be good review problems for exams). For each of the tasks, I'll define the problem statement and give you a hint on how to think recursively. Open the `Recursion` class, and start writing these methods in there.
