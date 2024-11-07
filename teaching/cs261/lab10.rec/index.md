@@ -131,7 +131,24 @@ Because these are meant to be code reading exercises, do not run the code in Blu
   In addition to the three questions, answer the following. Check your edge cases: What inputs for `i` and `j` might produce a stack overflow? How would you fix the code so that an overflow is not possible?
 
 
-- Okay last one! What does the following method do?. Hint: Trace it with `mystery3(2,4)`, and then with `mystery3(2,-2)`.
+- Okay last one! What do you think this method does? Hint: Trace it with `mystery3(2,4)`, and then with `mystery3(3,5)`.
+
+  ```java
+  public static int mystery3(int a, int b) {
+      if (b == 0) {
+          return 0;
+      }
+      else if (b % 2 == 0) {
+          return mystery3(a + a, b / 2);
+      }
+      else {
+          return a + mystery3(a, b - 1);
+      }
+  }
+  ```
+
+
+<!-- - Okay last one! What does the following method do?. Hint: Trace it with `mystery3(2,4)`, and then with `mystery3(2,-2)`.
 
   ```java
   public static double mystery3(double a, double b) {
@@ -151,7 +168,7 @@ Because these are meant to be code reading exercises, do not run the code in Blu
           return a * mystery3(a, (b-1)/2) * mystery3(a, (b-1)/2);
       }
   }
-  ```
+  ``` -->
 
 #### Part II: Fixing Bugs in Recursive Methods
 
