@@ -202,7 +202,7 @@ Open up the `RecursionBugs` class in the project, which contains the following m
   }
   ```
 
-- Finally, the following method accepts a list of integers and returns a new list containing just the even numbers from the input list. Further, it must not leave the input list empty after calling it. The code looks promising, but it does neither of those things.
+- Finally, the following method accepts a list of integers and returns a new list containing just the even numbers from the input list. Further, it must not leave the input list empty after calling it. The code looks promising, but it does neither of those things. 
 
   ```java
   public static List<Integer> evens(List<Integer> nums) {
@@ -218,6 +218,21 @@ Open up the `RecursionBugs` class in the project, which contains the following m
           return evensFromTail;
       }
   }
+  ```
+
+It's hard to test this method using point-and-click. To test this your method, you'll want to use your Code Pad to create an ArrayList (or LinkedList) before inputting it into this method. Something like this:
+
+  ```java
+  import java.util.*;
+  List<Integer> list = new ArrayList<>();
+  list.add(1);
+  list.add(2);
+  list.add(4);
+  list.add(8);
+  list.add(3);
+
+  List<Integer> list2 = RecursionBugs.evens(list);
+  System.out.println(list2);
   ```
 
 #### Part III: Writing Recursive Methods
