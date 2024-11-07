@@ -130,33 +130,13 @@ Because these are meant to be code reading exercises, do not run the code in Blu
 
   In addition to the three questions, answer the following. Check your edge cases: What inputs for `i` and `j` might produce a stack overflow? How would you fix the code so that an overflow is not possible?
 
-- Harder still, let's try this one. When tracing its execution, you must remember that, after it receives the value returned from the recursive call, it still has work to do! Trace it with about 5 random numbers thrown in `list` in no particular ordering, and `pos = 0`.
+
+- Okay last one! What does the following method do?. Hint: Trace it with `mystery3(2,4)`, and then with `mystery3(2,-2)`.
 
   ```java
-  public static int mystery3(int[] list, int pos) {
-    if (pos == list.length-1) {
-        return list[pos];
-    }
-    else {
-        int rest = mystery3(list, pos+1);
-        if (list[pos] < rest) {
-            return list[pos];
-        }
-        else {
-            return rest;
-        }
-    }
-  }
-  ```
-
-  In addition to the three questions, answer the following. Why is it imperative that `pos` starts with 0 when initially calling this algorithm? What would happen if `pos < 0`? What if `pos > 0`?
-
-- Okay last one! What does the following method do?. Hint: Trace it with `mystery4(2,4)`, and then with `mystery4(2,-2)`.
-
-  ```java
-  public static double mystery4(double a, double b) {
+  public static double mystery3(double a, double b) {
       if (b < 0) {
-          return mystery4(1 / a, -b);
+          return mystery3(1 / a, -b);
       }
       else if (b == 0) {
           return 1;
@@ -165,10 +145,10 @@ Because these are meant to be code reading exercises, do not run the code in Blu
           return a;
       }
       if (b % 2 == 0) {
-          return mystery4(a, b/2) * mystery4(a, b/2);
+          return mystery3(a, b/2) * mystery3(a, b/2);
       }
       else {
-          return a * mystery4(a, (b-1)/2) * mystery4(a, (b-1)/2);
+          return a * mystery3(a, (b-1)/2) * mystery3(a, (b-1)/2);
       }
   }
   ```
