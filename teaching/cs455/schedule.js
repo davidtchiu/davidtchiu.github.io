@@ -47,12 +47,12 @@ let days = {
       //   url: "hwk5.joins/",
       //   due: "11/4/2024",
       // },
-      // {
-      //   name: "Hwk 6 (coding)",
-      //   title: "Extendible Hashing",
-      //   url: "hwk6.exhash/",
-      //   due: "11/20/2024",
-      // },
+      {
+        name: "Hwk 6 (coding)",
+        title: "Extendible Hashing",
+        url: "hwk6.exhash/",
+        due: "11/25/2024",
+      },
       // {
       //   name: "Hwk 7 (coding)",
       //   title: "Design Theory - Closure of FD Sets",
