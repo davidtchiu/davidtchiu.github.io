@@ -49,12 +49,12 @@ let days = {
         url: "hwk5.rcv",
         due: "11/13/2024",
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Recursion Exercises",
-      //   url: "hwk5.rec",
-      //   due: "11/8/2024",
-      // },
+      {
+        name: "Hwk 6",
+        title: "Recursion Exercises",
+        url: "hwk6.rec",
+        due: "11/22/2024",
+      },
       {
         name: "Bonus Hwk",
         title: "Additional ArrayList Methods",
@@ -139,12 +139,12 @@ let days = {
         url: "lab10.rec/",
         due: "11/8/2024",
       },
-      // {
-      //   name: "Lab 9",
-      //   title: "Expression Trees (Binary Trees)",
-      //   url: "lab9.expr/",
-      //   due: "11/15/2024",
-      //   },
+      {
+        name: "Lab 9",
+        title: "Expression Trees (Binary Trees)",
+        url: "lab9.expr/",
+        due: "11/15/2024",
+        },
       //   {
       //     name: "Lab 10",
       //     title: "Binary Search Trees Lab",
