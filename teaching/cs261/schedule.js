@@ -140,9 +140,9 @@ let days = {
         due: "11/8/2024",
       },
       {
-        name: "Lab 9",
+        name: "Lab 11",
         title: "Expression Trees (Binary Trees)",
-        url: "lab9.expr/",
+        url: "lab11.expr/",
         due: "11/15/2024",
         },
       //   {
