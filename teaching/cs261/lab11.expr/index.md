@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Lab 9: Expression Trees
+### Lab: Expression Trees
 
 For this assignment, you'll implement a class for representing and evaluating arithmetic expressions. It's a great excuse to use recursion, recursive structures, and polymorphism all within a single assignment! Even better — it happens to be useful. Make sure you write clean, well-documented code. You should note that you will not be using the `BinaryTree` or `BST` classes that we coded up in class for this assignment. Instead, you'll be writing a customized version of the binary tree as part of this assignment.
 
@@ -36,7 +36,7 @@ An expression tree can be evaluated by recursively evaluating its subtrees. For 
 
 
 #### Expression Trees
-Our expression trees will be built out of three different kinds of nodes: Nodes that represent constant values (e.g., 6), nodes, and nodes representing arithmetic operators (e.g., +). So that we can recursively evaluate (or print) entire trees, each of the three nodes should have the ability to evaluate itself, and to return a String representation of itself. The "node" classes will therefore implement the following interface:
+Our expression trees will be built out of three different kinds of nodes: Nodes that represent constant values (e.g., 6), and nodes representing arithmetic operators (e.g., +). So that we can recursively evaluate (or print) entire trees, each of the three nodes should have the ability to evaluate itself, and to return a String representation of itself. The "node" classes will therefore implement the following interface:
 
 ```java
 public interface EvaluableNode {
