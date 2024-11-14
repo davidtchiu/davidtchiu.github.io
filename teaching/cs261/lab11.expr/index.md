@@ -36,7 +36,7 @@ An expression tree can be evaluated by recursively evaluating its subtrees. For 
 
 
 #### Expression Trees
-Our expression trees will be built out of three different kinds of nodes: Nodes that represent constant values (e.g., 6), and nodes representing arithmetic operators (e.g., +). So that we can recursively evaluate (or print) entire trees, each of the three nodes should have the ability to evaluate itself, and to return a String representation of itself. The "node" classes will therefore implement the following interface:
+Our expression trees will be built out of two different kinds of nodes: Nodes that represent constant values (e.g., 6.0 or -78.2), and nodes representing arithmetic operators (e.g., +, *, -, /). So that we can recursively evaluate (or print) entire trees, each of the three nodes should have the ability to evaluate itself, and to return a String representation of itself. The "node" classes will therefore implement the following interface:
 
 ```java
 public interface EvaluableNode {
