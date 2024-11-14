@@ -57,9 +57,9 @@ First, within the constructor, you can convert parenthesized infix expressions t
 
 For example, the infix expression `( ( 500 * ( 1 + 2.2 ) ) - 6 )`  would be transformed into the postfix expression `500 1 2.2 + * 6 -`. In the original expression, the parentheses tell us that the `+` should be performed first, precedence says that the `*` is next, followed by the `-`. Lo and behold, that's the order in which they appear in the postfix string! Luckily I have already provided the infix-to-postfix method in the `Infix2Postfix` class.
 
-Now, move on to the `buildTree()` method that you'll need to implement. First, you'll need a stack. Have the stack hold references to the nodes: When you encounter a value, make a new tree node and push it onto the stack. When an operator is encountered, build a larger tree out of the operator and the two subtrees at the top of the stack, then push this new tree onto the stack. A reference to the full expression tree will be on the stack when we're done!
+Now, move on to the `buildTree()` method that you'll need to implement. First, you'll need a stack that's capable of storing both kinds of nodes you just wrote. When you encounter a constant value in the given expression, make a new value node and push it onto the stack. When an operator is encountered, build a larger tree out of the operator and the two subtrees at the top of the stack, then push this new tree onto the stack. A reference to the full expression tree will be on the top of the stack when we're done!
 
-One word of warning: To test your code, I will always input the expressions with a space in between any parenthesis, operand and operator. That way, the infix to postfix converter you wrote for lab will work without too much hassle.
+One note: To test your code, I will always input the expressions with a space in between any parenthesis, operand and operator. That way, the infix to postfix converter you wrote for lab will work without too much hassle.
 
 
 
@@ -78,12 +78,13 @@ Your project structure will something like this:
     - `ExpressionTree(String infix)`: The constructor takes an infix expression as a String, builds and stores a tree to represent it Do not save the expression string as an instance variable. Again, you can expect that a well-formed infix expression will be given.
 
   - It must support the following methods:
+
     - `public double evaluate()`: Evaluate the expression and return its value as a double.
 
     - `public String toString()`: Returns a String containing a fully-parenthesized representation of the expression. Because the infix string was not stored as an instance variable in the constructor, you must build and return this string by traversing the tree.
 
 #### Sample Interactions
-Some sample interactions with the `ExpressionTree` class are shown below. Note that the last three demonstrate exceptions being thrown.
+Some sample interactions with the `ExpressionTree` class are shown below. 
 
 ```java
 ExpressionTree e = new ExpressionTree("5.2");
