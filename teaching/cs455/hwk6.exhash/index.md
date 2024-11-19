@@ -16,6 +16,7 @@ You may use Java or Python for this assignment.
 1. Upon running your program, your main method must accept a single command-line argument:
     - Local bucket size (integer): This is the maximum number of tuples that can be stored per block.
     - Key length (integer): This is the number of bits that constitute a key.
+    - You may assume that an integer will be given for both parameters (e.g., and not a double, or a string).
 
 2. After receiving the above input, create a default extendible hash index, with global index ($$i$$) and local index ($$j$$) initialized to 0, which means you will have $$2^i = 1$$ entry in your global index that points to the sole local bucket, which is empty.
 
@@ -35,23 +36,23 @@ You may use Java or Python for this assignment.
     ...
     ```
 
-    In the format above, `<i>` is the integer bit-depth of the global directory. `<B>` is a bit string representation of a global address. `<j>` is the integer bit-depth of the local directory. `<b>` is the bit string representation of the local bucket's address. Finally, the binary keys that are stored in that bucket are listed in no particular order.
+    In the format above, `<i>` is the integer bit-depth of the global directory. `<B>` is a bit string representation of a global address. `<j>` is the integer bit-depth of the local directory. `<b>` is the bit string prefix of the local bucket's address (I called this the "bit-pattern" of that block in my lecture). Finally, the binary keys that are stored in that bucket are listed in no particular order.
 
     Here's an example below for a local bucket size of 2 tuples. The global bit-depth is 2, so there are four addresses (entries) in the global directory: `00`, `01`, `10`, and `11` (one listed on per row). The global address `00` points to a local bucket (also addressed `00`) which stores a single key, `0000`. Both global entries `10` and `11` point to the _same_ local bucket. We know they're the same because the local bit-depth in those buckets is only 1 (and also because they store the same keys). If you work this out on paper, you should get this result from inserting `0000`, `1001`, `0110`, `1011`, and `0100`, in that order.
 
     ```
     Global(2)
-    00: Local(2)[00] = [0000, null]
-    01: Local(2)[01] = [0110, 0100]
-    10: Local(1)[1] = [1001, 1011]
-    11: Local(1)[1] = [1001, 1011]
+    00: Local(2)[00*] = [0000, null]
+    01: Local(2)[01*] = [0110, 0100]
+    10: Local(1)[1*] = [1001, 1011]
+    11: Local(1)[1*] = [1001, 1011]
     ```
 
     The corresponding drawing looks like:
 
     <img src="figures/exthash.png" width="400px"/>
 
-6. If taking an object oriented approach, I would have at least 2 classes: a Global Directory, which stores an array of Buckets. In my implementation, I have a third class that simply runs the main method, providing the user interface.
+6. If taking an object oriented approach, I would have at least 2 classes: a Global Directory class, which stores an array of buckets, and a Bucket class, which stores information about the local directory (e.g., what keys are stored in the bucket, the local bit-depth of that bucket, and what is the bit-pattern associated with that bucket) In my implementation, I have a third class that simply runs the main method, providing the user interactive interface. 
 
 
 
@@ -72,6 +73,7 @@ Error: key length must be positive
 $ java ExtHash 0 5
 Error: block size must be at least 1
 ```
+
 
 In this example, bucket/block size is set to 4, and therefore, the first four keys are inserted trivially. The fifth key `0101` causes a local split, which propagates to a global split. All keys beginning with `1` are transferred over to bucket `[1]`, before the insertion of `0101` can be performed.
 
@@ -95,15 +97,15 @@ SUCCESS
 
 > p
 Global(0)
-: Local(0)[] = [1011, 1010, 0110, 0000]
+: Local(0)[*] = [1011, 1010, 0110, 0000]
 
 > i 0101
 SUCCESS
 
 > p   
 Global(1)
-0: Local(1)[0] = [0101, null, 0110, 0000]
-1: Local(1)[1] = [1011, 1010, null, null]
+0: Local(1)[0*] = [0101, null, 0110, 0000]
+1: Local(1)[1*] = [1011, 1010, null, null]
 
 > s 101010101
 Error: key exceeds length 4
@@ -123,14 +125,14 @@ SUCCESS
 
 > p
 Global(0)
-: Local(0)[] = [00011, null]
+: Local(0)[*] = [00011, null]
 
 > i 00101
 SUCCESS
 
 > p
 Global(0)
-: Local(0)[] = [00011, 00101]
+: Local(0)[*] = [00011, 00101]
 
 > s 00011
 00111 FOUND
@@ -143,42 +145,42 @@ FAILED
 
 > p
 Global(3)
-000: Local(3)[000] = [00011, null]
-001: Local(3)[001] = [00101, 00111]
-010: Local(2)[01] = [null, null]
-011: Local(2)[01] = [null, null]
-100: Local(1)[1] = [null, null]
-101: Local(1)[1] = [null, null]
-110: Local(1)[1] = [null, null]
-111: Local(1)[1] = [null, null]
+000: Local(3)[000*] = [00011, null]
+001: Local(3)[001*] = [00101, 00111]
+010: Local(2)[01*] = [null, null]
+011: Local(2)[01*] = [null, null]
+100: Local(1)[1*] = [null, null]
+101: Local(1)[1*] = [null, null]
+110: Local(1)[1*] = [null, null]
+111: Local(1)[1*] = [null, null]
 
 > i 01001
 SUCCESS
 
 > p
 Global(3)
-000: Local(3)[000] = [00011, null]
-001: Local(3)[001] = [00101, 00111]
-010: Local(2)[01] = [01001, null]
-011: Local(2)[01] = [01001, null]
-100: Local(1)[1] = [null, null]
-101: Local(1)[1] = [null, null]
-110: Local(1)[1] = [null, null]
-111: Local(1)[1] = [null, null]
+000: Local(3)[000*] = [00011, null]
+001: Local(3)[001*] = [00101, 00111]
+010: Local(2)[01*] = [01001, null]
+011: Local(2)[01*] = [01001, null]
+100: Local(1)[1*] = [null, null]
+101: Local(1)[1*] = [null, null]
+110: Local(1)[1*] = [null, null]
+111: Local(1)[1*] = [null, null]
 
 > i 01011
 SUCCESS
 
 > p
 Global(3)
-000: Local(3)[000] = [00011, null]
-001: Local(3)[001] = [00101, 00111]
-010: Local(2)[01] = [01001, 01011]
-011: Local(2)[01] = [01001, 01011]
-100: Local(1)[1] = [null, null]
-101: Local(1)[1] = [null, null]
-110: Local(1)[1] = [null, null]
-111: Local(1)[1] = [null, null]
+000: Local(3)[000*] = [00011, null]
+001: Local(3)[001*] = [00101, 00111]
+010: Local(2)[01*] = [01001, 01011]
+011: Local(2)[01*] = [01001, 01011]
+100: Local(1)[1*] = [null, null]
+101: Local(1)[1*] = [null, null]
+110: Local(1)[1*] = [null, null]
+111: Local(1)[1*] = [null, null]
 
 > s 01011
 01011 FOUND
@@ -191,14 +193,14 @@ SUCCESS
 
 > p
 Global(3)
-000: Local(3)[000] = [00011, null]
-001: Local(3)[001] = [00101, 00111]
-010: Local(2)[01] = [01001, 01011]
-011: Local(2)[01] = [01001, 01011]
-100: Local(1)[1] = [10001, 11100]
-101: Local(1)[1] = [10001, 11100]
-110: Local(1)[1] = [10001, 11100]
-111: Local(1)[1] = [10001, 11100]
+000: Local(3)[000*] = [00011, null]
+001: Local(3)[001*] = [00101, 00111]
+010: Local(2)[01*] = [01001, 01011]
+011: Local(2)[01*] = [01001, 01011]
+100: Local(1)[1*] = [10001, 11100]
+101: Local(1)[1*] = [10001, 11100]
+110: Local(1)[1*] = [10001, 11100]
+111: Local(1)[1*] = [10001, 11100]
 
 > q
 ```

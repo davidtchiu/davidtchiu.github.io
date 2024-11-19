@@ -161,7 +161,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    6           San Franci
    ```
 
-8. For all Sales Reps, list their names and the names of the office they work out of, along with the number of clients they represent. Order by reverse order of number of clients. There are 15 rows in the result.
+8. For all employees listed as `Sales Rep`, list their names and the names of the office they work out of, along with the number of clients they represent. Order by reverse order of number of clients. There are 15 rows in the result.
 
    ```
    firstName   lastName    city        numClients
@@ -182,6 +182,30 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    Peter       Marsh       Sydney      5
    Mami        Nishi       Tokyo       5
    ```
+
+   Though not required, for an added challenge, you can write the query so that it further identifies the sales reps that have zero clients. In that case, you should get 17 rows (below).
+
+      ```
+      firstName   lastName    city        numClients
+      ----------  ----------  ----------  ----------
+      Pamela      Castillo    Paris       10
+      Barry       Jones       London      9
+      George      Vanauf      NYC         8
+      Larry       Bott        London      8
+      Foon Yue    Tseng       NYC         7
+      Gerard      Hernandez   Paris       7
+      Leslie      Jennings    San Franci  6
+      Leslie      Thompson    San Franci  6
+      Julie       Firrelli    Boston      6
+      Steve       Patterson   Boston      6
+      Loui        Bondur      Paris       6
+      Martin      Gerard      Paris       6
+      Andy        Fixter      Sydney      5
+      Peter       Marsh       Sydney      5
+      Mami        Nishi       Tokyo       5
+      Tom	      King	      Sydney	   0
+      Yoshimi	   Kato	      Tokyo    	0
+      ```
 
 9. List the customer(s) and their total payments (answer should include customer number, customer name, total payment where total payment is the total amount of dollars the customer has paid). Order by total payment. You should get 98 rows.
 
