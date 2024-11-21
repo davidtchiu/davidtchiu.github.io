@@ -225,19 +225,19 @@ let days = {
     "BSTs: contains(), add(), remove()",
     "BSTs: performance analysis",
     "Lab 12: BST Lab",
-    "Lab review",
-    // wk 13 
     "Start Hashing: Entry<K,V> class, hashcode()",
+    // wk 13 
+    "HashMaps approach 1: Open addressing",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
-    "HashMaps approach 1: Open addressing",
-    "HashMaps approach 2: Chaining",
-    "Lab 13: Hashing Lab",
-    "Cancelled",
-    // wk 15
+    "HashMaps approach 2: Bucket chaining",
     "Merge Sort",
+    "Lab 13: Hashing Lab",
+    "<strong><emph>Cancelled</emph></strong>",
+    // wk 15
+    "Quick Sort",
     "Quick Sort",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
