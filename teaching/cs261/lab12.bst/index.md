@@ -185,7 +185,7 @@ I've created a new project to get you started. Please download and open it. Firs
   ```
 
 
-- Implement the `public boolean isFull()` method which tests to see if the tree is full. Recall that a BST is full if every node has either 0 or 2 children. An empty tree (in which the `localRoot` points to `null`) is not full. Here's what to do if a tree has a root node: It's a leaf, then the tree is full. If the root node has only one child, the tree is not full. Otherwise, the root node must have two children, and it's full if both of its subtrees are also full. You need to create the private helper method.
+- Implement the `public boolean isFull()` method which tests to see if the tree is full. Recall that a BST is full if every node has either 0 or 2 children. Like the other methods you've had to implement earlier, start by creating a recursive helper method, `private boolean isFullHelper(Node<E> localRoot)` that inputs a tree node. An empty tree (i.e., `localRoot` is `null`) is not full, so return `false` immediately. Here's what to do otherwise: If `localRoot` is a leaf node, then the tree is full, so return `true`. If the `localRoot` node has only one child, the tree is not full, so return `false`. Otherwise, the given `localRoot` node must have *two* children, and it's full if both of its subtrees are also full ... so call your helper method recursively on the two children and see what they return!
 
   ```java
   BinarySearchTree<Integer> my_bst = new BinarySearchTree<>();
@@ -231,19 +231,19 @@ I've created a new project to get you started. Please download and open it. Firs
 
   Create a helper method `private Node<E> removeHelper(Node<E> localRoot, E target)`. It removes the `target` value from the subtree that is rooted by `localRoot` and returns the new root of the subtree after the node's removal. That's a super important point to remember, and worth repeating. This method returns the ROOT of the subtree after removal of the target.
 
-  - Base case: if `localRoot` is `null`, then the subtree is empty, and you won't find the target here, so return `null`.
+  - Base case #1: if `localRoot` is `null`, then the subtree is empty, and you won't find the target here, so return `null`.
 
-  - Base case: if the `localRoot` holds the target data, you need to deal with three cases:
+  - Base case #2: if the `localRoot` holds the target data, you need to deal with three cases:
 
-    - Case 1: `LocalRoot` is a leaf: If the `localRoot` node has neither children, then the root of the subtree after removal of the `localRoot` must be `null`. Simply return `null` to "remove" the current `localRoot`.
+    - Case 1: `localRoot` is a leaf: If the `localRoot` node has neither children, then the root of the subtree after removal of the `localRoot` must be `null`. Simply return `null` to "remove" the current `localRoot`.
 
       ![](figures/BSTLab_remove1.png)
 
-    - Case 2: `LocalRoot` has one child: If the `localRoot` node has no right child, then the left child of the `localRoot` becomes the new root of this subtree. Therefore, you only need to return the left child of `localRoot`. If the `localRoot` node has no left child, then do the opposite.
+    - Case 2: `localRoot` has one child: If the `localRoot` node has no right child, then the left child of the `localRoot` becomes the new root of this subtree. Therefore, you just need to `return` the left child of `localRoot`. If the `localRoot` node has no left child, then `return` the right child.
 
       ![](figures/BSTLab_remove2.png)
 
-    - Case 3: `LocalRoot` has both children: Replace the `localRoot`'s data with the data stored in its in-order predecessor (hmm, I _did_ have you write `largestHelper()` moments earlier...) Next, make a recursive call to remove the in-order predecessor from the left subtree of the `localRoot` (yup, just call the same method you're currently writing). Don't forget to join-up the modified left subtree with the current `localRoot` by setting `localRoot.left` to this recursive call. Return `localRoot` when done.
+    - Case 3: `localRoot` has both children: Replace the `localRoot`'s data with the data stored in its in-order predecessor (hmm, I _did_ have you write `largestHelper(...)` moments earlier...) Next, make a recursive call to remove the in-order predecessor from the left subtree of the `localRoot` (yup, just call the same method you're currently writing). Don't forget to join-up the modified left subtree with the current `localRoot` by setting `localRoot.left` to whatever this recursive call returns. Return `localRoot` when this is done.
 
       ![](figures/BSTLab_remove3.png)
 
