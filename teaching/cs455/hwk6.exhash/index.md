@@ -57,7 +57,7 @@ You may use Java or Python for this assignment.
 
 
 #### Example Output
-Bad input:
+Bad input. Recall that you can assume only integers (not strings, not doubles) are input on the command line.
 
 ```txt
 $ java ExtHash
