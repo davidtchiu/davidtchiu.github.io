@@ -137,6 +137,49 @@ I've created a new project to get you started. Please download and open it. Firs
   > 1 // indeed, only node 5 is a leaf
   ```
 
+
+- Implement the `public boolean isFull()` method which tests to see if the tree is full. Recall that a BST is full if every node has either 0 or 2 children.  An empty tree (i.e., `localRoot` is `null`) is not full, so return `false` immediately. Here's what to do otherwise: If `localRoot` is a leaf node, then the tree is full, so return `true`. If the `localRoot` node has only one child, the tree is not full, so return `false`. Otherwise, the given `localRoot` node must have *two* children, and it's full if both of its subtrees are also full ... so call your helper method recursively on the two children and see what they return!
+
+  ```java
+  BinarySearchTree<Integer> my_bst = new BinarySearchTree<>();
+  my_bst.add(3);
+  my_bst.add(4);
+  my_bst.add(1);
+  System.out.println(my_bst.toString());
+  > 3
+  >  1
+  >    null
+  >    null
+  >  4
+  >    null
+  >    null
+
+  System.out.println(my_bst.isFull());
+  > true
+
+  BinarySearchTree<Integer> my_bst2 = new BinarySearchTree<>();
+  my_bst2.add(1);
+  my_bst2.add(2);
+  my_bst2.add(3);
+  my_bst2.add(4);
+  my_bst2.add(5);
+  System.out.println(my_bst2.toString());
+  > 1
+  >   null
+  >  2
+  >    null
+  >    3
+  >      null
+  >      4
+  >        null
+  >        5
+  >          null
+  >          null
+
+  System.out.println(my_bst2.isFull());
+  > false
+  ```
+
 - Implement the `public int height()` method which returns the height of the current tree. Recall that the *height of a tree* is the *longest* number of edges from the root to any leaf node. Remember when I said in class that the reason you'd use recursion is to simplifying programming? This is one of those algorithms that's notoriously difficult to implement iteratively, but has a very simple recursive solution. Again, you only need to fill in the helper method that I've provided. Start by defining your base cases. When does the height of a BST become obvious? (There are two base cases.)
 
   ```java
@@ -186,47 +229,6 @@ I've created a new project to get you started. Please download and open it. Firs
   ```
 
 
-- Implement the `public boolean isFull()` method which tests to see if the tree is full. Recall that a BST is full if every node has either 0 or 2 children. Like the other methods you've had to implement earlier, start by creating a recursive helper method, `private boolean isFullHelper(Node<E> localRoot)` that inputs a tree node. An empty tree (i.e., `localRoot` is `null`) is not full, so return `false` immediately. Here's what to do otherwise: If `localRoot` is a leaf node, then the tree is full, so return `true`. If the `localRoot` node has only one child, the tree is not full, so return `false`. Otherwise, the given `localRoot` node must have *two* children, and it's full if both of its subtrees are also full ... so call your helper method recursively on the two children and see what they return!
-
-  ```java
-  BinarySearchTree<Integer> my_bst = new BinarySearchTree<>();
-  my_bst.add(3);
-  my_bst.add(4);
-  my_bst.add(1);
-  System.out.println(my_bst.toString());
-  > 3
-  >  1
-  >    null
-  >    null
-  >  4
-  >    null
-  >    null
-
-  System.out.println(my_bst.isFull());
-  > true
-
-  BinarySearchTree<Integer> my_bst2 = new BinarySearchTree<>();
-  my_bst2.add(1);
-  my_bst2.add(2);
-  my_bst2.add(3);
-  my_bst2.add(4);
-  my_bst2.add(5);
-  System.out.println(my_bst2.toString());
-  > 1
-  >   null
-  >  2
-  >    null
-  >    3
-  >      null
-  >      4
-  >        null
-  >        5
-  >          null
-  >          null
-
-  System.out.println(my_bst2.isFull());
-  > false
-  ```
 
 - For this last one, I strongly suggest you going back to the notes to remind yourselves how node removal works. The `public void remove(E target)` method attempts to remove the node containing the given key. You need to first find the "victim." Because this is a little more complicated, I'll give you some hints on what you need to do.
 
@@ -244,13 +246,13 @@ I've created a new project to get you started. Please download and open it. Firs
 
       ![](figures/BSTLab_remove2.png)
 
-    - Case 3: `localRoot` has both children: Replace the `localRoot`'s data with the data stored in its in-order predecessor (hmm, I _did_ have you write `largestHelper(...)` moments earlier...) Next, make a recursive call to remove the in-order predecessor from the left subtree of the `localRoot` (yup, just call the same method you're currently writing). Don't forget to join-up the modified left subtree with the current `localRoot` by setting `localRoot.left` to whatever this recursive call returns. Return `localRoot` when this is done.
+    - Case 3: `localRoot` has both children: Replace the `localRoot`'s data with the data stored in its in-order predecessor (hmm, I _did_ have you write `largestHelper(...)` moments earlier!) Next, make a recursive call to remove the in-order predecessor from the left subtree of the `localRoot` (yup, just call the same helper method you're currently writing on the current left subtree!). Don't forget to join-up the modified left subtree with the current `localRoot` by setting `localRoot.left` to whatever this recursive call returns. Return `localRoot` when this is done.
 
       ![](figures/BSTLab_remove3.png)
 
-    - Recursive case: if data at `localRoot` is smaller than the target data, then the `localRoot`'s right child is set to the root of the right subtree *after* you remove the victim from it. Therefore, you just need to set `localRoot.right` to the recursive call on the right subtree. Return `localRoot`.
+    - Recursive case #1: if data at `localRoot` is smaller than the target data, then you just need to set `localRoot.right` to the recursive `removeHelper()` call on the right subtree. Return `localRoot`.
 
-    - Recursive case: if data at `localRoot` is smaller than the target data, then the `localRoot`'s right child is set to the root of the right subtree *after* you remove the victim from it. Therefore, you just need to set `localRoot.right` to the recursive call on the right subtree. Return `localRoot`.
+    - Recursive case #2: if data at `localRoot` is larger than the target data, then  you just need to set `localRoot.left` to the recursive `removeHelper()` call on the left subtree. Return `localRoot`.
 
   - Here's a sample output:
 
