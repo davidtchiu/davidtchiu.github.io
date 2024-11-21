@@ -238,21 +238,21 @@ I've created a new project to get you started. Please download and open it. Firs
 
   - Base case #2: if the `localRoot` holds the target data, you need to deal with three cases:
 
-    - Case 1: `localRoot` is a leaf: If the `localRoot` node has neither children, then the root of the subtree after removal of the `localRoot` must be `null`. Simply return `null` to "remove" the current `localRoot`.
+    - Case #2a: `localRoot` is a leaf: If the `localRoot` node has neither children, then the root of the subtree after removal of the `localRoot` must be `null`. Simply return `null` to "remove" the current `localRoot`.
 
       ![](figures/BSTLab_remove1.png)
 
-    - Case 2: `localRoot` has one child: If the `localRoot` node has no right child, then the left child of the `localRoot` becomes the new root of this subtree. Therefore, you just need to `return` the left child of `localRoot`. If the `localRoot` node has no left child, then `return` the right child.
+    - Case #2b: `localRoot` has one child: If the `localRoot` node has no right child, then the left child of the `localRoot` becomes the new root of this subtree. Therefore, you just need to `return` the left child of `localRoot`. If the `localRoot` node has no left child, then `return` the right child.
 
       ![](figures/BSTLab_remove2.png)
 
-    - Case 3: `localRoot` has both children: Replace the `localRoot`'s data with the data stored in its in-order predecessor (hmm, I _did_ have you write `largestHelper(...)` moments earlier!) Next, make a recursive call to remove the in-order predecessor from the left subtree of the `localRoot` (yup, just call the same helper method you're currently writing on the current left subtree!). Don't forget to join-up the modified left subtree with the current `localRoot` by setting `localRoot.left` to whatever this recursive call returns. Return `localRoot` when this is done.
+    - Case #2c: `localRoot` has both children: Replace the `localRoot`'s data with the data stored in its in-order predecessor (hmm, I _did_ have you write `largestHelper(...)` moments earlier!) Next, make a recursive call to remove the in-order predecessor from the left subtree of the `localRoot` (yup, just call the same helper method you're currently writing on the current left subtree!). Don't forget to join-up the modified left subtree with the current `localRoot` by setting `localRoot.left` to whatever this recursive call returns. Return `localRoot` when this is done.
 
       ![](figures/BSTLab_remove3.png)
 
-    - Recursive case #1: if data at `localRoot` is smaller than the target data, then you just need to set `localRoot.right` to the recursive `removeHelper()` call on the right subtree. Return `localRoot`.
+  - Recursive case #1: if data at `localRoot` is smaller than the target data, then you need to call `removeHelper()` on the current right subtree (`localroot.right`), and then set `localRoot.right` to whatever that returns. Return `localRoot`.
 
-    - Recursive case #2: if data at `localRoot` is larger than the target data, then  you just need to set `localRoot.left` to the recursive `removeHelper()` call on the left subtree. Return `localRoot`.
+  - Recursive case #1: if data at `localRoot` is larger than the target data, then you need to call `removeHelper()` on the current left subtree (`localroot.left`), and then set `localRoot.right` to whatever that returns. Return `localRoot`.
 
   - Here's a sample output:
 
