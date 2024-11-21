@@ -79,7 +79,7 @@ I've created a new project to get you started. Please download and open it. Firs
   >          null
   ```
 
-- Take a look at all those BST figures at the top of this lab. Take note of where the largest element must be located in any BST. Implement the `E largest_helper()` method which returns the largest item in the BST rooted by the given node, or `null` if the given root node is `null`. Try implementing this one recursively.
+- Take a look at all those BST figures at the top of this lab. Take note of where the largest element must be located in any BST. Implement the `E largest_helper(Node<E> localRoot)` method which returns the largest item in the BST rooted on the given Node, or `null` if the given root node is `null`. Try implementing this one recursively.
 
   - **Hint:** Base case: if the `root` has no right child, the largest value is the data at the root. What's the general case?
 
