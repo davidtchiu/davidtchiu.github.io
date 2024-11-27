@@ -12,7 +12,7 @@ As a side note, "lossy" compression algorithms are no less important and common:
 - Use of PriorityQueue and BinaryTree.
 - Use of recursion for tree traversal.
 
-#### Teams
+<!-- #### Teams
 You are required to work in teams on this assignment. I've used a sophisticated matching algorithm to produce the groups listed below. (Ok, it's just random, but I did write a program to do it!) Do not start writing any code until you've met with your team member(s) and discussed the assignment and possible approaches. For best results, I expect you to work physically together. I will assume that each member of the team has contributed equally to the project. If that assumption isn't true, please contact me privately.
 
 ```
@@ -26,7 +26,7 @@ You are required to work in teams on this assignment. I've used a sophisticated 
 [Ben H, Jacob W]
 [Noel L, Elizabeth B]
 [Alex W, Timothy T]
-```
+``` -->
 
 #### Required Files
 Please download the following starter pack:
