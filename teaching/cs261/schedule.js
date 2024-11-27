@@ -56,6 +56,12 @@ let days = {
         due: "11/22/2024",
       },
       {
+        name: "Hwk 7",
+        title: "Huffman Encoding",
+        url: "hwk7.huff",
+        due: "12/18/2024",
+      },
+      {
         name: "Bonus Hwk",
         title: "Additional ArrayList Methods",
         url: "bonus.AL/",
@@ -64,12 +70,6 @@ let days = {
 
 
 
-      // {
-      //   name: "Hwk 7",
-      //   title: "Huffman Encoding",
-      //   url: "hwk7.huff",
-      //   due: "12/9/2024",
-      // },
       // {
       //   name: "Hwk 8",
       //   title: "Evil Hangman (Paired)",
