@@ -171,11 +171,12 @@ let days = {
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
-    "Theory: Review of attribute-set closure; superkeys algorithm",
+    // "Theory: Review of attribute-set closure; superkeys algorithm",
     "Theory: FD set closure; Armstrong's Axioms, proof of inference rules",
+    "Theory: 1NF, 2NF",
     "Cancelled",
     // wk 15
-    "Theory: Normal Forms: 1NF, 2NF, BCNF",
+    "Theory: BCNF decomposition",
     // "Theory: Lossless join; dependency preservation",
     // "Theory: Canonical cover; 3NF synthesis",
     // "<strong><emph>Final Presentation</emph></strong>",
