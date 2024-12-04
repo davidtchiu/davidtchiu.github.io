@@ -91,13 +91,13 @@ let days = {
         name: "Project Demo",
         title: "Project Demo",
         url: "proj/",
-        due: "12/9/2023",
+        due: "12/11/2024",
       },
       {
         name: "Project-Code",
         title: "Project Code",
         url: "proj/",
-        due: "12/9/2023",
+        due: "12/18/2024",
       },
     ],
 
