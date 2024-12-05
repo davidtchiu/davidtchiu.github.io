@@ -21,7 +21,7 @@ You may use Java or Python for this assignment.
 2. After receiving the above input, create a default extendible hash index, with global index ($$i$$) and local index ($$j$$) initialized to 0, which means you will have $$2^i = 1$$ entry in your global index that points to the sole local bucket, which is empty.
 
 3. Your program should now wait for instructions of the following format:
-    - `i <x>` Inserts the key `x` given as a binary string, such as `"i 11010"`, which prints `SUCCESS` or `FAILED`. An insert fails if `x` already exists in the hash index. An error should be printed if the length of this bit-string exceeds the `key length` specified in the command prompt.
+    - `i <x>` Inserts the key `x` given as a binary string, such as `"i 11010"`, which prints `SUCCESS` or `FAILED`. A key can go anywhere in the bucket, as long as there's room for it. An insert fails if `x` already exists in the hash index. An error should be printed if the length of this bit-string exceeds the `key length` specified in the command prompt.
     - `s <x>` Searches the index for key `x`, given as a binary string. Prints `x FOUND` or `x NOT FOUND`. An error should be printed if the length of this bit-string exceeds the `key length` specified in the command prompt.
     - `p` Prints out your extendible hash index (you must abide by the format given below.)
     - `q` Exits the program.
@@ -52,8 +52,7 @@ You may use Java or Python for this assignment.
 
     <img src="figures/exthash.png" width="400px"/>
 
-6. If taking an object oriented approach, I would have at least 2 classes: a Global Directory class, which stores an array of buckets, and a Bucket class, which stores information about the local directory (e.g., what keys are stored in the bucket, the local bit-depth of that bucket, and what is the bit-pattern associated with that bucket) In my implementation, I have a third class that simply runs the main method, providing the user interactive interface. 
-
+6. If taking an object oriented approach, I would have at least 2 classes: a `GlobalDirectory` class, which stores an array of `Buckets`, and a `Bucket` class, which stores information about the local directory (e.g., what keys are currently stored in the bucket, the bit-depth of that bucket, and what is the bit-pattern associated with that bucket). In my implementation, I have a third class that simply runs the `main` method, providing the user interactive interface. 
 
 
 #### Example Output
@@ -75,7 +74,7 @@ Error: block size must be at least 1
 ```
 
 
-In this example, bucket/block size is set to 4, and therefore, the first four keys are inserted trivially. The fifth key `0101` causes a local split, which propagates to a global split. All keys beginning with `1` are transferred over to bucket `[1]`, before the insertion of `0101` can be performed.
+In this example, bucket/block size is set to 4, and therefore, the first four keys are inserted trivially. The fifth key `0101` causes a local split, which propagates to a global split. All keys beginning with `1` are transferred over to bucket `[1]`, before the insertion of `0101` can be performed. (Keep in mind that keys can go anywhere in the bucket -- there is no ordering imposed, in case you're wondering why the keys are positioned where they're at.)
 
 ```
 $ java ExtHash 4 4

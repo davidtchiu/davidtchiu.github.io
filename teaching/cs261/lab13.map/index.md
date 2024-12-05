@@ -57,7 +57,7 @@ The following file(s) have been provided for this lab.
   > [Adam=3.2, Jan=2.5, Tony=3.0, Aaron=3.2, David=4.0, Brad=3.9]
   ```
 
-- The `values()` method only needs to return all the values stored in any Java `Collection<V>`. Because `Collection` is a high level interface to all the data structures you've learned in this class, you can essentially return an `ArrayList<V>`, or a `LinkedList<V>`, or a `TreeSet<V>` of values, etc.  (I returned an `ArrayList<V>` in my own implementation.)
+- The `values()` method only needs to return all the values stored in any Java `Collection<V>`. Because `Collection` is a high-level interface to many the data structures you've seen in this class, you can essentially return an `ArrayList<V>`, or a `LinkedList<V>`, or a `TreeSet<V>` of values, etc.  (I returned an `ArrayList<V>` in my own implementation.)
 
 - Implement the `V remove(K key)` method in the `OpenMap` class. It returns `null` if the key is not found, or it returns the removed value. Recall that, if the key is found, you cannot simply set the array entry to `null` because it breaks the linear probing algorithm you use for `get()` and `put()`. Instead, it seems counterintuitive, but you *must* keep the `Entry` in place, but set the key portion of the entry to `null`. 
 
