@@ -18,7 +18,7 @@ The following file(s) have been provided for this lab.
 
 - Look through `OpenMap`, which is supposed to implement the open-addressing map that we've been studying in lecture. Focus on the inner class, `Entry<K,V>`, which encapsulates a key-value pair of type `K` and `V`, respectively. Recall that an inner class' fields are accessible anywhere from the outer class. Now notice that the inner class, as well as both of its instance variables are declared as `protected`. This implies that the inner class and its fields are also accessible from any subclass of `OpenMap` too. (Remember that for later.)
 
-- Read through the two constructors. The default constructor instantiates the table array with the `INITIAL_CAPACITY`. The one-argument constructor allows the user to input the initial capacity. If the argument is not positive, throw an `IllegalArgumentException`.
+- Read through the two constructors. The default constructor instantiates the table array with the `INITIAL_CAPACITY`. The one-argument constructor allows the user to input the initial capacity. 
 
 - Now read through the `get()` method, which implements the so-called Linear Probing algorithm, and make sure you understand it fully. We first calculate the index based on the hash code of the key and (possibly) perform a linear traversal of the array to search for the key. This method then returns the corresponding value when you find the key, or `null` if the key isn't found.
 
@@ -26,7 +26,7 @@ The following file(s) have been provided for this lab.
 
   - The index into the array should be calculated the same way as in `get()`: Take the absolute value of the given `key`'s `hashCode()`, and `mod` it by the capacity of the hash table. This will tell you the location in the hash table where the key-value can be found or inserted.
 
-  - Next, check to see if that location is `null`. If it is, then create a new key-value `Entry` and put it there. If not, you need to perform Linear Probing: increment the array index until: (1) you come across a `null`, or (2) you find the given `key`. (You may have to "wrap around" to the beginning of the hash table as you search.) If (1), insert the `Entry` and return `null`. If (2), replace the value, and return the old value. If the table is full, you should throw an `IllegalArgumentException` (just for now).
+  - Next, check to see if that location is `null`. If it is, then create a new key-value `Entry` and put it there. If not, you need to perform Linear Probing: increment the array index until: (1) you come across a `null`, or (2) you find the given `key`. (You may have to "wrap around" to the beginning of the hash table as you search.) If (1), insert the `Entry` and return `null`. If (2), replace the value, and return the old value. If the table is full, you should return null.
 
 - Now you can fill in the `values()` and `toString()` methods. Note that `toString()` should return a string containing all the key-value entries stored in the map. Recall that maps do not guarantee a particular order on its entries, so don't be surprised if your output is in a different order than mine, below:
 
@@ -51,8 +51,7 @@ The following file(s) have been provided for this lab.
   System.out.println(map.toString());
   > [Adam=3.2, Jan=2.5, Tony=3.0, Aaron=3.2, David=4.0, Brad=3.9]
 
-  map.put("Tina", 4.0);
-  > IllegalArgumentException: Hashtable is full!
+  map.put("Tina", 4.0);  // no effect since table is full
 
   System.out.println(map.toString());
   > [Adam=3.2, Jan=2.5, Tony=3.0, Aaron=3.2, David=4.0, Brad=3.9]
