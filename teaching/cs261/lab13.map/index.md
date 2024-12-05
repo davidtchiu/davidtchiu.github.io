@@ -20,7 +20,7 @@ The following file(s) have been provided for this lab.
 
 - Read through the two constructors. The default constructor instantiates the table array with the `INITIAL_CAPACITY`. The one-argument constructor allows the user to input the initial capacity. 
 
-- Now read through the `get()` method, which implements the so-called Linear Probing algorithm, and make sure you understand it fully. We first calculate the index based on the hash code of the key and (possibly) perform a linear traversal of the array to search for the key. This method then returns the corresponding value when you find the key, or `null` if the key isn't found.
+- Now read through the `get()` method, which implements the "Linear Probing" algorithm, and make sure you understand it fully: We first calculate the index based on the "hash code" of the given `key` and (possibly) perform a linear traversal of the array to search for the `key`. This method then returns the corresponding value when you find the key, or `null` if the key isn't found.
 
 - Now implement the `put()` method, which behaves a lot like `get()`. Recall from lecture that you need to do a couple of things:
 
@@ -28,7 +28,7 @@ The following file(s) have been provided for this lab.
 
   - Next, check to see if that location is `null`. If it is, then create a new key-value `Entry` and put it there. If not, you need to perform Linear Probing: increment the array index until: (1) you come across a `null`, or (2) you find the given `key`. (You may have to "wrap around" to the beginning of the hash table as you search.) If (1), insert the `Entry` and return `null`. If (2), replace the value, and return the old value. If the table is full, you should return null.
 
-- Now you can fill in the `values()` and `toString()` methods. Note that `toString()` should return a string containing all the key-value entries stored in the map. Recall that maps do not guarantee a particular order on its entries, so don't be surprised if your output is in a different order than mine, below:
+- The `toString()` method should return a string containing all the key-value entries stored in the map. Recall that maps do not guarantee a particular order on its entries, so don't be surprised if your output is in a different order than mine, below:
 
   ```java
   MapInt<String,Double> map = new OpenMap<>(6);
@@ -56,6 +56,10 @@ The following file(s) have been provided for this lab.
   System.out.println(map.toString());
   > [Adam=3.2, Jan=2.5, Tony=3.0, Aaron=3.2, David=4.0, Brad=3.9]
   ```
+
+- The `values()` method only needs to return all the values stored in any Java `Collection`. That means you can return an `ArrayList` of values, or a `LinkedList`, or a `HashSet` of values, etc. Essentially, anything that implements `Collection` is okay to use. (I returned an `ArrayList` in my own implementation.)
+
+
 
 - Implement the `V remove(K key)` method in the `OpenMap` class. It returns `null` if the key is not found, or it returns the removed value. Recall that, if the key is found, you cannot simply set the array entry to `null` because it breaks the linear probing algorithm you use for `get()` and `put()`. Instead, it seems counterintuitive, but you *must* keep the `Entry` in place, but set the key portion of the entry to `null`. 
 
