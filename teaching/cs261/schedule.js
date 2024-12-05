@@ -151,12 +151,12 @@ let days = {
           url: "lab12.bst/",
           due: "11/22/2024",
         },
-      //   {
-      //     name: "Lab 11",
-      //     title: "Maps Lab",
-      //     url: "lab11.map/",
-      //     due: "11/29/2024",
-      //   },
+        {
+          name: "Lab 13",
+          title: "Maps Lab",
+          url: "lab13.map/",
+          due: "12/6/2024",
+        },
         // {
         //   name: "Lab 12",
         //   title: "Sorting Lab",
