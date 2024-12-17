@@ -227,7 +227,7 @@ regardless of whether the global directory needs to be doubled in size.
 
 This method must run in amortized O(1) time. On a split, you may observe that this method runs
 in O(d) where d is the number of entries in the global directory. However, because each split allows
-for addressing 2 times more buckets, the insert operations between global splits averages out to O(1).
+for addressing 2 times more buckets, the insert operations between global-splits averages out to O(1).
 ```
 
 #### Submitting Your Assignment

@@ -13,7 +13,7 @@ The term project is open-ended, and you need to write a short proposal (1 page i
 - Team preferences due via email to David: Wed, Oct 30, 2024
 - 1-page proposal deadline: Friday, Nov 8, 2024
 - Presentation / demo: Wednesday, Dec 11, 2024
-- Code submission: Friday, Dec 18, 2024
+- Code submission: Friday, Dec 20, 2024
 - Scrum logs and check-ins: weekly, ongoing
 
 
