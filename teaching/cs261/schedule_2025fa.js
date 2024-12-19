@@ -41,40 +41,45 @@ let days = {
         name: "Hwk 4",
         title: "Doubly Linked List",
         url: "hwk4.LL/",
-        due: "10/25/2024",
+        due: "10/23/2024", // due wed
       },
       {
         name: "Hwk 5",
-        title: "Ranked Choice Voting (Paired)",
-        url: "hwk5.rcv",
-        due: "11/13/2024",
+        title: "Evil Hangman",
+        url: "hwk5.ehm",
+        due: "11/4/2024", // due Mon
       },
+      // {
+      //   name: "Hwk 5",
+      //   title: "Ranked Choice Voting (Paired)",  // never again, unless I scaffold more
+      //   url: "hwk5.rcv",
+      //   due: "11/13/2024",
+      // },
       {
         name: "Hwk 6",
-        title: "Recursion Exercises",
+        title: "Recursion",
         url: "hwk6.rec",
-        due: "11/22/2024",
+        due: "11/18/2024",  // due Mon
       },
-      {
-        name: "Hwk 7",
-        title: "Huffman Encoding",
-        url: "hwk7.huff",
-        due: "12/18/2024",
-      },
-      {
-        name: "Bonus Hwk",
-        title: "Additional ArrayList Methods",
-        url: "bonus.AL/",
-        due: "12/18/2024",
-      },
-
-
 
       // {
-      //   name: "Hwk 8",
-      //   title: "Evil Hangman (Paired)",
-      //   url: "hwk8.ehm",
-      //   due: "12/13/2024",
+      //   name: "Hwk 7",
+      //   title: "Something using BSTs",  // never again, unless I scaffold more
+      //   url: "hwk7",
+      //   due: "12/18/2024",
+      // },
+
+      // {
+      //   name: "Hwk 7",
+      //   title: "Huffman Encoding",  // never again, unless I scaffold more
+      //   url: "hwk7.huff",
+      //   due: "12/18/2024",
+      // },
+      // {
+      //   name: "Bonus Hwk",
+      //   title: "Additional ArrayList Methods",
+      //   url: "bonus.AL/",
+      //   due: "12/18/2024",
       // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
@@ -105,7 +110,7 @@ let days = {
       },
       {
         name: "Lab 5",
-        title: "Complexity Lab",
+        title: "Big-O Lab",
         url: "lab5.bigO/",
         due: "10/4/2024",
       },
@@ -192,56 +197,58 @@ let days = {
     "Lab 5: Big-O lab",
     "List interface, ArrayList: add(), reallocate()",
     // wk 6
+    "ArrayList: continued",
     "<strong><emph>Review for Exam 1</emph></strong>",
-    "<strong><emph>Exam 1</emph></strong>",   // NO, DON'T DO EXAMS ON WED. THERE'SLAB NEXT DAY
-    "Lab 6: ArrayList Code-Along Lab",
+    "<strong><emph>Exam 1</emph></strong>",
     "Start Linked Lists: The Node inner class",
+//    "Lab 6: ArrayList Code-Along Lab",
     // wk 7
     "LL: indexOf(), getNodeAt(), get(), set()",
     "LL: addFirst(), addAfter(), add()",
-    "Lab 7: LL Homework Code-Along Lab",
+    "Lab 6: LL Homework Code-Along Lab",
     "LL: optimizations (tail, iterator, double links)",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Stack<E> usage",
-    "Lab 8: Stacks and Queues (MelodyPlayer)",
+    "Stacks and Queues",
+    "Lab 7: Stack and Queue Exercises",
     "Lab review; infix algorithm",
     // wk 9:
-    "PriorityQueues<E>; Start recursion",
-    "Recursion: code reading, common pitfalls",
-    "Lab 9: RCV Homework Code-Along Lab",
-    "Recursion: code tracing",
-    // wk 10
-    "Recursive code writing and pitfalls",
-    "Recursive Big-O (telescoping method)",
-    "Lab 10: Recursion Lab",
-    "<strong><emph>Review for Exam 2</emph></strong>",
-    // wk 11
-    "<strong><emph>Exam 2</emph></strong>",
-    "Start Binary Trees",
-    "Lab 11: Expression Trees Lab",
-    "Tree Traversal; Start Binary Search Trees (BST)",
-    // wk 12
-    "BSTs: contains(), add(), remove()",
-    "BSTs: performance analysis",
-    "Lab 12: BST Lab",
     "Start Hashing: Entry<K,V> class, hashcode()",
-    // wk 13 
-    "HashMaps approach 1: Open addressing",
+    "HashMaps: linear probing",
+    "Lab 8: Hashing Lab",
+    "Lab review; EH homework introduction",
+    // wk 10
+    "Start recursion",
+    "<strong><emph>Review for Exam 2</emph></strong>",
+    "<strong><emph>Exam 2</emph></strong>",
+    "Recursion: code reading, common pitfalls",
+    // wk 11
+    "Recursion: code tracing",
+    "Recursive code writing and pitfalls",
+    "Lab 9: Recursion Exercises",
+    "Recursive Big-O (telescoping method)",
+    // wk 12
+    "Efficient Sorting: Merge Sort",
+    "Merge Sort (cont.)",
+    "Lab 10: Sorting Lab",
+    "Efficient Sorting: Quick Sort",
+    // wk 13
+    "Quick Sort (cont.)",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
-    // wk 14
-    "HashMaps approach 2: Bucket chaining",
-    "Merge Sort",
-    "Lab 13: Hashing Lab",
-    "<strong><emph>Cancelled</emph></strong>",
+    // wk 14 
+    "Start Binary Search Trees (BST)",
+    "BSTs: contains(), add(), remove()",
+    "Lab 11: BST Lab",
+    "BSTs: performance analysis",
     // wk 15
-    "Quick Sort",
-    "Quick Sort",
+    "Exception Handling",
+    "Exceptions: throwing, catching",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
+    //    "Lab 11: Expression Trees Lab",
     "",
     "<strong><emph>Final Exam<br/>12:00-2:00</strong></emph>",
     "",

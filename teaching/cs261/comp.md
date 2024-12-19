@@ -9,5 +9,5 @@ Office Hours: Mon/Wed/Fri 9:00 - 10:00 in TH 303, or by appointment
 <!-- David's schedule generator! Do not touch -->
 <div id="schedule">&nbsp;</div>
 <script type="text/javascript" src="../calendar.js"></script>
-<script type="text/javascript" src="schedule_thurExams.js"></script>
+<script type="text/javascript" src="schedule_friExams.js"></script>
 <!-- End -->
