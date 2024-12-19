@@ -192,59 +192,53 @@ let days = {
     "Lab 5: Big-O lab",
     "List interface, ArrayList: add(), reallocate()",
     // wk 6
-    "ArrayList: continued",
     "<strong><emph>Review for Exam 1</emph></strong>",
-    "<strong><emph>Exam 1</emph></strong>",
+    "<strong><emph>Exam 1</emph></strong>",   // NO, DON'T DO EXAMS ON WED. THERE'SLAB NEXT DAY
+    "Lab 6: ArrayList Code-Along Lab",
     "Start Linked Lists: The Node inner class",
-//    "Lab 6: ArrayList Code-Along Lab",
     // wk 7
     "LL: indexOf(), getNodeAt(), get(), set()",
     "LL: addFirst(), addAfter(), add()",
-    "Lab 6: LL Homework Code-Along Lab",
+    "Lab 7: LL Homework Code-Along Lab",
     "LL: optimizations (tail, iterator, double links)",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Stacks and Queues",
-    "Lab 7: Stack and Queue Exercises",
+    "Stack<E> usage",
+    "Lab 8: Stacks and Queues (MelodyPlayer)",
     "Lab review; infix algorithm",
     // wk 9:
-    "Start Hashing: Entry<K,V> class, hashcode()",
-    "HashMaps: linear probing",
-    "Lab 8: Hashing Lab",
-    "Lab review; EH homework introduction",
-    // wk 10
-    "Start recursion",
+    "PriorityQueues<E>; Start recursion",
     "Recursion: code reading, common pitfalls",
-    "Lab 9: EH Homework Lab",
+    "Lab 9: RCV Homework Code-Along Lab",
     "Recursion: code tracing",
     // wk 10
     "Recursive code writing and pitfalls",
     "Recursive Big-O (telescoping method)",
-    "Lab 10: Recursion Exercises",
-    "Lab review",
-    // wk 11
-    "Efficient Sorting: Merge Sort",
+    "Lab 10: Recursion Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
+    // wk 11
     "<strong><emph>Exam 2</emph></strong>",
-    "Efficient Sorting: Quick Sort",
+    "Start Binary Trees",
+    "Lab 11: Expression Trees Lab",
+    "Tree Traversal; Start Binary Search Trees (BST)",
     // wk 12
-    "Efficient Sorting: Quick Sort (cont.)",
-    "Start Binary Search Trees (BST)",
-    "Lab 11: Sorting Lab",
     "BSTs: contains(), add(), remove()",
-    // wk 13 
     "BSTs: performance analysis",
-    "<strong><emph>Thanksgiving</emph></strong>",
-    "<strong><emph>Thanksgiving</emph></strong>",
-    "<strong><emph>Thanksgiving</emph></strong>",
-//    "Lab 11: Expression Trees Lab",
-    // wk 14
-    "Exception Handling",
-    "Exceptions: throwing, catching",
     "Lab 12: BST Lab",
-    "Exception Handling",
+    "Start Hashing: Entry<K,V> class, hashcode()",
+    // wk 13 
+    "HashMaps approach 1: Open addressing",
+    "<strong><emph>Thanksgiving</emph></strong>",
+    "<strong><emph>Thanksgiving</emph></strong>",
+    "<strong><emph>Thanksgiving</emph></strong>",
+    // wk 14
+    "HashMaps approach 2: Bucket chaining",
+    "Merge Sort",
+    "Lab 13: Hashing Lab",
+    "<strong><emph>Cancelled</emph></strong>",
     // wk 15
-    "Final Review?",
+    "Quick Sort",
+    "Quick Sort",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final

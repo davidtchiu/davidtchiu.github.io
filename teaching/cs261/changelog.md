@@ -2,13 +2,25 @@
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 
 # TODO
-- Need more code along labs! Maybe start all labs as code alongs.
+- Need better assignments. Elizabeth says that things really stopped lining up
+with what we were learning: no BST assignment, RCV assignment no good. Want more
+scaffolding.
+
+- Go back to Thursday midterms
+
+- Replace Hwk 5 RCV with MelodyPlayer
+
+- Possibly replace Huffman Tree with something that uses Maps and showcases BSTs.
+
+- Skip priority queues altogether as a subject?
+
+- Need more code along labs! Maybe start all labs as code alongs?
+
 - Hwk 2: TTT - Insist that they keep a list of known open coordinates
     - In Player? In RandomPlayer?
     - What about Cooords?
+
 - Replace RG1 and RG1 sol (no more exceptions)
-- Students say they prefer Monday due dates???
-- Get assignment starter code on github
 
 
 # Change Log
