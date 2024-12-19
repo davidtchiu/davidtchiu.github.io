@@ -2,6 +2,8 @@
 - Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
 
 # TODO
+- Gotta stop telling students that CS 261 is a litmus test. Stop giving industry questions
+
 - Need better assignments. Elizabeth says that things really stopped lining up
 with what we were learning: no BST assignment, RCV assignment no good. Want more
 scaffolding.

@@ -69,13 +69,6 @@ let days = {
       },
 
 
-
-      // {
-      //   name: "Hwk 8",
-      //   title: "Evil Hangman (Paired)",
-      //   url: "hwk8.ehm",
-      //   due: "12/13/2024",
-      // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
@@ -105,7 +98,7 @@ let days = {
       },
       {
         name: "Lab 5",
-        title: "Complexity Lab",
+        title: "Big-O Lab",
         url: "lab5.bigO/",
         due: "10/4/2024",
       },
@@ -217,38 +210,39 @@ let days = {
     "Recursion: code reading, common pitfalls",
     "Lab 9: EH Homework Lab",
     "Recursion: code tracing",
-    // wk 10
+    // wk 11
     "Recursive code writing and pitfalls",
     "Recursive Big-O (telescoping method)",
     "Lab 10: Recursion Exercises",
     "Lab review",
-    // wk 11
+    // wk 12
     "Efficient Sorting: Merge Sort",
     "<strong><emph>Review for Exam 2</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     "Efficient Sorting: Quick Sort",
-    // wk 12
+    // wk 13
     "Efficient Sorting: Quick Sort (cont.)",
+    "<strong><emph>Thanksgiving</emph></strong>",
+    "<strong><emph>Thanksgiving</emph></strong>",
+    "<strong><emph>Thanksgiving</emph></strong>",
+    // wk 14 
     "Start Binary Search Trees (BST)",
-    "Lab 11: Sorting Lab",
     "BSTs: contains(), add(), remove()",
-    // wk 13 
+    "Lab 11: BST Lab",
     "BSTs: performance analysis",
-    "<strong><emph>Thanksgiving</emph></strong>",
-    "<strong><emph>Thanksgiving</emph></strong>",
-    "<strong><emph>Thanksgiving</emph></strong>",
-//    "Lab 11: Expression Trees Lab",
-    // wk 14
+    // wk 15
     "Exception Handling",
     "Exceptions: throwing, catching",
-    "Lab 12: BST Lab",
-    "Exception Handling",
-    // wk 15
-    "Final Review?",
+    "Lab 12: Exceptions Lab",
+    "Buffer",
+    // wk final
+    "Buffer",
+    "Buffer",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
-    "",
+//    "Lab 11: Expression Trees Lab",
+"",
     "<strong><emph>Final Exam<br/>12:00-2:00</strong></emph>",
     "",
     "",
