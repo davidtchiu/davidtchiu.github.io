@@ -233,16 +233,11 @@ let days = {
     // wk 15
     "Exception Handling",
     "Exceptions: throwing, catching",
-    "Lab 12: Exceptions Lab",
-    "Buffer",
-    // wk final
-    "Buffer",
-    "Buffer",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
-//    "Lab 11: Expression Trees Lab",
-"",
+    //    "Lab 11: Expression Trees Lab",
+    "",
     "<strong><emph>Final Exam<br/>12:00-2:00</strong></emph>",
     "",
     "",
