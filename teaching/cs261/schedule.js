@@ -235,7 +235,6 @@ let days = {
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
-    //    "Lab 11: Expression Trees Lab",
     "",
     "<strong><emph>Final Exam<br/>12:00-2:00</strong></emph>",
     "",
