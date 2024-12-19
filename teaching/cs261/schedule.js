@@ -186,38 +186,39 @@ let days = {
     "List interface, ArrayList: add(), reallocate()",
     // wk 6
     "ArrayList: continued",
-    "Start Linked Lists: The Node inner class",
-    "<strong><emph>Review for Exam 1</emph></strong> + Lab 6: ArrayList Code-Along",
+    "<strong><emph>Review for Exam 1</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
+    "Start Linked Lists: The Node inner class",
+//    "Lab 6: ArrayList Code-Along Lab",
     // wk 7
     "LL: indexOf(), getNodeAt(), get(), set()",
     "LL: addFirst(), addAfter(), add()",
-    "Lab 7: LL Homework Code-Along Lab",
+    "Lab 6: LL Homework Code-Along Lab",
     "LL: optimizations (tail, iterator, double links)",
     // wk 8
     "<strong>Fall Break</strong>",
     "Stacks and Queues",
-    "Lab 8: Stack and Queue Exercises",
-    "2-stack infix algorithm",
+    "Lab 7: Stack and Queue Exercises",
+    "Lab review; infix algorithm",
     // wk 9:
     "Start Hashing: Entry<K,V> class, hashcode()",
-    "HashMaps: bucket chaining",
-    "Lab 9: Hashing Lab",
+    "HashMaps: linear probing",
+    "Lab 8: Hashing Lab",
     "Lab review; EH homework introduction",
     // wk 10
     "Start recursion",
-    "Recursion: code reading, common pitfalls",
-    "<strong><emph>Review for Exam 2</emph></strong> + Lab 10",
+    "<strong><emph>Review for Exam 2</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
+    "Recursion: code reading, common pitfalls",
     // wk 11
     "Recursion: code tracing",
     "Recursive code writing and pitfalls",
-    "Lab 11: Recursion Exercises",
+    "Lab 9: Recursion Exercises",
     "Recursive Big-O (telescoping method)",
     // wk 12
     "Efficient Sorting: Merge Sort",
     "Merge Sort (cont.)",
-    "Lab 12: Sorting Lab",
+    "Lab 10: Sorting Lab",
     "Efficient Sorting: Quick Sort",
     // wk 13
     "Quick Sort (cont.)",
@@ -227,7 +228,7 @@ let days = {
     // wk 14 
     "Start Binary Search Trees (BST)",
     "BSTs: contains(), add(), remove()",
-    "Lab 13: BST Lab",
+    "Lab 11: BST Lab",
     "BSTs: performance analysis",
     // wk 15
     "Exception Handling",
@@ -235,6 +236,7 @@ let days = {
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
+    //    "Lab 11: Expression Trees Lab",
     "",
     "<strong><emph>Final Exam<br/>12:00-2:00</strong></emph>",
     "",
