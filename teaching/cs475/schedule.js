@@ -25,62 +25,62 @@ let days = {
         name: "Hwk 1 (vscode)",
         title: "Setting up VS Code",
         url: "hwk1.vscode/",
-        due: "1/19/2024",
+        due: "1/24/2025", // Fri, wk 1
       },
       {
         name: "Hwk 2 (Sorting)",
         title: "Pointers, Arrays, Strings",
         url: "hwk2.sorting/",
-        due: "1/29/2024",
+        due: "2/3/2025",  // Mon, wk 3
       },
-      {
-        name: "Hwk 3 (ls2)",
-        title: "Making System Calls",
-        url: "hwk3.ls2/",
-        due: "2/9/2024",
-      },
-      {
-        name: "Hwk 4 (dsh)",
-        title: "David Shell",
-        url: "hwk4.dsh/",
-        due: "2/26/2024",
-      },
-      {
-        name: "Hwk 5 (mmm)",
-        title: "Matrix Multiplication",
-        url: "hwk5.mmm/",
-        due: "3/8/2024",
-      },
-      // // {
-      // //   name: "Hwk 4 (BackItUp)",
-      // //   title: "Back It Up",
-      // //   url: "hwk4.biu/",
-      // //   due: "2/28/2024",
-      // // },
-      {
-        name: "Hwk 6 (ts_hashmap)",
-        title: "Thread-Safe Hashmap",
-        url: "hwk6.hashmap/",
-        due: "3/27/2024", // after break
-      },
-      {
-        name: "Hwk 7 (OneLaneBridge)",
-        title: "One Lane Bridge ",
-        url: "hwk7.thebridge/",
-        due: "4/10/2024",
-      },
-      // // {
-      // //   name: "Hwk 8 (bankers)",
-      // //   title: "Banker's Algorithm",
-      // //   url: "hwk8.bankers/",
-      // //   due: "4/26/2024",
-      // // },
-      {
-        name: "Hwk 8",
-        title: "Technical Report",
-        url: "hwk8.report/",
-        due: "5/3/2024",
-      },
+      // {
+      //   name: "Hwk 3 (ls2)",
+      //   title: "Making System Calls",
+      //   url: "hwk3.ls2/",
+      //   due: "2/14/2025",   // Fri, wk 4
+      // },
+      // {
+      //   name: "Hwk 4 (dsh)",
+      //   title: "David Shell",
+      //   url: "hwk4.dsh/",
+      //   due: "3/3/2025", // Mon, wk 7
+      // },
+      // {
+      //   name: "Hwk 5 (mmm)",
+      //   title: "Matrix Multiplication",
+      //   url: "hwk5.mmm/",
+      //   due: "3/14/2025",  // Fri, wk 8
+      // },
+      // // // {
+      // // //   name: "Hwk 4 (BackItUp)",
+      // // //   title: "Back It Up",
+      // // //   url: "hwk4.biu/",
+      // // //   due: "2/28/2024",
+      // // // },
+      // {
+      //   name: "Hwk 6 (ts_hashmap)",
+      //   title: "Thread-Safe Hashmap",
+      //   url: "hwk6.hashmap/",
+      //   due: "4/2/2025", // after break, Wed, wk 11
+      // },
+      // {
+      //   name: "Hwk 7 (OneLaneBridge)",
+      //   title: "One Lane Bridge ",
+      //   url: "hwk7.thebridge/",
+      //   due: "4/16/2025", // Wed, wk 13
+      // },
+      // // // {
+      // // //   name: "Hwk 8 (bankers)",
+      // // //   title: "Banker's Algorithm",
+      // // //   url: "hwk8.bankers/",
+      // // //   due: "4/26/2024",
+      // // // },
+      // {
+      //   name: "Hwk 8",
+      //   title: "Technical Report",
+      //   url: "hwk8.report/",
+      //   due: "5/9/2025",  // Fri, finals wk
+      // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
@@ -156,18 +156,15 @@ let days = {
     // wk 13
     "Mem: segmentation",
     "Mem: paging",
-    "Cancelled",
-    // wk 14
     "Mem: TLB and page faults",
+    // wk 14
     "Start Virtual Memory",
     "VM: replacement policies",
-    // "VM: clock",
+    "VM: clock",
     // wk 15
-    "VM: memory allocation and working set",
-    "File System",
+    "VM: memory allocation",
+    "VM: malloc(), free()",
     "<strong>Reading Period</strong>",
-    // "VM: memory allocation (cont.)",
-    // "VM: malloc(), free()",
     // wk final
     "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
     "",

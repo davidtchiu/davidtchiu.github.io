@@ -52,8 +52,8 @@ Your overall grade is broken down as as follows:
 | Participation | 5% |
 | Homework Assignments | 43% |
 | Midterm I | 15% |
-| Midterm II | 17% |
-| Final Exam | 20% |
+| Midterm II | 18% |
+| Final Exam | 22% |
 
 {% include syllabus-my-boilerplate.md %}
 

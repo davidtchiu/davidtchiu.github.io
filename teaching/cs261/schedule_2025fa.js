@@ -70,14 +70,7 @@ let days = {
 
       // {
       //   name: "Hwk 7",
-      //   title: "Something using BSTs",  // never again, unless I scaffold more
-      //   url: "hwk7",
-      //   due: "12/18/2024",
-      // },
-
-      // {
-      //   name: "Hwk 7",
-      //   title: "Huffman Encoding",  // never again, unless I scaffold more
+      //   title: "Huffman Encoding",  // never, unless I scaffold more
       //   url: "hwk7.huff",
       //   due: "12/18/2024",
       // },
