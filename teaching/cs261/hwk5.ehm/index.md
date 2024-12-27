@@ -1,6 +1,10 @@
+# MORE SCAFFOLDING OR DON'T USE AT ALL
+# PROVIDE SOME INTERFACES AND/OR CLASSES
+# tell them what they need to implement
+
 ## CS 261 - Computer Science II
 
-### Evil Hangman
+### Evil Hangman (HashMaps)
 
 It's hard to write computer programs to play games. When we as humans sit down to play a game, we can draw on past experience, adapt to our opponents' strategies, and learn from our mistakes. Computers, on the other hand, blindly follow a preset algorithm that (hopefully) causes it to act somewhat intelligently. Though computers have bested their human masters in some games, most notably checkers and chess, the programs that do so often draw on hundreds of years of human game experience and use extraordinarily complex algorithms and optimizations to out-calculate their opponents...
 

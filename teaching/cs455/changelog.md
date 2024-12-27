@@ -1,4 +1,10 @@
+# Note to self
+- Insist that final exams are cumulative
+
+
 # TODO
+- SHould I make room for Mongo?
+
 - Make the SQL Labs time for them to work on their SQL homework. In other words, no more separate SQL homework. Just assign it and use the lab time to finish it. (No more University SQL lab). Keep data ingestion hhomework.
 
 - Stress in the beginning that relational model is successful due to it being "non-navigational" The two competing

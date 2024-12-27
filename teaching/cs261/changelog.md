@@ -1,31 +1,28 @@
-# Notes to Future Self
-- Don't introduce IntelliJ/Eclipse until after inheritance lectures/labs
+# Note to self
+- Insist that final exams are cumulative
 
 # TODO
-- Gotta stop telling students that CS 261 is a litmus test. Stop giving industry questions
+- Gotta stop telling students that CS 261 is a litmus test for whether you'll like the major. Things change from CS 261.
 
 - Need better assignments. Elizabeth says that things really stopped lining up
-with what we were learning: no BST assignment, RCV assignment no good. Want more
+with what we were learning: no BST assignment, RCV assignment is no good. Want more
 scaffolding.
-
-- Go back to Thursday midterms
 
 - Replace Hwk 5 RCV with MelodyPlayer
 
-- Possibly replace Huffman Tree with something that uses Maps and showcases BSTs.
-
-- Skip priority queues altogether as a subject?
-
 - Need more code along labs! Maybe start all labs as code alongs?
 
-- Hwk 2: TTT - Insist that they keep a list of known open coordinates
+- Some confusion in Hwk 2: TTT - Insist that they keep a list of known open coordinates
+    - Should I spend a bit of time in lecture to talk about 2D arrays (yes)?
     - In Player? In RandomPlayer?
-    - What about Cooords?
+    - What about Coords? Was it obvious that they needed to store them somehow?
 
 - Replace RG1 and RG1 sol (no more exceptions)
 
 
 # Change Log
+- Go back to Thursday midterms to give students a break (2025)
+- Skip priority queues altogether as a subject until this class is DS-only (2025)
 - MyArrayList and LinkedList Lab are now "code along" labs
 - Some of MyArrayList is now a bonus assignment.
 - Get rid of selection sort from Big-O.

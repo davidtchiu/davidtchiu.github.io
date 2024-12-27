@@ -45,9 +45,15 @@ let days = {
       },
       {
         name: "Hwk 5",
-        title: "Evil Hangman",
-        url: "hwk5.ehm",
+        title: "Melody Player",
+        url: "hwk5.melody",
         due: "11/4/2024", // due Mon
+      },
+      {
+        name: "Hwk 6",
+        title: "Evil Hangman",
+        url: "hwk6.ehm",
+        due: "11/18/2024",  // due Mon
       },
       // {
       //   name: "Hwk 5",
@@ -56,10 +62,10 @@ let days = {
       //   due: "11/13/2024",
       // },
       {
-        name: "Hwk 6",
-        title: "Recursion",
-        url: "hwk6.rec",
-        due: "11/18/2024",  // due Mon
+        name: "Hwk 7",
+        title: "Recursion (possibly in conjunction with lab?)",
+        url: "hwk7.rec",
+        due: "11/25/2024",  // due Mon of thanksgiving wk
       },
 
       // {
@@ -216,24 +222,23 @@ let days = {
     "Start Hashing: Entry<K,V> class, hashcode()",
     "HashMaps: linear probing",
     "Lab 8: Hashing Lab",
-    "Lab review; EH homework introduction",
-    // wk 10
     "Start recursion",
+    // wk 10
+    "Recursion: code reading, common pitfalls",
     "<strong><emph>Review for Exam 2</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "Recursion: code reading, common pitfalls",
-    // wk 11
     "Recursion: code tracing",
-    "Recursive code writing and pitfalls",
-    "Lab 9: Recursion Exercises",
+    // wk 11
+    "Recursive code writing",
     "Recursive Big-O (telescoping method)",
-    // wk 12
+    "Lab 9: Recursion (Homework lab?)",
     "Efficient Sorting: Merge Sort",
+    // wk 12
     "Merge Sort (cont.)",
-    "Lab 10: Sorting Lab",
     "Efficient Sorting: Quick Sort",
-    // wk 13
+    "Lab 10: Sorting Lab",
     "Quick Sort (cont.)",
+    // wk 13
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",

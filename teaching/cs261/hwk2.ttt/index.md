@@ -1,3 +1,7 @@
+# THIS NEEDS REWORKED A BIT
+# TELL STUDENTS THEY NEED A COORD CLASS FOR THE RANDOM PLAYER
+
+
 ## CS 261 - Computer Science II
 
 ### Tic Tac Toe
@@ -136,7 +140,7 @@ System.out.println(b.toString());
     > true  (boolean)
     ```
 
-4. Next, write a third and final player class called `CornerPlayer` that extends `RandomPlayer`. (No, that's not a typo — it extends `RandomPlayer` and not Player.) Objects of type `CornerPlayer` look first to see if any of the corners are open, and fill a corner if they find one. The order in which the corners are inspected isn't important. If none of the corners are available, it should select its move randomly from among the open positions. For full credit, your new `makeMove` method should not generate any random numbers. Instead, it should invoke `makeMove` from the superclass (`RandomPlayer`) if no corners are open.
+4. Next, write a third and final player class called `CornerPlayer` that extends `RandomPlayer`. Objects of type `CornerPlayer` look first to see if any of the corners are open, and fill a corner (any) if they find one. The order in which the corners are inspected isn't important. If none of the corners are available, it should make its move randomly from among the remaining open positions. In other words, your new `makeMove` method should invoke `makeMove` from the superclass (`RandomPlayer`) if no corners are open.
 
     ```java
     Board b = new Board();
@@ -168,9 +172,17 @@ System.out.println(b.toString());
 
 5. Custom player: None of the three player classes you created are very smart — there's lots of room for improvement. Write your own class that does a better job of guessing than the other players. Name your new player `F_L_Player`, where `F` and `L` refer to *your* first and last initials. For instance, I'd name my class `D_C_Player`. All your code must be contained within this class (i.e., do not introduce more classes and expect me to know to pull those into my editor). I'll run a tournament consisting of all of your custom players, and reward the winner(s) with to-be-determined prizes!
 
-6. Finally, create a new `Tournament` class. In it, define a `playGame` method that takes two player instances and plays a single round of Tic-Tac-Toe between them. You should treat the first argument to `playGame` as the player using `X` and the second as `O`. (You'll want to use the `setSymbol` method to ensure that the players are using the proper symbols too.) Your method should print the output from the winner's celebrate method and the loser's mourn method, then return a reference to the winning player or `null` if the game ends in a draw.
+6. Finally, create a new `Tournament` class. In it, define a `playGame(Player p1, Player p2)` method that takes two players and plays a single round of Tic-Tac-Toe between them. You should treat the first argument to `playGame()` as the player using `X` and the second as `O`. (You'll want to use the `setSymbol()` method to ensure that the players are using the proper symbols.)
+    
+    - Create a new `Board` object. When either player calls their `makeMove(...)`, make sure you pass this board object as its argument, so that they're playing on the same board!
 
-7. Before you turn anything into me, please remove all print statements that you put in your code while debugging!
+    - Write a loop that does not end until the game is over. (The board object can tell you if the game is over if there's a winner, or if the board is filled and there's no winner -- read its methods).
+
+    - You may assume `p1` gets the first move. After each move, print out the `board` object so we can examine its state.
+
+    - Once the game is over, your method should print the output from the winner's `celebrate()` method and the loser's `mourn()` method. If the game is a draw, both players mourn. Finally, `return` a reference to the winning player or `null` if the game ends in a draw.
+
+7. Before you turn anything into me, please remove all print statements in your Player classes that you might've put in your code while debugging!
 
 
 #### Grading

@@ -211,7 +211,7 @@ Global(3)
 ```
 This assignment will be graded out of 90 points.
 
-[10pts] Implementation of the user interface to insert, search, print. Quits on .quit.
+[10pts] Implementation of the user interface to insert, search, print, and quit.
 
 [10pts] The search method is properly implemented, and takes O(1) time.
 

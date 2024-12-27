@@ -1,3 +1,7 @@
+# MORE SCAFFOLDING OR DON'T USE AT ALL
+# PROVIDE SOME INTERFACES AND/OR CLASSES
+# tell them what they need to implement
+
 ## CS 261 - Computer Science II
 
 ### Ranked-Choice Voting

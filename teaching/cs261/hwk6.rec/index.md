@@ -167,25 +167,33 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	> false
 	```
 
-6. (Spicy) A permutation is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a set of permutations of the remaining substring. Then for each string in the returned set, insert the first character back into every position of the string and add each to a new set. Return the set when finished. Here's an example. Suppose  you're finding all permutations of `"abc"`.
+6. (Spicy) A _permutation_ is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a list of permutations of the remaining substring. Then for each string in the returned list, insert the first character back into every position of the string and add each to the list. Return the list when finished. Here's an example. Suppose you're finding all permutations of `"abc"`.
 
-	 - Split `"abc"` by chopping `"a"` off from the front, and recursively find the set of permutations of the remaining substring, `"bc"`.
-	 - Now for each permuted substring, insert `"a"` back in every possible position. For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`. For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`
+	 - Split `"abc"` by chopping `"a"` off from the front, and recursively find the List of permutations of the remaining substring, `"bc"` (yep, call yourself on `"bc"` to obtain this List).
+	 - Now for each permuted substring in the list returned from the previous step, insert `"a"` into every possible position. For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`. For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`. Create a new List and put each of these permutations into that List and return it.
 
-		Write a static method called `public static SortedSet<String> permute(String str)` that takes as input a string and recursively returns a `SortedSet` of all permutations of that string. It should be noted that the only permutation of an empty string is also an empty string. Similarly, the only permutation of a single-character string is that character. Also note that, if your string is of length $$n$$, then you have set of $$n!$$ permutations. **Hint:** Base case: If your string is shorter than two letters, then create a `TreeSet<String>`, add the string to it, and return the set.
+		Write a static method called `public static List<String> permute(String str)` that takes as input a string and returns a `ArrayList<String>` of all permutations of that string. It should be noted that the only permutation of an empty string is also an empty string. Similarly, the only permutation of a single-character string is that character. **Hint:** Base case: If your string is shorter than two letters, then create a `ArrayList<String>`, add the string to it, and return the List.
+
+		Below, my results are sorted alphabetically so that it's easier on the eyes, but that is not a requirement for full credit. You could sort the returned list for easier checking. To sort an ArrayList, use `Collections.sort(nameOfYourList);`. You must first `import java.util.Collections`.
 
 		```java
 		System.out.println(Recursion.permute("a"));
 		> [a]
+
 		System.out.println(Recursion.permute("ab"));
 		> [ab, ba]
 
+		System.out.println(Recursion.permute("ba"));
+		> [ab, ba]   <--- yours may not be in this order
+
 		System.out.println(Recursion.permute("abc"));
-		> [abc, acb, bac, bca, cab, cba]
+		> [abc, acb, bac, bca, cab, cba]   <--- yours may not be in this order
 
 		System.out.println(Recursion.permute("abcd"));
-		> [abcd, abdc, acbd, acdb, adbc, adcb, bacd, badc, bcad, bcda, bdac, bdca, cabd, cadb, cbad, cbda, cdab, cdba, dabc, dacb, dbac, dbca, dcab, dcba]
+		> [abcd, abdc, acbd, acdb, adbc, adcb, bacd, badc, bcad, bcda, bdac, bdca, cabd, cadb, cbad, cbda, cdab, cdba, dabc, dacb, dbac, dbca, dcab, dcba]   <--- yours may not be in this order
 		```
+
+	- Fun fact: If your string is of length $$n$$, then you have a list of $$n! = n \times (n-1) \times (n-2) \times ... \times 2 \times 1$$ permutations. Because this algorithm needs to find all permutations, it runs in $$O(n!)$$ time. Ouch!
 
 #### Program Defensively
 
