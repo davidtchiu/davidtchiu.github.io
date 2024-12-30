@@ -142,9 +142,12 @@ To download and submit your homework assignments for this class, you'll need to 
     ? Paste your authentication token: ****************************************
     ```
 
-8. That should set you up for authentication to github. We can start our "homework."
+8. Now run this to complete the setup.
+    ```bash
+    $ gh auth setup-git
+    ```
 
-
+9. That should set you up for authentication to github. We can start our "homework."
 
 
 #### Our First C Program
