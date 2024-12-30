@@ -16,7 +16,7 @@ Your goal for this assignment is to create your very own shell, David Shell (`ds
 
 #### Starter Code
 
-Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
+Starter code for this assignment is provided on the github repo. You must do these steps in order to submit your work to me on github.
 
 - Login to github, and go here: [https://github.com/davidtchiu/os-dsh](https://github.com/davidtchiu/os-dsh). 
 

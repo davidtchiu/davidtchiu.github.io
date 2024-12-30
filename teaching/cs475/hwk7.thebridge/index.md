@@ -14,7 +14,7 @@ Your task is to write a Java program to solve the One Lane Bridge Problem, coord
 
 #### Starter Code
 
-Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
+Starter code for this assignment is provided on the github repo. You must do these steps in order to submit your work to me on github.
 
 - Login to github, and go here: [https://github.com/davidtchiu/os-bridge](https://github.com/davidtchiu/os-bridge). 
 

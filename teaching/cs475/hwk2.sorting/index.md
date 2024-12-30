@@ -32,9 +32,9 @@ Heaps are a projection of a balanced binary tree onto arrays. They serve many pu
 
 ###### Starter Code
 
-Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
+Starter code for this assignment is provided on the github repo. You must do these steps in order to submit your work to me on github.
 
-- Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk2-heapsort](https://github.com/davidtchiu/cs475-hwk2-heapsort). 
+- Login to github, and go here: [https://github.com/davidtchiu/os-heapsort](https://github.com/davidtchiu/os-heapsort). 
 
 - Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
 
@@ -45,7 +45,6 @@ Starter code for this assignment is provided on the github repo. You are not req
   ```
   git clone <your-github-url-for-this-project>
   ```
-
 
 - This should download the starter code in a directory called `cs475-hwk2-heapsort`. After you've done this, you can work freely from VS Code or any other editor. 
 

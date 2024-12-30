@@ -8,8 +8,8 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 #### Student Outcomes
 - Setting up VS code for remote development on a Linux server
+- Setting up git and github remote connection
 - Compiling and running your first C program for this class
-- Understand Makefiles and the `make` utility
 
 #### Installing C Development Tools
 
@@ -101,31 +101,87 @@ It's therefore important that we all code in a common environment, so I've prepa
   - [Linux Command Cheatsheet](https://www.guru99.com/linux-commands-cheat-sheet.html)
   - [The Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 
+#### Setting up Git
+
+To download and submit your homework assignments for this class, you'll need to get connected to github and configure it all to work with this server. Follow these steps.
+
+1. From your browser, go to [github.com](https://github.com). If you don't already have an account, go ahead and create one now, and log in.
+
+2. Navigate to [https://github.com/settings/tokens](https://github.com/settings/tokens) to create a new "personal access token." You can also get there via `Settings > Developer Settings`. 
+
+3. Click to generate new a (classic) token. On the next screen, give your new token a good note, like "For OS" or "CS 475" so you know what it is later. Assign it an expiration period that will take you to the end of the course, or, you could just give it no expiration and delete the token later (not recommended).
+
+4. Below, select `repo`, `admin:org`, and `admin:public_key`. 
+
+5. Click the `Generate token` button on the bottom of the page, and take note (save) the token in a secure place. Don't share it. Treat this like your password.
+
+6. Go back into your VS Code's terminal window. Type:
+    ```bash
+    $ gh auth login
+    ```
+
+7. Follow the prompts in this program. Use your up/down keys to choose the following selections to their questions:
+
+    ```
+    ? What account do you want to log into? 
+    > GitHub.com
+    ```
+
+    ```
+    ? What is your preferred protocol for Git operations?
+    > HTTPS
+    ```
+
+    ```
+    ? How would you like to authenticate GitHub CLI?
+    > Paste an authentication token
+    ```
+
+    Finally, get your access token ready for pasting ...
+    ```
+    ? Paste your authentication token: ****************************************
+    ```
+
+8. That should set you up for authentication to github. We can start our "homework."
+
 
 
 
 #### Our First C Program
 
-1. From your home directory, create a new directory called `hwk1`, navigate into it, and create a new file called `hwk1.c`.
+
+1. Go to find my homework 1 repository here: [https://github.com/davidtchiu/os-first](https://github.com/davidtchiu/os-first). 
+
+    - Click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+
+    - This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
+
+2. Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
+
+    ```bash
+    $ git clone <your-github-url-for-this-project>
+    ```
+
+3. You will be prompted in the terminal for your github username and password again. Enter those now. Use the "token" we previously generated as your password. (You just have to do this once.)
+
+
+4. From the terminal window, navigate into the new directory you just cloned. Inside, create a new directory create a new file called `hwk1.c`.
 
     ```bash
     $ cd ~
-    $ mkdir hwk1
-    $ cd hwk1
+    $ cd os-hwk-first/
     $ code hwk1.c
     ```
 
-    - The first command `cd ~` changes your working directory to your "home directory" (`~` is just a shortcut to your home directory... which is nice because you can't ever get lost if you just remember that!)
+    - The first command `cd ~` changes your working directory to your "home directory". You should remember that `~` is a shortcut to your home directory, and now you won't ever get "lost!"
 
-    - The 2nd command `mkdir hwk1` creates a new directory (folder) within your home directory named `hwk1`.
-
-    - The 3rd command `cd hwk1` now changes your working directory to within the `hwk1` directory you just created.
+    - The second command `cd os-hwk-first` changes your current-working-directory to  the `os-hwk-first` directory that git should have cloned in the previous steps.
 
     - Finally, `code hwk1.c` creates and opens a new file called `hwk1.c` within the current working directory. 
 
     - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but what's the fun in that? Plus, this puts your navigates your Terminal to the same directory as your new project folder.
 
-2. Type in the following "hello world" code in C.
+2. With `hwk1.c` open in your editor, type in the following "hello world" code and save it. 
 
     ```c
     #include <stdio.h>
@@ -140,14 +196,14 @@ It's therefore important that we all code in a common environment, so I've prepa
     }
     ```
 
-3. Save it and go back down to the terminal window to compile and run it:
+3. Go back down to the terminal window to compile and run it:
 
     ```bash
     $ gcc -Wall -g hwk1.c
     ```
-    Here, `gcc` is the name of the C compiler (gnu c compiler). The `-Wall` flag instructs the compiler to display warnings (even if the code compiles.) The `-g` flag generates debugging information for debuggers that we'll use later on.
+    Here, `gcc` invokes the gnu c compiler (gcc). The `-Wall` flag instructs the compiler to display any warnings (even if the code compiles.) The `-g` flag generates debugging information for debuggers that we'll use later on.
 
-    The executable file that is produced is called `a.out`. Type `ls` on the terminal to make sure it's there. If you don't see `a.out`, that means the compilation failed and there was a syntax error that need to fix. To run it, use the command `./<executable-file>`:
+    The executable file that is produced is called `a.out`. Type `ls` on the terminal to make sure it's there. If you don't see `a.out`, that means the compilation failed and there was a syntax error that need to fix. To run it, use the command `./<executable-file>`
 
     ```bash
     $ ./a.out
@@ -163,13 +219,25 @@ It's therefore important that we all code in a common environment, so I've prepa
     Hello world 9 of 10!
     ```
 
-4. It seems a bit odd that your executable file would be named `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <name>` flag. 
+4. It seems a bit odd that your executable file would be named `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <executable-name>` flag. 
 
     ```bash
     $ gcc -Wall -g -o helloworld hwk1.c
     ```
 
     This would output the binary as `helloworld`, and you can run it using `./helloworld` on the command-line.
+
+5. After you're done, commit and push the `hwk1.c` file to github for grading. From the terminal,
+
+    ```bash
+    $ git add hwk1.c
+    $ git commit -m "<write-a-commit-msg>"
+    $ git push origin main
+    ```
+
+6. It may ask you for your github credentials again. Enter it now. (You should only have to do this once for the initial push).
+
+7. Navigate to your github repository from your browser to make sure that `hwk1.c` exists.
 
 <!-- 
 #### Make Utility and Makefiles: Multi-File Compiling
@@ -242,9 +310,12 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 #### Submission
 To prove that you have logged in successfully:
-- Change your password on the server using `passwd`
-- Then type `uname -a` into the terminal
-- Copy and paste its output into canvas
+1. Change your password on the server using `passwd`. Yep, I will login using 
+the old password just to check.
+
+2. Commited and pushed your git repository. Make sure your repo is public.
+
+3. On canvas, simply submit the URL to your Github repo. No other form of submission is accepted.
 
 #### Credits
 
