@@ -22,7 +22,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - You may have to restart VS Code after installing those extensions. Go ahead and do so.
 
-#### Getting Connected to the Remote Server
+#### Connecting to the Remote Server
 
 - I've set up a Linux server for you to connect to and develop on. Make a note of the following information:
   ```
@@ -60,18 +60,20 @@ It's therefore important that we all code in a common environment, so I've prepa
 
   <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_.png" width="250px" />
 
-  If you see this, congrats, you're all set up! If not, let me know and we'll get you fixed up.
+
+- Now, change your password, since the one I gave you was for everybody. In the terminal window, type `passwd`, and follow the instructions.
+
 
 #### Using the Terminal (Shell) and VS Code Editor
-- You only have to do the steps listed in the previous section the first time. Let's get a feel for how to start up the coding environment from this point forward, so go ahead and quit VS Code. 
+- You only have to do the steps listed in the previous section that one time. Let's get a feel for how to start up the coding environment from this point forward, so go ahead and **quit** VS Code.
 
-- Before getting started again, keep in mind that, because we're coding on a remote server, a stable internet connection is essential. This means it will not be possible to develop while you're offline or only have an intermittent Wifi connection (e.g., on a plane), so plan wisely throughout the semester.
+- Before getting started again, keep in mind that, because we're coding on a remote server, a stable internet connection is essential. This means it will not be possible to develop while you're offline or only have an intermittent wifi connection (e.g., on a plane), so plan wisely throughout the semester.
 
-  - **Pro Tip: Save Often** Anytime you lose Wifi connection or close down your computer, you *will* sever your connection to the remote server and lose any unsaved work! As you're developing, save often!
+  - **Pro Tip: Save Often** Anytime you lose wifi connection or close down your computer, you *will* sever your connection to the remote server and lose any unsaved work! As you're developing, save often!
 
   - I installed the `git` command-line utility on this server, so you should also take advantage of that and backup your code using git (and github).
 
-- Open VS Code back up. If you don't see a new, blank window, then choose the `File` menu and select `New Window`. In the blank editor window, look on the left-hand panel with the vertical bar of icons. There's an icon called **Remote Explorer**. Click on it, then choose the profile you want to connect. It should simply be called `/home/yourUserName`.
+- **Open** VS Code back up. If you don't see a new, blank window, then choose the `File` menu and select `New Window`. In the blank editor window, look on the left-hand panel with the vertical bar of icons. There's an icon called **Remote Explorer**. Click on it, then choose the profile you want to connect. It should simply be called `/home/yourUserName`.
 
   <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_2.png" width="250px" />
 
@@ -89,15 +91,17 @@ It's therefore important that we all code in a common environment, so I've prepa
   | :--- | :--- |
   | `[tab]` | Type the first few letters of a file or directory, and hit `[tab]` to auto-complete. When the there are multiple matches, hitting `[tab]` will do nothing. However, hit `[tab]` twice in succession will reveal all the matches. |
   | `up` and `down` keys | Hitting the `up` key will display the most recently issued command. You can hit `up` continuously to scroll through your command history. |
-  | `history` | Shows you a list of recently-run commands. |
   | `ctrl + c` | Will interrupt the currently-running command, and return the shell prompt. I suspect you'll be using this one a lot! You use it to terminate a process that you ran.|
-  | `ctrl + u` | Will reset your cursor (deletes everything you've typed on the same line.) |
-  | `ctrl + l` | Will clear the terminal window. |
+  | `ctrl + u` | Will delete from your cursor to the beginning of the line.  |
+  | `ctrl + k` | Will delete from your cursor to the end of the line.  |
+  | `ctrl + l` | Will clear out the terminal window. (Same as the `clear` command). |
 
 
 - If you need a refresher on how to work on the shell, here are some resources (Strongly recommended)
   - [Linux Command Cheatsheet](https://www.guru99.com/linux-commands-cheat-sheet.html)
   - [The Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
+
+
 
 
 #### Our First C Program
@@ -108,7 +112,7 @@ It's therefore important that we all code in a common environment, so I've prepa
     $ cd ~
     $ mkdir hwk1
     $ cd hwk1
-    $ touch hwk1.c
+    $ code hwk1.c
     ```
 
     - The first command `cd ~` changes your working directory to your "home directory" (`~` is just a shortcut to your home directory... which is nice because you can't ever get lost if you just remember that!)
@@ -117,11 +121,11 @@ It's therefore important that we all code in a common environment, so I've prepa
 
     - The 3rd command `cd hwk1` now changes your working directory to within the `hwk1` directory you just created.
 
-    - Finally, `touch hwk1.c` creates a new file called `hwk1.c` within the current working directory. 
+    - Finally, `code hwk1.c` creates and opens a new file called `hwk1.c` within the current working directory. 
 
     - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but what's the fun in that? Plus, this puts your navigates your Terminal to the same directory as your new project folder.
 
-2. You should see the `hwk1.c` file show up on the left-hand panel of VS Code. Clicking on it will open it up in the editor. Type in the following "hello world program."
+2. Type in the following "hello world" code in C.
 
     ```c
     #include <stdio.h>

@@ -148,11 +148,11 @@ let days = {
     // wk 11
     "Sync: monitors and condition variables",
     "Snchronization in Java",
-    "Memory Management: virtual addressing",
-    // wk 12
-    "Mem: partitioning and segmentation",
     "<strong><emph>Review</emph></strong>",
+    // wk 12
     "<strong><emph>Exam 2</emph></strong>",
+    "Memory Management: virtual addressing",
+    "Mem: partitioning and segmentation",
     // wk 13
     "Mem: segmentation",
     "Mem: paging",
