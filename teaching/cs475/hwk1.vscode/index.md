@@ -322,4 +322,4 @@ the old password just to check.
 
 #### Credits
 
-Written by David Chiu. 2022.
+Written by David Chiu. 2022. Updated 2024.
