@@ -46,7 +46,7 @@ Starter code for this assignment is provided on the github repo. You must do the
   git clone <your-github-url-for-this-project>
   ```
 
-- This should download the starter code in a directory called `cs475-hwk2-heapsort`. After you've done this, you can work freely from VS Code or any other editor. 
+- This should download the starter code in a directory called `os-heapsort`. After you've done this, you can work freely from VS Code or any other editor. 
 
 ###### Working Solution
 
