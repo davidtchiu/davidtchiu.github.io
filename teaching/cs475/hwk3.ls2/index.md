@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: ls2 -  a Suped Up `ls`
+### Hwk: ls2 -  A Suped-Up `ls`
 
 
 #### Related Reading
@@ -18,10 +18,10 @@
 
 
 #### Before You Get Started: Debugging with valgrind (Read This!)
-Valgrind is a tool to help you debug access errors for memory that you allocated on the heap using `malloc()`. Believe me, it will save you a bunch of time and tears. To use valgrind, you just have to first compile your C code using the `-g` (as you'd been instructed to do all along). Then run your program like this:
+Valgrind is a tool to help you debug access errors for memory that you allocated on the heap using `malloc()`. Believe me, it will save you a bunch of time and tears. To use valgrind, you just have to compile your C code using the `-g` flag (don't worry, the provided `Makefile` already builds this in). Then run your program like this:
 
 ```bash
-$ valgrind --leak-check=full -s <your executable file>
+$ valgrind --leak-check=full -s <your-executable-file>
 ```
 
 Valgrind will print out a full summary after your program terminates, reporting any memory access errors or memory leaks. Let's see an example here:
@@ -45,7 +45,9 @@ int main(int argc, char *argv[]) {
 
 When I compile this code and run the program through valgrind, it will generate some output. I'm using the `--leak-check=full` flag to instruct valgrind to report detailed memory leak information.
 ```bash
-$ gcc -Wall -g memtest.c -o memtest
+$ make
+  gcc -Wall -g memtest.c -o memtest
+
 $ valgrind --leak-check=full -s ./memtest 
 ```
 
@@ -99,8 +101,8 @@ Starter code for this assignment is provided on the github repo. You must do the
 
 - Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
 
-  ```
-  git clone <your-github-url-for-this-project>
+  ```bash
+  $ git clone <your-github-url-for-this-project>
   ```
 
 
