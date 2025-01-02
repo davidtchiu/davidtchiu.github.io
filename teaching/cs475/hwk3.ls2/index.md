@@ -101,7 +101,7 @@ Starter code for this assignment is provided on the github repo. You must do the
 
 - Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
 
-  ```bash
+  ```
   $ git clone <your-github-url-for-this-project>
   ```
 
