@@ -122,7 +122,7 @@ This helps to simplify our parallelization work, because we don't need to synchr
 
          // iterate through each row and malloc a size N array of ints
          for (int i = 0; i < N; i++) {
-            matrix[i] = (int*) malloc(sizeof(int) * M;)
+            matrix[i] = (int*) malloc(sizeof(int) * M);
          }
          // can now have access to matrix[i][j]
          ```
