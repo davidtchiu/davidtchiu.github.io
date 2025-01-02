@@ -45,28 +45,28 @@ The Sobel operator uses two $$3 \times 3$$ convolution kernels:
 
 ###### **Horizontal Kernel $$K_x$$**
 Detects changes in intensity along the horizontal direction:
-\[K_x =
+$$\[K_x =
 \begin{bmatrix}
 -1 & 0 & 1 \\
 -2 & 0 & 2 \\
 -1 & 0 & 1
 \end{bmatrix}
-\]
+\]$$
 
 ###### **Vertical Kernel $$K_y$$**
 Detects changes in intensity along the vertical direction:
-\[K_y
+$$\[K_y
 \begin{bmatrix}
 -1 & -2 & -1 \\
  0 &  0 &  0 \\
  1 &  2 &  1
 \end{bmatrix}
-\]
+\]$$
 
 #### How to Apply Sobel Filters over an Image (Convolution)
 To apply the Sobel filters to an image, you treat the image as a 2D array where each "pixel" value is represented by a grayscale value between 0 (black) and 255 (white). Here's a step-by-step explanation of how it's done. **Convolution** involves sliding the Sobel kernels over the image and performing the following steps at each pixel:
 
-   1. For a pixel at position $$[i,j]$$, it may have up to 8 neighbors (the exception are those pixels along the borders of the image, which will have fewer neighbors).
+   1. For a pixel at position $$[i,j]$$, it will 8 neighbor pixels surrounding it (the exception are those pixels along the borders of the image, which this algorithm need to ignore). 
 
       [image here]
 
@@ -74,8 +74,9 @@ To apply the Sobel filters to an image, you treat the image as a 2D array where 
 
    3. Repeat this task for the $$K_y$$ kernel to produce the gradient $$G_y$$.
 
-   4. Combine that pixel's gradient components using this formula: $$G = \sqrt{G_x^2 + G_y^2}$$. For any values of $$G$$ less than 0, clamp it to 0, and for any values of $$G$$ greater than 255, clamp it to 255. Write this value of $$G$$ to the output 2D array (image).
-
+   4. Combine that pixel's gradient components using this formula: $$G = \sqrt{G_x^2 + G_y^2}$$. For any values of $$G$$ less than 0, clamp it up to 0, and for any values of $$G$$ greater than 255, clamp it down to 255. For all other values of $$G$$, comopare $$G$$ to the threshold that was input on the program's command-line. If $$G$$ is less than the threshold, set the corresponding pixel in the output 2D array to 0 (black), otherwise, set it to $$G$$.
+  
+   5. Repeat this process for every pixel to produce the output 2D array. For any pixel that sits along the border of an image, set its value in the output 2D array to 0 (black).
 
 #### Example:
 
@@ -89,7 +90,7 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
    90 100 110 140 180
    ```
 
-1. Center the $$G_x$$ and $$G_y$$ kernels over each pixel and compute the gradient components for the pixel. For example, for the pixel at position $$[2,1]$$ (value 55), its region (includes its 8 neighbors) are:
+1. As an example, for the pixel at position $$[2,1]$$ (value 55), its region (including its 8 neighbors) is:
 
    ```c
    40  50  70
@@ -117,7 +118,26 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 
 4. Combine the components: $$G = \sqrt{G_x^2 + G_y^2} = \sqrt{70 + 90} \approx 114$$. Now over in the output 2D array, assign the value `114` to position $$[2,1]$$.
 
-5. Repeat this process for every pixel to produce the output image.
+5. Repeat this process for every pixel to produce the output 2D array, and remember to set any border pixel  to 0 (black).
+
+   ```c
+   0  0  0   0    0
+   0  50  70 100  0
+   0  55  75 110  0
+   0  80  95 120  0
+   0  0  0   0    0
+   ```
+
+6. Suppose the **threshold** was input as 80 on the command line. The final output image would be:
+
+   ```c
+   0  0  0   0    0
+   0  0  0 100  0
+   0  0  0 110  0
+   0  80  95 120  0
+   0  0  0   0    0
+   ```
+
 
 #### "Embarassingly Parallel"
 In this assignment each thread is writing to its own isolated location in memory. That is, threads are not contending to read and write to the *same* memory location, and therefore **race conditions are not possible (phew! Don't have to worry about data races on this assignment)**. Such programs are known to be "embarassingly parallel." That isn't meant to be a derogatory term. The term suggests that the parallelization of these problems is so straightforward that it almost feels "embarrassing" to call it parallel computing. The "embarrassment" here is more of a playful nod to how easy these problems are to parallelize compared to more complex ones that require significant coordination, synchronization, or data sharing between threads or processes.
@@ -131,15 +151,16 @@ You should still verify this to be the case, as you would any parallelizable pbo
 1. The program should accept two command-line arguments:
      - The filename of the input image (e.g., `pics/input.jpg`).
      - The number of threads to use for processing.
+     - A pixel threshold for emphasizing edges (0-255).
 
      Example:
      ```bash
-     ./sobel pics/input.jpg 4
+     ./sobel pics/input.jpg 4 120
      ```
    
       Your `main(int argc, char *argv[])`. Command-line arguments can be accessed through `argc` and `argv`. Specifically, `argc` refers to the number of arguments given on the command line, including the command to run the executable itself. `argv` is a string array containing the arguments (much like `String[] args` in Java). Once you parse out the command line arguments, store the mode (sequential vs. parallel) as an integer in the `mode` global, and store the dimension of your matrices in the `size` global.
 
-2. **Output Image**: Input images will be provided in the `pics/` directory. All images are in grayscale.
+2. **Input Image**: Input images will be provided in the `pics/` directory. All images are in grayscale.
 
 3. **Output Image**:
    - The processed image should be saved in the `pics/` directory with `-sobel` appended to the filename.
