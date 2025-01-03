@@ -3,10 +3,13 @@
 ### Hwk: Parallel Edge Detection with `pthread`
 Ever wonder how self-driving cars detect lane and boundaries to navigate safely on roads (lane departure is a safety feature in most cars nowadays)? Or, how doctors use advanced imaging techniques to identify tumors with pinpoint accuracy? Or, how in popular graphics tools like Photoshop, users can select (magic lasso) certain objects in a picture and move it around? 
 
-"Edge detection" enables all of these techniques by highlighting the boundaries and transitions within images, making it possible to extract such meaningful information! Edge detection is an important pre-processing step commonly used in graphics, AI/ML, and computer-vision applications today. However, high resolution images  require heavy processing -- this assignment seeks to parallelize this process.
+For instance, how might an AI application determine that the image below (left) is a grumpy cat? For starters, let's try tuning out all the noisy details and focus just on the prominent lines (right). The outline of a cat and its frown, are unmistakable, making it easier for an algorithm (or human eyeballs) to pick up at a later stage.
 
 <img src="figures/cat.jpg" width="300px">
 <img src="figures/cat-sobel.jpg" width="300px">
+
+"Edge detection" enables all of these techniques by highlighting the boundaries and transitions within images, making it possible to extract such meaningful information! Edge detection is an important pre-processing step commonly used in graphics, AI/ML, and computer-vision applications today. However, high resolution images  require heavy processing -- this assignment seeks to parallelize this process.
+
 
 The goal of this assignment is to implement a multithreaded edge-detection algorithm on grayscale images using the `pthread` library in C. The particular technique we will focus on is called Sobel Filtering.
 
