@@ -256,7 +256,7 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 
 #### Example Output
 
-The outputs below are from using our server, so your timed results (in seconds) should be similar to mine. I'm using a threshold of 180 on the road.jpg picture. You might try different thresholds. The higher the threshold, the lower the tolerance for detecting edges (i.e., edges need to be more clear-cut to be shown).
+The outputs below are from using our server, so your timed results (in seconds) should be similar to mine. I'm using a threshold of 180 on the road.jpg picture. You might try different thresholds. The higher the threshold, the lower the algorithm's sensitivity (i.e., edges that less definitive and profound in the original image may be ignored).
 
 ```bash
 $ ./sobel pics/road.jpg 1 180
