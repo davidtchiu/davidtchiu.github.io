@@ -141,9 +141,9 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 
 
 #### Side Note: "Embarassingly Parallel"
-This program, is classified to be "embarassingly parallel." That isn't meant to be a derogatory term. It simply suggests that the parallelization of these problems is so straightforward that it almost feels "embarrassing" to call it parallel computing. The "embarrassment" here is more of a playful nod to how easy these problems are to parallelize compared to more complex ones that require significant coordination, synchronization, or data sharing between threads or processes. (More on those later :)
+The nature of this program is called "embarassingly parallel" in industry and academia. It isn't meant to be a derogatory term. It simply suggests that the parallelization of these problems is straightforward. The "embarrassment" here is more of a playful nod to how easy these problems are to parallelize compared to more complex ones that require significant coordination, synchronization, and/or locking between threads or processes. (More on those later :)
 
-You should still verify this to be the case for this assignment though. On a piece of paper, trace and depict how the sobel filter process would work. Pay attention to how the new output image (2D array) is populated with values. To calculate the value of a cell, do you have to read any other cells from the *same* array that you're writing to?
+As any good parallel programmer would, you should still verify this to be the case for this assignment. On a piece of paper, trace and depict how the sobel filter process would work across the input image. Pay attention to how the new output image (2D array) is calculated. Do you ever have to read any other cells from the *same* array that you're writing to?
 
 #### Program Requirements
 
