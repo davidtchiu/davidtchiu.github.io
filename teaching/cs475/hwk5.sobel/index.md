@@ -237,26 +237,24 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
     }
    ```
 
-9. Don't forget that you'll need to free up these arrays (`array1D`, `input_image`, `output_image`) before your program exits.
+9. Don't forget that you'll need to free up these arrays (`array1D`, `input_image`, `output_image`) before your program exits. Note: To free any malloc'd 2D array, you need to individually free every row, then free the original pointer, as follows.
 
-      - To free any 2D array, you need to individually free every row, then free the original pointer.
-
-         ```c
-         // free each row
-         for (int i = 0; i < height; i++) {
-            free(arrayName[i]);
-            arrayName[i] = NULL;  // dangling pointer
-         }
-         // free original array
-         free(arrayName);
-         arrayName = NULL;  // dangling pointer
-         ```
+   ```c
+   // free each row
+   for (int i = 0; i < height; i++) {
+      free(arrayName[i]);
+      arrayName[i] = NULL;  // dangling pointer
+   }
+   // free original array
+   free(arrayName);
+   arrayName = NULL;  // dangling pointer
+   ```
 
 
 
 #### Example Output
 
-The outputs below are from using our server, so your timed results (in seconds) should be similar to mine.
+The outputs below are from using our server, so your timed results (in seconds) should be similar to mine. I'm using a threshold of 180 on the road.jpg picture. You might try different thresholds. The higher the threshold, the lower the tolerance for detecting edges (i.e., edges need to be more clear-cut to be shown).
 
 ```bash
 $ ./sobel pics/road.jpg 1 180
@@ -288,7 +286,7 @@ Saved as pics/road-sobel.jpg
 Pay attention to the times taken. It should reduce as the number of threads increase. To get the speedup, simply divide the 1-thread version by the parallel version. For example, if I wanted to see how much speedup I'm getting with the 8-thread version, I calculate $$0.066707 sec / 0.009435 sec = 7.07\times$$ speedup on this particular image. That's pretty good!
 
 
-The pics, for comparison:
+The pics, for comparison (left = original, right = edge-detection):
 
 <img src="figures/road.jpg" width="400px">
 <img src="figures/road-sobel.jpg" width="400px">
