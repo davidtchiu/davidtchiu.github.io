@@ -285,6 +285,9 @@ Time taken (thread count = 16): 0.005540 sec
 Saved as pics/road-sobel.jpg
 ```
 
+Pay attention to the times taken. It should reduce as the number of threads increase. To get the speedup, simply divide the 1-thread version by the parallel version. For example, if I wanted to see how much speedup I'm getting with the 8-thread version, I calculate $$0.066707 sec / 0.009435 sec = 7.07\times$$ speedup on this particular image. That's pretty good!
+
+
 The pics, for comparison:
 
 <img src="figures/road.jpg" width="400px">
