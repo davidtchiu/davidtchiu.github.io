@@ -8,17 +8,14 @@ Ever wonder how self-driving cars detect lanes and boundaries to navigate safely
 
 The goal of this assignment is to implement a **multithreaded Sobel filter** to perform edge detection on grayscale images using the `pthread` library in C.
 
-<!-- 
-#### "Embarassingly Parallel"
-In this assignment each thread is writing to its own isolated location in memory. That is, threads are not contending to read and write to the *same* memory location, and therefore **race conditions are not possible (phew! Don't have to worry about data races on this assignment)**. Such programs are known to be "embarassingly parallel." That isn't meant to be a derogatory term. The term suggests that the parallelization of these problems is so straightforward that it almost feels "embarrassing" to call it parallel computing. The "embarrassment" here is more of a playful nod to how easy these problems are to parallelize compared to more complex ones that require significant coordination, synchronization, or data sharing between threads or processes.
 
-You should still verify this to be the case, as you would any parallelizable pboelm in the real world. On a piece of paper, depict how the sobel filter process would work. Pay attention to how the new image (2D array) is populated with values. To calcuate the value of a cell, do you have to read any other cells from the *same* matrix you're writing to? -->
 
 
 #### Student Outcomes
 
-- To write a parallel, multi-threaded program using the `pthread` library.
+- To write a parallel, multi-threaded program using the `pthread` library with real-world application.
 - To work with the data-parallel paradigm.
+- Exposure to "embarassingly parallel" problems. 
 
 #### Starter Code
 
@@ -142,8 +139,13 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
    0  0  0   0    0
    ```
 
-#### Program Requirements
 
+#### Side Note: "Embarassingly Parallel"
+This program, is classified to be "embarassingly parallel." That isn't meant to be a derogatory term. It simply suggests that the parallelization of these problems is so straightforward that it almost feels "embarrassing" to call it parallel computing. The "embarrassment" here is more of a playful nod to how easy these problems are to parallelize compared to more complex ones that require significant coordination, synchronization, or data sharing between threads or processes. (More on those later :)
+
+You should still verify this to be the case for this assignment though. On a piece of paper, trace and depict how the sobel filter process would work. Pay attention to how the new output image (2D array) is populated with values. To calculate the value of a cell, do you have to read any other cells from the *same* array that you're writing to?
+
+#### Program Requirements
 
 1. The program should accept the following required command-line arguments. If any of the following parameters are missing, print an error message and do not attempt to run the program.
      - The filename of the input image (e.g., `pics/input.jpg`).
