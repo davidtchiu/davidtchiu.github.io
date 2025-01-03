@@ -122,21 +122,21 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 5. Repeat this process for every pixel to produce the output 2D array, and remember to set any border pixel  to 0 (black).
 
    ```c
-   0  0  0   0    0
-   0  50 70  100  0
-   0  55 75  110  0
-   0  80 95  120  0
-   0  0  0   0    0
+   0  0  0   0  0
+   0 50 70 100  0
+   0 55 75 110  0
+   0 80 95 120  0
+   0  0  0   0  0
    ```
 
 6. Now suppose the **threshold** was input as 80 on the command line. The final output 2D array would be:
 
    ```c
-   0  0  0   0    0
-   0  0  0   100  0
-   0  0  0   110  0
-   0  80 95  120  0
-   0  0  0   0    0
+   0  0  0   0  0
+   0  0  0 100  0
+   0  0  0 110  0
+   0 80 95 120  0
+   0  0  0   0  0
    ```
 
 
