@@ -294,24 +294,32 @@ The pics, for comparison:
 #### Grading
 
 ```
-This assignment will be graded out of 60 points:
+This assignment will be graded out of 70 points:
 
-[5pt] User input is properly handled, and invalid commands generates an error.
+[5pts] User input is properly handled, and invalid commands generates an error.
 
-[5pt] Sequential version of mmm is properly implemented.
+[5pts] The program outputs the processed image as a .jpg in the pics/ directory.
+The new file must append "-sobel" to its original name. For instance, "pics/cat.jpg"
+produces "pics/cat-sobel.jpg"
 
-[30pt] Parallel version of mmm is properly implemented.
+[20pts] pthreads are managed properly. Each thread is input a struct
+that includes the beginning and the ending rows for which it is responsible.
 
-[5pt] You must verify that parallel version is correct by comparing the result
-      matrix with one generated using the sequential algorithm.
+[40pts] The Sobel convolution algorithm is correctly implemented.
 
-[5pt] Your work-sharing model for the parallel version is producing good
-      performance.
+   [5pts] Border pixels are set to 0.
 
-[5pt] You are properly timing your results over multiple runs, and timing only
-      relevant portions of code.
+   [15pts] Kernels Kx and Ky are applied to each pixel when applicable to
+                determine its gradient.
 
-[5pt] Your program is free of memory leaks and dangling pointers.
+   [5pts] The gradient is clamped to 255 if it exceeds 255.
+   
+   [5pts] The gradient is thresholded as explained in the assignment.
+
+   [10pts] Each thread only does the predefined amount of work. The thread's
+           "work" function is properly written and compiles without warnings.
+
+[5pts] Your program is free of memory leaks and dangling pointers.
 ```
 
 #### Submitting Your Assignment
