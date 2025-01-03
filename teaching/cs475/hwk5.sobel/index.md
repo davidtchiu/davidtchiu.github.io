@@ -48,7 +48,7 @@ Starter code for this assignment is provided on the github repo. You must do the
 I have included a working solution of my program along with the starter code. The binary executable file is called `sobelSol`. You can run it from the terminal by first navigating in to the homework directory and typing the command `./sobelSol`. 
 
 
-### Preamble: Understanding Sobel Filters
+#### Preamble: Understanding Sobel Filters
 
 In image processing, **Sobel Filters** are one of the most popular methods for performing edge detection due to their simplicity and effectiveness. The Sobel filter applies a pair of _convolution kernels_ to an image to compute the intensity gradients in both the horizontal ($$G_x$$) and vertical ($$G_y$$) directions. These gradients highlight regions of the image where the intensity changes significantly, which often corresponds to edges.
 
@@ -62,7 +62,7 @@ $$K_x =
 \end{bmatrix}
 $$
 
-$$K_y
+$$K_y =
 \begin{bmatrix}
 -1 & -2 & -1 \\
  0 &  0 &  0 \\
@@ -70,7 +70,7 @@ $$K_y
 \end{bmatrix}
 $$
 
-#### How to Apply Sobel Filters over an Image (Convolution)
+##### How to Apply Sobel Filters over an Image (Convolution)
 The input image is essentially a 2D array where each cell, or "pixel" value, is represented by an integer between 0 (black) and 255 (white). Here's a step-by-step explanation of how it's done. **Convolution** involves sliding the two Sobel kernels across all pixels in the image and performing the following steps at each pixel:
 
    1. For a pixel at position $$[i,j]$$, it will have 8 neighbor pixels surrounding it (the exception, of course, are the pixels along the borders of the image, which your algorithm needs to simply set to 0).
@@ -83,7 +83,7 @@ The input image is essentially a 2D array where each cell, or "pixel" value, is 
   
    5. Repeat this process for every pixel to produce the output 2D array. For any pixel that sits along the border of an image, set its value in the output 2D array to 0 (black).
 
-#### A Running Example
+##### Convolution: A Running Example
 
 Let's say we start with the following $$5\times 5$$ grayscale image:
 
@@ -143,7 +143,7 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
    0  0  0   0    0
    ```
 
-### Program Requirements
+#### Program Requirements
 
 
 1. The program should accept the following required command-line arguments. If any of the following parameters are missing, print an error message and do not attempt to run the program.
@@ -164,20 +164,19 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 
       Your `main(int argc, char *argv[])`. Command-line arguments can be accessed through `argc` and `argv`. Specifically, `argc` refers to the number of arguments given on the command line, including the command to run the executable itself. `argv` is a string array containing the arguments (much like `String[] args` in Java). Once you parse out the command line arguments, store the mode (sequential vs. parallel) as an integer in the `mode` global, and store the dimension of your matrices in the `size` global.
 
-2. **Images**: Input images will be provided in the `pics/` directory. All images are grayscale jpegs. You're welcome to upload your own too. The processed image should be saved in the `pics/` directory with `-sobel` appended to the filename.
+2. **Images**: Input images are provided in the `pics/` directory. All images are grayscale jpegs. You're welcome to upload your own too. The processed image should also be saved in the `pics/` directory with `-sobel` appended to the filename.
 
 
 3. **Globals**: Several global variables have been declared/defined in `main.c`:
-   - `int Kx[3][3]`: This contains the horizontal kernel.
-   - `int Ky[3][3]`: This contains the vertical kernel.
-   - `unsigned char **input_image`: This is the 2D array representing the input image's pixels.
-   - `unsigned char **output_image`: This is the 2D array representing the output image.
-   - `int width`: Stores the width (horizontal dimension) of the image (automatically populated).
-   - `int height`: Stores the height (vertical dimension) of the image (automatically populated).
+   - `int Kx[3][3]`: Defines the horizontal kernel.
+   - `int Ky[3][3]`: Defines the vertical kernel.
+   - `unsigned char **input_image`: The 2D array representing the input image.
+   - `unsigned char **output_image`: The 2D array representing the output image.
+   - `width` and `height`: Store the dimensions (in pixels) of the image (automatically populated).
    - `num_threads`: Stores the number of threads you should spawn (given on command line).
    - `unsigned char threshold`: Stores the pixel threshold (given on command line).
 
-4. **Reading JPEG Images**: The `stbi_load()` function is provided for you to read a `.jpg` file into a 1D array for processing. You can read in an image as follows:
+4. **Reading JPEG Images**: The `stbi_load()` function is provided for you to read a `.jpg` file into a 1D array for processing. You can read in an image stored in `filename` (such as `pics/cat.jpg`) as follows:
 
    ```c
    unsigned char *data = stbi_load(filename, &width, &height, NULL, 1);
@@ -210,6 +209,15 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
       }
       // Now we have a 2D array, accessible via output_image[x][y]!!
       ```
+
+8. **Parallelized Convolution:** It is highly recommended that you write the Sobel convolution algorithm serially before trying to parallelize it. Test the serial function on the images to ensure that it works, and that you understand the convolution algorithm. When you're ready, your `main()` function must split the convolution work evenly among the specified number of threads. The most straightforward way is to have each thread be responsible for processing a fraction of the rows in the image.
+
+      - Remember to provide each thread (as an input argument to the thread function) its "range of work." As I showed in class, this is usually done through allocating a `struct` and putting information inside that `struct` before passing it to each corresponding thread. For instance, if I want each thread to compute a set of rows in the image, I would prepare a `struct` that has each thread's assigned `starting` row, and `ending` row.
+      
+      - If you forget how to do this, refer to the examples I gave in class: [Parallel Sum](https://github.com/davidtchiu/cs475-parSum) and [Parallel Sort](https://github.com/davidtchiu/cs475-parInsertionSort).
+
+      - FYI: our server supports 16 cores. While Amdahl's Law states that we'll never achieve 16 time speedup, we should get pretty close! The larger the image, the better the speedup!
+
 
 8. **Writing JPEG Images**: The `stbi_write_jpg()` function is also provided for you to export a 1D array as a `.jpg` file. You can export an image as follows:
 
@@ -244,13 +252,6 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
          arrayName = NULL;  // dangling pointer
          ```
 
-10. **Data Parallelism:** Your `main()` function must split the edge detection work evenly among the specified number of threads. The most straightforward way is to have each thread be responsible for processing a fraction of the rows in the image.
-
-   - Remember to provide each thread (as an input argument to the thread function) its "range of work." As I showed in class, this is usually done through allocating a `struct` and putting information inside that `struct` before passing it to each corresponding thread. For instance, if I want each thread to compute a set of rows in the result matrix, I would prepare a `struct` that has each thread's `start` row, and `end` row. 
-   
-   - If you forget how to do this, refer to the examples I gave in class: [Parallel Sum](https://github.com/davidtchiu/cs475-parSum) and [Parallel Sort](https://github.com/davidtchiu/cs475-parInsertionSort).
-
-   - For your information: our server has 16 CPU cores. While Amdahl's Law states that we'll never achieve 16 time speedup, we should get pretty close! The larger the image, the better the speedup!
 
 
 #### Example Output
