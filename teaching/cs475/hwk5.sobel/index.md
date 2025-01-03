@@ -1,9 +1,7 @@
 ## CS 475 - Operating Systems
 
 ### Hwk: Parallel Edge Detection with `pthread`
-Ever wonder how self-driving cars detect lanes and boundaries to navigate safely on roads? Or how doctors use advanced imaging techniques to identify tumors with pinpoint accuracy? Edge detection enables these breakthroughs by highlighting the boundaries and transitions within images, making it possible to extract such meaningful information. From enhancing the safety of autonomous vehicles to advancing medical diagnostics, edge detection plays a critical role in industries ranging from transportation to healthcare, shaping the way we interact with the world and solve complex problems.
-
-
+Ever wonder how self-driving cars detect lanes and boundaries to navigate safely on roads? Or how doctors use advanced imaging techniques to identify tumors with pinpoint accuracy? Edge detection enables these breakthroughs by highlighting the boundaries and transitions within images, making it possible to extract such meaningful information. 
 
 <img src="figures/coins.jpg" width="300px">
 <img src="figures/coins-sobel.jpg" width="300px">
@@ -21,7 +19,6 @@ You should still verify this to be the case, as you would any parallelizable pbo
 
 - To write a parallel, multi-threaded program using the `pthread` library.
 - To work with the data-parallel paradigm.
-- To be exposed to timing runs and producing results for performance evaluation.
 
 #### Starter Code
 
@@ -50,9 +47,9 @@ I have included a working solution of my program along with the starter code. Th
 
 #### Preamble: Understanding Sobel Filters
 
-In image processing, **Sobel Filters** are one of the most popular methods for performing edge detection due to their simplicity and effectiveness. The Sobel filter applies a pair of _convolution kernels_ to an image to compute the intensity gradients in both the horizontal ($$G_x$$) and vertical ($$G_y$$) directions. These gradients highlight regions of the image where the intensity changes significantly, which often corresponds to edges.
+In image processing, **Sobel Filters** are one of the most popular methods for performing edge detection due to their simplicity and effectiveness. The Sobel filter applies a pair of _convolution kernels_ to an image to compute the intensity gradients in both the horizontal and vertical directions. These gradients highlight regions of the image where the intensity changes significantly, which often corresponds to edges.
 
-The Sobel operator uses two $$3 \times 3$$ convolution kernels that detect changes in intensity along the horizontal and vertical directions:
+The Sobel operator uses two $$3 \times 3$$ convolution kernels that detect changes in intensity along the horizontal and vertical directions of an image:
 
 $$K_x =
 \begin{bmatrix}
@@ -60,9 +57,8 @@ $$K_x =
 -2 & 0 & 2 \\
 -1 & 0 & 1
 \end{bmatrix}
-$$
 
-$$K_y =
+K_y =
 \begin{bmatrix}
 -1 & -2 & -1 \\
  0 &  0 &  0 \\
@@ -71,16 +67,19 @@ $$K_y =
 $$
 
 ##### How to Apply Sobel Filters over an Image (Convolution)
-The input image is essentially a 2D array where each cell, or "pixel" value, is represented by an integer between 0 (black) and 255 (white). Here's a step-by-step explanation of how it's done. **Convolution** involves sliding the two Sobel kernels across all pixels in the image and performing the following steps at each pixel:
+The input image is essentially a 2D array where each cell, or "pixel", is an integer between 0 (black) and 255 (white). Here's a step-by-step explanation of how it's done. **"Convolution"** is the process of sliding the two Sobel kernels across all pixels in the image and performing the following steps at each pixel:
 
-   1. For a pixel at position $$[i,j]$$, it will have 8 neighbor pixels surrounding it (the exception, of course, are the pixels along the borders of the image, which your algorithm needs to simply set to 0).
+   1. For a pixel at position $$[i,j]$$, it will have 8 neighbor pixels surrounding it.
+      
+      - The exception are the pixels that ride along the four borders of the image.
+      - Your algorithm will need to exclude these border pixels from processing.
 
-   2. Center the $$K_x$$ kernel over each pixel multiply each kernel value with the corresponding image pixel and sum up the results. The sum is called the pixel's horizontal "gradient", $$G_x$$.
+   2. Center the $$K_x$$ kernel over each pixel and multiply each of the nine kernel values with the corresponding pixel value and sum up these products. The sum is called the pixel's horizontal "gradient", $$G_x$$.
 
-   3. Repeat this process for the $$K_y$$ kernel to produce the vertical gradient $$G_y$$.
+   3. Repeat this process for the $$K_y$$ kernel to produce the vertical gradient, $$G_y$$.
 
    4. Combine that pixel's two gradient components using this formula: $$G = \sqrt{G_x^2 + G_y^2}$$. For any value of $$G$$ greater than 255, clamp it down to 255. For all other values of $$G$$, compare $$G$$ to the threshold that was input on the program's command-line. If $$G$$ is less than the threshold, set the corresponding pixel of the output 2D array to 0 (black), otherwise, set it to $$G$$.
-  
+
    5. Repeat this process for every pixel to produce the output 2D array. For any pixel that sits along the border of an image, set its value in the output 2D array to 0 (black).
 
 ##### Convolution: A Running Example
@@ -127,9 +126,9 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 
    ```c
    0  0  0   0    0
-   0  50  70 100  0
-   0  55  75 110  0
-   0  80  95 120  0
+   0  50 70  100  0
+   0  55 75  110  0
+   0  80 95  120  0
    0  0  0   0    0
    ```
 
@@ -137,9 +136,9 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 
    ```c
    0  0  0   0    0
-   0  0  0 100    0
-   0  0  0 110    0
-   0  80  95 120  0
+   0  0  0   100  0
+   0  0  0   110  0
+   0  80 95  120  0
    0  0  0   0    0
    ```
 
@@ -212,7 +211,10 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 
 8. **Parallelized Convolution:** It is highly recommended that you write the Sobel convolution algorithm serially before trying to parallelize it. Test the serial function on the images to ensure that it works, and that you understand the convolution algorithm. When you're ready, your `main()` function must split the convolution work evenly among the specified number of threads. The most straightforward way is to have each thread be responsible for processing a fraction of the rows in the image.
 
-      - Remember to provide each thread (as an input argument to the thread function) its "range of work." As I showed in class, this is usually done through allocating a `struct` and putting information inside that `struct` before passing it to each corresponding thread. For instance, if I want each thread to compute a set of rows in the image, I would prepare a `struct` that has each thread's assigned `starting` row, and `ending` row.
+
+      - Because all globals and any memory allocated on the heap are shared across threads, you do not need to explicitly transfer the 2D arrays to each thread! Nice!
+
+      - The only things that each thread requires (as an input argument to the thread function) are its "range of work." As I showed in class, this is usually done through allocating a `struct` and putting information inside that `struct` before passing it to each corresponding thread. For instance, if I want each thread to compute a set of rows in the image, I would prepare a `struct` that has each thread's assigned `starting` row, and `ending` row.
       
       - If you forget how to do this, refer to the examples I gave in class: [Parallel Sum](https://github.com/davidtchiu/cs475-parSum) and [Parallel Sort](https://github.com/davidtchiu/cs475-parInsertionSort).
 
