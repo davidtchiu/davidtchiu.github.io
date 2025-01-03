@@ -1,15 +1,14 @@
 ## CS 475 - Operating Systems
 
 ### Hwk: Parallel Edge Detection with `pthread`
-Ever wonder how self-driving cars detect lane and boundaries to navigate safely on roads (lane departure is a safety feature in most cars nowadays)? Or, how doctors use advanced imaging techniques to identify tumors with pinpoint accuracy? Or, how in popular graphics tools like Photoshop, users can select (magic lasso) certain objects in a picture and move it around? 
+Ever wonder how self-driving cars detect lane and boundaries to navigate safely on roads (lane departure is a safety feature in most cars nowadays)? Or, how doctors use advanced imaging techniques to identify tumors with pinpoint accuracy? Or, how in popular graphics tools like Photoshop, users can select (magic lasso) certain objects in a picture and move it around?
 
-For instance, how might an AI application determine that the image below (left) is a grumpy cat? For starters, let's try tuning out all the noisy details and focus just on the prominent lines (right). The outline of a cat and its frown, are unmistakable, making it easier for an algorithm (or human eyeballs) to pick up at a later stage.
+<div align="center">
+<img src="figures/cat.jpg" width="200px">
+<img src="figures/cat-sobel.jpg" width="200px">
+</div>
 
-<img src="figures/cat.jpg" width="300px">
-<img src="figures/cat-sobel.jpg" width="300px">
-
-"Edge detection" enables all of these techniques by highlighting the boundaries and transitions within images, making it possible to extract such meaningful information! Edge detection is an important pre-processing step commonly used in graphics, AI/ML, and computer-vision applications today. However, high resolution images  require heavy processing -- this assignment seeks to parallelize this process.
-
+Especially on a fuzzier/noisier image, where objects may be harder for a machine to identify, we might try tuning out all the noise and focus on the outlines. "Edge detection" enables these techniques by highlighting the boundaries and transitions within images, making it possible to extract such meaningful information! Edge detection is an important preprocessing step commonly used in graphics, AI/ML, and computer-vision applications today. However, high-resolution images require heavier processing to achieve edge detection. This assignment seeks to parallelize that process.
 
 The goal of this assignment is to implement a multithreaded edge-detection algorithm on grayscale images using the `pthread` library in C. The particular technique we will focus on is called Sobel Filtering.
 
@@ -18,7 +17,7 @@ The goal of this assignment is to implement a multithreaded edge-detection algor
 
 #### Student Outcomes
 
-- To write a parallel, multi-threaded program using the `pthread` library with real-world application.
+- To write a multi-threaded program using the `pthread` library with real-world application.
 - To work with the data-parallel paradigm.
 - Exposure to "embarassingly parallel" problems. 
 
@@ -49,7 +48,7 @@ I have included a working solution of my program along with the starter code. Th
 
 #### Preamble: Understanding Sobel Filters
 
-In image processing, **Sobel Filters** are one of the most popular methods for performing edge detection due to their simplicity and effectiveness. The Sobel filter applies a pair of _convolution kernels_ to an image to compute the intensity gradients in both the horizontal and vertical directions. These gradients highlight regions of the image where the intensity changes significantly, which often corresponds to edges.
+**Sobel Filters** are one of the most popular methods for performing edge detection due to their simplicity and effectiveness. The Sobel filter applies a pair of _convolution kernels_ to an image to compute the intensity gradients in both the horizontal and vertical directions. These gradients highlight regions of the image where the intensity changes significantly, which often corresponds to edges.
 
 The Sobel operator uses two $$3 \times 3$$ convolution kernels that detect changes in intensity along the horizontal and vertical directions of an image:
 
@@ -80,9 +79,9 @@ The input image is essentially a 2D array where each cell, or "pixel", is an int
 
    3. Repeat this process for the $$K_y$$ kernel to produce the vertical gradient, $$G_y$$.
 
-   4. Combine that pixel's two gradient components using this formula: $$G = \sqrt{G_x^2 + G_y^2}$$. For any value of $$G$$ greater than 255, clamp it down to 255. For all other values of $$G$$, compare $$G$$ to the threshold that was input on the program's command-line. If $$G$$ is less than the threshold, set the corresponding pixel of the output 2D array to 0 (black), otherwise, set it to $$G$$.
+   4. Combine that pixel's two gradient components using this formula: $$G = \sqrt{G_x^2 + G_y^2}$$. For any value of $$G$$ greater than 255, clamp it down to 255. Then compare $$G$$ to the threshold that was input on the program's command-line. If $$G$$ is less than the threshold, set the corresponding pixel of the output 2D array to 0 (black), otherwise, set it to $$G$$.
 
-   5. Repeat this process for every pixel to produce the output 2D array. For any pixel that sits along the border of an image, set its value in the output 2D array to 0 (black).
+   5. Repeat this process for every pixel to produce the output 2D array. For any pixel that sits along the border of an image, set its value in the output 2D array to 0 (black), and do not attempt to apply the kernels.
 
 ##### Convolution: A Running Example
 
@@ -134,7 +133,7 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
    0  0  0   0  0
    ```
 
-6. Now suppose the **threshold** was input as 80 on the command line. The final output 2D array would be:
+6. Now suppose the **threshold** was input as 80 on the command line. The final (convolved) output 2D array would be:
 
    ```c
    0  0  0   0  0
@@ -189,7 +188,7 @@ As any good parallel programmer would, you should still verify this to be the ca
    ```
    The code above will automatically `malloc()` a 1D array of `unsigned char`s (recalling that `unsigned chars` can handle values of 0-255). This array represents all the pixels in the jpg image given by the `filename`. It also populates the `width` and `height` global variables with the dimensions of the jpg. If the call fails, it returns `NULL` to `data`.
 
-6. **Remapping of 1D Array to 2D Array**: It's unnatural to think about an image as a 1D array, in which all the rows of the image are just appended to each other. You could re-map this 1D array to a 2D array of `height` rows and `width` columns as follows:
+6. **Remapping of 1D Array to 2D Array**: It can be a bit unnatural to think about an image as a 1D array, in which all the rows of the image are just appended to each other. You could re-map this 1D array to a 2D array of `height` rows and `width` columns as follows:
 
    ```c
    input_image = (unsigned char**) malloc(sizeof(unsigned char*) * height);
@@ -198,30 +197,30 @@ As any good parallel programmer would, you should still verify this to be the ca
       input_image[i] = &data[i * width];
    }
    ```
-   That will remap the 1D array `data` into the 2D `input_image` (a global). Now you can access the pixel at position `[i,j]` using `input_image[i][j]`.
+   This code will map the 1D array `data` onto the 2D array `input_image` (a global). Now you can access the pixel at position `[i,j]` using `input_image[i][j]`. This should simplify writing the convolution algorithm.
 
-7. **Output Image**: You can't make changes to the pixel values directly to `input_image[..][..]` because it would screw up the gradient calculations for  pixels downstream. Therefore, you should `malloc()` an 2D array of `height` rows and `width` columns that store `unsigned chars`, and assign it to the global, `unsigned char **output_image`.
+7. **Output Image**: You can't make changes to the pixel values directly to `input_image[..][..]` because it would screw up the gradient calculations for  pixels downstream. Therefore, you should `malloc()` another 2D array of `height` rows and `width` columns that store `unsigned chars`, and assign it to the global, `output_image`.
 
-
-   The `**` syntax may at first seem confusing. However, recall that an array is just a pointer. So, an array of pointers can be interpreted to be a pointer to pointers. (If you ever needed a 3 dimensional array, then you would use `***`, and so on.)
+   The `**` syntax of `unsigned char **output_image**` may at first seem confusing. However, recall that an array is just a pointer. So, a 2D array, which is an array of arrays, can be interpreted to be a pointer to pointers. (If you ever needed to malloc a 3 dimensional array, then you would use `***`, and so on.)
    
       ```c
-      // malloc a size 'height' array of pointers
+      // malloc a size 'height' array of pointers (these are the rows)
       output_image = (unsigned char**) malloc(sizeof(unsigned char*) * height);
 
-      // iterate through each row and malloc a size 'width' array
+      // iterate through each row and malloc an array of size 'width'
       for (int i = 0; i < height; i++) {
          output_image[i] = (unsigned char*) malloc(sizeof(int) * width);
       }
       // Now we have a 2D array, accessible via output_image[x][y]!!
       ```
 
-8. **Parallelized Convolution:** It is highly recommended that you write the Sobel convolution algorithm serially before trying to parallelize it. Test the serial function on the images to ensure that it works, and that you understand the convolution algorithm. When you're ready, your `main()` function must split the convolution work evenly among the specified number of threads. The most straightforward way is to have each thread be responsible for processing a fraction of the rows in the image.
+8. **Parallelized Convolution:** It is highly recommended that you write the Sobel convolution algorithm without parallelizing it first. Test this "serial" function on the provided images to ensure that it works, and that you understand the convolution algorithm. 
 
+      - When you're ready, your `main()` function must split the convolution work evenly among the specified number of threads. The most straightforward way is to have each thread be responsible for processing a fraction of the rows in the image.
 
-      - Because all globals and any memory allocated on the heap are shared across threads, you do not need to explicitly transfer the 2D arrays to each thread! Nice!
+      - Because all globals and any memory allocated on the heap are shared across threads, you do not need to explicitly transfer the 2D arrays, or their dimensions, to each thread!
 
-      - The only things that each thread requires (as an input argument to the thread function) are its "range of work." As I showed in class, this is usually done through allocating a `struct` and putting information inside that `struct` before passing it to each corresponding thread. For instance, if I want each thread to compute a set of rows in the image, I would prepare a `struct` that has each thread's assigned `starting` row, and `ending` row.
+      - The only things that each thread requires (as an input argument to the thread function) are its "range of work." As I showed in class, this is usually done through allocating a `struct` and putting information inside that `struct` before passing it to each corresponding thread. If I want each thread to compute a set of rows in the image, I would prepare a `struct` that has each thread's assigned `starting` row and `ending` row.
       
       - If you forget how to do this, refer to the examples I gave in class: [Parallel Sum](https://github.com/davidtchiu/cs475-parSum) and [Parallel Sort](https://github.com/davidtchiu/cs475-parInsertionSort).
 
