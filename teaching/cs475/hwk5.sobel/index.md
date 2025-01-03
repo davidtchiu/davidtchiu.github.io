@@ -57,7 +57,7 @@ $$K_x =
 -2 & 0 & 2 \\
 -1 & 0 & 1
 \end{bmatrix}
-
+~~~~~~~
 K_y =
 \begin{bmatrix}
 -1 & -2 & -1 \\
@@ -288,7 +288,7 @@ Saved as pics/road-sobel.jpg
 Pay attention to the times taken. It should reduce as the number of threads increase. To get the speedup, simply divide the 1-thread version by the parallel version. For example, if I wanted to see how much speedup I'm getting with the 8-thread version, I calculate $$0.066707 sec / 0.009435 sec = 7.07\times$$ speedup on this particular image. That's pretty good!
 
 
-The pics, for comparison: left = original, center = sobel (threshold: 180), right = sobel (threshold: 5). You can see how the right-most picture depicting low-thresholds picks up on more details, detecting edges that are more subtle in the original picture.
+The pics, for comparison: left = original, right = sobel (threshold: 180), bottom = sobel (threshold: 5). You can see how the right-most picture depicting low-thresholds picks up on more details, detecting edges that are more subtle in the original picture, such as the outline of the clouds and details in the mountains. If this were for image-recognition or computer-vision, the level of sensitivity should be finely tuned per application.
 
 <img src="figures/road.jpg" width="400px">
 <img src="figures/road-sobel.jpg" width="400px">
