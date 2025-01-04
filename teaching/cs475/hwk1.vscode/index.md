@@ -27,15 +27,15 @@ It's therefore important that we all code in a common environment, so I've prepa
 - I've set up a Linux server for you to connect to and develop on. Make a note of the following information:
   ```
   Server IP Address: 149.165.174.87
-  Your Username: yourPugetSoundUsername
-  Your Password: <given in class>
+  Your Username: <your-pugetsound-username>
+  Your Password: <given-in-class>
   ```
   The IP address and your username will not change during this class, but  you *can* change your password later.
   
 
 - Open up VS Code, then click on the `View` menu and select `Command Palette`. Then type: `Remote-SSH: Add New SSH Host...`. It should auto-complete after typing the first few letters. Choose to run this command. In the box that pops up, enter:
   ```
-  ssh yourPugetSoundUsername@IPAddress
+  ssh  <your-pugetsound-username>@IPAddress
   ```
   For example, mine would look like:
   ```
@@ -52,7 +52,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - VS Code might then ask you what platform the remote server is using. Select `Linux` from the option menu, if asked. Then it's going to take a bit of time to install the necessary files to get you set up. Wait for it to finish completely. Once everything is set up, you should see a front page with some information and options on it. Go ahead and exit out of this page to show an empty VS Code editor. 
 
-  - From the left-side panel, click on the top button called "Explorer" that looks like like two sheets of paper. Then click on the button called `Open Folder`. Choose `/home/yourUsername` (which should be the default option). Important: This "path" `/home/yourUsername` is called the **home directory** on the server. Only you (and I) have access to it, so don't worry about the privacy of your code.  This is where all your code will go for this class.
+  - From the left-side panel, click on the top button called "Explorer" that looks like like two sheets of paper. Then click on the button called `Open Folder`. Choose `/home/<your-pugetsound-username>` (which should be the default option). Important: This "path" `/home/<your-pugetsound-username>` is called the **home directory** on the server. Only you (and I) have access to it, so don't worry about the privacy of your code.  This is where all your code will go for this class.
 
 -  You may be prompted for your password again, followed by a prompt to trust and accept the secure certificate. Click the checkbox then select `yes` on this dialog box.
 
@@ -73,7 +73,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 
   - I installed the `git` command-line utility on this server, so you should also take advantage of that and backup your code using git (and github).
 
-- **Open** VS Code back up. If you don't see a new, blank window, then choose the `File` menu and select `New Window`. In the blank editor window, look on the left-hand panel with the vertical bar of icons. There's an icon called **Remote Explorer**. Click on it, then choose the profile you want to connect. It should simply be called `/home/yourUserName`.
+- **Open** VS Code back up. If you don't see a new, blank window, then choose the `File` menu and select `New Window`. In the blank editor window, look on the left-hand panel with the vertical bar of icons. There's an icon called **Remote Explorer**. Click on it, then choose the profile you want to connect. It should simply be called `/home/<your-pugetsound-username>`.
 
   <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_2.png" width="250px" />
 
@@ -147,7 +147,7 @@ To download and submit your homework assignments for this class, you'll need to 
     $ gh auth setup-git
     ```
 
-9. That should set you up for authentication to github. We can start our "homework."
+9. That should set you up for authentication to github. We can start our homework.
 
 
 #### Our First C Program
@@ -162,7 +162,7 @@ To download and submit your homework assignments for this class, you'll need to 
 2. Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
 
     ```bash
-    $ git clone <your-github-url-for-this-project>
+    $ git clone <your-github-url>
     ```
 
 3. You will be prompted in the terminal for your github username and password again. Enter those now. Use the "token" we previously generated as your password. (You just have to do this once.)
@@ -172,7 +172,7 @@ To download and submit your homework assignments for this class, you'll need to 
 
     ```bash
     $ cd ~
-    $ cd os-hwk-first/
+    $ cd os-first/
     $ code hwk1.c
     ```
 
