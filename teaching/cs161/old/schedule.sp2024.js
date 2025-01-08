@@ -27,43 +27,43 @@ let days = {
         name: "Hwk 0",
         title: "All About Me",
         url: "hwk0.me/",
-        due: "1/22/2024", // Mon, wk 2
+        due: "1/22/2024", // Mon
       },
       {
         name: "Hwk 1",
         title: "A Better Circle",
         url: "hwk1.circle/",
-        due: "1/31/2024", // Wed, wk 3
+        due: "1/31/2024", // Wed
       },
       {
         name: "Hwk 2",
         title: "Alarm Clock",
         url: "hwk2.clock/",
-        due: "2/9/2024", // Fri, wk 4
+        due: "2/9/2024", // Fri
       },
       {
         name: "Hwk 3",
         title: "Orca Card",
         url: "hwk3.orca/",
-        due: "2/21/2024", // Mon, wk 6
+        due: "2/21/2024", //nope, too much time on this one. Due 19 next time (Mon)
       },
       {
         name: "Hwk 4",
-        title: "Diamonds",
-        url: "hwk4.diamonds/",
-        due: "3/1/2024", //Fri, wk 7
+        title: "Fractions",
+        url: "hwk4.fraction/",
+        due: "3/1/2024", //Wed (this *should* be due on Wed, not Friday!)
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Loops Practice I",
-      //   url: "hwk5.loops/",
-      //   due: "3/8/2024",  // Fri
-      // },
       {
         name: "Hwk 5",
-        title: "Loops Practice",
+        title: "Loops Practice I",
+        url: "hwk5.loops/",
+        due: "3/8/2024",  // Fri
+      },
+      {
+        name: "Hwk 6",
+        title: "Loops Practice II",
         url: "hwk6.loops2/",
-        due: "3/18/2024", // Mon, wk 10
+        due: "3/27/2024", // Wed
       },
       {
         name: "Hwk 7",
@@ -266,7 +266,7 @@ let days = {
 
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("1/20/2025", days, MWRF);
+const schedule = new CourseCalendar("1/15/2024", days, MWRF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();

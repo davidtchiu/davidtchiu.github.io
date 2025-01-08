@@ -1,6 +1,6 @@
 ## CS 240 - Software Engineering
 
-[Course Syllabus](CS240-syllabus.pdf) - [Notes and Code on Canvas](https://canvas.pugetsound.edu)
+Office Hours: Drop-in or by appointment (scan QR code at my door)
 
 <!-- David's schedule generator! Do not touch -->
 <div id="schedule">&nbsp;</div>

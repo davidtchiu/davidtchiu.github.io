@@ -2,7 +2,7 @@
 
 Instructor: David Chiu\
 Lecture: Mon/Wed/Fri 3:00 - 3:50 in TH 409\
-Office Hours: Mon/Wed/Fri 9:00 - 10:00 in TH 303, or by appointment
+Office Hours: Drop-in or by appointment (scan QR code at my door)
 
 
 <!-- David's schedule generator! Do not touch -->
