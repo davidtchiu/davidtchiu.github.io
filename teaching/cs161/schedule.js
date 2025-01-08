@@ -43,19 +43,19 @@ let days = {
       },
       {
         name: "Hwk 3",
-        title: "Orca Card (Conditionals, Types, Casting)",
-        url: "hwk3.orca/",
+        title: "Fractions (Object Interaction)",
+        url: "hwk3.fraction/",
         due: "2/24/2025", // Mon, wk 6
       },
       {
         name: "Hwk 4",
-        title: "Robots (Abstraction and Modularity)",
+        title: "Robots (Code Abstraction and Modularity)",
         url: "hwk4.robot/",
         due: "3/7/2025", //Fri, wk 7 (has a simple loop)
       },
       {
         name: "Hwk 5",
-        title: "Loops Loops Loops",
+        title: "Loops, Loops, Loops!",
         url: "hwk5.loops/",
         due: "3/24/2025", // Mon, wk 10 (right after spring break)
       },
@@ -71,7 +71,12 @@ let days = {
         url: "hwk7.life/",
         due: "4/14/2025", // Mon, wk 13 (right after spring break)
       },
-
+      {
+        name: "Hwk 8",
+        title: "Black Jack",
+        url: "hwkF.blackjack.enums/",
+        due: "5/9/2025", // Fri (exam period)
+      },
       // {
       //   name: "Final Hwk Prop",
       //   title: "Final Homework Proposal (Optional)",
@@ -84,12 +89,6 @@ let days = {
       // // //   url: "hwkF.pooled/",
       // // //   due: "5/4/2021",
       // // // },
-      {
-        name: "Hwk 8",
-        title: "Black Jack",
-        url: "hwkF.blackjack.enums/",
-        due: "5/9/2025", // Fri (exam period)
-      },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
