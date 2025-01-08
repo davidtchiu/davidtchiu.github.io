@@ -55,21 +55,21 @@ let days = {
       },
       {
         name: "Hwk 5",
-        title: "Turtle (Loops)",
-        url: "hwk5.turtle/",
+        title: "Loops Loops Loops",
+        url: "hwk5.loops/",
         due: "3/24/2025", // Mon, wk 10 (right after spring break)
       },
       {
         name: "Hwk 6",
         title: "CC Validator (1D Array)",
         url: "hwk6.cc/",
-        due: "4/4/2025", // Mon, wk 10 (right after spring break)
+        due: "4/4/2025", // Mon, wk 11 (right after spring break)
       },
       {
         name: "Hwk 7",
         title: "Game of Life (2D Array)",
         url: "hwk7.life/",
-        due: "4/16/2025", // Mon, wk 10 (right after spring break)
+        due: "4/14/2025", // Mon, wk 13 (right after spring break)
       },
 
       // {
@@ -85,7 +85,7 @@ let days = {
       // // //   due: "5/4/2021",
       // // // },
       {
-        name: "Final Hwk (Default)",
+        name: "Hwk 8",
         title: "Black Jack",
         url: "hwkF.blackjack.enums/",
         due: "5/9/2025", // Fri (exam period)
@@ -131,7 +131,7 @@ let days = {
       // },
       // {
       //   name: "Lab 7",
-      //   title: "Loops Practice",
+      //   title: "Turtle (Loops Practice)",
       //   url: "lab7.loops/",
       //   due: "3/7/2025",
       // },
@@ -159,12 +159,12 @@ let days = {
       //   url: "lab11.superCircleDrawer/",
       //   due: "3/29/2024",
       // },
-      {
-        name: "Lab 12",
-        title: "Tweet Processor (Scanner, String parsing)",
-        url: "lab12.twitter/",
-        due: "4/18/2025",
-      },
+      // {
+      //   name: "Lab 12",
+      //   title: "Tweet Processor (Scanner, String parsing)",
+      //   url: "lab12.twitter/",
+      //   due: "4/18/2025",
+      // },
       // {
       //   name: "Lab 10",
       //   title: "Boulders (Files)",
@@ -213,12 +213,12 @@ let days = {
     // wk 7
     "Start loops; reading; tracing",
     "More loops",
-    "Lab 7: Turtle",
+    "Lab 7: Loops",
     "More loops: Prime number testing",
     // wk 8
     "Nested loops",
     "Nested loops (cont.)",
-    "Homework Lab",
+    "Lab 8: Nested Loops",
     "Start Arrays; Write the Bank class",
     // wk 9: spring break
     "<strong><emph>Spring break</emph></strong>",
@@ -227,28 +227,28 @@ let days = {
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
     "Array exercises",
-    "Array exercises; for-each",
-    "Lab 8: CC Validator (arrays)",
+    "Array exercises",
+    "Lab 9: Combo Guesser (1D Array)",
     "Arrays of objects: TurtleMob",
     // wk 11
     "2D Arrays",
     "2D Arrays",
-    "Lab 9: 2D Arrays",
+    "Lab 10: Images (2D Array)",
     "Lab review",
     // wk 12
     "Start ArrayLists",
     "More ArrayLists",
-    "<strong><emph>Review</emph></strong>, plus Lab 9: Super CircleDrawer (ArrayList)",
+    "<strong><emph>Review</emph></strong>, plus Lab 11: Super CircleDrawer (ArrayList)",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
     "Scanner: user interaction",
     "String parsing",
-    "Lab 10: String Parsing",
+    "Lab 12: Boulders (String Parsing)",
     "Information hiding",
     // wk 14
     "static scope, constants, enums",
     "The main method",
-    "Lab 12: enum",
+    "Lab 13: Cards (Enum type)",
     "File handling",
     // wk 15
     "File handling",

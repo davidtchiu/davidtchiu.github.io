@@ -1,17 +1,20 @@
 #### TODO
-- Go back to Robots homework instead of Fractions. I do like Fractions though ... maybe replace OrcaCard?
-- I need to work complexity back in.... but when?
-- And 2D arrays
+
+
 - Consider getting rid of the book altogether now, but some students actually say they read it.
-- Do I need an encyclopedia of syntax?
-- Hwk 3 needs to be due sooner (2 days -- to Monday of week 6)
 - I should do a small unit on debugging and hand out rubber ducks sooner. BlueJ debugger tool. Problems like reverse(), edge cases, removing items from a list, ...
-  - I'd have to cut hashmap. Not a huge deal if I do.
-- Start teaching `if (5 == x)` instead of `(x == 5)`. A debugging lab?
 - Move static/enum/private/public up (or spread them out)
 
 
 #### Change Log
+
+#### Spring 2025
+- Replace Hwk 3 OrcaCard with Fractions
+- Merged the 2 loops homeworks together, due right after spring break
+- Added back 2D arrays
+- Removed HashMaps topic
+- Made TweetProc into a Lab (Scanner, String Parsing, Arrays)
+
 
 ##### Spring 2024
 - Exams now on Fridays to preserve Lab.
