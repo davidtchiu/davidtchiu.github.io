@@ -2,8 +2,7 @@
 
 ### Homework: Fractions
 
-The key to object oriented programming is to write classes to create objects, then to interact
-with those objects to accomplish a greater goal. In this assignment, you'll get first-hand
+The key to the object-oriented programming (OOP) paradigm is to write classes, then create objects of those classes to accomplish a greater goal. In this assignment, you'll get first-hand
 experience with object interaction, e.g., storing references (pointers) to objects and 
 calling methods on them. 
 
@@ -20,6 +19,7 @@ For this assignment, you'll build a class that deals with fractions.
 - Exposure to object interaction.
 - Exposure to making method calls on object references.
 - Exposure to integer divide and type conversion.
+- Exposure to type casting.
 - Putting defensive programming into practice.
 
 #### Instructions
@@ -106,17 +106,19 @@ We need to provide some methods to our `Fraction` class. Let's start with writin
   ```
 
 #### Arithmetic Operations (Inputting Other Fractions!)
-Now that we have the basics down, we can finally implement add, subtract, multiply, and divide! Before diving in, you must ensure that only the current fraction can change from calling one of these functions. The *other* fraction that you're inputting to add, subtract, etc., must remain unchanged.
+Now that we have the basics down, we can finally implement add, subtract, multiply, and divide! Before diving in, when implementing methods that take another `Fraction` object as input, you need to ensure that the input `Fraction` remains unchanged. Your methods should not modify the state of the input `Fraction` under any circumstances. Only the current (this) `Fraction` is changed.
 
-- Let's first write `add()`, which accepts a single `Fraction` object to add to the current one. This method does not return a value. If one of the fractions is *undefined*, then take no action. Otherwise, you need to ensure that both fractions' denominators agree. If they already are equal, then simply add the *other* numerator to the current one, and you're done. If they don't agree, then you need to multiply their denominators together. Then multiply the current numerator by the *other* fraction's denominator. Then multiply the other fraction's numerator with the current fraction's denominator and add that sum to your current numerator. 
+- Let's first write `add(Fraction other)`, which accepts a single `Fraction` object named `other` to add to the current one. This method does not return a value. If one of the fractions is *undefined*, then take no action. Otherwise, you need to ensure that both fractions' denominators agree. If they already are equal, then simply add the *other* numerator to the current one, and you're done. If they don't agree, then you need to multiply their denominators together. Then multiply the current numerator by the *other* fraction's denominator. Then multiply the other fraction's numerator with the current fraction's denominator and add that sum to your current numerator. 
 
-- Now start working on `minus()`, which accepts a single `Fraction` object to subtract from the current one. You can go about this in similar fashion to `add()`, and that's totally fine, but do you need to do all that work again? Isn't subtraction just adding a fraction that's been  *negated*?
+- Now start working on `minus(Fraction other)`, which accepts a single `Fraction` object to subtract from the current one. You can go about this in similar fashion to `add()`, and that's totally fine, but do you need to do all that work again? Isn't subtraction just adding a fraction that's been  *negated*?
 
-- Write `multiply()`, which is likely the easiest of the bunch. Simply multiply the numerators and denominators together with the given `Fraction`. This method, like all the others, does not return a value.
+- Write `multiply(Fraction other)`, which is likely the easiest of the bunch. Simply multiply the numerators and denominators together with the given `Fraction`. This method, like all the others, does not return a value.
 
-- Finally, to do divide two `Fraction`s you need to first invert the *other* one. Then multiply them together. (There's a reason I had to implement `multiply()` first!)
+- Finally, write `divide(Fraction other)`. To  divide two `Fraction`s you need to first invert the *other* one. Then multiply them together. (There's a reason I had to implement `multiply()` first!)
 
-#### Reduced Form (Need to Loop)
+
+
+<!-- #### Reduced Form (Need to Loop)
 
 A fraction can be put in *reduced form*. For instance 6/8 reduces to 3/4 and  25/1000 reduces to 1/40. An important step towards finding the reduced form is to first determine the greatest common divisor (GCD) between two integers, that is, the GCD is the largest positive integer that divides evenly into two integers. 
 
@@ -135,7 +137,7 @@ A fraction can be put in *reduced form*. For instance 6/8 reduces to 3/4 and  25
   ```
 
 - Because `gcd()` should only be called in another method of this class, you should make it `private` instead of `public`. 
-
+ -->
 
 
 
@@ -146,7 +148,7 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 120pts.
+This assignment will be graded out of a total of 105pts.
 
 [10pts] The constructor creates a fraction object with the given numerator 
 and denominator. Only the numerator can be negative. If the denominator is
@@ -164,7 +166,8 @@ given as a negative, then negate the numerator and the denominator.
 a string that represents the current fraction object.
 
 [10pts] The toDouble() method returns the floating-point representation of
-the current fraction if it's defined. Otherwise, it returns Double.NaN.
+the current fraction if it's defined. Otherwise (denominator is zero), this
+method returns the constant Double.NaN (Not a Number).
 
 [10pts] The equals() method returns true if both fractions are defined, and that
 the numerators and denominators are equal. Your equals method does not need to
@@ -186,10 +189,15 @@ This method only runs if both fractions are defined.
 The current fraction could change, but the other fraction should remain unchanged.
 This method only runs if both fractions are defined.
 
-[5pts] The reduce() method, which calls gcd(), puts the current fraction in "reduced form."
-
-[10pts] The private gcd() method returns the greatest common divisor between two integers.
+[15pts] Avoiding side-effects: When implementing methods that take another 
+Fraction object as input, you need to ensure that the input Fraction remains 
+unchanged. Your methods should not modify the state of the input Fraction under 
+any circumstances. 
 ```
+
+<!-- [5pts] The reduce() method, which calls gcd(), puts the current fraction in "reduced form."
+
+[10pts] The private gcd() method returns the greatest common divisor between two integers. -->
 
 
 #### Submitting Your Assignment
