@@ -45,13 +45,13 @@ let days = {
         name: "Hwk 3",
         title: "Orca Card (Conditionals, Types, Casting)",
         url: "hwk3.orca/",
-        due: "2/19/2025", // Wed, wk 5
+        due: "2/24/2025", // Mon, wk 6
       },
       {
         name: "Hwk 4",
         title: "Robots (Abstraction and Modularity)",
         url: "hwk4.robot/",
-        due: "3/5/2025", //Wed, wk 7 (has a simple loop)
+        due: "3/7/2025", //Fri, wk 7 (has a simple loop)
       },
       {
         name: "Hwk 5",
