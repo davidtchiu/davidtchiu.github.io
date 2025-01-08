@@ -50,33 +50,34 @@ let days = {
       {
         name: "Hwk 4",
         title: "Robots (Abstraction and Modularity)",
-        url: "hwk4.robots/",
-        due: "3/3/2025", //Mon, wk 7
+        url: "hwk4.robot/",
+        due: "3/5/2025", //Wed, wk 7 (has a simple loop)
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Loops Practice I",
-      //   url: "hwk5.loops/",
-      //   due: "3/8/2024",  // Fri
-      // },
       {
         name: "Hwk 5",
-        title: "Loops Practice",
-        url: "hwk6.loops2/",
-        due: "3/14/2025", // Mon, wk 10
+        title: "Turtle (Loops)",
+        url: "hwk5.turtle/",
+        due: "3/24/2025", // Mon, wk 10 (right after spring break)
+      },
+      {
+        name: "Hwk 6",
+        title: "CC Validator (1D Array)",
+        url: "hwk6.cc/",
+        due: "4/4/2025", // Mon, wk 10 (right after spring break)
       },
       {
         name: "Hwk 7",
-        title: "Tweet Processor",
-        url: "hwk7.twitter/",
-        due: "4/10/2024", // Fri
+        title: "Game of Life (2D Array)",
+        url: "hwk7.life/",
+        due: "4/16/2025", // Mon, wk 10 (right after spring break)
       },
-      {
-        name: "Final Hwk Prop",
-        title: "Final Homework Proposal (Optional)",
-        url: "hwkF.prep/",
-        due: "4/11/2025",  // Fri, wk 12
-      },
+
+      // {
+      //   name: "Final Hwk Prop",
+      //   title: "Final Homework Proposal (Optional)",
+      //   url: "hwkF.prep/",
+      //   due: "4/11/2025",  // Fri, wk 12
+      // },
       // // // {
       // // //   name: "Final Hwk (alternate)",
       // // //   title: "Pooled Testing",
@@ -158,6 +159,12 @@ let days = {
       //   url: "lab11.superCircleDrawer/",
       //   due: "3/29/2024",
       // },
+      {
+        name: "Lab 12",
+        title: "Tweet Processor (Scanner, String parsing)",
+        url: "lab12.twitter/",
+        due: "4/18/2025",
+      },
       // {
       //   name: "Lab 10",
       //   title: "Boulders (Files)",
