@@ -25,33 +25,33 @@ let days = {
     homework: [
       {
         name: "Hwk 0",
-        title: "All About Me",
+        title: "All About Me (BlueJ, Code Submission)",
         url: "hwk0.me/",
-        due: "1/22/2025", // Mon, wk 2
+        due: "1/27/2025", // Mon, wk 2
       },
       {
         name: "Hwk 1",
-        title: "A Better Circle",
+        title: "A Better Circle (Method Calls, Method Writing)",
         url: "hwk1.circle/",
-        due: "1/31/2025", // Wed, wk 3
+        due: "2/5/2025", // Wed, wk 3
       },
       {
         name: "Hwk 2",
-        title: "Alarm Clock",
+        title: "Alarm Clock (Accumulators, Conditionals)",
         url: "hwk2.clock/",
-        due: "2/9/2025", // Fri, wk 4
+        due: "2/14/2025", // Fri, wk 4
       },
       {
         name: "Hwk 3",
-        title: "Orca Card",
+        title: "Orca Card (Conditionals, Types, Casting)",
         url: "hwk3.orca/",
-        due: "2/21/2025", // Mon, wk 6
+        due: "2/19/2025", // Wed, wk 5
       },
       {
         name: "Hwk 4",
-        title: "Diamonds",
-        url: "hwk4.diamonds/",
-        due: "3/1/2025", //Fri, wk 7
+        title: "Robots (Abstraction and Modularity)",
+        url: "hwk4.robots/",
+        due: "3/3/2025", //Mon, wk 7
       },
       // {
       //   name: "Hwk 5",
@@ -63,7 +63,7 @@ let days = {
         name: "Hwk 5",
         title: "Loops Practice",
         url: "hwk6.loops2/",
-        due: "3/18/2025", // Mon, wk 10
+        due: "3/14/2025", // Mon, wk 10
       },
       {
         name: "Hwk 7",
@@ -96,68 +96,68 @@ let days = {
       //   name: "Lab 1",
       //   title: "Draw My Picture (BlueJ)",
       //   url: "lab1.bluej/",
-      //   due: "1/19/2024",
+      //   due: "1/24/2025",
       // },
       // {
       //   name: "Lab 2",
       //   title: "Triangle Class (Variables, Scope, and Lifetime)",
       //   url: "lab2.vars/",
-      //   due: "1/26/2024",
+      //   due: "1/31/2025",
       // },
       // {
       //   name: "Lab 3",
       //   title: "Stomach Class (Class Writing)",
       //   url: "lab3.stomach/",
-      //   due: "2/2/2024",
+      //   due: "2/7/2025",
       // },
       // {
       //   name: "Lab 4",
       //   title: "Guessing Game (If-Else)",
       //   url: "lab4.guessing/",
-      //   due: "2/9/2024",
+      //   due: "2/14/2025",
       // },
       // {
       //   name: "Lab 5",
       //   title: "Circle Drawer (Object Interaction)",
       //   url: "lab5.circleDrawer/",
-      //   due: "2/16/2024",
+      //   due: "2/21/2025",
       // },
       // {
       //   name: "Lab 6",
       //   title: "Diamonds (Abstraction and Modularity)",
       //   url: "lab6.diamonds/",
-      //   due: "2/23/2024",
+      //   due: "2/28/2025",
       // },
       // {
       //   name: "Lab 7",
-      //   title: "Turtle (Loops)",
-      //   url: "lab7.turtle/",
-      //   due: "3/1/2024",
+      //   title: "Loops Practice",
+      //   url: "lab7.loops/",
+      //   due: "3/7/2025",
       // },
       // {
       //   name: "Lab 8",
-      //   title: "CC Validator (Arrays)",
-      //   url: "lab8.cc/",
-      //   due: "3/22/2024",
+      //   title: "Nested Loops Practice",
+      //   url: "lab8.loops/",
+      //   due: "3/14/2025",
       // },
       // {
       //   name: "Lab 9",
+      //   title: "CC Validator (Arrays)",
+      //   url: "lab9.cc/",
+      //   due: "3/28/2025",
+      // },
+      // {
+      //   name: "Lab 10",
+      //   title: "2D Arrays",
+      //   url: "lab10.tbd/",
+      //   due: "4/4/2025",
+      // },
+      // {
+      //   name: "Lab 11",
       //   title: "Super Circle Drawer (ArrayLists)",
-      //   url: "lab9.superCircleDrawer/",
+      //   url: "lab11.superCircleDrawer/",
       //   due: "3/29/2024",
       // },
-      // // // {
-      // // //   name: "Lab 10",
-      // // //   title: "Election (Files and HashMaps)",
-      // // //   url: "lab10.election/",
-      // // //   due: "4/14/2024",
-      // // // },
-      // // {
-      // //   name: "Lab 10",
-      // //   title: "TBD",
-      // //   url: "lab10.TBD/",
-      // //   due: "4/5/2024",
-      // // },
       // {
       //   name: "Lab 10",
       //   title: "Boulders (Files)",
