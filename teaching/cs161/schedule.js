@@ -27,31 +27,31 @@ let days = {
         name: "Hwk 0",
         title: "All About Me",
         url: "hwk0.me/",
-        due: "1/22/2024", // Mon, wk 2
+        due: "1/22/2025", // Mon, wk 2
       },
       {
         name: "Hwk 1",
         title: "A Better Circle",
         url: "hwk1.circle/",
-        due: "1/31/2024", // Wed, wk 3
+        due: "1/31/2025", // Wed, wk 3
       },
       {
         name: "Hwk 2",
         title: "Alarm Clock",
         url: "hwk2.clock/",
-        due: "2/9/2024", // Fri, wk 4
+        due: "2/9/2025", // Fri, wk 4
       },
       {
         name: "Hwk 3",
         title: "Orca Card",
         url: "hwk3.orca/",
-        due: "2/21/2024", // Mon, wk 6
+        due: "2/21/2025", // Mon, wk 6
       },
       {
         name: "Hwk 4",
         title: "Diamonds",
         url: "hwk4.diamonds/",
-        due: "3/1/2024", //Fri, wk 7
+        due: "3/1/2025", //Fri, wk 7
       },
       // {
       //   name: "Hwk 5",
@@ -63,7 +63,7 @@ let days = {
         name: "Hwk 5",
         title: "Loops Practice",
         url: "hwk6.loops2/",
-        due: "3/18/2024", // Mon, wk 10
+        due: "3/18/2025", // Mon, wk 10
       },
       {
         name: "Hwk 7",
@@ -71,17 +71,11 @@ let days = {
         url: "hwk7.twitter/",
         due: "4/10/2024", // Fri
       },
-      // // {
-      // //   name: "Hwk 7",
-      // //   title: "Pooled Testing",
-      // //   url: "hwk7.pooled/",
-      // //   due: "4/19/2024",  // Wed
-      // // },
       {
         name: "Final Hwk Prop",
         title: "Final Homework Proposal (Optional)",
         url: "hwkF.prep/",
-        due: "4/12/2024",  // Fri
+        due: "4/11/2025",  // Fri, wk 12
       },
       // // // {
       // // //   name: "Final Hwk (alternate)",
@@ -93,7 +87,7 @@ let days = {
         name: "Final Hwk (Default)",
         title: "Black Jack",
         url: "hwkF.blackjack.enums/",
-        due: "5/3/2024", // Mon (exam period)
+        due: "5/9/2025", // Fri (exam period)
       },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
@@ -232,7 +226,7 @@ let days = {
     // wk 11
     "2D Arrays",
     "2D Arrays",
-    "Lab 9: Super CircleDrawer (2D Arrays)",
+    "Lab 9: 2D Arrays",
     "Lab review",
     // wk 12
     "Start ArrayLists",
@@ -251,6 +245,7 @@ let days = {
     "File handling",
     // wk 15
     "File handling",
+    "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
