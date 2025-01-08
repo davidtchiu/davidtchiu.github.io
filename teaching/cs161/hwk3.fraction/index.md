@@ -148,7 +148,7 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 105pts.
+This assignment will be graded out of a total of 120 pts.
 
 [10pts] The constructor creates a fraction object with the given numerator 
 and denominator. Only the numerator can be negative. If the denominator is
