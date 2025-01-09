@@ -28,7 +28,7 @@ Here are your assigned partners for today's lab.
 
 #### Required Files
 
-The following file(s) have been provided for this homework.
+The following file(s) have been provided for this project.
 
 - [Lab7_TurtleDrawer.zip](Lab7_TurtleDrawer.zip)
 
@@ -38,7 +38,7 @@ The API handout that you'll want to have in front of you:
 
 - [Turtle](../api/TurtleAPI.pdf)
 
-#### Preliminary
+#### Part 1: Preliminary
 
 Download the BlueJ project from the above link. After you unzip it into your working directory, navigate into the project folder. Inside, you will see a `Turtle` class. **You do not need to make changes to this class.** You only need to know its public methods (given in the [Turtle API](TurtleAPI.pdf) hand out).
 
