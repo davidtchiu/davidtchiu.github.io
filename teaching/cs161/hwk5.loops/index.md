@@ -95,7 +95,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
     - Finally, beware of integer divide!
 
     ```java
-    Loops loopie = new MoreLoops();
+    Loops loopie = new Loops();
     System.out.println(loopie.vowelRatio("Hello world"));
     > 0.2727272727
 

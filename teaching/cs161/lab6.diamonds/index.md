@@ -71,9 +71,9 @@ Our objective is to create a new class that can create  `Diamond`s with the same
 
 Let's move on to something a little more challenging: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
 
-    - However, this will introduce a new problem. The triangles, upon changing their size, may  overlap each other or they could be spread farther apart!
+- However, this will introduce a new problem. The triangles, upon changing their size, may overlap each other or they could be spread farther apart!
 
-    - This can be a bit tricky. You'll need to move the bottom triangle up or down to adjust for this gap. But how much do you move it by...? **(Hint: it's a good thing we know the old height of the diamond...)** Recall that when you resize a triangle, the top never changes along the vertical axis -- it's the bottom of the triangle that moves. Draw on a piece of paper to gain insight into when you'd need to move the bottom one up and when you'd need to move the bottom one down (and by how much).
+- You need to move the bottom triangle up or down to adjust for this gap. But how much do you move it by...? **(Hint: it's a good thing we know the old height of the diamond...)** Recall that when you resize a triangle, the top never changes along the vertical axis -- it's the bottom of the triangle that moves. Draw on a piece of paper to gain insight into when you'd need to move the bottom one up and when you'd need to move the bottom one down (and by how much).
 
 #### Reflections: Problem Decomposition and Thinking Abstractly
 Hopefully, through this lab, you can see how useful it is to think abstractly. We broke down a bigger problem ("How to build a diamond") and made the key insight that diamonds are nothing more than just 2 triangles, whose code we already have. Then the rest is just a matter of bossing around the triangles so that together, they look and act like a diamond! Knowing this, it's easy to see how we might create new shapes and add them to our toolkit.

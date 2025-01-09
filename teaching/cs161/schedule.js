@@ -61,8 +61,8 @@ let days = {
       },
       {
         name: "Hwk 6",
-        title: "CC Validator (1D Array)",
-        url: "hwk6.cc/",
+        title: "Combo Guesser (1D Array)",
+        url: "hwk6.combo/",
         due: "4/4/2025", // Mon, wk 11 (right after spring break)
       },
       {
