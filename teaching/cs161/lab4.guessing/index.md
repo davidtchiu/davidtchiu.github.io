@@ -120,10 +120,14 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
 
   When a user guesses wrong, currently your code only tells them to go higher or lower. In addition to this, we now want to print out a message corresponding to how *close* their guess was. Print a different message depending on its _distance_ from the secret number.
 
-    - For example, if the secret number is 35, and the user guesses either 34 or 36, then both guesses should generate "scalding hot."
-    - It's slightly annoying that you have to check to see if the distance of the guess from the secret number is 1 or -1. (Hint: What if you wrote a method, called `public int abs(int x)`, to `return` the **absolute value** of a number `x`? How might it be useful in this situation?)
+    - For example, if the secret number is 35, and the user guesses either 34 or 36, then both guesses should print "scalding hot." It’s inconvenient to check whether the guess is exactly +1 above or -1 below the secret number. What we’re really interested in is the **absolute distance** between the guess and the secret number. For example:
 
-    | Distance from Secret | Message to Print              |
+      - If the guess is 34 or 36 and the secret number is 35, the absolute distance is 1.
+      - If the guess is 41 or 29 and the secret number is 35, the absolute distance is 6.
+
+    - It seems like you would just want the *absolute value* of the distance, but how?  What if you wrote a new method, called `public int abs(int x)`, to `return` the **absolute value** of an integer `x`?
+
+    | Absolute Distance from Secret | Message to Print              |
     | -------------------- | ----------------------------- |
     | Within 1             | "scalding hot"                |
     | Within 2             | "extremely warm"              |
@@ -149,7 +153,7 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
     Game Over: You Lost!
     You've reached the limit of 25 tries.
     The secret number was 46.
-    Please stop playing now.
+    You have reached the guess limit!
     ```
 
 - Food for Thought: By now, you've probably played the game several times to test your program. Have you figured out a guessing strategy based on the "higher" or "lower" information that minimizes the number of guesses you need to find the secret number? (Foreshadowing: Could such a strategy be useful in other ways...?)
