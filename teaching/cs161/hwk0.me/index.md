@@ -2,7 +2,7 @@
 
 ### Hwk: About Me
 
-The purpose of this first assignment is to get you even more familiarized with BlueJ, and the submission process.
+The purpose of this first assignment is to get you even more familiarized with the BlueJ coding editor and with the code-submission process.
 
 #### Student Outcomes
 
@@ -17,9 +17,9 @@ The following file(s) have been provided for this assignment.
 
 - [Hwk_AboutMe.zip](Hwk_AboutMe.zip)
 
-#### Instructions
+#### Getting Started: Setting up
 
-0. Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk0_AboutMe.zip`. 
+0. Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk_AboutMe.zip`. 
    - **Windows users:** remember from Lab that you cannot simply double-click on the zip file to extract it! You must right-click on the file, and choose `Extract...`. Remember where you choose to extract its content.
    - **Mac users:** you can simply double-click on the zip file to extract it!
 
@@ -29,11 +29,11 @@ The following file(s) have been provided for this assignment.
 
    - Navigate into your Google Drive, and create a new a new folder to store all of your code for this class (there will be many!) 
 
-   - Drag and drop your new `Hwk0_AboutMe` folder there.
+   - Drag and drop your new `Hwk_AboutMe` folder there.
 
    - You will be graded on this step. As proof, I'll ask to see your Drive during our next lab.
 
-2. After you've given your `Hwk0_AboutMe` folder a good place to live. Navigate into it, and double-click the file called `package.bluej` (It should look like a small blue jay icon.) This should open the project inside the BlueJ code editor, and you should see a single icon called `AboutMe` (looks like an orange box).
+2. After you've given your `Hwk_AboutMe` folder a good place to live. Navigate into it, and double-click the file called `package.bluej` (It should look like a small blue jay icon.) This should open the project inside the BlueJ code editor, and you should see a single icon called `AboutMe` (looks like an orange box).
 
 3. Before you do anything else, let's customize your BlueJ environment:
 
@@ -41,9 +41,12 @@ The following file(s) have been provided for this assignment.
    - Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
    - Okay, that should be it for now.
 
-4. You should be back to the project overview window that shows the `AboutMe` icon. Double-click on the `AboutMe` icon to open the source code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
+4. You should be back to the project overview window that shows the `AboutMe` icon. Double-click on it to open the code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
 
-5. Once you have the editor open, you should see a code block that looks like the following:
+
+#### Instructions
+
+1. Once you have the code editor open for `AboutMe`, you should see the following code block:
 
    ```java
    public void printMyName() {
@@ -59,7 +62,7 @@ The following file(s) have been provided for this assignment.
       - **Body:** Following the parameter list, we now see a pair of "curly" braces `{` and `}` found on different lines. All the instructions of your algorithm must go in between the pair of curly braces. Each instruction should be placed on a separate line.
       - **Line Comment:** I put a _comment_ inside the body. In Java, anything that follows the `//` pattern is ignored. That makes it easy for programmers to make notes about their code! Clear and effective commenting is imperative in programming, and will be emphasized in this course. I've used a line comment here to direct your attention to where you need to start writing your code. You can remove my comment later.
 
-5. Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax to print a something to the screen is:
+2. Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax to print a something to the screen is:
 
    ```java
    System.out.println(thingYouWantPrinted);
@@ -67,17 +70,17 @@ The following file(s) have been provided for this assignment.
 
    When programming, a sequence of symbols or characters is called a _String_. Strings in Java are always enclosed between a pair of double quotes, `"like this"`. If you tried to print out your name without using the quotes, the code won't compile.
 
-6. Go ahead and test this instruction out. Write a print statement inside the body of the `printMyName()` method to print out your name.
+3. Go ahead and test this instruction out. Write a print statement inside the body of the `printMyName()` method to print out your name.
 
-7. After you're done with `printMyName()`, it's time to test it out. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right-click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
+4. After you're done with `printMyName()`, it's time to test it out. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right-click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
 
-8. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on February 26, 2000 would print `02/26/00`. To create a new method, you can just copy the `printMyName()` code. The new method code block can go before or after the `printMyName()` method block. I would type out the code for this method "by hand," instead of using copy-and-paste. Compile and test it out.
+5. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on February 26, 2000 would print `02/26/00`. To create a new method, you can just copy the `printMyName()` code. The new method code block can go before or after the `printMyName()` method block. I would type out the code for this method "by hand," instead of using copy-and-paste. Compile and test it out.
 
    - Did the print-out from the previous interactions get reset when you called `printBday()`? Don't worry, there's an easy way to change that behavior. Click anywhere on the output screen, and from the menu up top, click `Options` then uncheck `Clear screen at method call`. This should save all the outputs on the screen from before.
 
    - Saving old outputs on the screen *will* get annoying though, when your programs get more complicated. So just remember that you can always re-enable this option.
 
-9. Let's try something a little more involved. Write a method called `printInitials()` that prints out your first, middle (if applicable), and last initials in "block form" (see below). Notice the formatting --- you should use the letter itself to create the block shape. For instance, my initials DTC might be printed as follows:
+6. Let's try something a little more involved. Write a method called `printInitials()` that prints out your first, middle (if applicable), and last initials in "block form" (see below). Notice the formatting --- you should use the letter itself to create the block shape. For instance, my initials DTC might be printed as follows:
 
    ```
    DDDDDD   TTTTTTTTT   CCCCCC
@@ -92,7 +95,7 @@ The following file(s) have been provided for this assignment.
    - Second way: Let's say you wanted to use only a _single_ print statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line-break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens in the output.
    - Compile and test it out.
 
-10. Next, create a new method called `printBio()` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. For instance, mine might print:
+7. Next, create a new method called `printBio()` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. For instance, mine might print:
 
     ```
     I am a professor of computer science at University of Puget Sound.
@@ -100,7 +103,7 @@ The following file(s) have been provided for this assignment.
     I live in Tacoma, WA.
     ```
 
-11. Finally, it sure would be nice to have a method that would print out your initials, your name, birthday, and bio **all at once**, instead of having to call separate methods. Write a method called `printMyInfo()`. Here's the key: You wouldn't want to have to _rewrite_ all those print statements from before! (Pro-tip: Code duplication should be avoided --- always!)
+8. Finally, it sure would be nice to have a method that would print out your initials, your name, birthday, and bio **all at once**, instead of having to call separate methods. Write a method called `printMyInfo()`. Here's the key: You wouldn't want to have to _rewrite_ all those print statements from before! (Pro-tip: Code duplication should be avoided --- always!)
 
     - Instead, We want to simply call (re-use) the other three methods you've already written. To **call** an existing method from the code itself, you just have to write `methodName();` in the body of `printMyInfo()`.
 
@@ -126,24 +129,27 @@ The following file(s) have been provided for this assignment.
     early high-level programming language still in use today.
     ```
 
-12. Feel free to play with it more and customize your outputs however you like. You're free to add as many methods or statements as you like! Experiment with things like:
+9. Feel free to play with it more and customize your outputs however you like. You're free to add as many methods or statements as you like! Experiment with things like:
 
-   - How would you print out a "tab?"
-   - How would you print out a double quote (")?
-   - What if you didn't want `System.out.println(...)` to automatically insert a line-break at the end of the line? Is there another method to print without a line break?
+      - How would you print out a "tab?"
+      - How would you print out a double quote (")?
+      - What if you didn't want `System.out.println(...)` to automatically insert a line-break at the end of the line? Is there another method to print without a line break?
 
-13. **Final check:** It's important to note that everything you write in Java is case-sensitive. You _must_ adhere to the proper casing. For instance, when I specify that your method should be named `printMyName()`, you should not name it `printmyname()`. Typos, using the wrong name, or wrong case will screw up our automatic _grading_ tool.
+
+#### How to Submit
+
+1. **Final check:** It's important to note that everything you write in Java is case-sensitive. You _must_ adhere to the proper casing. For instance, when I specify that your method should be named `printMyName()`, you should not name it `printmyname()`. Typos, using the wrong name, or wrong case will screw up our automatic _grading_ tool.
 
     - Go back to make sure your methods adhere to my given specification.
     - Remember to do this for all remaining homework and labs.
 
-14. **Submission:** Exit out from BlueJ. Then from your operating system's file finder, navigate to the folder that you extracted. It should contain files like these:
+2. **Submission:** Exit out of BlueJ. Then from your operating system's file finder or file explorer, navigate to the folder that you previously extracted. If you did everything correctly, this folder should be somewhere in your Google Drive. It should contain files like these:
     - `AboutMe.class`
     - `AboutMe.java`
     - `package.bluej`
     - `README.txt`
 
-   For this assignment, you only need to locate the file(s) ending in `.java`. This is called your *source code*, and it contains all the code you just wrote! Now go to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
+3. For this assignment, you only need to locate the file(s) ending in `.java`. This is called your *source code*, and it contains all the code you just wrote! Now go to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
    
     - Upload all the file(s) ending in `.java` from your project folder.
     - Click "Submit Assignment" again to upload it.
