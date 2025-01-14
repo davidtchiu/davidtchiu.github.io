@@ -12,7 +12,7 @@ another fraction object, say $$c/d$$, that you want to divide with. Then you tel
 fraction to invert itself to become $$d/c$$. Then you need to ask it for its numerator $$d$$ 
 and denominator $$c$$ and multiply them with $$a$$ and $$b$$, respectively. 
 
-For this assignment, you'll build a class that deals with fractions.
+For this assignment, you'll build a class that deals with fractions as individual "objects."
 
 #### Student Outcomes
 

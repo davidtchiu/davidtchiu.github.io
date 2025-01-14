@@ -1,12 +1,12 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Loop Practice (The Basics!)
+### Homework: Loops Loops Loops
 
 In this assignment, you'll be working with loops. It helps to use the David's 4-Step Process for Writing Loops handout I passed out to you in class.
 
 #### Student Outcomes
 
-- Exposure to writing simple loops.
+- Practice writing loops and nested loops.
 
 #### Instructions
 

@@ -15,7 +15,7 @@ The purpose of this first assignment is to get you even more familiarized with B
 
 The following file(s) have been provided for this assignment.
 
-- [Hwk0_AboutMe.zip](Hwk0_AboutMe.zip)
+- [Hwk_AboutMe.zip](Hwk_AboutMe.zip)
 
 #### Instructions
 

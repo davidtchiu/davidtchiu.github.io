@@ -34,7 +34,7 @@ Here are your assigned partners for today's lab.
 
 The following file(s) have been provided for this homework.
 
-- [Lab5_CircleDrawer.zip](Lab5_CircleDrawer.zip)
+- [Lab_CircleDrawer.zip](Lab_CircleDrawer.zip)
 
 #### Instructions
 

@@ -12,7 +12,7 @@ This assignment will give you a chance to explore the Circle class in more detai
 
 The following file(s) have been provided for this assignment.
 
-- [Hwk1_BetterCircle.zip](Hwk1_BetterCircle.zip)
+- [Hwk_BetterCircle.zip](Hwk_BetterCircle.zip)
 
 #### Instructions
 

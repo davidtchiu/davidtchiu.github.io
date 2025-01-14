@@ -16,7 +16,7 @@ Business at David's Casino is flourishing, but customers have been complaining t
 
 The following file(s) have been provided for this assignment.
 
-- [Hwk8_BlackJack.zip](Hwk8_BlackJack.zip)
+- [Hwk_BlackJack.zip](Hwk_BlackJack.zip)
 
 #### The Suit Enumeration Class, Card Class, and Deck Class.
 

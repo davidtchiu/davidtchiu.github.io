@@ -30,7 +30,7 @@ Here are your assigned partners for today's lab.
 
 The following file(s) have been provided for this project.
 
-- [Lab7_TurtleDrawer.zip](Lab7_TurtleDrawer.zip)
+- [Lab_TurtleDrawer.zip](Lab_TurtleDrawer.zip)
 
 #### Helpful APIs
 

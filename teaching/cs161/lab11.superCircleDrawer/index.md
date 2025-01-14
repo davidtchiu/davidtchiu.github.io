@@ -18,7 +18,7 @@ Professor Pacman has requested that you implement a new and improved version of 
 
 The following file(s) have been provided for this homework.
 
-- [Lab9_SuperCircleDrawer.zip](Lab9_SuperCircleDrawer.zip)
+- [Lab_SuperCircleDrawer.zip](Lab_SuperCircleDrawer.zip)
 
 #### Helpful APIs
 

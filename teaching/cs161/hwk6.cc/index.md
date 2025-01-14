@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Credit Card Validation
+### Homework: Credit Card Validation
 
 Most credit cards carry a unique 16-digit number. With the length being this long,  people often make mistakes when filling out a form or giving it over the phone. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) Back before the Internet and Web existed, how did our credit card readers immediately determine when a credit card number was entered incorrectly? That is the topic of today's lab!
 
@@ -15,9 +15,9 @@ Most credit cards carry a unique 16-digit number. With the length being this lon
 
 #### Required Files
 
-The following file(s) have been provided for this homework.
+The following file(s) have been provided for this assignment.
 
-- [Lab8_CC.zip](Lab8_CC.zip)
+- [Hwk_CC.zip](Hwk_CC.zip)
 
 #### Validating Credit Cards (Luhn's Algorithm)
 
@@ -131,7 +131,7 @@ Let's take a sec to understand that a 16-digit credit number actually represents
 
   - **Step 3:** Finally, you'll need to add up all the values in order to obtain: 6 + 9 + 5 + 9 + 4 + 5 + 0 + 4 + 4 + 8 + 4 + 1 + 9 + 4 + 6 == 78. Next, add in the `checksum` to obtain 78 + 2 == 80, and calculate 80 % 10. Because this result is zero, this credit card number validates!
 
-- To test, go back and run the `static void main(String[] args)` method of the `Main` class. You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a> lets you generate valid credit card numbers! 
+- To test, go back and run the `public static void main(String[] args)` method of the `Main` class. You may not want to use your own credit card numbers to test, which is understandable, but <a href="https://www.dcode.fr/luhn-algorithm">this link</a> lets you generate valid credit card numbers! 
 
 #### Grading
 

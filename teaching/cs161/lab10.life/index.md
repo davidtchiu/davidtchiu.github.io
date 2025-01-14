@@ -35,6 +35,17 @@ The game is played on a square grid of cells. Each cell can either be alive or i
 
 - Write a getter method named `isAlive()` that takes no inputs and returns the state of your `Cell`'s living status
 
+
+```java
+Cell c = new Cell();
+c.isAlive()
+> false  (boolean)
+
+Cell anotherCell = new Cell(true);
+c.isAlive()
+> true  (boolean)
+```
+
 #### Part 2: Life Class
 You will need to modify the `Life` class in order to make things work. Important: In our board, the axes are flipped: `x` refers to the vertical axis, and `y` refers to the horizontal axis. Please remember this!
 

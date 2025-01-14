@@ -142,8 +142,8 @@ let days = {
       // },
       // {
       //   name: "Lab 9",
-      //   title: "CC Validator (Arrays)",
-      //   url: "lab9.cc/",
+      //   title: "Combo Guesser (Arrays)",
+      //   url: "lab9.combo/",
       //   due: "3/28/2025",
       // },
       // {
@@ -232,7 +232,7 @@ let days = {
     // wk 11
     "2D Arrays",
     "2D Arrays",
-    "Lab 10: Images (2D Array)",
+    "Lab 10: Game of Life (2D Array)",
     "Lab review",
     // wk 12
     "Start ArrayLists",

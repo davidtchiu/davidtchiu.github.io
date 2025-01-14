@@ -15,7 +15,7 @@ In this assignment you will use BlueJ to practice creating and calling methods o
 
 The following file(s) have been provided for this lab.
 
-- [Lab1_Shapes.zip](Lab1_Shapes.zip)
+- [Lab_Shapes.zip](Lab_Shapes.zip)
 
 <!-- #### Preliminary: Watch This Video
 

@@ -32,7 +32,7 @@ Here are your assigned partners for today's lab.
 
 The following file(s) have been provided for this homework.
 
-- [Lab6_Diamonds.zip](Lab6_Diamonds.zip)
+- [Lab_Diamonds.zip](Lab_Diamonds.zip)
 
 
 

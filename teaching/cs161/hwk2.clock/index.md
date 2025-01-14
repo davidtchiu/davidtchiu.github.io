@@ -17,7 +17,7 @@ In this project, you will put in the work to write a class of (alarm) clocks fro
 - To use parameters, fields, and local variables
 - To use if-else statements
 
-#### Required Files
+#### Create a New Project
 
 There are no starter files provided for this project. To create a new project, follow these instructions:   
   1. Open BlueJ. It might show you the most recently opened project, but that's okay.
