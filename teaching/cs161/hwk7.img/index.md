@@ -29,7 +29,8 @@ The following file(s) have been provided for this assignment.
 
 - After you unzip the starter code, you'll find the following files:
   - `cat.jpg`: An image of Grumpy Cat.
-  - `nasa.jpg`: A washed-out aerial image.
+  - `camera.jpg`: An grainy photo of a camera person.
+  - `road.jpg`: A high resolution photo of a road.
   - `Image.java`: This is the `Image` class, which represents a greyscale image and offers services to manipulate this image. There are several methods left for you to implement.
   - `Fotoshop.java`: This is the `Fotoshop` class, which just contains the main method you would run to manipulate the image.
 
@@ -44,9 +45,9 @@ The following file(s) have been provided for this assignment.
 - Write a method called `inverse()`. It iterates through all pixel elements in your 2D array and negates their values. For instsance, 0 becomes 255, 1 becomes 254, 2 becomes 253, and so on. 
 
 
-- Write a method called `gamma()` that takes as input two `doubles` named `coeff` and `gamma`. It loops through all Pixel elements in your 2D array and applies sets all pixel values to be `coeff * p^gamma`, where `p` is the current pixel value.
+- Write a method called `gamma()` that takes as input a `double` named `gamma`. It loops through all Pixel elements in your 2D array and applies sets all pixel values to the value of the pixel raised to the power of `gamma`. Recall that you can raise $$a$$ to the power of $$b$$ by using the method `Math.pow(a,b)`.
 
-Before moving on to the next section, you should test everything out to check whether everything's working so far. Check out the examples below (type into code pad). If successful, open up the BlueJ project folder, and double-click to open the new jpeg file after transformation. You should get the results that follow:
+Before moving on to the next section, you should test everything out to check whether everything's working so far. Check out the examples below (type into the `main` method inside the `Fotoshop` class). If successful, open up the BlueJ project folder, and double-click to open the new jpeg file after transformation. You should get the results that follow:
 
 ##### Examples of Pixel Intensity Transformations
 <center>
