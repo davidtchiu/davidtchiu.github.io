@@ -165,17 +165,17 @@ let days = {
         due: "4/18/2025",
       },
       {
-        name: "Lab 10",
-        title: "Boulders (Files)",
-        url: "lab10.boulders/",
-        due: "4/12/2024",
-      },
-      {
-        name: "Lab 11",
+        name: "Lab 13",
         title: "Playing Cards (Constants, Enum)",
-        url: "lab11.cards/",
+        url: "lab13.cards/",
         due: "4/19/2024",
       }
+      // {
+      //   name: "Lab 10",
+      //   title: "Boulders (Files)",
+      //   url: "lab10.boulders/",
+      //   due: "4/12/2024",
+      // },
     ],
   },
   lectures: [

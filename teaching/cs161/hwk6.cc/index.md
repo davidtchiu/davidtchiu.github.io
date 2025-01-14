@@ -136,9 +136,8 @@ Let's take a sec to understand that a 16-digit credit number actually represents
 #### Grading
 
 ```
-This assignment will be graded out of 2 points, provided that:
-- You were in attendance and on-time.
-- Completed all required methods.
+
+
 ```
 
 
