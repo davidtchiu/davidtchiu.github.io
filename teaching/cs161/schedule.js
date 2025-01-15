@@ -136,8 +136,8 @@ let days = {
       },
       {
         name: "Lab 8",
-        title: "Nested Loops Practice",
-        url: "lab8.loops/",
+        title: "Homework Lab",
+        url: "hwk5.loops/",
         due: "3/14/2025",
       },
       {
@@ -148,8 +148,8 @@ let days = {
       },
       {
         name: "Lab 10",
-        title: "2D Arrays",
-        url: "lab10.tbd/",
+        title: "The Game of Life (2D Arrays)",
+        url: "lab10.life/",
         due: "4/4/2025",
       },
       {

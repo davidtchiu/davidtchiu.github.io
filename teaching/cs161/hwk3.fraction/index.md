@@ -148,7 +148,7 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 120 pts.
+This assignment will be graded out of a total of 90 pts.
 
 [10pts] The constructor creates a fraction object with the given numerator 
 and denominator. Only the numerator can be negative. If the denominator is
@@ -162,32 +162,32 @@ given as a negative, then negate the numerator and the denominator.
 
 [2pts] The isDefined() method determines if the current fraction is (un)defined.
 
-[10pts] The toString() method is working as specified to return (not print!)
+[5pts] The toString() method is working as specified to return (not print!)
 a string that represents the current fraction object.
 
-[10pts] The toDouble() method returns the floating-point representation of
+[5pts] The toDouble() method returns the floating-point representation of
 the current fraction if it's defined. Otherwise (denominator is zero), this
 method returns the constant Double.NaN (Not a Number).
 
-[10pts] The equals() method returns true if both fractions are defined, and that
+[5pts] The equals() method returns true if both fractions are defined, and that
 the numerators and denominators are equal. Your equals method does not need to
 check to see if their reduced forms are equal.
 
-[15pts] The add() method adds another (input) fraction to the current one. 
+[10pts] The add() method adds another (input) fraction to the current one. 
 The current fraction could change, but the other fraction should remain unchanged.
-This method only runs if both fractions are defined.
+This method only runs if both fractions are *defined*.
 
-[15pts] The minus() method subtracts another (input) fraction from the current one. 
+[10pts] The minus() method subtracts another (input) fraction from the current one. 
 The current fraction could change, but the other fraction should remain unchanged.
-This method only runs if both fractions are defined.
+This method only runs if both fractions are *defined*.
 
-[15pts] The multiply() method multiplies another (input) fraction to the current one. 
+[10pts] The multiply() method multiplies another (input) fraction to the current one. 
 The current fraction could change, but the other fraction should remain unchanged.
-This method only runs if both fractions are defined.
+This method only runs if both fractions are *defined*.
 
-[15pts] The divide() method divides the current fraction by another (input) one. 
+[10pts] The divide() method divides the current fraction by another (input) one. 
 The current fraction could change, but the other fraction should remain unchanged.
-This method only runs if both fractions are defined.
+This method only runs if both fractions are *defined*.
 
 [15pts] Avoiding side-effects: When implementing methods that take another 
 Fraction object as input, you need to ensure that the input Fraction remains 
