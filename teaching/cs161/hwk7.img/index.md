@@ -15,13 +15,15 @@ and <code>width</code> columns. Each element in the 2D array is known as a <b>Pi
 and white (255). For example, a 2D array with the following contents:
 
 ```txt
-0   255 128
-128 255 0
+0   128 255
+255 128 0
 ```
 
-Would render into the following 2 x 3 image:
+Would render into the following 2 x 3 image (which has been zoomed in):
 
-<img width="300px" src="figures/hwk8_test.png" />
+<img width="300px" src="figures/pixels.jpg" />
+
+As you can see, each integer in the 2D array corresponds to a gray pixel intensity value. Values closer to zero tend towards black, and closer to 255 tend towards white.
 
 #### Student Outcomes
 
