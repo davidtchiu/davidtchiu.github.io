@@ -5,15 +5,23 @@
 Digital image processing is an important field of study in computer science, with 
 widespread applications in medicine, space exploration, photo-editing tools (e.g., 
 Photoshop), and so on. In this homework, you'll be implementing some of the basic
-image-transformation techniques. A <b>digital image</b> can be modeled as a 2D array 
+image-transformation techniques. 
+
+
+A <b>digital image</b> can be modeled as a 2D array 
 containing <code>height</code> rows
 and <code>width</code> columns. Each element in the 2D array is known as a <b>Pixel</b> 
 (short for <i>picture element</i>), which is just an integer ranging between black (0) 
-and white (255).
+and white (255). For example, a 2D array with the following contents:
 
-<img src="figures/gui.png" width="250px"/>
+```txt
+0   255 128
+128 255 0
+```
 
+Would render into the following 2 x 3 image:
 
+<img width="300px" src="figures/hwk8_test.png" />
 
 #### Student Outcomes
 
@@ -54,7 +62,7 @@ Before moving on to the next section, you should test everything out to check wh
 	<table width="100%">
 	<tr>
 	<td width="50%">
-	<code>Image cat = new Image("cat.jpg");<br/>cat.gamma(1.25, 0.85);<br/>cat.save("grumpycatNew.pgm");</code><br/>
+	<code>Image cat = new Image("cat.jpg");<br/>cat.gamma(0.85);<br/>cat.save("cat-gamma.pgm");</code><br/>
 	<img border="1" width="250" src="figures/gcPower_1.25_0.85.jpg"/>
 	</td>
 	<td width="50%">
@@ -116,7 +124,7 @@ Some images, like the one shown below can be grainy (also called "noise"). This 
 	<table width="100%">
 	<tr>
 	<td width="50%">
-	<code>Original camera.jpg</code><br/>
+	<code>Original camera.jpg<br/><br/></code><br/>
 	<img border="1" width="250" src="figures/camera.jpg"/>
 	</td>
 	<td width="50%">
@@ -132,6 +140,13 @@ Some images, like the one shown below can be grainy (also called "noise"). This 
 #### Grading
 
 ```
+This assignment is graded out of 70 total pts.
+
+[10 pts] Completion of inverse()
+[10 pts] Completion of gamma()
+[15 pts] Completion of flipVertical()
+[15 pts] Completion of flipHorizontal()
+[20 pts] Completion of smooth()
 ```
 
 
