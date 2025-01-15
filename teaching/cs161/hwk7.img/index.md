@@ -19,9 +19,9 @@ and white (255). For example, a 2D array with the following contents:
 255 128 0
 ```
 
-Would render into the following 2 x 3 image (which has been zoomed in):
+Would render into the following 2 x 3 image (which has been zoomed in so it's easier to see):
 
-<img width="300px" src="figures/pixels.jpg" />
+<img width="200px" src="figures/pixels.jpg" />
 
 As you can see, each integer in the 2D array corresponds to a gray pixel intensity value. Values closer to zero tend towards black, and closer to 255 tend towards white.
 
@@ -64,7 +64,7 @@ Before moving on to the next section, you should test everything out to check wh
 	<table width="100%">
 	<tr>
 	<td width="50%">
-	<code>Image cat = new Image("cat.jpg");<br/>cat.gamma(0.85);<br/>cat.save("cat-gamma.pgm");</code><br/>
+	<code>Image cat = new Image("cat.jpg");<br/>cat.gamma(0.85);  // Darken<br/>cat.save("cat-gamma.pgm");</code><br/>
 	<img border="1" width="250" src="figures/gcPower_1.25_0.85.jpg"/>
 	</td>
 	<td width="50%">
@@ -122,6 +122,7 @@ Some images, like the one shown below can be grainy (also called "noise"). This 
 - Be careful not to go out of bounds! For instance, a pixel on the corners would only have 3 neighbors. 
 
 ##### Examples of Smoothing
+In the picture to the right, notice that the graininess is less pronounced due to smoothing, but the image loses its sharpness because of it. This is a well known trade off of smoothing.
 <center>
 	<table width="100%">
 	<tr>
