@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: Remote C Development in VS Code
+### Hwk: Remote C Development
 
 In this tutorial, we will set you up to develop on a remote server. Here's why we have to do this, instead of developing on your own machines. C is a very finicky language, and is highly dependent on the  environment on which it compiles and executes. This is everybody's worst nightmare: turning in an assignment you've spent hours on, only to have it not compile or execute on your professor's machine. Indeed, having a common compiling and runtime environment was what made Java (and the Java Virtual Machine  JVM) so successful when it was introduced in the mid-90s. Today, most languages have a common runtime environment, and C has certainly made significant efforts to being more portable across systems, but alas I find that it's still very system dependent.
 
@@ -9,18 +9,18 @@ It's therefore important that we all code in a common environment, so I've prepa
 #### Student Outcomes
 - Setting up VS code for remote development on a Linux server
 - Setting up git and github remote connection
-- Compiling and running your first C program for this class
+- Compiling and running our first C program
 
 #### Installing C Development Tools
 
 - Download and install [VS Code](https://code.visualstudio.com/) if you don't already have it installed on your computers. This is what we'll be using for writing all our assignments for this class.
 
 - Open VS Code and click on the **"Extensions"** tab on the left hand side. You'll want to search for and install the following packages:
-  - **C/C++** by Microsoft
-  - **C/C++ Themes** by Microsoft
-  - **Remote Development** by Microsoft
+  - **C/C++ (required)** by Microsoft
+  - **Remote Development (required)** by Microsoft
+  - **C/C++ Themes (optional)** by Microsoft 
 
-- You may have to restart VS Code after installing those extensions. Go ahead and do so.
+- You may have to restart VS Code after installing these extensions.
 
 #### Connecting to the Remote Server
 
@@ -28,10 +28,8 @@ It's therefore important that we all code in a common environment, so I've prepa
   ```
   Server IP Address: 149.165.174.87
   Your Username: <your-pugetsound-username>
-  Your Password: <given-in-class>
-  ```
-  The IP address and your username will not change during this class, but  you *can* change your password later.
-  
+  Your Password: <given-to-you>
+  ```  
 
 - Open up VS Code, then click on the `View` menu and select `Command Palette`. Then type: `Remote-SSH: Add New SSH Host...`. It should auto-complete after typing the first few letters. Choose to run this command. In the box that pops up, enter:
   ```
@@ -44,48 +42,45 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - Next, VS Code may ask you to choose an SSH configuration file. If it asks, just select the one that's already selected. 
 
-- Now click on the "Remote Explorer" button the left-hand panel, shown below. Near the top left, select the `Remote` (or `SSH Target` on older versions) option from the pull-down menu that may have "Containers" selected currently. Now you should see the `149.165.174.87` and your username below it. Click on the arrow next to your username to connect.
+- Now click on the **"Remote Explorer"** icon the left-hand panel, shown below. Near the top left, select the `Remote` (or `SSH Target` on older versions) option from the pull-down menu that may have "Containers" selected currently. Now you should see the `149.165.174.87` and your username below it. Click on the arrow next to your username to connect.
 
   <img src="figures/Visual_Studio_Code_and_schedule_js_—_davidtchiu_github_io.png" width="300px" />
 
-- You'll be prompted for your password in a box at the top. Enter the one that I assigned you.
+- You'll be prompted for your password in a box at the top (it's easy to miss). Enter the one that I assigned.
 
-- VS Code might then ask you what platform the remote server is using. Select `Linux` from the option menu, if asked. Then it's going to take a bit of time to install the necessary files to get you set up. Wait for it to finish completely. Once everything is set up, you should see a front page with some information and options on it. Go ahead and exit out of this page to show an empty VS Code editor. 
+- VS Code may ask you what platform the remote server is using. Select `Linux` from the option menu if asked. It's going to take a couple minutes for it to install the necessary packages to get you set up.  Once everything is installed, you should see a front page with some information and options on it. Go ahead and exit out of this page to show an empty VS Code editor. 
 
-  - From the left-side panel, click on the top button called "Explorer" that looks like like two sheets of paper. Then click on the button called `Open Folder`. Choose `/home/<your-pugetsound-username>` (which should be the default option). Important: This "path" `/home/<your-pugetsound-username>` is called the **home directory** on the server. Only you (and I) have access to it, so don't worry about the privacy of your code.  This is where all your code will go for this class.
+  - From the left-hand panel, click on the **"Explorer"** icon that looks like like two sheets of paper. Then click on the button called `Open Folder`. Choose `/home/<your-pugetsound-username>` (which should be the default option). Important: This path is your **home directory** on the server. Only you (and I) have access to it. This is where all your code will go for this class.
 
--  You may be prompted for your password again, followed by a prompt to trust and accept the secure certificate. Click the checkbox then select `yes` on this dialog box.
+-  You may be prompted for your password again up on the top of the screen, followed by a prompt to trust and accept the secure certificate. Click the check box then select `Yes` on this dialog box.
 
-- If you did all the steps correctly, you should see the contents of your home directory on the left-side panel. Here's what mine looks like:
+- If you did all the steps correctly, you should see the contents of your home directory on the left-hand panel. Here's what mine looks like:
 
   <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_.png" width="250px" />
 
 
-- Now, change your password, since the one I gave you was for everybody. In the terminal window, type `passwd`, and follow the instructions.
+- Now, change your password to something more secure. From the terminal (command-line) window on the bottom of your screen, enter `passwd`, and follow the instructions. When you type of your password, the screen will remain blank, but your input is registered. That is normal.
 
 
 #### Using the Terminal (Shell) and VS Code Editor
-- You only have to do the steps listed in the previous section that one time. Let's get a feel for how to start up the coding environment from this point forward, so go ahead and **quit** VS Code.
+- You only have to do all those steps listed in the previous section that one time. Let's get a feel for how to start up the coding environment from this point forward, so go ahead and **quit** VS Code.
 
-- Before getting started again, keep in mind that, because we're coding on a remote server, a stable internet connection is essential. This means it will not be possible to develop while you're offline or only have an intermittent wifi connection (e.g., on a plane), so plan wisely throughout the semester.
+  - Before getting started again, keep in mind that, because we're coding on a remote server, a stable internet connection is essential. This means it will not be possible to develop while you're offline or only have an intermittent wifi connection (e.g., on a plane), so plan wisely throughout the semester.
 
-  - **Pro Tip: Save Often** Anytime you lose wifi connection or close down your computer, you *will* sever your connection to the remote server and lose any unsaved work! As you're developing, save often!
+  - **Pro Tip: Save Often** Anytime you lose wifi connection or close down your computer, you *will* sever your connection to the remote server and lose any unsaved work! As you're developing, save often! (It's just `ctrl+s` on Windows and `command+s` on a mac.)
 
-  - I installed the `git` command-line utility on this server, so you should also take advantage of that and backup your code using git (and github).
-
-- **Open** VS Code back up. If you don't see a new, blank window, then choose the `File` menu and select `New Window`. In the blank editor window, look on the left-hand panel with the vertical bar of icons. There's an icon called **Remote Explorer**. Click on it, then choose the profile you want to connect. It should simply be called `/home/<your-pugetsound-username>`.
+- **Open** VS Code back up. If you don't see a new, blank window, then choose the `File` menu and select `New Window`. Click on **Remote Explorer** icon, then choose the profile you want to connect. It should simply be called `/home/<your-pugetsound-username>`.
 
   <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_2.png" width="250px" />
 
-- You will be prompted for your password (this can be hard to miss) at the top of the VS Code editor, and afterwards, you should see the contents of your home directory once again. If you do, then you're connected back to the server! Happy programming!
+- Enter your new password, and you should see the contents of your home directory once again. If you do, then you're connected back to the server! Happy programming!
 
-- **Accessing the Terminal** The command-line terminal (also called a _shell_) should show up on the bottom of your VS Code editor. If it's not there, go to the `Terminal` menu on the very top of your screen and select `New Terminal`. Here's what mine looks like:
+- **Accessing the Terminal** The command-line terminal (also called a _shell_) should show up on the bottom of your VS Code editor. If it's not already there, go to the `Terminal` menu on the top of your screen and select `New Terminal`. Here's what mine looks like:
 
   <img src="figures/dchiu__SSH__149_165_174_87_.png" width="500px" />
 
-  Before graphical user interfaces (GUIs) were possible, the shell was the _only_ user interface to operating systems. We use it to do everything that you can do with GUIs: accessing your files and folders, running and quitting programs, editing files, etc. Because the Linux server that I provided is "headless" (i.e., a stripped-down OS that doesn't support GUIs), you will need to know how to work inside the shell.
   
-- **Pro Tips:** I assume you have a working knowledge of the command-line shell, but here are some time-saving tips. 
+- I assume you have a working knowledge of the command-line shell, but here are some time-saving tips. 
 
   | Tip |  |
   | :--- | :--- |
@@ -101,17 +96,17 @@ It's therefore important that we all code in a common environment, so I've prepa
   - [Linux Command Cheatsheet](https://www.guru99.com/linux-commands-cheat-sheet.html)
   - [The Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 
-#### Setting up Git
+#### Setting up Git and Github
 
 To download and submit your homework assignments for this class, you'll need to get connected to github and configure it all to work with this server. Follow these steps.
 
-1. From your browser, go to [github.com](https://github.com). If you don't already have an account, go ahead and create one now, and log in.
+1. Open your browser, and go to [github.com](https://github.com). If you don't already have an account,  create one now.
 
 2. Navigate to [https://github.com/settings/tokens](https://github.com/settings/tokens) to create a new "personal access token." You can also get there via `Settings > Developer Settings`. 
 
-3. Click to generate new a (classic) token. On the next screen, give your new token a good note, like "For OS" or "CS 475" so you know what it is later. Assign it an expiration period that will take you to the end of the course, or, you could just give it no expiration and delete the token later (not recommended).
+3. Click to generate new a (classic) token. On the next screen, give your new token a good *note*, like "For OS assignments" or "CS 475" so you know what it is later. Assign it an expiration period that will take you to the end of the course, and it may be easier to just give it no expiration.
 
-4. Below, select `repo`, `admin:org`, and `admin:public_key`. 
+4. Below that, select the boxes: `repo`, `admin:org`, and `admin:public_key`. 
 
 5. Click the `Generate token` button on the bottom of the page, and take note (save) the token in a secure place. Don't share it. Treat this like your password.
 
@@ -125,19 +120,15 @@ To download and submit your homework assignments for this class, you'll need to 
     ```
     ? What account do you want to log into? 
     > GitHub.com
-    ```
 
-    ```
     ? What is your preferred protocol for Git operations?
     > HTTPS
-    ```
 
-    ```
     ? How would you like to authenticate GitHub CLI?
     > Paste an authentication token
     ```
 
-    Finally, get your access token ready for pasting ...
+    Finally, get your github access token ready for pasting:
     ```
     ? Paste your authentication token: ****************************************
     ```
@@ -153,22 +144,24 @@ To download and submit your homework assignments for this class, you'll need to 
 #### Our First C Program
 
 
-1. Go to find my homework 1 repository here: [https://github.com/davidtchiu/os-first](https://github.com/davidtchiu/os-first). 
+1. From your browser, find my code repository here: [https://github.com/davidtchiu/os-first](https://github.com/davidtchiu/os-first). 
 
     - Click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
 
-    - This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
+    - Leave your repository with public visibility.
 
-2. Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
+    - Copy the URL of your new from the browser window.
+
+2. Now from VS Code, open a terminal, and _*clone*_ your new Github repository down to your local working directory using:
 
     ```bash
-    $ git clone <your-github-url>
+    $ git clone <your-github-repo-url>
     ```
 
-3. You will be prompted in the terminal for your github username and password again. Enter those now. Use the "token" we previously generated as your password. (You just have to do this once.)
+3. You will be prompted in the terminal for your github username and password. Enter those now -- however, you will use the "access token" we previously generated as your password. Do not attempt to use your regular github login password here. If successful, it will download a directory called `os-first`. 
 
 
-4. From the terminal window, navigate into the new directory you just cloned. Inside, create a new directory create a new file called `hwk1.c`.
+4. Navigate into the new directory you just cloned. Inside, create a new directory create a new file called `hwk1.c`:
 
     ```bash
     $ cd ~
@@ -176,13 +169,13 @@ To download and submit your homework assignments for this class, you'll need to 
     $ code hwk1.c
     ```
 
-    - The first command `cd ~` changes your working directory to your "home directory". You should remember that `~` is a shortcut to your home directory, and now you won't ever get "lost!"
+    - The first command `cd ~` changes your current-working-directory to your home directory. You should remember that `~` is a shortcut to your home directory, and now you won't ever get "lost!"
 
-    - The second command `cd os-hwk-first` changes your current-working-directory to  the `os-hwk-first` directory that git should have cloned in the previous steps.
+    - The second command `cd os-first` changes your current-working-directory to  the `os-first` directory that git should have cloned in the previous steps.
 
-    - Finally, `code hwk1.c` creates and opens a new file called `hwk1.c` within the current working directory. 
+    - Finally, `code hwk1.c` opens a new file called `hwk1.c`. 
 
-    - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but what's the fun in that? Plus, this puts your navigates your Terminal to the same directory as your new project folder.
+    - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but it's important to make sure that your terminal is *in* that new project directory when you're ready to compile. 
 
 2. With `hwk1.c` open in your editor, type in the following "hello world" code and save it. 
 
@@ -190,9 +183,8 @@ To download and submit your homework assignments for this class, you'll need to 
     #include <stdio.h>
 
     int main(int argc, char *argv[]) {
-      const int n = 10;
-      int x;
-      for (x = 0; x < n; x++) {
+      const int n = 10;   // n is declared to be constant (read only)
+      for (int x = 0; x < n; x++) {
         printf("Hello world %d of %d!\n", x, n);
       }
       return 0;
@@ -222,13 +214,13 @@ To download and submit your homework assignments for this class, you'll need to 
     Hello world 9 of 10!
     ```
 
-4. It seems a bit odd that your executable file would be named `a.out`. To instruct the compiler to output the executable under a different name, you can use the `-o <executable-name>` flag. 
+4. It seems a bit odd that your executable file would be named `a.out` by default. To instruct the compiler to output the executable under a different name, you can use the `-o <executable-name>` flag: 
 
     ```bash
     $ gcc -Wall -g -o helloworld hwk1.c
     ```
 
-    This would output the binary as `helloworld`, and you can run it using `./helloworld` on the command-line.
+    This would output the binary as `helloworld`, and you can run it using `./helloworld` on the terminal.
 
 5. After you're done, commit and push the `hwk1.c` file to github for grading. From the terminal,
 
@@ -238,9 +230,9 @@ To download and submit your homework assignments for this class, you'll need to 
     $ git push origin main
     ```
 
-6. It may ask you for your github credentials again. Enter it now. (You should only have to do this once for the initial push).
+6. It may ask you for your github credentials again. Enter it now -- remember once again to use your "access token" for the password. (You should only have to do this once for the initial push).
 
-7. Navigate to your github repository from your browser to make sure that `hwk1.c` exists.
+7. Navigate to your github repository from your browser to make sure that `hwk1.c` exists. If so, you have successfully committed your code and pushed to github! This is how you will submit all assignments in this course.
 
 <!-- 
 #### Make Utility and Makefiles: Multi-File Compiling
