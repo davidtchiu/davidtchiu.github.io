@@ -1,4 +1,4 @@
-## CS 475 Operating Systems Syllabus
+## CS 475 - Operating Systems - Syllabus
 
 
 #### Course Description

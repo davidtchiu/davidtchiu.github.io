@@ -1,4 +1,4 @@
-## CS 161 Syllabus
+## CS 161 - Introduction to Computer Science - Syllabus
 
 
 #### Course Description
