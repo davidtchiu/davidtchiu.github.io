@@ -2,7 +2,7 @@
 
 
 #### Course Description
-One the most complex software systems ever assembled, the modern operating system serves as the interface between the human and the machine. This course traces how the simple idea of "resource sharing"  unravels into some of the most confounding problems and original breakthroughs in computer science. Course topics include process and thread management, input/output, CPU scheduling, synchronization primitives, memory management, and file systems. Students taking this course will learn how to deal with the intricacies of low-level programming, parallel computing, and tackling synchronization problems. The C programming language will be taught. 
+One the most complex software systems ever assembled, the modern operating system serves as the interface between the human and the machine. This course traces how the simple idea of "resource sharing"  unravels into some of the most confounding problems and original breakthroughs in computer science. Course topics include process and thread management, input/output, CPU scheduling, concurrency and synchronization, memory management, virtual memory, and caching. Students taking this course will learn how to deal with the intricacies of low-level programming, parallel computing, and tackling synchronization problems. The C programming language will be taught. 
 
 <!-- One the most complex software systems ever assembled, the modern operating system serves as the interface between the human and the machine. This course traces how the simple idea of "resource sharing"  unravels into some of the most confounding problems and original breakthroughs in computer science. Course topics include process and thread management, input/output, CPU scheduling, synchronization primitives, memory management, and file systems. Students taking this course will learn how to deal with the intricacies of low-level programming, parallel computing and synchronization problems, and will also receive kernel-development experience through the design and implementation of various subsystems in a real operating system. The C programming language will be used.  -->
 
@@ -13,7 +13,7 @@ A grade of C- or higher in the following course(s) is required:
 #### Required Textbook
 
 - Silberschatz, Galvin, and Gagne. [Operating Systems Concepts](https://www.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/0470128720). 8th Ed. or greater. (Required)
-- Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. [Dive into Systems](https://diveintosystems.org/book/) (Required for learning C)
+- Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. [Dive into Systems (Free)](https://diveintosystems.org/book/) (Required for learning C)
 
   
 #### Student Course Outcomes
