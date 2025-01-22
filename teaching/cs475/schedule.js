@@ -13,7 +13,7 @@ let days = {
     {
       name: "Textbook (Free): Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. Dive into Systems.",
       url: "https://diveintosystems.org/book/"
-    }
+    },
     {
       name: "Textbook: Silberschatz, Galvin, and Gagne. Operating Systems Concepts 8th edition or higher.",
       url: "https://www.amazon.com/dp/1119800366"
