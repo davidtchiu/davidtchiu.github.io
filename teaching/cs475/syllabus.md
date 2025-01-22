@@ -52,7 +52,7 @@ Your overall grade is broken down as as follows:
 |   | % Weight |
 | :--- | :--- |
 | Participation | 5% |
-| Homework Assignments | 43% |
+| Homework Assignments | 40% |
 | Midterm I | 15% |
 | Midterm II | 18% |
 | Final Exam | 22% |
