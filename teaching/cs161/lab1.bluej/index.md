@@ -114,7 +114,7 @@ You still don't need a partner yet, but now it's your turn to write an algorithm
     - You **can't** stretch or shrink a square into a rectangle (but you *can* line two squares up next to each other)
     - You **can't** rotate any shapes.
     - You **can't** flip any shapes.
-    - You **can**, however overlap shapes, and the shape that you touch last will always appear on top.
+    - You **can**, however overlap shapes, and the shape that you change last will always appear on top. (A simple way of making sure it's on top is to just call `makeVisible()` again, even if it's already visible!)
 
   - Now take your design from paper to screen. **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** There is no "record" function in BlueJ -- open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window and type in the steps. (You can record your steps under **Part III, question 5**). This recording becomes the algorithm for anyone (or anything -- any computer) to create your drawing.
 
@@ -145,7 +145,7 @@ This assignment will be graded out of 2 points, provided you do all the followin
 
 - You were in attendance and on-time.
 - You submitted a README.txt with a detailed and precise algorithm for producing a
-  drawing, as well as answers to the questions.
+  drawing.
 - Your algorithm produces something recognizable.
 - You have executed your partner's algorithm and gave them feedback on the process.
 - You have properly submitted your lab.
