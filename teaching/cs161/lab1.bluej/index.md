@@ -99,15 +99,16 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
   <img src="figures/pacman.png" width="300px"/>
 
-#### Part 3: Your Turn!
-
 - You just executed an **Algorithm** -- recall from class that it's a sequence of instructions that gives you some desired outcome. The algorithm we provided, when executed faithfully, will always produce the same Pac-Man picture. This means that, when designing this algorithm, we had to be careful and detail-oriented when recording steps. We even test-ran the algorithm several times just to make sure it would be repeatable.
 
-- You still don't need a partner yet, but now it's your turn to write an algorithm to draw anything of your choosing. (Without saying, please draw something appropriate!)
+- Go ahead and remove Pac-Man. You can click on the reset arrow &#8617; found at the _bottom right corner_ of BlueJ. This will reset the entire canvas.
 
-  - To remove Pac-Man, you can click on the reset arrow &#8617; found at the _bottom right corner_ of BlueJ. This will reset the entire process.
 
-  - Once your canvas is clean, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (just 4-5 shapes should do) because your partner will have to reproduce your drawing before the period is over! Before you design anything, keep in mind the following limitations:
+#### Part 3: Your Turn!
+
+You still don't need a partner yet, but now it's your turn to write an algorithm to draw anything of your choosing. (Without saying, please draw something appropriate!)
+
+  - Once your canvas is a clean slate again, design a simple drawing on a piece of paper using only Circles, Squares, and Triangles. Popular ideas in the past include: a face, a spaceship, a house, a landscape, etc. Try not to draw something too complicated (just 4-5 shapes should do) because your partner will have to reproduce your drawing before the period is over! Before you design anything, keep in mind the following limitations:
 
     - You **can't** stretch or shrink a circle into an oval.
     - You **can't** stretch or shrink a square into a rectangle (but you *can* line two squares up next to each other)
@@ -123,7 +124,7 @@ If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) 
 
   - Once you are finished, give your partner some feedback: Describe whether there were any problems you ran into when following the algorithm. (It's okay for there to be problems -- you aren't getting graded on that.)
 
-#### Part 4: Answering Questions in the README file
+<!-- #### Part 4: Answering Questions in the README file
 
 Back in BlueJ's project window, open up the README.txt file by double-clicking on the white paper icon ![](figures/readme-icon.png). The README file never contains any programming elements, and is used to give an overview describing your program.
 
@@ -132,7 +133,7 @@ Back in BlueJ's project window, open up the README.txt file by double-clicking o
 - Next, answer each question directly in the README file. Place your answer below each question. Remember to save your changes (select "Class" > "Save" from the menu).
 
 - You're ready to submit your lab assignment for grading. Briefly read over the grading criteria below to make sure you've covered the basis. Now skip down to the "Submitting Your Lab" section and follow the steps to zip up and submit your lab to me.
-
+ -->
 #### Optional Extensions
 
 Have some free time? There are no limitations to the content you want to display. Feel free to make more pages about yourself, and add as much styling as you wish! As long as your site meets the requirements, you will receive full credit!
