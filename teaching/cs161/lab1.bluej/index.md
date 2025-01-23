@@ -114,9 +114,9 @@ You still don't need a partner yet, but now it's your turn to write an algorithm
     - You **can't** stretch or shrink a square into a rectangle (but you *can* line two squares up next to each other)
     - You **can't** rotate any shapes.
     - You **can't** flip any shapes.
-    - You **can**, however overlap shapes, and the shape that you change last will always appear on top. (A simple way of making sure it's on top is to just call `makeVisible()` again, even if it's already visible!)
+    - You **can**, however, overlap shapes! The shape that you change last will always appear in front. (A simple way of making sure it's in front is to just call `makeVisible()` again on that shape, even if it's already visible!)
 
-  - Now take your design from paper to screen. **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** There is no "record" function in BlueJ -- open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window and type in the steps. (You can record your steps under **Part III, question 5**). This recording becomes the algorithm for anyone (or anything -- any computer) to create your drawing.
+  - Now take your design from paper to screen. **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** There is no "record" function in BlueJ -- open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window and type in the steps (called the README file). You can record your instructions right in this README file. This recording becomes the algorithm for anyone (or anything -- any computer) to create your drawing.
 
   - When you're done, erase your drawing by clicking on the reset arrow &#8617; and let us know that you're ready.
 
