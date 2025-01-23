@@ -25,7 +25,7 @@ The following file(s) have been provided for this assignment.
 
 1. You should move the newly extracted folder with all its file contents to a location that you'll remember. I highly recommend that you follow this organization (below) for this and all future projects:
 
-   - Download the [https://support.google.com/a/users/answer/13022292?hl=en](Google Drive App), if you haven't already. Install it and set up a dedicated drive folder on your operating system. This will create a special folder, and anything you drop inside will be automatically backed up!
+   - Download the [Google Drive Desktop App](https://support.google.com/a/users/answer/13022292?hl=en), if you haven't already. Install it and set up a dedicated drive folder on your operating system. This will create a special folder, and anything you drop inside will be automatically backed up!
 
    - Navigate into your Google Drive, and create a new a new folder to store all of your code for this class (there will be many!) 
 
