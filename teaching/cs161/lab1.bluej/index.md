@@ -11,21 +11,25 @@ In this assignment you will use BlueJ to practice creating and calling methods o
 - To understand the concept of an algorithm
 - To practice the procedure for submitting your work
 
-#### Required Files
-
-The following file(s) have been provided for this lab.
-
-- [Lab_Shapes.zip](Lab_Shapes.zip)
 
 <!-- #### Preliminary: Watch This Video
 
 If you haven't already, please [watch this video](https://youtu.be/ffj_TahUeZA) to learn how to save and open BlueJ files for this course. -->
 
+#### Preliminary: Setting up Google Drive
+You may skip this step if you already have a solution for backing your files up (such as iCloud, Google Drive, OneDrive, Dropbox, and so on.) If not, read on!
+
+- Download the [Google Drive Desktop App](https://support.google.com/a/users/answer/13022292?hl=en), if you haven't already.
+
+- Install it and set up a dedicated drive folder on your operating system.
+
+- This will create a special folder called "Google Drive" (I know, shocker) in your computer and anything you drop in there will be automatically backed up! To find it, you just have to pull up your File Finder (or File Explorer) again, and it should show up on the left-hand panel. 
+
+
+
 #### Part 1: Getting Started
 
-- Important (READ THIS): Usually, you would start lab by finding your partner and sitting with them. This first lab, you will work independently at first, and then you'll be prompted to find your partner about halfway through.
-
-- Download the project from the link above. You will need to save the `.zip` file to your computer. The actual project files are stored inside this compressed zip, and you need to first extract its contents before BlueJ can open the project.
+- Download [Lab_Shapes.zip](Lab_Shapes.zip), which contains the project file. You will need to save this file to your new "Google Drive" folder we just set up (or iCloud, OneDrive, etc., if you'd rather use those). The actual project files are stored inside this compressed zip file (which shows up as a ), and you need to first extract its contents before BlueJ can open the project.
 
   - On a windows machine, double-click on this zip file, and you should find two folders inside your file explorer. Ignore the Mac OS X folder, now most importantly, drag the `Lab1_Shapes` folder out from here and into a place you'll remember (like into a dedicated folder for this course). You may close out and delete the zip file. Navigate to the new project folder before moving on.
 

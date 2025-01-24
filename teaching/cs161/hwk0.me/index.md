@@ -19,21 +19,12 @@ The following file(s) have been provided for this assignment.
 
 #### Getting Started: Setting up
 
-0. Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk_AboutMe.zip`. 
+1. Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk_AboutMe.zip`. Place it into your folder for this class, preferably within Google Drive. Then extract the contents of this folder:
+
    - **Windows users:** remember from Lab that you cannot simply double-click on the zip file to extract it! You must right-click on the file, and choose `Extract...`. Remember where you choose to extract its content.
    - **Mac users:** you can simply double-click on the zip file to extract it!
 
-1. You should move the newly extracted folder with all its file contents to a location that you'll remember. I highly recommend that you follow this organization (below) for this and all future projects:
-
-   - Download the [Google Drive Desktop App](https://support.google.com/a/users/answer/13022292?hl=en), if you haven't already. Install it and set up a dedicated drive folder on your operating system. This will create a special folder, and anything you drop inside will be automatically backed up!
-
-   - Navigate into your Google Drive, and create a new a new folder to store all of your code for this class (there will be many!) 
-
-   - Drag and drop your new `Hwk_AboutMe` folder there.
-
-   - You will be graded on this step. As proof, I'll ask to see your Drive during our next lab.
-
-2. After you've given your `Hwk_AboutMe` folder a good place to live. Navigate into it, and double-click the file called `package.bluej` (It should look like a small blue jay icon.) This should open the project inside the BlueJ code editor, and you should see a single icon called `AboutMe` (looks like an orange box).
+2. Navigate into the folder, and double-click the file called `package.bluej` (It should look like a small blue jay icon.) This should open the project inside the BlueJ code editor, and you should see a single icon called `AboutMe` (looks like an orange box).
 
 3. Before you do anything else, let's customize your BlueJ environment:
 
@@ -65,7 +56,7 @@ The following file(s) have been provided for this assignment.
 2. Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax to print a something to the screen is:
 
    ```java
-   System.out.println(thingYouWantPrinted);
+   System.out.println(thing-you-want-printed);
    ```
 
    When programming, a sequence of symbols or characters is called a _String_. Strings in Java are always enclosed between a pair of double quotes, `"like this"`. If you tried to print out your name without using the quotes, the code won't compile.
@@ -80,7 +71,7 @@ The following file(s) have been provided for this assignment.
 
    - Saving old outputs on the screen *will* get annoying though, when your programs get more complicated. So just remember that you can always re-enable this option.
 
-6. Let's try something a little more involved. Write a method called `printInitials()` that prints out your first, middle (if applicable), and last initials in "block form" (see below). Notice the formatting --- you should use the letter itself to create the block shape. For instance, my initials DTC might be printed as follows:
+6. Let's try something a little more involved. Write a method called `printInitials()` that prints out your first, middle (if applicable), and last initials in "block form" (see how I printed mine below). There's not a pre-built command print a design like this, so you'll need to do it yourself! Notice the formatting below --- mine has multiple rows that I need to print out. Mine also uses the letter itself to create the block shape. For instance, my initials, DTC, might be output as follows:
 
    ```
    DDDDDD   TTTTTTTTT   CCCCCC
@@ -89,10 +80,8 @@ The following file(s) have been provided for this assignment.
    DDDDDD      TTT      CCCCCC
    ```
 
-   You'll need to print multiple lines for this method.
-
-   - The first way to do this is perhaps the obvious way: You can simply call `System.out.println(...)` multiple times. Each call will automatically insert a line-break at the end of the line.
-   - Second way: Let's say you wanted to use only a _single_ print statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line-break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens in the output.
+   - The first way to do this is perhaps the obvious way: You can simply call `System.out.println(...)` multiple times, one for each "row" of the print-out. Each call will automatically insert a line-break.
+   - Second way: Let's say you wanted to use only a _single_  statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line-break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens in the output.
    - Compile and test it out.
 
 7. Next, create a new method called `printBio()` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. For instance, mine might print:
@@ -174,6 +163,6 @@ This assignment will be graded out of a total of 25pts.
        casing (upper case, lower case) of each individual character.
        Check and fix any typos and inconsistent casing before submission.
 
-[10pts] Installed Google Drive and submitted your assignment as 
-        per the instructions. Check with me or with tutors if you're not sure!
+[10pts] Submitted your assignment as per the instructions. Check with me 
+or with tutors if you're not sure!
 ```
