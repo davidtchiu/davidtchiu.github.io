@@ -49,22 +49,22 @@ Open your VS Code and get connected to your Remote Development environment.
    * @author <YOUR NAME>
    */
 
-  #include <stdio.h>
+  #include <stdio.h>  // Line 7
 
   #define VAL 0
   #define PI 3.14
 
-  int main(int argc, char *argv[])
+  int main(int argc, char *argv[])  // Line 12
   {
-      char a = 'X';
+      char a = 'X'; // Line 14
       int b = 9;
       float c = 6;
       double d = 0;
       char str[] = "Hello world!";
 
-      if (VAL == d)
+      if (VAL == d) 
       {
-          printf("Value of a is %c\n", a);
+          printf("Value of a is %c\n", a);  // Line 22
           printf("Value of b is %d\n", b);
           printf("Value of c is %f\n", c);
           printf("Value of d is %f\n", d);
@@ -73,15 +73,15 @@ Open your VS Code and get connected to your Remote Development environment.
           //printf can input varying amounts of arguments
           printf("Values of a, b, and c are %c, %d, and %f\n", a, b, c);
 
-          //controlling floating point output
-          printf("c/b is: %f\n", c/b);
+          //controlling floating point output 
+          printf("c/b is: %f\n", c/b);  // Line 32
           printf("c/b is: %0.0f\n", c/b);
           printf("c/b is: %25.3f\n", c/b);
           printf("c/b is: %0.9f\n", c/b);
 
           //obtaining input
           printf("Enter a character: ");
-          scanf("%c", &a);
+          scanf("%c", &a);  // Line 39
           printf("Enter an integer: ");
           scanf("%d", &b);
           printf("You entered %c and %d\n", a, b);
@@ -89,7 +89,7 @@ Open your VS Code and get connected to your Remote Development environment.
           scanf("%f", &c);
           printf("You entered %f\n", c);
       }
-      return 0;
+      return 0; // Line 44
   }
   ```
 
@@ -133,9 +133,7 @@ Open your VS Code and get connected to your Remote Development environment.
   - **Line 12**: In C, the only necessary function you need to write is `main()`. Its functionality is the same as Java's `main()` method, in that, it's where the program execution begins. Studying its declaration, we find that it returns an `int` and like Java, it allows arguments to be input directly from the command-line (more on command-line arguments later).
   
   - **Lines 14 to 18**: defines some local variables. C supports: `char` (8-bits), `int` (32-bits), `float` (32-bits), and `double` (64-bits). Finally, note that strings in C are simply `char` arrays (more on strings later).
-  
-  - **Line 20**:  Unlike Java, there is no `boolean` data type in C, nor are there `true` and `false` keywords. **Know this:** In C, any value other than the integer value `0` is assumed to be true. An integer value of `0` is false!!
-  
+    
   - **Lines 22-26**: uses the `printf()` function (provided in `stdio.h`) to print. The first argument is a formatted string, followed by any number of values to be inserted into the formatted string. It is worth spending some time understanding C's **format specifiers** (those `%` thingies). Here are some common format specifiers:
     - `%c` - a character
     - `%d` - a signed integer
@@ -359,14 +357,14 @@ A string in C is essentially an array of `chars`, with one important caveat: The
       char str[MAX_LEN] = "Puget Sound";  // using = for initialization is okay
       char str2[MAX_LEN] = "Loggers";
 
-      strcpy(str, str2);    // replace "Puget Sound" with "Loggers"
+      strcpy(str, str2);    // Line 9: replace "Puget Sound" with "Loggers"
       printf("%s\n", str);  // prints "Loggers"
 
-      strcat(str, " Rule");   // concatenates " Rule" to str
+      strcat(str, " Rule");   // Line 12: concatenates " Rule" to str
       printf("%s\n", str);    // prints "Loggers Rule"
 
       int x = 0, y = 1;
-      sprintf(str, "x is %d, y is %d", x, y); // easiest way to assign a formatted string
+      sprintf(str, "x is %d, y is %d", x, y); // Line 16: easiest way to assign a formatted string
       printf("%s\n", str);    //prints "x is 0, y is 1"
 
       return 0;
@@ -418,13 +416,13 @@ returnType funcName(param1, param2, ...) {
       int i = 0, j = 0;
 
       // assign i to the position immediately following the existing string s
-      while (s[i] != '\0') {
+      while (s[i] != '\0') {  // Line 12
           i++;
       }
 
       // i now at NULL character position of s
       // now append string t to the end of s
-      while (t[j] != '\0') {
+      while (t[j] != '\0') {  // Line 17
           s[i] = t[j];
           i++;
           j++;
