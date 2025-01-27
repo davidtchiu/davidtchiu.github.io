@@ -96,7 +96,7 @@ The following file(s) have been provided for this assignment.
 
 8. Finally, it sure would be nice to have a method that would print out your initials, your name, birthday, and bio **all at once**, instead of having to call separate methods. Write a method called `printMyInfo()`. Here's the key: You wouldn't want to have to _rewrite_ all those print statements from before! (Pro-tip: Code duplication should be avoided --- always!)
 
-    - Instead, We want to simply call (re-use) the other three methods you've already written. To **call** an existing method from the code itself, you just have to write `methodName();` in the body of `printMyInfo()`.
+    - Instead, We want to simply call (re-use) the other three methods you've already written. To **call** an existing method from the code itself, you just have to write `method-name();` in the body of `printMyInfo()`. You just need to replace `method-name` with the method you actually want to call.
 
     Here's an example of what someone's output might like after calling `printMyInfo()`:
 
