@@ -2,7 +2,7 @@ theme: jekyll-theme-slate
 kramdown:
   syntax_highlighter_opts:
     block:
-      line_numbers: false
+      line_numbers: true
 title: David Chiu
 description: Professor of Computer Science
 institution: University of Puget Sound
