@@ -460,7 +460,7 @@ returnType funcName(param1, param2, ...) {
 
 
 
-##### Part 0: Structs and Typedef
+##### Structs and Typedef
 
 C is not an object-oriented language, but it does support object-like elements called `struct`. I like to think of `struct`s as classes in Java with only public fields and no methods. It's used solely to combine multiple pieces of data. Let's see how it's used.
 
