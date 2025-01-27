@@ -28,11 +28,11 @@ The following file(s) have been provided for this assignment.
 
 3. Before you do anything else, let's customize your BlueJ environment:
 
-   - From the `BlueJ` menu on the top, select `Tool` then `Preferences`. The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
-   - Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
-   - Okay, that should be it for now.
+   - From the menu bar on top, select `Tools` then `Preferences`.
+   - Enable the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK.
+   - Now click on the `View` menu bar. Make sure `Show Code Pad` is selected. Click OK to exit.
 
-4. You should be back to the project overview window that shows the `AboutMe` icon. Double-click on it to open the code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
+4. You should be back to the project overview window that shows the `AboutMe` orange (class) icon. Double-click on it to open the code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
 
 
 #### Instructions
@@ -41,17 +41,17 @@ The following file(s) have been provided for this assignment.
 
    ```java
    public void printMyName() {
-     // TODO: Your code goes here (remove this "line comment" later)
+     // TODO: First line of your code goes here (remove this "line comment" later)
    }
    ```
 
-   This code block is called a **method** in Java. Let's dissect it a bit:
+   The above code block is called a **method** in Java. Let's dissect it:
 
-      - The method is our way of expressing an _algorithm_ in Java. For now, ignore the `public` and `void` keywords. We'll talk about them later in class.
+      - The method is our way of expressing an _algorithm_. For now, ignore the `public` and `void` keywords. We'll talk about them later.
       - **Method Name:** The name of this method is `printMyName`
-      - **Parameter List:** The pair of parentheses `()` immediately following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data because the parameter list is empty.
-      - **Body:** Following the parameter list, we now see a pair of "curly" braces `{` and `}` found on different lines. All the instructions of your algorithm must go in between the pair of curly braces. Each instruction should be placed on a separate line.
-      - **Line Comment:** I put a _comment_ inside the body. In Java, anything that follows the `//` pattern is ignored. That makes it easy for programmers to make notes about their code! Clear and effective commenting is imperative in programming, and will be emphasized in this course. I've used a line comment here to direct your attention to where you need to start writing your code. You can remove my comment later.
+      - **Parameter List:** The pair of parentheses `()` following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data, so the parentheses simply open and close, enclosing no inputs.
+      - **Body:** Following the parameter list, we now see a pair of "curly" braces `{` and `}` on different lines. All the instructions of your algorithm must go in between the pair of curly braces. The first instruction would go where the "TODO" line currently is. Each instruction should be placed on a separate line below it.
+      - **Line Comment:** I put a _comment_ inside the body (the "TODO" line). In Java, anything that follows `//`  is ignored. This makes it easy for programmers to make notes about their code. Clear and effective commenting is imperative in good programming, and will be emphasized in this course. I've used a line comment here to direct your attention to where you need to start writing your code. You can remove that line comment later.
 
 2. Most of the code you'll be writing in this class will be inside method bodies, so let's test out our very first Java instruction: printing something to the screen. The syntax to print a something to the screen is:
 
@@ -59,13 +59,15 @@ The following file(s) have been provided for this assignment.
    System.out.println(thing-you-want-printed);
    ```
 
-   When programming, a sequence of symbols or characters is called a _String_. Strings in Java are always enclosed between a pair of double quotes, `"like this"`. If you tried to print out your name without using the quotes, the code won't compile.
+   When coding, a sequence of letters is called a _String_. Strings in Java are always enclosed between a pair of double quotes, `"like this"`. If you tried to print out your name without using the quotes, the code won't compile.
 
 3. Go ahead and test this instruction out. Write a print statement inside the body of the `printMyName()` method to print out your name.
 
-4. After you're done with `printMyName()`, it's time to test it out. Save your code, and go back to the BlueJ project screen. Hit the `Compile` button, and if typed it in right, then you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right-click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
+4. After you're done with `printMyName()`, it's time to test it out. Save your code, and go back to the BlueJ project window (the one with all the orange boxes). Hit the `Compile` button on your left. If coded it right, you shouldn't see any compile errors. Right click on the `AboutMe` class and choose `new AboutMe()`. You will see a new `Object` made on the "workbench" below. Right-click on the new object and choose the `printMyName()` method. You should see your name printed to the screen. Now go back to the code and remove the quotes around your name to see how Java reacts. It _should_ inform you of the problem.
 
-5. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday). For instance, someone born on February 26, 2000 would print `02/26/00`. To create a new method, you can just copy the `printMyName()` code. The new method code block can go before or after the `printMyName()` method block. I would type out the code for this method "by hand," instead of using copy-and-paste. Compile and test it out.
+   - Yay! You just wrote your first method!
+
+5. Now create a new method called `printBday()` that prints your birthday in `mm/dd/yyyy` format (you can make this up -- I don't need to know your real birthday, LOL). For instance, someone born on February 26, 2000 would print `02/26/2000`. To create a new method, you can just copy the `printMyName()` code. The new method can go before or after the `printMyName()` method block. I would type out the code for this method "by hand," instead of using copy-and-paste. Compile and test it out.
 
    - Did the print-out from the previous interactions get reset when you called `printBday()`? Don't worry, there's an easy way to change that behavior. Click anywhere on the output screen, and from the menu up top, click `Options` then uncheck `Clear screen at method call`. This should save all the outputs on the screen from before.
 
@@ -138,10 +140,11 @@ The following file(s) have been provided for this assignment.
     - `package.bluej`
     - `README.txt`
 
-3. For this assignment, you only need to locate the file(s) ending in `.java`. This is called your *source code*, and it contains all the code you just wrote! Now go to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
+3. For this assignment, you only need to locate the file, `AboutMe.java`. This is called your *source code*, and it contains all the code you just wrote! Now go to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
    
-    - Upload all the file(s) ending in `.java` from your project folder.
-    - Click "Submit Assignment" again to upload it.
+    - Upload this filefrom your project folder.
+    - Click "Submit Assignment" again to save.
+    - Feel free to write me an email to ensure that I received the right file on my end.
 
 #### Grading
 
