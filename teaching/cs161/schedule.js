@@ -29,12 +29,12 @@ let days = {
         url: "hwk0.me/",
         due: "1/27/2025", // Mon, wk 2
       },
-      // {
-      //   name: "Hwk 1",
-      //   title: "A Better Circle (Method Calls, Method Writing)",
-      //   url: "hwk1.circle/",
-      //   due: "2/5/2025", // Wed, wk 3
-      // },
+      {
+        name: "Hwk 1",
+        title: "A Better Circle (Method Calls, Method Writing)",
+        url: "hwk1.circle/",
+        due: "2/5/2025", // Wed, wk 3
+      },
       // {
       //   name: "Hwk 2",
       //   title: "Alarm Clock (Accumulators, Conditionals)",
@@ -98,12 +98,12 @@ let days = {
         url: "lab1.bluej/",
         due: "1/24/2025",
       },
-      // {
-      //   name: "Lab 2",
-      //   title: "Triangle Class (Variables, Scope, and Lifetime)",
-      //   url: "lab2.vars/",
-      //   due: "1/31/2025",
-      // },
+      {
+        name: "Lab 2",
+        title: "Triangle Class (Variables, Scope, and Lifetime)",
+        url: "lab2.vars/",
+        due: "1/31/2025",
+      },
       // {
       //   name: "Lab 3",
       //   title: "Stomach Class (Class Writing)",
