@@ -17,7 +17,7 @@ This is the second part of a multi-part primer on C. In this tutorial-assignment
 
 #### Instructions
 
-Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 1](../1.vscode).
+Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 1](../hwk1.vscode).
 
   - Once you're logged in, you can open a terminal from the `Terminal` menu.
 
