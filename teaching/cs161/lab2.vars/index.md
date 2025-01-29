@@ -15,7 +15,7 @@ In this lab, you'll get familiarized with the concepts of data types, variables,
 
 The following file(s) have been provided for this lab.
 
-- [Lab2_Triangle.zip](Lab2_Triangle.zip)
+- [Lab_Triangle.zip](Lab_Triangle.zip)
 
 
 
