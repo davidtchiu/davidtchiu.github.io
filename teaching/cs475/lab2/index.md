@@ -264,7 +264,7 @@ Let's put everything together. There are three basic pointer concepts you have t
    ```
    or
    ```c
-   data-type* ptr;          // (It doesn't matter where the * is)
+   data-type* ptr;          // (It doesn't matter what the * is appended to)
    ```
 
    When assigning a pointer `q` to another pointer `p`, it causes them both to point to the same data.
