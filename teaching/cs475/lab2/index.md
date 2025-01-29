@@ -17,7 +17,7 @@ This is the second part of a multi-part primer on C. In this tutorial-assignment
 
 #### Instructions
 
-Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 1](../hwk1.vscode).
+Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, then you need to complete [Hwk 1](../hwk1.vscode).
 
   - Once you're logged in, you can open a terminal from the `Terminal` menu.
 
@@ -260,7 +260,11 @@ Let's put everything together. There are three basic pointer concepts you have t
 2. A pointer variable stores the address of some data. This data can be a variable, an array, or even another pointer. To declare a pointer, you use the following syntax:
 
    ```c
-   dataType *ptr;          //pointer to a dataType
+   data-type *ptr;          // Pointer to a dataType
+   ```
+   or
+   ```c
+   data-type* ptr;          // (It doesn't matter where the * is)
    ```
 
    When assigning a pointer `q` to another pointer `p`, it causes them both to point to the same data.

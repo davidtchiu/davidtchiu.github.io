@@ -197,7 +197,7 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
 - The syntax to create an array is:
 
   ```c
-  dataType arrayName[N];
+  data-type arrayName[N];
   ```
 
   where `N` is a constant integer. Alternatively, you can also create an array with known values:
@@ -205,7 +205,7 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
 - The syntax to create an array is:
 
   ```c
-  dataType arrayName[] = {val1, val2, ...};
+  data-type arrayName[] = {val1, val2, ...};
   ```
 
 - Now create the following program, called `array.c`:
@@ -395,7 +395,7 @@ A string in C is essentially an array of `chars`, with one important caveat: The
 As good programmers, we know that we should promote reuse and modularity by writing functions. In C, function definitions follow this syntax:
 
 ```c
-returnType funcName(param1, param2, ...) {
+return-type funcName(param1, param2, ...) {
     //body
 }
 ```
