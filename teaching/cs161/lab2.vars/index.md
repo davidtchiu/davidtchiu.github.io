@@ -17,22 +17,13 @@ The following file(s) have been provided for this lab.
 
 - [Lab2_Triangle.zip](Lab2_Triangle.zip)
 
-#### Preliminary
 
-You might've already done this, but just in case, let's take some time to customize your BlueJ environment:
-
-- Open up the project you just downloaded in BlueJ,
-- If you're on _Windows_, go to the `Tools` menu on the top, and click `Preferences`. If you're on a _Mac_, from the `BlueJ` menu on the top, select `Preferences`.
-- The `Editor` tab should already be selected. Please select the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK to exit.
-  - If you're on a Windows machine, you can get to `Preferences` from the `Tools` menu on top.
-- Now click on the `View` menu on the top. Please make sure `Show Code Pad` is selected.
-- That should be it for now. Go ahead and start reading the lab assignment with your partner.
 
 #### Part 1: Instance Variables
 
 **Read this, don't skim**
 
-In Java (and other programming languages), a variable refers to some unit of storage with a name. Before you can use a variable, the programmer must first declare what kind of data a particular variable can store (**data type**) and then the programmer should give it a good name to avoid confusion later. You have already seen several common data types: `int`, `double`, `String`, `char`, and `boolean`.
+In Java (and other programming languages), a **variable** is a storage unit for data. Think of variables as boxes in which you can assign values. Before you can use a variable, the programmer must first declare the nature of data the box can store (called its **Data Type**). You have already seen several common data types: `int`, `double`, `String`, and `boolean`. The programmer should also give each variable a good name to avoid confusion later on. 
 
 The particular kind of variable that we have been using thus far in lectures is used to store an object's state. We call these **instance variables** or **fields**. Later in lab, we'll introduce you to a couple other types of variables, each with different usages. Recall the basic class syntax, shown below.
 
@@ -50,55 +41,56 @@ public class SomeClassName {
 }
 ```
 
-You can declare any number of instance variables to store your object's state. When you need an instance variable, you must first declare it using the following syntax:
+You can declare any number of instance variables in your class. When you need one, you must first declare it using the following syntax:
 
 ```java
-private dataType variableName;
+private data-type variable-name;
 ```
 
 
-1. Modify the `Triangle` class to store two new instance variables, an `area` and a `perimeter`. It doesn't matter if they go first or last in line of your instance-variable section. Before you declare each one, you ought to be thinking ahead --- what kind of data does each hold? Integers? Strings? Doubles? Something else? Choose the right data type, and declare these two now.
+1. Open up the Triangle class, find the section of code (usually towards the top of the class) that lists all the instance variables. Modify it to store 2 new instance variables: `area` and `perimeter`. It doesn't matter if these go first or last in line of your instance-variable segment. Before you declare each one, you ought to be thinking ahead --- what nature of data does each hold? Integers? Strings? Doubles? Something else? (We're talking triangles after all... do you remember how to calculate areas and perimeters of triangles? What kind of value do you need to capture?) Choose the right data types, and declare `area` and `perimeter` two now.
 
-2. Back in the BlueJ project window, create a new `Triangle` instance and inspect its state by double-clicking it. You should see the two new instance variables you just declared, but alas, they are showing up as zeroes.
+2. Back in the BlueJ project window, *instantiate* a new `Triangle` object and inspect its state by double-clicking it. You should see the two new instance variables you just declared, but alas, they show up as zeroes.
 
-    - It's important to use this moment to reflect. Even though you gave these instance variables good names that indicate what they are, they don't just magically get values. (Computers have no insight!)
+    - It's important to use this moment to reflect. Even though you gave these instance variables good names that indicate what they are, they don't just magically get values. (Computers are morons!)
 
-    - It's up to *you* to assign values to these instance variables, and to keep track of them. Let's do so now.
+    - Indeed it's up to *the programmer* to assign values to these instance variables, and to always keep track of them if the triangle ever changes size.
 
-3. Let's start by thinking about all the places where the `area` and `perimeter` need to be updated.
+3. Let's start by thinking about all the places where the `area` and `perimeter` need to be assigned values.
 
-    - One place is in the code that runs when `Triangles` get created in the first place -- Remember that we called the object-creation code the class' **constructor**. Find the constructor code, which usually appears right after all your instance variables. It should look something like this:
+    - The first place is in the code that runs when `Triangles` get created -- Remember that we called the object-creation code the **constructor**. Find the constructor code, which usually appears right after all your instance variables. It should look something like this:
 
       ```java
       public Triangle() {
-        ...
+        // code omitted here
       }
       ```
 
-    - Update the constructor to assign values to `area` and `perimeter`.
+    - Update the constructor code to assign values to `area` and `perimeter`.
 
-      - Recall that the syntax to assign a value to a variable is:
+      - The syntax to assign (or give) a value to a variable is:
         ```java
-        variableName = expr;
+        variable-name = expression;
         ```
-        where `expr` is some Java expression. For instance, if I were inputing the area of a *square*, the expression would be `area = width * length;` (assuming `width` and `length` are the instance variable's names.)
+        where `expression` is some Java or mathematical expression. For instance, if I were assigning the area of a *square*, my expression would be `area = width * length;` (assuming `width` and `length` are the instance variable's names.)
 
-      - You may want to lookup (on Google) how to find the area and perimeter of an *isosceles triangle*, given its height and width. Here's a hint for perimeter though. In the figure below, you know the width and height of the Triangle. You just need to figure out the length of the sides, which you can determine using Pythagorean Theorem.
+      - You may want to lookup (on Google) on how to calculate the area and perimeter of an *isosceles triangle*, given its `height` and `width`. Here's a hint for perimeter though. In the figure below, you know the width and height of the Triangle, so you just need to figure out the length of the sides, which you can determine using Pythagorean Theorem.
 
-          - If you need to take the square root of an expression `x`, you can use the Java method `Math.sqrt(x)`. Also, to take `a` to the `b`th power ($$a^b$$), you can use `Math.pow(a, b)`.
+          - If you need to take the square root of some value `xxxx`, you can use the Java method `Math.sqrt(xxxx)`. Also, to take `a` to the `b`th power ($$a^b$$), you can use `Math.pow(a, b)`. 
 
         <img src="figures/lab2_fig1.png"/>
 
 
-4. Create a new `Triangle` to see if your `area` and `perimeter` instance variables are now populating. If you did everything above correctly, you should've gotten `600.0` for area and roughly `112.11` for perimeter.
+4. Compile your source code, and instantiate a new `Triangle` to see if your `area` and `perimeter` instance variables are now populating.
+    - If you did everything above correctly, you should've gotten `600.0` for area and roughly `112.11` for perimeter!
 
 5. But is this the only place where a triangle's `area` and `perimeter` need to be updated? Scroll further down the source code and see if there are any methods that might require the `area` and `perimeter` to be updated. Put in the assignment statements in those method(s) as well. Test again to make sure everything's working.
 
 #### Part II: Local Variables
-We know that instance variables store an object's current *state*. But that's not the only kind of variable that exists. In Java, there are actually four kinds:
-  - **Instance Variables:** Used to store an object's state. Exists until the object is removed (or when your program terminates).
-  - **Local Variables:** Used for temporary storage within a method or constructor. Exists until you exit the segment of code (enclosed between curly braces `{` ... `}`) in which the local variable was declared.
-  - **Input Parameters:** Used for accepting input to a method or constructor. Exists until you exit the method or construct.
+We know that instance variables store an object's current *state*. But that's not the only kind of variable that exists. In Java, there are actually four kinds of variables:
+  - **Instance Variables:** These variables are used to store values pertaining to an object's state. They exist until the object is deleted (or when your program terminates).
+  - **Local Variables:** These variables are used for temporary storage within a method or constructor. They exist until you exit the segment of code (that is, the code within curly braces `{` ... `}`) in which the local variable was declared.
+  - **Input Parameters:** These variables are used to accept input data in order to run a method or constructor. They exist  until the method or constructor exits.
   - **Static Variables** (We'll cover these later in the semester)
 
 In this section, let's focus on local variables, so you can appreciate when they should be used.
@@ -111,9 +103,9 @@ In this section, let's focus on local variables, so you can appreciate when they
         draw();
     }
     ```
-    - Studying its algorithm, this method does nothing more than simply erasing the Triangle off the canvas, updating the `xPosition` of its instance state, then re-drawing the Triangle on the canvas. The erasing and re-drawing happens so quickly that it appears as if the Triangle moved places instantly.
+    - Studying its algorithm, this method does nothing more than simply erasing the Triangle off the canvas, updating the `xPosition`, then drawing the Triangle back on the canvas. The erasing and re-drawing happens so quickly that it appears as if the Triangle moved places instantly.
 
-2. Suppose we now want the Triangle to output (print) its *old* coordinate position the Triangle moves. To do that, we need to *save* its x and y positions *before* they get updated in the `moveHorizontal()` code. To save the current positions, we'll need to introduce two variables  (one for each coordinate).
+2. Suppose we now want the Triangle to output (print) its *old* coordinate position before the Triangle moved. To do that, we need to *save* its old x and y positions *before* they get updated in the `moveHorizontal()` code. To save the current positions, we'll need to introduce two variables  (one for each coordinate).
 
 3. For now, add two **instance variables** near the top of the source code, and you can name them `oldXPosition` and `oldYPosition`. Go back to your notes (or book) to see the syntax for declaring new instance variables. 
 
@@ -122,11 +114,11 @@ In this section, let's focus on local variables, so you can appreciate when they
 5. Now, below the call to `draw()`, print out the old positions and the new positions. Recall that, to print something to the screen, you can use this syntax:
 
     ```java
-    System.out.println("stringYouWantToPrint");
+    System.out.println("string-you-want-printed");
     ```
     But if you need to evaluate variables in your print-out, then you need to concatenate (`+`) the variables to the string you want printed. For instance:
     ```java
-    System.out.println("stringYouWantToPrint" + someVariable + "moreString" + anotherVariable);
+    System.out.println("string-you-want-printed" + someVariable + "moreString" + anotherVariable);
     ```
 
     For instance, the following will print something to the effect of: `"Old X is 50"` on the *same* line.
@@ -135,24 +127,22 @@ In this section, let's focus on local variables, so you can appreciate when they
     ```
     Play with the string to print both old X and old Y values on the *same* line.
 
-6. Test it out, and see if everything's working before moving on.
+6. Test it out and see if everything's working before moving on.
 
-7. Once everything checks out, inspect the `Triangle`'s state and you should see the `oldXPosition` and `oldYPosition` instance variables. **But this begs the question.** Why are a Triangle's *old* positions even stored as part of its *current* state? 
+7. Once everything checks out, inspect the `Triangle`'s state and you should see the `oldXPosition` and `oldYPosition` instance variables. **But this begs the question:** Why are a Triangle's *old* positions even stored as part of its state? *You should always ask yourself these questions when you declare new variables:*
+    - Would the object benefit from memorizing these new values in the future? Should these variables be an intrinsic part of the object's state of existence? (If so, the variable should be an instance variable.)
+    - Are the new variables used in only one or two methods, and serve no purpose elsewhere? Is it okay for these variables to be destroyed as soon as the method exits? (If so, the variable should be a local variable.)
 
-    *You should always ask yourself these questions when you  introduce new variables:*
-    - Would the object benefit from memorizing and always carrying these new values in the future? Should they be an intrinsic part of the object's state of existence? (If so, the variable should be an instance variable.)
-    - Are the new variables used in only one or two methods, and serve no purpose elsewhere? It is okay for these variables to be destroyed as soon as the method exits? (If so, the variable should be local)
+8. The purpose of these questions is to gauge whether you need variables everywhere, or just inside a method or two.
 
-8. The purpose of these questions is to gauge whether you need variables that are "global" (and accessible by any method) or just "local" to each method.
-
-    - In our case, `oldXPosition` and `oldYPosition` serve a very specific purpose, inside only one method!
+    - In our case, `oldXPosition` and `oldYPosition` serve a very specific purpose inside only one method!
     - This suggests that `oldXPosition` and `oldYPosition` do not need to be instance variables.
 
-9. Remove the two instance variables from the top of your source code. Go back in your `moveHorizontal()` method and declare the variables within. The major difference in syntax is that, you must remove the `private` keyword when declaring local variables. This ought to do:
+9. Remove the two instance variables `oldXPosition` and `oldYPosition` from the top of your source code. Go back in your `moveHorizontal()` method and declare the variables within. The major difference in syntax is that, you must remove the `private` keyword when declaring local variables. This ought to do:
 
     ```java
     public void moveHorizontal(int distance) {
-        //declare local variables (you can name them whatever)
+        //declare local variables (there's no private keyword!)
         int oldXPosition;
         int oldYPosition;
  
@@ -160,60 +150,41 @@ In this section, let's focus on local variables, so you can appreciate when they
     }
     ```
 
-10. After you've made these changes, compile and create another `Triangle`. Move it around horizontally to ensure that the print-outs are working. Now double-click on the `Triangle` object and you should find that the `oldXPosition` and `oldYPosition` instance variables are gone.
+10. After you've made these changes, compile and create another `Triangle`. Move it around horizontally to ensure that the print-outs are working. Now double-click on the `Triangle` object and you should find that the `oldXPosition` and `oldYPosition` instance variables are no longer a part of its state.
 
-    - **Tip: Keep it as tidy as possible.** Less state (i.e., fewer instance variables) is generally preferable. Having too many instance variables could mean that the programmer may lose track of variables and have too much to manage in the future.
+    - **Tip: Keep the set of instance variables as tidy as possible.** Less state (i.e., fewer instance variables) is generally preferable. Having too many instance variables could mean that the programmer may lose track of variables and have too much to manage in the future.
 
-11. Now update `moveVertical()` to also print its old coordinates.
 
 #### Part III: Input Parameters
-The last type of variables in Java are  input parameters. Input parameters allow callers to provide values (called **arguments**) to a constructor or a method. Therefore, input parameters are always found on the first line of constructors' and methods's declaration. Here's the syntax for constructors and methods, respectively:
+The last type of variables in Java are called "input parameters." These allow users to provide values (values given to input parameters are called **arguments**) to a constructor or a method. 
 
-```java
-public ClassName(listOfInputParameters) {
-  // body of constructor omitted
-}
-```
-
-```java
-public void someMethod(listOfInputParameters) {
-  // body of method omitted
-}
-```
-
-1. Go  and find the `moveHorizontal()` method again, and you need to only examine the first line of the method. Here it is again:
+1. Find the `moveHorizontal()` method again, and you only need to examine the first line of the method. Here it is:
 
     ```java
-    public void moveHorizontal(int distance) {
+    public void moveHorizontal(int distance)
     ```
 
-2. This method has exactly one input parameter, `int distance`, that is accepted. In fact, this method can't even be executed until the caller inputs a valid input value for `distance`. 
-    - If your method or constructor accepts multiple input parameters, then you should separate them with a comma.
-    - The value that is given to `distance` upon calling it is known as the **argument** for that input.
-    - The `distance` parameter captures the given argument, and it can be treated as a local variable in the code for `moveHorizontal()`
+2. This method accepts one input parameter `int distance`. In fact, this method can't even be executed until the caller inputs a valid argument for `distance`. 
+    - If your method or constructor accepts multiple input parameters, then you must separate each one with a comma.
+    - The `distance` parameter captures the given argument, and it can be treated as a local variable in the code for `moveHorizontal()`.
 
-3. Therefore, input parameters are nothing more than local variables to the method, except that they hold the values of given arguments! All input parameters are destroyed when the method exits.
+3. Therefore, input parameters are nothing more than local variables to the method, except that they capture the values of given arguments! Input parameters are destroyed when the method finishes.
 
-4. Write a new `Triangle()` constructor that accepts the starting height and width. You may name these input parameters `initialHeight` and `initialWidth` (honestly, you can name them whatever you like as long as their names make sense and are legal). Don't forget that you'll also need to declare their data types.
+4. Write a new `Triangle()` constructor that accepts the starting height and width. You may name these input parameters `startingHeight` and `startingWidth` (honestly, you can name them whatever you like as long as their names make sense and are legal). Don't forget that you'll also need to declare their data types.
     
     - Next, assign the instance variables `height` and `width` to these values in order to save them.
     
-    - All other instance variables should be assigned to the same values as in the original (default) constructor.
-
+    - All other instance variables still need to be assigned to the old values.
+    
 5. Test out your code to ensure that you can now create Triangles of customized height and width.
 
     - You might as well ensure that the perimeter and areas still check out too!
 
-6. Go back in your new constructor and rename the input parameters to just `height` and `width` (yes, the same names as your instance variables.)
-
-    - Does it still compile?
-    - Does it still work when you construct a new Triangle? Think about why this is the case.
-
-7. Create a new method `changeSizeAndColor()` that accepts 3 parameters, a new width, height, and color. Put in the code to change its size and color concurrently. To help do this, you should be calling existing methods instead of copying-and-pasting code.
+6. Create a new method `changeSizeAndColor()` that accepts 3 parameters, a new width, height, and color. Put in the code to change its size and color concurrently. To help do this, you should be calling existing methods instead of copying-and-pasting code.
     
 #### Part IV: Writing Effective Comments
 
-I've mentioned that effective commenting is an important habit for programmers to form. The reason is for documenting your code for posterity... and for yourself. There are generally two types of comments that I look for when grading: *line comments* and *Javadocs comments*.
+I've mentioned that effective commenting is an important habit for programmers to form. The reason is for documenting your code for posterity. There are generally two types of comments that I look for when grading: *line comments* and *Javadocs comments*.
 
 **Line comments** are free-form. They are used to describe blocks of code that you write. Their syntax is easy to remember. For instance:
 
@@ -229,7 +200,7 @@ public void moveHorizontal(int distance) {
 ```
 Use line comments whenever you've written a chunk of code and its purpose and function may not be obvious.
 
-**Javadocs comments** are more structured. You should write a Javadocs comment on top of every class definition, on top of each constructor, and on top of each method. For instance. Here's an example class comment:
+**Javadocs (block) comments** are more structured. You should write a Javadocs comment on top of every class definition, on top of each constructor, and on top of each method. For instance. Here's an example class comment:
 
 ```java
 /**
