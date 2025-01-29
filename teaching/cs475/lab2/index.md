@@ -273,7 +273,7 @@ Let's put everything together. There are three basic pointer concepts you have t
    double *a = NULL, *b = NULL;
    double c = 10;
    b = &c; // point b at c
-   a = b;  // point a at c
+   a = b;  // point a at c (why don't I need to use &b here?)
    ```
 
    - Memory contents after the declaration:\
