@@ -300,17 +300,6 @@ Let's put everything together. There are three basic pointer concepts you have t
   
   - What happens to your program when you try to de-reference a pointer to `NULL`? *(Ans:  In Java, you'd get the NullPointerException, but there are no such things as Exceptions in C... This really is something you should try out.)*
 
-  - **Do this. For real.** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? You would need to pass the addresses of two existing integer variables in as the 3rd and 4th arguments.
-
-    ```c
-    int max, min;
-    compareAndAssign(10, 100, &max, &min);
-    printf("%d\n", max);  // 100
-    printf("%d\n", min);  // 10
-    ```
-
-
-
 
 ##### Part 4: Pointers as Input Parameters
 
@@ -432,6 +421,10 @@ Have you ever wished that a function/method could return more than one thing? To
      Name: David, GPA: 4.00
      Name: David, GPA: 0.00
      ```
+
+
+  - **Do this output parameter exercise:** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? 
+
 
 
 ##### Part 6: Connection to Arrays and Strings (Pointer Arithmetic)
