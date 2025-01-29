@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Lab 3: Dynamic Memory Allocation
+### Lab 3: Dynamic Memory Allocation (Not Graded)
 
 Pointers are still a bit mysterious, because we still haven't seen a real need for them yet. Sure, it was cool to know that they are intrinsically connected to arrays, but still, with exception to `swap()`, all the code examples shown in the previous tutorial can be done easily without pointers. In this section, we introduce the prevailing motivation for pointers: heap memory allocation.
 

@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Lab 2: Structs, Arrays, and Pointers
+### Lab 2: Structs, Arrays, and Pointers (Not Graded)
 
 This is the second part of a multi-part primer on C. In this tutorial-assignment, you'll gain an appreciation for the way values and variables are stored in memory. You'll be introduced to pointers, as well as the connection between pointers and arrays.
 
@@ -151,7 +151,7 @@ size of 0.5 * 400 / 2: 8 bytes
 
 3. One of the benefits of a typed language like C and Java should be somewhat apparent now. When a programmer declares a variable's type, the executable files knows *exactly* how many contiguous bytes to read and write memory.
 
-- **Practice Questions (not graded):**
+- **Practice Questions**
 
   - Although a  single`char` requires just one byte of storage, most CPUs will insist on wasting, or "padding" the remaining 3 bytes (see figure above). Why do you think CPUs prefer this, instead of, say, having `amt` start from address `1117` to save you space? *(Ans: It's all about word-alignment. Recall that a unit of transfer between memory and CPU is a word. If we didn't pad the remaining unused bits of the word, then the start of the next data will begin in the same word, and must span across two words.)*
 
@@ -245,7 +245,7 @@ Every piece of data in your program, whether it's a  variable or a literal (like
 
 - *Important:* In the examples above, we demonstrated that the `&` operator returns only the address of the *first byte* of the associated variable, even if the variable might occupy more than one byte. For instance, `&days` returns simply `0x458`, even though `days` occupies the next three bytes as well. When we de-reference `*ptr` on **Line 8** and **Line 12**, the system was *smart* enough to know that the next three bytes are part of `days`'s value.  How  does the system know **exactly three** more bytes (and not zero, or one, or seven, or 1000) trailed first byte of `days`? **(Ans: This is why we declare data types in the first place! When we told C that `days` is an `int`, the C compiler translates `int` to something equivalent to a 32-bit `DWORD` in the underlying assembly language.)**
 
-- **Practice Problems (not graded)**
+- **Practice Problems**
 
   - Suppose we know that a pointer to an int (`int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? **(Ans: 4 bytes. Pointers are nothing more than addresses, no matter what kind of data you're pointing to. Addresses are fixed length.)**
 
@@ -292,7 +292,7 @@ Let's put everything together. There are three basic pointer concepts you have t
 - Memory contents after `*a += 5`.\
   <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
 
-- **Practice Questions (not graded):**
+- **Practice Questions**
   
   - What happens to your program when you try to de-reference a pointer to `NULL`? *(Ans:  In Java, you'd get the NullPointerException, but there are no such things as Exceptions in C... This really is something you should try out.)*
 

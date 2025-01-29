@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Lab 1: The Basics of C
+### Lab 1: The Basics of C (Not Graded)
 
 This is the first part of a multi-part primer on C, a lower-level language that is commonly used in systems programming. This tutorial is written for students who have prior experience in another language (say, Java), so you will often see me making comparisons to language features found in Java.
 
@@ -265,7 +265,7 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
 
   - **Lines 23**: after seeding, we can call `rand()` return a number in the range of [0, RAND_MAX].
 
-- **Do these exercises (not graded):**
+- **Do these exercises**
 
   - Set a value at an out-of-bounds index for one of the arrays (e.g.,` B[6] = 10;`), and then print out the array element at that index. Do you get runtime errors?
 
@@ -450,7 +450,7 @@ returnType funcName(param1, param2, ...) {
 
 - Defining all of our functions in the same file before each is used can be a bit of a hassle, and bigger programs can become hard to manage. It would be ideal to split related functions into different files. [Go here to learn more about organizing multi-file programs](http://www.cs.cf.ac.uk/Dave/C/node35.html). As I mentioned in the previous assignment, I usually give you the starter files, but you may want to add some of your own files later on.
 
-- **Do these exercises (not graded):**
+- **Do these exercises**
 
   - Write a function that inputs a string, and converts it to upper-case.
 
