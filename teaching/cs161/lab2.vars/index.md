@@ -176,11 +176,11 @@ The last type of variables in Java are called "input parameters." These allow us
     
     - All other instance variables still need to be assigned to the old values, so you can basically copy and paste the old constructor. 
     
-5. Test out your code to ensure that you can now create Triangles of customized height and width.
+5. Test out your code to ensure that you can now create Triangles of customized `height` and `width`.
 
     - You might as well ensure that the perimeter and areas still check out too!
 
-6. Create a new method `changeSizeAndColor()` that accepts 3 parameters, a new width, height, and color. Put in the code to change its size and color concurrently. To help do this, you should be calling existing methods instead of copying-and-pasting code.
+6. Create a new method `changeSizeAndColor()` that accepts 3 parameters, a different `width`, `height`, and `color`. Put in the code to change its size and color concurrently. To help do this, you should be calling existing methods instead of copying-and-pasting code.
     
 #### Part IV: Writing Effective Comments
 

@@ -3,7 +3,7 @@
 <div style="display: grid; grid-template-columns: auto auto; column-gap: 15px;">
   <div>
   <p>
-  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/mathematics-computer-science-current-students">University of Puget Sound</a>. He is the inaugural director of Puget Sound's <a href="https://www.pugetsound.edu/living-learning-communities/students-color-residential-community">Students of Color Living-and-Learning Community</a>.
+  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/mathematics-computer-science-current-students">University of Puget Sound</a>.
   </p>
   <p>
   David received a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> in 2010 as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was advised by <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now Founding Director of UGA's School of Computing). He worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows in distributed cloud systems. Prior to Ohio State, he studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a>  on projects involving the web transmission of math education modules. Between 2010 to 2014, he was an Assistant Professor and the Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with the University of Puget Sound as an Assistant, Associate, and Full Professor. He also completed a rotation as Department Chair from 2019 to 2022. 
