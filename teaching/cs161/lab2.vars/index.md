@@ -52,9 +52,7 @@ private data-type variable-name;
 
 2. Back in the BlueJ project window, click the compile button, and then *instantiate* a new `Triangle` object. Then inspect its state by double-clicking on the new object. You should see the two new instance variables you just declared, but alas, they show up as zeroes.
 
-    - It's important to use this moment to reflect. Even though you gave these instance variables good names that indicate what they are, they don't just magically get values. (Computers are morons!)
-
-    - Indeed it's up to *the programmer* to assign values to these instance variables, and to always keep track of them if the triangle ever changes size.
+    - It's important to use this moment to reflect. Even though you gave these instance variables good names that indicate what they are, they don't just magically get values. (Computers are morons!) It's up to *the programmer* to assign values to these instance variables, and to always keep track of them if the triangle ever changes size.
 
 3. Let's start by thinking about all the places where the `area` and `perimeter` need to be assigned values.
 
@@ -66,9 +64,8 @@ private data-type variable-name;
       }
       ```
 
-    - Update the constructor code to assign values to `area` and `perimeter`.
+    - Update the constructor code to assign values to `area` and `perimeter`. The syntax to assign a value to a variable is:
 
-      - The syntax to assign (or give) a value to a variable is:
         ```java
         variable-name = expression;
         ```
@@ -81,10 +78,9 @@ private data-type variable-name;
         <img src="figures/lab2_fig1.png"/>
 
 
-4. Compile your source code, and instantiate a new `Triangle` to see if your `area` and `perimeter` instance variables are now populating.
-    - If you did everything above correctly, you should've gotten `600.0` for area and roughly `112.11` for perimeter!
+4. Compile your source code, and instantiate a new `Triangle` to see if your `area` and `perimeter` instance variables are now populating. If you did everything above correctly, you should've gotten `600.0` for area and roughly `112.11` for perimeter.
 
-5. But is this the only place where a triangle's `area` and `perimeter` need to be updated? Scroll further down the source code and see if there are any methods that might require the `area` and `perimeter` to be updated. Put in the assignment statements in those method(s) as well. Test again to make sure everything's working.
+5. Is this the only place where a triangle's `area` and `perimeter` need to be assigned? Wasn't there a method to *change* a triangle's size? Find *that* method, and make sure you reassign values to `area` and `perimeter` in there to reflect the new dimensions. Test again to make sure everything's working.
 
 #### Part II: Local Variables
 We know that instance variables store an object's current *state*. But that's not the only kind of variable that exists. In Java, there are actually four kinds of variables:
@@ -118,7 +114,7 @@ In this section, let's focus on local variables, so you can appreciate when they
     ```
     But if you need to evaluate variables in your print-out, then you need to concatenate (`+`) the variables to the string you want printed. For instance:
     ```java
-    System.out.println("string-you-want-printed" + someVariable + "moreString" + anotherVariable);
+    System.out.println("string-you-want-printed" + some-variable + "more-string" + another-variable);
     ```
 
     For instance, the following will print something to the effect of: `"Old X is 50"` on the *same* line.
@@ -170,7 +166,7 @@ The last type of variables in Java are called "input parameters." These allow us
 
 3. Therefore, input parameters are nothing more than local variables to the method, except that they capture the values of given arguments! Input parameters are destroyed when the method finishes.
 
-4. Write a new `Triangle(int startingHeight, int startingWidth)` constructor that accepts the starting height and width. You may name these input parameters `startingHeight` and `startingWidth` (honestly, you can name them whatever you like as long as their names make sense and are legal). 
+4. Write a new `public Triangle(int startingHeight, int startingWidth)` constructor that accepts the starting height and width. You may name these input parameters `startingHeight` and `startingWidth` (honestly, you can name them whatever you like as long as their names make sense and are legal). 
     
     - Next, assign the instance variables `height` and `width` to these starting values in order to save them.
     
@@ -230,9 +226,7 @@ public void moveHorizontal(int distance) {
 }
 ```
 
-Note the use of `@tags` in the Javadocs comments.
-
-Go ahead and add comments to the new constructor and method that you wrote for this lab.
+Note the use of `@tags` in the Javadocs comments. Go ahead and add comments to the new constructor and method that you wrote for this lab. If your method or constructor requires multiple input parameters, then you should list each `@param` in your Javadocs comment on a separate line.
 
 #### Grading
 
