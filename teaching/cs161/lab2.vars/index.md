@@ -50,7 +50,7 @@ private data-type variable-name;
 
 1. Open up the Triangle class, find the section of code (usually towards the top of the class) that lists all the instance variables. Modify it to store 2 new instance variables: `area` and `perimeter`. It doesn't matter if these go first or last in line of your instance-variable segment. Before you declare each one, you ought to be thinking ahead --- what nature of data does each hold? Integers? Strings? Doubles? Something else? (We're talking triangles after all... do you remember how to calculate areas and perimeters of triangles? What kind of value do you need to capture?) Choose the right data types, and declare `area` and `perimeter` two now.
 
-2. Back in the BlueJ project window, *instantiate* a new `Triangle` object and inspect its state by double-clicking it. You should see the two new instance variables you just declared, but alas, they show up as zeroes.
+2. Back in the BlueJ project window, click the compile button, and then *instantiate* a new `Triangle` object. Then inspect its state by double-clicking on the new object. You should see the two new instance variables you just declared, but alas, they show up as zeroes.
 
     - It's important to use this moment to reflect. Even though you gave these instance variables good names that indicate what they are, they don't just magically get values. (Computers are morons!)
 
@@ -170,11 +170,11 @@ The last type of variables in Java are called "input parameters." These allow us
 
 3. Therefore, input parameters are nothing more than local variables to the method, except that they capture the values of given arguments! Input parameters are destroyed when the method finishes.
 
-4. Write a new `Triangle()` constructor that accepts the starting height and width. You may name these input parameters `startingHeight` and `startingWidth` (honestly, you can name them whatever you like as long as their names make sense and are legal). Don't forget that you'll also need to declare their data types.
+4. Write a new `Triangle(int startingHeight, int startingWidth)` constructor that accepts the starting height and width. You may name these input parameters `startingHeight` and `startingWidth` (honestly, you can name them whatever you like as long as their names make sense and are legal). 
     
-    - Next, assign the instance variables `height` and `width` to these values in order to save them.
+    - Next, assign the instance variables `height` and `width` to these starting values in order to save them.
     
-    - All other instance variables still need to be assigned to the old values.
+    - All other instance variables still need to be assigned to the old values, so you can basically copy and paste the old constructor. 
     
 5. Test out your code to ensure that you can now create Triangles of customized height and width.
 
