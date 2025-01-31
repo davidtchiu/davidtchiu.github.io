@@ -149,13 +149,13 @@ When a process starts running, the OS allocates `RLIMIT_STACK` bytes for that pr
 
 Now that we understand how the program stack works, we return to our problematic code:
 
-- The problem is on this line:
+- The problem is on this line (which is totally legal in Java!)
 
     ```c
     Employee my_employees[num_employees];
     ```
 
-  If the user entered a large enough number for `num_employees`, a segmentation fault can occur when at runtime it tries to push too large of an `Employee` array onto the stack.
+  If the user entered a large enough integer for `num_employees`, a segmentation fault can occur when at runtime it tries to push too-large of an `Employee` array onto the stack.
 
 - Check out the output for the following two runs:
 
@@ -179,11 +179,11 @@ Now that we understand how the program stack works, we return to our problematic
   Segmentation fault
   ```
 
-- Clearly, a program that crashes depending on the magnitude of a user's input is troubling, and is why you should avoid creating unknown-sized arrays on the _stack_. That foreshadows a different location that can store arbitrarily-sized structures.
+- Clearly, a program that crashes depending on the magnitude of a user's input is troubling, and this is why you should avoid creating unknown-sized arrays on the _program stack_. 
 
-##### Part 4: Heap to the Rescue!!
+##### Part 4: Program Heap to the Rescue!!
 
-- To deal with the stack-overflow problem, we need to be able allocate arbitrarily-sized memory off of the stack! The **Heap** segment serves this purpose. So, whenever we need a new array, struct, string, etc., at runtime, you should be creating a pointer  to refer to some location on the **heap** where this potentially large structure will live. In this section, we'll see how C supports memory allocation (and deallocation) on the heap.
+- To deal with the stack-overflow problem, we need to be able allocate arbitrarily-sized memory off of the program stack! The **Heap** segment serves this purpose. So, whenever we need a new array, struct, string, etc., at runtime, you should be creating a pointer  to refer to some location on the **heap** where this potentially large structure will live. In this section, we'll see how C supports memory allocation (and deallocation) on the heap.
 
   - In fact, allocating memory on the heap is  what Java does every time the `new` keyword is used to instantiate an object. 
 
