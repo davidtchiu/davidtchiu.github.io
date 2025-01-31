@@ -245,7 +245,7 @@ Now that we understand how the program stack works, we return to our problematic
 
     Remember the goal is to create an array on the *heap* that contains `num_employees` elements of type `Employee`. Therefore, we need to use `malloc()` to request `num_employees * sizeof(Employee)` bytes on the heap.
 
-    - For example, assume that the `Employee` struct is declared as follows:
+    - For example, assume that the `Employee` structure is declared as follows:
 
       ```c
       #define MAX_NAME_LEN 16
@@ -256,9 +256,9 @@ Now that we understand how the program stack works, we return to our problematic
       } Employee;
       ```
 
-    - Then `sizeof(Employee) == 20` because `name` is a char array of length 16 and `salary` is an 4-byte integer. So `malloc()` will  allocate a chunk of `num_employees * 20` bytes, and return a pointer to the first Employee.
+    - Then `sizeof(Employee) == 20` because `name` is a char array of length 16 and `salary` is an 4-byte integer. So `malloc()` will  allocate a chunk of `num_employees * 20` bytes, and return a pointer to the *first* Employee (at location [0]).
 
-    - Remember that `malloc()` is type-agnostic; it doesn't care about what kind of data you intend to store in the newly allocated memory. Therefore, it returns a `void*` pointer, so we need to cast this pointer into the desired type. Without the casting, C wouldn't know what the byte-boundaries are for each `Employee` object to do pointer-arithmetic! For example, it wouldn't be able to associate `.name` with the first 16 bytes, nor `.salary` with the next 4 bytes!
+    - `malloc()` is returns a pointer that is type-agnostic; it doesn't care about what kind of data you intend to store in the newly allocated memory. Therefore, it returns a `void*` pointer, so we need to cast this pointer into the desired type. Without the cast, C wouldn't know what the byte-boundaries are for each `Employee` object to do pointer-arithmetic! For example, it wouldn't be able to associate `.name` with the first 16 bytes, nor `.salary` with the next 4 bytes!
 
   - Important: We can use array syntax over the allocated space! Yes!!!
 
@@ -271,17 +271,13 @@ Now that we understand how the program stack works, we return to our problematic
     }
     ```
 
-    Remember from the previous primer that we learned the array-index syntax `my_employees[i]` is really a short-hand for `*(my_employees+i)`? Because of the earlier cast to `Employee*`, C now knows to skip `sizeof(Employee)` bytes every time `i` is incremented. How convenient that we can use the array-index syntax in this context to dereference each 20-byte block as an `Employee`!!
+    Remember from the previous lab that we learned the array-index syntax `my_employees[i]` is really just a short-hand for `*(my_employees+i)`. Because of the earlier cast to `Employee*`, C now knows to skip `sizeof(Employee)` bytes every time `i` is incremented. How convenient that we can use the array-index syntax in this context to dereference each 20-byte block as an `Employee` object!
 
-  - On **Line 30 (important word on Garbage Collection)**: This line _frees_ up the `num_employees * sizeof(Employee)` bytes off the heap, so that the space can be reclaimed and used by another part of the process. Be careful! After freeing it, `my_employees` now points to an *invalid* address. If you try to dereference `my_employees` after freeing, you'll receive a **segmentation fault**!
+  - On **Line 30 (important word on Garbage Collection)**: This line _frees_ up the `num_employees * sizeof(Employee)` bytes off the heap, so that the space can be reclaimed. Be careful! After freeing it, `my_employees` now points to an *invalid* address. If you try to dereference `my_employees` after freeing, you'll receive a **segmentation fault**!
 
-    - While "garbage collection" is automatically handled by many modern languages like Java and Python, we don't have that luxury in C. It is completely up to the programmer to decide *when* free memory. Be sensitive to this when you're programming!
+    - While "garbage collection" is automatically handled by many modern languages like Java and Python, we don't have that luxury in C. It is completely up to the programmer to decide *when* free any memory that you allocated. Be very sensitive to this when you're programming!
 
-  - On **Line 31 (avoiding dangling pointers)**: It is generally good  practice to set pointers to `NULL` after freeing -- here's why. After freeing, the pointer is *still* pointing at that location (i.e. it's dangling). However, once heap memory has been freed, that chunk of memory can be re-used by another call to `malloc` elsewhere in your program! This leads to two potential problems:
-
-    1. If you re-use the pointer and assign something new to it, then it will corrupt the memory that is in use by the other part of your program! This is the primary problem!
-
-    2. If you `free()` that pointer again (say you have multiple `free()` statements in different functions), then it will deallocate the memory that was in use by the other part of your program!
+  - On **Line 31 (avoiding dangling pointers)**: It is generally good  practice to set pointers to `NULL` after freeing their allocated space - here's why. After freeing memory, the pointer is *still* pointing at that location. However, once heap memory has been freed, that chunk of memory can be re-used by another call to `malloc` elsewhere in your program! 
 
 
 ##### Part 5: Dynamic Memory Allocation Examples
