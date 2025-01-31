@@ -301,19 +301,21 @@ Pay attention here, because you'll be doing this a lot! We can now use `malloc()
   ```
 
 In the above code:
-  - We `malloc()` just the right amount of space for the email string. The size is the length of the `user` + `domain` + `2`. Hmm, why add `2`? (1 is for the `@` symbol. 1 for the terminating `\0` character)
+  - We `malloc()` the exact amount of space for the email string. The size is the length of the `user` + `domain` + `2`. Why add `2`? (1 byte for the `@` symbol. 1 byte for the terminating `\0` character)!
 
-  - Next, we're presented with a rather annoying thing with `malloc()`. It does not clear out the contents after it allocates the space (that's actually a "feature," because it's faster to leave the memory as-is). All `malloc()` does is return the pointer to the first byte it allocated back to you. That means there could be existing garbage stored in the memory that was allocated! Therefore, we need to set the string to empty (which is equivalent to setting a string's 0th position to the `\0` character.)
+  - Next, we're presented with a rather annoying thing with `malloc()`. It does not clear out the contents after it allocates the space  to you (it's actually a "feature," because it's faster to leave the memory as-is). All `malloc()` does is return the pointer to the first byte. That means there could be existing *garbage* stored in the memory that was allocated! Therefore, we set the string to empty (which is equivalent to setting a string's 0th position to the `\0` character.)
 
-    - If you would rather that C clears out the contents of newly-allocated memory, you should use `calloc()` instead, but it's slower.
+    - You might say that this step was not needed since we reassign it immediately, and you'd be right in this case. However, consider if the first thing you did was to concatenate a string to `email`. If `email` wasn't cleared out, you may get some interesting results.
 
-  - With enough buffer on hand now, the subsequent `strcpy()` and `strcat()` calls have enough space to concatenate and build up this string. `strcpy()` and `strcat()` automatically adds the null character to the modified string.
+    - If you would rather that C clears out the contents of newly-allocated memory for you, you should use `calloc()` instead, but it's a bit slower.
+
+  - With enough buffer on hand now, the subsequent `strcpy()` and `strcat()` calls now have enough space to concatenate and build up this email string. `strcpy()` and `strcat()` automatically adds the `\0` character to the modified string.
 
   - On the Last Line, we return the address to the `email`, or rather, to the first byte of the allocated memory. Because the memory to store `email` is created on the heap, it does not disappear after the `return` statement.
 
 **Check-In Exercise** Doing the exercise below will be fruitful, because you'll likely use it for future assignments.
 
-  - Write a function `char* strrepeat(char *str, unsigned int nrepeat)` to return a newly allocated string `nrepeat` copies of `str` concatenated together. For instance, `strrepeat("hi", 3)` returns a pointer to `hihihi`, and `strrepeat("hi", 0)` returns simply an empty string (that is, a char array of size 1, which contains just the null character `\0`).
+  - Write a function `char* strrepeat(char *str, unsigned int nrepeat)` to return a newly allocated string `nrepeat` copies of `str` concatenated together. For instance, `strrepeat("hi", 3)` returns a pointer to `hihihi`, and `strrepeat("hi", 0)` returns simply an empty string (that is, a char array of size 1, which contains just `\0`).
 
 
 
