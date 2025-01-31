@@ -291,7 +291,7 @@ Pay attention here, because you'll be doing this a lot! We can now use `malloc()
   char* createEmail(char* user, char* domain) {
     // create a new string buffer on the heap
     char *email = (char*) malloc(strlen(user) + strlen(domain) + 2);    
-    email[0] = '\0';  //empty the string
+    email[0] = '\0';  // empty the string (just good habit)
 
     strcpy(email, user); // copy user over
     strcat(email, "@"); // append @
