@@ -91,7 +91,7 @@ I have included a working solution of my program along with the starter code. Th
 
    - `void printList(Employee *A, int n)`: Prints all values in the array referenced by pointer `A`.
 
-   - `void heapsort(Employee *A, int i, int n)`: This function inputs a pointer to an unsorted array of Employees and the size of that array and sorts it in descending order of their salary. Here's the sketch:
+   - `void heapsort(Employee *A, int n)`: This function inputs a pointer to an unsorted array of Employees and the size of that array and sorts it in descending order of their salary. Here's the sketch:
      ```
      Build min-heap over A
      Repeat the following until n < 0:
