@@ -132,7 +132,7 @@ When a process starts running, the OS allocates `RLIMIT_STACK` bytes for that pr
   Segmentation fault
   ```
 
-- When your program's execution results in a **segmentation fault**, it means that the OS detected that it tried to to access an invalid address. In this particular example, each recursive call to `f(..)` involves pushing the return address followed by pushing a new value for `int depth` onto  the stack. The stack breaches the `RLIMIT_STACK` limit on the *393036th* recursive call to `f(..)`. When the program tries to push a frame beyond that threshold, the memory-management unit of the OS detects this violation and throws a segmentation fault, and terminates the offending process.
+- When your program's execution results in a **segmentation fault**, it means that the OS detected that the program code tried to access an address in memory that it does not have permission to. In this particular example, each recursive call to `f(..)` involves pushing the return address followed by pushing a new value for `int depth` onto  the stack. Once enough data has been pushed to the program stack, it will eventually breach the `RLIMIT_STACK` limit on the *393036th* recursive call to `f(..)`. When the program tries to push data beyond that threshold, the memory-management unit (MMU)  detects this violation and throws a segmentation fault, and terminates the offending process.
 
 
 <!-- 
