@@ -204,7 +204,7 @@ Now that we understand how the program stack works, we return to our problematic
   ```c
   #include <stdio.h>
   #include <string.h>
-  #include <stdlib.h> //for malloc(), free(), ...
+  #include <stdlib.h> // For malloc(), free(), ...
   #include "employee.h"
 
   int getNumEmployees() {
@@ -218,7 +218,7 @@ Now that we understand how the program stack works, we return to our problematic
 
   int main(int argc, char *argv[]) {
     int num_employees = getNumEmployees();
-    Employee *my_employees = (Employee*) malloc(num_employees * sizeof(Employee));  // <--- On the heap!
+    Employee *my_employees = (Employee*) malloc(num_employees * sizeof(Employee));  // <--- Array is on the heap!
 
     //fill employee info
     int i;
