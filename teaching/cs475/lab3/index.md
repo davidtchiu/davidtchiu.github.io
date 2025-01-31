@@ -355,7 +355,7 @@ But the arrow operator `->` just provides a much cleaner syntax to de-reference 
 These will come back to us in future assignments, but it won't hurt to think about these problems early.
 - How would you allocate a 2D (or 3D, 4D, ...)  array on the heap?
 - How would you allocate an array of strings on the heap?
-
+- How would you free up these structures?
 
 #### Credits
 

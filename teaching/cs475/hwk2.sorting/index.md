@@ -103,7 +103,7 @@ I have included a working solution of my program along with the starter code. Th
 
 3. Implement the following inside `main.c`:
 
-   - Define a constant called `MAX_EMPLOYEES` that will serve as the maximum length of your array.
+   - `#define` a constant called `MAX_EMPLOYEES` that will serve as the maximum length of your array.
 
    - `int main()`: The driver function should create an array of `MAX_EMPLOYEES` elements, and fill it with values from the user. Below, a sample interaction for `MAX_EMPLOYEES` of 5.
 
