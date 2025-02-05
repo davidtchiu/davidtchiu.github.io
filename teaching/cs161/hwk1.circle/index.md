@@ -51,7 +51,7 @@ This assignment will be graded out of a total of 30pts.
 
 [2pts] The move methods now move by 30 instead of 20.
 
-[5pts] The moveNortheast() method is implemented.
+[5pts] The moveNorthEast() method is implemented.
 
 [5pts] The shuffleHorizontal() method and shuffleVertical() have been implemented.
 
