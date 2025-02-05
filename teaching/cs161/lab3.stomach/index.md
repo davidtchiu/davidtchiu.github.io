@@ -100,7 +100,7 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
       Now, `rng` is a variable that stores a `Random` object. You can think of it as a random number generator that you can request to spit out a number whenever you need one!
 
-    - Then you can call  `nextInt(int base, int bound)` on `rng` method to fetch a random integer between `low` (inclusive) and `high` (exclusive). For example:
+    - Then you can call  `nextInt(int low, int high)` on `rng` method to fetch a random integer between `low` (inclusive) and `high` (exclusive). For example:
 
       ```java
       Random rng = new Random();
