@@ -95,17 +95,17 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
     - In the body of `digest()`, create a local variable of type `Random` (Yes classes can be used like data types!) as follows:
 
       ```java
-      Random rng = new Random();   // Create a random number generator called 'rng'
+      Random rng = new Random();   // Create a local variable containing a random number generator
       ```
 
       Now, `rng` is a variable that stores a `Random` object. You can think of it as a random number generator that you can request to spit out a number whenever you need one!
 
-    - Then you can call the `rng`'s `nextInt(int n)` method to fetch a random integer between 0 (inclusive) and n (exclusive). For example:
+    - Then you can call  `nextInt(int base, int bound)` on `rng` method to fetch a random integer between `low` (inclusive) and `high` (exclusive). For example:
 
       ```java
       Random rng = new Random();
-      int x = rng.nextInt(10);     // returns a random number between 0 and 9, and
-                                   // stores it in local variable 'x'
+      int x = rng.nextInt(0,10);     // Returns a random number between 0 and 9, and
+                                     // stores it in local variable 'x'
       ```
 
       This will store a random integer between 0 and 9 in `x`.
