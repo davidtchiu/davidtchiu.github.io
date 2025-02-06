@@ -2,13 +2,15 @@
 
 ### Lab: Writing the Stomach Class
 
-In this assignment you will write your first class from scratch. This class models a very rudimentary stomach, which can ingest food, and digest food.
+In this assignment you will write your first class from scratch. This class models a very rudimentary stomach, which can ingest food, and digest food. (Image source: Flaticon License)
+
+<img src="figures/stomach.png" width="300px" />
 
 #### Student Outcomes
 
 - Practice basic class writing from scratch
 - Practice with integer operations
-- To learn to use objects of the `Random` class to generate random numbers
+- To learn to use objects of the `Random` class to generate random integers
 
 <!-- 
 #### Working with Partners (Please Read)
@@ -121,6 +123,16 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
   - `getAmountDigested` - Inputs nothing, and `returns` the total amount of food that the stomach has digested.
 
   - `toString` - Inputs nothing, and `returns` a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `Ingested: <X>, digested: <Y>`, where `<X>` and `<Y>` refer to those respective  values that are stored in those instance variables.
+
+    - To do this method, you'll probably want to start by creating a local `String` variable that you'll later `return`. You can initially assign an empty string to it: `""`, and build this string up piece by piece using the `+=` operator. For example,
+
+      ```java
+      int x = 3;
+      String s = "";
+      s += "Hello ";
+      s += x;
+      s += " world";  // s now stores "Hello 3 world"
+      ```
 
 <!-- - **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It lets you! You need to fix these problems next.
 
