@@ -57,15 +57,15 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
 - **Constructors:** Recall that it is the job of the constructor to set up initial values for the fields. Your class should have two constructors:
 
-  - A default constructor. The assumption here is that, when the stomach is created using this constructor, it is empty and has digested no food.
+  - A default constructor. The assumption here is that, when the stomach is created using this constructor, it is empty and has digested no food. In other words they should both be assigned to 0.
 
-  - A second constructor that lets users input a pre-existing whole-number amount of food that's already been ingested in the stomach.
+  - A second constructor that lets users input a pre-existing whole-number amount of food that's already been ingested in the stomach. (I know, gross.)
 
     ```java
     /**
      * This constructor creates a stomach object
      */
-    public Stomach(param1, param2, ...]) {
+    public Stomach(list-of-parameters) {
       // code to initialize fields
     }
     ```
@@ -104,19 +104,23 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
       ```java
       Random rng = new Random();
-      int x = rng.nextInt(0,10);     // Returns a random number between 0 and 9, and
+      int x = rng.nextInt(0, 10);     // Returns a random number between 0 and 9, and
                                      // stores it in local variable 'x'
       ```
 
       This will store a random integer between 0 and 9 in `x`.
 
-    - **As a reminder,** you don't want to just generate a number between 0 and 9 as shown in the example above. It should be a number between 0 and X, where X is the current amount of food in the stomach!
+    - **As a reminder,** you don't just want to generate a number between 0 and 9 as shown in the example above. It should be a random number between 0 and X, where X is the current amount of food currently in the stomach!
 
-  - `toString` - Inputs nothing, and returns a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `"Ingested: X, digested: Y"`, where `X` and `Y` refer to those respective field values.
+  - `toString` - Inputs nothing, and returns a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `Ingested: <X>, digested: <Y>`, where `<X>` and `<Y>` refer to those respective  values that are stored in the instance variables.
 
-- **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It lets you! You need to fix these problems next.
+- It would be nice to know how "efficiently" our stomach is working. On average, how much are we digesting every time the `digest()` method is called? This might be a useful piece of information to know. (E.g., if we’re digesting a very small amount on average then we might have a blockage in our stomach that needs to be examined.)  Add the following method to your Stomach class: `public double getAverageAmountDigested()`. This method should return the average amount of food that has been digested. For example, if 10 units of food was digested the first time we called `digest()` and 4 units of food the second time we called `digest()`, then on average, we are digesting 7 units of food.
+
+
+<!-- - **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It lets you! You need to fix these problems next.
 
   Use an if-then-else statement to alert the user that they've entered an invalid input, and ignore further actions on the stomach's state. For fixing your constructor, it is appropriate to just let Java create an empty stomach.
+ -->
 
 - **The Test Code:** Here's some code to test your Stomach class. Copy and paste **all** of the following code block into Blue's code pad. Ask one of us if you don't remember where the code pad is. If your class is bug-free, your output should look similar to mine farther down below.
 
@@ -181,10 +185,10 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
   Ingested: 3,  digested: 32
   ```
 
-#### Optional Extension
+<!-- #### Optional Extension
 It would be nice to know how "efficiently" our stomach is working. On average, how much are we digesting every time the `digest()` method is called? This might be a useful piece of information to know. (E.g., if we’re digesting a very small amount on average then we might have a blockage in our stomach that needs to be examined.)
 
-- Add the following method to your Stomach class: `public double getAverageAmountDigested()`. This method should return the average amount of food that has been digested. For example, if 10 units of food was digested the first time we called `digest()` and 4 units of food the second time we called `digest()`, then on average, we are digesting 7 units of food.
+- Add the following method to your Stomach class: `public double getAverageAmountDigested()`. This method should return the average amount of food that has been digested. For example, if 10 units of food was digested the first time we called `digest()` and 4 units of food the second time we called `digest()`, then on average, we are digesting 7 units of food. -->
 
 
 #### Grading
