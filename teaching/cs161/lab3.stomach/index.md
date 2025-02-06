@@ -80,9 +80,14 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
   - `getAmountFood` - Inputs nothing, and returns (doesn't print!) the current amount of food in the stomach.
 
-  - `getAmountDigested` - Inputs nothing, and returns (doesn't print! the total amount of food that the stomach has digested.
-
   - `ingest` - This method accepts one input, and does not `return` a value. Running this method causes the stomach to ingest the amount of food given in the input parameter, and this amount should be added to the current amount of food sitting in the stomach.
+
+  - `regurgitate` - This method does not accept inputs, and it does not need to return. It simply clears out all amounts of food in the stomach back to zero. It has no effect on the amount that has already been digested. It should also print `Gacked up <X> amount of food` onto the screen, where `<X>` is the amount of food that was currently in the stomach prior to zeroing it out. Recall that to print, you can use:
+
+    ```java
+    System.out.println(thing-you-want-to-print);
+    ```
+    Make sure you're testing these methods out!
 
   - `digest` - This method accepts no inputs and does not `return` a value. Running it causes a random amount of the food that's currently in the stomach to be "digested" and pulled out of the stomach. For example, suppose there are 13 units of food in the stomach, and 30 units have been digested. Select a random number between 0 and 13 (see below on how) to digest. Let's say the random number, 6, is chosen. After the method is finished, the stomach should now contain 7 units of food ingested, with 36 units digested.
 
@@ -112,7 +117,11 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
     - **As a reminder,** you don't just want to generate a number between 0 and 9 as shown in the example above. It should be a random number between 0 and X, where X is the current amount of food currently in the stomach!
 
-  - `toString` - Inputs nothing, and returns a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `Ingested: <X>, digested: <Y>`, where `<X>` and `<Y>` refer to those respective  values that are stored in the instance variables.
+
+  - `getAmountDigested` - Inputs nothing, and returns the total amount of food that the stomach has digested.
+
+
+  - `toString` - Inputs nothing, and returns a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `Ingested: <X>, digested: <Y>`, where `<X>` and `<Y>` refer to those respective  values that are stored in those instance variables.
 
 <!-- - **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It lets you! You need to fix these problems next.
 
