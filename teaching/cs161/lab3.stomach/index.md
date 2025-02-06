@@ -78,11 +78,9 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
 - Here are all the methods that your class needs to support. Read each description carefully. After you've designed each method, write it in BlueJ, and test it vigorously before moving on!
 
-  - `getAmountFood` - Inputs nothing, and returns (doesn't print!) the current amount of food in the stomach.
-
   - `ingest` - This method accepts one input, and does not `return` a value. Running this method causes the stomach to ingest the amount of food given in the input parameter, and this amount should be added to the current amount of food sitting in the stomach.
 
-  - `regurgitate` - This method does not accept inputs, and it does not need to return. It simply clears out all amounts of food in the stomach back to zero. It has no effect on the amount that has already been digested. It should also print `Gacked up <X> amount of food` onto the screen, where `<X>` is the amount of food that was currently in the stomach prior to zeroing it out. Recall that to print, you can use:
+  - `regurgitate` - This method does not accept inputs, and it does not need to return. It simply clears out all amounts of food in the stomach back to zero. It has no effect on the amount that has already been digested. It should also print `Gacked up <X>`, where `<X>` is the total amount of food that had been ingested in the stomach prior to zeroing it out. Recall that to print, you can use the method,
 
     ```java
     System.out.println(thing-you-want-to-print);
@@ -110,7 +108,7 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
       ```java
       Random rng = new Random();
       int x = rng.nextInt(0, 10);     // Returns a random number between 0 and 9, and
-                                     // stores it in local variable 'x'
+                                      // stores it in local variable 'x'
       ```
 
       This will store a random integer between 0 and 9 in `x`.
@@ -118,10 +116,11 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
     - **As a reminder,** you don't just want to generate a number between 0 and 9 as shown in the example above. It should be a random number between 0 and X, where X is the current amount of food currently in the stomach!
 
 
-  - `getAmountDigested` - Inputs nothing, and returns the total amount of food that the stomach has digested.
+  - `getAmountFood` - Inputs nothing, and `returns` (doesn't print!) the current amount of food in the stomach.
 
+  - `getAmountDigested` - Inputs nothing, and `returns` the total amount of food that the stomach has digested.
 
-  - `toString` - Inputs nothing, and returns a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `Ingested: <X>, digested: <Y>`, where `<X>` and `<Y>` refer to those respective  values that are stored in those instance variables.
+  - `toString` - Inputs nothing, and `returns` a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `Ingested: <X>, digested: <Y>`, where `<X>` and `<Y>` refer to those respective  values that are stored in those instance variables.
 
 <!-- - **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It lets you! You need to fix these problems next.
 
