@@ -67,24 +67,15 @@ Here are your assigned partners for today's lab.
 
 - Your class should have one constructor:
 
-  - Write a default constructor that picks a random number between 1 and 50, and remembers it as its secret number.
+  - Write a default constructor that picks a random integer between 1 and 50, and remembers it as its secret number.
 
-    - Recall that you must `import java.util.Random;` at the top of your class.
-    - Inside the constructor, create a `Random` object called `rng`:
-      ```java
-      Random rng = new Random();
-      ```
-    - Then you can use `rng.nextInt(50)` to generate a random number between 0 and 49. Now you need to capture the value that it returns into your secret number field.
+    - You may want to return to your notes to remind yourself how to generate random values.
 
-    - Add 1 to the secret number to convert it into a random number between 1 and 50.
+  - Write a second constructor that inputs the upper-bound for the secret number. It then picks a random number between 1 and that upper-bound (inclusively). So if the user starts a game with 200 input as the upper-bound, the game would randomly choose a secret number between 1 and 200.
 
-  <!-- - An overloaded constructor that inputs the upper-bound for the secret number. It then picks a random number between 1 and that upper-bound (inclusive). So if the user starts a game with 200 input as the upper-bound, the game would randomly choose a secret number between 1 and 200. -->
+  - Your constructors should also greet the player with a message and inform them of the range of numbers from which to guess. See the interaction in the beginning of this lab for a sample greeting.
 
-  - The constructor should also greet the player with a message and inform them of the range of numbers from which to guess. See the interaction in the beginning of this lab for a sample greeting. Check-in with us before moving on to ensure correctness.
-
-- You will need to write a `guess(...)` method that is called every time the user wants to guess a number. This method should take a whole number as its parameter, and it does not `return` a value. When the user calls `guess(...)`, several things need to happen:
-
-  - The method compares the input parameter with the stored *secret number*. If the user's guess is correct, you should print out a message congratulating the user, and let them know how many guesses it took them. (Again, see the sample output at the top of this page to understand the format of your printed message). If the user's guess is wrong, then you need to tell the user whether their guess needs to be **"higher"** or **"lower"**.
+- You will need to write a `guess(...)` method that is called every time the user wants to make a guess. This method should take a number as its input, and it does not need to `return` a value. When the user calls `guess(...)`, it first compares the input parameter with the stored *secret number*. If the guess is correct, you should print out a message congratulating the user, and let them know how many guesses it took them. (Again, see the sample output at the top of this page to understand the format of your printed message). Otherwise, if the user's guess is wrong, then you need to tell the user whether their guess needs to be **"higher"** or **"lower"**.
 
   - Double-check that your program works by playing games multiple times. To make testing easier, remember that you can inspect the game object to see what the *secret number* actually is. If there is ever any behavior that seems wrong, go back to your code and try to figure out what caused that!
 
@@ -92,7 +83,7 @@ Here are your assigned partners for today's lab.
 
 #### Part 2: Upgrading the Game
 
-With a bare-bones version of the `GuessingGame` written, you should now include the following functionalities.
+With a bare-bones version of  `GuessingGame` written, you should now include the following functionalities.
 
 - **Upgrade #1 - Congratulate (or Mock) the Player:** After the user *correctly* guesses the answer, we want the game to say something depending on the number of guesses that it took them. (Now your game needs to remember how many guesses it's taken the player!) Take a look at the table below. Print out the appropriate message when the guess is correct.
 
@@ -101,13 +92,13 @@ With a bare-bones version of the `GuessingGame` written, you should now include 
   | 1          | "All luck!"                      |
   | 2 to 4     | "Okay, that was amazing!"        |
   | 5 to 6     | "Not bad!"                       |
-  | 7          | "I think you can do better..."   |
-  | 8 to 9     | "Stop playing"                   |
-  | 10 or more | "Worst of all time" |
+  | 7          | "Surely you can do better..."    |
+  | 8 to 9     | "For real bruh?"                 |
+  | 10 or more | "Delete your account."            |
 
   It may be helpful to get out a piece of paper and draw the **flowchart** before you start writing the code.
 
-- **Upgrade #2 - Game Over:** Once the user correctly guesses the secret number, your game currently continues to allow more guesses to be made (go ahead try it, I'll wait!). Update your code so that, when more guesses are made after the game ends, you should print out something like the following, instead of telling them if their guess was right or not.
+- **Upgrade #2 - Game Over:** Once the user correctly guesses the secret number, currently your game still allows more guesses to be made (go ahead try it). Update your code so that, when more guesses are made after the game ends, you should print out something like the following instead:
 
   ```
   Game Over: You won!

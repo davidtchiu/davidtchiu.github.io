@@ -2,7 +2,7 @@
 
 ### Lab: Writing the Stomach Class
 
-In this assignment you will write your first class from scratch. This class models a very rudimentary stomach, which can ingest food, and digest food. (Image source: Flaticon License)
+In this assignment you will write your first class from scratch. This class models a very rudimentary stomach, which can ingest food, regurgitate, and digest food. (Image source: Flaticon License)
 
 <img src="figures/stomach.png" width="300px" />
 
