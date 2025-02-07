@@ -65,7 +65,7 @@ Here are your assigned partners for today's lab.
 
 - Remember our systematic way of defining classes? The `GuessingGame` class has a secret number, as well as the number of times the user has tried to guess that number. Go ahead and get started putting those in place.
 
-- Your class should have one constructor:
+- Constructors:
 
   - Write a default constructor that picks a random integer between 1 and 50, and remembers it as its secret number.
 
