@@ -32,9 +32,9 @@
 - (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: "Bitmap Indexing for Database Systems"
 - (05/2024) I will be serving on the program committee for [HiPC 2024](https://hipc.org/).
 - (05/2024) I'm honored to receive the 2024 Influential Faculty of Color Award, University of Puget Sound.
-- (05/2024) My student, Julia Kaeppel, has been named the Goman Outstanding Senior Award in Computer Science.
-- (12/2023) We have received the Best Paper Award at IEEE/ACM BDCAT 2023 conference for "Workload-Aware Cache Management of Bitmap Indices"! Here's a [featured story](https://www.pugetsound.edu/stories/computer-science-student-and-professor-university-puget-sound-win-best-paper-big-data) in The Hatchet.
-- (10/2023) Our paper, "Workload-Aware Cache Management of Bitmap Indices" has been accepted for publication at BDCAT 2023. Congratulations to my student, Julia Kaeppel!
+- (05/2024) My research student, Julia Kaeppel, has been named the Goman Outstanding Senior in Computer Science.
+- (12/2023) We have received the Best Paper Award at IEEE/ACM BDCAT 2023 conference for "Workload-Aware Cache Management of Bitmap Indices." Here's a [featured story](https://www.pugetsound.edu/stories/computer-science-student-and-professor-university-puget-sound-win-best-paper-big-data) in The Hatchet.
+- (10/2023) Our paper, "Workload-Aware Cache Management of Bitmap Indices" has been accepted for publication at BDCAT 2023.
 - (8/2023) Appointed to serve on the Total Compensation and Benefits Project, University of Puget Sound.
 - (7/2023) Serving on the PC for [BDCAT 2023](https://bdcat-conference.org/).
 - (4/2023) Congrats to Julia Kaeppel on receiving a McCormick Student Research Award.
