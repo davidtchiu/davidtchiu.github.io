@@ -24,6 +24,7 @@
 ### Recent Activities
 
 - (02/2025) Faculty search committee member, Communications Studies, University of Puget Sound.
+- (08/2024) Co-chairing the International Education Committee (IEC), University of Puget Sound.
 - (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
 - (09/2024) Serving as a New Faculty Mentor for 2024.
 - (08/2024) I'm excited to be teaching at the [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html), Taiwan, in 2025.
