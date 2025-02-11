@@ -6,7 +6,7 @@
   David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/mathematics-computer-science-current-students">University of Puget Sound</a>.
   </p>
   <p>
-  David received a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> in 2010 as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was advised by <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now Founding Director of UGA's School of Computing). He worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows in distributed cloud systems. Prior to Ohio State, he studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a>  on projects involving the web transmission of math education modules. Between 2010 to 2014, he was an Assistant Professor and the Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with the University of Puget Sound as an Assistant, Associate, and Full Professor. He also completed a rotation as Department Chair from 2019 to 2022. 
+  David received a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> in 2010 as a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>. He was advised by <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now Founding Director of UGA's School of Computing). For his dissertation, David worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows in distributed cloud systems. Prior to Ohio State, he studied under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a>  on projects involving the web transmission of math education modules. Between 2010 to 2014, he was an Assistant Professor and the Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with the University of Puget Sound as an Assistant, Associate, and Full Professor. He also completed a rotation as Department Chair from 2019 to 2022. 
   </p>
   <p>
   David has over 20 years of college teaching experience and is heavily engaged in mentoring and research with undergraduates. He has supervised over 25 research students working on topics spanning data management and cloud computing. He regularly serves on the organizational and technical program committees of international conferences in these areas.  David has received several teaching and research awards, including the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), the Bartanen Research Award (2017) from the University of Puget Sound, as well as the Eleanor Quinlan Memorial Award for Excellence in Teaching (2009) from The Ohio State University.
@@ -18,11 +18,12 @@
 </div>
 
 
-[Curriculum Vitae](CV.pdf).
+[Curriculum Vitae](CV.pdf)
 
 
 ### Recent Activities
 
+- (02/2025) Faculty search committee member, Communications Studies, University of Puget Sound.
 - (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
 - (09/2024) Serving as a New Faculty Mentor for 2024.
 - (08/2024) I'm excited to be teaching at the [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html), Taiwan, in 2025.
