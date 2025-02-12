@@ -14,32 +14,35 @@ I picked a number between 1 and 50. Try and guess!
 
 You guessed 25.
 Your guess is cold.
-Try a little higher.
+It's higher.
+
+you guessed -10.
+Error: Your guess -10 is outside the legal range of 1 and 50!
 
 You guessed 15.
 Your guess is icy freezing miserable cold.
-Try a little higher.
+It's higher.
 
 You guessed 30.
 Your guess is warm.
-Try a little higher
+It's higher.
 
 You guessed 40.
 Your guess is extremely warm.
-Try a little lower.
+It's lower.
 
 You guessed 38.
 Your guess is scalding hot!
-Try a little lower.
+It's lower.
 
 You guessed 37.
 Congratulations, you figured it out in 7 guesses!
-I've seen better.
+Meh, I've seen better.
 ```
 
 #### Student Outcomes
 
-- To practice with conditionals
+- To practice with writing conditional statements
 - More practice with class writing
 
 <!-- 
@@ -73,10 +76,16 @@ Here are your assigned partners for today's lab.
 
   - Write a second constructor that inputs the upper-bound for the secret number. It then picks a random number between 1 and that upper-bound (inclusively). So if the user starts a game with 200 input as the upper-bound, the game would randomly choose a secret number between 1 and 200.
 
+    - You need to practice defensive programming here. If the user enters a number less than 1. Think about what should you do instead.
+
   - Your constructors should also greet the player with a message and inform them of the range of numbers from which to guess. See the interaction in the beginning of this lab for a sample greeting.
 
-- You will need to write a `guess(...)` method that is called every time the user wants to make a guess. This method should take a number as its input, and it does not need to `return` a value. When the user calls `guess(...)`, it first compares the input parameter with the stored *secret number*. If the guess is correct, you should print out a message congratulating the user, and let them know how many guesses it took them. (Again, see the sample output at the top of this page to understand the format of your printed message). Otherwise, if the user's guess is wrong, then you need to tell the user whether their guess needs to be **"higher"** or **"lower"**.
-
+- You will need to write a `guess(...)` method that is called every time the user wants to make a guess. This method should take a number as its input, and it does not need to `return` a value. When the user calls `guess(...)`, it first compares the input parameter with the stored *secret number*.
+  - If the guess is correct, you should print out a message congratulating the user, and let them know how many guesses it took them. (Again, see the sample output at the top of this page to understand the format of your printed message).
+  - Otherwise, the user's guess is wrong.
+    - In this case, you need to tell the user whether their guess needs to be **"higher"** or **"lower"**.
+    - However, if the user guessed something outside of the valid range, you should print an error message instead of telling them whether they need to go higher or lower.
+    
   - Double-check that your program works by playing games multiple times. To make testing easier, remember that you can inspect the game object to see what the *secret number* actually is. If there is ever any behavior that seems wrong, go back to your code and try to figure out what caused that!
 
       - Don't be afraid to go in your code to print out the values of variables when figuring out what went wrong! That's common practice while "debugging."
@@ -92,8 +101,8 @@ With a bare-bones version of  `GuessingGame` written, you should now include the
   | 1          | "All luck!"                      |
   | 2 to 4     | "Okay, that was amazing!"        |
   | 5 to 6     | "Not bad!"                       |
-  | 7          | "Surely you can do better..."    |
-  | 8 to 9     | "For real bruh?"                 |
+  | 7          | "Meh, I've seen better."    |
+  | 8 to 9     | "Bruh."                 |
   | 10 or more | "Delete your account."            |
 
   It may be helpful to get out a piece of paper and draw the **flowchart** before you start writing the code.
