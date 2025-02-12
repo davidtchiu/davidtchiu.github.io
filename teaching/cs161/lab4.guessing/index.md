@@ -6,7 +6,7 @@ In this lab, you will create the "number guessing game" --- the computer will pi
 
 The player will enter guesses through the BlueJ interface, calling a `guess()` method and providing a parameter. The program will let the player know how close their guess is (if they are "hot" or "cold", and whether their guess was too high or too low). When finished, your program's output might look something like:
 
-Note that I called a `guess()` method multiple times with parameters 25, 15, 30, 40, 38, and 37. If you have BlueJ's Terminal set to "Clear screen at method call", then you will only see one of these at a time. Uncheck that option to be able to see your game history!
+Note that I called a `guess()` method multiple times with parameters 25, -10, 15, 30, 40, 38, and 37. If you have BlueJ's Terminal set to "Clear screen at method call", then you will only see one of these at a time. Uncheck that option to be able to see your game history!
 
 ```
 Welcome to the Guessing Game!
@@ -64,9 +64,9 @@ Here are your assigned partners for today's lab.
 
 #### Part 1: The Bare-Bones Guessing Game
 
-- Create a new project in BlueJ using the `Project > New Project` menu option. Inside, you will create just one Java class: `GuessingGame`. We'll start by building a naive class, and eventually build on top of it.
+- Create a new project in BlueJ using the `Project > New Project` menu option. Inside, you will create just one Java class: `GuessingGame`. We'll start by building a "barebones" game, and eventually build it out to be more robust. Have fun!
 
-- Remember our systematic way of defining classes? The `GuessingGame` class has a secret number, as well as the number of times the user has tried to guess that number. Go ahead and get started putting those in place.
+- What instance variables do you need? You'll actually need several to complete this program, but I'll get you started on one obvious one: your game needs to remember a `secret number`, which is just an integer.
 
 - Constructors:
 
@@ -76,7 +76,7 @@ Here are your assigned partners for today's lab.
 
   - Write a second constructor that inputs the upper-bound for the secret number. It then picks a random number between 1 and that upper-bound (inclusively). So if the user starts a game with 200 input as the upper-bound, the game would randomly choose a secret number between 1 and 200.
 
-    - You need to practice defensive programming here. If the user enters a number less than 1. Think about what should you do instead.
+    - You need to practice defensive programming here. If the user enters a number less than 1. Think about what should you do instead to start the game.
 
   - Your constructors should also greet the player with a message and inform them of the range of numbers from which to guess. See the interaction in the beginning of this lab for a sample greeting.
 
