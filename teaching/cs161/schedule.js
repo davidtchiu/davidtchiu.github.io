@@ -118,7 +118,7 @@ let days = {
       },
       // {
       //   name: "Lab 5",
-      //   title: "Circle Drawer (Object Interaction)",
+      //   title: "Circle Drawer (Object Aliasing & Interaction)",
       //   url: "lab5.circleDrawer/",
       //   due: "2/21/2025",
       // },
