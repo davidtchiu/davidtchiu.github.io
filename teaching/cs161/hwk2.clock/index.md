@@ -30,7 +30,7 @@ There are no starter files provided for this project. To create a new project, f
 
 #### Instructions
 
-- **Instance Variables:** What do all clocks need to remember about themselves? Well, your clocks for this project need to store the hour, minute, and whether it is am/pm. (You can ignore seconds.) For the am/pm indicator, I would use a `boolean` data type to store an instance variable called `pm`.
+- **Instance Variables:** What do all clocks need to remember about themselves? Well, your clocks for this project need to store the hour, minute, and whether it is am/pm. (You can ignore seconds for this homework.) For the am/pm indicator, I would use a `boolean` data type to store an instance variable called `pm`.
 
 - **Define a constructor:** The Clock constructor should be written to accept the hour, minute, and a boolean indicating whether the clock should be read as am or pm. Take the caller's inputs and store them in the corresponding instance variables. If you need a refresher on how to do this, check out Lab 2 (Triangle), or go to your class notes on Circle and TicketMachine.
 
