@@ -200,7 +200,7 @@ let days = {
     "Lab 4: Secret Number",
     "Lab 4 review; Data Types",
     // wk 5
-    "Primitives and numeric type-casting (narrowing, widening)",
+    "Primitives and Type-Casting (narrowing, widening); binary integer representation",
     "Classes as types: references, null",
     "Lab 5: Circle Drawer",
     "Lab 5 review; Object comparison",
