@@ -66,21 +66,21 @@ Here are your assigned partners for today's lab.
 
 - Create a new project in BlueJ using the `Project > New Project` menu option. Inside, you will create just one Java class: `GuessingGame`. We'll start by building a "barebones" game, and eventually build it out to be more robust. Have fun!
 
-- What instance variables do you need? You'll actually need several to complete this program, but I'll get you started on one obvious one: your game needs to remember a `secret number`, which is just an integer.
+- **What instance variables do you need?** You'll actually need several to complete this program, but I'll get you started on one obvious one: your game needs to remember a `secret number`, which is just an integer.
 
-- Constructors:
+- **Two Constructors**:
 
-  - Write a default constructor that picks a random integer between 1 and 50, and remembers it as its secret number.
+  - Write a *default* constructor that simply picks a random integer between 1 and 50, and remembers it as its secret number.
 
     - You may want to return to your notes to remind yourself how to generate random values.
 
-  - Write a second constructor that inputs the upper-bound for the secret number. It then picks a random number between 1 and that upper-bound (inclusively). So if the user starts a game with 200 input as the upper-bound, the game would randomly choose a secret number between 1 and 200.
+  - Write another constructor that inputs the upper-bound for the secret number. It then picks a random number between 1 and that upper-bound (inclusively). So if the user starts a game with 200 input as the upper-bound, the game would randomly choose a secret number between 1 and 200.
 
-    - You need to practice defensive programming here. If the user enters a number less than 1. Think about what should you do instead to start the game.
+    - You need to practice defensive programming here. If the user enters a value less than 1. Think about what should you do instead to start the game.
 
   - Your constructors should also greet the player with a message and inform them of the range of numbers from which to guess. See the interaction in the beginning of this lab for a sample greeting.
 
-- You will need to write a `guess(...)` method that is called every time the user wants to make a guess. This method should take a number as its input, and it does not need to `return` a value. When the user calls `guess(...)`, it first compares the input parameter with the stored *secret number*.
+- **Making a Guess** You will need to provide a method for users to make a guess. Write a `guess()` method that takes a number as input. It does not need to `return` a value. When the user calls `guess()`, it first compares the input parameter with the stored *secret number*.
   - If the guess is correct, you should print out a message congratulating the user, and let them know how many guesses it took them. (Again, see the sample output at the top of this page to understand the format of your printed message).
   - Otherwise, the user's guess is wrong.
     - In this case, you need to tell the user whether their guess needs to be **"higher"** or **"lower"**.

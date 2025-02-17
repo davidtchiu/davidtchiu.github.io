@@ -41,12 +41,12 @@ let days = {
         url: "hwk2.clock/",
         due: "2/14/2025", // Fri, wk 4
       },
-      // {
-      //   name: "Hwk 3",
-      //   title: "Fractions (Object Interaction)",
-      //   url: "hwk3.fraction/",
-      //   due: "2/24/2025", // Mon, wk 6
-      // },
+      {
+        name: "Hwk 3",
+        title: "Fractions (Object Interaction)",
+        url: "hwk3.fraction/",
+        due: "2/24/2025", // Mon, wk 6
+      },
       // {
       //   name: "Hwk 4",
       //   title: "Robots (Code Abstraction and Modularity)",
