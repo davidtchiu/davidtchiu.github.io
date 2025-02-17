@@ -39,12 +39,12 @@ let days = {
         url: "hwk3.ls2/",
         due: "2/14/2025",   // Fri, wk 4
       },
-      // {
-      //   name: "Hwk 4 (dsh)",
-      //   title: "David Shell",
-      //   url: "hwk4.dsh/",
-      //   due: "3/3/2025", // Mon, wk 7
-      // },
+      {
+        name: "Hwk 4 (dsh)",
+        title: "David Shell",
+        url: "hwk4.dsh/",
+        due: "3/3/2025", // Mon, wk 7
+      },
       // {
       //   name: "Hwk 5 (mmm)",
       //   title: "Matrix Multiplication",
@@ -120,7 +120,7 @@ let days = {
     "Processes: state transitions",
     "Processes: fork() system call",
     // wk 5
-    "Processes: exec()",
+    "Processes: exec() system call",
     "Processes: wait(); zombies and orphans",
     "Threads; User vs. kernel threads",
     // wk 6
