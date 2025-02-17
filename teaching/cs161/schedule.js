@@ -45,7 +45,7 @@ let days = {
         name: "Hwk 3",
         title: "Fractions (Object Interaction)",
         url: "hwk3.fraction/",
-        due: "2/24/2025", // Mon, wk 6
+        due: "2/26/2025", // Mon, wk 6
       },
       // {
       //   name: "Hwk 4",
