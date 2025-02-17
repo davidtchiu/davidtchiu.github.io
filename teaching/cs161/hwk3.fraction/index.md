@@ -2,21 +2,21 @@
 
 ### Homework: Fractions
 
-The key to the object-oriented programming (OOP) paradigm is to write classes, then create objects of those classes to accomplish a greater goal. In this assignment, you'll get first-hand
-experience with object interaction, e.g., storing references (pointers) to objects and 
-calling methods on them. 
+The key to the object-oriented programming (OOP) paradigm is to write classes, then create objects of those classes to accomplish a greater goal. In this assignment, you'll get first-hand experience with object interaction, e.g., storing references (pointers) to objects and calling methods on them. 
 
 For this assignment, you'll build a class that deals with fractions. Here's an example of object
-interaction. For one fraction $$a/b$$ to divide another fraction, you need to first input
-another fraction object, say $$c/d$$, that you want to divide with. Then you tell this *other* 
-fraction to invert itself to become $$d/c$$. Then you need to ask it for its numerator $$d$$ 
-and denominator $$c$$ and multiply them with $$a$$ and $$b$$, respectively. 
+interaction. For one fraction $$A/B$$ to divide another fraction, you need to input
+another fraction object, say $$C/D$$, that you want to divide with. Then you tell this *other* 
+fraction to invert itself to become $$D/C$$. Then you need to ask it for its numerator $$D$$ 
+and denominator $$C$$ and multiply them with $$A$$ and $$B$$, respectively. In the above interaction, it's
+essential that you see how you'd need to ask this other fraction to manipulate itself by calling methods on it to transform $$C/D$$ into $$D/C$$. But it's also essential that, because of object aliasing, you revert this other fraction back to its original form $$C/D$$.
 
 For this assignment, you'll build a class that deals with fractions as individual "objects."
 
 #### Student Outcomes
 
 - Exposure to object interaction.
+- Exposure to object aliasing.
 - Exposure to making method calls on object references.
 - Exposure to integer divide and type conversion.
 - Exposure to type casting.
@@ -105,17 +105,40 @@ We need to provide some methods to our `Fraction` class. Let's start with writin
   System.out.println(f3.equals(f4));  // this should print false!
   ```
 
-#### Arithmetic Operations (Inputting Other Fractions!)
+#### Arithmetic Operations (Inputting Other Fractions as Arguments!)
 Now that we have the basics down, we can finally implement add, subtract, multiply, and divide! Before diving in, when implementing methods that take another `Fraction` object as input, you need to ensure that the input `Fraction` remains unchanged. Your methods should not modify the state of the input `Fraction` under any circumstances. Only the current (this) `Fraction` is changed.
 
-- Let's first write `add(Fraction other)`, which accepts a single `Fraction` object named `other` to add to the current one. This method does not return a value. If one of the fractions is *undefined*, then take no action. Otherwise, you need to ensure that both fractions' denominators agree. If they already are equal, then simply add the *other* numerator to the current one, and you're done. If they don't agree, then you need to multiply their denominators together. Then multiply the current numerator by the *other* fraction's denominator. Then multiply the other fraction's numerator with the current fraction's denominator and add that sum to your current numerator. 
+- Let's first write `add(Fraction other)`, which accepts a `Fraction` object named `other` to add to  *this* one. This method does not return a value. First, check if either one of the fractions is *undefined*, then take no action. If it passes this check, then you need to ensure that both fractions' denominators agree (are equal). If they already *are* equal, then simply add the *other* numerator to the current one, and you're done. If they don't agree, then you need to multiply the *this* numerator by the *other* fraction's denominator, and multiply the *other* numerator with the *this* denominator and add the two products together to obtain the new numerator. Finally, multiply their denominators together to obtain the new denominator. Test this out with different cases to prove to yourself that it works before moving on.
+  ```java
+  Fraction f1 = new Fraction(2,15);
+  Fraction f2 = new Fraction(2,3);
+  f1.add(f2);
+  System.out.println(f1.toString());  // Now 36/45 (the denominators don't agree so, 6/45 + 30/45)
+  System.out.println(f2.toString());  // Still 2/3
+  ```
+  Remember to ensure that the *other* fraction is left unchanged after calling this method.
 
-- Now start working on `minus(Fraction other)`, which accepts a single `Fraction` object to subtract from the current one. You can go about this in similar fashion to `add()`, and that's totally fine, but do you need to do all that work again? Isn't subtraction just adding a fraction that's been  *negated*?
 
-- Write `multiply(Fraction other)`, which is likely the easiest of the bunch. Simply multiply the numerators and denominators together with the given `Fraction`. This method, like all the others, does not return a value.
+- Now start working on `minus(Fraction other)`, which accepts a single `Fraction` object to subtract from the current one. You can go about this in similar fashion to `add()`, and that's totally fine, but do you need to do all that work again? Isn't subtraction just adding a fraction that's been *negated*? (Hmm, you already wrote `negate()` and `add()` ... do you need to reinvent the wheel?) Remember to ensure that the *other* fraction is left unchanged after calling this method.
 
-- Finally, write `divide(Fraction other)`. To  divide two `Fraction`s you need to first invert the *other* one. Then multiply them together. (There's a reason I had to implement `multiply()` first!)
+  ```java
+  Fraction f1 = new Fraction(2,3);
+  Fraction f2 = new Fraction(3,10);
+  f1.minus(f2);
+  System.out.println(f1.toString());  // Now 11/30
+  System.out.println(f2.toString());  // Still 3/10
+  ```
 
+- Write `multiply(Fraction other)`, which is likely the easiest of the bunch. Simply multiply the numerators and denominators together with the given `Fraction`. This method, like all the others, does not return a value. Remember to ensure that the *other* fraction is left unchanged after calling this method.
+
+- Finally, write `divide(Fraction other)`. To  divide two `Fraction`s you need to first invert the *other* one. Then multiply them together. (There's a reason I had to implement `invert()` and `multiply()` first!) Remember to ensure that the *other* fraction is left unchanged after calling this method.
+  ```java
+  Fraction f1 = new Fraction(2,3);
+  Fraction f2 = new Fraction(5,11);
+  f1.divide(f2);
+  System.out.println(f1.toString());  // Now 22/15
+  System.out.println(f2.toString());  // Still 5/11
+  ```
 
 
 <!-- #### Reduced Form (Need to Loop)
