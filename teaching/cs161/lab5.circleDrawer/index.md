@@ -38,24 +38,23 @@ The following file(s) have been provided for this homework.
 
 #### Instructions
 
-- Download the `CircleDrawer` project from the link above and extract its contents, then start BlueJ and open the project. Take a moment to familiarize yourself with the code in the `CircleDrawer` class. A `CircleDrawer` contains two instance variables as references to a pair of Circles (named `first` and `second`).
+1. Download the `CircleDrawer` project from the link above and extract its contents, then start BlueJ and open the project. See how a `CircleDrawer` contains two instance variables of type Circles (named `first` and `second`). This demonstrates that classes like `Circle` can serve as a variable's data type!
 
-- Notice that the `CircleDrawer` class has two constructors. The default constructor is not given references to the two Circles to manage, it just sets both fields to `null`. The second constructor is given references to two `Circles`, and it sets both instance variables appropriately.
+2. Notice that the `CircleDrawer` class has two constructors. The *default* constructor just sets both instance variables to `null`. The secondary constructor takes to two `Circle` objects as arguments, and it sets both instance variables appropriately.
 
-  - Using the menus in BlueJ, instantiate two `Circle` objects. You can name them `c1` and `c2`.
+  - Using the menus in BlueJ, instantiate two `Circle`s. You can name them `c1` and `c2`.
   - Change `c1` to green, change size to `50`.
   - Change `c2` to red, change size to `75`. Then move it down by `50` pixels.
-  - Now create a new `CircleDrawer`, called drawer with its second constructor (the one that requires references to two Circles). Input `c1` and `c2` as your inputs. The new `CircleDrawer` will now "control" the two circles.
-
-  - Inspect the `CircleDrawer` object on the workbench, and you see that `first` and `second` store references (arrows). Follow the arrows by double-clicking on them. It opens the inspector to the Circles you created!
+  - Now create a new `CircleDrawer` using its secondary constructor . Input `c1` and `c2` to be your arguments. The new `CircleDrawer` will now "control" the two circles.
+  - Inspect the `CircleDrawer` object, and you see that `first` and `second` store references (see those *arrows?*). Double-clicking on one of the arrows, and it opens the inspector to the Circle you just created!
 
     <img src="figures/drawer2.png" width="300px" border="1px" />
 
-  - Call the `drawCircles()` method on the drawer, and notice that both Circles appear. (If you call `eraseCircles()` both disappear!)
+  - Call the `drawCircles()` method on the drawer, and notice that both Circles appear. (If you call `eraseCircles()` both disappear.)
 
     <img src="figures/drawer1.png" width="300px" border="1px" />
 
-  - So, this gives us some idea about what a `CircleDrawer` object does. It's basically a "puppet master" that bosses around one or two Circles.
+  - This gives us some idea about what a `CircleDrawer` does. It's basically a "puppet master" that bosses around one or two assigned Circles.
 
 <!-- - It's time to start weaning you off the BlueJ menus, and start learning how to do everything in code. Create a new class, and name it `Tester`. Clean up the "boilerplate code" that BlueJ fills in automatically. There are no fields. Now create the `main` method, which always has the same signature below:
 
@@ -97,35 +96,38 @@ The following file(s) have been provided for this homework.
 
 - After you're done, close out the code window. Right click on the `Tester` class and call the main method (Don't create a new `Tester` object on the workbench). You should again see the green and red circles drawn. -->
 
-- Now go back in the `CircleDrawer` code and take a look at `drawCircles()` and `eraseCircles()`. Their code looks pretty straightforward. Calling them will make both circles visible or invisible, but... that's assuming that our `first` and `second` fields actually refer to actual `Circle` objects, and not `null`.
+3.  Now go back in the `CircleDrawer` source code and take a look at `drawCircles()` and `eraseCircles()`. Calling them will make both circles visible or invisible, but that's assuming that `first` and `second` actually refer to actual `Circle` objects, and not a `null` reference.
 
-  - Create a `CircleDrawer` object using its default constructor (that's the one with no inputs).
-  - Inspect it, and see that `first` and `second` both point to `null` (no arrows to circle objects as before).
-  - Let's see what happens if you tried to call `drawCircles()` or `eraseCircles()`.
-  - The program should **crash** with a `"NullPointerException."` That's bad news -- it means our code isn't all that robust.
+  - Create a `CircleDrawer` object using its default constructor (that's the one with no input arguments).
+  - Inspect it, and see how `first` and `second` both point to `null`.
+  - Try calling `drawCircles()` or `eraseCircles()`. The program should **crash** with a `"NullPointerException."` That's bad news -- it means our code isn't all that robust.
 
-- Back in the `CircleDrawer` code, add necessary changes to `drawCircles()` and `eraseCircles()` so that no action is taken if either field refers to `null`. To do this, use an if-statement to check if each field is `==` or `!=` to the keyword `null`. Make sure you test these out after you're done.
+4. **Add necessary changes** to `drawCircles()` and `eraseCircles()` so that no action is taken if either `first` or `second` is equal to `null`. To do this, use an if-statement to check if each field is `==` or `!=` to the keyword `null`. Make sure you test these out after you're done.
 
-- Now **modify** the `drawCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
+5. Now **modify** the `drawCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
 
-  - But how do you get a `Circle`'s radius? One way is to go into `Circle` and making the `diameter` public instead of private. However this is a practice considered highly dangerous because it exposes `diameter` to unwanted changes. You should instead add a method in  the `Circle` class that returns its diameter. 
-  - Again, test this out. Ahem -- if your Circle's diameter is say, **41**, it *should* be drawn. 
+  - But how do you get a `Circle`'s radius? An easy way is to go into `Circle` source code and making the `diameter` *public* instead of *private*. However this is usually considered prohibitive because it exposes `diameter` to unwanted changes. You should instead add a method in the `Circle` class that simply returns its `diameter`. 
+  - Again, test this out. Ahem -- if your Circle's diameter is say, **41**, it *should* be drawn. If you just can't get yours to draw, write some code to print out the calculated radius. Are you falling victim to integer divide?
 
-- Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then draw both of them.
+6. Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then you should draw both of them.
 
-- **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 10 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
+7. **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 10 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
 
-  - If either circle is `null`, simply return 0.
+  - Now, if *either* circle is `null` then you can simply return 1 in this method.
 
-- **Add a method** in `CircleDrawer` called `addCircle()` that inputs a `Circle` object, and it doesn't return anything. This method will first erase both `Circle`s. If *either* of the two instance variables (`first`, `second`) are pointing to `null`, then simply assign the new `Circle` to that field. If neither reference is pointing to `null`, then promote the second `Circle` to the `first`, then sets the newly-input `Circle` to be the `second`. After you're done, make both Circles visible.
+8. **Add a method** in `CircleDrawer` called `addCircle()` that inputs a `Circle` object, and it doesn't return. This method must first first erase both `Circles` (Yep, just call `eraseCircles()` instead re-writing all that code). Now:
+  - If *either* of the two circles are `null`, then simply assign the new `Circle` to that field.
+  - If *neither* of the two are pointing to `null`, then promote the second `Circle` to the `first`, then set the newly-input `Circle` to be the `second`.
+  - After you're done with all that, make both Circles visible.
+  - To test this method, I would create 3 circles in BlueJ. Then create a CircleDrawer using the default constructor so that both `first` and `second` are `null`. Then call `addCircle()` 3 consecutive times (on the 3 circles you created).
 
-  - To test, I would create 3 circles in BlueJ. Then create a CircleDrawer using the default constructor so that both `first` and `second` are `null`. Then call `addCircle()` 3 consecutive times (on the 3 circles you created).
+9. **Add a method** called `swapCircles()` that inputs and returns nothing. Calling this method will cause  `first` to now point to whatever `second` held, and vice versa. 
 
-- **Add a method** called `swapCircles()` that inputs and returns nothing. Calling this method will cause  `first` to now point to whatever `second` held, and vice versa. 
-
-- **Add a method** called `replaceSmallest()` that takes a `Circle` as input. In `CircleDrawer`, if either of the two instance variables are `null`, simply add the new circle into the empty slot. If both instance variables are non-null, this method must replace the smaller circle with the new one. We need to respect seniority, though:
-  - If `first` is smaller, we'll first promote `second` to take its place, and assign the new circle in `second`'s place.
-  - If `second` is smaller, we'll just replace it with the new circle. In the case of a tie, replace second.
+10. **Add a method** called `replaceSmallest()` that takes a `Circle` as input. 
+  - If *either* of the two circles are `null`, simply add the new circle into the empty slot. 
+  - If *neither* of the two are pointing to `null`, this method must replace the *smaller* circle with the new, given one. We need to respect seniority, though:
+    - If `first` is smaller, we'll first promote `second` to take its place, and assign the new circle in `second`'s place.
+    - If `second` is smaller, we'll just replace it with the new circle. In the case of a tie, replace second.
   - This method seems to have quite a bit of similarities to `addCircle()`. You don't need to, but kudos if you can figure out how to utilize `addCircle()` and `swapCircles()` to simplify writing this method.
 
 
