@@ -56,6 +56,8 @@ The following file(s) have been provided for this homework.
 
   - This gives us some idea about what a `CircleDrawer` does. It's basically a "puppet master" that bosses around one or two assigned Circles.
 
+  - That's an example of **Object Aliasing** that we talked so much about in class! `first` is aliased to `c1` and `second` is aliased to `c2`.
+
 <!-- - It's time to start weaning you off the BlueJ menus, and start learning how to do everything in code. Create a new class, and name it `Tester`. Clean up the "boilerplate code" that BlueJ fills in automatically. There are no fields. Now create the `main` method, which always has the same signature below:
 
   ```java
@@ -120,8 +122,9 @@ The following file(s) have been provided for this homework.
   - If *neither* of the two are pointing to `null`, then promote the second `Circle` to the `first`, then set the newly-input `Circle` to be the `second`.
   - After you're done with all that, make both Circles visible.
   - To test this method, I would create 3 circles in BlueJ. Then create a CircleDrawer using the default constructor so that both `first` and `second` are `null`. Then call `addCircle()` 3 consecutive times (on the 3 circles you created).
+  - Here, we see *another* example of **object aliasing!** The new Circle that you input is now also referenced by your input parameter!
 
-9. **Add a method** called `swapCircles()` that inputs and returns nothing. Calling this method will cause  `first` to now point to whatever `second` held, and vice versa. 
+9. **Add a method** called `swapCircles()` that inputs and returns nothing. Calling this method will cause  `first` to now point to whatever `second` held, and vice versa. In other words, they exchange whatever they're pointing at (even if they're pointing to `null`). To do this correctly, you'll need to declare a local variable of type `Circle` to temporarily hold one of them so it doesn't get overwritten. 
 
 10. **Add a method** called `replaceSmallest()` that takes a `Circle` as input. 
   - If *either* of the two circles are `null`, simply add the new circle into the empty slot. 
