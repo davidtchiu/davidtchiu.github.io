@@ -1,7 +1,7 @@
 ## CS 161 - Intro to Computer Science
 
 ### Lab: Diamonds (Abstraction)
-David is a Rihanna super fan. While jamming to "Diamonds," he realized diamonds aren't a part of the _shapes_ toolkit he provides his CS 161 students, and he felt sad. Instead of creating diamonds from scratch (and saving ourselves from copying and pasting other shape classes), we'll make a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles needs to be flipped upside down and placed right below the other, as shown below. Given that we already have a `Triangle` class in our toolkit, it will vastly simplify our work in constructing `Diamond`s.
+David is a Rihanna super fan. While rocking to *"Diamonds"*, he was mortified to recall that diamonds aren't a part of the _shapes_ toolkit he provides his CS 161 students. Instead of creating diamonds from scratch (and saving ourselves from copying and pasting other shape classes), David made a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles needs to be flipped upside down and placed right below the other, as shown below. Given that we already have a `Triangle` class in our toolkit, it will vastly simplify our work.
 
   <img src="figures/lab6_diamond.png" width="100px" />
 
@@ -10,6 +10,7 @@ This lab is all about abstraction and object interaction.
 #### Student Outcomes
 
 - Practice abstract thinking
+- More practice with object interaction (dot notation)
 
 <!-- 
 #### Working with Partners (Please Read)
@@ -38,42 +39,45 @@ The following file(s) have been provided for this homework.
 
 #### Preliminary: An Improved Triangle Class
 
-You'll find that there's a slightly improved `Triangle` class. This `Triangle` sports a new method called `flip()`. Play around with it to see it in action. As you flip the triangle, notice that it is flipped "in place." That is, it doesn't just turn over downwards.
+You'll find that there's a slightly improved `Triangle` class. This `Triangle` sports a new method called `flip()`. Play around with it to see it in action. As you flip the triangle, notice that it is flipped "in place." That is, it doesn't just turn over downwards and displace from its old position. You'll need to keep that fact in mind for later...
 
 #### Part I: Diamonds
 
-Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shapes we've seen thus far. But as you know, there is code in the other shape classes that we still don't know how to read or what they do underneath the hood. But no worries, such is the power of abstraction. *Truth is, we don't have to know those implementation details!* Let's get started...
+Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shapes we've seen thus far. But as you know, there is code in the other shape classes that we still don't know how to read or what they do underneath the hood. But behold the power of abstraction: *We don't need to know all those implementation details!* Let's get started...
 
-1. Create a new class called `Diamond`. A diamond can be formed using two Triangles (which we have), with one flipped upside down and positioned properly. For now, your `Diamond` class only needs to store references to these two `Triangles` as  instance variables. Because of their placement, I would name them `top` and `bottom`.
+1. Create a new class called `Diamond`. A diamond can be formed using two Triangles, with one flipped upside down and positioned properly. For now, your `Diamond` class only needs to store instance variables pointing to these two `Triangles`. Because of their placement, I would name them `top` and `bottom`.
 
-    - You might as well go ahead and store a diamond's `height` and `width`  as instance variables too. They are both integers.
+    - You might as well go ahead and store a diamond's `height` and `width` as instance variables too. They are both integers.
 
-2. Write a constructor that  accepts two inputs: the `height` and `width` of a  diamond object. First, it needs to *instantiate* both `top` and `bottom` triangles.
+2. Write a constructor that  accepts two inputs: the height and width of the new Diamond object (maybe call these input parameters `h` and `w` so we don't conflate them with the instance variables?).
+    - It needs to *instantiate* both `top` and `bottom` triangles, and go ahead and store these given dimensions in your instance variables.
 
-    - Don't forget to resize the triangles. How large do you need to make these triangles to ensure that your diamond is of the given dimensions? 
-
-    - Each triangle essentially occupies **half** of the height of the new diamond, and they both have the same width as the diamond. You need to flip the bottom triangle upside down, and then move it vertically into place so that the *bases* of the triangles touch. 
-
-    - Make the whole diamond visible too, before leaving the constructor.
+    - Don't forget to resize the triangles. (How nice that Triangles have a `changeSize()` method we can use...) You need to make each triangle **half** of the given height of the new diamond, and they each should have the same width as the diamond.
     
-    - To test, create a few diamonds with various dimensions. Make sure the two triangles are always connected at the base regardless of your diamond's dimensions.
+    - Next you need to flip the bottom triangle and move it vertically into place so that the *bases* of the triangles touch. (Hey, remember that Triangle objects also supports a `moveVertical(int distance)` method? Use it!)
+
+    - Make the whole diamond visible before leaving the constructor.
+    
+    - To test, create a few diamonds with various dimensions. Make sure the two triangles are always connected at the base regardless of your diamond's given dimensions.
 
 
-3. Next, write in the `makeInvisible()` and `makeVisible()` methods to toggle visibility of the diamond. Then move on to `changeColor(String newColor)` to change the color of the diamond. As you write these two methods, you should notice how satisfying it is to be able to call on the individual triangle's methods.
+3. Next, write the `makeInvisible()` and `makeVisible()` methods to toggle visibility of the diamond. Then move on to `changeColor(String newColor)` to change the color of the diamond. As you write these two methods, you should notice how satisfying it is to be able to call on the individual triangle's methods.
 
-    - **Abstraction is about trust**. Notice that, to get the diamond to perform these actions, we don't even have to know about *how* each Triangle goes about performing its own actions. All we need to do is **trust** that it works, and use those methods where we need to!
+    - **Abstraction is about trust and delegation**. Notice that, to get the diamond to perform these actions, we don't even have to know about *how* each Triangle goes about performing its own actions. All we need to do is **trust** that it works, and we simply delegate to them when we need to!
 
-    - In each of these methods, you should not be writing more than two lines of code to get the job done.
+    - In each of these methods, you should not be writing more than two lines of code to get the job done!
 
-4. Now write in `moveVertical(int distance)` and `moveHorizontal(int distance)`. Again, the work we have to do should be minimal.
+4. Now write in `moveVertical(int distance)` and `moveHorizontal(int distance)`. Again, the work you have to do should be minimal.
 
 #### Part II: Change Size
 
-Let's move on to something a little more challenging: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
+Let's move on to something trickier: `changeSize(int newHeight, int newWidth)`. You'll need to change the sizes of the two triangles in such a way that the sum of the heights is equal to `newHeight` and the `width` is adjusted to `newWidth`. Okay, easy enough with a couple calls to the Triangles' `changeSize()` method. 
 
 - However, this will introduce a new problem. The triangles, upon changing their size, may overlap each other or they could be spread farther apart!
 
-- You need to move the bottom triangle up or down to adjust for this gap. But how much do you move it by...? **(Hint: it's a good thing we know the old height of the diamond...)** Recall that when you resize a triangle, the top never changes along the vertical axis -- it's the bottom of the triangle that moves. Draw on a piece of paper to gain insight into when you'd need to move the bottom one up and when you'd need to move the bottom one down (and by how much).
+- You need to move the bottom triangle up or down to adjust for this overlap (or gap). But how much do you move it by? **(Hint: it's a good thing we stored the old height of the diamond as an instance variable...)** Recall that when you re-size a triangle, the top of that triangle never changes along the vertical axis -- it's the base of the triangle that moves. Draw on a piece of paper to gain insight into when you'd need to move the bottom one up and when you'd need to move the bottom one down (and by how much).
+
+- Don't forget to save the *new* height and width in your instance variables!
 
 #### Reflections: Problem Decomposition and Thinking Abstractly
 Hopefully, through this lab, you can see how useful it is to think abstractly. We broke down a bigger problem ("How to build a diamond") and made the key insight that diamonds are nothing more than just 2 triangles, whose code we already have. Then the rest is just a matter of bossing around the triangles so that together, they look and act like a diamond! Knowing this, it's easy to see how we might create new shapes and add them to our toolkit.
