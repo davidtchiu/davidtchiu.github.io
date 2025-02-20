@@ -71,11 +71,13 @@ The following file(s) have been provided for this homework.
     - But how do you get a `Circle`'s radius? An easy way is to go into `Circle` source code and making the `diameter` *public* instead of *private*. However this is usually considered prohibitive because it exposes `diameter` to unwanted changes. You should instead add a method in the `Circle` class that simply returns its `diameter`. 
     - Again, test this out. Ahem -- if your Circle's diameter is say, **41**, it *should* be drawn. If you just can't get yours to draw, write some code to print out the calculated radius. Are you falling victim to integer divide?
 
-6. Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then you should draw both of them.
+6. Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then you should draw both of them. 
+    - Beware of null pointer exceptions!
 
 7. **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 10 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
 
    - Now, if *either* circle is `null` then you can simply return 1 in this method.
+   - Are you getting a zero when you're expecting to get a fraction? It could be due to integer divide...
 
 8. **Add a method** in `CircleDrawer` called `addCircle()` that inputs a `Circle` object, and it doesn't return. This method must first first erase both `Circles` (Yep, just call `eraseCircles()` instead re-writing all that code). Now:
     - If *either* of the two circles are `null`, then simply assign the new `Circle` to that field.
