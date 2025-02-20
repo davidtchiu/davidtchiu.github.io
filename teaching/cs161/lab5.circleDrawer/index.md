@@ -58,46 +58,6 @@ The following file(s) have been provided for this homework.
 
     - That's an example of **Object Aliasing** that we talked so much about in class! `first` is aliased to `c1` and `second` is aliased to `c2`.
 
-<!-- - It's time to start weaning you off the BlueJ menus, and start learning how to do everything in code. Create a new class, and name it `Tester`. Clean up the "boilerplate code" that BlueJ fills in automatically. There are no fields. Now create the `main` method, which always has the same signature below:
-
-  ```java
-  public static void main(String[] args) {
-    // Code goes here
-  }
-  ```
-
-  In the body of the `main` method, write code to do what we had just done using menus. Before you write anything though, you might interested in the following syntax reminders.
-
-  Object Instantiation/Creation:
-
-  ```java
-  ObjectType name = new ObjectType(...);  // 1) ObjectType refers to the Class name
-                                        // 2) name is a good name to call your object variable
-                                        // 3) ... refers to any parameters you wish to input to the constructor
-  ```
-
-  Calling a method on an object:
-
-  ```java
-  name.method(...);    // 1) name is the variable that refers to an object
-                     // 2) ... refers to any parameters input into the method
-  ```
-
-- I got things started for you...
-
-  ```java
-  public static void main(String[] args) {
-      Circle c1 = new Circle();
-      c1.makeVisible();
-      c1.changeColor("green");
-      c1.changeSize(50);
-
-      // Finish the rest
-  }
-  ```
-
-- After you're done, close out the code window. Right click on the `Tester` class and call the main method (Don't create a new `Tester` object on the workbench). You should again see the green and red circles drawn. -->
-
 3. Now go back in the `CircleDrawer` source code and take a look at `drawCircles()` and `eraseCircles()`. Calling them will make both circles visible or invisible, but that's assuming that `first` and `second` actually refer to actual `Circle` objects, and not a `null` reference.
 
     - Create a `CircleDrawer` object using its default constructor (that's the one with no input arguments).
