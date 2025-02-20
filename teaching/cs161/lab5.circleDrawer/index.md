@@ -77,7 +77,7 @@ The following file(s) have been provided for this homework.
 7. **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 9 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
 
    - Now, if *either* circle is `null` then you can simply return 1 in this method.
-   - Are you getting a zero when you're expecting to get a fraction? It could be due to integer divide...
+   - Are you always getting a 0 when you're expecting to get a fraction? It could be due to integer divide, which means you are going to need to type cast.
 
 8. **Add a method** in `CircleDrawer` called `addCircle()` that inputs a `Circle` object, and it doesn't return. This method must first first erase both `Circles` (Yep, just call `eraseCircles()` instead re-writing all that code). Now:
     - If *either* of the two circles are `null`, then simply assign the new `Circle` to that field.
