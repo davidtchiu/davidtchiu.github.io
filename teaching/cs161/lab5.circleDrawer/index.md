@@ -68,8 +68,9 @@ The following file(s) have been provided for this homework.
 
 5. Now **modify** the `drawCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
 
-    - But how do you get a `Circle`'s radius? An easy way is to go into `Circle` source code and making the `diameter` *public* instead of *private*. However this is usually considered prohibitive because it exposes `diameter` to unwanted changes. You should instead add a method in the `Circle` class that simply returns its `diameter`. 
-    - Again, test this out. Ahem -- if your Circle's diameter is say, **41**, it *should* be drawn. If you just can't get yours to draw, write some code to print out the calculated radius. Are you falling victim to integer divide?
+    - But how do you get a `Circle`'s radius? Add a method in the `Circle` class that simply returns its `diameter`.
+    - After you've done that, you need to go back to the `drawCircles` method and call your new "get diameter" method on `first` and `second` using dot notation! Use some if statements to ensure that each of your circles diameters are within the specified range, and make them visible!
+    - Test this out. Ahem -- if your Circle's diameter is say, **41**, it *should* be drawn. If you just can't get yours to draw, write some code to print out the calculated radius. Are you falling victim to integer divide?
 
 6. Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then you should draw both of them. 
     - Beware of null pointer exceptions!
