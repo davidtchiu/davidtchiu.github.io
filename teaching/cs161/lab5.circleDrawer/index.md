@@ -98,7 +98,7 @@ The following file(s) have been provided for this homework.
 
 - After you're done, close out the code window. Right click on the `Tester` class and call the main method (Don't create a new `Tester` object on the workbench). You should again see the green and red circles drawn. -->
 
-3.  Now go back in the `CircleDrawer` source code and take a look at `drawCircles()` and `eraseCircles()`. Calling them will make both circles visible or invisible, but that's assuming that `first` and `second` actually refer to actual `Circle` objects, and not a `null` reference.
+3. Now go back in the `CircleDrawer` source code and take a look at `drawCircles()` and `eraseCircles()`. Calling them will make both circles visible or invisible, but that's assuming that `first` and `second` actually refer to actual `Circle` objects, and not a `null` reference.
 
     - Create a `CircleDrawer` object using its default constructor (that's the one with no input arguments).
     - Inspect it, and see how `first` and `second` both point to `null`.
