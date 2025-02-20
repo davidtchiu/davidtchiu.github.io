@@ -74,7 +74,7 @@ The following file(s) have been provided for this homework.
 6. Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then you should draw both of them. 
     - Beware of null pointer exceptions!
 
-7. **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 10 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
+7. **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 9 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
 
    - Now, if *either* circle is `null` then you can simply return 1 in this method.
    - Are you getting a zero when you're expecting to get a fraction? It could be due to integer divide...
