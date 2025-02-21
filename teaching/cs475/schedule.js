@@ -122,21 +122,21 @@ let days = {
     // wk 5
     "Processes: exec() system call",
     "Processes: wait(); zombies and orphans",
-    "Threads; User vs. kernel threads",
+    "Threads: motivation and kernel support",
     // wk 6
     "Threads: pthread library",
     // "Threads: Performance and data sharing; Amdahl's Law",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
-    "Threads: Amdahl's Law; Coding Example",
+    "Threads: Amdahl's Law; code examples",
     "Scheduling: goals and metrics; FCFS, SJF",
     "Sched: RR, SRTF, MLFQ",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
     "Sched: hyperthreading, multicore considerations",
-    "Synchronization: critical section",
-    "Sync: spin locks; atomic ops",
+    "Sync: critical section problem",
+    "Sync: atomicity and spinlocks",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
@@ -147,20 +147,20 @@ let days = {
     "Sync: more semaphores",
     // wk 11
     "Sync: monitors and condition variables",
-    "Snchronization in Java",
+    "Sync: Java support",
     "<strong><emph>Review</emph></strong>",
     // wk 12
     "<strong><emph>Exam 2</emph></strong>",
     "Memory Management: virtual addressing",
-    "Mem: partitioning and segmentation",
+    "MM: partitioning and segmentation",
     // wk 13
-    "Mem: segmentation",
-    "Mem: paging",
-    "Mem: TLB and page faults",
+    "MM: segmentation",
+    "MM: paging",
+    "MM: TLB and page faults",
     // wk 14
-    "Start Virtual Memory",
-    "VM: replacement policies",
-    "VM: clock",
+    "Virtual Memory: demand paging",
+    "VM: page faults",
+    "VM: Clock algorithm",
     // wk 15
     "VM: memory allocation",
     "VM: malloc(), free()",

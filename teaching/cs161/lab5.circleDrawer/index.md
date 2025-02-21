@@ -64,9 +64,10 @@ The following file(s) have been provided for this homework.
     - Inspect it, and see how `first` and `second` both point to `null`.
     - Try calling `drawCircles()` or `eraseCircles()`. The program should **crash** with a `"NullPointerException."` That's bad news -- it means our code isn't all that robust.
 
-4. **Add necessary changes** to `drawCircles()` and `eraseCircles()` so that no action is taken if either `first` or `second` is equal to `null`. To do this, use an if-statement to check if each field is `==` or `!=` to the keyword `null`. Make sure you test these out after you're done.
+4. **Add necessary changes** to `drawCircles()` so that you only draw the circle(s) when it's not null. To do this, use an if-statement to check if each field is `==` or `!=` to the keyword `null`. Make sure you test these out after you're done.
+    - Make the same changes to `eraseCircles()`
 
-5. Now **modify** the `drawCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
+5. **Add** a new method called `drawStrictCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
 
     - But how do you get a `Circle`'s radius? Add a method in the `Circle` class that simply returns its `diameter`.
     - After you've done that, you need to go back to the `drawCircles` method and call your new "get diameter" method on `first` and `second` using dot notation! Use some if statements to ensure that each of your circles diameters are within the specified range, and make them visible!
@@ -75,7 +76,7 @@ The following file(s) have been provided for this homework.
 6. Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then you should draw both of them. 
     - Beware of null pointer exceptions!
 
-7. **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 9 and another has a diameter of 3, then this method returns 0.333... You should always divide the smaller diameter by the larger.
+7. **Add a method** in `CircleDrawer` called `sizeRatio()` that returns the ratio of the two circle's diameters as a `double`. If one circle has a diameter of 9 and another has a diameter of 3, then this method returns 0.333... You should *always* divide the smaller diameter by the larger.
 
    - Now, if *either* circle is `null` then you can simply return 1 in this method.
    - Are you always getting a 0 when you're expecting to get a fraction? It could be due to integer divide, which means you are going to need to type cast.
