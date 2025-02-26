@@ -206,12 +206,13 @@ let days = {
     "Lab 5 review; Object comparison",
     // wk 6
     "Abstraction and modularity",
-    "Abstraction: Using APIs (Strings)",
-    "<strong><emph>Review</emph></strong>, plus Lab 6: Diamonds",
+    "<strong><emph>Review</emph></strong>",
+    "Lab 6: Diamonds",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
+    "Abstraction: Using APIs (Strings)",
     "Start loops; reading; tracing",
-    "More loops",
+    // "More loops",
     "Lab 7: Loops",
     "More loops: Prime number testing",
     // wk 8
