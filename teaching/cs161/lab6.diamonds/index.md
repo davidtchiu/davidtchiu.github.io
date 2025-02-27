@@ -43,7 +43,7 @@ You'll find that there's a slightly improved `Triangle` class. This `Triangle` s
 
 #### Part I: Diamonds
 
-Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shapes we've seen thus far. But as you know, there is code in the other shape classes that we still don't know how to read or what they do underneath the hood. But behold the power of abstraction: *We don't need to know all those implementation details!* Let's get started...
+Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shapes we've seen thus far. But as you know, there is code in the other shape classes that we still don't know how to read or what they do underneath the hood. But behold the power of abstraction: *We don't need to know all the implementation details of Triangles!* Let's get started...
 
 1. Create a new class called `Diamond`. A diamond can be formed using two Triangles, with one flipped upside down and positioned properly. For now, your `Diamond` class only needs to store instance variables pointing to these two `Triangles`. Because of their placement, I would name them `top` and `bottom`.
 
@@ -75,9 +75,13 @@ Let's move on to something trickier: `changeSize(int newHeight, int newWidth)`. 
 
 - However, this will introduce a new problem. The triangles, upon changing their size, may overlap each other or they could be spread farther apart!
 
-- You need to move the bottom triangle up or down to adjust for this overlap (or gap). But how much do you move it by? **(Hint: it's a good thing we stored the old height of the diamond as an instance variable...)** Recall that when you re-size a triangle, the top of that triangle never changes along the vertical axis -- it's the base of the triangle that moves. Draw on a piece of paper to gain insight into when you'd need to move the bottom one up and when you'd need to move the bottom one down (and by how much).
+- Let's try to understand what's happening. When you make a diamond smaller, the two triangles are both trimmed from the bottom up. That means the top triangle will have its "base" trimmed upward, and the bottom triangle will have its southern tip pulled upward.
 
-- Don't forget to save the *new* height and width in your instance variables!
+    - Likewise, when you're making a diamond larger, it's the bottom of these triangles that are moving downward.
+
+- Knowing that, you now need to move the bottom triangle up or down to adjust for this overlap (or gap). But how much do you move it by? **(Hint: it's a good thing we stored the old height of the diamond as instance variables... you need to find the difference between those and the new dimensions)** Recall that when you re-size a triangle, the top of that triangle never changes along the vertical axis -- it's the base of the triangle that moves. Draw on a piece of paper to gain insight into when you'd need to move the bottom one up and when you'd need to move the bottom one down (and by how much).
+
+- Don't forget to save the *new* height and width in your instance variables *afterward*!
 
 #### Reflections: Problem Decomposition and Thinking Abstractly
 Hopefully, through this lab, you can see how useful it is to think abstractly. We broke down a bigger problem ("How to build a diamond") and made the key insight that diamonds are nothing more than just 2 triangles, whose code we already have. Then the rest is just a matter of bossing around the triangles so that together, they look and act like a diamond! Knowing this, it's easy to see how we might create new shapes and add them to our toolkit.
