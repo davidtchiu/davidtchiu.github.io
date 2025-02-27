@@ -50,9 +50,13 @@ Our objective is to create a new class that can create  `Diamond`s with the same
     - You might as well go ahead and store a diamond's `height` and `width` as instance variables too. They are both integers.
 
 2. Write a constructor that  accepts two inputs: the height and width of the new Diamond object (maybe call these input parameters `h` and `w` so we don't conflate them with the instance variables?).
-    - It needs to *instantiate* both `top` and `bottom` triangles, and go ahead and store these given dimensions in your instance variables.
 
-    - Don't forget to resize the triangles. (How nice that Triangles have a `changeSize()` method we can use...) You need to make each triangle **half** of the given height of the new diamond, and they each should have the same width as the diamond.
+    - Go ahead and store these given dimensions (`h` and `w`) in your instance variables.
+
+    - It needs to *instantiate* both `top` and `bottom` triangles, so the arrows don't simply point to `null`. You should recall that, to instantiate an object of a class, you can use the syntax, `new Class-Name()`. Therefore, `top = new Triangle()` would assign `top` a pointer to a triangle object. 
+    
+    - Don't forget to resize the triangles so that, when combined, they satisfy the given height and width of the diamond. You need to make each triangle **half** of the given height of the new diamond, and they each should have the same width as the diamond.
+        - (How nice is it that Triangles already have a `changeSize()` method we can use...)
     
     - Next you need to flip the bottom triangle and move it vertically into place so that the *bases* of the triangles touch. (Hey, remember that Triangle objects also supports a `moveVertical(int distance)` method? Use it!)
 
@@ -88,8 +92,8 @@ Hopefully, through this lab, you can see how useful it is to think abstractly. W
 
 You must also apply this idea to larger, more complex projects downstream.
 
-#### Extra Challenge
-Can you create a **parallelogram** with two diamonds? Can you create a restricted **rectangle** with two squares? How about a **wand** with a skinny rectangle and a circle on top? How about a Pacman that gets automatically drawn every time you create it (it's just 2 circles and a white triangle!), and you can slow move it, close and open its mouth, and so on.
+#### Extra Challenge (Optional)
+Can you create a **parallelogram** with two diamonds? Can you create a restricted **rectangle** with two squares? How about a **wand** using a skinny rectangle and a circle on top? How about a Pacman (recall it's just 2 circles and a white triangle!), and you can slow move it, close and open its mouth, and so on.
 
 #### Grading
 
