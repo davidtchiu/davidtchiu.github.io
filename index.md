@@ -3,7 +3,7 @@
 <div style="display: grid; grid-template-columns: auto auto; column-gap: 15px;">
   <div>
   <p>
-  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>.
+  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>. He is the inaugural Director and Faculty Advisor of the Students of Color Residential Community.
   </p>
   <p>
   David holds a PhD in Computer Science and Engineering from  <a href="https://cse.osu.edu">The Ohio State University</a> in 2010 under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now Founding Director of UGA's School of Computing). As a member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David worked on problems in the dynamic composition, modeling, and performance optimizations of scientific workflows deployed in distributed cloud systems. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on projects involving the web transmission of math education modules. Between 2010 to 2014, he was an Assistant Professor and the Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with the University of Puget Sound as an Assistant Professor (2014 - 2017), Associate Professor (2017 - 2022), and Professor (2022 - ). He also completed a rotation as the Department Chair between 2019 and 2022. 
@@ -23,7 +23,7 @@
 
 ### Recent Activities
 
-- (02/2025) Faculty search committee member, Communications Studies, University of Puget Sound.
+- (02/2025) Search Committee, Department of Communications Studies, University of Puget Sound.
 - (08/2024) Co-chairing the International Education Committee (IEC), University of Puget Sound.
 - (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
 - (09/2024) Serving as a New Faculty Mentor for 2024.
