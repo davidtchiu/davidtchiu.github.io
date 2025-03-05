@@ -128,12 +128,12 @@ let days = {
         url: "lab6.diamonds/",
         due: "2/28/2025",
       },
-      // {
-      //   name: "Lab 7",
-      //   title: "Turtle (Loops Practice)",
-      //   url: "lab7.loops/",
-      //   due: "3/7/2025",
-      // },
+      {
+        name: "Lab 7",
+        title: "Turtle (Loops)",
+        url: "lab7.loops/",
+        due: "3/7/2025",
+      },
       // {
       //   name: "Lab 8",
       //   title: "Homework Lab",
