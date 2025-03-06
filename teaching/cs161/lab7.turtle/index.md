@@ -40,7 +40,7 @@ The API handout that you'll want to have in front of you:
 
 #### Part 1: Preliminary
 
-Download the BlueJ project from the above link. After you unzip it into your working directory, navigate into the project folder. Inside, you will see a `Turtle` class. **You do not need to make changes to this class.** You only need to know its public methods (given in the [Turtle API](TurtleAPI.pdf) hand out).
+Download the BlueJ project from the above link. After you unzip it into your working directory, navigate into the project folder. Inside, you will see a `Turtle` class. **You do not need to make changes to this class.** You only need to know its public methods (given in the [Turtle API](../api/TurtleAPI.pdf) hand out).
 
 - All code for this lab should be written in the `TurtleDrawer` class. Again, **do not make changes** to the `Turtle` class. Before we begin, you may want to familiarize yourselves with the `Turtle` class by creating an object on the workbench and playing with its methods.
   Create a new class, called TurtleDrawer, with the following requirements:
@@ -156,14 +156,11 @@ Our `TurtleDrawer` class should be made to be more generalized. If we needed to 
 
 #### Part 4: Grids (Nested Loops)
 
-- You can use the method you just implemented to draw a grid. Think of an `H * W` grid as having `W` cells across (number of columns) by
-  `H` cells vertically (number of rows).
+- You can use the method you just implemented to draw a grid. Think of an `H * W` grid as having `W` cells across (number of columns) by `H` cells vertically (number of rows).
 
 - Write a method called `drawGrid(int numRows, int numCols, double cellSize, String color)` that inputs the number of rows, columns, a cell size, and a color, respectively.
 
-  - You will need a nested loop of degree 2 (i.e., one loop inside an outer loop) for this exercise.
-
-  - I would first focus on writing the loop to draw just one row: This loop should draw `numCols` cells (of `cellSize` length) adjacent to one another. Try inputting different values for `numCols` and `cellSize` to convince yourself that this loop works as intended.
+  - I would first focus on writing the loop to draw just a single row of cells: This loop should draw `numCols` cells (of `cellSize` length) adjacent to one another. Try inputting different values for `numCols` and `cellSize` to convince yourself that this loop works as intended.
 
   - Once that's done, now you just need to focus on stacking `numRows` of these rows on top of one another. You'll therefore need to nest the previous loop you wrote inside of this loop. Every time a row is drawn, you need to reset the turtle's position to draw the next row in place (like a typewriter's head movements)
 
