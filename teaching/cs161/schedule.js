@@ -131,7 +131,7 @@ let days = {
       {
         name: "Lab 7",
         title: "Turtle (Loops)",
-        url: "lab7.loops/",
+        url: "lab7.turtle/",
         due: "3/7/2025",
       },
       // {
