@@ -214,10 +214,10 @@ let days = {
     "Start loops; reading; tracing",
     // "More loops",
     "Lab 7: Loops",
-    "More loops: Prime number testing",
+    "More loops: Debugging and lab review",
     // wk 8
+    "More loops: Prime number testing",
     "Nested loops",
-    "Nested loops (cont.)",
     "Lab 8: Nested Loops",
     "Start Arrays; Write the Bank class",
     // wk 9: spring break
