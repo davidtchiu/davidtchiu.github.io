@@ -212,10 +212,9 @@ Let's try our hand at writing some nested loops. Remember that there's a formula
     ```
 
 #### Extra Puzzles
-There's no extra credit, but if you want to work on a couple additional puzzles:
+For a modest amount of extra credit on your homework assignments!
 
-
-- (Mild) Write a method called `runningSum` that inputs two integers `low` and `high`, and adds all numbers between `low` to `high` (inclusive), and returns this sum. If `low` is greater than `high`, then you must exchange these values before proceeding with the summation.
+- (Mild: +1pt) Write a method called `runningSum` that inputs two integers `low` and `high`, and adds all numbers between `low` to `high` (inclusive), and returns this sum. If `low` is greater than `high`, then you must exchange these values before proceeding with the summation.
 
     Clues:
     - Hmm there seems to be a definite beginning and end to this problem.
@@ -241,7 +240,7 @@ There's no extra credit, but if you want to work on a couple additional puzzles:
     > -489325
     ```
 
-- (Medium) Write the method `int binary2Decimal(String num)` that converts a binary number to an integer in base 10. For your reference, to take 2 to the *ith* power, you can use the method `Math.pow(2,i)`.
+- (Medium: +2pt) Write the method `int binary2Decimal(String num)` that converts a binary number to an integer in base 10. For your reference, to take 2 to the *ith* power, you can use the method `Math.pow(2,i)`.
 
   ```java
   Loops loopie = new Loops();
@@ -268,7 +267,7 @@ There's no extra credit, but if you want to work on a couple additional puzzles:
   ```
 
 
-- (Medium) Write `findPrimes()` inputs an integer `n` and prints the first `n` prime numbers, beginning with `2`. (We had written a prime number checker in class. Use it!) This method requires just a single loop if you use the `isPrime()` method we wrote in class.
+- (Medium: +2pts) Write `findPrimes()` inputs an integer `n` and prints the first `n` prime numbers, beginning with `2`. (We had written a prime number checker in class. Use it!) This method requires just a single loop if you use the `isPrime()` method we wrote in class.
 
     ```java
     Loops loopie = new Loops();
@@ -319,8 +318,11 @@ This assignment will be graded out of a total of 80 pts.
 [30 pts] Spicy (x 2) at 15 pts each
 
 Misc.
-    [5pts] You provide Javadocs style comments for any new methods implemented. You include
+[5pts] You provide Javadocs style comments for any new methods implemented. You include
            sufficient inline comments to explain the logic of your methods.
+
+Bonus:
+[+5 pts] Bonus problems attempted?
 ```
 
 <!-- [10pts] runningSum() is properly implemented. It returns the sum of all numbers between

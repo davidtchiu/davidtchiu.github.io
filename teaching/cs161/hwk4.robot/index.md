@@ -44,13 +44,7 @@ The following file(s) have been provided for this assignment.
 
   State: What should a Robot remember about itself? For starters, it should probably remember that it has a head, arms, body, and feet. There may be more state to be added later, but let's focus on these for now. Go ahead and declare these instance variables.
 
-- At this point, you've merely declared the instance variables' existence, and you have yet to assign any values to these instance variables. Define the default constructor (that's the one that accepts no inputs). For each instance variable, you need to instantiate it using the syntax you've seen in class:
-
-  ```java
-  objectName = new ClassName();
-  ```
-
-- For instance, you should have declared the `feet` field as a `Triangle`. To instantiate it you would write:
+- At this point, you've merely declared the instance variables' existence, and you have yet to assign any values to these instance variables. Define the default constructor (that's the one that accepts no inputs). For each instance variable, you need to instantiate it using the syntax you've seen in class. For instance, you should have declared the `feet` field as a `Triangle`. To instantiate it you would write:
 
   ```java
   feet = new Triangle();
@@ -64,7 +58,7 @@ The following file(s) have been provided for this assignment.
   - The arms should be colored magenta, and each arm has a diameter of 15, and must be aligned with the top of the body. Each arm must be a distance of 5 pixels away from the body.
   - The feet is a triangle with a height of 30 and a base of 40. It is horizontally centered with the body. The top of the feet and the bottom of the body are at the same level
 
-  **DON'T IGNORE THIS:** We strongly suggest you draw out the coordinate system with dimensions and the expected coordinates of each shape on a piece of paper before you start writing the code to move the Shapes. The design and planning of algorithms is often overlooked, even by expert programmers. Take our word for it, it will save you a ton of time to do this now. We've even gotten it started for you, so no excuses.
+  **DON'T IGNORE THIS:** We strongly suggest you draw out the coordinate system with dimensions and the expected coordinates of each shape on a piece of paper before you start writing the code to move the Shapes. The design and planning of algorithms is often overlooked, even by expert programmers. Take our word for it, it will save you a ton of time to do this now.
 
   <img width="450" border="1" src="figures/dimensions.png" />
 

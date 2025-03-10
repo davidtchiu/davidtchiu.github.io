@@ -53,12 +53,12 @@ let days = {
         url: "hwk4.robot/",
         due: "3/7/2025", //Fri, wk 7 (has a simple loop)
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Loops, Loops, Loops!",
-      //   url: "hwk5.loops/",
-      //   due: "3/24/2025", // Mon, wk 10 (right after spring break)
-      // },
+      {
+        name: "Hwk 5",
+        title: "Loops, Loops, Loops!",
+        url: "hwk5.loops/",
+        due: "3/25/2025", // Tues, wk 10 (right after spring break)
+      },
       // {
       //   name: "Hwk 6",
       //   title: "Credit Card Reader (1D Array)",
