@@ -130,42 +130,43 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
     "Threads: Amdahl's Law; code examples",
-    "Scheduling: goals and metrics; FCFS, SJF",
-    "Sched: RR, SRTF, MLFQ",
+    "Scheduling: goals and metrics; burst model",
+    "Sched: SJF, SRTF, prediction",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
+    "Sched: RR, SRTF, MLFQ",
     "Sched: hyperthreading, multicore considerations",
     "Sync: critical section problem",
-    "Sync: atomicity and spinlocks",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
+    "Sync: atomicity and spinlocks",
     "Sync: blocking locks",
     "Sync: semaphores",
-    "Sync: more semaphores",
     // wk 11
     // "Sync: monitors and condition variables",
     // "Sync: Java support",
+    "Sync: more semaphores",
     "DL: Deadlock detection",
-    "DL: Bankers algorithm",
     "<strong><emph>Review</emph></strong>",
     // wk 12
     "<strong><emph>Exam 2</emph></strong>",
+    "DL: Bankers algorithm",
     "Memory Management: virtual addressing",
-    "MM: partitioning and segmentation",
     // wk 13
+    "MM: partitioning and segmentation",
     "MM: segmentation",
     "MM: paging",
-    "MM: TLB and page faults",
     // wk 14
+    "MM: TLB and page faults",
     "Virtual Memory: demand paging",
     "VM: page faults",
-    "VM: Clock algorithm",
     // wk 15
+    "VM: clock algorithm",
     "VM: memory allocation",
-    "VM: malloc(), free()",
+    // "VM: malloc(), free()",
     "<strong>Reading Period</strong>",
     // wk final
     "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",

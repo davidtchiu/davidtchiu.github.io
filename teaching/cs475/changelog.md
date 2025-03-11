@@ -1,4 +1,5 @@
 # TODO
+- Move Exam 1 down by a week to week 7
 - Let them pair up on a few homework assignments?
 - Might want to bring up exam 2 by a week?
 - BEFORE removing/redoing the hwk3 (ls2 repo), I have to give them with a dummy directory structure and redo the assignment example!
