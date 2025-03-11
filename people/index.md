@@ -4,11 +4,12 @@ Here's is a list of my former research advisees and a half-hearted effort of tra
 
 ##### Undergraduate Research Alumni
 
-- Julia Kaeppel (BS'24 expected, Puget Sound)
-- Colin Monaghan (BS'22, Puget Sound) → Flock Freight
+- Alex Kirner (BS'26 expected, Puget Sound)
+- Julia Kaeppel (BS'24, Puget Sound)
+- Colin Monaghan (BS'22, Puget Sound) → Flock Freight → Productable
 - Manya Meutschler-Aldine (BS'21, Puget Sound) → Marigold
 - Sarah Walling-Bell (BS'20, Puget Sound) → University of Washington → Allen Institute for Brain Science
-- Sarah McClain (BS'20, Puget Sound) → Panorama Education, Boston
+- Sarah McClain (BS'20, Puget Sound) → Panorama Education
 - Jared Polonitza (BS'19, Puget Sound) → Chalice Networks → Prime Trust → Apple
 - Sam Burdick (BS'18, Puget Sound) → Amazon → PhD @ Ohio State
 - Jahrme Risner (BS'18, Puget Sound) → Google, Mountain View

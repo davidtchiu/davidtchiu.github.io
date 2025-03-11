@@ -146,8 +146,10 @@ let days = {
     "Sync: semaphores",
     "Sync: more semaphores",
     // wk 11
-    "Sync: monitors and condition variables",
-    "Sync: Java support",
+    // "Sync: monitors and condition variables",
+    // "Sync: Java support",
+    "DL: Deadlock detection",
+    "DL: Bankers algorithm",
     "<strong><emph>Review</emph></strong>",
     // wk 12
     "<strong><emph>Exam 2</emph></strong>",
