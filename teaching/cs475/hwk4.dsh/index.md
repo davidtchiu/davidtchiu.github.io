@@ -235,7 +235,7 @@ To make your lives easier, you may make the following assumptions.
 
 1. A line of input, which includes the newline and termination character, shall be no more than `MAXBUF` length. `MAXBUF` is given inside `dsh.h` to be 256. You may assume that no tests greater than that length will be made when grading.
 
-2. You may assume that, if the trailing `&` is given, it always follows a whitespace. That is, it shall not be attached to a command or argument.
+2. You may assume that, if the trailing `&` is given to indicate background-execution, it is always separated by a whitespace.
 
 3. In most shells, multiple commands can be given on the same line, separated by semi-colon. For instance, `cd /home; ls`. Your shell does not have to deal with multiple inline commands.
 

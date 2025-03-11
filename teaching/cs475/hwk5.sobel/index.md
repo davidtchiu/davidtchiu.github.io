@@ -112,7 +112,7 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
    == 70
    ```
 
-3. Apply the vetical kernel $$K_y$$ to produce that pixel's vertical gradient $$G_yx$$.
+3. Apply the vetical kernel $$K_y$$ to produce that pixel's vertical gradient $$G_y$$.
 
    ```c
    (-1 * 40) + (-2 * 50) + (-1 * 70) +
