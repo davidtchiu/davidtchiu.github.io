@@ -21,8 +21,6 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
     Clues:
     - This is an event-controlled loop, so I would suggest using a `while` loop instead of a `for` loop. You want your loop to repeat as long as `n` isn't 1.
-    <!-- - This is an event-controlled loop. The event we're hoping eventually occurs is `n == 1`.
-    - The looping condition is the **negation** of the event. -->
 
     Output:
 
