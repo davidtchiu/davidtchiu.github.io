@@ -15,13 +15,14 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 - Before you start, read through each of the prompts and decide if it is a **counter-controlled** loop or an **event-controlled* loop. Once you've determined the type of loop, go back to your notes and use the 4-step template that I provided you for writing each loop type.
 
 
-#### Problems
+#### Loop Problems
 
 1. (Mild) We'll start with an easy one, and I'll guide you through it. The famous **Collatz conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` ends at 1. (Fun fact: The numbers that appear in a sequence are also called "Hailstone Numbers.")
 
     Clues:
-    - This is an event-controlled loop. The event we're hoping eventually occurs is `n == 1`.
-    - The looping condition is the **negation** of the event.
+    - This is an event-controlled loop, so I would suggest using a `while` loop instead of a `for` loop. You want your loop to repeat as long as `n` isn't 1.
+    <!-- - This is an event-controlled loop. The event we're hoping eventually occurs is `n == 1`.
+    - The looping condition is the **negation** of the event. -->
 
     Output:
 
@@ -45,7 +46,9 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
     1
     ```
 
-2. (Mild) Write a method called `hammingDistance` that inputs two equal-length strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the [String API](StringAPI.pdf) handy to help you out. Particularly, you will need a way to extract an individual character out of both strings and compare them. You will also need to a way to determine the length of a string to see if you even need to proceed with count. 
+2. (Mild) Write a method called `hammingDistance` that inputs two equal-length Strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the [String API](StringAPI.pdf) handy to help you out. Particularly, you will need a way to extract an individual character out of both strings (sounds like the `charAt()` method?) and compare them. You will also need to a way to determine the length of a string to know when to stop! 
+
+    - Clue: Recall to compare two `char`s, which is the data type returned by `charAt()`, you can use the `==` operator.
 
     ```java
     Loops loopie = new Loops();
@@ -61,12 +64,12 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
     System.out.println(loopie.hammingDistance("david", ""));
     > -1
 
-    System.out.println(loopie.hammingDistance("Grace", "Grace"));
+    System.out.println(loopie.hammingDistance("Grace Hopper", "Grace Hopper"));
     > 0
     ```
     
 
-3. (Medium) Write `multiply()` which inputs two integers `A` and `B` and returns the product from multiplying them together. Your solution must use a loop to add `A` together `B` times (or vice versa). It must also handle negative inputs. Your loops can iterate at most `|A|` or `|B|` times, and ensure that your solution does not rely on integer overflow. Nested loops are not necessary for this problem. As an optional challenge, can you do this with only one loop?
+3. (Medium) Write `multiply()` which inputs two integers `A` and `B` and returns the product from multiplying them together. Your solution must use a loop to add `A` together `B` times (or vice versa). It must also handle negative inputs.
 
     ```java
     Loops loopie = new Loops();
@@ -90,9 +93,9 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
     ```
 
 
-4. (Spicy)  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters that are vowels in the string. Assume that `y` is not a vowel. You'll need the [String API](StringAPI.pdf). 
-    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char` data type) is a vowel. Beware of upper vs. lower case. (Yes this method should work for both cases.) Assume that `y` is not a vowel. 
-    - Finally, beware of integer divide!
+4. (Spicy)  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters that are vowels in the string. Assume that `y` is not a vowel. 
+    - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char`) is a vowel as a boolean. Beware of upper vs. lower case. (Yes this method should work for both cases.) 
+    - Beware of integer divide!
 
     ```java
     Loops loopie = new Loops();
@@ -106,7 +109,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
     > 0.5
     ```
 
-##### Part II: Nested Loops
+##### Part II: Nested Loop Problems
 Let's try our hand at writing some nested loops. Remember that there's a formula to writing doubly-nested loops. You should always be thinking 2-dimensionally. For the problems below, first figure out how many "rows" (height) you need (incurred in the Outer Loop). Then figure out what you need to do for each "row." (Inner Loop)
 
 5. (Mild) Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. The outer loop should control the number of rows. The inner loop: For each row, print `*` for the first and last rows, and print `*` for the first and last columns of other rows, with spaces in between. (Hint: You might start by writing a nested loop to print a solid square filled with only asterisks first.)
