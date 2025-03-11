@@ -49,7 +49,7 @@ let days = {
         name: "Hwk 5",
         title: "Parallel Edge Detection",
         url: "hwk5.sobel/",
-        due: "3/14/2025",  // Fri, wk 8
+        due: "3/17/2025",  // Mon, during break wk 8
       },
       // // // {
       // // //   name: "Hwk 4 (BackItUp)",
