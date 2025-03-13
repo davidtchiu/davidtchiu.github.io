@@ -10,7 +10,12 @@ As you complete these exercises, think about the real-world applications of loop
 
 #### Student Outcomes
 
-- Practice writing loops and nested loops.
+- Understand the need for loops
+- Differentiate between different loop types, and determine when each is most appropriate
+- Write syntactically correct and logically sound loop statements
+- Recognize and correct common looping mistakes
+- Use loops in combination with other constructs, such as conditionals and class APIs
+
 
 #### Instructions
 
