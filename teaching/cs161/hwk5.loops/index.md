@@ -26,10 +26,9 @@ As you complete these exercises, think about the real-world applications of loop
 
 #### Loop Problems
 
-1. (Mild) We'll start with an easy one, and I'll guide you through it. The famous **Collatz conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` ends at 1. (Fun fact: The numbers that appear in a sequence are also called "Hailstone Numbers.")
+1. (Mild) We'll start with an easy one, and I'll guide you through it. The **Collatz Conjecture** is stated as follows. Given a positive integer `n`, divide `n` by 2 if it is even, otherwise, multiply `n` by 3 and add 1 to it. If you do this repeatedly, the Collatz conjecture states that `n` will eventually reach 1. (Interestingly, this conjecture still has not been proven, but no one has been able to find a counter-example.) Write a method called `collatz` that inputs a positive integer `n` and prints the sequence by which `n` ends at 1. (Fun fact: The numbers that appear in a sequence are also called "Hailstone Numbers.")
 
-    Clues:
-    - This is an event-controlled loop, so I would suggest using a `while` loop instead of a `for` loop. You want your loop to repeat as long as `n` isn't 1.
+    Clues: This is an event-controlled loop, so I would suggest using a `while` loop instead of a `for` loop. You want your loop to repeat as long as `n` isn't 1.
 
     Output:
 
@@ -100,7 +99,7 @@ As you complete these exercises, think about the real-world applications of loop
     ```
 
 
-4. (Spicy)  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters that are vowels in the string. Assume that `y` is not a vowel. 
+4. (Spicy)  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters (`double`) that are vowels in the string. Assume that `y` is not a vowel. 
     - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char`) is a vowel as a boolean. Beware of upper vs. lower case. (Yes this method should work for both cases.) 
     - Beware of integer divide!
 
