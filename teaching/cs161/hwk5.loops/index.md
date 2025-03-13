@@ -52,7 +52,7 @@ As you complete these exercises, think about the real-world applications of loop
     1
     ```
 
-2. (Mild) Write a method `hammingDistance` that inputs two strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the [String API](StringAPI.pdf) handy to help you out. Particularly, you will need a way to extract each individual character out of both strings (sounds like the `charAt()` method?) and compare them. You will also need to a way to determine the length of a string to know when to stop! 
+2. (Mild) Write a method `hammingDistance` that inputs two strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the [String API](StringAPI.pdf) handy to help you out. Particularly, you will need a way to extract each individual character out of both strings (sounds like the `charAt()` method?) and compare them. 
 
     - Clue: Recall to compare two `char`s, which is the data type returned by `charAt()`, you can use the `==` operator.
 
@@ -75,7 +75,7 @@ As you complete these exercises, think about the real-world applications of loop
     ```
     
 
-3. (Medium) Write `multiply()` which inputs two integers `A` and `B` and returns the product from multiplying them together. Your solution must use a loop to add `A` together `B` times (or vice versa). It must also handle negative inputs.
+3. (Medium) Write `multiply()` which inputs two integers `A` and `B` and returns the product from multiplying them together. I would start by creating a variable to hold the product (which initializes to 0), and write a loop to add `A` to that product `B` times. It must also handle negative inputs, so make sure you test vigorously for different values of `A` and `B`.
 
     ```java
     Loops loopie = new Loops();
