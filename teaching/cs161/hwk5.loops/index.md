@@ -2,7 +2,11 @@
 
 ### Homework: Loops Loops Loops
 
-In this assignment, you'll be working with loops. It helps to use the David's 4-Step Process for Writing Loops handout I passed out to you in class.
+Loops are among the most important and fundamental elements of programming. They allow us to repeat instructions efficiently, making our programs more robust and scalable. Whether iterating over a list of data, counting down a timer, or running a simulation, loops provide a way to automate repetitive tasks.
+
+In this homework, you'll work through various exercises designed to reinforce your understanding of loops and how they work. These problems will challenge you to recognize when and why loops are necessary, choose the appropriate type of loop (e.g., for, while), and write clear, effective code that makes use of code repetition. Mastering loops will not only help you write better programs but will also build the foundation for more complex problem-solving in computer science.
+
+As you complete these exercises, think about the real-world applications of loops—how they are used in automation, data processing, game development, and many other fields. Developing a strong grasp of loops now will make future programming concepts easier to understand and apply.
 
 #### Student Outcomes
 
@@ -110,7 +114,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 ##### Part II: Nested Loop Problems
 Let's try our hand at writing some nested loops. Remember that there's a formula to writing doubly-nested loops. You should always be thinking 2-dimensionally. For the problems below, first figure out how many "rows" (height) you need (incurred in the Outer Loop). Then figure out what you need to do for each "row." (Inner Loop)
 
-5. (Mild) Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. The outer loop should control the number of rows. The inner loop: For each row, print `*` for the first and last rows, and print `*` for the first and last columns of other rows, with spaces in between. (Hint: You might start by writing a nested loop to print a solid square filled with only asterisks first.)
+5. (Mild) Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. The outer loop should control the number of rows. The inner loop: For each row, print `*` for the first and last rows, and print `*` for the first and last columns of other rows, with spaces in between. (Hint: You might start by writing a nested loop that prints a solid square filled with only asterisks first.)
 
     Here's what I would expect to see if your method is working properly. 
 
