@@ -12,7 +12,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
 
 - Open BlueJ and create a new project called `Hwk5_Loops`. This class will not have any fields or constructors. You'll just be writing and testing various methods. 
 
-- Before you start, read through each of the prompts and decide if it is a **counter-controlled** loop or an **event-controlled* loop. Once you've determined the type of loop, go back to your notes and use the 4-step template that I provided you for writing each loop type.
+- Before you start, read through each of the prompts and decide if it is a **counter-controlled** loop or an **event-controlled** loop. Once you've determined the type of loop, go back to your notes and use the 4-step template that I provided you for writing each loop type.
 
 
 #### Loop Problems
@@ -44,7 +44,7 @@ In this assignment, you'll be working with loops. It helps to use the David's 4-
     1
     ```
 
-2. (Mild) Write a method called `hammingDistance` that inputs two equal-length Strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the [String API](StringAPI.pdf) handy to help you out. Particularly, you will need a way to extract an individual character out of both strings (sounds like the `charAt()` method?) and compare them. You will also need to a way to determine the length of a string to know when to stop! 
+2. (Mild) Write a method `hammingDistance` that inputs two strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the [String API](StringAPI.pdf) handy to help you out. Particularly, you will need a way to extract an individual character out of both strings (sounds like the `charAt()` method?) and compare them. You will also need to a way to determine the length of a string to know when to stop! 
 
     - Clue: Recall to compare two `char`s, which is the data type returned by `charAt()`, you can use the `==` operator.
 
