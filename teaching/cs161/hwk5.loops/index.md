@@ -52,7 +52,7 @@ As you complete these exercises, think about the real-world applications of loop
     1
     ```
 
-2. (Mild) Write a method `hammingDistance` that inputs two strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the [String API](StringAPI.pdf) handy to help you out. Particularly, you will need a way to extract an individual character out of both strings (sounds like the `charAt()` method?) and compare them. You will also need to a way to determine the length of a string to know when to stop! 
+2. (Mild) Write a method `hammingDistance` that inputs two strings, and returns the number of positions in which the two strings differ. Return `-1` if the two strings are not of equal length. Have the [String API](StringAPI.pdf) handy to help you out. Particularly, you will need a way to extract each individual character out of both strings (sounds like the `charAt()` method?) and compare them. You will also need to a way to determine the length of a string to know when to stop! 
 
     - Clue: Recall to compare two `char`s, which is the data type returned by `charAt()`, you can use the `==` operator.
 
@@ -116,9 +116,9 @@ As you complete these exercises, think about the real-world applications of loop
     ```
 
 ##### Part II: Nested Loop Problems
-Let's try our hand at writing some nested loops. Remember that there's a formula to writing doubly-nested loops. You should always be thinking 2-dimensionally. For the problems below, first figure out how many "rows" (height) you need (incurred in the Outer Loop). Then figure out what you need to do for each "row." (Inner Loop)
+Let's try our hand at writing some nested loops. Remember that there's a formula to writing doubly-nested loops. You should always be thinking 2-dimensionally. For the problems below, I would first figure out what you need to do for each "row." (Inner Loop). Afterwards, determine how many "rows" (height) you need (the Outer Loop). 
 
-5. (Mild) Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. The outer loop should control the number of rows. The inner loop: For each row, print `*` for the first and last rows, and print `*` for the first and last columns of other rows, with spaces in between. (Hint: You might start by writing a nested loop that prints a solid square filled with only asterisks first.)
+5. (Mild) Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. The outer loop should control the number of rows. The inner loop: For each row of the outer loop, print an entire row of `*` only for the first and last rows. Otherwise,print `*` for the first and last columns of other rows, with spaces in between. (Hint: You might start by writing a nested loop that prints a solid square filled with only asterisks first.)
 
     Here's what I would expect to see if your method is working properly. 
 
@@ -166,7 +166,10 @@ Let's try our hand at writing some nested loops. Remember that there's a formula
     12345678
     ```
 
-7. (Medium) Write a method `pyramid(int n)` that prints a pyramid pattern of asterisks (`*`) based on the number of rows (`n`) provided by the user. Outer Loop controls the number of rows (from 0 up to `n`). There are two inner loops inside: The first inner loop prints spaces for alignment (decreasing with each row). The second inner loop, placed right below (but within) the first inner loop, prints asterisks (`*`) to form the pyramid (increasing with each row). But how many asterisks should you print for each row?
+7. (Medium) Write a method `pyramid(int n)` that prints a pyramid pattern of asterisks (`*`) based on the number of rows (`n`) provided by the user. Outer Loop controls the number of rows (from 0 up to `n`). There are two inner loops inside: The first inner loop prints spaces for center-alignment (decreasing with each row). The second inner loop, placed right below (but within) the first inner loop, prints asterisks (`*`) to form the pyramid (increasing with each row).
+
+    - I would start by figuring out the math to determine how many spaces you need before you print out the asterisk, as a function of `n` and the row number. For instance, on row `r`, you would need ??? spaces.
+    - Next, you need to do the same for determinine how many asterisks to print for a given row. It looks like it's always an odd number.
 
     ```java
     Loops loopie = new Loops();
