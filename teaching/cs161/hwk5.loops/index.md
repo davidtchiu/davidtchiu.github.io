@@ -118,7 +118,7 @@ As you complete these exercises, think about the real-world applications of loop
 ##### Part II: Nested Loop Problems
 Let's try our hand at writing some nested loops. Remember that there's a formula to writing doubly-nested loops. You should always be thinking 2-dimensionally. For the problems below, I would first figure out what you need to do for each "row." (Inner Loop). Afterwards, determine how many "rows" (height) you need (the Outer Loop). 
 
-5. (Mild) Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. The outer loop should control the number of rows. The inner loop: For each row of the outer loop, print an entire row of `*` only for the first and last rows. Otherwise,print `*` for the first and last columns of other rows, with spaces in between. (Hint: You might start by writing a nested loop that prints a solid square filled with only asterisks first.)
+5. (Mild) Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. The outer loop should control the number of rows. The inner loop: For each row of the outer loop, print an entire row of `*` only for the first and last rows. Otherwise, print `*` for the first and last columns of other rows, with spaces in between. (Hint: You might start by writing a nested loop that prints a solid square filled with only asterisks first.)
 
     Here's what I would expect to see if your method is working properly. 
 
@@ -178,6 +178,16 @@ Let's try our hand at writing some nested loops. Remember that there's a formula
       ***
      *****
     *******
+
+    loopie.pyramid(8);
+           *
+          ***
+         *****
+        *******
+       *********
+      ***********
+     *************
+    ***************
     ```
 
 8. (Spicy) The factorial of $$x$$, written $$x!$$ is defined $$x \times (x-1) \times (x-2) \times ... \times 2 \times 1$$. There's also a special case of $$0! = 1$$. Write a method `printFactorials()` which inputs an integer `n`. It prints out the factorial of all numbers between `0` and `n`. You may assume that `n` is nonnegative. (Hint: 0! should be printed out unconditionally. Then start into the loops!) Again, in designing this method, think about how many rows you need (starting from 1! -- and that's your outer loop), then decide what you need to do per row to compute the factorial at that row number and that's your inner loop.
