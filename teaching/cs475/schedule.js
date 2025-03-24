@@ -46,23 +46,17 @@ let days = {
         due: "3/3/2025", // Mon, wk 7
       },
       {
-        name: "Hwk 5",
+        name: "Hwk 5 (sobel)",
         title: "Parallel Edge Detection",
         url: "hwk5.sobel/",
         due: "3/17/2025",  // Mon, during break wk 8
       },
-      // // // {
-      // // //   name: "Hwk 4 (BackItUp)",
-      // // //   title: "Back It Up",
-      // // //   url: "hwk4.biu/",
-      // // //   due: "2/28/2024",
-      // // // },
-      // {
-      //   name: "Hwk 6 (ts_hashmap)",
-      //   title: "Thread-Safe Hashmap",
-      //   url: "hwk6.hashmap/",
-      //   due: "4/2/2025", // after break, Wed, wk 11
-      // },
+      {
+        name: "Hwk 6 (ts_hashmap)",
+        title: "Thread-Safe Hashmap",
+        url: "hwk6.hashmap/",
+        due: "4/9/2025", // after break, Wed, wk 11
+      },
       // {
       //   name: "Hwk 7 (OneLaneBridge)",
       //   title: "One Lane Bridge ",
