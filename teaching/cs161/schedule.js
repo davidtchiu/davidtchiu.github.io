@@ -59,6 +59,12 @@ let days = {
         url: "hwk5.loops/",
         due: "3/25/2025", // Tues, wk 10 (right after spring break)
       },
+      {
+        name: "Hwk 6",
+        title: "Combo Guesser (Arrays)",
+        url: "hwk6.combo/",
+        due: "4/4/2025",
+      },
       // {
       //   name: "Hwk 6",
       //   title: "Credit Card Reader (1D Array)",
@@ -134,12 +140,12 @@ let days = {
         url: "lab7.turtle/",
         due: "3/7/2025",
       },
-      // {
-      //   name: "Lab 8",
-      //   title: "Homework Lab",
-      //   url: "hwk5.loops/",
-      //   due: "3/14/2025",
-      // },
+      {
+        name: "Lab 8",
+        title: "Homework Lab",
+        url: "hwk5.loops/",
+        due: "3/14/2025",
+      },
       // {
       //   name: "Lab 9",
       //   title: "Combo Guesser (Arrays)",

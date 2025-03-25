@@ -28,7 +28,7 @@ let days = {
         due: "1/24/2025", // Fri, wk 1
       },
       {
-        name: "Hwk 2 (Sorting)",
+        name: "Hwk 2 (heapsort)",
         title: "Pointers, Arrays, Strings",
         url: "hwk2.sorting/",
         due: "2/3/2025",  // Mon, wk 3

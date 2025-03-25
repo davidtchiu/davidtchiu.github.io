@@ -1,5 +1,6 @@
 #### TODO
-
+- Consider having exam 2 in Week 11 instead of 12.
+- Consider moving back to Thursday exams.
 - Consider getting rid of the book altogether now, but some students actually say they read it.
 - I should do a small unit on debugging and hand out rubber ducks sooner. BlueJ debugger tool. Problems like reverse(), edge cases, removing items from a list, ...
 - Move static/enum/private/public up (or spread them out)
