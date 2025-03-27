@@ -24,7 +24,7 @@ By the end of this lab, students will be able to:
 
 #### Array Problems
 
-1. (Mild) Write a method `public static int countOccurrences(int[] array, int target)` that returns the number of occurrences of the `target`  in the array.
+1. (Mild) Write a method `public static int countOccurrences(int[] array, int target)` that returns the number of occurrences of the `target` in the array. You just need to traverse and examine every element in the array and cmpare it with the `target`. 
 
     Code Pad:
 
@@ -37,7 +37,7 @@ By the end of this lab, students will be able to:
     > 0
     ```
 
-2. (Mild) Write a method `public static int[] threshold(int[] array, int t)` that returns a new integer array with the same length as the input array. For each index i, the new array should contain 0 if `array[i]` is strictly less than the threshold `t`, and the old value otherwise.
+2. (Mild) Write a method `public static int[] threshold(int[] array, int t)` that returns a new integer array with the same length as the input array. For each index i, the new array should contain 0 if `array[i]` is strictly less than the threshold `t`, or the existing value otherwise.
 
     Code Pad:
 
@@ -63,7 +63,7 @@ By the end of this lab, students will be able to:
     ```
 
 
-4. (Medium) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements. Hint: Notice the new array is the same length as the input array, and the first element is always the same. Write a loop to fill the cumulative array with the sum of the current array element and the previous element of the cumulative array.
+4. (Medium) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements. **Hint:** Notice the new array is the same length as the input array, and the first element is always the same. How do you find the subsequent sums?
 
    Code Pad:
 
@@ -79,7 +79,7 @@ By the end of this lab, students will be able to:
     ```
 
 
-5. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). Hint: Notice the length of the mirrored array is twice as long as the input array. Write two loops -- one that simply copies the first half, and one that copies the second half in reverse order.
+5. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). **Hint:** Notice the length of the mirrored array is twice as long as the input array. Write two loops -- one that simply copies the first half, and one that copies the second half in reverse order.
 
     Code Pad:
 
@@ -97,9 +97,9 @@ By the end of this lab, students will be able to:
 
 
 #### Extra Puzzles (Strongly Encouraged)
-You won't get any extra credit for these, but doing them will bring you to enlightenment. (And great practice for exams!)
+You won't get any extra credit for these, but doing them will bring you enlightenment. (And great practice for exams!)
 
-- (Medium) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. Hint: You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is odd by using `x % 2` and testing if it equates to 1.
+- (Medium) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. **Hint:** You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is even by using `x % 2` and testing if it equates to 0.
 
    Code Pad:
 
