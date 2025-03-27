@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Arrays!
+### Lab 9: Array Sorcery!!!
 Welcome to the world of arrays — where order matters and one-off errors lurk in the shadows around every corner. In this lab, you’ll sharpen your skills in one of the most fundamental (and honestly, most satisfying) parts of programming: array manipulation.
 
 Why do arrays matter? Because whether you’re building a video game inventory system, crunching scientific data, or decoding alien transmissions (hey, you never know), arrays are simply everywhere in our everyday lives. Being able to slice, swap, shift, and scan through them with ease is a superpower every programmer needs.

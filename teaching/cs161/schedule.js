@@ -142,16 +142,16 @@ let days = {
       },
       {
         name: "Lab 8",
-        title: "Homework Lab",
+        title: "Homework Lab (Loops)",
         url: "hwk5.loops/",
         due: "3/14/2025",
       },
-      // {
-      //   name: "Lab 9",
-      //   title: "Combo Guesser (Arrays)",
-      //   url: "lab9.combo/",
-      //   due: "3/28/2025",
-      // },
+      {
+        name: "Lab 9",
+        title: "Array Sorcery!",
+        url: "lab9.arrays/",
+        due: "3/28/2025",
+      },
       // {
       //   name: "Lab 10",
       //   title: "The Game of Life (2D Arrays)",
