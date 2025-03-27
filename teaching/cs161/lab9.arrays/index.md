@@ -134,20 +134,20 @@ You won't get any extra credit for these, but doing them will bring you to enlig
     > NaN
     ```
 
-- (Spiciest) Write a method, `public static void zeroes2End(int[] array)` that moves all zero values to the end of the array, but what makes it tough is that you need to maintain the order of non-zero elements. Your code must work on the input array directly. Do not create a new array as there's nothing to return! Hint: You need two indices: one from the left that moves right to find a zero. Once you find a zero, introduce a second index starting at that same position and moves to the right, finding a non-zero. If you find a non-zero using the second index, swap the two elements. Continue until the first index reaches the end.
+- (Spiciest) Write a method, `public static void zeroes2End(int[] array)` that moves all zero values to the end of the array, but what makes it tough is that you need to maintain the order of non-zero elements. Your code must work on the input array directly. Do not create a new array as there's nothing to return! **Hint:** You need two indices: one from the left that moves right to find a zero. Once you find a zero, introduce a second index looping from that same position and also moves to the right, finding a non-zero. If you find a non-zero using the second index, swap the two elements at the two indices. Continue until the first index reaches the end. **Hint 2:** If you need to end a loop early, you can use the command `break;`
 
    Code Pad:
 
     ```java
     import java.util.Arrays;
-    double[] array1 = {0, 1, 0, 3, 12};
+    int[] array1 = {0, 1, 0, 3, 12};
     ArrayLab.zeroes2End(array1);
     System.out.println(Arrays.toString(array1));
     > [1, 3, 12, 0, 0]
 
-    double[] array2 = {50, 0, 0, 0, 70, 0, 10, 100, 0, 0};
+    int[] array2 = {50, 0, 0, 0, 70, 0, 10, 100, 0, 0};
     ArrayLab.zeroes2End(array2);
-    System.out.println(ArrayLab.toString(array2));
+    System.out.println(Arrays.toString(array2));
     > [50, 70, 10, 100, 0, 0, 0, 0, 0, 0]
     ```
 
