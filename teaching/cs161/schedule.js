@@ -63,7 +63,7 @@ let days = {
         name: "Hwk 6",
         title: "Combo Guesser (Arrays)",
         url: "hwk6.combo/",
-        due: "4/4/2025",
+        due: "4/4/2025", // Fri, wk 11 (week after break)
       },
       // {
       //   name: "Hwk 6",
