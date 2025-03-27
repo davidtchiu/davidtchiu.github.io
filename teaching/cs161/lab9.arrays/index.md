@@ -62,7 +62,24 @@ By the end of this lab, students will be able to:
     > A B A
     ```
 
-4. (Medium) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original).
+
+4. (Medium) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements. Hint: Notice the new array is the same length as the input array, and the first element is always the same. Write a loop to fill the cumulative array with the sum of the current array element and the previous element of the cumulative array.
+
+   Code Pad:
+
+    ```java
+    import java.util.Arrays;
+    int[] array1 = {1, 2, 3};
+    System.out.println(Arrays.toString(ArrayLab.cumulativeSum(array1)));
+    > [1, 3, 6]
+
+    int[] array2 = {10, 30, 50, 70};
+    System.out.println(Arrays.toString(ArrayLab.cumulativeSum(array2)));
+    > [10, 40, 90, 160]
+    ```
+
+
+5. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). Hint: Notice the length of the mirrored array is twice as long as the input array. Write two loops -- one that simply copies the first half, and one that copies the second half in reverse order.
 
     Code Pad:
 
@@ -77,39 +94,6 @@ By the end of this lab, students will be able to:
     > [10, 30, 50, 70, 70, 50, 30, 10]
     ```
 
-
-5. (Medium) An array is sorted if, for all elements at position `[i]`, its adjacent element at position `[i+1]` is greater than or equal to it. You are to return true if the array is sorted, or false otherwise. Write a method `public static boolean isSorted(int[] array)` that determines whether the given array is sorted.
-
-    Code Pad:
-
-    ```java
-    int[] array1 = {10, 30, 50, 70};
-    ArrayLab.isSorted(array1);
-    > true
-
-    int[] array2 = {70, 70, 70};
-    ArrayLab.isSorted(array2);
-    > true
-
-    int[] array3 = {70, 90, 70};
-    ArrayLab.isSorted(array3);
-    > false
-    ```
-
-6. (spicy) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements.
-
-   Code Pad:
-
-    ```java
-    import java.util.Arrays;
-    int[] array1 = {1, 2, 3};
-    System.out.println(Arrays.toString(ArrayLab.cumulativeSum(array1)));
-    > [1, 3, 6]
-
-    int[] array2 = {10, 30, 50, 70};
-    System.out.println(Arrays.toString(ArrayLab.cumulativeSum(array2)));
-    > [10, 40, 90, 160]
-    ```
 
 
 #### Extra Puzzles (Strongly Encouraged)
