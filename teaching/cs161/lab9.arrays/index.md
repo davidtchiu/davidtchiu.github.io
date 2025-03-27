@@ -99,7 +99,7 @@ By the end of this lab, students will be able to:
 #### Extra Puzzles (Strongly Encouraged)
 You won't get any extra credit for these, but doing them will bring you to enlightenment. (And great practice for exams!)
 
-- (Mild) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. Hint: You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is odd by using `x % 2` and testing if it equates to 1.
+- (Medium) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. Hint: You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is odd by using `x % 2` and testing if it equates to 1.
 
    Code Pad:
 
@@ -139,13 +139,14 @@ You won't get any extra credit for these, but doing them will bring you to enlig
    Code Pad:
 
     ```java
+    import java.util.Arrays;
     double[] array1 = {0, 1, 0, 3, 12};
-    ArrayLab.zeroes2nd(array1);
+    ArrayLab.zeroes2End(array1);
     System.out.println(Arrays.toString(array1));
     > [1, 3, 12, 0, 0]
 
     double[] array2 = {50, 0, 0, 0, 70, 0, 10, 100, 0, 0};
-    ArrayLab.zeroes2nd(array2);
+    ArrayLab.zeroes2End(array2);
     System.out.println(ArrayLab.toString(array2));
     > [50, 70, 10, 100, 0, 0, 0, 0, 0, 0]
     ```
