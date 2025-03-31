@@ -142,7 +142,8 @@ let days = {
     // wk 11
     // "Sync: monitors and condition variables",
     // "Sync: Java support",
-    "Sync: more semaphores",
+    // "Sync: more semaphores",
+    "DL: Deadlocks",
     "DL: Deadlock detection",
     "<strong><emph>Review</emph></strong>",
     // wk 12
