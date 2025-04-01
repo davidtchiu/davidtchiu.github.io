@@ -42,9 +42,9 @@ on the performance of a process and the system in which it executes. -->
 - Threads (pthread) and parallel programming
 - Interrupts and system calls
 - CPU scheduling
-- Synchronization of concurrent programs
+- Synchronization primitives: locks and semaphores
+- Deadlocks
 - Memory management and virtual memory
-- File systems
 
 #### Grades
 Your overall grade is broken down as as follows:
@@ -55,7 +55,7 @@ Your overall grade is broken down as as follows:
 | Homework Assignments | 40% |
 | Midterm I | 15% |
 | Midterm II | 18% |
-| Final Exam | 22% |
+| Final Exam (comprehensive) | 22% |
 
 {% include syllabus-my-boilerplate.md %}
 

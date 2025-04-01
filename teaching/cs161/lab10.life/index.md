@@ -1,10 +1,12 @@
 ## CS 161 - Intro to Computer Science
 
 ### Lab: Conway's Game of Life
+Conway's Game of Life is not just a fun curiosity (although it may have started as one). It has applications in biology (modeling evolutionary and life processes), physics (Modeling Reaction-Diffusion Systems), gaming, and artificial intelligence.
 
-In this lab, you will explore <a href="http://conwaylife.com/" target="_new">Conway's Game of Life</a>. The Game of Life is a board displayed as a square grid of cells. Each cell may either be "alive" or "inactive" depending on the state of their neighboring cells. Over time each cell may come to life, or become inactive, which results in interesting patterns on the board.
-</ol>
-</p>
+In this lab, you will implement <a href="http://conwaylife.com/" target="_new">Conway's Game of Life</a>, a classic example of a cellular automaton. The Game of Life simulates a grid-based "universe" of cells, where each cell can be either alive or inactive. The state of each cell evolves over time based on a simple set of rules that consider the states of neighboring cells. Despite its simplicity, the Game of Life can produce surprisingly complex and beautiful patterns, making it a powerful tool for exploring how complexity can emerge from simple rules.
+
+Fun fact: The flooring in our CS student lounge inspired by "glider patterns" that emerge from playing Game of Life using hexagonal tiles instead of square tiles.
+
 <center><img border="1" src="figures/life1.png" width="200px" />&nbsp;&nbsp;
 <img border="1" src="figures/life2.png" width="200px" />&nbsp;&nbsp;
 <img border="1" src="figures/life3.png" width="200px" /></center>
@@ -107,13 +109,6 @@ We will now implement the methods that determine if a `Cell` should live or die.
 
 5. Although it's random, if your board always stops changing after only 4-5 generations, something is probably a bit off in your `countNeighbors()` code. Our results consistently either never converges to a steady state, or takes over dozens of generations to settle.
 
-
-
-#### Grading
-
-```
-Attendance is necessary to receive credit for lab.
-```
 
 #### Grading
 

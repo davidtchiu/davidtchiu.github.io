@@ -16,22 +16,20 @@ Three years of high-school mathematics, MATH 110 Pre-Calculus, or equivalent. St
 - Object-oriented programming
 - Arithmetic manipulation
 - Conditional logic
-- Loops
-- Methods
-- Basic data structures
+- Loops and nested loops
+- Arrays, 2D Arrays, ArrayLists
 - Input/output: file and user interaction
-- Elementary complexity analysis
 
 #### Student Learning Objectives
 After the successful completion of this course, students should be able to:
 
--  Develop programs that use the fundamental programming constructs: assignment and expressions, basic I/O, conditional and iterative statements.
+- Develop programs that use the fundamental programming constructs: assignment and expressions, basic input/output, conditional and iterative statements.
 - Develop programs using functions (methods) with parameter passing.
 - Develop programs that create simple classes and instantiate objects of those classes.
-- Develop programs that effectively use the different structured data types provided in Java like arrays/lists and maps.
-- Develop programs that use file I/O to provide data persistence across multiple executions.
-- Develop programs that use language-provided libraries and frameworks (where applicable).
+- Develop programs that effectively use the different structured data types provided in Java like arrays/lists.
+- Develop programs that use external or language-provided libraries (APIs).
 - Write effective comments for a program specifying what it does.
+- Develop programs that use file I/O to provide data persistence across multiple executions. (Time permitting).
 
 #### Grades
 Your overall grade is broken down as as follows:
@@ -43,7 +41,7 @@ Your overall grade is broken down as as follows:
 | Homework Assignments | 30% |
 | Midterm I | 15% |
 | Midterm II | 18% |
-| Final Exam | 22% |
+| Final Exam (comprehensive) | 22% |
 
 ##### Lab Assignments
 Labs provide a low stakes, hands-on, and collaborative way to learn the materials. As such, they only represent 10% of your final grade. You may choose to work alone, or with whomever you like during lab. **However, you must submit your own work.**

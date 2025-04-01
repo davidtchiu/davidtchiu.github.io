@@ -1,11 +1,18 @@
 # TODO
 - Move Exam 1 down by a week to week 7
+- Move Exam 2 up by a week?
+- I need another day for Semaphores. Moved into Deadlocks too quickly
+- I need to consider a different problem than ts_hashmap, or to work semaphores in it somehow.
+  - Potentially create a new project that uses semaphores and gets them to eliminate hold-and-wait for preventing DL.
 - Let them pair up on a few homework assignments?
-- Might want to bring up exam 2 by a week?
 - BEFORE removing/redoing the hwk3 (ls2 repo), I have to give them with a dummy directory structure and redo the assignment example!
 
 
 # Change Log
+
+## Spring'25
+- Deadlocks are back. Removed monitors and Java.
+- Sobel filters for Hwk 5 instead of matrix mult
 
 ## Spring'23
 - Use 2nd week to teach C (labs).
