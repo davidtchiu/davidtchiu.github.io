@@ -31,34 +31,40 @@ The game is played on a square grid of cells. Each cell can either be alive or i
 
 - Write two constructors:
 
-  - The default constructor has a 50%-50% chance of setting the state to inactive or alive. The `Random` class will again be useful here. It has a method called `nextBoolean()` that will randomly return `true` or `false`.
+  - The default constructor has a 50%-50% chance of setting the state to inactive or alive. The `Random` class will again be useful here. It has a method called `nextBoolean()` that will randomly return `true` or `false` with 50%-50% probability.
 
-  - An overloaded constructor should input and assign an initial value for the Cell's living state.
+  - A second constructor should allow users to input the initial value for the Cell's living state, instead of being randomly assigned.
 
 - Write a getter method named `isAlive()` that takes no inputs and returns the state of your `Cell`'s living status
 
 - You can test your code from within the Code Pad:
 
-```java
-Cell c = new Cell();
-c.isAlive()
-> false  (boolean)
+  ```java
+  Cell c = new Cell();
+  c.isAlive()
+  > false  (boolean)
 
-Cell anotherCell = new Cell(true);
-c.isAlive()
-> true  (boolean)
-```
+  Cell anotherCell = new Cell(true);
+  c.isAlive()
+  > true  (boolean)
+  ```
 
 #### Part 2: Life Class
 You will need to modify the `Life` class in order to make things work. Important: In our board, the axes are flipped: `x` refers to the vertical axis, and `y` refers to the horizontal axis. Please remember this!
 
-- Instance Variables: Because the Game of Life needs store a grid of Cell objects, you will need a 2D array of `Cells`. You should name this instance variable `board`.
+- Instance Variables: Because the Game of Life needs store a grid of Cell objects, you will need a 2D array of `Cells`. You should name this instance variable `board`. To declare a 2D array as an instance variable, you can use:
+  ```java
+  private data-type[][] array-name;
+  ```
 
-- Constructor: Fill in the constructor, which inputs the height and width of the `board`. Instantiate your `board` using these dimensions. Recall that, when creating 2D arrays, the first dimension refers to the number of rows and the second dimension refers to the number of columns.
+- Constructor: Fill in the constructor, which inputs the height and width of the `board`. Instantiate your `board` using these row and column dimensions. Recall that, you can use the syntax:
+  ```java
+  array-name = new data-type[number-of-rows][number-of-columns];
+  ```
 
 - Complete the `isAlive()` method, which inputs the `x` and `y` coordinates of the board, and returns whether the `Cell` at that location is alive.
 
-- Next, write the `fillRandom()` method. This method should fill your board with random `Cells` (that is randomly alive or inactive).
+- Next, write the `fillRandom()` method. This method should fill your board with random `Cells` (that is randomly alive or inactive). Hey, your `new Cell()` default constructor already does that!
 
 - Now you need to go back to modify your constructor to call this method after it instantiates the 2D array.
 
