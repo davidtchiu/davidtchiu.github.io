@@ -13,7 +13,7 @@
   </p>
   </div>
   <div style="vertical-align: top;">
-    <img src="david-ghibli.png" width="265px"/>
+    <img src="david-ghibli.png" width="300px"/>
   </div>
 </div>
 
