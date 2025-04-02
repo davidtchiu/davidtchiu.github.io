@@ -1,7 +1,8 @@
 ### Biosketch
 
-<div style="display: grid; grid-template-columns: auto auto; column-gap: 15px;">
-  <div>
+<!-- <div style="display: grid; grid-template-columns: auto auto; column-gap: 15px;">
+  <div> -->
+  <img src="david-ghibli.png" width="300px" style="float: left; margin-right: 15px; width: 200px; height: auto;"/>
   <p>
   David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>. He is the inaugural Director and Faculty Advisor of the Students of Color Residential Community.
   </p>
@@ -18,9 +19,8 @@
   </p>
   </div>
   <div style="vertical-align: top;">
-    <img src="david-ghibli.png" width="300px"/>
-  </div>
-</div>
+  <!-- </div>
+</div> -->
 
 
 [Curriculum Vitae](CV.pdf)
