@@ -152,12 +152,12 @@ let days = {
         url: "lab9.arrays/",
         due: "3/28/2025",
       },
-      // {
-      //   name: "Lab 10",
-      //   title: "The Game of Life (2D Arrays)",
-      //   url: "lab10.life/",
-      //   due: "4/4/2025",
-      // },
+      {
+        name: "Lab 10",
+        title: "The Game of Life (2D Arrays)",
+        url: "lab10.life/",
+        due: "4/4/2025",
+      },
       // {
       //   name: "Lab 11",
       //   title: "Super Circle Drawer (ArrayLists)",

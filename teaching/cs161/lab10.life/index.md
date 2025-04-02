@@ -93,7 +93,7 @@ We will now implement the methods that determine if a `Cell` should live or die.
 
     - In the right figure below, we see two cases where a `Cell` lies along one or two borders of the board. They therefore have fewer neighbors within range (the invalid `Cells` are greyed out). You  need to skip over the invalid neighbor when counting, because attempting to access its x,y position would result in a runtime error! Observe that all invalid `Cells` share the characteristic that one or both of its coordinates are out-of-range of the dimensions of the board. 
 
-    	<img src="figures/lab10_fig1.png" width="550px"/>
+    	<img src="figures/lab10_fig1.png" width="600px"/>
 
 3. Complete the `nextGeneration()` method that updates the state of the `board` by:
 
@@ -108,7 +108,7 @@ We will now implement the methods that determine if a `Cell` should live or die.
 
     - Use the `countLivingNeighbors()` method you just implemented to get number of living neighbors for the purposes of updating the corresponding cell in the new `nextGenBoard`.
 
-    - Record the new living status of the current cell by updating the corresponding position in `nextGenBoard`. You simply have to construct a `new Cell(..)` given the living state and assign it to the same position in `nextGenBoard`.
+    - Record the new living status of the current cell by updating the corresponding position in `nextGenBoard`. You simply have to construct a `new Cell(...)` given the living state and assign it to the same position in `nextGenBoard`.
 
     - When that is done, re-assign `board` to `nextGenBoard`. This replaces your board with the new one!
 
