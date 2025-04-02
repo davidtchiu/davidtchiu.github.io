@@ -73,10 +73,10 @@ You will need to modify the `Life` class in order to make things work. Important
 - In the window that appears, hit the "Random" button to create a random community of cells. You may hit the "Random" button repeatedly to test whether `fillRandom()` is generating random cell communities. None of the other buttons should be working at this point. Close the window and move on to the next step.
 
 
-#### Part 3: Life or Death
+#### Part 3: Counting Neighbors
 We will now implement the methods that determine if a `Cell` should live or die. To do this, one of the key methods we need is a way to count the number of live neighbors for any given `Cell` at position `x` and `y`.
 
-1. Complete the `countLivingNeighbors()` method, which inputs a `Cell`'s coordinates x and y, and returns the its number of living neighboring `Cell` objects. Previously, I had you simply return 0 in this method so that we could test the code. Remove that line of code. Now, for a `Cell` object at any location `board[x][y]`, its 8 neighboring `Cells` are located at positions:
+1. Complete the `countLivingNeighbors()` method, which inputs a `Cell`'s position at x and y, and returns the its number of _living_ neighboring `Cell` objects. Previously, I had you simply return 0 in this method so that we could test the code. Remove that line of code. Now, for a `Cell` object at any location `board[x][y]`, its 8 neighboring `Cells` are located at positions:
 
     1. `board[x-1][y-1]`
     2. `board[x-1][y]`
@@ -87,36 +87,42 @@ We will now implement the methods that determine if a `Cell` should live or die.
     7. `board[x+1][y]`
     8. `board[x+1][y+1]`
 
-2. However, depending on where the current cell is positioned, some of those 8 neighbors may be out of bounds (or, _invalid_). 
+    Recall that you can ask an individual Cell to see if it's alive or not, by using their `isAlive()` method. Therefore, you can write something like:
 
-    - In the left figure below, we're examining the number of neighbors for the `Cell` at `board[4,2]` (marked in blue). All eight of its neighbors are in valid range and therefore can be checked on whether they are living or dead. Tally up a count for each neighbor determined to be alive, and return the count.
+      ```java
+      if (board[x-1][y-1].isAlive()) {
+        // This one's alive!
+      }
+      ```
 
-    - In the right figure below, we see two cases where a `Cell` lies along one or two borders of the board. They therefore have fewer neighbors within range (the invalid `Cells` are greyed out). You  need to skip over the invalid neighbor when counting, because attempting to access its x,y position would result in a runtime error! Observe that all invalid `Cells` share the characteristic that one or both of its coordinates are out-of-range of the dimensions of the board. 
+2. Depending on where the current cell is positioned, some of those 8 neighbors may be out of bounds. 
+
+    - In the **left-hand figure** below, we're examining the number of neighbors for the `Cell` at `board[4][2]` (marked in blue). All eight of its neighbors are in range and therefore can be checked on whether they are living or dead. Tally up a count for each neighbor determined to be alive, and return the count.
+
+    - In the **right-hand figure**, we see two cases where a `Cell` lies along one or two borders of the board. They therefore have fewer neighbors within range (the invalid `Cell` are greyed out). You  need to skip over the invalid neighbor when counting, because attempting to access its position would result in an IndexOutOfBounds exception and crash your program! **Put in the necessary tests to ensure that your `x` and `y` are indeed in range before trying to access that cell.**
 
     	  <img src="figures/lab10_fig1.png" width="650px"/>
 
 3. Complete the `nextGeneration()` method that updates the state of the `board` by:
 
-    - First declaring and instantiating yet another _local_ 2D array of Cells. It should be the same dimensions as your current `board` instance variable. You can call this temporary 2D array `nextGenBoard`.
+    - First, declare and instantiate a _local_ 2D array of Cells. It should be the same dimensions as your current `board` instance variable. You can call this temporary 2D array `nextGenBoard`.
 
-    - Iterating over all cells in `board`: for each cell, determine whether the cell should be living or inactive in the next "generation." Rules are:
+    - Iterate (zig-zag) through all cells in `board`: for each individual Cell, call the `countLivingNeighbors()` method on it to determine whether the cell should be living or inactive in the "next generation." The rules are:
 
-      - Any living cell with fewer than two living neighbors dies (due to underpopulation or loneliness).
-      - Any living cell with more than three living neighbors dies (due to overcrowding).
+      - Any living cell with fewer than two living neighbors dies in the next generation (due to underpopulation).
+      - Any living cell with more than three living neighbors dies in the next generation (due to overcrowding).
+      - Any inactive cell with exactly three living neighbors becomes alive in the next generation (slightly awkward reproduction).
       - By inference, any living cell with exactly two or three living neighbors stays alive.
-      - Any inactive cell with exactly three living neighbors becomes alive! (slightly awkward reproduction).
 
-    - Use the `countLivingNeighbors()` method you just implemented to get number of living neighbors for the purposes of updating the corresponding cell in the new `nextGenBoard`.
+    - Record the new living status of this Cell by updating its corresponding position in `nextGenBoard`. To do this, you simply have to create a `new Cell(...)` assign it to the same `[x][y]` position in `nextGenBoard`.
 
-    - Record the new living status of the current cell by updating the corresponding position in `nextGenBoard`. You simply have to construct a `new Cell(...)` given the living state and assign it to the same position in `nextGenBoard`.
+    - When you're done, and the whole `nextGenBoard` has been populated, simply re-assign `board` to point to `nextGenBoard`. This replaces your board with the new one!
 
-    - When that is done, re-assign `board` to `nextGenBoard`. This replaces your board with the new one!
+4. Remember to test your code! At this point, you should be able to hit the `"Next"` button to see a single generation (everytime you hit the "Next" button, your `nextGeneration()` method is called.) You could also use the "Start" and "Stop" buttons to run through generations continuously to see your board evolve! Try running the game multiple times (or hitting "Random" to reset the board). Does everything die out? Or does it keep going for a long time? Does it eventually "settle" into a steady state? Or alternate between two closely related states?
 
-4. Remember to test your code! At this point, you should be able to hit the "Next" button to see a single generation (everytime you hit the "Next" button, your `nextGeneration()` method is called.) You could also use the "Start" and "Stop" buttons to run through generations continuously to see your board evolve! Try running the game multiple times (or hitting "Random" to reset the board). Does everything die out? Or does it keep going for a long time? Does it eventually "settle" into a steady state? Or alternate between two closely related states?
+5. Although it's random, if your board always stabilizes after only 4-5 generations, something is probably a bit off in your `countLivingNeighbors()` code. Our results consistently either never converges to a steady state, or takes  dozens of generations to settle.
 
-5. Although it's random, if your board always stabilizes after only 4-5 generations, something is probably a bit off in your `countNeighbors()` code. Our results consistently either never converges to a steady state, or takes  dozens of generations to settle.
-
-#### Part 4: Gliders, Spaceships, and Oscillators --- oh my!
+#### Part 4: Gliders, Spaceships, and Oscillators --- Oh my!
 There are known patterns that produce interesting results over time. 
 
 - Instead of calling `fillRandom()`, write a another method called `fillMyPattern()`, and only activate certain cells to your liking!
