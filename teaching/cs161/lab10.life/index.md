@@ -93,7 +93,7 @@ We will now implement the methods that determine if a `Cell` should live or die.
 
     - In the right figure below, we see two cases where a `Cell` lies along one or two borders of the board. They therefore have fewer neighbors within range (the invalid `Cells` are greyed out). You  need to skip over the invalid neighbor when counting, because attempting to access its x,y position would result in a runtime error! Observe that all invalid `Cells` share the characteristic that one or both of its coordinates are out-of-range of the dimensions of the board. 
 
-    	<img src="figures/lab10_fig1.png" width="600px"/>
+    	  <img src="figures/lab10_fig1.png" width="650px"/>
 
 3. Complete the `nextGeneration()` method that updates the state of the `board` by:
 
@@ -116,7 +116,7 @@ We will now implement the methods that determine if a `Cell` should live or die.
 
 5. Although it's random, if your board always stabilizes after only 4-5 generations, something is probably a bit off in your `countNeighbors()` code. Our results consistently either never converges to a steady state, or takes  dozens of generations to settle.
 
-#### Gliders, Spaceships, and Oscillators --- oh my!
+#### Part 4: Gliders, Spaceships, and Oscillators --- oh my!
 There are known patterns that produce interesting results over time. 
 
 - Instead of calling `fillRandom()`, write a another method called `fillMyPattern()`, and only activate certain cells to your liking!
