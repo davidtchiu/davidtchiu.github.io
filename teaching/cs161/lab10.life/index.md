@@ -37,6 +37,7 @@ The game is played on a square grid of cells. Each cell can either be alive or i
 
 - Write a getter method named `isAlive()` that takes no inputs and returns the state of your `Cell`'s living status
 
+- You can test your code from within the Code Pad:
 
 ```java
 Cell c = new Cell();
@@ -86,29 +87,41 @@ We will now implement the methods that determine if a `Cell` should live or die.
 
     - In the right figure below, we see two cases where a `Cell` lies along one or two borders of the board. They therefore have fewer neighbors within range (the invalid `Cells` are greyed out). You  need to skip over the invalid neighbor when counting, because attempting to access its x,y position would result in a runtime error! Observe that all invalid `Cells` share the characteristic that one or both of its coordinates are out-of-range of the dimensions of the board. 
 
-	<img src="figures/lab10_fig1.png" width="450px"/>
+    	<img src="figures/lab10_fig1.png" width="550px"/>
 
 3. Complete the `nextGeneration()` method that updates the state of the `board` by:
 
-    - First declaring and instantiating yet another _local_ 2D array of the same dimensions as your `board`. You can call this temporary 2D array `tempBoard`.
+    - First declaring and instantiating yet another _local_ 2D array of Cells. It should be the same dimensions as your current `board` instance variable. You can call this temporary 2D array `nextGenBoard`.
 
-    - Iterating over all cells in `board`, and for each cell, determining whether the cell should be living or inactive in the next "generation." Rules are:
+    - Iterating over all cells in `board`: for each cell, determine whether the cell should be living or inactive in the next "generation." Rules are:
 
       - Any living cell with fewer than two living neighbors dies (due to underpopulation or loneliness).
       - Any living cell with more than three living neighbors dies (due to overcrowding).
       - By inference, any living cell with exactly two or three living neighbors stays alive.
       - Any inactive cell with exactly three living neighbors becomes alive! (slightly awkward reproduction).
 
-    - Use the `countLivingNeighbors()` method you just implemented to get number of living neighbors for the purposes of updating the corresponding cell in the new `tempBoard`.
+    - Use the `countLivingNeighbors()` method you just implemented to get number of living neighbors for the purposes of updating the corresponding cell in the new `nextGenBoard`.
 
-    - Record the new living status of the current cell by updating the corresponding position in `tempBoard`. You simply have to construct a `new Cell(..)` given the living state and assign it to the same position in `tempBoard`.
+    - Record the new living status of the current cell by updating the corresponding position in `nextGenBoard`. You simply have to construct a `new Cell(..)` given the living state and assign it to the same position in `nextGenBoard`.
 
-    - When that is done, re-assign `board` to `tempBoard`. This replaces your board with the new one!
+    - When that is done, re-assign `board` to `nextGenBoard`. This replaces your board with the new one!
 
 4. Remember to test your code! At this point, you should be able to hit the "Next" button to see a single generation (everytime you hit the "Next" button, your `nextGeneration()` method is called.) You could also use the "Start" and "Stop" buttons to run through generations continuously to see your board evolve! Try running the game multiple times (or hitting "Random" to reset the board). Does everything die out? Or does it keep going for a long time? Does it eventually "settle" into a steady state? Or alternate between two closely related states?
 
-5. Although it's random, if your board always stops changing after only 4-5 generations, something is probably a bit off in your `countNeighbors()` code. Our results consistently either never converges to a steady state, or takes over dozens of generations to settle.
+5. Although it's random, if your board always stabilizes after only 4-5 generations, something is probably a bit off in your `countNeighbors()` code. Our results consistently either never converges to a steady state, or takes  dozens of generations to settle.
 
+#### Gliders, Spaceships, and Oscillators --- oh my!
+There are known patterns that produce interesting results over time. 
+
+- Instead of calling `fillRandom()`, write a another method called `fillMyPattern()`, and only activate certain cells to your liking!
+
+- For instance, one class of patterns you might try are known as [Gliders](https://en.wikipedia.org/wiki/Glider_(Conway%27s_Game_of_Life)), perpetually move across the screen.
+
+- Explore [other patterns](https://conwaylife.appspot.com/library/), including spaceships, oscillators, and other gliders.
+
+- **Resizing the grid:** You may want to make your board larger than 25x25 to really appreciate their lifecycle though!
+  - To do this, change `DEFAULT_SIZE` constant in the Life class to something large, say 200.
+  - Then, in LifePanel, change the `BOARD_WIDTH` and `BOARD_HEIGHT` instance variables to 200 as well.
 
 #### Grading
 

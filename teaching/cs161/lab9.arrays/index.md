@@ -37,18 +37,7 @@ By the end of this lab, students will be able to:
     > 0
     ```
 
-2. (Mild) Write a method `public static int[] threshold(int[] array, int t)` that returns a new integer array with the same length as the input array. For each index i, the new array should contain 0 if `array[i]` is strictly less than the threshold `t`, or the existing value otherwise.
-
-    Code Pad:
-
-    ```java
-    import java.util.Arrays;
-    int[] array = {1, 2, 3, 2, 4, 2};
-    System.out.println(Arrays.toString(ArrayLab.threshold(array, 3)));
-    > [0, 0, 3, 0, 4, 0]
-    ```
-
-3. (Mild) Write a method `public static String stringify(String[] array)` that inputs an array of strings, then produces and returns a string that is the concatenation of all the strings in the array. (See examples below)
+2. (Mild) Write a method `public static String stringify(String[] array)` that inputs an array of strings, then produces and returns a string that is the concatenation of all the strings in the array. (See examples below). 
 
     Code Pad:
 
@@ -57,13 +46,24 @@ By the end of this lab, students will be able to:
     System.out.println(ArrayLab.stringify(array1));
     > bluegreenred
 
-    String[] array2 = {"A", " ", "B", " ", "A"};
+    String[] array2 = {"aaa", " ", "bbbb", " ", "aaa"};
     System.out.println(ArrayLab.stringify(array2));
-    > A B A
+    > aaa bbbb aaa
+    ```
+
+    If you found this too easy,  try to capitalizing each word to create camel case.
+    ```java
+    String[] array1 = {"blue", "green", "red"};
+    System.out.println(ArrayLab.stringify(array1));
+    > BlueGreenRed
+
+    String[] array2 = {"aaa", " ", "bbbb", " ", "aaa"};
+    System.out.println(ArrayLab.stringify(array2));
+    > Aaa Bbbb Aaa
     ```
 
 
-4. (Medium) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements. **Hint:** Notice the new array is the same length as the input array, and the first element is always the same. How do you find the subsequent sums?
+3. (Medium) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements. **Hint:** Notice the new array is the same length as the input array, and the first element is always the same.
 
    Code Pad:
 
@@ -78,8 +78,25 @@ By the end of this lab, students will be able to:
     > [10, 40, 90, 160]
     ```
 
+4. (Medium) Write a method `public static boolean palindrome(int[] array)`  that determines an array can be read the same forwards and backwards. Your algorithm must be "in-place" (in other words, you are not allowed to create another array). Consider the following usage:
 
-5. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). **Hint:** Notice the length of the mirrored array is twice as long as the input array. Write two loops -- one that simply copies the first half, and one that copies the second half in reverse order.
+    Code Pad:
+
+    ```java
+    int[] array1 = {1, 2, 3, 2, 1};
+    System.out.println(palindrome(array1));
+    > true
+
+    int[] array2 = {1, 2, 3, 4, 4, 3, 2, 1};
+    System.out.println(palindrome(array2));
+    > true
+
+    int[] array3 = {1, 2, 3, 1};
+    System.out.println(palindrome(array3));
+    > false
+    ```
+
+5. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). **Hint:** Notice the length of the mirrored array is twice as long as the input array. Would it help to write two loops? One that simply copies the first half down, and one that copies the second half in reverse order.
 
     Code Pad:
 
@@ -94,6 +111,23 @@ By the end of this lab, students will be able to:
     > [10, 30, 50, 70, 70, 50, 30, 10]
     ```
 
+
+6. (Spiciest) Write the method `public static int[] interleave(int[] array1, int[] array2)` that returns a new array that interleaves the two input arrays by alternating their elements. The first element of the combined array should come from `array1`. You may not assume that the input arrays are of the same length. If they differ in length, the remaining elements left over from the longer input array are copied to the back of the combined array. **Hint:** I would use 3 iterators, one for traversing each array.
+
+    Code Pad:
+
+    ```java
+    import java.util.Arrays;
+    int[] array1 = {100, 200, 300};
+    int[] array2 = {1, 2, 3};
+    System.out.println(Arrays.toString(ArrayLab.interleave(array1, array2)));
+    > [100, 1, 200, 2, 300, 3]
+
+    int[] array3 = {100, 200, 300, 400, 500};
+    int[] array4 = {5, 6};
+    System.out.println(Arrays.toString(ArrayLab.interleave(array3, array4)));
+    > [100, 5, 200, 6, 300, 400, 500]
+    ```
 
 
 #### Extra Puzzles (Strongly Encouraged)
@@ -116,7 +150,7 @@ You won't get any extra credit for these, but doing them will bring you enlighte
     > []
     ```
 
-- (Medium) Write a method `public static double secondLargest(double[] array)` that returns the second largest element in the input array. If the second-largest element doesn't exist, return `Double.NaN`. Hint: Find the largest (max) element first, then ignore it in the second pass. 
+- (Medium) Write a method `public static double secondLargest(double[] array)` that returns the second largest element in the input array. If the second-largest element doesn't exist, return `Double.NaN`. Hint: Find the largest (max) element first, then write a similar loop to find the largest again while ignoring the largest element. 
 
    Code Pad:
 
@@ -134,7 +168,8 @@ You won't get any extra credit for these, but doing them will bring you enlighte
     > NaN
     ```
 
-- (Spiciest) Write a method, `public static void zeroes2End(int[] array)` that moves all zero values to the end of the array, but what makes it tough is that you need to maintain the order of non-zero elements. Your code must work on the input array directly. Do not create a new array as there's nothing to return! **Hint:** You need two indices: one from the left that moves right to find a zero. Once you find a zero, introduce a second index looping from that same position and also moves to the right, finding a non-zero. If you find a non-zero using the second index, swap the two elements at the two indices. Continue until the first index reaches the end. **Hint 2:** If you need to end a loop early, you can use the command `break;`
+
+- (Spiciest) Write a method, `public static void zeroes2End(int[] array)` that moves all zero values to the end of the array, but what makes it tough is that you need to maintain the order of non-zero elements. Your code must work on the input array directly. You must do this "in-place" (Do not create a new array as there's nothing to return!)  **Hint:** Though you don't necessary *need* to, if you ever needed to end a loop early, you can use the command `break;`
 
    Code Pad:
 
