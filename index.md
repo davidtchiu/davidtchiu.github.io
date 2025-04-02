@@ -7,8 +7,9 @@
   David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>. He is the inaugural Director and Faculty Advisor of the Students of Color Residential Community.
   </p>
   <p>
-  David holds a PhD in Computer Science and Engineering from <a href="https://cse.osu.edu">The Ohio State University</a>, completed under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now Founding Director of the School of Computing at UGA). A member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David's research focused on the dynamic composition, modeling, and performance optimization of scientific workflows in distributed cloud environments. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on protocols and tools for supporting the transmission of web-based math education modules.
-
+  David holds a Ph.D. in Computer Science and Engineering from <a href="https://cse.osu.edu">The Ohio State University</a>, completed under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now Founding Director of the School of Computing at UGA). A member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David's research focused on the dynamic composition, modeling, and performance optimization of scientific workflows in distributed cloud environments. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on protocols and tools for supporting the transmission of web-based math education modules.
+  </p>
+  <p>
   From 2010 to 2014, he served as an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been at the University of Puget Sound, where he has held faculty appointments as Assistant Professor (2014–2017), Associate Professor (2017–2022), and Professor (2022–present). He also completed a term as Department Chair from 2019 to 2022.
   </p>
   <p>
@@ -25,6 +26,7 @@
 
 ### Recent Activities
 
+- (04/2025) Completed a site visit to [DIS Study Abroad in Scandinavia](https://disabroad.org/) (Stockholm and Copenhagen campuses).
 - (02/2025) Search Committee, Department of Communications Studies, University of Puget Sound.
 - (08/2024) Co-chairing the International Education Committee (IEC), University of Puget Sound.
 - (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
