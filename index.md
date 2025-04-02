@@ -2,10 +2,10 @@
 
 <!-- <div style="display: grid; grid-template-columns: auto auto; column-gap: 15px;">
   <div> -->
-  <img src="david-ghibli.png" width="300px" style="float: left; margin-right: 15px; width: 200px; height: auto;"/>
   <p>
   David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>. He is the inaugural Director and Faculty Advisor of the Students of Color Residential Community.
   </p>
+  <img src="david-ghibli.png"  style="float: right; margin-right: 15px; width: 300px; height: auto;"/>
   <p>
   David holds a PhD in Computer Science and Engineering from <a href="https://cse.osu.edu">The Ohio State University</a>, completed under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now Founding Director of the School of Computing at UGA). A member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David's research focused on the dynamic composition, modeling, and performance optimization of scientific workflows in distributed cloud environments. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on protocols and data models supporting web-based transmission of mathematics education modules.
 
@@ -17,8 +17,8 @@
   <p>
   David’s contributions have been recognized with several honors, including the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), the Bartanen Research Award (2017) from the University of Puget Sound, and the Eleanor Quinlan Memorial Award for Excellence in Teaching (2009) from The Ohio State University. He is a member of the ACM and a Senior Member of the IEEE.
   </p>
-  </div>
-  <div style="vertical-align: top;">
+  <!-- </div> -->
+  <!-- <div style="vertical-align: top;"> -->
   <!-- </div>
 </div> -->
 
