@@ -42,7 +42,7 @@ The game is played on a square grid of cells. Each cell can either be alive or i
   ```java
   Cell c = new Cell();
   c.isAlive()
-  > false  (boolean)
+  > false  (boolean)  <--- your results may vary given 50/50 probability
 
   Cell anotherCell = new Cell(true);
   c.isAlive()
