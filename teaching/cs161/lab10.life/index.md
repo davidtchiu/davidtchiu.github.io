@@ -33,6 +33,17 @@ The game is played on a square grid of cells. Each cell can either be alive or i
 
   - The default constructor has a 50%-50% chance of setting the state to inactive or alive. The `Random` class will again be useful here. It has a method called `nextBoolean()` that will randomly return `true` or `false` with 50%-50% probability.
 
+    Recall that, to use the random number generator, you must first import it at the top of your file:
+    ```java
+    import java.util.Random;
+    ```
+
+    Then to use it, you need to instantiate a copy:
+    ```java
+    Random rng = new Random();
+    // now you can call rng.nextBoolean() to return a boolean value!
+    ```
+
   - A second constructor should allow users to input the initial value for the Cell's living state, instead of being randomly assigned.
 
   - Write a getter method named `isAlive()` that takes no inputs and returns the state of your `Cell`'s living status
