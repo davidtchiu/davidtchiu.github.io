@@ -24,7 +24,7 @@ The following file(s) have been provided for this project.
 - [Lab_Life.zip](Lab_Life.zip)
 
 
-#### Part 1: Cells
+#### Part 1: Cell Class
 The game is played on a square grid of cells. Each cell can either be alive or inactive, so this should be a very simple class to write.
 
 - Create a new class `Cell`, which has a single instance variable that represents whether it is alive or inactive (a `boolean` ought to work).
@@ -35,19 +35,19 @@ The game is played on a square grid of cells. Each cell can either be alive or i
 
   - A second constructor should allow users to input the initial value for the Cell's living state, instead of being randomly assigned.
 
-- Write a getter method named `isAlive()` that takes no inputs and returns the state of your `Cell`'s living status
+  - Write a getter method named `isAlive()` that takes no inputs and returns the state of your `Cell`'s living status
 
-- You can test your code from within the Code Pad:
+  - You can test your code from within the Code Pad:
 
-  ```java
-  Cell c = new Cell();
-  c.isAlive()
-  > false  (boolean)  <--- your results may vary given 50/50 probability
+    ```java
+    Cell c = new Cell();
+    c.isAlive()
+    > false  (boolean)  <--- your result may vary given 50-50 probability
 
-  Cell anotherCell = new Cell(true);
-  c.isAlive()
-  > true  (boolean)
-  ```
+    Cell anotherCell = new Cell(true);
+    anotherCell.isAlive()
+    > true  (boolean)
+    ```
 
 #### Part 2: Life Class
 You will need to modify the `Life` class in order to make things work. Important: In our board, the axes are flipped: `x` refers to the vertical axis, and `y` refers to the horizontal axis. Please remember this!
