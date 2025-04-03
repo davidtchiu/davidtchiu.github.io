@@ -87,7 +87,7 @@ We will now implement the methods that determine if a `Cell` should live or die.
     7. `board[x+1][y]`
     8. `board[x+1][y+1]`
 
-    Recall that you can ask an individual Cell to see if it's alive or not, by using their `isAlive()` method. Therefore, you can write something like:
+    Recall that you can ask an individual Cell to see if it's alive or not, by using its `isAlive()` method. Therefore, you can write something like:
 
       ```java
       if (board[x-1][y-1].isAlive()) {
@@ -95,7 +95,7 @@ We will now implement the methods that determine if a `Cell` should live or die.
       }
       ```
 
-2. Depending on where the current cell is positioned, some of those 8 neighbors may be out of bounds. 
+2. **But does a neighbor exist?** Depending on where the current cell is positioned, some of those 8 neighbors may be out of bounds. 
 
     - In the **left-hand figure** below, we're examining the number of neighbors for the `Cell` at `board[4][2]` (marked in blue). All eight of its neighbors are in range and therefore can be checked on whether they are living or dead. Tally up a count for each neighbor determined to be alive, and return the count.
 
@@ -118,7 +118,7 @@ We will now implement the methods that determine if a `Cell` should live or die.
 
     - When you're done, and the whole `nextGenBoard` has been populated, simply re-assign `board` to point to `nextGenBoard`. This replaces your board with the new one!
 
-4. Remember to test your code! At this point, you should be able to hit the `"Next"` button to see a single generation (everytime you hit the "Next" button, your `nextGeneration()` method is called.) You could also use the "Start" and "Stop" buttons to run through generations continuously to see your board evolve! Try running the game multiple times (or hitting "Random" to reset the board). Does everything die out? Or does it keep going for a long time? Does it eventually "settle" into a steady state? Or alternate between two closely related states?
+4. Remember to test your code! At this point, you should be able to hit the `"Next"` button to see a single generation (everytime you hit the `"Next"` button, your `nextGeneration()` method is called.) You could also use the "Start" and `"Stop"` buttons to run through generations continuously to see your board evolve! Try running the game multiple times (or hitting `"Random"` to reset the board). Does everything die out? Or does it keep going for a long time? Does it eventually settle into a steady state? Or alternate between two closely related states?
 
 5. Although it's random, if your board always stabilizes after only 4-5 generations, something is probably a bit off in your `countLivingNeighbors()` code. Our results consistently either never converges to a steady state, or takes  dozens of generations to settle.
 
