@@ -146,6 +146,11 @@ There are known patterns that produce interesting results over time.
   - To do this, change `DEFAULT_SIZE` constant in the Life class to something large, say 200.
   - Then, in LifePanel, change the `BOARD_WIDTH` and `BOARD_HEIGHT` instance variables to 200 as well.
 
+- **Changing the color:** For fun, you can also change the color of the cells inside `LifePanel`. Look towards the bottom:
+  ```java
+  g.setColor(Color.BLACK);  // try Color.RED, Color.BLUE, Color.YELLOW, Color.MAGENTA, ... 
+  ```
+
 #### Grading
 
 ```
