@@ -44,7 +44,7 @@ The following file(s) have been provided for this assignment.
   - `Image.java`: This is the `Image` class, which represents a greyscale image and offers services to manipulate this image. There are several methods left for you to implement.
   - `Fotoshop.java`: This is the `Fotoshop` class, which just contains the main method you would run to manipulate the image.
 
-- Open the `Image` class that has been provided. Scroll to the bottom and you will find the following methods already implemented. Do not modify these methods!
+- Open the `Image` class that has been provided. Scroll to the bottom and you will find the following methods already implemented. **Do not modify these methods!**
 
   - `public void open(String filename)`: Opens the given filename and reads it into the 2D array.
   - `public void save(String targetFilename)`: Saves the current `Image` to the given filename.

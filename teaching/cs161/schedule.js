@@ -71,12 +71,12 @@ let days = {
       //   url: "hwk6.cc/",
       //   due: "4/4/2025", // Mon, wk 11 (right after spring break)
       // },
-      // {
-      //   name: "Hwk 7",
-      //   title: "Images (2D Array)",
-      //   url: "hwk7.img/",
-      //   due: "4/14/2025", // Mon, wk 13 (right after spring break)
-      // },
+      {
+        name: "Hwk 7",
+        title: "Fotoshop (2D Array)",
+        url: "hwk7.img/",
+        due: "4/14/2025", // Mon, wk 13 (right after spring break)
+      },
       // {
       //   name: "Hwk 8",
       //   title: "Black Jack",
@@ -225,26 +225,26 @@ let days = {
     "More loops: Prime number testing",
     "Nested loops",
     "Lab 8: Nested Loops",
-    "Start Arrays; Write the Bank class",
+    "Start 1D arrays; Write the Bank class",
     // wk 9: spring break
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     // wk 10
-    "Array exercises",
-    "Array exercises",
+    "1D Array practice",
+    "1D Array practice",
     "Lab 9: Combo Guesser (1D Array)",
     "Arrays of objects: TurtleMob",
     // wk 11
     "2D Arrays",
-    "2D Arrays",
+    "2D Arrays: TicTacToe",
     "Lab 10: Game of Life (2D Array)",
     "Lab review",
     // wk 12
-    "Start ArrayLists",
+    "Finish TTT; Start ArrayLists",
     "More ArrayLists",
-    "<strong><emph>Review</emph></strong>, plus Lab 11: Super CircleDrawer (ArrayList)",
+    "<strong><emph>Review</emph></strong> + Lab 11: Super CircleDrawer (ArrayList)",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
     "Scanner: user interaction",
@@ -252,12 +252,12 @@ let days = {
     "Lab 12: Boulders (String Parsing)",
     "Information hiding",
     // wk 14
+    "File handling",
+    "File handling",
+    "Lab 13: Cards (Enum type)",
     "static scope, constants, enums",
     "The main method",
-    "Lab 13: Cards (Enum type)",
-    "File handling",
     // wk 15
-    "File handling",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
