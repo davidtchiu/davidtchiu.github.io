@@ -75,7 +75,7 @@ let days = {
         name: "Hwk 7",
         title: "Fotoshop (2D Array)",
         url: "hwk7.img/",
-        due: "4/14/2025", // Mon, wk 13 (right after spring break)
+        due: "4/16/2025", // Mon, wk 13
       },
       // {
       //   name: "Hwk 8",
@@ -83,12 +83,12 @@ let days = {
       //   url: "hwkF.blackjack.enums/",
       //   due: "5/9/2025", // Fri (exam period)
       // },
-      // {
-      //   name: "Final Hwk Prop",
-      //   title: "Final Homework Proposal (Optional)",
-      //   url: "hwkF.prep/",
-      //   due: "4/11/2025",  // Fri, wk 12
-      // },
+      {
+        name: "Final Proposal",
+        title: "Final Homework Proposal (Optional)",
+        url: "hwkF.prep/",
+        due: "4/14/2025",  // Fri, wk 12
+      },
       // // // {
       // // //   name: "Final Hwk (alternate)",
       // // //   title: "Pooled Testing",
