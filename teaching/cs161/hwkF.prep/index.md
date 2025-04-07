@@ -5,7 +5,7 @@
 For your final assignment, you may choose between a pre-made assignment (Black Jack) or you can pitch your own idea. If you decide to pitch your own (which I encourage), it must have the following attributes:
 
 - A main method that accepts user input (if appropriate) and runs your program.
-- Use of at least one collection: arrays (1D, 2D, etc.), ArrayList, HashMap, or Set.
+- Use of at least one collection: arrays (1D, 2D, etc.), and ArrayList. You can also explore a new structure, like HashMaps!
 - If appropriate, your program might input data from a file.
 - Use of constants wherever possible.
 - You are allowed to use APIs and libraries that we have not learned, and you're also allowed to use APIs and libraries that are written by others, so as long as they are credited in your software.
