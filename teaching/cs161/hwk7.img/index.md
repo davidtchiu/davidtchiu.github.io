@@ -63,11 +63,15 @@ Before moving on to the next section, you should test everything out to check wh
 <center>
 	<table width="100%">
 	<tr>
-	<td width="50%">
+	<td width="33%">
+	Original Image<br><br>
+	<img border="1" width="250" src="figures/gcOrig.jpg"/>
+	</td>
+	<td width="33%">
 	<code>Image cat = new Image("cat.jpg");<br/>cat.gamma(0.85);  // Darken<br/>cat.save("cat-gamma.pgm");</code><br/>
 	<img border="1" width="250" src="figures/gcPower_1.25_0.85.jpg"/>
 	</td>
-	<td width="50%">
+	<td width="33%">
 	<code>Image cat = new Image("cat.jpg");<br/>cat.inverse();<br/>cat.save("cat-inv.jpg");</code><br/>
 	<img border="1" width="250" src="figures/gcInverse.jpg"/>
 	</td>
@@ -102,13 +106,17 @@ Before moving on to the next section, you should test everything out to check wh
 <center>
 	<table width="100%">
 	<tr>
-	<td width="50%">
-	<code>Image road = new Image("road.jpg");<br/>road.flipHorizontal();<br/>road.save("road-new.jpg");</code><br/>
-	<img border="1" width="250" src="figures/road-hor.jpg"/>
+	<td width="33%">
+	<code>Original<br><br/>
+	<img border="1" width="250" src="figures/road.jpg"/>
 	</td>
-	<td width="50%">
-	<code>Image road = new Image("road.jpg");<br/>road.flipVertical();<br/>road.save("road-new.jpg");</code><br/>
+	<td width="33%">
+	<code>Image road = new Image("road.jpg");<br/>road.flipHorizontal();<br/>road.save("road-new.jpg");</code><br/>
 	<img border="1" width="250" src="figures/road-vert.jpg"/>
+	</td>
+	<td width="33%">
+	<code>Image road = new Image("road.jpg");<br/>road.flipVertical();<br/>road.save("road-new.jpg");</code><br/>
+	<img border="1" width="250" src="figures/road-hor.jpg"/>
 	</td>
 	</tr>
 	</table>
