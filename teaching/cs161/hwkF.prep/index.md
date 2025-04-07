@@ -17,7 +17,9 @@ Here are the cool project ideas from years past. You're certainly welcome to reu
 
 Here's a short list of what CS 161 students have done in the last couple years:
 
-- _Hangman:_ The game inputs a file containing all known English words (you can find this in a lot of places on the Internet), and the game selects a random word out of that file. The letters in the secret word are initially concealed by "dashes." As users input letters to guess, they either get a "hit," revealing the letters in the correct spot, or they get a "miss," which adds a body part to the hangman. Once hangman is drawn, and the word has not been guessed, the user loses and the word is revealed.
+- _Fotoshop II:_ You've had some practice with Fotoshop, but there are so many other things we could've done! You could improve upon it by adding in a user-interface (ask the user what they want to do, what image to load, etc.) Add in new features, like rotate clockwise, rotate counterclockwise, sharpen (opposite of smooth), edge detection (sobel filtering), etc.
+
+- _Battleship, Guess Who, Connect 4, etc.:_ Many classic boardgames are really just 2D arrays in disguise! Write a program that lets you play one of these games against the computer! (What would the computer's strategy be in each of these games? Reflect on how we programmed in some naive strategies for Tic Tac Toe.)
 
 - _Hiking Database and Guide:_ A program stores various hike data in a file for Washington State. It starts by asking the user what scenes they want to see on a hike (waterfalls, mountains, wildflowers, etc.) Then it asks for the user's preferred difficulty level, and length. Given these inputs, the program outputs all the hikes matching the user's criteria.
 
@@ -27,7 +29,6 @@ Here's a short list of what CS 161 students have done in the last couple years:
 
 - _Mood Guesser:_ A program that utilizes an external API that can tell you the sentiment value for a given word (Ask me for it, and I can provide). For instance, the score for a positive word, like "happy" or "awesome" would be closer to 1.0. A negative word like "angry" or "unfair" would have a sentiment score closer to -1.0. Using a library that can do this, you try to guess the mood of someone writing a tweet.
 
-<!-- - _A Graphical BlackJack:_ One student programmed BlackJack, and then wrote a graphical interface for it (think Life lab). A black jack table is drawn on the canvas, hit and hold and quit buttons are implemented -->
 
 #### Proposal
 
