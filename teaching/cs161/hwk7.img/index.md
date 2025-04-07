@@ -112,11 +112,11 @@ Before moving on to the next section, you should test everything out to check wh
 	</td>
 	<td width="33%">
 	<code>Image road = new Image("road.jpg");<br/>road.flipHorizontal();<br/>road.save("road-new.jpg");</code><br/>
-	<img border="1" width="250" src="figures/road-vert.jpg"/>
+	<img border="1" width="250" src="figures/road-hor.jpg"/>
 	</td>
 	<td width="33%">
 	<code>Image road = new Image("road.jpg");<br/>road.flipVertical();<br/>road.save("road-new.jpg");</code><br/>
-	<img border="1" width="250" src="figures/road-hor.jpg"/>
+	<img border="1" width="250" src="figures/road-vert.jpg"/>
 	</td>
 	</tr>
 	</table>
