@@ -64,7 +64,7 @@ Before moving on to the next section, you should test everything out to check wh
 	<table width="100%">
 	<tr>
 	<td width="33%">
-	<code>Original<br/><br/></code><br/>
+	<code>Original<br/><br/><br></code><br/>
 	<img border="1" width="250" src="figures/gcOrig.jpg"/>
 	</td>
 	<td width="33%">
@@ -79,9 +79,9 @@ Before moving on to the next section, you should test everything out to check wh
 	</table>
 </center>
 
-#### Rotation and Flipping
+#### Flipping Images along an Axis
 
-- Write a method `flipHorizontal()` that will flip your 2D array along the horizontal (x) axis. The Pixels on the left-hand side of the image get swapped over to the right-hand side. For instance,
+- Write a method `flipHorizontal()` that will flip your 2D array along the vertical (y) axis. The Pixels on the left-hand side of the image get swapped over to the right-hand side. For instance,
 
     ```txt
     for all rows y:
@@ -91,7 +91,7 @@ Before moving on to the next section, you should test everything out to check wh
     and so on...
     ```
 
-- Write a method `flipVertical()` that will flip your 2D array along the vertical (y) axis. The Pixels on the top of the image get swapped over to the bottom. For instance,
+- Write a method `flipVertical()` that will flip your 2D array along the horizontal (x) axis. The Pixels on the top of the image get swapped over to the bottom. For instance,
 
     ```txt
     for all columns x:
@@ -107,7 +107,7 @@ Before moving on to the next section, you should test everything out to check wh
 	<table width="100%">
 	<tr>
 	<td width="33%">
-	<code>Original<br/><br/></code><br/>
+	<code>Original<br/><br/><br></code><br/>
 	<img border="1" width="250" src="figures/road.jpg"/>
 	</td>
 	<td width="33%">
@@ -151,13 +151,13 @@ In the picture to the right, notice that the graininess is less pronounced due t
 #### Grading
 
 ```
-This assignment is graded out of 70 total pts.
+This assignment is graded out of 75 total pts.
 
 [10 pts] Completion of inverse()
 [10 pts] Completion of gamma()
 [15 pts] Completion of flipVertical()
 [15 pts] Completion of flipHorizontal()
-[20 pts] Completion of smooth()
+[25 pts] Completion of smooth()
 ```
 
 
