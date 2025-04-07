@@ -64,7 +64,7 @@ Before moving on to the next section, you should test everything out to check wh
 	<table width="100%">
 	<tr>
 	<td width="33%">
-	Original Image<br><br>
+	<code>Original<br/><br/></code><br/>
 	<img border="1" width="250" src="figures/gcOrig.jpg"/>
 	</td>
 	<td width="33%">
@@ -107,7 +107,7 @@ Before moving on to the next section, you should test everything out to check wh
 	<table width="100%">
 	<tr>
 	<td width="33%">
-	<code>Original<br><br/>
+	<code>Original<br/><br/></code><br/>
 	<img border="1" width="250" src="figures/road.jpg"/>
 	</td>
 	<td width="33%">
