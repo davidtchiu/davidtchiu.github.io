@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Final Homework Proposal
+### Final Project Proposal (Optional)
 
 For your final assignment, you may choose between a pre-made assignment (Black Jack) or you can pitch your own idea. If you decide to pitch your own (which I encourage), it must have the following attributes:
 
@@ -19,11 +19,11 @@ Here's a short list of what CS 161 students have done in the last couple years:
 
 - _Fotoshop II:_ You've had some practice with Fotoshop, but there are so many other things we could've done! You could improve upon it by adding in a user-interface (ask the user what they want to do, what image to load, etc.) Add in new features, like rotate clockwise, rotate counterclockwise, sharpen (opposite of smooth), edge detection (sobel filtering), etc.
 
-- _Battleship, Guess Who, Connect 4, etc.:_ Many classic boardgames are really just 2D arrays in disguise! Write a program that lets you play one of these games against the computer! (What would the computer's strategy be in each of these games? Reflect on how we programmed in some naive strategies for Tic Tac Toe.)
+- _Battleship, Guess Who, Connect 4, etc.:_ Many classic childhood games are really just 2D arrays in disguise! Write a program that lets you play one of these games against the computer! (What would the computer's strategy be in each of these games? Reflect on how we programmed in some naive strategies for Tic Tac Toe.)
 
 - _Hiking Database and Guide:_ A program stores various hike data in a file for Washington State. It starts by asking the user what scenes they want to see on a hike (waterfalls, mountains, wildflowers, etc.) Then it asks for the user's preferred difficulty level, and length. Given these inputs, the program outputs all the hikes matching the user's criteria.
 
-- _Music Player:_ A program that catalogs your MP3 files. You can print a list of all of them on your computer (presumably, all your MP3s are in a single folder). You can organize them in terms of genre, artist, title, etc. Once the user selects the file they want to play (by inputting its filename), you can use an external library to play those an MP3 file.
+- _Music Player:_ A program that catalogs your music files. You can print a list of all of them on your computer (presumably, all your files are in a single folder). You can organize them in terms of genre, artist, title, etc. Once the user selects the file they want to play (by inputting its filename), you can use an external library to play those a music file.
 
 - _Tamagotchi:_ A program that simulates a flower or animal that you must care for over time. The entity grows and becomes happy/unhappy depending on the frequency and type of your interactions. One challenge is getting the program to recognize how long it has been (in real time) since your last interaction with the entity.
 

@@ -26,8 +26,9 @@ Would render into the following 2 x 3 image (which has been zoomed in so it's ea
 As you can see, each integer in the 2D array corresponds to a gray pixel intensity value. Values closer to zero tend towards black, and closer to 255 tend towards white.
 
 #### Student Outcomes
-
-- More practice with nested loops and 2D arrays
+- Practice with 2D array traversal
+- Exposure to real world applications of 2D arrays
+- Exposure to classic image processing techniques (smoothing, intensity/brightness, flipping)
 
 #### Required Files
 
@@ -52,10 +53,9 @@ The following file(s) have been provided for this assignment.
 
 - You don't need to declare any more instance variables besides the ones that are already declared. The `canvas` field will store the entire image as a 2D array of values ranging from 0 to 255. There are `height` rows, and `width` columns in this 2D array. All of these fields will be automatically populated upon calling `open()` in the constructor.
 
-- Write a method called `inverse()`. It iterates through all pixel elements in your 2D array and negates their values. For instsance, 0 becomes 255, 1 becomes 254, 2 becomes 253, and so on. 
+- Write a method called `inverse()`. It iterates through all pixel elements in your 2D array and negates their values in the range of 0 to 255. For instsance, 0 becomes 255, 1 becomes 254, 2 becomes 253, ..., 254 becomes 1, and 255 becomes 0. 
 
-
-- Write a method called `gamma()` that takes as input a `double` named `gamma`. It loops through all Pixel elements in your 2D array and applies sets all pixel values to the value of the pixel raised to the power of `gamma`. Recall that you can raise $$a$$ to the power of $$b$$ by using the method `Math.pow(a,b)`.
+- Write a method called `gamma()` that takes as input a `double` named `gamma`. It loops through all Pixel elements in your 2D array and sets all pixel values to the current value of the pixel raised to the power `gamma`. Recall that you can raise $$a$$ to the power of $$b$$ by using the method `Math.pow(a,b)`. If you want to darken your image, you can input a `gamma` value between 0 and 1. If you want to lighten your image, input a value slightly greater than 1 (such as 1.2).
 
 Before moving on to the next section, you should test everything out to check whether everything's working so far. Check out the examples below (type into the `main` method inside the `Fotoshop` class). If successful, open up the BlueJ project folder, and double-click to open the new jpeg file after transformation. You should get the results that follow:
 
