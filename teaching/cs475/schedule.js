@@ -63,12 +63,12 @@ let days = {
       //   url: "hwk7.thebridge/",
       //   due: "4/16/2025", // Wed, wk 13
       // },
-      // // // {
-      // // //   name: "Hwk 8 (bankers)",
-      // // //   title: "Banker's Algorithm",
-      // // //   url: "hwk8.bankers/",
-      // // //   due: "4/26/2024",
-      // // // },
+      {
+        name: "Hwk 7 (bankers)",
+        title: "Banker's Algorithm",
+        url: "hwk7.bankers/",
+        due: "4/18/2025",
+      },
       // {
       //   name: "Hwk 8",
       //   title: "Technical Report",
