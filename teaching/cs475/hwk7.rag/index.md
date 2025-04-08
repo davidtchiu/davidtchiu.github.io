@@ -1,17 +1,12 @@
 ## CS 475 - Operating Systems
 
 ### Hwk 7: Banker's Algorithm
-In modern operating systems, processes and threads frequently request access to shared resources: memory, files, devices, locks, semaphores, and so on. If resource allocation is not handled carefully, the system can enter a deadlock state where no progress is possible. One of the classic strategies to avoid deadlock before it occurs is Banker’s Algorithm, found by (who else?) Edsger Dijkstra.
-
-Just as a banker must ensure they never allocate loans that could bankrupt the bank, an OS must ensure that it only grants resource requests if doing so leaves the system in a safe state. The idea is to simulate allocations *before* actually making them, and deny requests that would lead to a potentially unsafe (and therefore deadlock-prone) condition.
-
-In this assignment, you will take the role of the OS and implement the safety-checking system.
 
 #### Student Outcomes
-- Understand the distinction between safe and unsafe states in resource allocation.
-- Track and manage resources using data structures for allocation, maximum demand, need, and availability.
-- Simulate resource request handling using the Banker's safety algorithm.
-- Detect whether a system state is safe after a hypothetical allocation.
+
+- Be able to define the Banker's algorithm and explain key concepts such as resource allocation, deadlock, safe states, and unsafe states.
+- Be able to determine if a system state is safe or unsafe by computing safe sequences and verifying that resource requests can be granted without leading to deadlock.
+-  Write and test Banker's algorithm, ensuring proper handling of requests, releases, and tracking of allocated versus needed resources.
 
 
 
@@ -32,31 +27,22 @@ Svetlana S, Zale F, Penny R
 
 #### Starter Code
 
-Starter code for this assignment is provided on the github repo. You must do these steps in order to submit your work to me on github.
+Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- Login to github, and go here: [https://github.com/davidtchiu/os-bankers](https://github.com/davidtchiu/os-bankers). 
+- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk8-bankers](https://github.com/davidtchiu/cs475-hwk8-bankers). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL to _your_ newly forked project. Then follow the rest of the instructions below. From VS Code, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
-- **Please do not fork from my repository!** Instead, click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
-
-- This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
-
-- Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
-
-  ```
-  git clone <your-github-url-for-this-project>
-  ```
-
-
-- This should download the starter code in a directory named after your Github repository. 
+		```
+		git clone <your-github-url-for-this-project>
+		```
 
 
 #### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `bankersSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./bankersSol <system-state-file>`. This is how your solution should behave when it's done.
+I have included a working solution of my program along with the starter code. The binary executable file is called `bankersSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./bankersSol <state file>`. This is how your solution should behave when it's done.
 
 There is a bonus version for this assignment, and the working solution is also provided, called `bankersBonusSol`.
 
-#### The System-State Input File
+#### The State Input File
 
 Your program will take a single command-line argument: the name of a state file to read. Here is the general format of a state file. If the file is not given on the command line, of if the file is not found, then simply print an error message.
 
@@ -92,7 +78,7 @@ Here's a sample state file:
 0 0 2
 ```
 
-When read top-down, the file specifies the following state:
+Read top-down, the file specifies the following state:
 
 - 3 resource types
 - 5 threads
@@ -102,16 +88,16 @@ When read top-down, the file specifies the following state:
 
 #### Vector/Matrix Functions
 
-I would start by implementing a small library of simple vector and matrix functions that will be used through out Banker's algorithm. You can assume that a vector is just an int array, and a matrix is 2D array of ints in our implementation. Here are some good ones for you to implement.
+I would start by writing a small library of simple vector/matrix functions that will be used through out Banker's algorithm. For instance, I implemented functions to:
 
-- Clone (deep copy) vectors/matrices
-- Compare two vectors: Is one "less than" the another? Are two vectors equal?
-- Add and subtract two vectors and matrices
-- Print the contents of vectors and matrices
+- clone (deep copy) vectors/matrices
+- compare two vectors
+- add, subtract two vectors/matrices
+- print the contents of vectors/matrices
 
-#### Part I: File Handling
+#### File Handling
 
-To open a file for reading, look into [fopen()](https://www.cplusplus.com/reference/cstdio/fopen/). If the given state file exists, then `fopen()` should return a non-NULL value. Notice the format of the state file. Every "token" is already separated by whitespace (either tab or newline). That's super convenient, because it allows you to simply use successive `fscanf()` calls to grab every token in the file.
+To open a file for reading, look into [fopen()](https://www.cplusplus.com/reference/cstdio/fopen/). If the given state file exists, then `fopen()` should return a non NULL value. Notice the format of the state file. Every "token" is already separated by whitespace (either tab or newline). That's super convenient, because it allows you to simply use successive `fscanf()` calls to grab every token in the file.
 
 For instance, here's how I've handled the first two lines of the state file:
 
@@ -124,9 +110,9 @@ fscanf(fp, "%d", &NPROC);
 
 The rest of the file can be read using the same approach, but be sure to allocate space for those vectors/matrices first!
 
-#### Part II: Sanity Check
+#### Sanity Check
 
-Before you run the safety algorithm, your program should do a sanity check to ensure the values given in the files are correct. There are two areas in which you need to do this:
+Before you run the safety algorithm, you should do a quick sanity check to ensure the values given in the files are correct. There are two areas in which you need to do this:
 
 1. Ensure that the currently allocated resources do not exceed the total number of resources.
 2. Ensure each thread's needs do not exceed its max demands for each resource type.
@@ -184,7 +170,7 @@ Integrity test failed: allocated resources exceed demand for Thread 2
 Need -1 instances of resource 0
 ```
 
-#### Part III: The Banker's Safety Algorithm
+#### The Safety Algorithm
 
 Upon passing the sanity checks, your task is to read in the contents of the given state file, and determine if the state is SAFE or UNSAFE by running the Banker's Safety algorithm. The pseudocode for this algorithm is given below:
 
@@ -279,6 +265,18 @@ $ less unsafe.txt
 $ ./bankers unsafe.txt
 UNSAFE:  T0 T4 can't finish
 ```
+
+<!-- #### Extra Credit
+
+A fair amount of extra credit can be earned if your program can list _all_ SAFE schedules. The behavior for UNSAFE is unchanged. You must tell me which of the following options you'd like me to apply. Exam scores cannot exceed the max score of 100, however. This is an all-or-nothing deal: Your bonus solution must be fully functioning to obtain the points and no partial bonus points will be given.
+
+- Option 1: +6pt applied to your lowest midterm exam score
+- Option 2: +4pt applied to your final exam score
+
+```
+$ ./bankers safe.txt
+
+``` -->
 
 #### Grading
 
