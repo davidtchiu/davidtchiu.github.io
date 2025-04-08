@@ -1,10 +1,8 @@
 ## CS 475 - Operating Systems
 
-### Hwk: The Bartender Problem (Synchronization)
+### Hwk 7: The Bartender Problem (Semaphores)
 
-A bar down the street from where I live recently hired me to study their operation's efficiency, so they asked me to write a bar simulator. Before I could finish, I got distracted by a note that I left on my fridge, and I haven't been able to do anything since.
-
-I need your help to finish my code! I got things started, so take a look at the starter code to see how I've broken things down. You just need to add synchronization mechanisms, wait times, and some good comments (I recommend starting with the comments to gain a good understanding of the code).
+A bar down the street from where I live recently hired me to study their operation's efficiency. They asked me to write a bar simulator. Before I could finish writing the program, I got distracted by a "Out for Milk" note that I left for myself on the fridge, and I haven't been able to do anything since. I need your help to finish this code! I got things started, so take a look at the starter code to see how I've broken things down. You just need to add synchronization mechanisms, wait times, and some good comments (I recommend starting with the comments to gain a good understanding of the code).
 
 #### Student Outcomes
 
@@ -88,7 +86,7 @@ sem_unlink("/mutex");
 - It is worth noting that, online tutorials on C's semaphores sometimes use functions that have now been deprecated.
 
   - `sem_init()` -- deprecated: use `sem_open()` instead.
-  - `sem_destroy()` -- deprecated: use `sem_close()` and `sem_unlink()` instead.
+  - `sem_destroy()` -- deprecated: use `sem_close()` then `sem_unlink()` instead.
 
 #### Example Output for 1 customer
 

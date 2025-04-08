@@ -1,11 +1,16 @@
 ## CS 475 - Operating Systems
 
-### Hwk: Banker's Safety Algorithm
+### Hwk 7: Banker's Algorithm
 
 #### Student Outcomes
 
-- To learn and implement Banker's algorithm for deadlock avoidance/detection.
+- Be able to define the Banker's algorithm and explain key concepts such as resource allocation, deadlock, safe states, and unsafe states.
+- Be able to determine if a system state is safe or unsafe by computing safe sequences and verifying that resource requests can be granted without leading to deadlock.
+-  Write and test Banker's algorithm, ensuring proper handling of requests, releases, and tracking of allocated versus needed resources.
 
+
+
+<!-- 
 #### Work in Groups
 
 You are required  to work in groups for this assignment. Please write in your names in the given `README.md` file as part of the project repo. Here are your assigned groups:
@@ -18,7 +23,7 @@ Abram R, Matthew A, Jaykob W
 Matthew Z, Nick P, Owen R-L
 Jared V, Georgia K, Mitch H
 Svetlana S, Zale F, Penny R
-```
+``` -->
 
 #### Starter Code
 
