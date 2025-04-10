@@ -158,12 +158,12 @@ let days = {
         url: "lab10.life/",
         due: "4/4/2025",
       },
-      // {
-      //   name: "Lab 11",
-      //   title: "Super Circle Drawer (ArrayLists)",
-      //   url: "lab11.superCircleDrawer/",
-      //   due: "3/29/2024",
-      // },
+      {
+        name: "Lab 11",
+        title: "Super Circle Drawer (ArrayLists)",
+        url: "lab11.superCircleDrawer/",
+        due: "4/11/2025",
+      },
       // {
       //   name: "Lab 12",
       //   title: "Tweet Processor (Scanner, String parsing)",
