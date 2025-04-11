@@ -249,20 +249,20 @@ let days = {
     // wk 13
     "Scanner: user interaction",
     "String parsing",
-    "Lab 12: Boulders (String Parsing)",
-    "Information hiding",
+    "Lab 12: Tweeter (UI + String Parsing)",
+    "File handling",
     // wk 14
     "File handling",
-    "File handling",
+    "Static scope,  enums",
     "Lab 13: Cards (Enum type)",
-    "static scope, constants, enums",
     "The main method",
     // wk 15
-    "<strong>Reading Period</strong>",
+    "Project Work Day",
+    "Project Work Day",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
-    "<strong><emph>Final Exam (8a - 10a)</strong></emph>",
+    "<strong><emph>Final Exam (8am)</strong></emph>",
     "",
     "",
     "",
