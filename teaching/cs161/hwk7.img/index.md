@@ -56,6 +56,7 @@ The following file(s) have been provided for this assignment.
 - Write a method called `inverse()`. It iterates through all pixel elements in your 2D array and negates their values in the range of 0 to 255. For instsance, 0 becomes 255, 1 becomes 254, 2 becomes 253, ..., 254 becomes 1, and 255 becomes 0. 
 
 - Write a method called `gamma()` that takes as input a `double` named `gamma`. It loops through all Pixel elements in your 2D array and sets all pixel values to the current value of the pixel raised to the power `gamma`. Recall that you can raise $$a$$ to the power of $$b$$ by using the method `Math.pow(a,b)`. If you want to darken your image, you can input a `gamma` value between 0 and 1. If you want to lighten your image, input a value slightly greater than 1 (such as 1.2).
+	- You'll need to be careful here. A `gamma` that is too large may cause the new pixel value to become greater than the maximum 255. When this is the case, you need to clamp your new value back down to 255.
 
 Before moving on to the next section, you should test everything out to check whether everything's working so far. Check out the examples below (type into the `main` method inside the `Fotoshop` class). If successful, open up the BlueJ project folder, and double-click to open the new jpeg file after transformation. You should get the results that follow:
 
