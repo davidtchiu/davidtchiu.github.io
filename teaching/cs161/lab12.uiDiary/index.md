@@ -145,14 +145,14 @@ The Diary is somewhat hard to use simply by pointing-and-clicking to call its me
 10. Recall the syntax to write a try-catch clause:
     ```java
     try {
-      // potentially risky instruction here
+      // potentially risky instructions here
     }
     catch (NumberFormatException e) {
       // alert the user that they entered a non-numerical value
     }
     ```
 
-11. After you've successfully converted their entry number into an int, grab the replacement entry from them, and call the `edit()` method on your diary. Test it out!
+11. After you've successfully converted their entry number into an int, grab the replacement entry from them, and call the `edit()` method on your diary. (Yes all of that goes inside the `try` clause). Test it out!
 
 12. Now work on the `search` command, which should further prompt the user to enter a keyword. Run the `search()` method on your Diary object to return a list of entries that match the given keyword. Your code should first print how many matches were found (ask the list that was returned!) and print out all of the matching entries.
 
@@ -160,10 +160,18 @@ The Diary is somewhat hard to use simply by pointing-and-clicking to call its me
 
 14. After you're done, make sure you're closing out the scanner object outside the while loop.
 
-#### Other Considerations:
-1. There's other things that a Diary can do (like `undo()` and `removeLongestEntry()`) but are not yet supported in our UI. Add support for those methods too.
+#### Refactoring for a New Feature
+1. Your customers say that they like this app, but demand a new menu option! They would you to add a new menu command `random` (yes, first add this option to your `printMenu()` code). Now go in your loop to add the code to print out a random diary entry.
 
-2. 
+2. Recalling from lecture how to obtain a random element from a list, you know that you need to generate a random number between 0 (inclusive) and the size of the diary (exclusive). Once you've done this, it's easy to see how you would ask your diary to return an entry using `getEntry()`. 
+
+3. But there's no method in the `Diary` class that tells you its size (i.e. the number of entries it stores)! Go into the `Diary` class to add a `countEntries()` method to simply return the number of entries in its ArrayList.
+
+4. Now back in your DiaryUI, use the `countEntries()` method to obtain the size of your diary. Using this, you can now generate a random entry number.
+
+#### Other Considerations:
+1. There's other things that a Diary can do (like `getEntry()`, `undo()` and `removeEntriesContaining()`) but are not yet supported in our UI. Add support for those methods too.
+
 
 #### Commenting
 
