@@ -4,7 +4,7 @@
   <div> -->
   <img src="david-ghibli.png"  style="float: right; margin-left: 15px; margin-bottom: 25px; width: 300px; height: auto;"/>
   <p>
-  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>. He is the inaugural Director and Faculty Advisor of the Students of Color Residential Community.
+  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>.
   </p>
   <p>
   David holds a Ph.D. in Computer Science and Engineering from <a href="https://cse.osu.edu">The Ohio State University</a>, completed under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now Founding Director of the School of Computing at UGA). A member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David's research focused on the dynamic composition, modeling, and performance optimization of scientific workflows in distributed cloud environments. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on protocols and tools for supporting the transmission of web-based math education modules.
@@ -42,7 +42,6 @@
 - (8/2023) Appointed to serve on the Total Compensation and Benefits Project, University of Puget Sound.
 - (7/2023) Serving on the PC for [BDCAT 2023](https://bdcat-conference.org/).
 - (4/2023) Congrats to Julia Kaeppel on receiving a McCormick Student Research Award.
-- (2/2023) Appointed to serve as the inaugural Advisor to Student of Color Residential Community (SCRC), University of Puget Sound.
 - (1/2023) Featured in the ["Five Questions Series"](https://www.pugetsound.edu/stories/five-questions-university-puget-sound-professor-computer-science-david-chiu) in [Arches](https://www.pugetsound.edu/arches-magazine) magazine.
 - (8/2022) Received an NSF grant to provide travel scholarships to students attending IEEE/ACM UCC 2022 and BDCAT 2022 conferences. I am also chairing the student travel awards committee.
 - (8/2022) Received the 2022 President's Award for Excellence in Teaching.

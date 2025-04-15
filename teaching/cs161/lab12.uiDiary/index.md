@@ -144,14 +144,21 @@ The Diary is somewhat hard to use simply by pointing-and-clicking to call its me
       ```java 
       Integer.parseInt(some-string)
       ```
-      which inputs a string like `"33"` and returns the int `33`!!
+      which inputs a string like `"35"` and returns the int `35`!!
 
-    - Here's the "catch" though. What if the user screws up and enters a non-number here like, `"ABCD"`? When that's the case, what's there to convert into an `int`? Java would raise an exception (specifically, a `NumberFormatException`) and crash the program. Instead, you need to catch this potential exception, and alert the user, circumventing a program crash! We can do this with a `try-catch` clause.
+    - (As an aside, can also use:)
+      ```java
+      Double.parseDouble(some-string)
+      ```
+      to turn a string like `"3.14"` to the double `3.14`.
+
+    - Here's the "catch" to using `parseInt()` though. What if the user screws up and enters a non-number here like, `"ABC"` instead of something like `"50"`? When that's the case, you'd be asking Java to convert `"ABC"` to its int equivalent. That's nonsense, and Java thinks so too! Java would raise an exception (specifically, a `NumberFormatException`) and crash the program. Instead, you need to catch this potential exception, and alert the user, circumventing a program crash! We can do this with a `try-catch` clause.
 
 10. Recall the syntax to write a try-catch clause:
     ```java
     try {
-      // potentially risky instructions here
+      // plug-in your Integer.parseInt() code here
+      //  ... and all other code that depends on it
     }
     catch (NumberFormatException e) {
       // alert the user that they entered a non-numerical value
