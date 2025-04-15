@@ -244,12 +244,12 @@ let days = {
     // wk 12
     "Finish TTT; Start ArrayLists",
     "More ArrayLists",
-    "<strong><emph>Review</emph></strong> + Lab 11: Super CircleDrawer (ArrayList)",
+    "<strong><emph>Review</emph></strong> + Lab 11: SuperCircleDrawer (ArrayList)",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
     "Scanner: user interaction",
     "String parsing",
-    "Lab 12: Tweeter (UI + String Parsing)",
+    "Lab 12: Interactive Diary (UI + String Parsing)",
     "File handling",
     // wk 14
     "File handling",
