@@ -1,12 +1,13 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Interactive Diary
-
+### Lab 12: An Interactive Diary
+<img src="figures/diary.png" width="400px" />
 
 #### Student Outcomes
 
 - Use of the Scanner object for obtaining user input.
 - Experience with String parsing.
+- Experience with try-catch.
 
 
 #### Preliminary
