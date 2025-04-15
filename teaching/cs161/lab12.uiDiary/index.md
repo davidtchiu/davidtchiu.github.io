@@ -116,17 +116,22 @@ The Diary is somewhat hard to use simply by pointing-and-clicking to call its me
 4. Directly following the scanner line, create a string variable to capture the command that the user inputs. Set the variable to `""` for now. Then write a while loop that runs as long as this string variable is not equal to `quit`. Most of your work will go inside this loop.
    - Recall that using `==` is no good for testing a string's equality! You must use the `.equals()` or `.equalsIgnoreCase()` method instead.
 
-5. The first thing you need to do in the loop is to print out the menu options. Go ahead and do so now. That method is already provided. Note that the *only* valid commands are: `new`, `edit`, `print`, `quit`, and `search`. (All other commands shall be ignored.)
+5. The first thing you need to do in the loop is to print out the menu options. Go ahead and do so now. That method is already provided.
 
-6. Next, write the code to assign the scanned user input into your string variable. Recall that the scanner object will cause the code to wait (indefinitely until something is entered!)
+6. Next, write the code to assign the scanned user input into your string variable. Recall that the scanner object will cause the code to wait (indefinitely until something is entered!). The code below will wait for a line of user input, and assign it to the string variable named `input`.
 
-7. Afterwards, you need to check what the user actually input as their command. Let's test to see if a user entered the command `new`. When this is the case, you need to prompt the user for a new diary entry ("What's on your mind?"). You need to use the scanner again to capture the new entry. Once you have it, add it to the `Diary`.
+    ```java
+    input = keyboard.nextLine();
+    ```
+  
 
-   - Abstraction: While we know that `Diary` internally keeps a list of entries, we don't really care about its details, nor do we need access to this list. This is because `Diary` gives us an easy way to save an entry through its `writeEntry()` method.
+7. Afterwards, you need to check what the user actually wrote as their command. Let's test to see if a user entered the command: `new`. When this is the case, you need to prompt the user for a new diary entry ("What's on your mind?"). Then you need to use the scanner again to capture the new entry. Once you have it, add it to the `Diary`.
 
-   - Call this method on `myDiary` to save the entry.
+   - Abstraction: While we know that `Diary` internally keeps a list of entries, we don't really care about its how it does it, nor do we need access to this list to add the new entry! This is because `Diary` gives us an easy way through its public API to add an entry through its `writeEntry()` method!
 
-   - After you've implemented the `new` command, test it out. Create a `DiaryUI` object and call `start()`. Make sure it prints the welcome banner and prompts with the menu options. Type `new` in the terminal to see if it allows you to add a new entry. To see if the entry's been successfully added, You can double-click on the `DiaryUI` object, and follow the pointer in `myDiary`. Inside it, look for the ArrayList of strings, and check to see if your new entry is stored within.
+   - Call this method on `myDiary` to save the entry that the user wrote.
+
+   - After you've implemented the `new` command, test it out: Create a `DiaryUI` object and call `start()`. Make sure it prints the welcome banner and prompts with the menu options. Type `new` in the terminal to see if it allows you to add a new entry. To see if the entry's been successfully added, You can double-click on the `DiaryUI` object, and follow the pointer in `myDiary`. Inside it, look for the ArrayList of strings, and check to see if your new entry is stored within.
 
 
 8. Now work on the `print` command. In the same way as shown above, you need to check if the user's command was `print`. If so, you just need to call the Diary method to print all its entries! (This one's easy!)
@@ -166,9 +171,9 @@ The Diary is somewhat hard to use simply by pointing-and-clicking to call its me
 
 2. Recalling from lecture how to obtain a random element from a list, you know that you need to generate a random number between 0 (inclusive) and the size of the diary (exclusive). Once you've done this, it's easy to see how you would ask your diary to return an entry using `getEntry()`. 
 
-3. But there's no method in the `Diary` class that tells you its size (i.e. the number of entries it stores)! Go into the `Diary` class to add a `countEntries()` method to simply return the number of entries in its ArrayList.
+3. But there's no method in the `Diary` class that tells you its size (i.e. the number of entries it stores)! Go into the `Diary` class to add a `count()` method to simply return the number of entries in its ArrayList.
 
-4. Now back in your DiaryUI, use the `countEntries()` method to obtain the size of your diary. Using this, you can now generate a random entry number.
+4. Now back in your DiaryUI, use the `count()` method to obtain the size of your diary. Using this, you can now generate a random entry number.
 
 #### Other Considerations:
 - **Undoing (Very Mild)** There's another method in Diary that we never supported in our UI, called `undo()`. If you have time, add support for this method too.
