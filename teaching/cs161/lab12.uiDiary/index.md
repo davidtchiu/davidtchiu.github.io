@@ -175,6 +175,8 @@ The Diary is somewhat hard to use simply by pointing-and-clicking to call its me
 
 4. Now back in your DiaryUI, use the `count()` method to obtain the size of your diary. Using this, you can now generate a random entry number.
 
+5. Careful though -- if the the `Diary` is empty, you do not want to attempt generating a random number and fetching a nonexistent entry.
+
 #### Other Considerations:
 - **Undoing (Very Mild)** There's another method in Diary that we never supported in our UI, called `undo()`. If you have time, add support for this method too.
 
