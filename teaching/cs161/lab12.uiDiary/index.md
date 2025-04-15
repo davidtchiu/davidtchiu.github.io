@@ -170,8 +170,11 @@ The Diary is somewhat hard to use simply by pointing-and-clicking to call its me
 4. Now back in your DiaryUI, use the `countEntries()` method to obtain the size of your diary. Using this, you can now generate a random entry number.
 
 #### Other Considerations:
-1. There's other things that a Diary can do (like `getEntry()`, `undo()` and `removeEntriesContaining()`) but are not yet supported in our UI. Add support for those methods too.
+- **Undoing (Very Mild)** There's another method in Diary that we never supported in our UI, called `undo()`. If you have time, add support for this method too.
 
+- **Deleting (Medium)** Go back into `Diary` and add a method to remove an entry given its entry number. Then add in a new command in `DiaryUI` called `delete`. It just needs to further prompt the user for an entry number to remove. (Yes, you have to convert their input into an int, just like you did for `edit`.)
+
+- **Reordering Entries (Spicy)** How would you go about reordering entries? Say you wanted to swap the positions of two entries. What `Diary` method would you have to write? Then how do you add this feature to your UI?
 
 #### Commenting
 
