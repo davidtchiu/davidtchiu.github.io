@@ -15,10 +15,7 @@
   <p>
   David is deeply committed to mentoring and conducting research with undergraduate students. He has supervised more than 25 student researchers on projects spanning data management, distributed systems, and cloud computing. He regularly serves on both organizational and technical program committees for international conferences in these areas. David’s academic contributions have been recognized with several honors, including the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), the Bartanen Research Award (2017) from the University of Puget Sound, and the Eleanor Quinlan Memorial Award for Excellence in Teaching (2009) from The Ohio State University. He is a member of the ACM and a Senior Member of the IEEE.
   </p>
-  <!-- </div> -->
-  <!-- <div style="vertical-align: top;"> -->
-  <!-- </div>
-</div> -->
+
 
 
 [Curriculum Vitae](CV.pdf)

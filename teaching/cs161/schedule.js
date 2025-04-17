@@ -164,6 +164,12 @@ let days = {
         url: "lab11.superCircleDrawer/",
         due: "4/14/2025",
       },
+      {
+        name: "Lab 12",
+        title: "Interactive Diary",
+        url: "lab12.uiDiary/",
+        due: "4/18/2025",
+      },
       // {
       //   name: "Lab 12",
       //   title: "Tweet Processor (Scanner, String parsing)",
@@ -248,7 +254,7 @@ let days = {
     "<strong><emph>Exam 2</emph></strong>",
     // wk 13
     "Scanner: user interaction",
-    "String parsing",
+    "String parsing: enforcing a word limit",
     "Lab 12: Interactive Diary (UI + String Parsing)",
     "File handling",
     // wk 14
