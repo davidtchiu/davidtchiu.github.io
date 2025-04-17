@@ -188,7 +188,7 @@ The Diary is somewhat hard to use simply by pointing-and-clicking to call its me
 5. Careful though -- if the the `Diary` is empty, you do not want to attempt generating a random number and fetching a nonexistent entry.
 
 #### Other Considerations:
-- **Undoing (Very Mild)** There's another method in Diary that we never supported in our UI, called `undo()`. If you have time, add support for this method too.
+- **Undoing (Very Mild)** There's another method inside Diary that we never supported in our UI, called `undo()`. All it does is delete the last entry in the diary. Put in a new menu command to call undo.
 
 - **Deleting (Medium)** Go back into `Diary` and add a method to remove an entry given its entry number. Then add in a new command in `DiaryUI` called `delete`. It just needs to further prompt the user for an entry number to remove. (Yes, you have to convert their input into an int, just like you did for `edit`.)
 
