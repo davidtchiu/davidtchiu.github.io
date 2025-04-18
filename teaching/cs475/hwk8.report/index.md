@@ -7,7 +7,7 @@ This course teaches broadly the various concepts that show up in modern operatin
 - To explore the structures of a new (or classical) operating system.
 
 #### Topics
-For this assignment, you have an option of: (1) exploring an OS of your choice, or (2) to explain a classic OS paper. 
+For this assignment, you have an option of: (1) exploring an OS of your choice, or (2) to explain a classic OS paper.
 
 If you're working on option #1, the OS does not have to be current, that is, explaining an historical operating systems are totally welcome. Among other things, your report must include clear descriptions (e.g., using illustrations when necessary) of the following elements:
 
@@ -16,12 +16,13 @@ If you're working on option #1, the OS does not have to be current, that is, exp
   - Describe your OS's CPU scheduling policies. Is it multilevel queueing? If so, what are the various scheduling policies at each level? How does a thread move between levels? You might comment on topics such as fairness, prevention of starvation, treatment of IO-bound vs. CPU-bound processes/threads, etc. Include a discussion of the pros and cons of its scheduling policy.
 
   - Describe its memory management in detail. What were some major design decisions (e.g., segmentation vs. paging vs. hybrid, etc.) they made, and why? How does the OS enforce protection among multiple processes? How is virtual memory implemented, and what are the policies involved?
+  
+    - Because memory management is the last topic we lecture on, your report must cover it deeply. This means you have to choose an OS that does some kind of memory management scheme: paging, segmentation, buddy system, etc. OS using identity based mapping (i.e. no virtual addressing) will not be acceptable. (That means you, TempleOS.)
 
   - Pick another topic that is outside the previous three to focus some attention on. This could be I/O devices, file system, etc.
 
   - An incomplete list of OS's explored by former students include:
     - FreeRTOS, iOS, Linux and UNIX variants, Osker, WebOS, Windows 95, Windows 11, Xinu
-    - I've seen enough of these: Red Star OS, Temple OS
 
   <!-- - Describe a filesystem that the OS supports by default. Describe certain structures, such as files' metadata (what and where they're stored), and any policies relating to how related blocks for a file are placed on disk. -->
 

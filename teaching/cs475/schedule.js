@@ -69,12 +69,12 @@ let days = {
         url: "hwk7.bankers/",
         due: "4/21/2025",
       },
-      // {
-      //   name: "Hwk 8",
-      //   title: "Technical Report",
-      //   url: "hwk8.report/",
-      //   due: "5/9/2025",  // Fri, finals wk
-      // },
+      {
+        name: "Hwk 8",
+        title: "Technical Report",
+        url: "hwk8.report/",
+        due: "5/9/2025",  // Fri, finals wk
+      },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
