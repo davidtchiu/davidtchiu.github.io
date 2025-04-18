@@ -67,7 +67,7 @@ let days = {
         name: "Hwk 7 (bankers)",
         title: "Banker's Algorithm",
         url: "hwk7.bankers/",
-        due: "4/18/2025",
+        due: "4/21/2025",
       },
       // {
       //   name: "Hwk 8",
