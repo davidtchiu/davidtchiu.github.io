@@ -1,8 +1,8 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Black Jack
+### Final Project: Black Jack
 
-Business at David's Casino is flourishing, but customers have been complaining that they're getting a bit bored of rock-paper-scissors, coin flipping, and dice games. To scale up his business, David wants to host Black Jack, a popular game at most casinos, but he doesn't have the ability to staff more people. He wonders if you can write a program to play Black Jack with his customers. David offers you 5% of all Black Jack winnings if you can properly implement the game, so you agree...
+Business at David's Casino is flourishing, but customers have been complaining that they're getting a bit bored of rock-paper-scissors, coin flipping, and guessing combinations. To scale up his business, David wants to host Black Jack, a popular game at most casinos. He wants to hire you to write an electronic Black Jack player. David offers you 5% of all Black Jack winnings if you can properly implement the game, so you agree...
 
 <img width="200px" src="figures/BlackJack.jpg" />
 
@@ -31,7 +31,8 @@ A quick word on face values. The face value of each card can usually be added to
   - The value of an Ace is _11_ if it does not cause the hand to bust.
   - The value of an Ace is _1_, otherwise.
   - Keep in mind there could be several Aces in a single hand... so even in the highly unlikely scenario where you somehow end up with a hand of 21 Ace cards, they should all count as 1, and leave you with a hand value of 21!
-  - **I'll give out a hint:** For each Ace in your hand, and just add 11 to the value. For instance, if had 3 Aces and a 5 in your hand, give yourself a value of 38. Now, you just need to figure out how to adjust the value down --- in this case, to 18 (= 11 + 1 + 1 + 5).
+  - **I'll give out a hint:** For each Ace in your hand, and just add 11 to the value by default. For instance, if had 3 Aces and a 5 in your hand, give yourself a value of 38 (= 11 + 11 + 11 + 5). Now, you just need to figure out how to adjust the value down --- in this case, to 18 (= 11 + 1 + 1 + 5). 
+  - To do this, you could keep a count of Aces, and subtract 10 for each until your hand is legal or until you run out of aces (whichever comes first). In our case, the hand became legal after we subtracted 10 for 2 of the 3 aces we have.
 
 #### Writing the Hand Class
 
@@ -158,11 +159,11 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
 
 - Create a class `Game`. It will initiate the game itself when people run your program. It requires no fields. You may write as many (static) helper methods as you'd like, but you must provide a main method (below).
 
-- Write the `public static void main(String[] args)` method.
+- Inside the `public static void main(String[] args)` method.
 
   - It starts by printing a "startup/welcome message" to user who will be playing against your algorithm. Then it needs to create a `Deck` and shuffle it a few times! Then create two Hands: a Hand for the AI and a Hand for the human-player. Make sure both AI and human-player Hands remember the Deck you just created.
   - If the human has a Black Jack, then the game ends. That is, neither the human nor the AI gets to hit. (The AI can push, or tie, if it also gets a Black Jack.) If the human doesn't get a Black Jack however, the game must go on.
-  - Print the AI's second Card (but don't reveal the first Card to the human). Also print the human's hand to the screen.
+  - Print the AI's second Card (but don't reveal the AI's first Card to the player). Also print the human's hand to the screen.
   - Prompt the user to either hit or hold. Scan in the user's response. If they typed in "hit," then deal them another Card and print out their hand again. Continue to prompt them to hit or hold until the human either busts or types in "hold."
   - If the user enters anything but hit or hold, then you must output an error and re-prompt.
   - Afterwards, if the human is bust, then the AI doesn't need to hit. The human loses immediately. Otherwise, the AI hits until its Hand holds at least a value of 18, or bust. After AI's action is performed, you must compare two hands, and either determine a winner or a tie.
@@ -266,9 +267,13 @@ Player: <diamond,10> <heart,8> (18)
 
 If you're finished and are looking for a challenge, consider the following extensions.
 
-**Medium:** Keep track of currency and bets. When the game starts, a user begins with some amount of money. At the beginning of each game before any cards are dealt, let the user place a bet. Do not allow this bet to exceed the user's balance (keep asking them to place a different bet until this condition is met). Then play a game. If the user wins, they receive the bet amount, and if they lose, they lose the bet. Don't just terminate the program after the game ends. Ask the user if they'd like to continue playing. If "yes" is entered, the start a new game, and terminate if "no" is entered or if the user's balance is zero.
+**Medium:** You might think about how you would save and restore a session. Let's say I've already started a game, and I currently have three cards, and the dealer has not revealed. I want to be able to type "save" and come back later. What do you need to store to a file so that this game can be restored at a later time?
 
-**Harder:** Allow the user to split a hand by inputting the command split from the terminal. Splitting can only occur when a hand contains two cards, and they both carry the same face value. If this condition does not hold, then you must reject the action, and continue playing the hand. If a split can occur, the current hand is split into two, each with just one of the cards from the original hand. The dealer then deals a card to both hands so that they each have two cards once more. Then the user plays and finishes a game on first hand, before finishing a game on the second hand. Yes, it is possible for an already-split hand to split again, if the second card is once again a duplicate. Hint: Use an ArrayList of hands.
+**Medium:** Keep track of the list of top ten players. Your game would have to start by asking the player for their name. Use a file to store the list of top ten players by the number of games they've won.
+
+**Medium:** Keep track of currency and bets. When the game starts, a user begins with some amount of money. At the beginning of each game before any cards are dealt, let the user place a bet. Do not allow this bet to exceed the user's balance (keep asking them to place a different bet until this condition is met). Then play a game. If the user wins, they receive the bet amount, and if they lose, they lose the bet. Don't just terminate the program after the game ends. Ask the user if they'd like to continue playing. If "yes" is entered, the start a new game, and terminate if "no" is entered or if the user's balance is zero. (This is even more fun if you could tie it in with the Top-10 list and with the "game saving" option mentioned above.)
+
+**Spicy:** Allow the user to split a hand by inputting the command split from the terminal. Splitting can only occur when a hand contains two cards, and they both carry the same face value. If this condition does not hold, then you must reject the action, and continue playing the hand. If a split can occur, the current hand is split into two, each with just one of the cards from the original hand. The dealer then deals a card to both hands so that they each have two cards once more. Then the user plays and finishes a game on first hand, before finishing a game on the second hand. Yes, it is possible for an already-split hand to split again, if the second card is once again a duplicate. Hint: Use an ArrayList of hands.
 
 #### Program Defensively
 

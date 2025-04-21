@@ -77,12 +77,12 @@ let days = {
         url: "hwk7.img/",
         due: "4/16/2025", // Mon, wk 13
       },
-      // {
-      //   name: "Hwk 8",
-      //   title: "Black Jack",
-      //   url: "hwkF.blackjack.enums/",
-      //   due: "5/9/2025", // Fri (exam period)
-      // },
+      {
+        name: "Hwk 8",
+        title: "Black Jack",
+        url: "hwkF.blackjack.enums/",
+        due: "5/9/2025", // Fri (exam period)
+      },
       {
         name: "Final Proposal",
         title: "Final Homework Proposal (Optional)",
@@ -176,12 +176,12 @@ let days = {
       //   url: "lab12.twitter/",
       //   due: "4/18/2025",
       // },
-      // {
-      //   name: "Lab 13",
-      //   title: "Playing Cards (Constants, Enum)",
-      //   url: "lab13.cards/",
-      //   due: "4/19/2024",
-      // }
+      {
+        name: "Lab 13",
+        title: "Playing Cards (Constants, Enum)",
+        url: "lab13.cards/",
+        due: "4/25/2024",
+      }
       // {
       //   name: "Lab 10",
       //   title: "Boulders (Files)",
