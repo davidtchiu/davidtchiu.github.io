@@ -18,11 +18,13 @@ The following file(s) have been provided for this assignment.
 
 - [Hwk_BlackJack.zip](Hwk_BlackJack.zip)
 
+#### The Suit Enumeration Class, Card Class, and Deck Class.
 
-#### A "Hand" in BlackJack Explained
-Now that we have a card and a deck of cards, we can begin thinking about how Black Jack is to be played. Black Jack requires users to hold a set of cards, called a "Hand." Let's go over its rules. 
+You will be copying over your Suit, Card, and Deck classes from lab. If you did not finish this class during lab period, go ahead and finishing them now.
 
-At the beginning of each game, a player is dealt two cards to their "Hand." The suits of the cards are not pertinent. The face values of these cards are added together. The objective is to get the sum of the hand as close to **21** as possible, without exceeding it (known as a *bust* if you do). A player can decide to "hit," in which the top card from the deck is drawn and added to their hand.
+#### "Hands" Explained
+
+Black Jack requires users to hold a set of cards, generally known as a "Hand." Let's go over its rules. At arbitrary points of the game, a hand contains at least two Cards. The suits are ignored, but the face values of these cards are added together. The objective is to get the sum of the hand as close to **21** as possible, without exceeding it (known as a bust if you do). Initially, a hand starts with two Cards. Users can decide to hit, in which the top card from the deck is drawn and added to their Hand.
 
 A quick word on face values. The face value of each card can usually be added to the value of the hand, with a few exceptions:
 
@@ -31,13 +33,13 @@ A quick word on face values. The face value of each card can usually be added to
   - The value of an Ace is _11_ if it does not cause the hand to bust.
   - The value of an Ace is _1_, otherwise.
   - Keep in mind there could be several Aces in a single hand... so even in the highly unlikely scenario where you somehow end up with a hand of 21 Ace cards, they should all count as 1, and leave you with a hand value of 21!
-  - **I'll give out a hint:** For each Ace in your hand, and just add 11 to the value. For instance, if had 3 Aces and a 5 in your hand, give yourself a value of 38. Now, you just need to figure out how to adjust the value down --- in this case, to 18 (= 11 + 1 + 1 + 5).
+  - **I'll give out a hint:** For each Ace in your hand, go ahead and just add 11 to the value. For instance, if had 3 Aces and a 5 in your hand, give yourself a value of 38. Now, you just need to figure out how to adjust the value down --- in this case, to 18 (= 11 + 1 + 1 + 5).
 
 #### Writing the Hand Class
 
-- This class should store an `ArrayList` of `Card`s.
+- This class should keep a list of `Card`s. I'll leave it up to you to determine a good data structure to use to store these cards, but it should be fairly obviously.
 
-- This class should also store a reference to a `Deck`, which represents all the `Card`s that have yet to be drawn.
+- This class should keep a reference to a `Deck` object, which represents all the `Card`s that have yet to be drawn.
 
 - Write a 1-argument constructor that takes as input a `Deck` object. Upon being called, it should remove the top two cards from the Deck, and add them to the hand.
 
@@ -160,7 +162,7 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
 
 - Write the `public static void main(String[] args)` method.
 
-  - It starts by printing a "startup/welcome message" to user who will be playing against your algorithm. Then it needs to create a `Deck` and shuffle it a few times! Then create two Hands: a Hand for the AI and a Hand for the human-player. Make sure both AI and human-player Hands remember the Deck you just created.
+  - It starts by printing a "startup/welcome message" to the sucker (I mean human player) who will be playing against your algorithm. Create a Deck here and shuffle it a few times! Then create two Hands: a Hand for the AI and a Hand for the human-player. Make sure both AI and human-player Hands remember the Deck you just created.
   - If the human has a Black Jack, then the game ends. That is, neither the human nor the AI gets to hit. (The AI can push, or tie, if it also gets a Black Jack.) If the human doesn't get a Black Jack however, the game must go on.
   - Print the AI's second Card (but don't reveal the first Card to the human). Also print the human's hand to the screen.
   - Prompt the user to either hit or hold. Scan in the user's response. If they typed in "hit," then deal them another Card and print out their hand again. Continue to prompt them to hit or hold until the human either busts or types in "hold."

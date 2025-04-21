@@ -1,16 +1,28 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Playing Cards
+### Lab 13: Playing Cards and Decks
 
 <img width="400px" src="https://scx1.b-cdn.net/csz/news/800/2017/heresthebest.jpg" />
 
 In this lab, you will create classes that model playing cards and decks of playing
-cards. You will practice using enum classes, and the `main()` method.
+cards. You will practice using files, enum classes, and the `main()` method. You'll be
+writing the "DeckPro" program, which is a simple app to generate a random
+deck of cards. 
 
 #### Student Outcomes
 
+- Practice reading files
 - Practice writing/using `enum` classes
 - Practice writing the `main()` method
+
+
+#### Required Files
+
+The following file(s) have been provided for this homework.
+
+- [Lab13_DeckPro.zip](Lab13_DeckPro.zip)
+
+
 
 <!--
 #### Required Files
@@ -62,59 +74,35 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 
 -->
 
-#### Preliminary: The main() Method
-Create a new class called `CardTester`. Inside the class, you should provide a single main method. Feel free to copy and paste the segment below:
-
-```java
-public static void main(String[] args) {
-  System.out.println("Test");
-}
-```
-Within the main method, print out some dummy message within main. Save it, and to run the main method, simply right-click on the `CardTester` class, and call the `main()` method. Hit enter on the dialog box that pops up. Cool, so it looks like static methods can be called directly on the class. Convenient! Let's remember that...
 
 #### Part 1: Card Class and Suit Enum Class
 
-- Create a new `enum` class called `Suit`, which defines `CLUB`, `SPADE`, `HEART`, `DIAMOND`. That's all you need in that class!
+- Create a new `Enum` class called `Suit`. Click on the "New class" button in BlueJ and choose `Enum`. Name it `Suit` and simply define `CLUB`, `SPADE`, `HEART`, `DIAMOND` to be the four suits. That's all you need to do here!
 
-- Now let's focus on writing the `Card` class. Each `Card` has a face-value and a suit.
+- Now let's focus on writing the `Card` class. Each `Card` carries a face value and a suit.
 
-  - The `faceValue` instance variable is an integer ranging from 1, 2, 3, 4, ..., 12, and 13.
+  - The `faceValue` is of type `int`.
   - The `faceSuit` is of type `Suit`.
 
-- Back in the `Card` class,  you need to implement two constructors:
+- Back in the `Card` class,  you need to implement the constructor:
 
-  - A default constructor that randomly generates a suit and face value. For the face value, you simply need to generate an integer between 1 and 13 (both inclusive). What do you do to generate a random suit? Here's a hint. The `Suit.values()` method returns an *array* of all the constants you just listed in the `Suit` enum class.
+  - The constructor takes as input a suit and a face value. If the given face value is not legal (1 to 13), then you should print out an error message, and instead assign it a random *legal* face value. (Why don't you need to check to see whether the given suit is legal?)
 
-  - A second constructor that takes as input a given suit and face value. If the given face value is not legal, for instance, the face value was given as a negative number, or a number greater than 13, then you should print out an error message, and instead assign it a random legal face value. (Why don't you need to check to see whether the given suit is legal?)
+- Implement the following methods. Remember to write-and-test, write-and-test!
 
-- Implement the following methods. Remember to write-and-test, write-and-test! That means you need to go back and forth between this class and the `static main()` method.
+  - `public int getFaceValue()`: Getter for this card's face value.
+  - `public Suit getSuit()`: Getter for this card's suit
+  - `public boolean isRed()`: Returns true if this card is a diamond or heart.
+  - `public boolean isBlack()`: Returns true if this card is a club or spade.
+  - `public boolean equals(Card other)`: Returns true if this card has same face value and suit as another given card. Seems like there's code that can be re-used here...
+  - `public boolean outRanks(Card other)`: Returns true if this card has greater face value than another given card. This one can be a tiny bit tricky, because an Ace (face value of 1) outranks all other face values, except other Aces.
 
-  - `int getFaceValue()`: Getter for this card's face value.
-
-  - `Suit getSuit()`: Getter for this card's suit
-
-  - `boolean hasSameFaceValue(Card other)`: Returns true if this card has same face value as another given card
-
-  - `boolean hasSameSuit(Card other)`: Returns true if this card has same suit as another given card.
-
-  - `boolean equals(Card other)`: Returns true if this card has same face value and suit as another given card. Seems like there's code that can be re-used here...
-
-  - `boolean isFaceCard()`: Returns true if this card is a face card (i.e., is the faceValue is 11, 12, 13)
-
-  - `boolean isRed()`: Returns true if this card is red. Diamond and heart suits are red.
-
-  - `boolean isBlack()`: Returns true if this card is black. Club and spade suits are black.
-
-  - `boolean outRanks(Card other)`: Returns true if this card has greater face value than another given card. This one can be a tiny bit tricky, because an Ace (face value of 1) outranks all other face values, except other Aces.
-
-- Here's what should happen if you typed the following in `main()` and ran it. Notice an illegal card entered into the constructor below. Notice how the constructor generated a random card instead.
+- Here's what should happen if you typed the following in the code pad. Notice an *illegal* card entered into the constructor below. Notice how the constructor generated a random card instead.
 
   ```java
-  public static void main(String[] args) {
-      Card card1 = new Card(Suit.CLUB, 15);   // illegal card
-      System.out.println(card1.getFaceValue());
-      System.out.println(card1.getSuit());
-  }
+  Card card1 = new Card(Suit.CLUB, 15);   // illegal card -- assume the code assigns a 7 instead
+  System.out.println(card1.getFaceValue());
+  System.out.println(card1.getSuit());
   ```
 
   ```
@@ -127,17 +115,15 @@ Within the main method, print out some dummy message within main. Save it, and t
 - In the following example, legal cards have been created.
 
   ```java
-  public static void main(String[] args) {
-      Card card1 = new Card(Suit.SPADE, 1);
-      System.out.println(card1.getFaceValue());
-      System.out.println(card1.getSuit());
-      System.out.println(card1.isRed());
-      System.out.println(card1.isBlack());
+  Card card1 = new Card(Suit.SPADE, 1);
+  System.out.println(card1.getFaceValue());
+  System.out.println(card1.getSuit());
+  System.out.println(card1.isRed());
+  System.out.println(card1.isBlack());
 
-      Card card2 = new Card(Suit.DIAMOND, 5);
-      System.out.println(card2.outRanks(card1));
-      System.out.println(card2.equals(card1));
-  }
+  Card card2 = new Card(Suit.DIAMOND, 5);
+  System.out.println(card2.outRanks(card1));
+  System.out.println(card2.equals(card1));
   ```
 
   ```
@@ -150,32 +136,22 @@ Within the main method, print out some dummy message within main. Save it, and t
   > false
   ```
 
-- The `toString()` Method: As you test your methods, you might've been tempted to print out the Card objects. Let's try doing that and see what happens:
+- Write the `public String toString()` to return the card as a String containing the suit and face value. The face value must replace a face-value of 1 with "A", 11 with "J", 12 with "Q", and 13 with "K". I chose to enclose the suit and value pair inside a set of angle brackets (see below).
 
   ```java
-      Card card1 = new Card(Suit.DIAMOND, 1);
-      System.out.println("This card is: " + card1);
+  Card card1 = new Card(Suit.DIAMOND, 1);
+  System.out.println("This card is: " + card1);
   ```
-
-  ```
-  > ------------ HERE IS THE OUTPUT -------------
-  > This card is: Card@2ad9c78f
-  ```
-
-  Your output might look bit different, but in general, it appears to be garbage. What could be going on? Well, we're telling Java to print out an object that isn't a String. When this happens, Java will try to find and call the `toString()` method on your object, but we haven't implemented a `toString()` method for Card.
-
-- Write a new method called `toString()`, which takes no inputs and returns a String. It should be noted that all toString methods have this signature. This method should return the card as a String containing the suit and face value. The face value must replace a 1 with "A", 11 with "J", 12 with "Q", and 13 with "K". If you implemented this method correctly, you should get the following output instead of the cryptic one above:
-
   ```
   > ------------ HERE IS THE OUTPUT -------------
   > This card is: <DIAMOND,A>
   ```
 
-- Important: Notice how we don't even need to call `card1.toString()` (although that would also work). This is because `toString()` is special; it is called automatically by Java whenever an object is used in the context of a `String`.
+- Important: Notice how we don't even need to call `card1.toString()` (that would also work). This is because `toString()` is considered to be special -- it is called *automatically* by Java whenever an object is used in the context of a `String`.
 
 #### Part 2: The Deck Class
 
-- Now let's create the `Deck` class. This class stores an `ArrayList` of `Cards`. Go ahead and create that field.
+- Now let's create the `Deck` class. This class stores a private `ArrayList` of `Cards`. Go ahead and create that instance variable now.
 
 <!--
 Here's where a professional editor like IntelliJ shines: Try declaring the field without first importing the `java.util.ArrayList` class. You'll see that `ArrayList` is in red. Right-click on Array`List, and you'll see `"Show Context Actions"` shown below.
@@ -191,232 +167,113 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
 
 -->
 
-- Now write the default constructor, which adds the standard 52 cards to the list:
+- The default constructor should simply instantiate the internal `ArrayList` of cards, nothing more. You now essentially would have created an empty Deck.
 
-  - Spade: 1 (Ace), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
-  - Club: 1 (Ace), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
-  - Diamond: 1 (Ace), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
-  - Heart: 1 (Ace), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
+- Implement and document the following methods. Remember to write-and-test, write-and-test!
 
-  How do you loop through `Enum` values? You can do this using a nested loop. For each suit, loop from 1 through 13, and create a Card using those suit and value combinations. Here's how to loop through the Enum values:
+  - `public boolean isEmpty()`: Returns whether this deck is empty. (You just need to check the size of the internal `ArrayList`.)
 
-  ```java
-  for (Suit s : Suit.values()) {
-      // s is a Suit constant
-  }
-  ```
+  - `public Card discard()`: Removes the first Card in the deck and returns it, or returns `null` if this `Deck` is empty.
 
-- Implement and document the following methods. Remember to write-and-test, write-and-test! That means you need to go back and forth between this class and the `main()` method.
+  - `public void replenish(String filename)` that takes as input the name of a file that contains a listing of cards. This method tries to open the given file, and fills the deck with the cards listed!
 
-  - `Card discard()`: Removes the first Card in the list and returns it, or returns null if the `Deck` is empty.
+    - A file containing just five cards has been given to you, but you're more than welcome to add more to it!
+    - You need to take note of the file's format to plan how you're going to process this file, then read in each row line-by-line, construct the corresponding `Card` and put it in your list!
+      ```txt
+      3 of CLUB
+      1 of SPADE
+      5 of SPADE
+      8 of HEART
+      13 of DIAMOND
+      ```
+    - You will need to open and read this file inside a try-catch clause, because attempting to open it could raise a `FileNotFoundException`.
+    - After you reach each line from the file, you need to split it up using `" of "` as your delimiter.
 
-  - `void replenish()`: No matter what the state of the `Deck` is, replenish all 52 cards in order specified earlier, i.e., spades, clubs, diamonds, hearts.
+  - `public void replenish()`: No matter what the state of the `Deck` is, replenish all 52 cards to the deck the following order:
+    - Spade: 1 (A), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
+    - Club: 1 (A), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
+    - Diamond: 1 (A), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
+    - Heart: 1 (A), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
 
-  - `void shuffle()`: Randomly shuffles the cards around. One idea is to loop through all cards (don't use a for-each loop) in the ArrayList, remove it, then add it to a random location in the list.
+    First, clear your list of cards. Now, how do you loop through the four `Enum` values? You can do this using a nested loop. For each suit, loop from 1 through 13, and create a Card using those suit and value combinations. Here's how to loop through the Enum values:
 
-  - `String toString()`: Returns a string containing each card in the `Deck` on a separate line.
-
-- Here's what it should look like when you create and print and deck. You can test by creating a new class called `Main`, and copying the code below. From outside, right-click on `Main` and run the `main(...)` method.
-
-  ```java
-  public class Main {
-
-    public static void main(String[] args) {
-        Deck myDeck = new Deck();
-        System.out.println(myDeck);
+    ```java
+    for (Suit s : Suit.values()) {
+        // s will be Suit.SPADE, Suit.CLUB, Suit.DIAMOND, and Suit.HEART
+        // Now loop through 1 to 13 and create Card objects, and add to your list
     }
-  }
-  ```
+    ```
 
-  ```
-  <SPADE,A>
-  <SPADE,2>
-  <SPADE,3>
-  <SPADE,4>
-  <SPADE,5>
-  <SPADE,6>
-  <SPADE,7>
-  <SPADE,8>
-  <SPADE,9>
-  <SPADE,10>
-  <SPADE,J>
-  <SPADE,Q>
-  <SPADE,K>
-  <CLUB,A>
-  <CLUB,2>
-  <CLUB,3>
-  <CLUB,4>
-  <CLUB,5>
-  <CLUB,6>
-  <CLUB,7>
-  <CLUB,8>
-  <CLUB,9>
-  <CLUB,10>
-  <CLUB,J>
-  <CLUB,Q>
-  <CLUB,K>
-  <HEART,A>
-  <HEART,2>
-  <HEART,3>
-  <HEART,4>
-  <HEART,5>
-  <HEART,6>
-  <HEART,7>
-  <HEART,8>
-  <HEART,9>
-  <HEART,10>
-  <HEART,J>
-  <HEART,Q>
-  <HEART,K>
-  <DIAMOND,A>
-  <DIAMOND,2>
-  <DIAMOND,3>
-  <DIAMOND,4>
-  <DIAMOND,5>
-  <DIAMOND,6>
-  <DIAMOND,7>
-  <DIAMOND,8>
-  <DIAMOND,9>
-  <DIAMOND,10>
-  <DIAMOND,J>
-  <DIAMOND,Q>
-  <DIAMOND,K>
-  ```
+  - `public void shuffle()`: Randomly shuffles the cards around. One idea is to loop through all cards (don't use a for-each loop!) in the `ArrayList`, remove it, then add it to a random position back into the list!
 
-- Here's what it should look like when you create and print and deck after shuffling.
+  - `public String toString()`: Builds then returns a string containing each card in the current `Deck` on a separate line.
+
+- Here's what it should look like when you create a deck from the given file, and print it.
 
   ```java
-  public class Main {
-
-      public static void main(String[] args) {
-          Deck myDeck = new Deck();
-          myDeck.shuffle(); //shuffle the cards
-          System.out.println(myDeck);
-      }
-  }
+  Deck myDeck = new Deck();
+  myDeck.replenish("starterDeck.txt")
+  System.out.println(myDeck);
   ```
 
-  ```
-  <HEART,10>
-  <DIAMOND,5>
-  <CLUB,9>
-  <SPADE,2>
-  <DIAMOND,2>
-  <DIAMOND,8>
-  <SPADE,4>
-  <SPADE,6>
-  <CLUB,Q>
-  <SPADE,8>
-  <HEART,5>
-  <HEART,J>
-  <SPADE,10>
-  <CLUB,7>
-  <SPADE,Q>
-  <SPADE,K>
-  <CLUB,2>
-  <DIAMOND,6>
-  <DIAMOND,Q>
-  <CLUB,4>
-  <HEART,6>
-  <HEART,K>
-  <CLUB,6>
-  <SPADE,J>
-  <DIAMOND,7>
-  <CLUB,8>
-  <CLUB,10>
-  <HEART,7>
-  <CLUB,J>
-  <CLUB,K>
-  <CLUB,5>
-  <HEART,2>
-  <DIAMOND,A>
-  <SPADE,5>
-  <HEART,4>
-  <HEART,8>
-  <CLUB,A>
-  <HEART,9>
-  <SPADE,7>
-  <HEART,Q>
-  <DIAMOND,K>
-  <DIAMOND,3>
+  ```txt
   <CLUB,3>
-  <DIAMOND,J>
-  <SPADE,3>
   <SPADE,A>
-  <DIAMOND,4>
-  <SPADE,9>
-  <DIAMOND,9>
-  <DIAMOND,10>
-  <HEART,3>
-  <HEART,A>
+  <SPADE,5>
+  <HEART,8>
+  <DIAMOND,K>
   ```
 
-- We can also give users a quick way of obtaining a shuffled deck using a `static` method. Write a `public static` method called `createShuffledDeck()` that returns a shuffled deck of cards. You can use it like this:
+- Here's what it might look like after shuffling.
 
   ```java
-  public class Main {
+  Deck myDeck = new Deck();
+  myDeck.replenish("starterDeck.txt")
+  myDeck.shuffle();
+  System.out.println(myDeck);
+  ```
 
-      public static void main(String[] args) {
-          Deck myDeck = Deck.createShuffledDeck();
-          System.out.println(myDeck);
-      }
+  ```txt
+  <CLUB,3>
+  <SPADE,5>
+  <DIAMOND,K>
+  <HEART,8>
+  <SPADE,A>
+  ```
+
+
+#### The main() Method
+The main() method is actually where every Java program "starts." It turns out BlueJ's just been making our lives easy this whole time! Everything you want to do in order to run your program  needs to happen within the main method. 
+
+- Create a new class called `DeckPro`. Inside the class, copy and paste the segment below:
+
+  ```java
+  import java.util.Scanner;
+
+  public static void main(String[] args) {
+    System.out.println("DeckPro Version 1.0");
+    System.out.println("Please enter one of the fllowing options:");
+    System.out.println("load: if you want to load a deck from a file")
+    System.out.println("full: if you want to create a full deck of 52 cards");
+
+    Scanner keyboard = new Scanner(System.in);
+    Deck myDeck = new Deck();
+    if (keyboard.equalsIgnoreCase("full")) {
+      myDeck.replenish();
+    }
+    else if (keyboard.equalsIgnoreCase("load")) {
+      System.out.println("What is the file name?");
+      String filename = keyboard.nextLine();
+      myDeck.replenish(filename);
+    }
+    myDeck.shuffle();
+    System.out.println("Here's your deck!");
+    System.out.println(myDeck);
+    System.out.println("Thanks for using Deck Pro! Good bye!");
   }
   ```
 
-  ```
-  <DIAMOND,2>
-  <DIAMOND,8>
-  <SPADE,4>
-  <SPADE,6>
-  <CLUB,Q>
-  <SPADE,8>
-  <HEART,5>
-  <HEART,J>
-  <SPADE,10>
-  <CLUB,7>
-  <SPADE,Q>
-  <SPADE,K>
-  <HEART,10>
-  <DIAMOND,5>
-  <CLUB,9>
-  <SPADE,2>
-  <CLUB,2>
-  <DIAMOND,6>
-  <DIAMOND,Q>
-  <CLUB,4>
-  <HEART,6>
-  <HEART,K>
-  <CLUB,6>
-  <SPADE,J>
-  <DIAMOND,7>
-  <CLUB,8>
-  <CLUB,10>
-  <HEART,7>
-  <CLUB,J>
-  <CLUB,K>
-  <CLUB,5>
-  <HEART,2>
-  <HEART,A>
-  <DIAMOND,J>
-  <DIAMOND,A>
-  <SPADE,5>
-  <HEART,4>
-  <HEART,8>
-  <CLUB,A>
-  <HEART,9>
-  <SPADE,7>
-  <HEART,Q>
-  <DIAMOND,K>
-  <DIAMOND,3>
-  <CLUB,3>
-  <DIAMOND,4>
-  <SPADE,9>
-  <DIAMOND,9>
-  <DIAMOND,10>
-  <HEART,3>
-  <SPADE,3>
-  <SPADE,A>
-  ```
+- To use `DeckPro`, you just need to right click on it, and choose `void main(String[] args)`.
 
 #### Grading
 

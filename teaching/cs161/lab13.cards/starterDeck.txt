@@ -1,0 +1,5 @@
+3 of CLUB
+1 of SPADE
+5 of SPADE
+8 of HEART
+13 of DIAMOND
