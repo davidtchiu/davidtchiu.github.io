@@ -181,7 +181,7 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
 - The first example below shows the AI busting.
 
 ```
-*** Welcome to Black Jack! Prepare to lose. ***
+*** Welcome to Black Jack! ***
 
 AI: <???>, <diamond,10>
 Player: <diamond,3> <heart,A> (14)
@@ -206,7 +206,7 @@ Player: <diamond,3> <heart,A> <spade,5> (19)
 - The second example shows that neither AI and human busts, but human wins.
 
 ```
-*** Welcome to Black Jack! Prepare to lose. ***
+*** Welcome to Black Jack! ***
 AI: <???>, <diamond,A>
 Player: <diamond,3> <diamond,4> (7)
 What will you do (enter either hold or hit)?
@@ -234,10 +234,10 @@ AI: <diamond,8> <diamond,A> (19)
 Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
 ```
 
-- The third example shows the human busting.
+- The third example shows the human busting (and losing).
 
 ```
-*** Welcome to Black Jack! Prepare to lose. ***
+*** Welcome to Black Jack! ***
 
 AI: <???>, <club,3>
 Player: <club,J> <heart,6> (16)
@@ -258,7 +258,7 @@ Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
 - The final example shows a push (tie).
 
 ```
-*** Welcome to Black Jack! Prepare to lose. ***
+*** Welcome to Black Jack! ***
 
 AI: <???>, <club,K>
 Player: <diamond,10> <heart,8> (18)
