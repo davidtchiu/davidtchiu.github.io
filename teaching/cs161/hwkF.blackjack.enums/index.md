@@ -179,98 +179,94 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
   - When the game ends, you must print off both Hands and the result of the Game.
 
 - The first example below shows the AI busting.
+    ```
+    *** Welcome to Black Jack! ***
 
-  ```
-  *** Welcome to Black Jack! ***
+    AI: <???>, <diamond,10>
+    Player: <diamond,3> <heart,A> (14)
 
-  AI: <???>, <diamond,10>
-  Player: <diamond,3> <heart,A> (14)
+    What will you do (enter either hold or hit)?
+    > hit
 
-  What will you do (enter either hold or hit)?
-  > hit
+    AI: <???>, <diamond,10>
+    Player: <diamond,3> <heart,A> <spade,5> (19)
 
-  AI: <???>, <diamond,10>
-  Player: <diamond,3> <heart,A> <spade,5> (19)
+    What will you do (enter either hold or hit)?
+    > hold
 
-  What will you do (enter either hold or hit)?
-  > hold
-
-  ***************************
-  ***      Game Over      ***
-  ***      You win!       ***
-  ***************************
-  AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
-  Player: <diamond,3> <heart,A> <spade,5> (19)
-  ```
+    ***************************
+    ***      Game Over      ***
+    ***      You win!       ***
+    ***************************
+    AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
+    Player: <diamond,3> <heart,A> <spade,5> (19)
+    ```
 
 - The second example shows that neither AI and human busts, but human wins.
+    ```
+    *** Welcome to Black Jack! ***
+    AI: <???>, <diamond,A>
+    Player: <diamond,3> <diamond,4> (7)
+    What will you do (enter either hold or hit)?
+    hit
 
-  ```
-  *** Welcome to Black Jack! ***
-  AI: <???>, <diamond,A>
-  Player: <diamond,3> <diamond,4> (7)
-  What will you do (enter either hold or hit)?
-  hit
+    AI: <???>, <diamond,A>
+    Player: <diamond,3> <diamond,4> <spade,7> (14)
+    What will you do (enter either hold or hit)?
+    hit
 
-  AI: <???>, <diamond,A>
-  Player: <diamond,3> <diamond,4> <spade,7> (14)
-  What will you do (enter either hold or hit)?
-  hit
+    AI: <???>, <diamond,A>
+    Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> (18)
+    What will you do (enter either hold or hit)?
+    hit
 
-  AI: <???>, <diamond,A>
-  Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> (18)
-  What will you do (enter either hold or hit)?
-  hit
-
-  AI: <???>, <diamond,A>
-  Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
-  What will you do (enter either hold or hit)?
-  hold
-  ***************************
-  ***      Game Over      ***
-  ***      You win!       ***
-  ***************************
-  AI: <diamond,8> <diamond,A> (19)
-  Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
-  ```
+    AI: <???>, <diamond,A>
+    Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
+    What will you do (enter either hold or hit)?
+    hold
+    ***************************
+    ***      Game Over      ***
+    ***      You win!       ***
+    ***************************
+    AI: <diamond,8> <diamond,A> (19)
+    Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
+    ```
 
 - The third example shows the human busting (and losing).
+    ```
+    *** Welcome to Black Jack! ***
 
-  ```
-  *** Welcome to Black Jack! ***
+    AI: <???>, <club,3>
+    Player: <club,J> <heart,6> (16)
+    What will you do (enter either hold or hit)?
+    hit
 
-  AI: <???>, <club,3>
-  Player: <club,J> <heart,6> (16)
-  What will you do (enter either hold or hit)?
-  hit
+    AI: <???>, <club,3>
+    Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
 
-  AI: <???>, <club,3>
-  Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
-
-  ***************************
-  ***      Game Over      ***
-  ***      You lose!      ***
-  ***************************
-  AI: <club,3> <club,3> (6)
-  Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
-  ```
+    ***************************
+    ***      Game Over      ***
+    ***      You lose!      ***
+    ***************************
+    AI: <club,3> <club,3> (6)
+    Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
+    ```
 
 - The final example shows a push (tie).
+    ```
+    *** Welcome to Black Jack! ***
 
-  ```
-  *** Welcome to Black Jack! ***
-
-  AI: <???>, <club,K>
-  Player: <diamond,10> <heart,8> (18)
-  What will you do (enter either hold or hit)?
-  hold
-  ***************************
-  ***      Game Over      ***
-  ***      You pushed     ***
-  ***************************
-  AI: <club,2> <club,K> <spade,5> <club,A> (18)
-  Player: <diamond,10> <heart,8> (18)
-  ```
+    AI: <???>, <club,K>
+    Player: <diamond,10> <heart,8> (18)
+    What will you do (enter either hold or hit)?
+    hold
+    ***************************
+    ***      Game Over      ***
+    ***      You pushed     ***
+    ***************************
+    AI: <club,2> <club,K> <spade,5> <club,A> (18)
+    Player: <diamond,10> <heart,8> (18)
+    ```
 
 #### Extensions
 
