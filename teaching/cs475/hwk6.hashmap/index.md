@@ -353,13 +353,14 @@ This assignment will be graded out of 100 points:
 [10pt] initmap() dynamically allocates a new hashmap. All 
 fields are initialized.
 
-[10pt] The numOps count is correct at the end of the run.
+[15pt] The various number of operations, map size, etc.,
+are correct in the profiling printed at the end of the run.
 
 [15pt] A thread-safe version of get() is implemented. 
 
 [15pt] A thread-safe version of put() is implemented. 
 
-[25pt] A thread-safe version of del() is implemented. 
+[20pt] A thread-safe version of del() is implemented. 
 
 [5pt] All locking mechanisms should be hidden from users.
 

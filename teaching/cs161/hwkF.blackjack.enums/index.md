@@ -19,48 +19,57 @@ The following file(s) have been provided for this assignment.
 - [Hwk_BlackJack.zip](Hwk_BlackJack.zip)
 
 
-#### A "Hand" in BlackJack Explained
-Now that we have a card and a deck of cards, we can begin thinking about how Black Jack is to be played. Black Jack requires users to hold a set of cards, called a "Hand." Let's go over its rules. 
+#### Preliminary: Suits, Cards, and Decks
+Now that we have a card and a deck of cards, we can begin thinking about how Black Jack is to be played. This assignment assumes that you have already done the work in Lab 13 to write the Suit, Card, and Deck classes. If you have not done so, you cannot continue this project until you've finished the lab.
 
-At the beginning of each game, a player is dealt two cards to their "Hand." The suits of the cards are not pertinent. The face values of these cards are added together. The objective is to get the sum of the hand as close to **21** as possible, without exceeding it (known as a *bust* if you do). A player can decide to "hit," in which the top card from the deck is drawn and added to their hand.
+#### BlackJack Explained
+Black Jack requires users to hold a set of cards, called a "Hand." Players can add cards to their hand (called a "hit") as long as the sum of the cards (with minor exceptions) does not exceed 21. A player can never remove cards from the Hand once it's been added to their hand. The order of the cards in the hand does not matter, nor do the cards' suits.
+
+At the beginning of the game, the player is dealt two cards to their hand from the deck. The values of these cards are added together. After evaluating the sum of their hand, the player may choose to "hit," drawing the top card from the deck and adding it to their hand. The objective is to get the sum of the hand as close to 21 as possible without exceeding it (exceeding 21 is called a bust, and you lose!). A player may also elect to "hold," which passes the turn to the dealer. The dealer then hits cards according to the same goal — getting as close to 21 as possible without busting.
 
 A quick word on face values. The face value of each card can usually be added to the value of the hand, with a few exceptions:
 
 - Jack (11), Queen (12), and King (13) all carry a value of **10** when added to the hand.
-- Another (much more complicated) exception is the Ace (1) card, which carries a value of either **1** or **11** when totaled, depending on circumstances. It's a bit tricky. Here's the rule for determining the value of an Ace card in your hand:
-  - The value of an Ace is _11_ if it does not cause the hand to bust.
-  - The value of an Ace is _1_, otherwise.
-  - Keep in mind there could be several Aces in a single hand... so even in the highly unlikely scenario where you somehow end up with a hand of 21 Ace cards, they should all count as 1, and leave you with a hand value of 21!
-  - **I'll give out a hint:** For each Ace in your hand, and just add 11 to the value by default. For instance, if had 3 Aces and a 5 in your hand, give yourself a value of 38 (= 11 + 11 + 11 + 5). Now, you just need to figure out how to adjust the value down --- in this case, to 18 (= 11 + 1 + 1 + 5). 
-  - To do this, you could keep a count of Aces, and subtract 10 for each until your hand is legal or until you run out of aces (whichever comes first). In our case, the hand became legal after we subtracted 10 for 2 of the 3 aces we have.
+- A special (and slightly more complicated) exception is the Ace card, which can count as either 1 or 11 depending on the situation. Here's the rule for determining the value of an Ace in your hand:
+
+  - The value of an Ace is *11* if it does not cause the hand to bust.
+  - The value of an Ace is *1* if counting it as 11 would cause a bust.
+  - You can have multiple Aces in your hand. In casinos, BlackJack is played with 8 decks, giving us 32 possible Ace cards. In the unlikely case where you end up with a hand of 21 Aces, each Ace would be counted as 1, giving you a total hand value of 21! (OK that would never happen in practice, but theoretically, it could, I guess.)
+  - **Hint:** A practical way to calculate your hand value with Aces is:
+    - Initially, treat each Ace as 11 by default, and add up all the rest of the cards too.
+    - Then, if the total exceeds 21, subtract 10 for each Ace (changing its value from 11 to 1) until either the hand is legal (21 or less) or until you've adjusted all the Aces.
+    - For example, if you had 3 Aces and a 5, you would start with 38 (11 + 11 + 11 + 5). Since 38 is over 21, subtract 10 for two of the Aces, bringing the total down to 18 (11 + 1 + 1 + 5).  
+
+**Winning conditions:**
+  - If the first two cards dealt add up to 21, the user wins immediately before the dealer even reveals their cards.
+  - If the dealer's first two cards add up to 21, then the dealer wins.
+  - When neither is the case, the player makes calculated decisions on whether to hit or hold, or until the hand goes bust. If the hand busts during this process, the player loses.
+  - When the player holds, then the dealer must repeat this process. Generally, the dealer holds if their hand adds up to 18 or more. If the dealer busts during their hits, then the player wins.
+  - When both player and dealer holds, their hands are added up and compared. Whomever has the higher value wins. The player and dealer may end the game on a tie (it's called a "push").
 
 #### Writing the Hand Class
 
-- This class should store an `ArrayList` of `Card`s.
-
-- This class should also store a reference to a `Deck`, which represents all the `Card`s that have yet to be drawn.
+- This class should store an `ArrayList` of `Card`s, and also store a `Deck`, which represents all the `Card`s that have yet to be drawn by the dealer.
 
 - Write a 1-argument constructor that takes as input a `Deck` object. Upon being called, it should remove the top two cards from the Deck, and add them to the hand.
 
 - Write a 3-argument constructor that takes as inputs 2 `Card` objects and add them to your list. The third argument is a `Deck` object. 
 
-- A method, `int getValue()` which accepts no input arguments. It loops through all the `Card`s in the hand, and sums up their values, using the rules of the game described above. This total is then returned to the caller. Recall that the Ace is handled specially.
+- A method, `public int getValue()` which accepts no input arguments. It loops through all the `Card`s in the hand, and sums up their values, using the rules of counting the Aces described above. This sum is then returned to the caller.
 
-- A method, `Card getCardAt(int index)` which accepts an index to the current Hand, and returns the Card at the given index. If the index is out of range, this method should return `null`.
+- A method, `public boolean isBust()` which determines whether or not the hand is "bust." A hand is bust when value of the hand *exceeds* 21.
 
-- A method, `boolean isBust()` which determines whether or not the hand is "bust." A hand is bust when value of the hand *exceeds* 21.
+- A method, `public boolean isBlackJack()` which determines whether or not the current Hand holds a Black Jack. This can *only* occur when the the `Hand` holds exactly two cards, and the value of the Hand is **21**. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s is not a Black Jack).
 
-- A method, `boolean isBlackJack()` which determines whether or not the current Hand holds a Black Jack. This can *only* occur when the the `Hand` holds exactly two cards, and the value of the Hand is **21**. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s is not a Black Jack).
+- A method, `public void hit()` that draws the top card from the associated `Deck` instance variable and adds it to the current hand. If the hand is already bust, this method should have no effect. If the `Deck` is empty, you must call `replenish()` on it before drawing from the top.
 
-- A method, `void hit()` that draws the top card from the associated `Deck` instance variable and adds it to the current hand. If the hand is already bust, this method should have no effect.
+- A method, `public boolean pushes(Hand other)` which accepts another `Hand` as input. It returns true if the current Hand's value ties the other Hand.
 
-- A method, `boolean pushes(Hand other)` which accepts another `Hand` as input. It returns true if the current Hand's value ties the other Hand.
-
-- A method, `boolean defeats(Hand other)` which accepts another `Hand` as its only argument. It compares the current Hand with the given Hand, and:
+- A method, `public boolean defeats(Hand other)` which accepts another `Hand` as its only argument. It compares the current Hand with the given Hand, and:
 
   - A hand defeats the other, if the other hand is bust, and the current hand is not. It also defeats the other if neither hand is bust, and the current hand's value is higher than the other.
 
-- The `String toString()` method, which returns a String representing the Hand. The String should show each Card in the hand on the same line, followed by the value of the Hand and whether it is bust, and whether it is a Black Jack on the same line. See code examples below for help.
+- The `public String toString()` method, which returns a String representing the Hand. The String should show each Card in the hand on the same line, followed by the value of the Hand and whether it is bust, and whether it is a Black Jack on the same line. See code examples below for help.
 
 - The first example below shows the effect of counting Aces.
 
@@ -164,9 +173,9 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
   - It starts by printing a "startup/welcome message" to user who will be playing against your algorithm. Then it needs to create a `Deck` and shuffle it a few times! Then create two Hands: a Hand for the AI and a Hand for the human-player. Make sure both AI and human-player Hands remember the Deck you just created.
   - If the human has a Black Jack, then the game ends. That is, neither the human nor the AI gets to hit. (The AI can push, or tie, if it also gets a Black Jack.) If the human doesn't get a Black Jack however, the game must go on.
   - Print the AI's second Card (but don't reveal the AI's first Card to the player). Also print the human's hand to the screen.
-  - Prompt the user to either hit or hold. Scan in the user's response. If they typed in "hit," then deal them another Card and print out their hand again. Continue to prompt them to hit or hold until the human either busts or types in "hold."
-  - If the user enters anything but hit or hold, then you must output an error and re-prompt.
-  - Afterwards, if the human is bust, then the AI doesn't need to hit. The human loses immediately. Otherwise, the AI hits until its Hand holds at least a value of 18, or bust. After AI's action is performed, you must compare two hands, and either determine a winner or a tie.
+  - Prompt the user to either "hit" or "hold." Scan in the user's response. If they typed in "hit," then call `hit()` on their hand, and print out their hand again. Continue to prompt them until the human either busts or enters "hold."
+  - If the user enters anything but "hit" or "hold," then you must output an error and re-prompt.
+  - Afterwards, if the human is bust, then the AI doesn't need to hit. The human loses immediately. Otherwise, the AI hits until its Hand holds at least a value of 18, or they bust. After AI's action is performed, you must compare two hands (use your `defeats()` method in both directions: AI->Human and Human->AI), and either determine a winner or a tie.
   - When the game ends, you must print off both Hands and the result of the Game.
 
 - The first example below shows the AI busting.
