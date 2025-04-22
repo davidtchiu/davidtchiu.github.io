@@ -166,10 +166,12 @@ Here are some properties you should keep in mind while programming:
 - You might also experiment with [spin locks](https://docs.oracle.com/cd/E26502_01/html/E35303/ggecq.html),  `pthread_spinlock_t`. Warning: The VS Code editor's C plugin doesn't recognize `pthread_spinlock_t`, so it thinks there's an error as you code along, but your code will compile.
 
 
-#### Example Output
+#### Output
 In the output below, my tester spawns the given number of threads from the command line. Each thread has a 33% chance of doing either a `del`, `get`, or `put`. Then a random key between 0 and 99 is generated for that chosen operation. Each thread runs this in a loop 100 times. Obviously, due to the randomness of the tests I'm running, the outputs below are mine alone. Because I'm not running the experiments multiple times and taking the average elapsed time, your mileage may vary per run, and you may have to repeat your runs to get numbers closer to mine.
 
 If race conditions were present, you would likely get a segmentation fault and/or duplicated keys during the test. The number of operations, which is one of the map's fields, may also be lower than you expected if there is a race. Finally, via valgrind, you may also get invalid read/write memory errors from valgrind in the multithreaded version (but not in the single threaded version) if races exist.
+
+Your output should look like mine below. Print the number of gets, adds, replaces, deletion successes and fails, count of total operations, and size of the map after the run. The "expected" map size is the number of put-adds minus the number of successful deletions. 
 
 ##### Single Threaded Experiments (No Lock Contention, Baseline)
 Run config: threads=1, ops per thread=10000, capacity=1, maxkey=500.
