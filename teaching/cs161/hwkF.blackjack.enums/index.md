@@ -268,11 +268,11 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
     Player: <diamond,10> <heart,8> (18)
     ```
 
-#### Extensions
+#### Optional Extensions
 
 If you're finished and are looking for a challenge, consider the following extensions.
 
-**Mild (and makes you look cool):** Package everything up as I showed in the slides, into a single package. Choose an icon for your BlackJack "app" and create a clickable button to start your game.
+**Mild (and makes you look cool):** Pack everything up as I showed in the slides, into a single runnable package. Choose an icon for your BlackJack "app" and create a clickable icon in your Applications folder to start your game.
 
 **Medium:** You might think about how you would save and restore a session. Let's say I've already started a game, and I currently have three cards, and the dealer has not revealed. I want to be able to type "save" and come back later. What do you need to store to a file so that this game can be restored at a later time?
 
