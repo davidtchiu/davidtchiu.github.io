@@ -35,14 +35,14 @@ A quick word on face values. The face value of each card can usually be added to
   - The value of an Ace is *11* if it does not cause the hand to bust.
   - The value of an Ace is *1* if counting it as 11 would cause a bust.
   - You can have multiple Aces in your hand. In casinos, BlackJack is played with 8 decks, giving us 32 possible Ace cards. In the unlikely case where you end up with a hand of 21 Aces, each Ace would be counted as 1, giving you a total hand value of 21! (OK that would never happen in practice, but theoretically, it could, I guess.)
-  - **Hint:** A practical way to calculate your hand value with Aces is:
-    - Initially, treat each Ace as 11 by default, and add up all the rest of the cards too.
-    - Then, if the total exceeds 21, subtract 10 for each Ace (changing its value from 11 to 1) until either the hand is legal (21 or less) or until you've adjusted all the Aces.
-    - For example, if you had 3 Aces and a 5, you would start with 38 (11 + 11 + 11 + 5). Since 38 is over 21, subtract 10 for two of the Aces, bringing the total down to 18 (11 + 1 + 1 + 5).  
+- **Hint:** A practical way to calculate your hand value with Aces is:
+  - Initially, treat each Ace as 11 by default, and add up all the rest of the cards too.
+  - Then, if the total exceeds 21, subtract 10 for each Ace (changing its value from 11 to 1) until either the hand is legal (21 or less) or until you've adjusted all the Aces.
+  - For example, if you had 3 Aces and a 5, you would start with 38 (11 + 11 + 11 + 5). Since 38 is over 21, subtract 10 for two of the Aces, bringing the total down to 18 (11 + 1 + 1 + 5).  
 
-**Winning conditions:**
-  - If the first two cards dealt add up to 21, the user wins immediately before the dealer even reveals their cards.
-  - If the dealer's first two cards add up to 21, then the dealer wins.
+#### Winning Conditions
+  - If the first two cards dealt to the player add up to 21, the player wins immediately before the dealer even reveals their cards! (This is called a "Black Jack!")
+  - Conversely, if the player doesn't have a Black Jack to start with, then if the dealer's first two cards add up to 21, then the dealer also wins immediately.
   - When neither is the case, the player makes calculated decisions on whether to hit or hold, or until the hand goes bust. If the hand busts during this process, the player loses.
   - When the player holds, then the dealer must repeat this process. Generally, the dealer holds if their hand adds up to 18 or more. If the dealer busts during their hits, then the player wins.
   - When both player and dealer holds, their hands are added up and compared. Whomever has the higher value wins. The player and dealer may end the game on a tie (it's called a "push").
