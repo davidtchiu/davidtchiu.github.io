@@ -204,7 +204,7 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
     }
     ```
 
-  - `public void shuffle()`: Randomly shuffles the cards around. One idea is to loop through all cards (don't use a for-each loop!) in the `ArrayList`, remove it, then add it to a random position back into the list!
+  - `public void shuffle()`: Randomly shuffles the cards around. One idea is to loop through all cards (don't use a for-each loop!) in the `ArrayList`, and swap it to a random position back into the list! You can do this by first `remove()` it, and then use the 2-argument `add()` to insert it back.
 
   - `public String toString()`: Builds then returns a string containing each card in the current `Deck` on a separate line.
 
