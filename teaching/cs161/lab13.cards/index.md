@@ -258,10 +258,11 @@ The main() method is actually where every Java program "starts." It turns out Bl
 
     Scanner keyboard = new Scanner(System.in);
     Deck myDeck = new Deck();
-    if (keyboard.equalsIgnoreCase("full")) {
+    String input = keyboard.nextLine();
+    if (input.equalsIgnoreCase("full")) {
       myDeck.replenish();
     }
-    else if (keyboard.equalsIgnoreCase("load")) {
+    else if (input.equalsIgnoreCase("load")) {
       System.out.println("What is the file name?");
       String filename = keyboard.nextLine();
       myDeck.replenish(filename);
