@@ -253,7 +253,7 @@ The main() method is actually where every Java program "starts." It turns out Bl
   public static void main(String[] args) {
     System.out.println("DeckPro Version 1.0");
     System.out.println("Please enter one of the fllowing options:");
-    System.out.println("load: if you want to load a deck from a file")
+    System.out.println("load: if you want to load a deck from a file");
     System.out.println("full: if you want to create a full deck of 52 cards");
 
     Scanner keyboard = new Scanner(System.in);
