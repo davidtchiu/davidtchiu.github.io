@@ -81,8 +81,8 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 
 - Now let's focus on writing the `Card` class. Each `Card` carries a face value and a suit.
 
-  - The `faceValue` is of type `int`.
-  - The `faceSuit` is of type `Suit`.
+  - The `cardVal` is of type `int`.
+  - The `cardSuit` is of type `Suit`.
 
 - Back in the `Card` class,  you need to implement the constructor:
 
