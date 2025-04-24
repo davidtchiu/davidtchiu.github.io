@@ -100,16 +100,15 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 - Here's what should happen if you typed the following in the code pad. Notice an *illegal* card entered into the constructor below. Notice how the constructor generated a random face value instead. You do not need to randomize the suit.
 
   ```java
-  Card card1 = new Card(Suit.CLUB, 15);   // illegal card -- assume the code assigns a 7 instead
-  System.out.println(card1.getFaceValue());
+  Card card1 = new Card(Suit.CLUB, 15);
   System.out.println(card1.getSuit());
+  System.out.println(card1.getFaceValue());
   ```
 
   ```
-  > ------------ HERE IS THE OUTPUT -------------
-  > 7
-  > CLUB
   > Illegal card entered. Generating random card.
+  > CLUB
+  > 7
   ```
 
 - In the following example, legal cards have been created.
@@ -143,7 +142,6 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
   System.out.println("This card is: " + card1);
   ```
   ```
-  > ------------ HERE IS THE OUTPUT -------------
   > This card is: <DIAMOND,A>
   ```
 
@@ -186,8 +184,26 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
       8 of HEART
       13 of DIAMOND
       ```
-    - You will need to open and read this file inside a try-catch clause, because attempting to open it could raise a `FileNotFoundException`.
     - After you reach each line from the file, you need to split it up using `" of "` as your delimiter.
+    - **Reminder** You need to import `java.io.*` as well as `java.util.Scanner`
+    - **Reminder 2** To open a file:
+      ```java
+      try {
+        Scanner fileIn = new Scanner(new File(filename));
+        while (fileIn.hasNext()) {
+          // grab a line from the file!
+          String line = fileIn.nextLine();
+
+          // split() that line up into tokens!
+
+          // create that Card object!
+
+          // add the Card to the ArrayList!
+        }
+      } catch(FileNotFoundException e) {
+        System.out.println("Could not open file " + filename);
+      }
+      ```
 
   - `public void replenish()`: No matter what the state of the `Deck` is, replenish all 52 cards to the deck the following order:
     - Spade: 1 (A), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
@@ -206,7 +222,7 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
 
   - `public void shuffle()`: Randomly shuffles the cards around. One idea is to loop through all cards (don't use a for-each loop!) in the `ArrayList`, and swap it to a random position back into the list! You can do this by first `remove()` it, and then use the 2-argument `add()` to insert it back.
 
-  - `public String toString()`: Builds then returns a string containing each card in the current `Deck` on a separate line.
+  - `public String toString()`: Builds then returns a string containing each card in the current `Deck` on a separate line. As you're building the string, you can use the special character `"\n"` to specify a "new line".
 
 - Here's what it should look like when you create a deck from the given file, and print it.
 
