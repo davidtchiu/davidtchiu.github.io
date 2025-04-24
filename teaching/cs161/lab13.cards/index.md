@@ -97,7 +97,7 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
   - `public boolean equals(Card other)`: Returns true if this card has same face value and suit as another given card. Seems like there's code that can be re-used here...
   - `public boolean outRanks(Card other)`: Returns true if this card has greater face value than another given card. This one can be a tiny bit tricky, because an Ace (face value of 1) outranks all other face values, except other Aces.
 
-- Here's what should happen if you typed the following in the code pad. Notice an *illegal* card entered into the constructor below. Notice how the constructor generated a random card instead.
+- Here's what should happen if you typed the following in the code pad. Notice an *illegal* card entered into the constructor below. Notice how the constructor generated a random face value instead. You do not need to randomize the suit.
 
   ```java
   Card card1 = new Card(Suit.CLUB, 15);   // illegal card -- assume the code assigns a 7 instead
@@ -108,7 +108,7 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
   ```
   > ------------ HERE IS THE OUTPUT -------------
   > 7
-  > HEART
+  > CLUB
   > Illegal card entered. Generating random card.
   ```
 
