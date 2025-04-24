@@ -86,7 +86,7 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
 
 - Back in the `Card` class,  you need to implement the constructor:
 
-  - The constructor takes as input a suit and a face value. If the given face value is not legal (1 to 13), then you should print out an error message, and instead assign it a random *legal* face value. (Why don't you need to check to see whether the given suit is legal?)
+  - The constructor takes as input a suit and a face value. If the given face value is not legal (that is, not 1 to 13), then you should print out an error message, and instead assign it a random *legal* face value. (Why don't you need to check to see whether the given suit is legal?)
 
 - Implement the following methods. Remember to write-and-test, write-and-test!
 
