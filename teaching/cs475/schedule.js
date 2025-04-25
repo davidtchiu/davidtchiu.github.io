@@ -157,7 +157,7 @@ let days = {
     // wk 14
     "MM: TLB and page faults",
     "Virtual Memory: demand paging",
-    "VM: page faults",
+    "VM: page replacement",
     // wk 15
     "VM: clock algorithm",
     "VM: memory allocation",
