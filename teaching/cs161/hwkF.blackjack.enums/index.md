@@ -22,6 +22,10 @@ The following file(s) have been provided for this assignment.
 #### Preliminary: Suits, Cards, and Decks
 Now that we have a card and a deck of cards, we can begin thinking about how Black Jack is to be played. This assignment assumes that you have already done the work in Lab 13 to write the Suit, Card, and Deck classes. If you have not done so, you cannot continue this project until you've finished the lab.
 
+Once you've finished the lab, **copy-and-paste** the finished code for Card and Deck over to this current project.
+
+**Important** Once Card and Deck classes are in place, you don't have to make any more changes to them to finish this project.
+
 #### BlackJack Explained
 Black Jack requires users to hold a set of cards, called a "Hand." Players can add cards to their hand (called a "hit") as long as the sum of the cards (with minor exceptions) does not exceed 21. A player can never remove cards from the Hand once it's been added to their hand. The order of the cards in the hand does not matter, nor do the cards' suits.
 
