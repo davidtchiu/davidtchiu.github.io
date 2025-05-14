@@ -73,7 +73,7 @@ The following file(s) have been provided for this assignment.
 
    - Saving old outputs on the screen *will* get annoying though, when your programs get more complicated. So just remember that you can always re-enable this option.
 
-6. Let's try something a little more involved. Write a method called `printInitials()` that prints out your first, middle (if applicable), and last initials in "block form" (see how I printed mine below). There's not a pre-built command print a design like this, so you'll need to do it yourself! Notice the formatting below --- mine has multiple rows that I need to print out. Mine also uses the letter itself to create the block shape. For instance, my initials, DTC, might be output as follows:
+6. Let's try something slightly more involved. Write a method called `printInitials()` that prints out your first, middle (if applicable), and last initials in "block form" (see how I printed mine below). There's not a pre-built command print a design like this, so you'll need to do it yourself! Notice the formatting below --- mine has multiple rows that I need to print out. Mine also uses the letter itself to create the block shape. For instance, my initials, DTC, might be output as follows:
 
    ```
    DDDDDD   TTTTTTTTT   CCCCCC
