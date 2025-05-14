@@ -145,8 +145,9 @@ let days = {
     "More ArrayLists",
     // wk 4
     "Scanners",
-    "Scanners: files",
-    "Scanners",
+    "More Scanners",
+    "Files and exception handling",
+    "Files",
     "Wrapup",
   ],
 };
