@@ -180,8 +180,9 @@ let days = {
     "Algorithms, hardware, languagesr",
     "Reading Java; class structure",
     "Writing methods",
-    "Variables: data types, lifetime, and scope",
+    "No class: Dragon Boat Festival",
     // wk 2
+    "Variables: data types, lifetime, and scope",
     "Methods and returning; Finish Circle, start TicketMachine",
     "Accumulators, concatenation; Conditionals and logical ops",
     "Primitives, classes as types",
