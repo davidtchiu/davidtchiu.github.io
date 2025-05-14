@@ -57,13 +57,55 @@ A quick word on face values. The face value of each card can usually be added to
 
 - Write a 1-argument constructor that takes as input a `Deck` object. Upon being called, it should remove the top two cards from the Deck, and add them to the hand.
 
-- Write a 3-argument constructor that takes as inputs 2 `Card` objects and add them to your list. The third argument is a `Deck` object. 
+- Notice that you are also given a constructor for "testing purposes." It's got a goofy looking syntax (note the `Card...` type input), which means it can input *any set of Cards*! This will be so useful to you for testing your `Hand` methods, because the only other way to add any Cards to your hand is to call `hit()`, and that's totally random! I'll show you how to use it to test your methods below!
 
-- A method, `public int getValue()` which accepts no input arguments. It loops through all the `Card`s in the hand, and sums up their values, using the rules of counting the Aces described above. This sum is then returned to the caller.
+- A method, `public int getValue()` which accepts no input arguments. It loops through all the `Card`s in the hand, and sums up their values, using the rules of counting the Aces described above. This sum is then returned to the caller. Here's how you might use it in the Code Pad:
+
+  ```java
+  Hand h1 = new Hand(new Card(Suit.CLUB, 2), new Card(Suit.CLUB, 1));
+  System.out.println(h1.getValue());
+  > 13    <-- because 2 + Ace is 2 + 11
+
+  Hand h2 = new Hand(new Card(Suit.CLUB, 2), new Card(Suit.CLUB, 1), new Card(Suit.CLUB, 11));
+  System.out.println(h2.getValue());
+  > 13    <-- because 2 + Ace + J is 2 + 1 + 10
+
+  Hand h3 = new Hand(new Card(Suit.CLUB, 1), new Card(Suit.CLUB, 1), new Card(Suit.CLUB, 1), new Card(Suit.CLUB, 1));
+  System.out.println(h3.getValue());
+  > 14  <-- because four Aces is 11 + 1 + 1 + 1
+
+  Hand h4 = new Hand(new Card(Suit.CLUB, 12), new Card(Suit.CLUB, 1));
+  System.out.println(h4.getValue());
+  > 21   <-- because Q + Ace is 10 + 11
+
+  Hand h5 = new Hand(new Card(Suit.CLUB, 11), new Card(Suit.CLUB, 11), new Card(Suit.CLUB, 1), new Card(Suit.CLUB, 4));
+  System.out.println(h5.getValue());
+  > 25    <-- because J + J + Ace + 4 is 10 + 10 + 1 + 4
+  ```
+
 
 - A method, `public boolean isBust()` which determines whether or not the hand is "bust." A hand is bust when value of the hand *exceeds* 21.
+  ```java
+  Hand h = new Hand(new Card(Suit.CLUB, 11), new Card(Suit.CLUB, 11), new Card(Suit.CLUB, 1), new Card(Suit.CLUB, 4));
+  System.out.println(h.isBust());
+  > true
+  ```
 
 - A method, `public boolean isBlackJack()` which determines whether or not the current Hand holds a Black Jack. This can *only* occur when the the `Hand` holds exactly two cards, and the value of the Hand is **21**. Note that any other combination of Cards that adds up to **21** is not considered a Black Jack (e.g., three 7s is not a Black Jack).
+
+  ```java
+  Hand h = new Hand(new Card(Suit.CLUB, 1), new Card(Suit.CLUB, 11));
+  System.out.println(h.getValue());
+  > 21
+  System.out.println(h.isBlackJack());
+  > true
+
+  Hand h2 = new Hand(new Card(Suit.CLUB, 7), new Card(Suit.HEART, 7), new Card(Suit.SPADE, 7));
+  System.out.println(h2.getValue());
+  > 21
+  System.out.println(h2.isBlackJack());
+  > false   <-- Because a "black jack" is only when you have 21 on two cards
+  ```
 
 - A method, `public void hit()` that draws the top card from the associated `Deck` instance variable and adds it to the current hand. If the hand is already bust, this method should have no effect. If the `Deck` is empty, you must call `replenish()` on it before drawing from the top.
 
@@ -181,6 +223,7 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
   - If the user enters anything but "hit" or "hold," then you must output an error and re-prompt.
   - Afterwards, if the human is bust, then the AI doesn't need to hit. The human loses immediately. Otherwise, the AI hits until its Hand holds at least a value of 18, or they bust. After AI's action is performed, you must compare two hands (use your `defeats()` method in both directions: AI->Human and Human->AI), and either determine a winner or a tie.
   - When the game ends, you must print off both Hands and the result of the Game.
+  - Prompt the user again to see if they want to play another game. If yes, create new Hands, but use the existing Deck!
 
 - The first example below shows the AI busting.
     ```
@@ -204,6 +247,8 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
     ***************************
     AI: <diamond,4> <diamond,10> <spade,2> <club,7> (23 -- Bust!)
     Player: <diamond,3> <heart,A> <spade,5> (19)
+
+    Play again (y/n)?
     ```
 
 - The second example shows that neither AI and human busts, but human wins.
@@ -234,6 +279,8 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
     ***************************
     AI: <diamond,8> <diamond,A> (19)
     Player: <diamond,3> <diamond,4> <spade,7> <diamond,4> <diamond,2> (20)
+
+    Play again (y/n)?
     ```
 
 - The third example shows the human busting (and losing).
@@ -254,6 +301,8 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
     ***************************
     AI: <club,3> <club,3> (6)
     Player: <club,J> <heart,6> <diamond,6> (22 -- Bust!)
+
+    Play again (y/n)?
     ```
 
 - The final example shows a push (tie).
@@ -270,21 +319,25 @@ Good work! Now we need a way to play Black Jack with the computer. Do the follow
     ***************************
     AI: <club,2> <club,K> <spade,5> <club,A> (18)
     Player: <diamond,10> <heart,8> (18)
+
+    Play again (y/n)?
     ```
 
 #### Optional Extensions
 
 If you're finished and are looking for a challenge, consider the following extensions.
 
-**Mild (and makes you look cool):** Pack everything up as I showed in the slides, into a single runnable package. Choose an icon for your BlackJack "app" and create a clickable icon in your Applications folder to start your game.
+**Mild (and it's cool):** Pack everything up as I showed in the slides, into a single runnable package. Choose an icon for your BlackJack "app" and create a clickable icon in your Applications folder to start your game.
 
-**Medium:** You might think about how you would save and restore a session. Let's say I've already started a game, and I currently have three cards, and the dealer has not revealed. I want to be able to type "save" and come back later. What do you need to store to a file so that this game can be restored at a later time?
+**Medium:** Keep track of bets. When the game starts, a user begins with some fixed amount of money (holdings). At the beginning of each game before any cards are dealt, let the user place a bet. Do not allow this bet to exceed the user's balance (keep asking them to place a different bet until this condition is met). Then play a game. If the user wins, they receive the bet amount added to their holdings, and if they lose, subtract their bet from their holdings. (This is even more fun if you could tie it in with the Top-10 list and with the "game saving" option mentioned below.)
 
-**Medium:** Keep track of the list of top ten players. Your game would have to start by asking the player for their name. Use a file to store the list of top ten players by the number of games they've won.
+**Mild:** Instead of "hitting" or "holding," a player can also "double down" immediately after they receive their first two cards and after the dealer's top card has been revealed. You do this by doubling your original bet (if you have sufficient funding) and receiving just one additional card —-- after which the player is automatically required to "hold." Typically, this is done when the dealer is showing a weak top card (6 or below) and the player has a 10 or 11 value --- i.e., chances are high that the player would end up with a 20 or 21. (Implementing this extension only makes sense after you've implemented "money and bets")
 
-**Medium:** Keep track of currency and bets. When the game starts, a user begins with some amount of money. At the beginning of each game before any cards are dealt, let the user place a bet. Do not allow this bet to exceed the user's balance (keep asking them to place a different bet until this condition is met). Then play a game. If the user wins, they receive the bet amount, and if they lose, they lose the bet. Don't just terminate the program after the game ends. Ask the user if they'd like to continue playing. If "yes" is entered, the start a new game, and terminate if "no" is entered or if the user's balance is zero. (This is even more fun if you could tie it in with the Top-10 list and with the "game saving" option mentioned above.)
+**Medium:** Keep track of the list of top ten players in a file. Your game would have to start by asking the player for their name. Use a file to store the list of top ten players by the number of games they've won. Display the top 10 after each game has ended.
 
-**Spicy:** Allow the user to split a hand by inputting the command split from the terminal. Splitting can only occur when a hand contains two cards, and they both carry the same face value. If this condition does not hold, then you must reject the action, and continue playing the hand. If a split can occur, the current hand is split into two, each with just one of the cards from the original hand. The dealer then deals a card to both hands so that they each have two cards once more. Then the user plays and finishes a game on first hand, before finishing a game on the second hand. Yes, it is possible for an already-split hand to split again, if the second card is once again a duplicate. Hint: Use an ArrayList of hands.
+**Spicy:** What would it take to save and restore a player's entire session? Let's say I've already started a game, and I currently have three cards, and the dealer has not revealed. I want to be able to type `"save"` and come back later. What do you need to store to a file so that this game can be restored at a later time? Don't forget to save the current state of the deck too! You'll likely also need to support a command `"load"` that reads the file to restore the game state! 
+
+**Spicy:** Allow the user to "split a hand" by inputting the command, `"split"` from the terminal. Splitting can only occur when a hand contains two cards, and they both carry the same face value. If this condition does not hold, then you must reject the action, and continue playing the hand. If a split can occur, the current hand is split into two, each with just one of the cards from the original hand. The dealer then deals a card to both hands so that they each have two cards once more. Then the user plays and finishes a game on first hand, before finishing a game on the second hand. Yes, it is possible for an already-split hand to split again, if the second card is once again a duplicate. Hint: Use an ArrayList of hands.
 
 #### Program Defensively
 

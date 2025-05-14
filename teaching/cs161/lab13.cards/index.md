@@ -94,6 +94,7 @@ If you haven't already, download and install IntelliJ. When you run IntelliJ for
   - `public Suit getSuit()`: Getter for this card's suit
   - `public boolean isRed()`: Returns true if this card is a diamond or heart.
   - `public boolean isBlack()`: Returns true if this card is a club or spade.
+  - `public boolean isFaceCard()`: Returns true if this card is a face card (Jack, Queen, or King).
   - `public boolean equals(Card other)`: Returns true if this card has same face value and suit as another given card. Seems like there's code that can be re-used here...
   - `public boolean outRanks(Card other)`: Returns true if this card has greater face value than another given card. This one can be a tiny bit tricky, because an Ace (face value of 1) outranks all other face values, except other Aces.
 
@@ -171,7 +172,6 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
 
   - `public boolean isEmpty()`: Returns whether this deck is empty. (You just need to check the size of the internal `ArrayList`.)
 
-  - `public Card discard()`: Removes the first Card in the deck and returns it, or returns `null` if this `Deck` is empty.
 
   - `public void replenish(String filename)` that takes as input the name of a file that contains a listing of cards. This method tries to open the given file, and fills the deck with the cards listed!
 
@@ -221,6 +221,8 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
     ```
 
   - `public void shuffle()`: Randomly shuffles the cards around. One idea is to loop through all cards (don't use a for-each loop!) in the `ArrayList`, and swap it to a random position back into the list! You can do this by first `remove()` it, and then use the 2-argument `add()` to insert it back.
+
+  - `public Card discard()`: Removes the first Card in the deck and returns it. However, if the deck was empty, you must first replenish the deck to a full set of 52 cards, shuffled..
 
   - `public String toString()`: Builds then returns a string containing each card in the current `Deck` on a separate line. As you're building the string, you can use the special character `"\n"` to specify a "new line".
 
