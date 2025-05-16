@@ -6,7 +6,7 @@ let days = {
     },
     {
       name: "Notes and Sample Code (on iLearn)",
-      url: "https://ilearn.thu.edu.tw/course/146003/"
+      url: "https://ilearn.thu.edu.tw/course/146003/content#/"
     },
   ],
   assignments: {
