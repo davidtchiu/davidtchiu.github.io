@@ -5,8 +5,12 @@ let days = {
       url: "https://bluej.org"
     },
     {
-      name: "Notes and Sample Code (on iLearn)",
+      name: "iLearn: Submit Assignments",
       url: "https://ilearn.thu.edu.tw/course/146003/content#/"
+    },
+    {
+      name: "Notes #1: What Are Algorithms?",
+      url: "notes/CS161_1-intro.pdf"
     },
   ],
   assignments: {
