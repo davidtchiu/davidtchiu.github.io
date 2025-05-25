@@ -84,7 +84,7 @@ let days = {
         name: "Lab 1",
         title: "Draw My Picture (BlueJ)",
         url: "lab1.bluej/",
-        due: "1/24/2025",
+        due: "",
       },
       // {
       //   name: "Lab 2",
