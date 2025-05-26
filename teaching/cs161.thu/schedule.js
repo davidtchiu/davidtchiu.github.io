@@ -12,6 +12,10 @@ let days = {
       name: "Notes 1: What Are Algorithms?",
       url: "notes/CS161_1-intro.pdf"
     },
+    {
+      name: "Notes 2: Classes and Objects",
+      url: "notes/CS161_2-classes-objects.pdf"
+    },
   ],
   assignments: {
     homework: [
@@ -134,7 +138,7 @@ let days = {
     "Hardware, Languages; Lab 1",
     "Java class structure: constructor",
     "Variables: data types, lifetime, and scope; Quiz",
-    "<b>No class: Dragon Boat Festival</b>",
+    "No class: Dragon Boat Festival",
     // wk 2
     "Class from scratch: TicketMachines",
     "Conditionals: if-then-else",
