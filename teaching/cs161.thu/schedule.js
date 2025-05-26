@@ -9,7 +9,7 @@ let days = {
       url: "https://ilearn.thu.edu.tw/course/146003/content#/"
     },
     {
-      name: "Notes #1: What Are Algorithms?",
+      name: "Notes 1: What Are Algorithms?",
       url: "notes/CS161_1-intro.pdf"
     },
   ],
@@ -21,12 +21,12 @@ let days = {
       //   url: "hwk0.me/",
       //   due: "1/27/2025", // Mon, wk 2
       // },
-      // {
-      //   name: "Hwk 1",
-      //   title: "A Better Circle (Method Calls, Method Writing)",
-      //   url: "hwk1.circle/",
-      //   due: "2/5/2025", // Wed, wk 3
-      // },
+      {
+        name: "Hwk 1",
+        title: "A Better Circle (Method Calls, Method Writing)",
+        url: "hwk1.circle/",
+        due: "6/2/2025", // Wed, wk 3
+      },
       // {
       //   name: "Hwk 2",
       //   title: "Alarm Clock (Accumulators, Conditionals)",
@@ -130,9 +130,9 @@ let days = {
   },
   lectures: [
     // wk 1
-    "Introductions: Who are we? What are algorithms?",
+    "What are algorithms?",
+    "Lab #1; Properties of algorithms",
     "Basic class structure",
-    "Writing methods",
     "Variables: data types, lifetime, and scope",
     "<b>No class: Dragon Boat Festival</b>",
     // wk 2
@@ -140,19 +140,19 @@ let days = {
     "Conditionals: if-then-else",
     "Primitive types, casting",
     "Classes as types, string API",
-    "Object interactions",    
+    "Object interactions; Quiz",
     // wk 3
     "Start loops",
     "More loops",
     "Nested loops",
     "Start ArrayLists",
-    "More ArrayLists",
+    "More ArrayLists; Quiz",
     // wk 4
     "Scanners",
     "More Scanners",
     "Files and exception handling",
     "Files",
-    "Wrapup",
+    "Wrapup; Quiz",
   ],
 };
 
