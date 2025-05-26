@@ -121,12 +121,12 @@ You still don't need a partner yet, but now it's your turn to write an algorithm
     - You **can**, however, overlap shapes! The shape that you change last will always appear in front. (A simple way of making sure it's in front is to just call `makeVisible()` again on that shape, even if it's already visible!)
 
   - Now take your design from paper to screen. **Here are the critical steps:** As you move the shapes around on the canvas, **you should be recording each step.** There is no "record" function in BlueJ -- open that white paper icon ![](figures/readme-icon.png) in BlueJ's project window and type in the steps (called the README file). You can record your instructions right in this README file. This recording becomes the algorithm for anyone (or anything -- any computer) to create your drawing.
-
+<!-- 
   - When you're done, erase your drawing by clicking on the reset arrow &#8617; and let us know that you're ready.
 
   - You will need to find another student and exchange algorithms (you can email them your algorithm, or take a picture of it with your phone, for example). By following their algorithm exactly as written (even if you think you found an error), you should be able to reproduce each other's drawings!
 
-  - Once you are finished, give your partner some feedback: Describe whether there were any problems you ran into when following the algorithm. (It's okay for there to be problems -- you aren't getting graded on that.)
+  - Once you are finished, give your partner some feedback: Describe whether there were any problems you ran into when following the algorithm. (It's okay for there to be problems -- you aren't getting graded on that.) -->
 
 <!-- #### Part 4: Answering Questions in the README file
 

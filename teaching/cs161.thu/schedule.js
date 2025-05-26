@@ -18,7 +18,7 @@ let days = {
     },
   ],
   assignments: {
-    homework: [
+    // homework: [
       // {
       //   name: "Hwk 0",
       //   title: "All About Me (BlueJ, Code Submission)",
@@ -85,7 +85,7 @@ let days = {
       // // //   url: "hwkF.pooled/",
       // // //   due: "5/4/2021",
       // // // },
-    ],
+    // ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
       {
