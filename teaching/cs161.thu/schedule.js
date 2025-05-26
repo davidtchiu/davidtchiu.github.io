@@ -131,9 +131,9 @@ let days = {
   lectures: [
     // wk 1
     "What are algorithms?",
-    "Lab #1; Properties of algorithms",
+    "Hardware, Languages; Lab 1",
     "Basic class structure",
-    "Variables: data types, lifetime, and scope",
+    "Variables: data types, lifetime, and scope; Quiz",
     "<b>No class: Dragon Boat Festival</b>",
     // wk 2
     "Class from scratch: TicketMachines",
