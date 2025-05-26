@@ -5,7 +5,7 @@ let days = {
       url: "https://bluej.org"
     },
     {
-      name: "iLearn: Submit Assignments",
+      name: "iLearn: Submit Labs",
       url: "https://ilearn.thu.edu.tw/course/146003/content#/"
     },
     {
@@ -21,12 +21,12 @@ let days = {
       //   url: "hwk0.me/",
       //   due: "1/27/2025", // Mon, wk 2
       // },
-      {
-        name: "Hwk 1",
-        title: "A Better Circle (Method Calls, Method Writing)",
-        url: "hwk1.circle/",
-        due: "6/2/2025", // Wed, wk 3
-      },
+      // {
+      //   name: "Hwk 1",
+      //   title: "A Better Circle (Method Calls, Method Writing)",
+      //   url: "hwk1.circle/",
+      //   due: "6/2/2025", // Wed, wk 3
+      // },
       // {
       //   name: "Hwk 2",
       //   title: "Alarm Clock (Accumulators, Conditionals)",
