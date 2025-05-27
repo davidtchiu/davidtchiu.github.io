@@ -136,27 +136,27 @@ let days = {
     // wk 1
     "What are algorithms?",
     "Hardware, Languages; Lab 1",
-    "Java class structure: constructor",
-    "Variables: data types, lifetime, and scope; Quiz",
-    "No class: Dragon Boat Festival",
+    "Instance variables, constructors, methods",
+    "Data types, variable scope; <span style=\"font-weight: bold;\">Quiz</span>",
+    " <span style=\"font-weight: bold;\">No class</span>",
     // wk 2
-    "Class from scratch: TicketMachines",
+    "Primitive and string operations",
     "Conditionals: if-then-else",
     "Primitive types, casting",
     "Classes as types, string API",
-    "Object interactions; Quiz",
+    "Object interactions;  <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 3
     "Start loops",
     "More loops",
     "Nested loops",
     "Start ArrayLists",
-    "More ArrayLists; Quiz",
+    "More ArrayLists;  <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 4
     "Scanners",
     "More Scanners",
     "Files and exception handling",
     "Files",
-    "Wrapup; Quiz",
+    "Wrapup; <span style=\"font-weight: bold;\">Quiz</span>",
   ],
 };
 
