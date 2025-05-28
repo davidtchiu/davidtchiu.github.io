@@ -94,6 +94,12 @@ let days = {
         url: "lab1.bluej/",
         due: "",
       },
+      {
+        name: "Lab 2",
+        title: "A Better Circle (Method Calls, Method Writing)",
+        url: "lab2.circle/",
+        due: "",
+      },
       // {
       //   name: "Lab 2",
       //   title: "Triangle Class (Variables, Scope, and Lifetime)",

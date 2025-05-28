@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Hwk: A Better Circle
+### Lab 2: A Better Circle
 
 This assignment will give you a chance to explore the Circle class in more detail, and gain additional experience with BlueJ. It requires modifying and extending Java source code, but all of the exercises below can be solved by copying and pasting from the original, running code — you don't need to know how to create any new lines of code from scratch yet.
 
@@ -12,7 +12,7 @@ This assignment will give you a chance to explore the Circle class in more detai
 
 The following file(s) have been provided for this assignment.
 
-- [Hwk_BetterCircle.zip](Hwk_BetterCircle.zip)
+- [Lab2_BetterCircle.zip](Lab2_BetterCircle.zip)
 
 #### Instructions
 
@@ -47,22 +47,20 @@ Doing these will not fetch you any more extra credit, but you will obtain enligh
 #### Grading
 
 ```
-This assignment will be graded out of a total of 30pts.
+This assignment will be graded on the following:
 
-[2pts] The move methods now move by 30 instead of 20.
+- The move methods now move by 30 instead of 20.
 
-[5pts] The moveNorthEast() method is implemented.
+- The moveNorthEast() method is implemented.
 
-[5pts] The shuffleHorizontal() method and shuffleVertical() have been implemented.
+- The shuffleHorizontal() method and shuffleVertical() have been implemented.
 
-[5pts] The dance() method and is implemented in Circle.
+- The dance() method and is implemented in Circle.
 
-[5pts] Circles are now yellow and visible when they are created. They are also visible when created.
+- Circles are now yellow and visible when they are created. They are also visible when created.
 
-[5pts] When possible, you reuse methods by calling them where appropriate.
-
-[3pts] You include sufficient block comments to explain any new methods you created.
-```
+- When possible, you reuse methods by calling them where appropriate.
+``
 
 #### Credits
 
@@ -72,7 +70,7 @@ Adapted for use from a previous assignment by Brad Richards. Shape classes provi
 #### Submitting Your Assignment
 Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
 
-- Navigate to our course page on Canvas and click on the assignment to which you are submitting. Click on "Submit Assignment."
+- Navigate to our course page on iLearn and click on the assignment to which you are submitting. Click on "Submit Assignment."
 
 - Upload all the files ending in `.java` from your project folder.
 
