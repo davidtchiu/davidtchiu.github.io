@@ -10,13 +10,13 @@ This assignment will give you a chance to explore the Circle class in more detai
 
 #### Required Files
 
-The following file(s) have been provided for this assignment.
+If you have the Lab 1 file, we can continue working off of that. If you prefer to download a fresh copy for this lab, the following file(s) have been provided for this assignment, which contains just the Circle class.
 
 - [Lab2_BetterCircle.zip](Lab2_BetterCircle.zip)
 
 #### Instructions
 
-Start by downloading a fresh copy of the starter file from the above link. The contents of the file has the `Circle` class that we've been playing around with in lecture. Extract `Hwk1_BetterCircle.zip`, and open the project in BlueJ, and double-click the Circle class (orange box icon) to open the source code editor.
+Start by downloading a fresh copy of the starter file from the above link. The contents of the file has the `Circle` class that we've been playing around with in lecture. Extract this zip file and open the project in BlueJ, and double-click the Circle class (orange box icon) to open the source code editor.
 
 - Modify the `moveUp()`, `moveDown()`, `moveLeft()`, and `moveRight()` methods so that they each move the Circle 30 units instead of 20. Make sure you test these afterwards so you know they're working! One way to check is to track down the Circle's x and y coordinates before and after the move.
 
