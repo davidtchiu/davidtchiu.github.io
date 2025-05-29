@@ -40,7 +40,7 @@ Start by downloading a fresh copy of the starter file from the above link. The c
 
 Doing these will not fetch you any more extra credit, but you will obtain enlightenment (no guarantees).
 
-- Take a the code for the `changeColor()` method, and read the block comment above it to get a gist of the valid colors. What happens if you try to change the color of a shape to a color not listed? What if you capitalized some letters? What do you think is going on?
+- Take a look at code for the `changeColor()` method, and read the block comment above it to get a gist of the valid colors. What happens if you try to change the color of a shape to a color not listed? What if you capitalized some letters? What do you think is going on?
 
 - Write a new constructor for `Circle` that lets the user decide where circle objects are placed initially.
 

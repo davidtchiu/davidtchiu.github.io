@@ -16,6 +16,10 @@ let days = {
       name: "Notes 2: Classes and Objects",
       url: "notes/CS161_2-classes-objects.pdf"
     },
+    {
+      name: "Notes 3: Arithmetic Operators and Conditionals",
+      url: "notes/CS161_3-writing-classes.pdf"
+    },
   ],
   assignments: {
     // homework: [
