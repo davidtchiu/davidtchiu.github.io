@@ -150,7 +150,7 @@ let days = {
     "Method calls; <span style=\"font-weight: bold;\">Lab 2</span>; <span style=\"font-weight: bold;\">Quiz</span>",
     " <span style=\"font-weight: bold;\">No class</span>",
     // wk 2
-    "Arithmetic operations; returning; printiing",
+    "Compound operations; random numbers; returning; printing",
     "Conditionals: if-then-else",
     "Primitive types, casting",
     "Classes as types, string API",
