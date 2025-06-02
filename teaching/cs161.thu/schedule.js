@@ -110,12 +110,12 @@ let days = {
       //   url: "lab2.vars/",
       //   due: "1/31/2025",
       // },
-      // {
-      //   name: "Lab 3",
-      //   title: "Stomach Class (Class Writing, Random object)",
-      //   url: "lab3.stomach/",
-      //   due: "2/7/2025",
-      // },
+      {
+        name: "Lab 3",
+        title: "Stomach Class (Class Writing, Random object)",
+        url: "lab3.stomach/",
+        due: "",
+      },
       // {
       //   name: "Lab 4",
       //   title: "Guessing Game (Conditionals)",
