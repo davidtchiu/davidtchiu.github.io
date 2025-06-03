@@ -51,17 +51,17 @@ public class Stomach {
 
 Recall that to write a new class, we need to specify three sections: (1) Fields, (2) Constructors, and (3) Methods. In the future, you'll be doing this on your own, but in this early lab, I'm going to tell you what you'll need in each section.
 
-- **Fields (Instance Variables):** Your stomach needs to have two fields:
+- **Instance Variables:** Your stomach needs to have two fields:
 
   - A whole number variable to hold the current amount of food sitting in the stomach. `ingested` would be a good name for this field.
 
   - A whole number variable to hold the total amount of food that has been digested. `digested` would be a good name for this field.
 
-- **Constructors:** Recall that it is the job of the constructor to set up initial values for the fields. Your class should have two constructors:
+- **Constructors:** Recall that it is the job of the constructor to set up initial values for the instance variables. Your class should have two constructors:
 
-  - A default constructor. The assumption here is that, when the stomach is created using this constructor, it is empty and has digested no food. In other words they should both be assigned to 0.
+  - A **default constructor**. The assumption here is that, when the stomach is created using this constructor, it is empty and has digested no food. In other words they should both be assigned to 0.
 
-  - A second constructor that lets users input a pre-existing whole-number amount of food that's already been ingested in the stomach. (I know, gross.)
+  - A **second constructor** that lets users input a pre-existing whole-number amount of food that's already been ingested in the stomach. (I know, gross.)
 
     ```java
     /**
@@ -80,16 +80,16 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
 
 - Here are all the methods that your class needs to support. Read each description carefully. After you've designed each method, write it in BlueJ, and test it vigorously before moving on!
 
-  - `ingest` - This method accepts one input, and does not `return` a value. Running this method causes the stomach to ingest the amount of food given in the input parameter, and this amount should be added to the current amount of food sitting in the stomach.
+  - `ingest()` - This method accepts one input, and does not `return` a value. Running this method causes the stomach to ingest the amount of food given in the input parameter, and this amount should be added to the current amount of food sitting in the stomach.
 
-  - `regurgitate` - This method does not accept inputs, and it does not need to return. It simply clears out all amounts of food in the stomach back to zero. It has no effect on the amount that has already been digested. It should also print `Gacked up <X>`, where `<X>` is the total amount of food that had been ingested in the stomach prior to zeroing it out. Recall that to print, you can use the method,
+  - `regurgitate()` - This method does not accept inputs, and it does not need to return. It simply clears out all amounts of food in the stomach back to zero. It has no effect on the amount that has already been digested. It should also print `Gacked up <X>`, where `<X>` is the total amount of food that had been ingested in the stomach prior to zeroing it out. Recall that to print, you can use the method,
 
     ```java
     System.out.println(thing-you-want-to-print);
     ```
     Make sure you're testing these methods out!
 
-  - `digest` - This method accepts no inputs and does not `return` a value. Running it causes a random amount of the food that's currently in the stomach to be "digested" and pulled out of the stomach. For example, suppose there are 13 units of food in the stomach, and 30 units have been digested. Select a random number between 0 and 13 (see below on how) to digest. Let's say the random number, 6, is chosen. After the method is finished, the stomach should now contain 7 units of food ingested, with 36 units digested.
+  - `digest()` - This method accepts no inputs and does not `return` a value. Running it causes a random amount of the food that's currently in the stomach to be "digested" and pulled out of the stomach. For example, suppose there are 13 units of food in the stomach, and 30 units have been digested. Select a random number between 0 and 13 (see below on how) to digest. Let's say the random number, 6, is chosen. After the method is finished, the stomach should now contain 7 units of food ingested, with 36 units digested.
 
     - To write this method, you need to figure out how to ask Java to generate a random value. **Read on.** Java has a convenient built-in class called `Random`, and to use it, you need to import it into your code. Place this line at the very top of your class file, above the class header:
 
@@ -118,11 +118,11 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
     - **As a reminder,** you don't just want to generate a number between 0 and 9 as shown in the example above. It should be a random number between 0 and X, where X is the current amount of food currently in the stomach!
 
 
-  - `getAmountFood` - Inputs nothing, and `returns` (doesn't print!) the current amount of food in the stomach.
+  - `getAmountFood()` - Inputs nothing, and `returns` (doesn't print!) the current amount of food in the stomach.
 
-  - `getAmountDigested` - Inputs nothing, and `returns` the total amount of food that the stomach has digested.
+  - `getAmountDigested()` - Inputs nothing, and `returns` the total amount of food that the stomach has digested.
 
-  - `toString` - Inputs nothing, and `returns` a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `Ingested: <X>, digested: <Y>`, where `<X>` and `<Y>` refer to those respective  values that are stored in those instance variables.
+  - `toString()` - Inputs nothing, and `returns` a String that summarizes the state of the stomach. This method does not print to the screen! In other words, you need to define a local `String` variable that is assigned something like `In stomach: xx, out of stomach: yy`, where `xx` and `yy` refer to those respective  values that are stored in those instance variables.
 
     - To do this method, you'll probably want to start by creating a local `String` variable that you'll later `return`. You can initially assign an empty string to it: `""`, and build this string up piece by piece using the `+=` operator. For example,
 

@@ -20,6 +20,10 @@ let days = {
       name: "Notes 3: Arithmetic Operators and Conditionals",
       url: "notes/CS161_3-writing-classes.pdf"
     },
+    {
+      name: "Notes 4: Data Types, Type Casting, Objects as Types",
+      url: "notes/CS161_4-types.pdf"
+    },
   ],
   assignments: {
     // homework: [
@@ -151,8 +155,8 @@ let days = {
     " <span style=\"font-weight: bold;\">No class</span>",
     // wk 2
     "Compound operations; random numbers; returning; printing",
-    "Conditionals: if-then-else",
-    "Primitive types, casting",
+    "Conditionals: else-if; <span style=\"font-weight: bold;\">Lab 3</span>",
+    "Lab review; logical operators",
     "Classes as types, string API",
     "Object interactions;  <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 3
