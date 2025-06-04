@@ -163,7 +163,7 @@ let days = {
     "Compound operations; random numbers; returning; printing",
     "Conditionals: else-if; <span style=\"font-weight: bold;\">Lab 3</span>",
     "Lab review; logical operators",
-    "Classes as types, string API",
+    "Classes as types, string API; <span style=\"font-weight: bold;\">Lab 4</span>",
     "Object interactions;  <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 3
     "Start loops",
