@@ -122,8 +122,8 @@ let days = {
       },
       {
         name: "Lab 4",
-        title: "Alarm Clock (Conditionals)",
-        url: "lab4.clock/",
+        title: "Orca Card (Conditionals)",
+        url: "lab4.orca/",
         due: "", // Fri, wk 4
       },
       // {
