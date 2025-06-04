@@ -120,6 +120,12 @@ let days = {
         url: "lab3.stomach/",
         due: "",
       },
+      {
+        name: "Lab 4",
+        title: "Alarm Clock (Conditionals)",
+        url: "lab4.clock/",
+        due: "", // Fri, wk 4
+      },
       // {
       //   name: "Lab 4",
       //   title: "Guessing Game (Conditionals)",

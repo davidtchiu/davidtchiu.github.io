@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab 3: Alarm Clock
+### Lab 4: Alarm Clock
 
 Clocks are cool. At a glance, they seem like just a glorified counter, ticking seconds, minutes, and hours up by one. But when we dig into them a bit more, we realize that there's actually a lot more detail that goes into properly implementing them. For instance, the minutes reset to 0 when they reach 60. The hours reset to 1 when they reach 13. We also need to keep track of am and pm, and that they change when the clock strikes 12.
 
@@ -119,34 +119,6 @@ If you have some time to spare and want to extend your clock, try doing the foll
   - Add a method called `addMinutes(int min)` that adds a given number of minutes `min` to the current time. Your clock needs to reflect any changes the addition would have had on the hours and the am/pm status. Don't forget that `min` can be given as a negative number too...
 
 
-#### Grading
-
-```
-This assignment will be graded out of a total of 85pts.
-
-[5pts] Appropriate instance variables have been defined for this class.
-       No local variables are defined as instance variables.
-
-[10pts] The constructor is properly implemented and defenseive to bad inputs. Upon 
-        receiving a bad hour, set the hour to 12. Set the minutes to 0 if a bad input
-        is given to it.
-
-[15pts] tickUp() moves the clock ahead by 1 minute, which may cause am/pm to flip. It may   
-        also cause the hour and minutes to "wrap around" to the beginning.
-
-[15pts] tickDown() moves the clock back by 1 minute, which may cause am/pm to flip. It may   
-        also cause the hour and minutes to "wrap around" to the beginning.
-
-[15pts] The showTime() method accepts an input and prints the current time in either 
-        If either hour or minute is single digit, then a leading 0 is appended.
-
-[10pts] The setAlarm(),  unsetAlarm(), and isAlarmSet() methods are properly implemented.
-
-[10pts] tickUp() and tickDown() further print out ***** BEEP BEEP BEEP **** if the time now 
-        matches the alarm that is set.
-
-[5pts] You include sufficient inline and block comments to explain the logic of your methods.
-```
 
 #### Submitting Your Assignment
 Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
