@@ -27,7 +27,7 @@ For full credit, your class should contain all of the methods described below. T
 
 - You need to implement two constructors:
 
-  - A default constructor should set the sales tax rate to 6.5% (input as a `double`: 0.065). Set all other counters (keep reading) to zero.
+  - A default constructor should set the sales tax rate to 6.5% (a `double` variable storing 0.065). Set all other variables to zero.
 
   - A second constructor should take a single argument as input (the sales tax rate). Your code should ensure that a valid rate was entered (i.e., can't be negative). If a rate is detected as being invalid, you should default the rate to 6.5%.
 
