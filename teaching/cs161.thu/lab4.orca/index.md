@@ -29,7 +29,7 @@ For full credit, your class should contain all of the methods described below. T
 
   - A default constructor should set the sales tax rate to 6.5% (a `double` variable storing 0.065). Set all other variables to zero.
 
-  - A second constructor should take a single argument as input (the sales tax rate). Your code should ensure that a valid rate was entered (i.e., can't be negative). If a rate is detected as being invalid, you should default the rate to 6.5%.
+  - A second constructor should take a single input argument as input (the sales tax rate). Your code should ensure that a valid rate was entered (i.e., can't be negative). If a rate is detected as being invalid, you should default the rate to 6.5%.
 
   - Know this: The thinking-ahead, anticipating possible errors, and writing code to prevent them, is called **Defensive Programming**. This is an extremely important programming practice, as it could prevent bugs and security vulnerabilities in your code.
 
@@ -43,9 +43,9 @@ For full credit, your class should contain all of the methods described below. T
 
 - It might be good to keep a record of the costliest trip you've ever taken. Write a method called `getCostliestTrip()` that returns that information. The costliest trip **does not** need to include the tax.
 
-- We'll also add a `getAverageTripCost()` method. It doesn't need any arguments, but it should return the average cost of the trips paid for by this card. Ignore the tax we pay on the trips when computing the average. The average trip cost **does not** include the tax.
+- We'll also add a `getAverageTripCost()` method. It doesn't need any input arguments, but it should return the average cost of the trips paid for by this card. Ignore the tax we pay on the trips when computing the average. The average trip cost **does not** include the tax.
 
-- Let's also alert the user to their level of balance remaining on the card. Write a method `balanceLevel()` that doesn't require arguments, and `return` a `String` containing the appropriate message (shown below) based on the current balance. Only one message should be returned. Note that a negative balance cannot happen if you programmed `buyTrip()` properly. If you see a negative balance, go back and fix that method!
+- Let's also alert the user to their level of balance remaining on the card. Write a method `balanceLevel()` that doesn't require input arguments, and `return` a `String` containing the appropriate message (shown below) based on the current balance. Only one message should be returned. Note that a negative balance cannot happen if you programmed `buyTrip()` properly. If you see a negative balance, go back and fix that method!
 
   | balance                                      | message to return                       |
   | -------------------------------------------- | --------------------------------------- |
