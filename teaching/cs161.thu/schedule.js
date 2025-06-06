@@ -170,12 +170,12 @@ let days = {
     "Start loops",
     "More loops",
     "Nested loops",
-    "Start ArrayLists",
+    "Start ArrayLists <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 4
-    "More ArrayLists;  <span style=\"font-weight: bold;\">Quiz</span>",
+    "More ArrayLists",
     "Scanners",
     "More Scanners",
-    "Files",
+    "More Scanners",
     "Wrapup; <span style=\"font-weight: bold;\">Quiz</span>",
   ],
 };

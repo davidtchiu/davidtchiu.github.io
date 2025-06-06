@@ -47,13 +47,14 @@ For full credit, your class should contain all of the methods described below. T
 
 - Let's also alert the user to their level of balance remaining on the card. Write a method `balanceLevel()` that doesn't require input arguments, and `return` a `String` containing the appropriate message (shown below) based on the current balance. Only one message should be returned. Note that a negative balance cannot happen if you programmed `buyTrip()` properly. If you see a negative balance, go back and fix that method!
 
-  | balance                                      | message to return                       |
-  | -------------------------------------------- | --------------------------------------- |
-  | $0                                           | Your card is empty! Top up immediately! |
-  | at or below five times the average trip cost | Your balance is sufficient!             |
-  | at or below twice the average trip cost      | Your balance is just enough.            |
-  | anything lower                               | Your balance is low!                    |
-  | anything higher                              | Your balance is high!                   |
+| **Balance Condition**                          | **Message to Return**                  |
+|------------------------------------------------|----------------------------------------|
+| $0                                             | Your card is empty. Please top up!     |
+| Greater than 5× the average trip cost          | Your balance is high.                  |
+| Equal to or above 5× the average trip cost     | Your balance is sufficient.            |
+| Equal to or above 2× the average trip cost     | Your balance is just enough.           |
+| Below the average trip cost                    | Your balance is low.                   |
+
 
 - Finally, write a `printSummary()` method that prints (not `return`!) information about the ORCA card object. The output should contain: the card's current balance, the number of trips taken, the balance-level message from the method you just wrote previously. It should also print your costliest trip on a separate line.
 
