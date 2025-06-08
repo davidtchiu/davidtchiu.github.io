@@ -170,17 +170,17 @@ let days = {
     "Primitive types, binary conversion; <span style=\"font-weight: bold;\">Lab 4</span>",
     "Finish lab;  <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 3
-    "Object interactions",
+    "APIs, Strings",
+    "<span style=\"font-weight: bold;\">Lab 5</span>",
     "Start loops",
-    "More loops",
+    "More loops  <span style=\"font-weight: bold;\">Quiz</span>",
     "Nested loops",
-    "Start ArrayLists <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 4
+    "Start ArrayLists",
     "More ArrayLists",
     "Scanners",
-    "More Scanners",
-    "More Scanners",
-    "Wrapup; <span style=\"font-weight: bold;\">Quiz</span>",
+    "More Scanners  <span style=\"font-weight: bold;\">Quiz</span>",
+    "Wrapup",
   ],
 };
 

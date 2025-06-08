@@ -7,7 +7,7 @@ Location:\
     - Tuesday in M217\
     - Wednesday in M217\
     - Thursday in M217\
-    - Friday in M217 and PG301
+    - Friday in PG301
 
 <!-- David's schedule generator! Do not touch -->
 <div id="schedule">&nbsp;</div>
