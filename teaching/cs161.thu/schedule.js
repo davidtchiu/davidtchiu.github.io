@@ -130,6 +130,12 @@ let days = {
         url: "lab4.orca/",
         due: "", // Fri, wk 4
       },
+      {
+        name: "In Class Coding",
+        title: "Organism",
+        url: "notes/Stomach.java",
+        due: "", // Fri, wk 4
+      },
       // {
       //   name: "Lab 4",
       //   title: "Guessing Game (Conditionals)",
