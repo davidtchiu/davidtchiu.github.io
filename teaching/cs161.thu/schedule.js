@@ -24,6 +24,10 @@ let days = {
       name: "Notes 4: Data Types, Type Casting, Objects as Types",
       url: "notes/CS161_4-types.pdf"
     },
+    {
+      name: "Notes 5: APIs, String API",
+      url: "notes/CS161_5-abstraction.pdf"
+    },
   ],
   assignments: {
     // homework: [
