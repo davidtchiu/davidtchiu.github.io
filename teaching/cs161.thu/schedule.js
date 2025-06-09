@@ -182,8 +182,8 @@ let days = {
     "Primitive types, binary conversion; <span style=\"font-weight: bold;\">Lab 4</span>",
     "Finish lab;  <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 3
-    "APIs, Strings",
-    "<span style=\"font-weight: bold;\">Lab 5</span>",
+    "OrcaCard review; type casting and int divide",
+    "APIs, Strings; <span style=\"font-weight: bold;\">Lab 5</span>",
     "Start loops",
     "More loops  <span style=\"font-weight: bold;\">Quiz</span>",
     "Nested loops",
