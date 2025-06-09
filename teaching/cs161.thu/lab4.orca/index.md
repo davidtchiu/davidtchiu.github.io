@@ -51,8 +51,8 @@ For full credit, your class should contain all of the methods described below. T
 |------------------------------------------------|----------------------------------------|
 | $0                                             | Your card is empty. Please top up!     |
 | Greater than 5× the average trip cost          | Your balance is high.                  |
-| Equal to or above 5× the average trip cost     | Your balance is sufficient.            |
-| Equal to or above 2× the average trip cost     | Your balance is just enough.           |
+| Between 2x to 5× the average trip cost         | Your balance is sufficient.            |
+| Between 1x to 2× the average trip cost         | Your balance is just enough.           |
 | Below the average trip cost                    | Your balance is low.                   |
 
 
