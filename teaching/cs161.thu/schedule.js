@@ -183,10 +183,10 @@ let days = {
     "Finish lab;  <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 3
     "OrcaCard review; type casting and int divide",
-    "APIs, Strings; <span style=\"font-weight: bold;\">Lab 5</span>",
-    "Start loops",
-    "More loops  <span style=\"font-weight: bold;\">Quiz</span>",
-    "Nested loops",
+    "APIs, Strings",
+    "<span style=\"font-weight: bold;\">Lab 5</span>",
+    "Loops  <span style=\"font-weight: bold;\">Quiz</span>",
+    "Nested Loops",
     // wk 4
     "Start ArrayLists",
     "More ArrayLists",
