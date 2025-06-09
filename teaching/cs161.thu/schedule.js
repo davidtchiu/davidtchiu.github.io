@@ -28,7 +28,18 @@ let days = {
       name: "Notes 5: APIs, String API",
       url: "notes/CS161_5-abstraction.pdf"
     },
+    {
+      name: "Notes 5: APIs, String API",
+      url: "notes/CS161_5-abstraction.pdf"
+    },  
   ],
+  APIs: [
+    {
+      name: "String API",
+      url: "api/StringAPI.pdf"
+    },
+  ],
+
   assignments: {
     // homework: [
       // {
@@ -131,8 +142,8 @@ let days = {
         due: "", // Fri, wk 4
       },
       {
-        name: "Lab 4 (Solution)",
-        title: "Orca Card (Conditionals)",
+        name: "Lab 4 SOLUTION",
+        title: "Orca Card (SOLUTION)",
         url: "notes/OrcaCard.java",
         due: "", // Fri, wk 4
       },
@@ -183,7 +194,7 @@ let days = {
     "Finish lab;  <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 3
     "OrcaCard review; type casting and int divide",
-    "APIs, Strings",
+    "Objects: interaction, aliasing, equality, APIs, Strings",
     "<span style=\"font-weight: bold;\">Lab 5</span>",
     "Loops  <span style=\"font-weight: bold;\">Quiz</span>",
     "Nested Loops",
