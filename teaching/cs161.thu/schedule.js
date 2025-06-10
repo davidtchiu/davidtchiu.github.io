@@ -29,13 +29,7 @@ let days = {
       url: "notes/CS161_5-abstraction.pdf"
     },
     {
-      name: "Notes 5: APIs, String API",
-      url: "notes/CS161_5-abstraction.pdf"
-    },  
-  ],
-  APIs: [
-    {
-      name: "String API",
+      name: "Notes 5a: String API",
       url: "api/StringAPI.pdf"
     },
   ],
