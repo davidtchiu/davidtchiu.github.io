@@ -25,7 +25,7 @@ let days = {
       url: "notes/CS161_4-types.pdf"
     },
     {
-      name: "Notes 5: APIs, String API",
+      name: "Notes 5: Abstraction",
       url: "notes/CS161_5-abstraction.pdf"
     },
     {
