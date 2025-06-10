@@ -141,12 +141,12 @@ let days = {
         url: "notes/OrcaCard.java",
         due: "", // Fri, wk 4
       },
-      {
-        name: "In Class Coding",
-        title: "Organism",
-        url: "notes/Stomach.java",
-        due: "", // Fri, wk 4
-      },
+      // {
+      //   name: "In Class Coding",
+      //   title: "Organism",
+      //   url: "notes/Stomach.java",
+      //   due: "", // Fri, wk 4
+      // },
       // {
       //   name: "Lab 4",
       //   title: "Guessing Game (Conditionals)",
@@ -190,8 +190,8 @@ let days = {
     "OrcaCard review; type casting and int divide",
     "Objects: interaction, aliasing, equality, APIs, Strings",
     "<span style=\"font-weight: bold;\">Lab 5</span>",
-    "Start loops; <span style=\"font-weight: bold;\">Quiz</span>",
-    "Loops continued",
+    "Lab review; String API; <span style=\"font-weight: bold;\">Quiz</span>",
+    "Loops",
     // wk 4
     "Nested loops",
     "Start ArrayLists",
