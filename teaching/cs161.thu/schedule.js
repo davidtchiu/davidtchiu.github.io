@@ -191,6 +191,7 @@ let days = {
     "Objects: interaction, aliasing, equality, APIs, Strings",
     "<span style=\"font-weight: bold;\">Lab 5</span>",
     "Start loops; <span style=\"font-weight: bold;\">Quiz</span>",
+    "Loops continued",
     // wk 4
     "Nested loops",
     "Start ArrayLists",
