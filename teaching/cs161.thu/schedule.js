@@ -190,13 +190,12 @@ let days = {
     "OrcaCard review; type casting and int divide",
     "Objects: interaction, aliasing, equality, APIs, Strings",
     "<span style=\"font-weight: bold;\">Lab 5</span>",
-    "Loops  <span style=\"font-weight: bold;\">Quiz</span>",
-    "Nested Loops",
+    "Start loops; <span style=\"font-weight: bold;\">Quiz</span>",
     // wk 4
+    "Nested loops",
     "Start ArrayLists",
     "More ArrayLists",
-    "Scanners",
-    "More Scanners  <span style=\"font-weight: bold;\">Quiz</span>",
+    "Scanners; <span style=\"font-weight: bold;\">Last Quiz</span>",
     "Wrapup",
   ],
 };
