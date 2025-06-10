@@ -153,12 +153,12 @@ let days = {
       //   url: "lab4.guessing/",
       //   due: "2/14/2025",
       // },
-      // {
-      //   name: "Lab 5",
-      //   title: "Circle Drawer (Object Aliasing & Interaction)",
-      //   url: "lab5.circleDrawer/",
-      //   due: "2/21/2025",
-      // },
+      {
+        name: "Lab 5",
+        title: "Circle Drawer (Object Aliasing & Interaction)",
+        url: "lab5.circleDrawer/",
+        due: "",
+      },
       // {
       //   name: "Lab 6",
       //   title: "Diamonds (Abstraction and Modularity)",

@@ -64,13 +64,14 @@ The following file(s) have been provided for this homework.
     - Inspect it, and see how `first` and `second` both point to `null`.
     - Try calling `drawCircles()` or `eraseCircles()`. The program should **crash** with a `"NullPointerException."` That's bad news -- it means our code isn't all that robust.
 
-4. **Add necessary changes** to `drawCircles()` so that you only draw the circle(s) when it's not null. To do this, use an if-statement to check if each field is `==` or `!=` to the keyword `null`. Make sure you test these out after you're done.
+4. **Add necessary changes** to `drawCircles()` so that you only draw the circle(s) when it's *not* `null`. To do this, use an if-statement to check if each field is `==` or `!=` to the keyword `null`. Make sure you test these out after you're done.
     - Make the same changes to `eraseCircles()`
 
-5. **Add** a new method called `drawStrictCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
+5. **Add** a new method called `strictDrawCircles()` method so that it only draws circles with **radii** strictly greater than `20` and strictly less than `50`.
 
-    - But how do you get a `Circle`'s radius? Add a method in the `Circle` class that simply returns its `diameter`.
-    - After you've done that, you need to go back to the `drawCircles` method and call your new "get diameter" method on `first` and `second` using dot notation! Use some if statements to ensure that each of your circles diameters are within the specified range, and make them visible!
+    - But how do you get a `Circle`'s radius size? You can't from this class.
+    - Add a method in the `Circle` class that simply returns its `diameter`.
+    - After you've done that, you need to go back to the `strictDrawCircles` method and call your new "get diameter" method on `first` and `second` using "dot notation!" Use some if statements to ensure that each of your circles diameters are within the specified range, and make them visible!
     - Test this out. Ahem -- if your Circle's diameter is say, **41**, it *should* be drawn. If you just can't get yours to draw, write some code to print out the calculated radius. Are you falling victim to integer divide?
 
 6. Go back in the `CircleDrawer` class. **Add a method** called `drawLarger()` that draws only the larger of the two circles. The smaller one should be hidden. If there's a tie, then you should draw both of them. 
