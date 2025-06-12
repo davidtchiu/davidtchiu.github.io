@@ -85,14 +85,14 @@ The following file(s) have been provided for this homework.
    - Now, if *either* circle is `null` then you can simply return 1 in this method.
    - Are you always getting a 0 when you're expecting to get a fraction? It could be due to integer divide, which means you are going to need to type cast.
 
-8. **Add a method** in `CircleDrawer` called `addCircle()` that inputs a `Circle` object, and it doesn't return. This method must first first erase both `Circles` (Yep, just call `eraseCircles()` instead re-writing all that code). Now:
+8. **Add a method** in `CircleDrawer` called `addCircle()` that inputs a `Circle` object, and it doesn't return. This method must first erase both `Circles` (Yep, just call `eraseCircles()` instead re-writing all that code). Now:
     - If *either* of the two circles are `null`, then simply assign the new `Circle` to that field.
     - If *neither* of the two are pointing to `null`, then promote the second `Circle` to the `first`, then set the newly-input `Circle` to be the `second`.
     - After you're done with all that, make both Circles visible.
     - To test this method, I would create 3 circles in BlueJ. Then create a CircleDrawer using the default constructor so that both `first` and `second` are `null`. Then call `addCircle()` 3 consecutive times (on the 3 circles you created).
     - Here, we see *another* example of **object aliasing!** The new Circle that you input is now also referenced by your input parameter!
 
-9. **Add a method** called `swapCircles()` that inputs and returns nothing. Calling this method will cause  `first` to now point to whatever `second` held, and vice versa. In other words, they exchange whatever they're pointing at (even if they're pointing to `null`). To do this correctly, you'll need to declare a local variable of type `Circle` to temporarily hold one of them so it doesn't get overwritten. 
+9. **Add a method** called `swapCircles()` that inputs and returns nothing. Calling this method will cause  `first` to now point to what `second` held, and vice versa. They exchange whatever they're pointing at (even if they're pointing to `null`).
 
 10. **Add a method** called `replaceSmallest()` that takes a `Circle` as input. 
     - If *either* of the two circles are `null`, simply add the new circle into the empty slot. 

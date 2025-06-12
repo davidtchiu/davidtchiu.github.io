@@ -26,7 +26,7 @@ let days = {
     },
     {
       name: "Notes 5: Abstraction",
-      url: "notes/CS161_5-abstraction.pdf"
+      url: "notes/CS161_5-strings.pdf"
     },
     {
       name: "Notes 5a: String API",
@@ -190,14 +190,14 @@ let days = {
     "OrcaCard review; type casting and int divide",
     "Objects: interaction, aliasing, equality, APIs, Strings",
     "<span style=\"font-weight: bold;\">Lab 5</span>",
-    "Lab review; String API; <span style=\"font-weight: bold;\">Quiz</span>",
-    "Loops",
+    "Lab review; <span style=\"font-weight: bold;\">Quiz</span>",
+    "String API, String examples",
     // wk 4
-    "Nested loops",
-    "Start ArrayLists",
-    "More ArrayLists",
-    "Scanners; <span style=\"font-weight: bold;\">Last Quiz</span>",
-    "Wrapup",
+    "Loops",
+    "<span style=\"font-weight: bold;\">Lab 6</span>",
+    "ArrayLists",
+    "ArrayLists <span style=\"font-weight: bold;\">Last Quiz</span>",
+    "Wrapup: discussion",
   ],
 };
 
