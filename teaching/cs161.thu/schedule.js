@@ -194,10 +194,10 @@ let days = {
     "String API, String examples",
     // wk 4
     "Loops",
-    "<span style=\"font-weight: bold;\">Lab 6</span>",
-    "<span style=\"font-weight: bold;\">Last Quiz</span>",
-    "<span style=\"font-weight: bold;\">Cancelled</span>",
-    "Wrapup: discussion",
+    "Loops <span style=\"font-weight: bold;\">Lab 6</span>",
+    "Nested loops; <span style=\"font-weight: bold;\">Last Quiz</span>",
+    "<span style=\"font-weight: bold;\">Cancelled: go to ICIC</span>",
+    "Demo Day, and wrapup",
   ],
 };
 
