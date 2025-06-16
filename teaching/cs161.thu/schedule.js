@@ -169,12 +169,12 @@ let days = {
       //   url: "lab6.diamonds/",
       //   due: "2/28/2025",
       // },
-      // {
-      //   name: "Lab 7",
-      //   title: "Turtle (Loops)",
-      //   url: "lab7.turtle/",
-      //   due: "3/7/2025",
-      // },
+      {
+        name: "Lab 6",
+        title: "Turtle (Loops)",
+        url: "lab6.turtle/",
+        due: "",
+      },
     ],
   },
   lectures: [
