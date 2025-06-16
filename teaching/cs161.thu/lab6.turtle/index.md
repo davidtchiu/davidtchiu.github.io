@@ -10,22 +10,6 @@ In this lab, we'll be using a supplied `Turtle` library to make some drawings, a
 
 - To practice writing loops and nested loops
 
-<!-- #### Working with Partners (Please Read)
-
-You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
-
-Here are your assigned partners for today's lab.
-
-```
-[Camblin, F, Jones, S]
-[Rodriguez, C, Steller, L]
-[Jones, B, Murayama, E, Wissing, A]
-[Culpepper, A, Roppolo, G]
-[Beardsley, M, Murphy, C]
-[Brown, A, Grey, E]
-[Miller, D, Strash, K]
-``` -->
-
 #### Required Files
 
 The following file(s) have been provided for this project.
@@ -186,14 +170,6 @@ Whatever you do, be creative! Use a nested loop (or a triply nested loop)! But h
 
 ```
 Attendance is necessary to receive credit for lab.
-```
-
-#### Grading
-
-```
-This assignment will be graded out of 2 points, provided that:
-- You were in attendance and on-time.
-- Completed all required methods.
 ```
 
 
