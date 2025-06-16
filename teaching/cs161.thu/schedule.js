@@ -32,6 +32,10 @@ let days = {
       name: "Notes 5a: String API",
       url: "api/StringAPI.pdf"
     },
+    {
+      name: "Notes 6: Loops",
+      url: "notes/CS161_6-loops.pdf"
+    },
   ],
 
   assignments: {
