@@ -199,9 +199,9 @@ let days = {
     // wk 4
     "Loops",
     "Loops <span style=\"font-weight: bold;\">Lab 6</span>",
-    "Nested loops; <span style=\"font-weight: bold;\">Last Quiz</span>",
+    "<span style=\"font-weight: bold;\">Last Quiz; Finish Lab 6</span>",
     "<span style=\"font-weight: bold;\">Cancelled: go to ICIC</span>",
-    "Demo Day, and wrapup",
+    "<span style=\"font-weight: bold;\">Demo Day</span> and wrapup",
   ],
 };
 
