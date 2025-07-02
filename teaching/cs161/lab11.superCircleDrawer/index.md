@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Super Circle Drawer
+### Lab 11: Super Circle Drawer
 
 At a recent cocktail party, David introduces you to his close friend Professor Pacman, world-renowned eater of ghosts and connoisseur of all things circular. He talked you up, and totally gushed about all the great programs you've written for him this semester. It turns out that Professor Pacman has been looking to hire someone to write a program to help manage their insane Circle collection. It piqued their interest when it was mentioned that you've dabbled with `CircleDrawers` in the past.
 

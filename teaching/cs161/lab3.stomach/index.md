@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Writing the Stomach Class
+### Lab 3: Writing the Stomach Class
 
 In this assignment you will write your first class from scratch. This class models a very rudimentary stomach, which can ingest food, regurgitate, and digest food. (Image source: Flaticon License)
 

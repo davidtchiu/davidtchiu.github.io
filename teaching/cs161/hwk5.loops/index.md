@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Loops Loops Loops
+### Homework 5: Loops Loops Loops
 
 Loops are among the most important and fundamental elements of programming. They allow us to repeat instructions efficiently, making our programs more robust and scalable. Whether iterating over a list of data, counting down a timer, or running a simulation, loops provide a way to automate repetitive tasks.
 

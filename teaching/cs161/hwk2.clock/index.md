@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Alarm Clock
+### Homework 2: Alarm Clock
 
 Clocks are cool. At a glance, they seem like just a glorified counter, ticking seconds, minutes, and hours up by one. But when we dig into them a bit more, we realize that there's actually a lot more detail that goes into properly implementing them. For instance, the minutes reset to 0 when they reach 60. The hours reset to 1 when they reach 13. We also need to keep track of am and pm, and that they change when the clock strikes 12.
 

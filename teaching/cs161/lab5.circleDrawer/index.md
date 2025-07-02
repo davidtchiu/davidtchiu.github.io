@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Circle Drawer
+### Lab 5: Circle Drawer
 
 This assignment is all about conditionals and object references! We'll work with the `CircleDrawer` class that is given to you. Along the way you'll write code that uses and manipulates object references, and requires more complex boolean expressions than you've written previously.
 

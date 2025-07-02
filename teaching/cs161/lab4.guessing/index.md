@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: The Guessing Game
+### Lab 4: The Guessing Game
 
 In this lab, you will create the "number guessing game" --- the computer will pick a random number between 1 and 50 (inclusive), and then the player will try to guess it in as few guesses as possible.
 

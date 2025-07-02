@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Variables and Scope
+### Lab 2: Variables and Scope
 
 In this lab, you'll get familiarized with the concepts of data types, variables, assignment statements, and scope. You'll be modifying the `Triangle` shape class to add some functionalities.
 

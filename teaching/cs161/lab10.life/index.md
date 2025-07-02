@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Conway's Game of Life
+### Lab 10: Conway's Game of Life
 Conway's Game of Life is not just a fun curiosity (although it may have started as one). It has applications in biology (modeling evolutionary and life processes), physics (Modeling Reaction-Diffusion Systems), gaming, and artificial intelligence.
 
 In this lab, you will implement <a href="http://conwaylife.com/" target="_new">Conway's Game of Life</a>, a classic example of a cellular automaton. The Game of Life simulates a grid-based "universe" of cells, where each cell can be either alive or inactive. The state of each cell evolves over time based on a simple set of rules that consider the states of neighboring cells. Despite its simplicity, the Game of Life can produce surprisingly complex and beautiful patterns, making it a powerful tool for exploring how complexity can emerge from simple rules.

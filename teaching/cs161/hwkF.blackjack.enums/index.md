@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Final Project: Black Jack
+### Final Homework: Black Jack
 
 Business at David's Casino is flourishing, but customers have been complaining that they're getting a bit bored of rock-paper-scissors, coin flipping, and guessing combinations. To scale up his business, David wants to host Black Jack, a popular game at most casinos. He wants to hire you to write an electronic Black Jack player. David offers you 5% of all Black Jack winnings if you can properly implement the game, so you agree...
 

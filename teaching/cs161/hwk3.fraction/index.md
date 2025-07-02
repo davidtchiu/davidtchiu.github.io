@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Fractions
+### Homework 3: Fractions
 
 The key to the object-oriented programming (OOP) paradigm is to write classes, then create objects of those classes to accomplish a greater goal. In this assignment, you'll get first-hand experience with object interaction, e.g., storing references (pointers) to objects and calling methods on them. 
 

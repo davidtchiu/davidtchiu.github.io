@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Robots
+### Homework 4: Robots
 
 In class we talked about the importance of modularity and abstraction to create larger-scale software applications. In the modularity step, the software designer breaks down the desired product into smaller, easy-to-program pieces. After each of these pieces have been programmed and tested, one can then focus on putting them together to obtain the desiderata.
 

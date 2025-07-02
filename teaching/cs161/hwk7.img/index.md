@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Fotoshop
+### Homework 7: Fotoshop
 
 Digital image processing is an important field of study in computer science, with 
 widespread applications in medicine, space exploration, photo-editing tools (e.g., 

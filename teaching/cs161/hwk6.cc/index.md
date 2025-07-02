@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework: Credit Card Validation
+### Homework 6: Credit Card Validation
 
 Most credit cards carry a unique 16-digit number. With the length being this long,  people often make mistakes when filling out a form or giving it over the phone. (Just think of the number of times you've screwed up typing your credit card number when making an online purchase!) Back before the Internet and Web existed, how did our credit card readers immediately determine when a credit card number was entered incorrectly? That is the topic of today's lab!
 

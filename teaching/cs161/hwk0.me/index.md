@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Hwk: About Me
+### Homework 0: About Me
 
 The purpose of this first assignment is to get you even more familiarized with the BlueJ coding editor and with the code-submission process.
 

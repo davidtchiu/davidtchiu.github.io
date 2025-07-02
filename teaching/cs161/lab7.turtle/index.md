@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Turtle Graphics
+### Lab 7: Turtle Graphics
 
 This lab is based on the iconic [Logo Turtle](https://techcommunity.microsoft.com/t5/small-basic-blog/small-basic-the-history-of-the-logo-turtle/ba-p/337073), which was an early tool for teaching kids how to program. The `Turtle` has a pen that can change colors and be dropped and lifted on/off the ground. It also has a few mobility functions, like crawling forward and turning by a certain angle. Given this small set of functionalities, people can create impressively complex drawings.
 

@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Lab: Diamonds (Abstraction)
+### Lab 6: Diamonds (Abstraction)
 David is a Rihanna super fan. While rocking to *"Diamonds"*, he was mortified to recall that diamonds aren't a part of the _shapes_ toolkit he provides his CS 161 students. Instead of creating diamonds from scratch (and saving ourselves from copying and pasting other shape classes), David made a keen observation that a diamond can be constructed using two triangles -- only that one of the triangles needs to be flipped upside down and placed right below the other, as shown below. Given that we already have a `Triangle` class in our toolkit, it will vastly simplify our work.
 
   <img src="figures/lab6_diamond.png" width="100px" />

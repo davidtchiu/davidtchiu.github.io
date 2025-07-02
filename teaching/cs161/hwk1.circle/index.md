@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Hwk: A Better Circle
+### Homework 1: A Better Circle
 
 This assignment will give you a chance to explore the Circle class in more detail, and gain additional experience with BlueJ. It requires modifying and extending Java source code, but all of the exercises below can be solved by copying and pasting from the original, running code — you don't need to know how to create any new lines of code from scratch yet.
 
