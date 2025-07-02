@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Lab: Binary Search Trees
+### Lab 12: Binary Search Trees
 
 A Binary Search Tree (BST) is arguably the most important data structure in the field of computer science. They are used to efficiently manage a collection of objects in sorted order, which can help simplify searches. We've seen the important methods in lecture, and in this lab you will be implementing a few more BST methods. Before you get started, you should recall the **BST Properties**:
 

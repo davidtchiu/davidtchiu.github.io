@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Lab: Melody Player
+### Lab 8: Melody Player
 
 In this assignment, students keep track of the notes of a song and write methods to perform many standard music player tasks. Repeated sections of songs are stored only once so students have to reason about how to play the entire song with all repeated sections.
 

@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Homework: Data Compression (Huffman's Algorithm)
+### Homework 7: Data Compression (Huffman's Algorithm)
 
 Lossless compression algorithms are used to shrink data, which can then later be inflated back to its original form. Lossless compression is so useful, in fact, you probably employ it on a regular basis. For instance, any time you had to "zip" up (or "unzip") some files, you have dealt with it. Probably the most widely known general-purpose lossless compression algorithm in use today is zip (and all its variants). You might've also heard of png and gif for compression of images, among many others. Arguably, most of today's lossless compression algorithms owe their existence to the seminal Huffman Coding algorithm, which you will implement in this assignment.
 

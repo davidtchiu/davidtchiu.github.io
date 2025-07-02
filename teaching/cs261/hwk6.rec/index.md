@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Homework: Recursion Exercises
+### Homework 6: Recursion Exercises
 
 In this assignment, you'll be working with recursion. This assignment can be quite challenging, so start early. Don't get too frustrated if you can't figure out how to write a method. Use the design approaches that you've learned in class. Seek tutoring or office-hours help from me.
 

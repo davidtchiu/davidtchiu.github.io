@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Lab: Complexity Analysis
+### Lab 5: Complexity Analysis
 
 In this lab, you'll form hypotheses about the time complexity (running time) of various algorithms, and validate/reject those hypotheses through experimentation, analysis of its results, and drawing conclusions. You will be generating plots and be providing a Lab Report.
 

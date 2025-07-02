@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Lab: HashMaps - Open-Addressing Implementation
+### Lab 13: HashMaps - Open-Addressing Implementation
 
 This week you'll implement the open-addressing version of a `HashMap` from scratch, and testing its performance, verifying that it does indeed support `O(1)`-time search/insert when space is effectively being traded for time. 
 

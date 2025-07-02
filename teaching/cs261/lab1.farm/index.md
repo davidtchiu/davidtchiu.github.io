@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Warmup Lab: Around the Farm
+### Lab 1: Around the Farm
 
 This lab serves a dual purpose: as a review, and as motivation for introducing higher abstraction concepts in Java. Backstory: David hails from the midwest, and thus has spent a considerable amount of time hanging around quintessential midwesterner things like flea markets, state fairs, corn fields, farms, and oh yeah, more farms. He is pictured below with a piglet at an Ohio county fair (yes, wearing a pig shirt). Anyway, David is interested in writing a program that simulates what animal life might be on the farm... so let's get to it.
 

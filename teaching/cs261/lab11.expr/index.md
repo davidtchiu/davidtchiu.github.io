@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Lab: Expression Trees
+### Lab 11: Expression Trees
 
 For this assignment, you'll implement a class for representing and evaluating arithmetic expressions. It's a great excuse to use recursion, recursive structures, and polymorphism all within a single assignment! Even better — it happens to be useful. Make sure you write clean, well-documented code. You should note that you will not be using the `BinaryTree` or `BST` classes that we coded up in class for this assignment. Instead, you'll be writing a customized version of the binary tree as part of this assignment.
 

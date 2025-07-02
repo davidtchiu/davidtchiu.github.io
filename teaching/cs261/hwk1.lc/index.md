@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Warmup Assignment: Letter Counter
+### Homework 1: Letter Counter
 
 This first assignment will give you a chance to refresh your Java programming basics and get reacquainted with your favorite development environment, whether that's BlueJ or something different. Your task, to be completed on your own, is to write a class that gathers information on the frequency with which letters appear in a sample of text. The specifics are spelled out in the next section, and you can use the code provided below to test your class.
 

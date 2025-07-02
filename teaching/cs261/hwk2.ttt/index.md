@@ -4,7 +4,7 @@
 
 ## CS 261 - Computer Science II
 
-### Tic Tac Toe
+### Homework 2: Tic Tac Toe
 
 Inheritance is a good thing. Really. It allows you to create new classes quickly by basing them off of other classes, instead of having to write a new class from scratch. And, as you'll see as you complete this assignment, it allows you to enhance an existing class without having to change the original — which is important if the original class does something useful and we want to keep it as is. For this assignment, you'll write parts of a program to play Tic-Tac-Toe. The project is composed of several classes: There's a class to model the game's board, and classes that model players (and playing styles). You'll create new players by basing them off of the existing Player class, and could pit them against one another or against the "human" player.
 
