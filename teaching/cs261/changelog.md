@@ -1,8 +1,8 @@
 # Note to self
 - Insist that final exams are cumulative
+- Gotta stop telling students that CS 261 is a litmus test for whether you'll like the major. Things change from CS 261.
 
 # TODO
-- Gotta stop telling students that CS 261 is a litmus test for whether you'll like the major. Things change from CS 261.
 
 - Need better assignments. Elizabeth says that things really stopped lining up
 with what we were learning: no BST assignment, RCV assignment is no good. Want more
@@ -11,11 +11,6 @@ scaffolding.
 - Replace Hwk 5 RCV with MelodyPlayer
 
 - Need more code along labs! Maybe start all labs as code alongs?
-
-- Some confusion in Hwk 2: TTT - Insist that they keep a list of known open coordinates
-    - Should I spend a bit of time in lecture to talk about 2D arrays (yes)?
-    - In Player? In RandomPlayer?
-    - What about Coords? Was it obvious that they needed to store them somehow?
 
 - Replace RG1 and RG1 sol (no more exceptions)
 

@@ -2,7 +2,7 @@
 
 ### Homework 3: You Complete Me
 
-Autocompletion is pervasive in modern applications. As the user types, the program predicts the complete query (typically a word or phrase) that the user intends to type. Autocomplete is most effective when there are a limited number of likely queries. For example, the Internet Movie Database uses it to display the names of movies as the user types; search engines use it to display suggestions as the user enters web search queries; cell phones use it to speed up text input. 
+Auto-completion is a pervasive feature in modern applications. As the user types, the program predicts the complete query (typically a word or phrase) that the user intends to type.  For example, the Internet Movie Database uses it to display the names of movies as the user types; search engines use it to display suggestions as the user enters web search queries; cell phones use it to speed up text input.
 
 <center>
 <IMG SRC="figures/autocomplete-imdb.png"      width = "250" alt = "IMDB search" title = "IMDB search" style="border: 10px solid #d6d6d6" />
@@ -16,7 +16,6 @@ In these examples, the application predicts how likely it is that the user is ty
 #### Student Objectives
 - Designing an object-oriented project from scratch.
 - Reading from files.
-- Catching exceptions.
 - Exposure to interfaces.
 - Implementing the Comparable interface.
 
@@ -29,12 +28,12 @@ The following file(s) have been provided for this homework.
 #### Object-Oriented Design
 We need to start removing the scaffolding that I provide with each assignment in prescribing you the overall structure of the classes.  We'll ease into this over the course of the semester, so we'll start slow --  I'll provide the class diagram below, but you'll need to fill in the rest. You should expect that future assignments might only provide the class diagram, and it's up to you to interpret it. 
 
-- Examine the class diagram given below. (Note the `Comparable`  interface is built into Java, and won't actually show up in your UML diagram.)
+- Examine the class diagram given below. (Note the `Comparable` interface is built into Java, and won't actually show up in your project diagram!)
 
   <img src="figures/AutoHomeworkClassDiag.png" width="500px">
 
 
-- `Term` -- This class encapsulates a term-frequency pair (given as each row in the input file). This class is simple. You only need to provide getters and setters to input/retrieve the term or frequency itself. Objects of this class eventually need to be ordered by decreasing frequency. Therefore, this class needs to implement the `Comparable` interface. (Alternatively, you could implement the `Comparator` interface for this purpose.)
+- `Term` -- This class encapsulates a term-frequency pair (given as each row in the input file). 
 
 - `Autocomplete` -- This is the heart of your project. Among other things, this class stores a list of term-frequency objects and provides functionalities for searching through the list for terms that match the user's "query." Objects of this class must open a given training file and read the file's contents into its list. Because searching through terms ought to be fast, you should add items to its term-frequency  in alphabetical order.
 
@@ -43,23 +42,34 @@ We need to start removing the scaffolding that I provide with each assignment in
 
 #### Instructions
 
-1. The first thing you need to do is to understand the data that I've provided you with. Open the "training file" that comes with this project. Each line represents a term and the number of occurrences (frequencies) of that term, separated by tab. The terms are in no particular ordering. Caution: some the frequencies are too big to store in an `int` variable. I would store those in a `long` instead. You should also only store the lower-case versions of each term.
+0. The first class I'd work on is `Term`.
+   - This class stores just two instance variables -- the term and its corresponding frequency. It needs just one constructor that inputs both of these arguments. You should also provide getter methods for the term and frequency portions, respectively.
 
-2. When the user types in a query, which may be only the prefix of a word of interest, you must search through your list of terms and return a list of all terms whose prefixes match the given prefix. For instance, if the query was How then your List might contain: how, howdy, howl, howling, howitzer, and so on.
+    - Objects of this class need to be ordered by decreasing frequency. Therefore, this class needs to implement the `Comparable<Term>` interface and override the `public int compareTo(Term other)` method. 
 
-3. Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. To have that same effect, your list of auto-completed terms must be sorted in descending order of the their frequencies. To do this, you should call the `Collections.sort(...)` method prior to printing out the list of matched terms, and if you implemented the `Comparable` interface correctly, your results should be sorted in descending frequency after calling `Collections.sort(...)`.
+1. Next, you need to understand the file that I've provided you with. Open the "training file" called `wiktionary.txt` that comes with this project. Each line represents a term and the number of occurrences (frequencies) of that term, separated by tab. The terms are in no particular ordering. Caution: some the frequencies are too big to store in an `int` variable. I would store those in a `long` instead. You should also only store the lower-case versions of each term.
 
-4. You must provide a `UserInterface` class, that contains a single static method, `public static void main(String[] args)`. If there are other static methods in this class, they must be made private so that they're hidden from the user. The main method should simply instantiate and start your program.
+2. Now work on the `Autocomplete` class. This is the core of your project!
+    - It should store a list of `Term`s.
+    - First, work on the `public void readTermsFromFile(String filename)` method. It should attempt to open the given file and read it line-by-line. You need to parse the information on each line into a term (String) and frequency (long), and create a `Term` object using these. Then put the new `Term` in your list!
+    - You should recall how to read files -- to do this, you can use a `Scanner` object to open the file, but you need to handle the `FileNotFoundException`. If you don't remember how to do this, ask our [AI tutor](https://chatgpt.com/g/g-6865afb2a07481918f072a3db92a74e6-puget-sound-cs-2-tutor)!
+    - Next, work on the `public List<Term> getMatches(String query)`.  When the user types in a "query," which may be only the prefix of a word of interest, you need search through your list of terms and return a list of all terms whose prefixes match the given prefix. For instance, if the query was "How" then your returned list of terms might contain: how, howdy, howl, howling, howitzer, and so on (and since you're returning a list of `Term`s, each term comes with their frequencies too -- that'll be useful soon!)
 
-5. When your program starts,  it should prompt the user for the name of the "training file," (i.e., `wiktionary.txt`). Note that any method that attempts to open a file can't compile until you've thrown or caught a *file not found exception*. The easiest way to do this is to add the following `throws` suffix to your method:
+3. Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. To have that same effect, your list of auto-completed terms must be sorted in descending order of the their frequencies. To do this, you should call the `Collections.sort(..)` method (you need to first import `java.util.Collections`) prior to printing out the list of matched terms, and if you implemented the `Comparable` interface correctly in `Term`, your results should be sorted in descending frequency after calling `Collections.sort(..)`.
+
+4. Finally, you must provide a `UserInterface` class, that contains a single static method, `public static void main(String[] args)`. If there are other static methods in this class, they must be made private so that they're hidden from the user. The main method should simply instantiate a copy of `Autocomplete` and start your program.
+   - It should continuously prompt the user for a keyword prefix (the query) until the user types `.quit`.
+   - After you scan in a query, call `getMatches()` on it. Sort the returned list and display it!
+
+<!-- 5. When your program starts,  it should prompt the user for the name of the "training file". Note that any method that attempts to open a file can't compile until you've thrown or caught a *file not found exception*. The easiest way to do this is to add the following `throws` suffix to your method:
 
     ```java
-    public void aMethodThatOpensFile() throws FileNotFoundException {
+    public void method-that-opens-file() throws FileNotFoundException {
       // code to open and read a file
     }
     ```
 
-  After reading the training file contents into your list, your then enters an infinite loop, requesting for a  *query* until the user enters `.quit`. After the user types in a query, you extract the last word in the query and use it to do your autocompletion routine. Print out the first 10 matches, if there are that many.
+  After reading the training file contents into your list, your then enters an infinite loop, requesting for a  *query* until the user enters `.quit`. After the user types in a query, you extract the last word in the query and use it to do your autocompletion routine. Print out the first 10 matches, if there are that many. -->
 
 <!--
 5. When your program starts,  it should prompt the user for the name of the "training file," (i.e., `wiktionary.txt`). Your program should then attempt to open this file and read in its contents, but you must use a try-catch clause to handle checked exception `FileNotFoundException` that is thrown. As long as the file cannot be opened, re-prompt the user for the name of the file. Your program should not move on until this is resolved. After reading the training file contents into your list, your then enters an infinite loop, requesting for a *query* until the user enters `.quit`. After the user types in a query, you extract the last word in the query and use it to do your autocompletion routine. Print out the first 10 matches, if there are that many.
