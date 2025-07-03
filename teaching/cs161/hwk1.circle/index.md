@@ -32,7 +32,7 @@ Start by downloading a fresh copy of the starter file from the above link. The c
 
 - Add a method called `public void shuffleVertical(int distance)`. The method, like `shuffleHorizontal`, will cause the Circle to do a slow movement to the south, and then back to its original position.
 
-- Add a method called `public void dance()` that inputs an integer named `distance` followed by four String arguments: `firstColor`, `secondColor`, `thirdColor`, and `fourthColor`. It will first change the color's color to `firstColor`, then shuffle the circle to the right by the given distance. Then it circle's color will change to `secondColor` before shuffling to the south by the given distance, and so on, in clockwise fashion for the remaining two colors. Again, you should simply _call_ methods that's already been written.
+- Add a method called `public void dance(int distance, String firstColor, String secondColor, String thirdColor, String fourthColor)`. It will first change the color's color to `firstColor`, then shuffle the circle to the right by the given distance. Then it circle's color will change to `secondColor` before shuffling to the south by the given distance, and so on, in clockwise fashion for the remaining two colors. Again, you should simply _call_ methods that's already been written.
 
   <img width="500px" border="1px" src="figures/danceCircle.gif" />
 

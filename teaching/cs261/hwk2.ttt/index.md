@@ -109,7 +109,11 @@ System.out.println(b.toString());
     > "Spassky"   (String)
     ```
 
-3. Extend `Player` again to create a `RandomPlayer` class. Objects of this type select from among the open positions on the board randomly. You *could* generate random row and column values until you find a position that's open, but I don't want you to, because the runtime of that loop would be unbounded. (Yeah I know it's unlikely to take more than a few iterations, but it's just bad code design). Instead, keep a list of open cells, and randomly select one of those cells to fill. If the board is already full, your method should return without modifying the board. Here's a couple of random players in action, though you'll obviously get different results:
+3. Extend `Player` again to create a `RandomPlayer` class. This player makes a random move among the open positions on the board. Use a random number generator (`Random`) to generate two random integers between 0 and 2 inclusive. If that spot is taken, generate another pair. Otherwise, make the move on the random coordinates! If the board is already full, your method should return without modifying the board. 
+
+
+
+Here's a couple of random players in action, though you'll obviously get different results:
 
     ```java
     Board b = new Board();
@@ -140,7 +144,7 @@ System.out.println(b.toString());
     > true  (boolean)
     ```
 
-4. Next, write a third and final player class called `CornerPlayer` that extends `RandomPlayer`. Objects of type `CornerPlayer` look first to see if any of the corners are open, and fill a corner (any) if they find one. The order in which the corners are inspected isn't important. If none of the corners are available, it should make its move randomly from among the remaining open positions. In other words, your new `makeMove` method should invoke `makeMove` from the superclass (`RandomPlayer`) if no corners are open.
+4. Next, write a third and final player class called `CornerPlayer` that extends `RandomPlayer`. Objects of type `CornerPlayer` look first to see if any of the corners are open, and fill a corner (any) if they find one. The order in which the corners are inspected isn't important. If none of the corners are available, it should make its move randomly from among the remaining open positions.
 
     ```java
     Board b = new Board();
@@ -172,15 +176,15 @@ System.out.println(b.toString());
 
 5. Custom player: None of the three player classes you created are very smart — there's lots of room for improvement. Write your own class that does a better job of guessing than the other players. Name your new player `F_L_Player`, where `F` and `L` refer to *your* first and last initials. For instance, I'd name my class `D_C_Player`. All your code must be contained within this class (i.e., do not introduce more classes and expect me to know to pull those into my editor). I'll run a tournament consisting of all of your custom players, and reward the winner(s) with to-be-determined prizes!
 
-6. Finally, create a new `Tournament` class. In it, define a `playGame(Player p1, Player p2)` method that takes two players and plays a single round of Tic-Tac-Toe between them. You should treat the first argument to `playGame()` as the player using `X` and the second as `O`. (You'll want to use the `setSymbol()` method to ensure that the players are using the proper symbols.)
+6. Finally, create a new `Tournament` class. In it, define a `public static Player playGame(Player p1, Player p2)` method that takes two players and plays a single round of Tic-Tac-Toe between them. You should treat the first argument to `playGame()` as the player using `X` and the second as `O`. (You'll want to use the `setSymbol()` method to ensure that the players are using the proper symbols.)
     
     - Create a new `Board` object. When either player calls their `makeMove(...)`, make sure you pass this board object as its argument, so that they're playing on the same board!
 
-    - Write a loop that does not end until the game is over. (The board object can tell you if the game is over if there's a winner, or if the board is filled and there's no winner -- read its methods).
+    - Write a loop that does not end until the game is over. (The board object can tell you if the game is over if there's a winner, or if the board is filled and there's no winner).
 
     - You may assume `p1` gets the first move. After each move, print out the `board` object so we can examine its state.
 
-    - Once the game is over, your method should print the output from the winner's `celebrate()` method and the loser's `mourn()` method. If the game is a draw, both players mourn. Finally, `return` a reference to the winning player or `null` if the game ends in a draw.
+    - Once the game is over, your method should print the output from the winner's `celebrate()` method and the loser's `mourn()` method. If the game is a draw, both players mourn. Finally, `return`  the winning player or `null` if the game ends in a draw.
 
 7. Before you turn anything into me, please remove all print statements in your Player classes that you might've put in your code while debugging!
 
