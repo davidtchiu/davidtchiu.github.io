@@ -1,10 +1,6 @@
-# THIS NEEDS REWORKED A BIT
-# TELL STUDENTS THEY NEED A COORD CLASS FOR THE RANDOM PLAYER
-
-
 ## CS 261 - Computer Science II
 
-### Homework 2: Tic Tac Toe
+### Homework 2: TicTacToe Players
 
 Inheritance is a good thing. Really. It allows you to create new classes quickly by basing them off of other classes, instead of having to write a new class from scratch. And, as you'll see as you complete this assignment, it allows you to enhance an existing class without having to change the original — which is important if the original class does something useful and we want to keep it as is. For this assignment, you'll write parts of a program to play Tic-Tac-Toe. The project is composed of several classes: There's a class to model the game's board, and classes that model players (and playing styles). You'll create new players by basing them off of the existing Player class, and could pit them against one another or against the "human" player.
 
@@ -176,13 +172,13 @@ Here's a couple of random players in action, though you'll obviously get differe
 
 5. Custom player: None of the three player classes you created are very smart — there's lots of room for improvement. Write your own class that does a better job of guessing than the other players. Name your new player `F_L_Player`, where `F` and `L` refer to *your* first and last initials. For instance, I'd name my class `D_C_Player`. All your code must be contained within this class (i.e., do not introduce more classes and expect me to know to pull those into my editor). I'll run a tournament consisting of all of your custom players, and reward the winner(s) with to-be-determined prizes!
 
-6. Finally, create a new `Tournament` class. In it, define a `public static Player playGame(Player p1, Player p2)` method that takes two players and plays a single round of Tic-Tac-Toe between them. You should treat the first argument to `playGame()` as the player using `X` and the second as `O`. (You'll want to use the `setSymbol()` method to ensure that the players are using the proper symbols.)
+6. Finally, create a new `Tournament` class. In it, define a `public static Player playGame(Player p1, Player p2)` method that inputs two players and plays a single round of Tic-Tac-Toe between them. You should treat the first argument to `playGame()` as the player using `X` and the second as `O`. (You'll want to use the `setSymbol()` method to ensure that the players are using the proper symbols.)
     
-    - Create a new `Board` object. When either player calls their `makeMove(...)`, make sure you pass this board object as its argument, so that they're playing on the same board!
+    - In this method, first create a new `Board` object. When either player calls their `makeMove(...)`, make sure you pass this Board object as its argument, so that they're playing on the same board!
 
-    - Write a loop that does not end until the game is over. (The board object can tell you if the game is over if there's a winner, or if the board is filled and there's no winner).
+    - Write a while-loop that does not end until the game is over. (The `Board` object has methods that can tell you if the game is over if there's a winner, or if the board is filled).
 
-    - You may assume `p1` gets the first move. After each move, print out the `board` object so we can examine its state.
+    - You may assume that player `p1` gets the first move. After each move, print out the `Board` object so we can examine its state.
 
     - Once the game is over, your method should print the output from the winner's `celebrate()` method and the loser's `mourn()` method. If the game is a draw, both players mourn. Finally, `return`  the winning player or `null` if the game ends in a draw.
 
