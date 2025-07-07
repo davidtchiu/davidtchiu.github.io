@@ -1,28 +1,35 @@
 
 ### Clasroom Policies
 
-
-##### Attendance and Participation
-Regular attendance and participation in class are required. Attendance, to be graded out of 10 "participation points," applies toward your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
-
-
 ##### Final Letter Grades
-These are the cutoffs when assigning your final letter grades. Please note that decimals are ignored (e.g., 89.99% = B+). The cutoffs below might come down, but will not be set higher.
+These are the cutoffs when assigning your final letter grades. The cutoffs below might come down, but will not be set higher.
 
 | Final Average  | Letter Grade |
 | :--- | :--- |
 | 100% - 94% | A |
 | 93% - 90% | A- |
 | 89% - 87% | B+ |
-| 86% - 83% | B |
-| 82% - 80% | B- |
+| 86% - 84% | B |
+| 83% - 80% | B- |
 | 79% - 77% | C+ |
-| 76% - 73% | C |
-| 72% - 70% | C- |
+| 76% - 74% | C |
+| 73% - 70% | C- |
 | 69% - 67% | D+ |
-| 66% - 63% | D |
-| 62% - 60% | D- |
+| 66% - 64% | D |
+| 63% - 60% | D- |
 | 59% and below | F |
+
+
+
+##### Attendance and Participation
+Regular attendance and participation in class are required. Attendance, to be graded out of 10 "participation points," applies toward your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
+
+    - Participation points is allowed to become negative, which will adversely impact your overall grade.
+
+Furthermore, if a student misses more than 6 class meetings (15% of the semester) without a verified excuse or accommodation, they will be automatically withdrawn from the course (W) or assigned a failing grade (F). Exceptions may be granted for verified emergencies with appropriate documentation.
+
+    - Excused absences (e.g., medical, family emergency, etc.) may require documentation and do not count toward this limit.
+
 
 
 ##### During Class: Phones Off!
@@ -37,8 +44,8 @@ I adhere to the university's [academic integrity policy](https://www.pugetsound.
 - Copying work found online or on generative AI platforms (see section below for expanded discussion into AI assistance).
 - Communication of any form during exams.
 
-##### AI Policy
-In CS 161 and CS 261, I have created an AI tutor that has been trained on our course materials. You can use this AI tutor freely to get help on assignments, to brainstorm for ideas, and to review for exams! If a bot has been created for this class, I will make it available through canvas. Please limit your AI use to our course's AI, as other AI tools may lead you astray from the course materials!
+##### AI Usage Policy
+In CS 161 and CS 261, I have created an AI tutor that has been trained on our course materials. You can use this AI tutor freely to get help on assignments, to brainstorm for ideas, and to review for exams! If an AI bot has been created for this class, I will make it available through canvas. Please limit your AI use to our course's AI, as other AI tools can lead you astray from the course materials!
 
 When used _properly_, ChatGPT, Gemini, and other generative AI are powerful tools and can be a great help in understanding the technical contents of this course. Because of that, on surface, I am not opposed to their use for my classes. However, there are clear boundaries that, when crossed, could lead to severe consequences for students. Here are some do's-and-don'ts guidelines on how to properly use these tools for this class:
 - **Do** use it to be your personal tutor, and that is as far as it should go. Use it to explain concepts you don't fully grasp. When helping with homework, prompt it with things like, "Without providing me with any code solution ..."
