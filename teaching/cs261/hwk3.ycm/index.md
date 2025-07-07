@@ -60,6 +60,7 @@ We need to start removing the scaffolding that I provide with each assignment in
 4. Finally, you must provide a `UserInterface` class, that contains a single static method, `public static void main(String[] args)`. If there are other static methods in this class, they must be made private so that they're hidden from the user. The main method should simply instantiate a copy of `Autocomplete` and start your program.
    - It should continuously prompt the user for a keyword prefix (the query) until the user types `.quit`.
    - After you scan in a query, call `getMatches()` on it. Sort the returned list and display it!
+   - Print out at most 10 matches, if there are that many.
 
 <!-- 5. When your program starts,  it should prompt the user for the name of the "training file". Note that any method that attempts to open a file can't compile until you've thrown or caught a *file not found exception*. The easiest way to do this is to add the following `throws` suffix to your method:
 

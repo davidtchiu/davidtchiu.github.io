@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Lab 8: Melody Player
+### Homework 5: Melody Player
 
 In this assignment, students keep track of the notes of a song and write methods to perform many standard music player tasks. Repeated sections of songs are stored only once so students have to reason about how to play the entire song with all repeated sections.
 
@@ -17,7 +17,7 @@ The following file(s) have been provided for this lab.
 - [Lab_Melody.zip](Lab_Melody.zip)
 
 Extract the zip file, and check out the contents. Besides the files ending in `.java`, you should also see the song files ending in `.txt`. You should have:
-- Sparks Fly - by Taylor Swift (thanks to Lily Gustafson Fall'23)
+- Sparks Fly - by Taylor Swift (thanks to Lily Gustafson Fall 2023)
 - Epona's Song - from the Legend of Zelda
 - Kernkraft 400 - by Zombie Nation (the Seattle Mariners' hype song)
 - Levels - by Avicii
@@ -73,7 +73,7 @@ The most challenging part of this assignment is getting melodies to play with re
 ...
 ```
 
-#### Part I: Familiarizing with the Codebase
+#### Part I: Familiarizing Yourself with the Codebase
 Spend a good amount of time to take a look at the given Note class. Make note of all the fields and methods it contains (a good idea is to make your own "API handout" for the Note class, as you will be using it quite a bit in this lab).
 
 A couple things you will notice is that the `Note` class refers to `Accidental` and `Pitch`. Open those up to take a look inside. They are not classes. They're something called `Enums` (pronounced "e-nums", short for "enumeration"). They're a useful way of declaring constants that you'll use throughout your program. You won't have to deal with them directly in this assignment, but for future reference, to refer to them, you can use `Pitch.E` or `Accidental.NATURAL` for example.
@@ -304,11 +304,50 @@ Create a new file using a plain text editor (like [Google Doc](https://docs.goog
 #### Grading
 
 ```
+MelodyPlayer Rubric
+
+----------------------------------------------------------
+[5 pts] Everywhere in your code, you are limited to using only the Stack<E> and
+        Queue<E> methods. You are not allowed to use any method besides those
+        specified in those interfaces, for instance, get(int i)
+
+[5 pts] The play() method restores all the notes in the queue after playing.
+
+[10 pts] changeTempo(): It takes a percentage (as a
+        fraction, and multiplies the length of each note by this percentage).
+
+[10 pts] append(): It appends the given Melodic structure
+         to the current Melody.
+
+[10 pts] reverse(): Uses a Stack<E> to reverse the current melody.
+
+[25 pts] play() must properly handle repeated sections.
+
+[10 pts] getDuration() returns the duration (including repeated sections!) of
+         the melody.
+
+----------------------------------------------------------
+Fun Stuff:
+
+[15 pts] You created your own song in a text file.
+
+----------------------------------------------------------
+[5 pts] Comments
+
+> You include sufficient Javadocs comments for each class and method.
+
+> You include sufficient inline comments in your methods.
+
+Total: 100
+```
+
+
+<!-- ```
 This assignment will be graded out of 2 points, provided that:
 
 - You were in attendance and on-time.
 - Your classes are fully implemented.
-```
+``` -->
 
 #### Submitting Your Assignment
 Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
@@ -318,11 +357,3 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 - Upload all the files ending in `.java` from your project folder.
 
 - Click "Submit Assignment" again to upload it.
-
-#### Credits
-
-Based on a previous lab by Professor Henry Walker, Grinnell College.
-
-#### Lab Attendance Policies
-
-Attendance is required for lab. Unexcused absence = no credit even if you turned in the lab. Unexcused tardiness = half credit.

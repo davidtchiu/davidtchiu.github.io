@@ -21,7 +21,7 @@ Students with transfer credit for CSCI 261 may not take this course.
 - Object inheritance and polymorphism
 - Basic principles of complexity analysis and the "Big-O" notation
 - Data structures and associated operations (including lists, queues, stack, trees, and maps)
-- Recursion, recursive data structures
+- Recursion and recursive data structures
 - Sorting algorithms
 
 
@@ -42,12 +42,12 @@ Your overall grade is broken down as as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Participation | 5% |
+| Participation | 7% |
 | Lab Assignments | 10% |
 | Homework Assignments | 30% |
 | Midterm I | 15% |
 | Midterm II | 18% |
-| Final Exam (comprehensive) | 22% |
+| Final Exam (comprehensive) | 20% |
 
 ##### Lab Assignments
 Labs provide a low stakes, hands-on, and collaborative way to learn the materials. As such, they only represent 10% of your final grade. You may choose to work alone, or with whomever you like during lab. **However, you must submit your own work.**
@@ -60,9 +60,7 @@ For full credit, you must attend weekly labs and submit your lab assignments by 
 Because labs are always due the next day and are graded on attendance and effort, there is no extension for labs. Missing lab is unacceptable. Unless you have excused absences (e.g., athletics, bereavement, medical, etc.), missing over half the lab sessions, will result in an automatic withdrawal or an F for the course.
 
 ##### Homework Assignments
-Homework assignments are assigned every 1.5 - 2 weeks. Unless otherwise noted, you are to work on homework assignments alone. You are welcome to brainstorm with others (including tutors) for ideas, but any code you submit should be yours.
-
-**Do not copy code you find on the web and/or ChatGPT.** This is considered plagiarism. Please see the "Academic Integrity" section below.
+Homework assignments are assigned every 1.5 weeks. Unless otherwise noted, you are to work on homework assignments alone. You are welcome to brainstorm with others (including tutors and the course AI tutor) for ideas, but any code you submit should be yours.
 
 {% include syllabus-community.md %}
 

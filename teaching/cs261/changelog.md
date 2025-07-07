@@ -8,14 +8,13 @@
 with what we were learning: no BST assignment, RCV assignment is no good. Want more
 scaffolding.
 
-- Replace Hwk 5 RCV with MelodyPlayer
-
 - Need more code along labs! Maybe start all labs as code alongs?
 
 - Replace RG1 and RG1 sol (no more exceptions)
 
 
 # Change Log
+- Replace Hwk 5 RCV with MelodyPlayer
 - Go back to Thursday midterms to give students a break (2025)
 - Skip priority queues altogether as a subject until this class is DS-only (2025)
 - MyArrayList and LinkedList Lab are now "code along" labs

@@ -70,9 +70,9 @@ System.out.println(b.toString());
 
 #### Instructions
 
-1. Start by downloading the provided code package, and starting a project in your preferred editor. You don't need to know anything about how these classes work (just which methods they support, which you can get from the documentation), and you should not modify them.
+1. Start by downloading the provided code package, and starting a project in your preferred editor. You don't need to know anything about how these classes work (just what methods they support), and you should not modify them.
 
-2. The `Player` class has a `makeMove` method that gets advice from the user. It displays the current game board, then asks the user to enter the column and row for the position on the board that they'd like to fill. That's no fun. Define a `NextOpenPlayer` class that makes moves without getting help from the outside world. Your class should extend Player and override the `makeMove` method with a new version that selects the first open space it comes across, starting in the upper-left corner and working left to right. If no open spaces are found on the board, return without making a move. The interactions below show a `NextOpenPlayer` object in action.
+2. The `Player` class has a `makeMove()` method that gets advice from the user. It displays the current game board, then asks the user to enter the column and row for the position on the board that they'd like to fill. That's no fun. Define a `NextOpenPlayer` class that makes moves without getting help from the outside world. Your class should extend Player and *override* the `makeMove()` method with a new version that selects the first open space it comes across, starting in the upper-left corner and working left to right. If no open spaces are found on the board, return without making a move. The interactions below show a `NextOpenPlayer` object in action.
 
     ```java
     Board b = new Board();
@@ -100,16 +100,11 @@ System.out.println(b.toString());
     > X  O  X
     > X  .  .
     > .  .  .
-
-    x.toString()
-    > "Spassky"   (String)
     ```
 
-3. Extend `Player` again to create a `RandomPlayer` class. This player makes a random move among the open positions on the board. Use a random number generator (`Random`) to generate two random integers between 0 and 2 inclusive. If that spot is taken, generate another pair. Otherwise, make the move on the random coordinates! If the board is already full, your method should return without modifying the board. 
+3. Extend `Player` again to create a `RandomPlayer` class. This player makes a random move among the open positions on the board. Use a random number generator (first import the `Random` class) to generate two random integers between 0 and 2 inclusive. (You'll want to use the `nextInt(int, int)` method.) If that spot is taken, generate another pair. Otherwise, make the move on the random coordinates. If the board is already full, your method should return without modifying the board. 
 
-
-
-Here's a couple of random players in action, though you'll obviously get different results:
+    Here's a couple of random players in action, though you'll obviously get different results:
 
     ```java
     Board b = new Board();
@@ -140,7 +135,7 @@ Here's a couple of random players in action, though you'll obviously get differe
     > true  (boolean)
     ```
 
-4. Next, write a third and final player class called `CornerPlayer` that extends `RandomPlayer`. Objects of type `CornerPlayer` look first to see if any of the corners are open, and fill a corner (any) if they find one. The order in which the corners are inspected isn't important. If none of the corners are available, it should make its move randomly from among the remaining open positions.
+4. Next, write a third player class called `CornerPlayer` that extends `RandomPlayer`. Objects of type `CornerPlayer` look first to see if any of the corners are open, and fill a corner (any) if they find one that's free. The order in which the corners are inspected isn't important. If none of the corners are available, it should make its move randomly from among the remaining open positions.
 
     ```java
     Board b = new Board();
@@ -168,11 +163,11 @@ Here's a couple of random players in action, though you'll obviously get differe
     > O  .  O
     ```
   
-    You can pit competing strategies against each other by creating instances of two different player classes and having them alternate turns on a board. (It would look like the interactions above, but with a CornerPlayer and a RandomPlayer, for example.) It's a bit of a pain to organize this all manually, but we'll write something for the next assignment that automates the process.
+    You can pit competing strategies against each other by creating instances of two different player classes and having them alternate turns on a board. (It would look like the interactions above, but with a CornerPlayer and a RandomPlayer, for example.)
 
-5. Custom player: None of the three player classes you created are very smart — there's lots of room for improvement. Write your own class that does a better job of guessing than the other players. Name your new player `F_L_Player`, where `F` and `L` refer to *your* first and last initials. For instance, I'd name my class `D_C_Player`. All your code must be contained within this class (i.e., do not introduce more classes and expect me to know to pull those into my editor). I'll run a tournament consisting of all of your custom players, and reward the winner(s) with to-be-determined prizes!
+5. Custom Player: None of the three player classes you created are very intelligent though — there's room for improvement. Write your own class that does a better job of playing than the other player classes. Name your new player `F_L_Player`, where `F` and `L` refer to *your* first and last initials. For instance, I'd name my class `D_C_Player`. All your code must be contained within this class (i.e., do not introduce more classes and expect me to know to pull those into my editor. If you need to create more classes, then make them into private inner classes. I'll run a tournament consisting of all of your custom players, and reward the winner(s) with to-be-determined prizes!
 
-6. Finally, create a new `Tournament` class. In it, define a `public static Player playGame(Player p1, Player p2)` method that inputs two players and plays a single round of Tic-Tac-Toe between them. You should treat the first argument to `playGame()` as the player using `X` and the second as `O`. (You'll want to use the `setSymbol()` method to ensure that the players are using the proper symbols.)
+6. Finally, create a new `Tournament` class. In it define a `public static Player playGame(Player p1, Player p2)` method that inputs two players and plays a single round of Tic-Tac-Toe between them. You should treat the first argument to `playGame()` as the player using `X` and the second as `O`. (You'll want to use the `setSymbol()` method to ensure that the players are using the proper symbols.)
     
     - In this method, first create a new `Board` object. When either player calls their `makeMove(...)`, make sure you pass this Board object as its argument, so that they're playing on the same board!
 
@@ -200,7 +195,7 @@ to repeatedly generate random locations until you find one that is free.
 
 
 ----------------------------------------------------------
-[10/10pts] Completion of CornerPlayer
+[10/10pts] Completion of CornerPlayer. Reuses code wherever possible.
 
 
 ----------------------------------------------------------
