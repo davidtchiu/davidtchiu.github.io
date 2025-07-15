@@ -23,50 +23,63 @@ let days = {
         name: "Hwk 1",
         title: "Letter Counter",
         url: "hwk1.lc/",
-        due: "9/13/2024",
+        due: "9/13/2024", // Wed, wk 2
       },
       {
         name: "Hwk 2",
         title: "TicTacToe Player",
         url: "hwk2.ttt/",
-        due: "9/23/2024",
+        due: "9/23/2024", // Mon, wk 4
       },
       {
         name: "Hwk 3",
         title: "You Complete Me",
         url: "hwk3.ycm/",
-        due: "10/7/2024",
+        due: "10/7/2024", // Mon, wk 6
       }, 
       {
         name: "Hwk 4",
         title: "Doubly Linked List",
         url: "hwk4.LL/",
-        due: "10/25/2024",
+        due: "10/25/2024",  // Wed, wk 8 after Fall Break
       },
       {
         name: "Hwk 5",
-        title: "Ranked Choice Voting (Paired)",
-        url: "hwk5.rcv",
-        due: "11/13/2024",
+        title: "Melody Player",
+        url: "hwk5.melody/",
+        due: "11/1/2024",  // Fri, wk 9
       },
+      // {
+      //   name: "Hwk 5",
+      //   title: "Ranked Choice Voting (Paired)",
+      //   url: "hwk5.rcv",
+      //   due: "11/13/2024",
+      // },
       {
         name: "Hwk 6",
         title: "Recursion Exercises",
         url: "hwk6.rec",
-        due: "11/22/2024",
+        due: "11/13/2024",  // Wed, wk 11
       },
       {
         name: "Hwk 7",
-        title: "Huffman Encoding",
-        url: "hwk7.huff",
-        due: "12/18/2024",
+        title: "BST Exercises",
+        url: "hwk7.bst",
+        due: "11/13/2024",  // Wed, wk 11
       },
-      {
-        name: "Bonus Hwk",
-        title: "Additional ArrayList Methods",
-        url: "bonus.AL/",
-        due: "12/18/2024",
-      },
+
+      // {
+      //   name: "Hwk 7",
+      //   title: "Huffman Encoding",
+      //   url: "hwk7.huff",
+      //   due: "12/18/2024",
+      // },
+      // {
+      //   name: "Bonus Hwk",
+      //   title: "Additional ArrayList Methods",
+      //   url: "bonus.AL/",
+      //   due: "12/18/2024",
+      // },
 
 
 
@@ -168,7 +181,7 @@ let days = {
   lectures: [
     // wk 1
     "<strong><emph>Labor Day<br/>(No Class)</emph></strong>",
-    "Who are we? Syllabus (Recording)",
+    "Course overview, Java warmup",
     "Lab 1: Warmup Lab",
     "Inheritance: motivation, abstraction",
     // wk 2
@@ -190,10 +203,10 @@ let days = {
     "More Big-O examples",
     "More Big-O examples",
     "Lab 5: Big-O lab",
-    "List interface, ArrayList: add(), reallocate()",
-    // wk 6
     "<strong><emph>Review for Exam 1</emph></strong>",
-    "<strong><emph>Exam 1</emph></strong>",   // NO, DON'T DO EXAMS ON WED. THERE'SLAB NEXT DAY
+    // wk 6
+    "<strong><emph>Exam 1</emph></strong>",
+    "List interface, ArrayList: add(), reallocate()",
     "Lab 6: ArrayList Code-Along Lab",
     "Start Linked Lists: The Node inner class",
     // wk 7
