@@ -3,6 +3,10 @@
 
 
 ## Introduction
+<center>
+<IMG SRC="figures/CityTracker.png" width = "250" style="border: 10px solid #d6d6d6" />
+</center>
+
 Your job in this assignment is to build a **CityTracker** that stores information about cities and their populations. Specifically, you'll need to:
 
 - Insert cities into a data structure
@@ -10,7 +14,7 @@ Your job in this assignment is to build a **CityTracker** that stores informatio
 - Count how many cities fall **below a certain population**
 - Retrieve all cities in a **population range**
 
-We'll represent cities using a new `City` class (given and shown below), and store these objects in a **Binary Search Tree**, ordered by population. To keep things clean and elegant.
+These are the perfect use case for a binary search tree, because it can support some of these operations more efficiently than lists. We'll represent cities using a new `City` class (given and shown below), and store these objects in a **Binary Search Tree**, ordered by population.
 
 ## Student Outcomes
 By completing this assignment, you should be able to:
@@ -20,7 +24,26 @@ By completing this assignment, you should be able to:
 
 
 #### Part 1: BinarySearchTree Enhancements
-Start by adding the following methods to our `BinarySearchTree` class. As with most of our other BST methods, you should write this recursively by having a private helper method do all the recursive traversal. Recall that the recursive helper method usually has this look: `private helperMethod(Node<E> localRoot, ...)`, where `localRoot` is the root of the current (sub)tree to be explored.
+Start by adding the following modifications to our `BinarySearchTree` class. 
+
+**Size Caching:** One problem that we have not yet discussed is the efficiency of the `size()` and `sizeHelper()` methods, used to recursively determine the number of nodes in a (sub)tree. Unfortunately, our current implementation runs in $$O(n)$$ time, where $$n$$ is the number of nodes in the subtree, because we need to recursively traverse the whole tree! This presents a problem when `sizeHelper()` is called repeatedly. 
+
+    But because the size of a (sub)tree is known as we insert and remove elements, it's a candidate for caching, so with a bit elbow grease, we can make it run in $$O(1)$$! Specifically, we want to modify our BST so that it has the following node structure:
+
+    <center>
+    <IMG SRC="figures/sizecaching_tree.png" width = "250" style="border: 10px solid #d6d6d6" />
+    </center>
+
+    Recall that every node in a BST serves as the root of its own subtree, so we want each node stores its corresponding subtree's size. Start by adding a `size` instance variable to the `Node<E>` inner class that is defined inside the `BinaryTree<E>` superclass. In the `Node` constructor, simply set `size` to 1.
+
+    - Back in `BinarySearchTree`, modify the `sizeHelper()` method so that it simply returns the new size field of the `localRoot` node. 
+    
+    - Now modify `add()` so that it takes no action if the item is already in the tree. Then, modify `addHelper()` so that it increments the size. Similarly, modify `remove()` so that it takes no action if the target is not in the tree. Then, modify `removeHelper()` so that it decrements the size.
+
+    - Test this method to ensure it's working before moving on. Make sure that the size is correct for not only the root node, but for *all* nodes.
+
+
+Next, let's add a few more BST methods that'll make our lives easier down the road. As with most of our other BST methods, you should write these methods recursively by having a private helper method do all the recursive traversal. Recall that the recursive helper method usually has this look: `private helperMethod(Node<E> localRoot, ...)`, where `localRoot` is the root of the current (sub)tree to be explored.
 
 1. Implement the `public E get(int index)` method that returns the element whose in-order position is at the given `index`. For example, when `index = 0` it returns the smallest element in the tree. When `index = 1` it returns the second smallest element, and so on. If `index` is invalid (less than zero or greater than `size()-1`), then this method simply returns `null`.
 
@@ -55,14 +78,13 @@ Start by adding the following methods to our `BinarySearchTree` class. As with m
         tree.add(30);
         tree.add(50);
         tree.add(70);
-
         System.out.println(tree.get(0));   // 10
         System.out.println(tree.get(3));   // 40
         System.out.println(tree.get(6));   // 70
         System.out.println(tree.get(7));   // null
         ```
 
-2. Implement another method `public int getRank(E target)` method that returns the number of elements in the BST that are _strictly smaller_ than the `target`.
+3. Implement another method `public int getRank(E target)` method that returns the number of elements in the BST that are _strictly smaller_ than the `target`.
 
     - This method should simply pass the current root node and the `target` to the helper method.
 
@@ -97,7 +119,7 @@ Start by adding the following methods to our `BinarySearchTree` class. As with m
         System.out.println(tree.getRank(5));   // 0
         ```
 
-3. Finally, write the `public List<E> rangeOf(E begin, E end)` method that returns a list of all elements in the BST that fall within the specified range inclusive of the endpoints. The elements are returned in sorted (in-order) order. If no elements fall within the given range, return an empty list.
+4. Finally, write the `public List<E> rangeOf(E begin, E end)` method that returns a list of all elements in the BST that fall within the specified range inclusive of the endpoints. The elements are returned in sorted (in-order) order. If no elements fall within the given range, return an empty list.
 
     - This method should construct an `ArrayList<E>` and pass it to the helper method, defined below. The helper method will populate this list, and then you can return it.
 
@@ -128,6 +150,9 @@ Start by adding the following methods to our `BinarySearchTree` class. As with m
         System.out.println(tree.rangeOf(15, 55));  // [20, 30, 40, 50]
         System.out.println(tree.rangeOf(100, 200));  // []
         ```
+
+
+
 
 #### Part 2: City and CityTracker
 Now we can work on tracking various cities and answering queries!
@@ -196,23 +221,29 @@ You will receive points based on the correctness and structure of your solution.
 
 ======================================
 Enhanced BinarySearchTree Methods (60 pts total)
-- get(int k) implemented recursively and correctly:
-  - 18 pts full credit
+
+- size-caching is implemented correctly. All nodes now additionally
+  store the size of its corresponding subtree.
+  - 12 pts full credit
+
+- get(int index) implemented recursively and correctly:
+  - 16 pts full credit
   - 12 pts mostly correct, minor off-by-one or subtree bug
   - 6 pts iterative or inefficient solution
+
 - getRank(E value) implemented recursively and correctly:
-  - 18 pts full credit
+  - 16 pts full credit
   - 12 pts mostly correct, off-by-one or traversal issue
   - 6 pts iterative or inefficient
+
 - rangeOf(E begin, E end) implemented recursively and correctly:
-  - 18 pts full credit
+  - 16 pts full credit
   - 12 pts mostly correct, mishandled bounds
   - 6 pts if not recursive or relies on full traversal without pruning
-- Recursive helper method(s) used for all three (3 pts)
-- Good use of private methods and structure (3 pts)
+
 
 ======================================
-CityTracker Logic (30 pts total)
+CityTracker Logic (20 pts total)
 - `addCity()` inserts cities correctly into BST: 2 pts
 - `medianCity()` correctly uses `get(size/2)` logic: 10 pts
 - `numCitiesBelow()` calls `getRank()` with constructed dummy City: 8 pts
@@ -244,4 +275,4 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 #### Credits
 
-Written by David Chiu, with help from course AI tutor.
+Written by David Chiu, with help from course AI course assistant.
