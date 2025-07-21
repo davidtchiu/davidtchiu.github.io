@@ -23,43 +23,43 @@ let days = {
         name: "Hwk 1",
         title: "Letter Counter",
         url: "hwk1.lc/",
-        due: "9/13/2024", // Wed, wk 2
+        due: "9/10/2025", // Wed, wk 2
       },
       {
         name: "Hwk 2",
         title: "TicTacToe Player",
         url: "hwk2.ttt/",
-        due: "9/23/2024", // Mon, wk 4
+        due: "9/22/2025", // Mon, wk 4
       },
       {
         name: "Hwk 3",
         title: "You Complete Me",
         url: "hwk3.ycm/",
-        due: "10/7/2024", // Mon, wk 6
+        due: "10/8/2025", // Wed, wk 6
       }, 
       {
         name: "Hwk 4",
         title: "Doubly Linked List",
         url: "hwk4.LL/",
-        due: "10/25/2024",  // Wed, wk 8 after Fall Break
+        due: "10/22/2025",  // Wed, wk 8 after Fall Break
       },
       {
         name: "Hwk 5",
         title: "Melody Player",
         url: "hwk5.melody/",
-        due: "11/1/2024",  // Fri, wk 9
+        due: "10/31/2024",  // Fri, wk 9
       },
       {
         name: "Hwk 6",
         title: "Recursion Exercises",
         url: "hwk6.rec",
-        due: "11/13/2024",  // Wed, wk 11
+        due: "11/12/2025",  // Wed, wk 11
       },
       {
         name: "Hwk 7",
         title: "City Tracker",
         url: "hwk7.bst",
-        due: "12/4/2024",  // Wed, wk 14
+        due: "12/3/2025",  // Wed, wk 14
       },
 
       // {
@@ -90,37 +90,37 @@ let days = {
         name: "Lab 1",
         title: "Review: Around the Farm",
         url: "lab1.farm/",
-        due: "9/6/2024",
+        due: "9/5/2025",
       },
       {
         name: "Lab 2",
         title: "Inheritance Lab",
         url: "lab2.dice/",
-        due: "9/13/2024",
+        due: "9/12/2025",
       },
       {
         name: "Lab 3",
         title: "Abstract Classes Lab",
         url: "lab3.lib/",
-        due: "9/20/2024",
+        due: "9/19/2025",
       },
       {
         name: "Lab 4",
         title: "Interface Lab ",
         url: "lab4.interface/",
-        due: "9/27/2024",
+        due: "9/26/2025",
       },
       {
         name: "Lab 5",
         title: "Complexity Lab",
         url: "lab5.bigO/",
-        due: "10/4/2024",
+        due: "10/3/2025",
       },
       {
         name: "Lab 6",
         title: "ArrayLists Code-along Lab",
         url: "lab6.AL/",
-        due: "10/11/2024",
+        due: "10/10/2025",
       },
       {
         name: "Lab 7",
@@ -132,37 +132,37 @@ let days = {
         name: "Lab 8",
         title: "Stacks and Queues Lab",
         url: "lab8.melody/",
-        due: "10/25/2024",
+        due: "10/24/2025",
       },
       {
         name: "Lab 9",
         title: "PriorityQueue Homework/Code-along Lab",
         url: "hwk5.rcv/",
-        //due: "11/1/2024",
+        due: "10/31/2025",
       },
       {
         name: "Lab 10",
         title: "Recursion Lab",
         url: "lab10.rec/",
-        due: "11/8/2024",
+        due: "11/7/2025",
       },
       {
         name: "Lab 11",
         title: "Expression Trees (Binary Trees)",
         url: "lab11.expr/",
-        due: "11/15/2024",
+        due: "11/14/2025",
         },
         {
           name: "Lab 12",
           title: "Binary Search Trees Lab",
           url: "lab12.bst/",
-          due: "11/22/2024",
+          due: "11/21/2025",
         },
         {
           name: "Lab 13",
           title: "Maps Lab",
           url: "lab13.map/",
-          due: "12/6/2024",
+          due: "12/5/2025",
         },
         // {
         //   name: "Lab 12",
