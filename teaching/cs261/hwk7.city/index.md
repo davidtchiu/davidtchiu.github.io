@@ -44,7 +44,7 @@ Recall that every node in a BST serves as the root of its own subtree, so we wan
 
 Next, let's add a few more BST methods that'll make our lives easier down the road. As with most of our other BST methods, you should write these methods recursively by having a private helper method do all the recursive traversal. Recall that the recursive helper method usually has this look: `private helperMethod(Node<E> localRoot, ...)`, where `localRoot` is the root of the current (sub)tree to be explored.
 
-1. Implement the `public E get(int index)` method that returns the element whose in-order position is at the given `index`. For example, when `index = 0` it returns the smallest element in the tree. When `index = 1` it returns the second smallest element, and so on. If `index` is invalid (less than zero or greater than `size()-1`), then this method simply returns `null`.
+2. Implement the `public E get(int index)` method that returns the element whose in-order position is at the given `index`. For example, when `index = 0` it returns the smallest element in the tree. When `index = 1` it returns the second smallest element, and so on. If `index` is invalid (less than zero or greater than `size()-1`), then this method simply returns `null`.
 
     - Your recursive helper method should have this signature:
         ```java
