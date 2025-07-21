@@ -92,7 +92,7 @@ Next, we want to add a few more BST methods that'll make our lives easier to com
         ```txt
         Return 0 if the current root is null
         if target == current root, 
-            // It's bigger than all nodes in the left subtree
+            // It's larger than all nodes in the left subtree
             // So its rank must be the size of the left subtree
             return the size of the left subtree
         if target < current root,

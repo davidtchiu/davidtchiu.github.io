@@ -49,12 +49,6 @@ let days = {
         url: "hwk5.melody/",
         due: "11/1/2024",  // Fri, wk 9
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "Ranked Choice Voting (Paired)",
-      //   url: "hwk5.rcv",
-      //   due: "11/13/2024",
-      // },
       {
         name: "Hwk 6",
         title: "Recursion Exercises",
@@ -63,9 +57,9 @@ let days = {
       },
       {
         name: "Hwk 7",
-        title: "BST Exercises",
+        title: "City Tracker",
         url: "hwk7.bst",
-        due: "11/13/2024",  // Wed, wk 11
+        due: "12/4/2024",  // Wed, wk 14
       },
 
       // {
@@ -240,18 +234,18 @@ let days = {
     "Lab 12: BST Lab",
     "Start Hashing: Entry<K,V> class, hashcode()",
     // wk 13 
-    "HashMaps approach 1: Open addressing",
+    "HashMaps: Open addressing",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
-    "HashMaps approach 2: Bucket chaining",
+    "HashMaps: Chaining",
     "Merge Sort",
     "Lab 13: Hashing Lab",
-    "<strong><emph>Cancelled</emph></strong>",
+    "Merge Sort Complexity",
     // wk 15
     "Quick Sort",
-    "Quick Sort",
+    "Quick Sort Complexity",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
@@ -263,7 +257,7 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("9/2/2024", days, MWRF);
+const schedule = new CourseCalendar("9/1/2025", days, MWRF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
