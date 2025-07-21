@@ -210,13 +210,13 @@ let days = {
     "LL: optimizations (tail, iterator, double links)",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Stack<E> usage",
-    "Lab 8: Stacks and Queues (MelodyPlayer)",
-    "Lab review; infix algorithm",
+    "Stacks and Queues: LIFO, FIFO",
+    "Lab 8: Stacks and Queues (Infix Solver)",
+    "Priority queues: motivation, use cases",
     // wk 9:
-    "PriorityQueues<E>; Start recursion",
+    "Start recursion",
     "Recursion: code reading, common pitfalls",
-    "Lab 9: RCV Homework Code-Along Lab",
+    "Lab 9: Homework Lab",
     "Recursion: code tracing",
     // wk 10
     "Recursive code writing and pitfalls",
@@ -250,7 +250,7 @@ let days = {
     "<strong>Reading Period</strong>",
     // wk final
     "",
-    "<strong><emph>Final Exam<br/>12:00-2:00</strong></emph>",
+    "<strong><emph>Final Exam (Comprehensive)<br/>12:00-2:00</strong></emph>",
     "",
     "",
   ],

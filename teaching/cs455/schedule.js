@@ -187,7 +187,7 @@ let days = {
     // "Transactions: Concurrency control",
     // wk final
     "",
-    "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
+    "<strong><emph>Final Exam (Comprehensive)<br/>4:00-6:00</emph></strong>",
     "",
   ],
 };

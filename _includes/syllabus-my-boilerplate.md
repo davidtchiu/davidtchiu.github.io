@@ -24,11 +24,11 @@ These are the cutoffs when assigning your final letter grades. The cutoffs below
 ##### Attendance and Participation
 Regular attendance and participation in class are required. Attendance, to be graded out of 10 "participation points," applies toward your final grade. I deduct **2 points** for each unexcused absence, **1 point** for being late, and **1 point** for engaging in activities that can disrupt others: scrolling through your phone, texting, playing games on your laptop, etc.
 
-    - Participation points is allowed to become negative, which will adversely impact your overall grade.
+- Participation points is allowed to become negative, which will adversely impact your overall grade.
 
 Furthermore, if a student misses more than 6 class meetings (15% of the semester) without a verified excuse or accommodation, they will be automatically withdrawn from the course (W) or assigned a failing grade (F). Exceptions may be granted for verified emergencies with appropriate documentation.
 
-    - Excused absences (e.g., medical, family emergency, etc.) may require documentation and do not count toward this limit.
+- Excused absences (e.g., medical, family emergency, etc.) may require documentation and do not count toward this limit.
 
 
 
@@ -45,7 +45,7 @@ I adhere to the university's [academic integrity policy](https://www.pugetsound.
 - Communication of any form during exams.
 
 ##### AI Usage Policy
-In CS 161 and CS 261, I have created an AI tutor that has been trained on our course materials. You can use this AI tutor freely to get help on assignments, to brainstorm for ideas, and to review for exams! If an AI bot has been created for this class, I will make it available through canvas. Please limit your AI use to our course's AI, as other AI tools can lead you astray from the course materials!
+In select courses, I have created an "AI Tutor" that has been trained on our course materials. You can use this AI tutor freely to get help on assignments, to brainstorm for ideas, and to review for exams. If an AI Tutor has been created for this class, I will make it available through canvas. Limit your AI usage to just this bot, as other AI tools can lead you astray from the course materials.
 
 When used _properly_, ChatGPT, Gemini, and other generative AI are powerful tools and can be a great help in understanding the technical contents of this course. Because of that, on surface, I am not opposed to their use for my classes. However, there are clear boundaries that, when crossed, could lead to severe consequences for students. Here are some do's-and-don'ts guidelines on how to properly use these tools for this class:
 - **Do** use it to be your personal tutor, and that is as far as it should go. Use it to explain concepts you don't fully grasp. When helping with homework, prompt it with things like, "Without providing me with any code solution ..."
