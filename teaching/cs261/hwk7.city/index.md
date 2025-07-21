@@ -26,22 +26,21 @@ By completing this assignment, you should be able to:
 #### Part 1: BinarySearchTree Enhancements
 Start by adding the following modifications to our `BinarySearchTree` class. 
 
-**Size Caching:** One problem that we have not yet discussed is the efficiency of the `size()` and `sizeHelper()` methods, used to recursively determine the number of nodes in a (sub)tree. Unfortunately, our current implementation runs in $$O(n)$$ time, where $$n$$ is the number of nodes in the subtree, because we need to recursively traverse the whole tree! This presents a problem when `sizeHelper()` is called repeatedly. 
+1. **Size Caching:** One problem that we have not yet discussed is the efficiency of the `size()` and `sizeHelper()` methods, used to recursively determine the number of nodes in a (sub)tree. Unfortunately, our current implementation runs in $$O(n)$$ time, where $$n$$ is the number of nodes in the subtree, because we need to recursively traverse the whole tree! This presents a problem when `sizeHelper()` is called repeatedly. 
 
-    But because the size of a (sub)tree is known as we insert and remove elements, it's a candidate for caching, so with a bit elbow grease, we can make it run in $$O(1)$$! Specifically, we want to modify our BST so that it has the following node structure:
+But because the size of a (sub)tree is known as we insert and remove elements, it's a candidate for caching, so with a bit elbow grease, we can make it run in $$O(1)$$! Specifically, we want to modify our BST so that it has the following node structure:
 
-    <center>
-    <IMG SRC="figures/sizecaching_tree.png" width = "250" style="border: 10px solid #d6d6d6" />
-    </center>
+<center>
+<IMG SRC="figures/sizecaching_tree.png" width = "250" style="border: 10px solid #d6d6d6" />
+</center>
 
-    Recall that every node in a BST serves as the root of its own subtree, so we want each node stores its corresponding subtree's size. Start by adding a `size` instance variable to the `Node<E>` inner class that is defined inside the `BinaryTree<E>` superclass. In the `Node` constructor, simply set `size` to 1.
+Recall that every node in a BST serves as the root of its own subtree, so we want each node stores its corresponding subtree's size. Start by adding a `size` instance variable to the `Node<E>` inner class that is defined inside the `BinaryTree<E>` superclass. In the `Node` constructor, simply set `size` to 1.
 
-    - Back in `BinarySearchTree`, modify the `sizeHelper()` method so that it simply returns the new size field of the `localRoot` node. 
-    
-    - Now modify `add()` so that it takes no action if the item is already in the tree. Then, modify `addHelper()` so that it increments the size. Similarly, modify `remove()` so that it takes no action if the target is not in the tree. Then, modify `removeHelper()` so that it decrements the size.
+- Back in `BinarySearchTree`, modify the `sizeHelper()` method so that it simply returns the new size field of the `localRoot` node. 
 
-    - Test this method to ensure it's working before moving on. Make sure that the size is correct for not only the root node, but for *all* nodes.
+- Now modify `add()` so that it takes no action if the item is already in the tree. Then, modify `addHelper()` so that it increments the size. Similarly, modify `remove()` so that it takes no action if the target is not in the tree. Then, modify `removeHelper()` so that it decrements the size.
 
+- Test this method to ensure it's working before moving on. Make sure that the size is correct for not only the root node, but for *all* nodes.
 
 Next, let's add a few more BST methods that'll make our lives easier down the road. As with most of our other BST methods, you should write these methods recursively by having a private helper method do all the recursive traversal. Recall that the recursive helper method usually has this look: `private helperMethod(Node<E> localRoot, ...)`, where `localRoot` is the root of the current (sub)tree to be explored.
 
