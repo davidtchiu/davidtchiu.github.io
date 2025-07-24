@@ -41,27 +41,32 @@ let days = {
         name: "Hwk 4",
         title: "Doubly Linked List",
         url: "hwk4.LL/",
-        due: "10/22/2025",  // Wed, wk 8 after Fall Break
+        due: "10/21/2025",  // Tues, wk 8 Fall Break
       },
       {
         name: "Hwk 5",
-        title: "Melody Player",
-        url: "hwk5.melody/",
-        due: "10/31/2024",  // Fri, wk 9
+        title: "HTML Tag Validator",
+        url: "hwk5.html/",
+        due: "10/31/2025",  // Fri, wk 9
       },
       {
         name: "Hwk 6",
         title: "Recursion Exercises",
-        url: "hwk6.rec",
-        due: "11/12/2025",  // Wed, wk 11
+        url: "hwk6.rec/",
+        due: "11/14/2025",  // Fri, wk 11
       },
       {
         name: "Hwk 7",
         title: "City Tracker",
-        url: "hwk7.bst",
-        due: "12/3/2025",  // Wed, wk 14
+        url: "hwk7.bst/",
+        due: "12/2/2025",  // Tue, wk 14
       },
-
+      // {
+      //   name: "Hwk 8",
+      //   title: "Sorting Lab",
+      //   url: "hwk8.ehm",
+      //   due: "12/19/2025", // Fri, finals week
+      // },
       // {
       //   name: "Hwk 7",
       //   title: "Huffman Encoding",
@@ -77,12 +82,7 @@ let days = {
 
 
 
-      // {
-      //   name: "Hwk 8",
-      //   title: "Evil Hangman (Paired)",
-      //   url: "hwk8.ehm",
-      //   due: "12/13/2024",
-      // },
+
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
