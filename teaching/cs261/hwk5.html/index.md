@@ -49,9 +49,9 @@ You’ll use a `Queue` to store the tags in order, and a `Stack` to track nestin
 - Reinforce string traversal, abstraction, and debugging through nested data
 
 #### Required Files
-- `TagReader.java` — parses HTML input into tags
-- `Syntax.java` - an interface for you to implement
-- `HtmlValidator.java` — checks whether the tags are properly nested. Implements the `Syntax` interface.
+- [TagReader.java](TagReader.java) — parses HTML input into tags
+- [Syntax.java](Syntax.java) - an interface for you to implement
+- [HTMLValidator.java](HTMLValidator.java) — checks whether the tags are properly nested. Implements the `Syntax` interface.
 
 
 #### Part 1: Writing the HTML Tag Extractor
@@ -167,23 +167,24 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
 
 3. Finally, override `public Queue<String> suggestFixes()`. What good is a syntax checker if it doesn't try to suggest possible fixes to malformed code? This method fixes malformed HTML by returning a new `Queue` that includes inserted or commented-out tags where needed to correct nesting errors. You will first need to create:
 
-    - A Stack<String> to track open tags.
-    - A Queue<String> to build and return your corrected tag sequence.
-    - Also remember to create a copy of the original queue for iteration.
+    - A `Stack<String>` to track open tags.
+    - A `Queue<String>` to build and return your corrected tag sequence.
+    - Also, remember to copy the original queue for iteration.
 
-  As before, process each tag in FIFO order:
+    As before, process each tag in FIFO order:
     - For each **void tag** and **comment**: Just enqueue it in the new queue.
     - For each **open tag**:
       - Push it onto the stack.
       - Enqueue it into the new queue.
     -  If it's a **closing tag**:
-      - Case 1: If the stack is empty:
-        - There’s no matching open tag, so this is invalid. Enqueue a comment like:
-          `<!-- </tag> removed! -->` (Do not enqueue the invalid closing tag.)
-      - Case 2: The stack is not empty:
+      - Test if the stack is empty (invalid!)
+        - It means there’s no matching open tag. Enqueue a comment like:
+          `<!-- </tag> removed! -->`
+        - (Do not enqueue the invalid closing tag.)
+      - If the stack was not empty:
         - Pop the most recent open tag from the stack.
         - If it matches the closing tag:
-          - Enqueue the closing tag as-is.
+          - Enqueue the closing tag.
         - If it doesn't match:
           - Comment out the invalid closing tag as shown above.
           - Enqueue the correct closing tag for the open tag you just popped (e.g., if you popped `<div>`, enqueue `</div>`).
