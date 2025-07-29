@@ -80,10 +80,9 @@ Hints: The `html` is stored as a `String`, so we have the [String API](https://d
 - Use the 2-argument `html.substring(start, end + 1)` to extract tags from the file.
 
 Assumptions: You can make the following simplifying assumptions about the `String html` input:
-- `<!-- Comments -->` will not be in the input, and therefore do not need to be handled by this method.
-- Nested angle brackets will not appear. For instance, `<p <b>>` will not be input.
+- Nested angle brackets will not appear. For instance, things like `<p <b>>` will not be input.
 - Void tags always end in `/>`. For instance, `<img/>` and `<br/>`, not `<img>` and `<br>`.
-- All `<tags>` are given in lowercase.
+- `<!-- comments -->` do not need to be handled by this method.
 
 
 If you got this class working, your output should match mine below:
@@ -99,7 +98,7 @@ System.out.println(myTags2);
 ```
 
 #### Part 2: HTML Syntax Validator
-Open the given `HTMLValidator` class which implements the `Syntax` interface. Note that it does not hold the original code string -- instead, it stores a Queue of tags. Read over the abstract methods and the private helper methods that have been given to understand what they do. All the methods below require that you use both a `Queue` and `Stack`, so you might want to refresh yourself of their API. 
+Open the given `HTMLValidator` class which implements the `Syntax` interface. Note that it does not hold the original code string -- instead, it stores a `Queue` of tags. Read over the abstract methods and the private helper methods that have been given to understand what they do. All the methods below require that you use both a `Queue` and `Stack`, so you might want to refresh yourself of their API. 
 
 **Important:** In all the methods below, you must preserve the contents of the original `Queue` of tags. One easy way to do this is to make a copy before processing it. If you're using a `LinkedList` as your `Queue` implementation, you can create a shallow copy like this:
 ```java
@@ -109,17 +108,16 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
 
 
 1. Override the method `public boolean isProperlyNested()`. For each tag in the queue:
-- If it’s an **opening tag**, `push()` it onto a stack.
-- If it’s a **closing tag**:
-  - First check if the stack is empty: reject — this means there's no matching open tag.
-  - Otherwise, `pop()` the most recent opening tag from the stack.
-    - Use the helper method tagsMatch(open, close) to check if they match.
-      - If they don't match, reject immediately.
-- If it's a **void tag** or a **comment**, ignore it.
-
-- After processing all tags:
-  - If the stack is not empty, reject — this means there are unclosed tags.
-  - If the stack is empty, accept the input as valid.
+    - If it’s an **opening tag**, `push()` it onto a stack.
+    - If it’s a **closing tag**:
+      - First check if the stack is empty: reject — this means there's no matching open tag.
+      - Otherwise, `pop()` the most recent opening tag from the stack.
+        - Use the helper method tagsMatch(open, close) to check if they match.
+          - If they don't match, reject immediately.
+    - If it's a **void tag** or a **comment**, ignore it.
+    - After processing all tags:
+      - If the stack is not empty, reject — this means there are unclosed tags.
+      - If the stack is empty, accept the input as valid.
 
 <!-- For each tag you examine in FIFO order, test if it's an opening tag, then push it onto a stack. If it's a close tag, pop a tag (if possible) from the top of the stack, and check to see if it *matches* the close tag (e.g., `<div>` matches `</div>`) -- check out the helper method `tagsMatch()`. If they don't match, reject. Also reject if the stack was empty (which means you have a closing tag without a corresponding opening tag.) Once you've examined all tags in the queue, check to see if the stack is empty. If not, then reject based on there being an unclosed opening tag. Ignore any comments and void tags. -->
 
@@ -140,12 +138,12 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
 
 2. Override the method `public void prettyPrint()` prints out each tag on a separate line, with indentation based on nesting level. Each "degree of nesting" calls for 2 spaces to be printed before the tag. This method is not expected to work if the HTML code is invalid -- print `"invalid syntax"` instead and stop. Otherwise, use a `Stack` to track **open tags**, and poll each tag off the `Queue`:
 For each **open tag**:
-- Print it with `2 × stack.size()` spaces in front
-- Then `push()` it onto the stack
-For each **close tag**:
-- First, `pop()` from the stack (which reduces the nesting level)
-- Then print the tag using the updated stack size for indentation
-For **void tags** (e.g.,` <br/>`,` <img/>`) and comments, just print them with current indentation; don’t push or pop.
+    - Print it with `2 × stack.size()` spaces in front
+    - Then `push()` it onto the stack
+    For each **close tag**:
+    - First, `pop()` from the stack (which reduces the nesting level)
+    - Then print the tag using the updated stack size for indentation
+    For **void tags** (e.g.,` <br/>`,` <img/>`) and comments, just print them with current indentation; don’t push or pop.
 
     ```java
     HTMLValidator syntax = new HTMLValidator();
