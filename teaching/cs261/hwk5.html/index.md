@@ -145,7 +145,7 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
     For each **close tag**:
     - First, `pop()` from the stack (which reduces the nesting level)
     - Then print the tag using the updated stack size for indentation
-    
+
     For **void tags** (e.g.,` <br/>`,` <img/>`) and comments, just print them with current indentation; don’t push or pop.
 
     ```java
@@ -165,11 +165,30 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
     </p>
     ```
 
-3. Finally, override `public Queue<String> suggestFixes()`. What good is a syntax checker if it doesn't try to suggest possible fixes to malformed code? This method first grabs a queue of HTML tags (from calling your static method as before), and will return a *new Queue* of tags with fixes. The fixes can be the insertion of a missing tag, or the removal of a given tag that was in the wrong place. Here's how we'll tackle it. If the tag is void or a comment, then just enqueue it in the new queue. If it's an open tag, push it onto the stack and enqueue it in the new queue.
+3. Finally, override `public Queue<String> suggestFixes()`. What good is a syntax checker if it doesn't try to suggest possible fixes to malformed code? This method fixes malformed HTML by returning a new `Queue` that includes inserted or commented-out tags where needed to correct nesting errors. You will first need to create:
 
-   Here's where things get tricky: If the next tag is a closing tag, then you have to first check if the stack is empty. If so, then this `</tag>` never had a corresponding opening tag -- therefore, enclose the `</tag>` in a comment like this: `<!-- </tag> removed! -->` and enqueue the comment (not the closing tag) in the new queue. On the other hand, if the stack was non-empty, you need to pop the opening `<tag>` from the stack to test if it matches the closing `</tag>`. If they match, then enqueue the closing `</tag>`. If they *don't match*, then surround the closing `</tag>` in a comment as we did before, and enqueue it. Furthermore, enqueue the *correct* closing tag! 
+    - A Stack<String> to track open tags.
+    - A Queue<String> to build and return your corrected tag sequence.
+    - Also remember to create a copy of the original queue for iteration.
 
-   Phew that was a lot, but there's one more fix! Once you've examined all the tags from the queue, you need to check to see if there are any extraneous openings left in the stack. For each, enqueue a corresponding closing `</tag>` for it.
+  As before, process each tag in FIFO order:
+    - For each **void tag** and **comment**: Just enqueue it in the new queue.
+    - For each **open tag**:
+      - Push it onto the stack.
+      - Enqueue it into the new queue.
+    -  If it's a **closing tag**:
+      - Case 1: If the stack is empty:
+        - There’s no matching open tag, so this is invalid. Enqueue a comment like:
+          `<!-- </tag> removed! -->` (Do not enqueue the invalid closing tag.)
+      - Case 2: The stack is not empty:
+        - Pop the most recent open tag from the stack.
+        - If it matches the closing tag:
+          - Enqueue the closing tag as-is.
+        - If it doesn't match:
+          - Comment out the invalid closing tag as shown above.
+          - Enqueue the correct closing tag for the open tag you just popped (e.g., if you popped `<div>`, enqueue `</div>`).
+    - After processing all tags from the original queue:
+      - There may still be open tags left in the stack. For each one, enqueue a corresponding closing tag (e.g., `</div>`) to close any remaining unclosed tags.
 
    ```java
    HTMLValidator syntax = new HTMLValidator();
