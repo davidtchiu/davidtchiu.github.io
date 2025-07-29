@@ -206,8 +206,23 @@ For each **open tag**:
    /* syntax was correct -- no fixes suggested */
    syntax.set(TagReader.extractTags("<p><strong><emph>Hello</emph> world!<br/></strong></p>"));
    syntax.prettyPrint();
+    <p>
+      <strong>
+        <emph>
+        </emph>
+        <br/>
+      </strong>
+    </p>
+
    syntax.set(syntax.suggestFixes());
    syntax.prettyPrint();   
+    <p>
+      <strong>
+        <emph>
+        </emph>
+        <br/>
+      </strong>
+    </p>
    ```
 
 #### Grading
