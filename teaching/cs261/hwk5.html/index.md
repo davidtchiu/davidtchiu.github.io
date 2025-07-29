@@ -106,32 +106,30 @@ Queue<String> copy = new LinkedList<>(original);
 ```
 This lets you safely poll from `copy` without modifying the `original` Queue.
 
+##### Requirements
 
 1. Override the method `public boolean isProperlyNested()`. For each tag in the queue:
     - If it’s an **opening tag**, `push()` it onto a stack.
     - If it’s a **closing tag**:
       - First check if the stack is empty: reject — this means there's no matching open tag.
       - Otherwise, `pop()` the most recent opening tag from the stack.
-        - Use the helper method tagsMatch(open, close) to check if they match.
-          - If they don't match, reject immediately.
+        - Use the helper method `tagsMatch(open, close)` to check if they match. If they don't match, reject immediately.
     - If it's a **void tag** or a **comment**, ignore it.
     - After processing all tags:
       - If the stack is not empty, reject — this means there are unclosed tags.
       - If the stack is empty, accept the input as valid.
 
-<!-- For each tag you examine in FIFO order, test if it's an opening tag, then push it onto a stack. If it's a close tag, pop a tag (if possible) from the top of the stack, and check to see if it *matches* the close tag (e.g., `<div>` matches `</div>`) -- check out the helper method `tagsMatch()`. If they don't match, reject. Also reject if the stack was empty (which means you have a closing tag without a corresponding opening tag.) Once you've examined all tags in the queue, check to see if the stack is empty. If not, then reject based on there being an unclosed opening tag. Ignore any comments and void tags. -->
-
     ```java
     HTMLValidator syntax = new HTMLValidator();
-    syntax.load("</u><p><hello></yes><emph>Hello</emph> world!</i>");
+    syntax.set(TagReader.extractTags("</u><p><hello></yes><emph>Hello</emph> world!</i>"));
     System.out.println(syntax.isProperlyNested());
     > false
 
-    syntax.load("<p> <strong><emph>Hello<br /></emph> world!</hello></p>");
+    syntax.set(TagReader.extractTags("<p> <strong><emph>Hello<br /></emph> world!</hello></p>"));
     System.out.println(syntax.isProperlyNested());
     > false
       
-    syntax.load("<p><strong><emph>Hello</emph> world!</strong></p>");
+    syntax.set(TagReader.extractTags("<p><strong><emph>Hello</emph> world!</strong></p>"));
     System.out.println(syntax.isProperlyNested());
     > true
     ```
@@ -147,11 +145,11 @@ For each **open tag**:
 
     ```java
     HTMLValidator syntax = new HTMLValidator();
-    syntax.load("</u><p><hello></yes><emph>Hello</emph> world!</i>");
+    syntax.set(TagReader.extractTags("</u><p><hello></yes><emph>Hello</emph> world!</i>"));
     syntax.prettyPrint();  /* pretty-print only works on valid syntax! */
     > invalid syntax!
 
-    syntax.load("<p><strong><emph>Hello</emph> world!<br/></strong></p>");
+    syntax.set(TagReader.extractTags("<p><strong><emph>Hello</emph> world!<br/></strong></p>"));
     syntax.prettyPrint(); /* pretty-print ignores non-tags */
     <p>
       <strong>
@@ -170,15 +168,46 @@ For each **open tag**:
 
    ```java
    HTMLValidator syntax = new HTMLValidator();
-   syntax.load("</u><p><hello></yes><emph>Hello</emph> world!</i>");
-   System.out.println(syntax.suggestFixes());
-   > [<!-- </u> removed! -->, <p>, <hello>, <!-- </yes> removed! -->, </hello>, <emph>, </emph>, <!-- </i> removed! -->, </p>]
 
-   syntax.
+   /* un-matched </hello> tag fixed */
+   syntax.set(TagReader.extractTags("<p> <strong><emph>Hello<br /></emph> world!</hello></p>"));
+   syntax.prettyPrint();
+   > invalid syntax!
 
-   syntax.load("<p> <strong><emph>Hello<br /></emph> world!</hello></p>");
-   System.out.println(syntax.suggestFixes());
-   > [<p>, <strong>, <emph>, <br />, </emph>, <!-- </hello>-->, </strong>, </p>]
+   syntax.set(syntax.suggestFixes());
+   syntax.prettyPrint();
+   <p>
+     <strong>
+       <emph>
+         <br />
+       </emph>
+       <!-- </hello> removed -->
+     </strong>
+   </p>
+
+   /* un-matched </u>, </yes>, </i> tag fixed */
+   /* closing </hello> tag added */
+   syntax.set(TagReader.extractTags("</u><p><hello></yes><emph>Hello</emph> world!</i>"));
+   syntax.prettyPrint();
+   > invalid syntax!
+   
+   syntax.set(syntax.suggestFixes());
+   syntax.prettyPrint();
+   <!-- </u> removed -->
+   <p>
+     <hello>
+       <!-- </yes> removed -->
+     </hello>
+     <emph>
+     </emph>
+     <!-- </i> removed -->
+   </p>
+
+   /* syntax was correct -- no fixes suggested */
+   syntax.set(TagReader.extractTags("<p><strong><emph>Hello</emph> world!<br/></strong></p>"));
+   syntax.prettyPrint();
+   syntax.set(syntax.suggestFixes());
+   syntax.prettyPrint();   
    ```
 
 #### Grading
