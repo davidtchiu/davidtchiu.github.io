@@ -108,7 +108,20 @@ Queue<String> copy = new LinkedList<>(original);
 This lets you safely poll from `copy` without modifying the `original` Queue.
 
 
-1. Override the method `public boolean isProperlyNested()`. For each tag you examine in FIFO order, test if it's an opening tag, then push it onto a stack. If it's a close tag, pop a tag (if possible) from the top of the stack, and check to see if it *matches* the close tag (e.g., `<div>` matches `</div>`) -- check out the helper method `tagsMatch()`. If they don't match, reject. Also reject if the stack was empty (which means you have a closing tag without a corresponding opening tag.) Once you've examined all tags in the queue, check to see if the stack is empty. If not, then reject based on there being an unclosed opening tag. Ignore any comments and void tags.
+1. Override the method `public boolean isProperlyNested()`. For each tag in the queue:
+- If it’s an **opening tag**, `push()` it onto a stack.
+- If it’s a **closing tag**:
+  - First check if the stack is empty: reject — this means there's no matching open tag.
+  - Otherwise, `pop()` the most recent opening tag from the stack.
+    - Use the helper method tagsMatch(open, close) to check if they match.
+      - If they don't match, reject immediately.
+- If it's a **void tag** or a **comment**, ignore it.
+
+- After processing all tags:
+  - If the stack is not empty, reject — this means there are unclosed tags.
+  - If the stack is empty, accept the input as valid.
+
+<!-- For each tag you examine in FIFO order, test if it's an opening tag, then push it onto a stack. If it's a close tag, pop a tag (if possible) from the top of the stack, and check to see if it *matches* the close tag (e.g., `<div>` matches `</div>`) -- check out the helper method `tagsMatch()`. If they don't match, reject. Also reject if the stack was empty (which means you have a closing tag without a corresponding opening tag.) Once you've examined all tags in the queue, check to see if the stack is empty. If not, then reject based on there being an unclosed opening tag. Ignore any comments and void tags. -->
 
     ```java
     HTMLValidator syntax = new HTMLValidator();
@@ -125,9 +138,7 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
     > true
     ```
 
-2. Override the method `public void prettyPrint()` prints out each tag on a separate line, with indentation based on nesting level. Each "degree of nesting" calls for 2 spaces to be printed before the tag. 
-
-This method is not expected to work if the HTML code is invalid -- print `"invalid syntax"` instead and stop. Otherwise, use a `Stack` to track **open tags**, and poll each tag off the `Queue`:
+2. Override the method `public void prettyPrint()` prints out each tag on a separate line, with indentation based on nesting level. Each "degree of nesting" calls for 2 spaces to be printed before the tag. This method is not expected to work if the HTML code is invalid -- print `"invalid syntax"` instead and stop. Otherwise, use a `Stack` to track **open tags**, and poll each tag off the `Queue`:
 For each **open tag**:
 - Print it with `2 × stack.size()` spaces in front
 - Then `push()` it onto the stack
@@ -140,17 +151,17 @@ For **void tags** (e.g.,` <br/>`,` <img/>`) and comments, just print them with c
     HTMLValidator syntax = new HTMLValidator();
     syntax.load("</u><p><hello></yes><emph>Hello</emph> world!</i>");
     syntax.prettyPrint();  /* pretty-print only works on valid syntax! */
-    > invalid syntax
+    > invalid syntax!
 
     syntax.load("<p><strong><emph>Hello</emph> world!<br/></strong></p>");
     syntax.prettyPrint(); /* pretty-print ignores non-tags */
-    > <p>
-    >   <strong>
-    >     <emph>
-    >     </emph>
-    >     <br/>
-    >   </strong>
-    > </p>
+    <p>
+      <strong>
+        <emph>
+        </emph>
+        <br/>
+      </strong>
+    </p>
     ```
 
 3. Finally, override `public Queue<String> suggestFixes()`. What good is a syntax checker if it doesn't try to suggest possible fixes to malformed code? This method first grabs a queue of HTML tags (from calling your static method as before), and will return a *new Queue* of tags with fixes. The fixes can be the insertion of a missing tag, or the removal of a given tag that was in the wrong place. Here's how we'll tackle it. If the tag is void or a comment, then just enqueue it in the new queue. If it's an open tag, push it onto the stack and enqueue it in the new queue.
