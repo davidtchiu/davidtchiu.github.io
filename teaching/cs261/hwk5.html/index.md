@@ -14,7 +14,9 @@ Here’s a simplified example:
   </head>
   <body>
     <h1>Main Title</h1>
-    <p>This is a paragraph with <b>bold</b> text.</p>
+    <p>
+      This is a paragraph with <b>bold</b> text.
+    </p>
     <br/>
   </body>
 </html>
@@ -234,6 +236,7 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
    syntax.prettyPrint();
    > invalid syntax!
    
+   /* fix the syntax and set it! */
    syntax.set(syntax.suggestFixes());
    syntax.prettyPrint();
    <!-- </u> removed -->
@@ -246,7 +249,7 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
      <!-- </i> removed -->
    </p>
 
-   /* syntax was correct -- no fixes suggested */
+   /* this syntax is sound */
    syntax.set(TagReader.extractTags("<p><strong><emph>Hello</emph> world!<br/></strong></p>"));
    syntax.prettyPrint();
     <p>
@@ -257,6 +260,7 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
       </strong>
     </p>
 
+   /* syntax was sound -- no fixes suggested! */
    syntax.set(syntax.suggestFixes());
    syntax.prettyPrint();   
     <p>
@@ -271,41 +275,54 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
 #### Grading
 
 ```
-MelodyPlayer Rubric
+HTM LValidator Assignment Rubric (80 points total)
+
+[25 pts] isProperlyNested()
+> Uses a Stack to manage nesting correctly (no List-style access) (5 pts)
+> Processes tags in FIFO order using a Queue copy (5 pts)
+> Correctly handles matching open/close tags using tagsMatch() (5 pts)
+> Properly ignores void tags (e.g., <br/>) (3 pts)
+> Rejects on extra closing tags (stack empty) or mismatches (3 pts)
+> Returns false if any tags are left open at the end (stack not empty) (4 pts)
 
 ----------------------------------------------------------
-[5 pts] Everywhere in your code, you are limited to using only the Stack<E> and
-        Queue<E> methods. You are not allowed to use any method besides those
-        specified in those interfaces, for instance, get(int i)
 
-[5 pts] The play() method restores all the notes in the queue after playing.
-
-[10 pts] changeTempo(): It takes a percentage (as a
-        fraction, and multiplies the length of each note by this percentage).
-
-[10 pts] append(): It appends the given Melodic structure
-         to the current Melody.
-
-[10 pts] reverse(): Uses a Stack<E> to reverse the current melody.
-
-[25 pts] play() must properly handle repeated sections.
-
-[10 pts] getDuration() returns the duration (including repeated sections!) of
-         the melody.
+[30 pts] suggestFixes() (30 points)
+> Uses both Queue and Stack correctly (no List methods like get(i)) (5 pts)
+> Preserves order of tags in output where no fix is needed (3 pts)
+> Detects unmatched closing tags and inserts correct comment (5 pts)
+> Detects mismatched closing tags, inserts correct comment and correct closing tag (5 pts)
+> Inserts missing closing tags for leftover open tags in stack at the end (5 pts)
+> Does not remove valid tags — only inserts or comments to fix structure (5 pts)
+> Returns a new queue (does not modify original queue directly) (2 pts)
 
 ----------------------------------------------------------
-Fun Stuff:
 
-[15 pts] You created your own song in a text file.
+[20pts] prettyPrint()
+> Calls isProperlyNested() and exits early with "invalid syntax" if false (4 pts)
+> Correctly tracks indentation level using Stack size (4 pts)
+> Indents each tag by 2×nesting level spaces (4 pts)
+> Pushes open tags and pops on matching close tags (4 pts)
+> Void tags are printed with correct indentation but not pushed/popped (4 pts)
 
 ----------------------------------------------------------
-[5 pts] Comments
+Misc.
 
-> You include sufficient Javadocs comments for each class and method.
+- Abstraction Violations (Up to -10 pts per method!)
+If student accesses elements in a stack/queue using non-abstract methods 
+like get(i), remove(i), or peek(index), take up to 10 points off across 
+affected methods. These are meant to be FIFO (Queue) and LIFO (Stack), 
+not general-purpose Lists!!
 
-> You include sufficient inline comments in your methods.
+----------------------------------------------------------
 
-Total: 100
+[5 pts] Comments and Style (5 points)
+
+> Code is clearly formatted and indented (2 pts)
+
+> Descriptive comments explain purpose of methods and tricky logic (2 pts)
+
+> Variables and method names follow Java conventions and are meaningful (1 pt)
 ```
 
 #### Submitting Your Assignment
