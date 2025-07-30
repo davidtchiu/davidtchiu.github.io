@@ -211,11 +211,11 @@ let days = {
     // wk 8
     "<strong>Fall Break</strong>",
     "Stacks and Queues: LIFO, FIFO",
-    "Lab 8: Stacks and Queues (Infix Solver)",
-    "Priority queues: motivation, use cases",
+    "Lab 8: Stacks and Queues (MelodyPlayer)",
+    "Stacks and Queue problem solving",
     // wk 9:
-    "Start recursion",
-    "Recursion: code reading, common pitfalls",
+    "Priority queues: motivation, use cases",
+    "Start Recursion",
     "Lab 9: Homework Lab",
     "Recursion: code tracing",
     // wk 10
