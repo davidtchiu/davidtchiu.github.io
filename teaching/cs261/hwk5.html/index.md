@@ -1,12 +1,31 @@
 ## CS 261 - Computer Science II
 
 ### Homework 5: HTML Tag Validator
-HTML (hypertext markup language) is the language of the web. Every webpage (and most of our mobile apps) look and feel the way they do thanks to HTML. It describes the basic structure of a webpage using elements called *"tags."* These tags mark where different parts of the page start and end --- things like headings, paragraphs, bold text, images, and more. Most HTML elements consist of two tags:
+HTML (hypertext markup language) is the language of the web. It is the standard language used to create and structure content on the web. Every webpage (and many mobile apps) you visit is built using HTML, and it defines how content is grouped and displayed. HTML uses *tags* to mark different parts of a page — like paragraphs, headings, images, lists, links, and more.
 
-- An opening tag, like `<p>` or `<div>`
-- A closing tag, like` </p>` or `</div>`
+#### Basic Structure of an HTML Document
+An HTML document consists of nested elements, where tags wrap around content and other tags. Every page starts with a `<html>` tag, and usually includes a `<head>` section (for metadata like the page title and information a search engine can use) and a `<body>` section (which contains what appears on the screen).
 
-Before your browsers can render the HTML into a webpage, it must do a bit of syntax checking. Importantly, HTML tags must be properly *nested*, like parentheses in Java and algebraic expressions. That means if you open a tag inside another, you must close it before closing the outer one.
+Here’s a simplified example:
+```html
+<html>
+  <head>
+    <title>Welcome!</title>
+  </head>
+  <body>
+    <h1>Main Title</h1>
+    <p>This is a paragraph with <b>bold</b> text.</p>
+    <br/>
+  </body>
+</html>
+```
+In this example:
+`<html>`, `<head>`, `<body>`,` <h1>`, `<p>`, and` <b>` are **open tags.** Each open tag must have a corresponding close tag (`</html>`, `</p>`, etc.) On the other hand, `<br/>` is called a void tag, meaning it stands alone and doesn't need a closing tag
+
+Web browsers are surprisingly forgiving — they'll try to render a page even if your tags aren't matched correctly. But behind the scenes, improper nesting can cause: Unexpected layout issues, broken page structure, problems for screen readers, and so on.
+
+In this assignment, you'll simulate an HTML validator that checks structural correctness, using `Stacks` and `Queues` to manage and examine tags in order.
+
 
 #### Proper Nesting Rules
 When writing HTML:
@@ -169,22 +188,21 @@ This lets you safely poll from `copy` without modifying the `original` Queue.
 
     - A `Stack<String>` to track open tags.
     - A `Queue<String>` to build and return your corrected tag sequence.
-    - Also, remember to copy the original queue for iteration.
+    - Remember to copy the original queue for iteration.
 
     As before, process each tag in FIFO order:
     - For each **void tag** and **comment**: Just enqueue it in the new queue.
     - For each **open tag**:
       - Push it onto the stack.
       - Enqueue it into the new queue.
-    -  If it's a **closing tag**:
+    - If it's a **closing tag**:
       - Test if the stack is empty (invalid!)
         - It means there’s no matching open tag. Enqueue a comment like:
           `<!-- </tag> removed! -->`
         - (Do not enqueue the invalid closing tag.)
       - If the stack was not empty:
         - Pop the most recent open tag from the stack.
-        - If it matches the closing tag:
-          - Enqueue the closing tag.
+        - If it matches the closing tag, enqueue the closing tag.
         - If it doesn't match:
           - Comment out the invalid closing tag as shown above.
           - Enqueue the correct closing tag for the open tag you just popped (e.g., if you popped `<div>`, enqueue `</div>`).
@@ -289,14 +307,6 @@ Fun Stuff:
 
 Total: 100
 ```
-
-
-<!-- ```
-This assignment will be graded out of 2 points, provided that:
-
-- You were in attendance and on-time.
-- Your classes are fully implemented.
-``` -->
 
 #### Submitting Your Assignment
 Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
