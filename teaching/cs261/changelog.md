@@ -9,7 +9,7 @@
 
 # Change Log
 - Replace Hwk 7 (Huffman) with CityTracker (Fall 2025)
-- Replace Hwk 5 RCV with MelodyPlayer (Fall 2025)
+- Replace Hwk 5 RCV with HTML Syntax Checker (Fall 2025)
 - Skip priority queues altogether as a subject until this class is DS-only (2025)
 - MyArrayList and LinkedList Lab are now "code along" labs
 - Some of MyArrayList is now a bonus assignment.

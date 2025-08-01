@@ -1,6 +1,11 @@
 import java.util.Queue;
-import java.util.LinkedList;
 
+/**
+ * Write a description of class TagReader here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
 public class TagReader {
 
     /**

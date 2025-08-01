@@ -47,7 +47,7 @@ let days = {
         name: "Hwk 5",
         title: "HTML Tag Validator",
         url: "hwk5.html/",
-        due: "10/31/2025",  // Fri, wk 9
+        due: "11/3/2025",  // Mon, wk 10
       },
       {
         name: "Hwk 6",

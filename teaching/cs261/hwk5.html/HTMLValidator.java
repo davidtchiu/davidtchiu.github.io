@@ -14,34 +14,21 @@ public class HTMLValidator implements Syntax
         this.tags = tags;
     }
     
-    /**
-     * Checks whether the tags in the HTML string are properly nested.
-     * 
-     * This method uses a stack to match opening and closing tags in the correct order.
-     * Void tags (e.g., <br/>) and comments (<!-- ... -->) are ignored.
-     * 
-     * @return true if all opening tags are matched with correct closing tags in the proper order;
-     *         false if any tag is mismatched, extra, or missing.
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean isProperlyNested() {
         // TODO
         return false; // Placeholder return
     }
     
-    /**
-     * Suggests minimal fixes for improperly nested tags.
-     * Returns a queue of tags (and inserted corrections) representing a fixed version.
-     */
+    /** {@inheritDoc} */
     @Override
     public Queue<String> suggestFixes() {
         // TODO
         return null; // Placeholder return
     }
     
-    /**
-     * Prints tags with indentation based on nesting level.
-     */
+    /** {@inheritDoc} */
     @Override
     public void prettyPrint() {
         // TODO
