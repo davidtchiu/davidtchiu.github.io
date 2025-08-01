@@ -58,7 +58,7 @@ let days = {
       {
         name: "Hwk 7",
         title: "City Tracker",
-        url: "hwk7.bst/",
+        url: "hwk7.city/",
         due: "12/2/2025",  // Tue, wk 14
       },
       // {
@@ -88,7 +88,7 @@ let days = {
     labs: [
       {
         name: "Lab 1",
-        title: "Review: Around the Farm",
+        title: "Code Along: Around the Farm",
         url: "lab1.farm/",
         due: "9/5/2025",
       },
