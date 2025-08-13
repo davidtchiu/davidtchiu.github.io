@@ -22,7 +22,7 @@
 
 
 ### Recent Activities
-
+- (05/2024) Congrats to Alex Kirner on receiving a Student Research Award. Work starts on optimizing join execution.
 - (04/2025) Completed a site visit to [DIS Study Abroad in Scandinavia](https://disabroad.org/) (Stockholm and Copenhagen campuses).
 - (02/2025) Search Committee, Department of Communications Studies, University of Puget Sound.
 - (08/2024) Co-chairing the International Education Committee (IEC), University of Puget Sound.

@@ -4,9 +4,8 @@ There are many university policies and resources that offer guidance on how to b
 
 - Please review university emergency preparedness, response procedures and a training video posted at [www.pugetsound.edu/emergency/](https://www.pugetsound.edu/emergency/).
 
-- Protect yourself and others from COVID-19 by following our ongoing campus safety protocols, posted here: [www.pugetsound.edu/emergency/communicable-disease-outbreak-prevention/university-response-covid-19/protect-yourself](https://www.pugetsound.edu/emergency/communicable-disease-outbreak-prevention/university-response-covid-19/protect-yourself)
+- For information on academic and administrative policies (such as policies on grade policies, leaves of absence, declaring a major, academic integrity, and academic petitions) please refer to the [Academic Policies](bulletin.pugetsound.edu/policy/academicpolicies) and [Administrative Policies](bulletin.pugetsound.edu/policy/administrativepolicies) sections of the University Bulletin.
 
-- For information on academic and administrative policies (such as policies on grade policies, leaves of absence, declaring a major, academic integrity, and academic petitions) please refer to the University Bulletin located here: [www.pugetsound.edu/sites/default/files/2023-08/AD23BULLETIN_online_Academic%20and%20Administrative%20Policies.pdf](https://www.pugetsound.edu/sites/default/files/2023-08/AD23BULLETIN_online_Academic%20and%20Administrative%20Policies.pdf)
 
 - If you are seeking a religious accommodation in an academic course or program, please follow the process provided in the university’s policy on Student Religious Accommodations in Academic Courses or Programs, available at [www.pugetsound.edu/office-university-counsel/policies/campuswide-policies/student-religious-accommodations-academic-courses-or-programs](https://www.pugetsound.edu/office-university-counsel/policies/campuswide-policies/student-religious-accommodations-academic-courses-or-programs)
 
