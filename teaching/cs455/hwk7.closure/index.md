@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: FD Set Closure and Armstrong's Axioms
+### Hwk 7: FD Set Closure and Armstrong's Axioms
 In this assignment you will implement algorithms that we've been learning in the DB theory lectures. Specifically, you will implement methods to find the FD set closure, attribute set closure, and BCNF decomposition.
 
 
