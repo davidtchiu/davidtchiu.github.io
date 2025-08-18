@@ -33,31 +33,31 @@ let days = {
         name: "Hwk 4 (sql)",
         title: "SQL Data Ingestion",
         url: "hwk4.sqlddl/",
-        due: "10/10/2025",  // wk6, friday
+        due: "10/13/2025",  // wk7, monday
       },
       {
         name: "Hwk 5 (sql)",
         title: "Writing SQL Queries",
         url: "hwk5.sqldml/",
-        due: "10/22/2025",  // wk 8, wednesday
+        due: "10/24/2025",  // wk 8, friday 
       },
       {
         name: "Hwk 6 (coding)",
-        title: "Design Theory 1 - FD Set Closure",
-        url: "hwk6.closure/",
-        due: "10/31/2025",  // wk 9, friday
+        title: "B+Tree",
+        url: "hwk6.btree/",
+        due: "11/10/2025",
       },
       {
-        name: "Hwk 7 (coding)",
-        title: "Design Theory 2 - BCNF Normalization",
-        url: "hwk7.bcnf/",
-        due: "11/14/2025", // wk 11, friday
+        name: "Hwk 6 (coding)",
+        title: "FD Set Closure",
+        url: "hwk7.closure/",
+        due: "12/2/2025",  // wk 14, friday
       },
       // {
       //   name: "Hwk 7 (coding)",
-      //   title: "B+Tree",
-      //   url: "hwk7.btree/",
-      //   due: "11/24/2021",
+      //   title: "Design Theory 2 - BCNF Normalization",
+      //   url: "hwk7.bcnf/",
+      //   due: "11/14/2025", // wk 11, friday
       // },
     ],
 
