@@ -152,18 +152,18 @@ let days = {
     "<strong><emph>Exam 2</emph></strong>",
     // wk 12
     "Indexing: motivation",
-    "Indexing: multilevel indexing - B+Trees",
+    "B+Tree structure",
     "B+Tree operations",
     // wk 13
     "B+Tree insertion",
-    "B+Tree runtime analysis",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
+    "B+Tree runtime analysis",
     "Bitmaps",
     "Bitmap compression",
     // wk 15
-    "<strong><emph>Presentations</emph></strong>",
+    "Catchup",
     "<strong><emph>Presentations</emph></strong>",
     "<strong>Reading Period</strong>",
     // "Start transactions: ACID, serializability",
