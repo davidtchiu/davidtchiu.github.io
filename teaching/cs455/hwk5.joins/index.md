@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: Join Processing
+### Hwk 5: Join Processing
 
 This assignment give you some hands-on experience programming several classical implementations of the natural join $$R\bowtie S$$ operation, one of the key algorithms in relational database systems. You may choose between Java and Python.
 

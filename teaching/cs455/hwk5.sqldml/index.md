@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: Writing SQL Queries
+### Hwk 5: Writing SQL Queries
 
 The database models a multinational company. The queries you are asked to perform are realistic.
 

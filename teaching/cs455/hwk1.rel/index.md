@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: The Relational Model
+### Hwk 1: The Relational Model
 
 This assignment focuses on the ins and outs of the relational model.
 

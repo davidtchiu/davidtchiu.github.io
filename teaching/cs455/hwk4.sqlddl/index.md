@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: Data Ingestion
+### Hwk 4: Data Ingestion
 
 There's a lot of text-based ("raw") data in the real world that we have to load into a relational database to reap all the benefits of SQL. This process is called **Data Ingestion**. Suppose a local college uses a comma-delimited spreadsheet (csv file) to manage all of its data. Their software has been collecting years' worth of data on their students and course enrollment in a single spreadsheet, and over time, the size of this file has gotten out of hand. College administrators can no longer "eyeball" the spreadsheet to do simple analysis, and require the help of someone with relational database expertise... that's where you step in.
 

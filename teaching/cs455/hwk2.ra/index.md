@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: Relational Algebra
+### Hwk 2: Relational Algebra 1
 
 This assignment asks you to formulate proper relational algebra expressions to answer arbitrary queries about the data. You are allowed to do these by hand (then scanned into a PDF document).
 

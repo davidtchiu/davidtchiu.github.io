@@ -15,55 +15,55 @@ let days = {
         name: "Hwk 1 (written)",
         title: "The Relational Model",
         url: "hwk1.rel/",
-        due: "9/11/2023",
+        due: "9/13/2025", // wk2, friday
       },
       {
         name: "Hwk 2 (written)",
-        title: "Relational Algebra",
+        title: "Relational Algebra I",
         url: "hwk2.ra/",
-        due: "9/22/2023",
+        due: "9/25/2024", // wk4, wednesday
       },
       {
-        name: "Hwk 3 (coding)",
-        title: "Data Preparation",
-        url: "hwk3.ddl/",
-        due: "10/6/2023",
+        name: "Hwk 3 (written)",
+        title: "Relational Algebra II",
+        url: "hwk3.ra2/",
+        due: "10/4/2024", // wk5, friday
       },
       {
-        name: "Hwk 4 (coding)",
+        name: "Hwk 4 (sql)",
+        title: "SQL Data Ingestion",
+        url: "hwk4.sqlddl/",
+        due: "10/16/2024",  // wk7, wednesday
+      },
+      {
+        name: "Hwk 5 (sql)",
         title: "Writing SQL Queries",
-        url: "hwk4.dml/",
-        due: "10/20/2023",
+        url: "hwk5.sqldml/",
+        due: "10/30/2024",  // wk 9, wednesday
       },
-      {
-        name: "Hwk 5 (coding)",
-        title: "Joins",
-        url: "hwk5.joins/",
-        due: "11/6/2023",
-      },
+      // {
+      //   name: "Hwk 5 (coding)",
+      //   title: "Joins",
+      //   url: "hwk5.joins/",
+      //   due: "11/4/2024",
+      // },
       {
         name: "Hwk 6 (coding)",
         title: "Extendible Hashing",
         url: "hwk6.exhash/",
-        due: "11/27/2023",
+        due: "11/20/2024",  // wk 12, wednesday
       },
       // {
-      //   name: "Hwk 5 (coding)",
+      //   name: "Hwk 7 (coding)",
       //   title: "Design Theory - Closure of FD Sets",
-      //   url: "hwk5.closure/",
-      //   due: "10/27/2023",
+      //   url: "hwk7.closure/",
+      //   due: "12/4/2024",
       // },
       // {
       //   name: "Hwk 6 (coding)",
       //   title: "Design Theory - BCNF Normalization",
       //   url: "hwk6.bcnf/",
       //   due: "11/10/2023",
-      // },
-      // {
-      //   name: "Hwk 7 (coding)",
-      //   title: "Joins!",
-      //   url: "hwk7.joins/",
-      //   due: "11/18/2021",
       // },
       // {
       //   name: "Hwk 7 (coding)",
@@ -79,25 +79,25 @@ let days = {
         name: "Project Teams",
         title: "Team Preferences",
         url: "proj/",
-        due: "10/20/2023",
+        due: "10/30/2024",
       },
       {
         name: "Project Prop",
         title: "Project Proposal",
         url: "proj/",
-        due: "11/3/2023",
+        due: "11/8/2024",
       },
       {
         name: "Project Demo",
         title: "Project Demo",
         url: "proj/",
-        due: "12/13/2023",
+        due: "12/11/2024",
       },
       {
         name: "Project-Code",
         title: "Project Code",
         url: "proj/",
-        due: "12/15/2023",
+        due: "12/20/2024",
       },
     ],
 
@@ -113,83 +113,87 @@ let days = {
 
   lectures: [
     // wk 1
-    "Why DBMS? Data independence",
-    "Data independence",
-    "Relational Model: Connection to sets",
-    // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
-    "Relational Model: keys",
-    "Relational Model: designing schema",
+    "Why DBMS? Data independence (on Zoom)",
+    "Relational model: Connection to sets",
+    // wk 2
+    "Relational model: keys",
+    "Relational model: schema",
+    "Relational algebra: selection, projection, and query plans",
     // wk 3
-    "Relational Algebra: selection, projection, and query plans",
+    "RA: query composition, set ops and compatibility",
     "RA: natural join",
-    "RA: outer joins, rename, NULL",
+    "RA: outer join, rename",
     // wk 4
     "RA: aggregation and grouping",
     "SQL: schema definition; integrity constraints",
     "SQL: foreign keys; insert, delete, update operations",
     // wk 5
     "SQL: selection, joins, set ops",
+    "SQL: More SQL",
     "SQL: outer joins, renaming, WITH",
-    "<strong><emph>Class Cancelled</emph></strong>",
     // wk 6
-    "SQL Work Day",
-    "SQL: subqueries",
-    "SQL: grouping and aggregation",
-    // wk 7
     "SQL Work Day",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
+    // wk 7
+    "SQL: grouping and aggregation",
+    "SQL Work Day",
+    "Disk and Files: access patterns",
     // wk 8
     "<strong>Fall Break</strong>",
     "Disk and Files: access patterns",
     "Tuple format, file format",
     // wk 9
     "File organization and costs",
-    "Join processing on files",
-    "Start Indexing: B+Tree",
+    "Start Indexing; Halloween Party",
+    // "Join processing on files",
+    "Multilevel indexing: B+Trees",
     // wk 10
-    "B+Tree cont.",
-    "B+Tree performance",
-    "Dynamic hashing",
+    "B+Tree operations",
+    "B+Tree insertion cases",
+    "B+Tree height",
     // "Consistent hashing",
-    // "Bitmap indexing",
     // "Disks and files; access patterns",
     // wk 11
-    "Bitmap indexing",
+    "Dynamic hashing",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
      // "Files: Structure of tuples",
      // "Files: Organization of tuples",
      // "Files: Cost analysis; Join algorithms",
     // wk 12
+    "Bitmap indexing",
+    "Bitmap indexing",
     "Design Theory: functional dependencies",
-    "Theory: functional dependencies, Attribute set closure",
-    "Theory: Review of attribute-set closure; superkeys algorithm",
     // wk 13
-    "Theory: FD-set closure; Armstrong's Axioms, proof of inference rules",
+    "Theory: functional dependencies, Attribute set closure",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
-    "Theory: Normal Forms: 1NF, 2NF, BCNF",
-    "Theory: Lossless join; dependency preservation",
-    "Theory: Canonical cover; 3NF synthesis",
+    // "Theory: Review of attribute-set closure; superkeys algorithm",
+    "Theory: FD set closure; Armstrong's Axioms, proof of inference rules",
+    "Theory: 1NF, 2NF",
+    "Cancelled",
     // wk 15
-    "Cancelled",
-    "Cancelled",
+    "Theory: BCNF decomposition",
+    // "Theory: Lossless join; dependency preservation",
+    // "Theory: Canonical cover; 3NF synthesis",
+    // "<strong><emph>Final Presentation</emph></strong>",
+    "<strong><emph>Final Presentation</emph></strong>",
+    "<strong>Reading Period</strong>",
     // "Start transactions: ACID, serializability",
     // "Transactions: serializability test, precedence graphs",
     // "Transactions: Concurrency control",
-    "<strong>Reading Period</strong>",
     // wk final
     "",
-    "<strong><emph>Final Presentation<br/>4:00-6:00</emph></strong>",
+    "<strong><emph>Final Exam (Comprehensive)<br/>4:00-6:00</emph></strong>",
     "",
   ],
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("8/28/23", days, MWF);
+const schedule = new CourseCalendar("9/2/24", days, MWF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
