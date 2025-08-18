@@ -27,7 +27,7 @@ let days = {
         name: "Hwk 3 (written)",
         title: "Relational Algebra II",
         url: "hwk3.ra2/",
-        due: "9/30/2025", // wk5, tuesday
+        due: "10/1/2025", // wk5, tuesday
       },
       {
         name: "Hwk 4 (sql)",
@@ -43,13 +43,13 @@ let days = {
       },
       {
         name: "Hwk 6 (coding)",
-        title: "Design Theory - FD Set Closure",
+        title: "Design Theory 1 - FD Set Closure",
         url: "hwk6.closure/",
         due: "10/31/2025",  // wk 9, friday
       },
       {
         name: "Hwk 7 (coding)",
-        title: "Design Theory - BCNF Normalization",
+        title: "Design Theory 2 - BCNF Normalization",
         url: "hwk7.bcnf/",
         due: "11/14/2025", // wk 11, friday
       },
