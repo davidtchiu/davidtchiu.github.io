@@ -21,43 +21,43 @@ let days = {
         name: "Hwk 2 (written)",
         title: "Relational Algebra I",
         url: "hwk2.ra/",
-        due: "9/24/2025", // wk4, wednesday
+        due: "9/22/2025", // wk3, friday
       },
       {
         name: "Hwk 3 (written)",
         title: "Relational Algebra II",
         url: "hwk3.ra2/",
-        due: "10/3/2025", // wk5, friday
+        due: "9/26/2025", // wk4, friday
       },
       {
         name: "Hwk 4 (sql)",
         title: "SQL Data Ingestion",
         url: "hwk4.sqlddl/",
-        due: "10/15/2025",  // wk7, wednesday
+        due: "10/6/2025",  // wk6, wednesday
       },
       {
         name: "Hwk 5 (sql)",
         title: "Writing SQL Queries",
         url: "hwk5.sqldml/",
-        due: "10/30/2024",  // wk 9, wednesday
+        due: "10/22/2025",  // wk 8, wednesday
       },
       {
         name: "Hwk 6 (coding)",
-        title: "Extendible Hashing",
-        url: "hwk6.exhash/",
-        due: "11/20/2024",  // wk 12, wednesday
+        title: "Design Theory - FD Set Closure",
+        url: "hwk6.closure/",
+        due: "10/31/2025",  // wk 9, friday
+      },
+      {
+        name: "Hwk 7 (coding)",
+        title: "Design Theory - BCNF Normalization",
+        url: "hwk7.bcnf/",
+        due: "11/7/2025", // wk 10, friday
       },
       // {
-      //   name: "Hwk 7 (coding)",
-      //   title: "Design Theory - Closure of FD Sets",
-      //   url: "hwk7.closure/",
-      //   due: "12/4/2024",
-      // },
-      // {
       //   name: "Hwk 6 (coding)",
-      //   title: "Design Theory - BCNF Normalization",
-      //   url: "hwk6.bcnf/",
-      //   due: "11/10/2023",
+      //   title: "Extendible Hashing",
+      //   url: "hwk6.exhash/",
+      //   due: "11/20/2024",  // wk 12, wednesday
       // },
       // {
       //   name: "Hwk 7 (coding)",
