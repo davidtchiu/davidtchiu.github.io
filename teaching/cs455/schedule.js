@@ -73,25 +73,25 @@ let days = {
         name: "Project Teams",
         title: "Team Preferences",
         url: "proj/",
-        due: "10/30/2024",
+        due: "10/29/2025",  // wk 9, wednesday
       },
       {
         name: "Project Prop",
         title: "Project Proposal",
         url: "proj/",
-        due: "11/8/2024",
+        due: "11/7/2025", // wk 10, friday
       },
       {
         name: "Project Demo",
         title: "Project Demo",
         url: "proj/",
-        due: "12/11/2024",
+        due: "12/10/2025",  // wk 14, wednesday
       },
       {
-        name: "Project-Code",
+        name: "Project Code",
         title: "Project Code",
         url: "proj/",
-        due: "12/20/2024",
+        due: "12/19/2025",  // finals wk, friday
       },
     ],
 
