@@ -27,13 +27,13 @@ let days = {
         name: "Hwk 3 (written)",
         title: "Relational Algebra II",
         url: "hwk3.ra2/",
-        due: "9/26/2025", // wk4, friday
+        due: "9/30/2025", // wk5, tuesday
       },
       {
         name: "Hwk 4 (sql)",
         title: "SQL Data Ingestion",
         url: "hwk4.sqlddl/",
-        due: "10/6/2025",  // wk6, wednesday
+        due: "10/10/2025",  // wk6, friday
       },
       {
         name: "Hwk 5 (sql)",
@@ -51,7 +51,7 @@ let days = {
         name: "Hwk 7 (coding)",
         title: "Design Theory - BCNF Normalization",
         url: "hwk7.bcnf/",
-        due: "11/7/2025", // wk 10, friday
+        due: "11/14/2025", // wk 11, friday
       },
       // {
       //   name: "Hwk 6 (coding)",
