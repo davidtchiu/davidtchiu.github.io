@@ -17,42 +17,42 @@ let days = {
         url: "hwk1.rel/",
         due: "9/12/2025", // wk2, friday
       },
-      {
-        name: "Hwk 2 (written)",
-        title: "Relational Algebra I",
-        url: "hwk2.ra/",
-        due: "9/22/2025", // wk3, friday
-      },
-      {
-        name: "Hwk 3 (written)",
-        title: "Relational Algebra II",
-        url: "hwk3.ra2/",
-        due: "10/1/2025", // wk5, tuesday
-      },
-      {
-        name: "Hwk 4 (sql)",
-        title: "SQL Data Ingestion",
-        url: "hwk4.sqlddl/",
-        due: "10/13/2025",  // wk7, monday
-      },
-      {
-        name: "Hwk 5 (sql)",
-        title: "Writing SQL Queries",
-        url: "hwk5.sqldml/",
-        due: "10/24/2025",  // wk 8, friday 
-      },
-      {
-        name: "Hwk 6 (coding)",
-        title: "B+Tree",
-        url: "hwk6.btree/",
-        due: "11/10/2025",
-      },
-      {
-        name: "Hwk 7 (coding)",
-        title: "FD Set Closure",
-        url: "hwk7.closure/",
-        due: "12/2/2025",  // wk 14, friday
-      },
+      // {
+      //   name: "Hwk 2 (written)",
+      //   title: "Relational Algebra I",
+      //   url: "hwk2.ra/",
+      //   due: "9/22/2025", // wk3, friday
+      // },
+      // {
+      //   name: "Hwk 3 (written)",
+      //   title: "Relational Algebra II",
+      //   url: "hwk3.ra2/",
+      //   due: "10/1/2025", // wk5, tuesday
+      // },
+      // {
+      //   name: "Hwk 4 (sql)",
+      //   title: "SQL Data Ingestion",
+      //   url: "hwk4.sqlddl/",
+      //   due: "10/13/2025",  // wk7, monday
+      // },
+      // {
+      //   name: "Hwk 5 (sql)",
+      //   title: "Writing SQL Queries",
+      //   url: "hwk5.sqldml/",
+      //   due: "10/24/2025",  // wk 8, friday 
+      // },
+      // {
+      //   name: "Hwk 6 (coding)",
+      //   title: "B+Tree",
+      //   url: "hwk6.btree/",
+      //   due: "11/10/2025",
+      // },
+      // {
+      //   name: "Hwk 7 (coding)",
+      //   title: "FD Set Closure",
+      //   url: "hwk7.closure/",
+      //   due: "12/2/2025",  // wk 14, friday
+      // },
       // {
       //   name: "Hwk 7 (coding)",
       //   title: "Design Theory 2 - BCNF Normalization",
@@ -62,41 +62,41 @@ let days = {
     ],
 
     ////////////////////////////// PROJECTS ///////////////////////////////
-     projects: [
-      {
-        name: "Project Teams",
-        title: "Team Preferences",
-        url: "proj/",
-        due: "10/29/2025",  // wk 9, wednesday
-      },
-      {
-        name: "Project Prop",
-        title: "Project Proposal",
-        url: "proj/",
-        due: "11/7/2025", // wk 10, friday
-      },
-      {
-        name: "Project Demo",
-        title: "Project Demo",
-        url: "proj/",
-        due: "12/10/2025",  // wk 14, wednesday
-      },
-      {
-        name: "Project Code",
-        title: "Project Code",
-        url: "proj/",
-        due: "12/19/2025",  // finals wk, friday
-      },
-    ],
+    //  projects: [
+    //   {
+    //     name: "Project Teams",
+    //     title: "Team Preferences",
+    //     url: "proj/",
+    //     due: "10/29/2025",  // wk 9, wednesday
+    //   },
+    //   {
+    //     name: "Project Prop",
+    //     title: "Project Proposal",
+    //     url: "proj/",
+    //     due: "11/7/2025", // wk 10, friday
+    //   },
+    //   {
+    //     name: "Project Demo",
+    //     title: "Project Demo",
+    //     url: "proj/",
+    //     due: "12/10/2025",  // wk 14, wednesday
+    //   },
+    //   {
+    //     name: "Project Code",
+    //     title: "Project Code",
+    //     url: "proj/",
+    //     due: "12/19/2025",  // finals wk, friday
+    //   },
+    // ],
 
     ////////////////////////////////// LABS ////////////////////////////////
-    labs: [
-      {
-        name: "Lab",
-        title: "SQL Lab!",
-        url: "lab.pplsoft/",
-      },
-    ],
+    // labs: [
+    //   {
+    //     name: "Lab",
+    //     title: "SQL Lab!",
+    //     url: "lab.pplsoft/",
+    //   },
+    // ],
   },
 
   lectures: [
