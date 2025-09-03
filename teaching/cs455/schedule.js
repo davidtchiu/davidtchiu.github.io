@@ -102,7 +102,7 @@ let days = {
   lectures: [
     // wk 1
     "<strong>Labor Day<br/>(no class)</strong>",
-    "Why DBMS? Data independence (on Zoom)",
+    "Why DBMS? Data independence",
     "Relational model: Connection to sets",
     // wk 2
     "Relational model: keys",
@@ -114,12 +114,12 @@ let days = {
     "RA: outer join, rename",
     // wk 4
     "RA: aggregation and grouping",
-    "SQL: schema definition; integrity constraints",
-    "SQL: foreign keys; insert, delete, update operations",
+    "SQL: schema definition",
+    "SQL: writing basic queries",
     // wk 5
-    "SQL: selection, joins, set ops",
-    "SQL: More SQL",
-    "SQL: outer joins, renaming, WITH",
+    "SQL: joining tables",
+    "SQL: outer joins, renaming, temporary tables",
+    "SQL: subqueries",
     // wk 6
     "SQL Work Day 1",
     "<strong><emph>Review</emph></strong>",
