@@ -58,6 +58,7 @@ If you are using your laptop, you must first download and install BlueJ or any o
   ```
 
 - Now write a second constructor taking two input arguments, allowing the caller to provide a Cow's name and a customized quote. Both constructors should also initialize the gallons milked to `0.0`. This `Cow` constructor's syntax looks like the following:
+
   ```java
   /**
    * This constructs a named cow with the specified utterance
