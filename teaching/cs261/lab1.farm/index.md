@@ -22,6 +22,7 @@ If you are using your laptop, you must first download and install BlueJ or any o
 - There is no starter file for this lab. Open your Java editor and create a new project.
 
 - Once the project is created, go ahead and create a new class called `Cow`. Recall the generic template for writing classes looks like this code block below. 
+
   ```java
   /* import statements (if needed) go here */
 

@@ -13,6 +13,15 @@ The following file have been provided for testing your assignment.
 
 - [TestLetterCounter.java](TestLetterCounter.java)
 
+#### Student Learning Objectives
+- Refresh Java fundamentals
+    - Practice declaring classes, methods, constants, and arrays in Java.
+    - Use the `String` class and the `char` primitive type effectively.
+    - Use arrays and indexing arrays using `char`s
+- Handle edge cases gracefully (null strings, empty strings, invalid characters).
+- Practice defensive programming
+- Format output clearly
+
 #### Instructions
 
 Your class should be named `LetterCounter`, and count the number of times each letter of the alphabet occurs in the sample text. Your code should ignore digits, punctuation, accented characters (like `é`), spaces, etc. Case should also be ignored — keep a count for each letter, and increment it if you see either an upper or lower case version of that letter.
