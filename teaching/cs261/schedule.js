@@ -182,9 +182,9 @@ let days = {
     "Inheritance: this(), super(), constructor chaining",
     "Polymorphism, object substitution, down-casting",
     "Lab 2: Inheritance Lab",
-    "Object class, @Override, dynamic dispatch",
+    "Method @Override, dynamic dispatch",
     // wk 3
-    "Dynamic dispatch",
+    "Review dynamic dispatch; Abstract classes",
     "Abstract classes",
     "Lab 3: Abstract classes Lab",
     "Lab review, start interfaces",
