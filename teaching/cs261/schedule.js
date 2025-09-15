@@ -185,16 +185,16 @@ let days = {
     "Method @Override, dynamic dispatch",
     // wk 3
     "Review dynamic dispatch; Abstract classes",
-    "Finish Abstract classes",
-    "Lab 3: Abstract classes Lab",
     "Java Interfaces",
+    "Lab 3: Abstract classes Lab",
+    "Finish interfaces",
     // wk 4
-    "Comparable interface",
+    "Exceptional execution and handling",
+    "More exceptions",
+    "Lab 4: Exceptions Lab",
     "Start: Big-O notation",
-    "Lab 4: Interfaces Lab",
-    "More Big-O notation",
     // wk 5
-    "Big-O examples",
+    "More Big-O notation",
     "Big-O examples",
     "Lab 5: Big-O lab",
     "<strong><emph>Review for Exam 1</emph></strong>",
