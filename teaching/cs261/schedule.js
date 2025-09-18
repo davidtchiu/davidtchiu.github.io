@@ -98,12 +98,12 @@ let days = {
         url: "lab2.dice/",
         due: "9/12/2025",
       },
-      // {
-      //   name: "Lab 3",
-      //   title: "Abstract Classes Lab",
-      //   url: "lab3.lib/",
-      //   due: "9/19/2025",
-      // },
+      {
+        name: "Lab 3",
+        title: "Abstract Classes Lab",
+        url: "lab3.lib/",
+        due: "9/19/2025",
+      },
       // {
       //   name: "Lab 4",
       //   title: "Interface Lab ",
@@ -187,7 +187,7 @@ let days = {
     "Review dynamic dispatch; Abstract classes",
     "Java Interfaces",
     "Lab 3: Abstract classes Lab",
-    "Finish interfaces",
+    "Multiple implementation",
     // wk 4
     "Exceptional execution and handling",
     "More exceptions",
