@@ -22,14 +22,15 @@ Print this assignment with single-side pages. Fill in your name above, and write
 #### Grading
 
 ```
-This assignment is graded out of 32 pts:
+This assignment is graded out of 35 pts:
 
 [3pt] Completion of problem 1.
 [3pt] Completion of problem 2.
 [5pt] Completion of problem 3.
-[5pt] Completion of problem 4.
-[8pt] Completion of problem 5.
+[3pt] Completion of problem 4.
+[5pt] Completion of problem 5.
 [8pt] Completion of problem 6.
+[8pt] Completion of problem 7.
 
 ```
 
