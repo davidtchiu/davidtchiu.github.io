@@ -58,7 +58,7 @@ We need to start removing the scaffolding that I provide with each assignment in
       - Once you've "parsed" each line into a `Term` object, add it to your list!
       - After all the terms have been loaded, simply call `Collections.sort(your_list)` to sort the ArrayList alphabetically. (How convenient!)
 
-  - Exception Handling of `readTermsFromFile(String filename)`
+3. Exception Handling of `readTermsFromFile(String filename)`
       - If the `FileNotFoundException` is thrown when you attempt to open the file, do not try to catch it! That is a major user error and we don't want to handle it here. Simply propagate it up to the caller.
       - Once the file is open, attempt to read each line of input, parsing the first token into a `long`. 
         - If the `NumberFormatException` is caught from calling `Long.parseLong()`, you'll also just need to ignore alert the user by printing out the line that contained the bad input. Your code should continue processing the remaining file!
@@ -68,7 +68,7 @@ We need to start removing the scaffolding that I provide with each assignment in
 
     - Next, work on the `public List<Term> getMatches(String query)`.  When the user types in a "query," which may be only the prefix of a word of interest, you need search through your list of terms and return a list of all terms whose prefixes match the given prefix. For instance, if the query was "How" then your returned list of terms might contain: how, howdy, howl, howling, howitzer, and so on (and since you're returning a list of `Term`s, each term comes with their frequencies too -- that'll be useful soon!)
 
-3. **Comparing Terms Revisited!** Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. To have that same effect, your list of auto-completed terms must be sorted in descending order of the their frequencies. To do this, you should call the `Collections.sort(..)` method on the ArrayList of matched terms.
+4. **Comparing Terms Revisited!** Just like when you type into Google's search bar, the list that you return would have the "most-likely" match ranked first. To have that same effect, your list of auto-completed terms must be sorted in descending order of the their frequencies. To do this, you should call the `Collections.sort(..)` method on the ArrayList of matched terms.
     - But we have a conundrum -- Terms are already implemented such that if you sorted them, they will come out in alphabetical order.
 
     - To write this method, we need to define a second way to sort Terms (by descending frequency ordering instead). No worries, this is quite simple.
@@ -83,7 +83,7 @@ We need to start removing the scaffolding that I provide with each assignment in
     - After you're done implementing this class, try sorting your list using this new comparator you wrote: `Collections.sort(matched_list, new TermFreqComparator());`
 
 
-4. Finally, you must provide a `UserInterface` class, that contains `public static void main(String[] args)`. If you make other `static` methods in this class, they must be made private so that they're hidden from the user.
+5. Finally, you must provide a `UserInterface` class, that contains `public static void main(String[] args)`. If you make other `static` methods in this class, they must be made private so that they're hidden from the user.
   - The main method should instantiate a copy of `Autocomplete`.
   - Prompt the user for the file to process then call `readTermsFromFile(filename)`.
     - But remember, `readTermsFromFile(filename)` is risky, because there's a chance that a `FileNotFoundException` is thrown. If thrown, catch it and alert the user that it was a bad file. Then reprompt the user for the file. Do this until a good file has been loaded.
