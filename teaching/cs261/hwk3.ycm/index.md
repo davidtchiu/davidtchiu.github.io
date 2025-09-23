@@ -208,7 +208,7 @@ try to guess what it is! Type .quit to exit the program.
 CS 261 Homework  (You Complete Me)
 
 ----------------------------------------------------------
-[30pts] Autocompletion Algorithm: Get Matches
+[20pts] Autocompletion Algorithm: Get Matches
 
 > Given a word's prefix, your program finds all terms that 
 begin with the given prefix. Can you exploit the fact that
@@ -217,16 +217,18 @@ terms are sorted alphabetically in your list?
 > Only the last term in the query needs autocompleted.
 
 ----------------------------------------------------------
-[15pts] Comparing and Sorting
+[20pts] Comparing and Sorting
 
-> Your program sorts and displays the first 10 results
-in descending order of frequency.
+> Comparable: Your program sorts the internal array list of terms in
+alphabetical order immediately after the file is loaded. This relies on
+Term class implementing Comparable<Term>
 
-> Your program sorts the internal array list of terms in
-alphabetical order.
+> Comparator: Your program sorts and displays the first 10 results
+in descending order of frequency. This relies on your writing a new
+"Comparator" class implementing Comparator<Term>
 
 ----------------------------------------------------------
-[15pts] Exception Handling
+[20pts] Exception Handling
 
 > Your parseTermsFromFile(filename) method propagates (does not catch)
 a FileNotFoundException.
