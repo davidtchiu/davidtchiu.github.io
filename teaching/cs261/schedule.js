@@ -31,12 +31,12 @@ let days = {
         url: "hwk2.ttt/",
         due: "9/22/2025", // Mon, wk 4
       },
-      // {
-      //   name: "Hwk 3",
-      //   title: "You Complete Me",
-      //   url: "hwk3.ycm/",
-      //   due: "10/8/2025", // Wed, wk 6
-      // }, 
+      {
+        name: "Hwk 3",
+        title: "You Complete Me",
+        url: "hwk3.ycm/",
+        due: "10/8/2025", // Wed, wk 6
+      }, 
       // {
       //   name: "Hwk 4",
       //   title: "Doubly Linked List",
