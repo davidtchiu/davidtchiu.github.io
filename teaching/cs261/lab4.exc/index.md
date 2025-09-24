@@ -7,6 +7,7 @@ This week you'll get some hands-on practice with catching and throwing exception
 
 #### Objectives
 - Flow of execution in the presence of exceptions ("exceptional execution")
+- Understand the basic mechanics of exception handling
 - Usage of `throw` statements
 - Usage of `throws` statements
 - Usage of `try-catch-finally` blocks
