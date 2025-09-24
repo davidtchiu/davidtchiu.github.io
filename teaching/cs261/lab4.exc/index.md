@@ -8,7 +8,7 @@ This week you'll get some hands-on practice with catching and throwing exception
 #### Objectives
 - To practice the usage of `throw` statements
 - To practice the usage of `throws` statements and `try-catch-finally` blocks
-- To distinguish between checked vs. unchecked exceptions.
+- To distinguish between checked vs. unchecked exceptions.p
 - To create your own exception types.
 
 #### Required Files
