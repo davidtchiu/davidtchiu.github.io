@@ -58,12 +58,12 @@ We need to start removing the scaffolding that I provide with each assignment in
       - Once you've "parsed" each line into a `Term` object, add it to your list!
       - After all the terms have been loaded, simply call `Collections.sort(your_list)` to sort the ArrayList alphabetically. (How convenient!)
 
-3. Exception Handling of `readTermsFromFile(String filename)`
-      - If the `FileNotFoundException` is thrown when you attempt to open the file, do not try to catch it! That is a major user error and we don't want to handle it here. Simply propagate it up to the caller.
+3. **Exception Handling of** `readTermsFromFile(String filename)`
+      - If the checked `FileNotFoundException` is thrown when you attempt to open the file, do not try to catch it! Simply propagate it up to the caller.
       - Once the file is open, attempt to read each line of input, parsing the first token into a `long`. 
         - If the `NumberFormatException` is caught from calling `Long.parseLong()`, you'll also just need to ignore alert the user by printing out the line that contained the bad input. Your code should continue processing the remaining file!
-        - In some cases, a badly formatted line of the file might only contain one token! Handle those exceptions gracefully as well.
-        - In either case, print out the bad row number, and the row itself, but keep processing the remaining file (that is, the program shall not crash!)
+        - In some cases, a badly formatted line of the file might only contain one token! Accessing a non-existing token might cause an `ArrayIndexOutOfBoundsException` (assuming that you split the row into token pieces). Handle those exceptions gracefully as well.
+        - In *any* exceptional case, print out the bad row number, and the row's data itself, but keep processing the remaining file (that is, the program shall not crash!)
       - For every 1000 lines read, print out a progress status: `Terms Processed: x`, where `x` is the number of lines that's been read.
 
     - Next, work on the `public List<Term> getMatches(String query)`.  When the user types in a "query," which may be only the prefix of a word of interest, you need search through your list of terms and return a list of all terms whose prefixes match the given prefix. For instance, if the query was "How" then your returned list of terms might contain: how, howdy, howl, howling, howitzer, and so on (and since you're returning a list of `Term`s, each term comes with their frequencies too -- that'll be useful soon!)
@@ -84,8 +84,8 @@ We need to start removing the scaffolding that I provide with each assignment in
 
 
 5. Finally, you must provide a `UserInterface` class, that contains `public static void main(String[] args)`. If you make other `static` methods in this class, they must be made private so that they're hidden from the user.
-  - The main method should instantiate a copy of `Autocomplete`.
-  - Prompt the user for the file to process then call `readTermsFromFile(filename)`.
+   - The main method should instantiate a copy of `Autocomplete`.
+   - Prompt the user for the file to process then call `readTermsFromFile(filename)`.
     - But remember, `readTermsFromFile(filename)` may throw a checked `FileNotFoundException`. If thrown, catch it and alert the user that it was a bad file. Then re-prompt the user for the file. Do this until a `FileNotFoundException` is not thrown when attempting to `readTermsFromFile()`.
    - After your terms have been loaded, you should continuously prompt the user for a keyword prefix (called a *query*) until the user types `.quit`.
    - After you scan in a query, call `getMatches(query)` on it and display the list!
