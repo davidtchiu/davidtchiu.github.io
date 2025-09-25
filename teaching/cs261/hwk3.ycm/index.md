@@ -86,11 +86,11 @@ We need to start removing the scaffolding that I provide with each assignment in
 5. Finally, you must provide a `UserInterface` class, that contains `public static void main(String[] args)`. If you make other `static` methods in this class, they must be made private so that they're hidden from the user.
   - The main method should instantiate a copy of `Autocomplete`.
   - Prompt the user for the file to process then call `readTermsFromFile(filename)`.
-    - But remember, `readTermsFromFile(filename)` is risky, because there's a chance that a `FileNotFoundException` is thrown. If thrown, catch it and alert the user that it was a bad file. Then reprompt the user for the file. Do this until a good file has been loaded.
-   - Next, your main method should continuously prompt the user for a keyword prefix (called a *query*) until the user types `.quit`.
-   - After you scan in a query, call `getMatches()` on it. Sort the returned list by descending order of frequency and display it!
+    - But remember, `readTermsFromFile(filename)` may throw a checked `FileNotFoundException`. If thrown, catch it and alert the user that it was a bad file. Then re-prompt the user for the file. Do this until a `FileNotFoundException` is not thrown when attempting to `readTermsFromFile()`.
+   - After your terms have been loaded, you should continuously prompt the user for a keyword prefix (called a *query*) until the user types `.quit`.
+   - After you scan in a query, call `getMatches(query)` on it and display the list!
      - In the case where a user query contains multiple words, you only need to get matches on the *last* word they entered.
-   - Print out at most 10 matches, if there are that many.
+     - Print out at most 10 matches, if there are that many.
 
 <!-- 5. When your program starts,  it should prompt the user for the name of the "training file". Note that any method that attempts to open a file can't compile until you've thrown or caught a *file not found exception*. The easiest way to do this is to add the following `throws` suffix to your method:
 
