@@ -80,7 +80,7 @@ We need to start removing the scaffolding that I provide with each assignment in
 
     - Remember, you want to order these terms in *descending* order of their frequency. So, if `t1` has a frequency of 10 and `t2` has a frequency of 20, then calling `compare(t1, t2)` should yield a positive number, placing `t1` *behind* `t2`.
 
-    - After you're done implementing this class, try sorting your list using this new comparator you wrote: `Collections.sort(matched_list, new TermFreqComparator());`
+    - After you're done implementing this class, return to the `getMatches()` method, and  sort your matched list of terms using this new comparator: `Collections.sort(your_matched_list, new TermFreqComparator());`
 
 
 5. Finally, you must provide a `UserInterface` class, that contains `public static void main(String[] args)`. If you make other `static` methods in this class, they must be made private so that they're hidden from the user.
