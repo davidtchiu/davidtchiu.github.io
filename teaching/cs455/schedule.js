@@ -115,19 +115,19 @@ let days = {
     // wk 4
     "RA: aggregation and grouping",
     "SQL: schema definition",
-    "SQL: writing basic queries",
+    "SQL: writing basic queries, joins",
     // wk 5
-    "SQL: joining tables",
     "SQL: outer joins, renaming, temporary tables",
     "SQL: subqueries",
-    // wk 6
     "SQL Work Day 1",
+    // wk 6
+    "SQL: grouping and aggregation",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
-    "SQL: grouping and aggregation",
     "SQL Work Day 2",
     "Storage: Disk architecture, access patterns",
+    "Storage: access patterns",
     // wk 8
     "<strong>Fall Break</strong>",
     "Storage: File abstraction",
