@@ -118,19 +118,19 @@ let days = {
     "SQL: writing basic queries, joins",
     // wk 5
     "SQL: outer joins, renaming, temporary tables",
-    "SQL Work Day (Hwk 4)",
+    "SQL Work Day 1",
     "SQL: subqueries",
     // wk 6
     "SQL: grouping and aggregation",
-    "SQL Work Day (Hwk 5)",
+    "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
+    "SQL Work Day 2",
     "Storage: File abstraction",
     "Storage: Disk scheduling",
-    "Files: Organization and costs",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Files: costs",
+    "Files: Organization and costs",
     "Files: Join processing",
     // wk 9
     "Indexing: motivation",
