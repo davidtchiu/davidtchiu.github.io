@@ -64,15 +64,14 @@ FOR EACH Employee
     PRINT Employee.NAME
 While this model allowed for many-to-many relationships, it was still navigational, meaning you had to explicitly define how to traverse the network of data.
 
-
 - Incorporate the laptop into all SQL courses and have them follow along and give them small group work.
-  - Use lab time to work on homework 4 and move up deadline of Hwk 4.
 - There's a lot (too much?) exam 1 practice, between the labs, Hwk, and RGs. How to better balance?
 - Redo the study guides so that the topics are listed
 - Hwk 6: The .jar file isn't working for anyone.
 - Still not doing a good enough job explaining what the 3rd property of 3NF does to include the Dep-preserving relations. Work out a proof using cover Fc
 
 # Change Log
+- Use lab time to work on homework 4 and move up deadline of Hwk 4 (Fall 2025).
 - Split Hwk 2 into two relational algebra assignments (Fall 2024)
 - Move exam 1 up a week? Too much going on for students that week though... (Fall 2024)
 - Hwk 5 (Joins): now out of core. Only HJ and NLJ. Has schema.txt.

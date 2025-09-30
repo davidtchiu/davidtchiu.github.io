@@ -1,12 +1,12 @@
 studentID,studentName,class,gpa,major,CourseNum,deptID,CourseName,Location,meetDay,meetTime,deptName,building
 -----------------------------------------------------------------------------------------------------------------
-1001,Lia,Junior,3.6,ENG,,,,,,,,
+1001,Lia,Junior,3.6,ENGL,,,,,,,,
 1282,Kelly,Freshman,2.5,,122,BUS,Economics,WY 30,MW,13:30,School of Business,McIntyre Hall
 1025,John,Senior,3.6,ENGL,101,PHYS,How Things Move,HH 191,MWF,10:00,Department of Physics,Harned Hall
 ,,,,,,HIST,,,,,Department of History,Wyatt Hall
-1247,Alexis,SR,3.9,ENG,320,MATH,Discrete Mathematics,TH 307,F,11:00,Department of Mathematics,Tower of Babel
+1247,Alexis,SR,3.9,ENGL,320,MATH,Discrete Mathematics,TH 307,F,11:00,Department of Mathematics,Tower of Babel
 1101,Haley,SR,4.0,BUS;MATH,120,MATH,Algebra,MH 10,MW,12:00,Department of Mathematics,Tower of Babel
-1247,Alexis,Senior,3.9,ENG,351,CSCI,Database Systems,TH 19,MW,12:00,School of Computer Science,Thompson Hall
+1247,Alexis,Senior,3.9,ENGL,351,CSCI,Database Systems,TH 19,MW,12:00,School of Computer Science,Thompson Hall
 1304,Jordan,SR,2.9,MATH,101,PHYS,How Things Move,HH 191,MWF,10:00,Department of Physics,Harned Hall
 1101,Haley,Senior,4.0,BUS;MATH,230,MATH,Linear Algebra,HH 308,TR,15:00,Department of Mathematics,Tower of Babel
 1709,Cassandra,Junior,2.8,CSCI;SOAN,102,SOAN,Sociology 2,WY 205,MTWRF,09:00,Department of Anthropology,Wyatt Hall
@@ -39,9 +39,9 @@ studentID,studentName,class,gpa,major,CourseNum,deptID,CourseName,Location,meetD
 1640,Adam,Senior,3.6,,,,,,,,,
 1304,Jordan,Senior,2.9,MATH,351,BUS,Finance,WY 29,TR,12:00,School of Business,McIntyre Hall
 1304,Jordan,SR,2.9,MATH,520,ENGL,Shakespeare Was Da Bomb,HH 20,TR,13:00,Department of English,Wyatt Hall
-1641,Brittany,SR,2.7,ENG,,,,,,,,
+1641,Brittany,SR,2.7,ENGL,,,,,,,,
 1661,Logan,Freshman,0.5,CSCI,351,BUS,Finance,WY 29,TR,12:00,School of Business,McIntyre Hall
-1025,John,Senior,3.6,ENG,520,CSCI,High Performance Computing,WY 307,TR,15:00,School of Computer Science,Thompson Hall
+1025,John,Senior,3.6,ENGL,520,CSCI,High Performance Computing,WY 307,TR,15:00,School of Computer Science,Thompson Hall
 1689,Gabriel,SR,2.4,BUS,520,ENGL,Shakespeare Was Da Bomb,HH 20,TR,13:00,Department of English,Wyatt Hall
 1661,Logan,Freshman,0.5,CSCI,460,CSCI,Operating Systems,TH 8,MW,14:00,School of Computer Science,Thompson Hall
 ,,,,,101,SOAN,Sociology 1,WY 105,MWF,08:00,,

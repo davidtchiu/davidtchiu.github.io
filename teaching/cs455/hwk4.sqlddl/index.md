@@ -22,13 +22,13 @@ To best serve you, the university provided a dump of its enrollment data into a 
 ```
 studentID,studentName,class,gpa,major,CourseNum,deptID,CourseName,Location,meetDay,meetTime,deptName,building
 -----------------------------------------------------------------------------------------------------------------
-1001,Lia,Junior,3.6,ENG,,,,,,,,
+1001,Lia,Junior,3.6,ENGL,,,,,,,,
 1282,Kelly,Freshman,2.5,,122,BUS,Economics,WY 30,MW,13:30,School of Business,McIntyre Hall
 1025,John,Senior,3.6,ENGL,101,PHYS,How Things Move,HH 191,MWF,10:00,Department of Physics,Harned Hall
 ,,,,,,HIST,,,,,Department of History,Wyatt Hall
-1247,Alexis,SR,3.9,ENG,320,MATH,Discrete Mathematics,TH 307,F,11:00,Department of Mathematics,Tower of Babel
+1247,Alexis,SR,3.9,ENGL,320,MATH,Discrete Mathematics,TH 307,F,11:00,Department of Mathematics,Tower of Babel
 1101,Haley,SR,4.0,BUS;MATH,120,MATH,Algebra,MH 10,MW,12:00,Department of Mathematics,Tower of Babel
-1247,Alexis,Senior,3.9,ENG,351,CSCI,Database Systems,TH 19,MW,12:00,School of Computer Science,Thompson Hall
+1247,Alexis,Senior,3.9,ENGL,351,CSCI,Database Systems,TH 19,MW,12:00,School of Computer Science,Thompson Hall
 1304,Jordan,SR,2.9,MATH,101,PHYS,How Things Move,HH 191,MWF,10:00,Department of Physics,Harned Hall
 1101,Haley,Senior,4.0,BUS;MATH,230,MATH,Linear Algebra,HH 308,TR,15:00,Department of Mathematics,Tower of Babel
 1709,Cassandra,Junior,2.8,CSCI;SOAN,102,SOAN,Sociology 2,WY 205,MTWRF,09:00,Department of Anthropology,Wyatt Hall
@@ -61,9 +61,9 @@ studentID,studentName,class,gpa,major,CourseNum,deptID,CourseName,Location,meetD
 1640,Adam,Senior,3.6,,,,,,,,,
 1304,Jordan,Senior,2.9,MATH,351,BUS,Finance,WY 29,TR,12:00,School of Business,McIntyre Hall
 1304,Jordan,SR,2.9,MATH,520,ENGL,Shakespeare Was Da Bomb,HH 20,TR,13:00,Department of English,Wyatt Hall
-1641,Brittany,SR,2.7,ENG,,,,,,,,
+1641,Brittany,SR,2.7,ENGL,,,,,,,,
 1661,Logan,Freshman,0.5,CSCI,351,BUS,Finance,WY 29,TR,12:00,School of Business,McIntyre Hall
-1025,John,Senior,3.6,ENG,520,CSCI,High Performance Computing,WY 307,TR,15:00,School of Computer Science,Thompson Hall
+1025,John,Senior,3.6,ENGL,520,CSCI,High Performance Computing,WY 307,TR,15:00,School of Computer Science,Thompson Hall
 1689,Gabriel,SR,2.4,BUS,520,ENGL,Shakespeare Was Da Bomb,HH 20,TR,13:00,Department of English,Wyatt Hall
 1661,Logan,Freshman,0.5,CSCI,460,CSCI,Operating Systems,TH 8,MW,14:00,School of Computer Science,Thompson Hall
 ,,,,,101,SOAN,Sociology 1,WY 105,MWF,08:00,,
@@ -81,7 +81,6 @@ Each line in this file represents a student enrollment. For instance, take a loo
 1. **Redundancies**: It is easy to see that a student's information is duplicated on a separate row for each course they are enrolled in. (For instance, check out the last two rows for a student, Kyle.)
 2. **Multi-valued attributes:** One of the attributes can have multiple values: A student can have 0-2 majors, and each of them is separated by a colon. (Multi-valued attributes like this is prohibited by the relational model.)
 3. **Incomplete data:** When a student is not enrolled in any course, their course-enrollment fields are simply delimited with commas, but there's no data in between. Look at Lia's (first row) information. She does not have a major and is not enrolled in any courses. Now take a look at the courses without the student info, like MATH 330 (Trigonometry). These are courses that exist on the books that no one is enrolled in. Sometimes, we just need to show that a department exists, so here are also departments without student or course info. This is the case for the History Department (4th row), which can happen when an existing department has not yet added any courses to the schedule.
-4. **Inconsistencies:** These redundancies led to bad and/or stale data over time. School administrators alert you that sometimes "ENGL" is mislabeled as simply "ENG" (they say you can assume that's the only major people screw keep up) and that some people tend to abbreviate "Junior" as "JR" and "Senior" as "SR" under a student's class rank. (The abbreviated versions need to be corrected to the full spelling of the class rank). They assure you that these are the only inconsistencies in the file.
 
 #### Task 1: Schema Definition
 
