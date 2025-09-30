@@ -56,7 +56,7 @@ For each of the following problems, write an SQL query to return the expected re
    460         MATH        Calculus 3  WEY 102     TR          12:30
    ```
 
-4. Return David's, course schedule. Assume you don't know David's student ID off hand, so you have to search by his name. (Yes you may assume he's the only one with that name in this database). Only `Course`'s attributes should be projected. Order by `DeptID` then by `Course Number`.
+4. Return David's, course schedule. Assume you don't know David's student ID off-hand, so you have to search by his name. (Yes you may assume he's the only one with that name in this database). Only `Course`'s attributes should be projected. Order by `DeptID` then by `Course Number`.
 
    ```
    deptID      CourseNum   CourseName        Location    meetDay     meetTime
@@ -97,7 +97,7 @@ For each of the following problems, write an SQL query to return the expected re
    1640        Adam
    ```
 
-#### Day 2: Aggregation and Grouping
+#### Aggregation and Grouping Queries
 
 8. Find the average GPA for each of the class ranks (freshman, sophomore, junior, senior). Rename the `avg(GPA)` field to `ClassGPA`.
 
@@ -177,6 +177,8 @@ For each of the following problems, write an SQL query to return the expected re
       1025        John         Senior      ENGL        3.6
       1510        Jordan       Freshman    MATH        3.0
       ```
+
+#### Updating Tables
 
 14. You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so round anything higher than a 4.0 to 4.0. This should just take two UPDATE statements. 
 
@@ -298,6 +300,31 @@ For each of the following problems, write an SQL query to return the expected re
       401         PHYS        1101
       102         SOAN        1709
       ```
+
+#### Grading
+
+```
+I want to be able to run your query set easily. Do *not* submit your queries in a 
+Word or PDF file! Files not submitted in plain-text format with your queries 
+inside will be returned without a grade. 
+
+[35pt] Basic queries Q1 - Q7 (5pts each)
+[60pt] Completion of queries Q8 - Q13.  (10pts each)
+[10pt] Update queries Q14 - Q15. (5pts each)
+Total: 100pts
+```
+
+
+#### Submitting Your Assignment
+
+After you have completed the homework, use the following to submit your work on Canvas. There are two options to submit your work.
+
+1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
+2. Alternatively, you can just submit the text file with all the queries listed inside.
+3. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+
+
+
 #### Credits
 
 Written by David Chiu.

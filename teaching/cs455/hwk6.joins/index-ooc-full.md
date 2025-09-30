@@ -114,57 +114,52 @@ Inside the `data/` directory, you'll find a file describing the database schema 
 ![schema.png](schema.png)
 
 
-This file is formatted as follows:
+The `schema.txt` file is formatted as follows:
 
 ```txt
-[relation name]
+[table-1-name]
 [comma-separated list of attributes]
-[data file]
-[blank line]
+[data-file]
+
+[table-2-name]
+[comma-separated list of attributes]
+[data-file]
+
 ...
 ```
 
-For instance, the `productlines` table:
+For instance,
 ```txt
 Productlines
 productLine,textDescription,htmlDescription,image
 productlines.txt
 ```
-
+means that there is a `productlines` table with the four listed attributes. Its contents are stored in `productlines.txt`.
 
 #### Database Files
-Also inside the `data/` directory in the given project starter file, you find a set of files. Each file contains data for a table in the following schema:
-
-
-The format of these files is as follows, where `val_i` is the value of the ith attribute.
+Also inside the `data/` directory in the given project starter file, you find a set of files. The format of these files is as follows, where `val_i` is the value of the ith attribute.
 
 ```txt
 val_1|val_2|...|val_N
 val_1|val_2|...|val_N
 val_1|val_2|...|val_N
-val_1|val_2|...|val_N
-val_1|val_2|...|val_N
-.
-.
-.
+...
 ```
 
 #### Program Requirements
 You have the choice to write this program in the language of your choice. Just be sure to let me know how to compile/run your program.
 
-1. When the program starts, you should immediately read in the `schema.txt` file to understand what tables you have, and what their attributes are. For grading, I will be using completely different files (with different file names). Your program can assume that all relevant files are placed in the `data/` directory in your project directory. You should test rigorously with your own toy-files to ensure that your program can accept arbitrary data sets. 
+1. When the program starts, it should immediately read the `schema.txt` file to understand what tables you have, and what their attribute names are. Keep track of where the corresponding data file is located without opening it just yet. For grading, I will be using completely different files (with different file names). Your program can assume that all relevant files are placed in the `data/` directory in your project directory. You should test rigorously with your own toy-files to ensure that your program can accept arbitrary data sets. 
 
 	 Avoid hardcoding absolute paths in your code (for instance `/Users/Maddie/Desktop/CS455/Hwk5/data`). Points will be deducted if I can't easily run your program with database files on my machine. 
-
-	 **Do not attempt to open any other database files. These files are only to be opened when you run the join algorithm.**
 
 2. Prompt the user to enter the names of two relations over which they'd like to perform a natural join. You should accept their tables on a single line, separated by space. You may assume that at most two relations will be input.
 	- If a table they entered does not exist (case insensitive), your program should re-prompt. Otherwise, you should present the user with a menu, allowing the user to select which join algorithm to run. 
 	- When the user is done making their choice, process the chosen algorithm and output the rows result to the terminal, along with the (1) time elapsed in milliseconds, and the (2) number of rows produced by the join.
 
-3. You  need to implement the **Nested Loop Join** and  **Hash Join** algorithms.
+3. You  need to implement the **Nested Loop Join** and  **Hash Join** algorithms. 
 
-4. If a common attribute does not exist between the tables, your join algorithms should produce the cartesian product. You may assume that there is **at most** one common attribute between two relations. Even though it holds in this particular data set, do not assume that the common attribute is always the first attribute in the relation. 
+4. If a common attribute does not exist between the tables, your join algorithms should produce the cartesian product. You may assume that there is **at most** one common attribute between two relations. 
 
 5. The ordering of attributes must be preserved in the joined result. For instance, when applying $$R(A,B,C)~\bowtie~S(X,C,Y,Z)$$, the resulting relation should have the following attribute ordering: $$(A,B,C,X,C,Y,Z)$$. This means you should preserve the original attribute ordering of $$R$$ and $$S$$. You do not have to remove the duplicate common attribute column.
 

@@ -13,6 +13,166 @@ You may use Java or Python for this assignment.
 
 #### Program Requirements
 
+1. Constructor
+Prompt: Implement the constructor for BPlusTree that initializes a new B+ tree with the specified degree.
+Stub:
+```java
+public BPlusTree(int degree) {
+    // TODO: Implement constructor
+}
+```
+
+2. Insert Method
+Prompt: Implement the main insert method that handles inserting a key into the B+ tree, including root splitting when necessary.
+Stub:
+```java
+public boolean insert(E key) {
+    // TODO: Implement insert method
+    // 1. If root is null, create a new leaf node as root
+    // 2. Call insertKey(root, key) to insert the key
+    // 3. If root is now over-full (keys.size() > DEGREE - 1):
+    // - Create new internal node as new root
+    // - Add old root as first child
+    // - Split the old root
+    // 4. Return the result from insertKey
+
+return false;
+}
+```
+
+
+3. InsertKey Helper Method
+Prompt: Implement the recursive helper method that inserts a key into a node, allowing temporary overflows and handling splits.
+Stub:
+```java
+private boolean insertKey(Node node, E key) {
+    // 1. If node is a leaf:
+    // - Check for duplicate using contains()
+    // - If duplicate found, return false
+    // - Find insertion position (maintain sorted order)
+    // - Insert key at that position
+    // - Return true
+    // 2. Else (internal node):
+    // - Find appropriate child index to recurse into
+    // - Recursively call insertKey on that child
+    // - If child is now over-full after insertion:
+    //     - Split the child
+    //     - Recalculate child index (tree structure changed)
+    // - Return result from recursive call
+    
+    // return false;
+}
+```
+
+
+4. SplitChild Method
+Prompt: Implement the method that splits an over-full child node, redistributing keys and children appropriately for both leaf and internal nodes.
+Stub:
+```java
+private void splitChild(Node parent, int idx, Node child) {
+    // TODO: Implement splitChild method
+//     1. Calculate leftKeyCount = DEGREE / 2
+// 2. Create new sibling node with same leaf status as child
+// 3. If child is a leaf:
+//    - Move keys from leftKeyCount to end to sibling
+//    - Remove those keys from child
+//    - Add first key of sibling to parent at index idx
+//    - Add sibling as child of parent at index idx + 1
+//    - Update leaf node chaining (next pointers)
+// 4. Else (internal node):
+//    - Move keys from leftKeyCount to end to sibling
+//    - Remove those keys from child
+//    - Move children from leftKeyCount to end to sibling
+//    - Remove those children from child
+//    - Move leftmost key of sibling up to parent
+//    - Remove that key from sibling
+//    - Add sibling as child of parent at index idx + 1
+}
+```
+
+5. LevelPrint Method
+Prompt: Implement the public method that prints the B+ tree structure level by level.
+Stub:
+```java
+public void levelPrint() {
+    // TODO: Implement levelPrint method
+}
+```
+
+6. Private LevelPrint Method
+Prompt: Implement the private helper method that performs level-order traversal and prints each level of the tree.
+Stub:
+```java
+private void levelPrint(Queue<Node> queue) {
+    // TODO: Implement private levelPrint method
+// 1. While queue is not empty:
+//    - Get current level size (queue.size())
+//    - For each node at current level:
+//      - Remove node from queue
+//      - Print node's keys (remove spaces)
+//      - If node is not a leaf:
+//        - Add all children to queue
+//    - Print newline after each level
+
+}
+```
+
+7. Search Method
+Prompt: Implement the public search method that checks if a key exists in the B+ tree.
+Stub:
+```java
+public boolean search(E key) {
+    // 1. If root is null, return false
+    // 2. Call searchNode(root, key) and return result
+    return false;
+}
+```
+
+8. SearchNode Helper Method
+Prompt: Implement the recursive helper method that traverses the tree to find a key.
+Stub:
+```java
+private boolean searchNode(Node node, E key) {
+// 1. While node is not null:
+//    - If node is a leaf:
+//      - Search through all keys in the node
+//      - If key found, return true
+//      - If not found, return false
+//    - Else (internal node):
+//      - Find appropriate child index to descend into
+//      - Ensure index is within bounds
+//      - Set node to that child
+// 2. Return false (should not reach here)
+
+return false;
+}
+```
+
+9. Range Method
+Prompt: Implement the range method that returns all keys within a specified range [start, end].
+Stub:
+```java
+public List<E> range(E start, E end) {
+    // 1. Create empty result list
+    // 2. If root is null, return empty list
+    // 3. Find leftmost leaf node that may contain 'start':
+    // - Start at root
+    // - While not at leaf:
+    //     - Find appropriate child index
+    //     - Descend to that child
+    // 4. Traverse leaf nodes using next pointers:
+    // - For each key in current leaf:
+    //     - If key is in range [start, end], add to result
+    //     - If key > end, return result (done)
+    // - Move to next leaf node
+    // 5. Return result list
+    return new ArrayList<>();
+}```
+
+
+
+
+
 1. Your program must be run with a single command-line argument:
     - Degree of the tree (integer): This is the maximum number of children that each node can store. You should ensure that the degree ≥ 3. If the degree is not within this range, inform the user and exit.
 

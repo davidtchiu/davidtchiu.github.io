@@ -29,17 +29,17 @@ let days = {
         url: "hwk3.ra2/",
         due: "10/1/2025", // wk5, Wednesday
       },
-      // {
-      //   name: "Hwk 4 (sql)",
-      //   title: "SQL Data Ingestion",
-      //   url: "hwk4.sqlddl/",
-      //   due: "10/13/2025",  // wk7, monday
-      // },
       {
         name: "Hwk 4 (sql)",
+        title: "SQL Data Ingestion",
+        url: "hwk4.sqlddl/",
+        due: "10/10/2025",  // wk6, Friday
+      },
+      {
+        name: "Hwk 5 (sql)",
         title: "Writing SQL Queries",
-        url: "hwk4.sqldml/",
-        due: "10/15/2025",  // wk 8, friday 
+        url: "hwk5.sqldml/",
+        due: "10/22/2025",  // wk 8, Wed 
       },
       // {
       //   name: "Hwk 6 (coding)",
@@ -126,19 +126,19 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
     "SQL Work Day 2",
-    "Storage: Disk architecture, access patterns",
-    "Storage: access patterns",
-    // wk 8
-    "<strong>Fall Break</strong>",
     "Storage: File abstraction",
     "Storage: Disk scheduling",
+    // wk 8
+    "<strong>Fall Break</strong>",
+    "Files: Organization and costs",
+    "Files: Join processing",
     // wk 9
     "Indexing: motivation",
-    "B+Tree structure",
-    "B+Tree operations",
+    "Multilevel indexing: B+Trees",
+    "B+Tree: point and range queries",
     // wk 10
-    "B+Tree insertion cases",
-    "B+Tree runtime analysis",
+    "B+Tree: insertion",
+    "B+Tree: runtime analysis",
     "Bitmap indexing",
     // wk 11
     "Bitmap compression",
