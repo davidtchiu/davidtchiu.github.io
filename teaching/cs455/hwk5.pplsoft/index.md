@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### SQL Lab: Writing SQL Queries for the University Database!
+### SQL Queries for the University Database!
 
 We're finally to ready to get some hands on experience with a SQL database! The data set, although synthetic, is an analog to the real data found in any university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually have to run when generating year-end reports!
 
@@ -304,14 +304,13 @@ For each of the following problems, write an SQL query to return the expected re
 #### Grading
 
 ```
-I want to be able to run your query set easily. Do *not* submit your queries in a 
-Word or PDF file! Files not submitted in plain-text format with your queries 
-inside will be returned without a grade. 
+Please submit all queries in a single .txt file.
 
 [35pt] Basic queries Q1 - Q7 (5pts each)
 [60pt] Completion of queries Q8 - Q13.  (10pts each)
 [10pt] Update queries Q14 - Q15. (5pts each)
-Total: 100pts
+
+Total: 105pts
 ```
 
 

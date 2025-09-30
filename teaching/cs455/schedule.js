@@ -30,17 +30,17 @@ let days = {
         due: "10/1/2025", // wk5, Wednesday (needs to be due end of wk 4)
       },
       {
-        name: "Hwk 4 (sql)",
+        name: "Hwk 4 (sql + light coding)",
         title: "SQL Data Ingestion",
         url: "hwk4.sqlddl/",
         due: "10/10/2025",  // wk6, Friday
       },
-      {
-        name: "Hwk 5 (sql)",
-        title: "Writing SQL Queries",
-        url: "hwk5.sqldml/",
-        due: "10/22/2025",  // wk 8, Wed 
-      },
+      // {
+      //   name: "Hwk 5 (sql)",
+      //   title: "Writing SQL Queries",
+      //   url: "hwk5.pplsoft/",
+      //   due: "10/20/2025",  // wk 8, Mon 
+      // },
       // {
       //   name: "Hwk 6 (coding)",
       //   title: "B+Tree",
@@ -118,14 +118,14 @@ let days = {
     "SQL: writing basic queries, joins",
     // wk 5
     "SQL: outer joins, renaming, temporary tables",
-    "SQL Work Day 1",
+    "SQL Work Day (Hwk 4)",
     "SQL: subqueries",
     // wk 6
     "SQL: grouping and aggregation",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
-    "SQL Work Day 2",
+    "SQL Work Day (Hwk 5))",
     "Storage: File abstraction",
     "Storage: Disk scheduling",
     // wk 8
