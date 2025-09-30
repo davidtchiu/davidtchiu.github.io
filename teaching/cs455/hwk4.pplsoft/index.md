@@ -305,8 +305,8 @@ For each of the following problems, write an SQL query to return the expected re
 
 ```
 [35pt] Basic queries Q1 - Q7 (5pts each)
-[60pt] Completion of queries Q8 - Q13.  (10pts each)
-[10pt] Update queries Q14 - Q15. (5pts each)
+[60pt] Aggregation queries Q1 - Q6 (10pts each)
+[10pt] Update queries Q1, Q2 (5pts each)
 
 Total: 105pts
 ```
