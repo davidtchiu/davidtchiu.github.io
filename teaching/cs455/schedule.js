@@ -127,9 +127,10 @@ let days = {
     // wk 7
     "Storage: File abstraction",
     "Storage: Disk scheduling",
+    "Files: Organization and costs",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Files: Organization and costs",
+    "Files: costs",
     "Files: Join processing",
     // wk 9
     "Indexing: motivation",
