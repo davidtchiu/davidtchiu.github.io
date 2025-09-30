@@ -15,14 +15,14 @@ The following file have been provided for this assignment.
 - [university.db](university.db)
 
 #### Browse your Database!
-Start by downloading the database file, and open it up in [DB Browser](https://sqlitebrowser.org/), or  an online tool like [https://sqliteonline.com/](https://sqliteonline.com/). Open the `university.db` file that is provided to you, and browse its contents to gauge the schema and where all the data is stored.<br/><br/>
+Start by downloading the database file, and open it up in [DB Browser](https://sqlitebrowser.org/). Open the `university.db` file that is provided to you, and browse its contents to gauge the schema and where all the data is stored.<br/><br/>
 
 <img src="universitySchema.png"/>
 
 #### Writing SQL Queries
 For each of the following problems, write an SQL query to return the expected results. Your queries should work in general, regardless of what data is currently stored in this instance of the University database. In other words, don't hard code your queries to work for only the given database instance!
 
-#### Day 1: Basic Queries
+#### Basic Queries
 
 
 1. Return the list of first-year (freshman) students. Sort results by descending order of GPA.
