@@ -118,8 +118,8 @@ let days = {
     "SQL: writing basic queries, joins",
     // wk 5
     "SQL: outer joins, renaming, temporary tables",
-    "SQL: subqueries",
     "SQL Work Day 1",
+    "SQL: subqueries",
     // wk 6
     "SQL: grouping and aggregation",
     "<strong><emph>Review</emph></strong>",
