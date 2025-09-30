@@ -304,8 +304,6 @@ For each of the following problems, write an SQL query to return the expected re
 #### Grading
 
 ```
-Please submit all queries in a single .txt file.
-
 [35pt] Basic queries Q1 - Q7 (5pts each)
 [60pt] Completion of queries Q8 - Q13.  (10pts each)
 [10pt] Update queries Q14 - Q15. (5pts each)
@@ -315,12 +313,7 @@ Total: 105pts
 
 
 #### Submitting Your Assignment
-
-After you have completed the homework, use the following to submit your work on Canvas. There are two options to submit your work.
-
-1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
-2. Alternatively, you can just submit the text file with all the queries listed inside.
-3. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+Please submit all queries in a single `.txt` file. Please clearly label each query by its assigned number using a `--comment`.
 
 
 
