@@ -150,25 +150,28 @@ val_1|val_2|...|val_N
 ```
 
 #### Program Requirements
-You have the choice to write this program in either Python or Java. Just be sure to let me know how to run you program.
+You have the choice to write this program in the language of your choice. Just be sure to let me know how to compile/run your program.
 
 1. When the program starts, you should immediately read in the `schema.txt` file to understand what tables you have, and what their attributes are. For grading, I will be using completely different files (with different file names). Your program can assume that all relevant files are placed in the `data/` directory in your project directory. You should test rigorously with your own toy-files to ensure that your program can accept arbitrary data sets. 
 
-	 Avoid hardcoding absolute file paths in your code (for instance avoid hardcoding things like `/Users/Johnny/Desktop/CS455/Hwk5/data`). Points will be deducted if I can't easily run your program with database files on my machine. 
+	 Avoid hardcoding absolute paths in your code (for instance `/Users/Maddie/Desktop/CS455/Hwk5/data`). Points will be deducted if I can't easily run your program with database files on my machine. 
 
 	 **Do not attempt to open any other database files. These files are only to be opened when you run the join algorithm.**
 
-2. Prompt the user to enter the names of the relations across which they'd like to perform the natural join. You should accept their inputs on a single line, separated by space. You may assume that at most two relations will be input. If a relation name they entered does not exist (case insensitive), your program should re-prompt. Otherwise, you should present the user with a menu, allowing the user to select which join algorithm to run. When the user is done making their choice, the join processing should then output the result; the time elapsed in milliseconds; and the number of rows produced by the natural join.
+2. Prompt the user to enter the names of two relations over which they'd like to perform a natural join. You should accept their tables on a single line, separated by space. You may assume that at most two relations will be input.
+	- If a table they entered does not exist (case insensitive), your program should re-prompt. Otherwise, you should present the user with a menu, allowing the user to select which join algorithm to run. 
+	- When the user is done making their choice, process the chosen algorithm and output the rows result to the terminal, along with the (1) time elapsed in milliseconds, and the (2) number of rows produced by the join.
 
-3. You just need to implement the **Nested Loop Join** and **Hash Join** algorithms.
+3. You  need to implement the **Nested Loop Join** and  **Hash Join** algorithms.
 
 4. If a common attribute does not exist between the tables, your join algorithms should produce the cartesian product. You may assume that there is **at most** one common attribute between two relations. Even though it holds in this particular data set, do not assume that the common attribute is always the first attribute in the relation. 
 
 5. The ordering of attributes must be preserved in the joined result. For instance, when applying $$R(A,B,C)~\bowtie~S(X,C,Y,Z)$$, the resulting relation should have the following attribute ordering: $$(A,B,C,X,C,Y,Z)$$. This means you should preserve the original attribute ordering of $$R$$ and $$S$$. You do not have to remove the duplicate common attribute column.
 
-6. **Out of core execution**: We assume that the data files are huge and cannot be fit completely in memory (even though that is not the case with the files I provided to you.) Ensure that you are *not* reading all rows into a list for processing joins. To preserve memory, you should only read in a line from file when you actually to. The algorithms on the slides should be followed. 
+6. **Out-of-Core Execution**: Database systems must assume that the database files are huge and cannot be fit completely in memory (even though that's not the case with the files I provided). To preserve memory, you should only read in a line from file when you actually need to. The algorithms on the slides should be followed. 
 
-	 - Besides the HashMap for the HashJoin algorithm, you are not allowed to use any auxiliary data structures for storing tuples.
+	 - Besides the HashMap for the `HashJoin` algorithm, you are not allowed to use any auxiliary data structures for storing tuples.
+
 
 7. Your program should continuously prompt after each join operation is completed. It should only exit if `.quit` was input as a relation name.
 
