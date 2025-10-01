@@ -76,7 +76,7 @@ For each of the following problems, write an SQL query to return the expected re
    520	ENGL	Shakespeare Was Da Bomb	HH 20	TR	13:00	Department of English	Wyatt Hall
    ```
 
-6. Haley's advisor wants to know what courses she's taking in her major(s). Assume you don't know what her major off hand, so your query needs to involve the `Major` table. Perhaps you should start by joining together the student and the majors table to see what her majors are... but beware, you can't just use a natural join here (why?) Keep in mind that students like Haley may have more than one major!
+6. Haley's advisor wants to know what courses she's taking in her major(s). Assume you don't know what her major off hand, so your query needs to involve the `Major` table. Perhaps you should start by joining together the student and the majors table to see what her majors are.
 
    ```
    deptID   courseNum
