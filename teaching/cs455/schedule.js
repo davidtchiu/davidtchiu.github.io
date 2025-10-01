@@ -95,7 +95,7 @@ let days = {
         name: "Lab 1",
         title: "SQL Basics",
         url: "lab1/",
-        due: "10/3/2025", // Fri
+        due: "10/6/2025", // Mon
       },
       // {
       //   name: "Lab 2",
