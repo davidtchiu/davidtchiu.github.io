@@ -29,18 +29,18 @@ let days = {
         url: "hwk3.ra2/",
         due: "10/1/2025", // wk5, Wednesday (needs to be due end of wk 4)
       },
-      // {
-      //   name: "Hwk 4 (sql + light coding)",
-      //   title: "SQL Data Ingestion",
-      //   url: "hwk4.sqlddl/",
-      //   due: "10/10/2025",  // wk6, Friday
-      // },
       {
-        name: "Hwk 4 (sql)",
-        title: "Writing SQL Queries",
-        url: "hwk4.pplsoft/",
-        due: "10/13/2025",  // wk 8, Mon 
+        name: "Hwk 4 (sql + light coding)",
+        title: "SQL Data Ingestion",
+        url: "hwk4.sqlddl/",
+        due: "10/10/2025",  // wk6, Friday
       },
+      // {
+      //   name: "Hwk 4 (sql)",
+      //   title: "Writing SQL Queries",
+      //   url: "hwk4.pplsoft/",
+      //   due: "10/13/2025",  // wk 8, Mon 
+      // },
       // {
       //   name: "Hwk 6 (coding)",
       //   title: "B+Tree",
@@ -90,13 +90,20 @@ let days = {
     // ],
 
     ////////////////////////////////// LABS ////////////////////////////////
-    // labs: [
-    //   {
-    //     name: "Lab",
-    //     title: "SQL Lab!",
-    //     url: "lab.pplsoft/",
-    //   },
-    // ],
+    labs: [
+      {
+        name: "Lab 1",
+        title: "SQL Basics",
+        url: "lab1/",
+        due: "10/3/2025", // Fri
+      },
+      // {
+      //   name: "Lab 2",
+      //   title: "SQL Aggregation",
+      //   url: "lab2/",
+      //   due: "10/17/2025", // Fri
+      // },
+    ],
   },
 
   lectures: [
