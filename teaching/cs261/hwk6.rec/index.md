@@ -228,13 +228,13 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 Write a method `public static void snakeFill(int n)` that prints out an $$n × n$$ grid of integers filled from 1 to $$n^2$$ in a diagonal “snake” pattern:
 
-	- Start with 1 at the top-left (0,0).
-	- Move right one (if possible).
-	- Then alternate between diagonally up-right and diagonally down-left runs.
+- Start by filling a 1 at the top-left (0,0).
+- Move right one (if possible) and fill that with 2.
+- Then alternate between diagonally up-right and diagonally down-left runs, incrementing the counter as you proceed.
+- When a diagonal hits a boundary, take one step either right (if you hit the top or bottom edge and can move right) or take one step down (if you hit the left or right edge and can move down), then switch diagonal direction and continue.
+- Continue until the grid is filled; then print the grid (row by row, single spaces between numbers).
 
-When a diagonal hits a boundary, take one step either right (if you hit the top or bottom edge and can move right) or down (if you hit the left or right edge and can move down), then switch diagonal direction and continue. Continue until the grid is filled; then print the grid (row by row, single spaces between numbers).
-
-Hint: The way to go about this is to fill an $$n x n$$ 2D array and then print it out. I would write a helper method that inputs this 2D array, among other inputs, and recursively fills it up. The original (outer) method should then simply print this 2D array.
+Hint: The way to go about this is to fill an $$n x n$$ 2D array and then print it out. I would write a helper method that inputs this 2D array, among other inputs, and recursively fills it. The original (outer) method should then simply print this 2D array.
 
 
 ```java
