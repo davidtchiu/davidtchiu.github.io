@@ -213,16 +213,53 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 		> [ab, ba]
 
 		System.out.println(Recursion.permute("ba"));
-		> [ab, ba]   <--- yours may not be in this order
+		> [ab, ba]
 
 		System.out.println(Recursion.permute("abc"));
-		> [abc, acb, bac, bca, cab, cba]   <--- yours may not be in this order
+		> [abc, acb, bac, bca, cab, cba]
 
 		System.out.println(Recursion.permute("abcd"));
-		> [abcd, abdc, acbd, acdb, adbc, adcb, bacd, badc, bcad, bcda, bdac, bdca, cabd, cadb, cbad, cbda, cdab, cdba, dabc, dacb, dbac, dbca, dcab, dcba]   <--- yours may not be in this order
+		> [abcd, abdc, acbd, acdb, adbc, adcb, bacd, badc, bcad, bcda, bdac, bdca, cabd, cadb, cbad, cbda, cdab, cdba, dabc, dacb, dbac, dbca, dcab, dcba]
 		```
 
 	- Fun fact: If your string is of length $$n$$, then you have a list of $$n! = n \times (n-1) \times (n-2) \times ... \times 2 \times 1$$ permutations. Because this algorithm needs to find all permutations, it runs in $$O(n!)$$ time. Yikes!
+
+#### Added Challenge
+
+1. (Very Spicy) Write a method `public static void snakeFill(int n)` that prints out an n × n grid of integers filled from 1 to n*n in a diagonal “snake” pattern:
+
+	- Start with 1 at the top-left (0,0).
+
+	- Move right one (if possible).
+
+	- Then alternate between diagonally up-right and diagonally down-left runs.
+
+When a diagonal hits a boundary, take one step either right (if you hit the top or bottom edge and can move right) or down (if you hit the left or right edge and can move down), then switch diagonal direction and continue.
+
+Continue until the grid is filled; then print the grid (row by row, single spaces between numbers).
+
+	```java
+	Recursion.snakeFill(5);
+	1	2	6	7	15	
+	3	5	8	14	16	
+	4	9	13	17	22	
+	10	12	18	21	23	
+	11	19	20	24	25
+
+    Recursion.snakeFill(4);	
+	1	2	6	7	
+	3	5	8	13	
+	4	9	12	14	
+	10	11	15	16
+
+    Recursion.snakeFill(3);	
+	1	2	6	
+	3	5	7	
+	4	8	9	
+	```
+
+
+
 
 #### Program Defensively
 

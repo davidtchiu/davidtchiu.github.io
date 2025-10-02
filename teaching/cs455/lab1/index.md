@@ -90,6 +90,7 @@ For each of the following problems, write an SQL query to return the expected re
    ```
    studentID   studentName
    ----------  -----------
+   1001        Lia
    1225        Sarah
    1282        Kelly
    1629        Brad
@@ -104,22 +105,22 @@ These don't yield any points, but you will be happier that you did them.
 2. (medium) List all students (sorted by name) who are not enrolled in any courses. Project their ID, name, and class rank.
 
    ```
-   studentID	studentName	class
-   ---------   ----------- -----
+   studentID   studentName	class
+   ---------   -----------    -----
    1640	      Adam	      Senior
    1629	      Brad	      Senior
-   1641	      Brittany	   Senior
+   1641	      Brittany	      Senior
    1487	      Erin	      Sophomore
    1468	      Kris	      Sophomore
    1001	      Lia	      Junior
-   1381	      Tiffany	   Junior
+   1381	      Tiffany	      Junior
    ```
 
    <!-- select *
    from Student where studentID NOT IN (select studentID from Enroll)
    order by studentName; -->
 
-3. (spicy) List all courses in Andrew's major that is currently not taking.
+3. (spicy) List all courses in Andrew's major that he is not currently taking.
 
    ```
    CourseNum	deptID	CourseName	Location	meetDay	meetTime
