@@ -1,0 +1,123 @@
+-- David modified for class
+-- @author David
+-- @version 9/30/19
+
+-- Q1
+-- List the customers by customerName whose contact person shares either a first name or last name with any of the company's employees
+-- Order by customerName
+SELECT DISTINCT customerName 
+FROM customers, employees 
+WHERE customers.contactLastName = employees.lastName OR customers.contactFirstName = employees.firstName
+ORDER BY customerName;
+
+
+-- Q2
+-- Return the product(s) by productCode and productName that the company has the least stock of.
+-- Order by product code.
+SELECT productCode, productName 
+FROM products 
+WHERE quantityInStock IN (SELECT MIN(quantityInStock) FROM products)
+ORDER BY productCode;
+
+-- Q3
+-- Identify the offices (by city) that have the least employees and the most employees (answer should include city, numEmps)
+WITH cityCounts AS (
+		SELECT city, COUNT(employeeNumber) AS numEmps 
+		FROM offices NATURAL JOIN employees
+		GROUP BY city),
+	most AS (
+		SELECT max(numEmps) AS numEmps
+		FROM cityCounts),
+	least AS (
+		SELECT min(numEmps) AS numEmps
+		FROM cityCounts)
+SELECT *
+FROM most natural join cityCounts
+UNION
+SELECT *
+FROM least natural join cityCounts;
+
+-- Q4
+-- For all Sales Reps list their names (first and last) and the name of the office they work out of and the number of clients they represent.
+-- Order by reverse order of numClients
+SELECT employees.firstName, employees.lastName, offices.city, COUNT(*) AS numClients 
+FROM (employees NATURAL JOIN offices), customers 
+WHERE employees.employeeNumber = customers.salesRepEmployeeNumber AND employees.jobTitle = 'Sales Rep' 
+GROUP BY customers.salesRepEmployeeNumber
+ORDER BY numClients DESC;
+
+-- Q5
+-- List the customer(s) and their total payments (answer should include customerNumber, custermerName, totalPayment where totalPayment is the total amount of dollars the customer has paid).
+-- Order by totalPayment.
+WITH totalpayments AS (
+	SELECT SUM(amount) as total, customerNumber, customerName
+	FROM payments NATURAL JOIN customers
+	GROUP BY customerNumber)
+SELECT customerNumber, customerName, (total) AS totalPayment 
+FROM totalpayments
+ORDER BY total;
+
+-- Q6
+-- List the product number, product name, and customer name such that the customer has never ordered that product.
+-- Order by customerName, productCode.
+SELECT productCode, productName, customerName 
+FROM products, customers 
+WHERE  (productCode, customerNumber) NOT IN (SELECT productCode, customerNumber 
+FROM orders NATURAL JOIN orderdetails)
+ORDER BY customerName, productCode;
+
+
+-- Q7
+-- List the average order size for each customer (answer should include customerName, avgQuantity)
+-- Order by customer name.
+SELECT customerName, AVG(orderSize) AS avgQuantity 
+FROM ( SELECT customerName, SUM(quantityOrdered) AS orderSize
+FROM customers NATURAL JOIN orders NATURAL JOIN orderdetails
+GROUP BY orders.orderNumber) AS totalOrder
+GROUP BY customerName
+ORDER BY customerName;
+
+
+
+
+########################## MORE FUN:
+
+
+-- Q1
+-- List all customer names and their addresses who don't have a specified sales rep.
+-- Order by customer name.
+SELECT DISTINCT customerName, addressLine1, addressLine2, city, state, postalCode  
+FROM customers 
+WHERE salesRepEmployeeNumber IS NULL
+ORDER BY customerName;
+
+-- Q2
+-- List the names of all customers that have a creditLimit between $100,000 and $200,000 inclusively.
+-- Order by customer name.
+SELECT DISTINCT customerName, creditLimit 
+FROM customers 
+WHERE creditLimit >= 100000 AND creditLimit <= 200000
+ORDER BY customerName;
+
+-- Q3
+-- List all employees who have the initials of M.P. or P.M., by name.
+-- Order by last name.
+SELECT DISTINCT firstName, lastName 
+FROM employees 
+WHERE (firstName LIKE 'M%' AND lastName LIKE 'P%') OR (firstName LIKE 'P%' AND lastName LIKE 'M%')
+ORDER BY lastName;
+
+-- Q4
+-- List all the products' productNames purchased by Mini Wheels Co.
+-- Order the list by product line.
+SELECT DISTINCT  productName 
+FROM products NATURAL JOIN productlines NATURAL JOIN orderdetails NATURAL JOIN orders  NATURAL JOIN customers
+WHERE customers.customerName = 'Mini Wheels Co.'
+ORDER BY productLine;
+
+-- Q5
+-- List the profit per product that the company would make if it were able to sell all of that product at MSRP (answer should include productName, profit).
+-- Order by profit.
+SELECT productName, (MSRP - buyPrice) * quantityInStock AS profit 
+FROM products
+ORDER BY profit;

@@ -30,7 +30,7 @@ let days = {
         due: "10/1/2025", // wk5, Wednesday (needs to be due end of wk 4)
       },
       {
-        name: "Hwk 4 (sql + light coding)",
+        name: "Hwk 4 (sql schema)",
         title: "SQL Data Ingestion",
         url: "hwk4.sqlddl/",
         due: "10/10/2025",  // wk6, Friday
@@ -93,14 +93,14 @@ let days = {
     labs: [
       {
         name: "Lab 1",
-        title: "SQL Basics",
+        title: "SQL: Basic Queries",
         url: "lab1/",
         due: "10/6/2025", // Mon
       },
       // {
       //   name: "Lab 2",
-      //   title: "SQL Aggregation",
-      //   url: "lab2/",
+      //   title: "SQL: More Advanced Queries",
+      //   url: "lab2.models/",
       //   due: "10/17/2025", // Fri
       // },
     ],

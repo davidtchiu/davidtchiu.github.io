@@ -22,101 +22,7 @@ Start by opening up the database file in DB Browser or [Antares](https://antares
 
 Take a moment to study the schema, noting the foreign and primary keys. Browse the data in each relation to familiarize yourself with the database contents. Answer the following queries. Save the queries in a plain text file for submission. I've given you the expected results below each query.
 
-1. Return all customer names and their addresses if they are not represented by a sales rep. Order by customer name. There should be 22 rows.
-
-   ```
-   customerName   addressLine1  addressLine2  city        state       postalCode
-   -------------  ------------  ------------  ----------  ----------  ----------
-   ANG Resellers  Gran Vía, 1   NULL          Madrid      NULL        28001
-   Anton Designs  c/ Gobelas,   NULL          Madrid      NULL        28023
-   Asian Shoppin  Suntec Tower  8 Temasek     Singapore   NULL        038988
-   Asian Treasur  8 Johnstown   NULL          Cork        Co. Cork    NULL
-   BG&E Collecta  Rte des Arse  NULL          Fribourg    NULL        1700
-   Cramer Spezia  Maubelstr. 9  NULL          Brandenbur  NULL        14776
-   Der Hund Impo  Obere Str. 5  NULL          Berlin      NULL        12209
-   Feuer Online   Heerstr. 22   NULL          Leipzig     NULL        04179
-   Franken Gifts  Berliner Pla  NULL          München     NULL        80805
-   Havel & Zbysz  ul. Filtrowa  NULL          Warszawa    NULL        01-012
-   Kommission Au  Luisenstr. 4  NULL          Münster     NULL        44087
-   Kremlin Colle  2 Pobedy Squ  NULL          Saint Pete  NULL        196143
-   Lisboa Souven  Jardim das r  NULL          Lisboa      NULL        1675
-   Messner Shopp  Magazinweg 7  NULL          Frankfurt   NULL        60528
-   Mit Vergnügen  Forsterstr.   NULL          Mannheim    NULL        68306
-   Natürlich Aut  Taucherstraß  NULL          Cunewalde   NULL        01307
-   Porto Imports  Estrada da s  NULL          Lisboa      NULL        1756
-   Raanan Stores  3 Hagalim Bl  NULL          Herzlia     NULL        47625
-   SAR Distribut  1250 Pretori  NULL          Hatfield    Pretoria    0028
-   Schuyler Impo  Kingsfordweg  NULL          Amsterdam   NULL        1043 GR
-   Stuttgart Col  Adenaueralle  NULL          Stuttgart   NULL        70563
-   Warburg Excha  Walserweg 21  NULL          Aachen      NULL        52066
-   ```
-
-2. List the names of all customers that have a credit limit between 100,000 and 200,000 inclusively. Order by customer name. There should be 23 rows.
-
-   ```
-   customerName    creditLimit
-   --------------  -----------
-   AV Stores, Co.  136800.0
-   Amica Models &  113000.0
-   Annas Decorati  107800.0
-   Australian Col  117300.0
-   Collectable Mi  105000.0
-   Corporate Gift  105000.0
-   Corrida Auto R  104600.0
-   Diecast Classi  100600.0
-   Dragon Souveni  103800.0
-   Heintze Collec  120800.0
-   Kellys Gift Sh  110000.0
-   La Rochelle Gi  118200.0
-   Land of Toys I  114900.0
-   Lordine Souven  121400.0
-   Martas Replica  123700.0
-   Mini Classics   102700.0
-   Muscle Machine  138500.0
-   Online Diecast  114200.0
-   Rovelli Gifts   119600.0
-   Saveley & Henr  123900.0
-   Scandinavian G  116400.0
-   Toms Spezialit  120400.0
-   Vida Sport, Lt  141300.0
-   ```
-
-3. Return all employees who have the first and last initials of MP or PM. Order by last name.
-
-   ```
-   firstName   lastName
-   ----------  ----------
-   Peter       Marsh
-   Mary        Patterson
-   ```
-
-4. List all the products' names purchased by a company called "Mini Wheels Co." Order the list by product line. There should be 19 rows.
-
-   ```
-   productName
-   ------------------------
-   1952 Alpine Renault 1300
-   1969 Harley Davidson Ult
-   1996 Moto Guzzi 1100i
-   2003 Harley-Davidson Eag
-   2002 Suzuki XREO
-   1936 Harley Davidson El
-   1997 BMW R 1100 S
-   1960 BSA Gold Star DBD34
-   1958 Setra Bus
-   1940 Ford Pickup Truck
-   1996 Peterbilt 379 Stake
-   1937 Lincoln Berline
-   1936 Mercedes-Benz 500K
-   1934 Ford V8 Coupe
-   18th Century Vintage Hor
-   1917 Maxwell Touring Car
-   1936 Chrysler Airflow
-   1913 Ford Model T Speeds
-   1939 Cadillac Limousine
-   ```
-
-5. List the customers whose contact person shares either a first name or a last name with *any* of the company's employees. Order by customer name. There should be 17 rows.
+1. List the customers whose contact person shares either a first name or a last name with *any* of the company's employees. Order by customer name. There should be 17 rows.
 
    ```
    customerName
@@ -141,7 +47,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    ```
 
 
-6. Return the product(s) by product code and product name that the company has the least stock of. Order by product code. (Hint: Start with the quantity for each product, then find the min of those quantities, before identifying which products have those min counts.)
+2. Return the product(s) by product code and product name that the company has the least stock of. Order by product code. (Hint: Start with the quantity for each product, then find the min of those quantities, before identifying which products have those min counts.)
 
    ```
    productCode  productName
@@ -149,7 +55,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    S24_2000     1960 BSA Gold Star DBD34
    ```
 
-7. Identify the offices (by city name) that have the least employees and the most employees (answer should include city, number of employees)
+3. Identify the offices (by city name) that have the least employees and the most employees (answer should include city, number of employees)
 
    ```
    numEmps     city
@@ -161,7 +67,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
    6           San Franci
    ```
 
-8. For all employees listed as `Sales Rep`, list their names and the names of the office they work out of, along with the number of clients they represent. Order by reverse order of number of clients. There are 15 rows in the result.
+4. For all employees listed as `Sales Rep`, list their names and the names of the office they work out of, along with the number of clients they represent. Order by reverse order of number of clients. There are 15 rows in the result.
 
    ```
    firstName   lastName    city        numClients
@@ -207,7 +113,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
       Yoshimi	   Kato	      Tokyo    	0
       ```
 
-9. List the customer(s) and their total payments (answer should include customer number, customer name, total payment where total payment is the total amount of dollars the customer has paid). Order by total payment. You should get 98 rows.
+5. List the customer(s) and their total payments (answer should include customer number, customer name, total payment where total payment is the total amount of dollars the customer has paid). Order by total payment. You should get 98 rows.
 
     ```
     customerNumber  customerName       totalPayment
@@ -312,7 +218,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     141             Euro+ Shopping Ch  715738.98
     ```
 
-10. List the product number, product name, and customer name such that the customer has never ordered that product. Order by customer name then product code. You should get 10,888 rows.
+6. List the product number, product name, and customer name such that the customer has never ordered that product. Order by customer name then product code. You should get 10,888 rows.
 
     ```
     productCode  productName                            customerName
@@ -330,7 +236,227 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     (too many more to list)
     ```
 
-11. List the profit per product that the company would make if it were able to sell all of that product (quantity in stock) at MSRP instead of the "buy price" (answer should include product name, profit). Order by profit. This is a shorter/easier query than the previous ones. (You should get 110 rows)
+7. Return the average order size for each customer (results should include customer name, average quantity). Order by customer name. To get you started, you'll need to first find the sum of all orderQuantities for each orderNumber. Then you'll want to find the customers who made those individual orderNumbers, to find all orders that a customer has made. Finally, average out the summed order quantities. (You should get 98 rows.)
+
+    ```
+    customerName    avgQuantity
+    --------------  ----------------
+    AV Stores, Co.  592.666666666667
+    Alpha Cognac    229.0
+    Amica Models &  421.5
+    Annas Decorati  367.25
+    Atelier graphi  90.0
+    Australian Col  235.0
+    Australian Col  385.2
+    Australian Gif  181.666666666667
+    Auto Associés   318.5
+    Auto Canal+ Pe  333.666666666667
+    Auto-Moto Clas  95.6666666666667
+    Baane Mini Imp  270.5
+    Bavarian Colle  401.0
+    Blauer See Aut  202.75
+    Boards & Toys   51.0
+    CAF Imports     234.0
+    Cambridge Coll  178.5
+    Canadian Gift   351.5
+    Classic Gift I  334.0
+    Classic Legend  240.0
+    Clover Collect  245.0
+    Collectable Mi  477.0
+    Collectables F  265.0
+    Corporate Gift  361.75
+    Corrida Auto R  387.666666666667
+    Cruz & Sons Co  320.333333333333
+    Daedalus Desig  349.5
+    Danish Wholesa  263.0
+    Diecast Classi  277.75
+    Diecast Collec  347.5
+    Double Decker   178.5
+    Down Under Sou  338.2
+    Dragon Souveni  304.8
+    Enaco Distribu  294.0
+    Euro+ Shopping  358.730769230769
+    Extreme Desk D  351.666666666667
+    Frau da Collez  136.0
+    FunGiftIdeas.c  301.0
+    Gift Depot Inc  301.0
+    Gift Ideas Cor  222.0
+    Gifts4AllAges.  345.333333333333
+    GiftsForHim.co  334.333333333333
+    Handji Gifts&   309.0
+    Heintze Collec  441.0
+    Herkku Gifts    324.333333333333
+    Iberia Gift Im  294.5
+    Kellys Gift Sh  411.75
+    King Kong Coll  298.0
+    La Corne Dabon  278.666666666667
+    La Rochelle Gi  458.0
+    Land of Toys I  407.75
+    Lordine Souven  426.666666666667
+    Lyon Souvenier  228.0
+    Marseille Mini  268.0
+    Martas Replica  488.0
+    Men R US Retai  250.0
+    Microscale Inc  190.5
+    Mini Auto Werk  177.333333333333
+    Mini Caravy     259.666666666667
+    Mini Classics   464.5
+    Mini Creations  380.0
+    Mini Gifts Dis  374.470588235294
+    Mini Wheels Co  230.666666666667
+    Motor Mint Dis  243.333333333333
+    Muscle Machine  443.75
+    Norway Gifts B  393.5
+    Online Diecast  416.0
+    Online Mini Co  286.0
+    Osaka Souvenie  346.0
+    Oulu Toy Suppl  370.0
+    Petit Auto      265.333333333333
+    Québec Home Sh  239.0
+    Reims Collecta  286.6
+    Rovelli Gifts   550.0
+    Royal Canadian  436.5
+    Royale Belge    69.5
+    Salzburg Colle  360.5
+    Saveley & Henr  476.0
+    Scandinavian G  453.0
+    Signal Collect  257.0
+    Signal Gift St  309.666666666667
+    Souveniers And  400.25
+    Stylish Desk D  312.333333333333
+    Suominen Souve  343.666666666667
+    Super Scale In  318.0
+    Technics Store  294.75
+    Tekni Collecta  329.333333333333
+    The Sharp Gift  414.0
+    Tokyo Collecta  287.5
+    Toms Spezialit  468.0
+    Toys of Finlan  350.333333333333
+    Toys4GrownUps.  353.333333333333
+    UK Collectable  348.666666666667
+    Vida Sport, Lt  539.0
+    Vitachrome Inc  262.333333333333
+    Volvo Model Re  161.75
+    West Coast Col  255.5
+    giftsbymail.co  447.5
+    ```
+
+#### Just More Practice
+
+1. Return all customer names and their addresses if they are not represented by a sales rep. Order by customer name. There should be 22 rows.
+
+   ```
+   customerName   addressLine1  addressLine2  city        state       postalCode
+   -------------  ------------  ------------  ----------  ----------  ----------
+   ANG Resellers  Gran Vía, 1   NULL          Madrid      NULL        28001
+   Anton Designs  c/ Gobelas,   NULL          Madrid      NULL        28023
+   Asian Shoppin  Suntec Tower  8 Temasek     Singapore   NULL        038988
+   Asian Treasur  8 Johnstown   NULL          Cork        Co. Cork    NULL
+   BG&E Collecta  Rte des Arse  NULL          Fribourg    NULL        1700
+   Cramer Spezia  Maubelstr. 9  NULL          Brandenbur  NULL        14776
+   Der Hund Impo  Obere Str. 5  NULL          Berlin      NULL        12209
+   Feuer Online   Heerstr. 22   NULL          Leipzig     NULL        04179
+   Franken Gifts  Berliner Pla  NULL          München     NULL        80805
+   Havel & Zbysz  ul. Filtrowa  NULL          Warszawa    NULL        01-012
+   Kommission Au  Luisenstr. 4  NULL          Münster     NULL        44087
+   Kremlin Colle  2 Pobedy Squ  NULL          Saint Pete  NULL        196143
+   Lisboa Souven  Jardim das r  NULL          Lisboa      NULL        1675
+   Messner Shopp  Magazinweg 7  NULL          Frankfurt   NULL        60528
+   Mit Vergnügen  Forsterstr.   NULL          Mannheim    NULL        68306
+   Natürlich Aut  Taucherstraß  NULL          Cunewalde   NULL        01307
+   Porto Imports  Estrada da s  NULL          Lisboa      NULL        1756
+   Raanan Stores  3 Hagalim Bl  NULL          Herzlia     NULL        47625
+   SAR Distribut  1250 Pretori  NULL          Hatfield    Pretoria    0028
+   Schuyler Impo  Kingsfordweg  NULL          Amsterdam   NULL        1043 GR
+   Stuttgart Col  Adenaueralle  NULL          Stuttgart   NULL        70563
+   Warburg Excha  Walserweg 21  NULL          Aachen      NULL        52066
+   ```
+
+2. List the names of all customers that have a credit limit between 100,000 and 200,000 inclusively. Order by customer name. There should be 23 rows.
+
+   ```
+   customerName    creditLimit
+   --------------  -----------
+   AV Stores, Co.  136800.0
+   Amica Models &  113000.0
+   Annas Decorati  107800.0
+   Australian Col  117300.0
+   Collectable Mi  105000.0
+   Corporate Gift  105000.0
+   Corrida Auto R  104600.0
+   Diecast Classi  100600.0
+   Dragon Souveni  103800.0
+   Heintze Collec  120800.0
+   Kellys Gift Sh  110000.0
+   La Rochelle Gi  118200.0
+   Land of Toys I  114900.0
+   Lordine Souven  121400.0
+   Martas Replica  123700.0
+   Mini Classics   102700.0
+   Muscle Machine  138500.0
+   Online Diecast  114200.0
+   Rovelli Gifts   119600.0
+   Saveley & Henr  123900.0
+   Scandinavian G  116400.0
+   Toms Spezialit  120400.0
+   Vida Sport, Lt  141300.0
+   ```
+
+3. Return all employees who have the first and last initials of MP or PM. Order by last name.
+
+   ```
+   firstName   lastName
+   ----------  ----------
+   Peter       Marsh
+   Mary        Patterson
+   ```
+
+4. List all the products' names purchased by a company called "Mini Wheels Co." Order the list by product line. There should be 19 rows.
+
+   ```
+   productName
+   ------------------------
+   1952 Alpine Renault 1300
+   1969 Harley Davidson Ult
+   1996 Moto Guzzi 1100i
+   2003 Harley-Davidson Eag
+   2002 Suzuki XREO
+   1936 Harley Davidson El
+   1997 BMW R 1100 S
+   1960 BSA Gold Star DBD34
+   1958 Setra Bus
+   1940 Ford Pickup Truck
+   1996 Peterbilt 379 Stake
+   1937 Lincoln Berline
+   1936 Mercedes-Benz 500K
+   1934 Ford V8 Coupe
+   18th Century Vintage Hor
+   1917 Maxwell Touring Car
+   1936 Chrysler Airflow
+   1913 Ford Model T Speeds
+   1939 Cadillac Limousine
+   ```
+
+
+5. List the customers (by name) that are based in the country which is first in the lexicographic order of customer countries. Order by customerName.
+
+   ```
+   customerName
+   --------------
+   Annas Decorations, Ltd
+   Australian Collectables, Ltd
+   Australian Collectors, Co.
+   Australian Gift Network, Co
+   Souveniers And Things Co.
+   ```
+
+<!-- SELECT customerName 
+FROM customers 
+WHERE country IN (SELECT MIN(country) FROM customers)
+ORDER BY customerName; -->
+
+
+6. List the profit per product that the company would make if it were able to sell all of that product (quantity in stock) at MSRP instead of the "buy price" (answer should include product name, profit). Order by profit. This is a shorter/easier query than the previous ones. (You should get 110 rows)
 
     ```
     productName               profit
@@ -446,110 +572,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     2002 Suzuki XREO          843246.95
     1952 Alpine Renault 1300  845334.6
     ```
-12. Return the average order size for each customer (results should include customer name, average quantity). Order by customer name. To get you started, you'll need to first find the sum of all orderQuantities for each orderNumber. Then you'll want to find the customers who made those individual orderNumbers, to find all orders that a customer has made. Finally, average out the summed order quantities. (You should get 98 rows.)
 
-    ```
-    customerName    avgQuantity
-    --------------  ----------------
-    AV Stores, Co.  592.666666666667
-    Alpha Cognac    229.0
-    Amica Models &  421.5
-    Annas Decorati  367.25
-    Atelier graphi  90.0
-    Australian Col  235.0
-    Australian Col  385.2
-    Australian Gif  181.666666666667
-    Auto Associés   318.5
-    Auto Canal+ Pe  333.666666666667
-    Auto-Moto Clas  95.6666666666667
-    Baane Mini Imp  270.5
-    Bavarian Colle  401.0
-    Blauer See Aut  202.75
-    Boards & Toys   51.0
-    CAF Imports     234.0
-    Cambridge Coll  178.5
-    Canadian Gift   351.5
-    Classic Gift I  334.0
-    Classic Legend  240.0
-    Clover Collect  245.0
-    Collectable Mi  477.0
-    Collectables F  265.0
-    Corporate Gift  361.75
-    Corrida Auto R  387.666666666667
-    Cruz & Sons Co  320.333333333333
-    Daedalus Desig  349.5
-    Danish Wholesa  263.0
-    Diecast Classi  277.75
-    Diecast Collec  347.5
-    Double Decker   178.5
-    Down Under Sou  338.2
-    Dragon Souveni  304.8
-    Enaco Distribu  294.0
-    Euro+ Shopping  358.730769230769
-    Extreme Desk D  351.666666666667
-    Frau da Collez  136.0
-    FunGiftIdeas.c  301.0
-    Gift Depot Inc  301.0
-    Gift Ideas Cor  222.0
-    Gifts4AllAges.  345.333333333333
-    GiftsForHim.co  334.333333333333
-    Handji Gifts&   309.0
-    Heintze Collec  441.0
-    Herkku Gifts    324.333333333333
-    Iberia Gift Im  294.5
-    Kellys Gift Sh  411.75
-    King Kong Coll  298.0
-    La Corne Dabon  278.666666666667
-    La Rochelle Gi  458.0
-    Land of Toys I  407.75
-    Lordine Souven  426.666666666667
-    Lyon Souvenier  228.0
-    Marseille Mini  268.0
-    Martas Replica  488.0
-    Men R US Retai  250.0
-    Microscale Inc  190.5
-    Mini Auto Werk  177.333333333333
-    Mini Caravy     259.666666666667
-    Mini Classics   464.5
-    Mini Creations  380.0
-    Mini Gifts Dis  374.470588235294
-    Mini Wheels Co  230.666666666667
-    Motor Mint Dis  243.333333333333
-    Muscle Machine  443.75
-    Norway Gifts B  393.5
-    Online Diecast  416.0
-    Online Mini Co  286.0
-    Osaka Souvenie  346.0
-    Oulu Toy Suppl  370.0
-    Petit Auto      265.333333333333
-    Québec Home Sh  239.0
-    Reims Collecta  286.6
-    Rovelli Gifts   550.0
-    Royal Canadian  436.5
-    Royale Belge    69.5
-    Salzburg Colle  360.5
-    Saveley & Henr  476.0
-    Scandinavian G  453.0
-    Signal Collect  257.0
-    Signal Gift St  309.666666666667
-    Souveniers And  400.25
-    Stylish Desk D  312.333333333333
-    Suominen Souve  343.666666666667
-    Super Scale In  318.0
-    Technics Store  294.75
-    Tekni Collecta  329.333333333333
-    The Sharp Gift  414.0
-    Tokyo Collecta  287.5
-    Toms Spezialit  468.0
-    Toys of Finlan  350.333333333333
-    Toys4GrownUps.  353.333333333333
-    UK Collectable  348.666666666667
-    Vida Sport, Lt  539.0
-    Vitachrome Inc  262.333333333333
-    Volvo Model Re  161.75
-    West Coast Col  255.5
-    giftsbymail.co  447.5
-    ```
 
 
 #### Grading
