@@ -85,17 +85,56 @@ For each of the following problems, write an SQL query to return the expected re
    MATH	   230
    ```
 
-7. Return a list of all students who are still undeclared (i.e., are without a major). Project their student ID and their name. Sort results by `studentID`.
+7. Return a list of all students who are still undeclared (without a major). Project their student ID and their name. Sort results by `studentID`.
 
    ```
    studentID   studentName
    ----------  -----------
-   1001        Lia
    1225        Sarah
    1282        Kelly
    1629        Brad
    1640        Adam
    ```
+
+#### More Fun
+These don't yield any points, but you will be happier that you did them.
+
+1. (mild) If you used a left outer join to in the last query, do it again using a set difference (EXCEPT) instead. Otherwise, use a left outer join instead.
+
+2. (medium) List all students (sorted by name) who are not enrolled in any courses. Project their ID, name, and class rank.
+
+   ```
+   studentID	studentName	class
+   ---------   ----------- -----
+   1640	      Adam	      Senior
+   1629	      Brad	      Senior
+   1641	      Brittany	   Senior
+   1487	      Erin	      Sophomore
+   1468	      Kris	      Sophomore
+   1001	      Lia	      Junior
+   1381	      Tiffany	   Junior
+   ```
+
+   <!-- select *
+   from Student where studentID NOT IN (select studentID from Enroll)
+   order by studentName; -->
+
+3. (spicy) List all courses in Andrew's major that is currently not taking.
+
+   ```
+   CourseNum	deptID	CourseName	Location	meetDay	meetTime
+   ---------   ------   ----------  -------- -------  --------
+   122	      BUS	   Economics	WY 30	   MW	      13:30
+   351	      BUS	   Finance	   WY 29	   TR	      12:00
+   ```
+
+
+   <!-- WITH hisMajor as (select major from student natural join major where studentName='Andrew')
+   select * from Course where course.deptID IN hisMajor
+   except
+   select coursenum,deptid,coursename,location,meetday,meettime
+   from student natural join enroll natural join course
+   where course.deptID IN hisMajor and studentName = 'Andrew'; -->
 
 
 #### Grading
