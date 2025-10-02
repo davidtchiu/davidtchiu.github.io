@@ -225,7 +225,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	- Fun fact: If your string is of length $$n$$, then you have a list of $$n! = n \times (n-1) \times (n-2) \times ... \times 2 \times 1$$ permutations. Because this algorithm needs to find all permutations, it runs in $$O(n!)$$ time. Yikes!
 
 #### Additional Challenge: SnakeFill (🐍🐍🐍 Ssssssspicy)
-Did you enjoy writing FloodFill? Then you'll _really_ enjoy its cousin SnakeFill. Write a method `public static void snakeFill(int n)` that prints out an $$n × n$$ grid of integers filled from 1 to $$n^2$$ in a diagonal “snake” pattern:
+Write a method `public static void snakeFill(int n)` that prints out an $$n \times n$$ grid of integers filled from 1 to $$n^2$$ in a zigzagging “snake-like” pattern:
 
 - Start by filling a 1 at the top-left corner.
 - Move right one (if possible) and fill that with 2.
@@ -233,7 +233,7 @@ Did you enjoy writing FloodFill? Then you'll _really_ enjoy its cousin SnakeFill
 - When a diagonal hits a boundary, take one step either right (if you hit the top or bottom edge and can move right) or take one step down (if you hit the left or right edge and can move down), then switch diagonal direction and continue.
 - Continue until the grid is filled; then print the grid (row by row, single spaces between numbers).
 
-Hint: The way to go about this is to fill an $$n x n$$ 2D array and then print it out. I would write a helper method that inputs this 2D array, among other inputs, and recursively fills it. The original (outer) method should then simply print this 2D array.
+Hint: The way to go about this is to fill an $$n \times n$$ 2D array and then print it out. I would write a helper method that inputs this 2D array, among other inputs, and recursively fills it. The original (outer) method should then simply print this 2D array.
 
 
 ```java
