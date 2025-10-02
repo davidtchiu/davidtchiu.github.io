@@ -56,8 +56,8 @@ To investigate the performance of our algorithms, we need to first generate some
     System.out.println(runner);
     > [5, 9, 2, 6, 0, 3, 1, 8, 4, 7]
     ```
-
-#### Part 2: Counting Simple Statements
+<!-- 
+#### Part 2: Counting Operations
 
 In this lab, we assume that the time complexity of an algorithm is the number of simple statements an algorithm has to run as a function of the problem (list) size.
 
@@ -136,9 +136,9 @@ In this lab, we assume that the time complexity of an algorithm is the number of
    runner.binarySearch(68);
    System.out.println(runner.getStatements());
    > 4
-   ```
+   ``` -->
 
-#### Part 3: Experimentation and Analysis
+#### Part 2: Experimentation and Analysis
 
 Let's test to see if our hypotheses on the search algorithms' time complexity are sound. The `Expr` class has a constant defined called `NUM_RUNS = 1` (you will change this later), and a few `static` methods (already implemented - you do not need to edit these). Here's what they do:
 
@@ -241,7 +241,7 @@ On the lab report,  I ask you to put the running times of the best, worst, and a
 3. Open your spreadsheet program, and generate another plot, with the best, worst, and average-case as the series. Again, drop it into the proper place in your **Lab Report**. Juxtapose the two Charts (between Linear Search and Binary Search) and you can see the power of Binary Search. Also, what can you glean about the average-case time complexity of binary search? Is it more like the best-case, or the worst-case?
 
 
-#### Part 4. Writing and Analyzing Algorithms
+#### Part 3. Writing and Analyzing Algorithms
 One of the objectives of this class is to get you into the habit of writing your own algorithms, and then to analyze its running time, which may in turn prompt you to improve upon it. Here's a method that's often used in statistics and requires a couple passes over your data, and shouldn't be super difficult to code up. 
 
 You might've already noticed that there's a method in `RuntimeTester` that you need to implement called `standardDeviation()`. The standard deviation, which can be denoted using $$\sigma$$ (read "sigma"), measures the average distance an element in your list is from the average (mean). Standard deviation is calculated as follows:
@@ -272,7 +272,7 @@ where $$n$$ is the length of your list, $$\mu$$ is the mean value of the list, a
 
 3. You don't need to replot here, but what would you suspect your plot to look like if you called `average()`
 
-#### Part 5. Finding the Median
+#### Part 4. Finding the Median
 Finally, let's try analyzing a tougher one. Open back up the `RuntimeTester` class, and look for the `median()` method.Read the algorithm thoroughly to understand how it calculates the median element in a given list. The *median* is defined to be the element with an equal number of elements less than, and greater than, itself.  For instance, the median of [5,3,2,7,1,9,0] is 3 because [0, 1, 2] are less than 3, and [5, 7, 9] are greater than 3. Try to see how the algorithm determines count of elememts on each "side" for every value in the list. In cases where the number of elements in the list is even, and there are two elements that could both serve as the median, this algorithm chooses the smaller one. So, if the list is [4,2,7,1,9,0] then the choice of median is between either 2 or 4. The algorithm chooses 2. It's important to note that, as soon as the counts are found to be the same on each side, the median is found and returned. In other words, the algorithm may finish early depending on where the median actually is.
 
 
