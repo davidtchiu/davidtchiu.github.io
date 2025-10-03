@@ -231,3 +231,92 @@ Written by David Chiu.
 #### Lab Attendance Policies
 
 Attendance is required for lab. Unexcused absence = no credit even if you turned in the lab. Unexcused tardiness = half credit.
+
+
+
+
+
+
+<!-- 
+#### Part 2: Counting Operations
+
+In this lab, we assume that the time complexity of an algorithm is the number of simple statements an algorithm has to run as a function of the problem (list) size.
+
+##### Review: Linear Search
+
+1. Still inside the `RuntimeTester` class, find the `linearSearch()` method. You might read through the code again just to remind yourself of how it behaves. Notice that I added a line of code to help us count the number of simple statements executed. 
+
+2. We learned that the time complexity of this method varies based on the elements inside the list, as well as the key you're searching for. Specifically, if $$n$$ is  the size of your list, we estimated that it would take $$1$$, $$n$$, and $$\dfrac{n+1}{2}$$ comparisons for the best, worst, and average cases, respectively. Also recall the scenarios under which these cases are exhibited:
+
+   - Worst Case:  when the key is not found. The worst case is often what we pay attention.
+   - Best Case:  when the key is found in the first element of the list. Rare.
+   - Average Case: assuming the key is in the list, then over many runs, the key's location averages out to be in middle, therefore requiring around $n/2$ statements on average.
+
+4. We wouldn't lie to you, but it would be good to verify these results. If you type out the following in code pad, your outputs should look _exactly_ like the mine:
+
+   ```java
+   RuntimeTester runner = new RuntimeTester(10);
+   runner.generateData(true);
+   System.out.println(runner);
+   > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+   runner.resetStatements();
+   runner.linearSearch(7);
+   System.out.println(runner.getStatements());
+   > 8
+
+   runner.resetStatements();
+   runner.linearSearch(56);
+   System.out.println(runner.getStatements());
+   > 10
+
+   runner.resetStatements();
+   runner.linearSearch(0);
+   System.out.println(runner.getStatements());
+   > 1
+   ```
+
+#### Review: Binary Search
+
+1. Now find the `binarySearch()` method. Read through it to get a basic understanding of what it does. Recall the caveat that binary search only works if the list is already sorted in ascending order! This method takes an integer `key` as input. It then compares the middle element in the list to the key. If the middle element is larger, then it "throws away" the latter half of the list from further consideration, and vice-versa if the element was instead smaller. These steps continue until the key is found, or if there is no more elements to throw away, in which case, the key is not found.
+
+2. We saw that the time complexity of this method varies based on the elements inside the list, as well as the key you're searching for. Specifically, if $$n$$ is the size of your list, we calculated that it would take 1 and $$\log_2{n}$$ comparisons for the best-case and worst-case, respectively. Also recall the scenarios under which these cases are exhibited:
+
+   - Best Case:  when the key is found in the middle of the sorted list. Super rare.
+   - Worst Case: when the key is not found in the list.
+   - Average Case: ? It's unclear how this algorithm behaves on the average. We'll find out in the next section. For now, treat it as a mystery. 
+
+3. If you type out the following in code pad, your outputs should look _exactly_ like the mine:
+
+   ```java
+   RuntimeTester runner = new RuntimeTester(8);
+   runner.generateData(true);
+   System.out.println(runner.toString());
+   "[0, 1, 2, 3, 4, 5, 6, 7]"   (String)
+
+   runner.binarySearch(0);
+   System.out.println(runner.getStatements());
+   > 3
+
+   runner.resetStatements();
+   runner.binarySearch(1);
+   System.out.println(runner.getStatements());
+   > 2
+
+   runner.resetStatements();
+   runner.binarySearch(2);
+   System.out.println(runner.getStatements());
+   > 3
+
+   runner.resetStatements();
+   runner.binarySearch(3);
+   System.out.println(runner.getStatements());
+   > 1
+
+   runner.resetStatements();
+   runner.binarySearch(68);
+   System.out.println(runner.getStatements());
+   > 4
+   ```
+   
+-->

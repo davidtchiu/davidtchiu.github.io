@@ -123,8 +123,8 @@ These don't yield any points, but you will be happier that you did them.
 3. (spicy) List all courses in Andrew's major that he is not currently taking.
 
    ```
-   CourseNum   deptID	CourseName	Location	meetDay	meetTime
-   ---------      ------   ----------  -------- -------  --------
+   CourseNum      deptID	CourseName	Location	meetDay	meetTime
+   ---------      ------   ----------     -------- -------  --------
    122	         BUS	   Economics	   WY 30	   MW	      13:30
    351	         BUS	   Finance	   WY 29	   TR	      12:00
    ```
