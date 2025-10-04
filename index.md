@@ -23,6 +23,7 @@
 
 ### Recent Activities
 - (09/2025) Chairing the Student Support Committee for 2025-26.
+- (08/2025) Led a panel  on supporting underrepresented students for Peer Advisor Training, University of Puget Sound.
 - (08/2025) Faculty Development Center (FDC) board for 2025-26.
 - (05/2025) Congrats to Alex Kirner on receiving a Student Research Award. Work starts on optimizing join execution.
 - (04/2025) Completed a site visit to [DIS Study Abroad in Scandinavia](https://disabroad.org/) (Stockholm and Copenhagen campuses).
@@ -31,7 +32,7 @@
 - (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
 - (09/2024) Serving as a New Faculty Mentor for 2024.
 - (08/2024) I'm excited to be teaching at the [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html), Taiwan, in 2025.
-- (08/2024) Led a panel discussion on supporting underrepresented students for Peer Advisor Training, University of Puget Sound.
+- (08/2024) Led a panel  on supporting underrepresented students for Peer Advisor Training, University of Puget Sound.
 - (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: "Bitmap Indexing for Database Systems"
 - (05/2024) I will be serving on the program committee for [HiPC 2024](https://hipc.org/).
 - (05/2024) I'm honored to receive the 2024 Influential Faculty of Color Award, University of Puget Sound.
