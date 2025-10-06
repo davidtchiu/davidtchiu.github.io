@@ -15,19 +15,7 @@ By the end of this assignment, you should be able to:
 - Explain how scheduling policies trade off between throughput, fairness, and average response time.
 
 #### Program Requirements
-A hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies:
-
-- First-Come First-Served (FCFS)
-- Shortest Seek Time First (SSTF)
-- LOOK
-- C-LOOK
-
-Your program reports the results of each policy, including:
-
-- The exact schedule of tracks visited (i.e., order of service).
-- The total seek distance (number of tracks traversed).
-- The total seek time (seek distance * seek time per track).
-- The average turnaround time (assume all requests arrive at time 0).
+A hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: First-Come First-Served (FCFS), Shortest Seek Time First (SSTF), LOOK, Circular LOOK (C-LOOK).
 
 
 1. You can write this program using a language of your choice. Your program must compile and run without modifications. No separate write-up is required for this assignment.
@@ -43,8 +31,14 @@ Your program reports the results of each policy, including:
     2069 1212 2296 2800 544 1618 356 1523 4965 3681
     ```
 
-3. Once you've read in the inputs, your program will simulate each of the four scheduling algorithms. After each algorithm is done simulating, print out a summary block:
 
+3. Once you've read in the inputs, your program will simulate each of the four scheduling algorithms. After each algorithm is done simulating, your program reports the results of each policy, including:
+- The exact schedule of tracks visited (i.e., order of service).
+- The total seek distance (number of tracks traversed).
+- The total seek time (seek distance * seek time per track).
+- The average turnaround time (assume all requests arrive at time 0).
+
+Here's an example output:
     ```txt
     Algorithm: SSTF
     Schedule: 2150 -> 2069 -> 2296 -> 2800 -> 3681 -> 4965 -> 1618 -> 1523 -> 1212 -> 544 -> 356
@@ -54,10 +48,11 @@ Your program reports the results of each policy, including:
     ```
 
 Note the following:
-    - The "schedule" always starts on the user-given "initial head position" and outputs the schedule that is determined by the corresponding scheduling policy.
-    - Please clearly label each algorithm’s results.
-    - Turnaround time is computed assuming all requests are in the queue at time 0.
-    - For C-LOOK, remember that the head wraps around to the lowest outstanding request rather than reversing direction.
+- The "schedule" always starts on the user-given "initial head position" and outputs the schedule that is determined by the corresponding scheduling policy.
+- Please clearly label each algorithm’s results.
+- Please use arrows `->` to separate head movements.
+- Turnaround time is computed assuming all requests are in the queue at time 0.
+- For C-LOOK, remember that the head wraps around to the lowest outstanding request rather than reversing direction.
 
 ### Example Interaction (degree = 3)
 ```txt
@@ -160,25 +155,12 @@ Same insertion order, but final tree would be:
 #### Grading
 
 ```
-This assignment will be graded out of 90 points.
+This assignment will be graded out of XX points.
+Correctness	60	Accurately implements FCFS, SSTF, LOOK, and C-LOOK. Metrics computed correctly.
+Clarity & Style	20	Code is well-structured, readable, and commented where appropriate. Functions or methods separate algorithm logic from input/output.
+Input/Output Handling	10	Prompts user interactively and matches specified format. Handles reasonable user inputs gracefully.
+Testing & Robustness	10	Validates track bounds, handles empty or malformed input without crashing.
 
-[10pts] Implementation of the user interface to insert, search, print, and quit.
-
-[10pts] The search method is properly implemented, and takes O(1) time.
-
-[20pts] The print function prints the global directory and the buckets in the format
-given in this assignment.
-
-[50pts] The insert function is properly implemented according to the algorithm given
-in lecture. This method only attempts to insert when the key is not already contained
-in the index. Splitting of the local directory requires the correct keys from the overflown
-bucket to be transferred to the new bucket based on those keys' most significant bits.
-Pointers in the global directory need to be updated to point to the new bucket, 
-regardless of whether the global directory needs to be doubled in size. 
-
-This method must run in amortized O(1) time. On a split, you may observe that this method runs
-in O(d) where d is the number of entries in the global directory. However, because each split allows
-for addressing 2 times more buckets, the insert operations between global-splits averages out to O(1).
 ```
 
 #### Submitting Your Assignment
