@@ -10,7 +10,7 @@
   David holds a PhD in Computer Science and Engineering from <a href="https://cse.osu.edu">The Ohio State University</a>, completed under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a> (now Founding Director at the University of Georgia). A member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David's doctoral research was on the dynamic composition of scientific workflows in distributed systems. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on protocols and tools for supporting the transmission of web-based math education modules.
   </p>
   <p>
-  From 2010 to 2014, David was an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at Washington State University, Vancouver. Since 2014, he has been with Puget Sound, where he held appointments as an Assistant Professor (2014–2017), Associate Professor (2017–2022), and Full Professor (2022–). He also completed a rotation as Department Chair (2019-2022).
+  From 2010 to 2014, David was an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at WSU Vancouver. Since 2014, he has been with Puget Sound, where he held appointments as an Assistant Professor (2014–2017), Associate Professor (2017–2022), and Full Professor (2022–). He also completed a rotation as Department Chair (2019-2022).
   </p>
   <p>
   David is deeply committed to mentoring and  research with undergraduates. He has supervised more than 25 researchers on projects spanning data management and  distributed cloud computing. He regularly serves on both organizational and program committees for  conferences in these areas. David has received the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), the Bartanen Research Award (2017) from the University of Puget Sound, and the Eleanor Quinlan Memorial Award for Excellence in Teaching (2009) from The Ohio State University. He is a member of the ACM and a Senior Member of the IEEE.
@@ -28,6 +28,8 @@
 - (05/2025) Congrats to Alex Kirner on receiving a Student Research Award. Work starts on optimizing join execution.
 - (04/2025) Completed a site visit to [DIS Study Abroad in Scandinavia](https://disabroad.org/) (Stockholm and Copenhagen campuses).
 - (02/2025) Search Committee, Department of Communications Studies, University of Puget Sound.
+
+<!-- 
 - (08/2024) Co-chairing the International Education Committee (IEC), University of Puget Sound.
 - (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
 - (09/2024) Serving as a New Faculty Mentor for 2024.
@@ -48,7 +50,8 @@
 - (5/2022) Co-chairing the Poster Program at IEEE/ACM [UCC 2022](https://ucc-conference.org/) and [BDCAT 2022](https://bdcat-conference.org/), both to be held in Portland, Oregon in December.
 - (4/2022) Promoted to Full Professor.
 
-<!-- 
+
+
 - (4/2022) Serving as a PC member for IDEAS 2022.
 - (8/2021) Faculty Panelist (with Monica DeHart and Melvin Rouse) for the "I Am Puget Sound" student orientation program.
 - (7/2021) Chairing the Demo/Short Paper Session at SSDBM 2021, and I'm also giving a talk, "Caching Support for Range Query Processing on Bitmap Indices."
