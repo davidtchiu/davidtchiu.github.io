@@ -15,7 +15,12 @@ By the end of this assignment, you should be able to:
 - Explain how scheduling policies trade off between throughput, fairness, and average response time.
 
 #### Program Requirements
-A hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: First-Come First-Served (FCFS), Shortest Seek Time First (SSTF), LOOK, Circular LOOK (C-LOOK).
+A hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: FCFS, SSTF, LOOK, and C-LOOK. Let's take a second to review each policy:
+
+- **FCFS (First-Come-First-Served):** The scheduler services each track based solely on their arrival order.
+- **SSTF (Shortest-Seek-Time-First):** This is a "greedy approach." The scheduler services the track that is nearest to the current location of the disk head.
+- **LOOK:** Starting from the current head position, the scheduler continues moving in the same direction that the head was last traveling. (At program start, you may assume this direction is toward higher-numbered tracks.) It services all outstanding requests in that direction, ordered by increasing track number,  ignoring any requests that are behind the current head position until the direction reverses. When it reaches the last pending request in that direction, it reverses and services the remaining requests in the opposite direction.
+- **C-LOOK (Circular LOOK):** This is the same as LOOK except that the head only services requests in one direction (lower to higher-numbered tracks). When the reaches the last request, it snaps back to the lowest requested track to service the rest.
 
 
 1. You can write this program using a language of your choice. Your program must compile and run without modifications. No separate write-up is required for this assignment.
@@ -24,6 +29,7 @@ A hard disk consists of N tracks numbered from 0 to N-1. The disk head services 
 
     ```txt
     *** DISK SCHEDULING SIMULATOR ***
+
     Enter the total number of tracks on the disk: 5000
     Enter initial head position: 2150
     Enter seek time per track (in ms): 0.5
