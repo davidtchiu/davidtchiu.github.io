@@ -32,8 +32,7 @@ A hard disk consists of N tracks numbered from 0 to N-1. The disk head services 
 
     Enter the total number of tracks on the disk: 5000
     Enter initial head position: 2150
-    Enter seek time per track (in ms): 0.5
-    Enter the request queue (track numbers separated by space): 
+    Enter the track numbers (separated by space): 
     2069 1212 2296 2800 544 1618 356 1523 4965 3681
     ```
 
