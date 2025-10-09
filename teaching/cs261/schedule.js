@@ -116,12 +116,12 @@ let days = {
         url: "lab5.bigO/",
         due: "10/3/2025",
       },
-      // {
-      //   name: "Lab 6",
-      //   title: "ArrayLists Code-along Lab",
-      //   url: "lab6.AL/",
-      //   due: "10/10/2025",
-      // },
+      {
+        name: "Lab 6",
+        title: "ArrayLists Code-along Lab",
+        url: "lab6.AL/",
+        due: "10/10/2025",
+      },
       // {
       //   name: "Lab 7",
       //   title: "LinkedList Homework/Code-along Lab",
