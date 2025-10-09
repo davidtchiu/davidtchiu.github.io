@@ -70,7 +70,7 @@ Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are 
 - First Copy and paste the following code directly into your `MyList` interface file, replacing what used to be there. All references to `double` have been replaced with `E`. Also note that `<E>` has been appended to the name of the `MyList` interface.
 
   ```java
-   /**
+  /**
     * An abbreviated List<E> interface
     *
     * @author David
@@ -93,7 +93,7 @@ Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are 
         * @return always return true
         * @throws ArrayIndexOutOfBoundsException if the given index is illegal
         */
-        boolean add(int index, E item);
+        void add(int index, E item);
 
         /**
         * Gets the item at the specified index
@@ -143,6 +143,11 @@ Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are 
         */
         int indexOf(E item);
 
+        /**
+         * Clears the list
+         */
+        void clear();
+        
         /**
         * @return string representation of the array list
         */
