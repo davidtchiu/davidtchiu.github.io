@@ -192,11 +192,11 @@ let days = {
     "Exceptional execution and handling",
     "More exceptions",
     "Lab 4: Exceptions Lab",
-    "Start: Big-O notation",
+    "Start: Understanding Big-O",
     // wk 5
-    "More Big-O notation",
-    "Big-O examples",
-    "Lab 5: Big-O lab",
+    "Big-O: linear time, quadratic time",
+    "Big-O: logarithmic time, binary search",
+    "Lab 5: Big-O Lab",
     "<strong><emph>Review for Exam 1</emph></strong>",
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",

@@ -231,9 +231,9 @@ Write a method `public static void snakeFill(int n)` that prints out an $$n \tim
 - Move right one (if possible) and fill that with 2.
 - Then alternate between diagonally up-right and diagonally down-left runs, incrementing the counter as you proceed.
 - When a diagonal hits a boundary, take one step either right (if you hit the top or bottom edge and can move right) or take one step down (if you hit the left or right edge and can move down), then switch diagonal direction and continue.
-- Continue until the grid is filled; then print the grid (row by row, single spaces between numbers).
+- Continue until the grid is filled; when done, print the grid (row by row, single spaces between numbers).
 
-Hint: The way to go about this is to fill an $$n \times n$$ 2D array and then print it out. I would write a helper method that inputs this 2D array, among other inputs, and recursively fills it. The original (outer) method should then simply print this 2D array.
+Hint: The way to go about this is to fill an $$n \times n$$ 2D array and then print it out. I would write a helper method that inputs this 2D array, among other inputs, and recursively fills it in snake-like fashion. The original (outer) `snakeFill()` method should then simply call this helper method to fill the 2D array, and then print it out.
 
 
 ```java
