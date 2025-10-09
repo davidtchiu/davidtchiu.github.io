@@ -160,7 +160,7 @@ Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are 
 - Refactoring the Instance Variables: Anywhere you make a reference to the old type of the stored data (it was an array of doubles), you must now replace its declaration with `E`. You see, once the user fills in `E` with a concrete type (like `String`, `Double`, `Integer`, `BasicDie`, etc.), Java plugs that into where ever `E` appears. If you need a reminder, click on the button.
 
   ```java
-    private E[] data;  // an array of generic objects
+  private E[] data;  // an array of generic objects
   ```
 
 - Refactoring the Constructor: The constructor gives initial values to instance variables. In our case the generic array needs to be instantiated as an array of `Objects`. But as we know, the array of `Object`s is hardly an array of type `E`, and therefore we must type cast. Notice that there is no diamond notation in the signature of the constructor.
@@ -202,9 +202,10 @@ There are still three methods remaining that you need to implement on your own.
 
 3. Finally, write the `boolean remove(E item)` method. This method searches for the given `item`, and if found, it removes it from the list. Hmm, you just wrote a method to search and a method to remove. I wonder if this can be done in a couple of lines? Return a true if found and removed, or false if not found.
 
-#### Part 5: Optional - Got Time? Implement These!
+#### Part 5 (More Practice): Got Time? Implement These Bad Boys
 These methods are not part of our `MyList` interface, but they *are* part of Java's real `List` interface. 
 
+<!-- 
 - Implement `int lastIndexOf(E item)` - searches for the specified item in the list and returns the last position in which it was found. If not found, return -1. When you're ready to test it, try out the following code example:
 
   ```java
@@ -228,7 +229,9 @@ These methods are not part of our `MyList` interface, but they *are* part of Jav
 
   System.out.println(list.lastIndexOf(0));
   > -1
-  ```
+  ``` 
+-->
+
 
 - Write `MyList<E> subList(int fromIndex, int toIndex)` - Returns a view of the portion of this list between the specified `fromIndex` (inclusive), and `toIndex` (exclusive). Don't be confused by the fact that you should return a `MyList<E>`. After all, `MyArrayList<E>` is a `MyList<E>`, so just instantiate and return another `MyArrayList<E>` with the elements in the specified range. The contents of the current `MyArrayList<E>` should remain unchanged after this call.
 
