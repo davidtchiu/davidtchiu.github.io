@@ -47,7 +47,7 @@ The following file(s) have been provided for this lab.
   
  
 
-#### Code Along: Reallocation and the Add Methods
+#### Part 2: Reallocation for the "Add" Methods
 
 1. Before we can finish the 1-argument and 2-argument "add" methods, recall that the underlying array has a maximum of `capacity` spots? 
 

@@ -214,38 +214,38 @@ let days = {
     "Lab 8: Stacks and Queues (MelodyPlayer)",
     "Stacks and Queue problem solving",
     // wk 9:
-    "Priority queues: motivation, use cases",
     "Start Recursion",
-    "Lab 9: Homework Lab",
     "Recursion: code tracing",
-    // wk 10
+    "Lab 9: Recursion Lab",
     "Recursive code writing and pitfalls",
-    "Recursive Big-O (telescoping method)",
-    "Lab 10: Recursion Lab",
+    // wk 10
+    "Big-O of recursive algos",
+    "Start Binary Trees",
+    "Lab 10: Expression Tree Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
-    "Start Binary Trees",
-    "Lab 11: Expression Trees Lab",
     "Tree Traversal; Start Binary Search Trees (BST)",
-    // wk 12
+    "Lab 11: Expression Trees Lab",
     "BSTs: contains(), add(), remove()",
+    // wk 12
     "BSTs: performance analysis",
-    "Lab 12: BST Lab",
     "Start Hashing: Entry<K,V> class, hashcode()",
-    // wk 13 
+    "Lab 12: BST Lab",
     "HashMaps: Open addressing",
+    // wk 13 
+    "HashMaps: Chaining",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
-    "HashMaps: Chaining",
     "Merge Sort",
-    "Lab 13: Hashing Lab",
     "Merge Sort Complexity",
-    // wk 15
+    "Lab 13: Hashing Lab",
     "Quick Sort",
+    // wk 15
     "Quick Sort Complexity",
+    "TBD",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
