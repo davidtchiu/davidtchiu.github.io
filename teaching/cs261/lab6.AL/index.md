@@ -202,13 +202,13 @@ There are still three methods remaining that you need to implement on your own.
 
 3. Finally, write the `boolean remove(E item)` method. This method searches for the given `item`, and if found, it removes it from the list. Hmm, you just wrote a method to search and a method to remove. I wonder if this can be done in a couple of lines? Return a true if found and removed, or false if not found.
 
-#### Part 5: Optional - Got Time? Implement These Too!
+#### Part 5: Optional - Got Time? Implement These!
+These methods are not part of our `MyList` interface, but they *are* part of Java's real `List` interface. 
 
-
-- Implement `int lastIndexOf(double item)` - searches for the specified item in the list and returns the last position in which it was found. If not found, return -1. When you're ready to test it, try out the following code example:
+- Implement `int lastIndexOf(E item)` - searches for the specified item in the list and returns the last position in which it was found. If not found, return -1. When you're ready to test it, try out the following code example:
 
   ```java
-  MyList list = new MyArrayList();
+  MyList<Double> list = new MyArrayList<>();
   list.add(3);
   list.add(5);
   list.add(7);
@@ -230,10 +230,10 @@ There are still three methods remaining that you need to implement on your own.
   > -1
   ```
 
-- Write `MyList subList(int fromIndex, int toIndex)` - Returns a view of the portion of this list between the specified `fromIndex` (inclusive), and `toIndex` (exclusive). Don't be confused by the fact that you should return a `MyList`. After all, `MyArrayList` is a `MyList`, so just instantiate and return another `MyArrayList` with the elements in the specified range. The contents of the current `MyArrayList` should remain unchanged after this call.
+- Write `MyList<E> subList(int fromIndex, int toIndex)` - Returns a view of the portion of this list between the specified `fromIndex` (inclusive), and `toIndex` (exclusive). Don't be confused by the fact that you should return a `MyList<E>`. After all, `MyArrayList<E>` is a `MyList<E>`, so just instantiate and return another `MyArrayList<E>` with the elements in the specified range. The contents of the current `MyArrayList<E>` should remain unchanged after this call.
 
   ```java
-  MyList list_A = new MyArrayList();
+  MyList<Double> list_A = new MyArrayList<>();
   list_A.add(10);
   list_A.add(20);
   list_A.add(30);
@@ -244,12 +244,12 @@ There are still three methods remaining that you need to implement on your own.
   > [10.0, 20.0, 30.0, 40.0, 50.0, 60.0]
 
   // gimme the last half of the list
-  MyList list_C = list_A.subList(list_A.size()/2, list_A.size());
+  MyList<E> list_C = list_A.subList(list_A.size()/2, list_A.size());
   System.out.println(list_C);
   > [40.0, 50.0, 60.0]
 
   // gimme the first half of the list
-  MyList list_D = list_A.subList(0, list_A.size()/2);
+  MyList<E> list_D = list_A.subList(0, list_A.size()/2);
   System.out.println(list_D);
   > [10.0, 20.0, 30.0]
 
@@ -261,7 +261,7 @@ There are still three methods remaining that you need to implement on your own.
 - Write `void removeRange(int fromIndex, int toIndex)` - Removes from this list all of the elements whose index is between `fromIndex` (inclusive), and `toIndex` (exclusive). You should reuse the remove method. 
 
   ```java
-  MyList list = new MyArrayList();
+  MyList<Double> list = new MyArrayList<>();
   list.add(3);
   list.add(5);
   list.add(7);
@@ -285,18 +285,18 @@ There are still three methods remaining that you need to implement on your own.
   > [3.0]
   ```
 
-- Write `boolean equals(Object other)` - This method returns true if the current list is equivalent to the input list (yes, you have to down-cast `other` to a `MyArrayList` object first). For two lists to be equal, they must contain the same items in the same order. 
+- Write `boolean equals(Object other)` - This method returns true if the current list is equivalent to the input list (yes, you have to down-cast `other` to a `MyArrayList<E>` object first). For two lists to be equal, they must contain the same items in the same order. 
 
   ```java
   // Here's a list
-  MyList list_A = new MyArrayList();
+  MyList<Double> list_A = new MyArrayList<>();
   list_A.add(1);
   list_A.add(2);
   list_A.add(2);
   list_A.add(1);
 
   // Here's another list
-  MyList list_B = new MyArrayList();
+  MyList<Double> list_B = new MyArrayList<>();
   list_B.add(1);
   list_B.add(2);
   list_B.add(3);
@@ -304,17 +304,17 @@ There are still three methods remaining that you need to implement on your own.
   System.out.println(list_A.equals(list_B));
   > false
 
-  list_A.removeRange(2,list_A.size());
+  list_A.removeRange(2, list_A.size());
   list_A.add(3);
   System.out.println(list_A.equals(list_B));
   > true
   ```
 
-- Write `boolean retainAll(MyList list)` - Retains only the elements in this list that are contained in the specified list. This method returns `true` if changes were made to the current list and `false` otherwise. You should reuse the `remove()` method. 
+- Write `boolean retainAll(MyList<E> list)` - Retains only the elements in this list that are contained in the specified list. This method returns `true` if changes were made to the current list and `false` otherwise. You should reuse the `remove()` method. 
 
   ```java
   // Here's a list
-  MyList list_A = new MyArrayList();
+  MyList<Double> list_A = new MyArrayList<>();
   list_A.add(1);
   list_A.add(2);
   list_A.add(2);
@@ -325,7 +325,7 @@ There are still three methods remaining that you need to implement on your own.
   > [1.0, 2.0, 2.0, 1.0, 3.0, 1.0]
 
   // Here's a list of things to retain        
-  MyList list_B = new MyArrayList();
+  MyList<Double> list_B = new MyArrayList<>();
   list_B.add(2);
   list_B.add(3);
   System.out.println(list_B);
@@ -336,17 +336,17 @@ There are still three methods remaining that you need to implement on your own.
   > [2.0, 2.0, 3.0]
   ```
 
-- Write the method, `void addAll(int index, MyList other)` that adds all elements in the input list to the specified position. You should be using the 2-argument add method that you wrote during lab!
+- Write the method, `void addAll(int index, MyList<E> other)` that adds all elements in the input list to the specified position. You should be using the 2-argument add method that you wrote during lab!
 
   ```java
-  MyList list_A = new MyArrayList();
+  MyList<Double> list_A = new MyArrayList<>();
   list_A.add(1);
   list_A.add(2);
   list_A.add(3);
   System.out.println(list_A);
   > [1.0, 2.0, 3.0]
 
-  MyList list_B = new MyArrayList();
+  MyList<Double> list_B = new MyArrayList<>();
   list_B.add(4);
   list_B.add(5);
   System.out.println(list_B);
@@ -361,7 +361,7 @@ There are still three methods remaining that you need to implement on your own.
 - Now you should be able to write the 1-argument version, `void addAll(MyList other)` quite easily. This simply adds all elements in the input list to the end of the current list. 
 
   ```java
-  MyList list_A = new MyArrayList();
+  MyList<Double> list_A = new MyArrayList<>();
   list_A.add(1);
   list_A.add(2);
   list_A.add(2);
@@ -371,7 +371,7 @@ There are still three methods remaining that you need to implement on your own.
   System.out.println(list_A);
   > [1.0, 2.0, 2.0, 1.0, 3.0, 1.0]
 
-  MyList list_B = new MyArrayList();
+  MyList<Double> list_B = new MyArrayList<>();
   list_B.add(2);
   list_B.add(3);
   System.out.println(list_B);
@@ -384,10 +384,10 @@ There are still three methods remaining that you need to implement on your own.
   ```
 
 
-- Write the method `void removeAll(MyList list)` that removes all elements found in the input list from the current list. This one can be slightly tricky because you have to remove all instances. For example, if a list has `[4,5,6,6,1,2,6,8]` and the second list has `[6,8]` then after calling this method, you should be left with `[4,5,1,2]`
+- Write the method `void removeAll(MyList<E> list)` that removes all elements found in the input list from the current list. This one can be slightly tricky because you have to remove all instances. For example, if a list has `[4,5,6,6,1,2,6,8]` and the second list has `[6,8]` then after calling this method, you should be left with `[4,5,1,2]`
 
   ```java
-  MyList list_A = new MyArrayList();
+  MyList<Double> list_A = new MyArrayList<>();
   list_A.add(4);
   list_A.add(5);
   list_A.add(6);
@@ -399,7 +399,7 @@ There are still three methods remaining that you need to implement on your own.
   System.out.println(list_A);
   > [4.0, 5.0, 6.0, 6.0, 1.0, 2.0, 6.0, 8.0]
 
-  MyList list_B = new MyArrayList();
+  MyList<Double> list_B = new MyArrayList<>();
   list_B.add(6);
   list_B.add(8);
   System.out.println(list_B);
