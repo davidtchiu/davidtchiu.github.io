@@ -202,7 +202,7 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "List interface, ArrayList: add(), reallocate()",
     "Lab 6: ArrayList Code-Along Lab",
-    "Start Linked Lists: The Node inner class",
+    "Start Linked Lists: node structure",
     // wk 7
     "LL: indexOf(), getNodeAt(), get(), set()",
     "LL: addFirst(), addAfter(), add()",
