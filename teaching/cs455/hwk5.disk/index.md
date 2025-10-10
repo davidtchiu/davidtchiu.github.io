@@ -2,11 +2,11 @@
 
 ### Hwk 5: Disk Scheduling Simulator
 In this assignment you will write a program in Java or Python to simulate disk scheduling algorithms. This project will help you practice implementing scheduling policies covered in lecture (FCFS, SSTF, LOOK, C-LOOK).
-![](figures/image.png)
+<img src="figures/image.png" width="75%" />
 
 
 #### Background
-A hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: FCFS, SSTF, LOOK, and C-LOOK. Let's take a moment to review each policy:
+A rotating hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: FCFS, SSTF, LOOK, and C-LOOK. Let's take a moment to review each policy:
 
 - **FCFS (First-Come-First-Served):** The scheduler services each track based solely on their arrival order in the disk request queue.
 - **SSTF (Shortest-Seek-Time-First):** This is a "greedy approach" in the sense that the disk scheduler always services the request that is closest to the current location of the head.
@@ -100,7 +100,7 @@ Schedule: 132 -> 187 -> 23 -> 42 -> 89
 Total Seek Distance: 317 (avg = 63.40 tracks per seek)
 ```
 
-### Example Interaction (2)
+### Example Interaction (3)
 If your program is correct, your outputs should match mine.
 
 ```txt
