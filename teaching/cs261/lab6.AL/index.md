@@ -293,7 +293,7 @@ These methods are not part of our `MyList` interface, but they *are* part of Jav
   > [3.0]
   ```
 
-- Write `boolean equals(Object other)` - This method returns true if the current list is equivalent to the input list (yes, you have to down-cast `other` to a `MyArrayList<E>` object first). For two lists to be equal, they must contain the same items in the same order. 
+- Write `boolean equals(Object other)` - This method returns true if the current list is equivalent to the input list. First, you should test to see if `other` is in fact a `MyArrayList` (that's right, no diamond notation!) using `instanceof`. If it is, then down-cast `other` to a `MyArrayList<E>` object first. For two lists to be equal, they must contain the same items in the same order.
 
   ```java
   // Here's a list

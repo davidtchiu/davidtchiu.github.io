@@ -1,10 +1,18 @@
 ## CS 455 - Principles of Database Systems
 
 ### Hwk 5: Disk Scheduling Simulator
-In this assignment you will write a program in Java or Python to simulate disk scheduling algorithms. This project will help you:
-- Practice implementing scheduling policies covered in lecture (FCFS, SSTF, LOOK, C-LOOK).
-- Compare their performance in terms of seek distance, seek time, and turnaround time.
-- Appreciate fairness vs. efficiency trade-offs in scheduling.
+In this assignment you will write a program in Java or Python to simulate disk scheduling algorithms. This project will help you practice implementing scheduling policies covered in lecture (FCFS, SSTF, LOOK, C-LOOK).
+![](figures/image.png)
+
+
+#### Background
+A hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: FCFS, SSTF, LOOK, and C-LOOK. Let's take a moment to review each policy:
+
+- **FCFS (First-Come-First-Served):** The scheduler services each track based solely on their arrival order in the disk request queue.
+- **SSTF (Shortest-Seek-Time-First):** This is a "greedy approach" in the sense that the disk scheduler always services the request that is closest to the current location of the head.
+- **LOOK:** Starting from the current head position, the scheduler moves in the same direction that the head was last traveling. (At program start, you may assume this direction is in ascending order.) It services all outstanding requests in that direction, ignoring any requests that are behind the current head position. When the head reaches the last pending request in that direction, it reverses and services the remaining requests in the opposite direction.
+- **C-LOOK (Circular LOOK):** This is the same as LOOK except that the head only services requests in one direction (ascending order). When the reaches the last request, it heads back to the lowest requested track to service the rest.
+
 
 #### Student Outcomes
 By the end of this assignment, you should be able to:
@@ -14,157 +22,129 @@ By the end of this assignment, you should be able to:
 - Compute and compare quantitative performance metrics, including total seek distance, total seek time, and turnaround time.
 - Explain how scheduling policies trade off between throughput, fairness, and average response time.
 
-#### Program Requirements
-A hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: FCFS, SSTF, LOOK, and C-LOOK. Let's take a second to review each policy:
-
-- **FCFS (First-Come-First-Served):** The scheduler services each track based solely on their arrival order.
-- **SSTF (Shortest-Seek-Time-First):** This is a "greedy approach." The scheduler services the track that is nearest to the current location of the disk head.
-- **LOOK:** Starting from the current head position, the scheduler continues moving in the same direction that the head was last traveling. (At program start, you may assume this direction is toward higher-numbered tracks.) It services all outstanding requests in that direction, ordered by increasing track number,  ignoring any requests that are behind the current head position until the direction reverses. When it reaches the last pending request in that direction, it reverses and services the remaining requests in the opposite direction.
-- **C-LOOK (Circular LOOK):** This is the same as LOOK except that the head only services requests in one direction (lower to higher-numbered tracks). When the reaches the last request, it snaps back to the lowest requested track to service the rest.
-
+#### Requirements
 
 1. You can write this program using a language of your choice. Your program must compile and run without modifications. No separate write-up is required for this assignment.
 
-2. Upon starting, your program should prompt for user input step-by-step. Here's an example of what that might look like:
+2. Upon starting, your program should prompt for two user inputs: the initial head position, and a listing of outstanding track requests. Here's an example of what that might look like:
 
     ```txt
     *** DISK SCHEDULING SIMULATOR ***
 
-    Enter the total number of tracks on the disk: 5000
     Enter initial head position: 2150
     Enter the track numbers (separated by space): 
     2069 1212 2296 2800 544 1618 356 1523 4965 3681
     ```
 
-
-3. Once you've read in the inputs, your program will simulate each of the four scheduling algorithms. After each algorithm is done simulating, your program reports the results of each policy, including:
+3. Once you've read in the inputs, your program will simulate each of the four scheduling algorithms. After each algorithm is done simulating, your program reports the results of that policy, including:
 - The exact schedule of tracks visited (i.e., order of service).
 - The total seek distance (number of tracks traversed).
-- The total seek time (seek distance * seek time per track).
-- The average turnaround time (assume all requests arrive at time 0).
+- The average seek distance per request (round down to the nearest hundredth).
+See the example outputs below for examples.
 
-Here's an example output:
-    ```txt
-    Algorithm: SSTF
-    Schedule: 2150 -> 2069 -> 2296 -> 2800 -> 3681 -> 4965 -> 1618 -> 1523 -> 1212 -> 544 -> 356
-    Total seek distance: 7586 tracks
-    Total seek time: 3793.0 ms
-    Average turnaround time:  XXXX ms
-    ```
+4. Note the following:
+- You may assume that the lowest track is 0.
+- You may assume that well-formed inputs will be given. For example, I won't test with a negative initial head position, no negative track requests, and nothing besides integers would be input in the prompts.
+- The resulting schedule always starts on the user-given "initial head position."
+- Please print arrows `->` to separate head movements in the schedule.
 
-Note the following:
-- The "schedule" always starts on the user-given "initial head position" and outputs the schedule that is determined by the corresponding scheduling policy.
-- Please clearly label each algorithm’s results.
-- Please use arrows `->` to separate head movements.
-- Turnaround time is computed assuming all requests are in the queue at time 0.
-- For C-LOOK, remember that the head wraps around to the lowest outstanding request rather than reversing direction.
+### Example Interaction (1)
+If your program is correct, your outputs should match mine.
 
-### Example Interaction (degree = 3)
 ```txt
-$ java BPlusTree 3
+*** DISK SCHEDULING SIMULATOR ***
+Enter initial head position: 50
+Enter the request queue (track numbers separated by space):
+82 170 43 140 24 16 190
 
-> p
-PRINTING TREE
-#
+FCFS
+Schedule: 82 -> 170 -> 43 -> 140 -> 24 -> 16 -> 190
+Total Seek Distance: 642 (avg = 91.71 tracks per seek)
 
-> i 8
-SUCCESS
+SSTF
+Schedule: 43 -> 24 -> 16 -> 82 -> 140 -> 170 -> 190
+Total Seek Distance: 208 (avg = 29.71 tracks per seek)
 
-> i 5
-SUCCESS
+LOOK
+Schedule: 82 -> 140 -> 170 -> 190 -> 43 -> 24 -> 16
+Total Seek Distance: 314 (avg = 44.86 tracks per seek)
 
-> i 1
-SUCCESS
-
-> p
-PRINTING TREE
-5 #
-1 # 5,8 #
-
-> i 7
-SUCCESS
-
-> p
-PRINTING TREE
-5,7 #
-1 # 5 # 7,8 #
-
-> i 3
-SUCCESS
-
-> i 12
-SUCCESS
-
-> p
-PRINTING TREE
-7#
-5# 8#
-1,3# 5# 7# 8,12#
-
-> i 9
-SUCCESS
-
-> s 56
-56 NOT FOUND
-
-> s 8
-8 FOUND
-
-> p
-PRINTING TREE
-7#
-5# 8,9#
-1,3# 5# 7# 8# 9,12#
-
-> i 6
-SUCCESS
-
-> p
-PRINTING TREE
-7#
-5# 8,9#
-1,3# 5,6# 7# 8# 9,12#
-
-> i 13
-SUCCESS
-
-> i 14
-SUCCESS
-
-> i 15
-SUCCESS
-
-> p
-PRINTING TREE
-9#
-7# 13#
-5# 8# 12# 14#
-1,3# 5,6# 7# 8# 9# 12# 13# 14,15#
+C-LOOK
+Schedule: 82 -> 140 -> 170 -> 190 -> 16 -> 24 -> 43
+Total Seek Distance: 341 (avg = 48.71 tracks per seek)
 ```
 
-### Example (degree = 4)
-Same insertion order, but final tree would be:
+### Example Interaction (2)
+If your program is correct, your outputs should match mine.
+
 ```txt
-9# 
-5,7# 13# 
-1,3# 5,6# 7,8# 9,12# 13,14,15#
+*** DISK SCHEDULING SIMULATOR ***
+Enter initial head position: 100
+Enter the request queue (track numbers separated by space):
+23 89 132 42 187 
+
+FCFS
+Schedule: 23 -> 89 -> 132 -> 42 -> 187
+Total Seek Distance: 421 (avg = 84.20 tracks per seek)
+
+SSTF
+Schedule: 89 -> 132 -> 187 -> 42 -> 23
+Total Seek Distance: 273 (avg = 54.60 tracks per seek)
+
+LOOK
+Schedule: 132 -> 187 -> 89 -> 42 -> 23
+Total Seek Distance: 251 (avg = 50.20 tracks per seek)
+
+C-LOOK
+Schedule: 132 -> 187 -> 23 -> 42 -> 89
+Total Seek Distance: 317 (avg = 63.40 tracks per seek)
 ```
 
-### Example (degree = 20)
-Same insertion order, but final tree would be:
-```txt
-1,3,5,6,7,8,9,12,13,14,15#
-```
+### Example Interaction (2)
+If your program is correct, your outputs should match mine.
 
+```txt
+*** DISK SCHEDULING SIMULATOR ***
+Enter initial head position: 3030                                           
+Enter the request queue (track numbers separated by space):
+2069 1212 2296 2800 544 1618 356 1523 4965 3681
+
+FCFS
+Schedule: 2069 -> 1212 -> 2296 -> 2800 -> 544 -> 1618 -> 356 -> 1523 -> 4965 -> 3681
+Total Seek Distance: 13891 (avg = 1389.10 tracks per seek)
+
+SSTF
+Schedule: 2800 -> 2296 -> 2069 -> 1618 -> 1523 -> 1212 -> 544 -> 356 -> 3681 -> 4965
+Total Seek Distance: 7283 (avg = 728.30 tracks per seek)
+
+LOOK
+Schedule: 3681 -> 4965 -> 2800 -> 2296 -> 2069 -> 1618 -> 1523 -> 1212 -> 544 -> 356
+Total Seek Distance: 6544 (avg = 654.40 tracks per seek)
+
+C-LOOK
+Schedule: 3681 -> 4965 -> 356 -> 544 -> 1212 -> 1523 -> 1618 -> 2069 -> 2296 -> 2800
+Total Seek Distance: 8988 (avg = 898.80 tracks per seek)
+```
 
 #### Grading
 
 ```
-This assignment will be graded out of XX points.
-Correctness	60	Accurately implements FCFS, SSTF, LOOK, and C-LOOK. Metrics computed correctly.
-Clarity & Style	20	Code is well-structured, readable, and commented where appropriate. Functions or methods separate algorithm logic from input/output.
-Input/Output Handling	10	Prompts user interactively and matches specified format. Handles reasonable user inputs gracefully.
-Testing & Robustness	10	Validates track bounds, handles empty or malformed input without crashing.
+This assignment will be graded out of 80 points.
+
+[10pts] Input/Output handling
+    - Prompts user interactively and output matches specified format.
+    - Handles reasonable user inputs gracefully.
+
+[10pts] Style and Commenting
+    - Code is well-structured, readable, and commented where appropriate.
+    - Functions / methods separate algorithm logic from input/output.
+    - Code duplication is minimized.
+
+[60pts] 
+    - Correctness of FCFS (10 pts)
+    - Correctness of SSTF (20 pts)
+    - Correctness of LOOK (15 pts)
+    - Correctness of C-LOOK (15 pts)
 
 ```
 
@@ -173,9 +153,9 @@ Testing & Robustness	10	Validates track bounds, handles empty or malformed input
 After you have completed the homework, use the following to submit your work on Canvas. There are two options to submit your work.
 
 1. If you pushed all your code to a Github repository. Make sure your repo is public, and simply submit the URL to your repo on Canvas.
-2. Alternatively, you can zip up all your files (minus the `.class` files) and submit the `.zip` file on Canvas.
+2. Alternatively, you can zip up all your files and submit the `.zip` file on Canvas.
 3. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
 
 #### Credits
 
-Written by David Chiu. 2024.
+Written by David Chiu. 2025.
