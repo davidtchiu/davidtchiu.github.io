@@ -2,7 +2,7 @@
 
 ### Hwk 5: Disk Scheduling Simulator
 In this assignment you will write a program in Java or Python to simulate disk scheduling algorithms. This project will help you practice implementing scheduling policies covered in lecture (FCFS, SSTF, LOOK, C-LOOK).
-<img src="figures/image.png" width="75%" />
+<img src="figures/image.png" width="50%" />
 
 
 #### Background
