@@ -37,12 +37,12 @@ let days = {
         url: "hwk3.ycm/",
         due: "10/8/2025", // Wed, wk 6
       }, 
-      // {
-      //   name: "Hwk 4",
-      //   title: "Doubly Linked List",
-      //   url: "hwk4.LL/",
-      //   due: "10/21/2025",  // Tues, wk 8 Fall Break
-      // },
+      {
+        name: "Hwk 4",
+        title: "Doubly Linked List",
+        url: "hwk4.LL/",
+        due: "10/22/2025",  // Wed, wk 8 Fall Break
+      },
       // {
       //   name: "Hwk 5",
       //   title: "HTML Tag Validator",
@@ -202,9 +202,9 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "List interface, ArrayList: add(), reallocate()",
     "Lab 6: ArrayList Code-Along Lab",
-    "Start Linked Lists: node structure",
+    "Linked Lists: node structure, getNodeAt()",
     // wk 7
-    "LL: indexOf(), getNodeAt(), get(), set()",
+    "LL: get(), set(), add()",
     "LL: addFirst(), addAfter(), add()",
     "Lab 7: LL Homework Code-Along Lab",
     "LL: optimizations (tail, iterator, double links)",

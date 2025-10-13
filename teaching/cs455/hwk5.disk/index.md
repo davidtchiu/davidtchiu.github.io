@@ -16,7 +16,6 @@ A rotating hard disk consists of N tracks numbered from 0 to N-1. The disk head 
 
 #### Student Outcomes
 By the end of this assignment, you should be able to:
-
 - Describe how disk scheduling algorithms (FCFS, SSTF, LOOK, C-LOOK) determine the order of servicing I/O requests.
 - Simulate each of these algorithms and trace the head movement across disk tracks.
 - Compute and compare quantitative performance metrics, including total seek distance, total seek time, and turnaround time.
@@ -145,7 +144,6 @@ This assignment will be graded out of 80 points.
     - Correctness of SSTF (20 pts)
     - Correctness of LOOK (15 pts)
     - Correctness of C-LOOK (15 pts)
-
 ```
 
 #### Submitting Your Assignment
