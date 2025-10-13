@@ -132,12 +132,12 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     // wk 7
-    "SQL Work Day 2",
     "Storage: File abstraction",
     "Storage: Disk scheduling",
+    "Files: formats and organization",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Files: Organization and costs",
+    "Files: Cost modeling",
     "Files: Join processing",
     // wk 9
     "Indexing: motivation",
