@@ -57,20 +57,24 @@ Enter the request queue (track numbers separated by space):
 82 170 43 140 24 16 190
 
 FCFS
-Schedule: 82 -> 170 -> 43 -> 140 -> 24 -> 16 -> 190
+Schedule: 50 -> 82 -> 170 -> 43 -> 140 -> 24 -> 16 -> 190
 Total Seek Distance: 642 (avg = 91.71 tracks per seek)
 
 SSTF
-Schedule: 43 -> 24 -> 16 -> 82 -> 140 -> 170 -> 190
+Schedule: 50 -> 43 -> 24 -> 16 -> 82 -> 140 -> 170 -> 190
 Total Seek Distance: 208 (avg = 29.71 tracks per seek)
 
 LOOK
-Schedule: 82 -> 140 -> 170 -> 190 -> 43 -> 24 -> 16
+Schedule: 50 -> 82 -> 140 -> 170 -> 190 -> 43 -> 24 -> 16
 Total Seek Distance: 314 (avg = 44.86 tracks per seek)
 
 C-LOOK
-Schedule: 82 -> 140 -> 170 -> 190 -> 16 -> 24 -> 43
+Schedule: 50 -> 82 -> 140 -> 170 -> 190 -> 16 -> 24 -> 43
 Total Seek Distance: 341 (avg = 48.71 tracks per seek)
+
+OPT
+Schedule: 50 -> 43 -> 24 -> 16 -> 82 -> 140 -> 170 -> 190
+Total Seek Distance: 208 (avg = 29.71 tracks per seek)
 ```
 
 ### Example Interaction (2)
@@ -83,20 +87,24 @@ Enter the request queue (track numbers separated by space):
 23 89 132 42 187 
 
 FCFS
-Schedule: 23 -> 89 -> 132 -> 42 -> 187
+Schedule: 100 -> 23 -> 89 -> 132 -> 42 -> 187
 Total Seek Distance: 421 (avg = 84.20 tracks per seek)
 
 SSTF
-Schedule: 89 -> 132 -> 187 -> 42 -> 23
+Schedule: 100 -> 89 -> 132 -> 187 -> 42 -> 23
 Total Seek Distance: 273 (avg = 54.60 tracks per seek)
 
 LOOK
-Schedule: 132 -> 187 -> 89 -> 42 -> 23
+Schedule: 100 -> 132 -> 187 -> 89 -> 42 -> 23
 Total Seek Distance: 251 (avg = 50.20 tracks per seek)
 
 C-LOOK
-Schedule: 132 -> 187 -> 23 -> 42 -> 89
+Schedule: 100 -> 132 -> 187 -> 23 -> 42 -> 89
 Total Seek Distance: 317 (avg = 63.40 tracks per seek)
+
+OPT
+Schedule: 100 -> 89 -> 42 -> 23 -> 132 -> 187
+Total Seek Distance: 241 (avg = 48.20 tracks per seek)
 ```
 
 ### Example Interaction (3)
@@ -104,25 +112,56 @@ If your program is correct, your outputs should match mine.
 
 ```txt
 *** DISK SCHEDULING SIMULATOR ***
-Enter initial head position: 3030                                           
+Enter initial head position: 3030
 Enter the request queue (track numbers separated by space):
 2069 1212 2296 2800 544 1618 356 1523 4965 3681
 
 FCFS
-Schedule: 2069 -> 1212 -> 2296 -> 2800 -> 544 -> 1618 -> 356 -> 1523 -> 4965 -> 3681
+Schedule: 3030 -> 2069 -> 1212 -> 2296 -> 2800 -> 544 -> 1618 -> 356 -> 1523 -> 4965 -> 3681
 Total Seek Distance: 13891 (avg = 1389.10 tracks per seek)
 
 SSTF
-Schedule: 2800 -> 2296 -> 2069 -> 1618 -> 1523 -> 1212 -> 544 -> 356 -> 3681 -> 4965
+Schedule: 3030 -> 2800 -> 2296 -> 2069 -> 1618 -> 1523 -> 1212 -> 544 -> 356 -> 3681 -> 4965
 Total Seek Distance: 7283 (avg = 728.30 tracks per seek)
 
 LOOK
-Schedule: 3681 -> 4965 -> 2800 -> 2296 -> 2069 -> 1618 -> 1523 -> 1212 -> 544 -> 356
+Schedule: 3030 -> 3681 -> 4965 -> 2800 -> 2296 -> 2069 -> 1618 -> 1523 -> 1212 -> 544 -> 356
 Total Seek Distance: 6544 (avg = 654.40 tracks per seek)
 
 C-LOOK
-Schedule: 3681 -> 4965 -> 356 -> 544 -> 1212 -> 1523 -> 1618 -> 2069 -> 2296 -> 2800
+Schedule: 3030 -> 3681 -> 4965 -> 356 -> 544 -> 1212 -> 1523 -> 1618 -> 2069 -> 2296 -> 2800
 Total Seek Distance: 8988 (avg = 898.80 tracks per seek)
+
+OPT
+Schedule: 3030 -> 3681 -> 4965 -> 2800 -> 2296 -> 2069 -> 1618 -> 1523 -> 1212 -> 544 -> 356
+Total Seek Distance: 6544 (avg = 654.40 tracks per seek)
+```
+
+### Example Interactions (4)
+```txt
+*** DISK SCHEDULING SIMULATOR ***
+Enter initial head position: 50 
+Enter the request queue (track numbers separated by space): 49 51 90 11
+
+FCFS
+Schedule: 50 -> 49 -> 51 -> 90 -> 11
+Total Seek Distance: 121 (avg = 30.25 tracks per seek)
+
+SSTF
+Schedule: 50 -> 49 -> 51 -> 90 -> 11
+Total Seek Distance: 121 (avg = 30.25 tracks per seek)
+
+LOOK
+Schedule: 50 -> 51 -> 90 -> 49 -> 11
+Total Seek Distance: 119 (avg = 29.75 tracks per seek)
+
+C-LOOK
+Schedule: 50 -> 51 -> 90 -> 11 -> 49
+Total Seek Distance: 157 (avg = 39.25 tracks per seek)
+
+OPT
+Schedule: 50 -> 49 -> 11 -> 51 -> 90
+Total Seek Distance: 118 (avg = 29.50 tracks per seek)
 ```
 
 #### Grading
