@@ -6,20 +6,20 @@ In this assignment you will write a program in Java or Python to simulate disk s
 
 
 #### Background
-A rotating hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: FCFS, SSTF, LOOK, and C-LOOK. Let's take a moment to review each policy:
+A rotating hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: FCFS, SSTF, LOOK, C-LOOK, and OPT. Let's take a moment to review each policy:
 
 - **FCFS (First-Come-First-Served):** The scheduler services each track based solely on their arrival order in the disk request queue.
 - **SSTF (Shortest-Seek-Time-First):** This is a "greedy approach" in the sense that the disk scheduler always services the request that is closest to the current location of the head.
 - **LOOK:** Starting from the current head position, the scheduler moves in the same direction that the head was last traveling. (At program start, you may assume this direction is in ascending order.) It services all outstanding requests in that direction, ignoring any requests that are behind the current head position. When the head reaches the last pending request in that direction, it reverses and services the remaining requests in the opposite direction.
 - **C-LOOK (Circular LOOK):** This is the same as LOOK except that the head only services requests in one direction (ascending order). When the reaches the last request, it heads back to the lowest requested track to service the rest.
+- **OPT (Nearest-Extreme-First):** The best possible schedule is to sweep to the nearest extrem request, which is either the min or the max of what's in the queue, then sweep back over to the other extreme, picking up requests as you go. When the nearest extreme is the max track, this schedule should be the same as LOOK.
 
 
 #### Student Outcomes
 By the end of this assignment, you should be able to:
 - Describe how disk scheduling algorithms (FCFS, SSTF, LOOK, C-LOOK) determine the order of servicing I/O requests.
 - Simulate each of these algorithms and trace the head movement across disk tracks.
-- Compute and compare quantitative performance metrics, including total seek distance, total seek time, and turnaround time.
-- Explain how scheduling policies trade off between throughput, fairness, and average response time.
+- Compute and compare quantitative performance metrics.
 
 #### Requirements
 

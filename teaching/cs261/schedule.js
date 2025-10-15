@@ -205,7 +205,7 @@ let days = {
     "Linked Lists: node structure, getNodeAt()",
     // wk 7
     "LL: get(), set(), add()",
-    "LL: indexOf(), remove()",
+    "LL: direct manipulation of nodes",
     "Lab 7: LL Homework Code-Along Lab",
     "LL: optimizations (tail, iterator, double links)",
     // wk 8
