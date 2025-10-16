@@ -1,7 +1,7 @@
 ## CS 455 - Principles of Database Systems
 
 ### Hwk 5: Disk Scheduling Simulator
-In this assignment you will write a program in Java or Python to simulate disk scheduling algorithms. This project will help you practice implementing scheduling policies covered in lecture (FCFS, SSTF, LOOK, C-LOOK).
+In this assignment you will write a program in a language of your choice to simulate disk scheduling algorithms. This project will help you practice implementing scheduling policies covered in lecture (FCFS, SSTF, LOOK, C-LOOK).
 <img src="figures/image.png" width="50%" />
 
 
@@ -167,7 +167,7 @@ Total Seek Distance: 118 (avg = 29.50 tracks per seek)
 #### Grading
 
 ```
-This assignment will be graded out of 80 points.
+This assignment will be graded out of 95 points.
 
 [10pts] Input/Output handling
     - Prompts user interactively and output matches specified format.
@@ -178,11 +178,12 @@ This assignment will be graded out of 80 points.
     - Functions / methods separate algorithm logic from input/output.
     - Code duplication is minimized.
 
-[60pts] 
+[75pts] 
     - Correctness of FCFS (10 pts)
     - Correctness of SSTF (20 pts)
     - Correctness of LOOK (15 pts)
     - Correctness of C-LOOK (15 pts)
+    - Correctness of OPT (15 pts)
 ```
 
 #### Submitting Your Assignment
