@@ -5,15 +5,16 @@ In this assignment you will write a program in a language of your choice to simu
 <img src="figures/image.png" width="50%" />
 
 
-#### Background
+#### Background: Offline Scheduling
 A rotating hard disk consists of N tracks numbered from 0 to N-1. The disk head services a queue of pending requests, each given as a track number. You are to write a program that accepts user input interactively, and simulates the following disk-scheduling policies: FCFS, SSTF, LOOK, C-LOOK, and OPT. Let's take a moment to review each policy:
 
 - **FCFS (First-Come-First-Served):** The scheduler services each track based solely on their arrival order in the disk request queue.
 - **SSTF (Shortest-Seek-Time-First):** This is a "greedy approach" in the sense that the disk scheduler always services the request that is closest to the current location of the head.
 - **LOOK:** Starting from the current head position, the scheduler moves in the same direction that the head was last traveling. (At program start, you may assume this direction is in ascending order.) It services all outstanding requests in that direction, ignoring any requests that are behind the current head position. When the head reaches the last pending request in that direction, it reverses and services the remaining requests in the opposite direction.
-- **C-LOOK (Circular LOOK):** This is the same as LOOK except that the head only services requests in one direction (ascending order). When the reaches the last request, it heads back to the lowest requested track to service the rest.
+- **C-LOOK (Circular LOOK):** This is the same as LOOK except that the head only services requests in one direction (ascending order only). When the reaches the highest request, it heads back to the lowest-requested track (ignoring any requests along the way) to service the rest.
 - **OPT (Nearest-Extreme-First):** The best possible schedule is to sweep to the nearest extrem request, which is either the min or the max of what's in the queue, then sweep back over to the other extreme, picking up requests as you go. When the nearest extreme is the max track, this schedule should be the same as LOOK.
 
+You may assume that you are simulating an "offline scheduler." This means you can assume that no other requests arrive while your scheduler runs, so you just have to handle the requests in the given queue.
 
 #### Student Outcomes
 By the end of this assignment, you should be able to:
@@ -23,7 +24,7 @@ By the end of this assignment, you should be able to:
 
 #### Requirements
 
-1. You can write this program using a language of your choice. Your program must compile and run without modifications. No separate write-up is required for this assignment.
+1. You can write this program using a language of your choice. Your program must compile and run without modifications. 
 
 2. Upon starting, your program should prompt for two user inputs: the initial head position, and a listing of outstanding track requests. Here's an example of what that might look like:
 
