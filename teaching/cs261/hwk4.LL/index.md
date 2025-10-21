@@ -169,9 +169,9 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
 
 4. **Location Caching (Iterator):** When calling `sumUp()`, it's really annoying that for each item in the list we have to start all over at the head again to find it. To get the $$ith$$ node, you'd currently have to make around $$i−1$$ hops!  One improvement would be to add some internal state to our linked list class so that it "remembers" (or caches) the most recently accessed position in the list.
 
-    Add **two** new instance variables to `SinglyLinkedList`: An integer to record the most recently accessed position (index) in the list, and a `Node` reference that points to the corresponding list node. Modify your `getNodeAt()` method to take advantage of the new information when possible. For example, if we do a `get(107)` and the previous access to the list was at index `98`, the list traversal should start at `98` and work its way to `107` rather than starting at `0`. 
+    Add **two** new instance variables to `SinglyLinkedList`: An integer `lastVisitedIndex` to record the most recently accessed position (index) in the list, and a `Node` reference `lastVisited` that points to the corresponding list node. Modify your `getNodeAt()` method to take advantage of the new information when possible. For example, if we do a `get(107)` and the previous access to the list was at index `98`, the list traversal should start at `98` and work its way to `107` rather than starting at `0`. 
 
-    After you make this modification to `getNodeAt()`, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
+    After you make this modification to `getNodeAt(index)`, here's the cost of adding 10000 integers (from 0 to 9999), summing up, and summing down, respectively.
 
     ```
     Adding 10000 elements: took 0 hops
@@ -180,6 +180,8 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
     ```
 
     We've managed to make left-to-right accesses to the list much faster through location caching... but notice that summing down is still taking a lot of steps! That's because, to gradually access the list in reverse order, we still need to start from the head when identifying the next node.
+
+5. After you get the iterator caching working, make sure you make the necessary changes to reset it when you `removeFirst()`, `removeAfter()`, `addFirst()`, and `addAfter()`. It is sufficient to simply set the iterator to the head, and set its index back to 0.
 
 5. **Understanding the Need for Double Links:** Even after all the enhancements we've made, there are still two major concerns with the singly linked list's performance. [1] a reverse (backward) traversal of the singly linked list would be a really costly operation (you saw that with `sumDown()` already), and [2] removing any element (including  `tail`) is still slow, because you always need to find the deleted `Node`'s previous `Node` in order to link up the remaining list. To illustrate problem [1], try running something like the following, and observe how many hops it takes:
 
@@ -224,7 +226,7 @@ Altogether, it required a total of 6 hops to add all these elements. How do you 
 
     - Rename `SinglyLinkedList` to `DoublyLinkedList`. Add a pointer to the previous item in all `Nodes`, and add the necessary code to update that pointer to `addFirst`, `addAfter`, `removeFirst`, `removeAfter`.
 
-    - Next, change the `getNodeAt()` helper method to traverse in the appropriate direction, depending on the value of the given index, and the current location of the iterator (location cache):
+    - Next, change the `getNodeAt(index)` helper method to traverse in the appropriate direction, depending on the value of the given index, and the current location of the iterator (location cache):
 
         - If the given index is to the left of the iterator, but is closer to the head, then traverse to the East direction starting from the head. (This is currently what's being done)
 
