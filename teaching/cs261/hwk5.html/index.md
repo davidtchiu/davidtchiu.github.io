@@ -41,7 +41,7 @@ When writing HTML:
 ```html
 <div><p><i>Text<br/></i></p></div>
 ```
-Notice that each open tag is closed with respect to nested ordering. The exception is a void tag, `<hr/>` that stands alone and does not need to be matched.
+Notice that each open tag is closed with respect to nested ordering. The exception is that void tag, `<br/>` that stands alone and does not need to be matched.
 
 **❌ Example 2: Incorrect nesting**
 ```html
@@ -121,11 +121,11 @@ System.out.println(myTags2);
 #### Part 2: HTML Syntax Validator
 Open the given `HTMLValidator` class which implements the `Syntax` interface. Note that it does not hold the original code string -- instead, it stores a `Queue` of tags. Read over the abstract methods and the private helper methods that have been given to understand what they do. All the methods below require that you use both a `Queue` and `Stack`, so you might want to refresh yourself of their API. 
 
-**Important:** In all the methods below, you must preserve the contents of the original `Queue` of tags. One easy way to do this is to make a copy before processing it. If you're using a `LinkedList` as your `Queue` implementation, you can create a shallow copy like this:
+**Important:** In all the methods below, you must preserve the contents of the original `Queue` of tags. One easy way to do this is to make a copy before processing it. For instance, you can create a copy like this:
 ```java
-Queue<String> copy = new LinkedList<>(original);
+Queue<String> copyOfQueue = new LinkedList<>(originalQueue);
 ```
-This lets you safely poll from `copy` without modifying the `original` Queue.
+This lets you safely modify `copyOfQueue` without affecting the `originalQueue`.
 
 ##### Requirements
 
