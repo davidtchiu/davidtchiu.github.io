@@ -43,12 +43,12 @@ let days = {
         url: "hwk4.LL/",
         due: "10/22/2025",  // Wed, wk 8 Fall Break
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "HTML Tag Validator",
-      //   url: "hwk5.html/",
-      //   due: "11/3/2025",  // Mon, wk 10
-      // },
+      {
+        name: "Hwk 5",
+        title: "HTML Tag Validator",
+        url: "hwk5.html/",
+        due: "11/3/2025",  // Mon, wk 10
+      },
       // {
       //   name: "Hwk 6",
       //   title: "Recursion Exercises",
@@ -122,18 +122,18 @@ let days = {
         url: "lab6.AL/",
         due: "10/10/2025",
       },
-      // {
-      //   name: "Lab 7",
-      //   title: "LinkedList Homework/Code-along Lab",
-      //   url: "hwk4.LL/",
-      //   //due: "10/18/2024",
-      // },
-      // {
-      //   name: "Lab 8",
-      //   title: "Stacks and Queues Lab",
-      //   url: "lab8.melody/",
-      //   due: "10/24/2025",
-      // },
+      {
+        name: "Lab 7",
+        title: "LinkedList Homework Lab",
+        url: "hwk4.LL/",
+        //due: "10/18/2024",
+      },
+      {
+        name: "Lab 8",
+        title: "Stacks and Queues Lab",
+        url: "lab8.melody/",
+        due: "10/24/2025",
+      },
       // {
       //   name: "Lab 9",
       //   title: "PriorityQueue Homework/Code-along Lab",
