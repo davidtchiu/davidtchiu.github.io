@@ -39,7 +39,7 @@ let days = {
         name: "Hwk 5 (coding)",
         title: "Disk Scheduling",
         url: "hwk5.disk/",
-        due: "10/24/2025",  // wk 8, Fri 
+        due: "10/27/2025",  // wk 9, Monday 
       },
       // {
       //   name: "Hwk 4 (sql)",
