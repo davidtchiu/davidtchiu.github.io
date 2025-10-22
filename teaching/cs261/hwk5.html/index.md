@@ -26,7 +26,7 @@ In this example:
 
 Web browsers are surprisingly forgiving — they'll try to render a page even if your tags aren't matched correctly. But behind the scenes, improper nesting can cause: Unexpected layout issues, broken page structure, problems for screen readers, and so on.
 
-In this assignment, you'll simulate an HTML validator that checks structural correctness, using `Stacks` and `Queues` to manage and examine tags in order.
+In this assignment, you'll write an HTML validator that checks structural correctness, using `Stacks` and `Queues` to manage and examine tags in order.
 
 
 #### Proper Nesting Rules
