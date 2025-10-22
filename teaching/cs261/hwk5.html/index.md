@@ -186,7 +186,7 @@ This lets you safely modify `copyOfQueue` without affecting the `originalQueue`.
     </p>
     ```
 
-3. Finally, override `public Queue<String> suggestFixes()`. What good is a syntax checker if it doesn't try to suggest possible fixes to malformed code? This method fixes malformed HTML by returning a new `Queue` that includes inserted or commented-out tags where needed to correct nesting errors. You will first need to create:
+3. Finally, override `public Queue<String> suggestFixes()`. What good is a syntax checker if it doesn't try to suggest possible fixes to malformed code? This method fixes malformed HTML by returning a new `Queue` that includes inserted or commented-out tags where needed to correct nesting errors. To write this method, you will first need to instantiate:
 
     - A `Stack<String>` to track open tags.
     - A `Queue<String>` to build and return your corrected tag sequence.
