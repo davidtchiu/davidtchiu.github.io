@@ -130,14 +130,14 @@ This lets you safely modify `copyOfQueue` without affecting the `originalQueue`.
 ##### Requirements
 
 1. Override the method `public boolean isProperlyNested()`. For each tag in the queue:
+
     For each **opening tag**, `push()` it onto a stack.
     
     For each **closing tag**:
     - If the stack is empty: reject — this means there's no matching open tag.
     - Otherwise, `pop()` the most recent opening tag from the stack.
       - Use the helper method `tagsMatch()` to check if they match. If they don't, reject.
-    
-    Ignore all **void tag** and **comment**.
+    - Ignore all **void tag** and **comment**.
     - After processing all tags:
       - If the stack is not empty, reject — this means there are unclosed tags.
       - If the stack is empty, accept the input as valid.
