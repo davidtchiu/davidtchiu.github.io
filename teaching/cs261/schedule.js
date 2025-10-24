@@ -41,7 +41,7 @@ let days = {
         name: "Hwk 4",
         title: "Doubly Linked List",
         url: "hwk4.LL/",
-        due: "10/22/2025",  // Wed, wk 8 Fall Break
+        due: "10/24/2025",  // Wed, wk 8 Fall Break
       },
       {
         name: "Hwk 5",
