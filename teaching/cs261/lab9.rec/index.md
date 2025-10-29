@@ -279,10 +279,6 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 - Click "Submit Assignment" again to upload it.
 
-#### Credits
-
-Based on a previous lab by Professor Henry Walker, Grinnell College.
-
 #### Lab Attendance Policies
 
 Attendance is required for lab. Unexcused absence = no credit even if you turned in the lab. Unexcused tardiness = half credit.

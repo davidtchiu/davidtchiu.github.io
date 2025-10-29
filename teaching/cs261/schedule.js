@@ -41,7 +41,7 @@ let days = {
         name: "Hwk 4",
         title: "Doubly Linked List",
         url: "hwk4.LL/",
-        due: "10/24/2025",  // Wed, wk 8 Fall Break
+        due: "10/24/2025",  // Fri, wk 8 Fall Break
       },
       {
         name: "Hwk 5",
@@ -134,18 +134,12 @@ let days = {
         url: "lab8.melody/",
         due: "10/24/2025",
       },
-      // {
-      //   name: "Lab 9",
-      //   title: "PriorityQueue Homework/Code-along Lab",
-      //   url: "hwk5.rcv/",
-      //   due: "10/31/2025",
-      // },
-      // {
-      //   name: "Lab 10",
-      //   title: "Recursion Lab",
-      //   url: "lab10.rec/",
-      //   due: "11/7/2025",
-      // },
+      {
+        name: "Lab 9",
+        title: "Recursion Lab",
+        url: "lab9.rec/",
+        due: "10/31/2025",
+      },
       // {
       //   name: "Lab 11",
       //   title: "Expression Trees (Binary Trees)",
@@ -217,7 +211,7 @@ let days = {
     "Recursion: code tracing",
     "Recursive code writing and pitfalls",
     "Lab 9: Recursion Lab",
-    "Recursive code writing (cont.)",
+    "Big-O of recursive algos",
     // wk 10
     "Big-O of recursive algos",
     "Start Binary trees, tree traversal",
