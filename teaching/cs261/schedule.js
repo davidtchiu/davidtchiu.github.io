@@ -213,20 +213,20 @@ let days = {
     "Lab 9: Recursion Lab",
     "Big-O of recursive algos",
     // wk 10
-    "Big-O of recursive algos",
-    "Start Binary trees, tree traversal",
+    "Start Trees, binary trees",
+    "Tree traversal",
     "Lab 10: Expression Tree Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
+    "Start Binary Search Trees",
+    "Lab 11: BST Lab",
+    "More on BSTs",
+    // wk 12
+    "BSTs: performance analysis",
     "(Min-)Heaps and PriorityQueues",
     "Lab 11: PriorityQueue Code-Along Lab",
     "Big-O of heaps and PriorityQueues",
-    // wk 12
-    "Start Binary Search Trees (BST)",
-    "BSTs: contains(), add(), remove()",
-    "Lab 12: BST Lab",
-    "BSTs: performance analysis",
     // wk 13
     "Start Hashing: Entry<K,V> class, hashcode()",
     "<strong><emph>Thanksgiving</emph></strong>",

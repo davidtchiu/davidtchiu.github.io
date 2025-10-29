@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Lab 10: Thinking Recursively
+### Lab 9: Cursin' and Recursin'
 
 This lab is all about recursion and getting used to thinking recursively. 
 Recursive algorithms call <i>themselves</i> repeatedly to solve a problem. They are useful when the problem
