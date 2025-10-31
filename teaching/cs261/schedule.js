@@ -224,8 +224,8 @@ let days = {
     "Tree traversal",
     // wk 12
     "Start Binary Search Trees",
-    "Lab 12: BST Lab",
     "More on BSTs",
+    "Lab 12: BST Lab",
     "BSTs: performance analysis",
     // "(Min-)Heaps and PriorityQueues",
     // "Lab 11: PriorityQueue Code-Along Lab",
