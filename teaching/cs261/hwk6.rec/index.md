@@ -15,7 +15,7 @@ For full credit, all methods must be static, and recursive. To be clear, this do
 Create a new project and create a class called `Recursion`. Put all of the following static methods in this class.
 
 
-1. (Mild) Write a static method called `public static<E> Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. Note that the reversal of an empty queue is the queue itself. Hint: In the recursive case, remove the head, reverse remaining queue, then offer head to the tail of the queue.
+1. (Mild) Write a static method called `public static<E> Queue<E> reverseQueue(Queue<E> queue)` that reverses the content of the given queue before returning it. You cannot use any auxiliary data structures (like a Stack) in your implementation. Hint: Note that the reversal of an empty queue is just the empy queue itself. Hint 2: In the recursive case, remove the head, reverse remaining queue, then offer head to the tail of the queue.
 
 	 ```java
 	 Queue<Double> q0 = new LinkedList<>();
@@ -104,19 +104,19 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 	```java
 	System.out.println(Recursion.dec2binary(1));
-	 > 1
+	> 1
 
-   	System.out.println(Recursion.dec2binary(0));
-	 > 0
+	System.out.println(Recursion.dec2binary(0));
+	> 0
 
-   	System.out.println(Recursion.dec2binary(12));
-	 > 1100
+	System.out.println(Recursion.dec2binary(12));
+	> 1100
 
-   	System.out.println(Recursion.dec2binary(1023));
+	System.out.println(Recursion.dec2binary(1023));
 	> 1111111111
 
-	 System.out.println(Recursion.dec2binary(21845));
-	 > 101010101010101
+	System.out.println(Recursion.dec2binary(21845));
+	> 101010101010101
 	 ```
 
 4. (Medium) If you've ever used a tool like Photoshop, you may be familiar with the **Flood Fill (Paint Can) utility**, which allows you to fill an entire segment of the image with a  color of  choice. For example, say you flood-filled the cell at `A[1][2]` with a replacement value of 8 (image below on the left). Since it's a "fill," you might also need to change the values of any adjacent cells if they contain the same original value. So, not only does `A[1][2]` need to change from 3 to 8, but so might all of its four directional neighbors (to its north, east, south, and west), and their neighbors, and theirs, and so on. If this process is applied recursively, then the fill will be correctly propagated. Beware of accessing elements beyond any of the four boundaries of the 2D array (in which you'd want to avoid coloring -- hey that sounds like a terminating base case!)
@@ -126,7 +126,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
    Write a method `public static void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value  `r`. In the outputs below, assume that `print2DArray()` is a static method that prints out 2D arrays. (You should probably define this method so that you can see the contents, but it's not part of the assignment.)
 
    ```java
-	 int[][] img1 = {
+	int[][] img1 = {
       {1, 1, 7, 5},
       {1, 3, 3, 3},
       {6, 5, 5, 3},
