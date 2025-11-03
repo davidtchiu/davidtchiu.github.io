@@ -49,12 +49,12 @@ let days = {
         url: "hwk5.html/",
         due: "11/3/2025",  // Mon, wk 10
       },
-      // {
-      //   name: "Hwk 6",
-      //   title: "Recursion Exercises",
-      //   url: "hwk6.rec/",
-      //   due: "11/14/2025",  // Fri, wk 11
-      // },
+      {
+        name: "Hwk 6",
+        title: "Recursion Exercises",
+        url: "hwk6.rec/",
+        due: "11/14/2025",  // Fri, wk 11
+      },
       // {
       //   name: "Hwk 7",
       //   title: "City Tracker",
