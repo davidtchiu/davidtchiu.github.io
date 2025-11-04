@@ -1,39 +1,50 @@
 ## CS 455 - Principles of Database Systems
 
-### Databases Project
-The term project is open-ended, and you need to write a short proposal (1/2 to 1 page is sufficient) outlining what you are hoping to accomplish. You are given a lot of freedom to work on whatever you wish, and the only requirements for the term project are listed as follows:
+### Database Term Project
+The term project is open-ended, and you need to write a short proposal (1 page is sufficient) outlining what you and your team are hoping to accomplish. You are given a lot of freedom to work on whatever you wish. The only requirements for the term project are listed as follows:
 - Novelty requirement: You are required to learn and apply something new about data management and/or databases that was not covered in class.
+- You are required to work in teams of 2-3 students.
+- You are required to practice scrum, recording daily progress (this is graded).
 - You must prepare a final presentation during the last week of classes.
 - Your code is to be managed and submitted via Github, with instructions on how to build and run it for grading.
 
 
 #### Important Dates
-- 1-page proposal deadline: Monday, Nov 10, 2025
-- Presentation / demo: Wednesday, Dec 10, 2025
-- Code submission: Friday, Dec 19, 2025
+- Team preferences due via email to David: Wed, Oct 30, 2024
+- 1-page proposal deadline: Friday, Nov 8, 2024
+- Presentation / demo: Wednesday, Dec 11, 2024
+- Code submission: Friday, Dec 20, 2024
+- Scrum logs and check-ins: weekly, ongoing
 
 
-##### Project Ideas
-Here are just some ideas on what you can work on:
+
+##### Importance of Team Buy-in
+I strongly recommend that the team comes to a consensus on the project vision, so that everyone is equally invested in taking ownership. Project visions borne out of one or two students generally doesn't work well. Something like this has happened in the very recent past... A student was really into Pokemon cards. They convinced the rest of their team members to write a web app to organize all the Pokemon cards in the world, and so that users can manage which cards they own and even trade them and battle each other. Other teammates didn't understand how the battles were played out (which was far more complicated than they thought) but went along with it anyway. The other members were never invested enough in the project to stay motivated. 
+
+Here are just some ideas on what you and your team can do:
 
 - Build a web application (like the kind of work you might've done for *Software Engineering*) that requires database back-end support. The novelty will be the need to learn back-end programming to get SQLite or some other database system integrated into your application. It is essential that you learn some security/privacy measures, such as SQL Injection and secured password storage. I would prefer that you do not simply update a previous project.
 
   - *Novelty:* It requires you to learn how to use Node.js libraries for backend programming and database APIs. It requires you understand how to prevent SQL injection attacks.
 
+- You could also try building a web application, but instead of a relational database, use a NoSQL database such as MongoDB that are becoming increasingly common.
+
+  - *Novelty:* Be able to rationalize why one would choose a NoSQL model over the relational model and vice versa. It also requires you to know how to integrate an existing NoSQL database into your web app.
+
 - Learn to deploy parallel/distributed processing tools like Hadoop and/or Spark. You must use it to solve a real-world problem that requires crunching massive amounts of data (i.e., it is not sufficient to process a toy example.) You must also demonstrate that the Hadoop-based implementation is faster than a single-threaded implementation. For instance, you can use Hadoop to implement Google's PageRank algorithm over the Wikipedia data set.
 
-  - *Novelty:* Be able to deploy a Hadoop map-reduce algorithm on your machine, or onto the cloud. Talk through what map() and reduce() do for you.
+  - *Novelty:* Learning to program using the Map-Reduce paradigm for big-data processing.
 
-- You could learn, implement, and visualize a new indexing method, such as implementing an R-Tree for indexing geospatial data, or linear hashing.
+- You could learn, implement, and visualize a new indexing method, such as an R-Tree for indexing geospatial data, or linear hashing.
 
 - And more! You have a high degree of freedom to propose anything, as long as it's related to databases and data management. It just needs to satisfy the *novelty* requirement.
 
 
 [prop](#prop)
 #### Project Proposal Requirements
-A short proposal outlining your project should be submitted to me before the proposal deadline. This doesn't have to be super formal, it's really just for me to do a quick sanity check to ensure your project can be finished. Here's a sample outline.
+A short proposal outlining your project should be submitted to me before the proposal deadline. One page ought to suffice, but there's no page limit. There are required sections of the proposal that you have to write:
 
-- *Title* Give a title of your project.
+- *Title and members:* Give a title to your project, and list the names of your group members on your proposal.
  
 - *Section I:* Explain you're hoping to accomplish, addressing all the points below, if applicable:
 
@@ -44,7 +55,7 @@ A short proposal outlining your project should be submitted to me before the pro
 
 - *Section II:* Tentative Grading Rubric
 
-  How should we measure the success of your project? This also gives you a chance to think a little bit more about the details of the project. Work to distribute 100 points across different "success metrics." You can model your rubric off of the ones I give you for your assignments. This rubric is only tentative, because we might expect plans to change as time passes. I will be using the finalized version to assign a final grade to your project.
+  How do you measure the success of your project? This also gives you a chance to think a little bit more about the details of the project. Work with your team and distribute 100 points across different item. You can model your rubric off of the ones I give you for your assignments. This rubric is only tentative, because we might expect plans to change as time passes. I will be using the finalized version to assign a final grade to your project.
   
   Here's a sample rubric:
 
@@ -93,6 +104,15 @@ Finally, you must produce a Gantt Chart that communicates your timeline and mile
 #### Project Code Repository
 You are required to manage your code on github. As soon as you are able, please share with me the URL to your code repository. Finalize and push your code by 11:59pm on day of our exams. You *must* include a `readme.md` file that includes some basic instructions on how to deploy your code (with examples, if applicable.)
 
+[scrum](#scrum)
+#### Scrum Records
+As a way to keep everyone accountable, you must share a Google Document/Sheet that records your scrum activities. I assume that you and your group will be meeting regularly, but please reserve a weekly meeting to run scrum. At the beginning of each week, everyone must answer these questions:
+
+1. What did I accomplish since our last meeting?
+2. What do I hope to have done by the end of the week?
+3. What elements might impede me from accomplishing my goals for the week?
+
+Please have someone record everyone's responses to these questions. I will check in regularly to ensure good progress is being made by all team members.** Your scrum log figures into your final grade.**
 
 [demo](#demo)
 #### Presentation/Demo Requirements 
