@@ -123,7 +123,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 	 <img src="figures/flood_fill.png" width="450px" />
 
-   Write a method `public static void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value  `r`. In the outputs below, assume that `print2DArray()` is a static method that prints out 2D arrays. (You should probably define this method so that you can see the contents, but it's not part of the assignment.)
+   Write a method `public static void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value  `r`. You may assume that `A` is a square, but a rectangular `A` shouldn't change your implementation. In the outputs below, assume that `print2DArray()` is a static method that prints out 2D arrays. (You should probably define `print2DArray()` so that you can see the contents, but it's not part of the assignment -- and you don't have to do it recursively.)
 
    ```java
 	int[][] img1 = {
@@ -150,7 +150,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
    >	2       2       8       8
    ```
 
-5. (Medium) Given a positive integer `n`, `n` is prime if and only if it is only divisible evenly by 1 and itself. Write a static method, `public static boolean isPrime(int n)` that tests if `n` is prime. Hint: I would first create a private helper method that inputs `n` and a counter `k` that is initially input as 2 by the public-facing `isPrime()` method. There are two base cases in this helper method: (1) when counter `k` reaches `n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n` is not prime. The recursive case of the helper method simply calls itself on `k+1`, moving the counter a step closer to `n`.
+5. (Medium) Given a positive integer `n`, `n` is prime if-and-only-if it is only divisible evenly by 1 and itself. Write a static method, `public static boolean isPrime(int n)` that tests if `n` is prime. Hint: I would first create a private helper method that inputs `n` and a counter `k` that is initially input as 2 by the public-facing `isPrime()` method. There are two base cases in this helper method: (1) when counter `k` reaches `n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n` is not prime. The recursive case of the helper method simply calls itself on `k+1`, moving the counter a step closer to `n`.
 
 	```java
 	System.out.println(Recursion.isPrime(13));
@@ -166,7 +166,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	> false
 	```
 
-6. (Spicy) Given a 2D array of integers, write a method `public static void printPaths(int[][] grid)` to print out all valid paths from cell (0, 0) to the bottom-right cell (rows - 1, cols - 1). The only legal moves at each step are: 
+6. (Spicy) Given a 2D array of integers, write a method `public static void printPaths(int[][] grid)` to print out all valid paths from cell (0, 0) to the bottom-right cell (`rows - 1`, `cols - 1`). The only legal moves at each step are: 
 	- Move one cell to the right
 	- Move one cell down
 	Your method should print each full path as soon as it reaches the destination cell. 
@@ -199,11 +199,11 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 7. (Spicy) A _permutation_ is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a list of permutations of the remaining substring. Then for each string in the returned list, insert the first character back into every position of the string and add each to the list. Return the list when finished. Here's an example. Suppose you're finding all permutations of `"abc"`.
 
 	 - Split `"abc"` by chopping `"a"` off, and recursively find the list of permutations of the remaining substring, `"bc"` (yep, call yourself on `"bc"` to obtain this list).
-	 - Insert `"a"` back into every possible position for each substring in the returned list. In our example, the previous step returns `["bc", "cb"]`. For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`. For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`. Create a new list and add each of these permutations and return it.
+	 - Insert `"a"` back into every possible position for each substring in the list returned in the previous step. In our example, the previous step returns `["bc", "cb"]`. For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`. For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`. Create a new list and add each of these permutations and return it.
 
-		Write a static method called `public static List<String> permute(String str)` that takes as input a string and returns a `ArrayList<String>` of all permutations of that string.  Similarly, the only permutation of a single-character string is that character. **Hint:** Base case: If your string is shorter than two letters, then create a `ArrayList<String>`, add the string to it, and return the list. It should be noted that the permutation of an empty string is just an empty string.
+		Write a static method called `public static List<String> permute(String str)` that inputs a string and returns an `ArrayList<String>` of all permutations of that string.  Similarly, the only permutation of a single-character string is that character. **Hint:** Base case: If your string is shorter than two letters, then create a `ArrayList<String>`, add the string to it, and return the list. This is because the list of permutations of a single letter is just itself.
 
-		Below, my results are sorted alphabetically so that it's easier on the eyes, but that is not a requirement for full credit. You could sort the returned list for easier checking. To sort an ArrayList, use `Collections.sort(nameOfYourList);`
+		Below, my results are sorted alphabetically so that it's easier on the eyes, but that is not a requirement for full credit. You could sort the returned list for easier checking. To sort an ArrayList, use `Collections.sort(your-list);`
 
 		```java
 		System.out.println(Recursion.permute("a"));
@@ -224,7 +224,9 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 	- Fun fact: If your string is of length $$n$$, then you have a list of $$n! = n \times (n-1) \times (n-2) \times ... \times 2 \times 1$$ permutations. Because this algorithm needs to find all permutations, it runs in $$O(n!)$$ time. Yikes!
 
-#### Additional Challenge: SnakeFill (🐍🐍🐍 Ssssssspicy)
+#### Optional Challenge Problem: SnakeFill (🐍🐍🐍 ssssssspicy 🐍🐍🐍)
+Bored? Don't worry, David has a plethora of challenging problems for you to try, like this one! (And feel free to ask for more.)
+
 Write a method `public static void snakeFill(int n)` that prints out an $$n \times n$$ grid of integers filled from 1 to $$n^2$$ in a zigzagging “snake-like” pattern:
 
 - Start by filling a 1 at the top-left corner.
