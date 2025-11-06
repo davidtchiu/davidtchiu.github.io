@@ -79,7 +79,7 @@ let days = {
         name: "Project Prop",
         title: "Project Proposal",
         url: "proj/",
-        due: "11/7/2025", // wk 10, friday
+        due: "11/10/2025", // wk 10, friday
       },
       {
         name: "Project Demo",
@@ -152,28 +152,25 @@ let days = {
     // wk 10
     "B+Tree: insertion",
     "B+Tree: runtime analysis",
-    "Bitmap indexing",
+    "Extendible Hashing",
     // wk 11
-    "Bitmap compression",
+    "Bitmap index",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     // wk 12
+    "Bitmap compression",
     "Theory: functional dependencies",
-    "Theory: Attribute-set closure and superkeys",
-    "Theory: FD-set closure; Armstrong's Axioms",
+    "Theory: attribute-set closure and superkeys",
     // wk 13
-    "Theory: Normalization",
+    "Theory: FD-set closure; Armstrong's Axioms",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
     // wk 14
+    "Theory: normal forms",
     "Theory: BCNF decomposition",
-    "Transactions: ACID, serializability",
-    "Transactions: serializability test, precedence graphs",
-    // "Theory: Lossless join; dependency preservation",
-    // "Theory: Canonical cover",
-    // "Theory: 3NF synthesis",
+    "Theory: Lossless join; dependency preservation",
     // wk 15
-    "Transactions: Concurrency control",
+    "Theory: Minimal (canonical) cover and 3NF",
     "<strong><emph>Final Presentation</emph></strong>",
     "<strong>Reading Period</strong>",
     // wk final
