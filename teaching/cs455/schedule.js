@@ -44,7 +44,7 @@ let days = {
       {
         name: "Hwk 6 (coding)",
         title: "Extendible (Dynamic) Hashing",
-        url: "hwk6.exthash/",
+        url: "hwk6.exhash/",
         due: "11/19/2025",  // wk 12, Tuesday 
       },
       // {
