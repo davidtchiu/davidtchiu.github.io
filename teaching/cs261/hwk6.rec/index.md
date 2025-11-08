@@ -235,7 +235,7 @@ Write a method `public static void snakeFill(int n)` that prints out an $$n \tim
 - When a diagonal hits a boundary, take one step either right (if you hit the top or bottom edge and can move right) or take one step down (if you hit the left or right edge and can move down), then switch diagonal direction and continue.
 - Continue until the grid is filled; when done, print the grid (row by row, single spaces between numbers).
 
-Hint: The way to go about this is to fill an $$n \times n$$ 2D array and then print it out. I would write a helper method that inputs this 2D array, among other inputs, and recursively fills it in snake-like fashion. The original (outer) `snakeFill()` method should then simply call this helper method to fill the 2D array, and then print it out.
+Hint: As usual, the way to go about this is to write a non-recursive public-facing "outer shell" method that simply calls a private helper method to recursively fill an $$n \times n$$ 2D array and then the public-facing method prints it out. The helper method should input the 2D array, among other inputs to track state, and recursively fills it in a zigzagging fashion. 
 
 
 ```java

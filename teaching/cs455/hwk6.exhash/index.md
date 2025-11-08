@@ -1,21 +1,31 @@
 ## CS 455 - Principles of Database Systems
 
 ### Hwk: Extendible Hashing
-In this assignment, you will build a program that simulates the search and insertion of search keys into an extendible hash indexing structure. There are two things that would be different in a real database system: First,  the local buckets would be allocated as blocks on disk. The data stored in those blocks would actually be the tuples that hash into those blocks. Secondly, in a real extendible hash index, actual bits of the key's hash codes would be used (which require heavier usage of bitwise operators), instead of Strings of bits that represent the keys as we see in class. I choose to use strings here for simplicity, but you may implement this program using integers and bitwise operators if you'd prefer a challenge.
+In this assignment, you will build a program that simulates the search and insertion of search keys into an extendible hash indexing structure. Extendible hashing dynamically grows the directory to minimize collisions and expensive rehashing when the dataset expands. While "static hashing" approaches that you learned in previous classes are also allowed to expand. But while rehashing is an acceptable cost in in-memory hashtable data structures (i.e., HashMaps and dictionaries), it is a prohibitively expensive operation for database systems, because it would mean that all tuples would need to be rehashed into new disk bocks.
+
+<!-- There are two things about this program that would be different in a real database system: First, the local buckets would be allocated as blocks on disk. The data stored in those blocks would actually be the tuples that hash into those blocks. Secondly, in a real extendible hash index, actual bits of the key's hash codes would be used (which require heavier usage of bitwise operators), instead of Strings of bits that represent the keys as we see in class. I choose to use strings here for simplicity, but you may implement this program using integers and bitwise operators if you'd prefer a challenge. -->
 
 You may use Java or Python for this assignment. 
 
 
 #### Student Outcomes
 
-- To understand the basics of extendible hashing.
+After completing this assignment, students should be able to:
+- Implement an extendible hash structure supporting insertion, search, and directory printing.
+- Explain how extendible hashing dynamically adapts to data growth without global rehashing.
+- Differentiate between global and local bit-depth, and describe their roles in directory management.
+- Explain bucket splitting and directory doubling based on overflow conditions.
 
+#### Glossary
+- Global Depth (i): Number of bits used to index into the global directory.
+- Local Depth (j): Number of bits used to identify a bucket’s unique prefix.
+- Bucket: Stores keys with the same bit prefix; may be shared by multiple directory entries.
 
 #### Program Requirements
 
-1. Upon running your program, your main method must accept a single command-line argument:
-    - Local bucket size (integer): This is the maximum number of tuples that can be stored per block.
-    - Key length (integer): This is the number of bits that constitute a key.
+1. Upon running your program, your main method must accept two command-line arguments: `<block size> <key length>`
+    - Block (local bucket) size: This is the maximum number of tuples that can be stored per block.
+    - Key length: This is the number of bits used to represent a key.
     - You may assume that an integer will be given for both parameters (e.g., and not a double, or a string).
 
 2. After receiving the above input, create a default extendible hash index, with global index ($$i$$) and local index ($$j$$) initialized to 0, which means you will have $$2^i = 1$$ entry in your global index that points to the sole local bucket, which is empty.
@@ -38,7 +48,7 @@ You may use Java or Python for this assignment.
 
     In the format above, `<i>` is the integer bit-depth of the global directory. `<B>` is a bit string representation of a global address. `<j>` is the integer bit-depth of the local directory. `<b>` is the bit string prefix of the local bucket's address (I called this the "bit-pattern" of that block in my lecture). Finally, the binary keys that are stored in that bucket are listed in no particular order.
 
-    Here's an example below for a local bucket size of 2 tuples. The global bit-depth is 2, so there are four addresses (entries) in the global directory: `00`, `01`, `10`, and `11` (one listed on per row). The global address `00` points to a local bucket (also addressed `00`) which stores a single key, `0000`. Both global entries `10` and `11` point to the _same_ local bucket. We know they're the same because the local bit-depth in those buckets is only 1 (and also because they store the same keys). If you work this out on paper, you should get this result from inserting `0000`, `1001`, `0110`, `1011`, and `0100`, in that order.
+    Here's an example below for a local bucket size of 2 tuples. The global bit-depth is 2, so there are four addresses (entries) in the global directory: `00`, `01`, `10`, and `11` (one listed per row). The global address `00` points to a local bucket (also addressed `00`) which stores a single key, `0000`. Both global entries `10` and `11` point to the _same_ local bucket. We know they're the same because the local bit-depth in those buckets is only 1 (and also because they store the same keys). If you work this out on paper, you should get this result from inserting `0000`, `1001`, `0110`, `1011`, and `0100`, in that order.
 
     ```
     Global(2)
@@ -52,7 +62,9 @@ You may use Java or Python for this assignment.
 
     <img src="figures/exthash.png" width="400px"/>
 
-6. If taking an object oriented approach, I would have at least 2 classes: a `GlobalDirectory` class, which stores an array of `Buckets`, and a `Bucket` class, which stores information about the local directory (e.g., what keys are currently stored in the bucket, the bit-depth of that bucket, and what is the bit-pattern associated with that bucket). In my implementation, I have a third class that simply runs the `main` method, providing the user interactive interface. 
+#### Design Hints
+If taking an object-oriented approach, I would have at least two classes: a `GlobalDirectory` class, which stores an array of `Buckets`, and a `Bucket` (or `LocalDirectory`) class, which stores information about the bucket (e.g., what keys are currently stored in the bucket, the bit-depth of that bucket, and what is the bit-pattern associated with that bucket). 
+
 
 
 #### Example Output
