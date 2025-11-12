@@ -7,63 +7,8 @@ Recursive algorithms call <i>themselves</i> repeatedly to solve a problem. They 
 is reducible to a smaller subproblem of the same nature.
 <center><img width="400px" src="https://miro.medium.com/max/1338/1*Hgviugi5d0AZcFgy1-xVqQ.jpeg"></center>
 
-As I mentioned in class, recursive solutions are usually not necessary (i.e., you could always do recursion with a loop). However, solutions to some problems are naturally recursive, and when that is the case, recursive algorithms tend to be more readable, simple, and elegant. Finding the sum from $$1$$ up to $$n$$ (for $$n \ge 1$$) is one such problem that is naturally recursive.
-Consider the method $$sum(n)$$ to find the sum of $$1$$ up to $$n$$, for $$n \ge 1$$:
+As I mentioned in class, recursive solutions are not necessary (i.e., you could always "do recursion" with a loop and a stack). However, solutions to some problems are naturally recursive, and when that is the case, recursive algorithms tend to be more readable, simple, and elegant. 
 
-$$sum(n) = 1 + 2 +  ... + (n-1) + n$$
-
-In a step toward thinking recursively, observe that due to the commutativity of addition, this sum could be rewritten as
-adding $$n$$ to the sum of the remaining numbers, that is,
-
-$$sum(n) = n + [1 + 2 + ... + (n-1)]$$
-
-Now, isn't the partial sum expressed in the square brackets just $$sum(n-1)$$? Say... we're calling $$sum(\cdot)$$ again to solve for another sum? That's a self (recursive) definition! Indeed, let's rewrite it as such:
-
-$$sum(n) = n + sum(n-1)$$
-
-Now we just need to find $$sum(n-1)$$, and using the same argument above, $$sum(n-1)$$ can be written as follows:
-
-$$sum(n-1) = (n-1) + sum(n-2)$$
-
-After substitution we now have $$sum(n) = n + (n-1) + sum(n-2)$$. We repeat this process for $$sum(n-2)$$, and $$sum(n-3)$$, and so on. If you write  out each substitution on a new line, you'd get something that looks like this:
-
-$$\begin{align}
-sum(n) & =  n + sum(n-1)\\
- & =  n + (n-1) + sum(n-2)\\
- & =  n + (n-1) + (n-2) + sum(n-3)\\
- & =  n + (n-1) + (n-2) + (n-3) + sum(n-4)\\
-& \cdots
-\end{align}$$
-
-That's swell and all, but when do we ever stop? A terminating condition (known as the <b>base case</b>) 
-is crucial for you to identify! It is the only way we can avoid <i>infinite recursion!</i>
-Notice that the input to $$sum(\cdot)$$ reduces by $$1$$ on each line. Well, you'd have to ask yourself, &quot;When does
-the input become so small that the problem can be solved trivially (without making another recursive call)?&quot;
-This occurs when the input becomes $$1$$ for this problem. Why? Consider the problem statement once
-again: the sum from $$1$$ <i>up to</i> $$n=1$$ is simply $$1$$. That terminates the recursion. Okay, let's finish the substitution:
-
-$$\begin{align}
-sum(n) & =  n + sum(n-1)\\
- & =  n + (n-1) + sum(n-2)\\
- & =  n + (n-1) + (n-2) + sum(n-3)\\
- & =  n + (n-1) + (n-2) + (n-3) + sum(n-4)\\
- & \cdots\\
- & =  n + (n-1) + (n-2) + (n-3) + ... + sum(2)\\
- & =  n + (n-1) + (n-2) + (n-3) + ... + 2 + sum(1)\\
- & =  n + (n-1) + (n-2) + (n-3) + ... + 2 + 1\\
-\end{align}$$
-
-In defining this method, note that there are just two cases we need worry about depending on
-the value of $$n$$. The result is $$sum(n) = 1$$ when $$n = 1$$, and $$sum = n + sum(n-1)$$ when $$n > 1$$. The method can be written as follows,
-
-```java
-public int sum(int n) {
-    if (n == 1) {
-        return 1;
-    }
-    return n + sum(n-1);
-}
-```
 
 The first section of the lab involves code reading, the second section asks you to fix some bugs in recursive methods. The third section asks you to write some recursive methods.
 
@@ -244,7 +189,7 @@ I know this part can be challenging, since it'll be your first time writing recu
 	your solution should work for negative values. I would start by getting it to work for positive values first.
 
 - **Find the Greatest Common Divisor (Euclid's Algorithm)**
-	Write a recursive method `gcd(int m,int n)` that returns the greatest common divisor (GCD) between two positive integers `m` and `n`. 	The GCD of `m` and `n` is the largest integer that can evenly divide both numbers. For example, the GCD between `m = 14` and `n = 49` is `7`. The GCD between `m = 15` and `n = 19` is `1`. The GCD between
+    The greatest common divisor, or GCD, of two positive integers $$m$$ and $$n$$ is the largest positive integer that can evenly divide both. For example, the GCD between `14` and `49` is `7`. The GCD between `15` and `19` is `1`. Write a recursive method `gcd(int m, int n)` that returns the GCD between two positive integers `m` and `n`. The GCD between
 	`m` and `n` is either: 
 
   - the smaller of the two values if it can evenly divide the larger value, or
