@@ -214,32 +214,32 @@ let days = {
     "Big-O of recursive algos: list reversal",
     // wk 10
     "Recursive Big-O: binary search, Fibonacci",
-    "Recursive data structures",
+    "Start Trees, binary trees",
     "Lab 10: Recursion Homework Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
-    "Start Trees, binary trees",
-    "Lab 11: Expression Tree Lab",
-    "Tree traversal",
-    // wk 12
     "Start Binary Search Trees",
-    "More on BSTs",
+    "Lab 11: Expression Tree Lab",
+    "BST operations",
+    // wk 12
+    "BST operations",
+    "BST performance analysis",
     "Lab 12: BST Lab",
-    "BSTs: performance analysis",
+    "Start Hashing: Entry<K,V> class, hashcode()",
     // "(Min-)Heaps and PriorityQueues",
     // "Lab 11: PriorityQueue Code-Along Lab",
     // "Big-O of heaps and PriorityQueues",
     // wk 13
-    "Start Hashing: Entry<K,V> class, hashcode()",
+    "HashMaps: open addressing and rehashing",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
-    "HashMaps: open addressing and rehashing",
     "HashMaps: chaining",
-    "Lab 13: Hashing Lab",
     "Start sorting: Merge Sort",
+    "Lab 13: Hashing Lab",
+    "Merge Sort",
     // wk 15
     // "Merge Sort Complexity",
     "Quick Sort",

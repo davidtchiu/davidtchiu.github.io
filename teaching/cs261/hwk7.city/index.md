@@ -1,8 +1,8 @@
-# CS 261 – Computer Science II  
-## Homework 7: CityTracker - Queries with BSTs
+## CS 261 – Computer Science II  
+### Homework 7: CityTracker - Queries with BSTs
 
 
-## Introduction
+#### Introduction
 <center>
 <IMG SRC="figures/CityTracker.png" width = "250" style="border: 10px solid #d6d6d6" />
 </center>
@@ -16,7 +16,7 @@ Your job in this assignment is to build a **CityTracker** that stores informatio
 
 These are the perfect use case for a binary search tree, because it can support some of these operations more efficiently than lists. We'll represent cities using a new `City` class (given and shown below), and store these objects in a **Binary Search Tree**, ordered by population.
 
-## Student Outcomes
+#### Student Outcomes
 By completing this assignment, you should be able to:
 - Design and implement recursive algorithms to perform rank-based queries (get, getRank, rangeOf)
 - Recognize when to extend the BST to support new functionality (e.g., realizing CityTracker needs more from the base version of the BST)

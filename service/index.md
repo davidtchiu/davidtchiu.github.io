@@ -34,8 +34,9 @@
 
 ### Service to the University
 
-- Director, Students of Color Residential Community, University of Puget Sound (2023 - )
-- Co-Chair, International Education Committee, University of Puget Sound (2024 - )
+- Director and Advisor, Students of Color Residential Community, University of Puget Sound (2023 - )
+- Chair, Student Support Committee, University of Puget Sound (2025 - 2026)
+- Co-Chair, International Education Committee, University of Puget Sound (2024 - 2025)
 - Total Compensation and Benefits Project, University of Puget Sound (2023 - )
 - External Member of Search Committee, Department of Communication, University of Puget Sound (2024)
 - New Faculty Mentor, University of Puget Sound (2024)
