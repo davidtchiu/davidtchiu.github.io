@@ -2,8 +2,7 @@
 
 ### Lab 11: Expression Trees
 
-For this assignment, you'll implement a class for representing and evaluating arithmetic expressions. It's a great excuse to use recursion, recursive structures, and polymorphism all within a single assignment! Even better — it happens to be useful. Make sure you write clean, well-documented code. You should note that you will not be using the `BinaryTree` or `BST` classes that we coded up in class for this assignment. Instead, you'll be writing a customized version of the binary tree as part of this assignment.
-
+For this assignment, you'll implement a class for representing and evaluating arithmetic expressions. It's a great excuse to use recursion, recursive structures, and polymorphism all within a single assignment! Even better — it happens to be useful. Make sure you write clean, well-documented code. You should note that you will not be using the `BinaryTree` or `BST` classes that we've been examining in lecture for this assignment. Instead, you'll be writing a class that manipulates nodes directly to form a kind of binary tree.
 
 
 #### Objectives
@@ -35,7 +34,7 @@ Expression trees are a convenient way to represent arithmetic expressions since 
 An expression tree can be evaluated by recursively evaluating its subtrees. For example, the multiplication at the top of the tree would evaluate its left and right subtrees, then multiply the two results and return the product. The process is recursive since the addition in the left subtree similarly asks that its two subtrees be evaluated, then adds the results, etc. An expression string can be produced by an in-order traversal of the tree.
 
 
-#### Expression Trees
+#### Building Expression Trees
 Our expression trees will be built out of two different kinds of nodes: Nodes that represent constant values (e.g., 6.0 or -78.2), and nodes representing arithmetic operators (e.g., +, *, -, /). So that we can recursively evaluate (or print) entire trees, each of the three nodes should have the ability to evaluate itself, and to return a String representation of itself. The "node" classes will therefore implement the following interface:
 
 ```java
@@ -51,7 +50,7 @@ Classes implementing this `EvaluableNode` interface must have an evaluate method
 You'll need to fill in an `ExpressionTree` class to encapsulate our expression trees, just like the book writes a `LinkedList` class that's separate from the individual list nodes. The `ExpressionTree` class will contain some methods that involve the entire tree, not just individual nodes, and will have a constructor that produces complete expression trees from arithmetic expressions passed in as strings. (I'll tell you later what methods need to be implemented).
 
 #### Building Trees from `Strings`
-The constructor for the ExpressionTree class must build a tree from an infix expression string. This is a challenge, since the operator precedence and parenthesized subexpressions must be handled properly. You can't just process the operators in the order you find them in the input string.
+The constructor for the `ExpressionTree` class must build a tree from an infix expression string. This is a challenge, since the operator precedence and parenthesized subexpressions must be handled properly. You can't just process the operators in the order you find them in the input string.
 
 First, within the constructor, you can convert parenthesized infix expressions to _"postfix"_ expression strings using the conversion code I already provided. This might not seem like a step in the right direction, but at least the parenthesized subexpressions will be processed away and, more importantly, the operators will now appear in the order in which they need to be applied.
 
