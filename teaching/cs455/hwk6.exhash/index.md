@@ -1,6 +1,6 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: Extendible Hashing
+### Hwk 6: Extendible Hashing
 In this assignment, you will build a program that simulates the search and insertion of search keys into an extendible hash indexing structure. Extendible hashing dynamically grows the directory to minimize collisions and expensive rehashing when the dataset expands. While "static hashing" approaches that you learned in previous classes are also allowed to expand. But while rehashing is an acceptable cost in in-memory hashtable data structures (i.e., HashMaps and dictionaries), it is a prohibitively expensive operation for database systems, because it would mean that all tuples would need to be rehashed into new disk bocks.
 
 <!-- There are two things about this program that would be different in a real database system: First, the local buckets would be allocated as blocks on disk. The data stored in those blocks would actually be the tuples that hash into those blocks. Secondly, in a real extendible hash index, actual bits of the key's hash codes would be used (which require heavier usage of bitwise operators), instead of Strings of bits that represent the keys as we see in class. I choose to use strings here for simplicity, but you may implement this program using integers and bitwise operators if you'd prefer a challenge. -->

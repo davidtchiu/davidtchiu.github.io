@@ -224,7 +224,6 @@ let days = {
     // wk 7
     "Abstraction: Using APIs (Strings)",
     "Start loops; reading; tracing",
-    // "More loops",
     "Lab 7: Loops",
     "More loops: Debugging and lab review",
     // wk 8
