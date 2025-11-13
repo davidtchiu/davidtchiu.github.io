@@ -21,7 +21,7 @@ let days = {
       url: "https://www.google.com/drive/download/"
     },
   ],
-  // assignments: {
+  assignments: {
   //   homework: [
   //     {
   //       name: "Hwk 0",
@@ -189,7 +189,7 @@ let days = {
   //     //   due: "4/12/2024",
   //     // },
   //   ],
-  // },
+  },
   lectures: [
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
