@@ -1,4 +1,4 @@
-## CS 111: Intermediate and Object-Oriented Programming
+## CS 111: Object-Oriented Programming
 
 Instructor: David Chiu\
 Lecture: Mon/Wed/Fri 10:00 - 10:50 in TH 409\
