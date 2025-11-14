@@ -23,40 +23,39 @@ A concise write-up or annotated bibliography that demonstrates the students:
 - Has selected the technologies, frameworks, or data sets they intend to use  
 - Understand what existing tools can and can't be used
 - Identify required background they still need to learn
+- An ethics/risk assessment (e.g., data privacy, misuse, accessibility)  
 
 #### 3. Feasibility Analysis (Weeks 6-7)
 A short technical memo identifying:
 - Risks and unknowns
 - Scope boundaries  
 - A fallback/minimal-viable version of the project  
-- An ethics/risk assessment (e.g., data privacy, misuse, accessibility)  
 
-#### 4. High-Level Design Document
+#### 4. High-Level Design Document (Weeks 8-12)
 This should include:
 - System architecture diagram  
 - Key modules, data structures, or models  
-- External dependencies and APIs  
-- Expected inputs/outputs  
+- External dependencies and APIs
 - Preliminary UI sketches if relevant  
-- A description of the main technical challenges  
 - Story development
+- A description of the main technical challenges  
 
 
-#### 5. Project Plan and Timeline
-A short document with:
+#### 5. Final Capstone Plan and Timeline (Week 13-15)
+A formal document with all of the above, plus:
 - Milestones and 2–3 week sprint goals  
 - Dependencies  
 - Time estimates  
-- Plans for testing or evaluation
+- Plans for testing or experimental evaluation
 - Contingency plans  
 - Reach goals
 
-#### 6. Capstone Proposal Defense
+#### 6. Capstone Proposal Defense (Finals Week)
 A presentation delivered to faculty and peers that covers:
 - Motivation  
 - Background  
 - Design  
-- Early results or prototype  
+- Early results or prototype, if applicable
 - Timeline and feasibility  
 
 
