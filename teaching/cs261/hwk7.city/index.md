@@ -174,28 +174,28 @@ Now we can work on tracking various cities and answering queries!
                                 //    Tacoma (219346), Spokane (228989), Seattle (737015)]
         ```
 
-    2. `public City medianCity()`: This method returns city with the median population. Let's say there are 5 cities stored in the tree, ordered by population. The median city is the one that would appear third in sorted order. In case of an even number of cities, return the smaller one. This method is easy to write using the new `get()` method we added previously.
+    2. `public City medianCity()`: This method returns city with the median population. Let's say there are 5 cities stored in the tree, ordered by population. The median city is the one that would appear third in sorted order. In case of an even number of cities, where there's a tie for the middle, return the smaller one to the left of the middle. This method is easy to write using the new `get(index)` method we added previously. If you did this right, it should just be a couple-liner.
 
         ```java
         System.out.println(tracker.medianCity()); 
         // Bellevue (151854)
         ```
 
-    3. `public int numCitiesBelow(int population)`: This method returns the number of cities with a population strictly less than the given population. It seems like you should be using `getRank()` here, but inputs a City object. Ah -- use the 1-argument City constructor to create a "dummy" city with this population to input into `getRank()`!
+    3. `public int numCitiesBelow(int population)`: This method returns the number of cities with a population strictly less than the given population. It seems like you should be using `getRank(city)` here, but inputs a `City` object. Ah -- use the 1-argument City constructor to create a "dummy" city with the given population to input into `getRank(city)`. If you did this right, it should just be a one-liner.
 
         ```java
         System.out.println(tracker.numCitiesBelow(200000); 
-        // 4  <--- That is: Olympia, Redmond, Bellingham, Bellevue!
+        // 4  <--- (That is: Olympia, Redmond, Bellingham, Bellevue!)
         ```
 
-    4. `public List<City> citiesInRange(int lower, int upper)`: This method returns a list of cities with a population that's between `lower` and `upper`, inclusive.
+    4. `public List<City> citiesInRange(int lower, int upper)`: This method returns a list of cities with a population that's between `lower` and `upper`, inclusive. If you did this right, it should just be a one-liner.
 
         ```java
         System.out.println(tracker.citiesInRange(80000, 230000));
         // [Bellingham (92489), Bellevue (151854), Tacoma (219346), Spokane (228989)]
         ```
 
-    5. `public List<City> kNearestCities(int population, int k)`: This method implements the famous **"K-Nearest Neighbors (kNN)"** search routine. This method returns a list of `k` cities whose populations are closest to the given population. If `k` is greater than the number of cities in the tracker, then all cities should be listed in the order from nearest to farthest from the given population.
+    5. `public List<City> kNearestCities(int population, int k)`: This method implements the famous **"K-Nearest Neighbors (kNN)"** search routine. This method returns a list of `k` cities whose populations are closest to the given population. If `k` is greater than the number of cities in the tracker, then all cities should be listed in the order from nearest to farthest from the given population. This one take a bit more work than the previous few methods. I would start by getting the rank of a dummy city with the given population, to see where it would be located. Next, "widen" your search to the left and to the right of that location until `k` cities are identified.
 
         ```java
         System.out.println("k = 3, " + tracker.kNearestCities(0, 3));
@@ -257,9 +257,10 @@ Enhanced BinarySearchTree Methods (60 pts total)
 ======================================
 CityTracker Logic (20 pts total)
 - `addCity()` inserts cities correctly into BST: 2 pts
-- `medianCity()` correctly uses `get(size/2)` logic: 10 pts
-- `numCitiesBelow()` calls `getRank()` with constructed dummy City: 8 pts
-- `citiesInRange()` calls `rangeOf()` with constructed dummy Cities: 10 pts
+- `medianCity()` correctly uses `get(size/2)` logic: 2 pts
+- `numCitiesBelow()` calls `getRank()` with constructed dummy City: 2 pts
+- `citiesInRange()` calls `rangeOf()` with constructed dummy Cities: 2 pts
+- `kNearestCities()`: 12 pts
 
 ======================================
 Style and Design (10 pts total)
