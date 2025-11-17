@@ -26,19 +26,19 @@ By completing this assignment, you should be able to:
 #### Part 1: BinarySearchTree Enhancements
 Start by adding the following modifications to our `BinarySearchTree` class. 
 
-1. **Size Caching:** One problem that we have not yet discussed is the efficiency of the `size()` and `sizeHelper()` methods, used to recursively determine the number of nodes in a (sub)tree. Unfortunately, our current implementation runs in $$O(n)$$ time, where $$n$$ is the number of nodes in the subtree, because we need to traverse the whole tree! This is a problem if `size()` or `sizeHelper()` are called repeatedly in other methods! Because the size of a (sub)tree should be known as we insert and remove elements, we should cache, so with a bit of work we can make it run in $$O(1)$$. Specifically, we want to modify our BST so that it has the following node structure:
+1. **Size Caching:** One problem that we have not yet discussed is the efficiency of the `size()` and `sizeHelper()` methods we used to recursively determine the number of nodes in a (sub)tree. Unfortunately, our recursive implementation (and even the iterative version) runs in $$O(n)$$ time, where $$n$$ is the number of nodes in the tree, because we need to traverse the whole tree in order to count them! This is a problem if `size()` or `sizeHelper()` are called repeatedly in other methods that may rely on them! Because the size of a (sub)tree should be known as we insert and remove elements, we should cache it within each node, so with a bit of work we can make `size()` run in $$O(1)$$. We wish to modify our BST so that it has the following node structure:
 
 <center>
 <IMG SRC="figures/sizecaching_tree.png" width = "350" style="border: 10px solid #d6d6d6" />
 </center>
 
-Recall that every node in a BST serves as the root of its own subtree, so we want each node stores its corresponding subtree's size. Start by adding a `size` instance variable to the `Node<E>` inner class that is defined inside the `BinaryTree<E>` superclass. In the `Node` constructor, simply set `size` to 1.
+Recall that every node in a BST serves as the root of its own subtree, so we want each node to store its corresponding subtree's size. Start by adding a `size` instance variable to the `Node<E>` inner class that is defined inside the `BinaryTree<E>` superclass. In the `Node` constructor, simply set `size` to 1.
 
 - In `BinarySearchTree`, modify the `sizeHelper()` method so that it simply returns the new size field of the `localRoot` node. Next, modify `add()` so that it takes no action if the item is already in the tree. Then, modify `addHelper()` so that it increments the size. Similarly, modify `remove()` so that it takes no action if the target is not in the tree. Then, modify `removeHelper()` so that it decrements the size prior to returning.
 
 - Test this method to ensure it's working before moving on. Make sure that the size is correct for not only the root node, but for *all* nodes.
 
-Next, we want to add a few more BST methods that'll make our lives easier to complete this project. As with most of our other BST methods, you should write these methods recursively by having a private helper method do all the recursive traversal. Recall that the recursive helper method usually has this look: `private helperMethod(Node<E> localRoot, ...)`, where `localRoot` is the root of the current (sub)tree to be explored.
+Next, we want to add a few more BST methods that'll make our lives easier to complete this project. As with most of our other BST methods, you should write these methods recursively by having a private helper method do all the recursive traversal. Recall that the recursive helper method usually has this look: `private helperMethod(Node<E> localRoot, ...)`, where `localRoot` is the current root of the subtree that's to be explored.
 
 2. Implement a `public E get(int index)` method that returns the element whose in-order position is at the given `index`. For example, when `index = 0` it returns the _smallest_ element in the tree. When `index = 1` it returns the _second smallest_ element, and so on. If `index` is invalid (less than zero or greater than `size()-1`), then this method simply returns `null`.
 
@@ -50,10 +50,10 @@ Next, we want to add a few more BST methods that'll make our lives easier to com
     - Recursive Strategy: 
         ```txt
         Return null if the local root is null
-        Otherwise, 
-            Compute the size of the left subtree  // You call call the O(1)-time sizeHelper() !!
+        Otherwise,
+            Compute the size of the left subtree  // You call call the O(1)-time sizeHelper()!!
             if index == sizeOfLeftSubtree,
-                return current root's data (Base case #2)
+                return current root's data (Base case)
             if index < sizeOfLeftSubtree,
                 // The element is in the left subtree
                 Recurse left
@@ -79,29 +79,28 @@ Next, we want to add a few more BST methods that'll make our lives easier to com
         System.out.println(tree.get(7));   // null
         ```
 
-3. Implement another method `public int getRank(E target)` method that returns the number of elements in the BST that are _strictly smaller_ than the `target`.
+3. Implement another method `public int getRank(E target)` that returns the number of elements in the BST that are _strictly smaller_ than the `target`.
 
-    - This method should simply pass the current root node and the `target` to the helper method.
-
-    - Your recursive helper method should have this signature:
+    - This method should simply pass the current local "oot node and the `target` to a recursive helper method (below)
         ```java
         private int getRankHelper(Node<E> localRoot, E target)
         ```
 
+
     - Recursive Strategy:
         ```txt
-        Return 0 if the current root is null
-        if target == current root, 
+        Return 0 if the local root is null
+        if target == local root, 
             // It's larger than all nodes in the left subtree
             // So its rank must be the size of the left subtree
             return the size of the left subtree
-        if target < current root,
+        if target < local root,
             // target is in the left subtree
             recurse down the left subtree to find target's rank
             return that rank
-        if target > current root,
+        if target > local root,
             // target's rank is more than all nodes in the left subtree
-            // and the current root.
+            // and the local root.
             recurse down the right subtree to find its rank
             add 1 + sizeOfLeftSubtree + the rank returned from the recursion
             return this sum
@@ -125,16 +124,16 @@ Next, we want to add a few more BST methods that'll make our lives easier to com
 
     - Strategy:
         ```txt
-        if current root == null, do nothing.
+        if local root == null, do nothing.
 
-        if begin < current root,
+        if begin < local root,
             // starting point is smaller than root, so
             // there might be more elements down the left
             recurse down left subtree
-        if begin <= current root <= end,
+        if begin <= local root <= end,
             // the root is within the specified range! Add to list.
-            add current root's data to the list
-        if begin > current root,
+            add local root's data to the list
+        if begin > local root,
             // end point is larger than root, so
             // there might be more elements down the right
             recurse down right subtree
@@ -145,8 +144,6 @@ Next, we want to add a few more BST methods that'll make our lives easier to com
         System.out.println(tree.rangeOf(15, 55));  // [20, 30, 40, 50]
         System.out.println(tree.rangeOf(100, 200));  // []
         ```
-
-
 
 
 #### Part 2: City and CityTracker
@@ -197,6 +194,26 @@ Now we can work on tracking various cities and answering queries!
         System.out.println(tracker.citiesInRange(80000, 230000));
         // [Bellingham (92489), Bellevue (151854), Tacoma (219346), Spokane (228989)]
         ```
+
+    5. `public List<City> kNearestCities(int population, int k)`: This method implements the famous **"K-Nearest Neighbors (kNN)"** search routine. This method returns a list of `k` cities whose populations are closest to the given population. If `k` is greater than the number of cities in the tracker, then all cities should be listed in the order from nearest to farthest from the given population.
+
+        ```java
+        System.out.println("k = 3, " + tracker.kNearestCities(0, 3));
+        // k = 3, [Olympia (55919), Redmond (76995), Bellingham (92489)]
+
+        System.out.println("k = 4, " + tracker.kNearestCities(0, 4));
+        // k = 4, [Olympia (55919), Redmond (76995), Bellingham (92489), Bellevue (151854)]
+
+        System.out.println("k = 3, "  + tracker.kNearestCities(999_999, 3));
+        // k = 3, [Seattle (737015), Spokane (228989), Tacoma (219346)]
+
+        System.out.println("k = 5, "  + tracker.kNearestCities(100_000, 5));
+        // k = 5, [Bellingham (92489), Redmond (76995), Olympia (55919), Bellevue (151854), Tacoma (219346)]
+
+        System.out.println("k = 10, "  + tracker.kNearestCities(100_000, 10));
+        // k = 10, [Bellingham (92489), Redmond (76995), Olympia (55919), Bellevue (151854), Tacoma (219346), Spokane (228989), Seattle (737015)]
+        ```
+
 
 #### Program Defensively
 

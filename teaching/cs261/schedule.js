@@ -55,12 +55,12 @@ let days = {
         url: "hwk6.rec/",
         due: "11/14/2025",  // Fri, wk 11
       },
-      // {
-      //   name: "Hwk 7",
-      //   title: "City Tracker",
-      //   url: "hwk7.city/",
-      //   due: "12/2/2025",  // Tue, wk 14
-      // },
+      {
+        name: "Hwk 7",
+        title: "City Tracker",
+        url: "hwk7.city/",
+        due: "12/3/2025",  // Wed, wk 14
+      },
       // {
       //   name: "Hwk 8",
       //   title: "Sorting Lab",
