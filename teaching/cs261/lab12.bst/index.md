@@ -80,14 +80,14 @@ I've created a new project to get you started. Please download and open it. Firs
   >          null
   ```
 
-- Take a look at all those BST pictures in the preamble of this lab assignment. Take note of where the largest element must be located in any BST. Implement the `E largestHelper(Node<E> localRoot)` method which returns the largest item in the BST rooted on the given `Node`, or `null` if the given root node is `null`. Try implementing this one recursively.
+- Take a look at all those BST pictures in the preamble of this lab assignment, and take note of where the largest element must be located in any BST. Implement the `private E largestHelper(Node<E> localRoot)` method which returns the largest item in the BST rooted on the given `Node`, or `null` if the given root node is `null`. Try implementing this one recursively.
 
   - **Hint:** Base case: if the `localRoot` has is non-null and has no right child, then the largest value must be stored inside the `localRoot`'s data field. What's the general case?
 
 
 - Now implement a method `public int numLeaves()` that counts the number of leaves in the tree. Recall that leaf nodes are ones without either child (that is, they both reference `null`). Before you look at the hint below, check out the `size()` method to see how I implemented that (which counts *all* nodes, not just the leaf nodes). 
 
-  - **Hint:** I have generously provided the skeleton code for a helper method `private int numLeavesHelper(Node<E> localRoot)` that `numLeaves()` simply has to call and return. This helper method returns the number of leaves for any BST rooted at the given `localRoot` node. Base case #1: if the `localRoot` is `null` then clearly, the number of leaves is 0, since the tree is empty. Base case #2: if the `localRoot` is not `null`, then check if it's a leaf. If so, then return 1. General case: if the local root is not null and not a leaf, then the number of leaves in its BST is the sum of the number of the count of leaves in both of `localRoot`'s subtrees.
+  - **Hint:** I have provided the skeleton code for a private helper method `private int numLeavesHelper(Node<E> localRoot)` that `numLeaves()` simply has to call and return. This helper method returns the number of leaves for any BST rooted at the given `localRoot` node. Base case #1: if the `localRoot` is `null` then clearly, the number of leaves is 0, since the tree is empty. Base case #2: if the `localRoot` is not `null`, then check if it's a leaf. If so, then return 1. General case: if the local root is not null and not a leaf, then the number of leaves in its BST is the sum of the number of the count of leaves in both of `localRoot`'s subtrees.
 
   - Make sure you test it before moving on.
 
@@ -138,7 +138,7 @@ I've created a new project to get you started. Please download and open it. Firs
   ```
 
 
-- Implement the `public boolean isFull()` method which tests to see if the tree is full. Recall that a BST is full if every node has either 0 or 2 children.  An empty tree (i.e., `localRoot` is `null`) is not full, so return `false` immediately. Here's what to do otherwise: If `localRoot` is a leaf node, then the tree is full, so return `true`. If the `localRoot` node has only one child, the tree is not full, so return `false`. Otherwise, the given `localRoot` node must have *two* children, and it's full if both of its subtrees are also full ... so call your helper method recursively on the two children and see what they return!
+- Implement the `public boolean isFull()` method which tests to see if the tree is full. Recall that a BST is full if every node has 0 or 2 child nodes. You'll want to use the recursive helper pattern that you've been seeing so far: an empty tree (i.e., `localRoot` is `null`) is not full, so return `false`. Otherwise, if `localRoot` is a leaf node (no children), then clearly the tree it roots must be full, so return `true`. If the `localRoot` has only one child, the tree is not full, so return `false`. Otherwise, the given `localRoot` node must have *two* children, and it's full if both of its subtrees are *also* full ... so call your helper method recursively on the two children and check what they return!
 
   ```java
   BinarySearchTree<Integer> my_bst = new BinarySearchTree<>();
@@ -227,8 +227,6 @@ I've created a new project to get you started. Please download and open it. Firs
   System.out.println(my_bst2.height());
   > 4
   ```
-
-
 
 - For this last one, I strongly suggest you going back to the notes to remind yourselves how node removal works. The `public void remove(E target)` method attempts to remove the node containing the given key. You need to first find the "victim." Because this is a little more complicated, I'll give you some hints on what you need to do.
 
