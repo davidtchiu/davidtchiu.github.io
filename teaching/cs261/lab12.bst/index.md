@@ -292,6 +292,16 @@ I've created a new project to get you started. Please download and open it. Firs
     >     null
     ```
 
+#### Optional: Got time? Try "level order" print
+It's quite annoying that the toString method returns a linear representation of the tree, which is slightly hard to read. Write a method called `public void levelOrder()` that prints then tree in top-down fashion (like the way they are usually drawn on the board).
+
+```txt
+                   6
+                /      \
+               3        10
+                 \     /   \
+                   5  8     18
+```
 
 #### Grading
 
