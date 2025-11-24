@@ -146,7 +146,7 @@ Global(0)
 : Local(0)[*] = [00011, 00101]
 
 > s 00011
-00111 FOUND
+00011 FOUND
 
 > i 00111
 SUCCESS
