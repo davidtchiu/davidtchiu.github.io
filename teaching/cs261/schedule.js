@@ -63,7 +63,7 @@ let days = {
       },
       // {
       //   name: "Hwk 8",
-      //   title: "Sorting Lab",
+      //   title: "Evil Hangman",
       //   url: "hwk8.ehm",
       //   due: "12/19/2025", // Fri, finals week
       // },

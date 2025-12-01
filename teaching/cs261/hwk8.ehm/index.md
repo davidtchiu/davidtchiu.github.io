@@ -11,10 +11,12 @@ While there are many viable strategies for building competitive computer game pl
 
 
 
-#### Student Objectives
-- To practice with file handling and text processing.
-- To practice with object-oriented design.
-- To select appropriate algorithms and data structures for problem solving.
+#### Student Learning Objectives
+- Apply abstract data types to solve a nontrivial problem, including choosing appropriate collections for representing evolving game state (e.g., sets of guessed letters, lists of words, maps from word families to word lists).
+
+- Use HashMap effectively to group, categorize, and retrieve structured data, specifically to partition dictionary words into word families based on dynamically changing letter guesses.
+
+- Design and implement algorithms that adapt data structures in response to user input, such as pruning the master word list, selecting the largest word family, and updating the exposed pattern of letters.
 
 
 #### Required Files

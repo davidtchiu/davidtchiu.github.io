@@ -22,6 +22,9 @@ By completing this assignment, you should be able to:
 - Recognize when to extend the BST to support new functionality (e.g., realizing CityTracker needs more from the base version of the BST)
 - Demonstrate good object-oriented design practices, including encapsulation and method decomposition
 
+#### Required Files
+- [Hwk7_CityBST.zip](Hwk7_CityBST.zip)
+
 
 #### Part 1: BinarySearchTree Enhancements
 Start by adding the following modifications to our `BinarySearchTree` class. 
