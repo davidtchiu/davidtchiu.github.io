@@ -59,14 +59,14 @@ let days = {
         name: "Hwk 7",
         title: "City Tracker",
         url: "hwk7.city/",
-        due: "12/3/2025",  // Wed, wk 14
+        due: "12/5/2025",  // Fri, wk 14 (extended due date because I'm an idiot and forgot to post it earlier)
       },
-      // {
-      //   name: "Hwk 8",
-      //   title: "Evil Hangman",
-      //   url: "hwk8.ehm",
-      //   due: "12/19/2025", // Fri, finals week
-      // },
+      {
+        name: "Hwk 8",
+        title: "Evil Hangman (Optional Extra Credit)",
+        url: "hwk8.ehm",
+        due: "12/19/2025", // Fri, finals week
+      },
       // {
       //   name: "Hwk 7",
       //   title: "Huffman Encoding",

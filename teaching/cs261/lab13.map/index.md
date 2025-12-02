@@ -157,7 +157,7 @@ The last experiment you ran showed that high load factors generally lead to wors
   
   ```java
   // Just enough capacity to hold all entries..
-  MapInt<String,Double> map = new FastOpenMap<>(6);
+  MapInt<String,Double> map = new RehashableOpenMap<>(6);
   map.put("David", 4.0);
   map.put("Aaron", 3.2);
   map.put("Brad", 3.9);
@@ -189,11 +189,9 @@ The last experiment you ran showed that high load factors generally lead to wors
   > Probes: 8
   ```
 
-Notice that, due to rehashing, this sequence only takes 8 probes compared to 16 before on a fuller Hash Map. The tradeoff between time and space is in full action. While the fast Hash Map performs better, its hash table will occupy a lot more space than the original Map that doesn't grow.
+Notice that, due to rehashing, this sequence only takes 8 probes compared to 16 before on a fuller Hash Map. The tradeoff between time and space is in full action. While the RehashableOpenMap performs better, its hash table will occupy a lot more space than the original Map that doesn't grow.
 
-**WARNING:** Be careful to not run the `Experiment` class again, because it will infinitely loop due to rehashing.
-
-#### Part V: Entry Chaining
+**WARNING:** Be careful to not try running the `Experiment` class on the `RehashableOpenMap`, because it will infinitely loop due to rehashing.
 
 
 
@@ -217,7 +215,7 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 #### Credits
 
-Based on a previous lab by Professor Henry Walker, Grinnell College.
+Based on a previous lab by Brad Richards.
 
 #### Lab Attendance Policies
 

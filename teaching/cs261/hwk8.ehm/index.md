@@ -1,6 +1,6 @@
 ## CS 261 - Computer Science II
 
-### Homework 8: Evil Hangman (HashMaps)
+### Homework 8: Evil Hangman (Bonus!)
 
 It's hard to write computer programs to play games. When we as humans sit down to play a game, we can draw on past experience, adapt to our opponents' strategies, and learn from our mistakes. Computers, on the other hand, blindly follow a preset algorithm that (hopefully) causes it to act somewhat intelligently. Though computers have bested their human masters in some games, most notably checkers and chess, the programs that do so often draw on hundreds of years of human game experience and use extraordinarily complex algorithms and optimizations to out-calculate their opponents...
 
@@ -207,7 +207,11 @@ The secret word is: muzzling
 ```
 
 #### Grading
-```
+Students who complete this bonus assignment will achieve enlightment and unlock +10 bonus points to be applied on either:
+your lowest exam (cannot exceed 100), or lowest homework assignment, whichever is more beneficial to your final grade!
+
+
+<!-- ```
 CS 261 Homework (Evil Hangman)
 
 ======================================
@@ -264,7 +268,7 @@ family is chosen.
 
 Total: 100
 
-```
+``` -->
 
 #### Submitting Your Assignment
 Follow these instructions to submit your work. You may submit as often as you'd like before the deadline. I will grade the most recent copy.
