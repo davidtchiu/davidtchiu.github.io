@@ -24,9 +24,12 @@ While there are many viable strategies for building competitive computer game pl
 The following file(s) have been provided for this homework.
 
 - [dictionary.txt](dictionary.txt)
+- [HangmanInterface.java](HangmanInterface.java)
+- [EvilHangman.java](EvilHangman.java)
+- [EvilHangmanDriver.java](EvilHangmanDriver.java)
 
 
-#### Overview of Evil Hangman
+#### Overview of Hangman
 
 In case you aren't familiar with the game Hangman, the rules are as follows:
 
@@ -56,6 +59,8 @@ If you'll notice, every word in your word list falls into one of the following �
 - `E--E`, which contains **E**LS**E**
 - `---E`, which contains HOP**E**
 
+**(Hint: Say, that that looks like a `HashMap` that maps word families (strings) to a list of words within that family!)**
+
 Since the letters you reveal have to correspond to some word in your word list, you can choose to reveal any one of the above five families. There are many ways to pick *which* word family to reveal – perhaps you want to steer your opponent toward a smaller family with more obscure words, or toward a larger family in the hopes of keeping your options open. In this assignment, in the interests of simplicity, we'll adopt the latter approach and always choose the largest of the remaining word families. In this case, it means that you should choose to commit to the word family `----`. This reduces your word list down to:
 
 ALLY    COOL    GOOD
@@ -77,46 +82,56 @@ There are two possible outcomes of this game. First, your opponent might be smar
 
 Your assignment is to write a computer program which plays a game of Hangman using this “Evil Hangman” algorithm. In particular, your program should do the following:
 
-- Read in the file `dictionary.txt`, which contains the full contents of the Official Scrabble Player's Dictionary, Second Edition. This word list has over 120,000 words, which should be more than enough for our purposes.
+- Download all the starter files above.
 
-- Prompt the user for a word length, re-prompting as necessary until she enters a number such that there's at least one word that's exactly that long. That is, if the user wants to play with words of length -42 or 137, since no English words are that long, you should reprompt her.
+    - The file `dictionary.txt` contains the full contents of the Official Scrabble Player's Dictionary, Second Edition. This word list has over 120,000 words, which should be more than enough for our purposes. 
+    - The file `HangmanInterface.java` is just a Java interface I created that you need to implement. This contract makes grading easier on me, and it gives you some scaffolding for how to piece out the methods.
+    - The file `EvilHangmanDriver.java` contains the main method. You shouldn't need to make changes to this file.
+    - The file `EvilHangman.java` is where all of your logic should go. To save you time (and because it's not really the purpose of this assignment), I have given you the `initDictionary(file)` method that scans all the words from the dictionary file.
 
-    - Think about how you would do this efficiently. It would be too slow to traverse your entire word list just to grab all the words of a certain length. Would a HashMap be helpful here for storing all your words read from the file?
+- **Instance Variables** First, you need to think about what state you need to store to play this game, and what data structures you will use to store them.
+    
+    - First, let's talk about the master word list. I contend that you would not want to store all the words in the dictionary inside a giant `List`. My rationale is this: You start the game by asking the user how many letters are in the secret word. To filter out just the word candidates, you'd have to traverse the entire list and test each word against the given length. I propose a better organization strategy. Store a `HashMap<Integer,List<String>>` that maps the word length (keys) to a List of words having that length. Then, when the user says they want to guess a 6 letter word, you just have to grab the corresponding list off the map!
+    
+    - Tracking the current set of word families also makes perfect use of `HashMap`s. You could, use the word-family string pattern (e.g., `"_ _ R _ _"`) as the key, and it maps to a list of words that fall into that family (say, `LORDS`, `DARTS`, `FIRST`, and so on). When the game starts, HashMap has only a single entry: `"_ _ _ _ _"` (that is, however many blanks) that maps to the list of *all* the words with the given length.
 
-- Prompt the user for a number of guesses, which must be an integer greater than zero. Don't worry about unusually large numbers of guesses – after all, having more than 26 guesses is clearly not going to help your opponent! 
-
-- Prompt the user for whether she wants to have a running total of the number of words remaining in the word list. This completely ruins the illusion of a fair game that you'll be cultivating, but it's quite useful for testing (and grading!)
-
-- Play a game of Hangman using the Evil Hangman algorithm, as described below:
-
-    - Print out how many guesses the user has remaining, along with any letters the player has guessed and the current blanked-out version of the word. If the user chose earlier to see the number of words remaining, print that out too.
-
-    - Prompt the user for a single letter guess, re-prompting until the user enters a letter that she hasn't already guessed. Make sure that the input is exactly one character long and that it's a letter of the English alphabet.
-
-    - Partition the words in the dictionary into groups by "word family," described above.
-
-    - Find the most common "word family" in the remaining words, remove all words from the word list that aren't in that family, and report the position of the letters (if any) to the user. If the word family doesn't contain any copies of the letter, subtract a remaining guess from the user.
-
-    - If the player has run out of guesses, then they have lost. Pick a random word from the word list and display it as the word that the computer initially “chose.”
-
-    - If the player correctly guesses the word, congratulate them.
-
-- Think about what data structures would be best for tracking word families and the master word list.
-
-    - Tracking the current set of word families makes perfect use of `HashMap`s. You could, for instance, use the word family string pattern (say `"_ _ R _ _"`) to be the key, and it hashes to a list of words that fall into that family (say, `LORDS`, `DARTS`, `FIRST`, and so on). Your `HashMap` should store multiple such entries (one entry per word family).
-
-    - The master word list also needs to be stored in a data structure for quick access. The dictionary file that's given to you is alphabetized, but is that the optimal ordering for what you're trying to accomplish? Would it make more sense to order the words in terms of their length? What if you alphabetized them *after* you first ordered them by length?
-
-    - The list of guessed letters needs to be output in alphabetical order after each wrong guess. Again, you'll want to avoid using a data structure that would require you to re-sort the list after each guess.
+    - The list of guessed letters needs to be output in alphabetical order after each guess. Again, you'll want to avoid using a data structure that would require you to re-sort the list after each guess. Seems like a good opportunity use of a data structure that automatically maintains order on its elements.
 
     - You are allowed to use the Java-provided classes that represent these data structures. In other words, you don't have to use the trees, lists, and maps that we wrote in lab/class.
 
-#### Advice
-Letter position matters just as much as letter frequency. When computing word families, it's not enough to count the number of times a particular letter appears in a word; you also have to consider their positions. For example, `BEER` and `HERE` are in two different families even though they both have two `E`'s in them. Consequently, representing word families as numbers representing the frequency of the letter in the word will get you into trouble.
+    - Besides these data structures, you also need to store some basic accounting info: how many guesses are left? What's the current word family that is revealed to the user? Etc.
 
-Watch out for gaps in the dictionary. When the user specifies a word length, you will need to check that there are indeed words of that length in the dictionary. You might initially assume that if the requested word length is less than the length of the longest word in the dictionary, there must be some word of that length. Unfortunately, the dictionary contains a few gaps. The longest word in the dictionary has length 29, but there are no words of length 27 or 26. Be sure to take this into account when checking if a word length is valid.
 
-Don't explicitly enumerate word families. If you are working with a word of length $$n$$, then there are $$2^n$$ possible word families for each letter. However, most of these families don't actually appear in the English language. For example, no English words contain three consecutive `U`s, and no word matches the pattern `E-EE-EE--E`. Rather than explicitly generating every word family whenever the user enters a guess, see if you can generate word families only for words that actually appear in the word list. One way to do this would be to scan over the word list, storing each word in a table mapping word families to words in that family.
+- **Methods:** Move on to implementing each of the abstract methods listed in the interface. I would probably save `play()` for last.
+
+    - The `public HashMap<String, List<String>> buildWordFamilies(char guess)` method needs to input a guessed character from and returns an updated HashMap of word families. For instance, let's say the current 5-letter HashMap of word families has a bunch of entries, like:
+        ```txt
+        "AB___" -> [ABREW, ANEST]
+        "A___Y" -> [ALLOY, ANNOY, ABBEY, ALLEY, AREFY]
+        "(some others)"
+        ```
+        Say the currently revealed word family is `"A___Y"`, so the current list of words associated with that family contains `[ABBEY, AREFY, ALLEY, ALLOY, ANNOY]`. Now suppose the input guessed letter was 'e'. Then you would build off of this current list and return a new HashMap containing these word-family entries:
+        ```txt
+        "A___Y" -> [ALLOY, ANNOY]
+        "A__EY" -> [ABBEY, ALLEY]
+        "A_E_Y" -> [AREFY]
+        ```
+
+    - The `public String nextWordFamily(char guess)` method calls the previous `buildWordFamilies(guess)` method to generate a whittled down list of mappings. This method then selects the word family containing the largest list. Here, it's a toss-up between "A___Y" and "A__EY" because they both refer to lists containing just two words. Pick one of those keys to return as the newly revealed word family. Also, don't forget to update your current word-family Hashmap instance variable to the one that `buildWordFamilies(guess)` returned!
+
+    - Now you can focus on `public void play()`. It plays a game of Hangman using the Evil Hangman algorithm, as described below:
+
+        - Print out how many guesses the user has remaining, along with any letters the player has guessed (in alphabetical order) and the current blanked-out version of the secret word, which is just the currently revealed "word family." If we are in "debug mode" (see the driver class), then print out the list of possible words too.
+
+        - Prompt the user for a single letter guess, re-prompting until the user enters a letter that she hasn't already guessed. Your `makeGuess()` method should perform that reprompting logic. Make sure that the input is exactly one character long and that it's a letter of the English alphabet.
+
+        - Using their guessed letter, call your earlier method `nextWordFamily(guess)` to narrow down the next word family. If the word family didn't change, then that means they made a bad guess, so decrement the number of guesses they have left.Output the current word family (that was returned by this method) to show the player the current state of their game.
+
+        - If the player has run out of guesses, then they have lost. Pick a random word from the current word list (simply lookup the currently revealed word family in your HashMap) and display it as the word that the computer initially “chose” (har har -- evil laughter!).
+
+        - If the player correctly guesses the word, congratulate them.
+
+
 
 #### Sample Output
 Here is a sample run of my program:
