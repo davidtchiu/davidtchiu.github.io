@@ -93,7 +93,7 @@ Your assignment is to write a computer program which plays a game of Hangman usi
     
     - First, let's talk about the master word list. I contend that you would not want to store all the words in the dictionary inside a giant `List`. My rationale is this: You start the game by asking the user how many letters are in the secret word. To filter out just the word candidates, you'd have to traverse the entire list and test each word against the given length. I propose a better organization strategy. Store a `HashMap<Integer,List<String>>` that maps the word length (keys) to a List of words having that length. Then, when the user says they want to guess a 6 letter word, you just have to grab the corresponding list off the map!
     
-    - Tracking the current set of word families also makes perfect use of `HashMap`s. You could, use the word-family string pattern (e.g., `"_ _ R _ _"`) as the key, and it maps to a list of words that fall into that family (say, `LORDS`, `DARTS`, `FIRST`, and so on). When the game starts, HashMap has only a single entry: `"_ _ _ _ _"` (that is, however many blanks) that maps to the list of *all* the words with the given length.
+    - Tracking the current set of word families also makes perfect use of `HashMap`s. You could, use the word-family string pattern (e.g., `"--R--"`) as the key, and it maps to a list of words that fall into that family (say, `LORDS`, `DARTS`, `FIRST`, and so on). When the game starts, HashMap has only a single entry: `"-----"` (that is, however many blanks) that maps to the list of *all* the words with the given length.
 
     - The list of guessed letters needs to be output in alphabetical order after each guess. Again, you'll want to avoid using a data structure that would require you to re-sort the list after each guess. Seems like a good opportunity use of a data structure that automatically maintains order on its elements.
 
@@ -106,18 +106,18 @@ Your assignment is to write a computer program which plays a game of Hangman usi
 
     - The `public HashMap<String, List<String>> buildWordFamilies(char guess)` method needs to input a guessed character from and returns an updated HashMap of word families. For instance, let's say the current 5-letter HashMap of word families has a bunch of entries, like:
         ```txt
-        "AB___" -> [ABREW, ANEST]
-        "A___Y" -> [ALLOY, ANNOY, ABBEY, ALLEY, AREFY]
+        "A----" -> [ABREW, ANEST]
+        "A---Y" -> [ALLOY, ANNOY, ABBEY, ALLEY, AREFY]
         "(some others)"
         ```
-        Say the currently revealed word family is `"A___Y"`, so the current list of words associated with that family contains `[ABBEY, AREFY, ALLEY, ALLOY, ANNOY]`. Now suppose the input guessed letter was 'e'. Then you would build off of this current list and return a new HashMap containing these word-family entries:
+        Say the currently revealed word family is `"A---Y"`, so the current list of words associated with that family contains `[ABBEY, AREFY, ALLEY, ALLOY, ANNOY]`. Now suppose the input guessed letter was 'e'. Then you would build off of this current list and return a new HashMap containing these word-family entries:
         ```txt
-        "A___Y" -> [ALLOY, ANNOY]
-        "A__EY" -> [ABBEY, ALLEY]
-        "A_E_Y" -> [AREFY]
+        "A---Y" -> [ALLOY, ANNOY]
+        "A--EY" -> [ABBEY, ALLEY]
+        "A-E-Y" -> [AREFY]
         ```
 
-    - The `public String nextWordFamily(char guess)` method calls the previous `buildWordFamilies(guess)` method to generate a whittled down list of mappings. This method then selects the word family containing the largest list. Here, it's a toss-up between "A___Y" and "A__EY" because they both refer to lists containing just two words. Pick one of those keys to return as the newly revealed word family. Also, don't forget to update your current word-family Hashmap instance variable to the one that `buildWordFamilies(guess)` returned!
+    - The `public String nextWordFamily(char guess)` method calls the previous `buildWordFamilies(guess)` method to generate a whittled down list of mappings. This method then selects the word family containing the largest list. Here, it's a toss-up between "A---Y" and "A--EY" because they both refer to lists containing just two words. Pick one of those keys to return as the newly revealed word family. Also, don't forget to update your current word-family Hashmap instance variable to the one that `buildWordFamilies(guess)` returned!
 
     - Now you can focus on `public void play()`. It plays a game of Hangman using the Evil Hangman algorithm, as described below:
 
