@@ -237,7 +237,7 @@ let days = {
     "<strong><emph>Thanksgiving</emph></strong>",
     // wk 14
     "HashMaps: chaining",
-    "Start sorting: Merge Sort",
+    "Start sorting",
     "Lab 13: Hashing Lab",
     "Merge Sort",
     // wk 15
