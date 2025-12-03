@@ -1,18 +1,19 @@
 ## CS 455 - Principles of Database Systems
 
-### Hwk: DB Design Theory
+### Hwk 7: Normalization and DB Theory
+
+This assignment focuses on the ins and outs of the relational model.
 
 #### Student Outcomes
 
-- Identification and generation of functional dependencies (FD) and keys.
-- Deriving/disproving FD inference rules.
-- Exposure to normal forms and decomposition.
+- To understand the basic concepts of the relational data model.
+- To become familiar with basic schema design.
 
 #### Required Files
 
 The following file(s) have been provided for this assignment.
 
-- [Print This Out](DB_Hwk5.pdf)
+- [Print This Out](DB_Hwk7.pdf)
 
 #### Instructions
 
@@ -21,8 +22,13 @@ Print this assignment with single-side pages. Fill in your name above, and write
 #### Grading
 
 ```
-This assignment will be graded out of 85 points.
-Point values for each question is given in the print-out.
+This assignment is graded out of 45 pts:
+
+[5pt] Completion of problem 1.
+[5pt] Completion of problem 2.
+[10pt] Completion of problem 3a and 3b.
+[10pt] Completion of problem 4.
+[15pt] Completion of problem 5.
 ```
 
 #### Submitting Your Assignment
@@ -33,4 +39,4 @@ After you've filled in the answers, scan all pages into a PDF, and submit to can
 
 #### Credits
 
-Written by David Chiu.
+Written by David Chiu. Some problems lifted from Silberschatz et al., Ramakrishnan/Gerhke, and Elmasri/Navathe. 2016.
