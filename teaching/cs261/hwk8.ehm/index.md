@@ -24,6 +24,7 @@ While there are many viable strategies for building competitive computer game pl
 The following file(s) have been provided for this homework.
 
 - [dictionary.txt](dictionary.txt)
+- [short.txt](short.txt)
 - [HangmanInterface.java](HangmanInterface.java)
 - [EvilHangman.java](EvilHangman.java)
 - [EvilHangmanDriver.java](EvilHangmanDriver.java)
@@ -42,41 +43,48 @@ Fundamental to the game is the fact the first player accurately represents the w
 There are only two words in the English language that match this pattern: `"doable"` and `"double"`. If the player who chose the hidden word is playing fairly, then you have a fifty-fifty chance of winning this game if you guess `'A'` or `'U'` as the missing letter. However, if your opponent is cheating and hasn't *actually committed* to either word, then there is no possible way you can win this game. No matter what letter you guess, your opponent can claim that they had picked the other word, and you will lose the game. That is, if you guess that the word is "doable," they can pretend that they actually committed to "`double`" the whole time, and vice-versa.
 
 #### Word Families
-Let's illustrate this technique with an example. Suppose that you are playing Hangman and it's your turn to choose a word, which we'll assume is of length 4. Rather than committing to a secret word, you instead compile a list of every four-letter word in the English language. For simplicity, let's assume that English only has a few 4-letter words, all of which are reprinted here:
+Let's illustrate this technique with an example. Let's assume the secret word length is 4. Rather than committing to a secret word, you instead compile a list of every four-letter word in the English language. For simplicity,  assume that  the English language only has a few 4-letter words, all of which are printed here:
 
-ALLY    BETA    COOL    DEAL    ELSE    FLEW    GOOD    HOPE    IBEX
+ALLY   BEST   BETA    COOL    DEAL    ELSE    FETA   FLEW    GOOD    HOPE    IBEX    META
 
 
-Now, suppose that your opponent guesses the letter `'E'`. You now need to tell your opponent which letters in the word you've "picked" are E's. Of course, you haven't picked a word, and so you have multiple options about where you reveal the E's. Here's the above word list, with E's highlighted in each word:
+Now, suppose that your opponent guesses the letter `'E'`. You now need to tell your opponent which letters in the word you've "picked" are E's. Of course, you haven't actually picked a word yet, and so you have multiple options about where you reveal the E's. Here's the above word list, with E's highlighted in each word:
 
-ALLY    B**E**TA    COOL    D**E**AL    **E**LS**E**    FL**E**W    GOOD    HOP**E**    IB**E**X
+ALLY  B**E**ST    B**E**TA    COOL    D**E**AL    **E**LS**E**  F**E**TA  FL**E**W    GOOD    HOP**E**   IB**E**X   M**E**TA
 
-If you'll notice, every word in your word list falls into one of the following “word families:”
+If you'll notice, every word in your list falls into one of the following *“word families:”*
 
-- `----`, which contains the words ALLY, COOL, and GOOD
-- `-E--`, which contains B**E**TA and D**E**AL
-- `--E-`, which contains FL**E**W and IB**E**X
-- `E--E`, which contains **E**LS**E**
-- `---E`, which contains HOP**E**
+- `----`, which contains the words: ALLY, COOL, and GOOD
+- `-E--`, which contains: B**E**ST, B**E**TA, D**E**AL, F**E**TA, M**E**TA    `<-- choose this!`
+- `--E-`, which contains: FL**E**W and IB**E**X
+- `E--E`, which contains: **E**LS**E**
+- `---E`, which contains: HOP**E**
 
-**(Hint: Say, that that looks like a `HashMap` that maps word families (strings) to a list of words within that family!)**
+**(Hint: Say, that looks like a `HashMap` that maps word-families (keys) to a list of words within that family (values)!)**
 
-Since the letters you reveal have to correspond to some word in your word list, you can choose to reveal any one of the above five families. There are many ways to pick *which* word family to reveal – perhaps you want to steer your opponent toward a smaller family with more obscure words, or toward a larger family in the hopes of keeping your options open. In this assignment, in the interests of simplicity, we'll adopt the latter approach and always choose the largest of the remaining word families. In this case, it means that you should choose to commit to the word family `----`. This reduces your word list down to:
+Since the letters you reveal have to correspond to *some* word in your word list, you can choose to reveal any one of the above five families. There are many ways to pick *which* word family to reveal – perhaps you want to steer your opponent toward a smaller family with more obscure words, or toward a larger family in the hopes of keeping your options open. In this assignment, we'll adopt the latter approach and always choose the largest of the word families. In this case, it means that you should commit to the word family `-E--`, which reduces your word list down to: 
 
-ALLY    COOL    GOOD
+BEST, BETA, DEAL, FETA, META
 
-and since you didn't reveal any letters, you would tell your opponent that their guess was wrong. Let's see a few more examples of this strategy. Given this 3-word word list, suppose your opponent now guesses the letter `O`, then you would further break your word list (of ALLY, COOL, and GOOD) down into two families:
+and since the word family you picked had to reveal the `E` that they guessed, you would tell your opponent that their guess was right! (And it wouldn't count against them.) Let's see a few more examples of this strategy. They now guess the letter `T`, which prompts you to further break your word list down into the following families:
 
-- `-OO-`, which contains C**OO**L and G**OO**D
-- `----`, which contains ALLY
+- `-E--`, which contains D**E**AL
+- `-ET-`, which contains B**E**TA, F**E**TA, M**E**TA   `<-- choose this!`
+- `-E-T`, which contains B**E**ST
 
-The first of these word families is larger than the second, and so you choose it, revealing two `O`'s in the word and reducing your list down to:
+The second of these word families is larger than the rest, so you choose it, revealing the `T`'s in the word and reducing your list down to:
 
-COOL    GOOD
+BETA, FETA, META
 
-But what happens if your opponent guesses a letter that doesn't appear anywhere in your word list? For example, what happens if your opponent now guesses `'T'`? This isn't a problem. If you try splitting these words apart into word families, you'll find that there's only one family, the family `----` in which `T` appears nowhere and which contains both `COOL` and `GOOD`. Since there is only one word family here, it's trivially the largest family, and by picking it you'd maintain the word list you already had.
+But what happens if your opponent guesses a letter that doesn't appear anywhere in your word list? For example, what happens if your opponent now guesses `'L'`? This isn't a problem. If you try splitting these words apart into word families, you'll find that there's only one family, the family `-ET-` in which `L` appears nowhere and which still contains BETA FETA and META. Since there is only one word family here, it's trivially the largest family, and by picking it you'd maintain the word list you already had.
 
-There are two possible outcomes of this game. First, your opponent might be smart enough to pare the word list down to one word and then guess what that word is. In this case, you should congratulate them – that's an impressive feat considering the scheming you were up to! Second, and by far the most common case, your opponent will be completely stumped and will run out of guesses. When this happens, you can pick any word you'd like from your list and say it's the word that you had chosen all along. The beauty of this setup is that your opponent will have no way of knowing that you were dodging guesses the whole time – it looks like you simply picked an unusual word and stuck with it the whole way.
+If the player has enough guesses left, they might then pick `B`, whittling down to:
+
+- `BET-`, which contains B**E**TA 
+- `-ET-`, which contains F**E**TA, M**E**TA      `<-- choose this!`
+- `BE-T`, which contains B**E**ST
+
+... and so on, until they either run out of guesses (and lose) or they actually get it! There are two possible outcomes of this game. First, your opponent might be smart enough to pare the word list down to one word and then guess what that word is. In this case, you should congratulate them – that's an impressive feat considering the scheming you were up to! Second, and by far the most common case, your opponent will be completely stumped and will run out of guesses. When this happens, you can pick any word you'd like from your list and say it's the word that you had chosen all along. The beauty of this setup is that your opponent will have no way of knowing that you were dodging guesses the whole time – it looks like you simply picked an unusual word and stuck with it the whole way.
 
 #### Instructions
 
@@ -85,6 +93,7 @@ Your assignment is to write a computer program which plays a game of Hangman usi
 - Download all the starter files above.
 
     - The file `dictionary.txt` contains the full contents of the Official Scrabble Player's Dictionary, Second Edition. This word list has over 120,000 words, which should be more than enough for our purposes. 
+    - The file `short.txt` which contains just the few words that appeared in our examples above. For easier testing.
     - The file `HangmanInterface.java` is just a Java interface I created that you need to implement. This contract makes grading easier on me, and it gives you some scaffolding for how to piece out the methods.
     - The file `EvilHangmanDriver.java` contains the main method. You shouldn't need to make changes to this file.
     - The file `EvilHangman.java` is where all of your logic should go. To save you time (and because it's not really the purpose of this assignment), I have given you the `initDictionary(file)` method that scans all the words from the dictionary file.
@@ -108,7 +117,7 @@ Your assignment is to write a computer program which plays a game of Hangman usi
         ```txt
         "A----" -> [ABREW, ANEST]
         "A---Y" -> [ALLOY, ANNOY, ABBEY, ALLEY, AREFY]
-        "(some others)"
+        "(potentially some others)"
         ```
         Say the currently revealed word family is `"A---Y"`, so the current list of words associated with that family contains `[ABBEY, AREFY, ALLEY, ALLOY, ANNOY]`. Now suppose the input guessed letter was 'e'. Then you would build off of this current list and return a new HashMap containing these word-family entries:
         ```txt
@@ -132,8 +141,64 @@ Your assignment is to write a computer program which plays a game of Hangman usi
         - If the player correctly guesses the word, congratulate them.
 
 
+#### Sample Output (Using short.txt and Debug Mode turned ON. 100 guesses)
+```
+Enter desired word length: 4
 
-#### Sample Output
+[Debug Mode] [ally, best, beta, cool, deal, else, feta, flew, good, hope, ibex, meta]
+Currently: ____
+Used letters: []
+You have 100 guesses remaining.
+Input your guess: e
+
+[Debug Mode] [best, beta, deal, feta, meta]
+Currently: _e__
+Used letters: [e]
+You have 100 guesses remaining.
+Input your guess: l
+
+[Debug Mode] [best, beta, feta, meta]
+Currently: _e__
+Used letters: [e, l]
+You have 99 guesses remaining.
+Input your guess: s
+
+[Debug Mode] [beta, feta, meta]
+Currently: _e__
+Used letters: [e, l, s]
+You have 98 guesses remaining.
+Input your guess: a
+
+[Debug Mode] [beta, feta, meta]
+Currently: _e_a
+Used letters: [a, e, l, s]
+You have 98 guesses remaining.
+Input your guess: t
+
+[Debug Mode] [beta, feta, meta]
+Currently: _eta
+Used letters: [a, e, l, s, t]
+You have 98 guesses remaining.
+Input your guess: m
+
+[Debug Mode] [beta, feta]
+Currently: _eta
+Used letters: [a, e, l, m, s, t]
+You have 97 guesses remaining.
+Input your guess: f
+
+[Debug Mode] [beta]
+Currently: _eta
+Used letters: [a, e, f, l, m, s, t]
+You have 96 guesses remaining.
+Input your guess: b
+
+Congratulations, you win!
+The secret word was: beta
+```
+
+
+#### Sample Output (Using dictionary and debug mode turned off. 10 guesses)
 Here is a sample run of my program:
 
 ```
