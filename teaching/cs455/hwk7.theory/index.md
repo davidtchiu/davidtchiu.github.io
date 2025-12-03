@@ -2,12 +2,6 @@
 
 ### Hwk 7: Normalization and DB Theory
 
-This assignment focuses on the ins and outs of the relational model.
-
-#### Student Outcomes
-
-- To understand the basic concepts of the relational data model.
-- To become familiar with basic schema design.
 
 #### Required Files
 
