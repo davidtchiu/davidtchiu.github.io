@@ -47,6 +47,12 @@ let days = {
         url: "hwk6.exhash/",
         due: "11/21/2025",  // wk 12, Fri 
       },
+      {
+        name: "Hwk 7 (written)",
+        title: "Normalization and DB Theory",
+        url: "hwk7.theory/",
+        due: "12/12/2025", // wk 15, Friday
+      },
       // {
       //   name: "Hwk 4 (sql)",
       //   title: "Writing SQL Queries",
