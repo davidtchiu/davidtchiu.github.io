@@ -136,7 +136,7 @@ $$T(n) = \frac{1}{2}\left(1 + \frac{1}{1-L}\right)$$
 The table below is lifted from the book, showing some predicted values of 
 $$T(n)$$ (ignore the right-hand section of this table).
 
-![](figures/KnuthTable.png)
+<img src="figures/KnuthTable.png" width="70%" />
 
 - Check out the definition of `fillAndTest()` in the `Experiment` class. It takes a `MapInt` object and a target load factor, adds random entries into the map until it reaches the desired load factor, then prints the average number of probes required to do a bunch of `get` calls (this is defaulted to 1000 calls). Notice we're inputting maps that map `Strings` to `Strings` to keep things simple. 
 
