@@ -123,37 +123,38 @@ The following file(s) have been provided for this lab.
   > Jan: 2.7
 
   System.out.println("Probes: " + map.getProbes() + "\n");
-  > Probes: 16
+  > Probes: 10
   ```
 
   Do some more testing to verify that your load factor and probe-counting code works as expected. (You don't have to write test code — testing via the code pad or point-and-click is enough.)
 
 #### Part III: Experimentation
-Now it's time to see how well our implementation works! Here's the formula that predicts the average number of probes needed per operation, as a function of the current load factor of the map, $$L = n/m$$, where $$n$$ is number of entries in the HashMap, and $$m$$ is the array size:
+Now it's time to see how fast the hash table is! With credit to Donald Knuth, here's the formula that predicts the average number of probes needed per operation, as a function of the current load factor of the map, $$L = n/m$$, where $$n$$ is number of entries in the HashMap, and $$m$$ is the array size:
 
 $$T(n) = \frac{1}{2}\left(1 + \frac{1}{1-L}\right)$$
 
-The table below is lifted from the book, showing some predicted values of 
-$$T(n)$$ (ignore the right-hand section of this table).
+The table below is lifted from the book, showing some predicted values of $$T(n)$$ (ignore the right-hand section of this table -- those are for the entry-chained implementation of the HashMap, which we talked about, but is not the focus of this Lab).
 
 <img src="figures/KnuthTable.png" width="70%" />
 
 - Check out the definition of `fillAndTest()` in the `Experiment` class. It takes a `MapInt` object and a target load factor, adds random entries into the map until it reaches the desired load factor, then prints the average number of probes required to do a bunch of `get` calls (this is defaulted to 1000 calls). Notice we're inputting maps that map `Strings` to `Strings` to keep things simple. 
 
-- Now check out `Experiment`'s main method, where I've left some code that creates an `OpenMap` and passes it to `fillAndTest()`. See how many probes are required for a load factor of 0.75. Are your probes a bit higher than the formula predicts? Knuth's formulas predicted that an open-addressing implementation would require 2.5 probes per access, on average, if the load factor was 0.75. After a few runs, mine is reporting 2.498 probes per operation. Knuth's formula is on point!
+- Now check out `Experiment`'s main method, where I've left some code that creates an `OpenMap` and passes it to `fillAndTest()`. See how many probes are required for a load factor of 0.75. Are your probes a bit higher than the formula predicts? Knuth's formulas predicted that an open-addressing implementation would require 2.5 probes per access, on average, if the load factor was 0.75. After a few runs, mine is reporting 2.498 probes per operation. Wow, Knuth's formula is on point!
 
-- Run the experiment again with a load factor of, say, 0.9. My results show 5.368 when Knuth predicted 5.5. Wow! 
+- Run the experiment again with a load factor of, say, 0.9. My results show 5.368 when Knuth predicted 5.5!
+
+- If your numbers are consistently not close to Knuth's predictions (after a few tests), there's probably something wrong with your put and remove implementations. Are you incrementing and decrementing `this.size` in the right spots? Are you incrementing the probes at the top of each loop iteration, and not at the bottom?
 
 #### Part IV: Importance of Rehashing
-The last experiment you ran showed that high load factors generally lead to worse performance. One question that remains is how we can keep our `HashMap` performing at a high level. If you guessed that we may need to occasionally increase the size of our underlying table, you guessed right!
+The last experiment you ran showed that high load factors generally lead to worse performance. One question that remains is how we can keep our `HashMap` performing at a high level. If you guessed that we may need to occasionally increase the size of our underlying hashtable, you guessed right! (Or, that you've been paying attention in lecture!)
 
-- Open up a new class, called `RehashableOpenMap`, which extends `OpenMap`, so we don't have to rewrite all the methods. This version of the open-addressing HashMap will always keep your load factor at or lower than 0.5. You'll start by providing the same two constructors for this class. They should just call OpenMap's corresponding constructors.
+- Create a new class, called `RehashableOpenMap`, which extends `OpenMap`, so we don't have to rewrite all the methods. This version of the HashMap will *always* keep your load factor at or lower than 0.5. You'll start by providing the same two constructors for this class. They should just call the superclass' corresponding constructors.
 
-- Write a private method called `rehash()`,  that doubles the capacity of the hash table (array), then it re-puts all the keys into this new table. Since you're calling `OpenMap`'s put method (yes, call `super.put(..)`) to re-insert the entries into the new hash table, make sure you reset the size first!
+- Write a helper method called `rehash()` that doubles the capacity of the hashtable, then it re-puts all the keys into this new table, skipping over the tombstones (you don't need those in the new hashtable). Since you're calling `OpenMap`'s put method (yes, call `super.put(..)`) to re-insert the entries into the new hash table, make sure you reset the `this.size` back to zero first!
 
 - Override the `put()` method in the `RehashableOpenMap` so that every time after it inserts a new entry (ignore the case where it replaces an entry), it checks the current load factor, and if it's greater than `0.5`, it rehashes.
 
-- If you did everything properly, your output should match mine below!
+- That should be all you need to do! If you did everything properly, your output should match mine below!
   
   ```java
   // Just enough capacity to hold all entries..
@@ -186,14 +187,19 @@ The last experiment you ran showed that high load factors generally lead to wors
   > Jan: 2.7
 
   System.out.println("Probes: " + map.getProbes() + "\n");
-  > Probes: 8
+  > Probes: 6
   ```
 
 Notice that, due to rehashing, this sequence only takes 8 probes compared to 16 before on a fuller Hash Map. The tradeoff between time and space is in full action. While the RehashableOpenMap performs better, its hash table will occupy a lot more space than the original Map that doesn't grow.
 
 **WARNING:** Be careful to not try running the `Experiment` class on the `RehashableOpenMap`, because it will infinitely loop due to rehashing.
 
-
+#### Optional Extension (If You Have Time)
+This part is optional, but if you're curious, I challenge you to implement the "entry-chained" implementation of the HashMap. Create a new class `ChainedMap<K,V>` that similarly implements the `MapInt<K,V>` interface. The overall structure is similar, except that each array element maps onto a *list* of key-value Entries.
+  - For get, put, and remove, you still need to calculate the array index just like before.
+  - There is no need for tombstones. The removal method simply grabs the corresponding list after hashing, and looks for the key-value entry that matches the given key.
+  - The true implementation in Java uses a singly linked list of entries, but here, for simplicity you can just use an `ArrayList<Entry<K,V>>`, or `LinkedList<Entry<K,V>>`. (How do you declare an array that points to a list of entries?)
+  - Since Java 8, if a chain gets to be 8 elements long, it will "treeify" the chain from 
 
 #### Grading
 
