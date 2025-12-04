@@ -129,12 +129,12 @@ The following file(s) have been provided for this lab.
   Do some more testing to verify that your load factor and probe-counting code works as expected. (You don't have to write test code — testing via the code pad or point-and-click is enough.)
 
 #### Part III: Experimentation
-Now it's time to see how well our implementation works! Famous computer science Donald Knuth came up with a formula to predict the average number of probes needed per operation, as a function of the current load factor of the map, $$L$$:
+Now it's time to see how well our implementation works! Here's the formula that predicts the average number of probes needed per operation, as a function of the current load factor of the map, $$L = n/m$$, where $$n$$ is number of entries in the HashMap, and $$m$$ is the array size:
 
-$$T = \frac{1}{2}\left(1 + \frac{1}{1-L}\right)$$
+$$T(n) = \frac{1}{2}\left(1 + \frac{1}{1-L}\right)$$
 
 The table below is lifted from the book, showing some predicted values of 
-$$T$$ (ignore the right-hand section of this table).
+$$T(n)$$ (ignore the right-hand section of this table).
 
 ![](figures/KnuthTable.png)
 
