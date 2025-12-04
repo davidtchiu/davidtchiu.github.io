@@ -62,7 +62,7 @@ let days = {
         due: "12/5/2025",  // Fri, wk 14 (extended due date because I'm an idiot and forgot to post it earlier)
       },
       {
-        name: "Hwk 8",
+        name: "Hwk (Bonus)",
         title: "Evil Hangman (Optional Extra Credit)",
         url: "hwk8.ehm",
         due: "12/19/2025", // Fri, finals week
@@ -152,12 +152,12 @@ let days = {
           url: "lab12.bst/",
           due: "11/21/2025",
         },
-      //   {
-      //     name: "Lab 13",
-      //     title: "Maps Lab",
-      //     url: "lab13.map/",
-      //     due: "12/5/2025",
-      //   },
+        {
+          name: "Lab 13",
+          title: "Maps Lab",
+          url: "lab13.map/",
+          due: "12/5/2025",
+        },
         // {
         //   name: "Lab 12",
         //   title: "Sorting Lab",
