@@ -56,7 +56,7 @@ The following file(s) have been provided for this lab.
 
 - After you've implemented and tested `remove(K key)`, you have to go back and update the `put()` method. It needs to check for the tombstone `key`, and if found, it can place a new entry there. Remember that you can't just stop as soon as you find the tombstone entry. Bookmark its location, and keep probing, because the `key` might actually be further down. If you continue probing and find a `null` entry, then go back to the first tombstone you found, and place the new entry there.
 
-- You also need to update the code for both `keySet()`, `values()`, and `toString()` so that tombstone are not included. You do not have to update the code for `get()` and you should understand why.
+- You also need to update the code for `keySet()`, `values()`, and `toString()` so that tombstone entries are not included!
 
   ```java
   MapInt<String,Double> map = new OpenMap<>(6);
@@ -77,7 +77,7 @@ The following file(s) have been provided for this lab.
   ```
 
 #### Part II: Understanding Load Factor
-- Now let us talk about the `MapPerf` implementations. There's a `getLoadFactor()` method that is intended to return a value between 0 and 1, indicating the ratio between the number of stored entries and the capacity of the underlying array. A load factor of 0 means that the underlying `table[]` array is completely empty, and 1 means it's full. Modify the appropriate methods in `OpenMap` so that the load factor returned correctly by `getLoadFactor()`.
+- Now let us talk about the `MapPerf` implementations. There's a `getLoadFactor()` method that is intended to return a value between 0 and 1, indicating the ratio between the number of stored entries and the capacity of the underlying array. A load factor of 0 means that the underlying `table[]` array is completely empty, and 1 means it's full. Test the put/remove methods in `OpenMap` to ensure that the load factor returned correctly by `getLoadFactor()`.
 
   ```java
   // Just enough capacity to hold all entries..

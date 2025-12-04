@@ -4,9 +4,7 @@
 - Gotta stop telling students that CS 261 is a litmus test for whether you'll like the major. Things change from CS 261.
 
 # TODO
-- Combine the Labs into 1, and make it longer. Then count it as a Homework assignment. Lab is used to give them time to work on it!
-- Replace RG1 and RG1 sol (no more exceptions)
-
+- Consider putting sorting right after recursion? Could be a good lead into BSTs. (i.e., what if there was a data structure that maintains order for us?)
 
 # Change Log
 - Replace Hwk 7 (Huffman) with CityTracker (Fall 2025)
