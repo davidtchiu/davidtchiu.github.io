@@ -51,7 +51,7 @@ let days = {
         name: "Hwk 7 (written)",
         title: "Normalization and DB Theory",
         url: "hwk7.theory/",
-        due: "12/12/2025", // wk 15, Friday
+        due: "12/17/2025", // wk 15, finals
       },
       // {
       //   name: "Hwk 4 (sql)",

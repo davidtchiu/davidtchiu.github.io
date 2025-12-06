@@ -28,7 +28,37 @@ The following file(s) have been provided for this lab.
 
   - Next, check to see if that location is `null`. If it is, then create a new key-value `Entry` and put it there. If not, you need to perform Linear Probing: increment the array index until: (1) you come across a `null`, or (2) you find the given `key`. (You may have to "wrap around" to the beginning of the hash table as you search.) If you come across a null, insert the `Entry`, increment `size`, and return `null`. If you find the key, replace the value, and return the old value. If the table is full, you should return null.
 
-- The `toString()` method should return a string containing all the key-value entries stored in the map. Recall that maps do not guarantee a particular order on its entries, so don't be surprised if your output is in a different order than mine:
+    ```java
+    MapInt<String,Double> map = new OpenMap<>(6);
+    map.put("David", 4.0);
+    map.put("Aaron", 3.2);
+    map.put("Brad", 3.9);
+    map.put("Adam", 3.2);
+    map.put("Tony", 3.0);
+    map.put("Jan", 2.7);
+    System.out.println(map.toString()); 
+    > [Adam=3.2, Jan=2.7, Tony=3.0, Aaron=3.2, David=4.0, Brad=3.9]
+
+    map.put("Jack", 3.0);    // <--- problem!! This causes an infinite loop!
+    ```
+
+- Take a moment to think about why the insertion of Jack would lead to an infinite loop. If the table is full of entries, then your code will continuously wrap around. Add in the necessary edits to avoid this scenario. Keep track of the entries that have been seen in the loop. If `idx` ever wraps back around the original position, then throw a new `IllegalArgumentException()` complaining that the table is full. After making this minor fix, you should be able to insert Jack from the above code sample without encountering an infinite loop. Ensure that this works! Print out the map and make sure Jack is in there!
+
+    ```java
+    MapInt<String,Double> map = new OpenMap<>(6);
+    map.put("David", 4.0);
+    map.put("Aaron", 3.2);
+    map.put("Brad", 3.9);
+    map.put("Adam", 3.2);
+    map.put("Tony", 3.0);
+    map.put("Jan", 2.7);
+
+    map.put("Jack", 3.0);
+    > IllegalArgumentException (Table is full: 6)
+    ```
+
+
+- Next, read over the `toString()` method, which should return a string containing all the key-value entries stored in the map. Recall that maps do not guarantee a particular order on its entries, so don't be surprised if your output is in a different order than mine:
 
   ```java
   MapInt<String,Double> map = new OpenMap<>(6);
@@ -52,11 +82,11 @@ The following file(s) have been provided for this lab.
   > [Adam=3.2, Jan=2.5, Tony=3.0, Aaron=3.2, David=4.0, Brad=3.9]
   ```
 
-- Implement the `V remove(K key)` method. It uses the same linear probing pattern as `get()`. If you come across a `null`, then simply return `null`. If the key is found, you cannot simply set the array entry to `null` because it breaks the linear probing algorithm you use for `get()` and `put()`. Instead, but you *must* keep the `Entry` in place, but set the key portion of the entry to `null`. This is called a "tombstone" or "sentinel" entry.
+- Implement the `V remove(K key)` method. It uses the same linear-probing pattern as `get()`. If you come across a `null`, then simply return `null`, because it indicates that an entry with the key was not found. If the key is found, you *cannot* simply set the array entry to `null` because it breaks the linear-probing algorithm you use for both `get()` and `put()`. Instead,  you *must* keep the `Entry` in place, but just set the key portion of the Entry to `null`. This is called a "tombstone" or "sentinel" entry.
 
-- After you've implemented and tested `remove(K key)`, you have to go back and update the `put()` method. It needs to check for the tombstone `key`, and if found, it can place a new entry there. Remember that you can't just stop as soon as you find the tombstone entry. Bookmark its location, and keep probing, because the `key` might actually be further down. If you continue probing and find a `null` entry, then go back to the first tombstone you found, and place the new entry there.
+- **Updating put():** After you've implemented and tested `remove(K key)`, you have to go back and update the `put()` method to account for the presence of tombstones. It needs to check for the tombstone `key`, and if found, it can place a new entry there. Remember that you can't just stop probing as soon as you find the tombstone entry. Bookmark the location of the first tombstone you find, and keep probing, because the `key` might actually be further down. If you continue probing and find a `null` entry, then go back to the first tombstone you found, and place the new entry there. 
 
-- You also need to update the code for `keySet()`, `values()`, and `toString()` so that tombstone entries are not included!
+  There's another issue. You need to take care to ensure that tombstones aren't interpreted to be valid entries. In the code below, after the removal of Brad, you *still* have 6 entries, one of which is "tombstoned." Then when you go to insert Jack, your map should *not* complain that it's full, even if it wraps around!
 
   ```java
   MapInt<String,Double> map = new OpenMap<>(6);
@@ -74,7 +104,15 @@ The following file(s) have been provided for this lab.
   map.put("Jack", 3.0);
   System.out.println(map.toString());
   > [Adam=3.2, Jan=2.7, Tony=3.0, Aaron=3.2, David=4.0, Jack=3.0]
+
+  /* now it's full! */
+  map.put("Erin", 4.0);
+  > IllegalArgumentException (Table is full: 6)
   ```
+
+
+- You also need to update the code for `keySet()`, `values()`, and `toString()` so that tombstone entries are not included!
+
 
 #### Part II: Understanding Load Factor
 - Now let us talk about the `MapPerf` implementations. There's a `getLoadFactor()` method that is intended to return a value between 0 and 1, indicating the ratio between the number of stored entries and the capacity of the underlying array. A load factor of 0 means that the underlying `table[]` array is completely empty, and 1 means it's full. Test the put/remove methods in `OpenMap` to ensure that the load factor returned correctly by `getLoadFactor()`.
@@ -152,7 +190,7 @@ The last experiment you ran showed that high load factors generally lead to wors
 
 - Write a helper method called `rehash()` that doubles the capacity of the hashtable, then it re-puts all the keys into this new table, skipping over the tombstones (you don't need those in the new hashtable). Since you're calling `OpenMap`'s put method (yes, call `super.put(..)`) to re-insert the entries into the new hash table, make sure you reset the `this.size` back to zero first!
 
-- Override the `put()` method in the `RehashableOpenMap` so that every time after it inserts a new entry (ignore the case where it replaces an entry), it checks the current load factor, and if it's greater than `0.5`, it rehashes.
+- Override the `put()` method in the `RehashableOpenMap` so that every time **after** it inserts a new entry (ignore the case where it replaces an entry), it checks the current load factor, and if it's greater than `0.5`, it rehashes.
 
 - That should be all you need to do! If you did everything properly, your output should match mine below!
   
@@ -199,7 +237,7 @@ This part is optional, but if you're curious, I challenge you to implement the "
   - For get, put, and remove, you still need to calculate the array index just like before.
   - There is no need for tombstones. The removal method simply grabs the corresponding list after hashing, and looks for the key-value entry that matches the given key.
   - The true implementation in Java uses a singly linked list of entries, but here, for simplicity you can just use an `ArrayList<Entry<K,V>>`, or `LinkedList<Entry<K,V>>`. (How do you declare an array that points to a list of entries?)
-  - Since Java 8, if a chain gets to be 8 elements long, it will "treeify" the chain from 
+  - Since Java version 8, if a chain gets to be 8 elements long, it will "treeify" the chain from a list to a `TreeSet<Entry<K,V>>`, which is a binary search tree. If you REALLY have time, add in the code to treeify and de-treeify back to a list if the elements shrink to less than 8.
 
 #### Grading
 
