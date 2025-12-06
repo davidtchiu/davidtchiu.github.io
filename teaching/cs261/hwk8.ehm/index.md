@@ -121,6 +121,7 @@ Your assignment is to write a computer program which plays a game of Hangman usi
         ```
         Say the currently revealed word family is `"A---Y"`, so the current list of words associated with that family contains `[ABBEY, AREFY, ALLEY, ALLOY, ANNOY]`. Now suppose the input guessed letter was 'e'. Then you would build off of this current list and return a new HashMap containing these word-family entries:
         ```txt
+        "A----" -> [ABREW, ANEST]
         "A---Y" -> [ALLOY, ANNOY]
         "A--EY" -> [ABBEY, ALLEY]
         "A-E-Y" -> [AREFY]
