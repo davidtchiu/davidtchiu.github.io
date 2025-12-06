@@ -126,7 +126,7 @@ Your assignment is to write a computer program which plays a game of Hangman usi
         "A-E-Y" -> [AREFY]
         ```
 
-    - The `public String nextWordFamily(char guess)` method calls the previous `buildWordFamilies(guess)` method to generate a whittled down list of mappings. This method then selects the word family containing the largest list. Here, it's a toss-up between "A---Y" and "A--EY" because they both refer to lists containing just two words. Pick one of those keys to return as the newly revealed word family. Also, don't forget to update your current word-family Hashmap instance variable to the one that `buildWordFamilies(guess)` returned!
+    - The `public String nextWordFamily(char guess)` method calls the previous `buildWordFamilies(guess)` method to generate a whittled down list of mappings. This method then selects the word family containing the largest list. Here, it's a toss-up between `"A---Y"` and `"A--EY"` because they both refer to lists containing just two words. Pick one of those keys to return as the newly revealed word family. Also, don't forget to update your current word-family Hashmap instance variable to the one that `buildWordFamilies(guess)` returned!
 
     - Now you can focus on `public void play()`. It plays a game of Hangman using the Evil Hangman algorithm, as described below:
 
