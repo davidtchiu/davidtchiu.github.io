@@ -241,9 +241,8 @@ let days = {
     "Lab 13: Hashing Lab",
     "Merge Sort",
     // wk 15
-    // "Merge Sort Complexity",
+    "Merge Sort Complexity",
     "Quick Sort",
-    "Quick Sort Complexity",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
