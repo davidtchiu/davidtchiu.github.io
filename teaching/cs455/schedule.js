@@ -90,19 +90,19 @@ let days = {
       {
         name: "Project Prop",
         title: "Project Proposal",
-        url: "proj/",
+        url: "proj/#prop",
         due: "11/10/2025", // wk 10, friday
       },
       {
         name: "Project Demo",
         title: "Project Demo",
-        url: "proj/",
+        url: "proj/#demo",
         due: "12/10/2025",  // wk 14, wednesday
       },
       {
         name: "Project Code",
         title: "Project Code",
-        url: "proj/",
+        url: "proj/#code",
         due: "12/19/2025",  // finals wk, friday
       },
     ],
