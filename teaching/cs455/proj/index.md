@@ -29,7 +29,7 @@ Here are just some ideas on what you can work on:
 - And more! You have a high degree of freedom to propose anything, as long as it's related to databases and data management. It just needs to satisfy the *novelty* requirement.
 
 
-[prop](#prop)
+<div id="prop"></div>
 #### Project Proposal Requirements
 A short proposal outlining your project should be submitted to me before the proposal deadline. This doesn't have to be super formal, it's really just for me to do a quick sanity check to ensure your project can be finished. Here's a sample outline.
 
@@ -89,12 +89,12 @@ Finally, you must produce a Gantt Chart that communicates your timeline and mile
 
 - **Submission:** The proposal should be in PDF format and uploaded to a github account. Go to [Canvas](https://canvas.pugetsound.edu) and submit the URL to your proposal under the `Project` Dropbox.
 
-[github](#github)
+<div id="github"></div>
 #### Project Code Repository
 You are required to manage your code on github. As soon as you are able, please share with me the URL to your code repository. Finalize and push your code by 11:59pm on day of our exams. You *must* include a `readme.md` file that includes some basic instructions on how to deploy your code (with examples, if applicable.)
 
 
-[demo](#demo)
+<div id="demo"></div>
 #### Presentation/Demo Requirements 
 Be prepared to give a ~15 minute presentation to the class, allowing a ~3 minutes for question and answer. The demo should showcase your application, and every team member must have equal participation in the demo (you will be graded on balance). At minimum, your presentation should show:
 
