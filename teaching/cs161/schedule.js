@@ -193,17 +193,15 @@ let days = {
   lectures: [
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
-    "Introductions: Who are we? Syllabus",
-    "What is CS? Plus, Lab 1",
-    "Algorithms, hardware, languages",
+    "Introductions: Who are we? Syllabus, What is CS?",
+    "Algorithms, hardware, languages; Plus Lab 1: Using BlueJ",
     // wk 2
-    "Reading Java code: comments, fields, data types",
-    "Constructors; input parameters, assignment statements",
-    "Methods. Plus, Lab 2: Triangle",
+    "Reading code: classes,  instance variables, types, assigning, constructors",
+    "Reading code: methods; Plus Lab 2: Triangle",
     "Variable types: instance, local, input; lifetime and scope",
     // wk 3
     "Methods and returning; Finish Circle, start TicketMachine",
-    "Accumulators, concatenation; Start conditionals",
+    // "Accumulators, concatenation; Start conditionals",
     "Code Pad; Classes as Types; Lab 3",
     "Lab 3 review; Defensive Programming",
     // wk 4
@@ -267,10 +265,10 @@ let days = {
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     // wk final
-    "<strong><emph>Final Exam (8am)</strong></emph>",
     "",
     "",
     "",
+    "<strong><emph>Final Exam<br/>12:00-2:00</emph></strong>",
   ],
 };
 

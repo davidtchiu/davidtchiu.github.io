@@ -2,12 +2,12 @@
 ### Clasroom Policies
 
 ##### Final Letter Grades
-These are the cutoffs when assigning your final letter grades. The cutoffs below might come down, but will not be set higher.
+A weighted average of various assessments (see above) determines your final letter grade. These are the cutoffs when assigning your final letter grades. 
 
 | Final Average  | Letter Grade |
 | :--- | :--- |
-| 100% - 94% | A |
-| 93% - 90% | A- |
+| 100% - 95% | A |
+| 94% - 90% | A- |
 | 89% - 87% | B+ |
 | 86% - 84% | B |
 | 83% - 80% | B- |
