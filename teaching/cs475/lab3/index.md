@@ -64,19 +64,17 @@ In most of the programs we write, the exact space requirements may not be known 
 #include <stdio.h>
 #include "employee.h"
 
-int getNumEmployees() {
-    int num;
-    do {
-        printf("Number of employees you need to store: ");
-        scanf("%d", &num);
-    } while (num <= 0);
+void getNumEmployees(int *numEmployees) {
+    printf("Number of employees you need to store: ");
+    scanf("%d", numEmployees);
     return num;
 }
 
 
 int main(int argc, char *argv[]) {
-    int num_employees = getNumEmployees();  // ask for the array size first
-    Employee my_employees[num_employees];   // <--- this could crash the program!!!
+    int num;
+    getNumEmployees(&num);  // ask for the array size first
+    Employee my_employees[num];   // <--- this could crash the program!!!
 
     // (code omitted)
 }
@@ -149,13 +147,13 @@ When a process starts running, the OS allocates `RLIMIT_STACK` bytes for that pr
 
 Now that we understand how the program stack works, we return to our problematic code:
 
-- The problem is on this line (which is totally legal in Java!)
+- The problem is on this line (by the way, this syntax is totally legal in Java!)
 
     ```c
-    Employee my_employees[num_employees];
+    Employee my_employees[num];
     ```
 
-  If the user entered a large enough integer for `num_employees`, a segmentation fault can occur when at runtime it tries to push too-large of an `Employee` array onto the stack.
+  If the user entered a large enough integer for `num`, a segmentation fault can occur when at runtime it tries to push too-large of an `Employee` array onto the stack.
 
 - Check out the output for the following two runs:
 
@@ -193,9 +191,9 @@ Now that we understand how the program stack works, we return to our problematic
 
   2.  `void* calloc(size_t num, size_t size)`: is an alternate function to  `malloc()`. It takes as input an unsigned integer `num` (number of elements) and `size` (number of bytes per element). It attempts to allocate `num * size` bytes on the heap. One difference from `malloc()` is that it will also initialize the entire allocated block to zeroes. Like `malloc()`, on success, it returns a `void*` pointer to the first byte of the newly allocated block. On failure, `NULL` is returned.
 
-  3.  `void* realloc(void *ptr, size_t size)`: is used to change the size of an already-allocated block of memory on the heap. It takes as input a pointer to an existing block of memory on the heap, and a new `size`, which may be smaller or larger than the current allocation. On failure, `NULL` is returned. Caveat: the location of the allocated block might change, which is why a `void*` pointer to a potentially different starting address is returned.
+  <!-- 3.  `void* realloc(void *ptr, size_t size)`: is used to change the size of an already-allocated block of memory on the heap. It takes as input a pointer to an existing block of memory on the heap, and a new `size`, which may be smaller or larger than the current allocation. On failure, `NULL` is returned. Caveat: the location of the allocated block might change, which is why a `void*` pointer to a potentially different starting address is returned. -->
 
-  4.  `void free(void *ptr)`: is used to reclaim the space that was previously allocated. It takes as input a pointer to the already-allocated memory block. **Important!** It is crucial that you free up memory as soon as it is no longer being used (Unlike Java, C does not garbage collect user-allocated memory automatically). When a user fails to free up unused space, it leads to **memory leaks** in your program, which can cause your process to bloat and take up lots of space over its lifetime.
+  3.  `void free(void *ptr)`: is used to reclaim the space that was previously allocated. It takes as input a pointer to the already-allocated memory block. **Important!** It is crucial that you free up memory as soon as it is no longer being used (Unlike Java, C does not garbage collect user-allocated memory automatically). When a user fails to free up unused space, it leads to **memory leaks** in your program, which can cause your process to bloat and take up lots of space over its lifetime.
 
       - Have you ever suspected that an app you use suffers from memory leaks? This is a very common problem in games and other memory-intensive applications. Next time an app that you use seems to be growing in memory usage in uncontrolled ways, it may be a memory leak that needs to be fixed.
 

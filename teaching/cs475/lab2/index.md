@@ -28,16 +28,14 @@ Pointers are powerful structures in C. To get a sense of what pointers are, let'
   - A pointer variable is a *notepad* with a *street address* written on it.
 
 Therefore, you wouldn't ever say that a street address is itself a building, but it does tell you where to go to find it.
-  - Any building always has a corresponding street address. You just have to ask for it!
-    - This is what the *address-of* operator `&` provides.
-  - You can navigate to the building located at an address: examine it, destroy it, change it.
-    - This is what it means to *de-reference* a pointer.
-  - You can reuse the notepad by writing a different buidling address on it.
-    - The pointer variable can be reassigned to point at a different piece of data.
-  - You can write an address on a notepad, and share the notepad with others.
-    - A pointer can be passed in as function input-parameters so it can find the piece of data too.
-  - You can check out the neighboring building, and the one after that, ...
-    - This is called pointer arithmetic. Once you have an address, you can visit the nearby element effortlessly.
+
+| Real-World Analogy                                                                                    | Explanation                                                                                                   |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| Any building always has a corresponding street address. You just have to ask for it!       | *This is what the *address-of* operator `&` provides.*                                                        |
+| You can navigate to the building located at an address: examine it, destroy it, change it. | *This is what it means to *de-reference* a pointer.*                                                          |
+| You can reuse the notepad by writing a different building address on it.                   | *The pointer variable can be reassigned to point at a different piece of data.*                               |
+| You can write an address on a notepad, and share the notepad with others.                  | *A pointer can be passed in as function input-parameters so it can find the piece of data too.*               |
+| You can check out the neighboring building, and the one after that, ...                    | *This is called pointer arithmetic. Once you have an address, you can visit the nearby element effortlessly.* |
 
 Under this scheme, think about what pointers would enable us to do:
   - You can efficiently pass massive data structures to functions: Don't pass the whole building, pass its street address!
@@ -65,7 +63,10 @@ There are several things worth noting:
 
 
 **Important C Operator: `sizeof()`**
-Notice from the figure above that that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures, so how did I know these storage requirements apply to my machine? C provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies in memory. Let's see what it does.
+Notice from the figure above that that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures, so how did I know these storage requirements apply to my machine? C provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies in memory.
+
+<!-- 
+Let's see what it does.
 
 ```c
 #include <stdio.h>
@@ -133,7 +134,7 @@ size of 0.5 * 400 / 2: 8 bytes
 
 1. The unsigned integer that is returned by `sizeof()` is the number of bytes required to store that data. A couple other things worth pointing out about the code:
 
-   <!-- - The `%lu` specifier means unsigned long integer, which is what is returned by `sizeof()`. In fact, if you dig into `sizeof()`, you'll see that it actually returns a type called size_t, which is an alias to an unsigned long. -->
+
 
    - **Lines 10-17**: We're now introduced to a few more data types (`short`, `long`, `long double`), which are all variants of the four original primitives. 
 
@@ -143,7 +144,6 @@ size of 0.5 * 400 / 2: 8 bytes
      printf("size of nums array: %lu\n", sizeof(nums));
      ```
 
-   <!-- - Line 27: a character constant is represented as an `int` (4 bytes on my machine). -->
 
    - **Line 28:** shows that a floating-point literal is interpreted as a `double`, not a `float`. (This is also true in Java.)
 
@@ -183,7 +183,8 @@ size of 0.5 * 400 / 2: 8 bytes
 
   - What is the point of an `unsigned integer`, and when would it be appropriate to declare an unsigned variable? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: Recall from your Architecture course that the most-significant bit, called the sign-bit, determines the +/- sign of that number. But the sign-bit wastes a bit! So a regular `int` can only cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[0, 2^{32}-1]$$, recalling that an `int` is 32 bits. If you know that a value cannot be negative (such as salary), it is appropriate to use unsigned ints. Java does not support unsigned ints.*
 
-  - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)*
+  - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)* 
+-->
 
 ##### Part 2: Understanding Addressing and Pointers
 
