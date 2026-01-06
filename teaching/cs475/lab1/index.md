@@ -11,7 +11,7 @@ This is the first part of a multi-part primer on C, a lower-level language that 
 
 #### Student Outcomes
 
-- To become familiar with the programming environment
+- To become familiar with the programming environment.
 - To become familiar with compiling single-source C programs.
 - To become familiar with C's supported data types, arrays (and strings), function writing, structs, and input/output functions.
 
@@ -23,30 +23,21 @@ Open your VS Code and get connected to your Remote Development environment.
 
 ##### Part I: The Basics
 
-- From your shell terminal, create a directory to store your first program. Let's call this directory `learningTypes`, like this:
+- From your shell terminal, create a directory to store your first program. Let's call this directory `lab1_types`, like this:
 
   ```bash
-  $ mkdir learningTypes
-  ```
-
-- Now navigate inside this directory:
-
-  ```bash
-  $ cd learningTypes
-  ```
-- Create a new file using the VSCode editor.
-
-  ```bash
+  $ mkdir lab1_types
+  $ cd lab1_types
   $ code types.c
   ```
 
-  Paste in the following code, and we'll discuss what each line means later in this assignment.
+  That should navigate your commandline into the new directory and open a fresh new file called `types.c` in VS Code. Paste in the following code, and we'll discuss what each line means later in this assignment.
 
   ```c
   /**
    * A simple C program
    *
-   * @author <YOUR NAME>
+   * @author <your-name>
    */
 
   #include <stdio.h>  // Line 7
@@ -96,19 +87,13 @@ Open your VS Code and get connected to your Remote Development environment.
 - Save this file, and return to the Terminal to compile it:
 
   ```bash
-  $ gcc -Wall -g -o hello types.c
+  $ gcc -Wall -g -o types types.c
   ```
-
-  The `gcc` command runs the C compiler. Let's unpack all the flags:
-    - `-Wall` means to report all warnings to the output
-    - `-g` generates debugging information for tools that we'll use later
-    - `-o hello` gives the name of the executable file to output
-    - `types.c` is the name of the source file
 
   Now run it, which prints this to the screen:
 
   ```bash
-  $ ./hello
+  $ ./types
   Value of a is X
   Value of b is 9
   Value of c is 6.000000
@@ -157,6 +142,8 @@ Open your VS Code and get connected to your Remote Development environment.
 
   - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters `'y'` then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, prompt again. (Hint: C's while-loop syntax is exactly the same as Java's). 
 
+<!-- 
+
 ##### More about `char`
 
 It is worth giving special attention to the `char` type. A `char` is essentially an 8-bit integer. That means chars can represent $$2^8 = 256$$ numbers, and each map to a unique character under the ASCII standard. Below I list a few notable mappings, but click here to see the [full list of ASCII codes](https://www.asciitable.com/).
@@ -188,11 +175,11 @@ It is worth giving special attention to the `char` type. A `char` is essentially
   }
   ```
 
-- Check out the [ctype](https://www.cplusplus.com/reference/cctype/) library for other useful functions on chars.
+- Check out the [ctype](https://www.cplusplus.com/reference/cctype/) library for other useful functions on chars. -->
 
 ##### Array Basics
 
-C has array support, but unlike Java, arrays in C are not considered objects. C's arrays are even more fundamental. That means we don't have that nice `array.length` field to tell us the length of an array, so it is the programmer who must always keep track of, and pass along, each array's length. There's also no memory protection -- so you may be able to access out of bounds elements, without an exception being thrown at runtime! Therefore it is especially important to check for 1-off errors.
+C has array support, but unlike Java, arrays in C are not considered objects. That means we don't have that nice `array.length` variable to tell us the length of an array, so it is the programmer who must always keep track of, and pass along, each array's length! There's also no memory protection (like ArrayIndexOutOfBoundsException) -- so you may be able to access out of bounds elements, without your program crashing at runtime! Therefore it is especially important to defend against 1-off errors in your code.
 
 - The syntax to create an array is:
 
@@ -200,12 +187,10 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
   data-type arrayName[N];
   ```
 
-  where `N` is a constant integer. Alternatively, you can also create an array with known values:
-
-- The syntax to create an array is:
+  where `N` is the integer size of your array. Alternatively, you can use this array-literal initialization syntax to create an array with predefined  values:
 
   ```c
-  data-type arrayName[] = {val1, val2, ...};
+  data-type arrayName[] = {val0, val1, val2, ...};
   ```
 
 - Now create the following program, called `array.c`:
@@ -219,7 +204,7 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
 
   int main(int argc, char *argv[])
   {
-      int A[] = {4,3,2,1};
+      int A[] = { 4, 3, 2, 1 };
       double B[MAX_VALS];
 
       //print out contents of A
@@ -244,7 +229,7 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
   }
   ```
 
-- Once you compile and run it, you should get something like:
+- You should get something like:
 
   ```c
   4 3 2 1
@@ -253,11 +238,11 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
 
 - Note a few important differences from Java's handling of arrays:
 
-  - You *should not* input the size of the array from the user, then create the array later. There will be a workaround for this limitation after we introduce memory allocation (malloc) in the next tutorial.
+  - You *should not* input the size of the array from the user, then create the array later. There will be a workaround for this limitation after we introduce memory allocation (`malloc`) in a later lab.
 
-  - There is no easy way to determine the size of an existing array. This shouldn't be a problem, since arrays must have had a known size when created. So if you're writing a function that inputs an array, you should also pass along the array's size.
+  - There is no easy way to ask for the size of an existing array. So if you're writing a function (method) that inputs an array, you should also pass along that array's size so you know when to stop looping!
 
-- Referring back to the source file:
+- Back to the above source file:
 
   - **Lines 2-3**: the random number generator functions `srand()` and `rand()` are imported from `stdlib.h`. We also include `time.h` to gain access to the `time()` function, which returns the number of seconds elapsed since 00:00 Jan 1, 1970 (known as Unix Time or Epoch Time).
 
@@ -272,14 +257,20 @@ C has array support, but unlike Java, arrays in C are not considered objects. C'
   - What happens if you use `rand()` without seeding it first? Eliminate the call to `srand()`, and run the program a few times. What does this tell you about the connection between `srand()` and `rand()`?
 
 
-##### C Strings
+##### Important: Strings and the NULL Terminating Character
 
-A string in C is essentially an array of `chars`, with one important caveat: The character sequence **must** be terminated with the null character `'\0'`.
+This section is extremely important. Please pay close attention to how strings are handled in C, which is unlike other languages that simplify strings for us. For starters, there is no `String` type or a concatenation operator `+`. Strings must be handled with great care in C, as an array of chars.
+
+A string in C is a sequence of $$k$$ `char`s stored in an array of size $$n$$, with $$k < n$$. For example, we can create a `char` array of size 10, and store `"cat"` or `"hello"`, or anything up to size 9.
+
+- Yep, size 9, that's not a typo! One important caveat about C strings is that the stored sequence **must** be terminated with the NULL character `'\0'` so that C knows when your string actually ends!
 
 - The following code creates a `char` array of size 20, and is initialized with a string of length 11, `"Puget Sound"`. Note that, although the string is only 11 characters long, it actually occupies 12 elements to store the terminating NULL character.
 
   ```c
-  char str[20];
+  char str[20]; // hold strings of up to length 20 (including '\0')
+
+  // now assign "Puget Sound" to be stored in str
   str[0] = 'P';
   str[1] = 'u';
   str[2] = 'g';
@@ -294,14 +285,15 @@ A string in C is essentially an array of `chars`, with one important caveat: The
   str[11] = '\0';
   ```
 
+- After this initialization, the contents of `str` are shown below. The null character is appended at `str[11]` automatically. Although the remaining unused characters (`str[12]`, ..., `str[19]`) are shown in the figure as having `'\0'`, C may not make any guarantee of this.
+  ![](figures/str1.png)
+
+<!-- 
 - Like Java, a string-literal in C is enclosed in double-quotes. When assigned as follows, it has the same effect as the code above. The NULL character does not appear in this syntax. however, string initialization is the **only time** you can assign a literal to a string variable.
 
   ```c
   char str[20] = "Puget Sound";
   ```
-
-- After this initialization, the contents of `str` are shown below. The null character is appended at `str[11]` automatically. Although the remaining unused characters (`str[12]`, ..., `str[19]`) are shown in the figure as having `'\0'`, C may not make any guarantee of this.
-  ![](figures/str1.png)
 
 - **Caveat: This is a biggie, and is very different than other languages.** The *only* time you should be using the assignment operator for strings is during initialization (above). Let's suppose we want to re-assign `str` to the string `"Loggers"`. Unfortunately, the assignment operator will not work!
 
@@ -319,7 +311,8 @@ A string in C is essentially an array of `chars`, with one important caveat: The
       printf("%s ", str);
       return 0;
   }
-  ```
+  ``` 
+
 
 - Instead, we need to write this very cumbersome code to copy one string to another variable.
 
@@ -337,34 +330,44 @@ A string in C is essentially an array of `chars`, with one important caveat: The
 
 - Important! You need to be sure that `str` was declared with enough storage to hold the newly assigned string _plus_ the terminating NULL character!  For now, strings in C are usually declared as `char` arrays having "too much capacity," but that'll change once we talk about memory allocation (malloc).
 
-- As you can imagine, manipulating strings in C can be a pain because you need to do everything at the array level. Forgetting something as simple as terminating the string could have dire consequences. Fortunately, C provides a standard string library `string.h` to help us out. Here are a few useful functions:
+  -->
 
-  - You should really check out [string.h](http://www.cplusplus.com/reference/cstring/) library for the full list of string functions.
+
+- **The string.h Library:** As you can imagine, manipulating strings would be a pain because you need to do everything at the array level, and forgetting something as simple as terminating the string could have dire consequences. Fortunately, C provides a standard string library `string.h` to help us out. 
+  - You should really check out [string.h](http://www.cplusplus.com/reference/cstring/) library for the full list of string functions, but here are the important ones.
+  - `strcpy(target, src)`: assigns `src` to `target`.
+  - `sprintf(target, format, listing-of-expr)`: the most versatile way of building a string that has mixed types. (See example below!)
+  - `strcat(target, src)`: concatenates  `src` to `target`, and null terminates.
   - `strlen(str)`: returns the length of `str`.
-  - `strcpy(dest, src)`: copies  `src` to `dest`, and null-terminates.
-  - `strcat(dest, src)`: concatenates  `src` to `dest`, and null terminates.
-  - `strcmp(str1, str2)`: Just like `compareTo(String)` in Java. This function compares the given strings and returns `0` if equal, a positive int if `str1` is greater than `str2`, and a negative integer otherwise.
-  - `sprintf(dest, format, ...)`: This is the most versatile way of building a string. It's got a similar syntax to `printf()`, except instead of printing the string out, the string is placed in `dest`.
+  - `strcmp(str1, str2)`: Just like `compareTo(String)` in Java. This function compares the given strings lexicographically and returns `0` if equal, a positive integer if `str1` is greater than `str2`, and a negative integer otherwise.
+  - `strtok(target, delimiter)`: tokenizes (splits) the `target` string into smaller pieces, separated by the delimiter.
 
-- Instead of writing our own, we could therefore use `strcpy()` to copy strings.
+- Example Use of String Functions:
 
   ```c
   #include <stdio.h>
-  #include <string.h> //import the string library
+  #include <string.h>
   #define MAX_LEN 20
 
   int main(int argc, char *argv[]) {
-      char str[MAX_LEN] = "Puget Sound";  // using = for initialization is okay
-      char str2[MAX_LEN] = "Loggers";
+      char str[MAX_LEN];
+      char str2[MAX_LEN];
 
-      strcpy(str, str2);    // Line 9: replace "Puget Sound" with "Loggers"
+      str = "Puget Sound";  // this won't compile! (Can't assign strings using =)
+
+      // string assignment
+      strcpy(str, "Puget Sound"); // use strcpy() to assign strings!
+      strcpy(str2, "Loggers");
+      strcpy(str, str2);    // Line 12: replace "Puget Sound" with "Loggers"
       printf("%s\n", str);  // prints "Loggers"
 
-      strcat(str, " Rule");   // Line 12: concatenates " Rule" to str
+      // concatenation
+      strcat(str, " Rule");   // Line 18: concatenates " Rule" to str
       printf("%s\n", str);    // prints "Loggers Rule"
 
+      // string building with sprintf()
       int x = 0, y = 1;
-      sprintf(str, "x is %d, y is %d", x, y); // Line 16: easiest way to assign a formatted string
+      sprintf(str, "x is %d, y is %d", x, y); // Line 22: easiest way to assign a formatted string
       printf("%s\n", str);    //prints "x is 0, y is 1"
 
       return 0;
@@ -373,18 +376,45 @@ A string in C is essentially an array of `chars`, with one important caveat: The
 
 - Referring back to the source file:
 
-  - **Line 2**: Imports the `string.h` library.
+  - **Line 9**: Warning! The familiar string assignment operator does not work in C! That's because string assignment is actually a multistep process that other languages (like Java and Python) had always simplified for us. As you saw earlier, to assign a string, you need to plug in each character in the array!
 
-  - **Line 9**: copies all 7 characters from `str2` to `str`. The function automatically appends the terminating null character at `str[7]`.
+  - **Lines 12-14**: Thankfully, the string library provides an easy way to do assignment through the `strcpy()` (sting copy) function. Happily, all string.h functions automatically appends the terminating NULL character, so we don't have to do it ourselves!
 
-  - **Lines 12**: concatenates " Rule" to the end of str, and appends terminating character.
+  - **Lines 12**: concatenates `" Rule"` to the end of str, and appends terminating character.
 
-  - **Lines 15-16**: The `strcpy()` function is only good for copying a string to another variable. However, we often need to mix types (e.g. strings concatenated with numbers). The `stdio.h` library includes a `sprintf()` that is used like `printf()`, but the string gets stored inside the variable. (Yes it null terminates.)
+  - **Lines 22**: When building strings, we often need to mix types (e.g. strings  with numbers). The `sprintf()` function that is used like `printf()`, but the string gets stored inside the variable. (Yes it NULL terminates.)
 
-    - Warning: On Lines 9, 12, and 16, it is assumed that the programmer had allocated enough space in str to hold the new string.
+    - Warning: Assert that you allocated enough space in the `char` array in the first place, before using `sprintf()`, `strcpy()`, `strcat()`.
 
-  - **Important: fgets() for string input** When getting input from users, recall that `scanf()` only reads up to the next whitespace. That's good for reading individual tokens like numbers, and names, but what if you wanted to read an entire line of input that could contain white spaces?
-    - Check out C's [fgets()](https://www.geeksforgeeks.org/fgets-gets-c-language/) function to read an entire line of input from user into a string. 
+
+**Capturing and Parsing Keyboard Input** When getting keyboard input, recall that `scanf()` only reads up to the next whitespace in the input. That's good for reading individual tokens, but what if you wanted to read an entire line of input that could contain white spaces?
+  - You need to use the [fgets()](https://www.geeksforgeeks.org/fgets-gets-c-language/) function to read an entire line of input from user into a string. 
+
+    ```c
+    #include <stdio.h>
+    int main() {
+        char buff[100];  
+      
+        printf("Enter a string: \n");
+      
+        // Read a line of input from the user
+        fgets(buff, sizeof(buff), stdin);
+        printf("You entered: %s", buff);
+        return 0;
+    }
+    ```
+    
+    ```txt
+    Enter a string: 
+    Hello World !!     <-- entered by user
+    You entered: Hello World !!
+    ```
+
+
+    The `fgets(buff, n, source)` function is described as follows: 
+    - `buff` is a reference to the `char` array to store the user input. This is where the input string (including the NULL terminating character) will land.
+    - `n` is the maximum allowable size (including the NULL terminating character) to be read from the input source.
+    - `source` is the input source, which could be a file handler, a socket, or in this case, your standard input device (`stdin`).
 
   - Java provides the `split()` method in its `String` class to tokenize strings by a delimiter. Look into C's `strtok()` function. Test it out - you will need to use it later.
 
@@ -392,26 +422,22 @@ A string in C is essentially an array of `chars`, with one important caveat: The
 
 ##### Writing Functions
 
-As good programmers, we know that we should promote reuse and modularity by writing functions. In C, function definitions follow this syntax:
+Methods in Java are called functions in C. For now, we assume that, all functions must precede its use. That is, before you can call `foo()` inside `main()`, you must first define `foo()` before `main()`. We'll get around this restriction later with function *declarations*.
+
+
+Function definitions follow this syntax:
 
 ```c
-return-type funcName(param1, param2, ...) {
+return-type function-name(param1, param2, ...) {
     //body
 }
 ```
 
-- Initially, we need to assume that in C, all function definitions must precede its usages.
-
-- Let's write the function `void my_strcat(char s[], char t[])`, which appends string `t` to the end of string `s` (basically, performs the function as `strcat()` from the `string.h` library).
+- Let's write our own function that concatenates two strings: `void my_strcat(char s[], char t[])` appends string `t` to the back of string `s` (basically, it performs `strcat()`).
 
   ```c
   #include <stdio.h>
 
-  /**
-  * Concatenates two strings
-  * @param s The destination string, with enough space for t[] and null-character
-  * @param t The source string to be appended
-  */
   void my_strcat(char s[], char t[]) {
       int i = 0, j = 0;
 
@@ -420,8 +446,8 @@ return-type funcName(param1, param2, ...) {
           i++;
       }
 
-      // i now at NULL character position of s
-      // now append string t to the end of s
+      // i is now at the NULL character position of s[]
+      // now append string t[] starting at position s[i]
       while (t[j] != '\0') {  // Line 17
           s[i] = t[j];
           i++;
@@ -440,42 +466,38 @@ return-type funcName(param1, param2, ...) {
 
 - Let's check out the code:
 
-  - **First**, note that the function is defined **before** it is used in `main()`.
+  - **First**, note that the function must be defined **before** it can be used in `main()`.
 
-  - **Lines 12-13:** We want `i` be the length of string `s`, and to do that, we simply traverse all characters of `s` until we encounter the NULL terminating character `'\0'`.
+  - **Lines 12-13:** We want `i` be the length of string `s`, and to do that, we simply traverse all characters of `s` until we encounter the `NULL` terminating character `'\0'`.
 
   - **Lines 17-20**: The second loop will copy into `s` all elements of `t` until `t`'s NULL character is encountered.
 
   - **Lastly**, we must insert a NULL terminating character to the end of `s`. As is true in Java, any changes made to an array passed as a parameter will persist beyond the scope of the function call! Therefore, it would be redundant to return `s` in `my_strcat()`.
 
-- Defining all of our functions in the same file before each is used can be a bit of a hassle, and bigger programs can become hard to manage. It would be ideal to split related functions into different files. [Go here to learn more about organizing multi-file programs](http://www.cs.cf.ac.uk/Dave/C/node35.html). As I mentioned in the previous assignment, I usually give you the starter files, but you may want to add some of your own files later on.
+**Managing Multiple Files** Putting all of our functions in the same file will become hard to manage. It would be ideal to split related functions into different files and then import those functions later. [Go here to learn more about organizing multi-file programs](http://www.cs.cf.ac.uk/Dave/C/node35.html).
 
-- **Do these exercises**
+- **Do These Exercises**
 
-  - Write a function that inputs a string, and converts it to upper-case.
+  - Write a function `void strToUpper(char str[])` that inputs a string, and converts it to upper-case.
 
-  - Can you figure out how a Java function like `Integer.parseInt()` might be implemented in C? That is, given a string like `"365"`, return `365 (int)`.
+  - It would be useful to convert a string into different types. Can you figure out how a Java function like `Integer.parseInt(s)` might be implemented in C? That is, given a string like `"365"`, return `365 (int)`.
 
-  - Write a function `void merge(int A[], int B[], int C[], int lengthA, int lengthB, int lengthC)` that inputs 2 sorted int arrays `A` and `B`, and an "output" array `C`. The function merges `A` and `B` into a sorted sequence in array `C`. Because the function doesn't know the arrays' lengths, you must also input those as params.
+##### C Structures (struct)
 
+C is not an object-oriented language, but that doesn't mean you can't create user defined types that are object-like. These are called structures, frequently used to combine multiple pieces of data in a single type (just as objects do in Java). A C struct is nothing more than a listing of data fields (called *members*).
 
-
-##### Structs and Typedef
-
-C is not an object-oriented language, but it does support object-like elements called `struct`. I like to think of `struct`s as classes in Java with only public fields and no methods. It's used solely to combine multiple pieces of data. Let's see how it's used.
-
-- To create a struct in C, you can use the following syntax:
+- To create a `struct` type in C:
 
   ```c
-  struct structName {
-      type0 field0;
-      type1 field1;
-      // ... other fields
-      typeN fieldN;
+  struct name-of-struct {
+      type-0 member-0;
+      type-1 member-1;
+      // ... other members
+      type-N member-N;
   };
   ```
 
-  Usually, the declaration of structs is done inside a `.h` file that can be `#include`d anywhere the `struct` is referenced. Once a `struct` has been declared you can use it as a data type. For example, the following code uses a `struct` to store a point, which has an x and y coordinate:
+  Just like functions, `structs` must also be declared above any code where they are used.
 
   ```c
   #include <stdio.h>
@@ -499,7 +521,6 @@ C is not an object-oriented language, but it does support object-like elements c
       return sqrt(pow(u.xCoord - v.xCoord, 2) + pow(u.yCoord - v.yCoord, 2));
   }
 
-
   int main(int argc, char *argv[]) {
       struct Point p, q;  //declare two Points (yes the struct keyword is required -- for now)
 
@@ -514,17 +535,13 @@ C is not an object-oriented language, but it does support object-like elements c
   }
   ```
 
-- **Important**
 
-  - A `struct`'s fields (called *data members* in C) are assumed to be `public`. (There is no such thing as `private` or `protected` scope in C.)
-  - Like Java, data members are accessed using dot-notation (`structName.fieldName`). You'll see a very different notation once we start talking about pointers to structs though. For now, the dot-notation will do.
+##### Important Aside: Renaming Types with `typedef`
 
-##### Important Aside: Aliasing Type Names with `typedef`
-
-C allows us to give new names (aliasing) to established data types. For instance, I could create an type alias `employee_t` to stand for `unsigned short int`, and use `employee_t` everywhere in my code, to improve code understanding. We do this using the following syntax:
+C allows us to give new names to established data types. For instance, I could create an alias `employee_t` to stand for `unsigned short int`, and use `employee_t` everywhere in my code to improve readability. We do this using the following syntax:
 
 ```c
-typedef <data type> <alias>;
+typedef <data-type> <alias>;
 ```
 
 - Let's alias `employee_t` to represent an `unsigned short int`. This makes for much more readable  code:
@@ -557,12 +574,12 @@ typedef <data type> <alias>;
   }
   ```
 
-- Typedefs are often used in conjunction with `structs`. For example, it's mildly annoying that we have to use `struct Point p;` syntax just to declare a `struct Point` variabl `p`. Using `typedef` totally optional here, but it *would* make the syntax a little easier on the eyes:
+- Typedefs are particularly useful when alaising `structs`. It's mildly annoying that we have to use `struct Point p;` syntax just to declare a `struct Point` variable. Using `typedef` totally optional here, but it *would* make the syntax a little easier on the eyes:
 
   ```c
-  typedef struct <structName> {
+  typedef struct <struct-name> {
       //members
-  } <structName>;
+  } <struct-name>;
   ```
 
   We can now declare the `Point` struct as follows,
@@ -574,7 +591,7 @@ typedef <data type> <alias>;
   } Point;
   ```
 
-  and now we can declare new points simply using `Point p;` rather than `struct Point p;`
+  and now we can declare new points simply using `Point p;` instead of `struct Point p;`
 
 <!-- 
 

@@ -1,14 +1,21 @@
 # TODO
-- Move Exam 1 down by a week to week 7
-- Move Exam 2 up by a week?
-- I need another day for Semaphores. Moved into Deadlocks too quickly
-- I need to consider a different problem than ts_hashmap, or to work semaphores in it somehow.
-  - Potentially create a new project that uses semaphores and gets them to eliminate hold-and-wait for preventing DL.
+- Deadlock-free philosophers: have them use semaphores or locks for the forks.
+  - But allow only N-1 philosophers into a room, not all N.
+  - This will ensure that circular wait is broken, since a cycle cannot be formed.
+  - Use a counting semaphore initialized to N-1 to manage the room. Just wait on it, and signal it when done.
 - Let them pair up on a few homework assignments?
 - BEFORE removing/redoing the hwk3 (ls2 repo), I have to give them with a dummy directory structure and redo the assignment example!
 
 
 # Change Log
+
+## Spring'26
+- Recitation leader to hold C homework sessions weekly
+- Tech report is now a graded unit
+- Don't start talking about multi-core until later (after threads).
+- Threads and processes emphasize multitasking and concurrency, not parallelism at first
+- Split the Chap 4 slides to focus on parallel programming
+- Move Exam 1 down by a week to week 7
 
 ## Spring'25
 - Deadlocks are back. Removed monitors and Java.

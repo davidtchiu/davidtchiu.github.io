@@ -150,7 +150,7 @@ Create a new project and create a class called `Recursion`. Put all of the follo
    >	2       2       8       8
    ```
 
-5. (Medium) Given a positive integer `n`, `n` is prime if-and-only-if it is only divisible evenly by 1 and itself. Write a static method, `public static boolean isPrime(int n)` that tests if `n` is prime. Hint: I would first create a private helper method that inputs `n` and a counter `k` that is initially input as 2 by the public-facing `isPrime()` method. There are two base cases in this helper method: (1) when counter `k` reaches `n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n` is not prime. The recursive case of the helper method simply calls itself on `k+1`, moving the counter a step closer to `n`.
+5. (Medium) A positive integer `n` is prime if-and-only-if it is only divisible evenly by 1 and itself. Write a method, `public static boolean isPrime(int n)` that determines if `n` is prime. Hint: I would first create a private helper method that inputs `n` and a counter `k` that is initially input as 2 by the public-facing `isPrime()` method. There are two base cases in this helper method: (1) when counter `k` reaches `n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n` is not prime. The recursive case of the helper method simply calls itself on `k+1`, moving the counter a step closer to `n`.
 
 	```java
 	System.out.println(Recursion.isPrime(13));
@@ -188,6 +188,24 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	> 1 2 3 6
 	> 1 2 5 6
 	> 1 4 5 6
+
+    int[][] grid3 = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9},
+        {10, 11, 12}
+    };  
+    Recursion.printPaths(grid3);
+	> 1 2 3 6 9 12
+	> 1 2 5 6 9 12
+	> 1 2 5 8 9 12
+	> 1 2 5 8 11 12
+	> 1 4 5 6 9 12
+	> 1 4 5 8 9 12
+	> 1 4 5 8 11 12
+	> 1 4 7 8 9 12
+	> 1 4 7 8 11 12
+	> 1 4 7 10 11 12
 	```
 	Hint: You should define a recursive helper method:
 	```java
@@ -196,9 +214,9 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 	where `i` and `j` are the current indices in traversing `grid`. At each step, pass along the current path (as `String path`) to accumulate the values. Your base case should detect when the bottom-right cell has been reached, at which case you simply print `path`. The recursive case should be when `i` and `j` are both not yet at the bottom-right cell, at which point you should make two recursive calls to move one step to the right, or one step down. If either `i` or `j` are out of bounds, do nothing.
 
 
-7. (Spicy) A _permutation_ is a sequencing of the elements in a given collection. For instance, given a string `"abc"` there are 6 possible permutations of this string: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. The intuition goes like this: split the input string up by removing the first character, and recursively return a list of permutations of the remaining substring. Then for each string in the returned list, insert the first character back into every position of the string and add each to the list. Return the list when finished. Here's an example. Suppose you're finding all permutations of `"abc"`.
+7. (Spicy) A _permutation_ is a sequencing of the elements in a given collection. For instance, there are 3 letters in the string `"abc"` (that is, a, b, and c), and there are 6 possible permutations of those three letters: `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`. Given a string, split the it up by removing the first letter, and recursively return a list of permutations of the remaining substring. Then for each string S in that recursively returned list, insert the first letter back into every position of string S and add each version  into a new list. Return that list when finished. Here's an example. Suppose you're finding all permutations of `"abc"`.
 
-	 - Split `"abc"` by chopping `"a"` off, and recursively find the list of permutations of the remaining substring, `"bc"` (yep, call yourself on `"bc"` to obtain this list).
+	 - Split `"abc"` by chopping `"a"` off, and recursively find the list of permutations of the remaining substring, `"bc"` (yep, just call yourself on `"bc"` to obtain this list). The list of permutations on `"bc"` should return ``["bc", "cb"]`.
 	 - Insert `"a"` back into every possible position for each substring in the list returned in the previous step. In our example, the previous step returns `["bc", "cb"]`. For `"bc"` this yields: `"abc"`, `"bac"`, and `"bca"`. For `"cb"` this yields: `"acb"`, `"cab"`, and `"cba"`. Create a new list and add each of these permutations and return it.
 
 		Write a static method called `public static List<String> permute(String str)` that inputs a string and returns an `ArrayList<String>` of all permutations of that string.  Similarly, the only permutation of a single-character string is that character. **Hint:** Base case: If your string is shorter than two letters, then create a `ArrayList<String>`, add the string to it, and return the list. This is because the list of permutations of a single letter is just itself.

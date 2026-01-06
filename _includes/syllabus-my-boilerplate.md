@@ -2,7 +2,7 @@
 ### Clasroom Policies
 
 ##### Final Letter Grades
-A weighted average of various assessments (see above) determines your final letter grade. These are the cutoffs when assigning your final letter grades. 
+A weighted average of various assessments (see above) determines your final letter grade. Anything after the decimal point is truncated, e.g. 89.9% -> B+.
 
 | Final Average  | Letter Grade |
 | :--- | :--- |

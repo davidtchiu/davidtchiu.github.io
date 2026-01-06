@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Lab 2: Structs, Arrays, and Pointers (Not Graded)
+### Lab 2: Pointers and Addressing (Not Graded)
 
 This is the second part of a multi-part primer on C. In this tutorial-assignment, you'll gain an appreciation for the way values and variables are stored in memory. You'll be introduced to pointers, as well as the connection between pointers and arrays.
 
@@ -24,7 +24,7 @@ Open your VS Code and get connected to your Remote Development environment. If y
 
 ##### Part 1: Understanding Variables - Data Types
 
-Okay, now for  a change of pace. A variable is a symbol that is associated with: (a) a data type and (b) its address in memory. To understand pointers, we need to have a grasp on both. We'll start discussion with the former. Consider the following code snippet:
+A variable is a symbol that is associated with a data type and its address in memory. To understand pointers, we need to have a grasp on both. We'll start discussion with the former. Consider the following code snippet:
 
 ```c
 char letter = 'p';

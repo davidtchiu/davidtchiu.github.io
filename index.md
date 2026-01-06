@@ -20,8 +20,8 @@
 
 
 ### Recent Activities
-- (08/2025) Chair, Student Support Committee 2025-26.
-- (08/2025) Faculty Development Center (FDC) Board for 2025-26.
+- (08/2025) Chair, Student Support Committee, 2025-26.
+- (08/2025) Faculty Development Center (FDC) Board member, 2025-26.
 - (08/2025) Led a panel on supporting underrepresented students @ Peer Advisor Training.
 - (05/2025) Congrats to Alex Kirner on receiving a Summer Research Award. Work starts on optimizing join execution.
 - (04/2025) Completed a site visit to [DIS Study Abroad in Scandinavia](https://disabroad.org/) (Stockholm and Copenhagen campuses).

@@ -26,9 +26,9 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - I've set up a Linux server for you to connect to and develop on. Make a note of the following information:
   ```
-  Server IP Address: 149.165.174.87
+  Server IP Address: 149.165.172.59
   Your Username: <your-pugetsound-username>
-  Your Password: <given-to-you>
+  Your Password: <given-in-class>
   ```  
 
 - Open up VS Code, then click on the `View` menu and select `Command Palette`. Then type: `Remote-SSH: Add New SSH Host...`. It should auto-complete after typing the first few letters. Choose to run this command. In the box that pops up, enter:
@@ -37,12 +37,12 @@ It's therefore important that we all code in a common environment, so I've prepa
   ```
   For example, mine would look like:
   ```
-  ssh dchiu@149.165.174.87
+  ssh dchiu@149.165.172.59
   ```
 
 - Next, VS Code may ask you to choose an SSH configuration file. If it asks, just select the one that's already selected. 
 
-- Now click on the **"Remote Explorer"** icon the left-hand panel, shown below. Near the top left, select the `Remote` (or `SSH Target` on older versions) option from the pull-down menu that may have "Containers" selected currently. Now you should see the `149.165.174.87` and your username below it. Click on the arrow next to your username to connect.
+- Now click on the **"Remote Explorer"** icon the left-hand panel, shown below. Near the top left, select the `Remote` (or `SSH Target` on older versions) option from the pull-down menu that may have "Containers" selected currently. Now you should see the `149.165.172.59` and your username below it. Click on the arrow next to your username to connect.
 
   <img src="figures/Visual_Studio_Code_and_schedule_js_—_davidtchiu_github_io.png" width="300px" />
 
@@ -59,7 +59,7 @@ It's therefore important that we all code in a common environment, so I've prepa
   <img src="figures/Menubar_and_dchiu__SSH__149_165_174_87_.png" width="250px" />
 
 
-- Now, change your password to something more secure. From the terminal (command-line) window on the bottom of your screen, enter `passwd`, and follow the instructions. When you type of your password, the screen will remain blank, but your input is registered. That is normal.
+- **Important:** Now, change your password to something more secure. From the terminal (command-line) window on the bottom of your screen, enter `passwd`, and follow the instructions. When you type of your password, the screen will remain blank, but your input is registered. That is normal.
 
 
 #### Using the Terminal (Shell) and VS Code Editor
@@ -165,17 +165,17 @@ To download and submit your homework assignments for this class, you'll need to 
 
     ```bash
     $ cd ~
-    $ cd os-first/
+    $ cd os-first
     $ code hwk1.c
     ```
 
-    - The first command `cd ~` changes your current-working-directory to your home directory. You should remember that `~` is a shortcut to your home directory, and now you won't ever get "lost!"
+    - The first command `cd ~` changes your current-working-directory to your home directory. You should remember that `~` is a shortcut to your home directory!
 
-    - The second command `cd os-first` changes your current-working-directory to  the `os-first` directory that git should have cloned in the previous steps.
+    - The second command `cd os-first` changes your current-working-directory to the `os-first` directory that git just cloned in the previous steps.
 
-    - Finally, `code hwk1.c` opens a new file called `hwk1.c`. 
+    - Finally, `code hwk1.c` opens a new file called `hwk1.c` inside your VS code editor.
 
-    - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but it's important to make sure that your terminal is *in* that new project directory when you're ready to compile. 
+    - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but it's important to make sure that your terminal is opened *in* that new project directory when you're ready to compile. 
 
 2. With `hwk1.c` open in your editor, type in the following "hello world" code and save it. 
 
@@ -185,7 +185,7 @@ To download and submit your homework assignments for this class, you'll need to 
     int main(int argc, char *argv[]) {
       const int n = 10;   // n is declared to be constant (read only)
       for (int x = 0; x < n; x++) {
-        printf("Hello world %d of %d!\n", x, n);
+        printf("Hello world %d of %d!\n", x+1, n);
       }
       return 0;
     }
@@ -198,11 +198,10 @@ To download and submit your homework assignments for this class, you'll need to 
     ```
     Here, `gcc` invokes the gnu c compiler (gcc). The `-Wall` flag instructs the compiler to display any warnings (even if the code compiles.) The `-g` flag generates debugging information for debuggers that we'll use later on.
 
-    The executable file that is produced is called `a.out`. Type `ls` on the terminal to make sure it's there. If you don't see `a.out`, that means the compilation failed and there was a syntax error that need to fix. To run it, use the command `./<executable-file>`
+    The runnable executable file that is produced is called `a.out`. Type `ls` on the terminal to make sure it's there. If you don't see `a.out`, that means the compilation failed and there was a syntax error that need to fix. To run it, use the command `./<executable-file>`
 
     ```bash
     $ ./a.out
-    Hello world 0 of 10!
     Hello world 1 of 10!
     Hello world 2 of 10!
     Hello world 3 of 10!
@@ -212,9 +211,10 @@ To download and submit your homework assignments for this class, you'll need to 
     Hello world 7 of 10!
     Hello world 8 of 10!
     Hello world 9 of 10!
+    Hello world 10 of 10!
     ```
 
-4. It seems a bit odd that your executable file would be named `a.out` by default. To instruct the compiler to output the executable under a different name, you can use the `-o <executable-name>` flag: 
+4. It seems a bit odd that your executable file would be named `a.out` by default. To instruct the compiler to output the executable under a different name, you can use the `-o executable-name` flag: 
 
     ```bash
     $ gcc -Wall -g -o helloworld hwk1.c
@@ -230,7 +230,7 @@ To download and submit your homework assignments for this class, you'll need to 
     $ git push origin main
     ```
 
-6. It may ask you for your github credentials again. Enter it now -- remember once again to use your "access token" for the password. (You should only have to do this once for the initial push).
+6. It may ask you for your github credentials again. Enter it now -- remember once again to use your "access token" for the password. (You should only have to do this once for the initial push, and all subsequent github actions should bypass this step.)
 
 7. Navigate to your github repository from your browser to make sure that `hwk1.c` exists. If so, you have successfully committed your code and pushed to github! This is how you will submit all assignments in this course.
 

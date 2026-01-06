@@ -57,18 +57,24 @@ let days = {
         url: "hwk6.hashmap/",
         due: "4/9/2025", // after break, Wed, wk 11
       },
+      {
+        name: "Hwk 7 (phils)",
+        title: "Deadlock-Free Philosophers",
+        url: "hwk7.phils/",
+        due: "4/21/2025",
+      },
       // {
       //   name: "Hwk 7 (OneLaneBridge)",
       //   title: "One Lane Bridge ",
       //   url: "hwk7.thebridge/",
       //   due: "4/16/2025", // Wed, wk 13
       // },
-      {
-        name: "Hwk 7 (bankers)",
-        title: "Banker's Algorithm",
-        url: "hwk7.bankers/",
-        due: "4/21/2025",
-      },
+      // {
+      //   name: "Hwk 7 (bankers)",
+      //   title: "Banker's Algorithm",
+      //   url: "hwk7.bankers/",
+      //   due: "4/21/2025",
+      // },
       {
         name: "Hwk 8",
         title: "Technical Report",
@@ -110,26 +116,26 @@ let days = {
     "Invoking the OS: Bootstrapping, interrupts",
     "Invoking the OS: Interrupts, traps and system calls",
     // wk 4
-    "Processes: PCB, address space, program stack",
-    "Processes: state transitions",
-    "Processes: fork() system call",
-    // wk 5
-    "Processes: exec() system call",
+    "Processes: switching, PCB, address space",
+    "Processes: fork(), exec() system calls",
     "Processes: wait(); zombies and orphans",
+    // wk 5
     "Threads: motivation and kernel support",
-    // wk 6
     "Threads: pthread library",
-    // "Threads: Performance and data sharing; Amdahl's Law",
+    "Threads: user-level vs kernel-level",
+    // wk 6
+    "Par: Parallel architectures",
+    "Par: Parallel computing patterns",
+    "Par: multithreaded code examples, Amdahl's Law",
+    // wk 7
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    // wk 7
-    "Threads: Amdahl's Law; code examples",
     "Scheduling: goals and metrics; burst model",
-    "Sched: SJF, SRTF, prediction",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
+    "Sched: SJF, SRTF, prediction",
     "Sched: RR, SRTF, MLFQ",
-    "Sched: hyperthreading, multicore considerations",
+    // "Sched: hyperthreading, multicore considerations",
     "Sync: critical section problem",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
@@ -142,25 +148,25 @@ let days = {
     // wk 11
     // "Sync: monitors and condition variables",
     // "Sync: Java support",
-    // "Sync: more semaphores",
-    "DL: Deadlocks",
-    "DL: Deadlock detection",
+    "Sync: more semaphores",
     "<strong><emph>Review</emph></strong>",
-    // wk 12
     "<strong><emph>Exam 2</emph></strong>",
+    // wk 12
+    "Deadlocks",
+    "DL: Deadlock detection",
     "DL: Bankers algorithm",
-    "Memory Management: virtual addressing",
     // wk 13
+    "Memory Management: virtual addressing",
     "MM: partitioning and segmentation",
     "MM: segmentation",
-    "MM: paging",
     // wk 14
+    "MM: paging",
     "MM: TLB and page faults",
     "Virtual Memory: demand paging",
-    "VM: page replacement",
     // wk 15
+    "VM: page replacement",
     "VM: clock algorithm",
-    "VM: memory allocation",
+    // "VM: memory allocation",
     // "VM: malloc(), free()",
     "<strong>Reading Period</strong>",
     // wk final

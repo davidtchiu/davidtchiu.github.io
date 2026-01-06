@@ -46,16 +46,28 @@ on the performance of a process and the system in which it executes. -->
 - Deadlocks
 - Memory management and virtual memory
 
-#### Grades
+
 Your overall grade is broken down as as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Participation | 5% |
-| Homework Assignments | 40% |
+| Participation | 7% |
+| Homework Assignments | 30% |
+| Technical Report | 10% |
 | Midterm I | 15% |
 | Midterm II | 18% |
-| Final Exam (comprehensive) | 22% |
+| Final Exam (comprehensive) | 20% |
+
+
+##### Homework Assignments
+Homework assignments are a mix of paper-based and coding-based. They account for a significant portion of the final grade.  Unless otherwise noted, you are to work on homework assignments alone. You are welcome to brainstorm with others (including tutors) for ideas, but any code you submit should be yours.
+
+**Do not copy code you find on the web and/or ChatGPT.** This is considered plagiarism. Please see the "Academic Integrity" section below.
+
+
+##### Term Project
+There will be an open-ended group project assigned about mid-way through the course. The most successful teams meet and physically work together at an agreed-upon location and time -- that is, *uno animo*. It is a good idea to set up version control environments and practice scrum, to ensure everyone has something to do and is making progress. A final presentation will be given toward the end of the semester. Each member of the team should contribute equally to the assignment. Students on the same team may receive different grades based on perceived effort and contributions (via scrum logs and git commit history).
+
 
 {% include syllabus-my-boilerplate.md %}
 
