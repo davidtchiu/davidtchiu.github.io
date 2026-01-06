@@ -21,22 +21,48 @@ Open your VS Code and get connected to your Remote Development environment. If y
 
   - Once you're logged in, you can open a terminal from the `Terminal` menu.
 
+##### Preamble: Notepads, Street Addresses, and Buildings
+Pointers are powerful structures in C. To get a sense of what pointers are, let's use a real-world analogy:
+  - Data values in this analogy are like buildings in a city.
+  - A pointer (or reference) is a building's street address.
+  - A pointer variable is a *notepad* with a *street address* written on it.
 
-##### Part 1: Understanding Variables - Data Types
+Therefore, you wouldn't ever say that a street address is itself a building, but it does tell you where to go to find it.
+  - Any building always has a corresponding street address. You just have to ask for it!
+    - This is what the *address-of* operator `&` provides.
+  - You can navigate to the building located at an address: examine it, destroy it, change it.
+    - This is what it means to *de-reference* a pointer.
+  - You can reuse the notepad by writing a different buidling address on it.
+    - The pointer variable can be reassigned to point at a different piece of data.
+  - You can write an address on a notepad, and share the notepad with others.
+    - A pointer can be passed in as function input-parameters so it can find the piece of data too.
+  - You can check out the neighboring building, and the one after that, ...
+    - This is called pointer arithmetic. Once you have an address, you can visit the nearby element effortlessly.
 
-A variable is a symbol that is associated with a data type and its address in memory. To understand pointers, we need to have a grasp on both. We'll start discussion with the former. Consider the following code snippet:
+Under this scheme, think about what pointers would enable us to do:
+  - You can efficiently pass massive data structures to functions: Don't pass the whole building, pass its street address!
+  - You can write functions that can change the variables in the function caller's scope!
+  - You can create linked structures (linked lists, trees). A node contains a data element, and a pointer variable (notepad) holding the address of the next node.
+
+
+##### Part 1:  Memory and Data Types
+How is data stored and managed inside your machine? Think of your computer's memory as being a giant array of bytes. Each byte corresponds to a unique *address* in memory. Depending on the data's *type*, a piece of data may occupy a range of bytes.  Consider the following code snippet:
 
 ```c
-char letter = 'p';
-int days = 365;
-double amt = 90000.75;
+char letter = 'p';    // chars are 1 byte long
+int days = 365;       // ints are 4 bytes long
+double amt = 90000.75;    // doubles are 8 bytes long
 ```
 
-The three variables have to exist *somewhere* in memory. Let's take a look at a make-believe snapshot of my computer's memory as it runs the code shown above. You might recall from your architecture class that a **CPU word** is a unit of data transfer between memory and CPU. For simplicity, in these tutorials, we'll assume that a word is a block of four contiguous bytes (i.e., 32-bits),  though it should be stated that a word is usually 8 bytes (64-bits) in modern machines.
-
-In the figure below, only a word's start address is shown, but know that each byte within the word is addressible too. When a CPU requests the byte located at a certain address, say `1117`,  the *full* word ranging from address `1116` to `1119` is retrieved from memory and brought into one of the CPU's registers. The CPU then extracts the desired byte at `1117`. All of this is done behind the scenes, hidden from the programmer.\
-
+Let's take a look at a snapshot of what my memory might look like as it runs the above code\
  <img border="1" width="450px" src="figures/proj2-ex1.png"/>
+
+There are several things worth noting:
+1. There's no guarantee that the variables are grouped together like this in memory.
+2. A *word* (4 contiguous bytes in this figure) is what we call a unit of data transfer between the memory and CPU. Although the figure only shows the starting addresses for each word, it should be noted that each byte is also addressable.
+3. *Word Alignment:* There are 3 wasted bytes that follow the `'p'` character. Sure, we *could* use those bytes to store 3 out 4 bytes of `days`, but now `days` would span across two words. This is not ideal, because it would require 2 transfers just to read/write the `days` variable. To avoid this, your system prefers to align data on the order of words.
+4. Yes, it would require this system to make 2 transfers to read/write `amt` since it spans 2 words -- a reason why earlier systems preferred avoiding `double`s if you didn't need its range and precision. This is why `float` types exist -- they are only 1 word wide!
+
 
 **Important C Operator: `sizeof()`**
 Notice from the figure above that that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures, so how did I know these storage requirements apply to my machine? C provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies in memory. Let's see what it does.
@@ -159,9 +185,9 @@ size of 0.5 * 400 / 2: 8 bytes
 
   - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)*
 
-##### Part 2: Understanding Addressing
+##### Part 2: Understanding Addressing and Pointers
 
-Every piece of data in your program, whether it's a  variable or a literal (like "hi" and 3.14), is stored in two pieces: its content and its address. We only have control over its content, and it's up to your OS to find a suitable location in memory to place it. It is possible, however, for programmers to ask the system for the addresses of your data. This section focuses on the support for working with a variable's location in C. In particular, we will focus on three syntax items: the address-of operator (`&var`), the pointer-declaration operator (`type *var`), and the de-reference operators (`*var` and `var->field`).
+Every piece of data in your program, whether it's a  variable or a literal (like `3.14`), is stored in two pieces: its content and its address. It is possible, for programmers to ask the OS for the addresses of your data, but we can't tell it *where* to place them. This section focuses on the support for working with a variable's location in C. In particular, we will focus on three syntax items: the **address-of** operator, the **pointer-declaration** operator, and the **de-referencing** operators.
 
 1. Let's now consider the code below. Read through it before moving on.
 
@@ -243,17 +269,17 @@ Every piece of data in your program, whether it's a  variable or a literal (like
 
      The addresses of `days` (0x458 == 1112) and `ptr` (0x8A2C == 35372) are first printed. This is followed by printing the contents of `ptr`, which unsurprisingly, stores the address of `days`.
 
-- *Important:* In the examples above, we demonstrated that the `&` operator returns only the address of the *first byte* of the associated variable, even if the variable might occupy more than one byte. For instance, `&days` returns simply `0x458`, even though `days` occupies the next three bytes as well. When we de-reference `*ptr` on **Line 8** and **Line 12**, the system was *smart* enough to know that the next three bytes are part of `days`'s value.  How  does the system know **exactly three** more bytes (and not zero, or one, or seven, or 1000) trailed first byte of `days`? **(Ans: This is why we declare data types in the first place! When we told C that `days` is an `int`, the C compiler translates `int` to something equivalent to a 32-bit `DWORD` in the underlying assembly language.)**
+- *Important:* In the examples above, we demonstrated that the `&` address-of operator returns only the address of the *first byte* of the associated variable (just like in our earlier figure). For instance, `&days` returns simply `0x458`, even though `days` occupies the next three bytes as well. When we de-reference `*ptr` on **Line 8** and **Line 12**, the system was *intelligent* enough to know that the next three bytes are part of `days`'s value. How does the system know **exactly three** more bytes (and not zero, or one, or seven, or a hundred) trailed first byte of `days`.
+  -  **Answer: Because you told the system how big it was!** It's why we declare data types in the first place. When you declared `days` as an `int`, the C compiler knows it needs to reserve 4 bytes.
 
-- **Practice Problems**
+- **Exercises (ungraded)**
 
   - Suppose we know that a pointer to an int (`int*`) occupies 4 bytes on my machine by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? **(Ans: 4 bytes. Pointers are nothing more than addresses, no matter what kind of data you're pointing to. Addresses are fixed length.)**
 
   - You can also create a pointer to a `void` data type, which seems odd at first. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. (Hint: Think generics in Java).
 
-##### Part 3: Pointer Basics
-
-Let's put everything together. There are three basic pointer concepts you have to master to succeed in this class:
+##### Part 3: Notepads and Street Addresses
+Let's put everything together.
 
 1. Address-Of Operator: Given a variable var, `&var` returns the address of var's location in memory.
 
@@ -302,6 +328,66 @@ Let's put everything together. There are three basic pointer concepts you have t
 
 
 ##### Part 4: Pointers as Input Parameters
+Remember how I mentioned that, for efficiency, you can pass an address/pointer into a function instead of passing the entire building? Consider the following function that modifies a large `struct` without using pointers. 
+```c
+typedef struct employee_t {
+  char ssn[11];
+  char name[100];
+  int salary;
+  // more members omitted
+  // ...
+} employee_t;
+
+employee_t increaseSalary(employee_t emp) {
+  emp.salary *= 1.03;
+  return emp;
+}
+
+void main() {
+  employee_t david;
+  strcpy(david.ssn, "123");
+  strcpy(david.ssn, "David C");
+  david.salary = 20000;
+  david = increaseSalary(david); // yikes
+}
+```
+
+This code runs, but it's really cumbersome. To call `increaseSalary(david)`, C needs to package up all those values in the struct and pass the whole thing as a value.  Because any changes done in `increaseSalary(david)` are local to it, they'd be lost if you didn't return the entire struct back to the caller! *Look, we're moving the entire building ... twice!*
+
+Intead, let's just pass the address of the employee to the function. The function can follow the address to make the salary updates. This saves the C runtime system from making a clone of the employee and passing it around!
+
+```c
+typedef struct employee_t {
+  char ssn[11];
+  char name[100];
+  int salary;
+  // more members omitted
+  // ...
+} employee_t;
+
+/** Now inputs a pointer to an employee! */
+void increaseSalary(employee_t *emp) {
+  emp->salary *= 1.03;  // What's this struct->member operator???? 
+}
+
+void main() {
+  employee_t david;
+  strcpy(david.ssn, "123");
+  strcpy(david.ssn, "David C");
+  david.salary = 20000;
+  increaseSalary(&david); // done in place!
+}
+```
+In the code above, notice:
+1. Main simply sends along an employee's address (using the `&` operator), not their entire content!
+2. If `increaseSalary()` knows exactly where to go to reach the affected employee, then any changes to it are done directly! No need to return the employee anymore. (That's what we remember doing in Java!)
+3. **Important:** When `p` is a pointer to a `struct`, you can de-refernce one of `p`'s members using either:
+   - `(*p).member = expression` -- this de-references `p` first, then applies the usual dot notation to access its member.
+   - Or a nice shortcut is usually done in practice: `p->member = expression`
+
+
+
+<!-- 
 
 1. Consider the following function used to swap the values of two integer variables:
 
@@ -352,10 +438,10 @@ Let's put everything together. There are three basic pointer concepts you have t
    //...
    int a = 4, b = 3;
    swap3(a,b); //swap?
-   ```
+   ``` -->
 
 ##### Part 5:  "Output" Parameters
-Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to create a new class that stored multiple values, or returned an array. You can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values (without actually calling `return` to do it).
+Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to create a new class that stored multiple values and return an object of that class, or you returned an array of values. Sure, you can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values (without actually calling `return` to do it).
 
  **"Output Parameters"**: An output parameter refers to a pointer that is input into a function, and the function modifies its contents before exiting. After the function call, one just needs to dereference the pointer to obtain the updated value(s).
 
@@ -369,17 +455,17 @@ Have you ever wished that a function/method could return more than one thing? To
      }
      ```
 
-   - In practice you often see the above function written out like this:
+   - In practice you often see the above function written out like this for clarity. Yeah it's ugly, but it makes clear to the reader that this function will put something in the location given to `*sum`.
 
      ```c
      void sum(
        int x,    /* IN */
        int y,    /* IN */
-       int* sum  /* OUT */) {
+       int *sum  /* OUT */) {
        *sum = x + y;
      }
      ```
-
+<!-- 
    - Here's another example:
 
      ```c
@@ -413,22 +499,20 @@ Have you ever wished that a function/method could return more than one thing? To
 
        return 0;
      }
-     ```
-
+     ``` 
      ```
      Enter a name: David
      Enter a GPA: 4.0
      Name: David, GPA: 4.00
      Name: David, GPA: 0.00
      ```
-
+-->
 
   - **Do this output parameter exercise:** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? 
 
 
-
-##### Part 6: Connection to Arrays and Strings (Pointer Arithmetic)
-In this section, we'll explore the relationship between pointers and arrays (and strings).
+##### Part 6: Connection to Arrays  (Pointer Arithmetic)
+In this section, we'll explore the relationship between pointers and arrays.
     
 1.  Study the following source file, then compile and run it.
 
