@@ -183,7 +183,7 @@ To download and submit your homework assignments for this class, you'll need to 
     #include <stdio.h>
 
     int main(int argc, char *argv[]) {
-      const int n = 10;   // n is declared to be constant (read only)
+      const int n = 10;   // n is declared to be constant (like 'final' in Java)
       for (int x = 0; x < n; x++) {
         printf("Hello world %d of %d!\n", x+1, n);
       }
@@ -196,9 +196,9 @@ To download and submit your homework assignments for this class, you'll need to 
     ```bash
     $ gcc -Wall -g hwk1.c
     ```
-    Here, `gcc` invokes the gnu c compiler (gcc). The `-Wall` flag instructs the compiler to display any warnings (even if the code compiles.) The `-g` flag generates debugging information for debuggers that we'll use later on.
+    `gcc` invokes the GNU C Compiler (gcc) to run. The `-Wall` flag instructs it to display all compiler warnings (even if the code ultimately compiles.) The `-g` flag generates debugging information for debuggers that we'll use later on.
 
-    The runnable executable file that is produced is called `a.out`. Type `ls` on the terminal to make sure it's there. If you don't see `a.out`, that means the compilation failed and there was a syntax error that need to fix. To run it, use the command `./<executable-file>`
+    The runnable executable (binary) file that is produced is called `a.out`. Type `ls` on the terminal to make sure it's there. If you don't see `a.out`, that means the compilation failed and there was a syntax error that need to fix. To run it, use the command `./<executable-file>`
 
     ```bash
     $ ./a.out
@@ -214,7 +214,7 @@ To download and submit your homework assignments for this class, you'll need to 
     Hello world 10 of 10!
     ```
 
-4. It seems a bit odd that your executable file would be named `a.out` by default. To instruct the compiler to output the executable under a different name, you can use the `-o executable-name` flag: 
+4. It seems a bit odd that your executable file would be named `a.out` by default. To instruct the compiler to output the executable under a different name, you can run `gcc` with the `-o executable-name` flag: 
 
     ```bash
     $ gcc -Wall -g -o helloworld hwk1.c

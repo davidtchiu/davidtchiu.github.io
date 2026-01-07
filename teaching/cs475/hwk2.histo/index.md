@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: Sorting
+### Hwk 2: Histograms
 
 
 #### Related Reading
@@ -15,133 +15,191 @@ Open your VS Code and get connected to your Remote Development environment. If y
   - Once you're logged in, you can open a terminal from the `Terminal` menu.
 
 
-##### Assignment: HeapSort (Graded)
+#### Student Outcomes
 
-Your tasked with providing a list of employees sorted in _descending_ order of their salaries. Luckily, you remember Heapsort from your Algorithms or CS II class, and decide to use it...
+- To work with user input.
+- To work with structs, strings, arrays, and pointers.
 
-Heaps are a projection of a balanced binary tree onto arrays. They serve many purposes, but are perhaps most well known as the basis for Heapsort. Heaps are also the backbone for Priority Queues, an important data structure which finds uses in many applications (including in OS). Your goal is to implement Heapsort using a min-heap. A min-heap is an array of n elements `A[0]`,...,`A[n−1]` that can be viewed as a binary tree (not necessarily a binary search tree), with the following properties:
+#### Preamble
 
-- The root of the heap is `A[0]`.
-- For an array index `i`,
-  - `parent(i) = (i-1)/2` (except for the root, which has no parent)
-  - `left_child(i) = 2(i+1)−1`
-  - `right_child(i) = 2(i+1)`
-- The _min-heap property_: Every node's value must be less-than-or-equal-to the value of its children. That is, `A[parent(i)] <= A[i]` for all `i`. The figure below shows an example of a min-heap of size 12.
+This assignment does not require concepts that you learned in Lab 3. Therefore, you do not need to `malloc` any memory to complete the assignment. This assignment is all about the fundamentals, and work involving pointers.
 
-   <img width="500px" src="figures/heap.png" />
+#### Assignment: Word Stats (Graded)
 
-###### Starter Code
+You're ready to write your first C program for this class! This assignment tries to incorporate almost all of the concepts you learned in the first two "C labs" to make sure you start with strong foundation. Specifically, the focus here is on structs, string manipulation and pointers. 
 
-Starter code for this assignment is provided on the github repo. You must do these steps in order to submit your work to me on github.
+You are to write a program that reports some basic statistics on user-input strings. When your program begins, it should ask the user to enter a string. Once it is entered, your program should parse all words out of this string, and maintain some basic stats. Continue prompting for more input until the user enters `#`, at which point your program outputs a menu with the following options:
 
-- Login to github, and go here: [https://github.com/davidtchiu/os-heapsort](https://github.com/davidtchiu/os-heapsort). 
+```txt
+Enter 1 to print frequencies.
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+```
 
-- Click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+##### Starter Code
 
-- This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
+Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
-- Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
+- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk1-wordstat](https://github.com/davidtchiu/cs475-hwk1-wordstat). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL of _your_ newly forked project. Then follow the rest of the instructions below. From your VS Code remote development environment, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
 
   ```
   git clone <your-github-url-for-this-project>
   ```
 
-- This should download the starter code in a directory called `os-heapsort`. After you've done this, you can work freely from VS Code or any other editor. 
+- This should download the starter code to your in a directory called `cs475-hwk1-wordstat`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
 
-###### Working Solution
+- `Makefile` - Do not make changes to this file. It is used for compiling
+- `defs.h` - This file defines some global constants
+- `menu.h` - This file should contain menu-option constants and function declarations
+- `menu.c` - You will implement the functions declared in `menu.h` in this file
+- `stats.h` - This file should contain constants, `WordStats` struct declaration, function declarations
+- `stats.c` - You will implement the functions declared in `stats.h` in this file
+- `main.c` - This file will contain the `main()` function, and other related helper functions
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `heapsortSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./heapsortSol`.
+##### Working Solution
 
-###### Program Requirements
+I have included a working solution of my program along with the starter code. The binary executable file is called `wordstatSol`. You can run it from the terminal by first navigating in to the Hwk1 directory and typing the command `./wordstatSol`.
 
-1. Inside the project directory, you should find the following files:
+##### `make`: Compiling Your Code and Cleaning Your Codebase
 
-   - `Makefile`
-   - `employee.h` contains the definition of the `Employee` struct
-   - `heap.h` contains the function declarations related to the heap
-   - `heap.c` contains the stubs for the functions defined in `heap.h`
-   - `main.c ` contains the `main()` function
+Compiling a multi-file C program can be tricky, and requires multiple steps and careful sequencing. To simplify the compilation process, I have provided a _script_ for you to run. As long as the `Makefile` is  in your project directory, you can run the command `make` on the terminal, and it will resolve the rules inside the `Makefile` and compile your project (hopefully). The name of the binary executable has been configured to be called `wordstat`, so if all goes well, you should be able to run `./wordstat` after compiling.
 
-2. Implement the following functions inside `heap.c`:
+- One related matter is the `make clean` command. This command will remove all intermediate files and binaries, but it will leave your source code alone. Use this command right before you push to github, for instance, because you wouldn't want these `.o` files to gum up your repository.
 
-   - `void heapify(Employee *A, int i, int n)`: This function inputs a pointer to an array
-     `A`, an index `i`, and the size of the array `n`. The function assumes the trees that rooted at
-     `left_child(i)` and `right_child(i)` already satisfy the min-heap property, but that `A[i]`
-     may be larger than its children. This function should trickle `A[i]`
-     down in place such that the tree rooted at `i` satisfies the min-heap property.
 
-     In the figure below, you can see how `heapify()` works. Here, `A[2]` violates the min-heap property, and a call to
-     `heapify(A, 2, 12)` is made to produce the following:
+##### Program Requirements
 
-      <img width="600px" src="figures/heapify.png" />
+1. The program starts by accepting user inputs (strings), not by printing the options menu. Strings are submitted by the user one line at a time. Each string should be processed (update your word stats structure), before accepting the next string. Continue accepting strings until a line with the singular value `#` is read, at which point, you should print the options menu.
 
-   - In Step 2, the out-of-place element `A[2]` is swapped with the smaller of the two children, `A[5]`. However, the tree rooted at
-     `A[5]` no longer satisfies min-heap property. Thus, a recursive call to heapify on
-     `A[5]` corrects the subtree. You should therefore recursively correct the subtrees until you hit a leaf.
+2. You may not assume that a user always enters a single word per line. If the user enters multiple words on the same line, you should tokenize each one (because need to count the number of words too). You may assume that the entire line of user-input cannot exceed `128` characters. (I have defined a constant `MAX_INPUT_LEN` to store 128 in `main.c`.) Ignore any characters that is input beyond this limit. 
 
-   - `void buildHeap(Employee *A, int n)`: Given a pointer to an array
-     `A` of size `n`, this function will leave the tree rooted at `A[0]` satisfying the min-heap property. Because leaf nodes trivially satisfy the property, only the non-leaf nodes need to be heapified. It's pertinent to know that the last non-leaf node is located at
-     index `n/2`. Run `heapify()` on `A[n/2]` down to `A[0]`.
+    - You should use the `fgets()` function, given in C's `stdio.h` library, to obtain a line of input (with spaces) from the user.
+    - To split a string into tokens, you should look into using the `strtok()` function given in the `string.h` library.
 
-     The before-and-after of this function call is shown below:
+3. Inside `stats.h`, declare a structure named `wordstats_t` that can hold the following stats. 
+    - Vowel count
+    - Consonant count
+    - Non-alphabetical count (including whitespaces)
+    - Word count
+    - An array that stores the counts of each alphabet
 
-      <img width="400px" src="figures/proj2-buildHeap.png" />
+4. We'll use a function to update the above structure for each line of user input that's read.
+    - Still in `stats.h`, below your `wordstat_t` declaration, you'll find the function declaration `void updateStats(wordstats_t *, char *);` that accepts a pointer to your struct, and a string to process. 
+    
+    - A **function declaration** is just the function header without the implementation. (Not even the input parameters need to have names, but it's okay if they do). We're basically telling the C compiler "this function exists somewhere in these files," so compile confidently if you come across its usage but haven't seen its definition yet!
+    
+    - Declaring functions seems bit foreign, but is necessary in C if you want to separate your functions into another file. In any file that needs to use this function, we can simply `#include "stats.h"` in the file header.
 
-   - `void swap (Employee *e1, Employee *e2)`: Inputs pointers to two Employees, and swaps them.
+    - Now go inside the `stats.c` file to write `updateStats()`.
 
-   - `void printList(Employee *A, int n)`: Prints all values in the array referenced by pointer `A`.
+5. Once you read a single `#` (if it's not followed by a NULL character, then you should update stats!), you need to show the options menu. Your program should now accept numerical options. If an unknown option is entered, print an error informing the user and reprompt. Note that there is an option to return to string-input mode.
+   - This time, write your own function to print the menu. Put the declaration in `menu.h` (I don't care what you name the function.), and put the implementation in `menu.c`.
 
-   - `void heapsort(Employee *A, int n)`: This function inputs a pointer to an unsorted array of Employees and the size of that array and sorts it in descending order of their salary. Here's the sketch:
-     ```
-     Build min-heap over A
-     Repeat the following until n < 0:
-       Swap root of heap with element n−1.
-       Now smallest element is sorted into place.
-       Heapify up to element n−1
-       Decrement n by 1
-     ```
+6. The bars in the histogram that you print must be vertical (see below). Point deductions will be taken if you print horizontal bars. Each of the 26 bars represents the count of letters that your program observed. The frequency itself must sit below the letter label.
 
-3. Implement the following inside `main.c`:
+   - Write a function in `stats.h`/`stats.c` to print the histogram given a pointer to your struct.
 
-   - `#define` a constant called `MAX_EMPLOYEES` that will serve as the maximum length of your array. (Some small-ish number ought to do, say, 5)
+7. Your `main()` function should create a wordstat struct, and handle the user input.
 
-   - `int main()`: The driver function should create an array of `MAX_EMPLOYEES` elements, and fill it with values from the user. Below, a sample interaction for `MAX_EMPLOYEES` of 5.
+##### Sample Output
 
-4. For ease of compiling, I've provided you with the `Makefile`. Simply run `make` on the command line to compile.
+```
+$ ./wordstat 
+Enter strings (# to stop):
+APPle caT
+orangE goat
+greenish blue fish
+#
+*** WORD STATS MENU ***
+Enter 1 to print frequencies.
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+1
 
-5. Here's a sample output:
+Vowels = 14 (41.18%), Consonants = 20 (58.82%), Total= 34
 
-   ```
-   Name: David
-   Salary: 60000
+*** WORD STATS MENU ***
+Enter 1 to print vowel and consonant frequency.
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+2
+        *                                           
+*       *                                           
+*       *   *                                       
+*       *   * * *     *   * * *   * * *             
+* * *   * * * * *     *   * * *   * * * *           
+a b c d e f g h i j k l m n o p q r s t u v w x y z 
+4 1 1 0 5 1 3 2 2 0 0 2 0 2 2 2 0 2 2 2 1 0 0 0 0 0 
 
-   Name: Gabe
-   Salary: 75000
+*** WORD STATS MENU ***
+Enter 1 to print frequencies.
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+3
+Enter strings (# to stop):
+grey SHARK
+!!@@!##
+@#@#@#@#
+#
+*** WORD STATS MENU ***
+Enter 1 to print frequencies.
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+1
 
-   Name: Katie
-   Salary: 92000
+Vowels = 16 (37.21%), Consonants = 27 (62.79%), Total= 43
 
-   Name: Gabe
-   Salary: 40000
+*** WORD STATS MENU ***
+Enter 1 to print frequencies.
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+2
+        *                                           
+*       *                                           
+*       *   *                     *                 
+*       *   * *                   * *               
+*       *   * * *     *   * * *   * * *             
+* * *   * * * * *   * *   * * *   * * * *       *   
+a b c d e f g h i j k l m n o p q r s t u v w x y z 
+5 1 1 0 6 1 4 3 2 0 1 2 0 2 2 2 0 4 3 2 1 0 0 0 1 0 
 
-   Name: Joan
-   Salary: 86000
+*** WORD STATS MENU ***
+Enter 1 to print frequencies.
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+19
+Error: Unknown option 19.
 
-   [id=Katie sal=92000], [id=Joan sal=86000], [id=Gabe sal=75000], [id=David sal=60000], [id=Gabe sal=40000]
-   ```
+*** WORD STATS MENU ***
+Enter 1 to print frequencies.
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+4
+Exiting...
+```
 
 #### Grading
 
 ```
 This assignment will be graded out of 20 points:
 
-[1pt] Appropriate constants have been defined.
-[6pt] Heapify is properly implemented.
-[6pt] BuildHeap is properly implemented to build a min-heap.
-[6pt] Heapsort sorts employees by descending order of their salary.
-[1pt] Your program receives user-input, and does basic error checking.
+[1pt] Appropriate constants have been defined
+[1pt] Array(s) and strings are created using a constant length
+[6pt] Your program handles multiple-word inputs (with spaces)
+[4pt] Your program updates the histogram appropriately
+[5pt] Your program prints a vertical (not horizontal) histogram
+[1pt] Basic error checking is handled, such as entering invalid menu options.
+[1pt] Your program runs repeatedly until sentinel inputs are entered
 [1pt] Your program observes good style and commenting.
-```
+``` 
 
 #### Submitting Your Assignment
 
