@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: Remote C Development
+### Hwk 1: Remote C Environment
 
 In this tutorial, we will set you up to develop on a remote server. Here's why we have to do this, instead of developing on your own machines. C is a very finicky language, and is highly dependent on the  environment on which it compiles and executes. This is everybody's worst nightmare: turning in an assignment you've spent hours on, only to have it not compile or execute on your professor's machine. Indeed, having a common compiling and runtime environment was what made Java (and the Java Virtual Machine  JVM) so successful when it was introduced in the mid-90s. Today, most languages have a common runtime environment, and C has certainly made significant efforts to being more portable across systems, but alas I find that it's still very system dependent.
 
@@ -175,28 +175,16 @@ To download and submit your homework assignments for this class, you'll need to 
 
     - Finally, `code hwk1.c` opens a new file called `hwk1.c` inside your VS code editor.
 
-    - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but it's important to make sure that your terminal is opened *in* that new project directory when you're ready to compile. 
+2. With the blank `hwk1.c` opened in your editor, write a main function to fill in the code to print "hello world" ten times.
 
-2. With `hwk1.c` open in your editor, put in the following "hello world" code and save it. 
-
-    ```c
-    #include <stdio.h>
-
-    int main(int argc, char *argv[]) {
-      // TODO -- fill in the code to print "hello world" ten times
-
-      return 0;
-    }
-    ```
-
-3. Go back down to the terminal window to compile and run it:
+3. When you're ready to compile and test, go back down to the terminal window to compile and run it:
 
     ```bash
     $ gcc -Wall -g hwk1.c
     ```
     `gcc` invokes the GNU C Compiler (gcc) to run. The `-Wall` flag instructs it to display all compiler warnings (even if the code ultimately compiles.) The `-g` flag generates debugging information for debuggers that we'll use later on.
 
-    The runnable executable (binary) file that is produced is called `a.out`. Type `ls` on the terminal to make sure it's there. If you don't see `a.out`, that means the compilation failed and there was a syntax error that need to fix. To run it, use the command `./<executable-file>`
+4. If all goes well the runnable executable (binary) file that is produced is called `a.out`. Type `ls` on the terminal to make sure it's there. If you don't see `a.out`, that means the compilation failed and there was a syntax error that need to fix. To run it, use the command `./<executable-file>`
 
     ```bash
     $ ./a.out
