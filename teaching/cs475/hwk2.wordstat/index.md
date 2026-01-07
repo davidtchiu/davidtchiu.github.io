@@ -36,18 +36,23 @@ Enter 2 to print histogram.
 Enter 3 to return to inputting more strings.
 Enter 4 to quit.
 ```
+###### Starter Code
 
-##### Starter Code
+Starter code for this assignment is provided on the github repo. You must do these steps in order to submit your work to me on github.
 
-Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
+- Login to github, and go here: [https://github.com/davidtchiu/os-wordstat](https://github.com/davidtchiu/os-wordstat). 
 
-- **This step is imperative:** Login to github, and go here: [https://github.com/davidtchiu/cs475-hwk1-wordstat](https://github.com/davidtchiu/cs475-hwk1-wordstat). Choose to _*fork*_ this repository over to your github account to obtain your own copy. Copy the Github URL of _your_ newly forked project. Then follow the rest of the instructions below. From your VS Code remote development environment, open a terminal, and _*clone*_ your forked Github repo down to your local working directory using:
+- Click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+
+- This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
+
+- Now from VS Code, open a terminal, and _*clone*_ your new Github repo down to your local working directory using:
 
   ```
   git clone <your-github-url-for-this-project>
   ```
 
-- This should download the starter code to your in a directory called `cs475-hwk1-wordstat`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
+- This should download the starter code to your in a directory called `os-wordstat`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
 
 - `Makefile` - Do not make changes to this file. It is used for compiling
 - `menu.h` - This file should contain menu-option constants and function declarations
@@ -91,7 +96,7 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
 
     - Now go inside the `stats.c` file to write `updateStats(stats, str)`.
 
-5. Once you read a single `#` (if it's not followed by a NULL character, then you should update stats!), you need to show the options menu. Your program should now accept numerical options. If an unknown option is entered, print an error informing the user and reprompt. Note that there is an option to return to string-input mode.
+5. Once you read a single `#` (if it's not followed by a NULL character, then you should update stats!), you need to show the options menu. Your program should now accept numerical options. If an unknown option is entered, alert the user and exit the program. Note that there is an option to return to string-input mode.
    - This time, write your own function to print the menu. Put the declaration in `menu.h` (I don't care what you name the function.), and put the implementation in `menu.c`.
 
 6. The bars in the histogram that you print must be vertical (see below). Point deductions will be taken if you print horizontal bars. Each of the 26 bars represents the count of letters that your program observed. The frequency itself must sit below the letter label.
@@ -104,6 +109,22 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
     - How do you print a `%` character, if `%` is meaningful in the `printf` format?
     - Under menu options, if the user inputs a string instead of one of the acceptable menu options, your program needs to exit immediately.
     - When counting words, you can use [strtok()](https://cplusplus.com/reference/cstring/strtok/) to split it up (by newline, tab, and space), but unlike other languages, the string will not survive! That is, once you're done looping through all the tokens with strtok, the string will be destroyed.
+
+##### Sample Output
+oops (errorenous option should cause exit)
+
+```$ ./wordstat
+Enter strings (# to stop):
+asdf asdf
+#
+*** WORD STATS MENU ***
+Enter 1 to print stats.
+Enter 2 to print histogram.
+Enter 3 to return to inputting more strings.
+Enter 4 to quit.
+asdf
+Exiting...
+```
 
 ##### Sample Output
 

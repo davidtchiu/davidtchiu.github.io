@@ -140,9 +140,9 @@ To download and submit your homework assignments for this class, you'll need to 
 
 9. That should set you up for authentication to github. We can start our homework.
 
+10. For each assignment, the initial push may still require you to login using this access token as your password, so make sure you don't lose it! (You cannot recover it if you do!)
 
 #### Our First C Program
-
 
 1. From your browser, find my code repository here: [https://github.com/davidtchiu/os-first](https://github.com/davidtchiu/os-first). 
 
@@ -177,16 +177,14 @@ To download and submit your homework assignments for this class, you'll need to 
 
     - Of course, you could've done all that using VS Code's file explorer on the left-hand panel, but it's important to make sure that your terminal is opened *in* that new project directory when you're ready to compile. 
 
-2. With `hwk1.c` open in your editor, type in the following "hello world" code and save it. 
+2. With `hwk1.c` open in your editor, put in the following "hello world" code and save it. 
 
     ```c
     #include <stdio.h>
 
     int main(int argc, char *argv[]) {
-      const int n = 10;   // n is declared to be constant (like 'final' in Java)
-      for (int x = 0; x < n; x++) {
-        printf("Hello world %d of %d!\n", x+1, n);
-      }
+      // TODO -- fill in the code to print "hello world" ten times
+
       return 0;
     }
     ```
@@ -233,6 +231,14 @@ To download and submit your homework assignments for this class, you'll need to 
 6. It may ask you for your github credentials again. Enter it now -- remember once again to use your "access token" for the password. (You should only have to do this once for the initial push, and all subsequent github actions should bypass this step.)
 
 7. Navigate to your github repository from your browser to make sure that `hwk1.c` exists. If so, you have successfully committed your code and pushed to github! This is how you will submit all assignments in this course.
+
+#### VS Code Tips
+By now, you may have noticed how helpful (or irritating) the AI suggested-fixes can be. I don't think it's a good way of learning C if they are turned on, because it tries to complete (incorrectly frequently) too much code. I would strongly recommend turning this feature off:
+
+- From the VS Code menu, into `Code > Settings`. Then under `Text Editor > Suggestions` which should show you a bunch of options. I simply turned mine off by unchecking `Inline Suggest: Enabled`, but you can browse other options to be less aggressive.
+
+I also found it useful to suppress AI suggestions in your terminal:
+- From the `Code > Settings`, navigate under `Features > Terminal`. A bit down you'll see the option `Integrated › Suggest: Enabled'. I also unchecked that option.
 
 <!-- 
 #### Make Utility and Makefiles: Multi-File Compiling
