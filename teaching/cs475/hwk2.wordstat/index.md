@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk 2: Histograms
+### Hwk 2: Word Stats
 
 
 #### Related Reading
@@ -50,7 +50,6 @@ Starter code for this assignment is provided on the github repo. You are not req
 - This should download the starter code to your in a directory called `cs475-hwk1-wordstat`. After you've done this, you can work freely from VS Code or any other editor. You should see these files inside your new homework directory:
 
 - `Makefile` - Do not make changes to this file. It is used for compiling
-- `defs.h` - This file defines some global constants
 - `menu.h` - This file should contain menu-option constants and function declarations
 - `menu.c` - You will implement the functions declared in `menu.h` in this file
 - `stats.h` - This file should contain constants, `WordStats` struct declaration, function declarations
@@ -80,18 +79,17 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
 3. Inside `stats.h`, declare a structure named `wordstats_t` that can hold the following stats. 
     - Vowel count
     - Consonant count
-    - Non-alphabetical count (including whitespaces)
     - Word count
     - An array that stores the counts of each alphabet
 
 4. We'll use a function to update the above structure for each line of user input that's read.
-    - Still in `stats.h`, below your `wordstat_t` declaration, you'll find the function declaration `void updateStats(wordstats_t *, char *);` that accepts a pointer to your struct, and a string to process. 
+    - Still in `stats.h`, below your `wordstat_t` declaration, you'll find the function declaration `void updateStats(wordstats_t *stats, char *str);` that accepts a pointer to your struct and a string to process. 
     
     - A **function declaration** is just the function header without the implementation. (Not even the input parameters need to have names, but it's okay if they do). We're basically telling the C compiler "this function exists somewhere in these files," so compile confidently if you come across its usage but haven't seen its definition yet!
     
     - Declaring functions seems bit foreign, but is necessary in C if you want to separate your functions into another file. In any file that needs to use this function, we can simply `#include "stats.h"` in the file header.
 
-    - Now go inside the `stats.c` file to write `updateStats()`.
+    - Now go inside the `stats.c` file to write `updateStats(stats, str)`.
 
 5. Once you read a single `#` (if it's not followed by a NULL character, then you should update stats!), you need to show the options menu. Your program should now accept numerical options. If an unknown option is entered, print an error informing the user and reprompt. Note that there is an option to return to string-input mode.
    - This time, write your own function to print the menu. Put the declaration in `menu.h` (I don't care what you name the function.), and put the implementation in `menu.c`.
@@ -102,40 +100,46 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
 
 7. Your `main()` function should create a wordstat struct, and handle the user input.
 
+8. Things to watch out for:
+    - How do you print a `%` character, if `%` is meaningful in the `printf` format?
+    - Under menu options, if the user inputs a string instead of one of the acceptable menu options, your program needs to exit immediately.
+    - When counting words, you can use [strtok()](https://cplusplus.com/reference/cstring/strtok/) to split it up (by newline, tab, and space), but unlike other languages, the string will not survive! That is, once you're done looping through all the tokens with strtok, the string will be destroyed.
+
 ##### Sample Output
 
 ```
-$ ./wordstat 
+$ ./wordstat
 Enter strings (# to stop):
 APPle caT
 orangE goat
 greenish blue fish
 #
 *** WORD STATS MENU ***
-Enter 1 to print frequencies.
+Enter 1 to print stats.
 Enter 2 to print histogram.
 Enter 3 to return to inputting more strings.
 Enter 4 to quit.
 1
 
+Words = 7 , Average Word Length = 4.86
 Vowels = 14 (41.18%), Consonants = 20 (58.82%), Total= 34
 
 *** WORD STATS MENU ***
-Enter 1 to print vowel and consonant frequency.
+Enter 1 to print stats.
 Enter 2 to print histogram.
 Enter 3 to return to inputting more strings.
 Enter 4 to quit.
 2
-        *                                           
-*       *                                           
-*       *   *                                       
-*       *   * * *     *   * * *   * * *             
-* * *   * * * * *     *   * * *   * * * *           
-a b c d e f g h i j k l m n o p q r s t u v w x y z 
-4 1 1 0 5 1 3 2 2 0 0 2 0 2 2 2 0 2 2 2 1 0 0 0 0 0 
+            *                                                                 
+*           *                                                                 
+*           *     *                                                           
+*           *     *  *  *        *     *  *  *     *  *  *                    
+*  *  *     *  *  *  *  *        *     *  *  *     *  *  *  *                 
+a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z  
+4  1  1  0  5  1  3  2  2  0  0  2  0  2  2  2  0  2  2  2  1  0  0  0  0  0  
 
 *** WORD STATS MENU ***
-Enter 1 to print frequencies.
+Enter 1 to print stats.
 Enter 2 to print histogram.
 Enter 3 to return to inputting more strings.
 Enter 4 to quit.
@@ -144,33 +148,36 @@ Enter strings (# to stop):
 grey SHARK
 !!@@!##
 @#@#@#@#
+#bruh bruh bruh              
 #
 *** WORD STATS MENU ***
-Enter 1 to print frequencies.
+Enter 1 to print stats.
 Enter 2 to print histogram.
 Enter 3 to return to inputting more strings.
 Enter 4 to quit.
 1
 
-Vowels = 16 (37.21%), Consonants = 27 (62.79%), Total= 43
+Words = 14 , Average Word Length = 5.07
+Vowels = 19 (34.55%), Consonants = 36 (65.45%), Total= 55
 
 *** WORD STATS MENU ***
-Enter 1 to print frequencies.
+Enter 1 to print stats.
 Enter 2 to print histogram.
 Enter 3 to return to inputting more strings.
 Enter 4 to quit.
 2
-        *                                           
-*       *                                           
-*       *   *                     *                 
-*       *   * *                   * *               
-*       *   * * *     *   * * *   * * *             
-* * *   * * * * *   * *   * * *   * * * *       *   
-a b c d e f g h i j k l m n o p q r s t u v w x y z 
-5 1 1 0 6 1 4 3 2 0 1 2 0 2 2 2 0 4 3 2 1 0 0 0 1 0 
+                                                   *                          
+            *        *                             *                          
+*           *        *                             *                          
+*  *        *     *  *                             *        *                 
+*  *        *     *  *                             *  *     *                 
+*  *        *     *  *  *        *     *  *  *     *  *  *  *                 
+*  *  *     *  *  *  *  *     *  *     *  *  *     *  *  *  *           *     
+a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z  
+5  4  1  0  6  1  4  6  2  0  1  2  0  2  2  2  0  7  3  2  4  0  0  0  1  0  
 
 *** WORD STATS MENU ***
-Enter 1 to print frequencies.
+Enter 1 to print stats.
 Enter 2 to print histogram.
 Enter 3 to return to inputting more strings.
 Enter 4 to quit.
@@ -178,11 +185,10 @@ Enter 4 to quit.
 Error: Unknown option 19.
 
 *** WORD STATS MENU ***
-Enter 1 to print frequencies.
+Enter 1 to print stats.
 Enter 2 to print histogram.
 Enter 3 to return to inputting more strings.
 Enter 4 to quit.
-4
 Exiting...
 ```
 
@@ -192,12 +198,11 @@ Exiting...
 This assignment will be graded out of 20 points:
 
 [1pt] Appropriate constants have been defined
-[1pt] Array(s) and strings are created using a constant length
-[6pt] Your program handles multiple-word inputs (with spaces)
-[4pt] Your program updates the histogram appropriately
-[5pt] Your program prints a vertical (not horizontal) histogram
-[1pt] Basic error checking is handled, such as entering invalid menu options.
-[1pt] Your program runs repeatedly until sentinel inputs are entered
+[3pt] Your program handles multiple-word inputs (with spaces)
+[4pt] Your program updates the stats and histogram appropriately
+[4pt] Your program prints a vertical (not horizontal) histogram
+[4pt] Basic error checking is handled, such as entering invalid menu options
+[3pt] Your program runs repeatedly until # is entered, or if a string is entered erroneously
 [1pt] Your program observes good style and commenting.
 ``` 
 
