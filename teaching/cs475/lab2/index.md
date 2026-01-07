@@ -279,7 +279,7 @@ Every piece of data in your program, whether it's a  variable or a literal (like
 
   - You can also create a pointer to a `void` data type, which seems odd at first. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. (Hint: Think generics in Java).
 
-##### Part 3: Notepads and Street Addresses
+##### Part 3: Pointer Operators: &, *
 Let's put everything together.
 
 1. Address-Of Operator: Given a variable var, `&var` returns the address of var's location in memory.
@@ -287,11 +287,7 @@ Let's put everything together.
 2. A pointer variable stores the address of some data. This data can be a variable, an array, or even another pointer. To declare a pointer, you use the following syntax:
 
    ```c
-   data-type *ptr;          // Pointer to a dataType
-   ```
-   or
-   ```c
-   data-type* ptr;          // (It doesn't matter what the * is appended to)
+   data-type *ptr;          // Pointer to some data that's described by the given data type.
    ```
 
    When assigning a pointer `q` to another pointer `p`, it causes them both to point to the same data.
@@ -466,7 +462,11 @@ Have you ever wished that a function/method could return more than one thing? To
        *sum = x + y;
      }
      ```
-<!-- 
+
+  - **Do this output parameter exercise:** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? 
+
+<!--
+
    - Here's another example:
 
      ```c
@@ -509,7 +509,6 @@ Have you ever wished that a function/method could return more than one thing? To
      ```
 -->
 
-  - **Do this output parameter exercise:** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? 
 
 
 ##### Part 6: Connection to Arrays  (Pointer Arithmetic)

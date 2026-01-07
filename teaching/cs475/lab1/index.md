@@ -285,8 +285,8 @@ A string in C is a sequence of $$k$$ `char`s stored in an array of size $$n$$, w
   str[11] = '\0';
   ```
 
-- After this initialization, the contents of `str` are shown below. The null character is appended at `str[11]` automatically. Although the remaining unused characters (`str[12]`, ..., `str[19]`) are shown in the figure as having `'\0'`, C may not make any guarantee of this.
-  ![](figures/str1.png)
+- After this initialization, the contents of `str` are shown below. The null character is appended at `str[11]` automatically. Although the remaining unused characters (`str[12]`, ..., `str[19]`) are shown in the figure as having `'\0'`, C may not make any guarantee of this.\
+  <img src="figures/str1.png" width="65%" />
 
 <!-- 
 - Like Java, a string-literal in C is enclosed in double-quotes. When assigned as follows, it has the same effect as the code above. The NULL character does not appear in this syntax. however, string initialization is the **only time** you can assign a literal to a string variable.
@@ -489,7 +489,7 @@ C is not an object-oriented language, but that doesn't mean you can't create use
 - To create a `struct` type in C:
 
   ```c
-  struct name-of-struct {
+  struct structure-name {
       type-0 member-0;
       type-1 member-1;
       // ... other members
@@ -577,9 +577,9 @@ typedef <data-type> <alias>;
 - Typedefs are particularly useful when alaising `structs`. It's mildly annoying that we have to use `struct Point p;` syntax just to declare a `struct Point` variable. Using `typedef` totally optional here, but it *would* make the syntax a little easier on the eyes:
 
   ```c
-  typedef struct <struct-name> {
+  typedef struct <structure-name> {
       //members
-  } <struct-name>;
+  } <structure-name>;
   ```
 
   We can now declare the `Point` struct as follows,
