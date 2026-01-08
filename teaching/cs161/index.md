@@ -3,11 +3,24 @@
 Instructor: David Chiu\
 Lecture: Mon/Fri 12:00 - 1:20 in TH 409\
 Lab: Thu 2:00 - 3:50 in TH 409\
-Office Hours: Drop-in or schedule appointment below:
+Office Hours: Open door or schedule appointment below:
 <!-- Google Calendar Appointment Scheduling begin -->
-<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1kQwoAUNREVqy6IahShY-uxo6OLEly2xzryDdRcAR5Aek3QAq5D9dyYbCEJXb0uKxAQsK1yBfy?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1kQwoAUNREVqy6IahShY-uxo6OLEly2xzryDdRcAR5Aek3QAq5D9dyYbCEJXb0uKxAQsK1yBfy?gv=true',
+      color: '#D81B60',
+      label: 'Book an appointment',
+      target,
+    });
+  });
+})();
+</script>
 <!-- end Google Calendar Appointment Scheduling -->
-
 
 <!-- David's schedule generator! Do not touch -->
 <div id="schedule">&nbsp;</div>
