@@ -36,12 +36,12 @@ Your overall grade is broken down as as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Participation | 5% |
+| Homework Assignments | 33% |
 | Lab Assignments | 10% |
-| Homework Assignments | 30% |
 | Midterm I | 15% |
-| Midterm II | 18% |
-| Final Exam (comprehensive) | 22% |
+| Midterm II | 15% |
+| Final Exam (comprehensive) | 20% |
+| Participation | 7% |
 
 ##### Lab Assignments
 Labs provide a low stakes, hands-on, and collaborative way to learn the materials. As such, they only represent 10% of your final grade. You may choose to work alone, or with whomever you like during lab. **However, you must submit your own work.**

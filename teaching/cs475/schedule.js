@@ -7,7 +7,7 @@ let days = {
       url: "syllabus"
     },
     {
-      name: "Notes and Sample Code (on Canvas)",
+      name: "Notes and Course Code (on Canvas)",
       url: "https://canvas.pugetsound.edu"
     },
     {
@@ -25,62 +25,63 @@ let days = {
         name: "Hwk 1 (vscode)",
         title: "Setting up VS Code",
         url: "hwk1.vscode/",
-        due: "1/24/2025", // Fri, wk 1
-      },
-      {
-        name: "Hwk 2 (heapsort)",
-        title: "Pointers, Arrays, Strings",
-        url: "hwk2.sorting/",
-        due: "2/3/2025",  // Mon, wk 3
-      },
-      {
-        name: "Hwk 3 (ls2)",
-        title: "Making System Calls",
-        url: "hwk3.ls2/",
-        due: "2/14/2025",   // Fri, wk 4
-      },
-      {
-        name: "Hwk 4 (dsh)",
-        title: "David Shell",
-        url: "hwk4.dsh/",
-        due: "3/3/2025", // Mon, wk 7
-      },
-      {
-        name: "Hwk 5 (sobel)",
-        title: "Parallel Edge Detection",
-        url: "hwk5.sobel/",
-        due: "3/17/2025",  // Mon, during break wk 8
-      },
-      {
-        name: "Hwk 6 (ts_hashmap)",
-        title: "Thread-Safe Hashmap",
-        url: "hwk6.hashmap/",
-        due: "4/9/2025", // after break, Wed, wk 11
-      },
-      {
-        name: "Hwk 7 (phils)",
-        title: "Deadlock-Free Philosophers",
-        url: "hwk7.phils/",
-        due: "4/21/2025",
+        due: "1/23/2026", // Fri, wk 1
       },
       // {
-      //   name: "Hwk 7 (OneLaneBridge)",
-      //   title: "One Lane Bridge ",
-      //   url: "hwk7.thebridge/",
-      //   due: "4/16/2025", // Wed, wk 13
+      //   name: "Hwk 2 (heapsort)",
+      //   title: "Pointers, Arrays, Strings",
+      //   url: "hwk2.sorting/",
+      //   due: "2/2/2026",  // Mon, wk 3
       // },
       // {
-      //   name: "Hwk 7 (bankers)",
-      //   title: "Banker's Algorithm",
-      //   url: "hwk7.bankers/",
-      //   due: "4/21/2025",
+      //   name: "Hwk 3 (ls2)",
+      //   title: "Making System Calls",
+      //   url: "hwk3.ls2/",
+      //   due: "2/13/2026",   // Fri, wk 4
       // },
-      {
-        name: "Hwk 8",
-        title: "Technical Report",
-        url: "hwk8.report/",
-        due: "5/9/2025",  // Fri, finals wk
-      },
+      // {
+      //   name: "Hwk 4 (dsh)",
+      //   title: "David Shell",
+      //   url: "hwk4.dsh/",
+      //   due: "2/25/2026", // Wed, wk 6
+      // },
+      // {
+      //   name: "Hwk 5 (sobel)",
+      //   title: "Edge Detection",
+      //   url: "hwk5.sobel/",
+      //   due: "3/9/2026",  // Mon, wk 8
+      // },
+      // {
+      //   name: "Hwk 6 (ts_hashmap)",
+      //   title: "Thread-Safe Hashmap",
+      //   url: "hwk6.hashmap/",
+      //   due: "3/27/2026", // Fri, wk 10
+      // },
+      // {
+      //   name: "Hwk 7 (phils)",
+      //   title: "Deadlock-Free Philosophers",
+      //   url: "hwk7.phils/",
+      //   due: "4/10/2026", // Fri, wk 12
+      // },
+      // {
+      //   name: "Hwk 8",
+      //   title: "Technical Report",
+      //   url: "hwk8.report/",
+      //   due: "4/24/2026",  // Fri, wk 14
+      // },
+      // // {
+      // //   name: "Hwk 7 (OneLaneBridge)",
+      // //   title: "One Lane Bridge ",
+      // //   url: "hwk7.thebridge/",
+      // //   due: "4/16/2025", // Wed, wk 13
+      // // },
+      // // {
+      // //   name: "Hwk 7 (bankers)",
+      // //   title: "Banker's Algorithm",
+      // //   url: "hwk7.bankers/",
+      // //   due: "4/21/2025",
+      // // },
+
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
@@ -108,9 +109,9 @@ let days = {
     "Intro: What's an OS?",
     "Intro: A brief history of computer systems",
     // wk 2
-    "<font color='blue'>Lab 1 (Attendance required; Bring laptops)</font>",
-    "<font color='blue'>Lab 2 (Attendance required; Bring laptops)</font>",
-    "<font color='blue'>Lab 3 (Attendance required; Bring laptops)</font>",
+    "<font color='blue'>Lab 1 (bring laptop)</font>",
+    "<font color='blue'>Lab 2 (bring laptop)</font>",
+    "<font color='blue'>Lab 3 (bring laptop)</font>",
     // wk 3
     "Intro: batch processing, multiprogramming, timesharing",
     "Invoking the OS: Bootstrapping, interrupts",

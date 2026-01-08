@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: ls2 -  A Suped-Up `ls`
+### Hwk 3: ls2 -  A Suped-Up `ls` Command
 
 
 #### Related Reading
@@ -17,7 +17,7 @@
 
 
 
-#### Before You Get Started: Debugging with valgrind (Read This!)
+#### Preamble: Debugging Memory Errors with Valgrind (Read This!)
 Valgrind is a tool to help you debug access errors for memory that you allocated on the heap using `malloc()`. Believe me, it will save you a bunch of time and tears. To use valgrind, you just have to compile your C code using the `-g` flag (don't worry, the provided `Makefile` already builds this in). Then run your program like this:
 
 ```bash
@@ -38,7 +38,6 @@ int main(int argc, char *argv[]) {
     buf1[i] = 0;
   }
   buf1[20] = 0;
-
   return 0;
 }
 ```
@@ -85,9 +84,7 @@ Here valgrind *suspects* that it has detected a memory leak. Reading the report 
 #### Assignment
 As you may already know,  the `ls` UNIX command lists all files and directories in a given directory. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. On top of the recursive descent into subdirectories, your version of `ls` must also also be able to perform a filename search.
 
-###### Starter Code
 
-Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
 
 #### Starter Code
 
@@ -108,12 +105,12 @@ Starter code for this assignment is provided on the github repo. You must do the
 
 - This should download the starter code in a directory named after your Github repository. 
 
-###### Working Solution
+#### Working Solution
 
 I have included a working solution of my program along with the starter code. The binary executable file is called `ls2Sol`. 
 
 
-###### Detailed Instructions
+#### Detailed Instructions
 
 0. For ease of compiling, I've provided you with the `Makefile`. Simply run `make` on the command line to compile your code.
 
@@ -122,7 +119,7 @@ I have included a working solution of my program along with the starter code. Th
     ```bash
     $ ./ls2 <path> [exact-match-pattern]
     ```
-   Only the `<path>` argument is required to be given, and your program should re-prompt the command if no arguments are given, or if more than two are given. Here's an example:
+   Only the `<path>` command-line argument is required to be given, and your program should re-prompt the command if no arguments are given, or if more than two are given. Here's an example:
     ```bash
     $ ./ls2 
     Usage: ./ls2 <path> [exact-match-pattern]
@@ -135,7 +132,7 @@ I have included a working solution of my program along with the starter code. Th
     - `int argc` gives a count of the number of terms given on the command line (including `"./ls2"` as `argv[0]`)
     - `char *argv[]` is an array of strings, with `argv[i]` being the ith term given on the command line
 
-2. Your program will then run in one of *two modes*:
+2. ls2 operates in one of *two modes*:
 
     - **Mode 1:** The first mode runs when the user only passes the `path`. Your program should attempt to open the directory given by `path` and recursively show all files' name and size (in bytes). You do not need to worry about displaying anything other than regular files and directories (ignore anything that isn't a directory or a regular file).
 
@@ -260,7 +257,6 @@ I have included a working solution of my program along with the starter code. Th
     - You can use the given stack to store this set of files/directories that you wish to print at the end.
 
 4. **Making System Calls**
-
     - To open up directories and check what's inside, you will want to check out the following system calls through `#include <unistd.h>`:`opendir()`, `readdir()`, `closedir()`.
     - When you read the contents of a directory, ignore any references to `.` and `..`.
       - Why? In most file systems, `.` refers to the current directory, and `..` means the parent directory. These exist in *every* directory you open. So if you recursively open those up, then you'll just end up in an infinite recursion!
@@ -283,19 +279,19 @@ I have included a working solution of my program along with the starter code. Th
 #### Hints and Tips
 1. Start as early as possible. This assignment (esp. Mode 2) is trickier than what meets the eye. 
 
-2. For both modes, you will need to create a string that stores the current path to a file. For instance, you would need a string to input into `stat()` and you may need to store that path string onto your stack for the printing of mode-2 results. You *must* create these strings on the heap using `malloc()` because any string you create on the program stack will likely be reaped by the time you print off *your* stack. When that's the case, your stack would store stores pointers to garbage.
+2. For both modes, you will need to create a string that stores the current path to a file. For instance, you would need a string to input into the `stat()` system call and you may need to store that path string onto your stack for the printing of mode-2 results. You *must* create these strings on the heap using `malloc()` because any string you create on the program stack will likely be reaped by the time you print off *your* stack. When that's the case, your stack would store stores pointers to garbage.
 
-3. Related to the first tip, there will be times where you'll need to build up strings. Sure, you can have a bunch of `strcpy()` and `strcat()` statements for this purpose. Or you might find [`snprintf()`](https://www.geeksforgeeks.org/snprintf-c-library/) to be useful. 
+3. Related to the first tip, there will be times where you'll need to build up strings. You might find [`snprintf()`](https://www.geeksforgeeks.org/snprintf-c-library/) to be useful. 
 
 
 
 #### Grading
 
 ```
-This assignment will be graded out of 50 points:
+This assignment will be graded out of 60 points:
 [5pt] Your program recursively descends down all subdirectories.
 [10pt] Implementation of Mode 1.
-[25pt] Implementation of Mode 2.
+[35pt] Implementation of Mode 2.
 [5pt] Your output of files and directories conforms to the specified format.
 [1pt] Your program properly resolves command line arguments.
 [4pt] Your program is free of memory leaks and dangling pointers. (Use valgrind!)

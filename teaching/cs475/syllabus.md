@@ -52,10 +52,10 @@ Your overall grade is broken down as as follows:
 |   | % Weight |
 | :--- | :--- |
 | Participation | 7% |
-| Homework Assignments | 30% |
-| Technical Report | 10% |
+| Homework Assignments | 35% |
+| Technical Report | 8% |
 | Midterm I | 15% |
-| Midterm II | 18% |
+| Midterm II | 15% |
 | Final Exam (comprehensive) | 20% |
 
 
