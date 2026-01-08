@@ -1,7 +1,7 @@
 ## CS 475 - Operating Systems
 
 ### Hwk 2: Word Stats
-
+You're ready to tackle your first real C program for this class! This assignment tries to incorporate almost all of the concepts you learned in the first two "C labs" to make sure you start with strong foundation.  You are to write a program that reports some basic statistics on user-input strings. When your program begins, it should ask the user to enter a string. This assignment will hit on important C concepts, emphasizing pass-by-reference, user-input, structs, string manipulation, and pointers.
 
 #### Related Reading
 
@@ -10,7 +10,7 @@
 
 #### Instructions
 
-Open your VS Code and get connected to your Remote Development environment. If you don't know what I'm referring to, complete [Hwk 1](../hwk1.vscode).
+Open your VS Code and get connected to your Remote C Development environment. If you don't know what I'm referring to, complete [Hwk 1](../hwk1.vscode).
 
   - Once you're logged in, you can open a terminal from the `Terminal` menu.
 
@@ -24,18 +24,6 @@ Open your VS Code and get connected to your Remote Development environment. If y
 
 This assignment does not require concepts that you learned in Lab 3. Therefore, you do not need to `malloc` any memory to complete the assignment. This assignment is all about the fundamentals, and work involving pointers.
 
-#### Assignment: Word Stats (Graded)
-
-You're ready to write your first C program for this class! This assignment tries to incorporate almost all of the concepts you learned in the first two "C labs" to make sure you start with strong foundation. Specifically, the focus here is on structs, string manipulation and pointers. 
-
-You are to write a program that reports some basic statistics on user-input strings. When your program begins, it should ask the user to enter a string. Once it is entered, your program should parse all words out of this string, and maintain some basic stats. Continue prompting for more input until the user enters `#`, at which point your program outputs a menu with the following options:
-
-```txt
-Enter 1 to print frequencies.
-Enter 2 to print histogram.
-Enter 3 to return to inputting more strings.
-Enter 4 to quit.
-```
 ###### Starter Code
 
 Starter code for this assignment is provided on the github repo. You must do these steps in order to submit your work to me on github.
@@ -74,11 +62,14 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
 
 ##### Program Requirements
 
+
+
 1. The program starts by accepting user inputs (strings), not by printing the options menu. Strings are submitted by the user one line at a time. Each string should be processed (update your word stats structure), before accepting the next string. Continue accepting strings until a line with the singular value `#` is read, at which point, you should print the options menu.
 
-2. You may not assume that a user always enters a single word per line. If the user enters multiple words on the same line, you should tokenize each one (because need to count the number of words too). You may assume that the entire line of user-input cannot exceed `128` characters. (I have defined a constant `MAX_INPUT_LEN` to store 128 in `main.c`.) Ignore any characters that is input beyond this limit. 
+2. You may not assume that a user always enters a single word per line of input. If the user enters multiple words on the same line, you should tokenize each one (because need to count the number of words too). You may, however, assume that the entire line of user-input cannot exceed `128` characters. (I have defined a constant `MAX_INPUT_LEN` to store 128 in `main.c`.) Ignore any characters that is input beyond this limit. 
 
     - You should use the `fgets()` function, given in C's `stdio.h` library, to obtain a line of input (with spaces) from the user.
+      - Beware, the `\n` (newline) character will *also* be captured, where the user pressed `enter` to submit the line.
     - To split a string into tokens, you should look into using the `strtok()` function given in the `string.h` library.
 
 3. Inside `stats.h`, declare a structure named `wordstats_t` that can hold the following stats. 
@@ -86,6 +77,7 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
     - Consonant count
     - Word count
     - An array that stores the counts of each alphabet
+    - (You may ignore counting symbol that is not an alphabet)
 
 4. We'll use a function to update the above structure for each line of user input that's read.
     - Still in `stats.h`, below your `wordstat_t` declaration, you'll find the function declaration `void updateStats(wordstats_t *stats, char *str);` that accepts a pointer to your struct and a string to process. 
@@ -97,9 +89,20 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
     - Now go inside the `stats.c` file to write `updateStats(stats, str)`.
 
 5. Once you read a single `#` (if it's not followed by a NULL character, then you should update stats!), you need to show the options menu. Your program should now accept numerical options. If an unknown option is entered, alert the user and exit the program. Note that there is an option to return to string-input mode.
+
    - This time, write your own function to print the menu. Put the declaration in `menu.h` (I don't care what you name the function.), and put the implementation in `menu.c`.
 
-6. The bars in the histogram that you print must be vertical (see below). Point deductions will be taken if you print horizontal bars. Each of the 26 bars represents the count of letters that your program observed. The frequency itself must sit below the letter label.
+   - Your program should output a menu with the following options:
+
+      ```txt
+      Enter 1 to print frequencies.
+      Enter 2 to print histogram.
+      Enter 3 to return to inputting more strings.
+      Enter 4 to quit.
+      ```
+
+
+6. These menu options should be self-explanatory. For the "histogram," the bars in must be printed vertically (see outputs below). Each of the 26 bars represents the count of letters that your program observed. The frequency must sit below the letter label.
 
    - Write a function in `stats.h`/`stats.c` to print the histogram given a pointer to your struct.
 
@@ -113,7 +116,8 @@ Compiling a multi-file C program can be tricky, and requires multiple steps and 
 ##### Sample Output
 oops (errorenous option should cause exit)
 
-```$ ./wordstat
+```txt
+$ ./wordstat
 Enter strings (# to stop):
 asdf asdf
 #
@@ -215,7 +219,7 @@ Exiting...
 
 #### Grading
 
-```
+```txt
 This assignment will be graded out of 20 points:
 
 [1pt] Appropriate constants have been defined
