@@ -12,14 +12,6 @@ let days = {
       name: "Notes and Sample Code (on Canvas)",
       url: "https://canvas.pugetsound.edu"
     },
-    {
-      name: "Download BlueJ",
-      url: "https://bluej.org"
-    },
-    {
-      name: "Download Google Drive App",
-      url: "https://www.google.com/drive/download/"
-    },
   ],
   assignments: {
     homework: [
