@@ -1,12 +1,12 @@
 # Note to self
-- Need more code along labs! Maybe start all labs as code alongs?
-- Insist that final exams are cumulative
-- Gotta stop telling students that CS 261 is a litmus test for whether you'll like the major. Things change from CS 261.
 
 # TODO
-- Consider putting sorting right after recursion? Could be a good lead into BSTs. (i.e., what if there was a data structure that maintains order for us?)
+- I need to put sorting right after recursion. Could be a good lead into BSTs. (i.e., what if there was a data structure that maintains order for us?)
+- Need more code along labs! Maybe start all labs as code alongs?
+- Gotta stop telling students that CS 261 is a litmus test for whether you'll like the major. Things change from CS 261.
 
 # Change Log
+- Insist that final exams are cumulative
 - Replace Hwk 7 (Huffman) with CityTracker (Fall 2025)
 - Replace Hwk 5 RCV with HTML Syntax Checker (Fall 2025)
 - Skip priority queues altogether as a subject until this class is DS-only (2025)
