@@ -30,6 +30,8 @@ const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#d14";
 const NOTTODAY_BG_COLOR = "#494949";
 
+const SHOW_RESOURCES_PER_WEEK = true;
+
 /**
  * This class can be used to generated an HTML course calendar.
  */
@@ -114,12 +116,13 @@ class CourseCalendar {
     // table and thead
     let table = document.createElement("table");
 
-    // header
+    // week header
     let thead = document.createElement("thead");
     let theadRow = document.createElement("tr");
     let wkHead = document.createElement("th");
     wkHead.innerHTML = "Wk";
     theadRow.appendChild(wkHead);
+    // days of the week
     for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
       if (this.format[dayCnt] != WKD) {
         let th = document.createElement("th");
@@ -127,6 +130,9 @@ class CourseCalendar {
         th.innerHTML = `${dayLabels[dayCnt]}`;
         theadRow.appendChild(th);
       }
+    }
+    if (SHOW_RESOURCES_PER_WEEK) {
+      theadRow.appendChild(document.createElement("th")); // resources
     }
     thead.appendChild(theadRow);
     table.appendChild(thead);
@@ -190,6 +196,11 @@ class CourseCalendar {
         // next day
         currentDate.setDate(currentDate.getDate() + 1);
       }
+
+    if (SHOW_RESOURCES_PER_WEEK) {
+      tr.appendChild(document.createElement("th")); // resources
+    }
+
       table.appendChild(tr);
       weekNum++;
     }
