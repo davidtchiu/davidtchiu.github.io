@@ -202,6 +202,7 @@ class CourseCalendar {
       td.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
       let dayContent = document.createElement("p");
       dayContent.style.fontSize = "80%";
+      dayContent.style.whiteSpace = "nowrap";
       dayContent.innerHTML += `${this.days.lectures.shift()}`;
       td.appendChild(dayContent);
       tr.appendChild(td);

@@ -84,23 +84,23 @@ let days = {
 
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
-    labs: [
-      {
-        name: "Lab 1",
-        title: "The Basics of C",
-        url: "tut1/",
-      },
-      {
-        name: "Lab 2",
-        title: "Arrays, Structs, and Pointers",
-        url: "tut2/",
-      },
-      {
-        name: "Lab 3",
-        title: "Dynamic Memory Allocation",
-        url: "tut3/",
-      },
-    ],
+    // labs: [
+    //   {
+    //     name: "Lab 1",
+    //     title: "The Basics of C",
+    //     url: "tut1/",
+    //   },
+    //   {
+    //     name: "Lab 2",
+    //     title: "Arrays, Structs, and Pointers",
+    //     url: "tut2/",
+    //   },
+    //   {
+    //     name: "Lab 3",
+    //     title: "Dynamic Memory Allocation",
+    //     url: "tut3/",
+    //   },
+    // ],
   },
 
   lectures: [
@@ -110,9 +110,9 @@ let days = {
     "Intro: A brief history of computer systems",
     "",
     // wk 2
-    "<font color='blue'>Lab 1 (bring laptop)</font>",
-    "<font color='blue'>Lab 2 (bring laptop)</font>",
-    "<font color='blue'>Lab 3 (bring laptop)</font>",
+    "<font color='blue'>Tutorial 1 (C Basics)</font>",
+    "<font color='blue'>Tutorial 2 (Pointers)</font>",
+    "<font color='blue'>Tutorial 3 (Memory Management)</font>",
     "<a href='tut1'>C tutorial 1</a><br/><a href='tut2'>C tutorial 2</a><br/><a href='tut3'>C tutorial 3</a>",
         // wk 3
     "Intro: batch processing, multiprogramming, timesharing",
