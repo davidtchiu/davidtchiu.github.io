@@ -104,7 +104,7 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
     "Intro: A brief history of computer systems",
-    "<a href='notes/CS475_1_Intro.pdf'>Notes 1: Intro</a>",
+    "<a href='notes/CS475_1-intro.pdf'>Lecture Notes 1 (what is OS?)</a>",
     // wk 2
     "<font color='blue'>Tutorial 1 (C Basics)</font>",
     "<font color='blue'>Tutorial 2 (Pointers)</font>",
@@ -114,21 +114,22 @@ let days = {
     "Intro: batch processing, multiprogramming, timesharing",
     "Invoking the OS: Bootstrapping, interrupts",
     "Invoking the OS: Interrupts, traps and system calls",
-    "",
+    "<a href='notes/CS475_2-kernel.pdf'>Lecture Notes 2 (Invoking OS)</a>",
     // wk 4
     "Processes: switching, PCB, address space",
     "Processes: fork(), exec() system calls",
     "Processes: wait(); zombies and orphans",
-    "",
+    "<a href='notes/CS475_3-processes.pdf'>Lecture Notes 3 (Concurrency and Processes)</a>",
     // wk 5
     "Threads: motivation and kernel support",
     "Threads: pthread library",
     "Threads: user-level vs kernel-level",
-    "",
+    "<a href='notes/CS475_4-threads1.pdf'>Lecture Notes 4a (Threads)</a>",
     // wk 6
     "Par: Parallel architectures",
     "Par: Parallel computing patterns",
     "Par: multithreaded code examples, Amdahl's Law",
+    "<a href='notes/CS475_4-threads2.pdf'>Lecture Notes 4b (Parallel Programming)</a>" +
     "<a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>Free Lunch Is Over</a><br/>" +
       "<a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
       "<a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>",
@@ -143,7 +144,7 @@ let days = {
     "Sched: RR, SRTF, MLFQ",
     // "Sched: hyperthreading, multicore considerations",
     "Sync: critical section problem",
-    "",
+    "<a href='notes/CS475_5-sched.pdf'>Lecture Notes 5 (Scheduling)</a>",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
@@ -153,7 +154,9 @@ let days = {
     "Sync: atomicity and spinlocks",
     "Sync: blocking locks",
     "Sync: semaphores",
-    "<a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spin vs. Blocking (locks)</a><br/>" + 
+    "<a href='notes/CS475_6-sync1.pdf'>Lecture Notes 6a (Mutexes)</a>" +
+    "<a href='notes/CS475_6-sync2.pdf'>Lecture Notes 6b (Semaphores)</a>" +
+      "<a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spin vs. Blocking (locks)</a><br/>" + 
       "<a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
     // wk 11
     // "Sync: monitors and condition variables",
@@ -161,24 +164,24 @@ let days = {
     "Sync: more semaphores",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "<a href='RG2.pdf'>Exam 2 Study Guide</a> (<a href='RG2Sol.pdf'>selected soln</a>)<br/>" +
+    "<a href='RG2.pdf'>Exam 2 Study Guide</a> (<a href='RG2Sol.pdf'>soln</a>)<br/>" +
         "<a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
         "<a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
     "Deadlocks",
     "DL: Deadlock detection",
     "DL: Bankers algorithm",
-    "",
+    "<a href='notes/CS475_7-deadlock.pdf'>Lecture Notes 7 (Deadlocks)</a>" +
     // wk 13
     "Memory Management: virtual addressing",
     "MM: partitioning and segmentation",
     "MM: segmentation",
-    "",
+    "<a href='notes/CS475_8-mmu.pdf'>Lecture Notes 8 (Memory Management)</a>" +
     // wk 14
     "MM: paging",
     "MM: TLB and page faults",
     "Virtual Memory: demand paging",
-    "",
+    "<a href='notes/CS475_6-sync1.pdf'>Lecture Notes 9 (Virtual Memory)</a>" +
     // wk 15
     "VM: page replacement",
     "VM: clock algorithm",
