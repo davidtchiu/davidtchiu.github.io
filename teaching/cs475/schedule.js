@@ -138,7 +138,7 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     "Scheduling: goals and metrics; burst model",
-    "Exam 1 Review: <a href='RG1.pdf'>Part 1</a> (<a href='RG1Sol.pdf'>soln</a>), <a href='RG2.pdf'>Part 2</a> (<a href='RG2Sol.pdf'>soln</a>),",
+    "Exam 1 Study Guide: <a href='RG1.pdf'>Part 1</a> (<a href='RG1Sol.pdf'>soln</a>), <a href='RG2.pdf'>Part 2</a> (<a href='RG2Sol.pdf'>soln</a>),",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
     "Sched: SJF, SRTF, prediction",
@@ -165,7 +165,7 @@ let days = {
     "Sync: more semaphores",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "<a href='RG2.pdf'>Exam 2 Study Guide</a> (<a href='RG2Sol.pdf'>soln</a>)<br/>" +
+    "Exam 2 Study Guide: <a href='RG1.pdf'>Part 1</a> (<a href='RG1Sol.pdf'>soln</a>), <a href='RG2.pdf'>Part 2</a> (<a href='RG2Sol.pdf'>soln</a>)," +
         "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
         "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
@@ -194,8 +194,8 @@ let days = {
     "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
     "",
     "",
-    "<a href='RG3.pdf'>Final Study Guide</a> (<a href='RG3Sol.pdf'>selected soln</a>)",
-  ],
+    "Final Study Guide: <a href='RG1.pdf'>Part 1</a> (<a href='RG1Sol.pdf'>soln</a>), <a href='RG2.pdf'>Part 2</a> (<a href='RG2Sol.pdf'>soln</a>)"
+    ],
 };
 
 // print out the schedule to HTML
