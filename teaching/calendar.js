@@ -8,7 +8,7 @@ const WKD = 2;
 const OFF = 1;
 const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-//////////////////////// configuration ////////////////////////////
+//////////////////////// configuration constants ////////////////////////////
 const TR = [OFF, LEC, OFF, LEC, OFF, WKD, WKD];
 const MWF = [LEC, OFF, LEC, OFF, LEC, WKD, WKD];
 const MRF = [LEC, OFF, OFF, LEC, LEC, WKD, WKD];
@@ -113,6 +113,7 @@ class CourseCalendar {
   generateHTMLCalendar() {
     // table and thead
     let table = document.createElement("table");
+    table.style.width = "90%";
 
     // week header
     let thead = document.createElement("thead");
@@ -146,7 +147,7 @@ class CourseCalendar {
       wk.innerHTML = weekNum;
       tr.appendChild(wk);
 
-      // work on days of the week
+      // days of the week
       for (let dayCnt = 0; dayCnt < this.format.length; dayCnt++) {
         if (this.format[dayCnt] != WKD) {
           let td = document.createElement("td");
@@ -200,7 +201,7 @@ class CourseCalendar {
       td.style.margin = "1px";
       td.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
       let dayContent = document.createElement("p");
-      dayContent.style.fontSize = "75%";
+      dayContent.style.fontSize = "80%";
       dayContent.innerHTML += `${this.days.lectures.shift()}`;
       td.appendChild(dayContent);
       tr.appendChild(td);
