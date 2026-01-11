@@ -7,10 +7,6 @@ let days = {
       url: "syllabus"
     },
     {
-      name: "Notes and Course Code (on Canvas)",
-      url: "https://canvas.pugetsound.edu"
-    },
-    {
       name: "Textbook (Free): Suzanne J. Matthews, Tia Newhall, Kevin C. Webb. Dive into Systems.",
       url: "https://diveintosystems.org/book/"
     },
@@ -108,7 +104,7 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
     "Intro: A brief history of computer systems",
-    "",
+    "<a href='notes/CS475_1_Intro.pdf'>Notes 1: Intro</a>",
     // wk 2
     "<font color='blue'>Tutorial 1 (C Basics)</font>",
     "<font color='blue'>Tutorial 2 (Pointers)</font>",
@@ -133,7 +129,9 @@ let days = {
     "Par: Parallel architectures",
     "Par: Parallel computing patterns",
     "Par: multithreaded code examples, Amdahl's Law",
-    "<a href='https://github.com/davidtchiu/cs475-parSum'>Par Sum</a><br/><a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Par Sort</a>",
+    "<a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>Free Lunch Is Over</a><br/>" +
+      "<a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
+      "<a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>",
     // wk 7
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
@@ -155,7 +153,7 @@ let days = {
     "Sync: atomicity and spinlocks",
     "Sync: blocking locks",
     "Sync: semaphores",
-    "<a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spin vs. Blocking</a><br/>" + 
+    "<a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spin vs. Blocking (locks)</a><br/>" + 
       "<a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
     // wk 11
     // "Sync: monitors and condition variables",
@@ -163,7 +161,7 @@ let days = {
     "Sync: more semaphores",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "<a href='RG2.pdf'>Exam 2 Study Guide</a> (<a href='RG2Sol.pdf'>selected soln</a>)" +
+    "<a href='RG2.pdf'>Exam 2 Study Guide</a> (<a href='RG2Sol.pdf'>selected soln</a>)<br/>" +
         "<a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
         "<a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
