@@ -104,7 +104,7 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
     "Intro: A brief history of computer systems",
-    "Notes #1: <a href='notes/CS475_1-intro.pdf'>What is OS?</a><br/>" +
+    "Notes #1: <a href='https://drive.google.com/open?id=1dkdLnS2wtQvwzzHTcusHgOq7tOhIKJhA&usp=drive_fs'>What is OS?</a><br/>" +
       "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
     // wk 2
     "<font color='blue'>Tutorial 1</font>",
