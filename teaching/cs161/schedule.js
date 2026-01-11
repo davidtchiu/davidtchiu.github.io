@@ -187,7 +187,7 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Introductions: Who are we? Syllabus, What is CS?",
     "Algorithms, hardware, languages; Plus Lab 1: Using BlueJ",
-    "Code",
+    "CodeCodeCodeCodeCodeCodeCode Code",
     // wk 2
     "Reading code: classes,  instance variables, types, assigning, constructors",
     "Reading code: methods; Plus Lab 2: Triangle",
