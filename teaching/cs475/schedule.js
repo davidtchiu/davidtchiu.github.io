@@ -88,17 +88,17 @@ let days = {
       {
         name: "Lab 1",
         title: "The Basics of C",
-        url: "lab1/",
+        url: "tut1/",
       },
       {
         name: "Lab 2",
         title: "Arrays, Structs, and Pointers",
-        url: "lab2/",
+        url: "tut2/",
       },
       {
         name: "Lab 3",
         title: "Dynamic Memory Allocation",
-        url: "lab3/",
+        url: "tut3/",
       },
     ],
   },
@@ -108,72 +108,91 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
     "Intro: A brief history of computer systems",
+    "",
     // wk 2
     "<font color='blue'>Lab 1 (bring laptop)</font>",
     "<font color='blue'>Lab 2 (bring laptop)</font>",
     "<font color='blue'>Lab 3 (bring laptop)</font>",
-    // wk 3
+    "<a href='tut1'>C tutorial 1</a><br/><a href='tut2'>C tutorial 2</a><br/><a href='tut3'>C tutorial 3</a>",
+        // wk 3
     "Intro: batch processing, multiprogramming, timesharing",
     "Invoking the OS: Bootstrapping, interrupts",
     "Invoking the OS: Interrupts, traps and system calls",
+    "",
     // wk 4
     "Processes: switching, PCB, address space",
     "Processes: fork(), exec() system calls",
     "Processes: wait(); zombies and orphans",
+    "",
     // wk 5
     "Threads: motivation and kernel support",
     "Threads: pthread library",
     "Threads: user-level vs kernel-level",
+    "",
     // wk 6
     "Par: Parallel architectures",
     "Par: Parallel computing patterns",
     "Par: multithreaded code examples, Amdahl's Law",
+    "<a href='https://github.com/davidtchiu/cs475-parSum'>Par Sum</a><br/><a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Par Sort</a>",
     // wk 7
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     "Scheduling: goals and metrics; burst model",
+    "<a href='RG1.pdf'>Exam 1 Study Guide</a> (<a href='RG1Sol.pdf'>selected soln</a>)",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
     "Sched: SJF, SRTF, prediction",
     "Sched: RR, SRTF, MLFQ",
     // "Sched: hyperthreading, multicore considerations",
     "Sync: critical section problem",
+    "",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
+    "",
     // wk 10
     "Sync: atomicity and spinlocks",
     "Sync: blocking locks",
     "Sync: semaphores",
+    "<a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spin vs. Blocking</a><br/>" + 
+      "<a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
     // wk 11
     // "Sync: monitors and condition variables",
     // "Sync: Java support",
     "Sync: more semaphores",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
+    "<a href='RG2.pdf'>Exam 2 Study Guide</a> (<a href='RG2Sol.pdf'>selected soln</a>)" +
+        "<a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
+        "<a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
     "Deadlocks",
     "DL: Deadlock detection",
     "DL: Bankers algorithm",
+    "",
     // wk 13
     "Memory Management: virtual addressing",
     "MM: partitioning and segmentation",
     "MM: segmentation",
+    "",
     // wk 14
     "MM: paging",
     "MM: TLB and page faults",
     "Virtual Memory: demand paging",
+    "",
     // wk 15
     "VM: page replacement",
     "VM: clock algorithm",
     // "VM: memory allocation",
     // "VM: malloc(), free()",
     "<strong>Reading Period</strong>",
+    "",
     // wk final
     "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
     "",
     "",
+    "<a href='RG3.pdf'>Final Study Guide</a> (<a href='RG3Sol.pdf'>selected soln</a>)",
   ],
 };
 
