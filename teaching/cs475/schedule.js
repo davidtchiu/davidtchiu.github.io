@@ -104,7 +104,8 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
     "Intro: A brief history of computer systems",
-    "<a href='notes/CS475_1-intro.pdf'>Lecture Notes 1 (what is OS?)</a>",
+    "<a href='notes/CS475_1-intro.pdf'>Lecture Notes 1 (what is OS?)</a><br/>" +
+      "<a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Watch BBC Documentary: Calculating Ada</a>",
     // wk 2
     "<font color='blue'>Tutorial 1 (C Basics)</font>",
     "<font color='blue'>Tutorial 2 (Pointers)</font>",
@@ -181,7 +182,7 @@ let days = {
     "MM: paging",
     "MM: TLB and page faults",
     "Virtual Memory: demand paging",
-    "<a href='notes/CS475_6-sync1.pdf'>Lecture Notes 9 (Virtual Memory)</a>" +
+    "<a href='notes/CS475_9-vm1.pdf'>Lecture Notes 9 (Virtual Memory)</a>" +
     // wk 15
     "VM: page replacement",
     "VM: clock algorithm",
