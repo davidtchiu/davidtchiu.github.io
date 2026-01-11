@@ -193,27 +193,21 @@ class CourseCalendar {
           td.appendChild(dayContent);
           tr.appendChild(td);
         }
-        // week's resources
-        let td = document.createElement("td");
-        td.style.width = "20%";
-        td.style.margin = "1px";
-        td.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
-        let dayContent = document.createElement("p");
-        dayContent.innerHTML += `${this.days.lectures.shift()}`;
-        td.appendChild(dayContent);
-        tr.appendChild(td);
-
         // next day
         currentDate.setDate(currentDate.getDate() + 1);
       }
 
-    // if (SHOW_RESOURCES_PER_WEEK) {
-    //   let td = document.createElement("td");
-    //   // loop through resources for the week
-    //   td.innerHTML = ''
-    //   tr.appendChild(td); // resources
-    // }
+      // week's resources
+      let td = document.createElement("td");
+      td.style.width = "20%";
+      td.style.margin = "1px";
+      td.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
+      let dayContent = document.createElement("p");
+      dayContent.innerHTML += `${this.days.lectures.shift()}`;
+      td.appendChild(dayContent);
+      tr.appendChild(td);
 
+      // done with a week/row
       table.appendChild(tr);
       weekNum++;
     }
