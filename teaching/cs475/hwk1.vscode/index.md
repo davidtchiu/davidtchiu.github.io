@@ -62,7 +62,7 @@ It's therefore important that we all code in a common environment, so I've prepa
 - **Important:** Now, change your password to something more secure. From the terminal (command-line) window on the bottom of your screen, enter `passwd`, and follow the instructions. When you type of your password, the screen will remain blank, but your input is registered. That is normal.
 
 
-#### Using the Terminal (Shell) and VS Code Editor
+#### Using the VS Code Editor
 - You only have to do all those steps listed in the previous section that one time. Let's get a feel for how to start up the coding environment from this point forward, so go ahead and **quit** VS Code.
 
   - Before getting started again, keep in mind that, because we're coding on a remote server, a stable internet connection is essential. This means it will not be possible to develop while you're offline or only have an intermittent wifi connection (e.g., on a plane), so plan wisely throughout the semester.
@@ -75,12 +75,16 @@ It's therefore important that we all code in a common environment, so I've prepa
 
 - Enter your new password, and you should see the contents of your home directory once again. If you do, then you're connected back to the server! Happy programming!
 
-- **Accessing the Terminal** The command-line terminal (also called a _shell_) should show up on the bottom of your VS Code editor. If it's not already there, go to the `Terminal` menu on the top of your screen and select `New Terminal`. Here's what mine looks like:
+#### Using the Shell (within the VS Code Integrated Terminal)
+
+- In this course it is important that you know your way around the command-line shell, because you'll need to use it for just about everything we do: I use it during lectures (so you'll need be able to follow what I'm doing); it's in my slides; you need it to compile and run/test your code, etc.
+
+- The operating system _shell_ is a command interpretor. By default, it should show up on the bottom window of VS Code. If it's not already there, then go to the `Terminal` menu on the top of your screen and select `New Terminal`. Here's what mine looks like:
 
   <img src="figures/dchiu__SSH__149_165_174_87_.png" width="500px" />
 
-  
-- I assume you have a working knowledge of the command-line shell, but here are some time-saving tips. 
+
+- I assume you have a working knowledge of the shell, but here are some time-saving tips. 
 
   | Tip |  |
   | :--- | :--- |
@@ -91,8 +95,16 @@ It's therefore important that we all code in a common environment, so I've prepa
   | `ctrl + k` | Will delete from your cursor to the end of the line.  |
   | `ctrl + l` | Will clear out the terminal window. (Same as the `clear` command). |
 
+- In the very least, I would familiarize myself with the following:
+  - Know how to navigate your file system. Understand what (full and relative) paths are.
+  - Know how to redirect and/or pipe your outputs. For example,
+    - `|` operator; How do you redirect the ouput or a program as input into another program?
+    - `>` operator: How do you redirect the output of a program to go into a file instead of the screen? (Useful when output is long).
+    - `>>` operator: Same as above, but appends to the existing output file instead of starting new.
+    - `&>` operator: What does this do?
+ 
 
-- If you need a refresher on how to work on the shell, here are some resources (Strongly recommended)
+- If you need a refresher on how to work the shell, here are some resources (Strongly recommended you take some time to read over these resources below.)
   - [Linux Command Cheatsheet](https://www.guru99.com/linux-commands-cheat-sheet.html)
   - [The Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 
@@ -200,7 +212,7 @@ To download and submit your homework assignments for this class, you'll need to 
     Hello world 10 of 10!
     ```
 
-4. It seems a bit odd that your executable file would be named `a.out` by default. To instruct the compiler to output the executable under a different name, you can run `gcc` with the `-o executable-name` flag: 
+4. It seems a bit odd that your executable file would be named `a.out` by default. To instruct the compiler to output the executable under a different name, you can run `gcc` with the `-o <executable-name>` flag: 
 
     ```bash
     $ gcc -Wall -g -o helloworld hwk1.c
@@ -220,7 +232,7 @@ To download and submit your homework assignments for this class, you'll need to 
 
 7. Navigate to your github repository from your browser to make sure that `hwk1.c` exists. If so, you have successfully committed your code and pushed to github! This is how you will submit all assignments in this course.
 
-#### VS Code Tips
+#### VS Code Editor Tips
 By now, you may have noticed how helpful (or irritating) the AI suggested-fixes can be. I don't think it's a good way of learning C if they are turned on, because it tries to complete (incorrectly frequently) too much code. I would strongly recommend turning this feature off:
 
 - From the VS Code menu, into `Code > Settings`. Then under `Text Editor > Suggestions` which should show you a bunch of options. I simply turned mine off by unchecking `Inline Suggest: Enabled`, but you can browse other options to be less aggressive.
@@ -299,8 +311,8 @@ I also found it useful to suppress AI suggestions in your terminal:
 
 #### Submission
 To prove that you have logged in successfully:
-1. Change your password on the server using `passwd`. Yep, I will login using 
-the old password just to check.
+
+1. Change your login password on the server.
 
 2. Commited and pushed your git repository. Make sure your repo is public.
 

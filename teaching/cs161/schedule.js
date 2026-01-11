@@ -187,66 +187,82 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Introductions: Who are we? Syllabus, What is CS?",
     "Algorithms, hardware, languages; Plus Lab 1: Using BlueJ",
+    "Code",
     // wk 2
     "Reading code: classes,  instance variables, types, assigning, constructors",
     "Reading code: methods; Plus Lab 2: Triangle",
     "Variable types: instance, local, input; lifetime and scope",
+    "Code",
     // wk 3
     "Methods and returning; Finish Circle, start TicketMachine",
     "Classes as Types, Random object; Lab 3: Stomach",
     "Conditionals, defensive programming",
+    "Code",
     // wk 4
     "Nested if-statements; else-if statements",
     "More conditionals; Lab 4: Secret Number",
     "Data Types, binary rep, casting",
+    "Code",
     // wk 5
     "Classes as types: references, null",
     "Object interaction; Lab 5: Circle Drawer",
     "Object equality; <strong><emph>Exam 1 review</emph></strong>",
+    "Code",
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
     "Using APIs (String interface)",
+    "Code",
     // wk 7
     "Start loops; reading; tracing",
     "More loops; Lab 7: Loops",
-    " and lab review",
+    "Lab review and nested loops",
+    "Code",
     // wk 8
     "Nested loops",
     "Lab 8: Nested Loops",
     "More nested loops and lab review",
+    "Code",
     // wk 9: spring break
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
+    "",
     // wk 10
     "Start 1D arrays; Write the Bank class",
     "Finish Bank class; Lab 9: ComboGuesser",
     "TurtleMob; <strong><emph>Exam 2 review</emph></strong>",
-    // wk 11
+     "Code",
+     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
     "Start 2D arrays; Lab 10: TicTacToe",    
     "TicTacToe review, more practice",
+    "Code",
     // wk 12
     "Start ArrayLists",
     "Lab 11: SuperCircleDrawer",
     "Lab review, more practice",
+    "Code",
     // wk 13
     "Scanner: user interaction, String parsing: enforcing a word limit",
     "Lab 12: Interactive Diary (UI + String Parsing)",
     "File handling",
+    "Code",
     // wk 14
     "Static scope, enums",
     "Lab 13: Cards (Enum type)",
     "The main method",
+    "Code",
     // wk 15
     "Project Work Day",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
+    "",
     // wk final
     "",
     "",
     "<strong><emph>Final Exam<br/>12:00-2:00</emph></strong>",
+    "",
   ],
 };
 

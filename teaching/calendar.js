@@ -197,9 +197,12 @@ class CourseCalendar {
         currentDate.setDate(currentDate.getDate() + 1);
       }
 
-    if (SHOW_RESOURCES_PER_WEEK) {
-      tr.appendChild(document.createElement("th")); // resources
-    }
+    // if (SHOW_RESOURCES_PER_WEEK) {
+    //   let td = document.createElement("td");
+    //   // loop through resources for the week
+    //   td.innerHTML = ''
+    //   tr.appendChild(td); // resources
+    // }
 
       table.appendChild(tr);
       weekNum++;
