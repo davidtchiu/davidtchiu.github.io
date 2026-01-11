@@ -30,8 +30,6 @@ const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#d14";
 const NOTTODAY_BG_COLOR = "#494949";
 
-const SHOW_RESOURCES_PER_WEEK = true;
-
 /**
  * This class can be used to generated an HTML course calendar.
  */
@@ -131,9 +129,7 @@ class CourseCalendar {
         theadRow.appendChild(th);
       }
     }
-    if (SHOW_RESOURCES_PER_WEEK) {
-      theadRow.appendChild(document.createElement("th")); // resources
-    }
+    theadRow.appendChild(document.createElement("th")); // resources
     thead.appendChild(theadRow);
     table.appendChild(thead);
 
@@ -176,6 +172,7 @@ class CourseCalendar {
 
           // any assignments due on current day?
           let dayContent = document.createElement("p");
+          dayContent.style.fontSize = "75%";
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
@@ -203,6 +200,7 @@ class CourseCalendar {
       td.style.margin = "1px";
       td.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
       let dayContent = document.createElement("p");
+      dayContent.style.fontSize = "75%";
       dayContent.innerHTML += `${this.days.lectures.shift()}`;
       td.appendChild(dayContent);
       tr.appendChild(td);
