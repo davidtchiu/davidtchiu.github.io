@@ -138,7 +138,7 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     "Scheduling: goals and metrics; burst model",
-    "<a href='RG1.pdf'>Exam 1 Study Guide</a> (<a href='RG1Sol.pdf'>selected soln</a>)",
+    "Exam 1 Review: <a href='RG1.pdf'>Part 1</a> (<a href='RG1Sol.pdf'>soln</a>), <a href='RG2.pdf'>Part 2</a> (<a href='RG2Sol.pdf'>soln</a>),",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
     "Sched: SJF, SRTF, prediction",
