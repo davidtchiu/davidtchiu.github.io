@@ -113,7 +113,8 @@ class CourseCalendar {
   generateHTMLCalendar() {
     // table and thead
     let table = document.createElement("table");
-//    table.style.width = "120%";
+    table.style.tableLayout = "fixed";
+    table.style.width = "120%";
 
     // week header
     let thead = document.createElement("thead");

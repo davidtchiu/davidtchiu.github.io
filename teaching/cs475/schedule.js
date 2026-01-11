@@ -165,7 +165,7 @@ let days = {
     "Sync: more semaphores",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "Exam 2 Study Guide: <a href='RG1.pdf'>Part 1</a> (<a href='RG1Sol.pdf'>soln</a>), <a href='RG2.pdf'>Part 2</a> (<a href='RG2Sol.pdf'>soln</a>)," +
+    "Exam 2 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a><br/>" +
         "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
         "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
@@ -194,7 +194,7 @@ let days = {
     "<strong><emph>Final Exam<br/>4:00-6:00</emph></strong>",
     "",
     "",
-    "Final Study Guide: <a href='RG1.pdf'>Part 1</a> (<a href='RG1Sol.pdf'>soln</a>), <a href='RG2.pdf'>Part 2</a> (<a href='RG2Sol.pdf'>soln</a>)"
+    "Final Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a>"
     ],
 };
 
