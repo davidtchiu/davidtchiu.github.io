@@ -110,7 +110,7 @@ let days = {
     "<font color='blue'>Tutorial 1</font>",
     "<font color='blue'>Tutorial 2</font>",
     "<font color='blue'>Tutorial 3</font>",
-    "<a href='tut1'>C tutorial 1: C Basics</a><br/><a href='tut2'>C tutorial 2: Pointers</a><br/><a href='tut3'>C tutorial 3: Memory Management</a>",
+    "C tutorial: <a href='tut1'>Basics</a><br/>C tutorial 2:<a href='tut2'>Pointers</a><br/>C tutorial 3:<a href='tut3'>Memory Management</a>",
         // wk 3
     "Intro: batch processing, multiprogramming, timesharing",
     "Invoking the OS: Bootstrapping, interrupts",
@@ -182,6 +182,7 @@ let days = {
     "MM: paging",
     "MM: TLB and page faults",
     "Virtual Memory: demand paging",
+    "",
     // wk 15
     "VM: page replacement",
     "VM: clock algorithm",
