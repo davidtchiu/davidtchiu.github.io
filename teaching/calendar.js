@@ -188,7 +188,7 @@ class CourseCalendar {
             if (lecture == null || lecture.trim() === "") {
               dayContent.innerHTML += "&nbsp;".repeat(10);
             } else {
-              dayContent.innerHTML += `${this.days.lectures.shift()}`;              
+              dayContent.innerHTML += lecture;
             }
           }
           td.appendChild(dateHeader);
