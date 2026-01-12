@@ -29,6 +29,7 @@ const ASSIGNMENT_COLOR = {
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#d14";
 const NOTTODAY_BG_COLOR = "#494949";
+const PAST_CONTENT_BG_COLOR = "rgba(230, 230, 230, 0.8)";
 
 /**
  * This class can be used to generated an HTML course calendar.
@@ -157,12 +158,13 @@ class CourseCalendar {
 
           // Is it today? Highlight the background differently
           let dateHeader = document.createElement("div");
-          if (this.sameDay(currentDate, this.today)) {
+          let dateCmp = this.compareDay(currentDate, this.today);
+          if (dateCmp == 0) {
             dateHeader.style.backgroundColor = TODAY_BG_COLOR;
           } else {
             dateHeader.style.backgroundColor = NOTTODAY_BG_COLOR;
-            if (this.compareDay(currentDate, this.today) < 0) {
-             td.style.backgroundColor = "rgba(225, 225, 225, 0.8)"
+            if (dateCmp < 0) {
+             td.style.backgroundColor = PAST_CONTENT_BG_COLOR;
             }
           }
           dateHeader.style.color = TODAY_COLOR;
