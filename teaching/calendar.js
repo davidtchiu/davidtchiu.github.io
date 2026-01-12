@@ -157,11 +157,13 @@ class CourseCalendar {
 
           // Is it today? Highlight the background differently
           let dateHeader = document.createElement("div");
-
           if (this.sameDay(currentDate, this.today)) {
             dateHeader.style.backgroundColor = TODAY_BG_COLOR;
           } else {
             dateHeader.style.backgroundColor = NOTTODAY_BG_COLOR;
+            if (this.compareDay(currentDate, this.today) < 0) {
+              td.backgroundColor = "rgba(175, 175, 175, .8)"
+            }
           }
           dateHeader.style.color = TODAY_COLOR;
           dateHeader.style.textAlign = "center";
@@ -184,7 +186,7 @@ class CourseCalendar {
           // depending on whether the day is LEC, WKD, or OFF, pull
           // activity from the respective queue and add to the table
           if (this.format[dayCnt] == LEC) {
-            let lecture = `${this.days.lectures.shift()}`;
+            const lecture = `${this.days.lectures.shift()}`;
             if (lecture == null || lecture.trim() === "") {
               dayContent.innerHTML += "&nbsp;".repeat(8);
             } else {
@@ -236,4 +238,13 @@ class CourseCalendar {
       day1.getFullYear() == day2.getFullYear()
     );
   }
+
+  compareDay(day1, day2) {
+    const d1 = new Date(day1.getFullYear(), day1.getMonth(), day1.getDate());
+    const d2 = new Date(day2.getFullYear(), day2.getMonth(), day2.getDate());
+
+    const MS_PER_DAY = 24 * 60 * 60 * 1000;
+    return Math.round((d1 - d2) / MS_PER_DAY);
+    }
+
 }
