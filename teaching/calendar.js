@@ -186,7 +186,7 @@ class CourseCalendar {
           if (this.format[dayCnt] == LEC) {
             let lecture = `${this.days.lectures.shift()}`;
             if (lecture == null || lecture.trim() === "") {
-              dayContent.innerHTML += "&nbsp;".repeat(10);
+              dayContent.innerHTML += "&nbsp;".repeat(8);
             } else {
               dayContent.innerHTML += lecture;
             }

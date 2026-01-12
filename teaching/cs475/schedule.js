@@ -103,18 +103,18 @@ let days = {
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
-    "Intro: A brief history of computer systems",
+    "Intro: History of systems",
     "Notes #1: <a href='https://drive.google.com/open?id=1dkdLnS2wtQvwzzHTcusHgOq7tOhIKJhA&usp=drive_fs'>What is OS?</a><br/>" +
       "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
     // wk 2
-    "<font color='blue'>Tutorial 1</font>",
-    "<font color='blue'>Tutorial 2</font>",
-    "<font color='blue'>Tutorial 3</font>",
+    "Tutorial Day 1",
+    "Tutorial Day 2",
+    "Tutorial Day 3",
     "C tutorial: <a href='tut1'>Basics</a><br/>C tutorial 2:<a href='tut2'>Pointers</a><br/>C tutorial 3:<a href='tut3'>Memory Management</a>",
         // wk 3
     "Intro: batch processing, multiprogramming, timesharing",
-    "Invoking the OS: Bootstrapping, interrupts",
-    "Invoking the OS: Interrupts, traps and system calls",
+    "Bootstrapping, interrupts",
+    "Dual mode, system calls",
     "Notes 2: <a href='notes/CS475_2-kernel.pdf'>Interrupts and Syscalls</a>",
     // wk 4
     "Processes: switching, PCB, address space",
@@ -138,7 +138,7 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     "Scheduling: goals and metrics; burst model",
-    "Exam 1 Study Guide: <a href='RG1.pdf'>Part 1</a> (<a href='RG1Sol.pdf'>soln</a>), <a href='RG2.pdf'>Part 2</a> (<a href='RG2Sol.pdf'>soln</a>),",
+    "Exam 1 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a>",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
     "Sched: SJF, SRTF, prediction",
