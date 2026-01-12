@@ -238,7 +238,7 @@ class CourseCalendar {
    * @returns {boolean} true if the two dates are of the same mm/dd/yyyy
    */
   sameDay(day1, day2) {
-    return compareDay(day1,day2) == 0;
+    return this.compareDay(day1,day2) === 0;
   }
 
   compareDay(day1, day2) {
