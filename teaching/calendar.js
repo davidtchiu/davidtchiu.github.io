@@ -161,6 +161,9 @@ class CourseCalendar {
             dateHeader.style.backgroundColor = TODAY_BG_COLOR;
           } else {
             dateHeader.style.backgroundColor = NOTTODAY_BG_COLOR;
+            if (this.compareDay(currentDate, this.today) < 0) {
+             td.style.backgroundColor = "rgba(225, 225, 225, 0.8)"
+            }
           }
           dateHeader.style.color = TODAY_COLOR;
           dateHeader.style.textAlign = "center";
@@ -190,12 +193,7 @@ class CourseCalendar {
               dayContent.innerHTML += lecture;
             }
           }
-          if (this.compareDay(currentDate, this.today) < 0) {
-            console.log(`${currentDate} is before ${this.today}`);
-            dayContent.style.backgroundColor = "rgba(175, 175, 175, .8)"
-          } else {
-            console.log(`${currentDate} is after ${this.today}`);
-          }
+
           
           td.appendChild(dateHeader);
           td.appendChild(dayContent);
