@@ -228,7 +228,10 @@ This assignment will be graded out of 20 points:
 [4pt] Your program prints a vertical (not horizontal) histogram
 [4pt] Basic error checking is handled, such as entering invalid menu options
 [3pt] Your program runs repeatedly until # is entered, or if a string is entered erroneously
-[1pt] Your program observes good style and commenting.
+[1pt] Your program observes good style and commenting
+
+* You are not required to use malloc() in this assignment, but if you do,
+you must ensure that your program is free from memory leaks.
 ``` 
 
 #### Submitting Your Assignment

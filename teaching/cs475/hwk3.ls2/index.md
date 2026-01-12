@@ -10,39 +10,40 @@
 
 #### Student Outcomes
 
-- To understand the motivation for dynamic memory allocation.
-- To become familiar with memory management functions:`malloc()`, `realloc()`, and `free()`.
-- To learn how to debug heap memory access using valgrind.
+- To become familiar with memory management functions.
+- More work with strings.
 - To make system calls.
-
-
+- To learn how to debug heap memory access using valgrind.
 
 #### Preamble: Debugging Memory Errors with Valgrind (Read This!)
-Valgrind is a tool to help you debug access errors for memory that you allocated on the heap using `malloc()`. Believe me, it will save you a bunch of time and tears. To use valgrind, you just have to compile your C code using the `-g` flag (don't worry, the provided `Makefile` already builds this in). Then run your program like this:
+Coming off the heels of the last C tutorial on memory management, we how important it is to avoid memory leaks in your code. Recall that "memory leaks" occur when you malloc memory at runtime, but fail to reclaim it when you're done. As your program continues to run, that heap memory is allocated, but unreachable, causing your footprint to increase. 
+
+Correct memory management is tricky business, so we'll need help. Valgrind is a debugging tool to help us find memory access errors that you allocated on the heap using `malloc`. To use Valgrind, you just have to compile your C code using the `-g` flag (don't worry, the provided `Makefile` already builds this flag in). Then "run" your program like this:
 
 ```bash
 $ valgrind --leak-check=full -s <your-executable-file>
 ```
 
-Valgrind will print out a full summary after your program terminates, reporting any memory access errors or memory leaks. Let's see an example here:
+Valgrind runs your program under instrumentation so it can trace memory accesses and allocations. When your program finishes, it prints a summary of detected issues, including invalid memory accesses and leaked heap blocks.
 
+Here is an example program with a heap-memory bug:
 ```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-  int *buf1 = (int*) malloc(sizeof(int) * 20);
+  int *buf1 = malloc(sizeof(int) * 20);
 
   for (int i = 0; i < 20; i++) {
     buf1[i] = 0;
   }
-  buf1[20] = 0;
+  buf1[20] = 0; // <---- Line 11 BUG: out-of-bounds (valid indices are 0..19)
   return 0;
 }
 ```
 
-When I compile this code and run the program through valgrind, it will generate some output. I'm using the `--leak-check=full` flag to instruct valgrind to report detailed memory leak information.
+When I compile this code and run the program through valgrind, it will generate a report. I'm using the `--leak-check=full` flag to instruct valgrind to report detailed memory leak information.
 ```bash
 $ make
   gcc -Wall -g memtest.c -o memtest
@@ -58,7 +59,7 @@ Here's a breakdown of what it says:
 ==359874==    at 0x4E050C5: malloc (vg_replace_malloc.c:393)
 ==359874==    by 0x109165: main (memtest.c:6)
 ```
-This error is an "invalid write" on **line 11**, `buf1[20] = 0;` Valgrind is warning that you had malloc'd only 20 ints, but you're attempting to write to the 21st spot. Therefore, it spotted a 1-off error, and at this point you should go back to fix the error.
+This error is an "invalid write" on **line 11**, `buf1[20] = 0;` Valgrind is warning that you had malloc'd only 20 `ints`, but you're attempting to write to the 21st spot so it spotted a one-off error!
 
 Further down the report, you'll see another segment:
 ```
@@ -77,7 +78,7 @@ Further down the report, you'll see another segment:
 ==359874==    still reachable: 0 bytes in 0 blocks
 ==359874==         suppressed: 0 bytes in 0 blocks
 ```
-Here valgrind *suspects* that it has detected a memory leak. Reading the report can be a bit misleading though. It appears the problem occurred inside the `malloc()` function on line 393 of `vg_replace_malloc.c`, but that's highly doubtful. So you'll have to look to the next line, indicating that leak originates on the call to `malloc()` on Line 6 of *our* program. It says that 80 bytes (indeed `sizeof(int) * 20` == 80) were malloc'd, but never freed before the program terminated. Adding a call to `free(buf1)` before the program exits would have solved this leak.
+Here valgrind *suspects* that it has detected a memory leak. Reading the report can be a bit misleading though. It appears the problem occurred inside the `malloc` function on line 393 of `vg_replace_malloc.c`, but that's highly doubtful. So you'll have to look to the next line, indicating that leak originates on the call to `malloc()` on Line 6 of *our* program. It says that 80 bytes (indeed `sizeof(int) * 20` is == 80) were malloc'd, but never freed before the program terminated. Adding a call to `free(buf1)` before the program exits would have solved this leak.
 
 **Important** For all programs (starting from this assignment) that you write from now on, valgrind should absolutely be a part of your debugging workflow to save you hours of time.
 
@@ -252,24 +253,28 @@ I have included a working solution of my program along with the starter code. Th
               main (41 bytes)
       ```
 
-3. **What's the stack library for?** You'll notice that I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. (For when writing your future programs, you should study `stack.c` to see how I use `malloc()` in various spots and later `free()` up the allocated memory.)
-    - When writing Mode 2, you'll notice that you can't simply print every file or directory as soon as you encounter them. Mode 2 requires that you keep a set of directories and files you actually want to print at the end.
-    - You can use the given stack to store this set of files/directories that you wish to print at the end.
+3. **What's the Included Stack For?** I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. (You should study `stack.c` to see how I use `malloc()` in various spots and later `free()` up the allocated memory.)
+    - When writing *Mode 2* of this assignment, you'll notice that you can't simply print every file or directory as soon as you encounter them as you could in *Mode 1*.
+    
+    - *Mode 2* requires that you keep a list of directories and files that you actually want to print out at the end. You can store this listing in the stack, and print out its contents later.
+
+    - The given `main()` function contains a bit of code to test this stack. You can remove this code when you're ready to write the ls2 program.
 
 4. **Making System Calls**
-    - To open up directories and check what's inside, you will want to check out the following system calls through `#include <unistd.h>`:`opendir()`, `readdir()`, `closedir()`.
-    - When you read the contents of a directory, ignore any references to `.` and `..`.
-      - Why? In most file systems, `.` refers to the current directory, and `..` means the parent directory. These exist in *every* directory you open. So if you recursively open those up, then you'll just end up in an infinite recursion!
+    Recall that there are many privileged operations that users can't run without the OS's help. These requests are made via "system calls". 
 
-    
-    - Once you have a name of a particular file or directory, you need to to test if it's actually a regular old file (or is it a shortcut? Is it a directory?) To get information on the file (how big is it?) you'll want to look into using the important `stat(..)` system call provided in `#include <sys/stat.h>` 
+    - To open up directories and check what's inside, you will want to check out the following system functions: `opendir()`, `readdir()`, `closedir()`.
+    - When you read the contents of a directory, ignore any references to `.` and `..`. Why? In file systems, `.` is a shorthand to refer to the current directory, and `..` means the parent directory. These entities exist in *every* directory you open. So if you recursively open those up, then you'll just end up in an infinite recursion!
+
+    - Once you've opened up a directory, you can use `readdir()` to traverse its contents. But not everything is a file. You need to test if it's a regular file, or is it a shortcut (link)? Is it a subdirectory? To get this and other information, you'll look into the important `stat(..)` system call provided in `#include <sys/stat.h>` 
       - [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
-      - Note that the second parameter of `stat(..)` accepts an *output parameter* (remember what those are from the previous assignment?), where it will update a `struct` with the file/directory's information.
-      - One of the data members in the output struct is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `stat(..)`ed is a *regular file* or a *directory* using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. As mentioned earlier, you should ignore all other types of files.
+      - Note that the second parameter of `stat(..)` accepts an *output parameter*. (Remember what those are from the previous assignment?). If the call was successful, `stat` will set that pointer to refer to a `struct` with the file/directory's information.
+      - One of the data members in the output `struct` is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `stat`d is a *regular file* or a *directory* using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. As mentioned earlier, you should ignore all other types of files.
+      - That struct also contains other useful information, like the size, which you'll need to display.
 
-5. Other header files you may want to look into before getting started on this assignment:
+5. Other libraries you may want to look into before getting started on this assignment:
     - [dirent.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/dirent.h.html) for `DIR` type for representing a directory stream. This is to be used in conjunction with `opendir()` system call.
-    - [sys/types.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/types.h.html) for `mode_t`.
+    - [sys/types.h](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/types.h.html) for the `mode_t` type.
 
 6.  **Print Formatting:** When printing, the names of *directories* must be followed with the suffix `"/ (directory)"`. Names of *regular files* must be followed by the suffix `"(nnn bytes)"` where `nnn` is the number of bytes occupied by that file. If a file or directory is found within a subdirectory, its name must be indented by four spaces to signify that it is enclosed within the above directory.
     - Luckily, the listing does not needed to sorted in any particular order.
@@ -277,7 +282,7 @@ I have included a working solution of my program along with the starter code. Th
 7. Although the `.git/` directory exists (as it did in my sample output), it still may be wise to create your own "test-dummy" directory structure so that you test your program. 
 
 #### Hints and Tips
-1. Start as early as possible. This assignment (esp. Mode 2) is trickier than what meets the eye. 
+1. Start as early as possible. This assignment (esp. Mode 2) is trickier than what meets the eye due to all the string work, and memory management work.
 
 2. For both modes, you will need to create a string that stores the current path to a file. For instance, you would need a string to input into the `stat()` system call and you may need to store that path string onto your stack for the printing of mode-2 results. You *must* create these strings on the heap using `malloc()` because any string you create on the program stack will likely be reaped by the time you print off *your* stack. When that's the case, your stack would store stores pointers to garbage.
 
