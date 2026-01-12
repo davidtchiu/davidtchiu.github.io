@@ -29,7 +29,7 @@ const ASSIGNMENT_COLOR = {
 const TODAY_COLOR = "#f2f2f2";
 const TODAY_BG_COLOR = "#d14";
 const NOTTODAY_BG_COLOR = "#494949";
-const PAST_CONTENT_BG_COLOR = "rgba(230, 230, 230, 0.8)";
+const PAST_CONTENT_BG_COLOR = "rgba(215, 215, 215, 0.8)";
 
 /**
  * This class can be used to generated an HTML course calendar.
@@ -174,9 +174,11 @@ class CourseCalendar {
             currentDate.getMonth() + 1
           }/${currentDate.getDate()}`;
 
-          // any assignments due on current day?
+          // construct the day content block
           let dayContent = document.createElement("p");
           dayContent.style.fontSize = "80%";
+
+          // any assignments due on current day?
           for (let assignmentType of Object.keys(this.days.assignments)) {
             for (let assign of this.days.assignments[assignmentType]) {
               if (this.sameDay(new Date(assign.due), currentDate)) {
@@ -205,7 +207,7 @@ class CourseCalendar {
         currentDate.setDate(currentDate.getDate() + 1);
       }
 
-      // week's resources
+      // the week's course resources
       let td = document.createElement("td");
       td.style.margin = "1px";
       td.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
@@ -236,11 +238,7 @@ class CourseCalendar {
    * @returns {boolean} true if the two dates are of the same mm/dd/yyyy
    */
   sameDay(day1, day2) {
-    return (
-      day1.getMonth() == day2.getMonth() &&
-      day1.getDate() == day2.getDate() &&
-      day1.getFullYear() == day2.getFullYear()
-    );
+    return compareDay(day1,day2) == 0;
   }
 
   compareDay(day1, day2) {

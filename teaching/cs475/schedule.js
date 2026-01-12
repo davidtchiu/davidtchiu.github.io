@@ -19,19 +19,19 @@ let days = {
     homework: [
       {
         name: "Hwk 1 (vscode)",
-        title: "Setting up VS Code",
+        title: "Setting up VSCode",
         url: "hwk1.vscode/",
         due: "1/23/2026", // Fri, wk 1
       },
       // {
-      //   name: "Hwk 2 (heapsort)",
-      //   title: "Pointers, Arrays, Strings",
-      //   url: "hwk2.sorting/",
+      //   name: "Hwk 2 (wordstats)",
+      //   title: "Word Stats",
+      //   url: "hwk2.wordstat/",
       //   due: "2/2/2026",  // Mon, wk 3
       // },
       // {
       //   name: "Hwk 3 (ls2)",
-      //   title: "Making System Calls",
+      //   title: "A Suped-Up ls",
       //   url: "hwk3.ls2/",
       //   due: "2/13/2026",   // Fri, wk 4
       // },
@@ -43,7 +43,7 @@ let days = {
       // },
       // {
       //   name: "Hwk 5 (sobel)",
-      //   title: "Edge Detection",
+      //   title: "Multithreaded Sobel Edge Detector",
       //   url: "hwk5.sobel/",
       //   due: "3/9/2026",  // Mon, wk 8
       // },
@@ -110,7 +110,7 @@ let days = {
     "Tutorial Day 1",
     "Tutorial Day 2",
     "Tutorial Day 3",
-    "C tutorial: <a href='tut1'>Basics</a><br/>C tutorial 2:<a href='tut2'>Pointers</a><br/>C tutorial 3:<a href='tut3'>Memory Management</a>",
+    "C tutorial 1: <a href='tut1'>Basics</a><br/>C tutorial 2:<a href='tut2'>Pointers</a><br/>C tutorial 3:<a href='tut3'>Memory Management</a>",
         // wk 3
     "Batch processing, multiprogramming, timesharing",
     "Bootstrapping, interrupts",

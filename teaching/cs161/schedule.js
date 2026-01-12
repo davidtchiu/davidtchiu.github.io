@@ -185,44 +185,48 @@ let days = {
   lectures: [
     // wk 1
     "<strong>MLK Day<br/>(no class)</strong>",
-    "Introductions: Who are we? Syllabus, What is CS?",
-    "Algorithms, hardware, languages; Plus Lab 1: Using BlueJ",
-    "CodeCodeCodeCodeCodeCodeCode Code",
+    "Introductions: Who are we? What is CS?",
+    "Algorithms, hardware, languages; Using BlueJ",
+    "Notes #1: <a href='https://drive.google.com/open?id=1gdKAJ_Mi3cT6icL8ms7Jo-kpv6_mrJSb&usp=drive_fs'>What is CS?</a>" + "<br/>" + 
+      "Install: <a href='https://bluej.org/'>BlueJ Code Editor</a>",
     // wk 2
-    "Reading code: classes,  instance variables, types, assigning, constructors",
-    "Reading code: methods; Plus Lab 2: Triangle",
-    "Variable types: instance, local, input; lifetime and scope",
-    "Code",
+    "Reading Java: basic class structure",
+    "Lab 1: Draw My Picture",
+    "Reading code: data types, scope",
+    "Notes #2: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>Classes and Objects</a>" + "<br/>" + 
+      "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Suped-Up Circle</a>",
     // wk 3
-    "Methods and returning; Finish Circle, start TicketMachine",
-    "Classes as Types, Random object; Lab 3: Stomach",
-    "Conditionals, defensive programming",
-    "Code",
+    "Reading code: methods; Start TicketMachine",
+    "Lab 2: Triangle",
+    "If statements, booleans, and logical operators",
+    "Notes #3: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>Writing Classes</a>" + "<br/>" + 
+      "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a>",
     // wk 4
-    "Nested if-statements; else-if statements",
-    "More conditionals; Lab 4: Secret Number",
+    "Nested if, else-if",
+    "Lab 3: Stomach",
     "Data Types, binary rep, casting",
-    "Code",
+    "",
     // wk 5
     "Classes as types: references, null",
     "Object interaction; Lab 5: Circle Drawer",
     "Object equality; <strong><emph>Exam 1 review</emph></strong>",
-    "Code",
+    "Notes #4: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>Primitives vs Classes</a>" + "<br/>" +,
+      "Exam #1 <a href=''>Study Guide</a> | <a href=''>Soln</a>",
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
     "Using APIs (String interface)",
-    "Code",
+    "Notes #5: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>Abstraction</a>",
     // wk 7
     "Start loops; reading; tracing",
     "More loops; Lab 7: Loops",
     "Lab review and nested loops",
-    "Code",
+    "",
     // wk 8
     "Nested loops",
     "Lab 8: Nested Loops",
     "More nested loops and lab review",
-    "Code",
+    "",
     // wk 9: spring break
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
@@ -232,27 +236,27 @@ let days = {
     "Start 1D arrays; Write the Bank class",
     "Finish Bank class; Lab 9: ComboGuesser",
     "TurtleMob; <strong><emph>Exam 2 review</emph></strong>",
-     "Code",
+    "Exam #2 <a href=''>Study Guide</a> | <a href=''>Soln</a>",
      // wk 11
     "<strong><emph>Exam 2</emph></strong>",
     "Start 2D arrays; Lab 10: TicTacToe",    
     "TicTacToe review, more practice",
-    "Code",
+    "",
     // wk 12
     "Start ArrayLists",
     "Lab 11: SuperCircleDrawer",
     "Lab review, more practice",
-    "Code",
+    "",
     // wk 13
     "Scanner: user interaction, String parsing: enforcing a word limit",
     "Lab 12: Interactive Diary (UI + String Parsing)",
     "File handling",
-    "Code",
+    "",
     // wk 14
     "Static scope, enums",
     "Lab 13: Cards (Enum type)",
     "The main method",
-    "Code",
+    "",
     // wk 15
     "Project Work Day",
     "<strong>Reading Period</strong>",
@@ -265,7 +269,7 @@ let days = {
     "",
   ],
 };
-
+// Lab 3: Stomach",
     // "HashMaps",
     // "Start complexity: Linear search",
 
