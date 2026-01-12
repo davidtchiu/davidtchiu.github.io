@@ -113,8 +113,6 @@ class CourseCalendar {
   generateHTMLCalendar() {
     // table and thead
     let table = document.createElement("table");
-    table.style.tableLayout = "fixed";
-    table.style.width = "120%";
 
     // week header
     let thead = document.createElement("thead");
@@ -186,7 +184,12 @@ class CourseCalendar {
           // depending on whether the day is LEC, WKD, or OFF, pull
           // activity from the respective queue and add to the table
           if (this.format[dayCnt] == LEC) {
-            dayContent.innerHTML += `${this.days.lectures.shift()}`;
+            let lecture = `${this.days.lectures.shift()}`;
+            if (lecture == null || lecture.trim() === "") {
+              dayContent.innerHTML += "&nbsp;".repeat(10);
+            } else {
+              dayContent.innerHTML += `${this.days.lectures.shift()}`;              
+            }
           }
           td.appendChild(dateHeader);
           td.appendChild(dayContent);
@@ -198,7 +201,6 @@ class CourseCalendar {
 
       // week's resources
       let td = document.createElement("td");
-      td.style.width = "20%";
       td.style.margin = "1px";
       td.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
       let dayContent = document.createElement("p");
