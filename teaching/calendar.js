@@ -159,10 +159,14 @@ class CourseCalendar {
           let dateHeader = document.createElement("div");
           if (this.sameDay(currentDate, this.today)) {
             dateHeader.style.backgroundColor = TODAY_BG_COLOR;
+              console.log(`${currentDate} is before ${this.today}`);
           } else {
             dateHeader.style.backgroundColor = NOTTODAY_BG_COLOR;
             if (this.compareDay(currentDate, this.today) < 0) {
+              console.log(`${currentDate} is before ${this.today}`);
               td.backgroundColor = "rgba(175, 175, 175, .8)"
+            } else {
+              console.log(`${currentDate} is after ${this.today}`);
             }
           }
           dateHeader.style.color = TODAY_COLOR;
