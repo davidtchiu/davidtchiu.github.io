@@ -7,8 +7,11 @@ This 0.5-unit pass/fail course provides structure for students as they prepare f
 #### Prerequisites
 Senior class standing, or permission of instructor.
 
+<!-- #### Student Learning Outcomes
+Students taking this course will:
+-  -->
 
-#### Project Topic + Problem Statement (Weeks 1-3)
+#### 1. Project Topic + Problem Statement (Weeks 1-3)
 A short document that:
 - Identifies group members, if applicable
 - States the core problem and motivation  
