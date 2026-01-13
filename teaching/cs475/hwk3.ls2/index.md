@@ -1,7 +1,9 @@
 ## CS 475 - Operating Systems
 
 ### Hwk 3: ls2 -  A Suped-Up `ls` Command
+As you already know,  the `ls` UNIX command lists all files and directories in a given directory. The default mode of `ls` is to only list the top-level contents in the given path. It does not, unless instructed to, automatically descend into all the subdirectories to print out a file system tree.
 
+Your task is to write a suped-up variant of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. On top of the recursive descent into subdirectories, your version of `ls` must also also be able to perform a file name search.
 
 #### Related Reading
 
@@ -78,13 +80,9 @@ Further down the report, you'll see another segment:
 ==359874==    still reachable: 0 bytes in 0 blocks
 ==359874==         suppressed: 0 bytes in 0 blocks
 ```
-Here valgrind *suspects* that it has detected a memory leak. Reading the report can be a bit misleading though. It appears the problem occurred inside the `malloc` function on line 393 of `vg_replace_malloc.c`, but that's highly doubtful. So you'll have to look to the next line, indicating that leak originates on the call to `malloc()` on Line 6 of *our* program. It says that 80 bytes (indeed `sizeof(int) * 20` is == 80) were malloc'd, but never freed before the program terminated. Adding a call to `free(buf1)` before the program exits would have solved this leak.
+Here valgrind *suspects* that it has detected a memory leak. Reading the report can be a bit misleading though. It appears the problem occurred inside the `malloc` function on line 393 of `vg_replace_malloc.c`, but that's highly doubtful. So you'll have to look to the next line, indicating that leak originates on the call to `malloc()` on Line 6 of *our* program. It says that 80 bytes (indeed `sizeof(int) * 20` is 80 bytes) were malloc'd, but never freed before the program terminated. Adding a call to `free(buf1)` before the program exits would have solved this leak.
 
 **Important** For all programs (starting from this assignment) that you write from now on, valgrind should absolutely be a part of your debugging workflow to save you hours of time.
-
-#### Assignment
-As you may already know,  the `ls` UNIX command lists all files and directories in a given directory. Your task is to write a recursive version of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. On top of the recursive descent into subdirectories, your version of `ls` must also also be able to perform a filename search.
-
 
 
 #### Starter Code
@@ -137,128 +135,41 @@ I have included a working solution of my program along with the starter code. Th
 
     - **Mode 1:** The first mode runs when the user only passes the `path`. Your program should attempt to open the directory given by `path` and recursively show all files' name and size (in bytes). You do not need to worry about displaying anything other than regular files and directories (ignore anything that isn't a directory or a regular file).
 
-      Here's me running `ls2` on the `.git/logs` directory, which is inside my current working directory:
+      Here's me running `ls2` on the `animals` directory, which is inside my current working directory:
       ```bash
-      $ ./ls2 .git/logs
-      HEAD (691 bytes)
-      refs/ (directory)
-          heads/ (directory)
-              main (503 bytes)
-          remotes/ (directory)
-              origin/ (directory)
-                  main (154 bytes)
-      ```
-
-      Here's me running `ls2` just on my current working directory `.`:
-      ```bash
-      $ ./ls2 .
-      main.c (387 bytes)
-      Makefile (182 bytes)
-      ls2.h (173 bytes)
-      .git/ (directory)
-          description (73 bytes)
-          HEAD (21 bytes)
-          COMMIT_EDITMSG (6 bytes)
-          hooks/ (directory)
-              prepare-commit-msg.sample (1492 bytes)
-              update.sample (3650 bytes)
-              fsmonitor-watchman.sample (4655 bytes)
-              pre-applypatch.sample (424 bytes)
-              pre-rebase.sample (4898 bytes)
-              pre-commit.sample (1643 bytes)
-              pre-push.sample (1374 bytes)
-              commit-msg.sample (896 bytes)
-              applypatch-msg.sample (478 bytes)
-              pre-merge-commit.sample (416 bytes)
-              pre-receive.sample (544 bytes)
-              push-to-checkout.sample (2783 bytes)
-              post-update.sample (189 bytes)
-          info/ (directory)
-              exclude (240 bytes)
-          objects/ (directory)
-              ad/ (directory)
-                  927129ffd942e63b356db9b811e0444a84b11f (223 bytes)
-              15/ (directory)
-                  6fe5a856f0ed83ddae54f2d4f235b03d07f21f (258 bytes)
-              d5/ (directory)
-                  626a4f84a73f58f39d63e07443a50b69041570 (111 bytes)
-              24/ (directory)
-                  537710b1c7599c061928d6f89bbf938b7c7d8a (590 bytes)
-              2c/ (directory)
-                  048c6621060d8242659e595220f8ec9da228f4 (4250 bytes)
-              0b/ (directory)
-                  738a7918e62ea8552a7997abd81c831304b846 (35 bytes)
-              13/ (directory)
-                  d87d094f4135b4c4199a9dfd901439288492c2 (155 bytes)
-              cc/ (directory)
-                  c1cb19b88b7163654e765a8bf552c6274b6b0c (53 bytes)
-              f7/ (directory)
-                  d900f3c17317cb30529d11dde2ed673eb29f69 (130 bytes)
-              7b/ (directory)
-                  2d469eb73ea748e5dacd44cda5071144fa6c7b (143 bytes)
-              85/ (directory)
-                  6bfad918cfaabf4db52fd50240934cd31e9b28 (121 bytes)
-              16/ (directory)
-                  3eff427411413e9b4b83a19dc20bb87d9f4814 (246 bytes)
-          config (269 bytes)
-          logs/ (directory)
-              HEAD (691 bytes)
-              refs/ (directory)
-                  heads/ (directory)
-                      main (503 bytes)
-                  remotes/ (directory)
-                      origin/ (directory)
-                          main (300 bytes)
-          refs/ (directory)
-              heads/ (directory)
-                  main (41 bytes)
-              remotes/ (directory)
-                  origin/ (directory)
-                      main (41 bytes)
-          index (641 bytes)
-      stack.h (438 bytes)
-      ls2.c (183 bytes)
-      stack.c (1428 bytes)
-      ls2Sol (16792 bytes)
-      README.md (34 bytes)
+        $ ./ls2 animals
+        horses/ (directory)
+            appaloosa/ (directory)
+                albert.txt (48 bytes)
+            mustang/ (directory)
+                dusty.txt (144 bytes)
+            arabian/ (directory)
+        gators/ (directory)
+            chomps.txt (6 bytes)
+        cats/ (directory)
+            fluffy.txt (42 bytes)
+            stimpy.txt (20 bytes)
+            dusty.txt (306 bytes)
       ```
     
-    - **Mode 2:** This mode runs when the user passes both `path` and the `exact-match-pattern` arguments. When this is the case, your program should only show files with names exactly matching the given `exact-match-pattern`. It should only include all the directories (and subdirectories) that contain files with names matching the given argument and ignore all the others in the print-out. The program should avoid showing the directory chain if the given pattern is not found in its subdirectory. Here's an example of me looking for any files or directories matching `main`.
+    - **Mode 2 (File Search):** This mode runs when the user passes both `path` and the `exact-match-pattern` arguments. When this is the case, your program should only show *files* with names matching `exact-match-pattern`. Here's the kicker: The output must not show any directory chains if the given pattern is not found in one its subdirectories. Here's an example of me looking for any files matching `dusty.txt`, which is found in two places: `animals/horses/mustang/` and in `animals/cats/`
 
-      ```bash
-      $ ./ls2 . main
-      .git/ (directory)
-          logs/ (directory)
-              refs/ (directory)
-                  heads/ (directory)
-                      main (503 bytes)
-                  remotes/ (directory)
-                      origin/ (directory)
-                          main (154 bytes)
-          refs/ (directory)
-              heads/ (directory)
-                  main (41 bytes)
-              remotes/ (directory)
-                  origin/ (directory)
-                      main (41 bytes)     
-      ```
+        ```bash
+        $ ./ls2 . dusty.txt
+        animals/ (directory)
+            horses/ (directory)
+                mustang/ (directory)
+                    dusty.txt (144 bytes)
+            cats/ (directory)
+                dusty.txt (306 bytes)
+        ```
 
-      In this run, I  want to search for any directories or files called `main` from within the `.git/refs` directory:
-      ```bash
-      ./ls2 .git/refs main
-      heads/ (directory)
-          main (41 bytes)
-      remotes/ (directory)
-          origin/ (directory)
-              main (41 bytes)
-      ```
-
-3. **What's the Included Stack For?** I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. (You should study `stack.c` to see how I use `malloc()` in various spots and later `free()` up the allocated memory.)
+3. **What's the Included Stack Library For?** I prepared you with the `stack.h` and `stack.c` files, which is a fully implemented stack. (You should study `stack.c` to see how I use `malloc()` in various spots and later `free()` up the allocated memory.)
     - When writing *Mode 2* of this assignment, you'll notice that you can't simply print every file or directory as soon as you encounter them as you could in *Mode 1*.
     
     - *Mode 2* requires that you keep a list of directories and files that you actually want to print out at the end. You can store this listing in the stack, and print out its contents later.
 
-    - The given `main()` function contains a bit of code to test this stack. You can remove this code when you're ready to write the ls2 program.
+    - The given `main()` function contains a bit of code to test this stack. You can remove this code when you're ready to write the `ls2` program.
 
 4. **Making System Calls**
     Recall that there are many privileged operations that users can't run without the OS's help. These requests are made via "system calls". 
@@ -293,13 +204,12 @@ I have included a working solution of my program along with the starter code. Th
 #### Grading
 
 ```
-This assignment will be graded out of 60 points:
-[5pt] Your program recursively descends down all subdirectories.
+This assignment will be graded out of 70 points:
+[5pt] Your program properly resolves command line arguments.
 [10pt] Implementation of Mode 1.
-[35pt] Implementation of Mode 2.
-[5pt] Your output of files and directories conforms to the specified format.
-[1pt] Your program properly resolves command line arguments.
-[4pt] Your program is free of memory leaks and dangling pointers. (Use valgrind!)
+[30pt] Implementation of Mode 2, which outputs only the directory chains that contain the given file name.
+[10pt] Your output of files and directories conforms to the specified format.
+[15pt] Your program is free of memory leaks and dangling pointers. (Use valgrind!)
 ```
 
 #### Submitting Your Assignment
@@ -311,4 +221,4 @@ This assignment will be graded out of 60 points:
 
 #### Credits
 
-Written by David Chiu. 2022.
+Written by David Chiu. 2022. Updated 2026.

@@ -334,8 +334,9 @@ A string in C is a sequence of $$k$$ `char`s stored in an array of size $$n$$, w
 
 
 - **The string.h Library:** As you can imagine, manipulating strings would be a pain because you need to do everything at the array level, and forgetting something as simple as terminating the string could have dire consequences. Fortunately, C provides a standard string library `string.h` to help us out. 
-  - You should really check out [string.h](http://www.cplusplus.com/reference/cstring/) library for the full list of string functions, but here are the important ones.
+  - You should really check out [string.h](http://www.cplusplus.com/reference/cstring/) library for the full list of string functions, but here are the most useful ones.
   - `strcpy(target, src)`: assigns `src` to `target`.
+  - `strdup(str)`: returns a cloned copy of the given string.
   - `sprintf(target, format, listing-of-expr)`: the most versatile way of building a string that has mixed types. (See example below!)
   - `strcat(target, src)`: concatenates  `src` to `target`, and null terminates.
   - `strlen(str)`: returns the length of `str`.

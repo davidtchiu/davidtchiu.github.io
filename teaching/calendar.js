@@ -21,6 +21,7 @@ const ASSIGNMENT_COLOR = {
   // labs: "#0e84b5",
   // homework: "#0e84b5",
   // projects: "#0e84b5",
+  resources: "#0e84b5",
   labs: "#d14",
   tutorials: "#d14",
   homework: "#d14",

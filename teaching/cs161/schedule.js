@@ -8,10 +8,6 @@ let days = {
       name: "Community Statement",
       url: "community"
     },
-    {
-      name: "Notes and Sample Code (on Canvas)",
-      url: "https://canvas.pugetsound.edu"
-    },
   ],
   assignments: {
     homework: [
@@ -90,12 +86,12 @@ let days = {
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
-      {
-        name: "Lab 1",
-        title: "Draw My Picture (BlueJ)",
-        url: "lab1.bluej/",
-        due: "1/23/2026",
-      },
+      // {
+      //   name: "Lab 1",
+      //   title: "Draw My Picture (BlueJ)",
+      //   url: "lab1.bluej/",
+      //   due: "1/23/2026",
+      // },
       // {
       //   name: "Lab 2",
       //   title: "Triangle Class (Variables, Scope, and Lifetime)",
