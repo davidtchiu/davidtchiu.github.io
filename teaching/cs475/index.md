@@ -1,7 +1,7 @@
 ## CS 475: Operating Systems
 
 Instructor: David Chiu\
-Lecture: Mon/Wed/Fri 3:00 - 3:50 in TH 374\
+Lecture: Mon/Wed/Fri 3:00 - 3:50 in TH 409\
 Office Hours: Drop in when door's open, or
 <!-- Google Calendar Appointment Scheduling begin -->
 <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
