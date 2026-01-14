@@ -116,11 +116,11 @@ To download and submit your homework assignments for this class, you'll need to 
 
 2. Navigate to [https://github.com/settings/tokens](https://github.com/settings/tokens) to create a new "personal access token." You can also get there via `Settings > Developer Settings`. 
 
-3. Click to generate new a (classic) token. On the next screen, give your new token a good *note*, like "For OS assignments" or "CS 475" so you know what it is later. Assign it an expiration period that will take you to the end of the course, and it may be easier to just give it no expiration.
+3. Click to generate new a (classic) token. On the next screen, give your new token a good *note*, like "For OS assignments" or "My OS class" so you know what it is later. Assign it an expiration period that will take you to the end of the course (or indefinitely).
 
 4. Below that, select the boxes: `repo`, `admin:org`, and `admin:public_key`. 
 
-5. Click the `Generate token` button on the bottom of the page, and take note (save) the token in a secure place. Don't share it. Treat this like your password.
+5. Click the `Generate token` button on the bottom of the page, and take note (save) the token in a secure place. Don't share it.  Treat this like your password. STORE IT SOMEWHERE SAFE BECAUSE YOU'LL BE REPEATEDLY ASKED FOR IT.
 
 6. Go back into your VS Code's terminal window. Type:
     ```bash
@@ -150,9 +150,7 @@ To download and submit your homework assignments for this class, you'll need to 
     $ gh auth setup-git
     ```
 
-9. That should set you up for authentication to github. We can start our homework.
-
-10. For each assignment, the initial push may still require you to login using this access token as your password, so make sure you don't lose it! (You cannot recover it if you do!)
+9. We should be set up for git! Occasionally, a push/pull will require you to enter the authentication token again, so don't lose it!
 
 #### Our First C Program
 
@@ -314,10 +312,10 @@ To prove that you have logged in successfully:
 
 1. Change your login password on the server.
 
-2. Commited and pushed your git repository. Make sure your repo is public.
+2. Commited and pushed your git repository. Make sure your github repo is public so I can access it for grading.
 
-3. On canvas, simply submit the URL to your Github repo. No other form of submission is accepted.
+3. On canvas, simply submit the URL to your github repo. No other form of submission is accepted.
 
 #### Credits
 
-Written by David Chiu. 2022. Updated 2024.
+Written by David Chiu. 2022. Updated 2026.
