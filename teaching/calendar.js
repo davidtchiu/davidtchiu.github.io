@@ -188,8 +188,8 @@ class CourseCalendar {
             }
           }
 
-          // depending on whether the day is LEC, WKD, or OFF, pull
-          // activity from the respective queue and add to the table
+          // Day's content: depending on whether the day is LEC, WKD, or OFF, pull
+          // the topic from the respective queue and add to the table
           if (this.format[dayCnt] == LEC) {
             const lecture = `${this.days.lectures.shift()}`;
             if (lecture == null || lecture.trim() === "") {
@@ -198,7 +198,6 @@ class CourseCalendar {
               dayContent.innerHTML += lecture;
             }
           }
-
           
           td.appendChild(dateHeader);
           td.appendChild(dayContent);
@@ -208,7 +207,7 @@ class CourseCalendar {
         currentDate.setDate(currentDate.getDate() + 1);
       }
 
-      // the week's course resources
+      // Resource block: notes, review guides, etc.
       let td = document.createElement("td");
       td.style.margin = "1px";
       td.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
@@ -216,6 +215,19 @@ class CourseCalendar {
       dayContent.style.fontSize = "80%";
       dayContent.style.whiteSpace = "nowrap";
       dayContent.innerHTML += `${this.days.lectures.shift()}`;
+
+      // Resource block: add any homework/lab assigned this week
+      for (let assignmentType of Object.keys(this.days.assignments)) {
+        for (let assign of this.days.assignments[assignmentType]) {
+          if (weekNum === assign.weekAssigned) {
+            dayContent.innerHTML += `Assigned: <a href="${assign.url}">${assign.name}</a> (due ${assign.due})<br/>`;
+          }
+        }
+      }
+
+
+
+
       td.appendChild(dayContent);
       tr.appendChild(td);
 
