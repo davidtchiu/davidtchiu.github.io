@@ -102,7 +102,7 @@ let days = {
     "Tutorial 3",
     "C tutorial: <a href='tut1'>1. The Basics</a><br/>C tutorial: <a href='tut2'>2. Pointers</a><br/>C tutorial: <a href='tut3'>3. Memory Management</a>",
         // wk 3
-    "Batch processing, multiprogramming, timesharing",
+    "Computing models",
     "Bootstrapping, interrupts",
     "Dual mode, system calls",
     "Notes: <a href='notes/CS475_2-kernel.pdf'>2. Interrupts and Syscalls</a>",
@@ -119,7 +119,7 @@ let days = {
     // wk 6
     "Par: Parallel architectures",
     "Par: Parallel computing patterns",
-    "Par: multithreaded code examples, Amdahl's Law",
+    "Par: Code examples, Amdahl's Law",
     "Notes: <a href='notes/CS475_4-threads2.pdf'>Parallel Programming (Part II)</a><br/>" +
     "Read: <a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>The Free Lunch Is Over</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
