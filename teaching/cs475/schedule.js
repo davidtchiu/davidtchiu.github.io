@@ -172,14 +172,14 @@ let days = {
     "MM: paging",
     "MM: TLB and page faults",
     "Virtual Memory: demand paging",
-    "",
+    "Notes: <a href='notes/CS475_9-vm1.pdf'>9. Virtual Memory</a>",
     // wk 15
     "VM: page replacement",
     "VM: clock algorithm",
     // "VM: memory allocation",
     // "VM: malloc(), free()",
     "<strong>Reading Period</strong>",
-    "Notes: <a href='notes/CS475_9-vm1.pdf'>9. Virtual Memory</a>",
+    "",
     // wk final
     "<strong><emph>Final Exam (Cumulative)<br/>4:00-6:00</emph></strong>",
     "",
