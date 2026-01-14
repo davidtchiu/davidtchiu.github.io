@@ -236,8 +236,7 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
     "Using APIs (String interface)",
-    "" + 
-      "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>5. Abstraction</a>",
+    "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>5. Abstraction</a>",
     // wk 7
     "Start loops; reading; tracing",
     "More loops; Lab 7: Loops",

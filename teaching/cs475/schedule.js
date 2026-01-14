@@ -24,67 +24,67 @@ let days = {
         weekAssigned: 1,
         due: "1/23/2026", // Fri, wk 1
       },
-      {
-        name: "Hwk 2 (wordstats)",
-        title: "Word Stats",
-        url: "hwk2.wordstat/",
-        weekAssigned: 2,
-        due: "2/2/2026",  // Mon, wk 3
-      },
-      {
-        name: "Hwk 3 (ls2)",
-        title: "A Suped-Up ls",
-        url: "hwk3.ls2/",
-        weekAssigned: 3,
-        due: "2/13/2026",   // Fri, wk 4
-      },
-      {
-        name: "Hwk 4 (dsh)",
-        title: "David Shell",
-        url: "hwk4.dsh/",
-        weekAssigned: 5,
-        due: "2/27/2026", // Fri, wk 6
-      },
-      {
-        name: "Hwk 5 (sobel)",
-        title: "Multithreaded Sobel Edge Detector",
-        url: "hwk5.sobel/",
-        weekAssigned: 6,
-        due: "3/11/2026",  // Wed, wk 8
-      },
-      {
-        name: "Hwk 6 (ts_hashmap)",
-        title: "Thread-Safe Hashmap",
-        url: "hwk6.hashmap/",
-        weekAssigned: 10,
-        due: "3/27/2026", // Fri, wk 10
-      },
-      {
-        name: "Hwk 7 (phils)",
-        title: "Deadlock-Free Philosophers",
-        url: "hwk7.phils/",
-        weekAssigned: 11,
-        due: "4/10/2026", // Fri, wk 12
-      },
-      {
-        name: "Hwk 8",
-        title: "Technical Report",
-        url: "hwk8.report/",
-        weekAssigned: 13,
-        due: "4/24/2026",  // Fri, wk 14
-      },
       // {
-      //   name: "Hwk 7 (OneLaneBridge)",
-      //   title: "One Lane Bridge ",
-      //   url: "hwk7.thebridge/",
-      //   due: "4/16/2025", // Wed, wk 13
+      //   name: "Hwk 2 (wordstats)",
+      //   title: "Word Stats",
+      //   url: "hwk2.wordstat/",
+      //   weekAssigned: 2,
+      //   due: "2/2/2026",  // Mon, wk 3
       // },
       // {
-      //   name: "Hwk 7 (bankers)",
-      //   title: "Banker's Algorithm",
-      //   url: "hwk7.bankers/",
-      //   due: "4/21/2025",
+      //   name: "Hwk 3 (ls2)",
+      //   title: "A Suped-Up ls",
+      //   url: "hwk3.ls2/",
+      //   weekAssigned: 3,
+      //   due: "2/13/2026",   // Fri, wk 4
       // },
+      // {
+      //   name: "Hwk 4 (dsh)",
+      //   title: "David Shell",
+      //   url: "hwk4.dsh/",
+      //   weekAssigned: 5,
+      //   due: "2/27/2026", // Fri, wk 6
+      // },
+      // {
+      //   name: "Hwk 5 (sobel)",
+      //   title: "Multithreaded Sobel Edge Detector",
+      //   url: "hwk5.sobel/",
+      //   weekAssigned: 6,
+      //   due: "3/11/2026",  // Wed, wk 8
+      // },
+      // {
+      //   name: "Hwk 6 (ts_hashmap)",
+      //   title: "Thread-Safe Hashmap",
+      //   url: "hwk6.hashmap/",
+      //   weekAssigned: 10,
+      //   due: "3/27/2026", // Fri, wk 10
+      // },
+      // {
+      //   name: "Hwk 7 (phils)",
+      //   title: "Deadlock-Free Philosophers",
+      //   url: "hwk7.phils/",
+      //   weekAssigned: 11,
+      //   due: "4/10/2026", // Fri, wk 12
+      // },
+      // {
+      //   name: "Hwk 8",
+      //   title: "Technical Report",
+      //   url: "hwk8.report/",
+      //   weekAssigned: 13,
+      //   due: "4/24/2026",  // Fri, wk 14
+      // },
+      // // {
+      // //   name: "Hwk 7 (OneLaneBridge)",
+      // //   title: "One Lane Bridge ",
+      // //   url: "hwk7.thebridge/",
+      // //   due: "4/16/2025", // Wed, wk 13
+      // // },
+      // // {
+      // //   name: "Hwk 7 (bankers)",
+      // //   title: "Banker's Algorithm",
+      // //   url: "hwk7.bankers/",
+      // //   due: "4/21/2025",
+      // // },
 
     ],
   },
