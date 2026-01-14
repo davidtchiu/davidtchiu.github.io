@@ -220,7 +220,7 @@ class CourseCalendar {
       for (let assignmentType of Object.keys(this.days.assignments)) {
         for (let assign of this.days.assignments[assignmentType]) {
           if (weekNum === assign.weekAssigned) {
-            dayContent.innerHTML += `Assigned: <a href="${assign.url}">${assign.name}</a> (due ${assign.due})<br/>`;
+            dayContent.innerHTML += `<br/> ${assignmentType}: <a href="${assign.url}">${assign.name}</a> (due ${assign.due})`;
           }
         }
       }
