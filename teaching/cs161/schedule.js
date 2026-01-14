@@ -15,42 +15,49 @@ let days = {
         name: "Hwk 0",
         title: "All About Me (BlueJ, Code Submission)",
         url: "hwk0.me/",
+        weekAssigned: 1, 
         due: "1/26/2026", // Mon, wk 2
       },
       // {
       //   name: "Hwk 1",
       //   title: "A Better Circle (Method Calls, Method Writing)",
       //   url: "hwk1.circle/",
+      //   weekAssigned: 2,
       //   due: "2/4/2026", // Wed, wk 3
       // },
       // {
       //   name: "Hwk 2",
       //   title: "Alarm Clock (Accumulators, Conditionals)",
       //   url: "hwk2.clock/",
+      //   weekAssigned: 3,
       //   due: "2/13/2026", // Fri, wk 4
       // },
       // {
       //   name: "Hwk 3",
       //   title: "Fractions (Object Interaction)",
       //   url: "hwk3.fraction/",
+      //   weekAssigned: 5,
       //   due: "2/25/2026", // Mon, wk 6
       // },
       // {
       //   name: "Hwk 4",
       //   title: "Robots (Code Abstraction and Modularity)",
       //   url: "hwk4.robot/",
+      //   weekAssigned: 6,
       //   due: "3/6/2026", //Fri, wk 7 (has a simple loop)
       // },
       // {
       //   name: "Hwk 5",
       //   title: "Loops, Loops, Loops!",
       //   url: "hwk5.loops/",
+      //   weekAssigned: 8,
       //   due: "3/24/2026", // Tues, wk 10 (right after spring break)
       // },
       // {
       //   name: "Hwk 6",
       //   title: "Combo Guesser (Arrays)",
       //   url: "hwk6.combo/",
+      //   weekAssigned: 10,
       //   due: "4/3/2026", // Fri, wk 11 (week after break)
       // },
       // // {
@@ -63,19 +70,22 @@ let days = {
       //   name: "Hwk 7",
       //   title: "Fotoshop (2D Array)",
       //   url: "hwk7.img/",
+      //   weekAssigned: 11,
       //   due: "4/15/2026", // Mon, wk 13
       // },
       // {
-      //   name: "Hwk 8",
-      //   title: "Black Jack",
-      //   url: "hwkF.blackjack.enums/",
-      //   due: "5/8/2026", // Fri (exam period)
+      //   name: "Hwk 8 Proposal",
+      //   title: "Homework Proposal (Optional)",
+      //   url: "hwkF.prep/",
+      //   weekAssigned: 12,
+      //   due: "4/12/2026",  // Fri, wk 12
       // },
       // {
-      //   name: "Final Proposal",
-      //   title: "Final Homework Proposal (Optional)",
-      //   url: "hwkF.prep/",
-      //   due: "4/13/2026",  // Fri, wk 12
+      //   name: "Hwk 8",
+      //   title: "Black Jack (Default)",
+      //   url: "hwkF.blackjack.enums/",
+      //   weekAssigned: 13,
+      //   due: "5/8/2026", // Fri (exam period)
       // },
       // // // {
       // // //   name: "Final Hwk (alternate)",
@@ -90,72 +100,84 @@ let days = {
       //   name: "Lab 1",
       //   title: "Draw My Picture (BlueJ)",
       //   url: "lab1.bluej/",
+      //   weekAssigned: 2,
       //   due: "1/23/2026",
       // },
       // {
       //   name: "Lab 2",
       //   title: "Triangle Class (Variables, Scope, and Lifetime)",
       //   url: "lab2.vars/",
+      //   weekAssigned: 3,
       //   due: "1/30/2026",
       // },
       // {
       //   name: "Lab 3",
       //   title: "Stomach Class (Class Writing, Random object)",
       //   url: "lab3.stomach/",
+      //   weekAssigned: 4,
       //   due: "2/6/2026",
       // },
       // {
       //   name: "Lab 4",
       //   title: "Guessing Game (Conditionals)",
       //   url: "lab4.guessing/",
+      //   weekAssigned: 5,
       //   due: "2/13/2026",
       // },
       // {
       //   name: "Lab 5",
       //   title: "Circle Drawer (Object Aliasing & Interaction)",
       //   url: "lab5.circleDrawer/",
+      //   weekAssigned: 6,
       //   due: "2/20/2026",
       // },
       // {
       //   name: "Lab 6",
       //   title: "Diamonds (Abstraction and Modularity)",
       //   url: "lab6.diamonds/",
+      //   weekAssigned: 7,
       //   due: "2/27/2026",
       // },
       // {
       //   name: "Lab 7",
       //   title: "Turtle (Loops)",
       //   url: "lab7.turtle/",
+      //   weekAssigned: 7,
       //   due: "3/6/2026",
       // },
       // {
       //   name: "Lab 8",
       //   title: "Homework Lab (Loops)",
       //   url: "hwk5.loops/",
+      //   weekAssigned: 8,
       //   due: "3/13/2026",
       // },
       // {
       //   name: "Lab 9",
       //   title: "Array Sorcery!",
       //   url: "lab9.arrays/",
+      //   weekAssigned: 10,
       //   due: "3/27/2026",
       // },
       // {
       //   name: "Lab 10",
       //   title: "The Game of Life (2D Arrays)",
       //   url: "lab10.life/",
+      //   weekAssigned: 11,
       //   due: "4/3/2026",
       // },
       // {
       //   name: "Lab 11",
       //   title: "Super Circle Drawer (ArrayLists)",
       //   url: "lab11.superCircleDrawer/",
+      //   weekAssigned: 12,
       //   due: "4/13/2026",
       // },
       // {
       //   name: "Lab 12",
       //   title: "Interactive Diary",
       //   url: "lab12.uiDiary/",
+      //   weekAssigned: 13,
       //   due: "4/17/2026",
       // },
       // // {
@@ -168,6 +190,7 @@ let days = {
       //   name: "Lab 13",
       //   title: "Playing Cards (Constants, Enum)",
       //   url: "lab13.cards/",
+      //   weekAssigned: 14,
       //   due: "4/24/2026",
       // }
       // // {
@@ -183,19 +206,20 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Introductions: Who are we? What is CS?",
     "Algorithms, hardware, languages; Using BlueJ",
-    "Notes #1: <a href='https://drive.google.com/open?id=1gdKAJ_Mi3cT6icL8ms7Jo-kpv6_mrJSb&usp=drive_fs'>What is CS?</a>" + "<br/>" + 
-      "Install: <a href='https://bluej.org/'>BlueJ Code Editor</a>",
+    "Notes: <a href='https://drive.google.com/open?id=1gdKAJ_Mi3cT6icL8ms7Jo-kpv6_mrJSb&usp=drive_fs'>1. What is CS?</a>" + "<br/>" + 
+      "Install: <a href='https://bluej.org/'>BlueJ Code Editor</a>" + "<br/>" +
+      "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
     // wk 2
     "Reading Java: basic class structure",
     "Lab 1: Draw My Picture",
     "Reading code: data types, scope",
-    "Notes #2: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>Classes and Objects</a>" + "<br/>" + 
+    "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
       "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Suped-Up Circle</a>",
     // wk 3
     "Reading code: methods; Start TicketMachine",
     "Lab 2: Triangle",
     "If statements, booleans, and logical operators",
-    "Notes #3: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>Writing Classes</a>" + "<br/>" + 
+    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Writing Classes</a>" + "<br/>" + 
       "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a>",
     // wk 4
     "Nested if, else-if",
@@ -206,13 +230,13 @@ let days = {
     "Classes as types: references, null",
     "Object interaction; Lab 5: Circle Drawer",
     "Object equality; <strong><emph>Exam 1 review</emph></strong>",
-    "Notes #4: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>Primitives vs Classes</a>" + "<br/>" +
+    "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>" + "<br/>" +
       "Exam #1 <a href=''>Study Guide</a> | <a href=''>Soln</a>",
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
     "Using APIs (String interface)",
-    "Notes #5: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>Abstraction</a>",
+    "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>5. Abstraction</a>",
     // wk 7
     "Start loops; reading; tracing",
     "More loops; Lab 7: Loops",
