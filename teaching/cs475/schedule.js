@@ -50,28 +50,35 @@ let days = {
       //   title: "Multithreaded Sobel Edge Detector",
       //   url: "hwk5.sobel/",
       //   weekAssigned: 6,
-      //   due: "3/11/2026",  // Wed, wk 8
+      //   due: "3/9/2026",  // Mon, wk 8
       // },
       // {
-      //   name: "Hwk 6 (ts_hashmap)",
+      //   name: "Hwk 6 (sched)",
+      //   title: "Stressin' out the Scheduler",
+      //   url: "hwk6.sched/",
+      //   weekAssigned: 8,
+      //   due: "3/27/2026",  // Fri, wk 10
+      // },
+      // {
+      //   name: "Hwk 7 (ts_hashmap)",
       //   title: "Thread-Safe Hashmap",
-      //   url: "hwk6.hashmap/",
-      //   weekAssigned: 10,
-      //   due: "3/27/2026", // Fri, wk 10
+      //   url: "hwk7.hashmap/",
+      //   weekAssigned: 11,
+      //   due: "4/8/2026", // Fri, wk 12
       // },
       // {
-      //   name: "Hwk 7 (phils)",
+      //   name: "Hwk 8 (phils)",
       //   title: "Deadlock-Free Philosophers",
       //   url: "hwk7.phils/",
-      //   weekAssigned: 11,
-      //   due: "4/10/2026", // Fri, wk 12
+      //   weekAssigned: 12,
+      //   due: "4/17/2026", // Fri, wk 13
       // },
       // {
       //   name: "Hwk 8",
       //   title: "Technical Report",
       //   url: "hwk8.report/",
-      //   weekAssigned: 13,
-      //   due: "4/24/2026",  // Fri, wk 14
+      //   weekAssigned: 14,
+      //   due: "5/4/2026",  // Finals
       // },
       // // {
       // //   name: "Hwk 7 (OneLaneBridge)",
@@ -80,7 +87,7 @@ let days = {
       // //   due: "4/16/2025", // Wed, wk 13
       // // },
       // // {
-      // //   name: "Hwk 7 (bankers)",
+      // //   name: "Hwk 8 (bankers)",
       // //   title: "Banker's Algorithm",
       // //   url: "hwk7.bankers/",
       // //   due: "4/21/2025",
