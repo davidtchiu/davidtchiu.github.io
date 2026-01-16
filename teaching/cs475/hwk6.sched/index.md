@@ -200,7 +200,7 @@ $ taskset -c 7 ./sched_test 2 4
 
 Let’s see how the system behaves with 20 CPU hogs running concurrently. On the third-from-last click, the jitter spikes, meaning this click woke up later than expected and the output hit the screen late. That’s scheduler latency under load, and it’s exactly the kind of small delay a human notices as a brief stutter. To the human, you might be slightly annoyed if it's a one-off, but if it occurs more frequently or if the delay is longer, then user experience might really take a toll.
 ```bash
-taskset -c 7 ./sched_test 20 4
+$ taskset -c 7 ./sched_test 20 4
 [click] elapsed=300.071 s  jitter=0.071 ms
 [click] elapsed=300.169 s  jitter=0.169 ms
 [click] elapsed=300.096 s  jitter=0.096 ms
@@ -217,10 +217,21 @@ taskset -c 7 ./sched_test 20 4
 ```
 
 
+#### Reflection Report
+The spirit of this assignment is experimentation on a real system. Answer the following questions in a `.txt` file and place it in your git repo.
+
+1. Compare your jitter with `num_hogs = 0` and `num_hogs = 8`. Does the interactive process stay surprisingly stable? At what point do you start seeing instability (higher jitters, more frequent jitters?).
+2. Jitter meaning: Does higher jitter imply a “bad scheduler,” or just a busy system? What other factors besides scheduling can contribute to jitter?
+3. Human perception: Presumably you type faster than 300ms per keypress. Change the `CLICK_INTERVAL_MS` constant in `interactive.c` to more closely match your typing speed. At what jitter value (in ms) do you personally start to notice the system feeling “laggy”?
+   - How many CPU hogs had to be deployed on a single core for you to observe this lag?
+   - What if you ran your program without `taskset` so that the hogs are scheduled on multiple cores? Does that help with lag? At what point does the lag return?
+4. Scheduler goals: Based on your observations, what do you think the Linux scheduler is optimizing for? Throughput? Fairness? Latency? Something else? How do you think it accomplishes low lag for certain processes that need it?
+
+
 #### Grading
 
 ```
-This assignment will be graded out of 80 points:
+This assignment will be graded out of 100 points:
 
 [5pts] User input is properly handled. Invalid arguments (wrong number of args, negative hog count, non-positive runtime) generate a clear error/usage message.
 
@@ -238,6 +249,8 @@ This assignment will be graded out of 80 points:
 [10pts] Spawns all hogs first using fork() + exec(). Spawns the interactive program last using fork() + exec() and passes runtime_seconds.
 
 [10pts] Waits for the interactive PID with waitpid(), then terminates hogs and reaps remaining children. Cleanup is correct: hog processes are not left running after sched_demo exits, and children are reaped (no zombies during normal execution).
+
+[20pts] Reflection report is completed.
 ```
 
 #### Submitting Your Assignment
