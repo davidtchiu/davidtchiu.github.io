@@ -35,16 +35,16 @@ Starter code for this assignment is provided on the github repo. You must do the
 
 #### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `sobelSol`. You can run it from the terminal by first navigating in to the homework directory and typing the command `./sobelSol`. 
+I have included a working solution of my program along with the starter code. The 3 binaries have been placed in the `sol` directory in the downloaded files. 
 
 
 #### Preamble: Working with Time in C
-In this assignment, you will need to measure time precisely. You will need to include the `time.h` library.
+In this assignment, you will need to measure time precisely. To do that, you will need to include the `time.h` library.
 ```c
 #include <time.h>
 ```
 
-This library gives you access to the  `struct timespec` structure, which holds a time value when the clocking function is called. Let's check out the data members in this struct. 
+This library gives you access to the  `struct timespec` structure, which holds a time value after the clocking function is called. Let's check out the data members in this struct. 
 ```c
 struct timespec {
     time_t tv_sec;   // whole seconds (valid values are >= ​0​)
@@ -52,7 +52,7 @@ struct timespec {
 };
 ```
 
-The time library gives you access to quite a few different clocks. For this assignment, we need a really precise stopwatch, called `CLOCK_MONOTONIC`.
+The time library gives you access to quite a few different clocks for telling date/time, but for this assignment, we need a really precise stop-watch, called `CLOCK_MONOTONIC`.
 ```c
 #include <stdio.h>
 #include <time.h>
@@ -71,7 +71,7 @@ Here's the kind of thing you might see when you run it:
 ```
 127374 seconds, 36495516 nanoseconds
 ```
-What it means is that 127374 seconds has elapsed since some undefined point in time, and 36495516 nanoseconds has passed since the last second. More precisely, 127374.036495516 seconds. On its own, that isn't all that useful. A better use of this measure is to call `clock_gettime()` again after doing some work to measure the time elapsed in between. (That's more like a of a stopwatch for tracking how much "wall-clock time" a piece of code took to run.)
+What it means is that 127374 seconds has elapsed since some undefined point in time, and 36495516 nanoseconds has passed since the last second. More precisely, 127374.036495516 seconds. On its own, that isn't all that useful. A better use of this measure is to call `clock_gettime()` again after doing some work to measure the time elapsed in between. (That's more like a stopwatch for tracking how much time a piece of code took to run.)
 
 Here's some helpful conversions:
 ```c
@@ -84,9 +84,9 @@ double ms = ts.tv_sec * 1000.0 + ts.tv_nsec / 1e6;
 
 #### Program Structure
 You will work with three separate programs:
-- `cpu_hog.c`: This program is CPU-bound. It just runs an infinite loop to waste CPU time. It doesn't yield, make a system call, or perform an I/O operation, so it will attempt to monopolize the CPU unless the OS scheduler preempts it.
-- `interactive.c`
-- `sched_test.c`
+- `cpu_hog.c`: This is a CPU-Bound program. (Requirements below.)
+- `interactive.c`: This is an IO-Bound program. (Requirements below.)
+- `sched_test.c`: This is the "controller" program you'll run to spawn (and reap) cpu hogs and interactive processes.
 
 #### Running Your Program
 
@@ -106,26 +106,26 @@ Meaning:
 - Run the interactive process for 5 seconds
 
 #### Program Requirements
-1. First, let's write ourselves a CPU hog inside `cpu_hog.c`. This shouldn't take you long. This program must be long-running and CPU-bound, so you just need to write an infinite loop doing mindless arithmetic to waste CPU time. For instance, just have it repeatedly traverse a small 2D array and doing some integer operation on each element. This might simulate the work of AI training, for instance. To be truly CPU-bound,  ensure that your program doesn't yield and doesn't perform an I/O operation (like printf, scanf, open, etc.). When it's run it will attempt to monopolize the CPU until the OS scheduler preempts it.
+1. First, let's write ourselves a CPU hog inside `cpu_hog.c`. This shouldn't take you long. This program must perform purely CPU instructions, so you just need to write an infinite loop doing mindless arithmetic to waste CPU time. For instance, just have it repeatedly traverse do some integer operation (like multiply or divide) on a variable. Ensure that your program doesn't yield and doesn't perform an I/O operation (like `printf`, `scanf`, `open`, etc.). When it's run it will monopolize the CPU until the OS scheduler preempts it.
 
-2. Verify that your CPU hog is indeed monopolizing. Compile and run it. Leave it running and from another shell, run the command `top`, which lists all running tasks and orders them by CPU usage. Near the top, you should see your hog process using up 100% of the server's CPU.
+2. Verify that your CPU hog is indeed monopolizing the CPU. Compile and run it. From another shell (you can create another terminal window by pressing on the `+` button to the right of your terminal window), run the `top` command, which dynamically lists all running tasks and orders them by CPU usage. Near the top, you should see your hog process using up close to 100% of one of the server's CPUs. Here's what mine shows.
    ```bash
    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                             
    190143 dchiu     20   0    2644    948    860 R  99.7   0.0   0:04.01 cpu_hog                             
    ```
 
-3. While the first hog's running, if you started another hog process, you would think that their CPU usage would split to 50%. But a run of `top` informs us that you now have two processes each taking up ~100%. What's going on? The server has a multi-core CPU. Linux is scheduling each task on a separate core, so they are indeed each monopolizing 100% of their own cores. Since we're aiming to stress test the OS on this assignment, we'll force all the processes to be run on just one CPU. (More on that later.) Terminate the CPU hogs after testing.
+3. While the CPU hog's running, try starting another CPU hog process. You would think that their CPU usage would split to 50%. But a run of `top` informs us that you now have two processes each taking up ~100%. What's going on? The server has a multi-core CPU. Linux is scheduling each task on a separate core, so they are indeed each monopolizing 100% of their own cores. Since we're aiming to stress test the OS on this assignment, we'll "pin" all the processes to be run on the same CPU. (More on how to do that later.) Go ahead and terminate the CPU hogs after testing.
 
-4. Next, let's define our interactive program inside `interactive.c`. This program must be I/O-bound. It should take a single command-line argument `<run-seconds>`. We want this program to simulate an interactive program like a shell, a code editor, or text processor, which does very little CPU work and spends most of its time blocking/waiting. To do this, you'll want the process to repeatedly [usleep()](https://www.ibm.com/support/pages/example-using-c-api-usleep) for **300 ms** (which is approximately the delay of a key press). After you sleep, print this line of output to the screen:
+4. Next, let's define our interactive program inside `interactive.c`. It should take a single command-line argument `<run-seconds>`. We want this program to simulate an interactive program like a shell, a code editor, or text processor, which does very little CPU work and spends most of its time blocking/waiting. To do this, you'll want the process to repeatedly [usleep()](https://www.ibm.com/support/pages/example-using-c-api-usleep) for **300 ms** (which is approximately the delay of a key press). After you sleep, print this line of output to the screen:
 
    ```bash
    [click] elapsed=300.077 ms  jitter=0.077 ms
    ```
    
-   Meaning:
-   - `[click]` indicates a simulated user action like a keypress or a mouseclick.
+   where:
+   - `[click]` indicates a simulated user action like a key-press or a mouse-click.
    - `elapsed` is the wall-clock time taken for the OS to service the "click." It should be displayed in milliseconds, precise to the thousandth place.
-   - `jitter` is the instantaneous wakeup delay for this click in milliseconds, defined as: $$jitter = (actual\_elapsed - expected\_elpased)$$. The "jitter" is an approximation responsiveness delay. It is influenced by scheduler latency and the current system load, and may spike if the system is overwhelemed. It is a useful measurement of how quickly your OS schedules an interactive process after it becomes ready/runnable.
+   - `jitter` is the responsiveness' delay in milliseconds, defined as: $$jitter = (actual\_elapsed - expected\_elpased)$$. (In our case, $$expected\_elpased = 300$$ ms).  The jitter influenced by scheduler latency and the current system load, and may spike if the system is overwhelemed. The higher the jitter, the more "lag" you feel as the human. It is a useful measurement of how quickly your OS schedules an interactive process after it becomes ready/runnable.
 
    This loop should run for a minimum of the given `<run-seconds>` seconds. Then it should break out of the loop and exit.
    Here's what a 2-second run might look like:
@@ -138,12 +138,13 @@ Meaning:
    [click] elapsed=300.115 ms  jitter=0.115 ms
    [click] elapsed=300.112 ms  jitter=0.112 ms
    ```
-   That's expected. When I ran this, the system was lightly loaded so each "click" carried a negligible jitter. Each line of output took around 300 ms to print, so it felt fast and responsive to me. We're interested in seeing if still feels as responsive once we deploy multiple CPU hogs running concurrently on the same CPU!
+   That's expected. When I ran this for the specified 2 seconds, the system was lightly loaded, so each "click" carried a negligible jitter. Each line of output took just a tad over 300 ms to print, and because the jitter was insignificant, this it felt fast and responsive to me (and to you too!). We're interested in seeing if the jitter increases as we deploy more CPU hogs running concurrently on the same CPU.
 
 
-s5. Now turn your attention to the `sched_test`  program, which will run the stress-test. The general idea is that it needs to fork all the hogs and the one interactive process so that they run concurrently on the server, wait for the interactive process to finish, then kill and reap all the hogs to clean up. Once you've parsed in the command line inputs,  `fork` and `exec` all CPU hogs first, and the interactive process last.
+5. Once you're done writing and testing `interactive.c`,  turn your attention to the `sched_test`  program, which will run the stress test. The general idea is that it needs to fork all the hogs and the one interactive process so that they run concurrently on the server, wait for the interactive process to finish, then kill and reap all the hogs to clean up. Once you've parsed in the command-line inputs,  `fork` and `exec` all CPU hogs first and the interactive process last.
 
-6. The parent process should now wait only for the interactive process to finish (all the CPU hogs run infinite loops and won't exit). After the parent detects that the interactive process exited, terminate all CPU hogs to clean up. We wouldn't want those CPU hogs running loose and gumming up our server! The parent also needs to reap all remaining children to avoid zombies after terminating the hogs!
+6. The parent process should now wait only for the interactive process to finish (all the CPU hogs run infinite loops and won't exit). After the parent detects that the interactive process exited, it needs to then terminate all CPU hogs. We wouldn't want those CPU hogs running loose and gumming up our server! The parent also needs to reap all remaining children to avoid zombies after terminating the hogs!
+   - Hint: Use the `wait(NULL)` command in a loop to reap all the hogs.
 
 
 7. **Warning:** Terminating a parent process does not automatically terminate its children on Linux.  If `sched_demo` crashes, is killed, or exits before it terminates/reaps the CPU-hog children, those hogs will continue to run on the server! They become orphans and are re-parented to PID 1, and they will continue consuming CPU. Too many of these orphans will totally bog down the server! So your program must explicitly terminate hogs (by sending a `SIGKILL` signal using the `kill()` function to terminate all the hog children) when the interactive process finishes. To check if you have any `cpu_hog` processes running, type this into your shell.
@@ -198,7 +199,7 @@ $ taskset -c 7 ./sched_test 2 4
 [click] elapsed=300.089 s  jitter=0.089 ms
 ```
 
-Let’s see how the system behaves with 20 CPU hogs running concurrently. On the third-from-last click, the jitter spikes, meaning this click woke up later than expected and the output hit the screen late. That’s scheduler latency under load, and it’s exactly the kind of small delay a human notices as a brief stutter. To the human, you might be slightly annoyed if it's a one-off, but if it occurs more frequently or if the delay is longer, then user experience might really take a toll.
+Let’s see how the system behaves with 20 CPU hogs running concurrently on the same CPU. It's pretty amazing how responsive the interactive process is! But on the third-from-last click, the jitter spikes, meaning this "click" responded later than expected and the output hit the screen with a noticeable delay (appears like a stutter to us).  To the human, you might be slightly annoyed if it's a one-off, but if it occurs more frequently and/or if the delay is longer, then user-experience might really take a hit! Because scheduling is non-deterministic, you may or may not observe jitters like this after 20 hogs. If that's the case, you might try increasing your hog count.
 ```bash
 $ taskset -c 7 ./sched_test 20 4
 [click] elapsed=300.071 s  jitter=0.071 ms
@@ -220,11 +221,11 @@ $ taskset -c 7 ./sched_test 20 4
 #### Reflection Report
 The spirit of this assignment is experimentation on a real system. Answer the following questions in a `.txt` file and place it in your git repo.
 
-1. Compare your jitter with `num_hogs = 0` and `num_hogs = 8`. Does the interactive process stay surprisingly stable? At what point do you start seeing instability (higher jitters, more frequent jitters?).
-2. Jitter meaning: Does higher jitter imply a “bad scheduler,” or just a busy system? What other factors besides scheduling can contribute to jitter?
+1. Starting with `num_hogs = 0`, and increasing it to 4, then 8, then 16, and so on, does the interactive process always remain relatively stable? At what point do you start seeing instability (longer jitters, more frequent jitters?).
+2. Think critically: Do you think that a higher jitter imply a “bad scheduler,” or just a busy system? What other factors besides scheduling can contribute to jitter?
 3. Human perception: Presumably you type faster than 300ms per keypress. Change the `CLICK_INTERVAL_MS` constant in `interactive.c` to more closely match your typing speed. At what jitter value (in ms) do you personally start to notice the system feeling “laggy”?
    - How many CPU hogs had to be deployed on a single core for you to observe this lag?
-   - What if you ran your program without `taskset` so that the hogs are scheduled on multiple cores? Does that help with lag? At what point does the lag return?
+   - What if you ran your program without the  `taskset -c` prefix so that the hogs are scheduled on multiple cores? Does that help with lag? At what point does the lag return?
 4. Scheduler goals: Based on your observations, what do you think the Linux scheduler is optimizing for? Throughput? Fairness? Latency? Something else? How do you think it accomplishes low lag for certain processes that need it?
 
 
