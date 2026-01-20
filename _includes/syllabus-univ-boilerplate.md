@@ -6,7 +6,6 @@ There are many university policies and resources that offer guidance on how to b
 
 - For information on academic and administrative policies (such as policies on grade policies, leaves of absence, declaring a major, academic integrity, and academic petitions) please refer to the [Academic Policies](bulletin.pugetsound.edu/policy/academicpolicies) and [Administrative Policies](bulletin.pugetsound.edu/policy/administrativepolicies) sections of the University Bulletin.
 
-
 - If you are seeking a religious accommodation in an academic course or program, please follow the process provided in the university’s policy on Student Religious Accommodations in Academic Courses or Programs, available at [www.pugetsound.edu/office-university-counsel/policies/campuswide-policies/student-religious-accommodations-academic-courses-or-programs](https://www.pugetsound.edu/office-university-counsel/policies/campuswide-policies/student-religious-accommodations-academic-courses-or-programs)
 
 - If you have any concerns about prohibited harassment or discrimination that may be affecting you or others at Puget Sound, please contact the university’s Title IX Coordinator/Equal Opportunity Officer, Wheelock 218, 253.879.3793, website: [www.pugetsound.edu/title-ix-equal-opportunity](https://www.pugetsound.edu/title-ix-equal-opportunity), email: [titleix-eoo@pugetsound.edu](mailto:titleix-eoo@pugetsound.edu). The Title IX Coordinator/Equal Opportunity Officer can explain available options and help address concerns informally or formally.

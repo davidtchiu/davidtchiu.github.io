@@ -18,6 +18,10 @@ One the most complex software systems ever assembled, the modern operating syste
 A grade of C- or higher in the following course(s) is required:
  - CSCI 281: Assembly Language and Computer Architecture
 
+
+
+
+
 #### Required Textbook
 
 - Silberschatz, Galvin, and Gagne. [Operating Systems Concepts](https://www.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/0470128720). 8th Ed. or greater. (Required)

@@ -10,15 +10,16 @@
 
 
 #### Course Description
-This course is an introduction to computer science and programming. The programming language Java is used to illustrate concepts in computer science. The course emphasizes the use of the computer as a problem-solving tool and the development of good programming style. CS 161 is the introductory course for students planning to major or minor in computer science. A weekly lab is required.
+This course is an introduction to computer science and programming. The programming language Java is used to illustrate concepts in computer science. The course emphasizes the use of the computer as a problem-solving tool and the development of good programming style. CS 161 is the introductory course for students planning to major or minor in computer science. A weekly lab is required. This course satisfies the MATH/SCI divisional requirement for graduation. 
 
 #### Prerequisites
 Three years of high-school mathematics, MATH 110 Pre-Calculus, or equivalent. Students with transfer credit for CSCI 161 may not take this course.
 
-<!-- 
+
 #### Required Textbook
-[Cay Horstmann. Java Concepts: Early Objects.](https://www.amazon.com/Java-Concepts-Cay-S-Horstmann/dp/1119056500)
- -->
+Notes provided. No textbook required.
+<!-- [Cay Horstmann. Java Concepts: Early Objects.](https://www.amazon.com/Java-Concepts-Cay-S-Horstmann/dp/1119056500) -->
+
 
 #### Course Topics
 - Computational thinking
