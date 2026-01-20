@@ -101,48 +101,53 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
     "History of systems",
-    "Notes: <a href='https://drive.google.com/open?id=1dkdLnS2wtQvwzzHTcusHgOq7tOhIKJhA&usp=drive_fs'>1. What is OS?</a><br/>" +
-      "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
+    "Notes: <a href='https://drive.google.com/open?id=1dkdLnS2wtQvwzzHTcusHgOq7tOhIKJhA&usp=drive_fs'>1. What is OS?</a><br/>",
     // wk 2
     "Tutorial 1",
     "Tutorial 2",
     "Tutorial 3",
     "C tutorial: <a href='tut1'>1. The Basics</a><br/>C tutorial: <a href='tut2'>2. Pointers</a><br/>C tutorial: <a href='tut3'>3. Memory Management</a>",
-        // wk 3
+    // wk 3
     "Computing models",
     "Bootstrapping, interrupts",
     "Dual mode, system calls",
-    "Notes: <a href='notes/CS475_2-kernel.pdf'>2. Interrupts and Syscalls</a>",
+    "",
+    // "Notes: <a href='notes/CS475_2-kernel.pdf'>2. Interrupts and Syscalls</a>",
     // wk 4
     "Processes: switching, PCB, address space",
     "Processes: fork(), exec() system calls",
     "Processes: wait(); zombies and orphans",
-    "Notes: <a href='notes/CS475_3-processes.pdf'>3. Concurrency and Processes</a>",
+    "",
+    // "Notes: <a href='notes/CS475_3-processes.pdf'>3. Concurrency and Processes</a>",
     // wk 5
     "Threads: motivation and kernel support",
     "Threads: pthread library",
     "Threads: user-level vs kernel-level",
-    "Notes: <a href='notes/CS475_4-threads1.pdf'>4. Threads (Part I)</a>",
+    "",
+    // "Notes: <a href='notes/CS475_4-threads1.pdf'>4. Threads (Part I)</a>",
     // wk 6
     "Par: Parallel architectures",
     "Par: Parallel computing patterns",
     "Par: Code examples, Amdahl's Law",
-    "Notes: <a href='notes/CS475_4-threads2.pdf'>Parallel Programming (Part II)</a><br/>" +
-    "Read: <a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>The Free Lunch Is Over</a><br/>" +
-      "Code: <a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
-      "Code: <a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>",
+    "",
+    // "Notes: <a href='notes/CS475_4-threads2.pdf'>Parallel Programming (Part II)</a><br/>" +
+    // "Read: <a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>The Free Lunch Is Over</a><br/>" +
+    //   "Code: <a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
+    //   "Code: <a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>",
     // wk 7
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
     "Scheduling: goals and metrics; burst model",
-    "Exam 1 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a>",
+    "",
+    // "Exam 1 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a>",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
     "Sched: SJF, SRTF, prediction",
     "Sched: RR, SRTF, MLFQ",
     // "Sched: hyperthreading, multicore considerations",
     "Sync: critical section problem",
-    "Notes #5: <a href='notes/CS475_5-sched.pdf'>CPU Scheduling</a>",
+    "",
+    // "Notes #5: <a href='notes/CS475_5-sched.pdf'>CPU Scheduling</a>",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
@@ -161,25 +166,29 @@ let days = {
     "Sync: more semaphores",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "Notes: <a href='notes/CS475_6-sync2.pdf'>6. Semaphores (Part II)</a><br/>" +
-        "Exam 2 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a><br/>" +
-        "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
-        "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
+    "",
+    // "Notes: <a href='notes/CS475_6-sync2.pdf'>6. Semaphores (Part II)</a><br/>" +
+    //     "Exam 2 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a><br/>" +
+    //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
+    //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
     "Deadlocks",
     "DL: Deadlock detection",
     "DL: Bankers algorithm",
-    "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
+    "",
+    // "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
     // wk 13
     "Memory Management: virtual addressing",
     "MM: partitioning and segmentation",
     "MM: segmentation",
-    "Notes: <a href='notes/CS475_8-mmu.pdf'>8. Memory Management</a>",
+    "",
+    // "Notes: <a href='notes/CS475_8-mmu.pdf'>8. Memory Management</a>",
     // wk 14
     "MM: paging",
     "MM: TLB and page faults",
     "Virtual Memory: demand paging",
-    "Notes: <a href='notes/CS475_9-vm1.pdf'>9. Virtual Memory</a>",
+    "",
+    // "Notes: <a href='notes/CS475_9-vm1.pdf'>9. Virtual Memory</a>",
     // wk 15
     "VM: page replacement",
     "VM: clock algorithm",
@@ -191,7 +200,8 @@ let days = {
     "<strong><emph>Final Exam (Cumulative)<br/>4:00-6:00</emph></strong>",
     "",
     "",
-    "Final Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a>"
+    "",
+    // "Final Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a>"
     ],
 };
 

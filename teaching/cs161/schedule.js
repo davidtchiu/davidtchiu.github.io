@@ -213,14 +213,16 @@ let days = {
     "Reading Java: basic class structure",
     "Lab 1: Draw My Picture",
     "Reading code: data types, scope",
-    "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
-      "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Suped-Up Circle</a>",
+    "",
+    // "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
+    //   "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Suped-Up Circle</a>",
     // wk 3
     "Reading code: methods; Start TicketMachine",
     "Lab 2: Triangle",
     "If statements, booleans, and logical operators",
-    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Writing Classes</a>" + "<br/>" + 
-      "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a>",
+    "",
+    // "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Writing Classes</a>" + "<br/>" + 
+    //   "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a>",
     // wk 4
     "Nested if, else-if",
     "Lab 3: Stomach",
@@ -257,7 +259,7 @@ let days = {
     "Finish Bank class; Lab 9: ComboGuesser",
     "TurtleMob; <strong><emph>Exam 2 review</emph></strong>",
     "",
-    "Exam #2 <a href=''>Study Guide</a> | <a href=''>Soln</a>",
+    // "Exam #2 <a href=''>Study Guide</a> | <a href=''>Soln</a>",
      // wk 11
     "<strong><emph>Exam 2</emph></strong>",
     "Start 2D arrays; Lab 10: TicTacToe",    
