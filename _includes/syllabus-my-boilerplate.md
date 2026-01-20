@@ -1,5 +1,4 @@
 
-### Clasroom Policies
 
 ##### Final Letter Grades
 A weighted average of various assessments (see above) determines your final letter grade. Anything after the decimal point is truncated, e.g. 89.9% = B+.
@@ -57,7 +56,7 @@ Note, however, that there are clear boundaries that, when crossed, could lead to
 
 
 
-### Late Policy, Extensions, and Makeup
+#### Late Policy, Extensions, and Makeup
 
 ##### Late Deduction
 For each day that a homework assignment is late beyond the due date (or the adjusted date according to your accommodations), I assess a $$3^d\%$$ deduction, where $$d$$ is the number of days late including weekends. 
