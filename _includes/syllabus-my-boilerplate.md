@@ -63,14 +63,18 @@ Note, however, that there are clear boundaries that, when crossed, could lead to
 For each day that a homework assignment is late beyond the due date (or the adjusted date according to your accommodations), I assess a $$3^d\%$$ deduction, where $$d$$ is the number of days late including weekends. 
 
 ##### Deadline Extensions
-Ample time is provided to complete each assignment, and I do not assign work that has not already been covered in lectures. Generally, no extensions be will given for assignments. The exception is when you can provide documentation for unique circumstances, or if you have student accommodations. As a general rule of thumb, come talk to me and explain what might be going on.
+At my discretion, extensions on assignments may only be given depending on circumstances like pacing, clarification, etc. Extensions are not generally granted on a *personal* basis, except if the student can provide documentation for unique circumstances (e.g., injury/hospitalization, bereavement, etc.), or when the student is entitled to certain accommodations. As a general rule of thumb, just come talk to me first.
 
 ##### Exam Policies
+Sample problem sets and a checklist of expected topics are provided in a study guide. Unless a student has accommodations, exams are always in written format. Students are *allowed* to bring a full page of notes (front + back) to the exam, which must be turned in along with the exam.
 
-- Makeup: I expect you to be present on the day of exams. I do not offer makeups unless you can _document_ an extenuating circumstance. The following do not count as extenuating circumstances: experiencing a cold, overslept, mental-health day, family visiting, traveling, etc. Exam days are listed on my course calendar and _will not_ change. Plan accordingly!
+- Exam dates: I have never had to move an exam from its scheduled date, but if I did, I would never move them earlier, only later.
 
-- Final Exam: You must show up on the scheduled day of the final exam. These dates are set by the university and cannot be rescheduled. Please do not ask for exceptions.
+- Final Exam: You must show up on the scheduled set day of the final exam. These dates are set by the university and cannot be rescheduled. Please do not ask for exceptions.
 
-- The following items are prohibited to use on the day of exams: Phones (even with Wifi disabled), headphones, and other mobile devices.
+- Makeup: I expect you to be present on the day of exams. I do not offer makeups unless you can _document_ an extenuating circumstance. The following do not count as extenuating circumstances: experiencing a cold, overslept, family visiting, traveling, etc. If a makeup exam is granted, you will receive a different version than everyone else.
 
 - Student Accommodations: It is *your* responsibility to inform me if you will be taking exams at the accommodations office well-ahead of time, so that I have time to provide exam copies to their office.
+
+- The following items are prohibited for use on the day of exams: Phones (even with WIFI disabled), headphones, and other mobile devices.
+
