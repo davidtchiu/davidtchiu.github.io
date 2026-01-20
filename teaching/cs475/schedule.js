@@ -99,7 +99,8 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
     "History of systems",
-    "Notes: <a href='https://drive.google.com/open?id=1dkdLnS2wtQvwzzHTcusHgOq7tOhIKJhA&usp=drive_fs'>1. What is OS?</a><br/>",
+    "Notes: <a href='https://drive.google.com/open?id=1dkdLnS2wtQvwzzHTcusHgOq7tOhIKJhA&usp=drive_fs'>1. What is OS?</a>" + "<br/>" +
+      "Watch: <a href='https://chsi.harvard.edu/harvard-ibm-mark-1-video'>The Story of Mark I</a>",
     // wk 2
     "Tutorial 1",
     "Tutorial 2",
