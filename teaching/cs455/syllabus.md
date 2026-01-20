@@ -5,7 +5,7 @@
 - Web page: [https://davidtchiu.github.io/teaching/cs455/](https://davidtchiu.github.io/teaching/cs455/)
 - Email: [dchiu@pugetsound.edu](mailto://dchiu@pugetsound.edu)
 - Office Hours: Drop in when door's open, or schedule an appointment using the QR code below
-    <img width="50%" src="../../calendar-qrcode.png" />
+    <img width="85px" src="../../calendar-qrcode.png" />
 
 
 #### Course Description
