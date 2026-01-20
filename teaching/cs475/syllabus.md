@@ -5,9 +5,9 @@
 - Instructor: David Chiu
 - Web page: [https://davidtchiu.github.io/teaching/cs475/](https://davidtchiu.github.io/teaching/cs475/)
 - Email: [dchiu@pugetsound.edu](mailto://dchiu@pugetsound.edu)
-- Office Hours: Drop in when door's open, or schedule an appointment using the QR code below
+- Office: TH 303
+- Office Hours: Drop in when door's open, or schedule an appointment using the QR code below\
     <img width="85px" src="../../calendar-qrcode.png" />
-
 
 #### Course Description
 One the most complex software systems ever assembled, the modern operating system serves as the interface between the human and the machine. This course traces how the simple idea of "resource sharing"  unravels into some of the most confounding problems and original breakthroughs in computer science. Course topics include process and thread management, input/output, CPU scheduling, concurrency and synchronization, memory management, virtual memory, and caching. Students taking this course will learn how to deal with the intricacies of low-level programming, parallel computing, and tackling synchronization problems. The C programming language will be taught. 

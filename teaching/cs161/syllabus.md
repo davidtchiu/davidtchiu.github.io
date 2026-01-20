@@ -4,10 +4,9 @@
 - Instructor: David Chiu
 - Web page: [https://davidtchiu.github.io/teaching/cs161/](https://davidtchiu.github.io/teaching/cs161/)
 - Email: [dchiu@pugetsound.edu](mailto://dchiu@pugetsound.edu)
-- Office Hours: Drop in when door's open, or schedule an appointment using the QR code below
+- Office: TH 303
+- Office Hours: Drop in when door's open, or schedule an appointment using the QR code below\
     <img width="85px" src="../../calendar-qrcode.png" />
-
-
 
 
 #### Course Description
@@ -16,9 +15,10 @@ This course is an introduction to computer science and programming. The programm
 #### Prerequisites
 Three years of high-school mathematics, MATH 110 Pre-Calculus, or equivalent. Students with transfer credit for CSCI 161 may not take this course.
 
+<!-- 
 #### Required Textbook
 [Cay Horstmann. Java Concepts: Early Objects.](https://www.amazon.com/Java-Concepts-Cay-S-Horstmann/dp/1119056500)
-
+ -->
 
 #### Course Topics
 - Computational thinking
