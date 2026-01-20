@@ -206,7 +206,7 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Introductions: Who are we? What is CS?",
     "Algorithms, hardware, languages; Using BlueJ",
-    "Notes: <a href='https://drive.google.com/open?id=1gdKAJ_Mi3cT6icL8ms7Jo-kpv6_mrJSb&usp=drive_fs'>1. What is CS?</a>" + "<br/>" + 
+    "Notes: <a href='https://drive.google.com/file/d/11UGFf39BPSc0oXnjzOFzUJsEKXZMYnuR/view'>1. What is CS?</a>" + "<br/>" + 
       "Install: <a href='https://bluej.org/'>BlueJ Code Editor</a>" + "<br/>" +
       "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
     // wk 2
