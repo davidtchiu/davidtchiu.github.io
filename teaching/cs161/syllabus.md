@@ -1,5 +1,14 @@
 ## CS 161 - Introduction to Computer Science - Syllabus
 
+#### Course Info
+- Instructor: David Chiu
+- Web page: [https://davidtchiu.github.io/teaching/cs161/](https://davidtchiu.github.io/teaching/cs161/)
+- Email: [dchiu@pugetsound.edu](mailto://dchiu@pugetsound.edu)
+- Office Hours: Drop in when door's open, or schedule an appointment using the QR code below
+    <img width="50%" src="../../calendar-qrcode.png" />
+
+
+
 
 #### Course Description
 This course is an introduction to computer science and programming. The programming language Java is used to illustrate concepts in computer science. The course emphasizes the use of the computer as a problem-solving tool and the development of good programming style. CS 161 is the introductory course for students planning to major or minor in computer science. A weekly lab is required.
