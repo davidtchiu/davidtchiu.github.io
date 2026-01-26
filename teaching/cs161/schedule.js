@@ -18,13 +18,13 @@ let days = {
         weekAssigned: 1, 
         due: "1/26/2026", // Mon, wk 2
       },
-      // {
-      //   name: "Hwk 1",
-      //   title: "A Better Circle (Method Calls, Method Writing)",
-      //   url: "hwk1.circle/",
-      //   weekAssigned: 2,
-      //   due: "2/4/2026", // Wed, wk 3
-      // },
+      {
+        name: "Hwk 1",
+        title: "A Better Circle (Method Calls, Method Writing)",
+        url: "hwk1.circle/",
+        weekAssigned: 2,
+        due: "2/4/2026", // Wed, wk 3
+      },
       // {
       //   name: "Hwk 2",
       //   title: "Alarm Clock (Accumulators, Conditionals)",
