@@ -214,8 +214,8 @@ let days = {
     "Lab 1: Draw My Picture",
     "Reading code: data types, scope",
     "",
-    // "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
-    //   "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Suped-Up Circle</a>",
+    "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
+      "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Suped-Up Circle</a>",
     // wk 3
     "Reading code: methods; Start TicketMachine",
     "Lab 2: Triangle",

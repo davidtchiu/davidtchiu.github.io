@@ -21,18 +21,18 @@ The following file(s) have been provided for this assignment.
 
 1. Start by downloading a fresh copy of the starter file from the above link. Extract `Hwk_AboutMe.zip`. Place it into your folder for this class, preferably within Google Drive. Then extract the contents of this folder:
 
-   - **Windows users:** remember from Lab that you cannot simply double-click on the zip file to extract it! You must right-click on the file, and choose `Extract...`. Remember where you choose to extract its content.
-   - **Mac users:** you can simply double-click on the zip file to extract it!
+   - **Windows users:** you cannot simply double-click on the zip file to extract it! You *must* right-click on the file, and choose `Extract...`. Remember where you choose to extract its content.
+   - **Mac users:** you can simply double-click on the zip file to extract it.
 
 2. Navigate into the folder, and double-click the file called `package.bluej` (It should look like a small blue jay icon.) This should open the project inside the BlueJ code editor, and you should see a single icon called `AboutMe` (looks like an orange box).
 
-3. Before you do anything else, let's customize your BlueJ environment:
+3. Before you do anything else, let's customize your BlueJ environment so that it's easier to use:
 
-   - From the menu bar on top, select `Tools` then `Preferences`.
-   - Enable the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click OK.
-   - Now click on the `View` menu bar. Make sure `Show Code Pad` is selected. Click OK to exit.
+   - If you're on Windows, from the menu bar on top, select `Tools > Preferences`. If you're on a Mac, select `BlueJ > Preferences`.
+   - Enable the `Display Line Numbers` setting. You can also enlarge the font size, so that you code might be easier on the eyes. Click `OK` to exit.
+   - Now click on the `View` menu bar. Make sure `Show Code Pad` has a checkmar next to it.
 
-4. You should be back to the project overview window that shows the `AboutMe` orange (class) icon. Double-click on it to open the code editor. Verify that the line numbers are showing up to the left margin, and that the font is appropriate.
+4. You should be back to the project overview window that shows the `AboutMe` orange (class) icon. Double-click on it to open the code editor. Verify that the line numbers are showing up to the left margin, and that the font size is appropriate.
 
 
 #### Instructions
@@ -47,7 +47,7 @@ The following file(s) have been provided for this assignment.
 
    The above code block is called a **method** in Java. Let's dissect it:
 
-      - The method is our way of expressing an _algorithm_. For now, ignore the `public` and `void` keywords. We'll talk about them later.
+      - The method is our way of expressing an _algorithm_ (or a _routine_) you want the computer to execute. For now, ignore the `public` and `void` keywords. We'll talk about them later.
       - **Method Name:** The name of this method is `printMyName`
       - **Parameter List:** The pair of parentheses `()` following the method's name are used to enclose any inputs that may be accepted for this method. In this case, our method does _not_ accept any input data, so the parentheses simply open and close, enclosing no inputs.
       - **Body:** Following the parameter list, we now see a pair of "curly" braces `{` and `}` on different lines. All the instructions of your algorithm must go in between the pair of curly braces. The first instruction would go where the "TODO" line currently is. Each instruction should be placed on a separate line below it.
@@ -86,7 +86,7 @@ The following file(s) have been provided for this assignment.
    - Second way: Let's say you wanted to use only a _single_  statement to print out multiple lines. How would you insert a "line break" in your string? In Java, a line-break character is denoted with the sequence `\n`. Insert a few of those in your string to see what happens in the output.
    - Compile and test it out.
 
-7. Next, create a new method called `printBio()` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. For instance, mine might print:
+7. Next, write a new method called `printBio()` that prints a short bio about yourself. 3-4 sentences ought to do. I want each sentence on its own line in the output. For instance, mine might print:
 
     ```
     I am a professor of computer science at University of Puget Sound.
