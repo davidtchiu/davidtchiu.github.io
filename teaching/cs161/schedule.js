@@ -213,9 +213,9 @@ let days = {
     "Reading Java: basic class structure",
     "Lab 1: Draw My Picture",
     "Reading code: data types, scope",
-    "",
     "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
-      "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Suped-Up Circle</a>",
+      "Code: <a href='https://drive.google.com/open?id=1BIumqGvCSt2G9H9EFNAAHTZyQnfK7SG6&usp=drive_fs'>Circle</a> (starter)" + "<br/>" +
+      "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Circle</a> (finished)",
     // wk 3
     "Reading code: methods; Start TicketMachine",
     "Lab 2: Triangle",
