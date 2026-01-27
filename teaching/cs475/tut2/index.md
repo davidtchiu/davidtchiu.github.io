@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-When I compile and run it, I get the following output.
+When I compile and run it, I get the following output. Read through the output and make sure it all makes sense to you. It's interesting to see how much space each data type (and data literal) takes up.
 
 ```
 *** sizes of data types ***
@@ -132,46 +132,6 @@ size of 3/2: 4 bytes
 size of 0.5 * 400 / 2: 8 bytes
 ```
 
-1. The unsigned integer that is returned by `sizeof()` is the number of bytes required to store that data. A couple other things worth pointing out about the code:
-
-
-
-   - **Lines 10-17**: We're now introduced to a few more data types (`short`, `long`, `long double`), which are all variants of the four original primitives. 
-
-   - **Line 23:** shows how `sizeof()` can be used to determine the size of the array `nums` in bytes: 80, or `(10 * sizeof(double))`, bytes.
-
-     ```c
-     printf("size of nums array: %lu\n", sizeof(nums));
-     ```
-
-
-   - **Line 28:** shows that a floating-point literal is interpreted as a `double`, not a `float`. (This is also true in Java.)
-
-     ```c
-     printf("size of 54.999: %lu bytes\n", sizeof(54.999));
-     > 80
-     ```
-
-   - **Line 29**: the string literal `"hello"` occupies 6 bytes (not 5!) Why do you think this is?
-
-     ```c
-     printf("size of hello: %lu bytes\n", sizeof("hello"));
-     > 6
-     ```
-
-   - **Line 30**: holds the result of an integer expression, which returns an `int`
-
-     ```c
-     printf("size of 3/2: %lu bytes\n", sizeof(3/2));
-     > 4
-     ```
-
-   - **Line 31**: holds the result of a mixed arithmetic expression, which returns a `double`
-
-     ```c
-     printf("size of 0.5 * 400 / 2: %lu bytes\n", sizeof(0.5 * 400 / 2));
-     > 8
-     ```
 
 2. Remember the `sizeof()` operator for later and for the future lab tutorial. `sizeof()` is one of the important built-in operators in C.
 
@@ -209,7 +169,10 @@ Every piece of data in your program, whether it's a variable or a literal (like 
    printf("Value of ptr: %p\n", ptr);
    ```
 
-2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**.
+2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**, shown below:
+
+    <img border="1" width="250px" src="figures/proj2-ex2.png" />
+
 
 3. Here is an example output when this program is executed.
 
@@ -228,15 +191,15 @@ Every piece of data in your program, whether it's a variable or a literal (like 
    - On **Line 5**, we see a new kind of variable-declaration syntax:
 
      ```c
-     int *ptr;       //declare pointer to an int
+     int *ptr;       //declare pointer to an int 
      ```
 
-     This declares a new variable named `ptr`, and unlike anything we've seen before, it holds a memory address, which references an `int` value. In other words, `ptr` is a pointer to an integer. Of course, `ptr` is itself a variable that requires storage, and our figure shows that `ptr` itself is located in byte addresses `35372` to `35375`.
+     This declares a new variable named `ptr`. It can hold a memory address that stores an `int`. Of course, `ptr` is itself a variable that requires storage, and our figure shows that `ptr` itself is located in byte addresses `35372` to `35375`.
 
    - On **Line 6**:
 
      ```c
-     ptr = &days;    //point ptr at the address of days
+     ptr = &days;    //point ptr to the address of days
      ```
 
      The operator `&var` returns the address of `var`. Even though `day` occupies four bytes because it is an `int`, only the address of its first byte (**1112**) is returned. Thus, `ptr = &days` will assign **1112** to `ptr`. That's how pointers (called "references" in Java) work! They're just variables that store addresses to data.
@@ -460,7 +423,7 @@ Have you ever wished that a function/method could return more than one thing? To
      }
      ```
 
-  - **Do this output parameter exercise:** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? 
+  - **Do this output parameter exercise:** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? Test it to make sure it works!
 
 <!--
 
