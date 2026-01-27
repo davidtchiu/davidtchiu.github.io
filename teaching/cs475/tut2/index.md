@@ -339,7 +339,29 @@ In the code above, notice:
 
 
 
-<!-- 
+##### Part 5:  "Output" Parameters
+Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to write a new class that stored multiple values, or you returned an array of values. Sure, you can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values.
+
+ **"Output Parameters"**: An output parameter refers to a pointer that is input into a function, and the function modifies its contents directly before exiting. 
+
+   - You've already seen this in action when you used `scanf()` to accept user input. For example, when `scanf("%d", &var)` is used, we input the address of `var` and we expect the contents of `var` to have changed afterwards.
+
+   - I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance:
+
+     ```c
+     void sum(int inX, int inY, int* outSum) {
+       *outSum = inX + inY;
+     }
+
+     int main() {
+      int a = 10;
+      int b = 20;
+      int mySum = 0;
+      sum(a, b, &mySum);  // result stored in mySum
+      printf("%d\n", mySum);
+     }
+     ```
+
 
 1. Consider the following function used to swap the values of two integer variables:
 
@@ -357,10 +379,9 @@ In the code above, notice:
    printf("%d\n", a); // 20
    printf("%d\n", b); // 10
    ```
-
-   How would you call this function? The method inputs two pointer parameters. Therefore, you have to pass the addresses of (using `&`) the variables you want to swap. Trace execution of calling `swap()` by drawing out the memory contents like you saw me do in earlier examples.
+  Trace execution of calling `swap()` by drawing out the memory contents like you saw me do in earlier examples.
    
-2. This version of swap doesn't work.  Can you see why?
+2. The below version of `swap` doesn't work.  Trace to see why?
 
    ```c
    void swap2(int *x, int *y) {
@@ -369,10 +390,12 @@ In the code above, notice:
        y = tmp;
    }
 
-   //(code omitted)
-   //...
-   int a = 4, b = 3;
-   swap2(&a, &b); //swap?
+   int main() {
+    int a = 4, b = 3;
+    swap2(&a, &b); //swap?
+    printf("%d\n", a);
+    printf("%d\n", b);
+   }
    ```
 
 3. Consider a final version of swap that accepts two variables (not pointers) as input. Will this method work? Trace its execution.
@@ -386,39 +409,14 @@ In the code above, notice:
        *y_ptr = tmp;
    }
 
-   //(code omitted)
-   //...
-   int a = 4, b = 3;
-   swap3(a,b); //swap?
-   ``` -->
+   int main() {
+    int a = 4, b = 3;
+    swap3(a, b); //swap?
+    printf("%d\n", a);
+    printf("%d\n", b);
+   }
+   ```
 
-##### Part 5:  "Output" Parameters
-Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to create a new class that stored multiple values and return an object of that class, or you returned an array of values. Sure, you can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values (without actually calling `return` to do it).
-
- **"Output Parameters"**: An output parameter refers to a pointer that is input into a function, and the function modifies its contents before exiting. After the function call, one just needs to dereference the pointer to obtain the updated value(s).
-
-   - You've also seen this in action already when you used `scanf()` to accept user input. For example, when `scanf("%d", &var)` is used, we input the address of `var` (i.e., a pointer), and we expect the contents of `var` to have changed afterwards.
-
-   - I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance:
-
-     ```c
-     void sum(int inX, int inY, int* outSum) {
-       *outSum = inX + inY;
-     }
-     ```
-
-   - In practice you often see the above function written out like this for clarity. Yeah it's ugly, but it makes clear to the reader that this function will put something in the location given to `*sum`.
-
-     ```c
-     void sum(
-       int x,    /* IN */
-       int y,    /* IN */
-       int *sum  /* OUT */) {
-       *sum = x + y;
-     }
-     ```
-
-  - **Do this output parameter exercise:** Write a function `void compareAndAssign(int n, int m, int *larger, int *smaller)` that puts the larger of `n` and `m` in `larger` and the smaller value in `smaller`. How would you call this function? Test it to make sure it works!
 
 <!--
 
@@ -466,7 +464,7 @@ Have you ever wished that a function/method could return more than one thing? To
 
 
 
-##### Part 6: Connection to Arrays  (Pointer Arithmetic)
+##### Part 6: Connection to Arrays and Strings (Pointer Arithmetic)
 In this section, we'll explore the relationship between pointers and arrays.
     
 1.  Study the following source file, then compile and run it.
@@ -572,6 +570,22 @@ In this section, we'll explore the relationship between pointers and arrays.
     **Important side note:** Because arrays are passed as pointers, you can now appreciate why modifications to arrays persist after the function terminates (this is also true in Java!).
 
 
+###### Do these exercises (not graded):
+
+- The following is a well-known string function. What does it do?
+  ```c
+  /*
+   * This method accepts two char pointers (char arrays, or strings)
+   */
+  void mystery(char *s, char *t) {
+     // not a typo below
+     while (*s++ = *t++)
+      ;
+  }
+  ```
+- Using pointer arithmetics, implement the string function `strcat(char *s, char *t)`, which concatenates the string referred to by `t` to the end of the string referred to by `s`. (Hint, traverse `s` using pointer arithmetic until you hit the null terminating character.)
+
+
 ##### Important Summary: Why Do We Need Pointers?
 Let's pause here and ask why pointers are needed at all?  There are several reasons to use pointers:
 
@@ -630,19 +644,6 @@ Let's pause here and ask why pointers are needed at all?  There are several reas
       Right before `strToUpper()` returns, the memory contents are shown below:\
       <img border="1" width="350px" src="figures/proj2-str2upper2.png" />\
       Every time `s++` is called (Line 13), it increments the pointer to the next character in `univ`. Eventually, `s` points to `univ[11]`, allowing it to break out of the loop. -->
-
-<!-- 
-###### Do these exercises (not graded):
-
-- The following is a well-known function. What does it do?
-  ```c
-  void mystery(char *s, char *t) {
-     while (*s++ = *t++) { //assignment, not equivalence (i.e., not a typo)
-         ;
-     }
-  }
-  ```
-- Using pointer arithmetics, implement the string function `strcat(char *s, char *t)`, which concatenates the string referred to by `t` to the end of the string referred to by `s`. -->
 
 #### Credits
 
