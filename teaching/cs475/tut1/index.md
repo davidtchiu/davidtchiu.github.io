@@ -134,34 +134,54 @@ Open your VS Code and get connected to your Remote Development environment.
 
   - **Line 44**: returns `0` before exiting the program. This value is not arbitrary -- the `0` signifies a normal exit, while a non-zero value indicates an error.
 
-- **Do these exercises (not graded):**
+###### The Input Buffer, and Why Using scanf() for String Acquisition Is UnSafe
+When you prompt for input, everything you type is stored as a string in an "input buffer." The calls to `scanf()` then process what's in this buffer.
 
-  - Modify `types.c` so that it reads two strings from standard input using `scanf()` and stores them in the same character array str.
-    - First, prompt the user to enter a string and read it into `str` using `scanf("%s", str)`. No that's not a typo, you **don't** scan into `&str`, because, as it turns out, a string is already a pointer/address (See: tutorial 2).
-      ```c
-      printf("Enter your full name: ");
-      scanf("%s", str);
-      printf("You entered %s\n", str);  
+  - Modify the main function in `types.c` to contain just this segment of code:
+    ```c
+    char name[10];
+    printf("Enter your full name: ");
+    scanf("%s", name);
+    printf("You entered %s\n", name);
+
+    int num = 99;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("You entered %d\n", num);
+    ```
+  
+    - Note that a character buffer `name` has been declared with a length of just 10.
+    - Compile and run this code.
+    - Enter `Ada`: what happens? Should be normal execution, bringing you to the next input prompt for a number. The first call, you placed "Ada" in the input buffer and the `scanf("%s",name)` clears the buffer. When you make the second call, the buffer being empty, it waits and prompts the user again for the number, which will again get read by `scanf()`.
+    - Now Enter `Ada Ada`: what happens? This is weird. Did your second `scanf()` get "skipped"? Here's what it looked like for me:
+      ```txt
+      Enter your full name: Ada Ada
+      You entered Ada
+      Enter a number: You entered 99
+      ```
+      It's important to understand what happened. The first "Ada" get read in properly, but the second "Ada" remains in the *input buffer*. When `scanf(%d, &num)` gets called later, it begins scanning the *input buffer* again, and attempts to read the second "Ada". But this time, it gets to `'A'` and can't convert it to an integer, as it's being asked to do. So that second `scanf()` actually fails and `num` is never re-assigned, remaining as `99`, which gets printed out.
+
+    - Enter `Michelangelo` (which is longer than your `name` array): What happens? Not only did C not catch the fact that the input string exceeds the length of the buffer, what's worse, the behavior of this `scanf` is *undefined*. Sometimes, I get a "stack smashing" error and the program quits. Other times, the program might proceed as if nothing's wrong at all!
+
+      ```txt
+      Enter your full name: Michelangelo
+      You entered Michelangelo
+      Enter a number: 10
+      You entered 10
+      *** stack smashing detected ***: terminated
+      Aborted
       ```
 
-      - Try entering input that contains spaces. What part of the input is stored in `str`?
-    - Without asking the user for new input, immediately call `scanf()` again to read another string into `str`.
-      ```c
-      printf("Enter your full name: ");
-      scanf("%s", str);
-      scanf("%s", str);
-      printf("You entered %s\n", str);  
-      ```
+    - Here's what likely happened in my run. When I entered "Michelangelo" it exceeded the `name` array by 3 places (`l`, `o`, and the null terminating character for strings `\0`). Those three character had to go somewhere, so C allowed them to overwrite existing memory.
 
-      - What does this second call read? Where did that input come from?
-    - Now run the program again, but this time enter a single long string (longer than 12 characters).
-      - What do you observe after each `scanf()` call?
-      - Why is this behavior potentially dangerous?
-    - In your own words, explain how `scanf()` decides when to stop reading and what happens to any characters it does not consume.
+    - This is called **Stack Smashing** and it's a dangerous problem. What if the existing memory was the contents of another variable in you program? Then suddenly the value of that variable has changed without you knowing!
 
-  - Write a program `temperature.c` that prompts the user for a temperature in Fahrenheit, and converts it to Celsius. Round temperatures off to the nearest hundredth degree.
+For now, it looks like `scanf()` is only safe to use with primitive types like ints and doubles. You will learn later how to properly acquire string inputs from the user using [fgets()](https://www.geeksforgeeks.org/fgets-gets-c-language/).
 
-  - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters `'y'` then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, prompt again. (Hint: C's while-loop syntax is exactly the same as Java's). 
+###### Ungraded Check-In
+  - Write a program `temperature.c` that prompts the user for a temperature in Fahrenheit, and converts it to Celsius. Round temperatures off to the nearest hundredth degree. Here's the conversion: $$C	= 5/9(F − 32)$$. (Beware of integer divide)
+
+  - Update `temperature.c` so that it asks the user whether they'd like to do another conversion after each conversion. If the user enters the character `'y'` then perform another conversion, exit the program if the user enters `'n'`, and if the user enters neither of those options, prompt again.
 
 <!-- 
 
@@ -409,7 +429,7 @@ A string in C is a sequence of $$k$$ `char`s stored in an array of size $$n$$, w
     - Warning: Assert that you allocated enough space in the `char` array in the first place, before using `sprintf()`, `strcpy()`, `strcat()`.
 
 
-**Capturing and Parsing Keyboard Input** When getting keyboard input, recall that `scanf()` only reads up to the next whitespace in the input. That's good for reading individual tokens, but what if you wanted to read an entire line of input that could contain white spaces?
+**Correctly Capturing and Parsing String Input** When getting keyboard input, recall that `scanf()` only reads up to the next whitespace in the input. That's good for reading individual tokens, but what if you wanted to read an entire line of input that could contain white spaces?
   - You need to use the [fgets()](https://www.geeksforgeeks.org/fgets-gets-c-language/) function to read an entire line of input from user into a string. 
 
     ```c
