@@ -136,7 +136,11 @@ Open your VS Code and get connected to your Remote Development environment.
 
 - **Do these exercises (not graded):**
 
-  - Edit the `types.c` program so that you input a string from the user, and read it into `str` using `scanf()`. What happens when there's a whitespace in your input? I'll guess that the compiler is going to yell at you about your `scanf()` syntax to read a string into `&str`. Try reading it into `str` instead of `&str`, and it should work. But you should ask yourself, "What is different about strings that it doesn't require the address-of operator?" What happens when you try to read a string whose length is longer than 12? (Hint: The original string was length 12).
+  - Edit the `types.c` program so that you input a string using `scanf()` from the user.
+    - I'll guess that the compiler may yell at you about your `scanf()` syntax to read a string into `&str`. Try reading it into `str` instead of `&str`, and it should work (hold on this thought for later).
+      - But you should ask yourself, "What is different about strings that it doesn't require the address-of operator?" (Tutorial 2).
+    - What happens when there's a whitespace in your input? Does whole line get read into `str`?
+    - What happens when you try to read a string whose length is longer than 12? (Hint: The original string, "Hello World!" was length 12).
 
   - Write a program `temperature.c` that prompts the user for a temperature in Fahrenheit, and converts it to Celsius. Round temperatures off to the nearest hundredth degree.
 
