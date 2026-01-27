@@ -22,13 +22,13 @@ let days = {
         weekAssigned: 1,
         due: "1/23/2026", // Fri, wk 1
       },
-      // {
-      //   name: "Hwk 2 (wordstats)",
-      //   title: "Word Stats",
-      //   url: "hwk2.wordstat/",
-      //   weekAssigned: 2,
-      //   due: "2/2/2026",  // Mon, wk 3
-      // },
+      {
+        name: "Hwk 2 (wordstats)",
+        title: "Word Stats",
+        url: "hwk2.wordstat/",
+        weekAssigned: 2,
+        due: "2/2/2026",  // Mon, wk 3
+      },
       // {
       //   name: "Hwk 3 (ls2)",
       //   title: "A Suped-Up ls",
@@ -52,7 +52,7 @@ let days = {
       // },
       // {
       //   name: "Hwk 6 (sched)",
-      //   title: "Stressin' out the Scheduler",
+      //   title: "Stressin' the Scheduler",
       //   url: "hwk6.sched/",
       //   weekAssigned: 8,
       //   due: "3/27/2026",  // Fri, wk 10

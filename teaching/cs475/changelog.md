@@ -5,7 +5,7 @@
   - Use a counting semaphore initialized to N-1 to manage the room. Just wait on it, and signal it when done.
 - Let them pair up on a few homework assignments?
 - BEFORE removing/redoing the hwk3 (ls2 repo), I have to give them with a dummy directory structure and redo the assignment example!
-
+- In the future, maybe combine Tut 1 with Homework 1 so that Homework 1 isn't so small?
 
 # Change Log
 

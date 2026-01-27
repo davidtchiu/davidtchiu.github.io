@@ -210,9 +210,9 @@ let days = {
       "Install: <a href='https://bluej.org/'>BlueJ Code Editor</a>" + "<br/>" +
       "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
     // wk 2
-    "Reading Java: basic class structure",
+    "Classes: Instance vars and data types, constructors",
     "Lab 1: Draw My Picture",
-    "Reading code: data types, scope",
+    "Constructors and methods",
     "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
       "Code: <a href='https://drive.google.com/open?id=1BIumqGvCSt2G9H9EFNAAHTZyQnfK7SG6&usp=drive_fs'>Circle</a> (starter)" + "<br/>" +
       "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Circle</a> (finished)",

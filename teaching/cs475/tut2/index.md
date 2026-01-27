@@ -23,23 +23,22 @@ Open your VS Code and get connected to your Remote Development environment. If y
 
 ##### Preamble: Notepads, Street Addresses, and Buildings
 Pointers are powerful structures in C. To get a sense of what pointers are, let's use a real-world analogy:
-  - Data values in this analogy are like buildings in a city.
-  - A pointer (or reference) is a building's street address.
-  - A pointer variable is a *notepad* with a *street address* written on it.
+  - Data in this analogy are like buildings in a city.
+  - A **pointer** to that data is like a building's *street address*.
+  - A **pointer variable** is just a *notepad* with a *street address* written on it that you can pass to other people.
 
 Therefore, you wouldn't ever say that a street address is itself a building, but it does tell you where to go to find it.
 
 | Real-World Analogy                                                                                    | Explanation                                                                                                   |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| Any building always has a corresponding street address. You just have to ask for it!       | *This is what the *address-of* operator `&` provides.*                                                        |
-| You can navigate to the building located at an address: examine it, destroy it, change it. | *This is what it means to *de-reference* a pointer.*                                                          |
-| You can reuse the notepad by writing a different building address on it.                   | *The pointer variable can be reassigned to point at a different piece of data.*                               |
+| Any building always has a street address. You just have to ask for it.       | *In C this is what the address-of operator `&` provides.*                                                        |
+| You can navigate to the building located at an address: examine it, destroy it, change it. | *This is what it means to de-reference (or lookup) a pointer.*                                                          |
+| You can reuse a notepad by writing a different building address on it.                   | *A pointer variable can be reassigned to refer to a different piece of data.*                               |
 | You can write an address on a notepad, and share the notepad with others.                  | *A pointer can be passed in as function input-parameters so it can find the piece of data too.*               |
 | You can check out the neighboring building, and the one after that, ...                    | *This is called pointer arithmetic. Once you have an address, you can visit the nearby element effortlessly.* |
 
 Under this scheme, think about what pointers would enable us to do:
-  - You can efficiently pass massive data structures to functions: Don't pass the whole building, pass its street address!
-  - You can write functions that can change the variables in the function caller's scope!
+  - You can efficiently pass massive data structures into functions. (Don't pass the whole building, pass its street address!)
   - You can create linked structures (linked lists, trees). A node contains a data element, and a pointer variable (notepad) holding the address of the next node.
 
 
