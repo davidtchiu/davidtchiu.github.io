@@ -27,18 +27,19 @@ Pointers are powerful structures in C. To get a sense of what pointers are, let'
   - A **pointer** to that data is like a building's *street address*.
   - A **pointer variable** is just a *notepad* with a *street address* written on it that you can pass to other people.
 
-Therefore, you wouldn't ever say that a street address is itself a building, but it does tell you where to go to find it.
+<img src="figures/ptrBuilding.png" width="250px" />\
+
+You wouldn't ever say that a street address is itself a building, but it does tell you where to go to find it.
 
 | Real-World Analogy                                                                                    | Explanation                                                                                                   |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| Any building always has a street address. You just have to ask for it.       | *In C this is what the address-of operator `&` provides.*                                                        |
-| You can navigate to the building located at an address: examine it, destroy it, change it. | *This is what it means to de-reference (or lookup) a pointer.*                                                          |
-| You can reuse a notepad by writing a different building address on it.                   | *A pointer variable can be reassigned to refer to a different piece of data.*                               |
-| You can write an address on a notepad, and share the notepad with others.                  | *A pointer can be passed in as function input-parameters so it can find the piece of data too.*               |
-| You can check out the neighboring building, and the one after that, ...                    | *This is called pointer arithmetic. Once you have an address, you can visit the nearby element effortlessly.* |
+| Buildings have a street address. You just have to ask for it.       | *In C this is called the address-of operator: `&`*                                                        |
+| You can write its address on a notepad, and share its with others.                  | *A "pointer" variable stores an address to a piece of data.*               |
+| You can go to the building given its address: examine it, modify it. | *This is what it means to de-reference (or lookup) a pointer.*                                                          |
+| You can check out the adjacent building, and the one after that, ...                    | *This is called pointer arithmetic. Once you have an address, you can visit the nearby elements effortlessly.* |
 
-Under this scheme, think about what pointers would enable us to do:
-  - You can efficiently pass massive data structures into functions. (Don't pass the whole building, pass its street address!)
+Under this scheme, consider what pointers  enable us to do:
+  - You can efficiently pass massive data structures into functions. (Don't pass the whole building, pass its street address and let the function modify it from afar.)
   - You can create linked structures (linked lists, trees). A node contains a data element, and a pointer variable (notepad) holding the address of the next node.
 
 
@@ -56,15 +57,15 @@ Let's take a look at a snapshot of what my memory might look like as it runs the
 
 There are several things worth noting:
 1. There's no guarantee that the variables are grouped together like this in memory.
-2. A *word* (4 contiguous bytes in this figure) is what we call a unit of data transfer between the memory and CPU. Although the figure only shows the starting addresses for each word, it should be noted that each byte is also addressable.
-3. *Word Alignment:* There are 3 wasted bytes that follow the `'p'` character. Sure, we *could* use those bytes to store 3 out 4 bytes of `days`, but now `days` would span across two words. This is not ideal, because it would require 2 transfers just to read/write the `days` variable. To avoid this, your system prefers to align data on the order of words.
-4. Yes, it would require this system to make 2 transfers to read/write `amt` since it spans 2 words -- a reason why earlier systems preferred avoiding `double`s if you didn't need its range and precision. This is why `float` types exist -- they are only 1 word wide!
+2. A *word* or *CPU word* (4 contiguous bytes in this figure) is the standard unit of data transfer between the memory and CPU. Although the figure only shows the starting addresses for each word, it should be noted that each byte is also addressable.
+3. *Word alignment:* There are 3 wasted bytes that follow the `'p'` character. Sure, we *could* use those bytes to store 3 out 4 bytes of `days`, but then `days` would span across two words. This is not ideal, because it would require 2 transfers just to read/write to it. To avoid this, your system prefers to align data on the size of words, even if it means we have to waste space.
+4. Due to the size of `amt`, it would indeed require this system to make two transfers to read/write `amt` since it spans 2 words -- a reason why earlier systems preferred avoiding `double`s if you didn't need its range and precision. (This is why `float` data types exist -- they are only 1-word wide!)
 
 
-**Important C Operator: `sizeof()`**
+**Important C Operator: `sizeof`**
 Notice from the figure above that that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures, so how did I know these storage requirements apply to my machine? C provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies in memory.
 
-<!-- 
+
 Let's see what it does.
 
 ```c
@@ -174,20 +175,17 @@ size of 0.5 * 400 / 2: 8 bytes
 
 2. Remember the `sizeof()` operator for later and for the future lab tutorial. `sizeof()` is one of the important built-in operators in C.
 
-3. One of the benefits of a typed language like C and Java should be somewhat apparent now. When a programmer declares a variable's type, the executable files knows *exactly* how many contiguous bytes to read and write memory.
 
 - **Practice Questions**
 
-  - Although a  single`char` requires just one byte of storage, most CPUs will insist on wasting, or "padding" the remaining 3 bytes (see figure above). Why do you think CPUs prefer this, instead of, say, having `amt` start from address `1117` to save you space? *(Ans: It's all about word-alignment. Recall that a unit of transfer between memory and CPU is a word. If we didn't pad the remaining unused bits of the word, then the start of the next data will begin in the same word, and must span across two words.)*
-
-  - What is the point of an `unsigned integer`, and when would it be appropriate to declare an unsigned variable? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: Recall from your Architecture course that the most-significant bit, called the sign-bit, determines the +/- sign of that number. But the sign-bit wastes a bit! So a regular `int` can only cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[0, 2^{32}-1]$$, recalling that an `int` is 32 bits. If you know that a value cannot be negative (such as salary), it is appropriate to use unsigned ints. Java does not support unsigned ints.*
+  - What is the point of an `unsigned integer`? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: All data is represented using bit sequences. The most-significant (left most) bit of a number, called the sign-bit, determines the +/- of that number. But the sign-bit wastes a bit! So a regular `int` can only cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[0, 2^{32}-1]$$, recalling that an `int` is 32 bits. If you know that a value cannot be negative (such as salary), it is appropriate to use `unsigned int`s. Higher level languages like Java does not support unsigned ints.*
 
   - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)* 
--->
+
 
 ##### Part 2: Understanding Addressing and Pointers
 
-Every piece of data in your program, whether it's a  variable or a literal (like `3.14`), is stored in two pieces: its content and its address. It is possible, for programmers to ask the OS for the addresses of your data, but we can't tell it *where* to place them. This section focuses on the support for working with a variable's location in C. In particular, we will focus on three syntax items: the **address-of** operator, the **pointer-declaration** operator, and the **de-referencing** operators.
+Every piece of data in your program, whether it's a variable or a literal (like `3.14`, or `"hello world"`), is stored in two pieces: its content and its address. It is possible for programmers to ask the OS for the addresses of existing data, but we can't tell your OS *where* to place them. We will focus on three syntax elements: the **address-of** operator, the **pointer-declaration** operator, and the **de-referencing** operator.
 
 1. Let's now consider the code below. Read through it before moving on.
 
