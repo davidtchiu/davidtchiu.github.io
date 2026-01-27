@@ -340,7 +340,7 @@ employee_t increaseSalary(employee_t emp) {
 void main() {
   employee_t david;
   strcpy(david.ssn, "123");
-  strcpy(david.ssn, "David C");
+  strcpy(david.name, "David C");
   david.salary = 20000;
   david = increaseSalary(david); // yikes
 }
@@ -367,14 +367,14 @@ void increaseSalary(employee_t *emp) {
 void main() {
   employee_t david;
   strcpy(david.ssn, "123");
-  strcpy(david.ssn, "David C");
+  strcpy(david.name, "David C");
   david.salary = 20000;
-  increaseSalary(&david); // done in place!
+  increaseSalary(&david); // done without passing the whole struct to `increaseSalary()`, just the address!!
 }
 ```
 In the code above, notice:
 1. Main simply sends along an employee's address (using the `&` operator), not their entire content!
-2. If `increaseSalary()` knows exactly where to go to reach the affected employee, then any changes to it are done directly! No need to return the employee anymore. (That's what we remember doing in Java!)
+2. If `increaseSalary()` knows where to go to reach the affected employee, then any changes to it are done directly! No need to return the employee anymore. (That's what we remember doing in Java!)
 3. **Important:** When `p` is a pointer to a `struct`, you can de-refernce one of `p`'s members using either:
    - `(*p).member = expression` -- this de-references `p` first, then applies the usual dot notation to access its member.
    - Or a nice shortcut is usually done in practice: `p->member = expression`
