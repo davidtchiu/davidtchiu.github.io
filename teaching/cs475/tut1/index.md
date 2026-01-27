@@ -136,11 +136,28 @@ Open your VS Code and get connected to your Remote Development environment.
 
 - **Do these exercises (not graded):**
 
-  - Edit the `types.c` program so that you input a string using `scanf()` from the user.
-    - I'll guess that the compiler may yell at you about your `scanf()` syntax to read a string into `&str`. Try reading it into `str` instead of `&str`, and it should work (hold on this thought for later).
-      - But you should ask yourself, "What is different about strings that it doesn't require the address-of operator?" (Tutorial 2).
-    - What happens when there's a whitespace in your input? Does whole line get read into `str`?
-    - What happens when you try to read a string whose length is longer than 12? (Hint: The original string, "Hello World!" was length 12).
+  - Modify `types.c` so that it reads two strings from standard input using `scanf()` and stores them in the same character array str.
+    - First, prompt the user to enter a string and read it into `str` using `scanf("%s", str)`. No that's not a typo, you **don't** scan into `&str`, because, as it turns out, a string is already a pointer/address (See: tutorial 2).
+      ```c
+      printf("Enter your full name: ");
+      scanf("%s", str);
+      printf("You entered %s\n", str);  
+      ```
+
+      - Try entering input that contains spaces. What part of the input is stored in `str`?
+    - Without asking the user for new input, immediately call `scanf()` again to read another string into `str`.
+      ```c
+      printf("Enter your full name: ");
+      scanf("%s", str);
+      scanf("%s", str);
+      printf("You entered %s\n", str);  
+      ```
+
+      - What does this second call read? Where did that input come from?
+    - Now run the program again, but this time enter a single long string (longer than 12 characters).
+      - What do you observe after each `scanf()` call?
+      - Why is this behavior potentially dangerous?
+    - In your own words, explain how `scanf()` decides when to stop reading and what happens to any characters it does not consume.
 
   - Write a program `temperature.c` that prompts the user for a temperature in Fahrenheit, and converts it to Celsius. Round temperatures off to the nearest hundredth degree.
 
