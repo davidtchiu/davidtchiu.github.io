@@ -135,7 +135,7 @@ Read through the output and make sure it all makes sense to you. It's interestin
 
 ##### Part 2: Understanding Addressing and Pointers
 
-Every piece of data in your program, whether it's a variable or a literal (like `3.14`, or `"hello world"`), is stored in two pieces: its content and its address. It is possible for programmers to ask the OS for the addresses of existing data, but we can't tell your OS *where* to place them. We will focus on three syntax elements: the **address-of** operator, the **pointer-declaration** operator, and the **de-referencing** operator.
+Every piece of data is stored in your memory in two pieces: its content and its address. We can ask the OS for the addresses of existing data, but we can't tell your OS *where* to place them. We will focus on three syntax elements: the **address-of** operator, the **pointer-declaration** operator, and the **de-referencing** operator.
 
 1. Let's now consider the code below. Read through it before moving on.
 
@@ -161,7 +161,7 @@ Every piece of data in your program, whether it's a variable or a literal (like 
 
 2. In this simplified example, we'll assume that the operating system places `days` in bytes **1112** to **1115**, `letter` in byte **1116**, and `amt` in bytes **1120** to **1127**, shown below:
 
-    <img border="1" width="300px" src="figures/proj2-ex2.png" />
+    <img border="1" width="400px" src="figures/proj2-ex2.png" />
 
 
 3. Here is a possible output of this program:
@@ -221,14 +221,14 @@ Every piece of data in your program, whether it's a variable or a literal (like 
 
      The addresses of `days` (0x458 == 1112) and `ptr` (0x8A2C == 35372) are first printed. This is followed by printing the contents of `ptr`, which unsurprisingly, stores the address of `days`, (0x458 == 1112).
 
-- *Important:* In the examples above, we demonstrated that the `&` address-of operator returns only the address of the *first byte* of the associated variable. For instance, `&days` returns simply `0x458`, even though `days` occupies the next three bytes as well. When we de-reference `*ptr` on **Line 8** and **Line 12**, the system was smart enough to know that the next three bytes are part of `days`'s value. How does the system know **exactly three** more bytes (and not zero, or one, or seven, or a hundred) trailed first byte of `days`?
-  -  **Answer: This is why we declare types!** When you declared `days` to be an `int`, the C compiler knows it needs to reserve 4 bytes, and any references to it always requires 4 bytes to be read.
+5. *Important:* In the examples above, we demonstrated that the `&` address-of operator returns only the address of the *first byte* of the associated variable. For instance, `&days` returns simply `0x458`, even though `days` occupies the next three bytes as well. When we de-reference `*ptr` on **Line 8** and **Line 12**, the system was smart enough to know that the next three bytes are part of `days`'s value. How does the system know **exactly three** more bytes (and not zero, or one, or seven, or a hundred) trailed first byte of `days`?
+    -  **Answer: This is why we declare types!** When you declared `days` to be an `int`, the C compiler knows it needs to reserve 4 bytes, and any references to it always requires 4 bytes to be read.
 
-- **Exercises (ungraded)**
+6. **Exercises (ungraded)**
 
-  - Suppose we know that a pointer to an int (`int*`) occupies 4 bytes on my machine. We can verify this by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? **(Ans: All 4 bytes. Pointers are nothing more than addresses, so it doesn't matter what kind of data you're pointing to.)**
+    - Suppose we know that a pointer to an int (`int*`) occupies 4 bytes on my machine. We can verify this by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? **(Ans: All 4 bytes. Pointers are nothing more than addresses, so it doesn't matter what kind of data you're pointing to.)**
 
-  - You can also create a pointer to a `void` data type, which seems odd at first. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. (Hint: Think generics in Java).
+    - You can also create a pointer to a `void` type, which seems odd. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. Declare a `void*` pointer. Can you point it at an int? A char? A struct? (Hint: Think generics in Java).
 
 ##### Part 3: Pointer Operators: `&` and `*`
 Let's put everything together.
@@ -252,8 +252,9 @@ Let's put everything together.
 
    - You must first `#include <stdlib.h>` to get access to the `NULL` constant.
 
-3. The De-reference Operator: Given an already-declared pointer `ptr`, we use `*ptr` to access the value at the location referenced by `ptr`. As I lamented earlier, I wish we chose a different syntax for dereferencing, because `*ptr` already has a different meaning!
+3. The De-Reference Operator: Given a pointer `ptr`, we use `*ptr` to access the content at the location referenced by `ptr`. As I lamented earlier, I wish we chose a different syntax for dereferencing, because `*ptr` already has a different meaning!
    ```c
+   double *b = &c; // point b at c
    *b = 15; // de-reference b to get to c's content! c is now 15
    *a += 5; // de-reference a to get to c's content! c is now 20
    ```
@@ -264,12 +265,10 @@ Let's put everything together.
 - Memory contents after `*a += 5`.\
   <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
 
-- **Practice Questions**
   
-  - What happens to your program when you try to de-reference a pointer to `NULL`? *(Ans:  In Java, you'd get the NullPointerException, but there are no such things as Exceptions in C... This really is something you should try out.)*
+- What happens if you try to de-reference a pointer referencing `NULL`? *(Ans:  In Java, you'd get the NullPointerException, but there are no such things as Exceptions in C... This really is something you should try out.)*
 
-
-##### Part 4: Pointers as Input Parameters
+##### Part 4: Pass by Reference (Pointers as Input Arguments)
 Remember how I mentioned that for efficiency, you should pass an address into a function instead of passing the entire building? Consider the following function that modifies a large `struct` without using pointers. 
 ```c
 typedef struct employee_t {
@@ -329,7 +328,7 @@ In the code above, notice:
 
 
 
-##### Part 5:  "Output" Parameters
+##### Part 5: Pointers as "Output Parameters"
 Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to write a new class that stored multiple values, or you returned an array of values. Sure, you can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values.
 
  **"Output Parameters"**: An output parameter refers to a pointer that is input into a function, and the function modifies its contents directly before exiting. 
@@ -467,7 +466,6 @@ In this section, we'll explore the relationship between pointers and arrays.
     int main(int argc, char* argv[])
     {
         int arr[BUFFERSIZE] = {9,8,7,6};
-        int i;
 
         printf("*** where is arr[0] stored? ***\n");
         printf("arr[0] location: %p\n", &arr[0]);
@@ -476,11 +474,11 @@ In this section, we'll explore the relationship between pointers and arrays.
         printf("arr location: %p\n", arr);
 
         printf("\n*** print out contents using pointer arithmetic ***\n");
-        for (i = 0; i < BUFFERSIZE; i++)
+        for (int i = 0; i < BUFFERSIZE; i++)
             printf("%d ", *(arr+i));
 
         printf("\n\n*** print out contents using familiar subscript syntax ***\n");
-        for (i = 0; i < BUFFERSIZE; i++)
+        for (int i = 0; i < BUFFERSIZE; i++)
             printf("%d ", arr[i]);
 
         return 0;
@@ -540,8 +538,7 @@ In this section, we'll explore the relationship between pointers and arrays.
 
     ```c
     void initArray(int *A, const int SIZE) {
-      int i;
-      for (i = 0; i < SIZE; i++) {
+      for (int i = 0; i < SIZE; i++) {
           A[i] = -1;
       }
     }
@@ -550,8 +547,7 @@ In this section, we'll explore the relationship between pointers and arrays.
     By the way, the following code also works:
     ```c
     void initArray(int A[], const int SIZE) {
-      int i;
-      for (i = 0; i < SIZE; i++) {
+      for (int i = 0; i < SIZE; i++) {
           A[i] = -1;
       }
     }
