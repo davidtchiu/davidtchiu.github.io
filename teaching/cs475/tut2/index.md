@@ -6,7 +6,7 @@ This is the second part of a multi-part primer on C. In this tutorial-assignment
 
 #### Related Reading
 
-- [Dive into Systems Chapter 2.1-2.3](https://diveintosystems.org/book/C2-C_depth/index.html)
+- [Dive into Systems Chapter 2.2-2.3](https://diveintosystems.org/book/C2-C_depth/index.html)
 
 #### Student Outcomes
 
@@ -29,29 +29,9 @@ From your shell terminal, create a directory to store your first program. Let's 
   $ code types.c
   ```
 
-##### Preamble: Notepads, Street Addresses, and Buildings
-Pointers are powerful structures in C. To get a sense of what pointers are, let's use a real-world analogy:
-  - Data in this analogy are like buildings in a city.
-  - A **pointer** to that data is like a building's *street address*.
-  - A **pointer variable** is just a *notepad* with a *street address* written on it that you can pass to other people.
-
-<img src="figures/ptrBuilding.png" width="300px" />\
-
-You wouldn't ever say that a street address is itself a building, but it does tell you where to go to find it.
-
-| Real-World Analogy                                                                                    | Explanation                                                                                                   |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| It doesn't matter how big or small a building is, every building has a street address. You just have to ask for it.       | *In C this is called the address-of operator: `&`*                                                        |
-| You can write its address on a notepad, and share its with others.                  | *A "pointer" variable stores an address to a piece of data.*               |
-| You can go to the building given its address: examine it, modify it. | *This is what it means to de-reference (or lookup) a pointer.*                                                          |
-| You can check out the adjacent building, and the one after that, ...                    | *This is called pointer arithmetic. Once you have an address, you can visit the nearby elements effortlessly.* |
-
-Under this scheme, consider what pointers  enable us to do:
-  - You can efficiently pass massive data structures into functions. (Don't pass the whole building, pass its street address and let the function modify it from afar.)
-  - You can create linked structures (linked lists, trees). A node contains a data element, and a pointer variable (notepad) holding the address of the next node.
 
 
-##### Part 1:  Memory and Data Types
+##### Preamble:  Memory and Data Types
 How is data stored and managed inside your machine? Think of your computer's memory as being a giant array of bytes. Each byte corresponds to a unique *address* in memory. Depending on the data's *type*, a piece of data may occupy a range of bytes.  Consider the following code snippet:
 
 ```c
@@ -131,6 +111,28 @@ Read through the output and make sure it all makes sense to you. It's interestin
   - What is the point of an `unsigned integer`? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: All data is represented using bit sequences. The leftmost bit of that sequence, called the sign-bit, determines the +/- of that number. But the sign-bit wastes a bit. so a regular `int` can only cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[0, 2^{32}-1]$$, recalling that an `int` is 32 bits. If you know that a value cannot be negative (such as salary), it is appropriate to use `unsigned int`s. Higher level languages like Java does not support unsigned ints.*
 
   - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)*  -->
+
+
+##### Part 1: Notepads, Street Addresses, and Buildings
+Pointers are powerful structures in C. To get a sense of what pointers are, let's use a real-world analogy:
+  - Data in this analogy are like buildings in a city.
+  - A **pointer** to that data is like a building's *street address*.
+  - A **pointer variable** is just a *notepad* with a *street address* written on it that you can pass to other people.
+
+<img src="figures/ptrBuilding.png" width="300px" />\
+
+You wouldn't ever say that a street address is itself a building, but it does tell you where to go to find it.
+
+| Real-World Analogy                                                                                    | Explanation                                                                                                   |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| It doesn't matter how big or small a building is, every building has a street address. You just have to ask for it.       | *In C this is called the address-of operator: `&`*                                                        |
+| You can write its address on a notepad, and share its with others.                  | *A "pointer" variable stores an address to a piece of data.*               |
+| You can go to the building given its address: examine it, modify it. | *This is what it means to de-reference (or lookup) a pointer.*                                                          |
+| You can check out the adjacent building, and the one after that, ...                    | *This is called pointer arithmetic. Once you have an address, you can visit the nearby elements effortlessly.* |
+
+Under this scheme, consider what pointers  enable us to do:
+  - You can efficiently pass massive data structures into functions. (Don't pass the whole building, pass its street address and let the function modify it from afar.)
+  - You can create linked structures (linked lists, trees). A node contains a data element, and a pointer variable (notepad) holding the address of the next node.
 
 
 ##### Part 2: Understanding Addressing and Pointers
