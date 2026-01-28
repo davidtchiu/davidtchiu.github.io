@@ -183,7 +183,7 @@ Every piece of data is stored in your memory in two pieces: its content and its 
    Address of ptr: 0x8A2C   <-- Which is 35372 (in hex)
    Value of ptr: 0x458      <-- Which is 1112 (in hex)
    ```
-
+<!-- 
 4. Let's now go back and explain the source code.
 
    - On **Line 5**, we see a new kind of variable-declaration syntax:
@@ -236,7 +236,7 @@ Every piece of data is stored in your memory in two pieces: its content and its 
 
     - Suppose we know that a pointer to an int (`int*`) occupies 4 bytes on my machine. We can verify this by calling `sizeof(int*)`. What would the size be for a pointer to a `char`, or a pointer to a `double`, or a pointer to some `struct` on my machine? **(Ans: All 4 bytes. Pointers are nothing more than addresses, so it doesn't matter what kind of data you're pointing to.)**
 
-    - You can also create a pointer to a `void` type, which seems odd. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. Declare a `void*` pointer. Can you point it at an int? A char? A struct? (Hint: Think generics in Java).
+    - You can also create a pointer to a `void` type, which seems odd. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. Declare a `void*` pointer. Can you point it at an int? A char? A struct? (Hint: Think generics in Java). -->
 
 <!-- 
 ##### Part 3: Pointer Operators: `&` and `*`
