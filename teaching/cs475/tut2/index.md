@@ -351,7 +351,17 @@ An output parameter refers to a pointer that is input into a function, and the f
     }
     ```
 
+  - Write a method called `swap` that can be used to swap the values of two integer variables. Here's how it can be used.
 
+   ```c
+   void main() {
+    int a = 10, b = 20;
+    swap(&a, &b);
+    printf("%d\n", a); // 20
+    printf("%d\n", b); // 10
+   }
+   ```
+   
 
 <!--
 
