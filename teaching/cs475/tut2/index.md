@@ -309,13 +309,13 @@ Intead, let's just pass the address of the employee `struct`. The function can d
 ```c
 /** Rewritten to input a pointer to an employee */
 void increaseSalary(employee_t *emp) {
-  emp->salary *= 1.03;  // What is the -> operator?
+  // Arrow operator dereferences emp, then accesses salary
+  emp->salary *= 1.03;
 }
 
 void main() {
-  // (code omitted)
-
-  // done without passing the whole struct to `increaseSalary()`, just the address!!
+  ...
+  // Done without passing the whole struct to `increaseSalary()`, just the address!
   increaseSalary(&david);
 }
 ```
