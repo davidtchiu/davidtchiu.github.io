@@ -41,7 +41,7 @@ You wouldn't ever say that a street address is itself a building, but it does te
 
 | Real-World Analogy                                                                                    | Explanation                                                                                                   |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| Buildings have a street address. You just have to ask for it.       | *In C this is called the address-of operator: `&`*                                                        |
+| It doesn't matter how big or small a building is, every building has a street address. You just have to ask for it.       | *In C this is called the address-of operator: `&`*                                                        |
 | You can write its address on a notepad, and share its with others.                  | *A "pointer" variable stores an address to a piece of data.*               |
 | You can go to the building given its address: examine it, modify it. | *This is what it means to de-reference (or lookup) a pointer.*                                                          |
 | You can check out the adjacent building, and the one after that, ...                    | *This is called pointer arithmetic. Once you have an address, you can visit the nearby elements effortlessly.* |
@@ -135,9 +135,14 @@ Read through the output and make sure it all makes sense to you. It's interestin
 
 ##### Part 2: Understanding Addressing and Pointers
 
-Every piece of data is stored in your memory in two pieces: its content and its address. We can ask the OS for the addresses of existing data, but we can't tell your OS *where* to place them. We will focus on three syntax elements: the **address-of** operator, the **pointer-declaration** operator, and the **de-referencing** operator.
+Every piece of data is stored in your memory in two pieces: its content and its address. We can ask the OS for the addresses of existing data, but we can't tell your OS *where* to place them. We will focus on three syntax elements:
 
-1. Let's now consider the code below. Read through it before moving on.
+  - Pointer Declaration: To declare a pointer variable, use `data-type *ptr;`
+  - Address-Of: To get the address of an existing variable, use `&var`
+  - De-reference: To follow the pointer to its content, use `*ptr`.
+
+
+1. Consider the code below. Read through it before moving on.
 
    ```c
    char letter = 'p';
