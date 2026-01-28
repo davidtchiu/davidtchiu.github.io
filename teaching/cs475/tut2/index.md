@@ -331,80 +331,26 @@ In the code above, notice:
 ##### Part 4: Pointers as "Output Parameters"
 Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to write a new class that stored multiple values, or you returned an array of values. Sure, you can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values.
 
- **"Output Parameters"**: An output parameter refers to a pointer that is input into a function, and the function modifies its contents directly before exiting. 
+An output parameter refers to a pointer that is input into a function, and the function modifies its contents directly before exiting. 
 
-   - You've already seen this in action when you used `scanf()` to accept user input. For example, when `scanf("%d", &var)` is used, we input the address of `var` and we expect the contents of `var` to have changed afterwards.
+  - You've actually already seen this in action when you used `scanf()` to accept user input. When you use `scanf()`, you first declared a variable `var` to hold the input, then called `scanf("%d", &var)` to change the contents of `var`.
 
-   - I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance:
+  - I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance:
 
-     ```c
-     void sum(int inX, int inY, int* outSum) {
-       *outSum = inX + inY;
-     }
+    ```c
+    void sum(int inX, int inY, int* outSum) {
+      *outSum = inX + inY;
+    }
 
-     int main() {
+    int main() {
       int a = 10;
       int b = 20;
       int mySum = 0;
       sum(a, b, &mySum);  // result stored in mySum
       printf("%d\n", mySum);
-     }
-     ```
+    }
+    ```
 
-
-1. Consider the following function used to swap the values of two integer variables:
-
-   ```c
-   void swap(int *x, int *y) {
-     int tmp = *x;  // dereference x and store value in tmp
-     *x = *y;
-     *y = tmp;      // you don't need to deference `tmp` (why)?
-   }
-
-   // later on ...
-
-   int a = 10, b = 20;
-   swap(&a, &b);
-   printf("%d\n", a); // 20
-   printf("%d\n", b); // 10
-   ```
-  Trace execution of calling `swap()` by drawing out the memory contents like you saw me do in earlier examples.
-   
-2. The below version of `swap` doesn't work.  Trace to see why?
-
-   ```c
-   void swap2(int *x, int *y) {
-       int *tmp = x;
-       x = y;
-       y = tmp;
-   }
-
-   int main() {
-    int a = 4, b = 3;
-    swap2(&a, &b); //swap?
-    printf("%d\n", a);
-    printf("%d\n", b);
-   }
-   ```
-
-3. Consider a final version of swap that accepts two variables (not pointers) as input. Will this method work? Trace its execution.
-
-   ```c
-   void swap3(int x, int y) {
-       int *x_ptr = &x;
-       int *y_ptr = &y;
-       int tmp = *x_ptr;
-       *x_ptr = *y_ptr;
-       *y_ptr = tmp;
-   }
-
-   int main() {
-    int a = 4, b = 3;
-    swap3(a, b); //swap?
-    printf("%d\n", a);
-    printf("%d\n", b);
-   }
-   ```
 
 
 <!--
