@@ -256,7 +256,7 @@ let days = {
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
     "",
-    // wk 10
+    // wk 10: Baha starts joining David
     "Start 1D arrays; Write the Bank class",
     "Finish Bank class; Lab 9: ComboGuesser",
     "TurtleMob; <strong><emph>Exam 2 review</emph></strong>",

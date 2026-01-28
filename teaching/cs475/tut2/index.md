@@ -511,6 +511,38 @@ In this section, we'll explore the relationship between pointers and arrays.
 
     **Important side note:** Because arrays are passed as pointers, you can now appreciate why modifications to arrays persist after the function terminates (this is also true in Java!).
 
+5. **Command-line Arguments** Ever notice that the signature of your main function usually looks like this: `int main(int argc, char *argv[])`? When you run your programs using command-line arguments, such as `./memtest arg1 arg2 arg3 ...` these arguments are captured in these main parameters. Specifically, `argc` is the count of arguments including the executable itself, while `argv` is an array of strings (i.e., an array containing the arguments themselves). C promises that the final element in `argv` is `NULL`. For instance, if you put the following code in `argtest.c` and ran it:
+
+    ```c
+    /* in argtest.c */
+    #include <stdio.h>
+
+    int main(int argc, char *argv[]) {
+      printf("I got %d arguments\n", argc);
+      while (*argv) {
+        printf("%s\n", *argv);
+        argv++; // iterate to the next argument.
+      }
+    }
+    ```
+    ```bash
+    $ gcc argtest.c -o argtest
+    $ ./argtest hi hello howdy
+    I got 4 arguments
+    ./argtest
+    hi
+    hello
+    howdy
+    ```
+
+    That's a nice easy way to effortlessly iterate through all your command-line argument using pointer arithmetic. Of course, you could also do it the old fashioned way, which would also work just fine!
+
+    ```c
+    for (int i = 0; i < argc; i++) {
+      printf("%s\n", argv[i]);
+      i++;
+    }
+    ```
 
 ###### Practice
 
