@@ -21,13 +21,21 @@ Open your VS Code and get connected to your Remote Development environment. If y
 
   - Once you're logged in, you can open a terminal from the `Terminal` menu.
 
+From your shell terminal, create a directory to store your first program. Let's call this directory `lab2_pointers`, like this:
+
+  ```bash
+  $ mkdir lab2_pointers
+  $ cd lab2_pointers
+  $ code types.c
+  ```
+
 ##### Preamble: Notepads, Street Addresses, and Buildings
 Pointers are powerful structures in C. To get a sense of what pointers are, let's use a real-world analogy:
   - Data in this analogy are like buildings in a city.
   - A **pointer** to that data is like a building's *street address*.
   - A **pointer variable** is just a *notepad* with a *street address* written on it that you can pass to other people.
 
-<img src="figures/ptrBuilding.png" width="250px" />\
+<img src="figures/ptrBuilding.png" width="300px" />\
 
 You wouldn't ever say that a street address is itself a building, but it does tell you where to go to find it.
 
@@ -47,9 +55,9 @@ Under this scheme, consider what pointers  enable us to do:
 How is data stored and managed inside your machine? Think of your computer's memory as being a giant array of bytes. Each byte corresponds to a unique *address* in memory. Depending on the data's *type*, a piece of data may occupy a range of bytes.  Consider the following code snippet:
 
 ```c
-char letter = 'p';    // chars are 1 byte long
-int days = 365;       // ints are 4 bytes long
-double amt = 90000.75;    // doubles are 8 bytes long
+char letter = 'p';    // chars are 1 byte 
+int days = 365;       // ints are 4 bytes 
+double amt = 90000.75;    // doubles are 8 bytes 
 ```
 
 Let's take a look at a snapshot of what my memory might look like as it runs the above code\
@@ -66,7 +74,7 @@ There are several things worth noting:
 Notice from the figure above that that an `int` takes up four contiguous bytes, a `char` requires just one byte, and a `double` requires eight. The specific space requirements for each data type actually vary across architectures, so how did I know these storage requirements apply to my machine? C provides an important operator `sizeof()` for this purpose. It inputs the name of a variable, a data type, or an expression, and returns the size in bytes that it occupies in memory.
 
 
-Let's see what it does.
+Let's see what it does. Create a new file inside your `lab2_pointers` directory, called `memsizes.c` and paste in the following:
 
 ```c
 #include <stdio.h>
@@ -105,40 +113,22 @@ int main(int argc, char *argv[])
 }
 ```
 
-When I compile and run it, I get the following output. Read through the output and make sure it all makes sense to you. It's interesting to see how much space each data type (and data literal) takes up.
-
-```
-*** sizes of data types ***
-size of char: 1 bytes
-size of short: 2 bytes
-size of int: 4 bytes
-size of long: 8 bytes
-size of float: 4 bytes
-size of double: 8 bytes
-size of long double: 16 bytes
-
-*** sizes of vars ***
-size of letter: 1 bytes
-size of days: 4 bytes
-size of amt: 8 bytes
-size of nums array: 80
-
-*** sizes of constants and expressions ***
-size of 50: 4 bytes
-size of '#': 4 bytes
-size of 54.999: 8 bytes
-size of hello: 6 bytes
-size of 3/2: 4 bytes
-size of 0.5 * 400 / 2: 8 bytes
+Compile and run it. Recall that to compile, you can use the following terminal command:
+```bash
+$ gcc -Wall -g -o memsizes memsizes.c 
 ```
 
+Run using:
+```bash
+$ ./memsizes 
+```
 
-2. Remember the `sizeof()` operator for later and for the future lab tutorial. `sizeof()` is one of the important built-in operators in C.
+Read through the output and make sure it all makes sense to you. It's interesting to see how much space each data type (and data literal) takes up. Remember this `sizeof()` operator for the future lab tutorials. It is one of the important built-in operators in C.
 
 
 - **Practice Questions**
 
-  - What is the point of an `unsigned integer`? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: All data is represented using bit sequences. The most-significant (left most) bit of a number, called the sign-bit, determines the +/- of that number. But the sign-bit wastes a bit! So a regular `int` can only cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[0, 2^{32}-1]$$, recalling that an `int` is 32 bits. If you know that a value cannot be negative (such as salary), it is appropriate to use `unsigned int`s. Higher level languages like Java does not support unsigned ints.*
+  - What is the point of an `unsigned integer`? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: All data is represented using bit sequences. The leftmost bit of that sequence, called the sign-bit, determines the +/- of that number. But the sign-bit wastes a bit. so a regular `int` can only cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[0, 2^{32}-1]$$, recalling that an `int` is 32 bits. If you know that a value cannot be negative (such as salary), it is appropriate to use `unsigned int`s. Higher level languages like Java does not support unsigned ints.*
 
   - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)* 
 
