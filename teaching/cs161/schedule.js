@@ -268,14 +268,14 @@ let days = {
     "TicTacToe review, more practice",
     "",
     // wk 12
-    "Start ArrayLists",
-    "Lab 11: SuperCircleDrawer",
-    "Lab review, more practice",
+    "Start ArrayLists (Baha')",
+    "Lab 11: SuperCircleDrawer (David)",
+    "Lab review, more practice (Baha')",
     "",
     // wk 13
-    "Scanner: user interaction, String parsing: enforcing a word limit",
+    "Scanner: user interaction, String parsing: enforcing a word limit (Baha')",
     "Lab 12: Interactive Diary (UI + String Parsing)",
-    "File handling",
+    "File handling (Baha')",
     "",
     // wk 14
     "Static scope, enums",
