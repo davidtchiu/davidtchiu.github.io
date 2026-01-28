@@ -96,20 +96,20 @@ let days = {
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     lab: [
-      // {
-      //   name: "Lab 1",
-      //   title: "Draw My Picture (BlueJ)",
-      //   url: "lab1.bluej/",
-      //   weekAssigned: 2,
-      //   due: "1/23/2026",
-      // },
-      // {
-      //   name: "Lab 2",
-      //   title: "Triangle Class (Variables, Scope, and Lifetime)",
-      //   url: "lab2.vars/",
-      //   weekAssigned: 3,
-      //   due: "1/30/2026",
-      // },
+      {
+        name: "Lab 1",
+        title: "BlueJ",
+        url: "hwk0.me/",
+        weekAssigned: 1,
+        due: "1/23/2026",
+      },
+      {
+        name: "Lab 2",
+        title: "Triangle Class (Variables, Scope, and Lifetime)",
+        url: "lab2.vars/",
+        weekAssigned: 2,
+        due: "1/30/2026",
+      },
       // {
       //   name: "Lab 3",
       //   title: "Stomach Class (Class Writing, Random object)",
@@ -211,14 +211,14 @@ let days = {
       "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
     // wk 2
     "Classes: Instance vars and data types, constructors",
-    "Lab 1: Draw My Picture",
-    "Constructors and methods",
+    "Lab 2: Triangle",
+    "Methods",
     "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
       "Code: <a href='https://drive.google.com/open?id=1BIumqGvCSt2G9H9EFNAAHTZyQnfK7SG6&usp=drive_fs'>Circle</a> (starter)" + "<br/>" +
       "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Circle</a> (finished)",
     // wk 3
     "Reading code: methods; Start TicketMachine",
-    "Lab 2: Triangle",
+    "Lab 3: Stomach",
     "If statements, booleans, and logical operators",
     "",
     // "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Writing Classes</a>" + "<br/>" + 
