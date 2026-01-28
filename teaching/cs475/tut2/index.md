@@ -125,12 +125,12 @@ $ ./memsizes
 
 Read through the output and make sure it all makes sense to you. It's interesting to see how much space each data type (and data literal) takes up. Remember this `sizeof()` operator for the future lab tutorials. It is one of the important built-in operators in C.
 
-
+<!-- 
 - **Practice Questions**
 
   - What is the point of an `unsigned integer`? Does it take up more space for an integer to be signed vs. unsigned? Does Java support unsigned integers? *(Ans: All data is represented using bit sequences. The leftmost bit of that sequence, called the sign-bit, determines the +/- of that number. But the sign-bit wastes a bit. so a regular `int` can only cover the range $$[-2^{31}, 2^{31}-1]$$), and an `unsigned int` can cover $$[0, 2^{32}-1]$$, recalling that an `int` is 32 bits. If you know that a value cannot be negative (such as salary), it is appropriate to use `unsigned int`s. Higher level languages like Java does not support unsigned ints.*
 
-  - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)* 
+  - If a `struct X` element was declared to contain a `char`, a `long`, and an array of 100 `doubles`, what is the size of each instance of `struct X`? *(Essentially, each instance of `struct X` would require 1 + 8 + 100 * 8 = 809 bytes, but it will actually take up 812 bytes for preserving word alignment)*  -->
 
 
 ##### Part 2: Understanding Addressing and Pointers
@@ -564,16 +564,16 @@ In this section, we'll explore the relationship between pointers and arrays.
 ###### Do these exercises (not graded):
 
 - The following is a well-known string function. What does it do?
-  ```c
-  /*
-   * This method accepts two char pointers (char arrays, or strings)
-   */
-  void mystery(char *s, char *t) {
-     // not a typo below
-     while (*s++ = *t++)
-      ;
-  }
-  ```
+    ```c
+    /*
+    * This method accepts two char pointers (char arrays, or strings)
+    */
+    void mystery(char *s, char *t) {
+      // not a typo below
+      while (*s++ = *t++)
+        ;
+    }
+    ```
 - Using pointer arithmetics, implement the string function `strcat(char *s, char *t)`, which concatenates the string referred to by `t` to the end of the string referred to by `s`. (Hint, traverse `s` using pointer arithmetic until you hit the null terminating character.)
 
 
