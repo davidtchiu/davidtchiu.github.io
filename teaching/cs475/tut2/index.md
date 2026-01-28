@@ -235,7 +235,7 @@ Let's put everything together.
 
 1. A pointer variable stores the address of some data. This data can be a variable, an array, or even another pointer. 
 
-2.   When assigning a pointer `q` to another pointer `p`, it causes them both to point to the same data. This is called *aliasing*, and it should not be a new concept to you as Java programmers.
+2. When assigning a pointer `q` to another pointer `p`, it causes them both to point to the same data. This is called *aliasing*, and it should not be a new concept to you as Java programmers.
 
    ```c
    double *a = NULL, *b = NULL;
@@ -259,14 +259,14 @@ Let's put everything together.
    *a += 5; // de-reference a to get to c's content! c is now 20
    ```
 
-- Memory contents after  `*b = 15`.\
-  <img border="1" width="250px" src="figures/proj2-ptrAssign3.png" />
+    - Memory contents after  `*b = 15`.\
+      <img border="1" width="250px" src="figures/proj2-ptrAssign3.png" />
 
-- Memory contents after `*a += 5`.\
-  <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
+    - Memory contents after `*a += 5`.\
+      <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
 
   
-- What happens if you try to de-reference a pointer referencing `NULL`? *(Ans:  In Java, you'd get the NullPointerException, but there are no such things as Exceptions in C... This really is something you should try out.)*
+4. What happens if you try to de-reference a pointer referencing `NULL`? *(Ans:  In Java, you'd get the NullPointerException, but there are no such things as Exceptions in C... This really is something you should try out.)*
 
 ##### Part 4: Pass by Reference (Pointers as Input Arguments)
 Remember how I mentioned that for efficiency, you should pass an address into a function instead of passing the entire building? Consider the following function that modifies a large `struct` without using pointers. 
