@@ -141,8 +141,9 @@ Every piece of data is stored in your memory in two pieces: its content and its 
 
   - Pointer Declaration: To declare a pointer variable, use `data-type *ptr;` (Creates a "notepad")
   - Address-Of: To get the address of an existing variable, use `&var`. (Gets the address of a building)
-  - De-reference: To follow the pointer to its content, use `*ptr`. (Follows the address to the building)
   - Pointer Assignment: `ptr1 = ptr2;` (Write another address on the notepad)
+  - De-reference: To chase the pointer to its content, use `*ptr`. (Follows the address to the building)
+  - Arrow (struct de-reference): `p->x` De-reference a pointer `p` to a struct, then access a field `x`.
 
 
 1. Consider the code below. Read through it before moving on.
@@ -183,7 +184,7 @@ Every piece of data is stored in your memory in two pieces: its content and its 
    Address of ptr: 0x8A2C   <-- Which is 35372 (in hex)
    Value of ptr: 0x458      <-- Which is 1112 (in hex)
    ```
-<!-- 
+
 4. Let's now go back and explain the source code.
 
    - On **Line 5**, we see a new kind of variable-declaration syntax:
@@ -216,7 +217,7 @@ Every piece of data is stored in your memory in two pieces: its content and its 
      (*ptr)--;   //decrement the content of 'days' by 1
      ```
 
-     Okay this is a strange one. Due to the parentheses, `ptr` is first de-referenced to examine the content `365`. The content is then decremented to `364`.
+     Due to the parentheses, `ptr` is first de-referenced to examine the content `365`. The content is then decremented to `364`.
       - This begs the question: what would `*ptr--;` do? This syntax would attempt to decrement the pointer to the previous memory location, before examining the contents.
 
    - On **Lines 15-17**: shows that we can use the output format specifier, `%p` to print an address (in hexadecimal).
@@ -229,7 +230,7 @@ Every piece of data is stored in your memory in two pieces: its content and its 
 
      The addresses of `days` (0x458 == 1112) and `ptr` (0x8A2C == 35372) are first printed. This is followed by printing the contents of `ptr`, which unsurprisingly, stores the address of `days`, (0x458 == 1112).
 
-5. *Important:* In the examples above, we demonstrated that the `&` address-of operator returns only the address of the *first byte* of the associated variable. For instance, `&days` returns simply `0x458`, even though `days` occupies the next three bytes as well. When we de-reference `*ptr` on **Line 8** and **Line 12**, the system was smart enough to know that the next three bytes are part of `days`'s value. How does the system know **exactly three** more bytes (and not zero, or one, or seven, or a hundred) trailed first byte of `days`?
+<!-- 5. *Important:* In the examples above, we demonstrated that the `&` address-of operator returns only the address of the *first byte* of the associated variable. For instance, `&days` returns simply `0x458`, even though `days` occupies the next three bytes as well. When we de-reference `*ptr` on **Line 8** and **Line 12**, the system was smart enough to know that the next three bytes are part of `days`'s value. How does the system know **exactly three** more bytes (and not zero, or one, or seven, or a hundred) trailed first byte of `days`?
     -  **Answer: This is why we declare types!** When you declared `days` to be an `int`, the C compiler knows it needs to reserve 4 bytes, and any references to it always requires 4 bytes to be read.
 
 6. **Exercises (ungraded)**
@@ -306,24 +307,13 @@ This code runs, but it's really cumbersome. To call `increaseSalary(david)`, C n
 Intead, let's just pass the address of the employee `struct`. The function can deference the address to make the salary updates directly. This saves the C runtime system from making a clone of the employee and moving it around!
 
 ```c
-typedef struct employee_t {
-  char ssn[11];
-  char name[100];
-  int salary;
-  // more members omitted
-  // ...
-} employee_t;
-
-/** Now inputs a pointer to an employee! */
+/** Rewritten to input a pointer to an employee */
 void increaseSalary(employee_t *emp) {
-  emp->salary *= 1.03;  // What's this struct->member operator???? 
+  emp->salary *= 1.03;  // What is the -> operator?
 }
 
 void main() {
-  employee_t david;
-  strcpy(david.ssn, "123");
-  strcpy(david.name, "David C");
-  david.salary = 20000;
+  // (code omitted)
 
   // done without passing the whole struct to `increaseSalary()`, just the address!!
   increaseSalary(&david);
