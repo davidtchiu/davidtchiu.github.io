@@ -512,20 +512,22 @@ In this section, we'll explore the relationship between pointers and arrays.
     **Important side note:** Because arrays are passed as pointers, you can now appreciate why modifications to arrays persist after the function terminates (this is also true in Java!).
 
 
-###### Do these exercises (not graded):
+###### Practice
 
-- The following is a well-known string function. What does it do?
-    ```c
-    /*
-    * This method accepts two char pointers (char arrays, or strings)
-    */
-    void mystery(char *s, char *t) {
-      // not a typo below
-      while (*s++ = *t++)
-        ;
-    }
-    ```
-- Using pointer arithmetics, implement the string function `strcat(char *s, char *t)`, which concatenates the string referred to by `t` to the end of the string referred to by `s`. (Hint, traverse `s` using pointer arithmetic until you hit the null terminating character.)
+What does the following function do?
+```c
+/*
+ * This method accepts two char pointers (char arrays, or strings)
+ */
+void mystery(char *s, char *t) {
+  // not a typo below
+  while (*s++ = *t++)
+    ;
+}
+```
+
+
+Using pointer arithmetics, implement the string function `strcat(char *s, char *t)`, which concatenates the string referred to by `t` to the end of the string referred to by `s`. (Hint, traverse `s` using pointer arithmetic until you hit the null terminating character.)
 
 
 ##### Important Summary: Why Do We Need Pointers?
