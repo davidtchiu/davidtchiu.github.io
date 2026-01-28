@@ -137,9 +137,10 @@ Read through the output and make sure it all makes sense to you. It's interestin
 
 Every piece of data is stored in your memory in two pieces: its content and its address. We can ask the OS for the addresses of existing data, but we can't tell your OS *where* to place them. We will focus on three syntax elements:
 
-  - Pointer Declaration: To declare a pointer variable, use `data-type *ptr;`
-  - Address-Of: To get the address of an existing variable, use `&var`
-  - De-reference: To follow the pointer to its content, use `*ptr`.
+  - Pointer Declaration: To declare a pointer variable, use `data-type *ptr;` (Creates a "notepad")
+  - Address-Of: To get the address of an existing variable, use `&var`. (Gets the address of a building)
+  - De-reference: To follow the pointer to its content, use `*ptr`. (Follows the address to the building)
+  - Pointer Assignment: `ptr1 = ptr2;` (Write another address on the notepad)
 
 
 1. Consider the code below. Read through it before moving on.
