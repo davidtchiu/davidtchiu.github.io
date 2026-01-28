@@ -238,6 +238,7 @@ Every piece of data is stored in your memory in two pieces: its content and its 
 
     - You can also create a pointer to a `void` type, which seems odd. Do some searching on the web, and figure out what a `void*` pointer means, and why it's useful. Declare a `void*` pointer. Can you point it at an int? A char? A struct? (Hint: Think generics in Java).
 
+<!-- 
 ##### Part 3: Pointer Operators: `&` and `*`
 Let's put everything together.
 
@@ -249,7 +250,7 @@ Let's put everything together.
    double *a = NULL, *b = NULL;
    double c = 10;
    b = &c; // point b at c
-   a = b;  // point a at c (why don't I need to use &b here?)
+   a = b;  // point a at c (why don't I use &b here?)
    ```
 
    - Memory contents after the declaration:\
@@ -260,9 +261,8 @@ Let's put everything together.
 
    - You must first `#include <stdlib.h>` to get access to the `NULL` constant.
 
-3. The De-Reference Operator: Given a pointer `ptr`, we use `*ptr` to access the content at the location referenced by `ptr`. As I lamented earlier, I wish we chose a different syntax for dereferencing, because `*ptr` already has a different meaning!
+3. Consider the following segment:
    ```c
-   double *b = &c; // point b at c
    *b = 15; // de-reference b to get to c's content! c is now 15
    *a += 5; // de-reference a to get to c's content! c is now 20
    ```
@@ -274,9 +274,9 @@ Let's put everything together.
       <img border="1" width="250px" src="figures/proj2-ptrAssign4.png" />
 
   
-4. What happens if you try to de-reference a pointer referencing `NULL`? *(Ans:  In Java, you'd get the NullPointerException, but there are no such things as Exceptions in C... This really is something you should try out.)*
+4. What happens if you try to de-reference a pointer referencing `NULL`? *(Ans:  In Java, you'd get the NullPointerException, but there are no such things as Exceptions in C... This really is something you should try out.)* -->
 
-##### Part 4: Pass by Reference (Pointers as Input Arguments)
+##### Part 3: Pass by Reference (Pointers as Input Arguments)
 Remember how I mentioned that for efficiency, you should pass an address into a function instead of passing the entire building? Consider the following function that modifies a large `struct` without using pointers. 
 ```c
 typedef struct employee_t {
@@ -294,7 +294,7 @@ employee_t increaseSalary(employee_t emp) {
 
 void main() {
   employee_t david;
-  strcpy(david.ssn, "123");
+  strcpy(david.ssn, "123");   // recall: you can't use simply assign strings. Use strcpy() or sprintf() instead.
   strcpy(david.name, "David C");
   david.salary = 20000;
   david = increaseSalary(david); // yikes
@@ -324,7 +324,9 @@ void main() {
   strcpy(david.ssn, "123");
   strcpy(david.name, "David C");
   david.salary = 20000;
-  increaseSalary(&david); // done without passing the whole struct to `increaseSalary()`, just the address!!
+
+  // done without passing the whole struct to `increaseSalary()`, just the address!!
+  increaseSalary(&david);
 }
 ```
 In the code above, notice:
@@ -336,7 +338,7 @@ In the code above, notice:
 
 
 
-##### Part 5: Pointers as "Output Parameters"
+##### Part 4: Pointers as "Output Parameters"
 Have you ever wished that a function/method could return more than one thing? To do this Java, you always had to write a new class that stored multiple values, or you returned an array of values. Sure, you can also do any of the above in C, but pointers give us another way to emulate "returning" multiple values.
 
  **"Output Parameters"**: An output parameter refers to a pointer that is input into a function, and the function modifies its contents directly before exiting. 
@@ -461,7 +463,7 @@ Have you ever wished that a function/method could return more than one thing? To
 
 
 
-##### Part 6: Connection to Arrays and Strings (Pointer Arithmetic)
+##### Part 5: Connection to Arrays and Strings (Pointer Arithmetic)
 In this section, we'll explore the relationship between pointers and arrays.
     
 1.  Study the following source file, then compile and run it.
@@ -641,4 +643,4 @@ Let's pause here and ask why pointers are needed at all?  There are several reas
 
 #### Credits
 
-Written by David Chiu. 2022.
+Written by David Chiu. 2022. Edited 2026.
