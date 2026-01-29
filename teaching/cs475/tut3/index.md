@@ -288,7 +288,9 @@ Pay attention here, because you'll be doing this kind of work a lot in your next
   ```c
   #include <string.h>
   char *createEmail(char *user, char *domain) {
-    // Allocate just enough space for "user@domain\0"
+    // BAD DON'T DO THIS: char email[strlen(user) + strlen(domain) + 2];    <-- this is on the stack!
+
+    // GOOD: Allocate just enough space for "user@domain\0" on the heap
     char *email = malloc(strlen(user) + strlen(domain) + 2);    
     email[0] = '\0';  // initialize as empty string (just good habit)
 
