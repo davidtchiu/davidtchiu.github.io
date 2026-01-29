@@ -171,6 +171,7 @@ class CourseCalendar {
           dateHeader.style.color = TODAY_COLOR;
           dateHeader.style.textAlign = "center";
           dateHeader.style.fontWeight = "bold";
+          dateHeader.style.verticalAlign = "top";
           dateHeader.innerHTML = `${
             currentDate.getMonth() + 1
           }/${currentDate.getDate()}`;
