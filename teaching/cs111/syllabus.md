@@ -5,10 +5,10 @@
 This course builds upon introductory programming fundamentals, unifying prior programming preparation within Java and its object-oriented programming (OOP) framework. Emphasis is placed on developing fluency in Java and strengthening the use of abstraction, modularity, and polymorphism in software design. This course also introduces topics such as recursion and elementary complexity analysis as foundational tools for problem solving and reasoning about algorithmic efficiency. This course has a weekly laboratory.
 
 #### Prerequisites
-CS 110, ARTS 288, DATA 160 with a grade of C- or higher.
+One of CS 110, ART 288, or DATA 160, with a grade of C- or higher.
 
 #### Required Textbook
-None. Materials provided by instructor.
+Notes, Code, and other Course Materials provided by instructor.
 
 
 #### Course Topics
