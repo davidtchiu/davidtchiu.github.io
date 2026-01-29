@@ -8,7 +8,7 @@ This course builds upon introductory programming fundamentals, unifying prior pr
 One of CS 110, ART 288, or DATA 160, with a grade of C- or higher.
 
 #### Required Textbook
-Notes, Code, and other Course Materials provided by instructor.
+Notes, code, and other related course materials provided by the instructor.
 
 
 #### Course Topics
