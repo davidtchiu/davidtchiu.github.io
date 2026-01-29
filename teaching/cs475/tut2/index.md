@@ -337,25 +337,28 @@ An output parameter refers to a pointer that is input into a function, and the f
   - I strongly recommend that you clearly name and comment when a parameter is an output parameter. For instance:
 
     ```c
-    void sum(int inX, int inY, int* outSum) {
+    void sum(int inX, int inY, int* outSum, int *outProd) {
       *outSum = inX + inY;
+      *outProd = inX * inY;
     }
 
     int main() {
       int a = 10;
       int b = 20;
-      int mySum = 0;
-      sum(a, b, &mySum);  // result stored in mySum
-      printf("%d\n", mySum);
+      int mySum = 0, myProd = 0
+      sum(a, b, &mySum, &myProd);  // result stored in mySum and in myProd!
+      printf("%d, %d\n", mySum, myProd);
     }
     ```
 
-  - Write a method called `swap` that can be used to swap the values of two integer variables. Here's how it can be used.
+  - **Practice:** Now write a function that can be used to swap the values of two integer variables. Hey that's something you simply can't do in languages like Java! Cool! Here's how it can be used. 
 
     ```c
     void main() {
       int a = 10, b = 20;
+
       swap(&a, &b);
+
       printf("%d\n", a); // 20
       printf("%d\n", b); // 10
     }
