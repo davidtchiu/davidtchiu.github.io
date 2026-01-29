@@ -1,4 +1,4 @@
-## CS 111 - Object-Oriented Programming - Syllabus
+## CS 111 - Intermediate and Object-Oriented Programming - Syllabus
 
 
 #### Course Description
