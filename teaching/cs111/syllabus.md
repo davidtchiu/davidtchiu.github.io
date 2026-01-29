@@ -1,4 +1,4 @@
-## CS 111 - Intermediate and Object-Oriented Programming - Syllabus
+## CS 111: Intermediate and Object-Oriented Programming
 
 
 #### Course Description
@@ -8,6 +8,7 @@ This course builds upon introductory programming fundamentals, unifying prior pr
 One of CS 110, ART 288, or DATA 160, with a grade of C- or higher.
 
 #### Required Textbook
+No textbook required.\
 Notes, code, and other related course materials provided by the instructor.
 
 
