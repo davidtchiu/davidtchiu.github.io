@@ -79,7 +79,7 @@ public class YourClassName {
         ```
         where `expression` is some Java or mathematical expression. For instance, if I were assigning the area of a *square*, my expression would be `area = width * length;` (assuming `width` and `length` are the instance variable's names.)
 
-4. Compile your source code, and instantiate a new `Triangle` to see if your `area` instance variable is now populating. Double click on the object (the red box near the bottom). If you did everything above correctly, you should've gotten `300.0` for area.
+4. Compile your source code, and instantiate a new `Triangle` to see if your `area` instance variable is now populating. Double click on the object (the red box near the bottom). If you did everything above correctly, you should've gotten `600.0` for area since the height is 30 and width is 40.
 
 5. But is this the only place where a triangle's `area` needs to be assigned? Wasn't there a method to *change* a triangle's size? Try calling `changeSize(int height, int width)` to change the triangle's size somehow and inspect the area again afterwards. Alas, the `area` field doesn't update. 
 
