@@ -155,6 +155,7 @@ class CourseCalendar {
           td.style.width = "20%";
           td.style.margin = "1px";
           td.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
+          td.style.verticalAlign = "top";
           // td.style.padding = "1px";
 
           // Is it today? Highlight the background differently
