@@ -51,7 +51,7 @@ public class YourClassName {
 ```
 
 
-1. Open up the Triangle class, find the section of code (usually towards the top of the class) that lists all the instance variables. Modify it to store two new instance variables: `area`. It doesn't matter if these go first or last in line of your instance-variable segment.
+1. Open up the Triangle class, find the section of code (usually towards the top of the class) that lists all the instance variables. Modify it to store a new instance variable: `area`. It doesn't matter if these go first or last in line of your instance-variable segment.
     - Before you declare `area`, you ought to be thinking ahead --- what nature of data does each hold? Integers? Strings? Doubles? Something else? (Do you remember how to calculate areas and perimeters of triangles? What kind of value do you need to capture?)
     - Choose the right data types, and declare `area`  now as an instance variable.
     Remember the syntax to declare an instance variable using:
@@ -60,7 +60,7 @@ public class YourClassName {
        ```
 
 
-2. Back in the BlueJ project window, click the compile button, and then *instantiate* a new `Triangle` object by right-clicking on that icon, and selecting `new Triangle()` from the menu. Once the object is created below,  inspect its instance variables by double-clicking on the new object. You should see the two new instance variables you just declared, but alas, they show up as zeroes.
+2. Back in the BlueJ project window, click the compile button, and then *instantiate* a new `Triangle` object by right-clicking on that icon, and selecting `new Triangle()` from the menu. Once the object is created below,  inspect its instance variables by double-clicking on the new object. You should see the the new instance variable you just declared, but alas, they show up as zeroes.
 
     - It's important to use this moment to reflect. Even though you gave these instance variables good names that indicate what they are, they don't just magically get values. (Computers are morons!) It's up to *the programmer* to assign values to these instance variables, and to keep track of them if the triangle ever changes size.
 
@@ -79,7 +79,7 @@ public class YourClassName {
         ```
         where `expression` is some Java or mathematical expression. For instance, if I were assigning the area of a *square*, my expression would be `area = width * length;` (assuming `width` and `length` are the instance variable's names.)
 
-4. Compile your source code, and instantiate a new `Triangle` to see if your `area` instance variable is now populating. Double click on the object (the red box near the bottom). If you did everything above correctly, you should've gotten `600.0` for area.
+4. Compile your source code, and instantiate a new `Triangle` to see if your `area` instance variable is now populating. Double click on the object (the red box near the bottom). If you did everything above correctly, you should've gotten `300.0` for area.
 
 5. But is this the only place where a triangle's `area` needs to be assigned? Wasn't there a method to *change* a triangle's size? Try calling `changeSize(int height, int width)` to change the triangle's size somehow and inspect the area again afterwards. Alas, the `area` field doesn't update. 
 
@@ -206,7 +206,6 @@ The last type of variables in Java are called "input parameters." These allow us
 
     - You might as well ensure that the perimeter and areas still check out too!
 
-6. Create a new method `changeSizeAndColor()` that accepts 3 parameters, a different `width`, `height`, and `color`. Put in the code to change its size and color concurrently. To help do this, you should be calling existing methods instead of copying-and-pasting code.
     
 #### Part IV: Writing Effective Comments
 
