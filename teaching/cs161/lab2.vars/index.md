@@ -77,7 +77,7 @@ public class YourClassName {
         ```java
         variable-name = expression;
         ```
-        where `expression` is some Java or mathematical expression. For instance, if I were assigning the area of a *square*, my expression would be `area = width * length;` (assuming `width` and `length` are the instance variable's names.)
+        where `expression` is some Java or mathematical expression. 
 
 4. Compile your source code, and instantiate a new `Triangle` to see if your `area` instance variable is now populating. Double click on the object (the red box near the bottom). If you did everything above correctly, you should've gotten `600.0` for area since the height is 30 and width is 40.
 
@@ -185,7 +185,7 @@ It's that simple! Just drop the preceding `private` keyword. Let's have a look a
 #### Part III: Input Parameters
 The last type of variables in Java are called "input parameters." These allow users to provide values (values given to input parameters are called **arguments**) to a constructor or a method. 
 
-1. Find the `moveHorizontal()` method again. You only need to examine the first line of the method. Here it is:
+1. Find the `moveHorizontal()` method in your source code. You only need to read the first line of the method. Here it is:
 
     ```java
     public void moveHorizontal(int distance)
@@ -196,7 +196,7 @@ The last type of variables in Java are called "input parameters." These allow us
 
 3. Like local variables, input parameters are also destroyed when the method finishes.
 
-4. Write a new `public Triangle(int startingHeight, int startingWidth)` constructor that accepts the starting height and width. You may name these input parameters `startingHeight` and `startingWidth` (honestly, you can name them whatever you like as long as their names make sense and are legal). 
+4. Now, write a new `public Triangle(int startingHeight, int startingWidth)` constructor that accepts the starting height and width. You may name these input parameters `startingHeight` and `startingWidth` (honestly, you can name them whatever you like as long as their names make sense and are legal). 
     
     - Next, assign the instance variables `height` and `width` to these starting values in order to save them.
     
