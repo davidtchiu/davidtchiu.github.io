@@ -212,20 +212,20 @@ let days = {
     // wk 2
     "Classes: Instance vars and data types, constructors",
     "Lab 2: Triangle",
-    "Methods",
+    "Lab review; Methods",
     "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
       "Code: <a href='https://drive.google.com/open?id=1BIumqGvCSt2G9H9EFNAAHTZyQnfK7SG6&usp=drive_fs'>Circle</a> (starter)" + "<br/>" +
       "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Circle</a> (finished)",
     // wk 3
-    "Reading code: methods; Start TicketMachine",
+    "Start TicketMachine",
     "Lab 3: Stomach",
     "If statements, booleans, and logical operators",
-    "",
-    // "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Writing Classes</a>" + "<br/>" + 
-    //   "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a>",
+    // "",
+    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Writing Classes</a>" + "<br/>" + 
+      "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a> (finished)",
     // wk 4
     "Nested if, else-if",
-    "Lab 3: Stomach",
+    "Lab 4: Guessing Game",
     "Data Types, binary rep, casting",
     "",
     // wk 5
