@@ -110,8 +110,8 @@ let days = {
     "Computing models",
     "Bootstrapping, interrupts",
     "Dual mode, system calls",
-    "",
-    // "Notes: <a href='notes/CS475_2-kernel.pdf'>2. Interrupts and Syscalls</a>",
+    // "",
+    "Notes: <a href='https://drive.google.com/open?id=1Se4tHmMOkSPjSYu_lBztMaUYUMsAVulF&usp=drive_fs'>2. Interrupts and Syscalls</a>",
     // wk 4
     "Processes: switching, PCB, address space",
     "Processes: fork(), exec() system calls",

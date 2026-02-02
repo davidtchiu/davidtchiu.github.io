@@ -217,9 +217,9 @@ let days = {
       "Code: <a href='https://drive.google.com/open?id=1BIumqGvCSt2G9H9EFNAAHTZyQnfK7SG6&usp=drive_fs'>Circle</a> (starter)" + "<br/>" +
       "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Circle</a> (finished)",
     // wk 3
-    "Start TicketMachine",
+    "Conditionals",
     "Lab 3: Stomach",
-    "If statements, booleans, and logical operators",
+    "Logical operators",
     // "",
     "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Writing Classes</a>" + "<br/>" + 
       "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a> (finished)",
