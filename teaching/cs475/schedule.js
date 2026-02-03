@@ -29,13 +29,13 @@ let days = {
         weekAssigned: 2,
         due: "2/2/2026",  // Mon, wk 3
       },
-      // {
-      //   name: "Hwk 3 (ls2)",
-      //   title: "A Suped-Up ls",
-      //   url: "hwk3.ls2/",
-      //   weekAssigned: 3,
-      //   due: "2/13/2026",   // Fri, wk 4
-      // },
+      {
+        name: "Hwk 3 (ls2)",
+        title: "A Suped-Up ls",
+        url: "hwk3.ls2/",
+        weekAssigned: 3,
+        due: "2/13/2026",   // Fri, wk 4
+      },
       // {
       //   name: "Hwk 4 (dsh)",
       //   title: "David Shell",
