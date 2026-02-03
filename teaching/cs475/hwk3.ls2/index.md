@@ -109,6 +109,27 @@ Starter code for this assignment is provided on the github repo. You must do the
 I have included a working solution of my program along with the starter code. The binary executable file is called `ls2Sol`. 
 
 
+#### Hints and Tips
+1. Start as early as possible. This assignment is trickier than what meets the eye due to all the string processing work and memory management. 
+
+2. There will be times where you'll need to build up strings. You might find [`snprintf()`](https://www.geeksforgeeks.org/snprintf-c-library/) to be useful. (It's just a stricter version of `sprintf()` for building strings.)
+
+
+3. A stack library has been given to you. It is used for Mode 2 (see below). Read the stack implementation to see how I manage  memory. Also, write some test code for it and use Valgrind to ensure you know how to use it. You will use the stack for storing paths in Mode 2.
+
+4. For both modes of operation, you will need to `malloc` strings that stores the current path to a file. For instance, you would need a string to input into the `stat()` system call and you may need to store that path onto your stack for the printing of Mode-2 results. If you did not malloc your strings and instead declared them as local arrays, they will likely be out of scope by the time you need to print them.
+
+5. I would tackle this project recursively, so abstractly your program should be structured as such:
+    ```txt
+    Given: a directory to explore
+    If the given directory is not empty:
+        Iterate through each entry (which can either be a file or directory.)
+        If the current entry is a file
+            Either print it or store it for later
+        else:
+            Recurse on the current entry
+    ```
+
 #### Detailed Instructions
 
 0. For ease of compiling, I've provided you with the `Makefile`. Simply run `make` on the command line to compile your code.
@@ -192,12 +213,6 @@ I have included a working solution of my program along with the starter code. Th
 
 7. Although the `.git/` directory exists (as it did in my sample output), it still may be wise to create your own "test-dummy" directory structure so that you test your program. 
 
-#### Hints and Tips
-1. Start as early as possible. This assignment (esp. Mode 2) is trickier than what meets the eye due to all the string work, and memory management work.
-
-2. For both modes, you will need to create a string that stores the current path to a file. For instance, you would need a string to input into the `stat()` system call and you may need to store that path string onto your stack for the printing of mode-2 results. You *must* create these strings on the heap using `malloc()` because any string you create on the program stack will likely be reaped by the time you print off *your* stack. When that's the case, your stack would store stores pointers to garbage.
-
-3. Related to the first tip, there will be times where you'll need to build up strings. You might find [`snprintf()`](https://www.geeksforgeeks.org/snprintf-c-library/) to be useful. 
 
 
 
