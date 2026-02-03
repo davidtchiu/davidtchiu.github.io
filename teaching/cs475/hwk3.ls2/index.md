@@ -110,7 +110,9 @@ I have included a working solution of my program along with the starter code. Th
 
 
 #### Hints and Tips
-0. Some useful terms:
+0. Start as early as possible. This assignment is trickier than what meets the eye due to all the string processing work and memory management. 
+
+1. Some useful terms:
     - A "folder" is also called a "directory"
     - A "path" gives the directions to navigate to either a file or a directory.
     - A "relative path" is a path to a file or directory from *where you currently are*. Importantly, `.` and `..` stands for the current directory and the parent directory, respectively. For example, suppose I'm currently exploring `/home/dchiu` and I want to see what's inside Alex's `os-ls2` directory. I can get to it using this path:
@@ -123,16 +125,17 @@ I have included a working solution of my program along with the starter code. Th
         /home/dchiu/os-ls2
         ```
 
-1. Start as early as possible. This assignment is trickier than what meets the eye due to all the string processing work and memory management. 
-
-2. There will be times where you'll need to build up strings. You might find [`snprintf()`](https://www.geeksforgeeks.org/snprintf-c-library/) to be useful. (It's just a stricter version of `sprintf()` for building strings.)
+2. You might want to explore the `os-ls2` directory you just cloned, just to get a sense of what's in there. I placed an `animals` directory with subdirectories and files inside for the purposes of testing this project.
 
 
-3. A stack library has been given to you. It is used for Mode 2 (see below). Read the stack implementation to see how I manage  memory. Also, write some test code for it and use Valgrind to ensure you know how to use it. You will use the stack for storing paths in Mode 2.
+3. There will be times where you'll need to build up strings. You might find [`snprintf()`](https://www.geeksforgeeks.org/snprintf-c-library/) to be useful. (It's just a stricter version of `sprintf()` for building strings.)
 
-4. For both modes of operation, you will need to `malloc` strings that stores the current path to a file. For instance, you would need a string to input into the `stat()` system call and you may need to store that path onto your stack for the printing of Mode-2 results. If you did not malloc your strings and instead declared them as local arrays, they will likely be out of scope by the time you need to print them.
 
-5. It's ultimately your call, but I chose to tackle this project recursively, because file system traversal is so naturally recursive. Abstractly your algorithm might be structured as followed:
+4. A stack library has been given to you. It is used for Mode 2 (see below). Read the stack implementation to see how I manage  memory. Also, write some test code for it and use Valgrind to ensure you know how to use it. You will use the stack for storing paths in Mode 2.
+
+5. For both modes of operation, you will need to `malloc` strings that stores the current path to a file. For instance, you would need a string to input into the `stat()` system call and you may need to store that path onto your stack for the printing of Mode-2 results. If you did not malloc your strings and instead declared them as local arrays, they will likely be out of scope by the time you need to print them.
+
+6. It's ultimately your call, but I chose to tackle this project recursively, because file system traversal is so naturally recursive. Abstractly your algorithm might be structured as followed:
     ```txt
     Input: a directory to explore
     If the given directory is not empty:
