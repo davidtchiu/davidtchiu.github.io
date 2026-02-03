@@ -132,11 +132,11 @@ I have included a working solution of my program along with the starter code. Th
 
 4. For both modes of operation, you will need to `malloc` strings that stores the current path to a file. For instance, you would need a string to input into the `stat()` system call and you may need to store that path onto your stack for the printing of Mode-2 results. If you did not malloc your strings and instead declared them as local arrays, they will likely be out of scope by the time you need to print them.
 
-5. I would tackle this project recursively, so abstractly your program should be structured as such:
+5. It's ultimately your call, but I chose to tackle this project recursively, because file system traversal is so naturally recursive. Abstractly your algorithm might be structured as followed:
     ```txt
-    Given: a directory to explore
+    Input: a directory to explore
     If the given directory is not empty:
-        Iterate through each entry (which can either be a file or directory.)
+        Iterate through each entry (which can either be a file or another directory)
         If the current entry is a file
             Either print it or store it for later
         else:
@@ -206,10 +206,10 @@ I have included a working solution of my program along with the starter code. Th
     - The given `main()` function contains a bit of code to test this stack. You can remove this code when you're ready to write the `ls2` program.
 
 4. **Making System Calls**
-    Recall that there are many privileged operations that users can't run without the OS's help. These requests are made via "system calls". 
+    Recall from class that there are many privileged operations that users can't run without OS intervention (so that the OS would know and can keep track of resources). Several of these "system calls" are for exploring the file system. 
 
     - To open up directories and check what's inside, you will want to check out the following system functions: `opendir()`, `readdir()`, `closedir()`.
-    - When you read the contents of a directory, ignore any references to `.` and `..`. Why? In file systems, `.` is a shorthand to refer to the current directory, and `..` means the parent directory. These entities exist in *every* directory you open. So if you recursively open those up, then you'll just end up in an infinite recursion!
+    - When you read the contents of a directory, ignore any references to `.` and `..`. In file systems, `.` is a shorthand to refer to the current directory, and `..` means the parent directory. Because these entities exist in *every* directory you open, if you recursively open those up, then you'll just end up in an infinite recursion!
 
     - Once you've opened up a directory, you can use `readdir()` to traverse its contents. But not everything is a file. You need to test if it's a regular file, or is it a shortcut (link)? Is it a subdirectory? To get this and other information, you'll look into the important `stat(..)` system call provided in `#include <sys/stat.h>` 
       - [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
