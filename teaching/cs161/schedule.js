@@ -221,7 +221,7 @@ let days = {
     "Lab 3: Stomach",
     "Logical operators",
     // "",
-    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Writing Classes</a>" + "<br/>" + 
+    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Random, Conditionals</a>" + "<br/>" + 
       "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a> (finished)",
     // wk 4
     "Nested if, else-if",
