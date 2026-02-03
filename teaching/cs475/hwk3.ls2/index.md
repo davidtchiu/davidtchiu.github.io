@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
   for (int i = 0; i < 20; i++) {
     buf1[i] = 0;
   }
-  buf1[20] = 0; // <---- Line 11 BUG: out-of-bounds (valid indices are 0..19)
+  buf1[20] = 0; // <---- Line 11: out-of-bounds (see report below)
   return 0;
 }
 ```
@@ -80,7 +80,7 @@ Further down the report, you'll see another segment:
 ==359874==    still reachable: 0 bytes in 0 blocks
 ==359874==         suppressed: 0 bytes in 0 blocks
 ```
-Here valgrind *suspects* that it has detected a memory leak. Reading the report can be a bit misleading though. It appears the problem occurred inside the `malloc` function on line 393 of `vg_replace_malloc.c`, but that's highly doubtful. So you'll have to look to the next line, indicating that leak originates on the call to `malloc()` on Line 6 of *our* program. It says that 80 bytes (indeed `sizeof(int) * 20` is 80 bytes) were malloc'd, but never freed before the program terminated. Adding a call to `free(buf1)` before the program exits would have solved this leak.
+Here Valgrind that there is a memory leak. It does this by intercepting and replacing all your calls to `malloc` with its own, so that it can track all the calls to allocate/freeing memory. Here it is reporting that **Line 6** of your `memtest.c` code is the culprit. It says that 80 bytes (indeed `sizeof(int) * 20` is 80 bytes) were malloc'd, but never freed. Adding a call to `free(buf1)` before the program exits would have solved this leak.
 
 **Important** For all programs (starting from this assignment) that you write from now on, valgrind should absolutely be a part of your debugging workflow to save you hours of time.
 

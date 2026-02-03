@@ -25,13 +25,13 @@ let days = {
         weekAssigned: 2,
         due: "2/4/2026", // Wed, wk 3
       },
-      // {
-      //   name: "Hwk 2",
-      //   title: "Alarm Clock (Accumulators, Conditionals)",
-      //   url: "hwk2.clock/",
-      //   weekAssigned: 3,
-      //   due: "2/13/2026", // Fri, wk 4
-      // },
+      {
+        name: "Hwk 2",
+        title: "Alarm Clock (Accumulators, Conditionals)",
+        url: "hwk2.clock/",
+        weekAssigned: 3,
+        due: "2/13/2026", // Fri, wk 4
+      },
       // {
       //   name: "Hwk 3",
       //   title: "Fractions (Object Interaction)",
@@ -110,13 +110,13 @@ let days = {
         weekAssigned: 2,
         due: "1/30/2026",
       },
-      // {
-      //   name: "Lab 3",
-      //   title: "Stomach Class (Class Writing, Random object)",
-      //   url: "lab3.stomach/",
-      //   weekAssigned: 4,
-      //   due: "2/6/2026",
-      // },
+      {
+        name: "Lab 3",
+        title: "Stomach Class (Class Writing, Random object)",
+        url: "lab3.stomach/",
+        weekAssigned: 4,
+        due: "2/6/2026",
+      },
       // {
       //   name: "Lab 4",
       //   title: "Guessing Game (Conditionals)",
@@ -221,7 +221,7 @@ let days = {
     "Lab 3: Stomach",
     "Logical operators",
     // "",
-    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Random, Conditionals</a>" + "<br/>" + 
+    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Operators and conditionals</a>" + "<br/>" + 
       "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a> (finished)",
     // wk 4
     "Nested if, else-if",

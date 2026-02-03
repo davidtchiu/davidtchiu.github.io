@@ -12,24 +12,12 @@ In this assignment you will write your first class from scratch. This class mode
 - Practice with integer operations
 - To learn to use objects of the `Random` class to generate random integers
 
-<!-- 
-#### Working with Partners (Please Read)
+
+#### Working with Partners (Required)
 
 You are required to work _together_ on labs. As I mentioned the first day of class, some of you may have had some prior programming experience, and this lab may come more naturally for you. Please be humble and be supportive to one another, and don't leave your partner behind. Labs are _very_ low-stakes, and you'll get full credit for being here, working through it, and being a good citizen. We'll be around to help.
 
-Here are your assigned partners for today's lab.
-
-```
-[Murayama, E, Strash, K]
-[Culpepper, A, Steller, L]
-[Jones, S, Rodriguez, C]
-[Beardsley, M, Roppolo, G]
-[Camblin, F, Murphy, C]
-[Jones, B, Brown, A]
-[Wissing, A, Miller, D]
-``` -->
-
-#### The Stomach Class
+#### Part 1: The Stomach Class
 
 There is no starter code this week to download. You need to create a new project in BlueJ. Open BlueJ and use the Project > New Project menu. It'll want you to choose a location on your computer to store and save this project. Make sure you choose somewhere appropriate that you won't forget.
 
@@ -133,11 +121,11 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
       s += x;
       s += " world";  // s now stores "Hello 3 world"
       ```
+<!-- 
+- **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It lets you! You need to fix these problems next.
 
-<!-- - **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It lets you! You need to fix these problems next.
+  Use an if-then-else statement to alert the user that they've entered an invalid input, and ignore further actions on the stomach's state. For fixing your constructor, it is appropriate to just let Java create an empty stomach. -->
 
-  Use an if-then-else statement to alert the user that they've entered an invalid input, and ignore further actions on the stomach's state. For fixing your constructor, it is appropriate to just let Java create an empty stomach.
- -->
 
 - **The Test Code:** Here's some code to test your Stomach class. Copy and paste **all** of the following code block into Blue's code pad. Ask one of us if you don't remember where the code pad is. If your class is bug-free, your output should look similar to mine farther down below.
 
@@ -202,7 +190,7 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
   Ingested: 3,  digested: 32
   ```
 
-#### Average Digested Amount
+#### Part 2: Average Digested Amount
 This last challenge is a tiny bit trickier. It would be nice to know how "efficiently" our stomach is working. On average, how much are we digesting every time the `digest()` method is called? This might be a useful piece of information to know. (E.g., if we’re digesting a very small amount on average then we might have a blockage in our stomach that needs to be examined.)
 
 - Add the following method to your Stomach class: `public double getAverageAmountDigested()`. This method should return the average amount of food that has been digested. For example, if 10 units of food was digested the first time we called `digest()` and 4 units of food the second time we called `digest()`, then on average, we are digesting 7 units of food.
@@ -228,7 +216,7 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 #### Credits
 
-Adapted for use from a previous lab by America Chambers.
+Adapted for use from a previous lab by America Chambers. Updated 2026.
 
 #### Lab Attendance Policies
 
