@@ -106,10 +106,23 @@ Starter code for this assignment is provided on the github repo. You must do the
 
 #### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `ls2Sol`. 
+I have included a working solution of my program along with the starter code. The binary executable file is called `ls2Sol`. Play around with this so you get a sense of the overall behavior.
 
 
 #### Hints and Tips
+0. Some useful terms:
+    - A "folder" is also called a "directory"
+    - A "path" gives the directions to navigate to either a file or a directory.
+    - A "relative path" is a path to a file or directory from *where you currently are*. Importantly, `.` and `..` stands for the current directory and the parent directory, respectively. For example, suppose I'm currently exploring `/home/dchiu` and I want to see what's inside Alex's `os-ls2` directory. I can get to it using this path:
+        ```txt
+        ../akirner/os-ls2
+        ```
+
+    - An "absolute (full) path" is a path to a file or directory that starts from the root of your file system. It fully specificies the location. For example, the following absolute path will point you to my `os-ls2` directory, no matter *where* you currently are.
+        ```txt
+        /home/dchiu/os-ls2
+        ```
+
 1. Start as early as possible. This assignment is trickier than what meets the eye due to all the string processing work and memory management. 
 
 2. There will be times where you'll need to build up strings. You might find [`snprintf()`](https://www.geeksforgeeks.org/snprintf-c-library/) to be useful. (It's just a stricter version of `sprintf()` for building strings.)
@@ -139,7 +152,7 @@ I have included a working solution of my program along with the starter code. Th
     ```bash
     $ ./ls2 <path> [exact-match-pattern]
     ```
-   Only the `<path>` command-line argument is required to be given, and your program should re-prompt the command if no arguments are given, or if more than two are given. Here's an example:
+   Only the `<path>` command-line argument is required to be given, and your program should re-prompt the command if no arguments are given, or if more than two are given. `path` may be given as a relative or an absolute path. Here's an example:
     ```bash
     $ ./ls2 
     Usage: ./ls2 <path> [exact-match-pattern]
@@ -154,9 +167,9 @@ I have included a working solution of my program along with the starter code. Th
 
 2. ls2 operates in one of *two modes*:
 
-    - **Mode 1:** The first mode runs when the user only passes the `path`. Your program should attempt to open the directory given by `path` and recursively show all files' name and size (in bytes). You do not need to worry about displaying anything other than regular files and directories (ignore anything that isn't a directory or a regular file).
+    - **Mode 1:** The first mode runs when the user only passes the `path` (no `exact-match-pattern` is given on the command line). Your program should attempt to open the directory given by `path` and recursively show all files' name and size (in bytes). You do not need to worry about displaying anything other than regular files and directories (ignore anything that isn't a directory or a regular file).
 
-      Here's me running `ls2` on the `animals` directory, which is inside my current working directory:
+      Here's me currently in my `/home/dchiu/os-ls2` directory, running `ls2` on the `animals` relative path:
       ```bash
         $ ./ls2 animals
         horses/ (directory)
@@ -173,7 +186,7 @@ I have included a working solution of my program along with the starter code. Th
             dusty.txt (306 bytes)
       ```
     
-    - **Mode 2 (File Search):** This mode runs when the user passes both `path` and the `exact-match-pattern` arguments. When this is the case, your program should only show *files* with names matching `exact-match-pattern`. Here's the kicker: The output must not show any directory chains if the given pattern is not found in one its subdirectories. Here's an example of me looking for any files matching `dusty.txt`, which is found in two places: `animals/horses/mustang/` and in `animals/cats/`
+    - **Mode 2 (File Search):** This mode runs when the user passes both `path` and the `exact-match-pattern` arguments. When this is the case, your program should only show *files* with names matching `exact-match-pattern`. Here's the kicker: The output *must not* show any directory chains if the given pattern is not found in one its subdirectories. Here's an example of me looking inside the current directory (`.` is given as `path`) for any files matching `dusty.txt`, which is found in two places: `animals/horses/mustang/` and in `animals/cats/`.
 
         ```bash
         $ ./ls2 . dusty.txt
