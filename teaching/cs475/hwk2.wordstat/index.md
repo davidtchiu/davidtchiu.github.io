@@ -51,7 +51,7 @@ Starter code for this assignment is provided on the github repo. You must do the
 
 ##### Working Solution
 
-I have included a working solution of my program along with the starter code. The binary executable file is called `wordstatSol`. You can run it from the terminal by first navigating in to the Hwk1 directory and typing the command `./wordstatSol`.
+I have included a working solution of my program along with the starter code. The binary executable file is called `wordstatSol`. You can run it from the terminal by first navigating in to the project directory and typing the command `./wordstatSol`.
 
 ##### `make`: Compiling Your Code and Cleaning Your Codebase
 

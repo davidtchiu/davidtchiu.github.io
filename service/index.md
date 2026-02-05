@@ -35,7 +35,8 @@
 ### Service to the University
 
 - Director and Advisor, SCRC, University of Puget Sound (2023 - )
-- Chair, Student Support Committee, University of Puget Sound (2025 - 2026)
+- Chair, Student Support Committee (formerly Academic Standards Committee), University of Puget Sound (2025 - )
+- Board Member, Faculty Development Center, University of Puget Sound (2025 - )
 - Co-Chair, International Education Committee, University of Puget Sound (2024 - 2025)
 - Total Compensation and Benefits Project, University of Puget Sound (2023 - 2025)
 - External Member of Search Committee, Department of Communication, University of Puget Sound (2024)

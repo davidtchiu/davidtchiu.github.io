@@ -99,7 +99,7 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
     "History of systems",
-    "Read Chap 1 (Dinosaur)" + "<br/>" +
+    "Read: Chap 1 (Dinosaur)" + "<br/>" +
       "Notes: <a href='https://drive.google.com/open?id=1dkdLnS2wtQvwzzHTcusHgOq7tOhIKJhA&usp=drive_fs'>1. What is OS?</a>" + "<br/>" +
       "Watch: <a href='https://chsi.harvard.edu/harvard-ibm-mark-1-video'>The Story of Mark I</a>",
     // wk 2
@@ -112,7 +112,7 @@ let days = {
     "Bootstrapping, interrupts",
     "Dual mode, system calls",
     // "",
-    "Read Chap 2 (Dinosaur)" + "<br/>" +
+    "Read: Chap 2 (Dinosaur)" + "<br/>" +
       "Notes: <a href='https://drive.google.com/open?id=1Se4tHmMOkSPjSYu_lBztMaUYUMsAVulF&usp=drive_fs'>2. Interrupts and Syscalls</a>",
     // wk 4
     "Processes: switching, PCB, address space",

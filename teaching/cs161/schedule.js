@@ -114,14 +114,14 @@ let days = {
         name: "Lab 3",
         title: "Stomach Class (Class Writing, Random object)",
         url: "lab3.stomach/",
-        weekAssigned: 4,
+        weekAssigned: 3,
         due: "2/6/2026",
       },
       // {
       //   name: "Lab 4",
       //   title: "Guessing Game (Conditionals)",
       //   url: "lab4.guessing/",
-      //   weekAssigned: 5,
+      //   weekAssigned: 4,
       //   due: "2/13/2026",
       // },
       // {
