@@ -34,10 +34,10 @@
 
 ### Service to the University
 
-- Director and Advisor, Students of Color Residential Community, University of Puget Sound (2023 - )
+- Director and Advisor, SCRC, University of Puget Sound (2023 - )
 - Chair, Student Support Committee, University of Puget Sound (2025 - 2026)
 - Co-Chair, International Education Committee, University of Puget Sound (2024 - 2025)
-- Total Compensation and Benefits Project, University of Puget Sound (2023 - )
+- Total Compensation and Benefits Project, University of Puget Sound (2023 - 2025)
 - External Member of Search Committee, Department of Communication, University of Puget Sound (2024)
 - New Faculty Mentor, University of Puget Sound (2024)
 - Student Life Committee, University of Puget Sound (2021 - 2024)
@@ -58,7 +58,7 @@
 - Faculty Mentor, University Scholars Honors Program, WSU Vancouver
 - Graduate Studies Committee, School of Engineering and Computer Science, WSU Vancouver
 
-### Volunteering and Community Outreach
+### Community
 
 - Mentor, Google Summer of Code
 - Faculty Participant, MESA Engineering Day (2011, 2012)

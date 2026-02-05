@@ -1,14 +1,9 @@
 ## CS 475 - Operating Systems
 
-### Hwk 3: ls2 -  A Suped-Up `ls` Command
+### Hwk 3: ls2 -  Suped-Up `ls` Command
 As you already know,  the `ls` UNIX command lists all files and directories in a given directory. The default mode of `ls` is to only list the top-level contents in the given path. It does not, unless instructed to, automatically descend into all the subdirectories to print out a file system tree.
 
 Your task is to write a suped-up variant of the `ls` command so that it not only lists all files/directories in the current working directory, but also traverses all subdirectories. On top of the recursive descent into subdirectories, your version of `ls` must also also be able to perform a file name search.
-
-#### Related Reading
-
-- [Dive into Systems Chapter 2.4-2.7](https://diveintosystems.org/book/C2-C_depth/dynamic_memory.html)
-
 
 #### Student Outcomes
 
@@ -141,7 +136,7 @@ I have included a working solution of my program along with the starter code. Th
     If the given directory is not empty:
         Iterate through each entry (which can either be a file or another directory)
         If the current entry is a file
-            Either print it or store it for later
+            Either print it or remember it for later
         else:
             Recurse on the current entry
     ```
