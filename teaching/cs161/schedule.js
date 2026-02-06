@@ -12,49 +12,49 @@ let days = {
   assignments: {
     homework: [
       {
-        name: "Hwk 0",
+        name: "Hwk 0 (About Me)",
         title: "All About Me (BlueJ, Code Submission)",
         url: "hwk0.me/",
         weekAssigned: 1, 
         due: "1/26/2026", // Mon, wk 2
       },
       {
-        name: "Hwk 1",
+        name: "Hwk 1 (Better Circle)",
         title: "A Better Circle (Method Calls, Method Writing)",
         url: "hwk1.circle/",
         weekAssigned: 2,
         due: "2/4/2026", // Wed, wk 3
       },
       {
-        name: "Hwk 2",
+        name: "Hwk 2 (Alarm Clock)",
         title: "Alarm Clock (Accumulators, Conditionals)",
         url: "hwk2.clock/",
         weekAssigned: 3,
         due: "2/13/2026", // Fri, wk 4
       },
       // {
-      //   name: "Hwk 3",
+      //   name: "Hwk 3 (Fractions)",
       //   title: "Fractions (Object Interaction)",
       //   url: "hwk3.fraction/",
       //   weekAssigned: 5,
       //   due: "2/25/2026", // Mon, wk 6
       // },
       // {
-      //   name: "Hwk 4",
+      //   name: "Hwk 4 (Robots)",
       //   title: "Robots (Code Abstraction and Modularity)",
       //   url: "hwk4.robot/",
       //   weekAssigned: 6,
       //   due: "3/6/2026", //Fri, wk 7 (has a simple loop)
       // },
       // {
-      //   name: "Hwk 5",
+      //   name: "Hwk 5 (Loops)",
       //   title: "Loops, Loops, Loops!",
       //   url: "hwk5.loops/",
       //   weekAssigned: 8,
       //   due: "3/24/2026", // Tues, wk 10 (right after spring break)
       // },
       // {
-      //   name: "Hwk 6",
+      //   name: "Hwk 6 (ComboGuesser)",
       //   title: "Combo Guesser (Arrays)",
       //   url: "hwk6.combo/",
       //   weekAssigned: 10,
@@ -67,7 +67,7 @@ let days = {
       // //   due: "4/4/2026", // Mon, wk 11 (right after spring break)
       // // },
       // {
-      //   name: "Hwk 7",
+      //   name: "Hwk 7 (Fotoshop)",
       //   title: "Fotoshop (2D Array)",
       //   url: "hwk7.img/",
       //   weekAssigned: 11,
