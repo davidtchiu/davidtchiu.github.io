@@ -121,10 +121,10 @@ Recall that to write a new class, we need to specify three sections: (1) Fields,
       s += x;
       s += " world";  // s now stores "Hello 3 world"
       ```
-<!-- 
+
 - **Defensive Programming:** Our Stomach is not very robust to erroneous inputs. For instance, Try creating a new Stomach with a negative amount of food in it. It lets you! Now try ingesting a negative amount of food. It lets you! You need to fix these problems next.
 
-  Use an if-then-else statement to alert the user that they've entered an invalid input, and ignore further actions on the stomach's state. For fixing your constructor, it is appropriate to just let Java create an empty stomach. -->
+  Use an if-then-else statement to alert the user that they've entered an invalid input, and ignore further actions on the stomach's state. For fixing your constructor, it is appropriate to just let Java create an empty stomach.
 
 
 - **The Test Code:** Here's some code to test your Stomach class. Copy and paste **all** of the following code block into Blue's code pad. Ask one of us if you don't remember where the code pad is. If your class is bug-free, your output should look similar to mine farther down below.
