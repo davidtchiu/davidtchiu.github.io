@@ -119,8 +119,8 @@ let days = {
     "Processes: fork(), exec() system calls",
     "Processes: wait(); zombies and orphans",
     // "",
-    "Read: Chap 3 (Dinosaur)" + "<br/>" +
-    "Notes: <a href='https://drive.google.com/open?id=199IfMl_lh11136uWAPS0takp2UVrCUIj&usp=drive_fs'>3. Concurrency and Processes</a>",
+    "Read: Chap 3.1-3.5 (Dinosaur)" + "<br/>" +
+      "Notes: <a href='https://drive.google.com/open?id=199IfMl_lh11136uWAPS0takp2UVrCUIj&usp=drive_fs'>3. Concurrency and Processes</a>",
     // wk 5
     "Threads: motivation and kernel support",
     "Threads: pthread library",
