@@ -118,8 +118,8 @@ let days = {
     "Processes: switching, PCB, address space",
     "Processes: fork(), exec() system calls",
     "Processes: wait(); zombies and orphans",
-    "",
-    // "Notes: <a href='notes/CS475_3-processes.pdf'>3. Concurrency and Processes</a>",
+    // "",
+    "Notes: <a href='notes/CS475_3-processes.pdf'>3. Concurrency and Processes</a>",
     // wk 5
     "Threads: motivation and kernel support",
     "Threads: pthread library",

@@ -219,15 +219,15 @@ let days = {
     // wk 3
     "Conditionals",
     "Lab 3: Stomach",
-    "Logical operators",
+    "Nested if, Else-if",
     // "",
     "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Operators and conditionals</a>" + "<br/>" + 
       "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a> (finished)",
     // wk 4
-    "Nested if, else-if",
+    "Logical operators",
     "Lab 4: Guessing Game",
-    "Data Types, binary rep, casting",
-    "",
+    "Data Types, binary representation, casting",
+    "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Data Types: Primitives vs Classes</a>" + "<br/>" + 
     // wk 5
     "Classes as types: references, null",
     "Object interaction; Lab 5: Circle Drawer",
