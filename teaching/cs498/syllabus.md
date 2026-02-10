@@ -4,7 +4,7 @@
 - Instructor: David Chiu
 - Web page: [https://davidtchiu.github.io/teaching/cs498/](https://davidtchiu.github.io/teaching/cs498/)
 - Email: [dchiu@pugetsound.edu](mailto://dchiu@pugetsound.edu)
-- Office Hours: Drop in when door's open, or schedule an appointment using the QR code below
+- Office Hours: Drop in when door's open, or schedule an appointment using the QR code below\
     <img width="85px" src="../../calendar-qrcode.png" />
 
 
