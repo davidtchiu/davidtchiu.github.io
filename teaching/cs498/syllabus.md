@@ -5,7 +5,8 @@
 - Web page: [https://davidtchiu.github.io/teaching/cs498/](https://davidtchiu.github.io/teaching/cs498/)
 - Email: [dchiu@pugetsound.edu](mailto://dchiu@pugetsound.edu)
 - Office Hours: Drop in when door's open, or schedule an appointment using the QR code below
-    <img width="50%" src="../../calendar-qrcode.png" />
+    <img width="85px" src="../../calendar-qrcode.png" />
+
 
 #### Course Description
 This 0-unit pass/fail course provides structure for students as they prepare for their senior capstone in computer science. Students identify a feasible project topic, survey relevant literature and technologies, and develop a coherent project plan that positions them to begin substantive work at the start of the following semester. Emphasis is placed on team definition (if applicable), project scoping, design, data acquisition, and early prototyping. By the end of the course, students will have a well-defined problem statement, an initial technical design, a shared code repository, a communication plan, and a realistic timeline for completing their project. Students are also required to attend talks at the Math/CS Seminar. This course is taken the semester before the capstone and focuses on preparation rather than implementation.
@@ -13,10 +14,17 @@ This 0-unit pass/fail course provides structure for students as they prepare for
 #### Prerequisites
 Senior class standing, or permission of instructor.
 
-<!-- #### Student Learning Outcomes
-Students taking this course will:
--  -->
+#### Student Outcomes
 
+By the end of the course, students will be able to:
+
+- Define a feasible capstone project, including a clear problem statement, stakeholders, team, and constraints.
+- Analyze relevant literature and technologies to justify design and implementation choices.
+- Evaluate project feasibility, identifying risks, scope boundaries, and a minimal viable approach.
+- Design a high-level system architecture with key components, data structures, and dependencies.
+- Develop a realistic project plan including milestones, timelines, and evaluation approaches.
+
+Communicate technical proposals effectively through written reports and oral presentations.
 #### 1. Project Topic + Problem Statement (Weeks 1-3)
 A short document that:
 - Identifies group members, if applicable

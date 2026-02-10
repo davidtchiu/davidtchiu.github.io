@@ -99,7 +99,7 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Intro: What's an OS?",
     "History of systems",
-    "Read: Chap 1 (Dinosaur)" + "<br/>" +
+    "Read: Appendix A (Dinosaur)" + "<br/>" +
       "Notes: <a href='https://drive.google.com/open?id=1dkdLnS2wtQvwzzHTcusHgOq7tOhIKJhA&usp=drive_fs'>1. What is OS?</a>" + "<br/>" +
       "Watch: <a href='https://chsi.harvard.edu/harvard-ibm-mark-1-video'>The Story of Mark I</a>",
     // wk 2
@@ -112,20 +112,20 @@ let days = {
     "Bootstrapping, interrupts",
     "Dual mode, system calls",
     // "",
-    "Read: Chap 2 (Dinosaur)" + "<br/>" +
+    "Read: Chaps 1.1-1.6 &amp; 2.1-2.9 (Dinosaur)" + "<br/>" +
       "Notes: <a href='https://drive.google.com/open?id=1Se4tHmMOkSPjSYu_lBztMaUYUMsAVulF&usp=drive_fs'>2. Interrupts and Syscalls</a>",
     // wk 4
     "Processes: switching, PCB, address space",
     "Processes: fork(), exec() system calls",
     "Processes: wait(); zombies and orphans",
     // "",
-    "Read: Chap 3.1-3.5 (Dinosaur)" + "<br/>" +
+    "Read: Chap 3.1-3.4 (Dinosaur)" + "<br/>" +
       "Notes: <a href='https://drive.google.com/open?id=199IfMl_lh11136uWAPS0takp2UVrCUIj&usp=drive_fs'>3. Concurrency and Processes</a>",
     // wk 5
     "Threads: motivation and kernel support",
     "Threads: pthread library",
     "Threads: user-level vs kernel-level",
-    "",
+    "Read: Chap 4.1-4.4 (Dinosaur)" + "<br/>" +
     // "Notes: <a href='notes/CS475_4-threads1.pdf'>4. Threads (Part I)</a>",
     // wk 6
     "Par: Parallel architectures",
