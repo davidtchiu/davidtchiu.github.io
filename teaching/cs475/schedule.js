@@ -41,7 +41,7 @@ let days = {
       //   title: "David Shell",
       //   url: "hwk4.dsh/",
       //   weekAssigned: 5,
-      //   due: "2/27/2026", // Fri, wk 6
+      //   due: "2/25/2026", // Wed, wk 6
       // },
       // {
       //   name: "Hwk 5 (sobel)",

@@ -209,10 +209,10 @@ I have included a working solution of my program along with the starter code. Th
     - To open up directories and check what's inside, you will want to check out the following system functions: `opendir()`, `readdir()`, `closedir()`.
     - When you read the contents of a directory, ignore any references to `.` and `..`. In file systems, `.` is a shorthand to refer to the current directory, and `..` means the parent directory. Because these entities exist in *every* directory you open, if you recursively open those up, then you'll just end up in an infinite recursion!
 
-    - Once you've opened up a directory, you can use `readdir()` to traverse its contents. But not everything is a file. You need to test if it's a regular file, or is it a shortcut (link)? Is it a subdirectory? To get this and other information, you'll look into the important `stat(..)` system call provided in `#include <sys/stat.h>` 
-      - [sys/stat.h](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
+    - Once you've opened up a directory, you can use `readdir()` to traverse its contents. But not everything is a file. You need to test if it's a regular file, or is it a shortcut (link)? Is it a subdirectory? To get this and other information, you'll look into the important `stat(..)` system call provided in `sys/stat.h`.
+      - Check out the `stat` system call [here](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html).
       - Note that the second parameter of `stat(..)` accepts an *output parameter*. (Remember what those are from the previous assignment?). If the call was successful, `stat` will set that pointer to refer to a `struct` with the file/directory's information.
-      - One of the data members in the output `struct` is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `stat`d is a *regular file* or a *directory* using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. As mentioned earlier, you should ignore all other types of files.
+      - One of the data members in the output `struct` is a `mode_t st_mode`. You can run the following tests on this field to check if the file that you `stat`ed is a file or a directory using `S_ISREG(mode_t m)` and `S_ISDIR(mode_t m)` functions respectively. As mentioned earlier, you should ignore all other types of files.
       - That struct also contains other useful information, like the size, which you'll need to display.
 
 5. Other libraries you may want to look into before getting started on this assignment:
@@ -222,7 +222,7 @@ I have included a working solution of my program along with the starter code. Th
 6.  **Print Formatting:** When printing, the names of *directories* must be followed with the suffix `"/ (directory)"`. Names of *regular files* must be followed by the suffix `"(nnn bytes)"` where `nnn` is the number of bytes occupied by that file. If a file or directory is found within a subdirectory, its name must be indented by four spaces to signify that it is enclosed within the above directory.
     - Luckily, the listing does not needed to sorted in any particular order.
 
-7. Although the `.git/` directory exists (as it did in my sample output), it still may be wise to create your own "test-dummy" directory structure so that you test your program. 
+7. Although the `animals/` directory exists (as it did in my sample output), it still may be wise to create your own "test-dummy" directory structure so that you test your program. 
 
 
 
