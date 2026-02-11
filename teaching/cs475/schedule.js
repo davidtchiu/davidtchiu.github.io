@@ -106,6 +106,8 @@ let days = {
     "Tutorial 1",
     "Tutorial 2",
     "Tutorial 3",
+    // "",
+    "Read: <a href='https://diveintosystems.org/book/Appendix1/'>Appendix 1 (Chap 16) (Dive Into Systems)</a>" + "<br/>" +
     "C tutorial: <a href='tut1'>1. The Basics</a><br/>C tutorial: <a href='tut2'>2. Pointers</a><br/>C tutorial: <a href='tut3'>3. Memory Management</a>",
     // wk 3
     "Computing models",
