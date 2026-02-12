@@ -117,13 +117,13 @@ let days = {
         weekAssigned: 3,
         due: "2/6/2026",
       },
-      // {
-      //   name: "Lab 4",
-      //   title: "Guessing Game (Conditionals)",
-      //   url: "lab4.guessing/",
-      //   weekAssigned: 4,
-      //   due: "2/13/2026",
-      // },
+      {
+        name: "Lab 4",
+        title: "Guessing Game (Conditionals)",
+        url: "lab4.guessing/",
+        weekAssigned: 4,
+        due: "2/13/2026",
+      },
       // {
       //   name: "Lab 5",
       //   title: "Circle Drawer (Object Aliasing & Interaction)",
