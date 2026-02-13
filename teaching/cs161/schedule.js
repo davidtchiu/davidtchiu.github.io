@@ -26,7 +26,7 @@ let days = {
         due: "2/4/2026", // Wed, wk 3
       },
       {
-        name: "Hwk 2 (Alarm Clock)",
+        name: "Hwk 2 (Clock)",
         title: "Alarm Clock (Accumulators, Conditionals)",
         url: "hwk2.clock/",
         weekAssigned: 3,
@@ -227,7 +227,7 @@ let days = {
     "Logical operators",
     "Lab 4: Guessing Game",
     "Data Types, binary representation, casting",
-    "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>" + "<br/>",
+    "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>",
     // wk 5
     "Classes as types: references, null",
     "Object interaction; Lab 5: Circle Drawer",
