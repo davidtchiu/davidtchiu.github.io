@@ -226,15 +226,14 @@ let days = {
     // wk 4
     "Logical operators",
     "Lab 4: Guessing Game",
-    "Data Types, binary representation, casting",
-    "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>",
+    "More fun with conditionals",
+    "",
     // wk 5
-    "Classes as types: references, null",
+    "Data Types, binary representation, casting, references, null",
     "Object interaction; Lab 5: Circle Drawer",
     "Object equality; <strong><emph>Exam 1 review</emph></strong>",
-    "",
-    // "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>" + "<br/>" +
-    //   "Exam #1 <a href=''>Study Guide</a> | <a href=''>Soln</a>",
+    "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>" + "<br/>" +
+      "Exam #1 <a href='https://drive.google.com/open?id=1StHl1jwP5jlWPL_XEudnZ6QNMfR_ekNE&usp=drive_fs'>Study Guide</a> | <a href=''>Soln</a>",
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
