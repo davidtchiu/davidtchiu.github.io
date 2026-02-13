@@ -128,7 +128,7 @@ let days = {
     "Threads: pthread library",
     "Threads: user-level vs kernel-level",
     "Read: Chap 4.1-4.4 (Dinosaur)" + "<br/>" +
-    // "Notes: <a href='notes/CS475_4-threads1.pdf'>4. Threads (Part I)</a>",
+      "Notes: <a href='notes/CS475_4-threads1.pdf'>4. Threads (Part I)</a>",
     // wk 6
     "Par: Parallel architectures",
     "Par: Parallel computing patterns",
