@@ -128,13 +128,13 @@ let days = {
     "Threads: pthread library",
     "Threads: user-level vs kernel-level",
     "Read: Chap 4.1-4.4 (Dinosaur)" + "<br/>" +
-      "Notes: <a href='notes/CS475_4-threads1.pdf'>4. Threads (Part I)</a>",
+      "Notes: <a href='notes/CS475_4-threads1.pdf'>4a. Thread Support</a>",
     // wk 6
     "Par: Parallel architectures",
     "Par: Parallel computing patterns",
     "Par: Code examples, Amdahl's Law",
     "",
-    // "Notes: <a href='notes/CS475_4-threads2.pdf'>Parallel Programming (Part II)</a><br/>" +
+    // "Notes: <a href='notes/CS475_4-threads2.pdf'>4b. Parallel Computing</a><br/>" +
     // "Read: <a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>The Free Lunch Is Over</a><br/>" +
     //   "Code: <a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
     //   "Code: <a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>",
