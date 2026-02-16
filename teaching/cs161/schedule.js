@@ -32,13 +32,13 @@ let days = {
         weekAssigned: 3,
         due: "2/13/2026", // Fri, wk 4
       },
-      // {
-      //   name: "Hwk 3 (Fractions)",
-      //   title: "Fractions (Object Interaction)",
-      //   url: "hwk3.fraction/",
-      //   weekAssigned: 5,
-      //   due: "2/25/2026", // Mon, wk 6
-      // },
+      {
+        name: "Hwk 3 (Fractions)",
+        title: "Fractions (Object Interaction)",
+        url: "hwk3.fraction/",
+        weekAssigned: 5,
+        due: "2/25/2026", // Mon, wk 6
+      },
       // {
       //   name: "Hwk 4 (Robots)",
       //   title: "Robots (Code Abstraction and Modularity)",
@@ -233,7 +233,7 @@ let days = {
     "Object interaction; Lab 5: Circle Drawer",
     "Object equality; <strong><emph>Exam 1 review</emph></strong>",
     "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>" + "<br/>" +
-      "Exam #1 <a href='https://drive.google.com/open?id=1StHl1jwP5jlWPL_XEudnZ6QNMfR_ekNE&usp=drive_fs'>Study Guide</a> | <a href=''>Soln</a>",
+      "Exam #1 <a href='https://drive.google.com/open?id=1StHl1jwP5jlWPL_XEudnZ6QNMfR_ekNE&usp=drive_fs'>Study Guide</a>",
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
