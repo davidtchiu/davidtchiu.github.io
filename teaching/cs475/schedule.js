@@ -36,13 +36,13 @@ let days = {
         weekAssigned: 3,
         due: "2/13/2026",   // Fri, wk 4
       },
-      // {
-      //   name: "Hwk 4 (dsh)",
-      //   title: "David Shell",
-      //   url: "hwk4.dsh/",
-      //   weekAssigned: 5,
-      //   due: "2/25/2026", // Wed, wk 6
-      // },
+      {
+        name: "Hwk 4 (dsh)",
+        title: "David Shell",
+        url: "hwk4.dsh/",
+        weekAssigned: 5,
+        due: "2/25/2026", // Wed, wk 6
+      },
       // {
       //   name: "Hwk 5 (sobel)",
       //   title: "Multithreaded Sobel Edge Detector",

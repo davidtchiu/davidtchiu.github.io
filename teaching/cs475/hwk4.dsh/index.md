@@ -159,9 +159,9 @@ Here is a list of built-in commands that David shell needs to support.
 - `cd [path]` should change the current working directory to the optionally given path. If path is not given, then David Shell should change the working directory to the user's home directory, stored in the environment variable `HOME`. Look into the `chdir()` function, defined in `unistd.h`. If the given path does not exist, you should output an error, `"<directory>: no such file or directory".`
 
 
-##### Flowchart of Activities
+##### Flowchart for Command Processing
 
-Phew! That's a lot to take in. The figure below shows the abstract flowchart for this program. This should (hopefully) give you a better idea of what all needs to be done.
+Phew! That's a lot to take in. The figure below shows the flowchart for this program. This should give you a better idea of what all needs to be done.
 
 <img src="figures/flowchart.png" width="500px" />
 
@@ -173,12 +173,12 @@ This assignment can be tricky to get started, because there are so many pieces t
 
     ```c
     // this creates num pointers to strings
-    char **array = (char**) malloc(num * sizeof(char*));
+    char **array = malloc(num * sizeof(char*));
 
     // this loops through each array element and instantiates
     // an array of chars of length CAPACITY
     for (int i = 0; i < num; i++) {
-      array[i] = (char*) malloc(CAPACITY * sizeof(char));
+      array[i] = malloc(CAPACITY * sizeof(char));
     }
 
     // now I can assign strings to individual array elements
