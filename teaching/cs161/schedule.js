@@ -41,7 +41,7 @@ let days = {
       },
       // {
       //   name: "Hwk 4 (Robots)",
-      //   title: "Robots (Code Abstraction and Modularity)",
+      //   title: "Robots (Abstraction and Modularity)",
       //   url: "hwk4.robot/",
       //   weekAssigned: 6,
       //   due: "3/6/2026", //Fri, wk 7 (has a simple loop)
@@ -229,8 +229,8 @@ let days = {
     "More fun with conditionals",
     "",
     // wk 5
-    "Data Types, binary representation, casting, references, null",
-    "Object interaction; Lab 5: Circle Drawer",
+    "Data Types: binary representation",
+    "Classes as types: object interaction; Lab 5: Circle Drawer",
     "Object equality; <strong><emph>Exam 1 review</emph></strong>",
     "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>" + "<br/>" +
       "Code: <a href='https://drive.google.com/open?id=1ycKeh6Uw3uJJalfidTy_KjSDer1q6NVZ&usp=drive_fs'>Square</a> (Starter)" + "<br/>" +
