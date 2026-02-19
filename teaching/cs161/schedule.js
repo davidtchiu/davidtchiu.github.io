@@ -128,7 +128,7 @@ let days = {
         name: "Lab 5",
         title: "Circle Drawer (Object Aliasing & Interaction)",
         url: "lab5.circleDrawer/",
-        weekAssigned: 6,
+        weekAssigned: 5,
         due: "2/20/2026",
       },
       // {
