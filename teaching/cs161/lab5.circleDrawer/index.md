@@ -45,12 +45,12 @@ The following file(s) have been provided for this homework.
     - Using the menus in BlueJ, instantiate two `Circle`s. You can name them `c1` and `c2`.
     - Change `c1` to green, change size to `50`.
     - Change `c2` to red, change size to `75`. Then move it down by `50` pixels.
-    - Now create a new `CircleDrawer` using its secondary constructor . Input `c1` and `c2` to be your arguments. The new `CircleDrawer` will now "control" the two circles.
+    - Now create a new `CircleDrawer` using its 2-argument constructor. Input `c1` and `c2` as your arguments. The new `CircleDrawer` will now "control" the two circles.
     - Inspect the `CircleDrawer` object, and you see that `first` and `second` store references (see those *arrows?*). Double-clicking on one of the arrows, and it opens the inspector to the Circle you just created!
 
       <img src="figures/drawer2.png" width="300px" border="1px" />
 
-    - Call the `drawCircles()` method on the drawer, and notice that both Circles appear. (If you call `eraseCircles()` both disappear.)
+    - Call the `drawCircles()` method, and notice that both Circles appear. (If you call `eraseCircles()` both disappear.)
 
       <img src="figures/drawer1.png" width="300px" border="1px" />
 

@@ -124,13 +124,13 @@ let days = {
         weekAssigned: 4,
         due: "2/13/2026",
       },
-      // {
-      //   name: "Lab 5",
-      //   title: "Circle Drawer (Object Aliasing & Interaction)",
-      //   url: "lab5.circleDrawer/",
-      //   weekAssigned: 6,
-      //   due: "2/20/2026",
-      // },
+      {
+        name: "Lab 5",
+        title: "Circle Drawer (Object Aliasing & Interaction)",
+        url: "lab5.circleDrawer/",
+        weekAssigned: 6,
+        due: "2/20/2026",
+      },
       // {
       //   name: "Lab 6",
       //   title: "Diamonds (Abstraction and Modularity)",
