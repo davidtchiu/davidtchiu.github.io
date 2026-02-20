@@ -238,6 +238,7 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
     "Using APIs (String interface)",
+    "",
       // "Code: <a href='https://drive.google.com/open?id=1ycKeh6Uw3uJJalfidTy_KjSDer1q6NVZ&usp=drive_fs'>Square</a> (Starter)",
     // "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>5. Abstraction</a>",
     // wk 7
