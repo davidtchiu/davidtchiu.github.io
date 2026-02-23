@@ -133,11 +133,10 @@ let days = {
     "Par: Parallel architectures",
     "Par: Parallel computing patterns",
     "Par: Code examples, Amdahl's Law",
-    "",
-    // "Notes: <a href='notes/CS475_4-threads2.pdf'>4b. Parallel Computing</a><br/>" +
-    // "Read: <a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>The Free Lunch Is Over</a><br/>" +
-    //   "Code: <a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
-    //   "Code: <a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>",
+    "Notes: <a href='https://drive.google.com/file/d/1bK8yUalrrdIOvmYSGKVDRci7EYu0gK9l/view?usp=drive_link'>4b. Parallel Computing</a><br/>" +
+      "Read: <a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>The Free Lunch Is Over</a><br/>" +
+      "Code: <a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
+      "Code: <a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>",
     // wk 7
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
