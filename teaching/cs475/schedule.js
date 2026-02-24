@@ -134,6 +134,7 @@ let days = {
     "Par: Parallel computing patterns",
     "Par: Code examples, Amdahl's Law",
     "Notes: <a href='https://drive.google.com/file/d/1bK8yUalrrdIOvmYSGKVDRci7EYu0gK9l/view?usp=drive_link'>4b. Parallel Computing</a><br/>" +
+      "Study: <a href='https://drive.google.com/file/d/10JZ_11JlnbPsXjhoV1YifaH1kDktcPID/edit'>Exam 1 Study Guide</a><br/>" +
       "Read: <a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>The Free Lunch Is Over</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>",
