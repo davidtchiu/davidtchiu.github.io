@@ -227,9 +227,6 @@ class CourseCalendar {
         }
       }
 
-
-
-
       td.appendChild(dayContent);
       tr.appendChild(td);
 

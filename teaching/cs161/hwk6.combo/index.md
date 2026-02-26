@@ -61,32 +61,32 @@ Your `Combination` class should contain the following elements:
 - A `setValue(int index, int newValue)` method that takes two integer arguments: The (zero-based) index of the value within the sequence to be changed, and the new value to be stored there. The value should only be changed if the index is valid, and the specified value is within the allowed range.
 
   ```java
-  //create a 4-number combination, and each number can range from 0 to 2
+  /* create a 4-number combination, and each number can range from 0 to 2 */
   Combination c = new Combination(4, 2);
   System.out.println(c.toString())
   > [1, 0, 0, 2]
 
-  c.setValue(0, 2);   //set the number at the 0-position to 2
+  c.setValue(0, 2);   /* set the number at the 0-position to 2 */
   System.out.println(c.toString())
   > [2, 0, 0, 2]
 
-  c.setValue(-4, 2);  //invalid position (-4) given: should have no effect
+  c.setValue(-4, 2);  /* invalid position (-4) given: should have no effect */
   System.out.println(c.toString())
   > [2, 0, 0, 2]
 
-  c.setValue(3, 1);   //set the number at the 3-position to 1
+  c.setValue(3, 1);   /* set the number at the 3-position to 1 */
   System.out.println(c.toString())
   > [2, 0, 0, 1]
 
-  c.setValue(3, 3);   //trying to set a number out of range (3): should have no effect
+  c.setValue(3, 3);   /* trying to set a number out of range (3): should have no effect */
   System.out.println(c.toString())
   > [2, 0, 0, 1]
 
-  c.setValue(4, 0);   //invalid position (4) given: should have no effect
+  c.setValue(4, 0);   /* invalid position (4) given: should have no effect */
   System.out.println(c.toString())
   > [2, 0, 0, 1]
 
-  c.setValue(1, -3);  //trying to set a number out of range (-3): should have no effect
+  c.setValue(1, -3);  /* trying to set a number out of range (-3): should have no effect */
   System.out.println(c.toString())
   > [2, 0, 0, 1]
   ```
@@ -108,8 +108,8 @@ Your `Combination` class should contain the following elements:
   System.out.println(c1.equals(c1));
   > true
 
-  c2.setValue(0, 0);  //set the number at the 0 position to 0
-  c2.setValue(2, 0);  //set the number at the 2 position to 0
+  c2.setValue(0, 0);  /* set the number at the 0 position to 0 */
+  c2.setValue(2, 0);  /* set the number at the 2 position to 0 */
   System.out.println(c2.toString())
   > [0, 0, 0, 1]
 
@@ -128,12 +128,12 @@ After testing your `Combination` class thoroughly, create a new `ComboGuesser` c
 - The sample outputs below first show a `ComboGuesser` guessing at a randomly-determined key. Then, a specific key is constructed (setting values within the key to the maximum and minimum possible helps ensure thorough testing), and a new `ComboGuesser` is created to guess the specified key. (The output from `guessCombo()` would appear in the terminal window, not the codepad.)
 
   ```java
-  // Create a key first
+  /* Create a key first */
   Combination myKey = new Combination(5, 10);
   System.out.println(myKey.toString());
   > [10, 3, 9, 4, 0]
 
-  // Hmm, how strong is my key? Let's see how many tries it would take to "crack it"
+  /* Hmm, how strong is my key? Let's see how many tries it would take to "crack it" */
   ComboGuesser cracker = new ComboGuesser(5, 10, myKey);
   cracker.guessCombo();
   > It took 116561 guesses to guess

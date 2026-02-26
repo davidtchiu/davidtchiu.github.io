@@ -72,12 +72,12 @@ We need to provide some methods to our `Fraction` class. Let's start with writin
 - Here's another simple one. Write a method called `negate()` that negates the numerator. If it's positive, turn it negative. If it's negative, turn it positive. The denominator is untouched. Here's some code to test it out in the codepad:
 
   ```java
-  Fraction f = new Fraction(1,3);   // create 1/3
-  System.out.println(f.toString()); // this should print 1/3
+  Fraction f = new Fraction(1,3);   /* create 1/3 */
+  System.out.println(f.toString()); /* this should print 1/3 */
   f.negate();
-  System.out.println(f.toString()); // this should print -1/3
+  System.out.println(f.toString()); /* this should print -1/3 */
   f.negate();
-  System.out.println(f.toString()); // this should print 1/3 again!
+  System.out.println(f.toString()); /* this should print 1/3 again! */
   ```
 
 - Write a method called `invert()` to exchange its numerator and denominator. This method does not `return` any values.
@@ -85,7 +85,7 @@ We need to provide some methods to our `Fraction` class. Let's start with writin
   ```java
   Fraction f = new Fraction(20,95);
   f.invert();
-  System.out.println(f.toString()); // this should now print 95/20
+  System.out.println(f.toString()); /* this should now print 95/20 */
   ```
 
 - Write a method called `equals()` that accepts *another* `Fraction` object to compare with. This method needs to return true if the two fractions are equal, and false otherwise. Follow these rules. If either `Fraction` is undefined (say, you just wrote that method earlier, and it can be called!) then they can't be equal. If both `Fraction`s are defined, then they are equal when both their numerators and denominators agree. To test if they agree, you are going to want to *ask* the `Fraction` you input for its numerator and denominator. Good thing we wrote those "getters" earlier too!
@@ -93,16 +93,16 @@ We need to provide some methods to our `Fraction` class. Let's start with writin
   ```java
   Fraction f1 = new Fraction(2,5);
   Fraction f2 = new Fraction(2,5);
-  System.out.println(f1.equals(f2));  // this should print true
+  System.out.println(f1.equals(f2));  /* this should print true */
   f1.invert();
-  System.out.println(f1.equals(f2));  // this should print false
+  System.out.println(f1.equals(f2));  /* this should print false */
   ```
 
   Test if your "undefined" checker is working:
   ```java
-  Fraction f3 = new Fraction(1,0);  // this is undefined...
-  Fraction f4 = new Fraction(1,0);  // this is also undefined... but they're the "same"
-  System.out.println(f3.equals(f4));  // this should print false!
+  Fraction f3 = new Fraction(1,0);  /* this is undefined... */
+  Fraction f4 = new Fraction(1,0);  /* this is also undefined... but they're the "same" */
+  System.out.println(f3.equals(f4));  /* this should print false! */
   ```
 
 #### Arithmetic Operations (Inputting Other Fractions as Arguments!)
@@ -113,8 +113,8 @@ Now that we have the basics down, we can finally implement add, subtract, multip
   Fraction f1 = new Fraction(2,15);
   Fraction f2 = new Fraction(2,3);
   f1.add(f2);
-  System.out.println(f1.toString());  // Now 36/45 (the denominators don't agree so, 6/45 + 30/45)
-  System.out.println(f2.toString());  // Still 2/3
+  System.out.println(f1.toString());  /* Now 36/45 (the denominators don't agree so, 6/45 + 30/45) */
+  System.out.println(f2.toString());  /* Still 2/3 */
   ```
   Remember to ensure that the *other* fraction is left unchanged after calling this method.
 
@@ -125,8 +125,8 @@ Now that we have the basics down, we can finally implement add, subtract, multip
   Fraction f1 = new Fraction(2,3);
   Fraction f2 = new Fraction(3,10);
   f1.minus(f2);
-  System.out.println(f1.toString());  // Now 11/30
-  System.out.println(f2.toString());  // Still 3/10
+  System.out.println(f1.toString());  /* Now 11/30 */
+  System.out.println(f2.toString());  /* Still 3/10 */
   ```
 
 - Write `multiply(Fraction other)`, which is likely the easiest of the bunch. Simply multiply the numerators and denominators together with the given `Fraction`. This method, like all the others, does not return a value. Remember to ensure that the *other* fraction is left unchanged after calling this method.
@@ -136,8 +136,8 @@ Now that we have the basics down, we can finally implement add, subtract, multip
   Fraction f1 = new Fraction(2,3);
   Fraction f2 = new Fraction(5,11);
   f1.divide(f2);
-  System.out.println(f1.toString());  // Now 22/15
-  System.out.println(f2.toString());  // Still 5/11
+  System.out.println(f1.toString());  /* Now 22/15 */
+  System.out.println(f2.toString());  /* Still 5/11 */
   ```
 
 
