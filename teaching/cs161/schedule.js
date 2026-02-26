@@ -39,13 +39,13 @@ let days = {
         weekAssigned: 5,
         due: "2/25/2026", // Mon, wk 6
       },
-      // {
-      //   name: "Hwk 4 (Robots)",
-      //   title: "Robots (Abstraction and Modularity)",
-      //   url: "hwk4.robot/",
-      //   weekAssigned: 6,
-      //   due: "3/6/2026", //Fri, wk 7 (has a simple loop)
-      // },
+      {
+        name: "Hwk 4 (Robots)",
+        title: "Robots (Abstraction and Modularity)",
+        url: "hwk4.robot/",
+        weekAssigned: 6,
+        due: "3/6/2026", //Fri, wk 7 (has a simple loop)
+      },
       // {
       //   name: "Hwk 5 (Loops)",
       //   title: "Loops, Loops, Loops!",
@@ -135,7 +135,7 @@ let days = {
         name: "Lab 6",
         title: "Diamonds (Abstraction and Modularity)",
         url: "lab6.diamonds/",
-        weekAssigned: 7,
+        weekAssigned: 6,
         due: "2/27/2026",
       },
       // {
@@ -238,8 +238,8 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
     "Using APIs (String interface)",
-      "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>5. Abstraction</a>" + "<br/>" +
-      "Code: <a href='https://drive.google.com/file/d/1Fo5UoS788VzFpwKvfScQf3-IFDC-qZ3n/view?usp=drive_link'>Organism</a> (Starter)",
+    "Notes: <a href='https://drive.google.com/file/d/1m226zYIekmAi4HIhuYEJeKCMjRubgYEz/view?usp=drive_link'>5. Abstraction</a>" + "<br/>" +
+    "Code: <a href='https://drive.google.com/file/d/1Fo5UoS788VzFpwKvfScQf3-IFDC-qZ3n/view?usp=drive_link'>Organism</a> (Starter)",
     // "Code: <a href='https://drive.google.com/open?id=1ycKeh6Uw3uJJalfidTy_KjSDer1q6NVZ&usp=drive_fs'>Square</a> (Starter)",
     // wk 7
     "Start loops; reading; tracing",
