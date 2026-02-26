@@ -131,13 +131,13 @@ let days = {
         weekAssigned: 5,
         due: "2/20/2026",
       },
-      // {
-      //   name: "Lab 6",
-      //   title: "Diamonds (Abstraction and Modularity)",
-      //   url: "lab6.diamonds/",
-      //   weekAssigned: 7,
-      //   due: "2/27/2026",
-      // },
+      {
+        name: "Lab 6",
+        title: "Diamonds (Abstraction and Modularity)",
+        url: "lab6.diamonds/",
+        weekAssigned: 7,
+        due: "2/27/2026",
+      },
       // {
       //   name: "Lab 7",
       //   title: "Turtle (Loops)",
