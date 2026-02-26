@@ -1,14 +1,14 @@
 ## CS 475 - Operating Systems
 
-### Hwk: Parallel Edge Detection with `pthread`
-Ever wonder how self-driving cars detect lane and boundaries to navigate safely on roads (lane departure is a safety feature in most cars nowadays)? Or, how doctors use advanced imaging techniques to identify tumors with pinpoint accuracy? Or, how in popular graphics tools like Photoshop, users can select (magic lasso) certain objects in a picture and move it around?
+### Hwk 5: Parallel Edge Detection with `pthread`
+Ever wonder how self-driving cars detect lane and boundaries to navigate safely on roads? Lane departure is a safety feature in most cars nowadays. Or, have you wondered how doctors can use imaging techniques to identify tumors with great accuracy? Or, how you can "magically erase" certain objects in a photo on your phones? For these tools to enable these features, they need to tune out all the noise and focus on the outlines so that object boundaries are more prominent. 
 
 <div align="center">
 <img src="figures/cat.jpg" width="200px">
 <img src="figures/cat-sobel.jpg" width="200px">
 </div>
 
-Especially on a fuzzier/noisier image, where objects may be harder for a machine to identify, we might try tuning out all the noise and focus on the outlines. "Edge detection" enables these techniques by highlighting the boundaries and transitions within images, making it possible to extract such meaningful information! Edge detection is an important preprocessing step commonly used in graphics, AI/ML, and computer-vision applications today. However, high-resolution images require heavier processing to achieve edge detection. This assignment seeks to parallelize that process.
+"Edge detection" is an image processing technique that enables these features by highlighting the boundaries within images, making it possible to extract meaningful information! Edge detection is an important preprocessing step commonly used in graphics, AI/ML, and computer-vision applications today. However, high-resolution images require heavier processing to achieve edge detection. This assignment seeks to parallelize that process.
 
 The goal of this assignment is to implement a multithreaded edge-detection algorithm on grayscale images using the `pthread` library in C. The particular technique we will focus on is called Sobel Filtering.
 
@@ -48,7 +48,7 @@ I have included a working solution of my program along with the starter code. Th
 
 #### Preamble: Understanding Sobel Filters
 
-**Sobel Filters** are one of the most popular methods for performing edge detection due to their simplicity and effectiveness. The Sobel filter applies a pair of _convolution kernels_ to an image to compute the intensity gradients in both the horizontal and vertical directions. These gradients highlight regions of the image where the intensity changes significantly, which often corresponds to edges.
+*Sobel Filters* are one of the most popular methods for edge detection due to their simplicity and effectiveness. The Sobel filter applies a pair of $$3 \times 3$$ matrices, called _convolution kernels_, across an image to compute the intensity gradients in both the horizontal and vertical directions. These gradients highlight regions of the image where the intensity changes significantly, which often corresponds to edges.
 
 The Sobel operator uses two $$3 \times 3$$ convolution kernels that detect changes in intensity along the horizontal and vertical directions of an image:
 
@@ -67,13 +67,13 @@ K_y =
 \end{bmatrix}
 $$
 
-##### How to Apply Sobel Filters over an Image (Convolution)
-The input image is essentially a 2D array where each cell, or "pixel", is an integer between 0 (black) and 255 (white). Here's a step-by-step explanation of how it's done. **"Convolution"** is the process of sliding the two Sobel kernels across all pixels in the image and performing the following steps at each pixel:
+##### Convolution: How to Apply Sobel Filters over an Image
+The input image is essentially a 2D array where each cell, or "pixel", is an integer between 0 (black) and 255 (white).  **"Convolution"** is the process of sliding the two Sobel kernels across all pixels in the image and performing the following steps at each pixel:
 
-   1. For a pixel at position $$[i,j]$$, it will have 8 neighbor pixels surrounding it.
+   1. For a pixel at position $$[i,j]$$, it will have 8 neighboring pixels surrounding it.
       
-      - The exception are the pixels that ride along the four borders of the image.
-      - Your algorithm will need to exclude these border pixels from processing.
+      - The exception are the pixels that ride along the four borders of the image, which would have fewer neighbors. 
+      - You are instructed ignore the border pixels by setting them to 0. (See running example below)
 
    2. Center the $$K_x$$ kernel over each pixel and multiply each of the nine kernel values with the corresponding pixel value and sum up these products. The sum is called the pixel's horizontal "gradient", $$G_x$$.
 
@@ -85,7 +85,7 @@ The input image is essentially a 2D array where each cell, or "pixel", is an int
 
 ##### Convolution: A Running Example
 
-Let's say we start with the following $$5\times 5$$ grayscale image:
+Let's say we start with the following $$5\times 5$$ image:
 
    ```c
    34  45  60  90 120
@@ -123,7 +123,7 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 
 4. Combine the components: $$G = \sqrt{G_x^2 + G_y^2} = \sqrt{70 + 90} \approx 114$$. Now over in the output 2D array, assign the value `114` to position $$[2,1]$$.
 
-5. Repeat this process for every pixel to produce the output 2D array, and remember to set any border pixel  to 0 (black).
+5. Repeat this process for every pixel to produce the output 2D array below, and remember to set any border pixel to 0 (black).
 
    ```c
    0  0  0   0  0
@@ -145,7 +145,7 @@ Let's say we start with the following $$5\times 5$$ grayscale image:
 
 
 #### Side Note: "Embarassingly Parallel"
-The nature of this program is called "embarassingly parallel" in industry and academia. It isn't meant to be a derogatory term. It simply suggests that the parallelization of these problems is straightforward. The "embarrassment" here is more of a playful nod to how easy these problems are to parallelize compared to more complex ones that require significant coordination, synchronization, and/or locking between threads or processes. (More on those later :)
+The nature of this program is called "embarassingly parallel" in industry and academia. It isn't meant to be derogatory. It simply suggests that the parallelization of these problems is straightforward. The "embarrassment" here is more of a playful nod to how easy these problems are to parallelize compared to more complex ones that require significant coordination, synchronization, and/or locking between threads or processes. (More on those later :)
 
 As any good parallel programmer would, you should still verify this to be the case for this assignment. On a piece of paper, trace and depict how the sobel filter process would work across the input image. Pay attention to how the new output image (2D array) is calculated. Do you ever have to read any other cells from the *same* array that you're writing to?
 
