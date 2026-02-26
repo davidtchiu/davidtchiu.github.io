@@ -36,6 +36,32 @@ The following file(s) have been provided for this homework.
 - [Lab_Diamonds.zip](Lab_Diamonds.zip)
 
 
+#### Before You Get Started (Syntax Review)
+You will want to remember the following pieces of syntax for object interation:
+
+- **Object Variable Declaration:** To store objects like Circles, Triangles, Strings, you need to declare an object variable. For instance, if I wanted a variable that points to a Circle, I can use:
+    ```java
+    Circle circ;
+    ```
+    Or if it's an instance variable,
+    ```java
+    private Circle circ;
+    ```
+    However, after this declaration, `circ` is merely a box containing a pointer to `null`. That's not very useful. You'd usually want to point it to a Circle object that you can tell what to do.
+
+- **Instantiation:** So then, how do you construct a new object using code? Here's how to do it:
+    ```java
+    circ = new Circle();
+    ```
+    This will call the `Circle()` default constructor, and assign the `circ` variable to point to it. If the `Circle` class defined more constructors, you can construct those instead by passing the right input arguments. 
+
+- **Dot-Notation:** What can you do with object variable (like `circ`) after instantiation? Call methods on it to boss it around! The syntax to call methods on an object is called "dot notation." Say you want to change circ's color and move it down by 30. You need to first identify which `Circle` methods do these actions.
+    ```java
+    circ.changeColor("red");
+    circ.moveVertical(30);
+    ```
+
+
 
 #### Preliminary: An Improved Triangle Class
 
@@ -45,15 +71,15 @@ You'll find that there's a slightly improved `Triangle` class. This `Triangle` s
 
 Our objective is to create a new class that can create  `Diamond`s with the same set of methods as all the other shapes we've seen thus far. But as you know, there is code in the other shape classes that we still don't know how to read or what they do underneath the hood. But behold the power of abstraction: *We don't need to know all the implementation details of Triangles!* Let's get started...
 
-1. Create a new class called `Diamond`. A diamond can be formed using two Triangles, with one flipped upside down and positioned properly. For now, your `Diamond` class only needs to store instance variables pointing to these two `Triangles`. Because of their placement, I would name them `top` and `bottom`.
+1. **Create a new class called `Diamond`.** A diamond can be formed using two Triangles, with one flipped upside down and positioned properly. For now, your `Diamond` class only needs to store instance variables pointing to these two `Triangles`. Because of their placement, I would name them `top` and `bottom`.
 
     - You might as well go ahead and store a diamond's `height` and `width` as instance variables too. They are both integers.
 
-2. Write a constructor that  accepts two inputs: the height and width of the new Diamond object (maybe call these input parameters `h` and `w` so we don't conflate them with the instance variables?).
+2. **Write a constructor** that  accepts two inputs: the `height` and `width` of the new Diamond object. (I suggest that you call these input parameters `h` and `w` so we don't confuse them with the instance variables?).
 
-    - Go ahead and store these given dimensions (`h` and `w`) in your instance variables.
+    - Go ahead and store these given dimensions (`h` and `w`) inside your instance variables.
 
-    - It needs to *instantiate* both `top` and `bottom` triangles, so the arrows don't simply point to `null`. You should recall that, to instantiate an object of a class, you can use the syntax, `new Class-Name()`. Therefore, `top = new Triangle()` would assign `top` a pointer to a triangle object. 
+    - It needs to *instantiate* both `top` and `bottom` triangles, so the arrows don't simply point to `null`. You should recall that, to instantiate an object of a class, you can use the syntax, `new ClassName()`. Therefore, `top = new Triangle()` would assign `top` a pointer to a new Triangle!
     
     - Don't forget to resize the triangles so that, when combined, they satisfy the given height and width of the diamond. You need to make each triangle **half** of the given height of the new diamond, and they each should have the same width as the diamond.
         - (How nice is it that Triangles already have a `changeSize()` method we can use...)

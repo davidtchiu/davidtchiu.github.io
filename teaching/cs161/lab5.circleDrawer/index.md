@@ -36,6 +36,32 @@ The following file(s) have been provided for this homework.
 
 - [Lab_CircleDrawer.zip](Lab_CircleDrawer.zip)
 
+
+#### Before You Get Started (Syntax Review)
+You will want to remember the following pieces of syntax for object interation:
+
+- **Object Variable Declaration:** To store objects like Circles, Triangles, Strings, you need to declare an object variable. For instance, if I wanted a variable that points to a Circle, I can use:
+    ```java
+    Circle circ;
+    ```
+    Or if it's an instance variable,
+    ```java
+    private Circle circ;
+    ```
+    However, after this declaration, `circ` is merely a box containing a pointer to `null`. That's not very useful. You'd usually want to point it to a Circle object that you can tell what to do.
+
+- **Instantiation:** So then, how do you construct a new object using code? Here's how to do it:
+    ```java
+    circ = new Circle();
+    ```
+    This will call the `Circle()` default constructor, and assign the `circ` variable to point to it. If the `Circle` class defined more constructors, you can construct those instead by passing the right input arguments. 
+
+- **Dot-Notation:** What can you do with object variable (like `circ`) after instantiation? Call methods on it to boss it around! The syntax to call methods on an object is called "dot notation." Say you want to change circ's color and move it down by 30. You need to first identify which `Circle` methods do these actions.
+    ```java
+    circ.changeColor("red");
+    circ.moveVertical(30);
+    ```
+
 #### Instructions
 
 1. Download the `CircleDrawer` project from the link above and extract its contents, then start BlueJ and open the project. See how a `CircleDrawer` contains two instance variables of type Circles (named `first` and `second`). This demonstrates that classes like `Circle` can serve as a variable's data type!
