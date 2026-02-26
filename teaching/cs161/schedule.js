@@ -15,7 +15,7 @@ let days = {
         name: "Hwk 0 (About Me)",
         title: "All About Me (BlueJ, Code Submission)",
         url: "hwk0.me/",
-        weekAssigned: 1, 
+        weekAssigned: 1,
         due: "1/26/2026", // Mon, wk 2
       },
       {
@@ -206,23 +206,23 @@ let days = {
     "<strong>MLK Day<br/>(no class)</strong>",
     "Introductions: Who are we? What is CS?",
     "Algorithms, hardware, languages; Using BlueJ",
-    "Notes: <a href='https://drive.google.com/file/d/11UGFf39BPSc0oXnjzOFzUJsEKXZMYnuR/view'>1. What is CS?</a>" + "<br/>" + 
-      "Install: <a href='https://bluej.org/'>BlueJ Code Editor</a>" + "<br/>" +
-      "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
+    "Notes: <a href='https://drive.google.com/file/d/11UGFf39BPSc0oXnjzOFzUJsEKXZMYnuR/view'>1. What is CS?</a>" + "<br/>" +
+    "Install: <a href='https://bluej.org/'>BlueJ Code Editor</a>" + "<br/>" +
+    "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
     // wk 2
     "Classes: Instance vars and data types, constructors",
     "Lab 2: Triangle",
     "Lab review; Methods",
-    "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" + 
-      "Code: <a href='https://drive.google.com/open?id=1BIumqGvCSt2G9H9EFNAAHTZyQnfK7SG6&usp=drive_fs'>Circle</a> (starter)" + "<br/>" +
-      "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Circle</a> (finished)",
+    "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" +
+    "Code: <a href='https://drive.google.com/open?id=1BIumqGvCSt2G9H9EFNAAHTZyQnfK7SG6&usp=drive_fs'>Circle</a> (starter)" + "<br/>" +
+    "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Circle</a> (finished)",
     // wk 3
     "Conditionals",
     "Lab 3: Stomach",
     "Nested if, Else-if",
     // "",
-    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Operators and conditionals</a>" + "<br/>" + 
-      "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a> (finished)",
+    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Operators and conditionals</a>" + "<br/>" +
+    "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a> (finished)",
     // wk 4
     "Logical operators",
     "Lab 4: Guessing Game",
@@ -233,14 +233,14 @@ let days = {
     "Classes as types: object interaction; Lab 5: Circle Drawer",
     "Object equality; <strong><emph>Exam 1 review</emph></strong>",
     "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>" + "<br/>" +
-      "Exam #1 <a href='https://drive.google.com/open?id=1StHl1jwP5jlWPL_XEudnZ6QNMfR_ekNE&usp=drive_fs'>Study Guide</a>",
+    "Exam #1 <a href='https://drive.google.com/open?id=1StHl1jwP5jlWPL_XEudnZ6QNMfR_ekNE&usp=drive_fs'>Study Guide</a>",
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
     "Using APIs (String interface)",
-    "",
-      // "Code: <a href='https://drive.google.com/open?id=1ycKeh6Uw3uJJalfidTy_KjSDer1q6NVZ&usp=drive_fs'>Square</a> (Starter)",
-    // "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>5. Abstraction</a>",
+      "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>5. Abstraction</a>" + "<br/>" +
+      "Code: <a href='https://drive.google.com/file/d/1Fo5UoS788VzFpwKvfScQf3-IFDC-qZ3n/view?usp=drive_link'>Organism</a> (Starter)",
+    // "Code: <a href='https://drive.google.com/open?id=1ycKeh6Uw3uJJalfidTy_KjSDer1q6NVZ&usp=drive_fs'>Square</a> (Starter)",
     // wk 7
     "Start loops; reading; tracing",
     "More loops; Lab 7: Loops",
@@ -262,9 +262,9 @@ let days = {
     "TurtleMob; <strong><emph>Exam 2 review</emph></strong>",
     "",
     // "Exam #2 <a href=''>Study Guide</a> | <a href=''>Soln</a>",
-     // wk 11
+    // wk 11
     "<strong><emph>Exam 2</emph></strong>",
-    "Start 2D arrays; Lab 10: TicTacToe",    
+    "Start 2D arrays; Lab 10: TicTacToe",
     "TicTacToe review, more practice",
     "",
     // wk 12
@@ -295,8 +295,8 @@ let days = {
   ],
 };
 // Lab 3: Stomach",
-    // "HashMaps",
-    // "Start complexity: Linear search",
+// "HashMaps",
+// "Start complexity: Linear search",
 
 
 // print out the schedule to HTML
