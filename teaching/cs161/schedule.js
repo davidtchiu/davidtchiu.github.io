@@ -238,14 +238,15 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "Abstraction; Lab 6: Diamonds code-along",
     "Using APIs (String interface)",
-    "Notes: <a href='https://drive.google.com/file/d/1m226zYIekmAi4HIhuYEJeKCMjRubgYEz/view?usp=drive_link'>5. Abstraction</a>" + "<br/>" +
+    "Notes: <a href='https://drive.google.com/file/d/1m226zYIekmAi4HIhuYEJeKCMjRubgYEz/view?usp=drive_link'>5. Abstraction and Strings</a>" + "<br/>" +
     "Code: <a href='https://drive.google.com/file/d/1Fo5UoS788VzFpwKvfScQf3-IFDC-qZ3n/view?usp=drive_link'>Organism</a> (Starter)",
     // "Code: <a href='https://drive.google.com/open?id=1ycKeh6Uw3uJJalfidTy_KjSDer1q6NVZ&usp=drive_fs'>Square</a> (Starter)",
     // wk 7
     "Start loops; reading; tracing",
     "More loops; Lab 7: Loops",
     "Lab review and nested loops",
-    "",
+    "Notes: <a href='https://drive.google.com/file/d/1-Fd3EEiX3UK2o3CV_tVLVrds6qCPYUun/view?usp=drive_link'>6. Loops</a>" + "<br/>" +
+      "",
     // wk 8
     "Nested loops",
     "Lab 8: Nested Loops",
