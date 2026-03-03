@@ -12,7 +12,7 @@
 This 0.5-unit pass/fail course provides structure for students as they prepare for their senior capstone in computer science. Students identify a feasible project topic, survey relevant literature and technologies, and develop a coherent project plan that positions them to begin substantive work at the start of the following semester. Emphasis is placed on team definition (if applicable), project scoping, design, data acquisition, and early prototyping. By the end of the course, students will have a well-defined problem statement, an initial technical design, a shared code repository, a communication plan, and a realistic timeline for completing their project. Students are also required to attend talks at the Math/CS Seminar.
 
 #### Prerequisites
-Senior class standing, or with instructor permission.
+Senior class standing, or with instructor permission. Usually taken the semester prior to Capstone.
 
 #### Student Outcomes
 
@@ -23,8 +23,20 @@ By the end of the course, students will be able to:
 - Evaluate project feasibility, identifying risks, scope boundaries, and a minimal viable approach.
 - Design a high-level system architecture with key components, data structures, and dependencies.
 - Develop a realistic project plan including milestones, timelines, and evaluation approaches.
+- Communicate technical proposals effectively through written reports and oral presentations.
 
-Communicate technical proposals effectively through written reports and oral presentations.
+#### Grading Policy
+This course is graded as pass/fail. A passing grade requires completion of the following elements.
+- Initial Project document, including the following sections:
+    - Group Membership
+    - Problem Statement
+    - Background and Related Work
+- Feasibility Analysis
+- Design Document
+- Project Management Plan and Timeline
+- Presentation to Faculty
+
+
 #### 1. Project Topic + Problem Statement (Weeks 1-3)
 A short document that:
 - Identifies group members, if applicable
@@ -56,7 +68,6 @@ This should include:
 - Story development
 - A description of the main technical challenges  
 
-
 #### 5. Final Capstone Plan and Timeline (Week 13-15)
 A formal document with all of the above, plus:
 - Milestones and 2–3 week sprint goals  
@@ -82,3 +93,10 @@ Something small but non-trivial, such as:
 - A trained baseline model  
 - A hardware demo that exercises sensors/actuators  
 - A single algorithm implemented in isolation   -->
+
+<!-- #### AI Policy: Some AI Allowed
+In this course, certain assignments will permit the use of AI. These assignments will be explicitly designated. In addition, students may use AI in indirect ways, such as consultation for brainstorming purposes or as a study assistant. Students must always disclose the use of AI-generated material, and specify how it was used. The student is also responsible for any misinformation or legally protected data that they incorporate into their work. If you have questions about the use of AI in this course, please ask your professor. -->
+
+{% include syllabus-my-boilerplate.md %}
+
+{% include syllabus-univ-boilerplate.md %}
