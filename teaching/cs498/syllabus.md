@@ -27,6 +27,19 @@ By the end of the course, students will be able to:
 - Develop a realistic project plan including milestones, timelines, and evaluation approaches.
 - Communicate technical proposals effectively through written reports and oral presentations.
 
+#### Grade Breakdown
+Your overall grade is assessed as follows:
+
+|   | % Weight |
+| :--- | :--- |
+| Participation | 10% |
+| Initial Project document | 15% |
+| Feasibility Analysis | 15% |
+| Initial Design Document | 30% |
+| Project Management Plan and Timeline | 10% |
+| Defense Presentation | 10% |
+| Engagement in the Math/CS Seminars | 10% |
+
 #### Grading Policy
 This course is graded as pass/fail. A passing grade requires your (or your group)'s completion of 
 the following elements.
@@ -38,10 +51,10 @@ the following elements.
 2. Feasibility Analysis
 3. Initial Design Document
 4. Project Management Plan and Timeline
-5. Presentation to Faculty
+5. Presentation to Faculty (see below)
 6. Engagement in the Math/CS Seminars:
     - 2 x attendance
-    - 1 presentation (defense)
+    - 1 defense presentation to faculty and peers
 
 ### Tentative Calendar
 #### Weeks 1-3: Group Selection, Project Topic Selection, and Problem Statement
@@ -107,9 +120,9 @@ Something small but non-trivial, such as:
 - A hardware demo that exercises sensors/actuators  
 - A single algorithm implemented in isolation   -->
 
-<!-- #### AI Policy: Some AI Allowed
-In this course, certain assignments will permit the use of AI. These assignments will be explicitly designated. In addition, students may use AI in indirect ways, such as consultation for brainstorming purposes or as a study assistant. Students must always disclose the use of AI-generated material, and specify how it was used. The student is also responsible for any misinformation or legally protected data that they incorporate into their work. If you have questions about the use of AI in this course, please ask your professor. -->
+#### AI Policy: Some AI Allowed
+In this course, certain assignments will permit the use of AI. These assignments will be explicitly designated. In addition, students may use AI in indirect ways, such as consultation for brainstorming purposes or as a study assistant. Students must always disclose the use of AI-generated material, and specify how it was used. The student is also responsible for any misinformation or legally protected data that they incorporate into their work. If you have questions about the use of AI in this course, please ask your professor.
 
-{% include syllabus-my-boilerplate.md %}
+{% include syllabus-my-boilerplate-PF.md %}
 
 {% include syllabus-univ-boilerplate.md %}
