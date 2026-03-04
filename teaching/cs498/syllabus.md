@@ -102,14 +102,13 @@ A formal document including all of the above, plus:
 - Time estimates  
 - Plans for testing or experimental evaluation
 - Reach goals
+- A 15-minute presentation delivered to faculty and peers during a Math/CS seminar that covers:
+    - Motivation  
+    - Background  
+    - Design  
+    - Early results or prototype, if applicable
+    - Timeline and feasibility
 
-#### 6. Capstone Proposal Defense (Finals Week)
-A 15-minute presentation delivered to faculty and peers during a Math/CS seminar that covers:
-- Motivation  
-- Background  
-- Design  
-- Early results or prototype, if applicable
-- Timeline and feasibility
 
 
 <!-- #### 5. Prototype or Proof-of-Concept Artifact
