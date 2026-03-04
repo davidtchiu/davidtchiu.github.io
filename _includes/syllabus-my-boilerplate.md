@@ -35,7 +35,7 @@ Furthermore, if a student misses more than 6 class meetings (15% of the semester
 Phones are a common distraction during lectures. Please turn your phones off, or at least put your phones on silent during lecture. If you are caught using your phone during class and/or lab, it will affect your participation points.
 
 
-### Academic Integrity
+##### Academic Integrity
 
 I adhere to the university's [academic integrity policy](https://www.pugetsound.edu/academic-integrity). If a student is caught misrepresenting their work, then  at minimum, they will receive an automatic zero for the assignment and the case will be reported upstream, which may affect the student's athletic and scholarship eligibilities. To avoid such problems, use common sense and when in doubt, ask me for advice. Examples of academic dishonesty include, but are not limited to, the following:
 
@@ -56,15 +56,13 @@ Note, however, that there are clear boundaries that, when crossed, could lead to
 
 
 
-#### Late Policy, Extensions, and Makeup
+##### Late Policy, Extensions, and Makeup
 
-##### Late Deduction
-For each day that a homework assignment is late beyond the due date (or the adjusted date according to your accommodations), I assess a $$3^d\%$$ deduction, where $$d$$ is the number of days late including weekends. 
+**Late Deduction** For each day that a homework assignment is late beyond the due date (or the adjusted date according to your accommodations), I assess a $$3^d\%$$ deduction, where $$d$$ is the number of days late including weekends. 
 
-##### Deadline Extensions
-At my discretion, extensions on assignments may only be given depending on circumstances like pacing, clarification, etc. Extensions are not generally granted on a *personal* basis, except if the student can provide documentation for unique circumstances (e.g., injury/hospitalization, bereavement, etc.), or when the student is entitled to certain accommodations. As a general rule of thumb, just come talk to me first.
+**Deadline Extensions** At my discretion, extensions on assignments may only be given depending on circumstances like pacing, clarification, etc. Extensions are not generally granted on a *personal* basis, except if the student can provide documentation for unique circumstances (e.g., injury/hospitalization, bereavement, etc.), or when the student is entitled to certain accommodations. As a general rule of thumb, just come talk to me first.
 
-##### Exam Policies
+**Exam Policies**
 Sample problem sets and a checklist of expected topics are provided in a study guide. Unless a student has accommodations, exams are always in written format. Students are *allowed* to bring a full page of notes (front + back) to the exam, which must be turned in along with the exam.
 
 - Exam dates: I have never had to move an exam from its scheduled date, but if I did, I would never move them earlier, only later.

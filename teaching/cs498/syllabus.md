@@ -56,8 +56,8 @@ the following elements.
     - 2 x attendance
     - 1 defense presentation to faculty and peers -->
 
-### Tentative Calendar
-#### Weeks 1-3: Group Selection, Project Topic Selection, and Problem Statement
+#### Tentative Calendar
+##### Weeks 1-3: Group Selection, Project Topic Selection, and Problem Statement
 This early period will be used to identify your team membership and your project.
 You (or your team) must produce a short document that:
 - Identifies group members, if applicable
@@ -66,7 +66,7 @@ You (or your team) must produce a short document that:
 - Describes constraints and assumptions  
 - Includes at least three alternative project directions before narrowing down  
 
-#### Weeks 3-5: Background + Related Work
+##### Weeks 3-5: Background + Related Work
 Continuation of the project document. This period is used to identify related
 work, background readings, potential tools, systems, and libraries that could be
 used to support the project. 
@@ -76,7 +76,7 @@ A concise write-up or annotated bibliography that demonstrates the students:
 - Has selected the technologies, frameworks, or data sets they intend to use  
 - Understand what existing tools can and can't be used
 
-#### Weeks 6-7: Feasibility Analysis
+##### Weeks 6-7: Feasibility Analysis
 A feasibility and risk analysis is performed. Students identify required 
 background they still need to learn, think critically about unknowns, risks,
 and ethical concerns. Given these risks, students plot out a contingency
@@ -86,7 +86,7 @@ plan. Students produce a short technical memo identifying:
 - An ethics/risk assessment (e.g., data privacy, misuse, accessibility)  
 - A fallback/minimal-viable version of the project  
 
-#### Weeks 8-12: High-Level Design Document
+##### Weeks 8-12: High-Level Design Document
 Students work on early structuring and design of their project. This should include:
 - System architecture diagram
 - Key modules, data structures, or models  
@@ -95,7 +95,7 @@ Students work on early structuring and design of their project. This should incl
 - User story development
 - A description of the main technical challenges
 
-#### Week 13-15: Final Project Organization Plan and Timeline
+##### Week 13-15: Final Project Organization Plan and Timeline
 A formal document including all of the above, plus:
 - Milestones and 2–3 week sprint goals  
 - Dependencies  
@@ -119,7 +119,7 @@ Something small but non-trivial, such as:
 - A hardware demo that exercises sensors/actuators  
 - A single algorithm implemented in isolation   -->
 
-#### AI Policy: Some AI Allowed
+##### AI Policy: Some AI Allowed
 In this course, certain assignments will permit the use of AI. These assignments will be explicitly designated. In addition, students may use AI in indirect ways, such as consultation for brainstorming purposes or as a study assistant. Students must always disclose the use of AI-generated material, and specify how it was used. The student is also responsible for any misinformation or legally protected data that they incorporate into their work. If you have questions about the use of AI in this course, please ask your professor.
 
 {% include syllabus-my-boilerplate-PF.md %}
