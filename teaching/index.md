@@ -1,17 +1,24 @@
 ### Teaching
 My teaching focuses on the areas of data management and computer systems. I teach the following courses on a regular rotation at Puget Sound:
 
-- [CS 161 - Introduction to Computer Science](cs161/)
-- [CS 240 - Software Engineering](cs240/)
-- [CS 261 - Computer Science II](cs261/)
-- [CS 440 - Capstone in Computer Science](cs440)
-- [CS 455 - Principles of Database Systems](cs455/)
-- [CS 475 - Operating Systems](cs475/)
+<!-- - [CS 110 - Introduction to Computer Science](cs110/)
+- [CS 111 - Intermediate and Object-Oriented Programming](cs111/) -->
+- [CS 161 - Introduction to Computer Science](cs161/) (Until Fall 2026)
+<!-- - [CS 210 - Data Structures](cs210/) -->
+- [CS 220 - Software Engineering](cs220/)
+- [CS 261 - Computer Science II](cs261/) (Until Spring 2027)
+- [CS 360 - Principles of Database Systems](cs360/)
+- [CS 456 - Operating Systems](cs456/)
+- [CS 498 - Capstone Planning Seminar](cs498/)
+- [CS 499 - Capstone in Computer Science](cs499/)
+
+
 
 Other courses taught:
 
-- High-Performance Computing
-- Search Engines
+- Advanced Topics in High-Performance Computing
+- Web Data Management and Search Engines
+- Programming and Algorithms for Engineers and Scientists
 
 <!-- Spring 2020
 CS 161 - Introduction to Computer Science

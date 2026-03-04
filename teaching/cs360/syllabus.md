@@ -1,4 +1,4 @@
-## CS 455 - Principles of Database Systems - Syllabus
+## CS 360 - Principles of Database Systems - Syllabus
 
 #### Course Info
 - Instructor: David Chiu
@@ -13,7 +13,7 @@ The management of data is one of the classical problems in computing. This cours
 
 #### Prerequisites
 A grade of C- or higher in the following course is required, or with permission from the instructor:
-- CSCI 261: Computer Science II
+- CSCI 210: Data Structures, or CSCI 261: Computer Science II (old bulletin)
 - MATH 210: The Mathematics of Computer Science
 
 #### Required Textbook

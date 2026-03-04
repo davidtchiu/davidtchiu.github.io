@@ -1,4 +1,4 @@
-## CS 455 - Principles of Database Systems
+## CS 360 - Principles of Database Systems
 
 Instructor: David Chiu\
 Lecture: Mon/Wed/Fri 3:00 - 3:50 in TH 409\

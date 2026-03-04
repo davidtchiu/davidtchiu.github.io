@@ -11,7 +11,10 @@
   From 2010 to 2014, David was an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at WSU Vancouver. He later joined the Puget Sound faculty, where he's held appointments as Assistant Professor (2014), Associate Professor (2017), and Professor (2022). He also completed a rotation as Department Chair (2019-2022).
   </p>
   <p>
-  David is deeply committed to research with undergrads. He has supervised numerous <a href="people">students</a> on projects spanning database systems, cloud computing, and high-performance computing. He regularly serves on both organizational and program committees for conferences in both areas of study. David received the Influential Faculty of Color Award (2024),  <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), and the Bartanen Research Award (2017) from the University of Puget Sound. Additionally, he was awarded the Eleanor Quinlan Memorial Award for Excellence in Graduate Student Teaching (2009) from The Ohio State University. He is a member of the ACM and a Senior Member of the IEEE.
+  David is deeply committed to research with undergrads. He has supervised numerous <a href="people">students</a> on projects spanning database systems, cloud computing, and high-performance computing. He regularly <a href="service">serves</a> on both organizational and program committees for conferences in these areas of study.
+  </p>
+  <p>
+  David has been awarded the Influential Faculty of Color Award (2024),  <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), and the Bartanen Research Award (2017) all from the University of Puget Sound. Additionally, he received the Eleanor Quinlan Memorial Award for Excellence in Graduate Student Teaching (2009) from The Ohio State University. He is a member of the ACM and a Senior Member of the IEEE.
   </p>
 
 
@@ -21,12 +24,12 @@
 
 ### Recent Activities
 - (08/2025) Chair, Student Support Committee, 2025-26.
-- (08/2025) Faculty Development Center (FDC) Board member, 2025-26.
+- (08/2025) Board Member, Faculty Development Center (FDC), 2025-26.
 - (08/2025) Led a panel on supporting underrepresented students @ Peer Advisor Training.
 - (05/2025) Congrats to Alex Kirner on receiving a Summer Research Award. Work starts on optimizing join execution.
 - (04/2025) Completed a site visit to [DIS Study Abroad in Scandinavia](https://disabroad.org/) (Stockholm and Copenhagen campuses).
 - (02/2025) External Search Committee Member, Communications Studies, University of Puget Sound.
-- (08/2024) Co-chairing the International Education Committee (IEC), University of Puget Sound.
+- (08/2024) Co-chair, International Education Committee, University of Puget Sound, 2024-25.
 - (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
 - (09/2024) Serving as a New Faculty Mentor for 2024.
 - (08/2024) I'm excited to be teaching at the [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html), Taiwan, in 2025.
