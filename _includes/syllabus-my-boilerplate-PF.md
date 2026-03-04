@@ -1,12 +1,5 @@
 
 
-##### Final Grades
-This is a pass/fail course determined by the average of the graded components listed above.
-| Final Average  | Letter Grade |
-| :--- | :--- |
-| 100% - 60% | P |
-| 59% and below | F |
-
 
 
 ##### Attendance and Participation

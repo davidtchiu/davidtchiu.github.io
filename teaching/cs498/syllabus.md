@@ -28,7 +28,7 @@ By the end of the course, students will be able to:
 - Communicate technical proposals effectively through written reports and oral presentations.
 
 #### Grade Breakdown
-Your overall grade is assessed as follows:
+This is a pass/fail grade. A passing grade requires a 60+% final average. This overall grade is assessed as follows:
 
 |   | % Weight |
 | :--- | :--- |
@@ -40,7 +40,7 @@ Your overall grade is assessed as follows:
 | Defense Presentation | 10% |
 | Engagement in the Math/CS Seminars | 10% |
 
-#### Grading Policy
+<!-- #### Grading Policy
 This course is graded as pass/fail. A passing grade requires your (or your group)'s completion of 
 the following elements.
 
@@ -54,7 +54,7 @@ the following elements.
 5. Presentation to Faculty (see below)
 6. Engagement in the Math/CS Seminars:
     - 2 x attendance
-    - 1 defense presentation to faculty and peers
+    - 1 defense presentation to faculty and peers -->
 
 ### Tentative Calendar
 #### Weeks 1-3: Group Selection, Project Topic Selection, and Problem Statement
