@@ -43,13 +43,13 @@ let days = {
         weekAssigned: 5,
         due: "3/4/2026", // Wed, wk 7
       },
-      // {
-      //   name: "Hwk 5 (sobel)",
-      //   title: "Multithreaded Sobel Edge Detector",
-      //   url: "hwk5.sobel/",
-      //   weekAssigned: 6,
-      //   due: "3/11/2026",  // Mon, wk 8
-      // },
+      {
+        name: "Hwk 5 (sobel)",
+        title: "Multithreaded Convolution",
+        url: "hwk5.sobel/",
+        weekAssigned: 7,
+        due: "3/16/2026",  // Mon, wk 9 (spring break)
+      },
       // {
       //   name: "Hwk 6 (sched)",
       //   title: "Stressin' the Scheduler",

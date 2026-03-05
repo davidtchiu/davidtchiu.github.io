@@ -138,13 +138,13 @@ let days = {
         weekAssigned: 6,
         due: "2/27/2026",
       },
-      // {
-      //   name: "Lab 7",
-      //   title: "Turtle (Loops)",
-      //   url: "lab7.turtle/",
-      //   weekAssigned: 7,
-      //   due: "3/6/2026",
-      // },
+      {
+        name: "Lab 7",
+        title: "Turtle (Loops)",
+        url: "lab7.turtle/",
+        weekAssigned: 7,
+        due: "3/6/2026",
+      },
       // {
       //   name: "Lab 8",
       //   title: "Homework Lab (Loops)",
