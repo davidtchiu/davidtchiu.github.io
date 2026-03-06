@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk 5: Parallel Edge Detection with `pthread`
+### Hwk 5: Parallel Convolution (Edge Detection and Sobel Filters)
 Ever wonder how self-driving cars detect lane and boundaries to navigate safely on roads? Lane departure is a safety feature in most cars nowadays. Or, have you wondered how doctors can use imaging techniques to identify tumors with great accuracy? Or, how you can "magically erase" certain objects in a photo on your phones? For these tools to enable these features, they need to tune out all the noise and focus on the outlines so that object boundaries are more prominent. 
 
 <div align="center">
@@ -205,11 +205,11 @@ As any good parallel programmer would, you should still verify this to be the ca
    
       ```c
       // malloc a size 'height' array of pointers (these are the rows)
-      output_image = (unsigned char**) malloc(sizeof(unsigned char*) * height);
+      output_image = malloc(sizeof(unsigned char*) * height);
 
       // iterate through each row and malloc an array of size 'width'
       for (int i = 0; i < height; i++) {
-         output_image[i] = (unsigned char*) malloc(sizeof(int) * width);
+         output_image[i] = malloc(sizeof(int) * width);
       }
       // Now we have a 2D array, accessible via output_image[x][y]!!
       ```
@@ -237,7 +237,7 @@ As any good parallel programmer would, you should still verify this to be the ca
    If you remapped to a 2D array in the earlier step, you have to map it back into a 1D array before you can call this function:
    ```c
    // This code re-maps output_image[][] down to a 1D array
-    unsigned char *array1D = (unsigned char*) malloc(width * height * sizeof(unsigned char));
+    unsigned char *array1D = malloc(width * height * sizeof(unsigned char));
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             array1D[i * width + j] = output_image[i][j];
