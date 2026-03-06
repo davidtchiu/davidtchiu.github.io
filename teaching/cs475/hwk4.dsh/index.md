@@ -80,7 +80,7 @@ There are certain environment variables that are pretty standardized, including 
 
     Example:
     ```c
-    char *line = (char*) malloc(256); // create an empty buffer to store the input
+    char *line = malloc(sizeof(char) * 256); // create an empty buffer to store the input
     
     // reads up to 256 characters into the buffer
     if (fgets(line, 256, stdin) == NULL) {
