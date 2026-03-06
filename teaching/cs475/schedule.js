@@ -143,7 +143,7 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "Scheduling: burst model, FCFS, SJF",
     "Read: Chap 5.1-5.5 (Dinosaur)" + "<br/>" +
-      "Notes: <a href='https://drive.google.com/file/d/1deZ8rIsKJowuTss0SxCLV2KGgfYrdlvG/view?usp=drive_link'>5. Scheduling/a><br/>" +
+      "Notes: <a href='https://drive.google.com/file/d/1deZ8rIsKJowuTss0SxCLV2KGgfYrdlvG/view?usp=drive_link'>5. Scheduling</a><br/>" +
       "",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
