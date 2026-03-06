@@ -1,6 +1,6 @@
 ## CS 161 - Intro to Computer Science
 
-### Homework 5: Loops Loops Loops
+### Homework 5: Loops
 
 Loops are among the most important and fundamental elements of programming. They allow us to repeat instructions efficiently, making our programs more robust and scalable. Whether iterating over a list of data, counting down a timer, or running a simulation, loops provide a way to automate repetitive tasks.
 
@@ -98,8 +98,20 @@ As you complete these exercises, think about the real-world applications of loop
     > 20
     ```
 
+4. (Medium) Write a method called `penultimatePosition()` that takes a `String` and a `char` as input and returns the second-to-last position where the given character appears in the string. If the second-to-last position is invalid (i.e., the given character does not appear at least twice in the string), return -1. Hint: Start by looping from the end of the string towards the start of the string. 
+    ```java
+    Loops loopie = new Loops();
+    System.out.println(loopie.penultimatePosition("reader", 'e'));
+    > 1
 
-4. (Spicy)  Write a method called `vowelRatio()` which inputs a String and returns the fraction of letters (`double`) that are vowels in the string. Assume that `y` is not a vowel. 
+    System.out.println(loopie.penultimatePosition("quarter", 'r'));
+    > 3
+
+    System.out.println(loopie.penultimatePosition("quarter", 'e'));  /* There is no second-to-last 'e' */
+    > -1
+    ```
+
+5. (Spicy)  Write a method called `vowelRatio()` that takes a String and returns the fraction of letters (`double`) that are vowels in the string. Assume that `y` is not a vowel. 
     - In the spirit of divide-and-conquer, I'd write a helper (`private`) method that returns whether a given character (`char`) is a vowel as a boolean. Beware of upper vs. lower case. (Yes this method should work for both cases.) 
     - Beware of integer divide!
 
@@ -118,7 +130,7 @@ As you complete these exercises, think about the real-world applications of loop
 ##### Part II: Nested Loop Problems
 Let's try our hand at writing some nested loops. Remember that there's a formula to writing doubly-nested loops. You should always be thinking 2-dimensionally. For the problems below, I would first figure out what you need to do for each "row." (Inner Loop). Afterwards, determine how many "rows" (height) you need (the Outer Loop). 
 
-5. (Mild) Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. The outer loop should control the number of rows. The inner loop: For each row of the outer loop, print an entire row of `*` only for the first and last rows. Otherwise, print `*` for the first and last columns of other rows, with spaces in between. (Hint: You might start by writing a nested loop that prints a solid square filled with only asterisks first.)
+6. (Mild) Write a method, `hollowSquare`, that accepts an integer `n`, and prints a hollow square of dimension `n`.  To draw a hollow square, you just need to make sure that you only print the first and final `*` if you're not printing out the first or last rows! This problem requires you to write nested loops even though you can solve it without one. The outer loop should control the number of rows. The inner loop: For each row of the outer loop, print an entire row of `*` only for the first and last rows. Otherwise, print `*` for the first and last columns of other rows, with spaces in between. (Hint: You might start by writing a nested loop that prints a solid square filled with only asterisks first.)
 
     Here's what I would expect to see if your method is working properly. 
 
@@ -144,7 +156,7 @@ Let's try our hand at writing some nested loops. Remember that there's a formula
     ```
 
 
-6. (Medium)  Write a method `reveal(int n)` that gradually reveals each number 1, 2, 3, ..., up to `n` (inclusive), on each line (see below). Ignore negative input. (Hint: For each row `r`, how many numbers do you need to print up to? How many dashes follow? Use the `printRightTriangle()` method we saw in class for inspiration.) The outer loop should control the number of rows from 1 to `n`. The inner loop: For each row, display a counter that goes from 1 to the `n`, but if the counter is greater than the current row number, then display a hyphen instead.
+7. (Medium)  Write a method `reveal(int n)` that gradually reveals each number 1, 2, 3, ..., up to `n` (inclusive), on each line (see below). Ignore negative input. (Hint: For each row `r`, how many numbers do you need to print up to? How many dashes follow? Use the `printRightTriangle()` method we saw in class for inspiration.) The outer loop should control the number of rows from 1 to `n`. The inner loop: For each row, display a counter that goes from 1 to the `n`, but if the counter is greater than the current row number, then display a hyphen instead.
 
 
     ```java
@@ -166,7 +178,7 @@ Let's try our hand at writing some nested loops. Remember that there's a formula
     12345678
     ```
 
-7. (Medium) Write a method `pyramid(int n)` that prints a pyramid pattern of asterisks (`*`) based on the number of rows (`n`) provided by the user. Outer Loop controls the number of rows (from 0 up to `n`). There are two inner loops inside: The first inner loop prints spaces for center-alignment (decreasing with each row). The second inner loop, placed right below (but within) the first inner loop, prints asterisks (`*`) to form the pyramid (increasing with each row).
+8. (Medium) Write a method `pyramid(int n)` that prints a pyramid pattern of asterisks (`*`) based on the number of rows (`n`) provided by the user. Outer Loop controls the number of rows (from 0 up to `n`). There are two inner loops inside: The first inner loop prints spaces for center-alignment (decreasing with each row). The second inner loop, placed right below (but within) the first inner loop, prints asterisks (`*`) to form the pyramid (increasing with each row).
 
     - I would start by figuring out the math to determine how many spaces you need before you print out the asterisk, as a function of `n` and the row number. For instance, on row `r`, you would need ??? spaces.
     - Next, you need to do the same for determinine how many asterisks to print for a given row. It looks like it's always an odd number.
@@ -190,7 +202,7 @@ Let's try our hand at writing some nested loops. Remember that there's a formula
     ***************
     ```
 
-8. (Spicy) The factorial of $$x$$, written $$x!$$ is defined $$x \times (x-1) \times (x-2) \times ... \times 2 \times 1$$. There's also a special case of $$0! = 1$$. Write a method `printFactorials()` which inputs an integer `n`. It prints out the factorial of all numbers between `0` and `n`. You may assume that `n` is nonnegative. (Hint: 0! should be printed out unconditionally. Then start into the loops!) Again, in designing this method, think about how many rows you need (starting from 1! -- and that's your outer loop), then decide what you need to do per row to compute the factorial at that row number and that's your inner loop.
+9. (Spicy) The factorial of $$x$$, written $$x!$$ is defined $$x \times (x-1) \times (x-2) \times ... \times 2 \times 1$$. There's also a special case of $$0! = 1$$. Write a method `printFactorials()` which inputs an integer `n`. It prints out the factorial of all numbers between `0` and `n`. You may assume that `n` is nonnegative. (Hint: 0! should be printed out unconditionally. Then start into the loops!) Again, in designing this method, think about how many rows you need (starting from 1! -- and that's your outer loop), then decide what you need to do per row to compute the factorial at that row number and that's your inner loop.
 
     ```java
     Loops loopie = new Loops();
@@ -331,11 +343,11 @@ Each and every method should have a "javadoc-style" comment above it (the ones t
 #### Grading
 
 ```
-This assignment will be graded out of a total of 80 pts.
+This assignment will be graded out of a total of 90 pts.
 
 [15 pts] Mild (x 3) at 5 pts each
 
-[30 pts] Medium (x 3) at 10 pts each
+[30 pts] Medium (x 4) at 10 pts each
 
 [30 pts] Spicy (x 2) at 15 pts each
 
