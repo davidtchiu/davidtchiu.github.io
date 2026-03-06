@@ -141,15 +141,15 @@ let days = {
     // wk 7
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-    "Scheduling: goals and metrics; burst model",
-    "",
-    // "Exam 1 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a>",
+    "Scheduling: burst model, FCFS, SJF",
+    "Read: Chap 5.1-5.5 (Dinosaur)" + "<br/>" +
+      "Notes: <a href='https://drive.google.com/file/d/1deZ8rIsKJowuTss0SxCLV2KGgfYrdlvG/view?usp=drive_link'>5. Scheduling/a><br/>" +
+      "",
     // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
-    "Sched: SJF, SRTF, prediction",
-    "Sched: RR, SRTF, MLFQ",
-    // "Sched: hyperthreading, multicore considerations",
-    "Sync: critical section problem",
+    "Sched: RR, SRTF",
+    "Sched: MLFQ",
+    "Sched: hyperthreading, multicore considerations",
     "",
     // "Notes #5: <a href='notes/CS475_5-sched.pdf'>CPU Scheduling</a>",
     // wk 9
@@ -158,7 +158,8 @@ let days = {
     "<strong><emph>Spring break</emph></strong>",
     "",
     // wk 10
-    "Sync: atomicity and spinlocks",
+    // "Sync: critical section problem",
+    "Sync: critical section, atomicity, and spinlocks",
     "Sync: blocking locks",
     "Sync: semaphores",
     "",
