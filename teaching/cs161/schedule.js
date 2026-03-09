@@ -46,13 +46,13 @@ let days = {
         weekAssigned: 6,
         due: "3/6/2026", //Fri, wk 7 (has a simple loop)
       },
-      // {
-      //   name: "Hwk 5 (Loops)",
-      //   title: "Loops, Loops, Loops!",
-      //   url: "hwk5.loops/",
-      //   weekAssigned: 8,
-      //   due: "3/24/2026", // Tues, wk 10 (right after spring break)
-      // },
+      {
+        name: "Hwk 5 (Loops)",
+        title: "Loops, Loops, Loops!",
+        url: "hwk5.loops/",
+        weekAssigned: 8,
+        due: "3/24/2026", // Tues, wk 10 (right after spring break)
+      },
       // {
       //   name: "Hwk 6 (ComboGuesser)",
       //   title: "Combo Guesser (Arrays)",
