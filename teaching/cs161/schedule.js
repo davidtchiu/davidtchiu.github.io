@@ -251,7 +251,8 @@ let days = {
     "Nested loops",
     "Lab 8: Nested Loops",
     "More nested loops and lab review",
-    "",
+    "Notes: <a href='https://drive.google.com/file/d/1Tkfn4Y0q9clx47NIlIDZnLcba7LMorEM/view?usp=drive_link'>7. Nested Loops</a>" + "<br/>" +
+      "",
     // wk 9: spring break
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
