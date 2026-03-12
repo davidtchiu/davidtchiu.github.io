@@ -145,13 +145,13 @@ let days = {
         weekAssigned: 7,
         due: "3/6/2026",
       },
-      // {
-      //   name: "Lab 8",
-      //   title: "Homework Lab (Loops)",
-      //   url: "hwk5.loops/",
-      //   weekAssigned: 8,
-      //   due: "3/13/2026",
-      // },
+      {
+        name: "Lab 8",
+        title: "Homework Time (Loops)",
+        url: "hwk5.loops/",
+        weekAssigned: 8,
+        due: "3/13/2026",
+      },
       // {
       //   name: "Lab 9",
       //   title: "Array Sorcery!",
@@ -249,7 +249,7 @@ let days = {
       "",
     // wk 8
     "Nested loops",
-    "Lab 8: Nested Loops",
+    "Lab 8: Homework Time",
     "More nested loops and lab review",
     "Notes: <a href='https://drive.google.com/file/d/1Tkfn4Y0q9clx47NIlIDZnLcba7LMorEM/view?usp=drive_link'>7. Nested Loops</a>" + "<br/>" +
       "",
