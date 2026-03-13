@@ -59,19 +59,19 @@ As you complete these exercises, think about the real-world applications of loop
     ```java
     Loops loopie = new Loops();
     System.out.println(loopie.hammingDistance("01010101", "10101010"));
-    > 8
+    8
 
     System.out.println(loopie.hammingDistance("David", "Davis"));
-    > 1
+    1
 
     System.out.println(loopie.hammingDistance("david", "Davis"));
-    > 2
+    2
 
     System.out.println(loopie.hammingDistance("david", ""));
-    > -1
+    -1
 
     System.out.println(loopie.hammingDistance("Grace Hopper", "Grace Hopper"));
-    > 0
+    0
     ```
     
 
@@ -80,35 +80,35 @@ As you complete these exercises, think about the real-world applications of loop
     ```java
     Loops loopie = new Loops();
     System.out.println(loopie.multiply(3,4));
-    > 12
+    12
 
     System.out.println(loopie.multiply(19,0));
-    > 0
+    0
     
     System.out.println(loopie.multiply(0,19));
-    > 0
+    0
     
     System.out.println(loopie.multiply(-2,9));
-    > -18
+    -18
     
     System.out.println(loopie.multiply(10,-9));
-    > -90
+    -90
     
     System.out.println(loopie.multiply(-4,-5));
-    > 20
+    20
     ```
 
 4. (Medium) Write a method called `penultimatePosition()` that takes a `String` and a `char` as input and returns the second-to-last position where the given character appears in the string. If the second-to-last position is invalid (i.e., the given character does not appear at least twice in the string), return -1. Hint: Start by looping from the end of the string towards the start of the string. 
     ```java
     Loops loopie = new Loops();
     System.out.println(loopie.penultimatePosition("reader", 'e'));
-    > 1
+    1
 
     System.out.println(loopie.penultimatePosition("quarter", 'r'));
-    > 3
+    3
 
     System.out.println(loopie.penultimatePosition("quarter", 'e'));  /* There is no second-to-last 'e' */
-    > -1
+    -1
     ```
 
 5. (Spicy)  Write a method called `vowelRatio()` that takes a String and returns the fraction of letters (`double`) that are vowels in the string. Assume that `y` is not a vowel. 
@@ -118,13 +118,13 @@ As you complete these exercises, think about the real-world applications of loop
     ```java
     Loops loopie = new Loops();
     System.out.println(loopie.vowelRatio("Hello world"));
-    > 0.2727272727
+    0.2727272727
 
     System.out.println(loopie.vowelRatio("eieieieieieieaaaaa"));
-    > 1.0
+    1.0
 
     System.out.println(loopie.vowelRatio("abba"));
-    > 0.5
+    0.5
     ```
 
 ##### Part II: Nested Loop Problems
@@ -137,22 +137,22 @@ Let's try our hand at writing some nested loops. Remember that there's a formula
     ```java
     Loops loopie = new Loops();
     loopie.hollowSquare(4);
-    > * * * * 
-    > *     * 
-    > *     * 
-    > * * * *
+    * * * * 
+    *     * 
+    *     * 
+    * * * *
 
     loopie.hollowSquare(1);
-    > *
+    *
 
     loopie.hollowSquare(7);
-    > * * * * * * * 
-    > *           * 
-    > *           * 
-    > *           * 
-    > *           * 
-    > *           * 
-    > * * * * * * * 
+    * * * * * * * 
+    *           * 
+    *           * 
+    *           * 
+    *           * 
+    *           * 
+    * * * * * * * 
     ```
 
 
@@ -256,50 +256,23 @@ For a modest amount of extra credit on your homework assignments!
     ```java
     Loops loopie = new Loops();
     System.out.println(loopie.runningSum(0,1));
-    > 1
+    1
     
     System.out.println(loopie.runningSum(9,9));
-    > 9
+    9
     
     System.out.println(loopie.runningSum(1,100));
-    > 5050
+    5050
     
     System.out.println(loopie.runningSum(100,1));
-    > 5050
+    5050
     
     System.out.println(loopie.runningSum(500,-500));
-    > 0
+    0
 
     System.out.println(loopie.runningSum(-1000,-150));
-    > -489325
+    -489325
     ```
-
-- (Medium: +2pt) Write the method `int binary2Decimal(String num)` that converts a binary number to an integer in base 10. For your reference, to take 2 to the *ith* power, you can use the method `Math.pow(2,i)`.
-
-  ```java
-  Loops loopie = new Loops();
-  loopie.binary2Decimal("0")
-  > 0   (int)
-
-  loopie.binary2Decimal("1")
-  > 1   (int)
-
-  loopie.binary2Decimal("100")
-  > 4   (int)
-
-  loopie.binary2Decimal("1001")
-  > 9   (int)
-
-  loopie.binary2Decimal("1010")
-  > 10   (int)
-
-  loopie.binary2Decimal("1011")
-  > 11   (int)
-
-  loopie.binary2Decimal("1010100")
-  > 84   (int)
-  ```
-
 
 - (Medium: +2pts) Write `findPrimes()` inputs an integer `n` and prints the first `n` prime numbers, beginning with `2`. (We had written a prime number checker in class. Use it!) This method requires just a single loop if you use the `isPrime()` method we wrote in class.
 
@@ -330,6 +303,32 @@ For a modest amount of extra credit on your homework assignments!
     23
     29
     ```
+
+- (Spicy: +2pt) Write the method `int binary2Decimal(String num)` that converts a binary number to an integer in base 10. For your reference, to take 2 to the *ith* power, you can use the method `Math.pow(2,i)`.
+
+  ```java
+  Loops loopie = new Loops();
+  System.out.println(loopie.binary2Decimal("0"));
+  0
+
+  System.out.println(loopie.binary2Decimal("1"));
+  1
+
+  System.out.println(loopie.binary2Decimal("100"));
+  4
+
+  System.out.println(loopie.binary2Decimal("1001"));
+  9
+
+  System.out.println(loopie.binary2Decimal("1010"));
+  10
+
+  System.out.println(loopie.binary2Decimal("1011"));
+  11
+
+  System.out.println(loopie.binary2Decimal("1010100"));
+  84
+  ```
 
 
 #### Program Defensively
