@@ -48,15 +48,15 @@ let days = {
         title: "Multithreaded Convolution",
         url: "hwk5.sobel/",
         weekAssigned: 7,
-        due: "3/16/2026",  // Mon, wk 9 (spring break - is this a good idea?)
+        due: "3/20/2026",  // Mon, wk 9 (spring break - is this a good idea?)
       },
-      // {
-      //   name: "Hwk 6 (sched)",
-      //   title: "Stressin' out the Scheduler",
-      //   url: "hwk6.sched/",
-      //   weekAssigned: 8,
-      //   due: "3/27/2026",  // Fri, wk 10
-      // },
+      {
+        name: "Hwk 6 (sched)",
+        title: "Stressin' out the Scheduler",
+        url: "hwk6.sched/",
+        weekAssigned: 8,
+        due: "3/27/2026",  // Wed, wk 11
+      },
       // {
       //   name: "Hwk 7 (ts_hashmap)",
       //   title: "Thread-Safe Hashmap",
@@ -162,24 +162,24 @@ let days = {
     "Sync: critical section, atomicity, and spinlocks",
     "Sync: blocking locks",
     "Sync: semaphores",
-    "",
-    // "Notes: <a href='notes/CS475_6-sync1.pdf'>6. Mutexes (Part I)</a><br/>" +
-    //   "Code: <a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spin vs. Blocking (locks)</a><br/>" + 
-    //   "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
+    "Read: Chap 6 (Dinosaur)" + "<br/>",
+    "Notes: <a href='notes/CS475_6-sync1.pdf'>6. Synchronization (Part I: Locks)</a><br/>" +
+      "Code: <a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spin vs. Blocking (locks)</a><br/>" + 
+      "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
     // wk 11
     // "Sync: monitors and condition variables",
     // "Sync: Java support",
     "Sync: more semaphores",
-    "<strong><emph>Review</emph></strong>",
-    "<strong><emph>Exam 2</emph></strong>",
+    "Deadlocks",
+    "DL: Deadlock detection",
     "",
-    // "Notes: <a href='notes/CS475_6-sync2.pdf'>6. Semaphores (Part II)</a><br/>" +
+    // "Notes: <a href='notes/CS475_6-sync2.pdf'>6. Synchronization (Part II: Semaphores)</a><br/>" +
     //     "Exam 2 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a><br/>" +
     //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
     //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
-    "Deadlocks",
-    "DL: Deadlock detection",
+    "<strong><emph>Review</emph></strong>",
+    "<strong><emph>Exam 2</emph></strong>",
     "DL: Bankers algorithm",
     "",
     // "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
