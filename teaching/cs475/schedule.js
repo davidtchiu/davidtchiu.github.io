@@ -162,9 +162,9 @@ let days = {
     "Sync: critical section, atomicity, and spinlocks",
     "Sync: blocking locks",
     "Sync: semaphores",
-    "Read: Chap 6 (Dinosaur)" + "<br/>",
+    "Read: Chap 6 (Dinosaur)" + "<br/>" +
     "Notes: <a href='notes/CS475_6-sync1.pdf'>6. Synchronization (Part I: Locks)</a><br/>" +
-      "Code: <a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spin vs. Blocking (locks)</a><br/>" + 
+      "Code: <a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spinning vs. Blocking (locks)</a><br/>" + 
       "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
     // wk 11
     // "Sync: monitors and condition variables",
