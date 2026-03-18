@@ -106,15 +106,18 @@ Meaning:
 - Run the interactive process for 5 seconds
 
 #### Program Requirements
-1. First, let's write ourselves a CPU hog inside `cpu_hog.c`. This shouldn't take you long. This program must perform purely CPU instructions, so you just need to write an infinite loop doing mindless arithmetic to waste CPU time. For instance, just have it repeatedly traverse do some integer operation (like multiply or divide) on a variable. Ensure that your program doesn't yield and doesn't perform an I/O operation (like `printf`, `scanf`, `open`, etc.). When it's run it will monopolize the CPU until the OS scheduler preempts it.
+1. First, let's write ourselves a CPU hog inside `cpu_hog.c`. This shouldn't take you long. This program must perform purely CPU instructions, so you just need to write an infinite loop doing mindless arithmetic to waste CPU time. For instance, just have it repeatedly do some integer operation (like multiply or divide) on an integer variable. Ensure that your program doesn't yield and doesn't perform an I/O operation (like `printf`, `scanf`, `open`, etc.). When it's run it will monopolize the CPU until the scheduler preempts it.
 
-2. Verify that your CPU hog is indeed monopolizing the CPU. Compile and run it. From another shell (you can create another terminal window by pressing on the `+` button to the right of your terminal window), run the `top` command, which dynamically lists all running tasks and orders them by CPU usage. Near the top, you should see your hog process using up close to 100% of one of the server's CPUs. Here's what mine shows.
+2. Verify that your CPU hog is indeed monopolizing the CPU. Compile `cpu_hog.c` and run it. From another shell (you can create another terminal window by pressing on the `+` button to the right of your terminal window), run the `top` command, which lists all running tasks and orders them by CPU usage. Near the top, you should see your hog process using up close to 100% of one of the server's CPUs. Here's what mine shows.
    ```bash
    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                             
-   190143 dchiu     20   0    2644    948    860 R  99.7   0.0   0:04.01 cpu_hog                             
+   190143 dchiu     20   0    2644    948    860 R  99.7   0.0   0:04.01 cpu_hog
+   ..
+   ..
+   ..                        
    ```
 
-3. While the CPU hog's running, try starting another CPU hog process. You would think that their CPU usage would split to 50%. But a run of `top` informs us that you now have two processes each taking up ~100%. What's going on? The server has a multi-core CPU. Linux is scheduling each task on a separate core, so they are indeed each monopolizing 100% of their own cores. Since we're aiming to stress test the OS on this assignment, we'll "pin" all the processes to be run on the same CPU. (More on how to do that later.) Go ahead and terminate the CPU hogs after testing.
+3. While the CPU hog's running, try starting another CPU hog. You would think that their CPU usage would split to 50%. But a run of `top` informs us that you now have two processes each taking up ~100%. What's going on? The server runs on a multi-core CPU. Linux is scheduling each task on a separate core, so they are each monopolizing 100% of their own cores. Since we're aiming to stress test the OS on this assignment, we'll need to "pin" all the processes to be run on the same CPU using the `taskset` command. (Don't worry it's easy, but more on how to do that later.) Go ahead and terminate both CPU hogs after testing.
 
 4. Next, let's define our interactive program inside `interactive.c`. It should take a single command-line argument `<run-seconds>`. We want this program to simulate an interactive program like a shell, a code editor, or text processor, which does very little CPU work and spends most of its time blocking/waiting. To do this, you'll want the process to repeatedly [usleep()](https://www.ibm.com/support/pages/example-using-c-api-usleep) for **300 ms** (which is approximately the delay of a key press). After you sleep, print this line of output to the screen:
 
@@ -124,8 +127,8 @@ Meaning:
    
    where:
    - `[click]` indicates a simulated user action like a key-press or a mouse-click.
-   - `elapsed` is the wall-clock time taken for the OS to service the "click." It should be displayed in milliseconds, precise to the thousandth place.
-   - `jitter` is the responsiveness' delay in milliseconds, defined as: $$jitter = (actual\_elapsed - expected\_elpased)$$. (In our case, $$expected\_elpased = 300$$ ms).  The jitter influenced by scheduler latency and the current system load, and may spike if the system is overwhelemed. The higher the jitter, the more "lag" you feel as the human. It is a useful measurement of how quickly your OS schedules an interactive process after it becomes ready/runnable.
+   - `elapsed` is the real time taken for the OS to service the "click." It should be displayed in milliseconds, precise to the thousandth place.
+   - `jitter` is the responsiveness' delay in milliseconds, defined as: $$jitter = (actual\_elapsed - expected\_elpased)$$. (In our case, $$expected\_elpased = 300$$ ms).  The jitter is influenced by scheduler latency and the current system load, and may spike if the system is overwhelemed. The higher the jitter, the more "lag" you feel as the human. It is a useful measurement of how quickly your OS schedules an interactive process after it becomes ready and runnable.
 
    This loop should run for a minimum of the given `<run-seconds>` seconds. Then it should break out of the loop and exit.
    Here's what a 2-second run might look like:
@@ -137,17 +140,19 @@ Meaning:
    [click] elapsed=300.117 ms  jitter=0.117 ms
    [click] elapsed=300.115 ms  jitter=0.115 ms
    [click] elapsed=300.112 ms  jitter=0.112 ms
+
+   $
    ```
-   That's expected. When I ran this for the specified 2 seconds, the system was lightly loaded, so each "click" carried a negligible jitter. Each line of output took just a tad over 300 ms to print, and because the jitter was insignificant, this it felt fast and responsive to me (and to you too!). We're interested in seeing if the jitter increases as we deploy more CPU hogs running concurrently on the same CPU.
+   To do this, you just need to stop looping once the sum of the elapsed times exceeds `<run-seconds>`. When I ran this for the specified 2 seconds, the system was lightly loaded, so each "click" carried a pretty negligible jitter. Each line of output took just a tad over 300 ms to print, and because the jitter was insignificant, this it felt fast and responsive to me (and to you too!). We're interested in seeing if the jitter increases as we deploy more CPU hogs running concurrently on the same CPU core.
 
 
-5. Once you're done writing and testing `interactive.c`,  turn your attention to the `sched_test`  program, which will run the stress test. The general idea is that it needs to fork all the hogs and the one interactive process so that they run concurrently on the server, wait for the interactive process to finish, then kill and reap all the hogs to clean up. Once you've parsed in the command-line inputs,  `fork` and `exec` all CPU hogs first and the interactive process last.
+5. Once you're done writing and testing `interactive.c`,  turn your attention to the `sched_test.c`  program, which will run the stress test. The core idea is that it needs to fork all the hogs and the one interactive process so that they run concurrently. It then waits for the interactive process to finish, followed by `kill`ing and reaping (`wait`ing on) all the CPU hogs. Once you've parsed in the command-line inputs,  `fork` and `exec` all CPU hogs first and the interactive process last.
 
 6. The parent process should now wait only for the interactive process to finish (all the CPU hogs run infinite loops and won't exit). After the parent detects that the interactive process exited, it needs to then terminate all CPU hogs. We wouldn't want those CPU hogs running loose and gumming up our server! The parent also needs to reap all remaining children to avoid zombies after terminating the hogs!
-   - Hint: Use the `wait(NULL)` command in a loop to reap all the hogs.
+   - Hint: Use the `wait(NULL)` command in a loop to reap all the hogs after they exit.
 
 
-7. **Warning:** Terminating a parent process does not automatically terminate its children on Linux.  If `sched_demo` crashes, is killed, or exits before it terminates/reaps the CPU-hog children, those hogs will continue to run on the server! They become orphans and are re-parented to PID 1, and they will continue consuming CPU. Too many of these orphans will totally bog down the server! So your program must explicitly terminate hogs (by sending a `SIGKILL` signal using the `kill()` function to terminate all the hog children) when the interactive process finishes. To check if you have any `cpu_hog` processes running, type this into your shell.
+7. **Warning:** Terminating a parent process does not automatically terminate its children on Linux.  If `sched_test` crashes, is killed, or exits before it terminates/reaps the CPU-hog children, those hogs will continue to run on the server! They become orphans and are re-parented to PID 1, but they will continue consuming CPU. Too many of these orphans will totally bog down the server! So your program must explicitly terminate hogs (by sending a `SIGKILL` signal using the `kill()` function to terminate all the hog children) when the interactive process finishes. To check if you have any `cpu_hog` processes running, type this into your shell.
    ```bash
    $ ps -u $USER -o pid,ppid,comm,%cpu |grep cpu_hog
    ```
@@ -163,6 +168,8 @@ Meaning:
    ps -u $USER -o pid,ppid,stat,comm
    ```
    If you see a `Z` under `STAT` ("state"), then that process is a zombie.
+
+9. Occasionally, you might want to run `killall cpu_hog` in the shell to ensure you don't have any left over.
 
 #### Running `sched_test`
 Remember that we are interested in what happens to all these processes on the **single CPU**. To ensure that `sched_test` and all its children are pinned to the same CPU core, we can use the following shell command to run `sched_test`:
