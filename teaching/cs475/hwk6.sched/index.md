@@ -1,9 +1,9 @@
 ## CS 475 - Operating Systems
 
-### Hwk 6: Stressing out the Scheduler
-In this assignment, you will experimentally observe a fundamental property of modern operating systems: An effective CPU scheduler. As you learned in class, CPU schedulers are "fairer" to I/O-bound processes by prioritizing human-perceived responsiveness, even under heavy CPU load. You will write a program that launches: several CPU-bound processes (CPU hogs), and one interactive, I/O-bound process that periodically simulates a “click" (as in  a user pressing a key or clicking a mouse).
+### Hwk 6: Stressing out the CFS
+In this assignment, you will experimentally observe a fundamental property of modern operating systems: the CPU scheduler. As you learned in class, CPU schedulers are "fairer" to I/O-bound processes by prioritizing human-perceived responsiveness, even under heavy CPU load. You will write a program that launches: several CPU-bound processes (CPU hogs), and one interactive, I/O-bound process that periodically simulates a “click" (as in  a user pressing a key or clicking a mouse).
 
-Your program will run these processes concurrently on the remote server to stress-test the Linux scheduler. It will report stats on the responsiveness of the I/O-bound process. 
+Your program will run these processes concurrently on the remote server to stress-test the Linux Completely Fair Scheduler (CFS) that our server employs. It will report stats on the responsiveness of the I/O-bound process. A short reading and reflection is required.
 
 #### Student Outcomes
 After completing this assignment, students should be able to:
@@ -165,7 +165,7 @@ Meaning:
    If you see a `Z` under `STAT` ("state"), then that process is a zombie.
 
 #### Running `sched_test`
-Remember that we are interested in what happens to all these processes on the single CPU. To ensure that `sched_test` and all its children are pinned to the same CPU core, we can use the following shell command to run `sched_test`:
+Remember that we are interested in what happens to all these processes on the **single CPU**. To ensure that `sched_test` and all its children are pinned to the same CPU core, we can use the following shell command to run `sched_test`:
 
 ```bash
 taskset -c 0 ./sched_test 2 5
@@ -218,15 +218,18 @@ $ taskset -c 7 ./sched_test 20 4
 ```
 
 
-#### Reflection Report
-The spirit of this assignment is experimentation on a real system. Answer the following questions in a `.txt` file and place it in your git repo.
+#### Short Reflection (Required)
+The spirit of this assignment is experimentation on a real system. Answer the following questions in a `.txt` or `.pdf` file and place it in your git repo.
 
-1. Starting with `num_hogs = 0`, and increasing it to 4, then 8, then 16, and so on, does the interactive process always remain relatively stable? At what point do you start seeing instability (longer jitters, more frequent jitters?).
-2. Think critically: Do you think that a higher jitter imply a “bad scheduler,” or just a busy system? What other factors besides scheduling can contribute to jitter?
-3. Human perception: Presumably you type faster than 300ms per keypress. Change the `CLICK_INTERVAL_MS` constant in `interactive.c` to more closely match your typing speed. At what jitter value (in ms) do you personally start to notice the system feeling “laggy”?
-   - How many CPU hogs had to be deployed on a single core for you to observe this lag?
-   - What if you ran your program without the  `taskset -c` prefix so that the hogs are scheduled on multiple cores? Does that help with lag? At what point does the lag return?
-4. Scheduler goals: Based on your observations, what do you think the Linux scheduler is optimizing for? Throughput? Fairness? Latency? Something else? How do you think it accomplishes low lag for certain processes that need it?
+0. First, [read](https://developer.ibm.com/tutorials/l-completely-fair-scheduler/) up on the Linux Completely Fair Scheduler (CFS) algorithm to get a sense of what it does.
+1. For now, ensure that your tests on a single core using the `taskset` command (e.g. `taskset -c <core-id> ./sched_test ...`). Starting with `num_hogs = 0`, and increasing it to 4, 8, 16, and so on, does the interactive process always remain relatively stable? At what point do you start seeing instability (longer jitters, more frequent jitters?).
+2. Human perception: Presumably you type faster than 300ms per keypress. Change the `CLICK_INTERVAL_MS` constant in `interactive.c` to more closely match your typing speed.
+   - At what jitter value (in ms) do you personally start to notice our server feeling “laggy”?
+   - Note how many CPU hogs did you have to deploy on a single core for you to observe this lag.
+   - What if you ran your program without the  `taskset -c <core-id>` prefix so that the hogs are scheduled on multiple cores? Does that help with lag? At what point (i.e., how many hogs did it take) does the lag return, if ever, in your testing?
+3. Based on both your experimental results and the CFS reading:
+   - What does the Linux CFS appear to prioritize (e.g., fairness, throughput, latency, or a combination)?
+   - How does the scheduler maintain responsiveness for the interactive process, even in the presence of CPU-bound hogs? Describe the mechanism in terms of how CPU time is distributed among processes under CFS.
 
 
 #### Grading
@@ -251,7 +254,7 @@ This assignment will be graded out of 100 points:
 
 [10pts] Waits for the interactive PID with waitpid(), then terminates hogs and reaps remaining children. Cleanup is correct: hog processes are not left running after sched_demo exits, and children are reaped (no zombies during normal execution).
 
-[20pts] Reflection report is completed.
+[20pts] Short reflection is completed in .txt or .pdf.
 ```
 
 #### Submitting Your Assignment
@@ -262,4 +265,4 @@ This assignment will be graded out of 100 points:
 
 #### Credits
 
-Written by David Chiu. 2022.
+Written by David Chiu. 2026.

@@ -178,9 +178,9 @@ let days = {
     //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
     //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
+    "DL: Bankers algorithm",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "DL: Bankers algorithm",
     "",
     // "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
     // wk 13
