@@ -54,7 +54,7 @@ let days = {
         name: "Hwk 6 (sched)",
         title: "Stressin' out the Scheduler",
         url: "hwk6.sched/",
-        weekAssigned: 8,
+        weekAssigned: 10,
         due: "4/1/2026",  // Wed, wk 11
       },
       // {
