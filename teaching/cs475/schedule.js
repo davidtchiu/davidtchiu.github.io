@@ -47,8 +47,8 @@ let days = {
         name: "Hwk 5 (sobel)",
         title: "Multithreaded Convolution",
         url: "hwk5.sobel/",
-        weekAssigned: 7,
-        due: "3/20/2026",  // Mon, wk 9 (spring break - is this a good idea?)
+        weekAssigned: 8,
+        due: "3/20/2026",  // Fri, wk 9 (spring break - is this a good idea?)
       },
       {
         name: "Hwk 6 (sched)",
