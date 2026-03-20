@@ -159,8 +159,8 @@ let days = {
     "",
     // wk 10
     // "Sync: critical section problem",
-    "Sync: critical section, atomicity, and spinlocks",
-    "Sync: blocking locks",
+    "Sync: atomicity and spinlocks",
+    "Sync: blocking locks (mutexes)",
     "Sync: semaphores",
     "Read: Chap 6 (Dinosaur)" + "<br/>" +
     "Notes: <a href='notes/CS475_6-sync1.pdf'>6. Synchronization (Part I: Locks)</a><br/>" +
@@ -169,7 +169,7 @@ let days = {
     // wk 11
     // "Sync: monitors and condition variables",
     // "Sync: Java support",
-    "Sync: more semaphores",
+    "Sync: classical synchronization problems",
     "Deadlocks",
     "DL: Deadlock detection",
     "",
