@@ -165,7 +165,6 @@ let days = {
     "Read: Chap 6 (Dinosaur)" + "<br/>" +
     "Notes: <a href='notes/CS475_6-sync1.pdf'>6. Synchronization (Part I: Locks)</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spinning vs. Blocking (locks)</a><br/>" + 
-      "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
     // wk 11
     // "Sync: monitors and condition variables",
     // "Sync: Java support",
@@ -173,8 +172,9 @@ let days = {
     "Deadlocks",
     "DL: Deadlock detection",
     "",
+    // "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
     // "Notes: <a href='notes/CS475_6-sync2.pdf'>6. Synchronization (Part II: Semaphores)</a><br/>" +
-    //     "Exam 2 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a><br/>" +
+      // "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
     //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
     //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
@@ -182,7 +182,7 @@ let days = {
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
     "",
-    // "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
+    //     "Exam 2 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a><br/>" +
     // wk 13
     "Memory Management: virtual addressing",
     "MM: partitioning and segmentation",
