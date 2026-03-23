@@ -53,13 +53,13 @@ let days = {
         weekAssigned: 8,
         due: "3/24/2026", // Tues, wk 10 (right after spring break)
       },
-      {
-        name: "Hwk 6 (ComboGuesser)",
-        title: "Combo Guesser (Arrays)",
-        url: "hwk6.combo/",
-        weekAssigned: 10,
-        due: "4/1/2026", // Fri, wk 11 (week after break)
-      },
+      // {
+      //   name: "Hwk 6 (ComboGuesser)",
+      //   title: "Combo Guesser (Arrays)",
+      //   url: "hwk6.combo/",
+      //   weekAssigned: 10,
+      //   due: "4/3/2026", // Fri, wk 11 (week after break)
+      // },
       // // {
       // //   name: "Hwk 6",
       // //   title: "Credit Card Reader (1D Array)",
@@ -263,6 +263,7 @@ let days = {
     "Lab 9: Array Sorcery!",
     "<strong><emph>Exam 2 review</emph></strong>",
     "Notes: <a href='https://drive.google.com/file/d/1eCvcYBI7N0j41SogoBSvUOry2giXVzf_/view?usp=drive_link'>8. Arrays</a>" + "<br/>" +
+    "Code: <a href='https://drive.google.com/file/d/13iE7iAqWVWjM-nO5I90zuluDJzEIwmuV/view?usp=drive_link'>Bank</a> (Starter)",
       "Exam #2 <a href='https://drive.google.com/file/d/1A-YpFuM39qPLnqm_l-yHKGcjozcj8Ja1/view?usp=drive_link'>Study Guide</a>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
