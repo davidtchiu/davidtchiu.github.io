@@ -259,7 +259,7 @@ let days = {
     "<strong><emph>Spring break</emph></strong>",
     "",
     // wk 10: Baha starts joining David
-    "Arrays; Write the Bank class",
+    "Arrays: The Bank class",
     "Lab 9: Array Sorcery!",
     "<strong><emph>Exam 2 review</emph></strong>",
     "Notes: <a href='https://drive.google.com/file/d/1eCvcYBI7N0j41SogoBSvUOry2giXVzf_/view?usp=drive_link'>8. Arrays</a>" + "<br/>" +
