@@ -263,7 +263,7 @@ let days = {
     "Lab 9: Array Sorcery!",
     "<strong><emph>Exam 2 review</emph></strong>",
     "Notes: <a href='https://drive.google.com/file/d/1eCvcYBI7N0j41SogoBSvUOry2giXVzf_/view?usp=drive_link'>8. Arrays</a>" + "<br/>" +
-    "Code: <a href='https://drive.google.com/file/d/13iE7iAqWVWjM-nO5I90zuluDJzEIwmuV/view?usp=drive_link'>Bank</a> (Starter)",
+    "Code: <a href='https://drive.google.com/file/d/13iE7iAqWVWjM-nO5I90zuluDJzEIwmuV/view?usp=drive_link'>Bank</a> (Starter)" + "<br/>" +
       "Exam #2 <a href='https://drive.google.com/file/d/1A-YpFuM39qPLnqm_l-yHKGcjozcj8Ja1/view?usp=drive_link'>Study Guide</a>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
