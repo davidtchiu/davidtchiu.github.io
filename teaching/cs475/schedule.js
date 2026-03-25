@@ -143,15 +143,13 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "Scheduling: burst model, FCFS, SJF",
     "Read: Chap 5.1-5.5 (Dinosaur)" + "<br/>" +
-      "Notes: <a href='https://drive.google.com/file/d/1deZ8rIsKJowuTss0SxCLV2KGgfYrdlvG/view?usp=drive_link'>5. Scheduling</a><br/>" +
+      "Notes: <a href='https://drive.google.com/file/d/1deZ8rIsKJowuTss0SxCLV2KGgfYrdlvG/view?usp=drive_link'>5. CPU Scheduling</a><br/>" +
       "",
-    // "Sched: MLFQ; Examples: Linux O(1) and CFS",
     // wk 8
     "Sched: RR, SRTF",
     "Sched: MLFQ",
     "Sched: hyperthreading, multicore considerations",
     "",
-    // "Notes #5: <a href='notes/CS475_5-sched.pdf'>CPU Scheduling</a>",
     // wk 9
     "<strong><emph>Spring break</emph></strong>",
     "<strong><emph>Spring break</emph></strong>",
@@ -162,7 +160,7 @@ let days = {
     "Sync: spinlocks and priority inversion",
     "Sync: blocking locks (mutexes)",
     "Read: Chap 6 (Dinosaur)" + "<br/>" +
-    "Notes: <a href='notes/CS475_6-sync1.pdf'>6. Synchronization (Part I: Locks)</a><br/>" +
+    "Notes: <a href='https://drive.google.com/file/d/1SgKoryMAMH-j2OlbsDhBamBWyKC8Zn5N/view?usp=drive_link'>6. Synchronization (Part I: Locks)</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spinning vs. Blocking (locks)</a><br/>",
     // wk 11
     // "Sync: monitors and condition variables",
@@ -171,8 +169,8 @@ let days = {
     "Sync: classical synchronization problems",
     "Deadlocks",
     "",
-    // "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
     // "Notes: <a href='notes/CS475_6-sync2.pdf'>6. Synchronization (Part II: Semaphores)</a><br/>" +
+    // "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
       // "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
     //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
     //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
