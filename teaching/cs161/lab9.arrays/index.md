@@ -110,24 +110,7 @@ By the end of this lab, students will be able to:
     > false
     ```
 
-5. (Medium) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. **Hint:** You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is even by using `x % 2` and testing if it equates to 0.
-
-   Code Pad:
-
-    ```java
-    import java.util.Arrays;
-    int[] array1 = {1, 2, 3, 4, 5, 6};
-    int[] oddsOnly1 = ArrayLab.removeEvens(array1);
-    System.out.println(Arrays.toString(oddsOnly1));
-    > [1, 3, 5]
-
-    int[] array2 = {10, 30, 50, 70};
-    int[] oddsOnly2 = ArrayLab.removeEvens(array2);
-    System.out.println(Arrays.toString(oddsOnly2));
-    > []
-    ```
-
-6. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). **Hint:** Notice the length of the mirrored array is twice as long as the input array. Would it help to write two loops? One that simply copies the first half down, and one that copies the second half in reverse order.
+5. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). **Hint:** Notice the length of the mirrored array is twice as long as the input array. Would it help to write two loops? One that simply copies the first half down, and one that copies the second half in reverse order.
 
     Code Pad:
 
@@ -143,6 +126,22 @@ By the end of this lab, students will be able to:
     ```
 
 
+6. (Spicy) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. **Hint:** You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is even by using `x % 2` and testing if it equates to 0.
+
+   Code Pad:
+
+    ```java
+    import java.util.Arrays;
+    int[] array1 = {1, 2, 3, 4, 5, 6};
+    int[] oddsOnly1 = ArrayLab.removeEvens(array1);
+    System.out.println(Arrays.toString(oddsOnly1));
+    > [1, 3, 5]
+
+    int[] array2 = {10, 30, 50, 70};
+    int[] oddsOnly2 = ArrayLab.removeEvens(array2);
+    System.out.println(Arrays.toString(oddsOnly2));
+    > []
+    ```
 
 #### Extra Puzzles (Strongly Encouraged)
 You won't get any extra credit for these, but doing them will bring you enlightenment. (And great practice for exams!)
@@ -181,6 +180,7 @@ You won't get any extra credit for these, but doing them will bring you enlighte
     System.out.println(ArrayLab.secondLargest(array3));
     > NaN
     ```
+
 
 
 - (Spicy) Write the method `public static int[] interleave(int[] array1, int[] array2)` that returns a new array that interleaves the two input arrays by alternating their elements. The first element of the combined array should come from `array1`. You may not assume that the input arrays are of the same length. If they differ in length, the remaining elements left over from the longer input array are copied to the back of the combined array. **Hint:** I would use 3 iterators, one for traversing each array.
