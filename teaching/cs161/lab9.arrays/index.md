@@ -22,9 +22,38 @@ By the end of this lab, students will be able to:
 
 - To test, you can just copy and paste the test code that I supply you directly in the BlueJ "Code Pad"
 
-#### Array Problems
+#### Problems
 
-1. (Mild) Write a method `public static int countOccurrences(int[] array, int target)` that returns the number of occurrences of the `target` in the array. You just need to traverse and examine every element in the array and cmpare it with the `target`. 
+0. (Mild) Write a method, `public static int max(int[] array)`, that returns the largest element in the given array.
+   Code Pad:
+
+    ```java
+    int[] array1 = {30, 40, 100, 20, 50};
+    System.out.println(ArrayLab.max(array1));
+    > 100
+
+    /* it should work for an array containing 1 element */
+    int[] array2 = {20};
+    System.out.println(ArrayLab.max(array2));
+    > 20
+    ```
+
+1. (Mild) Write a method, `public static boolean equals(int[] array1, int[] array2)`, that accepts two integer arrays as input and returns whether all corresponding elements are the same. Note that if the two arrays are of different lengths, this method can return `false` immediately.
+
+   Code Pad:
+
+    ```java
+    int[] array1 = {30, 40, 100};
+    int[] array2 = {30, 40, 50};
+    System.out.println(ArrayLab.equals(array1, array2));
+    > false
+
+    int[] array3 = {30, 40, 50};
+    System.out.println(ArrayLab.equals(array2, array3));
+    > true
+    ```
+
+2. (Mild) Write a method `public static int countOccurrences(int[] array, int target)` that returns the number of occurrences of the `target` in the array. You just need to traverse and examine every element in the array and cmpare it with the `target`. 
 
     Code Pad:
 
@@ -37,7 +66,7 @@ By the end of this lab, students will be able to:
     > 0
     ```
 
-2. (Mild) Write a method `public static String stringify(String[] array)` that inputs an array of strings, then produces and returns a string that is the concatenation of all the strings in the array. (See examples below). 
+3. (Mild) Write a method `public static String stringify(String[] array)` that inputs an array of strings, then produces and returns a string that is the concatenation of all the strings in the array. (See examples below).
 
     Code Pad:
 
@@ -51,7 +80,7 @@ By the end of this lab, students will be able to:
     > aaa bbbb aaa
     ```
 
-    If you found this too easy,  try to capitalizing each word to create camel case.
+    You could also try capitalizing each word to create camel case.
     ```java
     String[] array1 = {"blue", "green", "red"};
     System.out.println(ArrayLab.stringify(array1));
@@ -63,7 +92,9 @@ By the end of this lab, students will be able to:
     ```
 
 
-3. (Medium) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements. **Hint:** Notice the new array is the same length as the input array, and the first element is always the same.
+
+<!-- 
+4. (Medium) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements. **Hint:** Notice the new array that you return is the same length as the input array, and the first element is always the same.
 
    Code Pad:
 
@@ -77,8 +108,9 @@ By the end of this lab, students will be able to:
     System.out.println(Arrays.toString(ArrayLab.cumulativeSum(array2)));
     > [10, 40, 90, 160]
     ```
+-->
 
-4. (Medium) Write a method `public static boolean palindrome(int[] array)`  that determines an array can be read the same forwards and backwards. Your algorithm must be "in-place" (in other words, you are not allowed to create another array). Consider the following usage:
+4. (Medium) Write a method `public static boolean palindrome(int[] array)`  that determines an array can be read the same both forwards and backwards. Your algorithm must be "in-place" (you are not allowed to create another array). Consider the following usage:
 
     Code Pad:
 
@@ -94,6 +126,23 @@ By the end of this lab, students will be able to:
     int[] array3 = {1, 2, 3, 1};
     System.out.println(palindrome(array3));
     > false
+    ```
+
+4. (Medium) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. **Hint:** You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is even by using `x % 2` and testing if it equates to 0.
+
+   Code Pad:
+
+    ```java
+    import java.util.Arrays;
+    int[] array1 = {1, 2, 3, 4, 5, 6};
+    int[] oddsOnly1 = ArrayLab.removeEvens(array1);
+    System.out.println(Arrays.toString(oddsOnly1));
+    > [1, 3, 5]
+
+    int[] array2 = {10, 30, 50, 70};
+    int[] oddsOnly2 = ArrayLab.removeEvens(array2);
+    System.out.println(Arrays.toString(oddsOnly2));
+    > []
     ```
 
 5. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). **Hint:** Notice the length of the mirrored array is twice as long as the input array. Would it help to write two loops? One that simply copies the first half down, and one that copies the second half in reverse order.
@@ -112,43 +161,9 @@ By the end of this lab, students will be able to:
     ```
 
 
-6. (Spiciest) Write the method `public static int[] interleave(int[] array1, int[] array2)` that returns a new array that interleaves the two input arrays by alternating their elements. The first element of the combined array should come from `array1`. You may not assume that the input arrays are of the same length. If they differ in length, the remaining elements left over from the longer input array are copied to the back of the combined array. **Hint:** I would use 3 iterators, one for traversing each array.
-
-    Code Pad:
-
-    ```java
-    import java.util.Arrays;
-    int[] array1 = {100, 200, 300};
-    int[] array2 = {1, 2, 3};
-    System.out.println(Arrays.toString(ArrayLab.interleave(array1, array2)));
-    > [100, 1, 200, 2, 300, 3]
-
-    int[] array3 = {100, 200, 300, 400, 500};
-    int[] array4 = {5, 6};
-    System.out.println(Arrays.toString(ArrayLab.interleave(array3, array4)));
-    > [100, 5, 200, 6, 300, 400, 500]
-    ```
-
 
 #### Extra Puzzles (Strongly Encouraged)
 You won't get any extra credit for these, but doing them will bring you enlightenment. (And great practice for exams!)
-
-- (Medium) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. **Hint:** You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is even by using `x % 2` and testing if it equates to 0.
-
-   Code Pad:
-
-    ```java
-    import java.util.Arrays;
-    int[] array1 = {1, 2, 3, 4, 5, 6};
-    int[] oddsOnly1 = ArrayLab.removeEvens(array1);
-    System.out.println(Arrays.toString(oddsOnly1));
-    > [1, 3, 5]
-
-    int[] array2 = {10, 30, 50, 70};
-    int[] oddsOnly2 = ArrayLab.removeEvens(array2);
-    System.out.println(Arrays.toString(oddsOnly2));
-    > []
-    ```
 
 - (Medium) Write a method `public static double secondLargest(double[] array)` that returns the second largest element in the input array. If the second-largest element doesn't exist, return `Double.NaN`. Hint: Find the largest (max) element first, then write a similar loop to find the largest again while ignoring the largest element. 
 
@@ -166,6 +181,24 @@ You won't get any extra credit for these, but doing them will bring you enlighte
     double[] array3 = {10, 10, 10};
     System.out.println(ArrayLab.secondLargest(array3));
     > NaN
+    ```
+
+
+- (Spicy) Write the method `public static int[] interleave(int[] array1, int[] array2)` that returns a new array that interleaves the two input arrays by alternating their elements. The first element of the combined array should come from `array1`. You may not assume that the input arrays are of the same length. If they differ in length, the remaining elements left over from the longer input array are copied to the back of the combined array. **Hint:** I would use 3 iterators, one for traversing each array.
+
+    Code Pad:
+
+    ```java
+    import java.util.Arrays;
+    int[] array1 = {100, 200, 300};
+    int[] array2 = {1, 2, 3};
+    System.out.println(Arrays.toString(ArrayLab.interleave(array1, array2)));
+    > [100, 1, 200, 2, 300, 3]
+
+    int[] array3 = {100, 200, 300, 400, 500};
+    int[] array4 = {5, 6};
+    System.out.println(Arrays.toString(ArrayLab.interleave(array3, array4)));
+    > [100, 5, 200, 6, 300, 400, 500]
     ```
 
 
