@@ -152,13 +152,13 @@ let days = {
         weekAssigned: 8,
         due: "3/13/2026",
       },
-      // {
-      //   name: "Lab 9",
-      //   title: "Array Sorcery!",
-      //   url: "lab9.arrays/",
-      //   weekAssigned: 10,
-      //   due: "3/27/2026",
-      // },
+      {
+        name: "Lab 9",
+        title: "Array Sorcery!",
+        url: "lab9.arrays/",
+        weekAssigned: 10,
+        due: "3/27/2026",
+      },
       // {
       //   name: "Lab 10",
       //   title: "The Game of Life (2D Arrays)",
