@@ -98,15 +98,15 @@ By the end of this lab, students will be able to:
 
     ```java
     int[] array1 = {1, 2, 3, 2, 1};
-    System.out.println(palindrome(array1));
+    System.out.println(ArrayLab.palindrome(array1));
     > true
 
     int[] array2 = {1, 2, 3, 4, 4, 3, 2, 1};
-    System.out.println(palindrome(array2));
+    System.out.println(ArrayLab.palindrome(array2));
     > true
 
     int[] array3 = {1, 2, 3, 1};
-    System.out.println(palindrome(array3));
+    System.out.println(ArrayLab.palindrome(array3));
     > false
     ```
 
