@@ -92,24 +92,6 @@ By the end of this lab, students will be able to:
     ```
 
 
-
-<!-- 
-4. (Medium) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements. **Hint:** Notice the new array that you return is the same length as the input array, and the first element is always the same.
-
-   Code Pad:
-
-    ```java
-    import java.util.Arrays;
-    int[] array1 = {1, 2, 3};
-    System.out.println(Arrays.toString(ArrayLab.cumulativeSum(array1)));
-    > [1, 3, 6]
-
-    int[] array2 = {10, 30, 50, 70};
-    System.out.println(Arrays.toString(ArrayLab.cumulativeSum(array2)));
-    > [10, 40, 90, 160]
-    ```
--->
-
 4. (Medium) Write a method `public static boolean palindrome(int[] array)`  that determines an array can be read the same both forwards and backwards. Your algorithm must be "in-place" (you are not allowed to create another array). Consider the following usage:
 
     Code Pad:
@@ -128,7 +110,7 @@ By the end of this lab, students will be able to:
     > false
     ```
 
-4. (Medium) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. **Hint:** You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is even by using `x % 2` and testing if it equates to 0.
+5. (Medium) Write a method `public static int[] removeEvens(int[] array)` that returns a new array containing only the odd numbers from the input array. **Hint:** You need to count the number of odds before you can create the array to return. Recall that you can test to see if a value `x` is even by using `x % 2` and testing if it equates to 0.
 
    Code Pad:
 
@@ -145,7 +127,7 @@ By the end of this lab, students will be able to:
     > []
     ```
 
-5. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). **Hint:** Notice the length of the mirrored array is twice as long as the input array. Would it help to write two loops? One that simply copies the first half down, and one that copies the second half in reverse order.
+6. (Spicy) Write the method `public static int[] mirror(int[] array)` that returns a new array that mirrors the original (i.e., the original + reverse of original). **Hint:** Notice the length of the mirrored array is twice as long as the input array. Would it help to write two loops? One that simply copies the first half down, and one that copies the second half in reverse order.
 
     Code Pad:
 
@@ -164,6 +146,23 @@ By the end of this lab, students will be able to:
 
 #### Extra Puzzles (Strongly Encouraged)
 You won't get any extra credit for these, but doing them will bring you enlightenment. (And great practice for exams!)
+
+
+- (Medium) Write a method, `public static int[] cumulativeSum(int[] array)`, that creates a new array where each element is the sum of itself and all of its previous elements. **Hint:** Notice the new array that you return is the same length as the input array, and the first element is always the same.
+
+   Code Pad:
+
+    ```java
+    import java.util.Arrays;
+    int[] array1 = {1, 2, 3};
+    System.out.println(Arrays.toString(ArrayLab.cumulativeSum(array1)));
+    > [1, 3, 6]
+
+    int[] array2 = {10, 30, 50, 70};
+    System.out.println(Arrays.toString(ArrayLab.cumulativeSum(array2)));
+    > [10, 40, 90, 160]
+    ```
+
 
 - (Medium) Write a method `public static double secondLargest(double[] array)` that returns the second largest element in the input array. If the second-largest element doesn't exist, return `Double.NaN`. Hint: Find the largest (max) element first, then write a similar loop to find the largest again while ignoring the largest element. 
 
