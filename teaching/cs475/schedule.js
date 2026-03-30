@@ -168,18 +168,16 @@ let days = {
     "Sync: semaphores",
     "Sync: classical synchronization problems",
     "Deadlocks",
-    "",
-    // "Notes: <a href='notes/CS475_6-sync2.pdf'>6. Synchronization (Part II: Semaphores)</a><br/>" +
-    // "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
-      // "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>",
-    //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>" +
-    //     "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
+    "Notes: <a href='notes/CS475_6-sync2.pdf'>6. Synchronization (Part II: Semaphores)</a><br/>" +
+      "Study: <a href='https://drive.google.com/file/d/1ActoiNsL62XwmtbPwMcAtI0b4v_Z19Lc/view?usp=drive_link'>Exam 2 Study Guide</a><br/>" +
+      "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>" +
+      "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>",
+      // "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
     "DL: Deadlock detection",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "",
-    //     "Exam 2 Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a><br/>" +
+    "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
     // wk 13
     "DL: Bankers algorithm",
     "Memory Management: virtual addressing",

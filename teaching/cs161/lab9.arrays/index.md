@@ -179,11 +179,15 @@ You won't get any extra credit for these, but doing them will bring you enlighte
     double[] array3 = {10, 10, 10};
     System.out.println(ArrayLab.secondLargest(array3));
     > NaN
+
+    double[] array4 = {2, 10, 3, 10};
+    System.out.println(ArrayLab.secondLargest(array4));
+    > 3
     ```
 
 
 
-- (Spicy) Write the method `public static int[] interleave(int[] array1, int[] array2)` that returns a new array that interleaves the two input arrays by alternating their elements. The first element of the combined array should come from `array1`. You may not assume that the input arrays are of the same length. If they differ in length, the remaining elements left over from the longer input array are copied to the back of the combined array. **Hint:** I would use 3 iterators, one for traversing each array.
+- (Spicy) Write the method `public static int[] interleave(int[] array1, int[] array2)` that returns a new array that interleaves the two input arrays by alternating their elements. The first element of the combined array should come from `array1`. You may not assume that the input arrays are of the same length. If they differ in length, the remaining elements left over from the longer input array are copied to the back of the combined array. **Hint:** I would use 3 indices, one for traversing each array.
 
     Code Pad:
 
