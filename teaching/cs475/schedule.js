@@ -160,7 +160,7 @@ let days = {
     "Sync: spinlocks and priority inversion",
     "Sync: blocking locks (mutexes)",
     "Read: Chap 6 (Dinosaur)" + "<br/>" +
-    "Notes: <a href='https://drive.google.com/file/d/1SgKoryMAMH-j2OlbsDhBamBWyKC8Zn5N/view?usp=drive_link'>6. Synchronization (Part I: Locks)</a><br/>" +
+    "Notes: <a href='https://drive.google.com/file/d/1SgKoryMAMH-j2OlbsDhBamBWyKC8Zn5N/view?usp=drive_link'>6a. Sync (Part A: Locks)</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spinning vs. Blocking (locks)</a><br/>",
     // wk 11
     // "Sync: monitors and condition variables",
@@ -168,7 +168,7 @@ let days = {
     "Sync: semaphores",
     "Sync: classical synchronization problems",
     "Deadlocks",
-    "Notes: <a href='notes/CS475_6-sync2.pdf'>6. Synchronization (Part II: Semaphores)</a><br/>" +
+    "Notes: <a href='https://drive.google.com/file/d/1ht9KJfUKShf39_NFTFEym1uVVtQMoyK0/view?usp=drive_link'>6b. Sync (Part B: Semaphores)</a><br/>" +
       "Study: <a href='https://drive.google.com/file/d/1ActoiNsL62XwmtbPwMcAtI0b4v_Z19Lc/view?usp=drive_link'>Exam 2 Study Guide</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>",
