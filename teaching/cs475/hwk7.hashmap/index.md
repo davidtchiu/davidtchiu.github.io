@@ -1,6 +1,6 @@
 ## CS 475 - Operating Systems
 
-### Hwk: Thread-Safe HashMap
+### Hwk 7: Thread-Safe HashMap
 
 HashMaps (also called Hash Tables or Dictionaries) are one of the most versatile and powerful data structures due to its support of O(1) operations. Besides arrays, they are quite possibly the most ubiquitous data structures in use today.
 
@@ -161,7 +161,7 @@ Here are some properties you should keep in mind while programming:
 
 - Pay particular attention to memory management. Nodes are possibly created in `put()` and freed in `del()`. Be careful of ordering -- don't try to free a node before it's been completely unlinked from the map. In case of `del()`, you also need to return the old value, so make sure you save that value in a temporary variable before freeing the node and returning!
 
-- Speaking of memory management, you'll need to free up the memory allocated to your `pthread_lock_t` object(s) when you're done. To do this, use `pthread_mutex_destroy()`. It frees the resources for you, so you will not need to `free()` them explicitly after calling this function.
+- Speaking of memory management, you'll need to free up the memory allocated to your `pthread_spinlock_t` object(s) when you're done. To do this, use `pthread_mutex_destroy()`. It frees the resources for you, so you will not need to `free()` them explicitly after calling this function.
 
 - You might also experiment with [spin locks](https://docs.oracle.com/cd/E26502_01/html/E35303/ggecq.html),  `pthread_spinlock_t`. Warning: The VS Code editor's C plugin doesn't recognize `pthread_spinlock_t`, so it thinks there's an error as you code along, but your code will compile.
 

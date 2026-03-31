@@ -160,7 +160,7 @@ let days = {
     "Sync: spinlocks and priority inversion",
     "Sync: blocking locks (mutexes)",
     "Read: Chap 6 (Dinosaur)" + "<br/>" +
-    "Notes: <a href='https://drive.google.com/file/d/1SgKoryMAMH-j2OlbsDhBamBWyKC8Zn5N/view?usp=drive_link'>6a. Sync (Part A: Locks)</a><br/>" +
+      "Notes: <a href='https://drive.google.com/file/d/1SgKoryMAMH-j2OlbsDhBamBWyKC8Zn5N/view?usp=drive_link'>6a. Sync (Part A: Locks)</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-spin-vs-blocking'>Spinning vs. Blocking (locks)</a><br/>",
     // wk 11
     // "Sync: monitors and condition variables",

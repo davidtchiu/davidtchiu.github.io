@@ -161,6 +161,13 @@ let days = {
       },
       // {
       //   name: "Lab 10",
+      //   title: "TicTacToe (2D Arrays)",
+      //   url: "lab10.ttt/",
+      //   weekAssigned: 11,
+      //   due: "4/3/2026",
+      // },
+      // {
+      //   name: "Lab 10",
       //   title: "The Game of Life (2D Arrays)",
       //   url: "lab10.life/",
       //   weekAssigned: 11,
