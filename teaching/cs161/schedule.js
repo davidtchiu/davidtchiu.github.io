@@ -53,13 +53,13 @@ let days = {
         weekAssigned: 8,
         due: "3/24/2026", // Tues, wk 10 (right after spring break)
       },
-      // {
-      //   name: "Hwk 6 (ComboGuesser)",
-      //   title: "Combo Guesser (Arrays)",
-      //   url: "hwk6.combo/",
-      //   weekAssigned: 10,
-      //   due: "4/3/2026", // Fri, wk 11 (week after break)
-      // },
+      {
+        name: "Hwk 6 (ComboGuesser)",
+        title: "Combo Guesser (Arrays)",
+        url: "hwk6.combo/",
+        weekAssigned: 11,
+        due: "4/8/2026", // Fri, wk 11 (week after break)
+      },
       // // {
       // //   name: "Hwk 6",
       // //   title: "Credit Card Reader (1D Array)",
