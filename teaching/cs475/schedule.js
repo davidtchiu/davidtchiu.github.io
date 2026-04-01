@@ -57,6 +57,13 @@ let days = {
         weekAssigned: 10,
         due: "4/1/2026",  // Wed, wk 11
       },
+      {
+        name: "Hwk 7 (thebar)",
+        title: "The Bartender",
+        url: "hwk7.thebar/",
+        weekAssigned: 11,
+        due: "4/13/2026", // Fri, wk 13
+      },
       // {
       //   name: "Hwk 7 (ts_hashmap)",
       //   title: "Thread-Safe Hashmap",

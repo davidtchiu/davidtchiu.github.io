@@ -5,7 +5,7 @@
 A bar down the street recently hired me to study their operation's efficiency, and to this end, they asked me to write a bar simulator. However, before I could finish writing the program, I got distracted by a "Out for Milk" note that I left for myself on the fridge, and I haven't been able to do anything since! I need your help to finish this code for me and I'll split my earnings with you. I got things started, so take a look at the starter code to see how I've broken things down. You just need to add synchronization mechanisms, wait times, and some good comments (I recommend starting with the comments to gain a good understanding of the code).
 
 <div align="center">
-<img src="figures/thebar.png" width="200px">
+<img src="figures/thebar.png" width="500px">
 </div>
 
 #### Student Outcomes
@@ -37,6 +37,12 @@ Starter code for this assignment is provided on the github repo. You must do the
 
 I have included a working solution of my program along with the starter code. The binary executable file is called `thebarSol`. You can run it from the terminal by first navigating in to the Hwk directory and typing the command `./thebarSol`. This is how your solution should behave when it's done.
 
+#### Starter Files
+You are given the following starter files:
+- `globals.h` contains global variables shared across threads. Declare the semaphores here.
+- `thebar.c` contains the main function. Your thread management (creation, reaping) happens here.
+- `thebar.c` contains the main function. Your thread management (creation, reaping) happens here.
+
 #### The Bartender Problem
 
 Simulate a bar establishment with the following ground rules for customers and the bartender.
@@ -61,7 +67,7 @@ Simulate a bar establishment with the following ground rules for customers and t
   - When the bartender is finished mixing, the customer pays the bartender.
   - After the bartender confirms that the payment was received, the customer leaves the bar and lets the next customer in.
 
-#### Semaphores in C
+#### Review: Using Semaphores in C
 Recall that semaphores in C are a lot like files: they are represented by "handles," created and opened through system calls, and manipulated only via a defined API. Just as you use open, read, write, and close for files, you use functions like `sem_open`, `sem_wait`, `sem_post`, and `sem_close` to interact with semaphores. This abstraction allows the OS to manage synchronization across multiple processes, and not just between threads.
 
 Two important header files are needed whereever you use semaphores: `semaphore.h` and `fcntl.h`. Here are the useful semaphore functions:
