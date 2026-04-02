@@ -276,7 +276,7 @@ let days = {
     "<strong><emph>Exam 2</emph></strong>",
     "2D arrays; Lab 10: TicTacToe",
     "TicTacToe review, more practice",
-      "",
+      "Notes: <a href='https://drive.google.com/file/d/159vcZvn1tl4k_maDgsk0D7is7XXYUlUT/view?usp=drive_link'>9. 2D Arrays</a>" + "<br/>",
     // wk 12
     "Start ArrayLists (Baha')",
     "Lab 11: SuperCircleDrawer (David)",

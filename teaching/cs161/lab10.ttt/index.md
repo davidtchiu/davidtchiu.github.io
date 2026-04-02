@@ -20,6 +20,7 @@ Create a new class called `TTT`. As we know, TicTacToe is played on a 3 by 3 gri
 - Write the `public boolean makeMove(int row, int col, char player)` to attempt filling out the spot at the given `[row][col]` with the `player`'s marker. Return `true` if move was made, and return `false` if position was already taken.
 
 - Write the `public void printBoard()` method that prints the current TicTacToe board. You need to traverse the board, row by row as we usually do. For each row, build up a string to print out. If you come across an `'x'` or `'o'`, concatenate it to the string. If you come across a space, then concatenate a dash `-` character. After you've built up a row, print it out.
+  
   ```java
   TTT board = new TTT();
   board.makeMove(1,1,'x');
@@ -32,6 +33,7 @@ Create a new class called `TTT`. As we know, TicTacToe is played on a 3 by 3 gri
   ```
 
 - Write the `public boolean autoMove(char player)`: if center or corners are free, take those first. If not, take first free space from top-left to bottom-right.
+  
   ```java
   TTT board = new TTT();
   board.makeMove(2,1,'x');
