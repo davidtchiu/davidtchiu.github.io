@@ -26,9 +26,9 @@ Create a new class called `TTT`. As we know, TicTacToe is played on a 3 by 3 gri
   board.makeMove(0,0,'o');
   board.makeMove(1,1,'o');  /* no change (taken) */
   board.printBoard();
-  o - -  
-  - x -
-  - - -
+  o _ _  
+  _ x _
+  _ _ _
   ```
 
 - Write the `public boolean autoMove(char player)`: if center or corners are free, take those first. If not, take first free space from top-left to bottom-right.
@@ -38,22 +38,23 @@ Create a new class called `TTT`. As we know, TicTacToe is played on a 3 by 3 gri
   board.makeMove(0,0,'o');
   board.makeMove(0,1,'x');
   board.printBoard();
-  o x -
-  - - -
-  - x -
+  o x _
+  _ _ _
+  _ x _
+
   board.autoMove('o'); /* auto move for player o (take center) */
   board.printBoard();
-  o x -
-  - o -
-  - x -
+  o x _
+  _ o _
+  _ x _
   board.autoMove('x'); /* auto move for player x (take top-right corner) */
   board.printBoard();
   o x x
-  - o -
-  - x -
+  _ o _
+  _ x _
   ```
 
-- Write a method `public boolean isWinner(char player)` that returns true if the given player has won. You need to write loops to check whether the given player occupies any row, any col, or either diagonal.
+- Write a method `public boolean isWinner(char player)` that returns true if the given player has won. You need to write loops to check whether the given `player` occupies any row, col, or either diagonal.
 
 #### Grading
 
