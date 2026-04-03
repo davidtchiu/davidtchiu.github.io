@@ -58,6 +58,20 @@ Create a new class called `TTT`. As we know, TicTacToe is played on a 3 by 3 gri
 
 - Write a method `public boolean isWinner(char player)` that returns true if the given player has won. You need to write loops to check whether the given `player` occupies any row, col, or either diagonal.
 
+#### Extras
+Complete the following for extra practice!
+
+- (Medium) Write `public int countMoves(char player)` that counts the number of moes the given player has made to the board.
+
+- (Mild) Write `public boolean catsTail()` that returns if the board is full and there are no winners.
+
+- (Mild) Write `public boolean gameOver()` that returns if there's a winner OR if the board is full.
+
+- (Medium) Write `public char catchCheater()` that determines if cheating occurred. Cheating must have occurred if there are two more symbols for a player compared to the other player's symbol. Return the player's symbol that cheated, or a space `' '` if cheating was not detected.
+
+- (Spicy) Write `public void defensiveMove(char player)` that plays in the first spot it finds that defends against a 3 in-a-row by the opposing player.
+
+
 #### Grading
 
 ```
@@ -78,7 +92,7 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 #### Credits
 
-Written by David Chiu, Phil Howard, Joel Ross.
+Written by David Chiu. Updated 2026.
 
 #### Lab Attendance Policies
 

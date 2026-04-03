@@ -73,19 +73,19 @@ let days = {
       //   weekAssigned: 11,
       //   due: "4/15/2026", // Mon, wk 13
       // },
-      // {
-      //   name: "Hwk 8 Proposal",
-      //   title: "Homework Proposal (Optional)",
-      //   url: "hwkF.prep/",
-      //   weekAssigned: 12,
-      //   due: "4/12/2026",  // Fri, wk 12
-      // },
+      {
+        name: "Project Proposal",
+        title: "Homework Proposal (Optional)",
+        url: "hwkF.prep/",
+        weekAssigned: 12,
+        due: "4/10/2026",  // Fri, wk 12
+      },
       // {
       //   name: "Hwk 8",
       //   title: "Black Jack (Default)",
       //   url: "hwkF.blackjack.enums/",
-      //   weekAssigned: 13,
-      //   due: "5/8/2026", // Fri (exam period)
+      //   weekAssigned: 12,
+      //   due: "4/29/2026", // Fri (exam period)
       // },
       // // // {
       // // //   name: "Final Hwk (alternate)",
