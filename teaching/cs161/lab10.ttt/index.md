@@ -49,6 +49,7 @@ Create a new class called `TTT`. As we know, TicTacToe is played on a 3 by 3 gri
   o x _
   _ o _
   _ x _
+  
   board.autoMove('x'); /* auto move for player x (take top-right corner) */
   board.printBoard();
   o x x
@@ -68,6 +69,8 @@ Complete the following for extra practice!
 - (Mild) Write `public boolean gameOver()` that returns if there's a winner OR if the board is full.
 
 - (Medium) Write `public char catchCheater()` that determines if cheating occurred. Cheating must have occurred if there are two more symbols for a player compared to the other player's symbol. Return the player's symbol that cheated, or a space `' '` if cheating was not detected.
+
+- (Medium-Spicy) Write `public void scramble()` that scrambles the board randomly. To do this, traverse all spots on the board and randomly swap places with another spot!
 
 - (Spicy) Write `public void defensiveMove(char player)` that plays in the first spot it finds that defends against a 3 in-a-row by the opposing player.
 
