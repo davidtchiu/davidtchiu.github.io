@@ -1,15 +1,16 @@
 # TODO
+- In future, kill the bounded buffer problem in lecture. They've seen enough. go into deadlocks
 - Deadlock-free philosophers: have them use semaphores or locks for the forks.
   - But allow only N-1 philosophers into a room, not all N.
   - This will ensure that circular wait is broken, since a cycle cannot be formed.
   - Use a counting semaphore initialized to N-1 to manage the room. Just wait on it, and signal it when done.
 - Let them pair up on a few homework assignments?
-- BEFORE removing/redoing the hwk3 (ls2 repo), I have to give them with a dummy directory structure and redo the assignment example!
 - In the future, maybe combine Tut 1 with Homework 1 so that Homework 1 isn't so small?
 
 # Change Log
 
 ## Spring'26
+- BEFORE removing/redoing the hwk3 (ls2 repo), I have to give them with a dummy directory structure and redo the assignment example!
 - Recitation leader to hold C homework sessions weekly
 - Tech report is now a graded unit
 - Don't start talking about multi-core until later (after threads).

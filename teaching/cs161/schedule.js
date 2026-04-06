@@ -80,13 +80,13 @@ let days = {
         weekAssigned: 12,
         due: "4/10/2026",  // Fri, wk 12
       },
-      // {
-      //   name: "Hwk 8",
-      //   title: "Black Jack (Default)",
-      //   url: "hwkF.blackjack.enums/",
-      //   weekAssigned: 12,
-      //   due: "4/29/2026", // Fri (exam period)
-      // },
+      {
+        name: "Final Hwk",
+        title: "Black Jack (Default)",
+        url: "hwkF.blackjack.enums/",
+        weekAssigned: 12,
+        due: "4/29/2026", // Fri (exam period)
+      },
       // // // {
       // // //   name: "Final Hwk (alternate)",
       // // //   title: "Pooled Testing",
