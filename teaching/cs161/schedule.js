@@ -281,7 +281,7 @@ let days = {
     "Start ArrayLists (Baha')",
     "Lab 11: SuperCircleDrawer (David)",
     "Lab review, more practice (Baha')",
-    "",
+      "Notes: <a href='https://drive.google.com/file/d/1r6VfN46F5t1JUVCZtL9R41cS1VXU_BK5/view?usp=drive_link'>10. ArrayList (Dynamic Arrays)</a>" + "<br/>",
     // wk 13
     "Scanner: user interaction, String parsing: enforcing a word limit (Baha')",
     "Lab 12: Interactive Diary (UI + String Parsing)",
