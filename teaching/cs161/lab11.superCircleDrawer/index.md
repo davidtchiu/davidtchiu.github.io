@@ -27,23 +27,28 @@ The API handout that you'll want to have in front of you:
 - [ArrayList](../api/ArrayListAPI.pdf)
 - [Circle](../api/CircleAPI.pdf)
 
+#### Preamble
+Before getting started, note that two new methods have been added to the `Circle` class:
+- `getDiameter()` returns the diameter of the circle.
+- `moveTo(int x, int y)` moves the circle to the given coordinate.
+
 #### Instructions
 
 I've created a new project to get you started. Please download and modify `SuperCircleDrawer` instead of creating a new project via BlueJ, otherwise you won't be able to submit the assignment when you're finished. Note: The new project contains the Circle class (with the `getDiameter()` getter method), and a version of the canvas with a larger drawing area. Your `SuperCircleDrawer` class should abide by the following:
 
 - It should contain an `ArrayList` collection of `Circles`. Define an instance variable for the `ArrayList` that will be used to hold all of the `Circle` objects.
 
-- A constructor that inputs an integer argument `numCircles`, the number of `Circles` to add to the initial collection. Then instantiate the `ArrayList` and populate it with `numCircles` circles. Each circle you create and insert into the collection should have a random diameter (from 1 to 100) and a random x and y position. The coordinates should be within the dimensions of the canvas, which is 800 (Width) by 600 (Height). Go ahead and make the circle **visible** too. Note the new `moveTo(..)` method that has been provided to circles can be used here. 
+- A constructor that inputs an integer argument `numCircles`, the number of `Circles` to add to the initial collection. Then instantiate the `ArrayList` and populate it with `numCircles` circles. Each circle you create and insert into the collection should have a random diameter (from 1 to 100) and a random x and y position. The coordinates should be within the dimensions of the canvas, which is 800 (Width) by 600 (Height). Go ahead and make the circle **visible** too. 
 
-- An `addCircle(..)` method that inputs a single `Circle` object, adds the given circle to the collection, and draws it on the canvas. You do not need to _create_ any Circles in this method. Simply assume that a Circle object has already been created, and is being passed to this method. To test this method, create a circle object on the BlueJ workbench, take note of its variable name, make it red, and make it invisible. Then call `addCircle()` and give it the name of this new circle. It should show up on the canvas. Inspect your `SuperCircleDrawer` object to ensure that the last arrow points to this new circle.
+- An `public void addCircle(..)` method that inputs a single `Circle` object, adds the given circle to the collection, and draws it on the canvas. You do not need to _create_ any Circles in this method. Simply assume that a Circle object has already been created, and is being passed to this method. To test this method, create a circle object on the BlueJ workbench, take note of its variable name, make it red, and make it invisible. Then call `addCircle()` and give it the name of this new circle. It should show up on the canvas. Inspect your `SuperCircleDrawer` object to ensure that the last arrow points to this new circle.
 
-- An `eraseCircles()` method that takes no arguments, and erases all of the circles in the collection from the canvas. These circles should not be removed from the list, simply made invisible.
+- A `public void eraseCircles()` method that takes no arguments, and erases all of the circles in the collection from the canvas. These circles should not be removed from the list, simply made invisible.
 
-- A second `eraseCircles()` method that inputs a diameter. This method should erase all circles from the canvas that are smaller in size than the given diameter.
+- A `public void eraseCircles(int diameter)` method that inputs a diameter. This method should erase all circles from the canvas that are smaller in size than the given diameter. (Do not remove these Circles from the list, just erase them from the canvas.)
 
-- It's be nice to make the circles re-appear after you erased them. Write a `drawCircles()` method that takes no arguments, and causes all of the circles in the ArrayList collection to be drawn on the canvas.
+- It'd be nice to make the circles re-appear after you erased them. Write a `drawCircles()` method that takes no arguments, and causes all of the circles in the ArrayList to be drawn on the canvas.
 
-- A method called `grabCircles()` that inputs a diameter, and returns a new `ArrayList` of circles matching the given diameter. 
+- A method called `public ArrayList<Circle> grabCircles(int diameter)` that inputs a diameter, and returns a new `ArrayList` of circles matching the given diameter. To do this, I would first create (instantiate) a new `ArrayList` of circles. Then I would iterate through the current ArrayList to check whether each circle's diameter matches the input. If it does, stick that circle in the ArrayList you created. 
 
 - A method called `removeSmallest()` that takes no inputs. This method identifies the smallest (by diameter) circle in the collection and removes it from the list. Don't forget to erase it from the canvas first! In the case of a tie, just remove either one of them.
 
