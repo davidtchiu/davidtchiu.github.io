@@ -173,13 +173,13 @@ let days = {
       //   weekAssigned: 11,
       //   due: "4/3/2026",
       // },
-      // {
-      //   name: "Lab 11",
-      //   title: "Super Circle Drawer (ArrayLists)",
-      //   url: "lab11.superCircleDrawer/",
-      //   weekAssigned: 12,
-      //   due: "4/10/2026",
-      // },
+      {
+        name: "Lab 11",
+        title: "Super Circle Drawer (ArrayLists)",
+        url: "lab11.superCircleDrawer/",
+        weekAssigned: 12,
+        due: "4/10/2026",
+      },
       // {
       //   name: "Lab 12",
       //   title: "Interactive Diary",
