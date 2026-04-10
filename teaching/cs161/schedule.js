@@ -276,12 +276,14 @@ let days = {
     "<strong><emph>Exam 2</emph></strong>",
     "2D arrays; Lab 10: TicTacToe",
     "TicTacToe review, more practice",
-      "Notes: <a href='https://drive.google.com/file/d/159vcZvn1tl4k_maDgsk0D7is7XXYUlUT/view?usp=drive_link'>9. 2D Arrays</a>" + "<br/>",
+      "Notes: <a href='https://drive.google.com/file/d/159vcZvn1tl4k_maDgsk0D7is7XXYUlUT/view?usp=drive_link'>9. 2D Arrays</a>" + "<br/>" +
+      "Code: <a href='https://drive.google.com/file/d/1DYFBwBSIJDr6BraCW3r2zJMRtG2eNN95/view?usp=drive_link'>TicTacToe</a> (finished)",
     // wk 12
     "Start ArrayLists (Baha')",
     "Lab 11: SuperCircleDrawer (David)",
     "Lab review, more practice (Baha')",
-      "Notes: <a href='https://drive.google.com/file/d/1r6VfN46F5t1JUVCZtL9R41cS1VXU_BK5/view?usp=drive_link'>10. ArrayList (Dynamic Arrays)</a>" + "<br/>",
+      "Notes: <a href='https://drive.google.com/file/d/1r6VfN46F5t1JUVCZtL9R41cS1VXU_BK5/view?usp=drive_link'>10. ArrayList (Dynamic Arrays)</a>" + "<br/>" +
+      "Code: <a href=''>Diary</a>  (finished)",
     // wk 13
     "Scanner: user interaction, String parsing: enforcing a word limit (Baha')",
     "Lab 12: Interactive Diary (UI + String Parsing)",
