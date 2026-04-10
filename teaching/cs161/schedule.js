@@ -77,15 +77,15 @@ let days = {
         name: "Project Proposal",
         title: "Homework Proposal (Optional)",
         url: "hwkF.prep/",
-        weekAssigned: 12,
+        weekAssigned: 13,
         due: "4/10/2026",  // Fri, wk 12
       },
       {
         name: "Final Hwk",
         title: "Black Jack (Default)",
         url: "hwkF.blackjack.enums/",
-        weekAssigned: 12,
-        due: "4/29/2026", // Fri (exam period)
+        weekAssigned: 13,
+        due: "5/1/2026", // Fri (exam period)
       },
       // // // {
       // // //   name: "Final Hwk (alternate)",
