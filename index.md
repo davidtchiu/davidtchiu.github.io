@@ -11,10 +11,10 @@
   From 2010 to 2014, David was an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at WSU Vancouver. He later joined the Puget Sound faculty, where he's held appointments as Assistant Professor (2014), Associate Professor (2017), and Professor (2022). He also completed a rotation as Department Chair (2019-2022).
   </p>
   <p>
-  David is deeply committed to research with undergrads. He has supervised numerous <a href="people">students</a> on projects spanning database systems, cloud computing, and high-performance computing. He regularly <a href="service">serves</a> on both organizational and program committees for conferences in these areas of study.
+  David works closely with undergraduate students on research projects in database systems, cloud computing, and high-performance computing. He has supervised numerous <a href="people">students</a> in these areas. He also <a href="service">serves</a> on organizational and program committees for conferences in these fields. His research has received Best Paper Awards and nominations at international conferences, including BDCAT’19, ITCC’04, and ITE’04.
   </p>
   <p>
-  David has received the Influential Faculty of Color Award (2024),  <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), and the Bartanen Research Award (2017) all from the University of Puget Sound. Additionally, he received the <a href="https://cse.osu.edu/department/faculty-staff-resources/award-nominations">Eleanor Quinlan Memorial Award</a> for Graduate Student Teaching Excellence (2009) from The Ohio State University. He is a member of <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>, member of the ACM and Senior Member of the IEEE.
+  David received the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President’s Award for Excellence in Teaching</a> (2022), and the Bartanen Research Award (2017) from the University of Puget Sound. He also received the <a href="https://cse.osu.edu/department/faculty-staff-resources/award-nominations">Eleanor Quinlan Memorial Award</a> for Graduate Student Teaching Excellence (2009) from The Ohio State University. He is a member of <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>, as well as the ACM and the IEEE (Senior Member).
   </p>
 
 
