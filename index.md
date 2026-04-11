@@ -14,7 +14,7 @@
   David is deeply committed to research with undergrads. He has supervised numerous <a href="people">students</a> on projects spanning database systems, cloud computing, and high-performance computing. He regularly <a href="service">serves</a> on both organizational and program committees for conferences in these areas of study.
   </p>
   <p>
-  David has received the Influential Faculty of Color Award (2024),  <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), and the Bartanen Research Award (2017) all from the University of Puget Sound. Additionally, he received the <a href="https://cse.osu.edu/department/faculty-staff-resources/award-nominations">Eleanor Quinlan Memorial Award</a> for Graduate Student Teaching Excellence (2009) from The Ohio State University. He is a member of the ACM and a Senior Member of the IEEE.
+  David has received the Influential Faculty of Color Award (2024),  <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President's Award for Excellence in Teaching</a> (2022), and the Bartanen Research Award (2017) all from the University of Puget Sound. Additionally, he received the <a href="https://cse.osu.edu/department/faculty-staff-resources/award-nominations">Eleanor Quinlan Memorial Award</a> for Graduate Student Teaching Excellence (2009) from The Ohio State University. He is a member of <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>, member of the ACM and Senior Member of the IEEE.
   </p>
 
 
