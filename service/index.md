@@ -34,8 +34,8 @@
 
 ### Service to the University
 
-- Director and Advisor, SCRC, University of Puget Sound (2023 - )
-- Chair, Student Support Committee (formerly Academic Standards Committee), University of Puget Sound (2025 - )
+- Director and Advisor, Mosaic Residential Community, University of Puget Sound (2023 - )
+- Chair, Academic Standards Committee, University of Puget Sound (2025 - )
 - Board Member, Faculty Development Center, University of Puget Sound (2025 - )
 - Co-Chair, International Education Committee, University of Puget Sound (2024 - 2025)
 - Total Compensation and Benefits Project, University of Puget Sound (2023 - 2025)
