@@ -23,7 +23,8 @@
 
 
 ### Recent Activities
-- (08/2025) Chair, Student Support Committee, 2025-26.
+- (04/2026) Congrats to Lily Gustafson on receiving a Summer Research Award (to be co-advised by Marissa Masden).
+- (08/2025) Chair, Academic Standards Committee, 2025-26.
 - (08/2025) Board Member, Faculty Development Center (FDC), 2025-26.
 - (08/2025) Led a panel on supporting underrepresented students @ Peer Advisor Training.
 - (05/2025) Congrats to Alex Kirner on receiving a Summer Research Award. Work starts on optimizing join execution.

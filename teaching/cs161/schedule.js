@@ -87,12 +87,6 @@ let days = {
         weekAssigned: 13,
         due: "5/1/2026", // Fri (exam period)
       },
-      // // // {
-      // // //   name: "Final Hwk (alternate)",
-      // // //   title: "Pooled Testing",
-      // // //   url: "hwkF.pooled/",
-      // // //   due: "5/4/2021",
-      // // // },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     lab: [
