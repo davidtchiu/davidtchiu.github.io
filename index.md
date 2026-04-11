@@ -23,18 +23,18 @@
 
 
 ### Recent Activities
-- (04/2026) Congrats to Lily Gustafson on receiving a Summer Research Award (to be co-advised by Marissa Masden).
+- (04/2026) Congrats to Lily Gustafson on receiving a Summer Research Award. I'll be co-advising Lily with Professor Marissa Masden.
 - (08/2025) Chair, Academic Standards Committee, 2025-26.
 - (08/2025) Board Member, Faculty Development Center (FDC), 2025-26.
 - (08/2025) Led a panel on supporting underrepresented students @ Peer Advisor Training.
+- (06/2025) Led a summer course at [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html), Taiwan.
 - (05/2025) Congrats to Alex Kirner on receiving a Summer Research Award. Work starts on optimizing join execution.
 - (04/2025) Completed a site visit to [DIS Study Abroad in Scandinavia](https://disabroad.org/) (Stockholm and Copenhagen campuses).
 - (02/2025) External Search Committee Member, Communications Studies, University of Puget Sound.
 - (08/2024) Co-chair, International Education Committee, University of Puget Sound, 2024-25.
 - (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
 - (09/2024) Serving as a New Faculty Mentor for 2024.
-- (08/2024) I'm excited to be teaching at the [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html), Taiwan, in 2025.
-- (06/2024) I will be giving a talk at the 2024 Puget Sound Alumni College: "Bitmap Indexing for Database Systems"
+- (06/2024) I will be speaking at the 2024 Puget Sound Alumni College: "Bitmap Indexing for Database Systems"
 - (05/2024) I will be serving on the program committee for [HiPC 2024](https://hipc.org/).
 - (05/2024) I'm honored to receive the 2024 Influential Faculty of Color Award, University of Puget Sound.
 - (05/2024) My research student, Julia Kaeppel, has been named the Goman Outstanding Senior in Computer Science.
