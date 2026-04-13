@@ -78,7 +78,7 @@ let days = {
         title: "Homework Proposal (Optional)",
         url: "hwkF.prep/",
         weekAssigned: 13,
-        due: "4/10/2026",  // Fri, wk 12
+        due: "4/13/2026",  // Fri, wk 12
       },
       {
         name: "Final Hwk",
