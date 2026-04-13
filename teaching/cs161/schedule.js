@@ -283,7 +283,7 @@ let days = {
     "Lab 12: Interactive Diary (UI + String Parsing)",
     "File handling (Baha')",
       "Notes: <a href='https://drive.google.com/file/d/1uISc-ZRQSVfUojvLCr7ftMp3a0KFs0zg/view?usp=drive_link'>11. Scanner</a>" + "<br/>" +
-      "",
+      "Code: <a href='https://drive.google.com/file/d/187sn3agxiSCDslKSoP4EzpHft8NWDVMF/view?usp=drive_link'>ChatBot</a>  (starter)",
     // wk 14
     "Static scope, enums",
     "Lab 13: Cards (Enum type)",
