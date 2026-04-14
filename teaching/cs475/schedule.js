@@ -78,13 +78,13 @@ let days = {
       //   weekAssigned: 12,
       //   due: "4/17/2026", // Fri, wk 13
       // },
-      // {
-      //   name: "Hwk 8",
-      //   title: "Technical Report",
-      //   url: "hwk8.report/",
-      //   weekAssigned: 14,
-      //   due: "5/4/2026",  // Finals
-      // },
+      {
+        name: "Hwk 8",
+        title: "Technical Report",
+        url: "hwk8.report/",
+        weekAssigned: 14,
+        due: "4/29/2026",  // Finals
+      },
       // // {
       // //   name: "Hwk 7 (OneLaneBridge)",
       // //   title: "One Lane Bridge ",
@@ -173,29 +173,27 @@ let days = {
     // "Sync: monitors and condition variables",
     // "Sync: Java support",
     "Sync: semaphores",
-    "Sync: classical synchronization problems",
-    "Deadlocks",
+    "Sync: helpful prof, sleeping barber",
+    "Sync: bounded buffer problem", // <--  kill this next time?
     "Notes: <a href='https://drive.google.com/file/d/1ht9KJfUKShf39_NFTFEym1uVVtQMoyK0/view?usp=drive_link'>6b. Sync (Part B: Semaphores)</a><br/>" +
       "Study: <a href='https://drive.google.com/file/d/1ActoiNsL62XwmtbPwMcAtI0b4v_Z19Lc/view?usp=drive_link'>Exam 2 Study Guide</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-lec-helpfulprof'>Helpful Professor (sem)</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-lec-producerConsumer'>Producer Consumer (sem)</a><br/>",
       // "Code: <a href='https://github.com/davidtchiu/cs475-lec-readersWriters'>Readers Writers (sem)</a><br/>",
     // wk 12
-    "DL: Deadlock detection",
+    "Deadlocks: conditions and prevention",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-    "Notes: <a href='notes/CS475_7-deadlock.pdf'>7. Deadlocks</a>",
     // wk 13
-    "DL: Bankers algorithm",
+    "DL: Cycles vs. Knots (detection)",
+    "DL: Bankers algorithm (avoidance)",
     "Memory Management: virtual addressing",
-    "MM: partitioning and segmentation",
-    "",
-    // "Notes: <a href='notes/CS475_8-mmu.pdf'>8. Memory Management</a>",
+    "Notes: <a href='https://drive.google.com/file/d/1HXztJ0pgirpzAboVMykjmaNmyFZKBUWF/view?usp=drive_link'>7. Deadlocks</a>",
     // wk 14
-    "MM: segmentation",
+    "MM: partitioning",
     "MM: paging",
     "MM: TLB and page faults",
-    "",
+    "Notes: <a href='https://drive.google.com/file/d/1Kr1jr4V4WepiFy6UgaMF_hj2gtqVC2sR/view?usp=drive_link'>8. Memory Management</a>",
     // "Notes: <a href='notes/CS475_9-vm1.pdf'>9. Virtual Memory</a>",
     // wk 15
     "Virtual Memory: demand paging",
