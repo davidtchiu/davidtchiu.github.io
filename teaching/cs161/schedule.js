@@ -279,11 +279,11 @@ let days = {
       "Notes: <a href='https://drive.google.com/file/d/1r6VfN46F5t1JUVCZtL9R41cS1VXU_BK5/view?usp=drive_link'>10. ArrayList (Dynamic Arrays)</a>" + "<br/>" +
       "Code: <a href='https://drive.google.com/file/d/1BFzXCLxBVHRN5MWrc7HS9Io8JuIP0VVF/view?usp=drive_link'>Diary</a>  (finished)",
     // wk 13
-    "Scanner: user interaction, String parsing: enforcing a word limit (Baha')",
+    "Scanner: User interaction",
     "Lab 12: Interactive Diary (UI + String Parsing)",
-    "File handling (Baha')",
+    "Scanner: File handling",
       "Notes: <a href='https://drive.google.com/file/d/1uISc-ZRQSVfUojvLCr7ftMp3a0KFs0zg/view?usp=drive_link'>11. Scanner</a>" + "<br/>" +
-      "Code: <a href='https://drive.google.com/file/d/187sn3agxiSCDslKSoP4EzpHft8NWDVMF/view?usp=drive_link'>ChatBot</a>  (starter)",
+      "Code: <a href='https://drive.google.com/file/d/187sn3agxiSCDslKSoP4EzpHft8NWDVMF/view?usp=drive_link'>ChatBot</a> (starter)",
     // wk 14
     "Static scope, enums",
     "Lab 13: Cards (Enum type)",
