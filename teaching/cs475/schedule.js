@@ -184,6 +184,7 @@ let days = {
     "Deadlocks: conditions and prevention",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
+    "",
     // wk 13
     "DL: Cycles vs. Knots (detection)",
     "DL: Bankers algorithm (avoidance)",
