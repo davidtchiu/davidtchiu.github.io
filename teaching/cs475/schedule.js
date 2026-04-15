@@ -83,7 +83,7 @@ let days = {
         title: "Technical Report",
         url: "hwk8.report/",
         weekAssigned: 14,
-        due: "4/29/2026",  // Finals
+        due: "5/8/2026",  // Finals
       },
       // // {
       // //   name: "Hwk 7 (OneLaneBridge)",
