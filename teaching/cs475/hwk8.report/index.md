@@ -9,7 +9,7 @@ This course teaches broadly the various concepts that show up in modern operatin
 #### Topics
 For this assignment, you have an option of: (1) broadly exploring an OS of your choice, or (2) to explain a historical paper on an OS topic.
 
-If you're working on option #1, the OS does not have to be current, that is, explaining an historical operating systems are totally welcome. Among other things, your report must include clear descriptions (e.g., using illustrations when necessary) of the following elements:
+**If you're working on option #1**, the OS does not have to be current, that is, explaining an historical operating systems are totally welcome. Among other things, your report must include clear descriptions (e.g., using illustrations when necessary) of the following elements:
 
   - You must choose an OS that supports virtual addressing of memory. Here's a short list of OSes that are prohibited because they do not support virtual addressing: TempleOS, MS-DOS, FreeRTOS, Xinu, early Mac/OS.
 
@@ -28,7 +28,7 @@ If you're working on option #1, the OS does not have to be current, that is, exp
 
 <!-- If your OS does not support a filesystem, describe any one of your choosing (e.g., FAT32, NTFS, ext3, ext4, HFS, ...). Again, you are welcome to research one that is no longer used but has historical value (like FAT16 or Macintosh Filesystem). For the truly curious, you may also describe a distributed filesystem, such as lustre, NFS, HDFS, ... -->
 
-If you're working on option #2, it could be a paper covering any topic we've talked about in class, or something new! The requirements are that the paper you choose is published by a recoginized organization (such as ACM, IEEE, USENIX), and considered to be a classic. Here are some ideas:
+**If you're working on option #2**, it could be a paper covering any topic we've talked about in class, or something new! The requirements are that the paper you choose is published by a recognized CS organization (such as ACM, IEEE, USENIX), and considered to be a classic. Here are some ideas:
 
   - [Belady's anomaly](https://dl.acm.org/doi/10.1145/363011.363155)
   - [UNIX paper](https://dsf.berkeley.edu/cs262/unix.pdf)
@@ -39,7 +39,7 @@ If you're working on option #2, it could be a paper covering any topic we've tal
 If choosing this route, your goal would be to write an "expository paper" aiming to inform, explain, describe, or clarify ideas and concepts to a more general CS audience (perhaps aiming toward informing someone who has a CS background, but has not taken OS). Its primary purpose is to present information in a clear and logical manner, allowing the reader to understand and learn about a specific topic without your personal opinions influencing the content.
 
 
-# Requirements
+#### Requirements
   - Please refrain from using ChatGPT (and other LLMs) to write your report.
 
   - There is a 5 page single-spaced minimum, including all figures and citations. 
@@ -49,8 +49,6 @@ If choosing this route, your goal would be to write an "expository paper" aiming
   - And, please don't use ChatGPT to write this report for you. If you use ChatGPT to provide information regarding an OS, please be reminded that its information is sometimes unreliable and flawed. Plus, you do have to cite your sources. You **cannot** cite ChatGPT responses as part of your report. I do not have a preference on the format of your citations.
 
   - Your report should be submitted as a PDF document that you push to a Github repo.
-
-
 
 
 #### Submitting Your Report
