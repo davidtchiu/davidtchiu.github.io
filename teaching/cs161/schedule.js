@@ -174,13 +174,13 @@ let days = {
         weekAssigned: 12,
         due: "4/10/2026",
       },
-      // {
-      //   name: "Lab 12",
-      //   title: "Interactive Diary",
-      //   url: "lab12.uiDiary/",
-      //   weekAssigned: 13,
-      //   due: "4/17/2026",
-      // },
+      {
+        name: "Lab 12",
+        title: "Interactive Diary",
+        url: "lab12.uiDiary/",
+        weekAssigned: 13,
+        due: "4/17/2026",
+      },
       // // {
       // //   name: "Lab 12",
       // //   title: "Tweet Processor (Scanner, String parsing)",
