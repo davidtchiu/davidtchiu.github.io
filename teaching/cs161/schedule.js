@@ -292,7 +292,7 @@ let days = {
     "",
     // wk 15
     "Project Work Day",
-    "(no class)",
+    "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     "",
     // wk final
