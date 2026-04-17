@@ -85,7 +85,7 @@ let days = {
         title: "Black Jack (Default)",
         url: "hwkF.blackjack.enums/",
         weekAssigned: 13,
-        due: "5/1/2026", // Fri (exam period)
+        due: "5/8/2026", // Fri (exam period)
       },
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
