@@ -290,7 +290,8 @@ let days = {
     "Static scope, enums",
     "Lab 13: Cards (Enum type)",
     "The main method",
-    "",
+      "Notes: <a href='https://drive.google.com/file/d/1d6WHSfv6y4JNPgJoQeGFuqHbc7bNb9ms/view?usp=drive_link'>13. Static, Enums</a>" + "<br/>" +
+      "Code: <a href='https://drive.google.com/file/d/13z9GKGfpftT9dc9mMujhP0Dzfzvi-hBd/view?usp=drive_link'>Student</a> (starter)",
     // wk 15
     "Project Work Day",
     "<strong>Reading Period</strong>",
