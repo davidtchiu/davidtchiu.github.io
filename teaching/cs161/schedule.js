@@ -181,19 +181,19 @@ let days = {
         weekAssigned: 13,
         due: "4/17/2026",
       },
+      {
+        name: "Lab 13",
+        title: "Playing Cards (Constants, Enum)",
+        url: "lab13.cards/",
+        weekAssigned: 14,
+        due: "4/24/2026",
+      }
       // // {
       // //   name: "Lab 12",
       // //   title: "Tweet Processor (Scanner, String parsing)",
       // //   url: "lab12.twitter/",
       // //   due: "4/18/2026",
       // // },
-      // {
-      //   name: "Lab 13",
-      //   title: "Playing Cards (Constants, Enum)",
-      //   url: "lab13.cards/",
-      //   weekAssigned: 14,
-      //   due: "4/24/2026",
-      // }
       // // {
       // //   name: "Lab 10",
       // //   title: "Boulders (Files)",

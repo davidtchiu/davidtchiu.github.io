@@ -194,22 +194,22 @@ Here's where a professional editor like IntelliJ shines: Try declaring the field
           // grab a line from the file!
           String line = fileIn.nextLine();
 
-          // split() that line up into tokens!
+          // split() that line up into an array of tokens: ["8", "of", "HEART"]
 
-          // create that Card object!
+          // Use that tokens array create the corresponding Card object!
 
-          // add the Card to the ArrayList!
+          // Add the Card to the ArrayList!
         }
       } catch(FileNotFoundException e) {
         System.out.println("Could not open file " + filename);
       }
       ```
 
-  - `public void replenish()`: No matter what the state of the `Deck` is, replenish all 52 cards to the deck the following order:
-    - Spade: 1 (A), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
-    - Club: 1 (A), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
-    - Diamond: 1 (A), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
-    - Heart: 1 (A), 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
+  - `public void replenish()`: No matter what the state of the `Deck` is, replenish all 52 cards to the deck in the following order:
+    - Spade: 1 , 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
+    - Club: 1 , 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
+    - Diamond: 1 , 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
+    - Heart: 1, 2, 3, ..., 10, 11 (J), 12 (Q), 13 (K)
 
     First, clear your list of cards. Now, how do you loop through the four `Enum` values? You can do this using a nested loop. For each suit, loop from 1 through 13, and create a Card using those suit and value combinations. Here's how to loop through the Enum values:
 
