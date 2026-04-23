@@ -195,7 +195,6 @@ let days = {
     "MM: paging",
     "MM: TLB and page faults",
     "Notes: <a href='https://drive.google.com/file/d/1Kr1jr4V4WepiFy6UgaMF_hj2gtqVC2sR/view?usp=drive_link'>8. Memory Management</a>",
-    // "Notes: <a href='notes/CS475_9-vm1.pdf'>9. Virtual Memory</a>",
     // wk 15
     "Virtual Memory: demand paging",
     "VM: page replacement",
@@ -203,12 +202,13 @@ let days = {
     // "VM: memory allocation",
     // "VM: malloc(), free()",
     "<strong>Reading Period</strong>",
-    "",
+    "Notes: <a href='https://drive.google.com/file/d/1qMLvRo_hrt22o8Qr9d9-miazyjZn7Via/view?usp=drive_link'>9. Virtual Memory</a>" + "<br/>" +
+      "",
     // wk final
     "<strong><emph>Final Exam (Cumulative)<br/>4:00-6:00</emph></strong>",
     "",
     "",
-    "",
+    "Study: <a href='https://drive.google.com/file/d/154lEXT2v7EL92D1jsEFAPl85DBwBrvNl/view?usp=drive_link'>Final Exam Study Guide</a>" + "<br/>",
     // "Final Study Guide: <a href='RG1.pdf'>Part 1</a>, <a href='RG2.pdf'>Part 2</a>"
     ],
 };
