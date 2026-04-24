@@ -267,28 +267,30 @@ The main() method is actually where every Java program "starts." It turns out Bl
 
   ```java
   import java.util.Scanner;
+  public class DeckPro {
 
-  public static void main(String[] args) {
-    System.out.println("DeckPro Version 1.0");
-    System.out.println("Please enter one of the fllowing options:");
-    System.out.println("load: if you want to load a deck from a file");
-    System.out.println("full: if you want to create a full deck of 52 cards");
+    public static void main(String[] args) {
+      System.out.println("DeckPro Version 1.0");
+      System.out.println("Please enter one of the following options:");
+      System.out.println("load: if you want to load a deck from a file");
+      System.out.println("full: if you want to create a full deck of 52 cards");
 
-    Scanner keyboard = new Scanner(System.in);
-    Deck myDeck = new Deck();
-    String input = keyboard.nextLine();
-    if (input.equalsIgnoreCase("full")) {
-      myDeck.replenish();
+      Scanner keyboard = new Scanner(System.in);
+      Deck myDeck = new Deck();
+      String input = keyboard.nextLine();
+      if (input.equalsIgnoreCase("full")) {
+        myDeck.replenish();
+      }
+      else if (input.equalsIgnoreCase("load")) {
+        System.out.println("What is the file name?");
+        String filename = keyboard.nextLine();
+        myDeck.replenish(filename);
+      }
+      myDeck.shuffle();
+      System.out.println("Here's your deck!");
+      System.out.println(myDeck.toString());
+      System.out.println("Thanks for using Deck Pro! Good bye!");
     }
-    else if (input.equalsIgnoreCase("load")) {
-      System.out.println("What is the file name?");
-      String filename = keyboard.nextLine();
-      myDeck.replenish(filename);
-    }
-    myDeck.shuffle();
-    System.out.println("Here's your deck!");
-    System.out.println(myDeck);
-    System.out.println("Thanks for using Deck Pro! Good bye!");
   }
   ```
 
