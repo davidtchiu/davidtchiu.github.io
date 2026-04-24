@@ -297,6 +297,7 @@ let days = {
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",
     "",
+      "Exam #3 <a href='https://drive.google.com/file/d/1QCElEzlQnkErTpGR5wgPAZMBOEbxe4Wd/view?usp=drive_link'>Study Guide</a>",
     // wk final
     "",
     "",
