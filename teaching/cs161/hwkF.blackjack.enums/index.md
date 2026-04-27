@@ -53,9 +53,11 @@ A quick word on face values. The face value of each card can usually be added to
 
 #### Writing the Hand Class
 
-- This class should store an `ArrayList` of `Card`s, and also store a `Deck`, which represents all the `Card`s that have yet to be drawn by the dealer.
+- This class should store an `ArrayList` of `Card`s, and also store an instance variable `Deck`, which represents all the `Card`s that have yet to be drawn by the dealer.
 
-- Write a 1-argument constructor that takes as input a `Deck` object. Upon being called, it should remove the top two cards from the Deck, and add them to the hand.
+- Write a 1-argument constructor that takes as input a `Deck` object. Upon being called, it should remove the top two cards from the Deck, and add them to the hand (that is, your `ArrayList` for this class.)
+
+- Write a 3-argument constructor that takes 2 Card objects, and a `Deck` object. Upon being called, it should add the two cards to the hand, and set the `Deck` object to your instance variable.
 
 - Notice that you are also given a constructor for "testing purposes." It's got a goofy looking syntax (note the `Card...` type input), which means it can input *any set of Cards*! This will be so useful to you for testing your `Hand` methods, because the only other way to add any Cards to your hand is to call `hit()`, and that's totally random! I'll show you how to use it to test your methods below!
 
