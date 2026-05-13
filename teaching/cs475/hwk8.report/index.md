@@ -40,15 +40,14 @@ If choosing this route, your goal would be to write an "expository paper" aiming
 
 
 #### Requirements
-  - Please refrain from using ChatGPT (and other LLMs) to write your report.
 
-  - There is a 5 page single-spaced minimum, including all figures and citations. 
+- There is a 5-page minimum, including all figures and citations. Please use single-spacing, 12pt Times New Roman font.
 
-  - Your paper should be well-formed, free from grammar and spelling errors. You should not address each of the above points in a list but rather in well constructed paragraphs. Your paper should have an introduction, conclusion and bibliography. You should cite where you discovered the information that you include.
+- Your paper should be well-formed, free from grammar and spelling errors. You should not address each of the above points in a list but rather in well constructed paragraphs. Your paper should have an introduction, conclusion and bibliography. You should cite where you discovered the information that you include.
 
-  - And, please don't use ChatGPT to write this report for you. If you use ChatGPT to provide information regarding an OS, please be reminded that its information is sometimes unreliable and flawed. Plus, you do have to cite your sources. You **cannot** cite ChatGPT responses as part of your report. I do not have a preference on the format of your citations.
+- And, please don't use ChatGPT to write this report for you. If you use ChatGPT to provide information regarding an OS, please be reminded that its information is sometimes unreliable and flawed. Plus, you do have to cite your sources. You **cannot** cite ChatGPT responses as part of your report. I do not have a preference on the format of your citations.
 
-  - Your report should be submitted as a PDF document that you push to a Github repo.
+- Your report should be submitted as a PDF document that you push to a Github repo.
 
 
 #### Submitting Your Report
