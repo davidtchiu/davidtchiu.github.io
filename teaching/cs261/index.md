@@ -1,8 +1,8 @@
 ## CS 261 - Computer Science II
 
 Instructor: David Chiu\
-Lecture: Mon/Wed/Fri 11:00 - 11:50 in TH 399\
-Lab: Thur 11:00 - 12:50 in TH 399\
+Lecture: Mon/Wed/Fri 11:00 - 11:50 in TH 409\
+Lab: Thur 11:00 - 12:50 in TH 409\
 Office Hours: Drop in when door's open, or
 <!-- Google Calendar Appointment Scheduling begin -->
 <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">

@@ -1,5 +1,7 @@
 ## CS 498 - Capstone Planning Seminar
 
+Instructor: David Chiu\
+Lecture: Mon/Fri 1:00 - 1:50 in TH 409\
 Office Hours: Drop in when door's open, or
 <!-- Google Calendar Appointment Scheduling begin -->
 <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
@@ -18,3 +20,11 @@ Office Hours: Drop in when door's open, or
 })();
 </script>
 <!-- end Google Calendar Appointment Scheduling -->
+
+<!-- David's schedule generator! Do not touch -->
+<div id="schedule">&nbsp;</div>
+<script type="text/javascript" src="../calendar.js"></script>
+<script type="text/javascript" src="schedule.js"></script>
+<!-- End -->
+
+
