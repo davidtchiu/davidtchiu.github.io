@@ -84,7 +84,6 @@ let days = {
 };
 
 
-
 // print out the schedule to HTML
 const schedule = new CourseCalendar("8/31/2026", days, MF);
 schedule.generateHTMLResources();
