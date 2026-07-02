@@ -37,7 +37,7 @@ let days = {
     "Check annotated sources",//. Each student/team explains the most useful source and one thing it changed about the project.
     "",
     // wk 6
-    "Fall Break", //Pre-mortem", //It is the end of capstone and your project failed. Why?” Students list failure modes, then rank them by likelihood and severity.",
+    "TBD", //Pre-mortem", //It is the end of capstone and your project failed. Why?” Students list failure modes, then rank them by likelihood and severity.",
     "MVP cutdown", // Students define three versions: minimum viable version, expected version, stretch version. Then ask: “What would still count as a successful capstone if everything goes wrong?”",
     "", //"Risk triage", //For each team, identify the top 2 risks that must be tested before the semester ends.",
     // wk 7
@@ -45,28 +45,30 @@ let days = {
     "Instructor check-in", //Instructor check-in on scope. Push them to remove features, not add features.
     "",
     // wk 8
-    "Box-and-arrow diagramming", // Students draw their system architecture: frontend, backend, database, external APIs, models, files, users, data flow.
-    "Diagram critique", // Another team explains their diagram back to them. If they cannot, the diagram is unclear.
+    "<strong>Fall Break</strong>",
+    "TBD",
     "",
     // wk 9: 
-    "Input/output audit", // For every major component, students define inputs, outputs, data formats, and failure cases.",
-    "Check whether the components are real enough to implement", //. This is where vague “AI module” boxes get challenged.",
+    "Box-and-arrow diagramming", // Students draw their system architecture: frontend, backend, database, external APIs, models, files, users, data flow.
+    "Diagram critique", // Another team explains their diagram back to them. If they cannot, the diagram is unclear.
+    // "Input/output audit", // For every major component, students define inputs, outputs, data formats, and failure cases.",
+    // "Check whether the components are real enough to implement", //. This is where vague “AI module” boxes get challenged.",
     "",
     // wk 10
     "Success metric workshop", // Students answer: How will you know it works? How will you test correctness, usability, performance, accuracy, or completeness?
     "Peer review of evaluation plans", // Other students ask: “Would this convince you the project succeeded?”",
     "",
     // wk 11
-    "TBD",
-    "Thanksgiving Break",
-    "",
-    // wk 12
     "Design doc sprint",  // Students use class time to assemble the pieces: problem, background, MVP, architecture, risks, evaluation, timeline.
     "Cont'd",
     "",
-    // wk 13
+    // wk 12
     "Cont'd",
     "Design document peer review", //. Use a short rubric and require written comments.",
+    "",
+    // wk 13
+    "TBD",
+    "<strong>Thanksgiving Break</strong>",
     "",
     // wk 14
     "Storyboarding the final presentation", //Students build a slide outline: problem, motivation, prior work, design, feasibility, timeline, risks.",
@@ -76,10 +78,10 @@ let days = {
     "Day-one simulation", // It is the first day of capstone next semester. What exactly do you do?” Students write their first-week action plan.
     "<strong>Reading Period</strong>",
     "",
-    // wk final
-    "",
-    "",
-    "",
+    // // wk final
+    // "",
+    // "",
+    // "",
   ],
 };
 
