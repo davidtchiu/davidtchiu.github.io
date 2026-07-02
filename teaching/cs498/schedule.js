@@ -11,306 +11,82 @@ let days = {
   ],
   assignments: {
     homework: [
-      {
-        name: "Hwk 0 (About Me)",
-        title: "All About Me (BlueJ, Code Submission)",
-        url: "hwk0.me/",
-        weekAssigned: 1,
-        due: "1/26/2026", // Mon, wk 2
-      },
-      {
-        name: "Hwk 1 (Better Circle)",
-        title: "A Better Circle (Method Calls, Method Writing)",
-        url: "hwk1.circle/",
-        weekAssigned: 2,
-        due: "2/4/2026", // Wed, wk 3
-      },
-      {
-        name: "Hwk 2 (Clock)",
-        title: "Alarm Clock (Accumulators, Conditionals)",
-        url: "hwk2.clock/",
-        weekAssigned: 3,
-        due: "2/13/2026", // Fri, wk 4
-      },
-      {
-        name: "Hwk 3 (Fractions)",
-        title: "Fractions (Object Interaction)",
-        url: "hwk3.fraction/",
-        weekAssigned: 5,
-        due: "2/25/2026", // Mon, wk 6
-      },
-      {
-        name: "Hwk 4 (Robots)",
-        title: "Robots (Abstraction and Modularity)",
-        url: "hwk4.robot/",
-        weekAssigned: 6,
-        due: "3/6/2026", //Fri, wk 7 (has a simple loop)
-      },
-      {
-        name: "Hwk 5 (Loops)",
-        title: "Loops, Loops, Loops!",
-        url: "hwk5.loops/",
-        weekAssigned: 8,
-        due: "3/24/2026", // Tues, wk 10 (right after spring break)
-      },
-      {
-        name: "Hwk 6 (ComboGuesser)",
-        title: "Combo Guesser (Arrays)",
-        url: "hwk6.combo/",
-        weekAssigned: 11,
-        due: "4/8/2026", // Fri, wk 11 (week after break)
-      },
-      // // {
-      // //   name: "Hwk 6",
-      // //   title: "Credit Card Reader (1D Array)",
-      // //   url: "hwk6.cc/",
-      // //   due: "4/4/2026", // Mon, wk 11 (right after spring break)
-      // // },
-      // {
-      //   name: "Hwk 7 (Fotoshop)",
-      //   title: "Fotoshop (2D Array)",
-      //   url: "hwk7.img/",
-      //   weekAssigned: 11,
-      //   due: "4/15/2026", // Mon, wk 13
-      // },
-      {
-        name: "Project Proposal",
-        title: "Homework Proposal (Optional)",
-        url: "hwkF.prep/",
-        weekAssigned: 13,
-        due: "4/13/2026",  // Fri, wk 12
-      },
-      {
-        name: "Final Hwk",
-        title: "Black Jack (Default)",
-        url: "hwkF.blackjack.enums/",
-        weekAssigned: 13,
-        due: "5/8/2026", // Fri (exam period)
-      },
     ],
-    /////////////////////////////////// labs /////////////////////////////////////////
-    lab: [
-      {
-        name: "Lab 1",
-        title: "BlueJ",
-        url: "hwk0.me/",
-        weekAssigned: 1,
-        due: "1/23/2026",
-      },
-      {
-        name: "Lab 2",
-        title: "Triangle Class (Variables, Scope, and Lifetime)",
-        url: "lab2.vars/",
-        weekAssigned: 2,
-        due: "1/30/2026",
-      },
-      {
-        name: "Lab 3",
-        title: "Stomach Class (Class Writing, Random object)",
-        url: "lab3.stomach/",
-        weekAssigned: 3,
-        due: "2/6/2026",
-      },
-      {
-        name: "Lab 4",
-        title: "Guessing Game (Conditionals)",
-        url: "lab4.guessing/",
-        weekAssigned: 4,
-        due: "2/13/2026",
-      },
-      {
-        name: "Lab 5",
-        title: "Circle Drawer (Object Aliasing & Interaction)",
-        url: "lab5.circleDrawer/",
-        weekAssigned: 5,
-        due: "2/20/2026",
-      },
-      {
-        name: "Lab 6",
-        title: "Diamonds (Abstraction and Modularity)",
-        url: "lab6.diamonds/",
-        weekAssigned: 6,
-        due: "2/27/2026",
-      },
-      {
-        name: "Lab 7",
-        title: "Turtle (Loops)",
-        url: "lab7.turtle/",
-        weekAssigned: 7,
-        due: "3/6/2026",
-      },
-      {
-        name: "Lab 8",
-        title: "Homework Time (Loops)",
-        url: "hwk5.loops/",
-        weekAssigned: 8,
-        due: "3/13/2026",
-      },
-      {
-        name: "Lab 9",
-        title: "Array Sorcery!",
-        url: "lab9.arrays/",
-        weekAssigned: 10,
-        due: "3/27/2026",
-      },
-      {
-        name: "Lab 10",
-        title: "TicTacToe (2D Arrays)",
-        url: "lab10.ttt/",
-        weekAssigned: 11,
-        due: "4/3/2026",
-      },
-      // {
-      //   name: "Lab 10",
-      //   title: "The Game of Life (2D Arrays)",
-      //   url: "lab10.life/",
-      //   weekAssigned: 11,
-      //   due: "4/3/2026",
-      // },
-      {
-        name: "Lab 11",
-        title: "Super Circle Drawer (ArrayLists)",
-        url: "lab11.superCircleDrawer/",
-        weekAssigned: 12,
-        due: "4/10/2026",
-      },
-      {
-        name: "Lab 12",
-        title: "Interactive Diary",
-        url: "lab12.uiDiary/",
-        weekAssigned: 13,
-        due: "4/17/2026",
-      },
-      {
-        name: "Lab 13",
-        title: "Playing Cards (Constants, Enum)",
-        url: "lab13.cards/",
-        weekAssigned: 14,
-        due: "4/24/2026",
-      }
-      // // {
-      // //   name: "Lab 12",
-      // //   title: "Tweet Processor (Scanner, String parsing)",
-      // //   url: "lab12.twitter/",
-      // //   due: "4/18/2026",
-      // // },
-      // // {
-      // //   name: "Lab 10",
-      // //   title: "Boulders (Files)",
-      // //   url: "lab10.boulders/",
-      // //   due: "4/12/2024",
-      // // },
+    labs: [
     ],
   },
   lectures: [
     // wk 1
-    "<strong>MLK Day<br/>(no class)</strong>",
-    "Introductions: Who are we? What is CS?",
-    "Algorithms, hardware, languages; Using BlueJ",
-    "Notes: <a href='https://drive.google.com/file/d/11UGFf39BPSc0oXnjzOFzUJsEKXZMYnuR/view'>1. What is CS?</a>" + "<br/>" +
-    "Install: <a href='https://bluej.org/'>BlueJ Code Editor</a>" + "<br/>" +
-    "Watch: <a href='https://www.youtube.com/watch?v=QgUVrzkQgds'>Calculating Ada</a>",
+    "Capstone sorting exercise", // Give students a list of possible project ideas: some too small, some too large, some vague, some feasible. Have them classify each one as “too small,” “reasonable,” “too ambitious,” or “unclear.”
+    "Interest x skill x problem matrix", //Students make a 3-column table: things I care about, things I can build, problems people have. Then they combine entries into possible capstone ideas.
+    "",
     // wk 2
-    "Classes: Instance vars and data types, constructors",
-    "Lab 2: Triangle",
-    "Lab review; Methods",
-    "Notes: <a href='https://drive.google.com/open?id=1w3r2vSx8faSxUR6Bw19cKO-_91Y4CWV9&usp=drive_fs'>2. Classes and Objects</a>" + "<br/>" +
-    "Code: <a href='https://drive.google.com/open?id=1BIumqGvCSt2G9H9EFNAAHTZyQnfK7SG6&usp=drive_fs'>Circle</a> (starter)" + "<br/>" +
-    "Code: <a href='https://drive.google.com/open?id=1cE66k8-KAWyCn6f9bMwUjAnLLY9lelBt&usp=drive_fs'>Circle</a> (finished)",
+    "<strong>MLK Day<br/>(no class)</strong>",
+    "Individual check-in", // Each student shares 2–3 possible project directions and one skill/domain they want to use.",
+    "",
     // wk 3
-    "Conditionals",
-    "Lab 3: Stomach",
-    "Nested if, Else-if",
-    // "",
-    "Notes: <a href='https://drive.google.com/open?id=1CnNn_fCN4miWwRe5eJWBZxGOZKPydKpi&usp=drive_fs'>3. Operators and conditionals</a>" + "<br/>" +
-    "Code: <a href='https://drive.google.com/open?id=15OXNk4SQZ-xQbZh49SiyYgsO_33G0P9E&usp=drive_fs'>TicketMachine</a> (finished)",
+    "Decision matrix", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk.
+    "Project selection conference", //  Each student/team explains what they chose and what they rejected.",
+    "",
     // wk 4
-    "Logical operators",
-    "Lab 4: Guessing Game",
-    "More fun with conditionals",
+    "Problem statement workshop", // Use a template: “We are building ___ for ___ because ___.” Then force them to identify the user, pain point, and success condition.,
+    "Peer review of problem statements", //. Other students identify what is still vague,
     "",
     // wk 5
-    "Data Types: binary representation",
-    "Classes as types: object interaction; Lab 5: Circle Drawer",
-    "Object equality; <strong><emph>Exam 1 review</emph></strong>",
-    "Notes: <a href='https://drive.google.com/open?id=1KyW8LDBd7s92Lr_l-hiH6sPc-I8qt0Sk&usp=drive_fs'>4. Primitives vs Classes</a>" + "<br/>" +
-    "Exam #1 <a href='https://drive.google.com/open?id=1StHl1jwP5jlWPL_XEudnZ6QNMfR_ekNE&usp=drive_fs'>Study Guide</a>",
-    // wk 6
-    "<strong><emph>Exam 1</emph></strong>",
-    "Abstraction; Lab 6: Diamonds code-along",
-    "Using APIs (String)",
-    "Notes: <a href='https://drive.google.com/file/d/1m226zYIekmAi4HIhuYEJeKCMjRubgYEz/view?usp=drive_link'>5. Abstraction and Strings</a>" + "<br/>" +
-    "Code: <a href='https://drive.google.com/file/d/1Fo5UoS788VzFpwKvfScQf3-IFDC-qZ3n/view?usp=drive_link'>Organism</a> (Starter)",
-    // "Code: <a href='https://drive.google.com/open?id=1ycKeh6Uw3uJJalfidTy_KjSDer1q6NVZ&usp=drive_fs'>Square</a> (Starter)",
-    // wk 7
-    "Start loops; reading; tracing",
-    "More loops; Lab 7: Loops",
-    "Lab review and nested loops",
-    "Notes: <a href='https://drive.google.com/file/d/1-Fd3EEiX3UK2o3CV_tVLVrds6qCPYUun/view?usp=drive_link'>6. Loops</a>" + "<br/>" +
-      "",
-    // wk 8
-    "Nested loops",
-    "Lab 8: Homework Time",
-    "More nested loops and lab review",
-    "Notes: <a href='https://drive.google.com/file/d/1Tkfn4Y0q9clx47NIlIDZnLcba7LMorEM/view?usp=drive_link'>7. Nested Loops</a>" + "<br/>" +
-      "",
-    // wk 9: spring break
-    "<strong><emph>Spring break</emph></strong>",
-    "<strong><emph>Spring break</emph></strong>",
-    "<strong><emph>Spring break</emph></strong>",
+    "Prior-art scavenger hunt", // Students find examples of similar apps, papers, GitHub repos, datasets, tools, or APIs. They classify each as inspiration, competitor, dependency, or warning sign.
+    "Check annotated sources",//. Each student/team explains the most useful source and one thing it changed about the project.
     "",
-    // wk 10: Baha starts joining David
-    "Arrays: The Bank class",
-    "Lab 9: Array Sorcery!",
-    "<strong><emph>Exam 2 review</emph></strong>",
-    "Notes: <a href='https://drive.google.com/file/d/1eCvcYBI7N0j41SogoBSvUOry2giXVzf_/view?usp=drive_link'>8. Arrays</a>" + "<br/>" +
-    "Code: <a href='https://drive.google.com/file/d/13iE7iAqWVWjM-nO5I90zuluDJzEIwmuV/view?usp=drive_link'>Bank</a> (Starter)" + "<br/>" +
-      "Exam #2 <a href='https://drive.google.com/file/d/1A-YpFuM39qPLnqm_l-yHKGcjozcj8Ja1/view?usp=drive_link'>Study Guide</a>",
+    // wk 6
+    "Fall Break", //Pre-mortem", //It is the end of capstone and your project failed. Why?” Students list failure modes, then rank them by likelihood and severity.",
+    "MVP cutdown", // Students define three versions: minimum viable version, expected version, stretch version. Then ask: “What would still count as a successful capstone if everything goes wrong?”",
+    "", //"Risk triage", //For each team, identify the top 2 risks that must be tested before the semester ends.",
+    // wk 7
+    "MVP cutdown", // Students define three versions: minimum viable version, expected version, stretch version. Then ask: “What would still count as a successful capstone if everything goes wrong?”",
+    "Instructor check-in", //Instructor check-in on scope. Push them to remove features, not add features.
+    "",
+    // wk 8
+    "Box-and-arrow diagramming", // Students draw their system architecture: frontend, backend, database, external APIs, models, files, users, data flow.
+    "Diagram critique", // Another team explains their diagram back to them. If they cannot, the diagram is unclear.
+    "",
+    // wk 9: 
+    "Input/output audit", // For every major component, students define inputs, outputs, data formats, and failure cases.",
+    "Check whether the components are real enough to implement", //. This is where vague “AI module” boxes get challenged.",
+    "",
+    // wk 10
+    "Success metric workshop", // Students answer: How will you know it works? How will you test correctness, usability, performance, accuracy, or completeness?
+    "Peer review of evaluation plans", // Other students ask: “Would this convince you the project succeeded?”",
+    "",
     // wk 11
-    "<strong><emph>Exam 2</emph></strong>",
-    "2D arrays; Lab 10: TicTacToe",
-    "TicTacToe review, more practice",
-      "Notes: <a href='https://drive.google.com/file/d/159vcZvn1tl4k_maDgsk0D7is7XXYUlUT/view?usp=drive_link'>9. 2D Arrays</a>" + "<br/>" +
-      "Code: <a href='https://drive.google.com/file/d/1DYFBwBSIJDr6BraCW3r2zJMRtG2eNN95/view?usp=drive_link'>TicTacToe</a> (finished)",
+    "TBD",
+    "Thanksgiving Break",
+    "",
     // wk 12
-    "Start ArrayLists (Baha')",
-    "Lab 11: SuperCircleDrawer (David)",
-    "Lab review, more practice (Baha')",
-      "Notes: <a href='https://drive.google.com/file/d/1r6VfN46F5t1JUVCZtL9R41cS1VXU_BK5/view?usp=drive_link'>10. ArrayList (Dynamic Arrays)</a>" + "<br/>" +
-      "Code: <a href='https://drive.google.com/file/d/1BFzXCLxBVHRN5MWrc7HS9Io8JuIP0VVF/view?usp=drive_link'>Diary</a>  (finished)",
+    "Design doc sprint",  // Students use class time to assemble the pieces: problem, background, MVP, architecture, risks, evaluation, timeline.
+    "Cont'd",
+    "",
     // wk 13
-    "Scanner: User interaction",
-    "Lab 12: Interactive Diary (UI + String Parsing)",
-    "Scanner: File handling",
-      "Notes: <a href='https://drive.google.com/file/d/1uISc-ZRQSVfUojvLCr7ftMp3a0KFs0zg/view?usp=drive_link'>11. Scanner</a>" + "<br/>" +
-      "Notes: <a href='https://drive.google.com/file/d/1L6pSiwTf4aASvXS0Oe3-PkMjzqwmG2lw/view?usp=drive_link'>12. File Hanling</a>" + "<br/>" +
-      "Code: <a href='https://drive.google.com/file/d/187sn3agxiSCDslKSoP4EzpHft8NWDVMF/view?usp=drive_link'>ChatBot</a> (starter)" + "<br/>" +
-      "Code: <a href='https://drive.google.com/file/d/15cV3MUWcoHBPKZb_uSkicfsZq060nFi6/view?usp=drive_link'>ChatBot</a> (finished)",
+    "Cont'd",
+    "Design document peer review", //. Use a short rubric and require written comments.",
+    "",
     // wk 14
-    "Static scope, enums",
-    "Lab 13: Cards (Enum type)",
-    "The main method",
-      "Notes: <a href='https://drive.google.com/file/d/1d6WHSfv6y4JNPgJoQeGFuqHbc7bNb9ms/view?usp=drive_link'>13. Static, Enums</a>" + "<br/>" +
-      "Code: <a href='https://drive.google.com/file/d/13z9GKGfpftT9dc9mMujhP0Dzfzvi-hBd/view?usp=drive_link'>Student</a> (starter)",
+    "Storyboarding the final presentation", //Students build a slide outline: problem, motivation, prior work, design, feasibility, timeline, risks.",
+    "Practice presentations in small groups", // Peers must ask one feasibility question and one scope question.",
+    "",
     // wk 15
-    "Project Work Day",
+    "Day-one simulation", // It is the first day of capstone next semester. What exactly do you do?” Students write their first-week action plan.
     "<strong>Reading Period</strong>",
-    "<strong>Reading Period</strong>",
-    "Exam #3 <a href='https://drive.google.com/file/d/1QCElEzlQnkErTpGR5wgPAZMBOEbxe4Wd/view?usp=drive_link'>Study Guide</a>",
+    "",
     // wk final
     "",
     "",
-    "<strong><emph>Final Exam<br/>12:00-2:00</emph></strong>",
     "",
   ],
 };
-// Lab 3: Stomach",
-// "HashMaps",
-// "Start complexity: Linear search",
+
 
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("1/19/2026", days, MRF);
+const schedule = new CourseCalendar("8/31/2026", days, MF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
