@@ -1,6 +1,7 @@
 # Note to self
 
 # TODO
+- Once we move to 210, teach: skip lists right before going into trees. 
 - I need to put sorting right after recursion. Could be a good lead into BSTs. (i.e., what if there was a data structure that maintains order for us?)
 - Make a merge sort, quick sort (using student height) activity. 
     - In quicksort, randomly choose someone from the room. Everyone measures against that student and lines themselves up to their left or right.

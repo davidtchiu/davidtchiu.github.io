@@ -3,8 +3,8 @@
 Here's is a list of my former research advisees and a half-hearted effort of tracking where they've gone.
 
 ##### Undergraduate Research Alumni
-
-- Alex Kirner (BS'26 expected, Puget Sound)
+- Lily Gustafson (BS'27 expected, Puget Sound)
+- Alex Kirner (BS'26, Puget Sound)
 - Julia Kaeppel (BS'24, Puget Sound)
 - Colin Monaghan (BS'22, Puget Sound) → Flock Freight → Productable
 - Manya Meutschler-Aldine (BS'21, Puget Sound) → Marigold

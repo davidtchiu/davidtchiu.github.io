@@ -1,4 +1,4 @@
-## CS 440 - Capstone in Computer Science
+## CS 498 - Capstone Planning Seminar
 
 Office Hours: Drop in when door's open, or
 <!-- Google Calendar Appointment Scheduling begin -->

@@ -254,7 +254,7 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("9/1/2025", days, MWRF);
+const schedule = new CourseCalendar("8/31/2026", days, MWRF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();

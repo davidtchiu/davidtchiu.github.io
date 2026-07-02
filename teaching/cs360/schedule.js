@@ -193,7 +193,7 @@ let days = {
 };
 
 // print out the schedule to HTML
-const schedule = new CourseCalendar("9/1/25", days, MWF);
+const schedule = new CourseCalendar("8/31/26", days, MWF);
 schedule.generateHTMLResources();
 schedule.generateHTMLAssigments();
 schedule.generateHTMLCalendar();
