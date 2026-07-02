@@ -12,7 +12,7 @@ let days = {
   assignments: {
     homework: [
     ],
-    homework: [
+    labs: [
     ],
   },
   lectures: [
