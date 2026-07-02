@@ -10,6 +10,7 @@ const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 //////////////////////// configuration constants ////////////////////////////
 const TR = [OFF, LEC, OFF, LEC, OFF, WKD, WKD];
+const MF = [LEC, OFF, OFF, OFF, LEC, WKD, WKD];
 const MWF = [LEC, OFF, LEC, OFF, LEC, WKD, WKD];
 const MRF = [LEC, OFF, OFF, LEC, LEC, WKD, WKD];
 const MWRF = [LEC, OFF, LEC, LEC, LEC, WKD, WKD];
