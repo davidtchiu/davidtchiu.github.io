@@ -156,9 +156,7 @@ let days = {
     "",
   ],
 };
-// Lab 3: Stomach",
-// "HashMaps",
-// "Start complexity: Linear search",
+
 
 
 // print out the schedule to HTML
