@@ -25,48 +25,48 @@ let days = {
         url: "hwk1.lc/",
         due: "9/9/2026", // Wed, wk 2
       },
-      {
-        name: "Hwk 2",
-        title: "TicTacToe Player",
-        url: "hwk2.ttt/",
-        due: "9/22/2025", // Mon, wk 4
-      },
-      {
-        name: "Hwk 3",
-        title: "You Complete Me",
-        url: "hwk3.ycm/",
-        due: "10/8/2025", // Wed, wk 6
-      }, 
-      {
-        name: "Hwk 4",
-        title: "Doubly Linked List",
-        url: "hwk4.LL/",
-        due: "10/24/2025",  // Fri, wk 8 Fall Break
-      },
-      {
-        name: "Hwk 5",
-        title: "HTML Tag Validator",
-        url: "hwk5.html/",
-        due: "11/3/2025",  // Mon, wk 10
-      },
-      {
-        name: "Hwk 6",
-        title: "Recursion Exercises",
-        url: "hwk6.rec/",
-        due: "11/14/2025",  // Fri, wk 11
-      },
-      {
-        name: "Hwk 7",
-        title: "City Tracker",
-        url: "hwk7.city/",
-        due: "12/5/2025",  // Fri, wk 14 (extended due date because I'm an idiot and forgot to post it earlier)
-      },
-      {
-        name: "Hwk (Bonus)",
-        title: "Evil Hangman (Optional Extra Credit)",
-        url: "hwk8.ehm",
-        due: "12/19/2025", // Fri, finals week
-      },
+      // {
+      //   name: "Hwk 2",
+      //   title: "TicTacToe Player",
+      //   url: "hwk2.ttt/",
+      //   due: "9/22/2025", // Mon, wk 4
+      // },
+      // {
+      //   name: "Hwk 3",
+      //   title: "You Complete Me",
+      //   url: "hwk3.ycm/",
+      //   due: "10/8/2025", // Wed, wk 6
+      // }, 
+      // {
+      //   name: "Hwk 4",
+      //   title: "Doubly Linked List",
+      //   url: "hwk4.LL/",
+      //   due: "10/24/2025",  // Fri, wk 8 Fall Break
+      // },
+      // {
+      //   name: "Hwk 5",
+      //   title: "HTML Tag Validator",
+      //   url: "hwk5.html/",
+      //   due: "11/3/2025",  // Mon, wk 10
+      // },
+      // {
+      //   name: "Hwk 6",
+      //   title: "Recursion Exercises",
+      //   url: "hwk6.rec/",
+      //   due: "11/14/2025",  // Fri, wk 11
+      // },
+      // {
+      //   name: "Hwk 7",
+      //   title: "City Tracker",
+      //   url: "hwk7.city/",
+      //   due: "12/5/2025",  // Fri, wk 14 (extended due date because I'm an idiot and forgot to post it earlier)
+      // },
+      // {
+      //   name: "Hwk (Bonus)",
+      //   title: "Evil Hangman (Optional Extra Credit)",
+      //   url: "hwk8.ehm",
+      //   due: "12/19/2025", // Fri, finals week
+      // },
       // {
       //   name: "Hwk 7",
       //   title: "Huffman Encoding",
@@ -79,85 +79,81 @@ let days = {
       //   url: "bonus.AL/",
       //   due: "12/18/2024",
       // },
-
-
-
-
     ],
     /////////////////////////////////// labs /////////////////////////////////////////
     labs: [
       {
         name: "Lab 1",
-        title: "Code Along: Around the Farm",
+        title: "Down on the Farm",
         url: "lab1.farm/",
-        due: "9/5/2025",
+        due: "9/4/2026",
       },
-      {
-        name: "Lab 2",
-        title: "Inheritance Lab",
-        url: "lab2.dice/",
-        due: "9/12/2025",
-      },
-      {
-        name: "Lab 3",
-        title: "Abstract Classes Lab",
-        url: "lab3.lib/",
-        due: "9/19/2025",
-      },
-      {
-        name: "Lab 4",
-        title: "Exceptions Lab ",
-        url: "lab4.exc/",
-        due: "9/26/2025",
-      },
-      {
-        name: "Lab 5",
-        title: "Complexity Lab",
-        url: "lab5.bigO/",
-        due: "10/3/2025",
-      },
-      {
-        name: "Lab 6",
-        title: "ArrayLists Code-along Lab",
-        url: "lab6.AL/",
-        due: "10/10/2025",
-      },
-      {
-        name: "Lab 7",
-        title: "LinkedList Homework Lab",
-        url: "hwk4.LL/",
-        //due: "10/18/2024",
-      },
-      {
-        name: "Lab 8",
-        title: "Stacks and Queues Lab",
-        url: "lab8.melody/",
-        due: "10/24/2025",
-      },
-      {
-        name: "Lab 9",
-        title: "Recursion Lab",
-        url: "lab9.rec/",
-        due: "10/31/2025",
-      },
-      {
-        name: "Lab 11",
-        title: "Expression Trees (Binary Trees)",
-        url: "lab11.expr/",
-        due: "11/14/2025",
-        },
-        {
-          name: "Lab 12",
-          title: "Binary Search Trees Lab",
-          url: "lab12.bst/",
-          due: "11/21/2025",
-        },
-        {
-          name: "Lab 13",
-          title: "Maps Lab",
-          url: "lab13.map/",
-          due: "12/5/2025",
-        },
+      // {
+      //   name: "Lab 2",
+      //   title: "Inheritance Lab",
+      //   url: "lab2.dice/",
+      //   due: "9/12/2025",
+      // },
+      // {
+      //   name: "Lab 3",
+      //   title: "Abstract Classes Lab",
+      //   url: "lab3.lib/",
+      //   due: "9/19/2025",
+      // },
+      // {
+      //   name: "Lab 4",
+      //   title: "Exceptions Lab ",
+      //   url: "lab4.exc/",
+      //   due: "9/26/2025",
+      // },
+      // {
+      //   name: "Lab 5",
+      //   title: "Complexity Lab",
+      //   url: "lab5.bigO/",
+      //   due: "10/3/2025",
+      // },
+      // {
+      //   name: "Lab 6",
+      //   title: "ArrayLists Code-along Lab",
+      //   url: "lab6.AL/",
+      //   due: "10/10/2025",
+      // },
+      // {
+      //   name: "Lab 7",
+      //   title: "LinkedList Homework Lab",
+      //   url: "hwk4.LL/",
+      //   //due: "10/18/2024",
+      // },
+      // {
+      //   name: "Lab 8",
+      //   title: "Stacks and Queues Lab",
+      //   url: "lab8.melody/",
+      //   due: "10/24/2025",
+      // },
+      // {
+      //   name: "Lab 9",
+      //   title: "Recursion Lab",
+      //   url: "lab9.rec/",
+      //   due: "10/31/2025",
+      // },
+      // {
+      //   name: "Lab 11",
+      //   title: "Expression Trees (Binary Trees)",
+      //   url: "lab11.expr/",
+      //   due: "11/14/2025",
+      //   },
+      //   {
+      //     name: "Lab 12",
+      //     title: "Binary Search Trees Lab",
+      //     url: "lab12.bst/",
+      //     due: "11/21/2025",
+      //   },
+      //   {
+      //     name: "Lab 13",
+      //     title: "Maps Lab",
+      //     url: "lab13.map/",
+      //     due: "12/5/2025",
+      //   },
         // {
         //   name: "Lab 12",
         //   title: "Sorting Lab",
@@ -168,9 +164,9 @@ let days = {
   },
   lectures: [
     // wk 1
-    "Course overview, Java warmup",
+    "Course overview",
+    "Lab 1: Down on the Farm",
     "Inheritance: motivation, abstraction",
-    "Lab 1: Warmup Lab",
     "Inheritance: this(), super(), constructor chaining",
     "Notes: <a href='https://drive.google.com/open?id=1fDLCXWsAbwMnLeV9FNxwO_5GrmgYiKgq&usp=drive_fs'>1a. Inheritance</a>" + "<br/>" +
       "Assigned: <a href='hwk1.lc/'>Hwk 1 (Letter Counter)</a>" + "<br/>" +
