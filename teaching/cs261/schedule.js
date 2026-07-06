@@ -23,7 +23,7 @@ let days = {
         name: "Hwk 1",
         title: "Letter Counter",
         url: "hwk1.lc/",
-        due: "9/10/2025", // Wed, wk 2
+        due: "9/9/2026", // Wed, wk 2
       },
       {
         name: "Hwk 2",
@@ -168,13 +168,15 @@ let days = {
   },
   lectures: [
     // wk 1
-    "<strong><emph>Labor Day<br/>(No Class)</emph></strong>",
     "Course overview, Java warmup",
-    "Lab 1: Warmup Lab",
     "Inheritance: motivation, abstraction",
-    "",
-    // wk 2
+    "Lab 1: Warmup Lab",
     "Inheritance: this(), super(), constructor chaining",
+    "Notes: <a href='https://drive.google.com/open?id=1fDLCXWsAbwMnLeV9FNxwO_5GrmgYiKgq&usp=drive_fs'>1a. Inheritance</a>" + "<br/>" +
+      "Assigned: <a href='hwk1.lc/'>Hwk 1 (Letter Counter)</a>" + "<br/>" +
+      "Assigned: <a href='lab1.farm/'>Lab 1</a>",
+    // wk 2
+    "<strong><emph>Labor Day<br/>(No Class)</emph></strong>",
     "Polymorphism, object substitution, down-casting",
     "Lab 2: Inheritance Lab",
     "Method @Override, dynamic dispatch",

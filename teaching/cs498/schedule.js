@@ -3,11 +3,7 @@ let days = {
     {
       name: "Course Syllabus",
       url: "syllabus"
-    },
-    {
-      name: "Community Statement",
-      url: "community"
-    },
+    }
   ],
   assignments: {
     homework: [
