@@ -28,17 +28,17 @@ By the end of the course, students will be able to:
 - Communicate technical proposals effectively through written reports and oral presentations.
 
 #### Grade Breakdown
-This is a pass/fail grade. A passing grade requires a 60+% final average. This overall grade is assessed as follows:
+This is a pass/fail grade. A passing grade requires a final average >= 60%. This overall grade is assessed as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Participation | 10% |
+| Participation | 15% |
+| Attendance at the Math/CS Seminars | 10% |
 | Initial Project document | 15% |
 | Feasibility Analysis | 15% |
-| Initial Design Document | 30% |
+| Initial Design Document | 25% |
 | Project Management Plan and Timeline | 10% |
 | Defense Presentation | 10% |
-| Engagement in the Math/CS Seminars | 10% |
 
 <!-- #### Grading Policy
 This course is graded as pass/fail. A passing grade requires your (or your group)'s completion of 
@@ -56,6 +56,11 @@ the following elements.
     - 2 x attendance
     - 1 defense presentation to faculty and peers -->
 
+#### Expectations
+Work completed in this seminar may be used to develop a future capstone project. Because not all capstone students are enrolled in this elective planning seminar, project proposals developed here may be opened to additional students, revised by the eventual capstone team, merged with other proposals, or reframed before implementation begins. The goal of this seminar is to produce strong project candidates and useful planning materials. Students who develop a project proposal in the planning seminar would likely continue with that project in the capstone course, but they should expect the project to be revisited with the full capstone team (if the project is applicable to group work).
+
+
+<!-- 
 #### Tentative Calendar
 ##### Weeks 1-3: Group Selection, Project Topic Selection, and Problem Statement
 This early period will be used to identify your team membership and your project.
@@ -117,10 +122,14 @@ Something small but non-trivial, such as:
 - A basic CRUD skeleton for a web app  
 - A trained baseline model  
 - A hardware demo that exercises sensors/actuators  
-- A single algorithm implemented in isolation   -->
+- A single algorithm implemented in isolation   --> -->
 
-##### AI Policy: Some AI Allowed
-In this course, certain assignments will permit the use of AI. These assignments will be explicitly designated. In addition, students may use AI in indirect ways, such as consultation for brainstorming purposes or as a study assistant. Students must always disclose the use of AI-generated material, and specify how it was used. The student is also responsible for any misinformation or legally protected data that they incorporate into their work. If you have questions about the use of AI in this course, please ask your professor.
+##### AI Policy: AI Use Encouraged
+In this course, students are encouraged to use generative AI tools, to assist with course work (unless specifically told otherwise). The student is so responsible for any misinformation that they incorporate into their work. 
+
+
+<!-- ##### AI Policy: Some AI Allowed
+In this course, certain assignments will permit the use of AI. These assignments will be explicitly designated. In addition, students may use AI in indirect ways, such as consultation for brainstorming purposes or as a study assistant. Students must always disclose the use of AI-generated material, and specify how it was used. The student is also responsible for any misinformation or legally protected data that they incorporate into their work. If you have questions about the use of AI in this course, please ask your professor. -->
 
 {% include syllabus-my-boilerplate-PF.md %}
 

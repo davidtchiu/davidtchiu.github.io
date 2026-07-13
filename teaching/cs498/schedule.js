@@ -13,65 +13,70 @@ let days = {
   },
   lectures: [
     // wk 1
-    "Capstone sorting exercise", // Give students a list of possible project ideas: some too small, some too large, some vague, some feasible. Have them classify each one as “too small,” “reasonable,” “too ambitious,” or “unclear.”
-    "Interest x skill x problem matrix", //Students make a 3-column table: things I care about, things I can build, problems people have. Then they combine entries into possible capstone ideas.
-    "",
+    "Exploration: Capstone sorting exercise", // Give students a list of possible project ideas: some too small, some too large, some vague, some feasible. Have them classify each one as “too small,” “reasonable,” “too ambitious,” or “unclear.”
+    "Exploration: Project repair lab", // Give students project ideas, and get then to repair them so they are more in scope.
+      "Mon: <a href='https://docs.google.com/document/d/1e_NsdxjyYxz_24HmNAQc9G1LL7XH3xYcJH2AMQa_F1Y/edit?usp=drive_link'>Idea Classification</a>'" + "<br/>" + 
+        "Wed: <a href='https://docs.google.com/document/d/19oZe04G3wZL7xSLWYL6kKj3xkMyJTAfPALX6S3lA92o/edit?usp=drive_link'>Repair Lab</a>'",
     // wk 2
     "<strong>MLK Day<br/>(no class)</strong>",
-    "Individual check-in", // Each student shares 2–3 possible project directions and one skill/domain they want to use.",
-    "",
+    "Exploration: Idea generation", // Come up with at least 3 project directions
+      "Wed: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc/edit?usp=drive_link'>Idea Radar</a>",
     // wk 3
-    "Decision matrix", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk.
-    "Project selection conference", //  Each student/team explains what they chose and what they rejected.",
+    "Project def'n: Alternatives comparison", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk. Each student/team explains what they chose and what they rejected.
+    "Project def'n: Project definition and personas", 
     "",
     // wk 4
-    "Problem statement workshop", // Use a template: “We are building ___ for ___ because ___.” Then force them to identify the user, pain point, and success condition.,
-    "Peer review of problem statements", //. Other students identify what is still vague,
+    "Problem statement", 
+    "Problem statement (cont.)",
     "",
     // wk 5
-    "Prior-art scavenger hunt", // Students find examples of similar apps, papers, GitHub repos, datasets, tools, or APIs. They classify each as inspiration, competitor, dependency, or warning sign.
-    "Check annotated sources",//. Each student/team explains the most useful source and one thing it changed about the project.
+    "AI tool finding", // 
+    "AI tool testing", // 
     "",
     // wk 6
-    "TBD", //Pre-mortem", //It is the end of capstone and your project failed. Why?” Students list failure modes, then rank them by likelihood and severity.",
-    "MVP cutdown", // Students define three versions: minimum viable version, expected version, stretch version. Then ask: “What would still count as a successful capstone if everything goes wrong?”",
-    "", //"Risk triage", //For each team, identify the top 2 risks that must be tested before the semester ends.",
+    "Background: Prior work hunt", // Students find examples of similar apps, papers, GitHub repos, datasets, tools, or APIs. They classify each as inspiration, competitor, dependency, or warning sign.
+    "Background: Choices", // tech, resource, and data discussions
+    "",
     // wk 7
-    "MVP cutdown", // Students define three versions: minimum viable version, expected version, stretch version. Then ask: “What would still count as a successful capstone if everything goes wrong?”",
-    "Instructor check-in", //Instructor check-in on scope. Push them to remove features, not add features.
+    "Risks: Ethics study", // 
+    "Risks: Pre-mortem and mitigation", // premortem and mitigation
+    "",
+    // wk 7
+    "Feasibility", 
+    "Feasibility: MVP and project scope", 
     "",
     // wk 8
     "<strong>Fall Break</strong>",
-    "TBD",
+    "Use-case: User stories",
     "",
     // wk 9: 
-    "Box-and-arrow diagramming", // Students draw their system architecture: frontend, backend, database, external APIs, models, files, users, data flow.
-    "Diagram critique", // Another team explains their diagram back to them. If they cannot, the diagram is unclear.
+    "Use-case: User stories", 
+    "Use-case: First storyboard", 
     // "Input/output audit", // For every major component, students define inputs, outputs, data formats, and failure cases.",
     // "Check whether the components are real enough to implement", //. This is where vague “AI module” boxes get challenged.",
     "",
     // wk 10
-    "Success metric workshop", // Students answer: How will you know it works? How will you test correctness, usability, performance, accuracy, or completeness?
-    "Peer review of evaluation plans", // Other students ask: “Would this convince you the project succeeded?”",
+    "Use-case: First storyboard", 
+    "Architecture: ", 
     "",
     // wk 11
-    "Design doc sprint",  // Students use class time to assemble the pieces: problem, background, MVP, architecture, risks, evaluation, timeline.
+    "Challenges and tradeoffs", 
     "Cont'd",
     "",
     // wk 12
-    "Cont'd",
-    "Design document peer review", //. Use a short rubric and require written comments.",
+    "Git basics",
+    "Git cont.",
     "",
     // wk 13
     "TBD",
     "<strong>Thanksgiving Break</strong>",
     "",
     // wk 14
-    "Storyboarding the final presentation", //Students build a slide outline: problem, motivation, prior work, design, feasibility, timeline, risks.",
-    "Practice presentations in small groups", // Peers must ask one feasibility question and one scope question.",
+    "Milestones", //Students build a slide outline: problem, motivation, prior work, design, feasibility, timeline, risks.",
+    "Timeline", // Peers must ask one feasibility question and one scope question.",
     "",
     // wk 15
-    "Day-one simulation", // It is the first day of capstone next semester. What exactly do you do?” Students write their first-week action plan.
+    "Eval planning", // It is the first day of capstone next semester. What exactly do you do?” Students write their first-week action plan.
     "<strong>Reading Period</strong>",
     "",
     // // wk final
