@@ -95,7 +95,8 @@ let days = {
     // wk 15
     "Handoff",
     "<strong>Reading Period</strong>",
-      "Mon: <a href='https://docs.google.com/document/d/1mBGfdxe-gjm0xG8vvFMmxkNjlb79vc2HtLpaiMNNZDo/edit?usp=drive_link'>15. Handoff</a>" + "<br/>" +
+      "Mon: <a href='https://docs.google.com/document/d/1mBGfdxe-gjm0xG8vvFMmxkNjlb79vc2HtLpaiMNNZDo/edit?usp=drive_link'>15. Handoff</a>"
+    ,
     // // wk final
     // "",
     // "",
