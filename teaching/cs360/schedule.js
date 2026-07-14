@@ -129,7 +129,7 @@ let days = {
     "<strong>Labor Day<br/>(no class)</strong>",
     "Why DBMS? Data independence",
     "Relational model: Connection to sets",
-    "Notes: <a href='https://drive.google.com/file/d/1bK8yUalrrdIOvmYSGKVDRci7EYu0gK9l/view?usp=drive_link'>1. Intro</a>" + "<br/>" +
+    "Notes: <a href='https://drive.google.com/file/d/1bK8yUalrrdIOvmYSGKVDRci7EYu0gK9l/view?usp=drive_link'>1. Intro</a>" + "<br/>"
     ,
     // wk 2
     "Relational model: keys",

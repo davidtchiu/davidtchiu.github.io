@@ -64,33 +64,33 @@ let days = {
     "Use-case: User stories",
     "Use-case: Storyboard",
       "Mon: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4/edit?usp=drive_link'>9a. User stories</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1XDMFTchr4XY0kkRfp1UiL5Z0s0FNkdSaG0XW_bdSg0Q/edit?usp=drive_link'>9b. Storyboard 1</a>",
+      "Fri: <a href='https://docs.google.com/document/d/1XDMFTchr4XY0kkRfp1UiL5Z0s0FNkdSaG0XW_bdSg0Q/edit?usp=drive_link'>9b. Storyboard 1</a>"
     ,
       // wk 10
     "Use-case: First storyboard", 
     "Architecture: ", 
       "Mon: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4/edit?usp=drive_link'>10a. Storyboard 2</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1hZoI3ZjRxfeks_O1fdCvcy55m_f1nqbZjKGTK00vAaI/edit?usp=drive_link'>10b. Architecture</a>",
+      "Fri: <a href='https://docs.google.com/document/d/1hZoI3ZjRxfeks_O1fdCvcy55m_f1nqbZjKGTK00vAaI/edit?usp=drive_link'>10b. Architecture</a>"
     ,
     // wk 11
     "Challenges and tradeoffs", 
     "Cont'd",
       "Mon: <a href='https://docs.google.com/document/d/1_8KME8PNuEBeW3a8_oe_lSBlMBSCG16_tAP_HAKqbpI/edit?usp=drive_link'>11a. Tradeoffs</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw/edit?usp=drive_link'>11b. Checkpoints</a>",
+      "Fri: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw/edit?usp=drive_link'>11b. Checkpoints</a>"
     ,
     // wk 12
     "Git basics",
     "Git cont.",
     "",
     // wk 13
-    "<strong>No class</strong>",
+    "<strong>Thanksgiving Break</strong>",
     "<strong>Thanksgiving Break</strong>",
     "",
     // wk 14
     "Timeline", 
     "Evaluation Plan", 
       "Mon: <a href='https://docs.google.com/document/d/18v2pwZRIqrs_DYbMbmRcXt6pjYd2pWL6TFgRK1PWGvU/edit?usp=drive_link'>14a. Timeline</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1C8iv9z5qYXv4IcTw7s7ZEMSOVxidLOTHx7UU_1505ms/edit?usp=drive_link'>14b. Evaluation Plan</a>",
+      "Fri: <a href='https://docs.google.com/document/d/1C8iv9z5qYXv4IcTw7s7ZEMSOVxidLOTHx7UU_1505ms/edit?usp=drive_link'>14b. Evaluation Plan</a>"
     ,
     // wk 15
     "Handoff",
