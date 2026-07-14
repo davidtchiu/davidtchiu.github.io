@@ -129,65 +129,82 @@ let days = {
     "<strong>Labor Day<br/>(no class)</strong>",
     "Why DBMS? Data independence",
     "Relational model: Connection to sets",
+    "Notes: <a href='https://drive.google.com/file/d/1bK8yUalrrdIOvmYSGKVDRci7EYu0gK9l/view?usp=drive_link'>1. Intro</a>" + "<br/>" +
+    ,
     // wk 2
     "Relational model: keys",
     "Relational model: schema",
     "Relational algebra: selection, projection, and query plans",
+    "",
     // wk 3
     "RA: query composition, set ops and compatibility",
     "RA: natural join",
     "RA: outer join, rename",
+    "",
     // wk 4
     "RA: aggregation and grouping",
     "SQL: schema definition",
     "SQL: writing basic queries, joins",
+    "",
     // wk 5
     "SQL: outer joins, renaming, temporary tables",
     "SQL Work Day 1",
     "SQL: subqueries",
+    "",
     // wk 6
     "SQL: grouping and aggregation",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
+    "",
     // wk 7
     "Storage: File abstraction",
     "Storage: Disk scheduling",
     "Files: formats and organization",
+    "",
     // wk 8
     "<strong>Fall Break</strong>",
     "Files: Cost modeling",
     "Files: Join processing",
+    "",
     // wk 9
     "Indexing: motivation",
     "Multilevel indexing: B+Trees",
     "B+Tree: point and range queries",
+    "",
     // wk 10
     "B+Tree: insertion",
     "B+Tree: runtime analysis",
     "Extendible Hashing",
+    "",
     // wk 11
     "Bitmap index",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
+    "",
     // wk 12
     "Bitmap compression",
     "Theory: functional dependencies",
     "Theory: attribute-set closure and superkeys",
+    "",
     // wk 13
     "Theory: FD-set closure; Armstrong's Axioms",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
+    "",
     // wk 14
     "Theory: normal forms",
     "Theory: BCNF decomposition",
     "Theory: Lossless join; dependency preservation",
+    "",
     // wk 15
     "Theory: Minimal (canonical) cover and 3NF",
     "<strong><emph>Final Presentation</emph></strong>",
     "<strong>Reading Period</strong>",
+    "",
     // wk final
     "",
     "<strong><emph>Final Exam (Comprehensive)<br/>4:00-6:00</emph></strong>",
+    "",
     "",
   ],
 };

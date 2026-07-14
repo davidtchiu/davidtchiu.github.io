@@ -108,34 +108,39 @@ let days = {
     "History of systems",
     "Read: Appendix A (Dinosaur)" + "<br/>" +
       "Notes: <a href='https://drive.google.com/open?id=1dkdLnS2wtQvwzzHTcusHgOq7tOhIKJhA&usp=drive_fs'>1. What is OS?</a>" + "<br/>" +
-      "Watch: <a href='https://chsi.harvard.edu/harvard-ibm-mark-1-video'>The Story of Mark I</a>",
+      "Watch: <a href='https://chsi.harvard.edu/harvard-ibm-mark-1-video'>The Story of Mark I</a>"
+    ,
     // wk 2
     "Tutorial 1",
     "Tutorial 2",
     "Tutorial 3",
     // "",
     "Read: <a href='https://diveintosystems.org/book/Appendix1/'>Appendix 1</a> (Dive Into Systems)" + "<br/>" +
-    "C tutorial: <a href='tut1'>1. The Basics</a><br/>C tutorial: <a href='tut2'>2. Pointers</a><br/>C tutorial: <a href='tut3'>3. Memory Management</a>",
+      "C tutorial: <a href='tut1'>1. The Basics</a><br/>C tutorial: <a href='tut2'>2. Pointers</a><br/>C tutorial: <a href='tut3'>3. Memory Management</a>"
+    ,
     // wk 3
     "Computing models",
     "Bootstrapping, interrupts",
     "Dual mode, system calls",
     // "",
     "Read: Chaps 1.1-1.6 &amp; 2.1-2.9 (Dinosaur)" + "<br/>" +
-      "Notes: <a href='https://drive.google.com/open?id=1Se4tHmMOkSPjSYu_lBztMaUYUMsAVulF&usp=drive_fs'>2. Interrupts and Syscalls</a>",
+      "Notes: <a href='https://drive.google.com/open?id=1Se4tHmMOkSPjSYu_lBztMaUYUMsAVulF&usp=drive_fs'>2. Interrupts and Syscalls</a>"
+    ,
     // wk 4
     "Processes: switching, PCB, address space",
     "Processes: process trees, fork()",
     "Processes: execv(), wait()",
     // "",
     "Read: Chap 3.1-3.4 (Dinosaur)" + "<br/>" +
-      "Notes: <a href='https://drive.google.com/open?id=199IfMl_lh11136uWAPS0takp2UVrCUIj&usp=drive_fs'>3. Concurrency and Processes</a>",
+      "Notes: <a href='https://drive.google.com/open?id=199IfMl_lh11136uWAPS0takp2UVrCUIj&usp=drive_fs'>3. Concurrency and Processes</a>"
+    ,
     // wk 5
     "Processes: wait(); zombies and orphans",
     "Threads: motivation and kernel support",
     "Threads: pthread library",
     "Read: Chap 4.1-4.4 (Dinosaur)" + "<br/>" +
-      "Notes: <a href='https://drive.google.com/file/d/1PK8MuVS7SapfhYij8g_szZCuXskKvFJM/view?usp=drive_link'>4a. Thread Support</a>",
+      "Notes: <a href='https://drive.google.com/file/d/1PK8MuVS7SapfhYij8g_szZCuXskKvFJM/view?usp=drive_link'>4a. Thread Support</a>"
+    ,
     // wk 6
     "Par: Parallel architectures",
     "Par: Parallel computing patterns",
@@ -144,7 +149,8 @@ let days = {
       "Study: <a href='https://drive.google.com/file/d/10JZ_11JlnbPsXjhoV1YifaH1kDktcPID/edit'>Exam 1 Study Guide</a><br/>" +
       "Read: <a href='http://www.gotw.ca/publications/concurrency-ddj.htm'>The Free Lunch Is Over</a><br/>" +
       "Code: <a href='https://github.com/davidtchiu/cs475-parSum'>Parallel Sum</a><br/>" +
-      "Code: <a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>",
+      "Code: <a href='https://github.com/davidtchiu/cs475-parInsertionSort'>Parallel Sort</a>"
+    ,
     // wk 7
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
