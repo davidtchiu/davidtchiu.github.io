@@ -75,23 +75,27 @@ let days = {
     // wk 11
     "Challenges and tradeoffs", 
     "Cont'd",
-    "",
+      "Mon: <a href='https://docs.google.com/document/d/1_8KME8PNuEBeW3a8_oe_lSBlMBSCG16_tAP_HAKqbpI/edit?usp=drive_link'>11a. Tradeoffs</a>" + "<br/>" +
+      "Fri: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw/edit?usp=drive_link'>11b. Checkpoints</a>",
+    ,
     // wk 12
     "Git basics",
     "Git cont.",
     "",
     // wk 13
-    "TBD",
+    "<strong>No class</strong>",
     "<strong>Thanksgiving Break</strong>",
     "",
     // wk 14
-    "Milestones", //Students build a slide outline: problem, motivation, prior work, design, feasibility, timeline, risks.",
-    "Timeline", // Peers must ask one feasibility question and one scope question.",
-    "",
+    "Timeline", 
+    "Evaluation Plan", 
+      "Mon: <a href='https://docs.google.com/document/d/18v2pwZRIqrs_DYbMbmRcXt6pjYd2pWL6TFgRK1PWGvU/edit?usp=drive_link'>14a. Timeline</a>" + "<br/>" +
+      "Fri: <a href='https://docs.google.com/document/d/1C8iv9z5qYXv4IcTw7s7ZEMSOVxidLOTHx7UU_1505ms/edit?usp=drive_link'>14b. Evaluation Plan</a>",
+    ,
     // wk 15
-    "Eval planning", // It is the first day of capstone next semester. What exactly do you do?” Students write their first-week action plan.
+    "Handoff",
     "<strong>Reading Period</strong>",
-    "",
+      "Mon: <a href='https://docs.google.com/document/d/1mBGfdxe-gjm0xG8vvFMmxkNjlb79vc2HtLpaiMNNZDo/edit?usp=drive_link'>15. Handoff</a>" + "<br/>" +
     // // wk final
     // "",
     // "",
