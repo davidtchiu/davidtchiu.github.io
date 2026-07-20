@@ -80,7 +80,7 @@ Each line in this file represents a student enrollment. For instance, take a loo
 
 1. **Redundancies**: It is easy to see that a student's information is duplicated on a separate row for each course they are enrolled in. (For instance, check out the last two rows for a student, Kyle.)
 2. **Multi-valued attributes:** One of the attributes can have multiple values: A student can have 0-2 majors, and each of major is separated by a semi-colon. (You might recall multi-valued attributes like this are prohibited in the relational model.)
-3. **Incomplete data:** When a student is not enrolled in any course, their course-enrollment fields are simply delimited with commas, but there's no data in between. Look at Lia's (first row) information. She does not have a major and is not enrolled in any courses. Now take a look at the courses without the student info, like MATH 330 (Trigonometry). These are courses that exist on the books that no one is enrolled in. Sometimes, we just need to show that a department exists, so here are also departments without student or course info. This is the case for the History Department (4th row), which can happen when an existing department has not yet added any courses to the schedule.
+3. **Incomplete data:** When a student is not enrolled in any course, their course-enrollment fields are simply delimited with commas, but there's no data in between. Look at Lia's data on the third line in the file: They are not enrolled in any courses, so all of the fields following her major are empty, which looks kind of wonky. Now look at the courses without the student info, like MATH 330 (Trigonometry) on line 20. These are courses that exist on the books in which  no one is enrolled. In yet another example, sometimes, we just need to show that a department/program exists, so here are also departments without student or course info. This is the case for the History Department (4th row), which can happen when an existing department has not yet added any courses to the schedule.
 
 #### Task 1: Schema Definition
 
@@ -148,7 +148,7 @@ Here is the DB schema you need to define in SQL. As you define these relations, 
 </li>
 <li>
 	<p>
-	Dept(deptID, name, building)<br/>
+	Dept(deptID, deptName, building)<br/>
 	Departments are identified by a label (deptID), which is not numerical. For 
 	instance, `CS` would be the deptID for the computer science department. 
 	It also requires a full name of the department, and each is housed in a 
@@ -168,7 +168,7 @@ Here is the DB schema you need to define in SQL. As you define these relations, 
 	Students can enroll in any number of courses. A course-enrollment is given by 
 	course number, the department of the course offering, and the student taking
 	the course. For instance, that Kelly is enrolled in Databases 
-	would be represented in this table as the tuple `(351, 'CS', 1282)`.
+	would be represented in this table as the tuple `(351, 'CSCI', 1282)`.
 	</p>
 </li>
 </ul>
@@ -179,7 +179,7 @@ The next step is to import the raw data into your database.
 
 1. Write a script that inputs the raw data file and prints out a sequence of `INSERT OR IGNORE INTO ...` statements that you can later copy-and-paste into SQLite to fully populate the tables in your database.  It is recommended that you use Python for this type of work, as is mostly the case in industry, but I don't really have a preference. You may use either Python or Java.
 
-	 The optional `OR IGNORE` statement will ignore the insert statement if the tuple already exists in the table. We didn't talk about this option in class, but it cuts down on the number of warnings.
+	 The optional `OR IGNORE` statement will ignore the insert statement if the insertion results in an error (i.e., the tuple already exists). We didn't talk about this option in class, but it cuts down on the number of warnings.
 
 2. Your script will need to resolve all those anomalies I listed before (inconsistencies, redundancies, etc.). This step is called *Data Cleansing* out in the real world. In some cases, you can rely on the database to resolve some anomalies. For instance, if you set a deptID to be the primary key of Department like you were supposed to, then multiple insertions of the same department would be automatically rejected by SQLite. (You will see the warnings pop up in SQLite when you go to execute.)
 
@@ -371,21 +371,19 @@ CourseNum   deptID      StudentID
 [25pt] Correctness of the schema definition, including data types, primary and foreign
     keys. (5 points per table)
 
-[35pt] Correctness of the data ingestion script, broken down as follows:
+[40pt] Correctness of the data ingestion script, broken down as follows:
 
     [25pt] Your script prints a sequence of valid INSERT statements that
         properly populates all tables. Duplicate INSERT statements
-        are acceptable.
+        *are* acceptable.
 
     [5pt] Your script must resolve incomplete data (nonexistent majors, for instance).
 
     [5pt] Your script resolves multi-valued majors.
 
-    [5pt] Your script resolves inconsistent class-rank and department labels.
-
 [misc] Files not submitted in plain-text format will be returned without a grade.
 
-Total: 65pts
+Total: 60pts
 ```
 
 #### Submitting Your Assignment
@@ -393,7 +391,7 @@ Total: 65pts
 After you have completed the homework, use the following to submit your work on Canvas.
 You must submit two files: (1) The file containing the SQL schema definition. This file must be in plain-text. (2) The script used to generate the insert statements. Zip these files up.
 
-Navigate to our course on Canvas. You should see the Homework 3 Dropbox. Click on this link, and you should be able to drag your file right into the submission box. Click "Save Changes". You may submit as often as you'd like before the deadline. I will grade the most recent copy.
+Navigate to our course on Canvas. You should see the Homework submission dropbox. Click on this link, and you should be able to drag your file right into the submission box. Click "Save Changes". You may submit as often as you'd like before the deadline. I will grade the most recent copy.
 
 #### Credits
 
