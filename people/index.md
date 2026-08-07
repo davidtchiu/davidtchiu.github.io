@@ -1,6 +1,6 @@
 #### Students
 
-Here's is a list of my former research advisees and a half-hearted effort of tracking where they've gone.
+Here's is a list of my research advisees and a half-hearted effort of tracking where they've gone.
 
 ##### Undergraduate Research Alumni
 - Lily Gustafson (BS'27 expected, Puget Sound)
@@ -12,13 +12,13 @@ Here's is a list of my former research advisees and a half-hearted effort of tra
 - Sarah McClain (BS'20, Puget Sound) → Panorama Education
 - Jared Polonitza (BS'19, Puget Sound) → Chalice Networks → Prime Trust → Apple
 - Sam Burdick (BS'18, Puget Sound) → Amazon → PhD @ Ohio State
-- Jahrme Risner (BS'18, Puget Sound) → Google, Mountain View
+- Jahrme Risner (BS'18, Puget Sound) → Google
 - Jack Burns (BS'18, Puget Sound) → Loopie → Nordstrom Seattle
 - Patrick Ryan (BS'18, Puget Sound) → T-Mobile, Bellevue
 - Christine Li (BS'17, Puget Sound) → Columbia University
 - Rachel Hirsch (BS'17, Puget Sound) → MS @ Colorado State → ringDNA
 - Chili Johnson (BS'17, Puget Sound)
-- Alexia Ingerson (BS'16, Puget Sound) → Intel
+- Alexia Ingerson (BS'16, Puget Sound) → Intel → MS @ UC Berkeley
 - Brandon Roberts (BS'16, Puget Sound) → Milliman
 - Miles Histand (BS'14, Portland State University) → Daimler
 - Gabriel Dunham (BS'14, Washington State University) → Plexsys

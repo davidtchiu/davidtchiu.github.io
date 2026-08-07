@@ -17,42 +17,42 @@ let days = {
         url: "hwk1.rel/",
         due: "9/12/2025", // wk2, friday
       },
-      {
-        name: "Hwk 2 (written)",
-        title: "Relational Algebra I",
-        url: "hwk2.ra/",
-        due: "9/24/2025", // wk4, Monday (needs to be due earlier next year - end of wk 3)
-      },
-      {
-        name: "Hwk 3 (written)",
-        title: "Relational Algebra II",
-        url: "hwk3.ra2/",
-        due: "10/1/2025", // wk5, Wednesday (needs to be due end of wk 4)
-      },
-      {
-        name: "Hwk 4 (sql schema)",
-        title: "SQL Data Ingestion",
-        url: "hwk4.sqlddl/",
-        due: "10/10/2025",  // wk6, Friday
-      },
-      {
-        name: "Hwk 5 (coding)",
-        title: "Disk Scheduling",
-        url: "hwk5.disk/",
-        due: "10/27/2025",  // wk 9, Monday 
-      },
-      {
-        name: "Hwk 6 (coding)",
-        title: "Extendible (Dynamic) Hashing",
-        url: "hwk6.exhash/",
-        due: "11/21/2025",  // wk 12, Fri 
-      },
-      {
-        name: "Hwk 7 (written)",
-        title: "Normalization and DB Theory",
-        url: "hwk7.theory/",
-        due: "12/17/2025", // wk 15, finals
-      },
+      // {
+      //   name: "Hwk 2 (written)",
+      //   title: "Relational Algebra I",
+      //   url: "hwk2.ra/",
+      //   due: "9/24/2025", // wk4, Monday (needs to be due earlier next year - end of wk 3)
+      // },
+      // {
+      //   name: "Hwk 3 (written)",
+      //   title: "Relational Algebra II",
+      //   url: "hwk3.ra2/",
+      //   due: "10/1/2025", // wk5, Wednesday (needs to be due end of wk 4)
+      // },
+      // {
+      //   name: "Hwk 4 (sql schema)",
+      //   title: "SQL Data Ingestion",
+      //   url: "hwk4.sqlddl/",
+      //   due: "10/10/2025",  // wk6, Friday
+      // },
+      // {
+      //   name: "Hwk 5 (coding)",
+      //   title: "Disk Scheduling",
+      //   url: "hwk5.disk/",
+      //   due: "10/27/2025",  // wk 9, Monday 
+      // },
+      // {
+      //   name: "Hwk 6 (coding)",
+      //   title: "Extendible (Dynamic) Hashing",
+      //   url: "hwk6.exhash/",
+      //   due: "11/21/2025",  // wk 12, Fri 
+      // },
+      // {
+      //   name: "Hwk 7 (written)",
+      //   title: "Normalization and DB Theory",
+      //   url: "hwk7.theory/",
+      //   due: "12/17/2025", // wk 15, finals
+      // },
       // {
       //   name: "Hwk 4 (sql)",
       //   title: "Writing SQL Queries",
@@ -87,24 +87,24 @@ let days = {
       //   url: "proj/",
       //   due: "10/29/2025",  // wk 9, wednesday
       // },
-      {
-        name: "Project Prop",
-        title: "Project Proposal",
-        url: "proj/#prop",
-        due: "11/10/2025", // wk 10, friday
-      },
-      {
-        name: "Project Demo",
-        title: "Project Demo",
-        url: "proj/#demo",
-        due: "12/10/2025",  // wk 14, wednesday
-      },
-      {
-        name: "Project Code",
-        title: "Project Code",
-        url: "proj/#code",
-        due: "12/19/2025",  // finals wk, friday
-      },
+      // {
+      //   name: "Project Prop",
+      //   title: "Project Proposal",
+      //   url: "proj/#prop",
+      //   due: "11/10/2025", // wk 10, friday
+      // },
+      // {
+      //   name: "Project Demo",
+      //   title: "Project Demo",
+      //   url: "proj/#demo",
+      //   due: "12/10/2025",  // wk 14, wednesday
+      // },
+      // {
+      //   name: "Project Code",
+      //   title: "Project Code",
+      //   url: "proj/#code",
+      //   due: "12/19/2025",  // finals wk, friday
+      // },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
@@ -126,13 +126,13 @@ let days = {
 
   lectures: [
     // wk 1
-    "<strong>Labor Day<br/>(no class)</strong>",
-    "Why DBMS? Data independence",
+    "Why relational?",
     "Relational model: Connection to sets",
-    "Notes: <a href='https://drive.google.com/file/d/1bK8yUalrrdIOvmYSGKVDRci7EYu0gK9l/view?usp=drive_link'>1. Intro</a>" + "<br/>"
+    "Relational model: keys",
+    "Notes: <a href='https://drive.google.com/file/d/1bK8yUalrrdIOvmYSGKVDRci7EYu0gK9l/view?usp=drive_link'>1. Intro to DB</a>" + "<br/>"
     ,
     // wk 2
-    "Relational model: keys",
+    "<strong>Labor Day<br/>(no class)</strong>",
     "Relational model: schema",
     "Relational algebra: selection, projection, and query plans",
     "",
