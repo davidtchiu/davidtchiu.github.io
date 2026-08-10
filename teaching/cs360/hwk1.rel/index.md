@@ -22,12 +22,12 @@ Print this assignment with single-side pages. Fill in your name above, and write
 #### Grading
 
 ```
-This assignment is graded out of 35 pts:
+This assignment is graded out of 46 pts:
 
-[3pt] Completion of problem 1.
-[3pt] Completion of problem 2.
-[5pt] Completion of problem 3.
-[3pt] Completion of problem 4.
+[6pt] Completion of problem 1.
+[6pt] Completion of problem 2.
+[6pt] Completion of problem 3.
+[5pt] Completion of problem 4.
 [5pt] Completion of problem 5.
 [8pt] Completion of problem 6.
 [8pt] Completion of problem 7.
@@ -39,7 +39,3 @@ This assignment is graded out of 35 pts:
 Print the provided PDF using single-side pages. Fill in your name above, and write in the solutions in the space provided below each question. You are allowed to use the back of each page. If you used any scratch paper to show your work, append those to the end. Note: It is important you use this format for gradescope.
 
 After you've filled in the answers, scan all pages into a PDF, and submit to canvas.
-
-#### Credits
-
-Written by David Chiu. Some problems lifted from Silberschatz et al., Ramakrishnan/Gerhke, and Elmasri/Navathe. 2016.
