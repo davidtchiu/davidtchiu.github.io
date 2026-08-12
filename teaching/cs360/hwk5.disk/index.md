@@ -1,4 +1,4 @@
-## CS 455 - Principles of Database Systems
+## CS 360 - Principles of Database Systems
 
 ### Hwk 5: Disk Scheduling Simulator
 In this assignment you will write a program in a language of your choice to simulate disk scheduling algorithms. This project will help you practice implementing scheduling policies covered in lecture (FCFS, SSTF, LOOK, C-LOOK).

@@ -1,4 +1,4 @@
-## CS 455 - Principles of Database Systems
+## CS 360 - Principles of Database Systems
 
 ### Hwk 4: Data Ingestion
 
