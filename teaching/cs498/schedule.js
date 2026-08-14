@@ -15,27 +15,26 @@ let days = {
     // wk 1
     "Exploration: Capstone sorting exercise", // Give students a list of possible project ideas: some too small, some too large, some vague, some feasible. Have them classify each one as “too small,” “reasonable,” “too ambitious,” or “unclear.”
     "Exploration: Idea generation",
-      "Mon: <a href='https://docs.google.com/document/d/1e_NsdxjyYxz_24HmNAQc9G1LL7XH3xYcJH2AMQa_F1Y'>1a. Idea Classification</a>" + "<br/>" + 
-      "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation</a>"
-      // "Fri: <a href='https://docs.google.com/document/d/19oZe04G3wZL7xSLWYL6kKj3xkMyJTAfPALX6S3lA92o'>1b. Repair Lab</a>"
+      "Mon: <a href='https://docs.google.com/document/d/1e_NsdxjyYxz_24HmNAQc9G1LL7XH3xYcJH2AMQa_F1Y'>1a. Idea Classification Worksheet</a>" + "<br/>" + 
+      // "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation Worksheet</a>"
       ,
     // wk 2
     "<strong>MLK Day<br/>(no class)</strong>",
     "Exploration: Idea generation (cont.)", // Come up with at least 3 project directions
-      "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation</a>"
+      "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation Worksheet</a>"
     ,
     // wk 3
     "Project def'n: Alternatives comparison", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk. Each student/team explains what they chose and what they rejected.
     "Project def'n: Project definition and personas", 
-      "Mon: <a href='https://docs.google.com/document/d/1Vh7G7ENYOxLLMkSQplFwhA4nQrlhos8NAXd29UebsSo'>3a. Project Statement</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1NKW0GdXv4KrLQ_w5l8ZO2hqQSMaKUtkssyVez2e7eOc'>3b. Personas</a>" + "<br/>" +
+      "Mon: <a href='https://docs.google.com/document/d/1Vh7G7ENYOxLLMkSQplFwhA4nQrlhos8NAXd29UebsSo'>3a. Alternatives Comparison Worksheet</a>" + "<br/>" +
+      "Fri: <a href='https://docs.google.com/document/d/1NKW0GdXv4KrLQ_w5l8ZO2hqQSMaKUtkssyVez2e7eOc'>3b. Personas Worksheet</a>" + "<br/>" +
       "Fri: <a href='https://www.nngroup.com/articles/persona'>Read: Personas Make Users Memorable</a>"
     ,
     // wk 4
-    "Problem statement", 
-    "Problem statement (cont.)",
-      "Mon: <a href='https://docs.google.com/document/d/1HNnkLD7bKSad4XP8tS_e_Wug2Gj61O-2msVDAJ8gd3M'>4a. Snapshot</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4b. Research Questions</a>"
+    "Research Questions", 
+    "Starting your $$\LaTeX$$ document",
+      "Mon <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4a. Research Questions</a>",
+      "Fri <a href='https://overleaf.com'>Overleaf</a>"
     ,
     // wk 5
     "AI tool finding", // 
@@ -59,16 +58,14 @@ let days = {
       ,
     // wk 8 (fall break)
     "<strong>Fall Break</strong>",
-    "<strong>Check-in Presentation (1/3)</strong>",    
-    // "Feasibility", 
-    //   "Fri: <a href='https://docs.google.com/document/d/1MsObp789Q_eMbSkhBdDzjWNn3W6BnP3uhjtwk4Po0gw'>8a. Feasibility</a>" + "<br/>" +
-    //   "Fri: <a href='https://agilealliance.org/glossary/mvp/'>What is an MVP?</a>"
+    "<strong>Check-in Presentation (1/3)</strong>",
+      "",
       ,
     // wk 9
     "Feasibility", 
     "Use-case: User stories",
-    "Mon: <a href='https://docs.google.com/document/d/1MsObp789Q_eMbSkhBdDzjWNn3W6BnP3uhjtwk4Po0gw'>9a. Feasibility</a>" + "<br/>" +
-    "Mon: <a href='https://agilealliance.org/glossary/mvp/'>What is an MVP?</a>" + "<br/>" + 
+      "Mon: <a href='https://docs.google.com/document/d/1MsObp789Q_eMbSkhBdDzjWNn3W6BnP3uhjtwk4Po0gw'>9a. Feasibility</a>" + "<br/>" +
+      "Mon: <a href='https://agilealliance.org/glossary/mvp/'>What is an MVP?</a>" + "<br/>" + 
       "Fri: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>9b. User stories</a>" + "<br/>" +
       "Fri: <a href='https://www.atlassian.com/agile/project-management/user-stories'>Read: User stories article</a>"
     ,
