@@ -28,17 +28,17 @@ By the end of the course, students will be able to:
 - Communicate technical proposals effectively through written reports and oral presentations.
 
 #### Grade Breakdown
-This is a pass/fail grade. A passing grade requires a final average >= 60%. This overall grade is assessed as follows:
+This course carries a pass/fail grade. A passing grade requires a final average >= 60%. This overall grade assessment is as follows:
 
 |   | % Weight |
 | :--- | :--- |
-| Participation | 15% |
-| Attendance at the Math/CS Seminars | 10% |
-| Initial Project document | 15% |
-| Feasibility Analysis | 15% |
-| Initial Design Document | 25% |
-| Project Management Plan and Timeline | 10% |
-| Defense Presentation | 10% |
+| Participation | 10% |
+| In-Class Activities | 40% |
+| Attending Math/CS Seminars | 10% |
+| 1st Defense (1/3 way) | 10% |
+| 2nd Defense (2/3 way) | 10% |
+| Final Defense | 10% |
+| Final Project Document | 10% |
 
 <!-- #### Grading Policy
 This course is graded as pass/fail. A passing grade requires your (or your group)'s completion of 
@@ -60,69 +60,6 @@ the following elements.
 Work completed in this seminar may be used to develop a future capstone project. Because not all capstone students are enrolled in this elective planning seminar, project proposals developed here may be opened to additional students, revised by the eventual capstone team, merged with other proposals, or reframed before implementation begins. The goal of this seminar is to produce strong project candidates and useful planning materials. Students who develop a project proposal in the planning seminar would likely continue with that project in the capstone course, but they should expect the project to be revisited with the full capstone team (if the project is applicable to group work).
 
 
-<!-- 
-#### Tentative Calendar
-##### Weeks 1-3: Group Selection, Project Topic Selection, and Problem Statement
-This early period will be used to identify your team membership and your project.
-You (or your team) must produce a short document that:
-- Identifies group members, if applicable
-- States the core problem and motivation  
-- Explains who benefits and why it matters: develop personas
-- Describes constraints and assumptions  
-- Includes at least three alternative project directions before narrowing down  
-
-##### Weeks 3-5: Background + Related Work
-Continuation of the project document. This period is used to identify related
-work, background readings, potential tools, systems, and libraries that could be
-used to support the project. 
-
-A concise write-up or annotated bibliography that demonstrates the students:
-- Has read existing work that has been done in the field
-- Has selected the technologies, frameworks, or data sets they intend to use  
-- Understand what existing tools can and can't be used
-
-##### Weeks 6-7: Feasibility Analysis
-A feasibility and risk analysis is performed. Students identify required 
-background they still need to learn, think critically about unknowns, risks,
-and ethical concerns. Given these risks, students plot out a contingency
-plan. Students produce a short technical memo identifying:
-- Scope boundaries  
-- Risks and unknowns
-- An ethics/risk assessment (e.g., data privacy, misuse, accessibility)  
-- A fallback/minimal-viable version of the project  
-
-##### Weeks 8-12: High-Level Design Document
-Students work on early structuring and design of their project. This should include:
-- System architecture diagram
-- Key modules, data structures, or models  
-- External dependencies and APIs
-- Preliminary UI sketches if relevant  
-- User story development
-- A description of the main technical challenges
-
-##### Week 13-15: Final Project Organization Plan and Timeline
-A formal document including all of the above, plus:
-- Milestones and 2–3 week sprint goals  
-- Dependencies  
-- Time estimates  
-- Plans for testing or experimental evaluation
-- Reach goals
-- A 15-minute presentation delivered to faculty and peers during a Math/CS seminar that covers:
-    - Motivation  
-    - Background  
-    - Design  
-    - Early results or prototype, if applicable
-    - Timeline and feasibility
-
-
-
-<!-- #### 5. Prototype or Proof-of-Concept Artifact
-Something small but non-trivial, such as:
-- A minimal pipeline that loads one dataset  
-- A basic CRUD skeleton for a web app  
-- A trained baseline model  
-- A hardware demo that exercises sensors/actuators  
-- A single algorithm implemented in isolation   --> -->
 
 ##### AI Policy: AI Use Encouraged
 In this course, students are encouraged to use generative AI tools, to assist with course work (unless specifically told otherwise). The student is so responsible for any misinformation that they incorporate into their work. 

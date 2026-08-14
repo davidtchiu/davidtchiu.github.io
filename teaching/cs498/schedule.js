@@ -14,14 +14,15 @@ let days = {
   lectures: [
     // wk 1
     "Exploration: Capstone sorting exercise", // Give students a list of possible project ideas: some too small, some too large, some vague, some feasible. Have them classify each one as “too small,” “reasonable,” “too ambitious,” or “unclear.”
-    "Exploration: Project repair lab", // Give students project ideas, and get then to repair them so they are more in scope.
+    "Exploration: Idea generation",
       "Mon: <a href='https://docs.google.com/document/d/1e_NsdxjyYxz_24HmNAQc9G1LL7XH3xYcJH2AMQa_F1Y'>1a. Idea Classification</a>" + "<br/>" + 
-      "Fri: <a href='https://docs.google.com/document/d/19oZe04G3wZL7xSLWYL6kKj3xkMyJTAfPALX6S3lA92o'>1b. Repair Lab</a>"
+      "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation</a>"
+      // "Fri: <a href='https://docs.google.com/document/d/19oZe04G3wZL7xSLWYL6kKj3xkMyJTAfPALX6S3lA92o'>1b. Repair Lab</a>"
       ,
     // wk 2
     "<strong>MLK Day<br/>(no class)</strong>",
-    "Exploration: Idea generation", // Come up with at least 3 project directions
-      "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>2. Idea Radar</a>"
+    "Exploration: Idea generation (cont.)", // Come up with at least 3 project directions
+      "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation</a>"
     ,
     // wk 3
     "Project def'n: Alternatives comparison", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk. Each student/team explains what they chose and what they rejected.
@@ -37,6 +38,7 @@ let days = {
       "Fri: <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4b. Research Questions</a>"
     ,
     // wk 5
+    "<strong>Check-in Presentation (1/1)</strong>",    
     "AI tool finding", // 
     "AI tool testing", // 
       "Mon: <a href='https://docs.google.com/document/d/1ZBjDU0eWnfvt8yiYDKkwNPkeY-xBDgIy5Rfzs2zrPr4'>5a. AI Tasks</a>" + "<br/>" +
@@ -58,43 +60,45 @@ let days = {
       ,
     // wk 8 (fall break)
     "<strong>Fall Break</strong>",
-    "Feasibility", 
-      "Fri: <a href='https://docs.google.com/document/d/1MsObp789Q_eMbSkhBdDzjWNn3W6BnP3uhjtwk4Po0gw'>8a. Feasibility</a>" + "<br/>" +
-      "Fri: <a href='https://agilealliance.org/glossary/mvp/'>What is an MVP?</a>"
-        //+ "<br/>" +
-      // "Fri: <a href='https://docs.google.com/document/d/1U6TYbQ51M88OZUwiNRlA_Ixdgxqe9xeZ3Z6vcHEZLI0'>8b. Scope</a>"
+    "<strong>Check-in Presentation (1/3)</strong>",    
+    // "Feasibility", 
+    //   "Fri: <a href='https://docs.google.com/document/d/1MsObp789Q_eMbSkhBdDzjWNn3W6BnP3uhjtwk4Po0gw'>8a. Feasibility</a>" + "<br/>" +
+    //   "Fri: <a href='https://agilealliance.org/glossary/mvp/'>What is an MVP?</a>"
       ,
     // wk 9
+    "Feasibility", 
     "Use-case: User stories",
-    "Use-case: Storyboard",
-      "Mon: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>9a. User stories</a>" + "<br/>" +
-      "Mon: <a href='https://www.atlassian.com/agile/project-management/user-stories'>Read: User stories article</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1XDMFTchr4XY0kkRfp1UiL5Z0s0FNkdSaG0XW_bdSg0Q'>9b. Storyboard 1</a>" + "<br/>" +
-      "Fri: <a href='https://www.nngroup.com/articles/storyboards-visualize-ideas/'>Read: Storyboards Help Visualize UX Ideas</a>"
-
+    "Mon: <a href='https://docs.google.com/document/d/1MsObp789Q_eMbSkhBdDzjWNn3W6BnP3uhjtwk4Po0gw'>9a. Feasibility</a>" + "<br/>" +
+    "Mon: <a href='https://agilealliance.org/glossary/mvp/'>What is an MVP?</a>" + "<br/>" + 
+      "Fri: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>9b. User stories</a>" + "<br/>" +
+      "Fri: <a href='https://www.atlassian.com/agile/project-management/user-stories'>Read: User stories article</a>"
     ,
       // wk 10
     "Use-case: First storyboard", 
-    "Architecture: ", 
-      "Mon: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>10a. Storyboard 2</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1hZoI3ZjRxfeks_O1fdCvcy55m_f1nqbZjKGTK00vAaI'>10b. Architecture</a>" + "<br/>" +
-      "Fri: <a href='https://c4model.com/diagrams/container'>Read: C4 Model</a>"
-
+    "Use-case: Storyboard (cont.)", 
+      "Mon: <a href='https://docs.google.com/document/d/1XDMFTchr4XY0kkRfp1UiL5Z0s0FNkdSaG0XW_bdSg0Q'>10a. Storyboard 1</a>" + "<br/>" +
+      "Mon: <a href='https://www.nngroup.com/articles/storyboards-visualize-ideas/'>Read: Storyboards Help Visualize UX Ideas</a>" + "<br/>" +
+      "Fri: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>10b. Storyboard 2</a>"
     ,
     // wk 11
+    "Architecture: ", 
     "Challenges and tradeoffs", 
-    "Cont'd",
-      "Mon: <a href='https://docs.google.com/document/d/1_8KME8PNuEBeW3a8_oe_lSBlMBSCG16_tAP_HAKqbpI'>11a. Tradeoffs</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>11b. Checkpoints</a>"
+      "Mon: <a href='https://docs.google.com/document/d/1hZoI3ZjRxfeks_O1fdCvcy55m_f1nqbZjKGTK00vAaI'>11a. Architecture</a>" + "<br/>" +
+      "Mon: <a href='https://c4model.com/diagrams/container'>Read: C4 Model</a>" + "<br/>" + 
+      "Fri: <a href='https://docs.google.com/document/d/1_8KME8PNuEBeW3a8_oe_lSBlMBSCG16_tAP_HAKqbpI'>11b. Tradeoffs</a>"
+    // "Challenges (cont'd)",
+    //   "Fri: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>11b. Checkpoints</a>"
     ,
     // wk 12
-    "Git basics",
-    "Git cont.",
-    "",
+    "Design checkpoint",
+    "<strong>Check-in Presentation (2/3)</strong>",    
+      "Mon: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>12a. Checkpoints</a>"
+    ,
     // wk 13
     "<strong>Thanksgiving Break</strong>",
     "<strong>Thanksgiving Break</strong>",
-    "",
+      ""
+    ,
     // wk 14
     "Timeline", 
     "Evaluation Plan", 
@@ -106,10 +110,11 @@ let days = {
     "<strong>Reading Period</strong>",
       "Mon: <a href='https://docs.google.com/document/d/1mBGfdxe-gjm0xG8vvFMmxkNjlb79vc2HtLpaiMNNZDo'>15. Handoff</a>"
     ,
-    // // wk final
-    // "",
-    // "",
-    // "",
+    // wk final
+    "<strong>Final Check-in @ 12:00 (3/3)</strong>",
+    "",
+      ""
+    ,
   ],
 };
 

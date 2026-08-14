@@ -9,10 +9,6 @@ let days = {
       url: "community"
     },
     {
-      name: "Notes and Sample Code",
-      url: "https://canvas.pugetsound.edu"
-    },
-    {
       name: "Download Google Drive App",
       url: "https://www.google.com/drive/download/"
     },
