@@ -38,7 +38,6 @@ let days = {
       "Fri: <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4b. Research Questions</a>"
     ,
     // wk 5
-    "<strong>Check-in Presentation (1/1)</strong>",    
     "AI tool finding", // 
     "AI tool testing", // 
       "Mon: <a href='https://docs.google.com/document/d/1ZBjDU0eWnfvt8yiYDKkwNPkeY-xBDgIy5Rfzs2zrPr4'>5a. AI Tasks</a>" + "<br/>" +

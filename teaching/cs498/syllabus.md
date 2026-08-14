@@ -34,11 +34,11 @@ This course carries a pass/fail grade. A passing grade requires a final average 
 | :--- | :--- |
 | Participation | 10% |
 | In-Class Activities | 40% |
-| Attending Math/CS Seminars | 10% |
-| 1st Defense (1/3 way) | 10% |
-| 2nd Defense (2/3 way) | 10% |
+| Attending Math/CS Seminars | 5% |
+| 1st Defense | 5% |
+| 2nd Defense | 5% |
 | Final Defense | 10% |
-| Final Project Document | 10% |
+| Final Project Document | 25% |
 
 <!-- #### Grading Policy
 This course is graded as pass/fail. A passing grade requires your (or your group)'s completion of 
