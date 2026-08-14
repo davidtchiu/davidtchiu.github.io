@@ -15,7 +15,7 @@ let days = {
     // wk 1
     "Exploration: Capstone sorting exercise", // Give students a list of possible project ideas: some too small, some too large, some vague, some feasible. Have them classify each one as “too small,” “reasonable,” “too ambitious,” or “unclear.”
     "Exploration: Idea generation",
-      "Mon: <a href='https://docs.google.com/document/d/1e_NsdxjyYxz_24HmNAQc9G1LL7XH3xYcJH2AMQa_F1Y'>1a. Idea Classification Worksheet</a>" + "<br/>" + 
+      "Mon: <a href='https://docs.google.com/document/d/1e_NsdxjyYxz_24HmNAQc9G1LL7XH3xYcJH2AMQa_F1Y'>1a. Idea Classification Worksheet</a>"
       // "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation Worksheet</a>"
       ,
     // wk 2
@@ -32,21 +32,21 @@ let days = {
     ,
     // wk 4
     "Research Questions", 
-    "Starting your $$\LaTeX$$ document",
-      "Mon <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4a. Research Questions</a>",
+    "Starting your LaTeX document",
+      "Mon <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4a. Research Questions</a>" + "<br/>" +
       "Fri <a href='https://overleaf.com'>Overleaf</a>"
     ,
     // wk 5
     "AI tool finding", // 
     "AI tool testing", // 
-      "Mon: <a href='https://docs.google.com/document/d/1ZBjDU0eWnfvt8yiYDKkwNPkeY-xBDgIy5Rfzs2zrPr4'>5a. AI Tasks</a>" + "<br/>" +
+      "Mon: <a href='https://docs.google.com/document/d/1ZBjDU0eWnfvt8yiYDKkwNPkeY-xBDgIy5Rfzs2zrPr4'>5a. AI Tasks Worksheet</a>" + "<br/>" +
       "Fri: <a href='https://docs.google.com/document/d/1X3A0q_rQrI-QdFnkCrSLJUmSGAPuErvdf1slQq-ILdE'>5b. AI Tools Experiment</a>"
       ,
     // wk 6
     "Background: Prior work hunt", // Students find examples of similar apps, papers, GitHub repos, datasets, tools, or APIs. They classify each as inspiration, competitor, dependency, or warning sign.
     "Background: Choices", // tech, resource, and data discussions
-      "Mon: <a href='https://docs.google.com/document/d/1RmAVoe_YKqwn0U1gf8nysLG9DvZNuA9nNSEq81F5OyU'>6a. Related Work</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1lI7D-BhGg9wyO2NhBmHVRwo_yyRklQWxdQJlSAVW2qU'>6b. Needs and Choices</a>"
+      "Mon: <a href='https://docs.google.com/document/d/1RmAVoe_YKqwn0U1gf8nysLG9DvZNuA9nNSEq81F5OyU'>6a. Related Work Worksheet</a>" + "<br/>" +
+      "Fri: <a href='https://docs.google.com/document/d/1lI7D-BhGg9wyO2NhBmHVRwo_yyRklQWxdQJlSAVW2qU'>6b. Needs and Choices Worksheet</a>"
       ,
     // wk 7
     "Risks: Ethics study", // 
