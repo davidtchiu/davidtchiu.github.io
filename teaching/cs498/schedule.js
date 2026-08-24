@@ -59,7 +59,7 @@ let days = {
     // wk 8 (fall break)
     "<strong>Fall Break</strong>",
     "<strong>Check-in Presentation (1/3)</strong>",
-      "",
+      ""
       ,
     // wk 9
     "Feasibility", 
