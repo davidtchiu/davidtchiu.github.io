@@ -125,7 +125,8 @@ let days = {
     "Why relational model?",
     "Relational model: Connection to sets",
     "Relational model: keys",
-    "Notes: <a href='https://drive.google.com/file/d/10d8JU6ZL2dDySIGkZdV8jXVI9_uiGHPH/view?usp=drive_link'>1. Intro to DB</a>" + "<br/>"
+    "Notes: <a href='https://drive.google.com/file/d/10d8JU6ZL2dDySIGkZdV8jXVI9_uiGHPH/view?usp=drive_link'>1a. Intro to DB</a>" + "<br/>" +
+    "Notes: <a href='https://drive.google.com/open?id=1C0g0MafIFxPI_h_NRqVvrDeDQ7cxDEyT&usp=drive_fs'>1b. Relational model</a>" + "<br/>"
     ,
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
