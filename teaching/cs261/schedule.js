@@ -167,8 +167,7 @@ let days = {
     "Read: <a href='https://drive.google.com/open?id=1HdIsu7PkFtepAlF7fk5NWZMBRHDFXPBM&usp=drive_fs'>Inheritance</a>" + "<br/>" +
       "Notes: <a href='https://drive.google.com/open?id=1fDLCXWsAbwMnLeV9FNxwO_5GrmgYiKgq&usp=drive_fs'>1a. Inheritance</a>" + "<br/>" +
       "Assigned: <a href='hwk1.lc/'>Hwk 1 (Letter Counter)</a>" + "<br/>" +
-      // "Assigned: <a href='lab1.farm/'>Lab 1</a>"
-      ,
+      "Assigned: <a href='lab1.farm/'>Lab 1</a>",
     // wk 2
     "<strong><emph>Labor Day<br/>(No Class)</emph></strong>",
     "Polymorphism, object substitution, down-casting",
