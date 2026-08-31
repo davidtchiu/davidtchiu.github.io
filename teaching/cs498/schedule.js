@@ -21,7 +21,7 @@ let days = {
     // wk 2
     "<strong>MLK Day<br/>(no class)</strong>",
     "Exploration: Idea generation and selection", // Come up with at least 3 project directions
-    "",
+      ""
     ,
     // wk 3
     "Project def'n: Alternatives comparison", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk. Each student/team explains what they chose and what they rejected.
