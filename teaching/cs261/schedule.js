@@ -160,7 +160,7 @@ let days = {
   },
   lectures: [
     // wk 1
-    "Course overview",
+    "Course overview and code-along review",
     "Lab 1: Down on the Farm",
     "Inheritance: motivation, abstraction",
     "Inheritance: this(), super(), constructor chaining",

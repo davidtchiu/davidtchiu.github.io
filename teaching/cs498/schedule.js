@@ -15,13 +15,13 @@ let days = {
     // wk 1
     "Exploration: Capstone sorting exercise", // Give students a list of possible project ideas: some too small, some too large, some vague, some feasible. Have them classify each one as “too small,” “reasonable,” “too ambitious,” or “unclear.”
     "Exploration: Idea generation",
-      "Mon: <a href='https://docs.google.com/document/d/1e_NsdxjyYxz_24HmNAQc9G1LL7XH3xYcJH2AMQa_F1Y'>1a. Idea Classification Worksheet</a>"
-      // "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation Worksheet</a>"
+      "Mon: <a href='https://docs.google.com/document/d/1e_NsdxjyYxz_24HmNAQc9G1LL7XH3xYcJH2AMQa_F1Y'>1a. Idea Classification Worksheet</a>",
+      "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation Worksheet</a>"
       ,
     // wk 2
     "<strong>MLK Day<br/>(no class)</strong>",
     "Exploration: Idea generation (cont.)", // Come up with at least 3 project directions
-      "Fri: <a href='https://docs.google.com/document/d/1wRyQCQUXBkwbegbVCaENkez6tRVuKPwPpB865eEz-vc'>1b. Idea Generation Worksheet</a>"
+    "",
     ,
     // wk 3
     "Project def'n: Alternatives comparison", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk. Each student/team explains what they chose and what they rejected.

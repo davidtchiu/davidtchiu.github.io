@@ -122,7 +122,7 @@ let days = {
 
   lectures: [
     // wk 1
-    "Why relational?",
+    "Why relational model?",
     "Relational model: Connection to sets",
     "Relational model: keys",
     "Notes: <a href='https://drive.google.com/file/d/1bK8yUalrrdIOvmYSGKVDRci7EYu0gK9l/view?usp=drive_link'>1. Intro to DB</a>" + "<br/>"
