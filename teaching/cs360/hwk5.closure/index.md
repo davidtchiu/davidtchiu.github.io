@@ -8,15 +8,13 @@ In this assignment you will implement algorithms that we've been learning in the
 
 - To gain insight into the fundamentals and algorithms of relational design theory
 
-
-
 ###### Starter Code
 
-Starter code for this assignment is provided on the github repo. You are not required to submit your code to me on Github, but it's strongly recommended that you do.
+Starter code for this assignment is provided on the github repo. You must do these steps in order to submit your work to me on github.
 
 - The starter code is provided here [https://github.com/davidtchiu/cs455-hwk-fdclosure](https://github.com/davidtchiu/cs455-hwk-fdclosure).
 
-- Click on the green **Use this template** button and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+- Click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
 
 - This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
 
@@ -25,7 +23,6 @@ Starter code for this assignment is provided on the github repo. You are not req
   ```
   git clone <your-github-url-for-this-project>
   ```
-
 
 - This should download the starter code in a directory called `cs455-hwk-fdclosure`. After you've done this, you can work freely from VS Code or any other editor. 
 
