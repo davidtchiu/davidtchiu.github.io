@@ -17,31 +17,31 @@ let days = {
         name: "Hwk 2 (written)",
         title: "Relational Algebra",
         url: "hwk2.ra/",
-        due: "9/25/2025", // wk4, Wed
+        due: "9/25/2026", // wk4, Wed
       },
       {
         name: "Hwk 3 (sql schema)",
         title: "Data Ingestion",
         url: "hwk3.sqlddl/",
-        due: "10/2/2025",  // wk5, Friday
+        due: "10/2/2026",  // wk5, Friday
       },
       {
         name: "Hwk 4 (sql)",
         title: "Writing SQL Queries",
         url: "hwk4.sqldml/",
-        due: "10/12/2025",  // wk 7, Monday
+        due: "10/12/2026",  // wk 7, Monday
       },
       {
         name: "Hwk 5 (coding)",
         title: "FD Set Closure",
         url: "hwk5.closure/",
-        due: "10/21/2025",  // wk 8, Wed
+        due: "10/21/2026",  // wk 8, Wed
       },
       {
         name: "Hwk 6 (coding)",
         title: "BCNF Normalization",
         url: "hwk6.bcnf/",
-        due: "11/4/2025", // wk 10, Wed
+        due: "11/4/2026", // wk 10, Wed
       },
       // {
       //   name: "Hwk 5 (coding - too easy, but could give them a break as they do their projects)",

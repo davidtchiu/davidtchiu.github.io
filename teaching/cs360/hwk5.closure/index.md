@@ -37,14 +37,12 @@ Also, it's imperative for this assignment that you're careful about avoiding sid
 
 ```java
 public static method(FD originalFDset) {
-  FDSet badcopy = originalFDset;  // No!!! badcopy simply points to the input.
-                                  // Any changes to badcopy will cause side effects.
-                                  
-  FDSet truecopy = new FD(originalFDset);   // Yes! Creates a deep copy of originalFDset
+  FDSet badcopy = originalFDset;  // No!!! badcopy simply points to the input FD set.                                  
+  FDSet truecopy = new FD(originalFDset);   // Do this instead!
 }
 ```
   
-Note that Java's HashSet and TreeSet classes also provide copy constructors! Use them where applicable.
+Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors!" Use them where applicable.
   
 
 
