@@ -13,44 +13,44 @@ let days = {
         url: "hwk1.rel/",
         due: "9/11/2026", // wk2, friday
       },
+      {
+        name: "Hwk 2 (written)",
+        title: "Relational Algebra",
+        url: "hwk2.ra/",
+        due: "9/25/2025", // wk4, Wed
+      },
+      {
+        name: "Hwk 3 (sql schema)",
+        title: "Data Ingestion",
+        url: "hwk3.sqlddl/",
+        due: "10/2/2025",  // wk5, Friday
+      },
+      {
+        name: "Hwk 4 (sql)",
+        title: "Writing SQL Queries",
+        url: "hwk4.sqldml/",
+        due: "10/12/2025",  // wk 7, Monday
+      },
+      {
+        name: "Hwk 5 (coding)",
+        title: "FD Set Closure",
+        url: "hwk5.closure/",
+        due: "10/21/2025",  // wk 8, Wed
+      },
+      {
+        name: "Hwk 6 (coding)",
+        title: "BCNF Normalization",
+        url: "hwk6.bcnf/",
+        due: "11/4/2025", // wk 10, Wed
+      },
       // {
-      //   name: "Hwk 2 (written)",
-      //   title: "Relational Algebra",
-      //   url: "hwk2.ra/",
-      //   due: "9/25/2025", // wk4, Wed
-      // },
-      // {
-      //   name: "Hwk 3 (sql schema)",
-      //   title: "Data Ingestion",
-      //   url: "hwk3.sqlddl/",
-      //   due: "10/2/2025",  // wk5, Friday
-      // },
-      // {
-      //   name: "Hwk 4 (sql)",
-      //   title: "Writing SQL Queries",
-      //   url: "hwk4.sqldml/",
-      //   due: "10/12/2025",  // wk 7, Monday
-      // },
-      // {
-      //   name: "Hwk 5 (coding)",
-      //   title: "FD Set Closure",
-      //   url: "hwk5.closure/",
-      //   due: "10/21/2025",  // wk 8, Wed
-      // },
-      // {
-      //   name: "Hwk 6 (coding)",
-      //   title: "BCNF Normalization",
-      //   url: "hwk6.bcnf/",
-      //   due: "11/4/2025", // wk 10, Wed
-      // },
-      // {
-      //   name: "Hwk 5 (coding - too easy)",
+      //   name: "Hwk 5 (coding - too easy, but could give them a break as they do their projects)",
       //   title: "Disk Scheduling",
       //   url: "hwk5.disk/",
       //   due: "10/27/2025",  // wk 9, Monday 
       // },
       // {
-      //   name: "Hwk 6 (coding)",
+      //   name: "Hwk 6 (coding - hard)",
       //   title: "Extendible (Dynamic) Hashing",
       //   url: "hwk6.exhash/",
       //   due: "11/21/2025",  // wk 12, Fri 
@@ -62,13 +62,7 @@ let days = {
       //   due: "12/17/2025", // wk 15, finals
       // },
       // {
-      //   name: "Hwk 4 (sql)",
-      //   title: "Writing SQL Queries",
-      //   url: "hwk4.pplsoft/",
-      //   due: "10/13/2025",  // wk 8, Mon 
-      // },
-      // {
-      //   name: "Hwk 6 (coding)",
+      //   name: "Hwk 6 (coding - hard)",
       //   title: "B+Tree",
       //   url: "hwk6.btree/",
       //   due: "11/10/2025",
@@ -194,6 +188,7 @@ let days = {
     "Transactions: concurrency control",
       "",
     // wk 15
+    "<strong><emph>Final Presentation</emph></strong>",
     "<strong><emph>Final Presentation</emph></strong>",
     "<strong>Reading Period</strong>",
       "",
