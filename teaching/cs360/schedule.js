@@ -13,36 +13,36 @@ let days = {
         url: "hwk1.rel/",
         due: "9/11/2026", // wk2, friday
       },
-      {
-        name: "Hwk 2 (written)",
-        title: "Relational Algebra",
-        url: "hwk2.ra/",
-        due: "9/25/2026", // wk4, Wed
-      },
-      {
-        name: "Hwk 3 (sql schema)",
-        title: "Data Ingestion",
-        url: "hwk3.sqlddl/",
-        due: "10/2/2026",  // wk5, Friday
-      },
-      {
-        name: "Hwk 4 (sql)",
-        title: "Writing SQL Queries",
-        url: "hwk4.sqldml/",
-        due: "10/12/2026",  // wk 7, Monday
-      },
-      {
-        name: "Hwk 5 (coding)",
-        title: "FD Set Closure",
-        url: "hwk5.closure/",
-        due: "10/23/2026",  // wk 8, Fri
-      },
-      {
-        name: "Hwk 6 (coding)",
-        title: "BCNF Normalization",
-        url: "hwk6.bcnf/",
-        due: "11/4/2026", // wk 10, Wed
-      },
+      // {
+      //   name: "Hwk 2 (written)",
+      //   title: "Relational Algebra",
+      //   url: "hwk2.ra/",
+      //   due: "9/25/2026", // wk4, Wed
+      // },
+      // {
+      //   name: "Hwk 3 (sql schema)",
+      //   title: "Data Ingestion",
+      //   url: "hwk3.sqlddl/",
+      //   due: "10/2/2026",  // wk5, Friday
+      // },
+      // {
+      //   name: "Hwk 4 (sql)",
+      //   title: "Writing SQL Queries",
+      //   url: "hwk4.sqldml/",
+      //   due: "10/12/2026",  // wk 7, Monday
+      // },
+      // {
+      //   name: "Hwk 5 (coding)",
+      //   title: "FD Set Closure",
+      //   url: "hwk5.closure/",
+      //   due: "10/23/2026",  // wk 8, Fri
+      // },
+      // {
+      //   name: "Hwk 6 (coding)",
+      //   title: "BCNF Normalization",
+      //   url: "hwk6.bcnf/",
+      //   due: "11/4/2026", // wk 10, Wed
+      // },
       // {
       //   name: "Hwk 5 (coding - too easy, but could give them a break as they do their projects)",
       //   title: "Disk Scheduling",
