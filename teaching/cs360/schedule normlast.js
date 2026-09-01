@@ -15,36 +15,24 @@ let days = {
       },
       // {
       //   name: "Hwk 2 (written)",
-      //   title: "Relational Algebra",
+      //   title: "Relational Algebra I",
       //   url: "hwk2.ra/",
-      //   due: "9/25/2025", // wk4, Wed
+      //   due: "9/24/2025", // wk4, Monday (needs to be due earlier next year - end of wk 3)
       // },
       // {
-      //   name: "Hwk 3 (sql schema)",
-      //   title: "Data Ingestion",
-      //   url: "hwk3.sqlddl/",
-      //   due: "10/2/2025",  // wk5, Friday
+      //   name: "Hwk 3 (written)",
+      //   title: "Relational Algebra II",
+      //   url: "hwk3.ra2/",
+      //   due: "10/1/2025", // wk5, Wednesday (needs to be due end of wk 4)
       // },
       // {
-      //   name: "Hwk 4 (sql)",
-      //   title: "Writing SQL Queries",
-      //   url: "hwk4.sqldml/",
-      //   due: "10/12/2025",  // wk 7, Monday
+      //   name: "Hwk 4 (sql schema)",
+      //   title: "SQL Data Ingestion",
+      //   url: "hwk4.sqlddl/",
+      //   due: "10/10/2025",  // wk6, Friday
       // },
       // {
       //   name: "Hwk 5 (coding)",
-      //   title: "FD Set Closure",
-      //   url: "hwk5.closure/",
-      //   due: "10/21/2025",  // wk 8, Wed
-      // },
-      // {
-      //   name: "Hwk 6 (coding)",
-      //   title: "BCNF Normalization",
-      //   url: "hwk6.bcnf/",
-      //   due: "11/4/2025", // wk 10, Wed
-      // },
-      // {
-      //   name: "Hwk 5 (coding - too easy)",
       //   title: "Disk Scheduling",
       //   url: "hwk5.disk/",
       //   due: "10/27/2025",  // wk 9, Monday 
@@ -72,6 +60,18 @@ let days = {
       //   title: "B+Tree",
       //   url: "hwk6.btree/",
       //   due: "11/10/2025",
+      // },
+      // {
+      //   name: "Hwk 7 (coding)",
+      //   title: "FD Set Closure",
+      //   url: "hwk7.closure/",
+      //   due: "12/2/2025",  // wk 14, friday
+      // },
+      // {
+      //   name: "Hwk 7 (coding)",
+      //   title: "Design Theory 2 - BCNF Normalization",
+      //   url: "hwk7.bcnf/",
+      //   due: "11/14/2025", // wk 11, friday
       // },
     ],
 
@@ -122,86 +122,87 @@ let days = {
 
   lectures: [
     // wk 1
-    "Problems in data management",
+    "Why relational model?",
     "Relational model: Connection to sets",
-    "Relational model: keys, schema diagram",
-      "Notes: <a href='https://drive.google.com/file/d/10d8JU6ZL2dDySIGkZdV8jXVI9_uiGHPH/view?usp=drive_link'>1a. Intro to DB</a>" + "<br/>" +
-      "Notes: <a href='https://drive.google.com/open?id=1C0g0MafIFxPI_h_NRqVvrDeDQ7cxDEyT&usp=drive_fs'>1b. Relational model</a>" + "<br/>"
+    "Relational model: keys",
+    "Notes: <a href='https://drive.google.com/file/d/10d8JU6ZL2dDySIGkZdV8jXVI9_uiGHPH/view?usp=drive_link'>1a. Intro to DB</a>" + "<br/>" +
+    "Notes: <a href='https://drive.google.com/open?id=1C0g0MafIFxPI_h_NRqVvrDeDQ7cxDEyT&usp=drive_fs'>1b. Relational model</a>" + "<br/>"
     ,
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
-    "Start relational algebra",
-    "RA: composition",
-      "",
+    "Relational model: schema",
+    "Relational algebra: selection, projection, and query plans",
+    "",
     // wk 3
+    "RA: query composition, set ops and compatibility",
     "RA: natural join",
-    "RA: outer joins, rename operator",
-    "RA: grouping, aggregation",
-      "",
+    "RA: outer join, rename",
+    "",
     // wk 4
+    "RA: aggregation and grouping",
     "SQL: schema definition",
     "SQL: writing basic queries, joins",
-    "SQL: outer joins, renaming, temporary tables",
-      "",
+    "",
     // wk 5
+    "SQL: outer joins, renaming, temporary tables",
+    "SQL Work Day 1",
     "SQL: subqueries",
-    "SQL: grouping and aggregation",
-    "SQL: lab",
-      "",
+    "",
     // wk 6
-    "SQL: lab",
+    "SQL: grouping and aggregation",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
-      "",
+    "",
     // wk 7
-    "Theory: functional dependencies",
-    "Theory: attribute-set closure and superkeys",
-    "Theory: FD-set closure, Armstrong's axioms",
-      "",
+    "Storage: File abstraction",
+    "Storage: Disk scheduling",
+    "Files: formats and organization",
+    "",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Theory: normal forms, 1NF, 2NF",
-    "Theory: BCNF decomposition",
-      "",
+    "Files: Cost modeling",
+    "Files: Join processing",
+    "",
     // wk 9
-    "Theory: lossless join; FD preservation",
-    "Theory: minimal FD-Set cover and 3NF synthesis",
-    "Files: file abstraction",
-      "",
+    "Indexing: motivation",
+    "Multilevel indexing: B+Trees",
+    "B+Tree: point and range queries",
+    "",
     // wk 10
-    "Files: disk scheduling",
-    "Files: formats and organization",
-    "Files: query costs",
-      "",
+    "B+Tree: insertion",
+    "B+Tree: runtime analysis",
+    "Extendible Hashing",
+    "",
     // wk 11
-    "Start indexing",
+    "Bitmap index",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-      "",
+    "",
     // wk 12
-    "Indexing: B+Tree properties",
-    "Indexing: B+Tree insertion",
-    "Indexing: B+Tree analysis",
-      "",
+    "Bitmap compression",
+    "Theory: functional dependencies",
+    "Theory: attribute-set closure and superkeys",
+    "",
     // wk 13
-    "Indexing: extendible hashing",
+    "Theory: FD-set closure; Armstrong's Axioms",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
-      "",
+    "",
     // wk 14
-    "Start transactions: ACID, serializability",
-    "Transactions: serializability test, precedence graphs",
-    "Transactions: concurrency control",
-      "",
+    "Theory: normal forms",
+    "Theory: BCNF decomposition",
+    "Theory: Lossless join; dependency preservation",
+    "",
     // wk 15
+    "Theory: Minimal (canonical) cover and 3NF",
     "<strong><emph>Final Presentation</emph></strong>",
     "<strong>Reading Period</strong>",
-      "",
+    "",
     // wk final
     "",
     "<strong><emph>Final Exam (Comprehensive)<br/>4:00-6:00</emph></strong>",
     "",
-      "",
+    "",
   ],
 };
 
