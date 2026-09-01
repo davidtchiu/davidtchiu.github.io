@@ -23,7 +23,7 @@ Print this assignment with single-side pages. Fill in your name above, and write
 #### Grading
 
 ```
-This assignment will be graded out of 75 points.
+This assignment will be graded out of 110 points.
 
 [30pt total] Completion of problem 1, including:
   [5pt] Design of the movie, actor, and user relations.
@@ -33,17 +33,13 @@ This assignment will be graded out of 75 points.
   [5pt] Tracking of actor roles.
   [5pt] Redundancy is minimized, and extraneous attributes are not introduced.
 
-[5pt] Completion of problem 2
+[10pt] Completion of problem 2
 
-[10pt] Completion of problem 3
+[20pt total (5pt each)] Completion of problems 3, 4, 5, 6 (mild)
 
-[5pt] Completion of problem 4
+[20pt total (10pt each)] Completion of problem 7, 8 (medium)
 
-[5pt] Completion of problem 5
-
-[5pt] Completion of problem 6
-
-[5pt] Completion of problem 7
+[30pt total (15pt each)] Completion of problem 9, 10 (spicy)
 ```
 
 #### Submitting Your Assignment
