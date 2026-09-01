@@ -1,6 +1,6 @@
 ## CS 360 - Principles of Database Systems
 
-### SQL Queries for the University Database!
+### Hwk 4: Writing SQL Queries
 
 We're finally to ready to get some hands on experience with a SQL database! The data set, although synthetic, is an analog to the real data found in any university's database. The queries I'm having you run are very similar to (or even the same as) the ones that we actually have to run when generating year-end reports!
 

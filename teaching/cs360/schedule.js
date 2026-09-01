@@ -35,7 +35,7 @@ let days = {
         name: "Hwk 5 (coding)",
         title: "FD Set Closure",
         url: "hwk5.closure/",
-        due: "10/21/2026",  // wk 8, Wed
+        due: "10/23/2026",  // wk 8, Fri
       },
       {
         name: "Hwk 6 (coding)",

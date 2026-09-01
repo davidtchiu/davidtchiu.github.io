@@ -1,6 +1,6 @@
-## CS 455 - Principles of Database Systems
+## CS 360 - Principles of Database Systems
 
-### Hwk 8: BCNF Normalization
+### Hwk 6: BCNF Normalization
 In this assignment you will implement algorithms that we've been learning in the DB theory lectures. Specifically, you will implement methods to find the attribute set closure on your way to generating superkeys, and BCNF decomposition.
 
 
