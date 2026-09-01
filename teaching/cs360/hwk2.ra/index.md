@@ -1,6 +1,6 @@
 ## CS 360 - Principles of Database Systems
 
-### Hwk 2: Relational Algebra 1
+### Hwk 2: Relational Algebra
 
 This assignment asks you to formulate proper relational algebra expressions to answer arbitrary queries about the data. You are allowed to do these by hand (then scanned into a PDF document).
 

@@ -140,7 +140,7 @@ let days = {
     // wk 5
     "SQL: subqueries",
     "SQL: grouping and aggregation",
-    "SQL: lab",
+    "<strong><emph>Class Cancelled</emph></strong>",
       "",
     // wk 6
     "SQL: lab",
@@ -188,8 +188,8 @@ let days = {
     "Transactions: concurrency control",
       "",
     // wk 15
-    "<strong><emph>Final Presentation</emph></strong>",
-    "<strong><emph>Final Presentation</emph></strong>",
+    "<strong><emph>Group Demos Day 1</emph></strong>",
+    "<strong><emph>Group Demos Day 2</emph></strong>",
     "<strong>Reading Period</strong>",
       "",
     // wk final
