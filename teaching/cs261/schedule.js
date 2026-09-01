@@ -12,6 +12,10 @@ let days = {
       name: "Download Google Drive App",
       url: "https://www.google.com/drive/download/"
     },
+    {
+      name: "Department Tutoring Schedule",
+      url: "https://drive.google.com/file/d/1zAg2qkBUIO0VzLH0gH0xzmTTPADDIteg/view?usp=drive_link"
+    }
   ],
   assignments: {
     homework: [
