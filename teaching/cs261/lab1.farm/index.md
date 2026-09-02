@@ -40,8 +40,12 @@ If you are using your laptop, you must first download and install BlueJ or any o
   }
   ```
 
-- Every cow needs to remember these three pieces of data, so these should all be declared as **instance variables**.  A `Cow` class has a `name` (String), another string `quote` that it *utters* (no, not *"udders"* LOL!) when it's excited (String), and the `gallons` of milk it has produced (let's make that a `double`). You should recall that instance variables are generally declared to be `private`. For example, the name of the `Cow` should be declared as:
-
+- Every cow needs to remember these three pieces of data, so these should all be declared as **instance variables**. 
+  - A cow has a `name`.
+  - A cow also has  `quote` that it *utters* (no, not *"udders"* LOL) when it gets excited.
+  - Finally, a cow knows the `gallons` of milk that it has produced (let's make that a `double`).
+  
+  You should recall that instance variables are generally declared to be `private`. For example, the name of the cow should be declared as:
   ```java
   private String name;  // stores a cow's name
   ```

@@ -17,8 +17,6 @@
   David has received the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President’s Award for Excellence in Teaching</a> (2022), and the Bartanen Faculty Research Award (2017) all from the University of Puget Sound. He also received the <a href="https://cse.osu.edu/department/faculty-staff-resources/award-nominations">Eleanor Quinlan Memorial Award</a> for Graduate Student Teaching (2009) and was  a <a href="https://gradsch.osu.edu/current-students/graduate-student-experience/career-building-strategies-and-skill-development-0">PFF Fellow</a> at The Ohio State University. He is a member of <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>, the ACM, and the IEEE (Senior Member).
   </p>
 
-
-
 [Curriculum Vitae](CV.pdf)
 
 
