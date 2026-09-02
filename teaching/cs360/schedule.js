@@ -33,7 +33,7 @@ let days = {
       // },
       // {
       //   name: "Hwk 5 (coding)",
-      //   title: "FD Set Closure",
+      //   title: "F+: The FD Set Closure",
       //   url: "hwk5.closure/",
       //   due: "10/23/2026",  // wk 8, Fri
       // },

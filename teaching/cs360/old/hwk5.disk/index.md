@@ -12,7 +12,7 @@ A rotating hard disk consists of N tracks numbered from 0 to N-1. The disk head 
 - **SSTF (Shortest-Seek-Time-First):** This is a "greedy approach" in the sense that the disk scheduler always services the request that is closest to the current location of the head.
 - **LOOK:** Starting from the current head position, the scheduler moves in the same direction that the head was last traveling. (At program start, you may assume this direction is in ascending order.) It services all outstanding requests in that direction, ignoring any requests that are behind the current head position. When the head reaches the last pending request in that direction, it reverses and services the remaining requests in the opposite direction.
 - **C-LOOK (Circular LOOK):** This is the same as LOOK except that the head only services requests in one direction (ascending order only). When the reaches the highest request, it heads back to the lowest-requested track (ignoring any requests along the way) to service the rest.
-- **OPT (Nearest-Extreme-First):** The best possible schedule is to sweep to the nearest extrem request, which is either the min or the max of what's in the queue, then sweep back over to the other extreme, picking up requests as you go. When the nearest extreme is the max track, this schedule should be the same as LOOK.
+<!-- - **OPT (Nearest-Extreme-First):** The best possible schedule is to sweep to the nearest extrem request, which is either the min or the max of what's in the queue, then sweep back over to the other extreme, picking up requests as you go. When the nearest extreme is the max track, this schedule should be the same as LOOK. -->
 
 You may assume that you are simulating an "offline scheduler." This means you can assume that no other requests arrive while your scheduler runs, so you just have to handle the requests in the given queue.
 
@@ -72,11 +72,12 @@ Total Seek Distance: 314 (avg = 44.86 tracks per seek)
 C-LOOK
 Schedule: 50 -> 82 -> 140 -> 170 -> 190 -> 16 -> 24 -> 43
 Total Seek Distance: 341 (avg = 48.71 tracks per seek)
-
-OPT
-Schedule: 50 -> 43 -> 24 -> 16 -> 82 -> 140 -> 170 -> 190
-Total Seek Distance: 208 (avg = 29.71 tracks per seek)
 ```
+
+
+<!-- OPT
+Schedule: 50 -> 43 -> 24 -> 16 -> 82 -> 140 -> 170 -> 190
+Total Seek Distance: 208 (avg = 29.71 tracks per seek) -->
 
 ### Example Interaction (2)
 If your program is correct, your outputs should match mine.
@@ -102,11 +103,11 @@ Total Seek Distance: 251 (avg = 50.20 tracks per seek)
 C-LOOK
 Schedule: 100 -> 132 -> 187 -> 23 -> 42 -> 89
 Total Seek Distance: 317 (avg = 63.40 tracks per seek)
-
-OPT
-Schedule: 100 -> 89 -> 42 -> 23 -> 132 -> 187
-Total Seek Distance: 241 (avg = 48.20 tracks per seek)
 ```
+
+<!-- OPT
+Schedule: 100 -> 89 -> 42 -> 23 -> 132 -> 187
+Total Seek Distance: 241 (avg = 48.20 tracks per seek) -->
 
 ### Example Interaction (3)
 If your program is correct, your outputs should match mine.
@@ -132,11 +133,13 @@ Total Seek Distance: 6544 (avg = 654.40 tracks per seek)
 C-LOOK
 Schedule: 3030 -> 3681 -> 4965 -> 356 -> 544 -> 1212 -> 1523 -> 1618 -> 2069 -> 2296 -> 2800
 Total Seek Distance: 8988 (avg = 898.80 tracks per seek)
-
-OPT
-Schedule: 3030 -> 3681 -> 4965 -> 2800 -> 2296 -> 2069 -> 1618 -> 1523 -> 1212 -> 544 -> 356
-Total Seek Distance: 6544 (avg = 654.40 tracks per seek)
 ```
+
+
+<!-- OPT
+Schedule: 3030 -> 3681 -> 4965 -> 2800 -> 2296 -> 2069 -> 1618 -> 1523 -> 1212 -> 544 -> 356
+Total Seek Distance: 6544 (avg = 654.40 tracks per seek) -->
+
 
 ### Example Interactions (4)
 ```txt
@@ -159,16 +162,18 @@ Total Seek Distance: 119 (avg = 29.75 tracks per seek)
 C-LOOK
 Schedule: 50 -> 51 -> 90 -> 11 -> 49
 Total Seek Distance: 157 (avg = 39.25 tracks per seek)
-
-OPT
-Schedule: 50 -> 49 -> 11 -> 51 -> 90
-Total Seek Distance: 118 (avg = 29.50 tracks per seek)
 ```
+
+
+<!-- OPT
+Schedule: 50 -> 49 -> 11 -> 51 -> 90
+Total Seek Distance: 118 (avg = 29.50 tracks per seek) -->
+
 
 #### Grading
 
 ```
-This assignment will be graded out of 95 points.
+This assignment will be graded out of 80 points.
 
 [10pts] Input/Output handling
     - Prompts user interactively and output matches specified format.
@@ -179,12 +184,11 @@ This assignment will be graded out of 95 points.
     - Functions / methods separate algorithm logic from input/output.
     - Code duplication is minimized.
 
-[75pts] 
+[60pts] 
     - Correctness of FCFS (10 pts)
     - Correctness of SSTF (20 pts)
     - Correctness of LOOK (15 pts)
     - Correctness of C-LOOK (15 pts)
-    - Correctness of OPT (15 pts)
 ```
 
 #### Submitting Your Assignment
