@@ -210,30 +210,29 @@ So, I'm not sure you know this, but it turns out that birds like to hang out on 
   ```
 
 - Here's my output:
-
-  ```txt
-  Bessie: Moo
-  Fowl: Chirp
-  Prailine: Squawk
-  
-  -------------
-  Farm Summary
-  -------------
-  # 1
-  Name: Bessie
-  Quote: Moo
-  Milk produced: 0.0 gallons
-  
-  # 2
-  Name: Fowl
-  Quote: Chirp
-  Eggs produced: 0 eggs
-  
-  # 3
-  Name: Prailine
-  Quote: Squawk
-  Eggs produced: 0 eggs
-  ```
+    ```txt
+    Bessie: Moo
+    Fowl: Chirp
+    Prailine: Squawk
+    
+    -------------
+    Farm Summary
+    -------------
+    # 1
+    Name: Bessie
+    Quote: Moo
+    Milk produced: 0.0 gallons
+    
+    # 2
+    Name: Fowl
+    Quote: Chirp
+    Eggs produced: 0 eggs
+    
+    # 3
+    Name: Prailine
+    Quote: Squawk
+    Eggs produced: 0 eggs
+    ```
 
 #### Food for Thought
 ... And that's it! Before you submit the lab, though, you probably already see where this is going. Take a little bit of time to reflect on the following issues you likely encountered. Much of the code in `Bird` were very similar to those in `Cow`. Were there code that were exact duplications? Seems like there should be a way for two classes to share the same code? Also reflect on the amount of code you needed to update (and often duplicate) in the `Farm` class every time a new animal is introduced to the farm. Tomorrow, we'll learn techniques to address these issues: *Object Inheritance!*
