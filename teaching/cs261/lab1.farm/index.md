@@ -150,7 +150,7 @@ If you are using your laptop, you must first download and install BlueJ or any o
 
 - And your output should match mine:
 
-  ```
+  ```txt
   > Bessie: Moo      <---- From calling myFarm.exciteAll()
   > Tuffy: Mewww
   > Fred: Meh
@@ -210,7 +210,8 @@ So, I'm not sure you know this, but it turns out that birds like to hang out on 
   ```
 
 - Here's my output:
-  ```
+
+  ```txt
   Bessie: Moo
   Fowl: Chirp
   Prailine: Squawk
