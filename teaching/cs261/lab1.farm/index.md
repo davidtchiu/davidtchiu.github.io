@@ -100,19 +100,19 @@ If you are using your laptop, you must first download and install BlueJ or any o
 
   Now *run* this main method. Here's the output you should expect minus the line spacing that I threw in here for readability.
   ```
-  > Tuffy: Mewwww       <---- From calling myCow.moo()
+  Tuffy: Mewwww       <---- From calling myCow.moo()
 
-  > Name: Tuffy         <---- From calling myCow.display()
-  > Quote: Mewwww
-  > Milk produced: 0.0 gallons
+  Name: Tuffy         <---- From calling myCow.display()
+  Quote: Mewwww
+  Milk produced: 0.0 gallons
 
-  > Tuffy: Mewwww       <---- From calling myCow.milk()
+  Tuffy: Mewwww       <---- From calling myCow.milk()
 
-  > Tuffy: Mewwww       <---- From calling myCow.milk() a second time
+  Tuffy: Mewwww       <---- From calling myCow.milk() a second time
 
-  > Name: Tuffy         <---- From calling myCow.display()
-  > Quote: Mewwww
-  > Milk produced: 1.0 gallon
+  Name: Tuffy         <---- From calling myCow.display()
+  Quote: Mewwww
+  Milk produced: 1.0 gallon
   ```
 
 #### Part II: A Cow Farm
@@ -211,27 +211,27 @@ So, I'm not sure you know this, but it turns out that birds like to hang out on 
 
 - Here's my output:
   ```
-  > Bessie: Moo
-  > Fowl: Chirp
-  > Prailine: Squawk
-  >
-  > -------------
-  > Farm Summary
-  > -------------
-  > # 1
-  > Name: Bessie
-  > Quote: Moo
-  > Milk produced: 0.0 gallons
-  >
-  > # 2
-  > Name: Fowl
-  > Quote: Chirp
-  > Eggs produced: 0 eggs
-  >
-  > # 3
-  > Name: Prailine
-  > Quote: Squawk
-  > Eggs produced: 0 eggs
+  Bessie: Moo
+  Fowl: Chirp
+  Prailine: Squawk
+  
+  -------------
+  Farm Summary
+  -------------
+  # 1
+  Name: Bessie
+  Quote: Moo
+  Milk produced: 0.0 gallons
+  
+  # 2
+  Name: Fowl
+  Quote: Chirp
+  Eggs produced: 0 eggs
+  
+  # 3
+  Name: Prailine
+  Quote: Squawk
+  Eggs produced: 0 eggs
   ```
 
 #### Food for Thought
