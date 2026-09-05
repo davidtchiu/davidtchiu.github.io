@@ -8,13 +8,13 @@
   David holds a PhD in Computer Science and Engineering from <a href="https://cse.osu.edu">The Ohio State University</a>, completed under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a>. A member of Ohio State's <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David's dissertation was on the dynamic composition of scientific workflows and distributed data management. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on protocols and tools supporting the web transmission of math-education modules.
   </p>
   <p>
-  From 2010 to 2014, David was an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at WSU Vancouver. He later joined the Puget Sound faculty, where he's held appointments as Assistant Professor (2014), Associate Professor (2017), and Professor (2022). He also completed a rotation as Department Chair (2019-2022).
+  From 2010 to 2014, David was an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at WSU Vancouver. He later joined the Puget Sound faculty, where he's held appointments as Assistant Professor (2014), Associate Professor (2017), and Professor (2022). He also completed a rotation as Department Chair from 2019 to 2022.
   </p>
   <p>
   David works closely with undergraduate students on research projects in database systems, cloud computing, and high-performance computing. He has supervised numerous <a href="people">research students</a> in these areas. He also <a href="service">serves</a> on organizational and program committees for conferences in these fields. His research has received recognition at international conferences, including Best Paper Awards at BDCAT’23, ITCC’04, and ITE’04.
   </p>
   <p>
-  David has received the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President’s Award for Excellence in Teaching</a> (2022), and the Bartanen Faculty Research Award (2017) all from the University of Puget Sound. He also received the <a href="https://cse.osu.edu/department/faculty-staff-resources/award-nominations">Eleanor Quinlan Memorial Award</a> for Graduate Student Teaching (2009) and was  a <a href="https://gradsch.osu.edu/current-students/graduate-student-experience/career-building-strategies-and-skill-development-0">PFF Fellow</a> at The Ohio State University. He is a member of <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>, the ACM, and the IEEE (Senior Member).
+  David received the Influential Faculty of Color Award in 2024, the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President’s Award for Excellence in Teaching</a> in 2022, and the Bartanen Faculty Research Award in 2017 all from the University of Puget Sound. In addition, he's also been awarded the <a href="https://cse.osu.edu/department/faculty-staff-resources/award-nominations">Eleanor Quinlan Memorial Award</a> for Graduate Student Teaching (2009) and was named a <a href="https://gradsch.osu.edu/current-students/graduate-student-experience/career-building-strategies-and-skill-development-0">PFF Fellow</a> at The Ohio State University. He is a member of <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>, the ACM, and the IEEE (Senior Member).
   </p>
 
 [Curriculum Vitae](CV.pdf)
@@ -22,8 +22,8 @@
 
 ### Recent Activities
 - (04/2026) Congrats to Lily Gustafson on receiving a Summer Research Award. Co-advised with Marissa Masden.
-- (08/2025) Elected Chair, Academic Standards Committee, 2025-26.
-- (08/2025) Appointed Board Member, Faculty Development Center (FDC), 2025-present.
+- (08/2025) Chair, Academic Standards Committee, 2025-26.
+- (08/2025) Board Member, Faculty Development Center (FDC), 2025-present.
 - (08/2025) Led a panel on supporting underrepresented students @ Peer Advisor Training.
 - (06/2025) Led a summer course at [Tunghai University International College](https://ic.thu.edu.tw/DM/MiniSemester.html), Taiwan.
 - (05/2025) Congrats to Alex Kirner on receiving a Summer Research Award. Work starts on optimizing join execution.
