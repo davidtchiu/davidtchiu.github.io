@@ -126,7 +126,7 @@ let days = {
     "<strong>Labor Day<br/>(no class)</strong>",
     "Start relational algebra",
     "RA: composition",
-      "",
+      "Notes: <a href='https://drive.google.com/open?id=1S_LS_g84QvDuuHNVVIGLpLj8LhUo6NlL&usp=drive_fs'>2a. Relational algebra I</a>",
     // wk 3
     "RA: natural join",
     "RA: outer joins, rename operator",
