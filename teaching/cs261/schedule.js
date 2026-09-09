@@ -177,6 +177,7 @@ let days = {
     "Polymorphism, object substitution, down-casting",
     "Lab 2: Inheritance Lab",
     "Method @Override, dynamic dispatch",
+    "Read: <a href='    https://drive.google.com/open?id=1OWrluvtRL5mpO1DcSQ5dpXYfswwtpS8x&usp=drive_fs'>Polymorphism</a>" + "<br/>" +
       "Notes: <a href='https://drive.google.com/file/d/1eofxLACqANNzNL3ueYkzf7WDezQy4jwH/view'>1b. Polymorphism</a>" + "<br/>" +
       "Assigned: <a href='lab2.dice/'>Lab 2</a>",
     // wk 3
