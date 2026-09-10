@@ -25,12 +25,12 @@ let days = {
         url: "hwk1.lc/",
         due: "9/9/2026", // Wed, wk 2
       },
-      // {
-      //   name: "Hwk 2",
-      //   title: "TicTacToe Player",
-      //   url: "hwk2.ttt/",
-      //   due: "9/22/2025", // Mon, wk 4
-      // },
+      {
+        name: "Hwk 2",
+        title: "TicTacToe Player",
+        url: "hwk2.ttt/",
+        due: "9/21/2026", // Mon, wk 4
+      },
       // {
       //   name: "Hwk 3",
       //   title: "You Complete Me",
@@ -179,6 +179,7 @@ let days = {
     "Method @Override, dynamic dispatch",
     "Read: <a href='    https://drive.google.com/open?id=1OWrluvtRL5mpO1DcSQ5dpXYfswwtpS8x&usp=drive_fs'>Polymorphism</a>" + "<br/>" +
       "Notes: <a href='https://drive.google.com/file/d/1eofxLACqANNzNL3ueYkzf7WDezQy4jwH/view'>1b. Polymorphism</a>" + "<br/>" +
+      "Assigned: <a href='hwk2.ttt/'>Hwk 2 (TicTacToe)</a>" + "<br/>" +
       "Assigned: <a href='lab2.dice/'>Lab 2</a>",
     // wk 3
     "Review dynamic dispatch; Abstract classes",
