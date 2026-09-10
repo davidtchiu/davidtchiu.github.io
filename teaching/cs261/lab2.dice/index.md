@@ -8,13 +8,13 @@ Note: I *strongly* suggest that you use BlueJ for this lab. The lab involves lot
 
 
 #### Objectives
+- To examine the proper use of visibility modifiers (private, protected, ...)
 - To practice with inheritance and subtyping.
-- To understand the behavior of `super()` and `this()`
+- To understand the behavior of `super()` and `this()` and constructor chaining
+- To understand the Java's implicit writing and calling of default constructors
 
 #### Required Files
 - [Lab_DieInheritance.zip](Lab_DieInheritance.zip)
-
-
 
 #### Part I: Basic Inheritance
 Take a moment to familiarize yourself with the three `Die` classes. The `BasicDie` class models a die (the kind you roll) — you can create a `Die` with any number of sides, then `roll()` it to get a random result. The `HistoryDie` class extends `BasicDie` such that it keeps track of how many times each possible result has been rolled. `CrookedDie` cheats: Every third roll, an instance of this class returns the die's maximum value.
