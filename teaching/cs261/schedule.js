@@ -88,17 +88,17 @@ let days = {
         url: "lab1.farm/",
         due: "9/4/2026",
       },
-      // {
-      //   name: "Lab 2",
-      //   title: "Inheritance Lab",
-      //   url: "lab2.dice/",
-      //   due: "9/12/2025",
-      // },
+      {
+        name: "Lab 2",
+        title: "Inheritance Lab",
+        url: "lab2.dice/",
+        due: "9/11/2026",
+      },
       // {
       //   name: "Lab 3",
       //   title: "Abstract Classes Lab",
       //   url: "lab3.lib/",
-      //   due: "9/19/2025",
+      //   due: "9/18/2026",
       // },
       // {
       //   name: "Lab 4",
