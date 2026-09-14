@@ -34,7 +34,7 @@ let days = {
     "Research Questions", 
     "Starting your LaTeX document",
       "Mon <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4a. Research Questions</a>" + "<br/>" +
-      "Fri <a href='https://overleaf.com'>Overleaf</a>"
+      "Fri <a href='https://overleaf.com'>4b. Using Overleaf</a>"
     ,
     // wk 5
     "AI tool finding", // 

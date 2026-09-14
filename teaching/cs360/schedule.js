@@ -13,12 +13,12 @@ let days = {
         url: "hwk1.rel/",
         due: "9/11/2026", // wk2, friday
       },
-      // {
-      //   name: "Hwk 2 (written)",
-      //   title: "Relational Algebra",
-      //   url: "hwk2.ra/",
-      //   due: "9/25/2026", // wk4, Wed
-      // },
+      {
+        name: "Hwk 2 (written)",
+        title: "Relational Algebra",
+        url: "hwk2.ra/",
+        due: "9/23/2026", // wk4, Wed
+      },
       // {
       //   name: "Hwk 3 (sql schema)",
       //   title: "Data Ingestion",
@@ -120,18 +120,21 @@ let days = {
     "Relational model: Connection to sets",
     "Relational model: keys, schema diagram",
       "Notes: <a href='https://drive.google.com/file/d/10d8JU6ZL2dDySIGkZdV8jXVI9_uiGHPH/view?usp=drive_link'>1a. Intro to DB</a>" + "<br/>" +
-      "Notes: <a href='https://drive.google.com/open?id=1C0g0MafIFxPI_h_NRqVvrDeDQ7cxDEyT&usp=drive_fs'>1b. Relational model</a>" + "<br/>"
+      "Notes: <a href='https://drive.google.com/open?id=1C0g0MafIFxPI_h_NRqVvrDeDQ7cxDEyT&usp=drive_fs'>1b. Relational model</a>" + "<br/>" +
+      "Assigned: <a href='hwk1.rel/'>Hwk 1 (Relational Model)</a>" + "<br/>"
     ,
     // wk 2
     "<strong>Labor Day<br/>(no class)</strong>",
     "Start relational algebra",
     "RA: set operators, cartesian product",
-      "Notes: <a href='https://drive.google.com/open?id=1S_LS_g84QvDuuHNVVIGLpLj8LhUo6NlL&usp=drive_fs'>2a. Relational algebra I</a>",
+      "Notes: <a href='https://drive.google.com/open?id=1S_LS_g84QvDuuHNVVIGLpLj8LhUo6NlL'>2a. Relational algebra I</a>",
     // wk 3
     "RA: natural join",
     "RA: outer joins, rename operator",
     "RA: grouping, aggregation",
-      "",
+      "Notes: <a href='https://drive.google.com/file/d/1hQh6ckIrLSNRDf7fsnxVxO1HP1imXFOF'>2b. Relational algebra II</a>" + "<br/>" +
+      "Assigned: <a href='hwk2.ra/'>Hwk 2 (Relational Algebra)</a>" + "<br/>" 
+      ,
     // wk 4
     "SQL: schema definition",
     "SQL: writing basic queries, joins",
