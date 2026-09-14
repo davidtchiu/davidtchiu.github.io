@@ -168,7 +168,7 @@ let days = {
     "Lab 1: Down on the Farm",
     "Inheritance: motivation, abstraction",
     "Inheritance: this(), super(), constructor chaining",
-    "Read: <a href='https://drive.google.com/open?id=1HdIsu7PkFtepAlF7fk5NWZMBRHDFXPBM&usp=drive_fs'>Inheritance</a>" + "<br/>" +
+    "Read: <a href='https://drive.google.com/open?id=1HdIsu7PkFtepAlF7fk5NWZMBRHDFXPBM'>Inheritance</a>" + "<br/>" +
       "Notes: <a href='https://drive.google.com/drive/u/0/folders/1Pjg5NZRBFTAlffz6M1XRPhrdcLY0lrr1'>1a. Inheritance</a>" + "<br/>" +
       "Assigned: <a href='hwk1.lc/'>Hwk 1 (Letter Counter)</a>" + "<br/>" +
       "Assigned: <a href='lab1.farm/'>Lab 1</a>",
@@ -177,7 +177,7 @@ let days = {
     "Polymorphism, object substitution, down-casting",
     "Lab 2: Inheritance Lab",
     "Method @Override, dynamic dispatch",
-    "Read: <a href='    https://drive.google.com/open?id=1OWrluvtRL5mpO1DcSQ5dpXYfswwtpS8x&usp=drive_fs'>Polymorphism</a>" + "<br/>" +
+    "Read: <a href='    https://drive.google.com/open?id=1OWrluvtRL5mpO1DcSQ5dpXYfswwtpS8x'>Polymorphism</a>" + "<br/>" +
       "Notes: <a href='https://drive.google.com/file/d/1eofxLACqANNzNL3ueYkzf7WDezQy4jwH/view'>1b. Polymorphism</a>" + "<br/>" +
       "Assigned: <a href='hwk2.ttt/'>Hwk 2 (TicTacToe)</a>" + "<br/>" +
       "Assigned: <a href='lab2.dice/'>Lab 2</a>",
@@ -186,7 +186,9 @@ let days = {
     "Java Interfaces",
     "Lab 3: Abstract classes Lab",
     "Multiple implementation",
-    "",
+    "Read: <a href='https://drive.google.com/open?id=1RsmCUeXz9TjIV1PdHgfb-P3drY0smJaz'>Abstract Class and Interface</a>" + "<br/>" + 
+      "Notes: <a href='https://drive.google.com/open?id=1TAfKL771wsDGCnM4CjqXQvSCVp24SgNt'>1c. Abstract Class and Interface</a>" + "<br/>" +
+      "Code-Along: <a href='https://drive.google.com/open?id=1t2xCKIeetcOfAOL_IE82h9luCTUe7IlH'>ShapeManager</a>",
     // wk 4
     "Exceptional execution and handling",
     "More exceptions",
