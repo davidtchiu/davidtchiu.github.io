@@ -24,7 +24,7 @@ let days = {
       ""
     ,
     // wk 3
-    "Project def'n: Alternatives comparison", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk. Each student/team explains what they chose and what they rejected.
+    "Project def'n: Problem statement", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk. Each student/team explains what they chose and what they rejected.
     "Project def'n: Project definition and personas", 
       "Mon: <a href='https://docs.google.com/document/d/1Vh7G7ENYOxLLMkSQplFwhA4nQrlhos8NAXd29UebsSo'>3a. Alternatives Comparison Worksheet</a>" + "<br/>" +
       "Fri: <a href='https://docs.google.com/document/d/1NKW0GdXv4KrLQ_w5l8ZO2hqQSMaKUtkssyVez2e7eOc'>3b. Personas Worksheet</a>" + "<br/>" +
