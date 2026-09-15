@@ -129,8 +129,8 @@ let days = {
     "RA: set operators, cartesian product",
       "Notes: <a href='https://drive.google.com/open?id=1S_LS_g84QvDuuHNVVIGLpLj8LhUo6NlL'>2a. Relational algebra I</a>",
     // wk 3
-    "RA: natural join",
-    "RA: outer joins, rename operator",
+    "RA: natural join, outer join",
+    "RA: rename, grouping, aggregation",
     "RA: grouping, aggregation",
       "Notes: <a href='https://drive.google.com/file/d/1hQh6ckIrLSNRDf7fsnxVxO1HP1imXFOF'>2b. Relational algebra II</a>" + "<br/>" +
       "Assigned: <a href='hwk2.ra/'>Hwk 2 (Relational Algebra)</a>" + "<br/>" 
