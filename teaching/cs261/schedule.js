@@ -188,7 +188,8 @@ let days = {
     "Multiple implementation",
     "Read: <a href='https://drive.google.com/open?id=1RsmCUeXz9TjIV1PdHgfb-P3drY0smJaz'>Abstract Class and Interface</a>" + "<br/>" + 
       "Notes: <a href='https://drive.google.com/open?id=1TAfKL771wsDGCnM4CjqXQvSCVp24SgNt'>1c. Abstract Class and Interface</a>" + "<br/>" +
-      "Code-Along: <a href='https://drive.google.com/open?id=1t2xCKIeetcOfAOL_IE82h9luCTUe7IlH'>ShapeManager</a>",
+      "Code-Along (abstract class): <a href='https://drive.google.com/open?id=1t2xCKIeetcOfAOL_IE82h9luCTUe7IlH'>ShapeManager</a>" + "<br>" +
+      "Code-Along (interfaces): <a href='https://drive.google.com/open?id=1Voe6PWdSiu667Tk_j36droAiC2CXx5Ij'>UniversalRemote</a>",
     // wk 4
     "Exceptional execution and handling",
     "More exceptions",
