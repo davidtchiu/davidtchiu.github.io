@@ -4,7 +4,7 @@
 
 This week you'll get some hands-on practice with abstract classes and polymorphism. This lab considers a class hierarchy that models books in a library.
 
-![lib](figures/lib.jpg)
+<img src="figures/lib.jpg" width="300px"/>
 
 
 #### Objectives
@@ -20,7 +20,7 @@ The following file(s) have been provided for this lab.
 #### Preliminary
 Before you do anything, study the class diagram given below. You are reminded that elements prefixed with `+` and `-` means they are public and private, respectively. Elements that are *italicized* means they are `abstract`. Also, pay close to attention to which methods are overridden in the subclasses.
 
-![BookHierarchy.png](figures/BookHierarchy.png)
+<img src="figures/BookHierarchy.png" width="300px"/>
 
 Below are detailed instructions for completing this lab. There are a lot of details; be sure and read the instructions carefully, and let us know if anything is unclear!
 
