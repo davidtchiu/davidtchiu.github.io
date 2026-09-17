@@ -20,7 +20,7 @@ The following file(s) have been provided for this lab.
 #### Preliminary
 Before you do anything, study the class diagram given below. You are reminded that elements prefixed with `+` and `-` means they are public and private, respectively. Elements that are *italicized* means they are `abstract`. Also, pay close to attention to which methods are overridden in the subclasses.
 
-<img src="figures/BookHierarchy.png" width="300px"/>
+<img src="figures/BookHierarchy.png" width="400px"/>
 
 Below are detailed instructions for completing this lab. There are a lot of details; be sure and read the instructions carefully, and let us know if anything is unclear!
 
@@ -35,7 +35,7 @@ Below are detailed instructions for completing this lab. There are a lot of deta
   System.out.println(b.toString());
   ```
 
-  It doesn't print out a "pretty" String at all. Instead, you get a cryptic string that reads something like this: `Book@60269693`.
+  But it doesn't print out a "pretty" String at all. Instead, you get a cryptic string that reads something like this: `Book@60269693`.
 
 - The reason you see this weird string is because `Book` implicitly inherits from the `Object` class (as all classes do), and the `Object` class provides a super generic `toString()` method. Because the `Object` class is so broad, it knows very little about the particular object... so it's just returning what it knows: the class the object belongs to, and its location in memory in hexadecimal (base 16) representation. It's not important that you know how to decipher this string because it's usually overridden to return something more meaningful. Then let's go ahead and override `toString()` in the `Book` class so that it returns a more informative and "prettier" `String`. Here's what mine returns when run again:
 
