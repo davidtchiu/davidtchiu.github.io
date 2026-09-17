@@ -72,7 +72,7 @@ In addition to author, title, and ISBN, books that appear in a library have call
 
 - Override the `toString()` method, which should now return the "pretty" String from `Book` (that is, you should *call* Book's `toString()` method) and concatenate the call number to the end of it. Are you able to test  `toString()` in this class? Why or why not?
 
-- Override the `boolean equals(Object other)` method. Like `toString()`,  this method is also inherited from the root `Object` class. However, the one defined there is too vague... we need to override it so that we can define what it means for two library books to be equal. This method should return `true` if the current library book's call number matches the call number of the other library book. You must first down-cast the input parameter `other` to a `LibraryBook` type before you can access its call number.
+- Override the `boolean equals(Object other)` method. Like `toString()`,  this method is also inherited from the root `Object` class. However, the one defined there is way too vague... we need to override it so that we can define what it means for two library books to be equal. This method should return `true` if the current library book's call number matches the call number of the other library book. You must first down-cast the input parameter `other` to a `LibraryBook` type before you can access its call number. You should return `false` if `other` is input as `null` or if it's not even a `LibraryBook` (say, don't you know a way to see if an object belongs to a certain class...?)
 
   - (Keep in mind, for later, that only the call numbers need to match for two library  books to be "equal.")
 
