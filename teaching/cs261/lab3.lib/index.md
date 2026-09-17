@@ -37,7 +37,7 @@ Below are detailed instructions for completing this lab. There are a lot of deta
 
   But it doesn't print out a "pretty" String at all. Instead, you get a cryptic string that reads something like this: `Book@60269693`.
 
-- The reason you see this weird string is because `Book` implicitly inherits from the `Object` class (as all classes do), and the `Object` class provides a super generic `toString()` method. Because the `Object` class is so broad, it knows very little about the particular object... so it's just returning what it knows: the class the object belongs to, and its location in memory in hexadecimal (base 16) representation. It's not important that you know how to decipher this string because it's usually overridden to return something more meaningful. Then let's go ahead and override `toString()` in the `Book` class so that it returns a more informative and "prettier" `String`. Here's what mine returns when run again:
+- The reason you see this weird string is because `Book` implicitly inherits from the `Object` class (as all classes do), and the `Object` class provides a super generic `toString()` method. Because the `Object` class is so vague, it knows very little about the particular object... so it's just returning what it knows: the class the object belongs to, and its "hashcode" (a unique ID of sorts) in hexadecimal notation. It's not important that you know how to decipher this string because it's usually overridden to return something more meaningful. Then let's go ahead and override `toString()` in the `Book` class so that it returns a more informative and "prettier" `String`. Here's what mine returns when run again:
 
   ```java
   Book myBook = new Book("Anthony Burgess", "A Clockwork Orange", "978-0393312836");
