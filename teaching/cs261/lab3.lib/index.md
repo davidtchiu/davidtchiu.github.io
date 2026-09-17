@@ -49,11 +49,11 @@ Below are detailed instructions for completing this lab. There are a lot of deta
 
   Don't forget to use the `@Override` annotation when overriding a method!
 
-- **A neat trick:** Now try printing out your book again *without* calling the `toString()` method. Hey that works too! The `toString()` method is one of those special methods. It gets called implicitly by Java when you try to print the object  out. 
+- **A neat trick:** Now try printing out your book again *without* explicitly calling the `toString()` method. Hey that works too! The `toString()` method gets called implicitly by Java when you try to print the object out.
 
   ```java
   Book myBook = new Book("Anthony Burgess", "A Clockwork Orange", "978-0393312836");
-  System.out.println(myBook);
+  System.out.println(myBook);  // no call to .toString()
   > Title:  A Clockwork Orange
   > Author: Anthony Burgess
   > ISBN: 978-0393312836
