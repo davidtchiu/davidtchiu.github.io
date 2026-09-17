@@ -192,10 +192,10 @@ let days = {
       "Code-Along (Wed): <a href='https://drive.google.com/open?id=1Voe6PWdSiu667Tk_j36droAiC2CXx5Ij'>UniversalRemote</a>" + "<br>" +
       "Assigned: <a href='lab3.lib/'>Lab 3</a>",
     // wk 4
-    "Exceptional execution and handling",
-    "More exceptions",
+    "Exceptional execution",
+    "More on exceptions: try, catch, finally",
     "Lab 4: Exceptions Lab",
-    "Start: Understanding Big-O",
+    "Understanding Big-O",
     "",
     // wk 5
     "Big-O: linear time, quadratic time",
