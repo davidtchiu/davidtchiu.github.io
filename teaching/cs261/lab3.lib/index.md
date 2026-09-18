@@ -78,11 +78,11 @@ In addition to author, title, and ISBN, books that appear in a library have call
 
 - Now notice that there are three abstract methods without implementations. They are described, as follows:
 
-  - An abstract method `void checkout(String patron, String due)`. This method eventually handles processing for a patron to check out a book. A due date also is recorded.
+  - An abstract method `public void checkout(String patron, String due)`. This method eventually handles processing for a patron to check out a book. A due date also is recorded.
 
-  - An abstract method, `void returned()`. This method eventually handles processing for when a book is returned after having been checked out.
+  - An abstract method, `public void returned()`. This method eventually handles processing for when a book is returned after having been checked out.
 
-  - An abstract method `String circulationStatus()`. This method will eventually indicate whether the book is on the shelves, checked, or non-circulating in the reference collection.
+  - An abstract method `public String circulationStatus()`. This method will eventually indicate whether the book is on the shelves, checked, or non-circulating in the reference collection.
 
 - **Note:** You might be anxious to test out all the methods that you wrote for this class, but as you might remember from lecture, you can't instantiate an abstract class! This means you must wait until you've implemented its concrete subclasses...
 
@@ -98,11 +98,11 @@ There are actually two types of library books: `ReferenceBook` and `CirculatingB
 
 - Provide getter and setter methods for `collection`.
 
-- Override the abstract method, `void checkout(String patron, String due)`. Because checking-out is not allowed for reference books, the method should simply print that the patron `"cannot check out a reference book"`.
+- Override the abstract method, `public void checkout(String patron, String due)`. Because checking-out is not allowed for reference books, the method should simply print that the patron `"cannot check out a reference book"`.
 
-- Override the abstract method, `void returned()`, which should print `"reference book could not have been checked out -- return impossible"`.
+- Override the abstract method, `public void returned()`, which should print `"reference book could not have been checked out -- return impossible"`.
 
-- Override the abstract method, `String circulationStatus()`, which should return `"non-circulating reference book"`.
+- Override the abstract method, `public String circulationStatus()`, which should return `"non-circulating reference book"`.
 
 - Finally, override the `toString()` method, which should now return the "pretty" String from `LibraryBook` augmented with the `collection` information.
 
@@ -139,11 +139,11 @@ Unlike reference books, circulating books refer to those that patrons can borrow
 
 - Provide getter and setter methods for the due date, and current holder.
 
-- Override the abstract method, `void checkout(String patron, String due)`, which handles processing when a book is checked out, storing the patron's name as its current holder and the date the book is due to be returned. If the book was already checked out, then print the message `"book unavailable until DD"` (where `DD` is the due date).
+- Override the abstract method, `public void checkout(String patron, String due)`, which handles processing when a book is checked out, storing the patron's name as its current holder and the date the book is due to be returned. If the book was already checked out, then print the message `"book unavailable until DD"` (where `DD` is the due date).
 
-- Override the abstract method, `void returned()`, handles processing when a book is returned (currentHolder and dueDate are set to `null`).
+- Override the abstract method, `public void returned()`, handles processing when a book is returned (currentHolder and dueDate are set to `null`).
 
-- Override the abstract method, `String circulationStatus()`, which should return the `currentHolder`'s name and due date, if the book has been checked out; or `"book available on shelves"` if the book is available.
+- Override the abstract method, `public String circulationStatus()`, which should return the `currentHolder`'s name and due date, if the book has been checked out; or `"book available on shelves"` if the book is available.
 
 - Finally, override the `toString()` method, which should now return the "pretty" String from `LibraryBook` augmented with the current holder and due date.
 
@@ -178,9 +178,9 @@ Unlike reference books, circulating books refer to those that patrons can borrow
 
 - The class has a default constructor that instantiates the `ArrayList`.
 
-- Write a method `void addBook(LibraryBook book)` that adds the given book to the library.
+- Write a method `public void addBook(LibraryBook book)` that adds the given book to the library.
 
-- Write a method `void printLibrary()` that prints out all the books in the library. Here's an example:
+- Write a method `public void printLibrary()` that prints out all the books in the library. Here's an example:
 
   ```java
   Library lib = new Library();
