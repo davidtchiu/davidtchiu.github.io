@@ -23,13 +23,13 @@ let days = {
       //   name: "Hwk 3 (sql schema)",
       //   title: "Data Ingestion",
       //   url: "hwk3.sqlddl/",
-      //   due: "10/2/2026",  // wk5, Friday
+      //   due: "10/5/2026",  // wk6, Mon
       // },
       // {
       //   name: "Hwk 4 (sql)",
       //   title: "Writing SQL Queries",
       //   url: "hwk4.sqldml/",
-      //   due: "10/12/2026",  // wk 7, Monday
+      //   due: "10/14/2026",  // wk 7, Wed
       // },
       // {
       //   name: "Hwk 5 (coding)",
