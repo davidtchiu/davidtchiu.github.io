@@ -17,7 +17,7 @@ let days = {
         name: "Hwk 2 (written)",
         title: "Relational Algebra",
         url: "hwk2.ra/",
-        due: "9/23/2026", // wk4, Wed
+        due: "9/25/2026", // wk4, Fri
       },
       // {
       //   name: "Hwk 3 (sql schema)",
