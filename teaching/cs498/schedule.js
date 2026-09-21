@@ -31,10 +31,11 @@ let days = {
       "Fri: <a href='https://www.nngroup.com/articles/persona'>Read: Personas Make Users Memorable</a>"
     ,
     // wk 4
-    // "Personas (cont.", 
-    "Research Questions", 
-      "Mon <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4a. Research Questions</a>" + "<br/>" +
-      "Fri <a href='https://overleaf.com'>4b. Using Overleaf</a>"
+    "Intro to Overleaf", 
+    "Using Overleaf: Write a second persona!", 
+      // "Mon <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4a. Research Questions</a>" + "<br/>" +
+      // "Mon: <a href='https://docs.google.com/document/d/1NKW0GdXv4KrLQ_w5l8ZO2hqQSMaKUtkssyVez2e7eOc'>4a. Persona 2</a>" + "<br/>" +
+      "Mon <a href='https://www.overleaf.com/read/xkhfzngnpcfx#26f19e'>4a. Using Overleaf</a>"
     ,
     // wk 5
     "AI tool finding", // 
