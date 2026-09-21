@@ -94,12 +94,12 @@ let days = {
         url: "lab2.dice/",
         due: "9/11/2026",
       },
-      // {
-      //   name: "Lab 3",
-      //   title: "Abstract Classes Lab",
-      //   url: "lab3.lib/",
-      //   due: "9/18/2026",
-      // },
+      {
+        name: "Lab 3",
+        title: "Abstract Classes Lab",
+        url: "lab3.lib/",
+        due: "9/18/2026",
+      },
       // {
       //   name: "Lab 4",
       //   title: "Exceptions Lab ",
@@ -196,7 +196,9 @@ let days = {
     "More on exceptions: try, catch, finally",
     "Lab 4: Exceptions Lab",
     "Understanding Big-O",
-    "Notes: <a href='https://drive.google.com/file/d/1olL6INJ6t9-saScP7MIgERA82XjVQiRb'>2. Exceptions</a>",
+    "Notes: <a href='https://drive.google.com/file/d/1olL6INJ6t9-saScP7MIgERA82XjVQiRb'>2. Exceptions</a>" + "<br>" +
+      "Code-Along (Mon): <a href='https://drive.google.com/file/d/1AfUNaEovB1FmGOlRCbABAN8XcO8MBzRp'>RosterPrinter</a> (Throwing/Catching)" + "<br>" +
+      "Code-Along (Wed): <a href='https://drive.google.com/file/d/1K1O55c47BP6gBBUt8jf4eoisLFkOTAkj'>ATM</a> (Defining)",
     // wk 5
     "Big-O: linear time, quadratic time",
     "Big-O: logarithmic time, binary search",
