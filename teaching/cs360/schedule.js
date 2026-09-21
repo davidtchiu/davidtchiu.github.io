@@ -139,7 +139,9 @@ let days = {
     "SQL: schema definition",
     "SQL: writing basic queries, joins",
     "SQL: outer joins, renaming, temporary tables",
-      "",
+      "Notes: <a href='https://drive.google.com/open?id=1zntL-g7yGuUg_vNiHy-7lTcZxLSb3TfH&usp=drive_fs'>3a. SQL I</a>" + "<br/>" +
+      "Hand out: <a href='https://drive.google.com/open?id=1J_wvCXxMoXLIolvBnkVEm72nMUZDIeSI'>SQL Cheatsheet</a>" + "<br/>"
+      ,
     // wk 5
     "SQL: subqueries",
     "SQL: grouping and aggregation",
