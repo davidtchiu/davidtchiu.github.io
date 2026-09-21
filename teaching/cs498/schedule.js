@@ -39,7 +39,7 @@ let days = {
     ,
     // wk 5
     "AI tool finding", // 
-    "Class Cancelled", // 
+    "<b>Class Cancelled</b>", // 
       "Mon: <a href='https://docs.google.com/document/d/1ZBjDU0eWnfvt8yiYDKkwNPkeY-xBDgIy5Rfzs2zrPr4'>5a. AI Tasks Worksheet</a>" + "<br/>" +
       "Fri: <a href='https://docs.google.com/document/d/1X3A0q_rQrI-QdFnkCrSLJUmSGAPuErvdf1slQq-ILdE'>5b. AI Tools Experiment</a>"
       ,
