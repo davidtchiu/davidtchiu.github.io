@@ -31,7 +31,7 @@ let days = {
       "Fri: <a href='https://www.nngroup.com/articles/persona'>Read: Personas Make Users Memorable</a>"
     ,
     // wk 4
-    "Intro to Overleaf", 
+    "Intro to Overleaf (Make a Copy)", 
     "Using Overleaf: Write a second persona!", 
       // "Mon <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4a. Research Questions</a>" + "<br/>" +
       // "Mon: <a href='https://docs.google.com/document/d/1NKW0GdXv4KrLQ_w5l8ZO2hqQSMaKUtkssyVez2e7eOc'>4a. Persona 2</a>" + "<br/>" +
@@ -39,7 +39,7 @@ let days = {
     ,
     // wk 5
     "AI tool finding", // 
-    "<b>Class Cancelled</b>", // 
+    "<strong>Class Cancelled</strong>", // 
       "Mon: <a href='https://docs.google.com/document/d/1ZBjDU0eWnfvt8yiYDKkwNPkeY-xBDgIy5Rfzs2zrPr4'>5a. AI Tasks Worksheet</a>" + "<br/>" +
       "Fri: <a href='https://docs.google.com/document/d/1X3A0q_rQrI-QdFnkCrSLJUmSGAPuErvdf1slQq-ILdE'>5b. AI Tools Experiment</a>"
       ,
