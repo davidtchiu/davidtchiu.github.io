@@ -196,7 +196,7 @@ let days = {
     "More on exceptions: try, catch, finally",
     "Lab 4: Exceptions Lab",
     "Understanding Big-O",
-    "",
+    "Notes: <a href='https://drive.google.com/file/d/1olL6INJ6t9-saScP7MIgERA82XjVQiRb'>2. Exceptions</a>",
     // wk 5
     "Big-O: linear time, quadratic time",
     "Big-O: logarithmic time, binary search",

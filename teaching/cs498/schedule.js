@@ -24,15 +24,15 @@ let days = {
       ""
     ,
     // wk 3
-    "Project def'n: Problem statement", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk. Each student/team explains what they chose and what they rejected.
-    "Project def'n: Project definition and personas", 
+    "Problem statement", // Students compare 3 candidate projects using criteria: interest, feasibility, novelty, technical depth, data availability, evaluation, and risk. Each student/team explains what they chose and what they rejected.
+    "Personas", 
       "Mon: <a href='https://docs.google.com/document/d/1Vh7G7ENYOxLLMkSQplFwhA4nQrlhos8NAXd29UebsSo'>3a. Alternatives Comparison Worksheet</a>" + "<br/>" +
       "Fri: <a href='https://docs.google.com/document/d/1NKW0GdXv4KrLQ_w5l8ZO2hqQSMaKUtkssyVez2e7eOc'>3b. Personas Worksheet</a>" + "<br/>" +
       "Fri: <a href='https://www.nngroup.com/articles/persona'>Read: Personas Make Users Memorable</a>"
     ,
     // wk 4
+    // "Personas (cont.", 
     "Research Questions", 
-    "Starting your LaTeX document",
       "Mon <a href='https://docs.google.com/document/d/1ivP8vnTAOsufktrSjXKBtSkc1Bj0of2730jyR4cPagA'>4a. Research Questions</a>" + "<br/>" +
       "Fri <a href='https://overleaf.com'>4b. Using Overleaf</a>"
     ,
