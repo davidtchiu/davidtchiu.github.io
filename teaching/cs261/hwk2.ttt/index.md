@@ -190,16 +190,15 @@ CS 261 Homework 2 (TicTacToe)
 
 
 ----------------------------------------------------------
-[10/10pts] Completion of RandomPlayer. Remember that I do not want you
-to repeatedly generate random locations until you find one that is free.
+[10/10pts] Completion of RandomPlayer.
 
 
 ----------------------------------------------------------
-[10/10pts] Completion of CornerPlayer. Reuses code wherever possible.
+[10/10pts] Completion of CornerPlayer.
 
 
 ----------------------------------------------------------
-[10/10pts] Completion of your custom Player. Reuses code wherever possible.
+[10/10pts] Completion of your custom Player.
 
 
 ----------------------------------------------------------
