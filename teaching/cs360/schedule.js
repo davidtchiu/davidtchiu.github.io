@@ -142,8 +142,8 @@ let days = {
       "Notes: <a href='https://drive.google.com/open?id=1zntL-g7yGuUg_vNiHy-7lTcZxLSb3TfH&usp=drive_fs'>3a. SQL I</a>" + "<br/>" +
       "Download: <a href='https://www.sqlite.org/'>SQLite3 Database</a> (required)" + "<br>" +
       "Download: <a href='https://sqlitebrowser.org/'>SQLite Browser</a> (suggested)" + "<br>" +
-      "Download: <a href='https://drive.google.com/file/d/1BT2rLI1m_NjLd6BOk0TuKkdPiTc585Dj'>Airport Schema SQL</a> (sql)" + "<br>" +
-      "Download: <a href='https://drive.google.com/file/d/18O8tZ9e4kOuhOaX9w0fV8cbg4RkH6uMx'>Airport Populate SQL</a> (ssql)" + "<br>" +
+      "SQL: <a href='https://drive.google.com/file/d/1BT2rLI1m_NjLd6BOk0TuKkdPiTc585Dj'>Airport Schema SQL</a>" + "<br>" +
+      "SQL: <a href='https://drive.google.com/file/d/18O8tZ9e4kOuhOaX9w0fV8cbg4RkH6uMx'>Airport Populate SQL</a>" + "<br>" +
       "Handout: <a href='https://drive.google.com/open?id=1J_wvCXxMoXLIolvBnkVEm72nMUZDIeSI'>SQL Cheatsheet</a>" + "<br/>"
       ,
     // wk 5
