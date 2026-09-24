@@ -41,7 +41,8 @@ let days = {
     "AI tool finding", // 
     "<strong>Class Cancelled</strong>", // 
       "Mon: <a href='https://docs.google.com/document/d/1ZBjDU0eWnfvt8yiYDKkwNPkeY-xBDgIy5Rfzs2zrPr4'>5a. AI Tasks Worksheet</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1X3A0q_rQrI-QdFnkCrSLJUmSGAPuErvdf1slQq-ILdE'>5b. AI Tools Experiment</a>"
+      ""
+      // "Fri: <a href='https://docs.google.com/document/d/1X3A0q_rQrI-QdFnkCrSLJUmSGAPuErvdf1slQq-ILdE'>5b. AI Tools Experiment</a>"
       ,
     // wk 6
     "Background: Prior work hunt", // Students find examples of similar apps, papers, GitHub repos, datasets, tools, or APIs. They classify each as inspiration, competitor, dependency, or warning sign.
