@@ -1,13 +1,13 @@
 ## CS 360 - Principles of Database Systems
 
-### Hwk 3: Data Ingestion
+### Hwk 3: SQL Schema and Data Ingestion
 
 There's a lot of text-based ("raw") data in the real world that we have to load into a relational database to reap all the benefits of SQL. This process is called **Data Ingestion**. Suppose a local college uses a comma-delimited spreadsheet (csv file) to manage all of its data. Their software has been collecting years' worth of data on their students and course enrollment in a single spreadsheet, and over time, the size of this file has gotten out of hand. College administrators can no longer "eyeball" the spreadsheet to do simple analysis, and require the help of someone with relational database expertise... that's where you step in.
 
 #### Student Outcomes
 
-- To use SQL for the creation of a relational schema, including definition of keys and constraints.
-- To practice data cleansing, a process in which you convert inconsistent (or other bad) data into correct, structured data.
+- To use SQL to define a relational database schema, including definition of keys and constraints.
+- To practice data cleansing, a process in which you convert inconsistent (or other bad) data into correct, structured data for insertion into a database.
 
 #### Required Files
 
@@ -76,15 +76,15 @@ studentID,studentName,class,gpa,major,CourseNum,deptID,CourseName,Location,meetD
 1934,Kyle,Junior,2.1,BUS;ENGL,520,ENGL,Shakespeare Was Da Bomb,HH 20,TR,13:00,Department of English,Wyatt Hall
 ```
 
-Each line in this file represents a student enrollment. For instance, take a look at Kyle's (`1934`) info at the tail end of this file. Kyle is a `BUS` and `ENGL` double-major who is enrolled in CSCI 351, ENGL 520, and CSCI 453 (the latter enrollment a bit harder to find). At the end of each row, the last two tokens (department name and building) refer to the department in which the course is offered (and not the student's major). Take note of all the problems this file suffers from:
+Each line in this file represents a student's course-enrollment. For instance, take a look at Kyle's (`1934`) info at the tail end of this file. Kyle is a `BUS` and `ENGL` double-major (thus `BUS;ENGL` is listed under the "major" column) who is enrolled in CSCI 351, ENGL 520, and CSCI 453 (the enrollment in CSCI 453 appears a bit earlier in the file). At the end of each row, the last two tokens (department name and building) refer to the department in which the course is offered and not the student's major. Take note of all the problems this file suffers from:
 
-1. **Redundancies**: It is easy to see that a student's information is duplicated on a separate row for each course they are enrolled in. (For instance, check out the last two rows for a student, Kyle.)
-2. **Multi-valued attributes:** One of the attributes can have multiple values: A student can have 0-2 majors, and each of major is separated by a semi-colon. (You might recall multi-valued attributes like this are prohibited in the relational model.)
-3. **Incomplete data:** When a student is not enrolled in any course, their course-enrollment fields are simply delimited with commas, but there's no data in between. Look at Lia's data on the third line in the file: They are not enrolled in any courses, so all of the fields following her major are empty, which looks kind of wonky. Now look at the courses without the student info, like MATH 330 (Trigonometry) on line 20. These are courses that exist on the books in which  no one is enrolled. In yet another example, sometimes, we just need to show that a department/program exists, so here are also departments without student or course info. This is the case for the History Department (4th row), which can happen when an existing department has not yet added any courses to the schedule.
+1. **Data Redundancies**: It is easy to see that a student's information is duplicated on a separate row for each course they are enrolled in. (For instance, check out the last two rows for a student, Kyle.)
+2. **Multi-valued attributes:** One of the attributes can have multiple values: A student can have zero to two majors, and each of major is separated by a semi-colon.
+3. **Incomplete data:** When a student is not enrolled in any course, their course-enrollment fields are simply empty. Look at Lia's data on the third row of the file: They are not enrolled in any courses, so all of the fields following her major are empty, which looks really wonky. Now look at a course like MATH 330 (Trigonometry) on line 20. These are courses that exist on the books in which  no one is enrolled yet. In yet another example, sometimes, we just need to show that a department/program exists, so here are also departments without student or course info. This is the case for the History Department (6th row), which can happen when an existing department has not yet added any courses to the schedule.
 
 #### Task 1: Schema Definition
 
-Your task is two-part: (1) You must first define a database schema in SQL. I will explain the schema's requirements below. (2) After your schema has been defined, you must write a script that will take the data from its raw format and insert it into your database.
+Your task is two-part: (1) You must first define a database schema in SQL. I will explain the schema's requirements below. (2) After your schema has been defined you must load it into sqlite. Then you must write a script (in the language of your choice) that will take the enrollment data from its raw form and insert all the data into your structured database.
 
 We'll focus first on Task 1. You can assume there will be no other relations needed. Create a plain-text file called **YourLastname.txt** that will store the schema definition in SQL. (Disclaimer: Yes this file must be in plain-text. Do not write these statements in Word (.doc), Wordpad (.rtf), etc., that adds special formatting. Use an editor like VS Code or Atom). Submissions in non-plaintext will be returned without a grade.
 
@@ -102,12 +102,12 @@ drop table if exists Dept;
 drop table if exists Student;
 
 -- Create the schema for your tables below
-CREATE TABLE ... -- okay now you finish the rest
+create table ... -- you finish the rest :)
 ```
 
 ##### Defining Relations
 
-Here is the DB schema you need to define in SQL. As you define these relations, keep in mind that the order of each table in your file matters. Like referencing variables in any language, SQLite will throw an error informing you that relations do not yet exist if you refer to them too early in the file! Each table must have a primary key defined, and each attribute must have an appropriate data type (`TEXT`, `REAL`, or `INTEGER`).
+Here is the DB schema you need to define in SQL. As you define these relations, keep in mind that the order of each table in your file matters. Like referencing variables in any language, SQLite will throw an error informing you that relations do not yet exist if you refer to them too early in the file! Each table must have a primary key defined (take note that some primary keys are multi-attribute). Each attribute must have an appropriate data type (`TEXT`, `REAL`, or `INTEGER`).
 
 <ul>
 <li>
@@ -116,50 +116,49 @@ Here is the DB schema you need to define in SQL. As you define these relations, 
 	a class standing, and a cumulative GPA, which can be `NULL`. 
 	The studentName may not be unique, but it cannot be `NULL`. The 
 	class standing <i>must</i> be one of: 
-	"Freshman," "Sophomore," "Junior," or "Senior." The database should reject 
-	any insertions or updates if a student's class rank is not one of these.
-	Similarly, GPAs must be either `NULL` or between 0.0 to 4.0.
+	"Freshman," "Sophomore," "Junior," or "Senior." (Use the `CHECK()` attribute
+	constraint to enforce this.) 
+	Similarly, GPAs must be between 0.0 to 4.0 if given, or `NULL`.
 	</p>
 </li>
 <li>
 	<p>Major(studentID, major)<br/>
-	A student's major(s) is/are recognized by an entry in this table (an undeclared student
-	therefore would not have an entry). StudentID is self-explanatory, 
-	and the major code is the department's ID (see Department table below). That is, if a department
-	decided to recode its ID (e.g., `CS` changes its department code to `CSCI`), the changes must be reflected
-	automatically in this table. When defining the primary key for this table, you need to 
-	consider that a student may have several majors.
+	A student's major(s) is (are) recognized by an entry in this table (an undeclared student
+	therefore would not have an entry). `StudentID` is self-explanatory, 
+	and the major code is just the department's ID (see Department table below). That is, if a department
+	decided to recode its ID (say, `CS` department changes its department ID to `COMP`), then the changes must be reflected automatically in this table. (That is, think about your foreign key.) When defining the primary key for this table, you need to consider that a student may have several majors, so the student's ID may appear more than once.
 	</p>
 </li>
 <li>
 	<p>
 	Course(courseNum, deptID, courseName, location, meetDay, meetTime)<br/>
 	Courses have a course number, a department it belongs to, a course name, 
-	location, day, and time. Some courses can be cross listed. For instance, 
+	location, day, and time. Some courses can be cross-listed. For instance, 
 	the course Discrete Math might belong to both CS and Math departments! By 
 	itself, neither course number nor deptID are unique in this relation, but the
-	two taken together is. No courses can be taught before '07:00' or after '17:00'. Yes
+	two taken together is unique. No courses shall be taught before '07:00' or after '17:00', so make sure
+	you check that constraint. (Yes,
 	the leading "0" matters for single-digit hours, since time is represented as a string
-	and will be compared lexicographically. (Therefore, '7:00' > '17:00', which is clearly 
-	not true.)
-	I would use a TEXT field to store meeting days and meeting times (Hint: recall that
-	<code>&gt;</code> and <code>&lt;</code> operators can be used with TEXT fields).
+	and will be compared lexicographically. Therefore, '7:00' > '17:00', which is clearly 
+	not true in the time sense.)
+	I would still use a TEXT field to store meeting days and meeting times though (Hint: recall that
+	<code>&gt;</code> and <code>&lt;</code> operators can be used with `TEXT` fields).
 	</p>
 </li>
 <li>
 	<p>
 	Dept(deptID, deptName, building)<br/>
-	Departments are identified by a label (deptID), which is not numerical. For 
-	instance, `CS` would be the deptID for the computer science department. 
-	It also requires a full name of the department, and each is housed in a 
-	particular building on campus. A department cannot be housed in more than
+	Departments are identified by a unique label (`deptID`), which cannot be numerical. For 
+	instance, `HIST` would be the dept ID for the History Department. 
+	It also requires a full name, and each department is housed in a 
+	particular building. A department cannot be housed in more than
 	one building, nor can they have more than one label.
-	Constraint: deptID should not be more than 4 characters in length, and 
-	the department names should be unique and cannot be NULL. If a department is 
+	Constraint: `deptID` should not be more than 4 characters long, and 
+	the department names should be unique and cannot be `NULL`. If a department is 
 	removed, then all its course offerings are removed. Anyone enrolled in a
-	course offered by the department should have that course removed.
+	course offered by the department should also have that course-enrollment removed.
 	All students whose majors are from that department should be set to NULL (i.e., the 
-	database should not delete any students upon the removal of a department).
+	database should not delete any students upon the removal of a department!!).
 	</p>
 </li>
 <li>
@@ -177,13 +176,13 @@ Here is the DB schema you need to define in SQL. As you define these relations, 
 
 The next step is to import the raw data into your database.
 
-1. Write a script that inputs the raw data file and prints out a sequence of `INSERT OR IGNORE INTO ...` statements that you can later copy-and-paste into SQLite to fully populate the tables in your database.  It is recommended that you use Python for this type of work, as is mostly the case in industry, but I don't really have a preference. You may use either Python or Java.
+1. Write a script that inputs the raw data file and prints out a sequence of `INSERT OR IGNORE INTO ...` statements that you can later copy-and-paste into SQLite to fully populate the tables that you just defined earlier.  It is recommended that you use Python for this type of work, as is mostly the case in industry, but I don't really have a preference on what language you use to do the file parsing.
 
-	 The optional `OR IGNORE` statement will ignore the insert statement if the insertion results in an error (i.e., the tuple already exists). We didn't talk about this option in class, but it cuts down on the number of warnings.
+	 The optional `OR IGNORE` statement will simply ignore the insert statement if the insertion results in an error (i.e., the tuple already exists). We didn't talk about this option in class as it's not in the SQL standard, but it helps suppress the number of warnings.
 
-2. Your script will need to resolve all those anomalies I listed before (inconsistencies, redundancies, etc.). This step is called *Data Cleansing* out in the real world. In some cases, you can rely on the database to resolve some anomalies. For instance, if you set a deptID to be the primary key of Department like you were supposed to, then multiple insertions of the same department would be automatically rejected by SQLite. (You will see the warnings pop up in SQLite when you go to execute.)
+2. Your script will need to resolve all those anomalies I listed before (inconsistencies, redundancies, etc.). This step is called *Data Cleansing*  in the real world. In some cases, you can rely on the database to resolve some anomalies. For instance, if you set the `deptID` to be the primary key of `Department` like you were supposed to, then multiple insertions of the same department would be automatically rejected by SQLite.
 
-3. Here are the first few lines generated by my script when given the raw data. Duplicate insert statements in your output are allowed by me. Notice how my script took every row from the raw file, and generates several insert statements. Don't worry about duplicate insert statements in your output, as they will be ignored by the "OR IGNORE" clause. 
+3. Here are the first few lines generated by my script when given the raw input file. Duplicate insert statements in your output are allowed since the `OR IGNORE` will suppress their execution. Notice how my script took each row from the raw file, and produces several insert statements. 
 
    ```sql
    INSERT OR IGNORE INTO Student VALUES (1001,'Lia','Junior','3.6');
@@ -200,9 +199,9 @@ The next step is to import the raw data into your database.
    INSERT OR IGNORE INTO Dept VALUES ('HIST','Department of History','Wyatt Hall');
    ```
 
-4. One thing you'll figure out very shortly is that your foreign key constraints will reject insertions where primary keys don't exist. For instance, when you insert into the Major table `(1001,'ENGL')`, but let's say `ENGL` does not yet exist in the Dept table, then SQLite will reject the insertion. This means you need to organize your insertions so that you do them in order: all Students first, then Departments, then Courses, Major, and finally Enroll.
+4. One thing you'll figure out very shortly is that your foreign key constraints will reject insertions where primary keys don't yet exist. For instance, when you insert into the `Major` table a tuple containing `(1001,'ENGL')`, but say `ENGL` does not yet exist in the `Dept` table, then SQLite will reject the insertion. It's thinking, "who is this person majoring in a non-existent major?" This is a good thing -- this means the foreign keys are doing their jobs of checking dependencies. However, this means you need to organize your insertion printouts so that you do them in this order: insert all Students first, then all Departments, then Courses, Major, and finally Enroll.
 
-5. **Submission:** I just need two things: First, I need a file containing your SQL statements for creating the database schema. The second file is your Python or Java script. I don't need a file containing your script's output. I will run your script against my test data, and copy-and-paste its output directly into SQLite to grade it.
+5. **Submission:** I just need two things: First, I need a file containing your SQL statements for creating the database schema. The second file is your script. I don't need a file containing your script's INSERTION outputs, because I will run your script against my test data, and copy-and-paste its output directly into SQLite to grade it.
 
 #### Expected Output
 
