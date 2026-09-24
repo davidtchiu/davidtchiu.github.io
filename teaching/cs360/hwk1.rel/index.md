@@ -22,7 +22,7 @@ Print this assignment with single-side pages. Fill in your name above, and write
 #### Grading
 
 ```
-This assignment is graded out of 46 pts:
+This assignment is graded out of 44 pts:
 
 [6pt] Completion of problem 1.
 [6pt] Completion of problem 2.
