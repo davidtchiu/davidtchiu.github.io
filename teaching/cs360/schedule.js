@@ -19,17 +19,17 @@ let days = {
         url: "hwk2.ra/",
         due: "9/25/2026", // wk4, Fri
       },
-      // {
-      //   name: "Hwk 3 (sql schema)",
-      //   title: "Data Ingestion",
-      //   url: "hwk3.sqlddl/",
-      //   due: "10/5/2026",  // wk6, Mon
-      // },
+      {
+        name: "Hwk 3 (sql schema)",
+        title: "Data Ingestion",
+        url: "hwk3.sqlddl/",
+        due: "10/7/2026",  // wk6, Wed
+      },
       // {
       //   name: "Hwk 4 (sql)",
       //   title: "Writing SQL Queries",
       //   url: "hwk4.sqldml/",
-      //   due: "10/14/2026",  // wk 7, Wed
+      //   due: "10/16/2026",  // wk 7, Fri
       // },
       // {
       //   name: "Hwk 5 (coding)",
@@ -150,7 +150,7 @@ let days = {
     "SQL: subqueries",
     "SQL: grouping and aggregation",
     "<strong><emph>Class Cancelled</emph></strong>",
-      "",
+      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk3.sqlddl/'>Hwk 3 (Data Ingestion)</a>",
     // wk 6
     "SQL: lab",
     "<strong><emph>Review</emph></strong>",
