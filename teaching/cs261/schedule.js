@@ -31,12 +31,12 @@ let days = {
         url: "hwk2.ttt/",
         due: "9/21/2026", // Mon, wk 4
       },
-      // {
-      //   name: "Hwk 3",
-      //   title: "You Complete Me",
-      //   url: "hwk3.ycm/",
-      //   due: "10/8/2025", // Wed, wk 6
-      // }, 
+      {
+        name: "Hwk 3",
+        title: "You Complete Me",
+        url: "hwk3.ycm/",
+        due: "10/7/2026", // Wed, wk 6
+      }, 
       // {
       //   name: "Hwk 4",
       //   title: "Doubly Linked List",
@@ -100,12 +100,12 @@ let days = {
         url: "lab3.lib/",
         due: "9/18/2026",
       },
-      // {
-      //   name: "Lab 4",
-      //   title: "Exceptions Lab ",
-      //   url: "lab4.exc/",
-      //   due: "9/26/2025",
-      // },
+      {
+        name: "Lab 4",
+        title: "Exceptions Lab ",
+        url: "lab4.exc/",
+        due: "9/25/2026",
+      },
       // {
       //   name: "Lab 5",
       //   title: "Complexity Lab",
@@ -198,13 +198,16 @@ let days = {
     "Understanding Big-O",
     "Notes: <a href='https://drive.google.com/file/d/1olL6INJ6t9-saScP7MIgERA82XjVQiRb'>2. Exceptions</a>" + "<br>" +
       "Code-Along (Mon): <a href='https://drive.google.com/file/d/1AfUNaEovB1FmGOlRCbABAN8XcO8MBzRp'>RosterPrinter</a>" + "<br>" +
-      "Code-Along (Wed): <a href='https://drive.google.com/file/d/1K1O55c47BP6gBBUt8jf4eoisLFkOTAkj'>ATM</a>",
+      "Code-Along (Wed): <a href='https://drive.google.com/file/d/1K1O55c47BP6gBBUt8jf4eoisLFkOTAkj'>ATM</a>" + "<br>" +
+      "Assigned: <a href='lab4.exc/'>Lab 4</a>",
     // wk 5
     "Big-O: linear time, quadratic time",
     "Big-O: logarithmic time, binary search",
     "Lab 5: Big-O Lab",
     "<strong><emph>Review for Exam 1</emph></strong>",
-    "",
+    "Notes: <a href='https://drive.google.com/file/d/1WkjPSVABZwA7Dryk44V-s3yDk4v_BZEI/view?usp=drive_link'>Study Guide 1</a> (<a href='https://drive.google.com/file/d/1aA0CZgQsIIfKJfs2AVLV6QRmSZA1gWBU/view?usp=drive_link'>Soln</a>)" + "<br>" +
+      "Assigned: <a href='hwk3.ycm/'>Hwk 3 (AutoComplete)</a>"
+    ,
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
     "List interface, ArrayList: add(), reallocate()",
