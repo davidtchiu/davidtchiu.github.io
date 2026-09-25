@@ -198,7 +198,7 @@ let days = {
     "Understanding Big-O",
     "Notes: <a href='https://drive.google.com/file/d/1olL6INJ6t9-saScP7MIgERA82XjVQiRb'>2. Exceptions</a>" + "<br>" +
       "Code-Along (Mon): <a href='https://drive.google.com/file/d/1AfUNaEovB1FmGOlRCbABAN8XcO8MBzRp'>RosterPrinter</a>" + "<br>" +
-      "Code-Along (Wed): <a href='https://drive.google.com/file/d/1K1O55c47BP6gBBUt8jf4eoisLFkOTAkj'>ATM</a>" + "<br>" +
+      // "Code-Along (Wed): <a href='https://drive.google.com/file/d/1K1O55c47BP6gBBUt8jf4eoisLFkOTAkj'>ATM</a>" + "<br>" +
       "Assigned: <a href='lab4.exc/'>Lab 4</a>",
     // wk 5
     "Big-O: linear time, quadratic time",
@@ -206,7 +206,7 @@ let days = {
     "Lab 5: Big-O Lab",
     "<strong><emph>Review for Exam 1</emph></strong>",
     "Notes: <a href='https://drive.google.com/file/d/1WmJ232cmBuTSdOqVGbD-SWG7p-LcFkdJ/view?usp=drive_link'>3. Big-O Notation</a>" + "<br>" +
-    "Notes: <a href='https://drive.google.com/file/d/1WkjPSVABZwA7Dryk44V-s3yDk4v_BZEI/view?usp=drive_link'>Study Guide 1</a> (<a href='https://drive.google.com/file/d/1aA0CZgQsIIfKJfs2AVLV6QRmSZA1gWBU/view?usp=drive_link'>Soln</a>)" + "<br>" +
+      "Notes: <a href='https://drive.google.com/file/d/1WkjPSVABZwA7Dryk44V-s3yDk4v_BZEI/view?usp=drive_link'>Study Guide 1</a> (<a href='https://drive.google.com/file/d/1aA0CZgQsIIfKJfs2AVLV6QRmSZA1gWBU/view?usp=drive_link'>Soln</a>)" + "<br>" +
       "Assigned: <a href='hwk3.ycm/'>Hwk 3 (AutoComplete)</a>"
     ,
     // wk 6
