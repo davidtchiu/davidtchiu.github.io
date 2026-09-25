@@ -205,6 +205,7 @@ let days = {
     "Big-O: logarithmic time, binary search",
     "Lab 5: Big-O Lab",
     "<strong><emph>Review for Exam 1</emph></strong>",
+    "Notes: <a href='https://drive.google.com/file/d/1WmJ232cmBuTSdOqVGbD-SWG7p-LcFkdJ/view?usp=drive_link'>3. Big-O Notation</a>" + "<br>" +
     "Notes: <a href='https://drive.google.com/file/d/1WkjPSVABZwA7Dryk44V-s3yDk4v_BZEI/view?usp=drive_link'>Study Guide 1</a> (<a href='https://drive.google.com/file/d/1aA0CZgQsIIfKJfs2AVLV6QRmSZA1gWBU/view?usp=drive_link'>Soln</a>)" + "<br>" +
       "Assigned: <a href='hwk3.ycm/'>Hwk 3 (AutoComplete)</a>"
     ,
