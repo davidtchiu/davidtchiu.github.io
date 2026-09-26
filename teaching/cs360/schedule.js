@@ -150,7 +150,7 @@ let days = {
     "SQL: subqueries",
     "SQL: grouping and aggregation",
     "<strong><emph>Class Cancelled</emph></strong>",
-      "Study: <a href='https://drive.google.com/open?id=1ys2djah7tQzMvoUq6mwhNLRt0-lTwSWa&usp=drive_fs'>Exam 1 Study Guide</a>",
+      "Study: <a href='https://drive.google.com/open?id=1ys2djah7tQzMvoUq6mwhNLRt0-lTwSWa&usp=drive_fs'>Exam 1 Study Guide</a>" + "<bt>" +
       "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk3.sqlddl/'>Hwk 3 (Data Ingestion)</a>",
     // wk 6
     "SQL: lab",
