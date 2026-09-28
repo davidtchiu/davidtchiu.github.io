@@ -60,7 +60,7 @@ let days = {
       ,
     // wk 8 (fall break)
     "<strong>Fall Break</strong>",
-    "<strong>Check-in Presentation (1/3)</strong>",
+    "<strong>Check-in (1/3)</strong>",
       ""
       ,
     // wk 9
@@ -89,7 +89,7 @@ let days = {
     ,
     // wk 12
     "Design checkpoint",
-    "<strong>Check-in Presentation (2/3)</strong>",    
+    "<strong>Check-in (2/3)</strong>",    
       "Mon: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>12a. Checkpoints</a>"
     ,
     // wk 13
@@ -109,7 +109,7 @@ let days = {
       "Mon: <a href='https://docs.google.com/document/d/1mBGfdxe-gjm0xG8vvFMmxkNjlb79vc2HtLpaiMNNZDo'>15. Handoff</a>"
     ,
     // wk final
-    "<strong>Final Check-in @ 12:00 (3/3)</strong>",
+    "<strong>Final Checkin @ 12:00 (3/3)</strong>",
     "",
       ""
     ,
