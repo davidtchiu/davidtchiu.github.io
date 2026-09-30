@@ -1,6 +1,6 @@
-## CS 455 - Principles of Database Systems
+## CS 360 - Principles of Database Systems
 
-### Hwk 5: Writing SQL Queries
+### In Class Lab!
 
 The database models a multinational company. The queries you are asked to perform are realistic.
 
