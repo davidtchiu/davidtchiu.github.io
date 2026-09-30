@@ -150,6 +150,8 @@ let days = {
     "SQL: subqueries",
     "SQL: grouping and aggregation",
     "<strong><emph>Class Cancelled</emph></strong>",
+      "Notes: <a href='https://drive.google.com/open?id=1xvCIiUSsjQ3meVjtL38yEnuTQQl-TbF5&usp=drive_fs'>3b. SQL II</a>" + "<br>" +
+      "SQL: <a href='https://drive.google.com/open?id=1wLhbDNZAsPif1tyWKiw08uzi8_X1z7X7&usp=drive_fs'>Employee SQL</a>" + "<br>" +
       "Study: <a href='https://drive.google.com/open?id=1ys2djah7tQzMvoUq6mwhNLRt0-lTwSWa&usp=drive_fs'>Exam 1 Study Guide</a>" + "<br>" +
       "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk3.sqlddl/'>Hwk 3 (Data Ingestion)</a>",
     // wk 6
