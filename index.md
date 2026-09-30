@@ -2,13 +2,13 @@
 
   <img src="david-plush.png"  style="float: right; margin-left: 15px; margin-bottom: 25px; width: 270px; height: auto;"/>
   <p>
-  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>. He is the inaugural Director and Advisor to the Mosaic Residential Community.
+  David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>. He is the inaugural Director and Advisor to the Mosaic Community.
   </p>
   <p>
   David holds a PhD in Computer Science and Engineering from <a href="https://cse.osu.edu">The Ohio State University</a>, completed under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a>. A member of Ohio State's <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David's dissertation was on the dynamic composition of scientific workflows and distributed data management. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on protocols and tools supporting the web transmission of math-education modules.
   </p>
   <p>
-  From 2010 to 2014, David served as an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at WSU Vancouver. He later joined the faculty at Puget Sound, where he was appointed Assistant Professor in 2014, Associate Professor in 2017, and Professor in 2022. At Puget Sound, he has taken on numerous leadership roles, including a rotation as department chair and chairing major faculty-governance committees.
+  From 2010 to 2014, David served as an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at WSU Vancouver. He later joined the faculty at Puget Sound, where he was appointed Assistant Professor in 2014, Associate Professor in 2017, and Professor in 2022. He has taken on numerous leadership roles, including a rotation as department chair and serving as chair for various faculty-governance committees.
   </p>
   <p>
   David works closely with undergraduate students on research projects in database systems, cloud computing, and high-performance computing. He has supervised numerous <a href="people">research students</a> in these areas. He also <a href="service">serves</a> on organizational and program committees for conferences in these fields. His research has received recognition, including Best Paper Awards at BDCAT’23, ITCC’04, and ITE’04.
@@ -21,6 +21,7 @@
 
 
 ### Recent Activities
+- (09/2026) I am chairing the tenure-track faculty search in computer science.
 - (04/2026) Congrats to Lily Gustafson on receiving a Summer Research Award. Co-advised with Marissa Masden.
 - (08/2025) Chair, Academic Standards Committee, 2025-26.
 - (08/2025) Board Member, Faculty Development Center (FDC), 2025-present.
