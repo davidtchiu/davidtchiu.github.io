@@ -226,7 +226,7 @@ Follow these instructions to submit your work. You may submit as often as you'd 
 
 - Upload the URL link to your lab report!
 
-- Click "Submit Assignment" again to upload it.
+- Click "Submit Assignment."
 
 #### Credits
 
