@@ -106,12 +106,12 @@ let days = {
         url: "lab4.exc/",
         due: "9/25/2026",
       },
-      // {
-      //   name: "Lab 5",
-      //   title: "Complexity Lab",
-      //   url: "lab5.bigO/",
-      //   due: "10/3/2025",
-      // },
+      {
+        name: "Lab 5",
+        title: "Complexity Lab",
+        url: "lab5.bigO/",
+        due: "10/2/2026",
+      },
       // {
       //   name: "Lab 6",
       //   title: "ArrayLists Code-along Lab",
@@ -207,7 +207,8 @@ let days = {
     "<strong><emph>Review for Exam 1</emph></strong>",
     "Notes: <a href='https://drive.google.com/file/d/1WmJ232cmBuTSdOqVGbD-SWG7p-LcFkdJ/view?usp=drive_link'>3. Big-O Notation</a>" + "<br>" +
       "Notes: <a href='https://drive.google.com/file/d/1WkjPSVABZwA7Dryk44V-s3yDk4v_BZEI/view?usp=drive_link'>Study Guide 1</a> (<a href='https://drive.google.com/file/d/1aA0CZgQsIIfKJfs2AVLV6QRmSZA1gWBU/view?usp=drive_link'>Soln</a>)" + "<br>" +
-      "Assigned: <a href='hwk3.ycm/'>Hwk 3 (AutoComplete)</a>"
+      "Assigned: <a href='hwk3.ycm/'>Hwk 3 (AutoComplete)</a>" + "<br>" +
+      "Assigned: <a href='lab5.bigO/'>Lab 5</a>",
     ,
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
