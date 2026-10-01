@@ -8,7 +8,14 @@ In the lab, all algorithms that you need to analyze are list-based, but clearly,
 
 #### Student Outcomes
 
-- To apply critical and scientific thinking to the analysis of algorithms
+- To apply critical and scientific thinking to the analysis of algorithms.
+- To distinguish between best-case, worst-case, and average-case running times.
+- To relate empirical runtime data to theoretical predictions.
+- To use repeated trials to obtain more representative experimental results.
+- To visualize algorithm performance using plots.
+- To compare the growth rates of linear and logarithmic algorithms.
+- To formulate hypotheses about an algorithm's runtime behavior and evaluate those hypotheses experimentally.
+- To investigate how input characteristics, such as list ordering, affect algorithm performance.
 
 #### Required Files
 
