@@ -173,13 +173,13 @@ One of the objectives of this class is to get you into the habit of writing your
 
 You might've already noticed that there's a method in `RuntimeTester` that you need to implement called `standardDeviation()`. The standard deviation, which can be denoted using $$\sigma$$ (read "sigma"), measures the average distance an element in your list is from the average (mean). Standard deviation is calculated as follows:
 
-$$\sigma = \sqrt{\frac{1}{n} \sum_{i=0}^{n-1} (x_i - \mu)^2} = \sqrt{\frac{1}{n} ((x_0 - \mu)^2 + (x_1 - \mu)^2 + ... + (x_{n-1} - \mu)^2)}$$
+$$\sigma = \sqrt{\frac{1}{n} \sum_{i=0}^{n-1} (x[i] - \mu)^2} = \sqrt{\frac{1}{n} ((x[0] - \mu)^2 + (x[1] - \mu)^2 + ... + (x_[n-1] - \mu)^2)}$$
 
 where $$n$$ is the length of your list, $$\mu$$ is the mean value of the list, and $$x_i$$ refer to the ith  value in the list. To find the standard deviation of the values in the list, here are the steps you need to follow.
 
-- First, you need to find the average, $$\mu$$. You should write a private method, `private double average()` that returns the average of the elements in the list. You can now use this method for helping write `standardDeviation()`.
+- So first, you need to find the average, $$\mu$$. You should write a private method, `private double average()` that returns the average of the elements in the list. You can now use this method for helping write `standardDeviation()`.
 
-- Now write the `standardDeviation()`. Find the sum of the squared differences between $$\mu$$ and all the elements in the list. You can square a value using `Math.pow(val, 2)`. Finally, multiply with $$1/n$$ and take the square root using `Math.sqrt()`. Don't forget to increment `this.numStatements` whevever a simple statement is run. (Importantly, look inside your loops.) For this task, you may assume that `Math.pow()` and `Math.sqrt()` cost 1 simple-statement each.
+- Now write the `standardDeviation()`. Follow the formula given above to find the sum of the squared differences between the average, $$\mu$$, and all the elements in the list. You can square a value using `Math.pow(val, 2)`. Multiply this sum with $$1/n$$ and take the square root using `Math.sqrt()`. Don't forget to increment `this.numStatements` whevever a simple statement is run. (Importantly, look inside your loops.) For this task, you may assume that calls to `Math.pow()` and `Math.sqrt()` cost one simple-statement each.
 
 1. If you feel confident about the correctness of your code, test it to see if it works. Here are my tests, and yours should match mine:
 
@@ -197,10 +197,9 @@ where $$n$$ is the length of your list, $$\mu$$ is the mean value of the list, a
 
 2. Once you're satisfied with your code, try running `Expr.testStdDev()` vary list size N = 1000, 2000, ...,5000. Make a plot and put it in place in the lab report. Answer the questions in the document.
 
-3. You don't need to replot here, but what would you suspect your plot to look like if you called `average()`
 
 #### Part 4. Finding the Median
-Finally, let's try analyzing a tougher one. Open back up the `RuntimeTester` class, and look for the `median()` method.Read the algorithm thoroughly to understand how it calculates the median element in a given list. The *median* is defined to be the element with an equal number of elements less than, and greater than, itself.  For instance, the median of [5,3,2,7,1,9,0] is 3 because [0, 1, 2] are less than 3, and [5, 7, 9] are greater than 3. Try to see how the algorithm determines count of elememts on each "side" for every value in the list. In cases where the number of elements in the list is even, and there are two elements that could both serve as the median, this algorithm chooses the smaller one. So, if the list is [4,2,7,1,9,0] then the choice of median is between either 2 or 4. The algorithm chooses 2. It's important to note that, as soon as the counts are found to be the same on each side, the median is found and returned. In other words, the algorithm may finish early depending on where the median actually is.
+Finally, let's analyze a tougher one. Open back up the `RuntimeTester` class, and look for the `median()` method.Read the algorithm thoroughly to understand how it calculates the median element in a given list. The *median* is defined to be the element with an equal number of elements less than, and greater than, itself.  For instance, the median of [5,3,2,7,1,9,0] is 3 because [0, 1, 2] are less than 3, and [5, 7, 9] are greater than 3. Try to see how the algorithm determines count of elememts on each "side" for every value in the list. In cases where the number of elements in the list is even, and there are two elements that could both serve as the median, this algorithm chooses the smaller one. So, if the list is [4,2,7,1,9,0] then the choice of median is between either 2 or 4. The algorithm chooses 2. It's important to note that, as soon as the counts are found to be the same on each side, the median is found and returned. In other words, the algorithm may finish early depending on where the median actually is.
 
 
 1. Hypothesize what the best, worst, and average cases of this algorithm would be for both ordered and unordered lists.  Now open your Lab Report back up. For each best/worst/average case, write down: (A) the scenario under which that case would be observed, and (B) the corresponding running time function, $$T(n)$$.
