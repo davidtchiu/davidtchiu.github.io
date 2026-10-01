@@ -14,7 +14,7 @@ let days = {
     },
     {
       name: "Department Tutoring Schedule",
-      url: "https://drive.google.com/file/d/1zAg2qkBUIO0VzLH0gH0xzmTTPADDIteg/view?usp=drive_link"
+      url: "https://www.pugetsound.edu/academics/computer-science/computer-science-current-students"
     }
   ],
   assignments: {
