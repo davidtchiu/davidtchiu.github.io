@@ -208,7 +208,8 @@ let days = {
     "Notes: <a href='https://drive.google.com/file/d/1WmJ232cmBuTSdOqVGbD-SWG7p-LcFkdJ/view?usp=drive_link'>3. Big-O Notation</a>" + "<br>" +
       "Notes: <a href='https://drive.google.com/file/d/1WkjPSVABZwA7Dryk44V-s3yDk4v_BZEI/view?usp=drive_link'>Study Guide 1</a> (<a href='https://drive.google.com/file/d/1aA0CZgQsIIfKJfs2AVLV6QRmSZA1gWBU/view?usp=drive_link'>Soln</a>)" + "<br>" +
       "Assigned: <a href='hwk3.ycm/'>Hwk 3 (AutoComplete)</a>" + "<br>" +
-      "Assigned: <a href='lab5.bigO/'>Lab 5</a>"
+      "Assigned: <a href='lab5.bigO/'>Lab 5</a>" + "<br>" +
+      "Code: <a href='https://drive.google.com/file/d/1l-pDNz8EmHhcGjzkgYBFSLzrYyuKL7Y8/view?usp=drive_link'>Study Guide 1</a>"
     ,
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
