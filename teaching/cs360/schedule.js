@@ -98,20 +98,20 @@ let days = {
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
-    // labs: [
-    //   {
-    //     name: "Lab 1",
-    //     title: "SQL: Basic Queries",
-    //     url: "lab1/",
-    //     due: "10/6/2025", // Mon
-    //   },
-    //   // {
-    //   //   name: "Lab 2",
-    //   //   title: "SQL: More Advanced Queries",
-    //   //   url: "lab2.models/",
-    //   //   due: "10/17/2025", // Fri
-    //   // },
-    // ],
+    labs: [
+      {
+        name: "Lab 1",
+        title: "SQL: Basic Queries",
+        url: "lab1.models/",
+        due: "10/9/2026", // Mon
+      },
+      // {
+      //   name: "Lab 2",
+      //   title: "SQL: More Advanced Queries",
+      //   url: "lab2.models/",
+      //   due: "10/17/2025", // Fri
+      // },
+    ],
   },
 
   lectures: [
@@ -158,6 +158,7 @@ let days = {
     "SQL: lab",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 1</emph></strong>",
+      "Lab: <a href='lab1.models'>SQL Lab</a>" + "<br>" +
       "",
     // wk 7
     "Theory: functional dependencies",

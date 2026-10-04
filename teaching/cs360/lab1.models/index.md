@@ -341,7 +341,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
     giftsbymail.co  447.5
     ```
 
-#### Just More Practice
+
 
 1. Return all customer names and their addresses if they are not represented by a sales rep. Order by customer name. There should be 22 rows.
 
