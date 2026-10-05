@@ -101,7 +101,7 @@ let days = {
     labs: [
       {
         name: "Lab 1",
-        title: "SQL: Basic Queries",
+        title: "SQL: Classic Models",
         url: "lab1.models/",
         due: "10/9/2026", // Mon
       },
