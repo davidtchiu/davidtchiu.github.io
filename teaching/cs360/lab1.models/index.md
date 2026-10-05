@@ -20,7 +20,18 @@ Start by opening up the database file. Once open, you will find the following sc
 
 <center><img src="figures/schema.png" width="500px"/></center>
 
-Take a moment to study the schema, noting the foreign and primary keys. Browse the data in each relation to familiarize yourself with the database contents. Answer the following queries. Save the queries in a plain text file for submission. I've given you the expected results below each query.
+Take a moment to study the schema, noting the foreign and primary keys. Browse the data in each relation to familiarize yourself with the database contents. Here's the rundown:
+- customers: stores customer’s data.
+- products: stores a list of scale model cars.
+- productlines: stores a list of product lines.
+- orders: stores sales orders placed by customers.
+- orderdetails: stores sales order line items for every sales order.
+- payments: stores payments made by customers based on their accounts.
+- employees: stores employee information and the organization structure such as who reports to whom.
+- offices: stores sales office data.
+
+
+Answer the following queries. Save the queries in a plain text file for submission. I've given you the expected results below each query.
 
 1. List the customers whose contact person shares either a first name or a last name with *any* of the company's employees. Order by customer name. There should be 17 rows.
 
