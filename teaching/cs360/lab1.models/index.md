@@ -593,7 +593,7 @@ I want to be able to run your query set easily. Do *not* submit your queries in 
 Word or PDF file! Files not submitted in plain-text format with your queries 
 inside will be returned without a grade. 
 
-Completion of this lab will yield +5pts on the first exam. 
+Completion of this lab will yield some +4 pts on the first exam. 
 ```
 
 
