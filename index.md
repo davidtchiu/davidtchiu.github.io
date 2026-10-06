@@ -14,7 +14,7 @@
   David works closely with undergraduate students on research projects in database systems, cloud computing, and high-performance computing. He has supervised numerous <a href="people">research students</a> in these areas. He also <a href="service">serves</a> on organizational and program committees for conferences in these fields. His research has received recognition, including Best Paper Awards at BDCAT’23, ITCC’04, and ITE’04.
   </p>
   <p>
-  He received the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President’s Excellence in Teaching Award</a> (2022), and the Bartanen Faculty Research Award (2017) all from the University of Puget Sound. In addition, he was awarded the <a href="https://cse.osu.edu/department/faculty-staff-resources/award-nominations">Eleanor Quinlan Memorial Award</a> for Graduate Student Teaching (2009) and was named a <a href="https://gradsch.osu.edu/current-students/graduate-student-experience/career-building-strategies-and-skill-development-0">PFF Fellow</a> at The Ohio State University. He is a member of <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>, the ACM, and is a senior member of the IEEE.
+  David has received the Influential Faculty of Color Award (2024), the <a href="https://www.pugetsound.edu/presidents-excellence-teaching-award">President’s Excellence in Teaching Award</a> (2022), and the Bartanen Faculty Research Award (2017) all from the University of Puget Sound. In addition, he was awarded the <a href="https://cse.osu.edu/department/faculty-staff-resources/award-nominations">Eleanor Quinlan Memorial Award</a> for Graduate Student Teaching (2009) and was named a <a href="https://gradsch.osu.edu/current-students/graduate-student-experience/career-building-strategies-and-skill-development-0">PFF Fellow</a> at The Ohio State University. He is a member of <a href="https://upe.acm.org/">Upsilon Pi Epsilon</a>, the ACM, and is a senior member of the IEEE.
   </p>
 
 [Curriculum Vitae](CV.pdf)
@@ -22,6 +22,7 @@
 
 ### Recent Activities
 - (09/2026) I am chairing the tenure-track faculty search in computer science.
+- (08/2024) Serving on the PC for [BDCAT 2026](https://bdcat-conference.org/).
 - (04/2026) Congrats to Lily Gustafson on receiving a Summer Research Award. Co-advised with Marissa Masden.
 - (08/2025) Chair, Academic Standards Committee, 2025-26.
 - (08/2025) Board Member, Faculty Development Center (FDC), 2025-present.
@@ -31,7 +32,6 @@
 - (04/2025) Completed a site visit to [DIS Study Abroad in Scandinavia](https://disabroad.org/) (Stockholm and Copenhagen campuses).
 - (02/2025) External Search Committee Member, Communications Studies, University of Puget Sound.
 - (08/2024) Co-chair, International Education Committee, University of Puget Sound, 2024-25.
-- (09/2024) Serving on the PC for [BDCAT 2024](https://bdcat-conference.org/).
 - (09/2024) Serving as a New Faculty Mentor for 2024.
 - (06/2024) I will be speaking at the 2024 Puget Sound Alumni College: "Bitmap Indexing for Database Systems"
 - (05/2024) I will be serving on the program committee for [HiPC 2024](https://hipc.org/).
