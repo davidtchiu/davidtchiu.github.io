@@ -209,14 +209,16 @@ let days = {
       "Notes: <a href='https://drive.google.com/file/d/1WkjPSVABZwA7Dryk44V-s3yDk4v_BZEI/view?usp=drive_link'>Study Guide 1</a> (<a href='https://drive.google.com/file/d/1aA0CZgQsIIfKJfs2AVLV6QRmSZA1gWBU/view?usp=drive_link'>Soln</a>)" + "<br>" +
       "Assigned: <a href='hwk3.ycm/'>Hwk 3 (AutoComplete)</a>" + "<br>" +
       "Assigned: <a href='lab5.bigO/'>Lab 5</a>" + "<br>" +
-      "Code: <a href='https://drive.google.com/file/d/1l-pDNz8EmHhcGjzkgYBFSLzrYyuKL7Y8/view?usp=drive_link'>Study Guide 1</a>"
+      "Code: <a href='https://drive.google.com/file/d/1l-pDNz8EmHhcGjzkgYBFSLzrYyuKL7Y8/view?usp=drive_link'>From Study Guide 1</a>"
     ,
     // wk 6
     "<strong><emph>Exam 1</emph></strong>",
     "List interface, ArrayList: add(), reallocate()",
     "Lab 6: ArrayList Code-Along Lab",
     "Linked Lists: node structure, getNodeAt()",
-    "",
+    "Notes: <a href='https://drive.google.com/open?id=1uhHrwCf8Py2unFwJQov1ocMEcoXwFxnE'>4a. List and ArrayList</a>" + "<br>" +
+      "Code: <a href='https://drive.google.com/open?id=1hRMDDqLdPqF8wW72LFHreew-ydT95lgP'>MyArrayList</a>"
+      ,
     // wk 7
     "LL: get(), set(), add()",
     "LL: direct manipulation of nodes",
