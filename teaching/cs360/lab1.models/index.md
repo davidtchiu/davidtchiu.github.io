@@ -33,7 +33,7 @@ Take a moment to study the schema, noting the foreign and primary keys. Browse t
 
 Answer the following queries. Save the queries in a plain text file for submission. I've given you the expected results below each query.
 
-1. List the customers whose contact person shares either a first name or a last name with *any* of the company's employees. Order by customer name. There should be 17 rows.
+1. (Med) List the customers whose contact person shares either a first name or a last name with *any* of the company's employees. Order by customer name. There should be 17 rows.
 
    ```
    customerName
@@ -58,7 +58,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
    ```
 
 
-2. Return the product(s) by product code and product name that the company has the least stock of. Order by product code. (Hint: Start with the quantity for each product, then find the min of those quantities, before identifying which products have those min counts.)
+2. (Med) Return the product(s) by product code and product name that the company has the least stock of. Order by product code. (Hint: Start with the quantity for each product, then find the min of those quantities, before identifying which products have those min counts.)
 
    ```
    productCode  productName
@@ -66,7 +66,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
    S24_2000     1960 BSA Gold Star DBD34
    ```
 
-3. Identify the offices (by city name) that have the least employees and the most employees (answer should include city, number of employees)
+3. (Med) Identify the offices (by city name) that have the least employees and the most employees (answer should include city, number of employees)
 
    ```
    numEmps     city
@@ -78,7 +78,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
    6           San Franci
    ```
 
-4. For all employees listed as `Sales Rep`, list their names and the names of the office they work out of, along with the number of clients they represent. Order by reverse order of number of clients. There are 15 rows in the result.
+4. (Med) For all employees listed as the position of `"Sales Rep"`, list their names and the names of the office they work out of, along with the number of clients they represent. Order by reverse order of number of clients. There are 15 rows in the result.
 
    ```
    firstName   lastName    city        numClients
@@ -124,7 +124,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
       Yoshimi	   Kato	      Tokyo    	0
       ```
 
-5. List the customer(s) and their total payments (answer should include customer number, customer name, total payment where total payment is the total amount of dollars the customer has paid). Order by total payment. You should get 98 rows.
+5. (Med) List the customer(s) and their total payments (answer should include customer number, customer name, total payment where total payment is the total amount of dollars the customer has paid). Order by total payment. You should get 98 rows.
 
     ```
     customerNumber  customerName       totalPayment
@@ -229,7 +229,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
     141             Euro+ Shopping Ch  715738.98
     ```
 
-6. List the product number, product name, and customer name such that the customer has never ordered that product. Order by customer name then product code. You should get 10,888 rows.
+6. (Spicy) List the product number, product name, and customer name such that the customer has never ordered that product. Order by customer name then product code. You should get 10,888 rows.
 
     ```
     productCode  productName                            customerName
@@ -247,7 +247,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
     (too many more to list)
     ```
 
-7. Return the average order size for each customer (results should include customer name, average quantity). Order by customer name. To get you started, you'll need to first find the sum of all orderQuantities for each orderNumber. Then you'll want to find the customers who made those individual orderNumbers, to find all orders that a customer has made. Finally, average out the summed order quantities. (You should get 98 rows.)
+7. (Spicy) Return the average order size for each customer (results should include customer name, average quantity). Order by customer name. To get you started, you'll need to first find the sum of all orderQuantities for each orderNumber. Then you'll want to find the customers who made those individual orderNumbers, to find all orders that a customer has made. Finally, average out the summed order quantities. (You should get 98 rows.)
 
     ```
     customerName    avgQuantity
@@ -354,7 +354,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
 
 
 
-1. Return all customer names and their addresses if they are not represented by a sales rep. Order by customer name. There should be 22 rows.
+1. (Mild) Return all customer names and their addresses if they are not represented by a sales rep. Order by customer name. There should be 22 rows.
 
    ```
    customerName   addressLine1  addressLine2  city        state       postalCode
@@ -383,7 +383,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
    Warburg Excha  Walserweg 21  NULL          Aachen      NULL        52066
    ```
 
-2. List the names of all customers that have a credit limit between 100,000 and 200,000 inclusively. Order by customer name. There should be 23 rows.
+2. (Mild) List the names of all customers that have a credit limit between 100,000 and 200,000 inclusively. Order by customer name. There should be 23 rows.
 
    ```
    customerName    creditLimit
@@ -413,7 +413,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
    Vida Sport, Lt  141300.0
    ```
 
-3. Return all employees who have the first and last initials of MP or PM. Order by last name.
+3. (Mild) Return all employees who have the first and last initials of MP or PM. Order by last name.
 
    ```
    firstName   lastName
@@ -422,7 +422,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
    Mary        Patterson
    ```
 
-4. List all the products' names purchased by a company called "Mini Wheels Co." Order the list by product line. There should be 19 rows.
+4. (Mild) List all the products' names purchased by a company called "Mini Wheels Co." Order the list by product line. There should be 19 rows.
 
    ```
    productName
@@ -449,7 +449,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
    ```
 
 
-5. List the customers (by name) that are based in the country which is first in the lexicographic order of customer countries. Order by customerName.
+5. (Med) List the customers (by name) that are based in the country which is first in the alphabetical order of customer countries. Order the results by customerName.
 
    ```
    customerName
@@ -467,7 +467,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
    ORDER BY customerName; -->
 
 
-6. List the profit per product that the company would make if it were able to sell all of that product (quantity in stock) at MSRP instead of the "buy price" (answer should include product name, profit). Order by profit. This is a shorter/easier query than the previous ones. (You should get 110 rows)
+6. (Med-Hard) List the profit per product that the company would make if it were able to sell all of that product (quantity in stock) at MSRP instead of the "buy price" (answer should include product name, profit). Order by profit. This is a shorter/easier query than the previous ones. (You should get 110 rows)
 
     ```
     productName               profit
@@ -593,11 +593,20 @@ I want to be able to run your query set easily. Do *not* submit your queries in 
 Word or PDF file! Files not submitted in plain-text format with your queries 
 inside will be returned without a grade. 
 
+Completion of this lab will yield +5pts on the first exam. 
+```
+
+
+<!-- ```
+I want to be able to run your query set easily. Do *not* submit your queries in a 
+Word or PDF file! Files not submitted in plain-text format with your queries 
+inside will be returned without a grade. 
+
 [20pt] Completion of the queries Q1 - Q4. (5pts each)
 [80pt] Completion of queries Q5 - Q12.  (10pts each)
 
 Total: 100pts
-```
+``` -->
 
 
 #### Submitting Your Assignment
