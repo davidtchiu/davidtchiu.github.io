@@ -8,9 +8,9 @@ In this lab, you will begin implementing the `MyArrayList` class, which is an an
 #### Objectives
 - To understand the internal implementation of the `ArrayList` class.
 
-#### Required Files
+<!-- #### Required Files
 The following file(s) have been provided for this lab.
-- [Lab_MyArrayList.zip](Lab_MyArrayList.zip)
+- [Lab_MyArrayList.zip](Lab_MyArrayList.zip) -->
 
 
 
@@ -39,13 +39,12 @@ The following file(s) have been provided for this lab.
     ```java
     // The given index is illegal! Throw an exception to alert the user!
     if (index < 0 || index >= size) {
-      throw new ArrayIndexOutOfBoundsException(index);
+      throw new IndexOutOfBoundsException(index);
     }
     ```
 
   - We don't have to know what that block means yet, but anytime in your code, if a given index is invalid, use this code to alert users! 
   
- 
 
 #### Part 2: Reallocation for the "Add" Methods
 
@@ -64,7 +63,7 @@ The following file(s) have been provided for this lab.
 
 
 
-#### Code Along: Generic Typing
+#### Part 2: Generic Typing (The diamond notation)
 Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are supposed to be able to store any type of object. In this section we refactor our `MyArrayList` to accept generic types.
 
 - First Copy and paste the following code directly into your `MyList` interface file, replacing what used to be there. All references to `double` have been replaced with `E`. Also note that `<E>` has been appended to the name of the `MyList` interface.
@@ -197,7 +196,7 @@ Our `MyArrayList` can store unlimited `doubles`, but as we know, Arraylists are 
   > 1
   ```
 
-#### Part 4: On Your Own 
+#### Part 3: More List Methods!
 
 There are still three methods remaining that you need to implement on your own.
 
@@ -207,7 +206,7 @@ There are still three methods remaining that you need to implement on your own.
 
 3. Finally, write the `boolean remove(E item)` method. This method searches for the given `item`, and if found, it removes it from the list. Hmm, you just wrote a method to search and a method to remove. I wonder if this can be done in a couple of lines? Return a true if found and removed, or false if not found.
 
-#### Part 5 (More Practice): Got Time? Implement These Bad Boys
+#### Part 4 (More Practice): Want more practice? Implement These Bad Boys
 These methods are not part of our `MyList` interface, but they *are* part of Java's real `List` interface. 
 
 <!-- 

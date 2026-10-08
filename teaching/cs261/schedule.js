@@ -112,12 +112,12 @@ let days = {
         url: "lab5.bigO/",
         due: "10/2/2026",
       },
-      // {
-      //   name: "Lab 6",
-      //   title: "ArrayLists Code-along Lab",
-      //   url: "lab6.AL/",
-      //   due: "10/10/2025",
-      // },
+      {
+        name: "Lab 6",
+        title: "ArrayLists Code-along Lab",
+        url: "lab6.AL/",
+        due: "10/9/2026",
+      },
       // {
       //   name: "Lab 7",
       //   title: "LinkedList Homework Lab",
@@ -217,7 +217,8 @@ let days = {
     "Lab 6: ArrayList Code-Along Lab",
     "Linked Lists: node structure, getNodeAt()",
     "Notes: <a href='https://drive.google.com/open?id=1uhHrwCf8Py2unFwJQov1ocMEcoXwFxnE'>4a. List and ArrayList</a>" + "<br>" +
-      "Code: <a href='https://drive.google.com/open?id=1hRMDDqLdPqF8wW72LFHreew-ydT95lgP'>MyArrayList</a>"
+      "Code: <a href='https://drive.google.com/open?id=1hRMDDqLdPqF8wW72LFHreew-ydT95lgP'>MyArrayList</a>" + "<br>" +
+      "Assigned: <a href='lab6.AL/'>Lab 6</a>"
       ,
     // wk 7
     "LL: get(), set(), add()",
