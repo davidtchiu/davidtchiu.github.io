@@ -241,22 +241,22 @@ These methods are not part of our `MyList` interface, but they *are* part of Jav
 
   ```java
   MyList<Double> list_A = new MyArrayList<>();
-  list_A.add(10);
-  list_A.add(20);
-  list_A.add(30);
-  list_A.add(40);
-  list_A.add(50);
-  list_A.add(60);
+  list_A.add(10.0);
+  list_A.add(20.0);
+  list_A.add(30.0);
+  list_A.add(40.0);
+  list_A.add(50.0);
+  list_A.add(60.0);
   System.out.println(list_A);
   > [10.0, 20.0, 30.0, 40.0, 50.0, 60.0]
 
   // gimme the last half of the list
-  MyList<E> list_C = list_A.subList(list_A.size()/2, list_A.size());
+  MyList<Double> list_C = list_A.subList(list_A.size()/2, list_A.size());
   System.out.println(list_C);
   > [40.0, 50.0, 60.0]
 
   // gimme the first half of the list
-  MyList<E> list_D = list_A.subList(0, list_A.size()/2);
+  MyList<Double> list_D = list_A.subList(0, list_A.size()/2);
   System.out.println(list_D);
   > [10.0, 20.0, 30.0]
 
@@ -269,13 +269,13 @@ These methods are not part of our `MyList` interface, but they *are* part of Jav
 
   ```java
   MyList<Double> list = new MyArrayList<>();
-  list.add(3);
-  list.add(5);
-  list.add(7);
-  list.add(9);
-  list.add(11);
-  list.add(13);
-  list.add(3);
+  list.add(3.0);
+  list.add(5.0);
+  list.add(7.0);
+  list.add(9.0);
+  list.add(11.0);
+  list.add(13.0);
+  list.add(3.0);
 
   System.out.println(list);
   > [3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 3.0]
@@ -297,22 +297,22 @@ These methods are not part of our `MyList` interface, but they *are* part of Jav
   ```java
   // Here's a list
   MyList<Double> list_A = new MyArrayList<>();
-  list_A.add(1);
-  list_A.add(2);
-  list_A.add(2);
-  list_A.add(1);
+  list_A.add(1.0);
+  list_A.add(2.0);
+  list_A.add(2.0);
+  list_A.add(1.0);
 
   // Here's another list
   MyList<Double> list_B = new MyArrayList<>();
-  list_B.add(1);
-  list_B.add(2);
-  list_B.add(3);
+  list_B.add(1.0);
+  list_B.add(2.0);
+  list_B.add(3.0);
 
   System.out.println(list_A.equals(list_B));
   > false
 
   list_A.removeRange(2, list_A.size());
-  list_A.add(3);
+  list_A.add(3.0);
   System.out.println(list_A.equals(list_B));
   > true
   ```
@@ -322,19 +322,19 @@ These methods are not part of our `MyList` interface, but they *are* part of Jav
   ```java
   // Here's a list
   MyList<Double> list_A = new MyArrayList<>();
-  list_A.add(1);
-  list_A.add(2);
-  list_A.add(2);
-  list_A.add(1);
-  list_A.add(3);
-  list_A.add(1);
+  list_A.add(1.0);
+  list_A.add(2.0);
+  list_A.add(2.0);
+  list_A.add(1.0);
+  list_A.add(3.0);
+  list_A.add(1.0);
   System.out.println(list_A);
   > [1.0, 2.0, 2.0, 1.0, 3.0, 1.0]
 
   // Here's a list of things to retain        
   MyList<Double> list_B = new MyArrayList<>();
-  list_B.add(2);
-  list_B.add(3);
+  list_B.add(2.0);
+  list_B.add(3.0);
   System.out.println(list_B);
   > [2.0, 3.0]
 
@@ -347,15 +347,15 @@ These methods are not part of our `MyList` interface, but they *are* part of Jav
 
   ```java
   MyList<Double> list_A = new MyArrayList<>();
-  list_A.add(1);
-  list_A.add(2);
-  list_A.add(3);
+  list_A.add(1.0);
+  list_A.add(2.0);
+  list_A.add(3.0);
   System.out.println(list_A);
   > [1.0, 2.0, 3.0]
 
   MyList<Double> list_B = new MyArrayList<>();
-  list_B.add(4);
-  list_B.add(5);
+  list_B.add(4.0);
+  list_B.add(5.0);
   System.out.println(list_B);
   > [4.0, 5.0]
   
@@ -369,18 +369,18 @@ These methods are not part of our `MyList` interface, but they *are* part of Jav
 
   ```java
   MyList<Double> list_A = new MyArrayList<>();
-  list_A.add(1);
-  list_A.add(2);
-  list_A.add(2);
-  list_A.add(1);
-  list_A.add(3);
-  list_A.add(1);
+  list_A.add(1.0);
+  list_A.add(2.0);
+  list_A.add(2.0);
+  list_A.add(1.0);
+  list_A.add(3.0);
+  list_A.add(1.0);
   System.out.println(list_A);
   > [1.0, 2.0, 2.0, 1.0, 3.0, 1.0]
 
   MyList<Double> list_B = new MyArrayList<>();
-  list_B.add(2);
-  list_B.add(3);
+  list_B.add(2.0);
+  list_B.add(3.0);
   System.out.println(list_B);
   > [2.0, 3.0]
   
@@ -395,20 +395,20 @@ These methods are not part of our `MyList` interface, but they *are* part of Jav
 
   ```java
   MyList<Double> list_A = new MyArrayList<>();
-  list_A.add(4);
-  list_A.add(5);
-  list_A.add(6);
-  list_A.add(6);
-  list_A.add(1);
-  list_A.add(2);
-  list_A.add(6);
-  list_A.add(8);
+  list_A.add(4.0);
+  list_A.add(5.0);
+  list_A.add(6.0);
+  list_A.add(6.0);
+  list_A.add(1.0);
+  list_A.add(2.0);
+  list_A.add(6.0);
+  list_A.add(8.0);
   System.out.println(list_A);
   > [4.0, 5.0, 6.0, 6.0, 1.0, 2.0, 6.0, 8.0]
 
   MyList<Double> list_B = new MyArrayList<>();
-  list_B.add(6);
-  list_B.add(8);
+  list_B.add(6.0);
+  list_B.add(8.0);
   System.out.println(list_B);
   > [6.0, 8.0]
   
