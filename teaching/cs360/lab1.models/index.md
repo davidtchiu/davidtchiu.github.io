@@ -467,7 +467,7 @@ Answer the following queries. Save the queries in a plain text file for submissi
    ORDER BY customerName; -->
 
 
-6. (Med-Hard) List the profit per product that the company would make if it were able to sell all of that product (quantity in stock) at MSRP instead of the "buy price" (answer should include product name, profit). Order by profit. This is a shorter/easier query than the previous ones. (You should get 110 rows)
+6. (Med-Spicy) List the profit per product that the company would make if it were able to sell all of that product (quantity in stock) at MSRP instead of the "buy price" (answer should include product name, profit). Order by profit. This is a shorter/easier query than the previous ones. (You should get 110 rows)
 
     ```
     productName               profit
