@@ -215,7 +215,7 @@ let days = {
     "<strong><emph>Exam 1</emph></strong>",
     "List interface, ArrayList: add(), reallocate()",
     "Lab 6: ArrayList Code-Along Lab",
-    "Linked Lists: node structure, getNodeAt()",
+    "Amortized analysis; Start Linked Lists",
     "Notes: <a href='https://drive.google.com/open?id=1uhHrwCf8Py2unFwJQov1ocMEcoXwFxnE'>4a. List and ArrayList</a>" + "<br>" +
       "Code: <a href='https://drive.google.com/open?id=1hRMDDqLdPqF8wW72LFHreew-ydT95lgP'>MyArrayList</a>" + "<br>" +
       "Assigned: <a href='lab6.AL/'>Lab 6</a>" + "<br>" + 
