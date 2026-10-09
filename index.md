@@ -5,7 +5,7 @@
   David Chiu is a Professor of Computer Science at the <a href="https://www.pugetsound.edu/academics/computer-science">University of Puget Sound</a>. He is the inaugural Director and Advisor to the Mosaic Community.
   </p>
   <p>
-  David holds a PhD in Computer Science and Engineering from <a href="https://cse.osu.edu">The Ohio State University</a>, completed under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a>. A member of Ohio State's <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David's dissertation was on the dynamic composition of scientific workflows and distributed data management. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on protocols and tools supporting the web transmission of math-education modules.
+  David holds a PhD in Computer Science and Engineering from <a href="https://cse.osu.edu">The Ohio State University</a>, completed under the direction of <a href="https://engineering.uga.edu/team_member/gagan-agrawal/">Gagan Agrawal</a>. A member of the <a href="https://cse.osu.edu/research/systems">Systems Group</a>, David's dissertation was on the dynamic composition of scientific workflows and distributed data management. Prior to Ohio State, he worked under <a href="https://en.wikipedia.org/wiki/Paul_S._Wang">Paul S. Wang</a> on protocols and tools supporting the web transmission of math-education modules.
   </p>
   <p>
   From 2010 to 2014, David served as an Assistant Professor and Graduate Studies Chair in the School of Engineering and Computer Science at WSU Vancouver. He later joined the faculty at Puget Sound, where he was appointed Assistant Professor in 2014, Associate Professor in 2017, and Professor in 2022. He has taken on numerous leadership roles, including a rotation as department chair and serving as chair for various faculty-led committees.
@@ -65,6 +65,3 @@
 - (3/2019) Serving on the PC for HiPC'19. Please consider submitting a paper.
 - (10/2018) Our paper on distributed bitmap indexing has been accepted for publication at BDCAT'18. It was nominated for the Best Paper award. -->
 
-### Quick Links
-
-- Leave the CS department [some feedback](https://forms.gle/Ltassc7BQkNfnnXB7).
