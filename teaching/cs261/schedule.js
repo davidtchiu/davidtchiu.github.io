@@ -218,14 +218,16 @@ let days = {
     "Linked Lists: node structure, getNodeAt()",
     "Notes: <a href='https://drive.google.com/open?id=1uhHrwCf8Py2unFwJQov1ocMEcoXwFxnE'>4a. List and ArrayList</a>" + "<br>" +
       "Code: <a href='https://drive.google.com/open?id=1hRMDDqLdPqF8wW72LFHreew-ydT95lgP'>MyArrayList</a>" + "<br>" +
-      "Assigned: <a href='lab6.AL/'>Lab 6</a>"
-      ,
+      "Assigned: <a href='lab6.AL/'>Lab 6</a>" + "<br>" + 
+      "",
     // wk 7
     "LL: get(), set(), add()",
     "LL: direct manipulation of nodes",
     "Lab 7: LL Homework Code-Along Lab",
     "Stacks and Queues: LIFO, FIFO",
-    "",
+    "Notes: <a href='https://drive.google.com/open?id=1AHXq8pPrhZdtr8UQU2iUuQ6UONQ_JqIy'>4b. LinkedList</a>" + "<br>" +
+      "Code: <a href='https://drive.google.com/open?id=17t1uav5RtJcIfYymLCjfg2yC44fjxzIJ'>SinglyLinkedList</a>" + "<br>" +
+      "",
     // wk 8
     "<strong>Fall Break</strong>",
     "Stacks and Queues problem solving",
