@@ -121,7 +121,7 @@ The following file have been provided for this assignment.
    1468        Kris         Sophomore   1.0         2.675
    ```
 
-10. List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! Did you know that counting a NULL value gives you a 0? Wild!
+10. **(Med)** List all departments and their respective student enrollments. Sort the results in descending order of enrollment. Be careful! Make sure departments with no enrollments are also represented (with zeroes) in your results! Did you know that counting a NULL value gives you a 0? Wild!
 
       ```
       deptName                    enrolled
@@ -136,7 +136,7 @@ The following file have been provided for this assignment.
       ```
 
 
-11. Find the students who are enrolled in the most number of courses. Report the names, IDs, and the number of courses they are enrolled in.
+11. **(Med)** Find the students who are enrolled in the most number of courses. Report the names, IDs, and the number of courses they are enrolled in.
 
       ```
       studentID   studentName  NumCourses
@@ -146,7 +146,7 @@ The following file have been provided for this assignment.
       ```
 
 
-12. Identify all valedictorians in all majors. (This is a real query that we run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that `ENGL`major  has two students with the same GPA and they're both listed!)
+12. **(Med)** Identify all valedictorians in all majors. (This is a real query that we run at the end of each year for the award ceremony!) For each major, find the student(s) with the highest GPA. Sort results by major. (Notice that `ENGL`major  has two students with the same GPA and they're both listed!)
 
       ```
       (Notice that ENGL has two students with the same GPA)
@@ -162,7 +162,7 @@ The following file have been provided for this assignment.
       1709        Cassandra    Junior      SOAN        2.8
       ```
 
-13. The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
+13. **(Spicy)** The runners-up in each major also receive awards! For each major, now find the student(s) with the second highest GPAs. Sort results by `major`. (You may not delete tuples from the database). Hint: How might the previous query help answer this one?
 
       ```
       studentID   studentName  class       major       gpa
@@ -175,7 +175,7 @@ The following file have been provided for this assignment.
 
 #### Updating Tables
 
-14. You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so round anything higher than a 4.0 to 4.0. This should just take two UPDATE statements. 
+14. **(Mild)** You found a vulnerability to the Students table, and because you haven't taken an Ethics course, you decide to give every CSCI major a 1.0 bump in their GPA. To avoid detection, no GPA can exceed 4.0, so clamp anything higher than a 4.0 back down to a 4.0. This should just take two separate `UPDATE` statements. 
 
       ```
       (BEFORE)
@@ -201,7 +201,7 @@ The following file have been provided for this assignment.
       1661        Logan        Freshman    1.5         CSCI
       ```
 
-15. After learning about the GPA mishap, the college now wants to add a new department, `Philosophy (PHIL)`, which will housed in a newly constructed building called `Plato's Cave`. They will offer a course on `PHIL 101: Ethics` taught in room `CAVE`, and all CSCI majors SQL statements.
+15. **(Mild-Med)** After learning about the GPA hack, the college now wants to add a new department, `Philosophy (PHIL)`, which will housed in a newly constructed building called `Plato's Cave`. They will offer a course on `PHIL 101: Ethics` taught in room `CAVE`, and all CSCI majors must now be enrolled in it.
 
       ```
       (Showing the contents of the Dept, course, and enroll tables.)

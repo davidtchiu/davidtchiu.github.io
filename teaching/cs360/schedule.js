@@ -25,12 +25,12 @@ let days = {
         url: "hwk3.sqlddl/",
         due: "10/7/2026",  // wk6, Wed
       },
-      // {
-      //   name: "Hwk 4 (sql)",
-      //   title: "Writing SQL Queries",
-      //   url: "hwk4.sqldml/",
-      //   due: "10/16/2026",  // wk 7, Fri
-      // },
+      {
+        name: "Hwk 4 (sql)",
+        title: "Writing SQL Queries",
+        url: "hwk4.sqldml/",
+        due: "10/19/2026",  // wk 8, Mon
+      },
       // {
       //   name: "Hwk 5 (coding)",
       //   title: "F+: The FD Set Closure",
