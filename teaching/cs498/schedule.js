@@ -46,9 +46,10 @@ let days = {
       ,
     // wk 6
     "Background: Prior work hunt", // Students find examples of similar apps, papers, GitHub repos, datasets, tools, or APIs. They classify each as inspiration, competitor, dependency, or warning sign.
-    "Background: Choices", // tech, resource, and data discussions
+    "Background: Prior work hunt", // Students find examples of similar apps, papers, GitHub repos, datasets, tools, or APIs. They classify each as inspiration, competitor, dependency, or warning sign.
+    // "Background: Choices", // tech, resource, and data discussions
       "Mon: <a href='https://docs.google.com/document/d/1RmAVoe_YKqwn0U1gf8nysLG9DvZNuA9nNSEq81F5OyU'>6a. Related Work Worksheet</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1lI7D-BhGg9wyO2NhBmHVRwo_yyRklQWxdQJlSAVW2qU'>6b. Needs and Choices Worksheet</a>"
+      // "Fri: <a href='https://docs.google.com/document/d/1lI7D-BhGg9wyO2NhBmHVRwo_yyRklQWxdQJlSAVW2qU'>6b. Needs and Choices Worksheet</a>"
       ,
     // wk 7
     "Risks: Ethics study", // 
