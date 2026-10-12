@@ -52,17 +52,16 @@ let days = {
       "",
     // wk 7
     "Background: Choices", // tech, resource, and data discussions
-    "Risks: Ethics study", // 
     // "Risks: Pre-mortem and mitigation", // premortem and mitigation
       "Mon: <a href='https://docs.google.com/document/d/1lI7D-BhGg9wyO2NhBmHVRwo_yyRklQWxdQJlSAVW2qU'>6b. Needs and Choices Worksheet</a>" + "<br>" + 
-      "Fri: <a href='https://docs.google.com/document/d/12RhqMoLPqzR4X5Y4IITnt39ydfj9KlgAg4JUHKsyIDI'>7a. Ethics</a>" + "<br/>" +
-      "Fri: <a href='https://www.acm.org/code-of-ethics'>Read: ACM Code of Ethics</a>" + "<br/>" +
       // "Fri: <a href='https://docs.google.com/document/d/12ZOkl3fmQb-FNXbrfMw1aUfDIU6fxr9YIqh2XEVEA-Y'>7b. Stress Test</a>" + "<br/>" +
       // "Fri: <a href='https://www.atlassian.com/team-playbook/plays/pre-mortem'>Read: Pre-mortem strategy</a>"
       "",
     // wk 8 (fall break)
     "<strong>Fall Break</strong>",
-    "<strong>Check-in (1/3)</strong>",
+    "Risks: Ethics study", // 
+      "Fri: <a href='https://docs.google.com/document/d/12RhqMoLPqzR4X5Y4IITnt39ydfj9KlgAg4JUHKsyIDI'>7a. Ethics</a>" + "<br/>" +
+      "Fri: <a href='https://www.acm.org/code-of-ethics'>Read: ACM Code of Ethics</a>" + "<br/>" +
       ""
       ,
     // wk 9
