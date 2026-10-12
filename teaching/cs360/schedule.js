@@ -164,6 +164,7 @@ let days = {
     "Theory: functional dependencies",
     "Theory: attribute-set closure and superkeys",
     "Theory: FD-set closure, Armstrong's axioms",
+      "Notes: <a href='https://drive.google.com/open?id=1NHallhEkHCa30613U9Vo7fo1rsHRR-5z'>4a. Theory I</a>" + "<br>" +
       "",
     // wk 8
     "<strong>Fall Break</strong>",
