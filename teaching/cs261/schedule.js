@@ -228,6 +228,7 @@ let days = {
     "Notes: <a href='https://drive.google.com/open?id=1AHXq8pPrhZdtr8UQU2iUuQ6UONQ_JqIy'>4b. LinkedList</a>" + "<br>" +
       "Code: <a href='https://drive.google.com/open?id=17t1uav5RtJcIfYymLCjfg2yC44fjxzIJ'>SinglyLinkedList</a>" + "<br>" +
       "Worksheet: <a href='https://drive.google.com/open?id=1njFOzAYMIC88NP0oG4MrSHMGaCa-a-K2'>Draw and Code</a>" + "<br>" +      
+      "Assigned: <a href='hwk4.LL/'>Hwk 4 (Linked Lists)</a>" + "<br>" + 
       "",
     // wk 8
     "<strong>Fall Break</strong>",
