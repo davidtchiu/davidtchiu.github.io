@@ -1,10 +1,10 @@
 ## CS 261 - Computer Science II
 
-### Homework 4: Doubly Linked Lists
+### Homework 4: Linked List Optimizations
 
 In this assignment you'll complete the `SinglyLinkedList` class that we've been working on to get some practice with linked structures. You'll add all the optimization features, including upgrading it into a `DoublyLinkedList`.
 
-Fair warning: This assignment is tougher than it looks. Start early!
+Fair warning: This assignment is tougher than it looks, so start early!
 
 
 #### Student Objectives

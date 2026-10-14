@@ -37,12 +37,12 @@ let days = {
         url: "hwk3.ycm/",
         due: "10/7/2026", // Wed, wk 6
       }, 
-      // {
-      //   name: "Hwk 4",
-      //   title: "Doubly Linked List",
-      //   url: "hwk4.LL/",
-      //   due: "10/24/2025",  // Fri, wk 8 Fall Break
-      // },
+      {
+        name: "Hwk 4",
+        title: "Linked List Optimizations",
+        url: "hwk4.LL/",
+        due: "10/24/2025",  // Fri, wk 8 Fall Break
+      },
       // {
       //   name: "Hwk 5",
       //   title: "HTML Tag Validator",
