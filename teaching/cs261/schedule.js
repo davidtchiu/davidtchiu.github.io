@@ -41,7 +41,7 @@ let days = {
         name: "Hwk 4",
         title: "Linked List Optimizations",
         url: "hwk4.LL/",
-        due: "10/24/2026",  // Fri, wk 8 Fall Break
+        due: "10/23/2026",  // Fri, wk 8 Fall Break
       },
       // {
       //   name: "Hwk 5",
