@@ -69,7 +69,7 @@ The following file have been provided for this assignment.
    520	ENGL	Shakespeare Was Da Bomb	HH 20	TR	13:00	Department of English	Wyatt Hall
    ```
 
-6. **(mild)** Haley's advisor wants to know what courses they're taking in her major(s). Assume you don't know what their major off hand, so your query needs to involve the `Major` table. Perhaps you should start by joining together the student and the majors table to see what their majors are.
+6. **(mild)** Haley's advisor wants to know what courses they're taking in their major(s). Assume you don't know what their major off hand, so your query needs to involve the `Major` table. Perhaps you should start by joining together the student and the majors table to see what their majors are.
 
    ```
    deptID   courseNum
