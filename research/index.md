@@ -137,7 +137,7 @@
 - D. Chiu. Automatic Service Planning in Cloud/Grid Environments. Doctoral Dissertation. The Ohio State University, 2010. Pages 1 - 196. Committee Members: Gagan Agrawal (Advisor), Christopher Stewart, Feng Qin, and Hakan Ferhatosmanoglu.
 
 ### Research Awards
-
+- John Lantz Senior Fellowship for Research or Advanced Study, 2026
 - Best Paper Award, IEEE/ACM BDCAT 2023
 - Elevation to IEEE Senior Member, 2020
 - Best Paper Finalist, IEEE/ACM BDCAT 2019
