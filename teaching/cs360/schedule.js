@@ -169,19 +169,20 @@ let days = {
       "",
     // wk 8
     "<strong>Fall Break</strong>",
-    "Theory: normal forms, 1NF, 2NF",
-    "Theory: BCNF decomposition",
+    "Theory: Review of inference rules, F+",
+    "Theory: Normal forms: 1NF, 2NF",
       "Notes: <a href='https://drive.google.com/open?id=1zgEzeO3DmOgw1giv0z10sYsxcezSlsXp'>4b. Theory II (F+, Armstrong)</a>" + "<br>" +
       "",
     // wk 9
+    "Theory: Boyce-Codd Normal Form",
     "Theory: lossless join; FD preservation",
-    "Theory: minimal FD-Set cover and 3NF synthesis",
-    "Files: file abstraction",
+    "Theory: canonical cover and 3NF synthesis",
       "",
     // wk 10
+    "Files: file abstraction",
     "Files: disk scheduling",
-    "Files: formats and organization",
-    "Files: query costs",
+    // "Files: formats and organization",
+    "Files: modeling query costs",
       "",
     // wk 11
     "Start indexing",
