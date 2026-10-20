@@ -14,7 +14,7 @@ Starter code for this assignment is provided on the github repo. You must do the
 
 - The starter code is provided here [https://github.com/davidtchiu/db-fdclosure](https://github.com/davidtchiu/db-fdclosure).
 
-- Click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
+- Click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is to hide your homework solution from Google searches.
 
 - This will create your own copy of the repository with the starter code I provided! Copy the URL of your repo from the browser window.
 
@@ -24,7 +24,7 @@ Starter code for this assignment is provided on the github repo. You must do the
   git clone <your-github-url-for-this-project>
   ```
 
-- This should download the starter code in a directory called `cs455-hwk-fdclosure`. After you've done this, you can work freely from VS Code or any other editor. 
+- This should download the starter code in a directory called `db-fdclosure`. After you've done this, you can work freely from VS Code or any other editor. 
 
 
 #### Preliminary
@@ -33,12 +33,12 @@ You will need to be familiar with [Java's Set interface](https://docs.oracle.com
 Also, it's imperative for this assignment that you're careful about avoiding side-effects: All of the static methods you need to write must **not** alter the contents of the input structures. I have provided a **copy constructor**  in both `FD` and `FDSet` for this purpose. For instance:
 
 ```java
-public static method(FD originalFDset) {
+public static void method(FD originalFDset) {
   FDSet badcopy = originalFDset;  // No!!! badcopy simply points to the input FD set.                                  
   FDSet truecopy = new FD(originalFDset);   // Do this instead!
 }
 ```
-  
+
 Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors!" Use them where applicable.
   
 
@@ -51,9 +51,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
 
     - An `FD` has an attribute set on the left and on the right. The left-hand side attribute set determines the right-hand side.
 
-    - An attribute set is just a set of Strings (that is `Set<String>`). I used the slightly slower `TreeSet` in my implementation just to order the attribute names when they're printed. (Easier on the eyes when grading.)
-
-    - A functional dependency `FD` has an attribute set on the left and on the right. To construct an FD object, you can use the syntax below.
+    - An attribute set is just a set of Strings (that is `Set<String>`). I used `TreeSet` in my implementation  to order the attribute names when they're printed. (Easier on the eyes when grading.)
 
     - For example, $$AD \rightarrow B$$ can be constructed using:
 
@@ -67,7 +65,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
 
 3. Now open the `FDUtil` class, and implement the following static methods:
 
-    - `powerSet(Set<E> inputSet)` -- This method returns the power set of the given set, so it returns a Set of Sets. Recall that the power set of $$S$$ is all subsets of $$S$$, including the empty set. You'll want to write this method recursively. Here's a hint: The base case of the recursion is reached when the `inputSet` is empty, and in that case, you'll  return a new set containing just an empty set. I'll leave the general case to you to figure out -- how will you deal reduce $$S$$ at each step? Say the set containing `[A,B]` was input. This algorithm should return the set containing `[], [A], [B], [A,B]`.
+    - `powerSet(Set<E> inputSet)` -- This method returns the power set of the given set, so it returns a Set of Sets. Recall that the power set of $$S$$ is all subsets of $$S$$, including the empty set. You'll want to write this method recursively. Here's a hint: The base case of the recursion is reached when the `inputSet` is empty, and in that case, you'll  return a new set containing just an empty set. I'll leave the general case to you to figure out -- how will you  reduce $$S$$ at each step? Say the set containing `[A,B]` was input. This algorithm should return the set containing `[], [A], [B], [A,B]`. Here's one possible output. Your output order may vary.
 
       ```java
       Set<String> s = new TreeSet<>(Set.of("A", "B", "C"));
@@ -77,7 +75,9 @@ For this assignment, you're welcome to add as many other helper methods as you n
       [[], [A], [B], [C], [A, B], [A, C], [B, C], [A, B, C]]
       ```
 
-    - `trivial(FDSet fdset)` -- This method accepts a set of FDs and returns a new set of trivial FDs stemming from the input set. Recall the trivial rule says that any subset of the left-side attributes can be functionally determined by the left-side attributes. For each FD $$\alpha\rightarrow \beta$$ in the input set, find all non-empty subsets $$\gamma \subseteq \alpha$$. Then generate a new FD $$\alpha \rightarrow \gamma$$. Here's an example output for $$F = \{A \rightarrow B, AB \rightarrow C\}$$:
+4. Now complete these methods in the `FDUtil` class.
+
+    - `trivial(FDSet fdset)` -- This method accepts a set of FDs and returns a new set of trivial FDs stemming from the input set. Recall the trivial rule says that any subset of the left-side attributes can be functionally determined by the left-side attributes. For each FD $$\alpha\rightarrow \beta$$ in the input set, find all non-empty subsets $$\gamma \subseteq \alpha$$. (Hint: Use `powerSet()` to generate the subsets of each left-hand side.) Generate a new FD $$\alpha \rightarrow \gamma$$. Omit FDs with empty right-hand sides. Here's an example output for $$F = \{A \rightarrow B, AB \rightarrow C\}$$:
 
       ```java
       FD f1 = new FD(Set.of("A"), Set.of("B"));       // f1 = A --> B
@@ -94,7 +94,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
       ]
       ```
 
-    - `augment(FDSet fdset, Set<String> attrs)` -- This method returns a new set of FDs generated by combining both sides of each FD in the input set with the given set of attributes `attrs`. Here's an example output for $$F = \{A \rightarrow B, AB \rightarrow C\}$$ augmented with attribute set $$\{C\}$$:
+    - `augment(FDSet fdset, Set<String> attrs)` -- This method returns a new set of FDs generated by combining both sides of each FD in the input set with the given set of attributes `attrs`. That is, $$\alpha \rightarrow \beta \implies (\alpha\cup attrs) \rightarrow (\beta\cup attrs)$$. Here's an example output for $$F = \{A \rightarrow B, AB \rightarrow C\}$$ augmented with attribute set $$\{C\}$$:
 
       ```java
       FD f1 = new FD(Set.of("A"), Set.of("B"));       // f1 = A --> B
@@ -128,7 +128,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
         AB --> D    // This comes from AB --> C and C --> D
       ]
       ```
-      Make particular note in the fact that $$A \rightarrow D$$ (via $$A\rightarrow C$$ and $$C \rightarrow D$$) is  generated, even though it took an iteration to first generate $$A \rightarrow C$$. Therefore, this method is exhaustive.
+      Notice that $$A \rightarrow D$$ (via $$A\rightarrow C$$ and $$C \rightarrow D$$) is  generated, even though it took an iteration to first generate $$A \rightarrow C$$. Therefore, this method is exhaustive.
 
       Here's another example:
       ```java
@@ -142,29 +142,34 @@ For this assignment, you're welcome to add as many other helper methods as you n
         A --> DE     // This comes from A --> CB and C --> DE
       ]
       ```
-    - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure $$F^+$$, i.e., it returns the full set of FDs generated through the repeated applications of Armstrong's Axioms. You can find the the pseudocode algorithm in the notes or in the book, but I'll summarize it here:
+    - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure $$F^+$$, i.e., it returns the full set of FDs generated through the repeated applications of Armstrong's Axioms. Assume the relation’s attributes are exactly those appearing on either side of the FDs in the input FD set. You can find the pseudocode algorithm in the notes or in the book, but I'll repeat it here:
   
       ```
       Input: F, a set of functional dependencies
 
-      F+ = Copy of F
+      R = All attributes appearing on either side of the FDs in F
+      F+ = Copy (clone) of F // Don't want this algorithm to affect F
+
+      Subs = powerSet(R)  // Subs has all subsets of attributes
+      For every non-empty X in Subs:
+        Add X → X to F+
+
       Repeat:
         // augmentation
-        Get the set of attributes that appear in F
-        Union all subsets of these attributes to both sides of all FDs in F+
-        Add these augmented FDs to F+
+        For every Z in Subs:
+          Apply augment(F+, Z) and add the results to F+
 
         // trivial
-        Find all trivial FDs in F+ and add them to F+
+        Apply trivial(F+) and add the results to F+
 
         // transitivity
-        Find all transitive FDs in F+ and add them to F+
+        Apply transitive(F+) and add the results to F+
       Until no change to F+
+
       return F+
       ``` 
     
       The example below shows the FD set closure for $$F = \{A \rightarrow B, AB \rightarrow C\}$$:
-
 
       ```java
       FD f1 = new FD(Set.of("A"), Set.of("B"));       // f1 = A --> B
@@ -202,10 +207,15 @@ For this assignment, you're welcome to add as many other helper methods as you n
         ABC --> AC
         ABC --> BC
         ABC --> ABC
+        B --> B
+        C --> C
+        BC --> B
+        BC --> C
+        BC --> BC        
       ]
       ```
 
-4. Once you have FD Set Closure working, you should be able to test the equality between two FD sets. Recall that two FD sets are equal iff their closures are equal. There's nothing you need to do here, except  to try out more test cases in order to verify that the equals method works as intended.
+4. Once you have FD Set Closure algorithm working, you should be able to test the logical equivalence between two FD sets. Recall that two FD sets are logically equivalent if-and-only-if their closures (F+) are equal. There's nothing you need to do here, except  to try out more test cases in order to verify that the equals method works as intended.
 
     ```java
     // One FD Set = A --> AB, AB --> C
@@ -219,8 +229,8 @@ For this assignment, you're welcome to add as many other helper methods as you n
     FD g3 = new FD(Set.of("A", "B"), Set.of("C")); // AB --> C
     FDSet fdset2 = new FDSet(g1, g2, g3);
 
-    // Test FD set equality: fdset and gdset are equal iff their closures are logically equivalent
-    System.out.println("Logically Equivalent? " + (fdset.equals(fdset2)));
+    // Test FD set equality: fdset and fdset2 are logically equivalent iff their closures are equivalent
+    System.out.println("Logically Equivalent? " + (fdset.isEquivalentTo(fdset2)));
     ```
     
   The above test case should return `true`.
