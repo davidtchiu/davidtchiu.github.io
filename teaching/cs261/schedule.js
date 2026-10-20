@@ -234,8 +234,10 @@ let days = {
     "<strong>Fall Break</strong>",
     "Stacks and Queues problem solving",
     "Lab 8: Stacks and Queues (MelodyPlayer)",
-    "Start Recursion",
-    "",
+    "Stack/Queue programming challenges",
+    "Notes: <a href='https://drive.google.com/file/d/1EKGDJX_2CP5nH1LYdXJB0Ov0m3pvMSOT/view?usp=drive_link'>5. Stacks and Queues</a>" + "<br>" +
+      "Code: <a href='https://drive.google.com/file/d/1CNQxCdSYKroDf76VbeCrFyoRN-zz80eK'>Stack, Queue Examples</a>" + "<br>" +
+      "",
     // wk 9:
     "Recursion: code tracing",
     "Recursive code writing and pitfalls",
