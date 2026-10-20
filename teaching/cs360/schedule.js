@@ -31,12 +31,12 @@ let days = {
         url: "hwk4.sqldml/",
         due: "10/19/2026",  // wk 8, Mon
       },
-      // {
-      //   name: "Hwk 5 (coding)",
-      //   title: "F+: The FD Set Closure",
-      //   url: "hwk5.closure/",
-      //   due: "10/23/2026",  // wk 8, Fri
-      // },
+      {
+        name: "Hwk 5 (coding)",
+        title: "Computing the F+",
+        url: "hwk5.closure/",
+        due: "10/30/2026",  // wk 9, Fri
+      },
       // {
       //   name: "Hwk 6 (coding)",
       //   title: "BCNF Normalization",
@@ -172,6 +172,7 @@ let days = {
     "Theory: Review of inference rules, F+",
     "Theory: Normal forms: 1NF, 2NF",
       "Notes: <a href='https://drive.google.com/open?id=1zgEzeO3DmOgw1giv0z10sYsxcezSlsXp'>4b. Theory II (F+, Armstrong)</a>" + "<br>" +
+      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk5.closure/'>Hwk 5 (F+)</a>",
       "",
     // wk 9
     "Theory: Boyce-Codd Normal Form",
