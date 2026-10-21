@@ -9,7 +9,6 @@ In this assignment you will implement algorithms that we've been learning in the
 - Generate power sets using recursion and Java’s Set interface
 - Implement Armstrong’s Axioms to derive functional dependencies
 - Compute F+, the closure of an FD set through repeated rule application
-- Avoid modifying input data structures
  
 
 ###### Starter Code

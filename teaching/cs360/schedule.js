@@ -172,7 +172,7 @@ let days = {
     "Theory: Review of inference rules, F+",
     "Theory: Normal forms: 1NF, 2NF",
       "Notes: <a href='https://drive.google.com/open?id=1zgEzeO3DmOgw1giv0z10sYsxcezSlsXp'>4b. Theory II (F+, Armstrong)</a>" + "<br>" +
-      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk5.closure/'>Hwk 5 (F+)</a>",
+      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk5.closure/'>Hwk 5 (F+)</a>" + "<br>" +
       "",
     // wk 9
     "Theory: Boyce-Codd Normal Form",
