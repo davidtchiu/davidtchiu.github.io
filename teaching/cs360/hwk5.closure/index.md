@@ -220,7 +220,7 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
       ]
       ```
 
-4. Now, test: Once you have FD Set Closure algorithm working, you should be able to test the logical equivalence between two FD sets. Recall that two FD sets are logically equivalent if-and-only-if their closures (F+) are equal. There's nothing you need to do here, except  to try out more test cases in order to verify that the equals method works as intended.
+4. Now, test: Once you have FDSet Closure algorithm working, you should be able to test the logical equivalence between two FD sets. Recall that two FD sets are logically equivalent if-and-only-if their closures are equal. There's nothing you need to do here, except  to try out more test cases in order to verify that the equals method works as intended. Here's one test case, but you should come up with more on your own.
 
     ```java
     // One FD Set = A --> A,B and A,B --> C
@@ -238,23 +238,23 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
     System.out.println("Logically Equivalent? " + (fdset.isEquivalentTo(fdset2)));
     ```
     
-  The above test case should return `true`.
+  The above test case should return `true`. Even though `fdset2` initially contains more FDs, both sets logically infer the same full set of FDs.
 
 #### Grading
 
 ```
 This assignment will be graded out of 100 points.
 
-[20pts] The PowerSet method is completed.
+[25pts] The PowerSet method is completed.
 
 [10pts] Trivial rule.
 
-[20pts] Augmentation rule.
+[10pts] Augmentation rule.
 
 [20pts] Transitivity rule. Must be exhaustive (i.e., repeatedly apply
 transitivity until there is no change.)
 
-[20pts] Implementation of the FD Set closure algorithm
+[25pts] Implementation of the FD Set closure algorithm
 
 [10pts] Immutability: None of the methods should modify the content of 
 any input structure. (No side effects -- use copy constructors!)
