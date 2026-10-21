@@ -97,26 +97,6 @@ For this assignment, you're welcome to add as many other helper methods as you n
       ]
       ```
 
-
-
-
-<!-- 
-    - `trivial(FDSet fdset)` -- This method accepts a set of FDs and returns a new set of trivial FDs stemming from the input set. Recall the trivial rule says that any subset of the left-side attributes can be functionally determined by the left-side attributes. For each FD $$\alpha\rightarrow \beta$$ in the input set, find all non-empty subsets $$\gamma \subseteq \alpha$$. (Hint: Use `powerSet()` to generate the subsets of each left-hand side.) Generate a new FD $$\alpha \rightarrow \gamma$$. Omit FDs with empty right-hand sides. Here's an example output for $$F = \{A \rightarrow B, AB \rightarrow C\}$$:
-
-      ```java
-      FD f1 = new FD(Set.of("A"), Set.of("B"));       // f1 = A -> B
-      FD f2 = new FD(Set.of("A", "B"), Set.of("C"));  // f2 = A,B -> C
-      FDSet fdset = new FDSet(f1, f2);
-      System.out.println(FDUtil.trivial(fdset));
-      ```
-      ```
-      [
-        A,B -> A      // This comes from A,B -> C, since A is a subset of A,B
-        A,B -> B      // This comes from A,B -> C, since B is a subset of A,B
-        A,B -> AB     // This comes from A,B -> C, since A,B is a subset of A,B
-      ]
-      ``` -->
-
     - `augment(FDSet fdset, Set<String> attrs)` -- This method accepts a relation's FD set `fdset` and some attribute set `attrs` and returns a new set of FDs generated from combining both sides of each FD in `fdset` with the given set of attributes `attrs`. Here's an example output for $$F = \{A \rightarrow B, AB \rightarrow C\}$$ augmented with attribute set $$\{C\}$$:
 
       ```java
@@ -168,7 +148,8 @@ For this assignment, you're welcome to add as many other helper methods as you n
 
     - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure $$F^+$$, generated through repeated applications of Armstrong's Axioms. Assume the relation's attributes are exactly those appearing on either side of the FDs in the input set. For this assignment, omit FDs with empty right-hand sides.
 
-      First, collect the relation's attributes and use `trivial()` to generate all trivial FDs. Then repeatedly apply augmentation and transitivity until no new FDs are generated:
+      First, collect the relation's attributes and use `trivial()` to generate all trivial FDs. Then repeatedly apply augmentation and transitivity until no new FDs are generated.       The method must not modify the input FD set.
+
 
       ```text
       Input: F, a set of functional dependencies
@@ -192,37 +173,6 @@ For this assignment, you're welcome to add as many other helper methods as you n
       return F+
       ```
 
-      The method must not modify the input FD set.
-
-<!-- 
-    - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure $$F^+$$, i.e., it returns the full set of FDs generated through the repeated applications of Armstrong's Axioms. Assume the relation’s attributes are exactly those appearing on either side of the FDs in the input FD set. You can find the pseudocode algorithm in the notes or in the book, but I'll repeat it here:
-  
-      ```
-      Input: F, a set of functional dependencies
-
-      R = All attributes appearing on either side of the FDs in F
-      F+ = Copy (clone) of F // Don't want this algorithm to affect F
-
-      Subs = powerSet(R)  // Subs has all subsets of attributes
-      For every non-empty set X in Subs:
-        Add the FD X -> X to F+
-
-      Repeat:
-        // augmentation
-        For every Z in Subs:
-          Apply augment(F+, Z) and add the results to F+
-
-        // trivial
-        Apply trivial(F+) and add the results to F+
-
-        // transitivity
-        Apply transitive(F+) and add the results to F+
-      Until no change to F+
-
-      return F+
-      ```
-      -->
-    
       The example below shows the FD set closure for $$F = \{A \rightarrow B, AB \rightarrow C\}$$:
 
       ```java
