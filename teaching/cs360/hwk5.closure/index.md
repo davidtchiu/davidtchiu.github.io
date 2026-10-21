@@ -81,16 +81,16 @@ For this assignment, you're welcome to add as many other helper methods as you n
 
       ```java
       FD f1 = new FD(Set.of("A"), Set.of("B"));       // f1 = A --> B
-      FD f2 = new FD(Set.of("A", "B"), Set.of("C"));  // f2 = AB --> C
+      FD f2 = new FD(Set.of("A", "B"), Set.of("C"));  // f2 = A,B --> C
       FDSet fdset = new FDSet(f1, f2);
       System.out.println(FDUtil.trivial(fdset));
       ```
       ```
       [
         A --> A       // This comes from f1, since A is a subset of A
-        AB --> A      // This comes from f2, since A is a subset of AB
-        AB --> B      // This comes from f2, since B is a subset of AB
-        AB --> AB     // This comes from f2, since AB is a subset of AB
+        A,B --> A      // This comes from f2, since A is a subset of A,B
+        A,B --> B      // This comes from f2, since B is a subset of A,B
+        A,B --> AB     // This comes from f2, since A,B is a subset of A,B
       ]
       ```
 
@@ -107,39 +107,39 @@ For this assignment, you're welcome to add as many other helper methods as you n
       ```
       ```
       [
-        AC --> BC   // This comes from augmenting f1 with C
-        ABC --> C   // This comes from augmenting f2 with C
+        A,C --> B,C   // This comes from augmenting f1 with C
+        A,B,C --> C   // This comes from augmenting f2 with C
       ]
       ```
 
     - `transitive(FDSet fdset)` -- This method returns a new set of FDs after *repeatedly* applying the transitive rule until no more new FDs are detected. Here's an example output for $$F = \{A \rightarrow AB, AB \rightarrow C, C \rightarrow D\}$$:
 
       ```java
-      FD f1 = new FD(Set.of("A"), Set.of("A", "B")); // f1 = A --> AB
-      FD f2 = new FD(Set.of("A", "B"), Set.of("C")); // f2 = AB --> C
+      FD f1 = new FD(Set.of("A"), Set.of("A", "B")); // f1 = A --> A,B
+      FD f2 = new FD(Set.of("A", "B"), Set.of("C")); // f2 = A,B --> C
       FD f3 = new FD(Set.of("C"), Set.of("D"));     // f3 = C --> D
       FDSet fdset = new FDSet(f1, f2, f3);
       System.out.println(FDUtil.transitive(fdset));
       ```
       ```
       [
-        A --> C     // This comes from A --> AB and AB --> C
+        A --> C     // This comes from A --> A,B and A,B --> C
         A --> D     // This comes from A --> C and C --> D
-        AB --> D    // This comes from AB --> C and C --> D
+        A,B --> D    // This comes from A,B --> C and C --> D
       ]
       ```
       Notice that $$A \rightarrow D$$ (via $$A\rightarrow C$$ and $$C \rightarrow D$$) is  generated, even though it took an iteration to first generate $$A \rightarrow C$$. Therefore, this method is exhaustive.
 
       Here's another example:
       ```java
-      FD f1 = new FD(Set.of("A"), Set.of("C", "B")); // f1 = A --> CB
-      FD f2 = new FD(Set.of("C"), Set.of("D", "E")); // f2 = C --> DE
+      FD f1 = new FD(Set.of("A"), Set.of("C", "B")); // f1 = A --> C,B
+      FD f2 = new FD(Set.of("C"), Set.of("D", "E")); // f2 = C --> D,E
       FDSet fdset = new FDSet(f1, f2);
       System.out.println(FDUtil.transitive(fdset));
       ```
       ```
       [
-        A --> DE     // This comes from A --> CB and C --> DE
+        A --> D,E     // This comes from A --> CB and C --> DE
       ]
       ```
     - Finally, `fdSetClosure(FDSet fdset)` -- This method accepts a set of FDs and returns its closure $$F^+$$, i.e., it returns the full set of FDs generated through the repeated applications of Armstrong's Axioms. Assume the relation’s attributes are exactly those appearing on either side of the FDs in the input FD set. You can find the pseudocode algorithm in the notes or in the book, but I'll repeat it here:
@@ -151,8 +151,8 @@ For this assignment, you're welcome to add as many other helper methods as you n
       F+ = Copy (clone) of F // Don't want this algorithm to affect F
 
       Subs = powerSet(R)  // Subs has all subsets of attributes
-      For every non-empty X in Subs:
-        Add X → X to F+
+      For every non-empty set X in Subs:
+        Add the FD X --> X to F+
 
       Repeat:
         // augmentation
@@ -173,7 +173,7 @@ For this assignment, you're welcome to add as many other helper methods as you n
 
       ```java
       FD f1 = new FD(Set.of("A"), Set.of("B"));       // f1 = A --> B
-      FD f2 = new FD(Set.of("A", "B"), Set.of("C"));  // f2 = AB --> C
+      FD f2 = new FD(Set.of("A", "B"), Set.of("C"));  // f2 = A,B --> C
       FDSet fdset = new FDSet(f1, f2);
       System.out.println(FDUtil.fdSetClosure(fdset));
       ```
@@ -182,51 +182,51 @@ For this assignment, you're welcome to add as many other helper methods as you n
         A --> A
         A --> B
         A --> C
-        A --> AB
-        A --> AC
-        A --> BC
-        A --> ABC
-        AB --> A
-        AB --> B
-        AB --> C
-        AB --> AB
-        AB --> AC
-        AB --> BC
-        AB --> ABC
-        AC --> A
-        AC --> B
-        AC --> C
-        AC --> AB
-        AC --> AC
-        AC --> BC
-        AC --> ABC
-        ABC --> A
-        ABC --> B
-        ABC --> C
-        ABC --> AB
-        ABC --> AC
-        ABC --> BC
-        ABC --> ABC
+        A --> A,B
+        A --> A,C
+        A --> B,C
+        A --> A,B,C
+        A,B --> A
+        A,B --> B
+        A,B --> C
+        A,B --> A,B
+        A,B --> A,C
+        A,B --> B,C
+        A,B --> A,B,C
+        A,C --> A
+        A,C --> B
+        A,C --> C
+        A,C --> A,B
+        A,C --> A,C
+        A,C --> B,C
+        A,C --> A,B,C
+        A,B,C --> A
+        A,B,C --> B
+        A,B,C --> C
+        A,B,C --> A,B
+        A,B,C --> A,C
+        A,B,C --> B,C
+        A,B,C --> A,B,C
         B --> B
         C --> C
-        BC --> B
-        BC --> C
-        BC --> BC        
+        B,C --> B
+        B,C --> C
+        B,C --> B,C        
       ]
       ```
 
 4. Once you have FD Set Closure algorithm working, you should be able to test the logical equivalence between two FD sets. Recall that two FD sets are logically equivalent if-and-only-if their closures (F+) are equal. There's nothing you need to do here, except  to try out more test cases in order to verify that the equals method works as intended.
 
     ```java
-    // One FD Set = A --> AB, AB --> C
-    FD f1 = new FD(Set.of("A"), Set.of("A", "B")); // A --> AB
-    FD f2 = new FD(Set.of("A", "B"), Set.of("C")); // AB --> C
+    // One FD Set = A --> A,B and A,B --> C
+    FD f1 = new FD(Set.of("A"), Set.of("A", "B")); // A --> A,B
+    FD f2 = new FD(Set.of("A", "B"), Set.of("C")); // A,B --> C
     FDSet fdset = new FDSet(f1, f2);
 
-    // Another FD set: AB --> B, A --> BC, AB --> C
-    FD g1 = new FD(Set.of("A", "B"), Set.of("B")); // AB --> B
-    FD g2 = new FD(Set.of("A"), Set.of("C", "B")); // A --> BC
-    FD g3 = new FD(Set.of("A", "B"), Set.of("C")); // AB --> C
+    // Another FD set: A,B --> B and A --> B,C and A,B --> C
+    FD g1 = new FD(Set.of("A", "B"), Set.of("B")); // A,B --> B
+    FD g2 = new FD(Set.of("A"), Set.of("C", "B")); // A --> B,C
+    FD g3 = new FD(Set.of("A", "B"), Set.of("C")); // A,B --> C
     FDSet fdset2 = new FDSet(g1, g2, g3);
 
     // Test FD set equality: fdset and fdset2 are logically equivalent iff their closures are equivalent
@@ -238,11 +238,13 @@ For this assignment, you're welcome to add as many other helper methods as you n
 #### Grading
 
 ```
-This assignment will be graded out of 90 points.
+This assignment will be graded out of 100 points.
 
-[20pts] Trivial rule
+[20pts] The PowerSet method is completed.
 
-[20pts] Augmentation rule
+[10pts] Trivial rule.
+
+[20pts] Augmentation rule.
 
 [20pts] Transitivity rule. Must be exhaustive (i.e., repeatedly apply
 transitivity until there is no change.)
