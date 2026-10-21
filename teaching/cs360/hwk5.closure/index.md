@@ -1,12 +1,16 @@
 ## CS 360 - Principles of Database Systems
 
-### Hwk 5: FD Set Closure and Armstrong's Axioms
+### Hwk 5: Armstrong's Axioms and F+
 In this assignment you will implement algorithms that we've been learning in the DB theory lectures. Specifically, you will implement methods to find the FD set closure, attribute set closure, and BCNF decomposition.
 
 
 #### Student Outcomes
 
-- To gain insight into the fundamentals and algorithms of relational design theory
+- Generate power sets using recursion and Java’s Set interface
+- Implement Armstrong’s Axioms to derive functional dependencies
+- Compute F+, the closure of an FD set through repeated rule application
+- Avoid modifying input data structures
+ 
 
 ###### Starter Code
 
