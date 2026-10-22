@@ -57,10 +57,10 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
 
     - An attribute set is just a set of Strings (that is `Set<String>`). I used `TreeSet` in my implementation  to order the attribute names when they're printed. (The choice of `TreeSet` was only to make it easier on the eyes when grading your work.)
 
-    - For example, $$A,D \rightarrow B$$ can be constructed using:
+    - For example, $$A,D \rightarrow B$$ can be constructed using the 2-argument constructor:
 
         ```java
-        FD fd = new FD(Set.of("A", "D"), Set.of("B"));
+        new FD(Set.of("A", "D"), Set.of("B"))
         ```
 
     - Do not make any changes to this class.
