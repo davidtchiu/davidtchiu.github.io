@@ -96,6 +96,18 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
     - `trivial(Set<String> attrs)` -- This method accepts the relation's attribute set and returns all trivial FDs over those attributes. Recall that an FD $$\alpha \rightarrow \beta$$ is trivial when $$\beta \subseteq \alpha$$. For every non-empty subset $$\alpha$$ of `attrs`, generate $$\alpha \rightarrow \beta$$ for every non-empty subset $$\beta$$ of $$\alpha$$. Omit FDs with empty right-hand sides. **Hint:**  `powerSet()` seems useful here. You may also want to look into the `containsAll()` method in Java's Set interface, which is the implementation of $$\subseteq$$.
 
       For example:
+      ```java
+      // if relation R has just one attribute (X), then give me all the trivial dependencies!
+      System.out.println(FDUtil.trivial(Set.of("X")));
+      ```
+
+      Output:
+
+      ```text
+      [
+        X --> X
+      ]
+      ```
 
       ```java
       // if relation R has attributes (A,B), then give me all the trivial dependencies!
@@ -113,6 +125,7 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
         A,B --> A,B
       ]
       ```
+
 
     - `augment(FDSet fdset, Set<String> attrs)` -- This method accepts a relation's FD set `fdset` and some attribute set `attrs` and returns a new set of FDs generated from combining both sides of each FD in `fdset` with the given set of attributes `attrs`. Here's an example output for $$F = \{A \rightarrow B, AB \rightarrow C\}$$ augmented with attribute set $$\{C\}$$:
 
