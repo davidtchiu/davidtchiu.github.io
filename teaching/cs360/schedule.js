@@ -164,14 +164,15 @@ let days = {
     "Theory: functional dependencies",
     "Theory: attribute-set closure and superkeys",
     "Theory: FD-set closure, Armstrong's axioms",
-      "Notes: <a href='https://drive.google.com/open?id=1NHallhEkHCa30613U9Vo7fo1rsHRR-5z'>4a. Theory I (FD)</a>" + "<br>" +
+      "Notes: <a href='https://drive.google.com/open?id=1NHallhEkHCa30613U9Vo7fo1rsHRR-5z'>4. DB Theory I (FDs)</a>" + "<br>" +
       "Handout: <a href='https://drive.google.com/open?id=1awZlyecQp_U3lOiT2FdwYE-WzvejBzNw'>FD Vols Handout</a>" + "<br/>" +
       "",
     // wk 8
     "<strong>Fall Break</strong>",
     "Theory: Review of inference rules, F+",
     "Theory: Normal forms: 1NF, 2NF",
-      "Notes: <a href='https://drive.google.com/open?id=1zgEzeO3DmOgw1giv0z10sYsxcezSlsXp'>4b. Theory II (F+, Armstrong)</a>" + "<br>" +
+      "Notes: <a href='https://drive.google.com/open?id=1zgEzeO3DmOgw1giv0z10sYsxcezSlsXp'>5. DB Theory II (F+, Armstrong)</a>" + "<br>" +
+      "Notes: <a href=''>6. DB Theory III (Normalization)</a>" + "<br>" +
       "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk5.closure/'>Hwk 5 (F+)</a>" + "<br>" +
       "",
     // wk 9
