@@ -100,9 +100,6 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
       // if relation R has just one attribute (X), then give me all the trivial dependencies!
       System.out.println(FDUtil.trivial(Set.of("X")));
       ```
-
-      Output:
-
       ```text
       [
         X --> X
@@ -113,9 +110,6 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
       // if relation R has attributes (A,B), then give me all the trivial dependencies!
       System.out.println(FDUtil.trivial(Set.of("A","B")));
       ```
-
-      Output:
-
       ```text
       [
         A --> A
