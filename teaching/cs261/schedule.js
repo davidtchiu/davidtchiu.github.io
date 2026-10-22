@@ -124,12 +124,12 @@ let days = {
       //   url: "hwk4.LL/",
       //   //due: "10/18/2024",
       // },
-      // {
-      //   name: "Lab 8",
-      //   title: "Stacks and Queues Lab",
-      //   url: "lab8.melody/",
-      //   due: "10/24/2025",
-      // },
+      {
+        name: "Lab 8",
+        title: "Stacks and Queues Lab",
+        url: "lab8.melody/",
+        due: "10/24/2025",
+      },
       // {
       //   name: "Lab 9",
       //   title: "Recursion Lab",
