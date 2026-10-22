@@ -122,9 +122,9 @@ We suggest the following development strategy for solving this program:
 
 - Write an initial version of `play()` that assumes there are no repeating sections. (We'll put in the code for repeated sections later). This method accepts a `Queue` of `Notes`. Cycle through each note, and call `play()` on that note. Because you need to `poll()` each note out of the queue before you play it, you would empty out the song after it's played! Make sure the song survives after playing (in other words, you need to cycle that `Note` back into the queue after playing it!). Test it out, and make sure the songs are now playing on your machine. Then play it again to ensure that the song wasn't "emptied out" as a side effect.
 
-  - **Do not use a for-each loop to cycle through the notes**.  For this assignment, access the notes using queue operations (`offer`, `poll`, and `peek`) so that your solution follows FIFO processing.
+  - **Do not use a for-each loop to cycle through the notes**. This bypasses the queue operations we are practicing in this lab. Process the notes by removing them from the head and, when needed, reinserting them at the tail.
 
-- Implement the `changeTempo()` method. You can check the results of the `changeTempo()` method by reading in one of the sample files, calling `changeTempo()` and then calling the `toString()` method and checking your output matches what you expected. If successful, you should be able to see the following:
+- Implement the `changeTempo()` method. Cycle through the notes once again, and call `setDuration()` on a modified duration. This should have the same looping pattern as before. The new duration is just the product between the given `percentage` and the current duration of each note in the queue. You can check the results of the `changeTempo()` method by reading in one of the sample files, calling `changeTempo()` and then calling the `toString()` method and checking your output matches what you expected. If successful, you should be able to see the following:
 
   ```
   You are totally rocking MelodyPlayer!!! Type the word in the left column to do the action on the right
