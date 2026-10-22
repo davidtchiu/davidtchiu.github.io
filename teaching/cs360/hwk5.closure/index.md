@@ -67,9 +67,18 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
 
 2. Next, open up the `FDSet` class, which represents a set of FDs. It's really just a wrapper class that I wrote to make grading easier. **Read it over, but you do not need to make any changes to this class either.**
 
-3. Now open the `FDUtil` class, and implement the `static` methods.
+3. Now open the `FDUtil` class. You need to implement a few static methods for this assignment. We'll start with the utility power set method.
 
-    - `powerSet(Set<E> inputSet)` -- This method returns the _power set_ of the given set, so it returns a `Set` of `Set`s. Recall that the power set of $$S$$ is the set of all subsets of $$S$$, including the empty set. You'll want to write this method recursively. Here's a hint: The base case of the recursion is reached when the `inputSet` is empty, and in that case, you'll  return a new set containing just the empty set. I'll leave the general case of the recursion to you to figure out -- think about how will you reduce the input set at each step. Here's one example output.
+    - `powerSet(Set<E> inputSet)` -- This method returns the _power set_ of the given set, so it returns a `Set` of `Sets`,  in order words, it returns `Set<Set<E>>`. Recall that the power set of $$S$$ is the set of all subsets of $$S$$, including the empty set. You'll probably want to write this method recursively. Here's a hint: The base case of the recursion is reached when the `inputSet` is empty, and in that case, you'll  return a new set containing just the empty set. I'll leave the general case of the recursion to you to figure out -- think about how  you can reduce the `inputset` at each step. 
+
+      - Let's say the `inputSet` contains the elements $$\{A, B, C\}$$. Since the input set is not empty, you'll want to remove one of those elements, say $$A$$, and recursively find the power set of the remaining elements, $$\{B,C\}$$ (yep, just call this method on the set containing just $$\{B,C\}$$).
+        - We are now in the level-1 recursive call, where the `inputset` is $$\{B,C\}$$. Since the input is not empty, you'll   want to remove one element, say $$B$$, and recursively find the power set of the remaining elements, $$\{C\}$$.
+          - We are now in the level-2 recursive call, where the `inputset` is $$\{C\}$$. Since the input is not empty, you'll want to remove one element, $$C$$, and recursively find the power set of the remaining elements, $$\{\}$$.
+            - We are now in the level-3 recursive call, but this time, we hit the base case, so we return a set containing an empty set: $$\{\emptyset\}$$.
+          - Back inside level-2, we get $$\{\emptyset\}$$ back. Now we set-union the removed element $$C$$ with every element in the returned set, and add it to the returned set, giving us $$\{\emptyset,\{C\}\}$$.
+        - Back inside level-1, we get $$\{\emptyset,\{C\}\}$$ back. Now we set-union the removed element $$B$$ with every element in the returned set, and add it to the returned set, giving us $$\{\emptyset,\{C\}, \{B\}, \{B,C\}\}$$.
+      - Back inside the oringal call, we get $$\{\emptyset,\{C\}, \{B\}, \{B,C\}\}$$ back. Now we set-union the removed element $$A$$ with every element in the returned set, and add it to the returned set, giving us $$\{\emptyset, \{B\}, \{C\}, \{B,C\}, \{A\}, \{A,B\}, \{A,C\}, \{A,B,C\}\}\}$$.
+
 
       ```java
       Set<String> s = new TreeSet<>(Set.of("A", "B", "C")); // s = {A,B,C}
