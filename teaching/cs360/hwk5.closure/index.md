@@ -69,7 +69,7 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
 
 3. Now open the `FDUtil` class. You need to implement a few static methods for this assignment. We'll start with the utility power set method.
 
-    - `powerSet(Set<E> inputSet)` -- This method returns the _power set_ of the given set, so it returns a `Set` of `Sets`,  in order words, it returns `Set<Set<E>>`. Recall that the power set of $$S$$ is the set of all subsets of $$S$$, including the empty set. You'll probably want to write this method recursively. Here's a hint: The base case of the recursion is reached when the `inputSet` is empty, and in that case, you'll  return a new set containing just the empty set. I'll leave the general case of the recursion to you to figure out -- think about how  you can reduce the `inputset` at each step. 
+    - `powerSet(Set<E> inputSet)` -- This method returns the _power set_ of the given set, so it returns a `Set` of `Sets`,  in order words, it returns `Set<Set<E>>`. Recall that the power set of $$S$$ is the set of all subsets of $$S$$, including the empty set. You'll probably want to write this method recursively. Here's a hint: The base case of the recursion is reached when the `inputSet` is empty, and in that case, you'll  return a new set containing just the empty set. Now as for the general case where the `inputSet` is non-empty.
 
       - Let's say the `inputSet` contains the elements $$\{A, B, C\}$$. Since the input set is not empty, you'll want to remove one of those elements, say $$A$$, and recursively find the power set of the remaining elements, $$\{B,C\}$$ (yep, just call this method on the set containing just $$\{B,C\}$$).
         - We are now in the level-1 recursive call, where the `inputset` is $$\{B,C\}$$. Since the input is not empty, you'll   want to remove one element, say $$B$$, and recursively find the power set of the remaining elements, $$\{C\}$$.
@@ -168,15 +168,15 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
       Input: F, a set of functional dependencies
 
       R = All attributes appearing on either side of all the FDs in F
-      subsets = powerSet(R)
       F+ = Copy of F
 
       // apply trivial rule
       Add all FDs returned by trivial(R) to F+
 
+      AttrSubsets = powerSet(R)
       Repeat:
         // augmentation
-        For every Z in subsets:
+        For every Z in AttrSubsets:
           Apply augment(F+, Z) and add the results to F+
 
         // transitivity
