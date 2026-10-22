@@ -88,6 +88,9 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
       [[], [A], [B], [C], [A, B], [A, C], [B, C], [A, B, C]]
       ```
 
+      - Test your method out on different edge cases. What happens when you input an empty set? (You should set $$\{\emptyset\}$$) What happens when you input a set containing just one element, $$A$$? (You should get $$\{\emptyset, A\}$$). Please ensure that your method works before moving on. This is fundamental for the rest of the assignment.
+
+
 4. The method above is a fundamental helper method that we'll need to call in various spots. Now let's focus on the implementation of Armstrong's 3 Axioms: trivial rule, augmentation rule, and transitive rule.
 
     - `trivial(Set<String> attrs)` -- This method accepts the relation's attribute set and returns all trivial FDs over those attributes. Recall that an FD $$\alpha \rightarrow \beta$$ is trivial when $$\beta \subseteq \alpha$$. For every non-empty subset $$\alpha$$ of `attrs`, generate $$\alpha \rightarrow \beta$$ for every non-empty subset $$\beta$$ of $$\alpha$$. Omit FDs with empty right-hand sides. **Hint:**  `powerSet()` seems useful here. You may also want to look into the `containsAll()` method in Java's Set interface, which is the implementation of $$\subseteq$$.
