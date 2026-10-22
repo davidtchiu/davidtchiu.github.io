@@ -77,7 +77,7 @@ Note that Java's `HashSet` and `TreeSet` classes also provide "copy constructors
             - We are now in the level-3 recursive call, but this time, we hit the base case, so we return a set containing an empty set: $$\{\emptyset\}$$.
           - Back inside level-2, we get $$\{\emptyset\}$$ back. Now we set-union the removed element $$C$$ with every element in the returned set, and add it to the returned set, giving us $$\{\emptyset,\{C\}\}$$.
         - Back inside level-1, we get $$\{\emptyset,\{C\}\}$$ back. Now we set-union the removed element $$B$$ with every element in the returned set, and add it to the returned set, giving us $$\{\emptyset,\{C\}, \{B\}, \{B,C\}\}$$.
-      - Back inside the oringal call, we get $$\{\emptyset,\{C\}, \{B\}, \{B,C\}\}$$ back. Now we set-union the removed element $$A$$ with every element in the returned set, and add it to the returned set, giving us $$\{\emptyset, \{B\}, \{C\}, \{B,C\}, \{A\}, \{A,B\}, \{A,C\}, \{A,B,C\}\}\}$$.
+      - Back inside the oringal call, we get $$\{\emptyset,\{C\}, \{B\}, \{B,C\}\}$$ back. Now we set-union the removed element $$A$$ with every element in the returned set, and add it to the returned set, giving us $$\{\emptyset, \{B\}, \{C\}, \{B,C\}, \{A\}, \{A,B\}, \{A,C\}, \{A,B,C\}\}$$.
 
 
       ```java
