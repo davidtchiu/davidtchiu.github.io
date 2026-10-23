@@ -171,13 +171,13 @@ let days = {
     // wk 8
     "<strong>Fall Break</strong>",
     "Theory: Review of inference rules, F+",
-    "Theory: Normal forms: 1NF, 2NF",
+    "Theory: 1NF, 2NF and partial dependencies",
       "Notes: <a href='https://drive.google.com/file/d/10RS1Duw9yQokGhzcIDedqOuKphwBopvD'>6. DB Theory III (1NF, 2NF, BCNF)</a>" + "<br>" +
       "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk5.closure/'>Hwk 5 (FD Closure: F+)</a>" + "<br>" +
       "Handout: <a href='https://drive.google.com/file/d/1N9XE5p3-fmX-HsbT9-NNxlqzmQEr3RE9'>2NF Handout</a>" + "<br/>" +
       "",
     // wk 9
-    "Theory: Boyce-Codd Normal Form",
+    "Theory: Boyce-Codd Normal Form (BCNF)",
     "Theory: lossless join; FD preservation",
     "Theory: canonical cover and 3NF synthesis",
       "",
