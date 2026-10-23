@@ -166,7 +166,7 @@ let days = {
     "Theory: FD-set closure, Armstrong's axioms",
       "Notes: <a href='https://drive.google.com/open?id=1NHallhEkHCa30613U9Vo7fo1rsHRR-5z'>4. DB Theory I (FDs)</a>" + "<br>" +
       "Notes: <a href='https://drive.google.com/open?id=1zgEzeO3DmOgw1giv0z10sYsxcezSlsXp'>5. DB Theory II (F+, Armstrong)</a>" + "<br>" +
-      "Handout: <a href='https://drive.google.com/open?id=1awZlyecQp_U3lOiT2FdwYE-WzvejBzNw'>FD Vols Handout</a>" + "<br/>" +
+      "Handout: <a href='https://drive.google.com/open?id=1awZlyecQp_U3lOiT2FdwYE-WzvejBzNw'>FD Worksheet (Vols)</a>" + "<br/>" +
       "",
     // wk 8
     "<strong>Fall Break</strong>",
@@ -174,11 +174,11 @@ let days = {
     "Theory: 1NF, 2NF and partial dependencies",
       "Notes: <a href='https://drive.google.com/file/d/10RS1Duw9yQokGhzcIDedqOuKphwBopvD'>6. DB Theory III (1NF, 2NF, BCNF)</a>" + "<br>" +
       "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk5.closure/'>Hwk 5 (FD Closure: F+)</a>" + "<br>" +
-      "Handout: <a href='https://drive.google.com/file/d/1N9XE5p3-fmX-HsbT9-NNxlqzmQEr3RE9'>2NF Handout</a>" + "<br/>" +
+      "Handout: <a href='https://drive.google.com/file/d/1N9XE5p3-fmX-HsbT9-NNxlqzmQEr3RE9'>2NF Worksheet</a>" + "<br/>" +
       "",
     // wk 9
-    "Theory: Boyce-Codd Normal Form (BCNF)",
-    "Theory: lossless join; FD preservation",
+    "Theory: Boyce-Codd Normal Form (BCNF); Heath's Thm",
+    "Theory: FD preservation and canonical cover",
     "Theory: canonical cover and 3NF synthesis",
       "",
     // wk 10

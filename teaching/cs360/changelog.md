@@ -3,10 +3,11 @@
 
 
 # TODO
-- SHould I make room for Mongo?
-- Make the SQL Labs time for them to work on their SQL homework. In other words, no more separate SQL homework. Just assign it and use the lab time to finish it. (No more University SQL lab). Keep data ingestion homework.
+- More worksheets, especially to start the semester and in relational and SQL module. It's the only way for them to take effective notes.
+- Should I make room for Mongo?
 
 # Change Log
+- Began making "worksheets". More are needed, particularly in relational algebra and SQL module (Fall 2026)
 - Cut bitmap in favor of transactions (still not sure if there's time) (Fall 2026)
 - Speeding up intro sequence by a lecture, hopefully. (Fall 2026)
 - Return to one long Hwk 2. (Fall 2026)
