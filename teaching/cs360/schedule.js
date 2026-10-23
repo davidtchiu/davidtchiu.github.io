@@ -33,7 +33,7 @@ let days = {
       },
       {
         name: "Hwk 5 (coding)",
-        title: "Computing the F+",
+        title: "Computing the Closure F+",
         url: "hwk5.closure/",
         due: "10/30/2026",  // wk 9, Fri
       },
@@ -165,15 +165,16 @@ let days = {
     "Theory: attribute-set closure and superkeys",
     "Theory: FD-set closure, Armstrong's axioms",
       "Notes: <a href='https://drive.google.com/open?id=1NHallhEkHCa30613U9Vo7fo1rsHRR-5z'>4. DB Theory I (FDs)</a>" + "<br>" +
+      "Notes: <a href='https://drive.google.com/open?id=1zgEzeO3DmOgw1giv0z10sYsxcezSlsXp'>5. DB Theory II (F+, Armstrong)</a>" + "<br>" +
       "Handout: <a href='https://drive.google.com/open?id=1awZlyecQp_U3lOiT2FdwYE-WzvejBzNw'>FD Vols Handout</a>" + "<br/>" +
       "",
     // wk 8
     "<strong>Fall Break</strong>",
     "Theory: Review of inference rules, F+",
     "Theory: Normal forms: 1NF, 2NF",
-      "Notes: <a href='https://drive.google.com/open?id=1zgEzeO3DmOgw1giv0z10sYsxcezSlsXp'>5. DB Theory II (F+, Armstrong)</a>" + "<br>" +
-      "Notes: <a href=''>6. DB Theory III (Normalization)</a>" + "<br>" +
-      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk5.closure/'>Hwk 5 (F+)</a>" + "<br>" +
+      "Notes: <a href='https://drive.google.com/file/d/10RS1Duw9yQokGhzcIDedqOuKphwBopvD'>6. DB Theory III (1NF, 2NF, BCNF)</a>" + "<br>" +
+      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk5.closure/'>Hwk 5 (FD Closure: F+)</a>" + "<br>" +
+      "Handout: <a href='https://drive.google.com/file/d/1N9XE5p3-fmX-HsbT9-NNxlqzmQEr3RE9'>2NF Handout</a>" + "<br/>" +
       "",
     // wk 9
     "Theory: Boyce-Codd Normal Form",
