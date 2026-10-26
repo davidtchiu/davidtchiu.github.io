@@ -65,12 +65,12 @@ let days = {
       ""
       ,
     // wk 9
-    "Feasibility", 
     "Use-case: User stories",
-      "Mon: <a href='https://docs.google.com/document/d/1MsObp789Q_eMbSkhBdDzjWNn3W6BnP3uhjtwk4Po0gw'>9a. Feasibility</a>" + "<br/>" +
-      "Mon: <a href='https://agilealliance.org/glossary/mvp/'>What is an MVP?</a>" + "<br/>" + 
-      "Fri: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>9b. User stories</a>" + "<br/>" +
-      "Fri: <a href='https://www.atlassian.com/agile/project-management/user-stories'>Read: User stories article</a>"
+    "Use-case: User stories 2",
+      // "Mon: <a href='https://docs.google.com/document/d/1MsObp789Q_eMbSkhBdDzjWNn3W6BnP3uhjtwk4Po0gw'>9a. Feasibility</a>" + "<br/>" +
+      // "Mon: <a href='https://agilealliance.org/glossary/mvp/'>What is an MVP?</a>" + "<br/>" + 
+      "Mon: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>9. User stories</a>" + "<br/>" +
+      "Mon: <a href='https://www.atlassian.com/agile/project-management/user-stories'>Read: User stories article</a>"
     ,
       // wk 10
     "Use-case: First storyboard", 
