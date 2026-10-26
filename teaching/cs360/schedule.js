@@ -180,6 +180,7 @@ let days = {
     "Theory: Boyce-Codd Normal Form (BCNF); Heath's Thm",
     "Theory: FD preservation and canonical cover",
     "Theory: canonical cover and 3NF synthesis",
+      "Handout: <a href='https://drive.google.com/open?id=1Dp_BSTW6yuTY9cowDAalBDXCNjwsjnZz'>BCNF Worksheet</a>" + "<br/>" +
       "",
     // wk 10
     "Files: file abstraction",
