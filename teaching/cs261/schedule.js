@@ -43,12 +43,12 @@ let days = {
         url: "hwk4.LL/",
         due: "10/23/2026",  // Fri, wk 8 Fall Break
       },
-      // {
-      //   name: "Hwk 5",
-      //   title: "HTML Tag Validator",
-      //   url: "hwk5.html/",
-      //   due: "11/3/2025",  // Mon, wk 10
-      // },
+      {
+        name: "Hwk 5",
+        title: "HTML Tag Validator",
+        url: "hwk5.html/",
+        due: "11/4/2026",  // Wed, wk 10
+      },
       // {
       //   name: "Hwk 6",
       //   title: "Recursion Exercises",
@@ -244,7 +244,9 @@ let days = {
     "Recursive code writing and pitfalls",
     "Lab 9: Recursion Lab",
     "Big-O of recursive algos: list reversal",
-    "Code: <a href='https://drive.google.com/open?id=1exVtfzSHPHy-x419iI7ylImAWtZ0loY9&usp=drive_fs'>Recursive Examples</a>" + "<br>" +
+    "Notes: <a href='https://drive.google.com/open?id=1Sbyw4q3oqvmaMwXfjwdkRNwscs41blzU'>6. Recursion</a>" + "<br>" +
+      "Code: <a href='https://drive.google.com/open?id=1exVtfzSHPHy-x419iI7ylImAWtZ0loY9'>Recursive Examples</a>" + "<br>" +
+      "Assigned: <a href='hwk5.html/'>Hwk 5 (HTML Validator)</a>" + "<br>" +
       "",
     // wk 10
     "Recursive Big-O: binary search, Fibonacci",
