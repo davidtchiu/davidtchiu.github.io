@@ -1,4 +1,4 @@
-## CS 436055 - Principles of Database Systems
+## CS 360 - Principles of Database Systems
 
 ### Databases Project
 The term project is open-ended, and you need to write a short proposal (1/2 to 1 page is sufficient) outlining what you are hoping to accomplish. You are given a lot of freedom to work on whatever you wish, and the only requirements for the term project are listed as follows:

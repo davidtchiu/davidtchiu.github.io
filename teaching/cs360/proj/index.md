@@ -1,7 +1,7 @@
 ## CS 360 - Principles of Database Systems
 
 ### Database Term Project
-The term project is open-ended, and you need to write a short proposal (half page to one full page is sufficient) outlining what you and your team are hoping to accomplish. You are given a lot of freedom to work on whatever you wish. The only requirements for the term project are listed as follows:
+The term project is open-ended, and you need to write a short proposal (one-page is sufficient) outlining what you and your team are hoping to accomplish. You are given a lot of freedom to work on whatever you wish. The only requirements for the term project are listed as follows:
 - Novelty requirement: You are required to learn and apply something new about data management and/or databases that was not covered in class.
 - You are required to work in teams of 2-3 students.
 - You are required to practice scrum, recording daily progress (this is graded).
@@ -18,9 +18,9 @@ The term project is open-ended, and you need to write a short proposal (half pag
 
 
 ##### Importance of Team Buy-in
-I strongly recommend that the team comes to a consensus on the project vision, so that everyone is equally invested in taking ownership. Project visions borne out of one or two students generally doesn't work well. Something like this has happened in the very recent past... A student was really into Pokemon cards. They convinced the rest of their team members to write a web app to organize all the Pokemon cards in the world, and so that users can manage which cards they own and even trade them and battle each other. Other teammates didn't understand how the battles were played out (which was far more complicated than they thought) but went along with it anyway. The other members were never invested enough in the project to stay motivated. 
+I strongly recommend that the team comes to a consensus on the project vision, so that everyone is equally invested in taking ownership. 
 
-Here are just some ideas on what you and your team can do:
+**Here are just some ideas on what you and your team can do:**
 
 - Build a web application (like the kind of work you might've done for *Software Engineering*) that requires database back-end support. The novelty will be the need to learn back-end programming to get SQLite or some other database system integrated into your application. It is essential that you learn some security/privacy measures, such as SQL Injection and secured password storage. I would prefer that you do not simply update a previous project.
 
@@ -30,11 +30,11 @@ Here are just some ideas on what you and your team can do:
 
   - *Novelty:* Be able to rationalize why one would choose a NoSQL model over the relational model and vice versa. It also requires you to know how to integrate an existing NoSQL database into your web app.
 
-- Learn to deploy parallel/distributed processing tools like Hadoop and/or Spark. You must use it to solve a real-world problem that requires crunching massive amounts of data (i.e., it is not sufficient to process a toy example.) You must also demonstrate that the Hadoop-based implementation is faster than a single-threaded implementation. For instance, you can use Hadoop to implement Google's PageRank algorithm over the Wikipedia data set.
+- Learn to deploy parallel/distributed processing tools like Hadoop or Spark. You must use it to solve a real-world problem that requires crunching massive amounts of data (i.e., it is not sufficient to process a toy example.) You must also demonstrate that the Hadoop-based implementation is faster than a single-threaded implementation. For instance, you can use Hadoop to implement Google's PageRank algorithm over the Wikipedia data set.
 
   - *Novelty:* Learning to program using the Map-Reduce paradigm for big-data processing.
 
-- You could learn, implement, and visualize a new indexing method, such as an R-Tree for indexing geospatial data, or linear hashing.
+- You could learn, implement, and visualize a new normalization method, such as fourth normal form. 
 
 - And more! You have a high degree of freedom to propose anything, as long as it's related to databases and data management. It just needs to satisfy the *novelty* requirement.
 
