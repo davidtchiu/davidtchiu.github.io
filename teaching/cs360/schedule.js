@@ -71,12 +71,12 @@ let days = {
 
     ////////////////////////////// PROJECTS ///////////////////////////////
      projects: [
-      // {
-      //   name: "Project Teams",
-      //   title: "Team Preferences",
-      //   url: "proj/",
-      //   due: "10/29/2025",  // wk 9, wednesday
-      // },
+      {
+        name: "Project Teams",
+        title: "Team Preferences",
+        url: "proj/",
+        due: "10/30/2026",  // wk 9, Fri
+      },
       // {
       //   name: "Project Prop",
       //   title: "Project Proposal",
@@ -180,6 +180,7 @@ let days = {
     "Theory: Boyce-Codd Normal Form (BCNF); Heath's Thm",
     "Theory: FD preservation and canonical cover",
     "Theory: canonical cover and 3NF synthesis",
+      "Notes: <a href='https://drive.google.com/open?id=1PCv0hEp3BAlaRSzanh4b2SD9u3ZAaXo1'>7. DB Theory IV (Fc, 3NF)</a>" + "<br/>" +
       "Handout: <a href='https://drive.google.com/open?id=1Dp_BSTW6yuTY9cowDAalBDXCNjwsjnZz'>BCNF Worksheet</a>" + "<br/>" +
       "",
     // wk 10
