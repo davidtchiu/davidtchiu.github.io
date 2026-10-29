@@ -128,14 +128,14 @@ let days = {
         name: "Lab 8",
         title: "Stacks and Queues Lab",
         url: "lab8.melody/",
-        due: "10/24/2025",
+        due: "10/23/2026",
       },
-      // {
-      //   name: "Lab 9",
-      //   title: "Recursion Lab",
-      //   url: "lab9.rec/",
-      //   due: "10/31/2025",
-      // },
+      {
+        name: "Lab 9",
+        title: "Recursion Lab",
+        url: "lab9.rec/",
+        due: "10/30/2026",
+      },
       // {
       //   name: "Lab 11",
       //   title: "Expression Trees (Binary Trees)",
