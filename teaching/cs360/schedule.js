@@ -177,10 +177,10 @@ let days = {
       "Handout: <a href='https://drive.google.com/file/d/1N9XE5p3-fmX-HsbT9-NNxlqzmQEr3RE9'>2NF Worksheet</a>" + "<br/>" +
       "",
     // wk 9
-    "Theory: Boyce-Codd Normal Form (BCNF); Heath's Thm",
-    "Theory: FD preservation and canonical cover",
+    "Theory: Boyce-Codd Normal Form (BCNF)",
+    "Theory: Lossless test; Dependency preservation",
     "Theory: canonical cover and 3NF synthesis",
-      "Notes: <a href='https://drive.google.com/open?id=1PCv0hEp3BAlaRSzanh4b2SD9u3ZAaXo1'>7. DB Theory IV (Fc, 3NF)</a>" + "<br/>" +
+      "Notes: <a href='https://drive.google.com/open?id=1PCv0hEp3BAlaRSzanh4b2SD9u3ZAaXo1'>7. DB Theory IV (Canonical Cover, 3NF)</a>" + "<br/>" +
       "Handout: <a href='https://drive.google.com/open?id=1Dp_BSTW6yuTY9cowDAalBDXCNjwsjnZz'>BCNF Worksheet</a>" + "<br/>" +
       "",
     // wk 10
