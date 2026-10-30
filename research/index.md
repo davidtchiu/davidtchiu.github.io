@@ -10,7 +10,7 @@
 
 #### Bitmap Indexing for Data-Intensive Processing
 
-- A. Kirner, J. Sawin, and D. Chiu. [Dynamic Bitmap Join Execution with Integrated Range Query Support](Papers/kirner-BDCAT2026.pdf).  13th IEEE/ACM  International Conference on Big Data Computing, Applications and Technologies (BDCAT'23). Florianopolis, Brazil. 2026. IEEE.
+- A. Kirner, J. Sawin, and D. Chiu. [Dynamic Bitmap Join Execution with Integrated Range Query Support](Papers/kirner-BDCAT2026.pdf).  13th IEEE/ACM  International Conference on Big Data Computing, Applications and Technologies (BDCAT'26). Florianopolis, Brazil. 2026. IEEE.
 
 - J. Kaeppel, J. Sawin, and D. Chiu. [Workload-Aware Cache Management of Bitmap Indices](Papers/kaeppel-BDCAT2023.pdf).  10th IEEE/ACM  International Conference on Big Data Computing, Applications and Technologies (BDCAT'23). Taormina (Messina), Italy. 2023. ACM. **(Best Paper Award)**
 
