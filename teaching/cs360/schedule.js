@@ -182,6 +182,7 @@ let days = {
     "Theory: canonical cover and 3NF synthesis",
       "Notes: <a href='https://drive.google.com/open?id=1PCv0hEp3BAlaRSzanh4b2SD9u3ZAaXo1'>7. DB Theory IV (Canonical Cover, 3NF)</a>" + "<br/>" +
       "Handout: <a href='https://drive.google.com/open?id=1Dp_BSTW6yuTY9cowDAalBDXCNjwsjnZz'>BCNF Worksheet</a>" + "<br/>" +
+      "Handout: <a href='https://drive.google.com/file/d/1tMsznvv4_wANXm7a6CIeN2unuQSel0zJ'>3NF Worksheet</a>" + "<br/>" +
       "",
     // wk 10
     "Files: file abstraction",
