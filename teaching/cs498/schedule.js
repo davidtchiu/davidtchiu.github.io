@@ -73,7 +73,7 @@ let days = {
       "Mon: <a href='https://www.atlassian.com/agile/project-management/user-stories'>Read: User stories article</a>"
     ,
       // wk 10
-    "Use-case: First storyboard", 
+    "<strong>Class Cancelled</strong>", 
     "Use-case: Storyboard (cont.)", 
       "Mon: <a href='https://docs.google.com/document/d/1XDMFTchr4XY0kkRfp1UiL5Z0s0FNkdSaG0XW_bdSg0Q'>10a. Storyboard 1</a>" + "<br/>" +
       "Mon: <a href='https://www.nngroup.com/articles/storyboards-visualize-ideas/'>Read: Storyboards Help Visualize UX Ideas</a>" + "<br/>" +
