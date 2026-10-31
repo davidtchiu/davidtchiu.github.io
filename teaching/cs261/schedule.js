@@ -243,14 +243,14 @@ let days = {
     "Recursion: code tracing",
     "Recursive code writing and pitfalls",
     "Lab 9: Recursion Lab",
-    "Writing recursive code",
+    "Recursive code writing: passing state",
     "Notes: <a href='https://drive.google.com/open?id=1Sbyw4q3oqvmaMwXfjwdkRNwscs41blzU'>6. Recursion</a>" + "<br>" +
       "Code: <a href='https://drive.google.com/open?id=1exVtfzSHPHy-x419iI7ylImAWtZ0loY9'>Recursive Examples</a>" + "<br>" +
       "Assigned: <a href='hwk5.html/'>Hwk 5 (HTML Validator)</a>" + "<br>" +
       "",
     // wk 10
-    "Recursive Big-O",
-    "Recursive Big-O",
+    "Recurrences and Big-O",
+    "Recursive structures",
     "Lab 10: Recursion Homework Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     "",
