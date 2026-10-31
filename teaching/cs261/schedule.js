@@ -250,7 +250,7 @@ let days = {
       "",
     // wk 10
     "Recursive Big-O",
-    "Start Trees, binary trees",
+    "Recursive Big-O",
     "Lab 10: Recursion Homework Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     "",
