@@ -251,20 +251,20 @@ let days = {
       "",
     // wk 10
     "Recurrences and Big-O",
-    "Recursive structures",
+    "Big-O continued",
     "Lab 10: Recursion Homework Lab",
-    "<strong><emph>Review for Exam 2</emph></strong>",
+    "Recursive structures",
     "Notes: <a href='https://drive.google.com/open?id=1Sbyw4q3oqvmaMwXfjwdkRNwscs41blzU'>6b. Recursion (Part II)</a>" + "<br>" +
       "Notes: <a href='https://drive.google.com/file/d/1uwm3Ad6Cdfhmkr0znbACE5RtdUKeRmxT/view?usp=drive_link'>Study Guide 2</a> (<a href='https://drive.google.com/file/d/1ncSQ2qC1YXU6cJjFXDVrnAn8WfQSVeu6/view?usp=drive_link'>Soln</a>)" + "<br>" +
       "Handout: <a href='https://drive.google.com/open?id=1ie90-rnhsaHUFGTMhwdhmlybUqE93QPS&usp=drive_fs'>Telescoping Method (Big-O)</a>",
     // wk 11
-    "<strong><emph>Exam 2</emph></strong>",
     "Start Binary Search Trees",
-    "Lab 11: Expression Tree Lab",
     "BST operations",
+    "Lab 11: Expression Tree Lab",
+    "<strong><emph>Review for Exam 2</emph></strong>",
     "",
     // wk 12
-    "BST operations",
+    "<strong><emph>Exam 2</emph></strong>",
     "BST performance analysis",
     "Lab 12: BST Lab",
     "Start Hashing: Entry<K,V> class, hashcode()",
