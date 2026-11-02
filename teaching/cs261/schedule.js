@@ -244,8 +244,9 @@ let days = {
     "Recursive code writing and pitfalls",
     "Lab 9: Recursion Lab",
     "Recursive code writing: passing state",
-    "Notes: <a href='https://drive.google.com/open?id=1Sbyw4q3oqvmaMwXfjwdkRNwscs41blzU'>6. Recursion</a>" + "<br>" +
+    "Notes: <a href='https://drive.google.com/open?id=1Sbyw4q3oqvmaMwXfjwdkRNwscs41blzU'>6a. Recursion (Part I)</a>" + "<br>" +
       "Code: <a href='https://drive.google.com/open?id=1exVtfzSHPHy-x419iI7ylImAWtZ0loY9'>Recursive Examples</a>" + "<br>" +
+      "Assigned: <a href='lab9.rec/'>Lab 9 (Recursion)</a>" + " | " + "<a href='https://drive.google.com/open?id=1r4t_FAQ_h53lMtw-kW09So1LXMfJrFyL&usp=drive_fs'>Soln</a>" + "<br>" +
       "Assigned: <a href='hwk5.html/'>Hwk 5 (HTML Validator)</a>" + "<br>" +
       "",
     // wk 10
@@ -253,7 +254,8 @@ let days = {
     "Recursive structures",
     "Lab 10: Recursion Homework Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
-    "",
+    "Notes: <a href='https://drive.google.com/open?id=1Sbyw4q3oqvmaMwXfjwdkRNwscs41blzU'>6b. Recursion (Part II)</a>" + "<br>" +
+      "Handout: <a href='https://drive.google.com/open?id=1ie90-rnhsaHUFGTMhwdhmlybUqE93QPS&usp=drive_fs'>Telescoping Method (Big-O)</a>",
     // wk 11
     "<strong><emph>Exam 2</emph></strong>",
     "Start Binary Search Trees",
