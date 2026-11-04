@@ -255,7 +255,7 @@ let days = {
     "Lab 10: Recursion Homework Lab",
     "Recursive structures",
     "Notes: <a href='https://drive.google.com/open?id=1Sbyw4q3oqvmaMwXfjwdkRNwscs41blzU'>6b. Recursion (Part II)</a>" + "<br>" +
-      "Handout: <a href='https://drive.google.com/open?id=1ie90-rnhsaHUFGTMhwdhmlybUqE93QPS&usp=drive_fs'>Telescoping Method (Recursive Big-O)</a>",
+      "Handout: <a href='https://drive.google.com/open?id=1ie90-rnhsaHUFGTMhwdhmlybUqE93QPS&usp=drive_fs'>Telescoping Method (Recursive Big-O)</a>" + "<br>" +
       "Handout: <a href='https://drive.google.com/file/d/15da5owQ5YC1SpAYrXzy4-LVY_qlgXQdr/view?usp=drive_link'>Shortcutting Method (Recursive Big-O)</a>",
     // wk 11
     "Start Binary Search Trees",
