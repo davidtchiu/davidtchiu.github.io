@@ -189,6 +189,7 @@ let days = {
     "Files: disk scheduling",
     // "Files: formats and organization",
     "Files: modeling query costs",
+      "Notes: <a href='https://drive.google.com/file/d/1H0UygiqCUrsuP2NnWlf01vRA7Fah6ZWx/view?usp=drive_link'>8a. Files and Disks</a>" + "<br/>" +
       "",
     // wk 11
     "Start indexing",
