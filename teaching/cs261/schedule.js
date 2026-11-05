@@ -49,12 +49,12 @@ let days = {
         url: "hwk5.html/",
         due: "11/4/2026",  // Wed, wk 10
       },
-      // {
-      //   name: "Hwk 6",
-      //   title: "Recursion Exercises",
-      //   url: "hwk6.rec/",
-      //   due: "11/14/2025",  // Fri, wk 11
-      // },
+      {
+        name: "Hwk 6",
+        title: "Recursion Exercises",
+        url: "hwk6.rec/",
+        due: "11/18/2026",  // Fri, wk 11
+      },
       // {
       //   name: "Hwk 7",
       //   title: "City Tracker",
@@ -263,6 +263,7 @@ let days = {
     "Lab 11: Expression Tree Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     "Notes: <a href='https://drive.google.com/file/d/1uwm3Ad6Cdfhmkr0znbACE5RtdUKeRmxT/view?usp=drive_link'>Study Guide 2</a> (<a href='https://drive.google.com/file/d/1ncSQ2qC1YXU6cJjFXDVrnAn8WfQSVeu6/view?usp=drive_link'>Soln</a>)" + "<br>" +
+      "Assigned: <a href='hwk6.rec/'>Hwk 6 (Recursion)</a>" + "<br>" + 
       "",
     // wk 12
     "<strong><emph>Exam 2</emph></strong>",
