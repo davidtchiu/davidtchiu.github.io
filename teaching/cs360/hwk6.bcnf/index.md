@@ -62,7 +62,7 @@ Here's the output (though I've formatted the superkeys by hand for readability).
 BCNF START
  Current schema = [cartID, name, title, ssn, wage]
  Current schema's superkeys = [[cartID, title, wage, ssn], [cartID, title, ssn], [cartID, wage, ssn], [cartID, ssn], [cartID, name, wage, ssn], [cartID, name, ssn], [cartID, name, title, ssn], [cartID, name, title, wage, ssn]]
- *** Splitting on [ssn] --> [name] ***
+ *** Splitting on ssn --> name ***
  Left Schema = [name, ssn]
  Left Schema's superkeys = [[name, ssn], [ssn]]
  Right Schema = [cartID, title, ssn, wage]
@@ -130,7 +130,7 @@ Final BCNF Schemas: [[cartID, title, ssn, wage], [name, ssn]]
 
     ```
     Exception in thread "main" java.lang.IllegalArgumentException
-    The following FD refers to unknown attributes: [ssn] --> [eyecolor]
+    The following FD refers to unknown attributes: ssn --> eyecolor
       at Normalizer.findSuperkeys(Normalizer.java:132)
       at Main.main(Main.java:15)
     ```
