@@ -190,6 +190,8 @@ let days = {
     // "Files: formats and organization",
     "Files: modeling query costs",
       "Notes: <a href='https://drive.google.com/file/d/1H0UygiqCUrsuP2NnWlf01vRA7Fah6ZWx/view?usp=drive_link'>8a. Files and Disks</a>" + "<br/>" +
+      "Study: <a href='https://drive.google.com/open?id=1ys2djah7tQzMvoUq6mwhNLRt0-lTwSWa&usp=drive_fs'>Exam 2 Study Guide</a>" + "<br>" +
+      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk6.bcnf/'>Hwk 6 (BCNF)</a>",
       "",
     // wk 11
     "Start indexing",
