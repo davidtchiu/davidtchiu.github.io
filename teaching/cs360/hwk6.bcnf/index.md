@@ -13,7 +13,7 @@ In this assignment you will implement algorithms that we've been learning in the
 
 Starter code for this assignment is provided on the github repo. You must do these steps in order to submit your work to me on github.
 
-- The starter code is provided here [https://github.com/davidtchiu/cs455-hwk-bcnf](https://github.com/davidtchiu/cs455-hwk-bcnf).
+- The starter code is provided here [https://github.com/davidtchiu/db-bcnf](https://github.com/davidtchiu/db-bcnf).
 
 - Click on the green **Use this template** button <img src="figures/useThisTemplate.png" width="80px" /> and select the **Create new repository** option. In the next page, give your repository a good name (the "suggestion" they give is fine). My only request is that you *don't* name it to be the same as mine. This is hide your homework solution from Google searches.
 
@@ -25,7 +25,7 @@ Starter code for this assignment is provided on the github repo. You must do the
   git clone <your-github-url-for-this-project>
   ```
 
-- This should download the starter code in a directory called `cs455-hwk-fdclosure`. After you've done this, you can work freely from VS Code or any other editor. 
+- This should download the starter code in a directory. After you've done this, you can work freely from VS Code or any other editor. 
 
 #### Preliminary
 - Just like the previous assignment, you will need to be familiar with [Java's Set interface](https://docs.oracle.com/javase/7/docs/api/java/util/Set.html). Know how to take a set union, intersection, difference, and how to iterate through Sets. **You must write this program in Java.** I've provided skeleton code for you to implement. 
