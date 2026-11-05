@@ -123,32 +123,44 @@ Create a new project and create a class called `Recursion`. Put all of the follo
 
 	 <img src="figures/flood_fill.png" width="450px" />
 
-   Write a method `public static void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value  `r`. You may assume that `A` is a square, but a rectangular `A` shouldn't change your implementation. In the outputs below, assume that `print2DArray()` is a static method that prints out 2D arrays. (You should probably define `print2DArray()` so that you can see the contents, but it's not part of the assignment -- and you don't have to do it recursively.)
+   Write a method `public static void floodFill(int[][] A, int i, int j, int r)` that flood fills the given 2D array starting from `A[i][j]` with the value  `r`. You may assume that `A` is a square, but a rectangular `A` shouldn't change your implementation. In the outputs below, please use the `print2DArray()` given below.
 
-   ```java
-	int[][] img1 = {
-      {1, 1, 7, 5},
-      {1, 3, 3, 3},
-      {6, 5, 5, 3},
-      {2, 2, 3, 3}
-   };
+	```java
+	public static void print2DArray(int[][] arr) {
+    for (int[] row : arr) {
+        for (int value : row) {
+            System.out.print(value + "\t");
+        }
+        System.out.println();
+    }
+	}
+	```
 
-   System.out.println("Before filling:");
-   Recursion.print2DArray(img1);
-   >	1       1       7       5
-   >	1       3       3       3
-   >	6       5       5       3
-   >	2       2       3       3
+	Here are some sample outputs:
+	```java
+		int[][] img1 = {
+		{1, 1, 7, 5},
+		{1, 3, 3, 3},
+		{6, 5, 5, 3},
+		{2, 2, 3, 3}
+	};
 
-   Recursion.floodFill(img1, 1, 2, 8);
+	System.out.println("Before filling:");
+	Recursion.print2DArray(img1);
+	>	1       1       7       5
+	>	1       3       3       3
+	>	6       5       5       3
+	>	2       2       3       3
 
-   System.out.println("After filling:");
-   Recursion.print2DArray(img1);
-   >	1       1       7       5
-   >	1       8       8       8
-   >	6       5       5       8
-   >	2       2       8       8
-   ```
+	Recursion.floodFill(img1, 1, 2, 8);
+
+	System.out.println("After filling:");
+	Recursion.print2DArray(img1);
+	>	1       1       7       5
+	>	1       8       8       8
+	>	6       5       5       8
+	>	2       2       8       8
+	```
 
 5. (Medium) A positive integer `n` is prime if-and-only-if it is only divisible evenly by 1 and itself. Write a method, `public static boolean isPrime(int n)` that determines if `n` is prime. Hint: I would first create a private helper method that inputs `n` and a counter `k` that is initially input as 2 by the public-facing `isPrime()` method. There are two base cases in this helper method: (1) when counter `k` reaches `n` that means `n` is prime, or (2) when `n` is evenly divisible by `k` then `n` is not prime. The recursive case of the helper method simply calls itself on `k+1`, moving the counter a step closer to `n`.
 
