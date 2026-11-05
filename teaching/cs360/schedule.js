@@ -37,12 +37,12 @@ let days = {
         url: "hwk5.closure/",
         due: "10/30/2026",  // wk 9, Fri
       },
-      // {
-      //   name: "Hwk 6 (coding)",
-      //   title: "BCNF Normalization",
-      //   url: "hwk6.bcnf/",
-      //   due: "11/4/2026", // wk 10, Wed
-      // },
+      {
+        name: "Hwk 6 (coding)",
+        title: "BCNF Normalization",
+        url: "hwk6.bcnf/",
+        due: "11/16/2026", // wk 10, Wed
+      },
       // {
       //   name: "Hwk 5 (coding - too easy, but could give them a break as they do their projects)",
       //   title: "Disk Scheduling",
@@ -191,7 +191,7 @@ let days = {
     "Files: modeling query costs",
       "Notes: <a href='https://drive.google.com/file/d/1H0UygiqCUrsuP2NnWlf01vRA7Fah6ZWx/view?usp=drive_link'>8a. Files and Disks</a>" + "<br/>" +
       "Study: <a href='https://drive.google.com/open?id=1ys2djah7tQzMvoUq6mwhNLRt0-lTwSWa&usp=drive_fs'>Exam 2 Study Guide</a>" + "<br>" +
-      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk6.bcnf/'>Hwk 6 (BCNF)</a>",
+      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk6.bcnf/'>Bonus Hwk 6 (BCNF)</a>" + "<br>" +
       "",
     // wk 11
     "Start indexing",
