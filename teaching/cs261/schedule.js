@@ -257,6 +257,7 @@ let days = {
     "Notes: <a href='https://drive.google.com/open?id=1Sbyw4q3oqvmaMwXfjwdkRNwscs41blzU'>6b. Recursion (Part II)</a>" + "<br>" +
       "Handout: <a href='https://drive.google.com/open?id=1ie90-rnhsaHUFGTMhwdhmlybUqE93QPS&usp=drive_fs'>Telescoping Method (Recursive Big-O)</a>" + "<br>" +
       "Handout: <a href='https://drive.google.com/file/d/15da5owQ5YC1SpAYrXzy4-LVY_qlgXQdr/view?usp=drive_link'>Shortcutting Method (Recursive Big-O)</a>" + "<br>" + 
+      "Code: <a href='https://drive.google.com/file/d/1IQxEVZIIvYm1eQHEHFIlRLmHbzJBNaBU/view?usp=drive_link'>Recursive Linkedlist</a>" + "<br>" +
       "Assigned: <a href='hwk6.rec/'>Hwk 6 (Recursion)</a>" + "<br>" + 
       ""
       ,
