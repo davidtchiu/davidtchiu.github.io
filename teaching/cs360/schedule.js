@@ -190,13 +190,13 @@ let days = {
     // "Files: formats and organization",
     "Files: modeling query costs",
       "Notes: <a href='https://drive.google.com/file/d/1H0UygiqCUrsuP2NnWlf01vRA7Fah6ZWx/view?usp=drive_link'>8a. Files and Disks</a>" + "<br/>" +
-      "Study: <a href='https://drive.google.com/open?id=1ys2djah7tQzMvoUq6mwhNLRt0-lTwSWa&usp=drive_fs'>Exam 2 Study Guide</a>" + "<br>" +
-      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk6.bcnf/'>Bonus Hwk 6 (BCNF)</a>" + "<br>" +
       "",
     // wk 11
     "Start indexing",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
+      "Study: <a href='https://drive.google.com/drive/u/0/folders/1lhpzOzjPb3-LG6vvBqsf7p--nDph32XV'>Exam 2 Study Guide</a>" + "<br>" +
+      "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk6.bcnf/'>Bonus Hwk 6 (BCNF)</a>" + "<br>" +
       "",
     // wk 12
     "Indexing: B+Tree properties",

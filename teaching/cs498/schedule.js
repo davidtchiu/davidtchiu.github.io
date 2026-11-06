@@ -74,13 +74,16 @@ let days = {
     ,
       // wk 10
     "<strong>Class Cancelled</strong>", 
+    "Use-case: User stories 3"
+    ,
+    // wk 11
     "Use-case: Storyboard (cont.)", 
       "Mon: <a href='https://docs.google.com/document/d/1XDMFTchr4XY0kkRfp1UiL5Z0s0FNkdSaG0XW_bdSg0Q'>10a. Storyboard 1</a>" + "<br/>" +
       "Mon: <a href='https://www.nngroup.com/articles/storyboards-visualize-ideas/'>Read: Storyboards Help Visualize UX Ideas</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>10b. Storyboard 2</a>"
-    ,
-    // wk 11
-    "Architecture: ", 
+      "Fri: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>10b. Storyboard 2</a>" + 
+      "",
+
+      "Architecture: ", 
     "Challenges and tradeoffs", 
       "Mon: <a href='https://docs.google.com/document/d/1hZoI3ZjRxfeks_O1fdCvcy55m_f1nqbZjKGTK00vAaI'>11a. Architecture</a>" + "<br/>" +
       "Mon: <a href='https://c4model.com/diagrams/container'>Read: C4 Model</a>" + "<br/>" + 
