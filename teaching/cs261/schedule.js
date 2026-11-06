@@ -259,8 +259,7 @@ let days = {
       "Handout: <a href='https://drive.google.com/file/d/15da5owQ5YC1SpAYrXzy4-LVY_qlgXQdr/view?usp=drive_link'>Shortcutting Method (Recursive Big-O)</a>" + "<br>" + 
       "Code: <a href='https://drive.google.com/file/d/1IQxEVZIIvYm1eQHEHFIlRLmHbzJBNaBU/view?usp=drive_link'>Recursive Linkedlist</a>" + "<br>" +
       "Assigned: <a href='hwk6.rec/'>Hwk 6 (Recursion)</a>" + "<br>" + 
-      ""
-      ,
+      "",
     // wk 11
     "Start Binary Search Trees",
     "BST operations",
