@@ -74,27 +74,24 @@ let days = {
     ,
       // wk 10
     "<strong>Class Cancelled</strong>", 
-    "Use-case: User stories 3"
-    ,
+    "Use-case: User stories 3",
+    "",
     // wk 11
-    "Use-case: Storyboard (cont.)", 
-      "Mon: <a href='https://docs.google.com/document/d/1XDMFTchr4XY0kkRfp1UiL5Z0s0FNkdSaG0XW_bdSg0Q'>10a. Storyboard 1</a>" + "<br/>" +
-      "Mon: <a href='https://www.nngroup.com/articles/storyboards-visualize-ideas/'>Read: Storyboards Help Visualize UX Ideas</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>10b. Storyboard 2</a>" + 
-      "",
-
-      "Architecture: ", 
-    "Challenges and tradeoffs", 
-      "Mon: <a href='https://docs.google.com/document/d/1hZoI3ZjRxfeks_O1fdCvcy55m_f1nqbZjKGTK00vAaI'>11a. Architecture</a>" + "<br/>" +
-      "Mon: <a href='https://c4model.com/diagrams/container'>Read: C4 Model</a>" + "<br/>" + 
-      "Fri: <a href='https://docs.google.com/document/d/1_8KME8PNuEBeW3a8_oe_lSBlMBSCG16_tAP_HAKqbpI'>11b. Tradeoffs</a>"
+    "Paper wireframing",
+    "Paper wireframing",
+    "",
+    //   "Architecture: ", 
+    // "Challenges and tradeoffs", 
+    //   "Mon: <a href='https://docs.google.com/document/d/1hZoI3ZjRxfeks_O1fdCvcy55m_f1nqbZjKGTK00vAaI'>11a. Architecture</a>" + "<br/>" +
+    //   "Mon: <a href='https://c4model.com/diagrams/container'>Read: C4 Model</a>" + "<br/>" + 
+    //   "Fri: <a href='https://docs.google.com/document/d/1_8KME8PNuEBeW3a8_oe_lSBlMBSCG16_tAP_HAKqbpI'>11b. Tradeoffs</a>"
     // "Challenges (cont'd)",
     //   "Fri: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>11b. Checkpoints</a>"
     ,
     // wk 12
-    "Design checkpoint",
-    "<strong>Check-in (2/3)</strong>",    
-      "Mon: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>12a. Checkpoints</a>"
+    "Exploring Figma",
+    "Figma: Homepage mockup",
+      ""
     ,
     // wk 13
     "<strong>Thanksgiving Break</strong>",
@@ -102,18 +99,24 @@ let days = {
       ""
     ,
     // wk 14
+    // "Figma Tutorial: Flow",
+    // "Design checkpoint",
+    // "<strong>Check-in (2/3)</strong>",    
+    //   "Mon: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>12a. Checkpoints</a>"
     "Timeline", 
-    "Evaluation Plan", 
+    "Time for writing", 
       "Mon: <a href='https://docs.google.com/document/d/18v2pwZRIqrs_DYbMbmRcXt6pjYd2pWL6TFgRK1PWGvU'>14a. Timeline</a>" + "<br/>" +
-      "Fri: <a href='https://docs.google.com/document/d/1C8iv9z5qYXv4IcTw7s7ZEMSOVxidLOTHx7UU_1505ms'>14b. Evaluation Plan</a>"
+      ""
     ,
+    // "Evaluation Plan", 
+    //   "Fri: <a href='https://docs.google.com/document/d/1C8iv9z5qYXv4IcTw7s7ZEMSOVxidLOTHx7UU_1505ms'>14b. Evaluation Plan</a>"
     // wk 15
-    "Handoff",
+    "Time for writing",
     "<strong>Reading Period</strong>",
       "Mon: <a href='https://docs.google.com/document/d/1mBGfdxe-gjm0xG8vvFMmxkNjlb79vc2HtLpaiMNNZDo'>15. Handoff</a>"
     ,
     // wk final
-    "<strong>Final Checkin @ 12:00 (3/3)</strong>",
+    "<strong>Final Checkin @ 12:00</strong>",
     "",
       ""
     ,
