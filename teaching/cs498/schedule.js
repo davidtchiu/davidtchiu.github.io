@@ -65,8 +65,8 @@ let days = {
       ""
       ,
     // wk 9
-    "Use-case: User stories",
-    "Use-case: User stories 2",
+    "Use-case: User scenario",
+    "Use-case: User scenario 2",
       // "Mon: <a href='https://docs.google.com/document/d/1MsObp789Q_eMbSkhBdDzjWNn3W6BnP3uhjtwk4Po0gw'>9a. Feasibility</a>" + "<br/>" +
       // "Mon: <a href='https://agilealliance.org/glossary/mvp/'>What is an MVP?</a>" + "<br/>" + 
       "Mon: <a href='https://docs.google.com/document/d/1g4u2-Vn784nJ-8MAL4jPRLTrZXvMpy-vwgpAPOslxw4'>9. User stories</a>" + "<br/>" +
@@ -74,11 +74,12 @@ let days = {
     ,
       // wk 10
     "<strong>Class Cancelled</strong>", 
-    "Use-case: User stories 3",
+    "Use-case: User scenario 3",
     "",
     // wk 11
     "Paper wireframing",
-    "Paper wireframing",
+    "Exploring Figma",
+    // "Paper wireframing",
     "",
     //   "Architecture: ", 
     // "Challenges and tradeoffs", 
@@ -89,8 +90,8 @@ let days = {
     //   "Fri: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>11b. Checkpoints</a>"
     
     // wk 12
-    "Exploring Figma",
-    "Figma: Homepage mockup",
+    "Figma: mockup",
+    "Figma: mockup",
       ""
     ,
     // wk 13
