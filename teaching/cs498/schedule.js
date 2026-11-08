@@ -87,7 +87,7 @@ let days = {
     //   "Fri: <a href='https://docs.google.com/document/d/1_8KME8PNuEBeW3a8_oe_lSBlMBSCG16_tAP_HAKqbpI'>11b. Tradeoffs</a>"
     // "Challenges (cont'd)",
     //   "Fri: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>11b. Checkpoints</a>"
-    ,
+    
     // wk 12
     "Exploring Figma",
     "Figma: Homepage mockup",
