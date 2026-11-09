@@ -261,15 +261,16 @@ let days = {
       "Assigned: <a href='hwk6.rec/'>Hwk 6 (Recursion)</a>" + "<br>" + 
       "",
     // wk 11
-    "Start Binary Search Trees",
-    "BST operations",
+    "Start Trees and Binary Trees",
+    "BSTs Binary Search Trees",
     "Lab 11: Expression Tree Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
     "Notes: <a href='https://drive.google.com/file/d/1uwm3Ad6Cdfhmkr0znbACE5RtdUKeRmxT/view?usp=drive_link'>Study Guide 2</a> (<a href='https://drive.google.com/file/d/1ncSQ2qC1YXU6cJjFXDVrnAn8WfQSVeu6/view?usp=drive_link'>Soln</a>)" + "<br>" +
+      "Notes: <a href='https://drive.google.com/open?id=14JzZd-vpS_GlYhQTT3JP2nDQbQFm7RBK&usp=drive_fs'>7a. Trees (Part I)</a>" + "<br>" +
       "",
     // wk 12
     "<strong><emph>Exam 2</emph></strong>",
-    "BST performance analysis",
+    "BST operations",
     "Lab 12: BST Lab",
     "Start Hashing: Entry<K,V> class, hashcode()",
     "",
