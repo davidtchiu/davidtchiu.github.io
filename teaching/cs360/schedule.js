@@ -186,9 +186,10 @@ let days = {
       "",
     // wk 10
     "Files: file abstraction",
+    "Files: access patterns",
     "Files: disk scheduling",
     // "Files: formats and organization",
-    "Files: modeling query costs",
+    // "Files: modeling query costs",
       "Notes: <a href='https://drive.google.com/file/d/1H0UygiqCUrsuP2NnWlf01vRA7Fah6ZWx/view?usp=drive_link'>8. Files and Disks</a>" + "<br/>" +
       "",
     // wk 11
