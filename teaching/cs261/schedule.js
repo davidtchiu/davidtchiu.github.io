@@ -273,7 +273,10 @@ let days = {
     "BST operations",
     "Lab 12: BST Lab",
     "Start Hashing: Entry<K,V> class, hashcode()",
-    "",
+    "Notes: <a href='https://drive.google.com/open?id=14JzZd-vpS_GlYhQTT3JP2nDQbQFm7RBK&usp=drive_fs'>7b. Trees (Part II - BST)</a>" + "<br>" +
+      "Code: <a href='https://drive.google.com/open?id=1ON-XNal9On2dghqwarpZH8sdXUC9vgqD&usp=drive_fs'>BST starter</a>" + "<br>" +
+      "Worksheet: <a href='https://drive.google.com/open?id=14-p5LvVr1bC5oGAgVckkvdHb2Iuuw-qD&usp=drive_fs'>BST</a>" + "<br>" +
+      "",
     // "(Min-)Heaps and PriorityQueues",
     // "Lab 11: PriorityQueue Code-Along Lab",
     // "Big-O of heaps and PriorityQueues",
