@@ -136,12 +136,12 @@ let days = {
         url: "lab9.rec/",
         due: "10/30/2026",
       },
-      // {
-      //   name: "Lab 11",
-      //   title: "Expression Trees (Binary Trees)",
-      //   url: "lab11.expr/",
-      //   due: "11/14/2025",
-      //   },
+      {
+        name: "Lab 11",
+        title: "Expression Trees (Binary Trees)",
+        url: "lab11.expr/",
+        due: "11/13/2025",
+        },
       //   {
       //     name: "Lab 12",
       //     title: "Binary Search Trees Lab",
@@ -267,13 +267,14 @@ let days = {
     "<strong><emph>Review for Exam 2</emph></strong>",
     "Notes: <a href='https://drive.google.com/file/d/1uwm3Ad6Cdfhmkr0znbACE5RtdUKeRmxT/view?usp=drive_link'>Study Guide 2</a> (<a href='https://drive.google.com/file/d/1ncSQ2qC1YXU6cJjFXDVrnAn8WfQSVeu6/view?usp=drive_link'>Soln</a>)" + "<br>" +
       "Notes: <a href='https://drive.google.com/open?id=14JzZd-vpS_GlYhQTT3JP2nDQbQFm7RBK&usp=drive_fs'>7a. Trees (Part I)</a>" + "<br>" +
-      "",
+       "Assigned: <a href='lab11.expr/'>Lab 11</a>" + "<br>" +
+       "",
     // wk 12
     "<strong><emph>Exam 2</emph></strong>",
     "BST operations",
     "Lab 12: BST Lab",
     "Start Hashing: Entry<K,V> class, hashcode()",
-    "Notes: <a href='https://drive.google.com/open?id=14JzZd-vpS_GlYhQTT3JP2nDQbQFm7RBK&usp=drive_fs'>7b. Trees (Part II - BST)</a>" + "<br>" +
+    "Notes: <a href='https://drive.google.com/open?id=1zZQTRkvwQf7cEdHIfx_AgRW5ZhJzPlr1&usp=drive_fs'>7b. Trees (Part II - BST)</a>" + "<br>" +
       "Code: <a href='https://drive.google.com/open?id=1ON-XNal9On2dghqwarpZH8sdXUC9vgqD&usp=drive_fs'>BST starter</a>" + "<br>" +
       "Worksheet: <a href='https://drive.google.com/open?id=14-p5LvVr1bC5oGAgVckkvdHb2Iuuw-qD&usp=drive_fs'>BST</a>" + "<br>" +
       "",
