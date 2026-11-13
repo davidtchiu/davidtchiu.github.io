@@ -265,7 +265,7 @@ let days = {
     "BSTs Binary Search Trees",
     "Lab 11: Expression Tree Lab",
     "<strong><emph>Review for Exam 2</emph></strong>",
-    "Notes: <a href='https://drive.google.com/file/d/1uwm3Ad6Cdfhmkr0znbACE5RtdUKeRmxT/view?usp=drive_link'>Study Guide 2</a> (<a href='https://drive.google.com/file/d/1ncSQ2qC1YXU6cJjFXDVrnAn8WfQSVeu6/view?usp=drive_link'>Soln</a>)" + "<br>" +
+    "Notes: <a href='https://drive.google.com/file/d/1uwm3Ad6Cdfhmkr0znbACE5RtdUKeRmxT/view?usp=drive_link'>Study Guide 2</a> (<a href='https://drive.google.com/file/d/1ncSQ2qC1YXU6cJjFXDVrnAn8WfQSVeu6/view?usp=drive_link'>Soln</a>, <a href='https://drive.google.com/open?id=1fC3e-Tw0f7A7W5AKdumEUYH9Iq99V8ds&usp=drive_fs'>code</a>)" + "<br>" +
       "Notes: <a href='https://drive.google.com/open?id=14JzZd-vpS_GlYhQTT3JP2nDQbQFm7RBK&usp=drive_fs'>7a. Trees (Part I)</a>" + "<br>" +
        "Assigned: <a href='lab11.expr/'>Lab 11</a>" + "<br>" +
        "",
