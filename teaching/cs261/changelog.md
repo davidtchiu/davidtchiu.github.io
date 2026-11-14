@@ -1,12 +1,12 @@
 # Note to self
 
 # TODO
+- Need more code along labs! Maybe start all labs as code alongs?
+- One of the problems I'm seeing is that, I've been spending very little time doing lab reviews and post exam review, pre-and-post homework reviews, so the assignments don't connect as well. Takes time, but I will have time in 210.
 - Once we move to 210, teach: skip lists right before going into trees. 
 - I need to put sorting right after recursion. Could be a good lead into BSTs. (i.e., what if there was a data structure that maintains order for us?)
 - Make a merge sort, quick sort (using student height) activity. 
     - In quicksort, randomly choose someone from the room. Everyone measures against that student and lines themselves up to their left or right.
-- Need more code along labs! Maybe start all labs as code alongs?
-- Gotta stop telling students that CS 261 is a litmus test for whether you'll like the major. Things change from CS 261.
 
 # Change Log
 - Insist that final exams are cumulative
