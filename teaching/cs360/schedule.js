@@ -193,17 +193,17 @@ let days = {
       "Notes: <a href='https://drive.google.com/file/d/1H0UygiqCUrsuP2NnWlf01vRA7Fah6ZWx/view?usp=drive_link'>8. Files and Disks</a>" + "<br/>" +
       "",
     // wk 11
-    "Start indexing",
+    "Indexing: problem and motivation",
     "<strong><emph>Review</emph></strong>",
     "<strong><emph>Exam 2</emph></strong>",
-      "Notes: <a href='https://drive.google.com/file/d/1R5knTB9z3d374okTQ-SArHiiOLQUsdIi/view?usp=drive_link'>9. Indexing</a>" + "<br>" + 
       "Study: <a href='https://drive.google.com/file/d/18MmQ6mh9-yo47ad_sGmn_93cfwy8hfQx/view?usp=drive_link'>Exam 2 Study Guide</a>" + "<br>" +
       "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk6.bcnf/'>Bonus Hwk 6 (BCNF)</a>" + "<br>" +
       "",
     // wk 12
-    "Indexing: B+Tree properties",
-    "Indexing: B+Tree insertion",
+    "Indexing: Indexing",
+    "Indexing: B+Tree (properties, insertion)",
     "Indexing: B+Tree analysis",
+      "Notes: <a href='https://drive.google.com/file/d/1R5knTB9z3d374okTQ-SArHiiOLQUsdIi/view?usp=drive_link'>9. Indexing</a>" + "<br>" + 
       "",
     // wk 13
     "Indexing: extendible hashing",
