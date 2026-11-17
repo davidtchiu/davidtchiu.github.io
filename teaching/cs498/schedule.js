@@ -90,12 +90,12 @@ let days = {
     //   "Fri: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>11b. Checkpoints</a>"
     
     // wk 12
-    "Figma: mockup",
-    "Figma: mockup",
+    "Work Day",
+    "Work Day",
       ""
     ,
     // wk 13
-    "<strong>Thanksgiving Break</strong>",
+    "<strong>Work Day</strong>",
     "<strong>Thanksgiving Break</strong>",
       ""
     ,
@@ -104,7 +104,7 @@ let days = {
     // "Design checkpoint",
     // "<strong>Check-in (2/3)</strong>",    
     //   "Mon: <a href='https://docs.google.com/document/d/1t8hGcN_wy2YRoBKesR_jHqrk5C3OK1biqb9p7iQkThw'>12a. Checkpoints</a>"
-    "Timeline", 
+    "Work Day", 
     "Time for writing", 
       "Mon: <a href='https://docs.google.com/document/d/18v2pwZRIqrs_DYbMbmRcXt6pjYd2pWL6TFgRK1PWGvU'>14a. Timeline</a>" + "<br/>" +
       ""
