@@ -200,7 +200,7 @@ let days = {
       "Assigned: <a href='https://davidtchiu.github.io/teaching/cs360/hwk6.bcnf/'>Bonus Hwk 6 (BCNF)</a>" + "<br>" +
       "",
     // wk 12
-    "Indexing: Indexing",
+    "Indexing: sparse vs. dense",
     "Indexing: B+Tree (properties, insertion)",
     "Indexing: B+Tree analysis",
       "Notes: <a href='https://drive.google.com/file/d/1R5knTB9z3d374okTQ-SArHiiOLQUsdIi/view?usp=drive_link'>9. Indexing</a>" + "<br>" + 
