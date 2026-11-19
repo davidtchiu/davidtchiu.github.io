@@ -273,7 +273,7 @@ let days = {
     "<strong><emph>Exam 2</emph></strong>",
     "BST operations",
     "Lab 12: BST Lab",
-    "Start Hashing: Entry<K,V> class, hashcode()",
+    "BST lab review and Big-O", 
     "Notes: <a href='https://drive.google.com/open?id=1zZQTRkvwQf7cEdHIfx_AgRW5ZhJzPlr1&usp=drive_fs'>7b. Trees (Part II - BST)</a>" + "<br>" +
       "Code: <a href='https://drive.google.com/open?id=1ON-XNal9On2dghqwarpZH8sdXUC9vgqD&usp=drive_fs'>BST starter</a>" + "<br>" +
       "Worksheet: <a href='https://drive.google.com/open?id=14-p5LvVr1bC5oGAgVckkvdHb2Iuuw-qD&usp=drive_fs'>BST</a>" + "<br>" +
@@ -283,14 +283,14 @@ let days = {
     // "Lab 11: PriorityQueue Code-Along Lab",
     // "Big-O of heaps and PriorityQueues",
     // wk 13
-    "HashMaps: open addressing and rehashing",
+    "Start Hashing: Entry<K,V> class, hashcode()",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "",
     // wk 14
+    "HashMaps: open addressing and rehashing",
     "HashMaps: chaining",
-    "Start sorting",
     "Lab 13: Hashing Lab",
     "Merge Sort",
     "",
