@@ -248,9 +248,9 @@ I've created a new project to get you started. Please download and open it. Firs
 
       ![](figures/BSTLab_remove3.png)
 
-  - Recursive case #1: if data at `localRoot` is smaller than the target data, then you need to call `removeHelper()` on the current right subtree (`localroot.right`), and then set `localRoot.right` to whatever that returns. Return `localRoot`.
+  - Recursive case #1: if data at `localRoot` is smaller than the target, then you need to call `removeHelper()` on the current right subtree (`localroot.right`), and then set `localRoot.right` to whatever that returns. Return `localRoot`.
 
-  - Recursive case #1: if data at `localRoot` is larger than the target data, then you need to call `removeHelper()` on the current left subtree (`localroot.left`), and then set `localRoot.right` to whatever that returns. Return `localRoot`.
+  - Recursive case #2: if data at `localRoot` is larger than the target data, then you need to call `removeHelper()` on the current left subtree (`localroot.left`), and then set `localRoot.left` to whatever that returns. Return `localRoot`.
 
   - Here's a sample output:
 
