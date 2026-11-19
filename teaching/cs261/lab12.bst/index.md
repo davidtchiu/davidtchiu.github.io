@@ -10,9 +10,9 @@ A Binary Search Tree (BST) is arguably the most important data structure in the 
 - No duplicate values allowed
 
 Here are some examples of valid BSTs:
-![](figures/bst1.png)
-![](figures/bst2.png)
-![](figures/bst3.png)
+<img src="figures/bst1.png" width="200px" />
+<img src="figures/bst2.png" width="200px" />
+<img src="figures/bst3.png" width="200px" />
 
 
 #### Objectives

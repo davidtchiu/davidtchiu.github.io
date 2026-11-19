@@ -142,12 +142,12 @@ let days = {
         url: "lab11.expr/",
         due: "11/13/2025",
         },
-      //   {
-      //     name: "Lab 12",
-      //     title: "Binary Search Trees Lab",
-      //     url: "lab12.bst/",
-      //     due: "11/21/2025",
-      //   },
+        {
+          name: "Lab 12",
+          title: "Binary Search Trees Lab",
+          url: "lab12.bst/",
+          due: "11/20/2026",
+        },
       //   {
       //     name: "Lab 13",
       //     title: "Maps Lab",
@@ -277,6 +277,7 @@ let days = {
     "Notes: <a href='https://drive.google.com/open?id=1zZQTRkvwQf7cEdHIfx_AgRW5ZhJzPlr1&usp=drive_fs'>7b. Trees (Part II - BST)</a>" + "<br>" +
       "Code: <a href='https://drive.google.com/open?id=1ON-XNal9On2dghqwarpZH8sdXUC9vgqD&usp=drive_fs'>BST starter</a>" + "<br>" +
       "Worksheet: <a href='https://drive.google.com/open?id=14-p5LvVr1bC5oGAgVckkvdHb2Iuuw-qD&usp=drive_fs'>BST</a>" + "<br>" +
+      "Assigned: <a href='lab12.bst/'>Lab 12</a>" + "<br>" +
       "",
     // "(Min-)Heaps and PriorityQueues",
     // "Lab 11: PriorityQueue Code-Along Lab",
