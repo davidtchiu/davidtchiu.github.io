@@ -205,6 +205,7 @@ let days = {
     "Indexing: B+Tree analysis",
       "Notes: <a href='https://drive.google.com/file/d/1R5knTB9z3d374okTQ-SArHiiOLQUsdIi/view?usp=drive_link'>9. Indexing</a>" + "<br>" + 
       "Handout: <a href='https://drive.google.com/open?id=1FiLUMuS-4kSUVRssNnBkVTBZVrfldRcj&usp=drive_fs'>B+Tree Worksheet</a>" + "<br/>" +
+      "Handout: <a href='https://drive.google.com/open?id=1wWZDXaIae8r4TLA3RaO_QmthnSrni_en&usp=drive_fs'>B+Tree Algorithms</a>" + "<br/>" +
       "",
     // wk 13
     "Indexing: extendible hashing",
