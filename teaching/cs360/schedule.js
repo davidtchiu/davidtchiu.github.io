@@ -213,9 +213,10 @@ let days = {
     "<strong>Thanksgiving</strong>",
       "",
     // wk 14
+    "Indexing: extendible hashing",
     "Start transactions: ACID, serializability",
     "Transactions: serializability test, precedence graphs",
-    "Transactions: concurrency control",
+    // "Transactions: concurrency control",
       "",
     // wk 15
     "<strong><emph>Group Demos Day 1</emph></strong>",
