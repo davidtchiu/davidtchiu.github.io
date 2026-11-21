@@ -214,8 +214,10 @@ let days = {
       "",
     // wk 14
     "Indexing: extendible hashing",
-    "Start transactions: ACID, serializability",
-    "Transactions: serializability test, precedence graphs",
+    "Work!",
+    "Work!",
+    // "Start transactions: ACID, serializability",
+    // "Transactions: serializability test, precedence graphs",
     // "Transactions: concurrency control",
       "",
     // wk 15
