@@ -78,9 +78,8 @@ let days = {
     "",
     // wk 11
     "Paper wireframing",
-    "Exploring Figma",
-    // "Paper wireframing",
-    "",
+    "Paper wireframing",
+    "<a href='https://drive.google.com/file/d/1NS-UQysR5hmqz9TzC0xQMY1-TWTWT-Qx/view?usp=drive_link'>Wireframe Handouts</a>",
     //   "Architecture: ", 
     // "Challenges and tradeoffs", 
     //   "Mon: <a href='https://docs.google.com/document/d/1hZoI3ZjRxfeks_O1fdCvcy55m_f1nqbZjKGTK00vAaI'>11a. Architecture</a>" + "<br/>" +
