@@ -1,6 +1,5 @@
 # Note to self
-- Insist that final exams are cumulative
-
+- At the end of the semester, replace B+Tree worksheet with one that's got less nodes
 
 # TODO
 - More worksheets, especially to start the semester and in relational and SQL module. It's the only way for them to take effective notes.

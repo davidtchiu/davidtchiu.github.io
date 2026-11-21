@@ -55,12 +55,12 @@ let days = {
         url: "hwk6.rec/",
         due: "11/18/2026",  // Fri, wk 11
       },
-      // {
-      //   name: "Hwk 7",
-      //   title: "City Tracker",
-      //   url: "hwk7.city/",
-      //   due: "12/5/2025",  // Fri, wk 14 (extended due date because I'm an idiot and forgot to post it earlier)
-      // },
+      {
+        name: "Hwk 7",
+        title: "City Tracker",
+        url: "hwk7.city/",
+        due: "12/9/2026",  // Fri, wk 14 (extended due date because I'm an idiot and forgot to post it earlier)
+      },
       // {
       //   name: "Hwk (Bonus)",
       //   title: "Evil Hangman (Optional Extra Credit)",
@@ -140,7 +140,7 @@ let days = {
         name: "Lab 11",
         title: "Expression Trees (Binary Trees)",
         url: "lab11.expr/",
-        due: "11/13/2025",
+        due: "11/13/2026",
         },
         {
           name: "Lab 12",
