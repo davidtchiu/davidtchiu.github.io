@@ -83,18 +83,18 @@ let days = {
       //   url: "proj/#prop",
       //   due: "11/10/2025", // wk 10, friday
       // },
-      // {
-      //   name: "Project Demo",
-      //   title: "Project Demo",
-      //   url: "proj/#demo",
-      //   due: "12/10/2025",  // wk 14, wednesday
-      // },
-      // {
-      //   name: "Project Code",
-      //   title: "Project Code",
-      //   url: "proj/#code",
-      //   due: "12/19/2025",  // finals wk, friday
-      // },
+      {
+        name: "Project Demo",
+        title: "Project Demo - Slides Due",
+        url: "proj/#demo",
+        due: "12/9/2026",  // wk 14, wednesday
+      },
+      {
+        name: "Project Code",
+        title: "Project Code Due on Github",
+        url: "proj/#code",
+        due: "12/18/2026",  // finals wk, friday
+      },
     ],
 
     ////////////////////////////////// LABS ////////////////////////////////
