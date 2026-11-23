@@ -208,13 +208,13 @@ let days = {
       "Handout: <a href='https://drive.google.com/open?id=1wWZDXaIae8r4TLA3RaO_QmthnSrni_en&usp=drive_fs'>B+Tree Algorithms</a>" + "<br/>" +
       "",
     // wk 13
-    "Indexing: extendible hashing",
+    "Project Work Day!",
     "<strong>Thanksgiving</strong>",
     "<strong>Thanksgiving</strong>",
       "",
     // wk 14
+    "Indexing: static vs. dynamic hashing",
     "Indexing: extendible hashing",
-    "Work!",
     "Work!",
     // "Start transactions: ACID, serializability",
     // "Transactions: serializability test, precedence graphs",
