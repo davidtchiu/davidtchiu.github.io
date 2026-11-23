@@ -283,19 +283,19 @@ let days = {
     // "Lab 11: PriorityQueue Code-Along Lab",
     // "Big-O of heaps and PriorityQueues",
     // wk 13
-    "Start Hashing: Entry<K,V> class, hashcode()",
+    "Work Day!",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "<strong><emph>Thanksgiving</emph></strong>",
     "",
     // wk 14
+    "Start Hashing: Entry<K,V> class, hashcode()",
     "HashMaps: open addressing and rehashing",
     "HashMaps: chaining",
     "Lab 13: Hashing Lab",
-    "Merge Sort",
     "",
     // wk 15
-    "Merge Sort Complexity",
+    "Merge Sort",
     "Quick Sort",
     "<strong>Reading Period</strong>",
     "<strong>Reading Period</strong>",

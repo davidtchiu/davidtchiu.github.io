@@ -87,7 +87,7 @@ let days = {
         name: "Project Demo",
         title: "Project Demo - Slides Due",
         url: "proj/#demo",
-        due: "12/7/2026",  // wk 14, wednesday
+        due: "12/7/2026",  // wk 14, mon
       },
       {
         name: "Project Code",
